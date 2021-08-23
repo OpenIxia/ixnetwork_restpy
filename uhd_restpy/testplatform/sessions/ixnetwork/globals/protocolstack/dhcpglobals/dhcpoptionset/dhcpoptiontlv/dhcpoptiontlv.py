@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpOptionTlv(Base):
@@ -40,12 +41,16 @@ class DhcpOptionTlv(Base):
         'Type': 'type',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['boolean', 'domainName', 'hexadecimal', 'integer16', 'integer16List', 'integer32', 'integer32List', 'integer8', 'integer8List', 'ipv4Address', 'ipv4AddressList', 'ipv4Prefix', 'ipv6Address', 'ipv6AddressList', 'ipv6Prefix', 'string', 'zeroLength'],
+    }
 
-    def __init__(self, parent):
-        super(DhcpOptionTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpOptionTlv, self).__init__(parent, list_op)
 
     @property
     def Code(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,10 +59,12 @@ class DhcpOptionTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Code'])
     @Code.setter
     def Code(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Code'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class DhcpOptionTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +88,7 @@ class DhcpOptionTlv(Base):
 
     @property
     def Rfc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class DhcpOptionTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rfc'])
     @Rfc.setter
     def Rfc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rfc'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +111,12 @@ class DhcpOptionTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,9 +125,11 @@ class DhcpOptionTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Code=None, Name=None, Rfc=None, Type=None, Value=None):
+        # type: (int, str, bool, str, str) -> DhcpOptionTlv
         """Updates dhcpOptionTlv resource on the server.
 
         Args
@@ -131,6 +147,7 @@ class DhcpOptionTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Code=None, Name=None, Rfc=None, Type=None, Value=None):
+        # type: (int, str, bool, str, str) -> DhcpOptionTlv
         """Adds a new dhcpOptionTlv resource on the server and adds it to the container.
 
         Args
@@ -162,6 +179,7 @@ class DhcpOptionTlv(Base):
         self._delete()
 
     def find(self, Code=None, Name=None, ObjectId=None, Rfc=None, Type=None, Value=None):
+        # type: (int, str, str, bool, str, str) -> DhcpOptionTlv
         """Finds and retrieves dhcpOptionTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpOptionTlv resources from the server.

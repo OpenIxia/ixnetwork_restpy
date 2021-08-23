@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DiscoveredNeighbor(Base):
@@ -38,12 +39,15 @@ class DiscoveredNeighbor(Base):
         'NeighborIp': 'neighborIp',
         'NeighborMac': 'neighborMac',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DiscoveredNeighbor, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DiscoveredNeighbor, self).__init__(parent, list_op)
 
     @property
     def IsRouter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class DiscoveredNeighbor(Base):
 
     @property
     def LastUpdate(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class DiscoveredNeighbor(Base):
 
     @property
     def NeighborIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class DiscoveredNeighbor(Base):
 
     @property
     def NeighborMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +109,7 @@ class DiscoveredNeighbor(Base):
         self._delete()
 
     def find(self, IsRouter=None, LastUpdate=None, NeighborIp=None, NeighborMac=None):
+        # type: (str, str, str, str) -> DiscoveredNeighbor
         """Finds and retrieves discoveredNeighbor resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve discoveredNeighbor resources from the server.

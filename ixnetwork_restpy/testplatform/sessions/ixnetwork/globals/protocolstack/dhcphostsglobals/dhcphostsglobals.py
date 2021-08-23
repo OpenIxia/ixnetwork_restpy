@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpHostsGlobals(Base):
@@ -35,12 +36,15 @@ class DhcpHostsGlobals(Base):
     _SDM_ATT_MAP = {
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DhcpHostsGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpHostsGlobals, self).__init__(parent, list_op)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +76,7 @@ class DhcpHostsGlobals(Base):
         self._delete()
 
     def find(self, ObjectId=None):
+        # type: (str) -> DhcpHostsGlobals
         """Finds and retrieves dhcpHostsGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpHostsGlobals resources from the server.

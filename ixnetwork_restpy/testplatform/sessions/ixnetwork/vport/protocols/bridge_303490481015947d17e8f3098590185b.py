@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bridge(Base):
@@ -108,9 +109,30 @@ class Bridge(Base):
         'UserTtlInterval': 'userTtlInterval',
         'UserUsabilityOption': 'userUsabilityOption',
     }
+    _SDM_ENUM_MAP = {
+        'aisInterval': ['oneSec', 'oneMin'],
+        'encapsulation': ['ethernet', 'llcSnap'],
+        'function': ['faultManagement', 'performanceMeasurement'],
+        'operationMode': ['cfm', 'y1731', 'pbbTe'],
+        'userBvlan': ['noVlanId', 'vlanId', 'allVlanId'],
+        'userCvlan': ['noVlanId', 'vlanId', 'allVlanId'],
+        'userDelayMethod': ['oneWay', 'twoWay'],
+        'userDelayType': ['dm', 'dvm'],
+        'userDstType': ['mepMac', 'mepId', 'mepMacAll', 'mepIdAll'],
+        'userLossMethod': ['dualEnded', 'singleEnded'],
+        'userMdLevel': ['0', '1', '2', '3', '4', '5', '6', '7', 'allMd'],
+        'userPbbTeDelayMethod': ['twoWay', 'oneWay'],
+        'userPbbTeDelayType': ['dm', 'dvm'],
+        'userPeriodicOamType': ['linkTrace', 'loopback', 'delayMeasurement', 'lossMeasurement'],
+        'userSendType': ['unicast', 'multicast'],
+        'userShortMaNameFormat': ['allFormats', 'primaryVid', 'characterString', 'twoOctetInteger', 'rfc2685VpnId'],
+        'userSrcType': ['mepMac', 'mepId', 'mepMacAll', 'mepIdAll'],
+        'userSvlan': ['noVlanId', 'vlanId', 'allVlanId'],
+        'userUsabilityOption': ['manual', 'oneToOne', 'oneToAll', 'allToOne', 'allToAll'],
+    }
 
-    def __init__(self, parent):
-        super(Bridge, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bridge, self).__init__(parent, list_op)
 
     @property
     def AisLearnedInfo(self):
@@ -124,7 +146,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.aislearnedinfo_1ef51d8a5d7e1d6f8b4577dd1a7a694e import AisLearnedInfo
-        return AisLearnedInfo(self)
+        if self._properties.get('AisLearnedInfo', None) is not None:
+            return self._properties.get('AisLearnedInfo')
+        else:
+            return AisLearnedInfo(self)
 
     @property
     def CcmLearnedInfo(self):
@@ -138,7 +163,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ccmlearnedinfo_f04a632dd1f2d59cdba98ffe4c169328 import CcmLearnedInfo
-        return CcmLearnedInfo(self)
+        if self._properties.get('CcmLearnedInfo', None) is not None:
+            return self._properties.get('CcmLearnedInfo')
+        else:
+            return CcmLearnedInfo(self)
 
     @property
     def CustomTlvs(self):
@@ -152,7 +180,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlvs_a77b90defd4dc2a97e3440bbaabec5e1 import CustomTlvs
-        return CustomTlvs(self)
+        if self._properties.get('CustomTlvs', None) is not None:
+            return self._properties.get('CustomTlvs')
+        else:
+            return CustomTlvs(self)
 
     @property
     def DelayLearnedInfo(self):
@@ -166,7 +197,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.delaylearnedinfo_bea460573dd9106bc998073489a0c2d0 import DelayLearnedInfo
-        return DelayLearnedInfo(self)
+        if self._properties.get('DelayLearnedInfo', None) is not None:
+            return self._properties.get('DelayLearnedInfo')
+        else:
+            return DelayLearnedInfo(self)
 
     @property
     def Interface(self):
@@ -180,7 +214,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_f5817c97c964b787c8c564bdf17f05ce import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def LbLearnedInfo(self):
@@ -194,7 +231,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lblearnedinfo_2c4c60ce204615b71f6b9313592f8557 import LbLearnedInfo
-        return LbLearnedInfo(self)
+        if self._properties.get('LbLearnedInfo', None) is not None:
+            return self._properties.get('LbLearnedInfo')
+        else:
+            return LbLearnedInfo(self)
 
     @property
     def LckLearnedInfo(self):
@@ -208,7 +248,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lcklearnedinfo_496dd52a33c2c0009b74a9bee972e99f import LckLearnedInfo
-        return LckLearnedInfo(self)
+        if self._properties.get('LckLearnedInfo', None) is not None:
+            return self._properties.get('LckLearnedInfo')
+        else:
+            return LckLearnedInfo(self)
 
     @property
     def Link(self):
@@ -222,7 +265,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_7d58db94150539071d46c85f2377f76c import Link
-        return Link(self)
+        if self._properties.get('Link', None) is not None:
+            return self._properties.get('Link')
+        else:
+            return Link(self)
 
     @property
     def LossLearnedInfo(self):
@@ -236,7 +282,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.losslearnedinfo_84309f8d1003b963cb497f04a53aba4c import LossLearnedInfo
-        return LossLearnedInfo(self)
+        if self._properties.get('LossLearnedInfo', None) is not None:
+            return self._properties.get('LossLearnedInfo')
+        else:
+            return LossLearnedInfo(self)
 
     @property
     def LtLearnedInfo(self):
@@ -250,7 +299,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedinfo_4d824216eb258ad01e7165314c7ec9bb import LtLearnedInfo
-        return LtLearnedInfo(self)
+        if self._properties.get('LtLearnedInfo', None) is not None:
+            return self._properties.get('LtLearnedInfo')
+        else:
+            return LtLearnedInfo(self)
 
     @property
     def MdLevel(self):
@@ -264,7 +316,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mdlevel_ebbac25168b7f1eb8e9c616327588e31 import MdLevel
-        return MdLevel(self)
+        if self._properties.get('MdLevel', None) is not None:
+            return self._properties.get('MdLevel')
+        else:
+            return MdLevel(self)
 
     @property
     def Mp(self):
@@ -278,7 +333,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mp_27380643ca73dc91fb91d8f173d7c4b0 import Mp
-        return Mp(self)
+        if self._properties.get('Mp', None) is not None:
+            return self._properties.get('Mp')
+        else:
+            return Mp(self)
 
     @property
     def PbbTeCcmLearnedInfo(self):
@@ -292,7 +350,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteccmlearnedinfo_be36c1d486826a7637c81a968538c581 import PbbTeCcmLearnedInfo
-        return PbbTeCcmLearnedInfo(self)
+        if self._properties.get('PbbTeCcmLearnedInfo', None) is not None:
+            return self._properties.get('PbbTeCcmLearnedInfo')
+        else:
+            return PbbTeCcmLearnedInfo(self)
 
     @property
     def PbbTeDelayLearnedInfo(self):
@@ -306,7 +367,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtedelaylearnedinfo_afb05fa03db6811e7ae1c2a593ca6044 import PbbTeDelayLearnedInfo
-        return PbbTeDelayLearnedInfo(self)
+        if self._properties.get('PbbTeDelayLearnedInfo', None) is not None:
+            return self._properties.get('PbbTeDelayLearnedInfo')
+        else:
+            return PbbTeDelayLearnedInfo(self)
 
     @property
     def PbbTeLbLearnedInfo(self):
@@ -320,7 +384,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbtelblearnedinfo_f137629a0dcafa32f5fc4fd0827a09f1 import PbbTeLbLearnedInfo
-        return PbbTeLbLearnedInfo(self)
+        if self._properties.get('PbbTeLbLearnedInfo', None) is not None:
+            return self._properties.get('PbbTeLbLearnedInfo')
+        else:
+            return PbbTeLbLearnedInfo(self)
 
     @property
     def PbbTeLtLearnedInfo(self):
@@ -334,7 +401,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteltlearnedinfo_c55aae88e52b1e26bdfd4943fba601be import PbbTeLtLearnedInfo
-        return PbbTeLtLearnedInfo(self)
+        if self._properties.get('PbbTeLtLearnedInfo', None) is not None:
+            return self._properties.get('PbbTeLtLearnedInfo')
+        else:
+            return PbbTeLtLearnedInfo(self)
 
     @property
     def PbbTePeriodicOamDmLearnedInfo(self):
@@ -348,7 +418,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamdmlearnedinfo_795335039bdead8c63c9803d2ae3d6b7 import PbbTePeriodicOamDmLearnedInfo
-        return PbbTePeriodicOamDmLearnedInfo(self)
+        if self._properties.get('PbbTePeriodicOamDmLearnedInfo', None) is not None:
+            return self._properties.get('PbbTePeriodicOamDmLearnedInfo')
+        else:
+            return PbbTePeriodicOamDmLearnedInfo(self)
 
     @property
     def PbbTePeriodicOamLbLearnedInfo(self):
@@ -362,7 +435,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamlblearnedinfo_e9d79ab2045ec30babf41733329db343 import PbbTePeriodicOamLbLearnedInfo
-        return PbbTePeriodicOamLbLearnedInfo(self)
+        if self._properties.get('PbbTePeriodicOamLbLearnedInfo', None) is not None:
+            return self._properties.get('PbbTePeriodicOamLbLearnedInfo')
+        else:
+            return PbbTePeriodicOamLbLearnedInfo(self)
 
     @property
     def PbbTePeriodicOamLtLearnedInfo(self):
@@ -376,7 +452,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pbbteperiodicoamltlearnedinfo_e6b96e3d1f94decd2b892cc7a253c5ac import PbbTePeriodicOamLtLearnedInfo
-        return PbbTePeriodicOamLtLearnedInfo(self)
+        if self._properties.get('PbbTePeriodicOamLtLearnedInfo', None) is not None:
+            return self._properties.get('PbbTePeriodicOamLtLearnedInfo')
+        else:
+            return PbbTePeriodicOamLtLearnedInfo(self)
 
     @property
     def PeriodicOamDmLearnedInfo(self):
@@ -390,7 +469,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamdmlearnedinfo_5d0ee05ebe2d3358a6728bad2b1827e4 import PeriodicOamDmLearnedInfo
-        return PeriodicOamDmLearnedInfo(self)
+        if self._properties.get('PeriodicOamDmLearnedInfo', None) is not None:
+            return self._properties.get('PeriodicOamDmLearnedInfo')
+        else:
+            return PeriodicOamDmLearnedInfo(self)
 
     @property
     def PeriodicOamLbLearnedInfo(self):
@@ -404,7 +486,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlblearnedinfo_7a9a25d94d97ca8cf93888312cab1e63 import PeriodicOamLbLearnedInfo
-        return PeriodicOamLbLearnedInfo(self)
+        if self._properties.get('PeriodicOamLbLearnedInfo', None) is not None:
+            return self._properties.get('PeriodicOamLbLearnedInfo')
+        else:
+            return PeriodicOamLbLearnedInfo(self)
 
     @property
     def PeriodicOamLmLearnedInfo(self):
@@ -418,7 +503,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamlmlearnedinfo_3875ae13eb2ca004c45550a58703214d import PeriodicOamLmLearnedInfo
-        return PeriodicOamLmLearnedInfo(self)
+        if self._properties.get('PeriodicOamLmLearnedInfo', None) is not None:
+            return self._properties.get('PeriodicOamLmLearnedInfo')
+        else:
+            return PeriodicOamLmLearnedInfo(self)
 
     @property
     def PeriodicOamLtLearnedInfo(self):
@@ -432,7 +520,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.periodicoamltlearnedinfo_49a700a40a8546a87d3cdd281c3f012b import PeriodicOamLtLearnedInfo
-        return PeriodicOamLtLearnedInfo(self)
+        if self._properties.get('PeriodicOamLtLearnedInfo', None) is not None:
+            return self._properties.get('PeriodicOamLtLearnedInfo')
+        else:
+            return PeriodicOamLtLearnedInfo(self)
 
     @property
     def Trunk(self):
@@ -446,7 +537,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trunk_da9c758dcc43a1e155e9aecc9fc92dcd import Trunk
-        return Trunk(self)
+        if self._properties.get('Trunk', None) is not None:
+            return self._properties.get('Trunk')
+        else:
+            return Trunk(self)
 
     @property
     def TstLearnedInfo(self):
@@ -460,7 +554,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tstlearnedinfo_ddb283fba5ef8dce5df59ea72cdd6e37 import TstLearnedInfo
-        return TstLearnedInfo(self)
+        if self._properties.get('TstLearnedInfo', None) is not None:
+            return self._properties.get('TstLearnedInfo')
+        else:
+            return TstLearnedInfo(self)
 
     @property
     def Vlans(self):
@@ -474,10 +571,14 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlans_92287cc4b4083769c57758c6be9fc9e8 import Vlans
-        return Vlans(self)
+        if self._properties.get('Vlans', None) is not None:
+            return self._properties.get('Vlans')
+        else:
+            return Vlans(self)
 
     @property
     def AisInterval(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -486,10 +587,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AisInterval'])
     @AisInterval.setter
     def AisInterval(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AisInterval'], value)
 
     @property
     def AllowCfmMaidFormatsInY1731(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -498,10 +601,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllowCfmMaidFormatsInY1731'])
     @AllowCfmMaidFormatsInY1731.setter
     def AllowCfmMaidFormatsInY1731(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllowCfmMaidFormatsInY1731'], value)
 
     @property
     def BridgeId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -510,10 +615,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgeId'])
     @BridgeId.setter
     def BridgeId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgeId'], value)
 
     @property
     def DelayLearnedErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -523,6 +630,7 @@ class Bridge(Base):
 
     @property
     def EnableAis(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -531,10 +639,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAis'])
     @EnableAis.setter
     def EnableAis(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAis'], value)
 
     @property
     def EnableOutOfSequenceDetection(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -543,10 +653,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOutOfSequenceDetection'])
     @EnableOutOfSequenceDetection.setter
     def EnableOutOfSequenceDetection(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOutOfSequenceDetection'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -555,10 +667,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Encapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -567,10 +681,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def EtherType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -579,10 +695,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EtherType'])
     @EtherType.setter
     def EtherType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EtherType'], value)
 
     @property
     def Function(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -591,10 +709,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Function'])
     @Function.setter
     def Function(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Function'], value)
 
     @property
     def GarbageCollectTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -603,10 +723,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GarbageCollectTime'])
     @GarbageCollectTime.setter
     def GarbageCollectTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GarbageCollectTime'], value)
 
     @property
     def IsAisLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -616,6 +738,7 @@ class Bridge(Base):
 
     @property
     def IsCcmLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -625,6 +748,7 @@ class Bridge(Base):
 
     @property
     def IsDelayLearnedConfigMep(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -634,6 +758,7 @@ class Bridge(Base):
 
     @property
     def IsDelayLearnedPacketSent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -643,6 +768,7 @@ class Bridge(Base):
 
     @property
     def IsDelayMeasurementLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -652,6 +778,7 @@ class Bridge(Base):
 
     @property
     def IsLbLearnedConfigMep(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -661,6 +788,7 @@ class Bridge(Base):
 
     @property
     def IsLbLearnedPacketSent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -670,6 +798,7 @@ class Bridge(Base):
 
     @property
     def IsLckLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -679,6 +808,7 @@ class Bridge(Base):
 
     @property
     def IsLinkTraceLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -688,6 +818,7 @@ class Bridge(Base):
 
     @property
     def IsLoopbackLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -697,6 +828,7 @@ class Bridge(Base):
 
     @property
     def IsLossMeasurementLearnedInfoPacketSent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -706,6 +838,7 @@ class Bridge(Base):
 
     @property
     def IsLossMeasurementLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -715,6 +848,7 @@ class Bridge(Base):
 
     @property
     def IsLtLearnedConfigMep(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -724,6 +858,7 @@ class Bridge(Base):
 
     @property
     def IsLtLearnedPacketSent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -733,6 +868,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeCcmLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -742,6 +878,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeDelayLearnedConfigMep(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -751,6 +888,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeDelayLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -760,6 +898,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeDelayLearnedPacketSent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -769,6 +908,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeLbLearnedConfigMep(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -778,6 +918,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeLbLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -787,6 +928,7 @@ class Bridge(Base):
 
     @property
     def IsPbbTeLbLearnedPacketSent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -796,6 +938,7 @@ class Bridge(Base):
 
     @property
     def IsPeriodicOamLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -805,6 +948,7 @@ class Bridge(Base):
 
     @property
     def IsTstLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -814,6 +958,7 @@ class Bridge(Base):
 
     @property
     def LbLearnedErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -823,6 +968,7 @@ class Bridge(Base):
 
     @property
     def LossMeasurementLearnedInfoErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -832,6 +978,7 @@ class Bridge(Base):
 
     @property
     def LtLearnedErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -841,6 +988,7 @@ class Bridge(Base):
 
     @property
     def OperationMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -849,10 +997,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OperationMode'])
     @OperationMode.setter
     def OperationMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OperationMode'], value)
 
     @property
     def PbbTeDelayLearnedErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -862,6 +1012,7 @@ class Bridge(Base):
 
     @property
     def PbbTeLbLearnedErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -871,6 +1022,7 @@ class Bridge(Base):
 
     @property
     def UserBvlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -879,10 +1031,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserBvlan'])
     @UserBvlan.setter
     def UserBvlan(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserBvlan'], value)
 
     @property
     def UserBvlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -891,10 +1045,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserBvlanId'])
     @UserBvlanId.setter
     def UserBvlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserBvlanId'], value)
 
     @property
     def UserBvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -903,10 +1059,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserBvlanPriority'])
     @UserBvlanPriority.setter
     def UserBvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserBvlanPriority'], value)
 
     @property
     def UserBvlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -915,10 +1073,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserBvlanTpId'])
     @UserBvlanTpId.setter
     def UserBvlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserBvlanTpId'], value)
 
     @property
     def UserCvlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -927,10 +1087,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserCvlan'])
     @UserCvlan.setter
     def UserCvlan(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserCvlan'], value)
 
     @property
     def UserCvlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -939,10 +1101,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserCvlanId'])
     @UserCvlanId.setter
     def UserCvlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserCvlanId'], value)
 
     @property
     def UserCvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -951,10 +1115,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserCvlanPriority'])
     @UserCvlanPriority.setter
     def UserCvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserCvlanPriority'], value)
 
     @property
     def UserCvlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -963,10 +1129,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserCvlanTpId'])
     @UserCvlanTpId.setter
     def UserCvlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserCvlanTpId'], value)
 
     @property
     def UserDelayMethod(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -975,10 +1143,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserDelayMethod'])
     @UserDelayMethod.setter
     def UserDelayMethod(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserDelayMethod'], value)
 
     @property
     def UserDelayType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -987,10 +1157,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserDelayType'])
     @UserDelayType.setter
     def UserDelayType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserDelayType'], value)
 
     @property
     def UserDstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -999,10 +1171,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserDstMacAddress'])
     @UserDstMacAddress.setter
     def UserDstMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserDstMacAddress'], value)
 
     @property
     def UserDstMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1011,10 +1185,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserDstMepId'])
     @UserDstMepId.setter
     def UserDstMepId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserDstMepId'], value)
 
     @property
     def UserDstType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1023,10 +1199,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserDstType'])
     @UserDstType.setter
     def UserDstType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserDstType'], value)
 
     @property
     def UserLearnedInfoTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1035,10 +1213,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserLearnedInfoTimeOut'])
     @UserLearnedInfoTimeOut.setter
     def UserLearnedInfoTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserLearnedInfoTimeOut'], value)
 
     @property
     def UserLossMethod(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1047,10 +1227,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserLossMethod'])
     @UserLossMethod.setter
     def UserLossMethod(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserLossMethod'], value)
 
     @property
     def UserMdLevel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1059,10 +1241,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserMdLevel'])
     @UserMdLevel.setter
     def UserMdLevel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserMdLevel'], value)
 
     @property
     def UserPbbTeDelayMethod(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1071,10 +1255,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPbbTeDelayMethod'])
     @UserPbbTeDelayMethod.setter
     def UserPbbTeDelayMethod(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPbbTeDelayMethod'], value)
 
     @property
     def UserPbbTeDelayType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1083,10 +1269,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPbbTeDelayType'])
     @UserPbbTeDelayType.setter
     def UserPbbTeDelayType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPbbTeDelayType'], value)
 
     @property
     def UserPeriodicOamType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1095,10 +1283,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPeriodicOamType'])
     @UserPeriodicOamType.setter
     def UserPeriodicOamType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPeriodicOamType'], value)
 
     @property
     def UserSelectDstMepById(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -1107,10 +1297,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSelectDstMepById'])
     @UserSelectDstMepById.setter
     def UserSelectDstMepById(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSelectDstMepById'], value)
 
     @property
     def UserSelectSrcMepById(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -1119,10 +1311,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSelectSrcMepById'])
     @UserSelectSrcMepById.setter
     def UserSelectSrcMepById(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSelectSrcMepById'], value)
 
     @property
     def UserSendType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1131,10 +1325,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSendType'])
     @UserSendType.setter
     def UserSendType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSendType'], value)
 
     @property
     def UserShortMaName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1143,10 +1339,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserShortMaName'])
     @UserShortMaName.setter
     def UserShortMaName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserShortMaName'], value)
 
     @property
     def UserShortMaNameFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1155,10 +1353,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserShortMaNameFormat'])
     @UserShortMaNameFormat.setter
     def UserShortMaNameFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserShortMaNameFormat'], value)
 
     @property
     def UserSrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1167,10 +1367,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSrcMacAddress'])
     @UserSrcMacAddress.setter
     def UserSrcMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSrcMacAddress'], value)
 
     @property
     def UserSrcMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1179,10 +1381,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSrcMepId'])
     @UserSrcMepId.setter
     def UserSrcMepId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSrcMepId'], value)
 
     @property
     def UserSrcType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1191,10 +1395,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSrcType'])
     @UserSrcType.setter
     def UserSrcType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSrcType'], value)
 
     @property
     def UserSvlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1203,10 +1409,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSvlan'])
     @UserSvlan.setter
     def UserSvlan(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSvlan'], value)
 
     @property
     def UserSvlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1215,10 +1423,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSvlanId'])
     @UserSvlanId.setter
     def UserSvlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSvlanId'], value)
 
     @property
     def UserSvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1227,10 +1437,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSvlanPriority'])
     @UserSvlanPriority.setter
     def UserSvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSvlanPriority'], value)
 
     @property
     def UserSvlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1239,10 +1451,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserSvlanTpId'])
     @UserSvlanTpId.setter
     def UserSvlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserSvlanTpId'], value)
 
     @property
     def UserTransactionId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1251,10 +1465,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserTransactionId'])
     @UserTransactionId.setter
     def UserTransactionId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserTransactionId'], value)
 
     @property
     def UserTtlInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1263,10 +1479,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserTtlInterval'])
     @UserTtlInterval.setter
     def UserTtlInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserTtlInterval'], value)
 
     @property
     def UserUsabilityOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1275,9 +1493,11 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserUsabilityOption'])
     @UserUsabilityOption.setter
     def UserUsabilityOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserUsabilityOption'], value)
 
     def update(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, OperationMode=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
+        # type: (str, bool, str, bool, bool, bool, str, int, str, int, str, str, int, int, str, str, int, int, str, str, str, str, int, str, int, str, str, str, str, str, bool, bool, str, str, str, str, int, str, str, int, int, str, int, int, str) -> Bridge
         """Updates bridge resource on the server.
 
         Args
@@ -1335,6 +1555,7 @@ class Bridge(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, OperationMode=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
+        # type: (str, bool, str, bool, bool, bool, str, int, str, int, str, str, int, int, str, str, int, int, str, str, str, str, int, str, int, str, str, str, str, str, bool, bool, str, str, str, str, int, str, str, int, int, str, int, int, str) -> Bridge
         """Adds a new bridge resource on the server and adds it to the container.
 
         Args
@@ -1406,6 +1627,7 @@ class Bridge(Base):
         self._delete()
 
     def find(self, AisInterval=None, AllowCfmMaidFormatsInY1731=None, BridgeId=None, DelayLearnedErrorString=None, EnableAis=None, EnableOutOfSequenceDetection=None, Enabled=None, Encapsulation=None, EtherType=None, Function=None, GarbageCollectTime=None, IsAisLearnedInfoRefreshed=None, IsCcmLearnedInfoRefreshed=None, IsDelayLearnedConfigMep=None, IsDelayLearnedPacketSent=None, IsDelayMeasurementLearnedInfoRefreshed=None, IsLbLearnedConfigMep=None, IsLbLearnedPacketSent=None, IsLckLearnedInfoRefreshed=None, IsLinkTraceLearnedInfoRefreshed=None, IsLoopbackLearnedInfoRefreshed=None, IsLossMeasurementLearnedInfoPacketSent=None, IsLossMeasurementLearnedInfoRefreshed=None, IsLtLearnedConfigMep=None, IsLtLearnedPacketSent=None, IsPbbTeCcmLearnedInfoRefreshed=None, IsPbbTeDelayLearnedConfigMep=None, IsPbbTeDelayLearnedInfoRefreshed=None, IsPbbTeDelayLearnedPacketSent=None, IsPbbTeLbLearnedConfigMep=None, IsPbbTeLbLearnedInfoRefreshed=None, IsPbbTeLbLearnedPacketSent=None, IsPeriodicOamLearnedInfoRefreshed=None, IsTstLearnedInfoRefreshed=None, LbLearnedErrorString=None, LossMeasurementLearnedInfoErrorString=None, LtLearnedErrorString=None, OperationMode=None, PbbTeDelayLearnedErrorString=None, PbbTeLbLearnedErrorString=None, UserBvlan=None, UserBvlanId=None, UserBvlanPriority=None, UserBvlanTpId=None, UserCvlan=None, UserCvlanId=None, UserCvlanPriority=None, UserCvlanTpId=None, UserDelayMethod=None, UserDelayType=None, UserDstMacAddress=None, UserDstMepId=None, UserDstType=None, UserLearnedInfoTimeOut=None, UserLossMethod=None, UserMdLevel=None, UserPbbTeDelayMethod=None, UserPbbTeDelayType=None, UserPeriodicOamType=None, UserSelectDstMepById=None, UserSelectSrcMepById=None, UserSendType=None, UserShortMaName=None, UserShortMaNameFormat=None, UserSrcMacAddress=None, UserSrcMepId=None, UserSrcType=None, UserSvlan=None, UserSvlanId=None, UserSvlanPriority=None, UserSvlanTpId=None, UserTransactionId=None, UserTtlInterval=None, UserUsabilityOption=None):
+        # type: (str, bool, str, str, bool, bool, bool, str, int, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str, int, int, str, str, int, int, str, str, str, str, int, str, int, str, str, str, str, str, bool, bool, str, str, str, str, int, str, str, int, int, str, int, int, str) -> Bridge
         """Finds and retrieves bridge resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bridge resources from the server.
@@ -1517,119 +1739,191 @@ class Bridge(Base):
         """
         return self._read(href)
 
-    def RefreshAisLearnedInfo(self):
+    def RefreshAisLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshAisLearnedInfo operation on the server.
 
         NOT DEFINED
 
+        refreshAisLearnedInfo(async_operation=bool)bool
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshAisLearnedInfo', payload=payload, response_object=None)
 
-    def RefreshCcmLearnedInfo(self):
+    def RefreshCcmLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshCcmLearnedInfo operation on the server.
 
         This command is used to refresh the learned CCM information on the bridge.
 
+        refreshCcmLearnedInfo(async_operation=bool)bool
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshCcmLearnedInfo', payload=payload, response_object=None)
 
-    def RefreshLckLearnedInfo(self):
+    def RefreshLckLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLckLearnedInfo operation on the server.
 
         NOT DEFINED
 
+        refreshLckLearnedInfo(async_operation=bool)bool
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLckLearnedInfo', payload=payload, response_object=None)
 
-    def RefreshTstLearnedInfo(self):
+    def RefreshTstLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshTstLearnedInfo operation on the server.
 
         NOT DEFINED
 
+        refreshTstLearnedInfo(async_operation=bool)bool
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshTstLearnedInfo', payload=payload, response_object=None)
 
-    def StartDelayMeasurement(self):
+    def StartDelayMeasurement(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the startDelayMeasurement operation on the server.
 
         This command is used to refresh the learned CFM ITU information on this bridge.
 
+        startDelayMeasurement(async_operation=bool)bool
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startDelayMeasurement', payload=payload, response_object=None)
 
-    def StartLinkTrace(self):
+    def StartLinkTrace(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the startLinkTrace operation on the server.
 
         This command is used to refresh the learned CFM LT information on this bridge.
 
+        startLinkTrace(async_operation=bool)bool
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startLinkTrace', payload=payload, response_object=None)
 
-    def StartLoopback(self):
+    def StartLoopback(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the startLoopback operation on the server.
 
         This command is used to refresh the learned CFM LB information on this bridge.
 
+        startLoopback(async_operation=bool)bool
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startLoopback', payload=payload, response_object=None)
 
-    def StartLossMeasurement(self):
+    def StartLossMeasurement(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the startLossMeasurement operation on the server.
 
         NOT DEFINED
 
+        startLossMeasurement(async_operation=bool)bool
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startLossMeasurement', payload=payload, response_object=None)
 
-    def UpdatePeriodicOamLearnedInfo(self):
+    def UpdatePeriodicOamLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updatePeriodicOamLearnedInfo operation on the server.
 
         This command updates the periodic OAM learned information on this bridge.
 
+        updatePeriodicOamLearnedInfo(async_operation=bool)bool
+        ------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('updatePeriodicOamLearnedInfo', payload=payload, response_object=None)

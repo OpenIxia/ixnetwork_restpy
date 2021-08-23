@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class QueueStatLearnedInformation(Base):
@@ -49,12 +50,15 @@ class QueueStatLearnedInformation(Base):
         'ReplyState': 'replyState',
         'TxErrors': 'txErrors',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(QueueStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(QueueStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def BytesTx(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +78,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +88,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def Duration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def DurationInNsec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +138,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +148,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,6 +158,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def PacketsTx(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,6 +168,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -163,6 +178,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def QueueId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,6 +188,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,6 +198,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,6 +208,7 @@ class QueueStatLearnedInformation(Base):
 
     @property
     def TxErrors(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,7 +216,21 @@ class QueueStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxErrors'])
 
+    def add(self):
+        """Adds a new queueStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved queueStatLearnedInformation resources using find and the newly added queueStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BytesTx=None, DataPathId=None, DataPathIdAsHex=None, Duration=None, DurationInNsec=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketsTx=None, PortNumber=None, QueueId=None, RemoteIp=None, ReplyState=None, TxErrors=None):
+        # type: (str, str, str, int, int, str, str, int, str, str, str, int, int, str, str, str) -> QueueStatLearnedInformation
         """Finds and retrieves queueStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve queueStatLearnedInformation resources from the server.

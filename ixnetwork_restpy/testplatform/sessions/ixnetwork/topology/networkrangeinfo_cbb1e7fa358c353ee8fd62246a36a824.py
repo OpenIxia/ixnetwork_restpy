@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetworkRangeInfo(Base):
@@ -48,9 +49,11 @@ class NetworkRangeInfo(Base):
         'NumColumns': 'numColumns',
         'NumRows': 'numRows',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetworkRangeInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetworkRangeInfo, self).__init__(parent, list_op)
 
     @property
     def CMacProperties(self):
@@ -64,7 +67,10 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is not None:
+            return self._properties.get('CMacProperties')
+        else:
+            return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -78,7 +84,10 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv4PrefixRange')
+        else:
+            return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -92,10 +101,14 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv6PrefixRange')
+        else:
+            return EvpnIPv6PrefixRange(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,6 +118,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +128,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,10 +137,12 @@ class NetworkRangeInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkRangeIPByMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +153,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeInterfaceIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,6 +164,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeInterfaceIpMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -156,6 +175,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +186,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeIpIncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +197,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeIpMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +208,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeLinkType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +219,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeRID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +230,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NetworkRangeRIDIncrement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +241,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NumColumns(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +252,7 @@ class NetworkRangeInfo(Base):
 
     @property
     def NumRows(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -235,6 +262,7 @@ class NetworkRangeInfo(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NumRows']))
 
     def update(self, Name=None):
+        # type: (str) -> NetworkRangeInfo
         """Updates networkRangeInfo resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -251,6 +279,7 @@ class NetworkRangeInfo(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> NetworkRangeInfo
         """Adds a new networkRangeInfo resource on the server and adds it to the container.
 
         Args
@@ -278,6 +307,7 @@ class NetworkRangeInfo(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> NetworkRangeInfo
         """Finds and retrieves networkRangeInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkRangeInfo resources from the server.
@@ -318,6 +348,66 @@ class NetworkRangeInfo(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, NetworkRangeIPByMask=None, NetworkRangeInterfaceIp=None, NetworkRangeInterfaceIpMask=None, NetworkRangeIp=None, NetworkRangeIpIncrementBy=None, NetworkRangeIpMask=None, NetworkRangeLinkType=None, NetworkRangeRID=None, NetworkRangeRIDIncrement=None, NumColumns=None, NumRows=None):
         """Base class infrastructure that gets a list of networkRangeInfo device ids encapsulated by this object.
 
@@ -347,42 +437,3 @@ class NetworkRangeInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

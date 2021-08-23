@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MatchTemplate(Base):
@@ -38,9 +39,11 @@ class MatchTemplate(Base):
         'Name': 'name',
         'SavedInVersion': 'savedInVersion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MatchTemplate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MatchTemplate, self).__init__(parent, list_op)
 
     @property
     def MatchCriteria(self):
@@ -54,10 +57,14 @@ class MatchTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchcriteria_9aa9789751ef3a19fec75c76015a02c0 import MatchCriteria
-        return MatchCriteria(self)
+        if self._properties.get('MatchCriteria', None) is not None:
+            return self._properties.get('MatchCriteria')
+        else:
+            return MatchCriteria(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +74,7 @@ class MatchTemplate(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +84,7 @@ class MatchTemplate(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +93,12 @@ class MatchTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SavedInVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,9 +107,11 @@ class MatchTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SavedInVersion'])
     @SavedInVersion.setter
     def SavedInVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SavedInVersion'], value)
 
     def update(self, Name=None, SavedInVersion=None):
+        # type: (str, str) -> MatchTemplate
         """Updates matchTemplate resource on the server.
 
         Args
@@ -113,6 +126,7 @@ class MatchTemplate(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, SavedInVersion=None):
+        # type: (str, str) -> MatchTemplate
         """Adds a new matchTemplate resource on the server and adds it to the container.
 
         Args
@@ -141,6 +155,7 @@ class MatchTemplate(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None, SavedInVersion=None):
+        # type: (int, str, str, str) -> MatchTemplate
         """Finds and retrieves matchTemplate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve matchTemplate resources from the server.

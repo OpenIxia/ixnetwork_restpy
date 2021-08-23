@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Connector(Base):
@@ -37,24 +38,29 @@ class Connector(Base):
         'Count': 'count',
         'PropagateMultiplier': 'propagateMultiplier',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Connector, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Connector, self).__init__(parent, list_op)
 
     @property
     def ConnectedTo(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/lag/.../*): Scenario element this connector is connecting to
+        - str(None | /api/v1/sessions/1/ixnetwork/lag/.../*): Scenario element this connector is connecting to
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedTo'])
     @ConnectedTo.setter
     def ConnectedTo(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedTo'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +70,7 @@ class Connector(Base):
 
     @property
     def PropagateMultiplier(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,11 +79,12 @@ class Connector(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PropagateMultiplier'])
 
     def update(self, ConnectedTo=None):
+        # type: (str) -> Connector
         """Updates connector resource on the server.
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
 
         Raises
         ------
@@ -85,11 +93,12 @@ class Connector(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedTo=None):
+        # type: (str) -> Connector
         """Adds a new connector resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
 
         Returns
         -------
@@ -112,6 +121,7 @@ class Connector(Base):
         self._delete()
 
     def find(self, ConnectedTo=None, Count=None, PropagateMultiplier=None):
+        # type: (str, int, bool) -> Connector
         """Finds and retrieves connector resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve connector resources from the server.
@@ -120,7 +130,7 @@ class Connector(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - PropagateMultiplier (bool): The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
 

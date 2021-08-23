@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EnumerationFilter(Base):
@@ -36,12 +37,16 @@ class EnumerationFilter(Base):
         'SortDirection': 'sortDirection',
         'TrackingFilterId': 'trackingFilterId',
     }
+    _SDM_ENUM_MAP = {
+        'sortDirection': ['ascending', 'descending'],
+    }
 
-    def __init__(self, parent):
-        super(EnumerationFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EnumerationFilter, self).__init__(parent, list_op)
 
     @property
     def SortDirection(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,27 +55,31 @@ class EnumerationFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortDirection'])
     @SortDirection.setter
     def SortDirection(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortDirection'], value)
 
     @property
     def TrackingFilterId(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     def update(self, SortDirection=None, TrackingFilterId=None):
+        # type: (str, str) -> EnumerationFilter
         """Updates enumerationFilter resource on the server.
 
         Args
         ----
         - SortDirection (str(ascending | descending)): Sets the display order of the view.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
 
         Raises
         ------
@@ -79,12 +88,13 @@ class EnumerationFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, SortDirection=None, TrackingFilterId=None):
+        # type: (str, str) -> EnumerationFilter
         """Adds a new enumerationFilter resource on the server and adds it to the container.
 
         Args
         ----
         - SortDirection (str(ascending | descending)): Sets the display order of the view.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
 
         Returns
         -------
@@ -107,6 +117,7 @@ class EnumerationFilter(Base):
         self._delete()
 
     def find(self, SortDirection=None, TrackingFilterId=None):
+        # type: (str, str) -> EnumerationFilter
         """Finds and retrieves enumerationFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve enumerationFilter resources from the server.
@@ -116,7 +127,7 @@ class EnumerationFilter(Base):
         Args
         ----
         - SortDirection (str(ascending | descending)): Sets the display order of the view.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
 
         Returns
         -------

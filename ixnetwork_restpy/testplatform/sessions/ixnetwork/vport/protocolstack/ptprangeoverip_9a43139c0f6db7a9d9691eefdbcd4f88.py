@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PtpRangeOverIp(Base):
@@ -109,12 +110,15 @@ class PtpRangeOverIp(Base):
         'UseAlternateMasterFlag': 'useAlternateMasterFlag',
         'UseClockIdentity': 'useClockIdentity',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PtpRangeOverIp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PtpRangeOverIp, self).__init__(parent, list_op)
 
     @property
     def AnnounceCurrentUtcOffsetValid(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +127,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceCurrentUtcOffsetValid'])
     @AnnounceCurrentUtcOffsetValid.setter
     def AnnounceCurrentUtcOffsetValid(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceCurrentUtcOffsetValid'], value)
 
     @property
     def AnnounceDropRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,10 +141,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceDropRate'])
     @AnnounceDropRate.setter
     def AnnounceDropRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceDropRate'], value)
 
     @property
     def AnnounceFrequencyTraceable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,10 +155,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceFrequencyTraceable'])
     @AnnounceFrequencyTraceable.setter
     def AnnounceFrequencyTraceable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceFrequencyTraceable'], value)
 
     @property
     def AnnounceLeap59(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -159,10 +169,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceLeap59'])
     @AnnounceLeap59.setter
     def AnnounceLeap59(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceLeap59'], value)
 
     @property
     def AnnounceLeap61(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -171,10 +183,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceLeap61'])
     @AnnounceLeap61.setter
     def AnnounceLeap61(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceLeap61'], value)
 
     @property
     def AnnouncePtpTimescale(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -183,10 +197,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnouncePtpTimescale'])
     @AnnouncePtpTimescale.setter
     def AnnouncePtpTimescale(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnouncePtpTimescale'], value)
 
     @property
     def AnnounceReceiptTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +211,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceReceiptTimeout'])
     @AnnounceReceiptTimeout.setter
     def AnnounceReceiptTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceReceiptTimeout'], value)
 
     @property
     def AnnounceTimeTraceable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -207,10 +225,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AnnounceTimeTraceable'])
     @AnnounceTimeTraceable.setter
     def AnnounceTimeTraceable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AnnounceTimeTraceable'], value)
 
     @property
     def ClientCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,10 +239,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientCount'])
     @ClientCount.setter
     def ClientCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientCount'], value)
 
     @property
     def ClientIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,10 +253,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientIpAddress'])
     @ClientIpAddress.setter
     def ClientIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientIpAddress'], value)
 
     @property
     def ClientIpIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,10 +267,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientIpIncrementBy'])
     @ClientIpIncrementBy.setter
     def ClientIpIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientIpIncrementBy'], value)
 
     @property
     def ClientMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -255,10 +281,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientMacAddress'])
     @ClientMacAddress.setter
     def ClientMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientMacAddress'], value)
 
     @property
     def ClientMacIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -267,10 +295,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientMacIncrementBy'])
     @ClientMacIncrementBy.setter
     def ClientMacIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientMacIncrementBy'], value)
 
     @property
     def ClockAccuracy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -279,10 +309,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClockAccuracy'])
     @ClockAccuracy.setter
     def ClockAccuracy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClockAccuracy'], value)
 
     @property
     def ClockClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -291,10 +323,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClockClass'])
     @ClockClass.setter
     def ClockClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClockClass'], value)
 
     @property
     def ClockIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -303,10 +337,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClockIncrement'])
     @ClockIncrement.setter
     def ClockIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClockIncrement'], value)
 
     @property
     def CommunicationMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -315,10 +351,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CommunicationMode'])
     @CommunicationMode.setter
     def CommunicationMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CommunicationMode'], value)
 
     @property
     def DelayMechanism(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -327,10 +365,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayMechanism'])
     @DelayMechanism.setter
     def DelayMechanism(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayMechanism'], value)
 
     @property
     def DelayRespDropRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -339,10 +379,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayRespDropRate'])
     @DelayRespDropRate.setter
     def DelayRespDropRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayRespDropRate'], value)
 
     @property
     def DelayRespReceiptTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -351,10 +393,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayRespReceiptTimeout'])
     @DelayRespReceiptTimeout.setter
     def DelayRespReceiptTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayRespReceiptTimeout'], value)
 
     @property
     def DelayResponseDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -363,10 +407,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayResponseDelay'])
     @DelayResponseDelay.setter
     def DelayResponseDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayResponseDelay'], value)
 
     @property
     def DelayResponseDelayInsertionRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -375,10 +421,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayResponseDelayInsertionRate'])
     @DelayResponseDelayInsertionRate.setter
     def DelayResponseDelayInsertionRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayResponseDelayInsertionRate'], value)
 
     @property
     def Domain(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -387,10 +435,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Domain'])
     @Domain.setter
     def Domain(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Domain'], value)
 
     @property
     def DropSignalReqAnnounce(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -399,10 +449,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DropSignalReqAnnounce'])
     @DropSignalReqAnnounce.setter
     def DropSignalReqAnnounce(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DropSignalReqAnnounce'], value)
 
     @property
     def DropSignalReqDelayResp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -411,10 +463,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DropSignalReqDelayResp'])
     @DropSignalReqDelayResp.setter
     def DropSignalReqDelayResp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DropSignalReqDelayResp'], value)
 
     @property
     def DropSignalReqSync(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -423,10 +477,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DropSignalReqSync'])
     @DropSignalReqSync.setter
     def DropSignalReqSync(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DropSignalReqSync'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -435,10 +491,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstClock(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -447,10 +505,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstClock'])
     @FirstClock.setter
     def FirstClock(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstClock'], value)
 
     @property
     def FollowUpBadCrcRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -459,10 +519,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FollowUpBadCrcRate'])
     @FollowUpBadCrcRate.setter
     def FollowUpBadCrcRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FollowUpBadCrcRate'], value)
 
     @property
     def FollowUpDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -471,10 +533,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FollowUpDelay'])
     @FollowUpDelay.setter
     def FollowUpDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FollowUpDelay'], value)
 
     @property
     def FollowUpDelayInsertionRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -483,10 +547,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FollowUpDelayInsertionRate'])
     @FollowUpDelayInsertionRate.setter
     def FollowUpDelayInsertionRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FollowUpDelayInsertionRate'], value)
 
     @property
     def FollowUpDropRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -495,10 +561,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FollowUpDropRate'])
     @FollowUpDropRate.setter
     def FollowUpDropRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FollowUpDropRate'], value)
 
     @property
     def GrantDelayRespDurationInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -507,10 +575,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GrantDelayRespDurationInterval'])
     @GrantDelayRespDurationInterval.setter
     def GrantDelayRespDurationInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GrantDelayRespDurationInterval'], value)
 
     @property
     def GrantSyncDurationInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -519,10 +589,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GrantSyncDurationInterval'])
     @GrantSyncDurationInterval.setter
     def GrantSyncDurationInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GrantSyncDurationInterval'], value)
 
     @property
     def GrantUnicastDurationInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -531,10 +603,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GrantUnicastDurationInterval'])
     @GrantUnicastDurationInterval.setter
     def GrantUnicastDurationInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GrantUnicastDurationInterval'], value)
 
     @property
     def IpTos(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -543,10 +617,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpTos'])
     @IpTos.setter
     def IpTos(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpTos'], value)
 
     @property
     def LearnPortId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -555,10 +631,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LearnPortId'])
     @LearnPortId.setter
     def LearnPortId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LearnPortId'], value)
 
     @property
     def LogAnnounceInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -567,10 +645,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogAnnounceInterval'])
     @LogAnnounceInterval.setter
     def LogAnnounceInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogAnnounceInterval'], value)
 
     @property
     def LogDelayReqInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -579,10 +659,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogDelayReqInterval'])
     @LogDelayReqInterval.setter
     def LogDelayReqInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogDelayReqInterval'], value)
 
     @property
     def LogSyncInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -591,10 +673,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogSyncInterval'])
     @LogSyncInterval.setter
     def LogSyncInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogSyncInterval'], value)
 
     @property
     def MasterCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -603,10 +687,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterCount'])
     @MasterCount.setter
     def MasterCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterCount'], value)
 
     @property
     def MasterIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -615,10 +701,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterIpAddress'])
     @MasterIpAddress.setter
     def MasterIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterIpAddress'], value)
 
     @property
     def MasterIpIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -627,10 +715,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterIpIncrementBy'])
     @MasterIpIncrementBy.setter
     def MasterIpIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterIpIncrementBy'], value)
 
     @property
     def MasterIpIncrementInterEntity(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -639,10 +729,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterIpIncrementInterEntity'])
     @MasterIpIncrementInterEntity.setter
     def MasterIpIncrementInterEntity(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterIpIncrementInterEntity'], value)
 
     @property
     def MasterMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -651,10 +743,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterMacAddress'])
     @MasterMacAddress.setter
     def MasterMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterMacAddress'], value)
 
     @property
     def MasterMacIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -663,10 +757,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterMacIncrementBy'])
     @MasterMacIncrementBy.setter
     def MasterMacIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterMacIncrementBy'], value)
 
     @property
     def MasterMacIncrementInterEntity(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -675,10 +771,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterMacIncrementInterEntity'])
     @MasterMacIncrementInterEntity.setter
     def MasterMacIncrementInterEntity(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterMacIncrementInterEntity'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -687,10 +785,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -700,6 +800,7 @@ class PtpRangeOverIp(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -708,10 +809,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
     @PortNumber.setter
     def PortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortNumber'], value)
 
     @property
     def PortNumberIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -720,10 +823,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortNumberIncrement'])
     @PortNumberIncrement.setter
     def PortNumberIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortNumberIncrement'], value)
 
     @property
     def Priority1(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -732,10 +837,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority1'])
     @Priority1.setter
     def Priority1(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority1'], value)
 
     @property
     def Priority2(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -744,10 +851,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority2'])
     @Priority2.setter
     def Priority2(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority2'], value)
 
     @property
     def RenewalInvited(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -756,10 +865,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RenewalInvited'])
     @RenewalInvited.setter
     def RenewalInvited(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RenewalInvited'], value)
 
     @property
     def RequestAttempts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -768,10 +879,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestAttempts'])
     @RequestAttempts.setter
     def RequestAttempts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestAttempts'], value)
 
     @property
     def RequestHolddown(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -780,10 +893,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestHolddown'])
     @RequestHolddown.setter
     def RequestHolddown(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestHolddown'], value)
 
     @property
     def RequestInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -792,10 +907,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestInterval'])
     @RequestInterval.setter
     def RequestInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestInterval'], value)
 
     @property
     def ResidenceTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -804,10 +921,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResidenceTime'])
     @ResidenceTime.setter
     def ResidenceTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResidenceTime'], value)
 
     @property
     def RxCalibration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -816,10 +935,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RxCalibration'])
     @RxCalibration.setter
     def RxCalibration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RxCalibration'], value)
 
     @property
     def SendAnnounceMulticast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -828,10 +949,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendAnnounceMulticast'])
     @SendAnnounceMulticast.setter
     def SendAnnounceMulticast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendAnnounceMulticast'], value)
 
     @property
     def SendAnnounceTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -840,10 +963,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendAnnounceTlv'])
     @SendAnnounceTlv.setter
     def SendAnnounceTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendAnnounceTlv'], value)
 
     @property
     def SendCancelTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -852,10 +977,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendCancelTlv'])
     @SendCancelTlv.setter
     def SendCancelTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendCancelTlv'], value)
 
     @property
     def SignalInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -864,10 +991,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SignalInterval'])
     @SignalInterval.setter
     def SignalInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SignalInterval'], value)
 
     @property
     def SignalUnicastHandling(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -876,10 +1005,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SignalUnicastHandling'])
     @SignalUnicastHandling.setter
     def SignalUnicastHandling(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SignalUnicastHandling'], value)
 
     @property
     def StepMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -888,10 +1019,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepMode'])
     @StepMode.setter
     def StepMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepMode'], value)
 
     @property
     def StepsRemoved(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -900,10 +1033,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepsRemoved'])
     @StepsRemoved.setter
     def StepsRemoved(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepsRemoved'], value)
 
     @property
     def StrictGrant(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -912,10 +1047,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StrictGrant'])
     @StrictGrant.setter
     def StrictGrant(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StrictGrant'], value)
 
     @property
     def SyncDropRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -924,10 +1061,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SyncDropRate'])
     @SyncDropRate.setter
     def SyncDropRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SyncDropRate'], value)
 
     @property
     def SyncReceiptTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -936,10 +1075,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SyncReceiptTimeout'])
     @SyncReceiptTimeout.setter
     def SyncReceiptTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SyncReceiptTimeout'], value)
 
     @property
     def TimeSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -948,10 +1089,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeSource'])
     @TimeSource.setter
     def TimeSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeSource'], value)
 
     @property
     def TimestampOffset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -960,10 +1103,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimestampOffset'])
     @TimestampOffset.setter
     def TimestampOffset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimestampOffset'], value)
 
     @property
     def TimestampOffsetVariation(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -972,10 +1117,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimestampOffsetVariation'])
     @TimestampOffsetVariation.setter
     def TimestampOffsetVariation(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimestampOffsetVariation'], value)
 
     @property
     def TxCalibration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -984,10 +1131,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxCalibration'])
     @TxCalibration.setter
     def TxCalibration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxCalibration'], value)
 
     @property
     def UseAlternateMasterFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -996,10 +1145,12 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseAlternateMasterFlag'])
     @UseAlternateMasterFlag.setter
     def UseAlternateMasterFlag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseAlternateMasterFlag'], value)
 
     @property
     def UseClockIdentity(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1008,9 +1159,11 @@ class PtpRangeOverIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseClockIdentity'])
     @UseClockIdentity.setter
     def UseClockIdentity(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseClockIdentity'], value)
 
     def update(self, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, ClientCount=None, ClientIpAddress=None, ClientIpIncrementBy=None, ClientMacAddress=None, ClientMacIncrementBy=None, ClockAccuracy=None, ClockClass=None, ClockIncrement=None, CommunicationMode=None, DelayMechanism=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, Enabled=None, FirstClock=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, IpTos=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpIncrementInterEntity=None, MasterMacAddress=None, MasterMacIncrementBy=None, MasterMacIncrementInterEntity=None, Name=None, PortNumber=None, PortNumberIncrement=None, Priority1=None, Priority2=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ResidenceTime=None, RxCalibration=None, SendAnnounceMulticast=None, SendAnnounceTlv=None, SendCancelTlv=None, SignalInterval=None, SignalUnicastHandling=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, TimeSource=None, TimestampOffset=None, TimestampOffsetVariation=None, TxCalibration=None, UseAlternateMasterFlag=None, UseClockIdentity=None):
+        # type: (bool, int, bool, bool, bool, bool, int, bool, int, str, str, str, str, str, int, str, str, str, int, int, int, int, int, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, bool, int, int, int, int, str, str, str, str, str, str, str, int, int, int, int, bool, int, int, int, int, int, bool, bool, bool, int, str, str, int, bool, int, int, str, int, int, int, bool, bool) -> PtpRangeOverIp
         """Updates ptpRangeOverIp resource on the server.
 
         Args
@@ -1097,6 +1250,7 @@ class PtpRangeOverIp(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, ClientCount=None, ClientIpAddress=None, ClientIpIncrementBy=None, ClientMacAddress=None, ClientMacIncrementBy=None, ClockAccuracy=None, ClockClass=None, ClockIncrement=None, CommunicationMode=None, DelayMechanism=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, Enabled=None, FirstClock=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, IpTos=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpIncrementInterEntity=None, MasterMacAddress=None, MasterMacIncrementBy=None, MasterMacIncrementInterEntity=None, Name=None, PortNumber=None, PortNumberIncrement=None, Priority1=None, Priority2=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ResidenceTime=None, RxCalibration=None, SendAnnounceMulticast=None, SendAnnounceTlv=None, SendCancelTlv=None, SignalInterval=None, SignalUnicastHandling=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, TimeSource=None, TimestampOffset=None, TimestampOffsetVariation=None, TxCalibration=None, UseAlternateMasterFlag=None, UseClockIdentity=None):
+        # type: (bool, int, bool, bool, bool, bool, int, bool, int, str, str, str, str, str, int, str, str, str, int, int, int, int, int, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, bool, int, int, int, int, str, str, str, str, str, str, str, int, int, int, int, bool, int, int, int, int, int, bool, bool, bool, int, str, str, int, bool, int, int, str, int, int, int, bool, bool) -> PtpRangeOverIp
         """Adds a new ptpRangeOverIp resource on the server and adds it to the container.
 
         Args
@@ -1197,6 +1351,7 @@ class PtpRangeOverIp(Base):
         self._delete()
 
     def find(self, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, ClientCount=None, ClientIpAddress=None, ClientIpIncrementBy=None, ClientMacAddress=None, ClientMacIncrementBy=None, ClockAccuracy=None, ClockClass=None, ClockIncrement=None, CommunicationMode=None, DelayMechanism=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, Enabled=None, FirstClock=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, IpTos=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogSyncInterval=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpIncrementInterEntity=None, MasterMacAddress=None, MasterMacIncrementBy=None, MasterMacIncrementInterEntity=None, Name=None, ObjectId=None, PortNumber=None, PortNumberIncrement=None, Priority1=None, Priority2=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, ResidenceTime=None, RxCalibration=None, SendAnnounceMulticast=None, SendAnnounceTlv=None, SendCancelTlv=None, SignalInterval=None, SignalUnicastHandling=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, TimeSource=None, TimestampOffset=None, TimestampOffsetVariation=None, TxCalibration=None, UseAlternateMasterFlag=None, UseClockIdentity=None):
+        # type: (bool, int, bool, bool, bool, bool, int, bool, int, str, str, str, str, str, int, str, str, str, int, int, int, int, int, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, bool, int, int, int, int, str, str, str, str, str, str, str, str, int, int, int, int, bool, int, int, int, int, int, bool, bool, bool, int, str, str, int, bool, int, int, str, int, int, int, bool, bool) -> PtpRangeOverIp
         """Finds and retrieves ptpRangeOverIp resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ptpRangeOverIp resources from the server.
@@ -1309,10 +1464,15 @@ class PtpRangeOverIp(Base):
         """
         return self._read(href)
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Apply changes for on the fly configuration support.
+
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1320,17 +1480,21 @@ class PtpRangeOverIp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1343,13 +1507,15 @@ class PtpRangeOverIp(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -1363,13 +1529,15 @@ class PtpRangeOverIp(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -1383,24 +1551,27 @@ class PtpRangeOverIp(Base):
         return self._execute('enableProtocolStack', payload=payload, response_object=None)
 
     def PtpChangeDropSignalParams(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpChangeDropSignalParams operation on the server.
 
         Change Drop Signal Parameters
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ptpChangeDropSignalParams(Arg2=bool, Arg3=bool, Arg4=bool)
-        ----------------------------------------------------------
+        ptpChangeDropSignalParams(Arg2=bool, Arg3=bool, Arg4=bool, async_operation=bool)
+        --------------------------------------------------------------------------------
         - Arg2 (bool): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
         - Arg3 (bool): Drop any Signal Request received on a master side that contains one Announce TLV.
         - Arg4 (bool): Drop any Signal Request received on a master side that contains one Sync TLV.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        ptpChangeDropSignalParams(Arg2=bool, Arg3=bool, Arg4=bool, Arg5=enum)
-        ---------------------------------------------------------------------
+        ptpChangeDropSignalParams(Arg2=bool, Arg3=bool, Arg4=bool, Arg5=enum, async_operation=bool)
+        -------------------------------------------------------------------------------------------
         - Arg2 (bool): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
         - Arg3 (bool): Drop any Signal Request received on a master side that contains one Announce TLV.
         - Arg4 (bool): Drop any Signal Request received on a master side that contains one Sync TLV.
         - Arg5 (str(async | sync)): Drop any Signal Request received on a master side that contains one DelayResp TLV.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1413,22 +1584,25 @@ class PtpRangeOverIp(Base):
         return self._execute('ptpChangeDropSignalParams', payload=payload, response_object=None)
 
     def PtpChangeMiscParams(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpChangeMiscParams operation on the server.
 
         Change Misc Parameters
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ptpChangeMiscParams(Arg2=number, Arg3=number)
-        ---------------------------------------------
+        ptpChangeMiscParams(Arg2=number, Arg3=number, async_operation=bool)
+        -------------------------------------------------------------------
         - Arg2 (number): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
         - Arg3 (number): PTP Domain.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        ptpChangeMiscParams(Arg2=number, Arg3=number, Arg4=enum)
-        --------------------------------------------------------
+        ptpChangeMiscParams(Arg2=number, Arg3=number, Arg4=enum, async_operation=bool)
+        ------------------------------------------------------------------------------
         - Arg2 (number): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
         - Arg3 (number): PTP Domain.
         - Arg4 (str(async | sync)): The number of announceInterval that has to pass without receipt of an Announce message.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1441,14 +1615,15 @@ class PtpRangeOverIp(Base):
         return self._execute('ptpChangeMiscParams', payload=payload, response_object=None)
 
     def PtpChangeNegativeTesting(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpChangeNegativeTesting operation on the server.
 
         Change Negative Testing Parameters
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ptpChangeNegativeTesting(Arg2=number, Arg3=number, Arg4=number, Arg5=number, Arg6=number, Arg7=number, Arg8=number, Arg9=number, Arg10=number)
-        ----------------------------------------------------------------------------------------------------------------------------------------------
+        ptpChangeNegativeTesting(Arg2=number, Arg3=number, Arg4=number, Arg5=number, Arg6=number, Arg7=number, Arg8=number, Arg9=number, Arg10=number, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------
         - Arg2 (number): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
         - Arg3 (number): Additional delay introduced in the Follow_Up message timestamp (nanoseconds).
         - Arg4 (number): Percentage rate of the Follow_Up messages in which the delay is introduced.
@@ -1458,9 +1633,10 @@ class PtpRangeOverIp(Base):
         - Arg8 (number): Percentage rate of the dropped Sync messages.
         - Arg9 (number): Percentage rate of the dropped Follow_Up messages.
         - Arg10 (number): Percentage rate of the dropped Delay_Resp messages.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        ptpChangeNegativeTesting(Arg2=number, Arg3=number, Arg4=number, Arg5=number, Arg6=number, Arg7=number, Arg8=number, Arg9=number, Arg10=number, Arg11=enum)
-        ----------------------------------------------------------------------------------------------------------------------------------------------------------
+        ptpChangeNegativeTesting(Arg2=number, Arg3=number, Arg4=number, Arg5=number, Arg6=number, Arg7=number, Arg8=number, Arg9=number, Arg10=number, Arg11=enum, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         - Arg2 (number): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
         - Arg3 (number): Additional delay introduced in the Follow_Up message timestamp (nanoseconds).
         - Arg4 (number): Percentage rate of the Follow_Up messages in which the delay is introduced.
@@ -1471,6 +1647,7 @@ class PtpRangeOverIp(Base):
         - Arg9 (number): Percentage rate of the dropped Follow_Up messages.
         - Arg10 (number): Percentage rate of the dropped Delay_Resp messages.
         - Arg11 (str(async | sync)): Percentage rate of the bad crc Follow_Up messages.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1482,55 +1659,82 @@ class PtpRangeOverIp(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('ptpChangeNegativeTesting', payload=payload, response_object=None)
 
-    def PtpConfigure(self):
+    def PtpConfigure(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpConfigure operation on the server.
 
         Configure PTP protocol on selected ranges.
 
+        ptpConfigure(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('ptpConfigure', payload=payload, response_object=None)
 
-    def PtpPause(self):
+    def PtpPause(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpPause operation on the server.
 
         Pause negotiation of PTP for selected plugins and ranges
 
+        ptpPause(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('ptpPause', payload=payload, response_object=None)
 
-    def PtpResume(self):
+    def PtpResume(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpResume operation on the server.
 
         Resume previously paused negotiation of PTP for selected plugins and ranges
 
+        ptpResume(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('ptpResume', payload=payload, response_object=None)
 
     def PtpStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpStart operation on the server.
 
         Negotiate PTP for selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ptpStart(Arg2=enum)
-        -------------------
+        ptpStart(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ptpStart(Arg2=enum, async_operation=bool)
+        -----------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1543,15 +1747,21 @@ class PtpRangeOverIp(Base):
         return self._execute('ptpStart', payload=payload, response_object=None)
 
     def PtpStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the ptpStop operation on the server.
 
         Release PTP for selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        ptpStop(Arg2=enum)
-        ------------------
+        ptpStop(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ptpStop(Arg2=enum, async_operation=bool)
+        ----------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ip/ptp,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ip/ptp,/vport/protocolStack/atm/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/atm/ipEndpoint/ptp,/vport/protocolStack/atm/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/dcbxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ip/ptp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/ptp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/emulatedRouterEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/fcoeFwdEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ip/ptp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ipEndpoint/ptp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverIp,/vport/protocolStack/ethernet/ipEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/pppoxEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernet/ptp,/vport/protocolStack/ethernet/vepaEndpoint/range/ptpRangeOverMac,/vport/protocolStack/ethernetEndpoint/ptp,/vport/protocolStack/ethernetEndpoint/range/ptpRangeOverMac]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

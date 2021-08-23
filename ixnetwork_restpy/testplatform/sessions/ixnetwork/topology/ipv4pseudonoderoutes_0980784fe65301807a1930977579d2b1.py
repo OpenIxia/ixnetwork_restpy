@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IPv4PseudoNodeRoutes(Base):
@@ -65,9 +66,11 @@ class IPv4PseudoNodeRoutes(Base):
         'RangeSize': 'rangeSize',
         'SIDIndexLabel': 'sIDIndexLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IPv4PseudoNodeRoutes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IPv4PseudoNodeRoutes, self).__init__(parent, list_op)
 
     @property
     def PseudoRoutesSid(self):
@@ -81,7 +84,10 @@ class IPv4PseudoNodeRoutes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pseudoroutessid_623bc67162f81219eae7debb23b5fa39 import PseudoRoutesSid
-        return PseudoRoutesSid(self)._select()
+        if self._properties.get('PseudoRoutesSid', None) is not None:
+            return self._properties.get('PseudoRoutesSid')
+        else:
+            return PseudoRoutesSid(self)._select()
 
     @property
     def Tag(self):
@@ -95,10 +101,14 @@ class IPv4PseudoNodeRoutes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +119,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -119,6 +130,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -129,6 +141,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,6 +151,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,6 +161,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableBit4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +172,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableBit5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -167,6 +183,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableBit6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -177,6 +194,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableBit7(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +205,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableBit8(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -197,6 +216,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableNFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -207,6 +227,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableRFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +238,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def EnableXFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -227,6 +249,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def IPv6SourceRouterID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +260,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def IncludePrefixAttrFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,6 +271,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def IncludeSourceRouterID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +282,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4EFlag(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -267,6 +293,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4LFlag(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -277,6 +304,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4Metric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -287,6 +315,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4NFlag(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -297,6 +326,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4PFlag(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -307,6 +337,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4RFlag(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -317,6 +348,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4Redistribution(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +359,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4RouteOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +370,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4SourceRouterID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +381,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Ipv4VFlag(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -357,6 +392,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -365,10 +401,12 @@ class IPv4PseudoNodeRoutes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -379,6 +417,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def NoOfSidPerNodeRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -387,10 +426,12 @@ class IPv4PseudoNodeRoutes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfSidPerNodeRoutes'])
     @NoOfSidPerNodeRoutes.setter
     def NoOfSidPerNodeRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfSidPerNodeRoutes'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -401,6 +442,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def RangeSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -411,6 +453,7 @@ class IPv4PseudoNodeRoutes(Base):
 
     @property
     def SIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -420,6 +463,7 @@ class IPv4PseudoNodeRoutes(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SIDIndexLabel']))
 
     def update(self, Name=None, NoOfSidPerNodeRoutes=None):
+        # type: (str, int) -> IPv4PseudoNodeRoutes
         """Updates IPv4PseudoNodeRoutes resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -436,7 +480,27 @@ class IPv4PseudoNodeRoutes(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None, NoOfSidPerNodeRoutes=None):
+        # type: (str, int) -> IPv4PseudoNodeRoutes
+        """Adds a new IPv4PseudoNodeRoutes resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfSidPerNodeRoutes (number): Number of SID per node routes
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved IPv4PseudoNodeRoutes resources using find and the newly added IPv4PseudoNodeRoutes resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, NoOfSidPerNodeRoutes=None):
+        # type: (int, str, str, int) -> IPv4PseudoNodeRoutes
         """Finds and retrieves IPv4PseudoNodeRoutes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve IPv4PseudoNodeRoutes resources from the server.
@@ -477,6 +541,66 @@ class IPv4PseudoNodeRoutes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EnableBit4=None, EnableBit5=None, EnableBit6=None, EnableBit7=None, EnableBit8=None, EnableNFlag=None, EnableRFlag=None, EnableXFlag=None, IPv6SourceRouterID=None, IncludePrefixAttrFlags=None, IncludeSourceRouterID=None, Ipv4EFlag=None, Ipv4LFlag=None, Ipv4Metric=None, Ipv4NFlag=None, Ipv4PFlag=None, Ipv4RFlag=None, Ipv4Redistribution=None, Ipv4RouteOrigin=None, Ipv4SourceRouterID=None, Ipv4VFlag=None, NetworkAddress=None, PrefixLength=None, RangeSize=None, SIDIndexLabel=None):
         """Base class infrastructure that gets a list of IPv4PseudoNodeRoutes device ids encapsulated by this object.
@@ -524,42 +648,3 @@ class IPv4PseudoNodeRoutes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

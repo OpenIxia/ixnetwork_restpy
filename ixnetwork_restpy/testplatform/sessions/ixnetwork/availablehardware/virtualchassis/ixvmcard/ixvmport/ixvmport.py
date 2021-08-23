@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IxVmPort(Base):
@@ -43,12 +44,16 @@ class IxVmPort(Base):
         'PortState': 'portState',
         'PromiscMode': 'promiscMode',
     }
+    _SDM_ENUM_MAP = {
+        'portState': ['invalidNIC', 'ixVmPortUnitialized', 'portLicenseNotFound', 'portNotAdded', 'portOK', 'portRemoved', 'portUnconnectedCard', 'portUnknownError'],
+    }
 
-    def __init__(self, parent):
-        super(IxVmPort, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IxVmPort, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,10 +62,12 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interface'])
     @Interface.setter
     def Interface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interface'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,10 +76,12 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,10 +90,12 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +104,12 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Owner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +119,7 @@ class IxVmPort(Base):
 
     @property
     def PortId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortId'])
     @PortId.setter
     def PortId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortId'], value)
 
     @property
     def PortName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,10 +142,12 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortName'])
     @PortName.setter
     def PortName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortName'], value)
 
     @property
     def PortState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,6 +157,7 @@ class IxVmPort(Base):
 
     @property
     def PromiscMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,9 +166,11 @@ class IxVmPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PromiscMode'])
     @PromiscMode.setter
     def PromiscMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PromiscMode'], value)
 
     def update(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
+        # type: (str, str, str, int, str, str, bool) -> IxVmPort
         """Updates ixVmPort resource on the server.
 
         Args
@@ -169,6 +190,7 @@ class IxVmPort(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, PortId=None, PortName=None, PromiscMode=None):
+        # type: (str, str, str, int, str, str, bool) -> IxVmPort
         """Adds a new ixVmPort resource on the server and adds it to the container.
 
         Args
@@ -202,6 +224,7 @@ class IxVmPort(Base):
         self._delete()
 
     def find(self, Interface=None, IpAddress=None, MacAddress=None, Mtu=None, Owner=None, PortId=None, PortName=None, PortState=None, PromiscMode=None):
+        # type: (str, str, str, int, str, str, str, str, bool) -> IxVmPort
         """Finds and retrieves ixVmPort resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ixVmPort resources from the server.

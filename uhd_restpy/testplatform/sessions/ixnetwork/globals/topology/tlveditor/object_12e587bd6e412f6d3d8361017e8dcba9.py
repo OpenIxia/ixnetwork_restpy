@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Object(Base):
@@ -35,9 +36,11 @@ class Object(Base):
     _SDM_ATT_MAP = {
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Object, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Object, self).__init__(parent, list_op)
 
     @property
     def Container(self):
@@ -51,7 +54,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.container_1a12044c5aa69dabfe18a51e622cd1b5 import Container
-        return Container(self)
+        if self._properties.get('Container', None) is not None:
+            return self._properties.get('Container')
+        else:
+            return Container(self)
 
     @property
     def Field(self):
@@ -65,7 +71,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.field_01f1f7f093248c40b24c4bf69cffe573 import Field
-        return Field(self)
+        if self._properties.get('Field', None) is not None:
+            return self._properties.get('Field')
+        else:
+            return Field(self)
 
     @property
     def SubTlv(self):
@@ -79,10 +88,14 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.subtlv_60e12b7ebaca7628a30e30506e5025bc import SubTlv
-        return SubTlv(self)
+        if self._properties.get('SubTlv', None) is not None:
+            return self._properties.get('SubTlv')
+        else:
+            return SubTlv(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,9 +104,11 @@ class Object(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Object
         """Updates object resource on the server.
 
         Args
@@ -107,6 +122,7 @@ class Object(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> Object
         """Adds a new object resource on the server and adds it to the container.
 
         Args
@@ -134,6 +150,7 @@ class Object(Base):
         self._delete()
 
     def find(self, Name=None):
+        # type: (str) -> Object
         """Finds and retrieves object resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve object resources from the server.

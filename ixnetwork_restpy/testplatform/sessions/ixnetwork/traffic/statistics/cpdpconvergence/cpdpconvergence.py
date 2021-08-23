@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CpdpConvergence(Base):
@@ -37,12 +38,16 @@ class CpdpConvergence(Base):
         'EnableDataPlaneEventsRateMonitor': 'enableDataPlaneEventsRateMonitor',
         'Enabled': 'enabled',
     }
+    _SDM_ENUM_MAP = {
+        'dataPlaneJitterWindow': ['0', '10485760', '1310720', '167772160', '20971520', '2621440', '335544320', '41943040', '5242880', '671088640', '83886080'],
+    }
 
-    def __init__(self, parent):
-        super(CpdpConvergence, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CpdpConvergence, self).__init__(parent, list_op)
 
     @property
     def DataPlaneJitterWindow(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +56,12 @@ class CpdpConvergence(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'])
     @DataPlaneJitterWindow.setter
     def DataPlaneJitterWindow(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'], value)
 
     @property
     def DataPlaneThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class CpdpConvergence(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataPlaneThreshold'])
     @DataPlaneThreshold.setter
     def DataPlaneThreshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataPlaneThreshold'], value)
 
     @property
     def EnableControlPlaneEvents(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +84,12 @@ class CpdpConvergence(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableControlPlaneEvents'])
     @EnableControlPlaneEvents.setter
     def EnableControlPlaneEvents(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableControlPlaneEvents'], value)
 
     @property
     def EnableDataPlaneEventsRateMonitor(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +98,12 @@ class CpdpConvergence(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDataPlaneEventsRateMonitor'])
     @EnableDataPlaneEventsRateMonitor.setter
     def EnableDataPlaneEventsRateMonitor(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDataPlaneEventsRateMonitor'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,9 +112,11 @@ class CpdpConvergence(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, DataPlaneJitterWindow=None, DataPlaneThreshold=None, EnableControlPlaneEvents=None, EnableDataPlaneEventsRateMonitor=None, Enabled=None):
+        # type: (str, int, bool, bool, bool) -> CpdpConvergence
         """Updates cpdpConvergence resource on the server.
 
         Args

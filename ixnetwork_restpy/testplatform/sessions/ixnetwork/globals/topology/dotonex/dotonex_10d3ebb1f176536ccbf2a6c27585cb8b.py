@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DotOneX(Base):
@@ -61,12 +62,15 @@ class DotOneX(Base):
         'UseVlanIdentify': 'useVlanIdentify',
         'WaitBeforeRun': 'waitBeforeRun',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DotOneX, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DotOneX, self).__init__(parent, list_op)
 
     @property
     def AltName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -77,6 +81,7 @@ class DotOneX(Base):
 
     @property
     def AuthOnNoResponse(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +92,7 @@ class DotOneX(Base):
 
     @property
     def AuthWaitPeriod(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +103,7 @@ class DotOneX(Base):
 
     @property
     def City(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +114,7 @@ class DotOneX(Base):
 
     @property
     def Company(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +125,7 @@ class DotOneX(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,6 +135,7 @@ class DotOneX(Base):
 
     @property
     def Country(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +146,7 @@ class DotOneX(Base):
 
     @property
     def Department(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,6 +157,7 @@ class DotOneX(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,6 +167,7 @@ class DotOneX(Base):
 
     @property
     def DisableLogoff(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +178,7 @@ class DotOneX(Base):
 
     @property
     def DutTestMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +189,7 @@ class DotOneX(Base):
 
     @property
     def FragmentSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +200,7 @@ class DotOneX(Base):
 
     @property
     def GetCACertOnly(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +211,7 @@ class DotOneX(Base):
 
     @property
     def KeySize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +222,7 @@ class DotOneX(Base):
 
     @property
     def KeyUsage(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +233,7 @@ class DotOneX(Base):
 
     @property
     def MacAuthPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -225,6 +244,7 @@ class DotOneX(Base):
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -235,6 +255,7 @@ class DotOneX(Base):
 
     @property
     def MaxSetupRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -245,6 +266,7 @@ class DotOneX(Base):
 
     @property
     def MaxStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -255,6 +277,7 @@ class DotOneX(Base):
 
     @property
     def MaxTeardownRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -265,6 +288,7 @@ class DotOneX(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -273,10 +297,12 @@ class DotOneX(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OnlyMulticast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -287,6 +313,7 @@ class DotOneX(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -296,6 +323,7 @@ class DotOneX(Base):
 
     @property
     def ServerURL(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +334,7 @@ class DotOneX(Base):
 
     @property
     def StartPeriod(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +345,7 @@ class DotOneX(Base):
 
     @property
     def State(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +356,7 @@ class DotOneX(Base):
 
     @property
     def SuccessiveStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +367,7 @@ class DotOneX(Base):
 
     @property
     def UseVlanIdentify(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -346,6 +378,7 @@ class DotOneX(Base):
 
     @property
     def WaitBeforeRun(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -355,6 +388,7 @@ class DotOneX(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun']))
 
     def update(self, Name=None):
+        # type: (str) -> DotOneX
         """Updates dotOneX resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

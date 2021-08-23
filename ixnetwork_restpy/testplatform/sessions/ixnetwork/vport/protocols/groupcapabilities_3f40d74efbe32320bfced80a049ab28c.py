@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GroupCapabilities(Base):
@@ -36,12 +37,15 @@ class GroupCapabilities(Base):
         'SelectLiveness': 'selectLiveness',
         'SelectWeight': 'selectWeight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GroupCapabilities, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GroupCapabilities, self).__init__(parent, list_op)
 
     @property
     def Chaining(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class GroupCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Chaining'])
     @Chaining.setter
     def Chaining(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Chaining'], value)
 
     @property
     def ChainingChecks(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class GroupCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChainingChecks'])
     @ChainingChecks.setter
     def ChainingChecks(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChainingChecks'], value)
 
     @property
     def SelectLiveness(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class GroupCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectLiveness'])
     @SelectLiveness.setter
     def SelectLiveness(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectLiveness'], value)
 
     @property
     def SelectWeight(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class GroupCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectWeight'])
     @SelectWeight.setter
     def SelectWeight(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectWeight'], value)
 
     def update(self, Chaining=None, ChainingChecks=None, SelectLiveness=None, SelectWeight=None):
+        # type: (bool, bool, bool, bool) -> GroupCapabilities
         """Updates groupCapabilities resource on the server.
 
         Args

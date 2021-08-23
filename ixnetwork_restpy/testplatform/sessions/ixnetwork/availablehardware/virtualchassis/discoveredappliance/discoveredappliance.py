@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DiscoveredAppliance(Base):
@@ -37,9 +38,12 @@ class DiscoveredAppliance(Base):
         'InterfacesNumber': 'interfacesNumber',
         'ManagementIp': 'managementIp',
     }
+    _SDM_ENUM_MAP = {
+        'applianceType': ['qemu', 'vCenter', 'vmware'],
+    }
 
-    def __init__(self, parent):
-        super(DiscoveredAppliance, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DiscoveredAppliance, self).__init__(parent, list_op)
 
     @property
     def DiscoveredInterface(self):
@@ -53,10 +57,14 @@ class DiscoveredAppliance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredinterface.discoveredinterface import DiscoveredInterface
-        return DiscoveredInterface(self)
+        if self._properties.get('DiscoveredInterface', None) is not None:
+            return self._properties.get('DiscoveredInterface')
+        else:
+            return DiscoveredInterface(self)
 
     @property
     def ApplianceName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,6 +74,7 @@ class DiscoveredAppliance(Base):
 
     @property
     def ApplianceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +84,7 @@ class DiscoveredAppliance(Base):
 
     @property
     def InterfacesNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +94,7 @@ class DiscoveredAppliance(Base):
 
     @property
     def ManagementIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,7 +102,21 @@ class DiscoveredAppliance(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ManagementIp'])
 
+    def add(self):
+        """Adds a new discoveredAppliance resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved discoveredAppliance resources using find and the newly added discoveredAppliance resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ApplianceName=None, ApplianceType=None, InterfacesNumber=None, ManagementIp=None):
+        # type: (str, str, int, str) -> DiscoveredAppliance
         """Finds and retrieves discoveredAppliance resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve discoveredAppliance resources from the server.

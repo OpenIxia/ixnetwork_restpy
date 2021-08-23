@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpEvpnSmetMld(Base):
@@ -45,12 +46,15 @@ class BgpEvpnSmetMld(Base):
         'StartGroupAddressSMET': 'startGroupAddressSMET',
         'StartSourceAddressIpv6': 'startSourceAddressIpv6',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpEvpnSmetMld, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpEvpnSmetMld, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -61,6 +65,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def GroupAddressCountSMET(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def GroupType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def MldVersionV1SMET(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def MldVersionV2SMET(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +129,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def Mode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +140,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,10 +149,12 @@ class BgpEvpnSmetMld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SourceAddressCountSMET(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +165,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def SourceGroupMappingSMET(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +176,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def StartGroupAddressSMET(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class BgpEvpnSmetMld(Base):
 
     @property
     def StartSourceAddressIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class BgpEvpnSmetMld(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSourceAddressIpv6']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpEvpnSmetMld
         """Updates bgpEvpnSmetMld resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6relayAgent(Base):
@@ -50,9 +51,12 @@ class Dhcpv6relayAgent(Base):
         'StateCounts': 'stateCounts',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6relayAgent, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6relayAgent, self).__init__(parent, list_op)
 
     @property
     def Dhcp6RelayTlvProfile(self):
@@ -66,7 +70,10 @@ class Dhcpv6relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcp6relaytlvprofile_26571057903c7fcd2a20eb10f55be22f import Dhcp6RelayTlvProfile
-        return Dhcp6RelayTlvProfile(self)._select()
+        if self._properties.get('Dhcp6RelayTlvProfile', None) is not None:
+            return self._properties.get('Dhcp6RelayTlvProfile')
+        else:
+            return Dhcp6RelayTlvProfile(self)._select()
 
     @property
     def LightweightDhcp6RelayTlvProfile(self):
@@ -80,22 +87,28 @@ class Dhcpv6relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lightweightdhcp6relaytlvprofile_987f303b51886f2a61c9c1388518f037 import LightweightDhcp6RelayTlvProfile
-        return LightweightDhcp6RelayTlvProfile(self)._select()
+        if self._properties.get('LightweightDhcp6RelayTlvProfile', None) is not None:
+            return self._properties.get('LightweightDhcp6RelayTlvProfile')
+        else:
+            return LightweightDhcp6RelayTlvProfile(self)._select()
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,6 +118,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +128,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def Dhcp6RelayAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,15 +139,17 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def Dhcp6RelayAgentGlobalAndPortData(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/topology/.../*): Global and Port Settings
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Global and Port Settings
         """
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RelayAgentGlobalAndPortData'])
 
     @property
     def Dhcp6ServerAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,21 +163,23 @@ class Dhcpv6relayAgent(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def LightweightDhcp6RelayAgentGlobalAndPortData(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/topology/.../*): Global and Port Settings
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Global and Port Settings
         """
         return self._get_attribute(self._SDM_ATT_MAP['LightweightDhcp6RelayAgentGlobalAndPortData'])
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -169,10 +188,12 @@ class Dhcpv6relayAgent(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,10 +202,12 @@ class Dhcpv6relayAgent(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ReconfviaRelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +218,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -204,6 +228,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -213,14 +238,16 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -234,6 +261,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -242,6 +270,7 @@ class Dhcpv6relayAgent(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Dhcpv6relayAgent
         """Updates dhcpv6relayAgent resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -249,10 +278,10 @@ class Dhcpv6relayAgent(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -261,14 +290,15 @@ class Dhcpv6relayAgent(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Dhcpv6relayAgent
         """Adds a new dhcpv6relayAgent resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -299,17 +329,17 @@ class Dhcpv6relayAgent(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Dhcp6RelayAgentGlobalAndPortData (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): Global and Port Settings
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
-        - LightweightDhcp6RelayAgentGlobalAndPortData (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): Global and Port Settings
+        - Dhcp6RelayAgentGlobalAndPortData (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Global and Port Settings
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - LightweightDhcp6RelayAgentGlobalAndPortData (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Global and Port Settings
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SessionInfo (list(str[excessiveTlvs | ipDown | none])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -341,6 +371,134 @@ class Dhcpv6relayAgent(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Dhcp6RelayAddress=None, Dhcp6ServerAddress=None, ReconfviaRelay=None):
         """Base class infrastructure that gets a list of dhcpv6relayAgent device ids encapsulated by this object.
 
@@ -362,103 +520,3 @@ class Dhcpv6relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

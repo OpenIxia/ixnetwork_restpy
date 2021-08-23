@@ -67,7 +67,7 @@ class Mocks(object):
                 'status_code': 200
             }
         },
-        'api/v1/sessions/1/ixnetwork/operations/select': {
+        'api/v1/sessions/1/ixnetwork/operations/select?xpath=true': {
             'POST': {
                 'data': [
                     {

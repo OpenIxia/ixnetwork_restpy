@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Latency(Base):
@@ -34,12 +35,16 @@ class Latency(Base):
         'Enabled': 'enabled',
         'Mode': 'mode',
     }
+    _SDM_ENUM_MAP = {
+        'mode': ['cutThrough'],
+    }
 
-    def __init__(self, parent):
-        super(Latency, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Latency, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -48,10 +53,12 @@ class Latency(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,9 +67,11 @@ class Latency(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     def update(self, Enabled=None, Mode=None):
+        # type: (bool, str) -> Latency
         """Updates latency resource on the server.
 
         Args

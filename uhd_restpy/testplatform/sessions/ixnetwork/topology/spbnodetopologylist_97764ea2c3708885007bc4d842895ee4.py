@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbNodeTopologyList(Base):
@@ -43,9 +44,11 @@ class SpbNodeTopologyList(Base):
         'TopologyId': 'topologyId',
         'Vbit': 'vbit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbNodeTopologyList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbNodeTopologyList, self).__init__(parent, list_op)
 
     @property
     def BaseVidList(self):
@@ -59,10 +62,14 @@ class SpbNodeTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_0854f00d7287dd167f5cc03126e3011d import BaseVidList
-        return BaseVidList(self)._select()
+        if self._properties.get('BaseVidList', None) is not None:
+            return self._properties.get('BaseVidList')
+        else:
+            return BaseVidList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def BaseVIDCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +89,12 @@ class SpbNodeTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BaseVIDCount'])
     @BaseVIDCount.setter
     def BaseVIDCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BaseVIDCount'], value)
 
     @property
     def CistExternalRootCost(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +105,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def CistRootId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +116,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,6 +126,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,6 +136,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +145,12 @@ class SpbNodeTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfPorts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +161,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def PortIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +172,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +183,7 @@ class SpbNodeTopologyList(Base):
 
     @property
     def Vbit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -174,6 +193,7 @@ class SpbNodeTopologyList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vbit']))
 
     def update(self, BaseVIDCount=None, Name=None):
+        # type: (int, str) -> SpbNodeTopologyList
         """Updates spbNodeTopologyList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

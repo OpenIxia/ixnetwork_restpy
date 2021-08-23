@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Pcc(Base):
@@ -77,9 +78,12 @@ class Pcc(Base):
         'Status': 'status',
         'TcpPort': 'tcpPort',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Pcc, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Pcc, self).__init__(parent, list_op)
 
     @property
     def ExpectedInitiatedLspList(self):
@@ -93,7 +97,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.expectedinitiatedlsplist_c1edb3ac572c229482ac3b16768b81b1 import ExpectedInitiatedLspList
-        return ExpectedInitiatedLspList(self)._select()
+        if self._properties.get('ExpectedInitiatedLspList', None) is not None:
+            return self._properties.get('ExpectedInitiatedLspList')
+        else:
+            return ExpectedInitiatedLspList(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -107,7 +114,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def PccLearnedLspDb(self):
@@ -121,7 +131,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcclearnedlspdb_1f09e65ced78209c908d7bf80bf0e73d import PccLearnedLspDb
-        return PccLearnedLspDb(self)._select()
+        if self._properties.get('PccLearnedLspDb', None) is not None:
+            return self._properties.get('PccLearnedLspDb')
+        else:
+            return PccLearnedLspDb(self)._select()
 
     @property
     def PcepBackupPCEs(self):
@@ -135,7 +148,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepbackuppces_f780e95e8b1b209ab7ad3ca8a9f3a4c6 import PcepBackupPCEs
-        return PcepBackupPCEs(self)._select()
+        if self._properties.get('PcepBackupPCEs', None) is not None:
+            return self._properties.get('PcepBackupPCEs')
+        else:
+            return PcepBackupPCEs(self)._select()
 
     @property
     def PreEstablishedSrLsps(self):
@@ -149,7 +165,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_a4b5c388b0a9f1cd18fdc396c2ea1c6a import PreEstablishedSrLsps
-        return PreEstablishedSrLsps(self)._select()
+        if self._properties.get('PreEstablishedSrLsps', None) is not None:
+            return self._properties.get('PreEstablishedSrLsps')
+        else:
+            return PreEstablishedSrLsps(self)._select()
 
     @property
     def RequestedLsps(self):
@@ -163,10 +182,14 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestedlsps_13f940a8c982ec765fee3bc34ba5d305 import RequestedLsps
-        return RequestedLsps(self)._select()
+        if self._properties.get('RequestedLsps', None) is not None:
+            return self._properties.get('RequestedLsps')
+        else:
+            return RequestedLsps(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -177,6 +200,7 @@ class Pcc(Base):
 
     @property
     def Active_pre_established_lsps(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -185,10 +209,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Active_pre_established_lsps'])
     @Active_pre_established_lsps.setter
     def Active_pre_established_lsps(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Active_pre_established_lsps'], value)
 
     @property
     def Authentication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +225,7 @@ class Pcc(Base):
 
     @property
     def BurstInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -209,6 +236,7 @@ class Pcc(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -217,10 +245,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,6 +260,7 @@ class Pcc(Base):
 
     @property
     def DeadInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +271,7 @@ class Pcc(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -249,6 +281,7 @@ class Pcc(Base):
 
     @property
     def ErrorValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +301,7 @@ class Pcc(Base):
 
     @property
     def ExpectedInitiatedLspsForTraffic(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +310,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExpectedInitiatedLspsForTraffic'])
     @ExpectedInitiatedLspsForTraffic.setter
     def ExpectedInitiatedLspsForTraffic(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExpectedInitiatedLspsForTraffic'], value)
 
     @property
     def KeepaliveInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +326,7 @@ class Pcc(Base):
 
     @property
     def LspInstantiationCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +337,7 @@ class Pcc(Base):
 
     @property
     def LspUpdateCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +348,7 @@ class Pcc(Base):
 
     @property
     def MD5Key(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +359,7 @@ class Pcc(Base):
 
     @property
     def MaxLspPerPcReq(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -330,6 +370,7 @@ class Pcc(Base):
 
     @property
     def MaxLspsPerPcRpt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -340,6 +381,7 @@ class Pcc(Base):
 
     @property
     def MaxReconnectInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +392,7 @@ class Pcc(Base):
 
     @property
     def MaxRequestedLspPerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +403,7 @@ class Pcc(Base):
 
     @property
     def MaxSyncLspPerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +414,7 @@ class Pcc(Base):
 
     @property
     def MaximumSidDepth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +425,7 @@ class Pcc(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -388,10 +434,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -400,10 +448,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfBackupPCEs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -412,10 +462,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfBackupPCEs'])
     @NumberOfBackupPCEs.setter
     def NumberOfBackupPCEs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfBackupPCEs'], value)
 
     @property
     def PccPpagTLVType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +478,7 @@ class Pcc(Base):
 
     @property
     def PccTEPathBindingTLVType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +489,7 @@ class Pcc(Base):
 
     @property
     def PceIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +500,7 @@ class Pcc(Base):
 
     @property
     def PreEstablishedSrLspsPerPcc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -454,10 +509,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreEstablishedSrLspsPerPcc'])
     @PreEstablishedSrLspsPerPcc.setter
     def PreEstablishedSrLspsPerPcc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreEstablishedSrLspsPerPcc'], value)
 
     @property
     def RateControl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -468,6 +525,7 @@ class Pcc(Base):
 
     @property
     def ReconnectInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -478,6 +536,7 @@ class Pcc(Base):
 
     @property
     def RequestedLspsPerPcc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -486,10 +545,12 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestedLspsPerPcc'])
     @RequestedLspsPerPcc.setter
     def RequestedLspsPerPcc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestedLspsPerPcc'], value)
 
     @property
     def ReturnInstantiationError(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -500,6 +561,7 @@ class Pcc(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -509,6 +571,7 @@ class Pcc(Base):
 
     @property
     def SrPceCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -519,6 +582,7 @@ class Pcc(Base):
 
     @property
     def Sr_capability_n_flag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -529,6 +593,7 @@ class Pcc(Base):
 
     @property
     def Sr_capability_x_flag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -539,6 +604,7 @@ class Pcc(Base):
 
     @property
     def Srv6MaxSL(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -549,6 +615,7 @@ class Pcc(Base):
 
     @property
     def Srv6PceCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -559,6 +626,7 @@ class Pcc(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -567,6 +635,7 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -580,6 +649,7 @@ class Pcc(Base):
 
     @property
     def StateTimeoutInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -590,6 +660,7 @@ class Pcc(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -599,6 +670,7 @@ class Pcc(Base):
 
     @property
     def TcpPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -608,6 +680,7 @@ class Pcc(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TcpPort']))
 
     def update(self, Active_pre_established_lsps=None, ConnectedVia=None, ExpectedInitiatedLspsForTraffic=None, Multiplier=None, Name=None, NumberOfBackupPCEs=None, PreEstablishedSrLspsPerPcc=None, RequestedLspsPerPcc=None, StackedLayers=None):
+        # type: (int, List[str], int, int, str, int, int, int, List[str]) -> Pcc
         """Updates pcc resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -632,6 +705,7 @@ class Pcc(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Active_pre_established_lsps=None, ConnectedVia=None, ExpectedInitiatedLspsForTraffic=None, Multiplier=None, Name=None, NumberOfBackupPCEs=None, PreEstablishedSrLspsPerPcc=None, RequestedLspsPerPcc=None, StackedLayers=None):
+        # type: (int, List[str], int, int, str, int, int, int, List[str]) -> Pcc
         """Adds a new pcc resource on the server and adds it to the container.
 
         Args
@@ -719,6 +793,552 @@ class Pcc(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearPccLearnedInfoInClient(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearPccLearnedInfoInClient operation on the server.
+
+        Clears ALL Learned LSP Information of PCC Device.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearPccLearnedInfoInClient(async_operation=bool)
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearPccLearnedInfoInClient(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearPccLearnedInfoInClient(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearPccLearnedInfoInClient(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearPccLearnedInfoInClient', payload=payload, response_object=None)
+
+    def GetPccBasicAllSrLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicAllSrLspLearnedInfo operation on the server.
+
+        Gets Basic Information about All SR LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicAllSrLspLearnedInfo(async_operation=bool)
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicAllSrLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicAllSrLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicAllSrLspLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicAllSrLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicAllSrv6LspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicAllSrv6LspLearnedInfo operation on the server.
+
+        Gets Basic Information about All SRv6 LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicAllSrv6LspLearnedInfo(async_operation=bool)
+        ------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicAllSrv6LspLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicAllSrv6LspLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicAllSrv6LspLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicAllSrv6LspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicSrPccRequestedLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicSrPccRequestedLspLearnedInfo operation on the server.
+
+        Gets Basic Information about SR-TE PCC Requested LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicSrPccRequestedLspLearnedInfo(async_operation=bool)
+        -------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPccRequestedLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPccRequestedLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicSrPccRequestedLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicSrPccSyncOrReportLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicSrPccSyncOrReportLspLearnedInfo operation on the server.
+
+        Gets Basic Information about SR-TE PCC Sync/Report LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicSrPccSyncOrReportLspLearnedInfo(async_operation=bool)
+        ----------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPccSyncOrReportLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPccSyncOrReportLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPccSyncOrReportLspLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicSrPccSyncOrReportLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicSrPceInitiatedLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicSrPceInitiatedLspLearnedInfo operation on the server.
+
+        Gets Basic Information about SR-TE PCE Initiated LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicSrPceInitiatedLspLearnedInfo(async_operation=bool)
+        -------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPceInitiatedLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPceInitiatedLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrPceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicSrv6PccRequestedLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicSrv6PccRequestedLspLearnedInfo operation on the server.
+
+        Gets Basic Information about SRv6 PCC Requested LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicSrv6PccRequestedLspLearnedInfo(async_operation=bool)
+        ---------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PccRequestedLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PccRequestedLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicSrv6PccSyncOrReportLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicSrv6PccSyncOrReportLspLearnedInfo operation on the server.
+
+        Gets Basic Information about SRv6 PCC Sync/Report LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(async_operation=bool)
+        ------------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicSrv6PccSyncOrReportLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccBasicSrv6PceInitiatedLspLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccBasicSrv6PceInitiatedLspLearnedInfo operation on the server.
+
+        Gets Basic Information about SRv6 PCE Initiated LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccBasicSrv6PceInitiatedLspLearnedInfo(async_operation=bool)
+        ---------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PceInitiatedLspLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PceInitiatedLspLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccBasicSrv6PceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccBasicSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccLearnedInfo operation on the server.
+
+        Gets Detailed Information about All SR LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccLearnedInfo', payload=payload, response_object=None)
+
+    def GetPccSrv6LearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPccSrv6LearnedInfo operation on the server.
+
+        Gets Detailed Information about All SRv6 LSPs learnt by this PCC.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPccSrv6LearnedInfo(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccSrv6LearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccSrv6LearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPccSrv6LearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPccSrv6LearnedInfo', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, Authentication=None, BurstInterval=None, DeadInterval=None, ErrorValue=None, KeepaliveInterval=None, LspInstantiationCapability=None, LspUpdateCapability=None, MD5Key=None, MaxLspPerPcReq=None, MaxLspsPerPcRpt=None, MaxReconnectInterval=None, MaxRequestedLspPerInterval=None, MaxSyncLspPerInterval=None, MaximumSidDepth=None, PccPpagTLVType=None, PccTEPathBindingTLVType=None, PceIpv4Address=None, RateControl=None, ReconnectInterval=None, ReturnInstantiationError=None, SrPceCapability=None, Sr_capability_n_flag=None, Sr_capability_x_flag=None, Srv6MaxSL=None, Srv6PceCapability=None, StateTimeoutInterval=None, TcpPort=None):
         """Base class infrastructure that gets a list of pcc device ids encapsulated by this object.
 
@@ -765,433 +1385,3 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearPccLearnedInfoInClient(self, *args, **kwargs):
-        """Executes the clearPccLearnedInfoInClient operation on the server.
-
-        Clears ALL Learned LSP Information of PCC Device.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearPccLearnedInfoInClient(SessionIndices=list)
-        ------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearPccLearnedInfoInClient(SessionIndices=string)
-        --------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        clearPccLearnedInfoInClient(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearPccLearnedInfoInClient', payload=payload, response_object=None)
-
-    def GetPccBasicAllSrLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicAllSrLspLearnedInfo operation on the server.
-
-        Gets Basic Information about All SR LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicAllSrLspLearnedInfo(SessionIndices=list)
-        ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicAllSrLspLearnedInfo(SessionIndices=string)
-        -----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicAllSrLspLearnedInfo(Arg2=list)list
-        ---------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicAllSrLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicAllSrv6LspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicAllSrv6LspLearnedInfo operation on the server.
-
-        Gets Basic Information about All SRv6 LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicAllSrv6LspLearnedInfo(SessionIndices=list)
-        -----------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicAllSrv6LspLearnedInfo(SessionIndices=string)
-        -------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicAllSrv6LspLearnedInfo(Arg2=list)list
-        -----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicAllSrv6LspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicSrPccRequestedLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicSrPccRequestedLspLearnedInfo operation on the server.
-
-        Gets Basic Information about SR-TE PCC Requested LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicSrPccRequestedLspLearnedInfo(SessionIndices=list)
-        ------------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicSrPccRequestedLspLearnedInfo(SessionIndices=string)
-        --------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicSrPccRequestedLspLearnedInfo(Arg2=list)list
-        ------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicSrPccRequestedLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicSrPccSyncOrReportLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicSrPccSyncOrReportLspLearnedInfo operation on the server.
-
-        Gets Basic Information about SR-TE PCC Sync/Report LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicSrPccSyncOrReportLspLearnedInfo(SessionIndices=list)
-        ---------------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicSrPccSyncOrReportLspLearnedInfo(SessionIndices=string)
-        -----------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicSrPccSyncOrReportLspLearnedInfo(Arg2=list)list
-        ---------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicSrPccSyncOrReportLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicSrPceInitiatedLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicSrPceInitiatedLspLearnedInfo operation on the server.
-
-        Gets Basic Information about SR-TE PCE Initiated LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicSrPceInitiatedLspLearnedInfo(SessionIndices=list)
-        ------------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicSrPceInitiatedLspLearnedInfo(SessionIndices=string)
-        --------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicSrPceInitiatedLspLearnedInfo(Arg2=list)list
-        ------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicSrPceInitiatedLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicSrv6PccRequestedLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicSrv6PccRequestedLspLearnedInfo operation on the server.
-
-        Gets Basic Information about SRv6 PCC Requested LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicSrv6PccRequestedLspLearnedInfo(SessionIndices=list)
-        --------------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicSrv6PccRequestedLspLearnedInfo(SessionIndices=string)
-        ----------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicSrv6PccRequestedLspLearnedInfo(Arg2=list)list
-        --------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicSrv6PccRequestedLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicSrv6PccSyncOrReportLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicSrv6PccSyncOrReportLspLearnedInfo operation on the server.
-
-        Gets Basic Information about SRv6 PCC Sync/Report LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(SessionIndices=list)
-        -----------------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(SessionIndices=string)
-        -------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicSrv6PccSyncOrReportLspLearnedInfo(Arg2=list)list
-        -----------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicSrv6PccSyncOrReportLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccBasicSrv6PceInitiatedLspLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccBasicSrv6PceInitiatedLspLearnedInfo operation on the server.
-
-        Gets Basic Information about SRv6 PCE Initiated LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccBasicSrv6PceInitiatedLspLearnedInfo(SessionIndices=list)
-        --------------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccBasicSrv6PceInitiatedLspLearnedInfo(SessionIndices=string)
-        ----------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccBasicSrv6PceInitiatedLspLearnedInfo(Arg2=list)list
-        --------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccBasicSrv6PceInitiatedLspLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccLearnedInfo(self, *args, **kwargs):
-        """Executes the getPccLearnedInfo operation on the server.
-
-        Gets Detailed Information about All SR LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccLearnedInfo(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccLearnedInfo', payload=payload, response_object=None)
-
-    def GetPccSrv6LearnedInfo(self, *args, **kwargs):
-        """Executes the getPccSrv6LearnedInfo operation on the server.
-
-        Gets Detailed Information about All SRv6 LSPs learnt by this PCC.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPccSrv6LearnedInfo(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPccSrv6LearnedInfo(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getPccSrv6LearnedInfo(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPccSrv6LearnedInfo', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

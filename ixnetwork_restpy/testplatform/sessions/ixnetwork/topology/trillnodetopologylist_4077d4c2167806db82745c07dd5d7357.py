@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrillNodeTopologyList(Base):
@@ -39,9 +40,11 @@ class TrillNodeTopologyList(Base):
         'NoOfTreesToCompute': 'noOfTreesToCompute',
         'TopologyId': 'topologyId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TrillNodeTopologyList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrillNodeTopologyList, self).__init__(parent, list_op)
 
     @property
     def InterestedVlanList(self):
@@ -55,10 +58,14 @@ class TrillNodeTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_c042412b751d673b9fbaaf71ca229e77 import InterestedVlanList
-        return InterestedVlanList(self)._select()
+        if self._properties.get('InterestedVlanList', None) is not None:
+            return self._properties.get('InterestedVlanList')
+        else:
+            return InterestedVlanList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -69,6 +76,7 @@ class TrillNodeTopologyList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,6 +86,7 @@ class TrillNodeTopologyList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +96,7 @@ class TrillNodeTopologyList(Base):
 
     @property
     def InterestedVlanRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class TrillNodeTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterestedVlanRangeCount'])
     @InterestedVlanRangeCount.setter
     def InterestedVlanRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterestedVlanRangeCount'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class TrillNodeTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfTreesToCompute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +135,7 @@ class TrillNodeTopologyList(Base):
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +145,7 @@ class TrillNodeTopologyList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
 
     def update(self, InterestedVlanRangeCount=None, Name=None):
+        # type: (int, str) -> TrillNodeTopologyList
         """Updates trillNodeTopologyList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

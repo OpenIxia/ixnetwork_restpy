@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EvpnMac(Base):
@@ -37,9 +38,11 @@ class EvpnMac(Base):
         'MacPrefixLen': 'macPrefixLen',
         'Neighbor': 'neighbor',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EvpnMac, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EvpnMac, self).__init__(parent, list_op)
 
     @property
     def NextHopInfo(self):
@@ -53,10 +56,14 @@ class EvpnMac(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_9644743d8e097c3fbbcd45b81df8ec69 import NextHopInfo
-        return NextHopInfo(self)
+        if self._properties.get('NextHopInfo', None) is not None:
+            return self._properties.get('NextHopInfo')
+        else:
+            return NextHopInfo(self)
 
     @property
     def Esi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,6 +73,7 @@ class EvpnMac(Base):
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +83,7 @@ class EvpnMac(Base):
 
     @property
     def MacPrefixLen(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +93,7 @@ class EvpnMac(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,7 +101,21 @@ class EvpnMac(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
 
+    def add(self):
+        """Adds a new evpnMac resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved evpnMac resources using find and the newly added evpnMac resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Esi=None, MacAddress=None, MacPrefixLen=None, Neighbor=None):
+        # type: (str, str, str, str) -> EvpnMac
         """Finds and retrieves evpnMac resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evpnMac resources from the server.

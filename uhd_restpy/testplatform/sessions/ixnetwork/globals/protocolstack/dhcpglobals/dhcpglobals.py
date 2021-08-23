@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpGlobals(Base):
@@ -67,9 +68,11 @@ class DhcpGlobals(Base):
         'TeardownRateMax': 'teardownRateMax',
         'WaitForCompletion': 'waitForCompletion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DhcpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpGlobals, self).__init__(parent, list_op)
 
     @property
     def DhcpOptionSet(self):
@@ -83,10 +86,14 @@ class DhcpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpglobals.dhcpoptionset.dhcpoptionset import DhcpOptionSet
-        return DhcpOptionSet(self)
+        if self._properties.get('DhcpOptionSet', None) is not None:
+            return self._properties.get('DhcpOptionSet')
+        else:
+            return DhcpOptionSet(self)
 
     @property
     def AcceptPartialConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +102,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def Dhcp4AddrLeaseTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +116,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4AddrLeaseTime'])
     @Dhcp4AddrLeaseTime.setter
     def Dhcp4AddrLeaseTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4AddrLeaseTime'], value)
 
     @property
     def Dhcp4ClientPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +130,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ClientPort'])
     @Dhcp4ClientPort.setter
     def Dhcp4ClientPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4ClientPort'], value)
 
     @property
     def Dhcp4MaxMsgSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +144,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4MaxMsgSize'])
     @Dhcp4MaxMsgSize.setter
     def Dhcp4MaxMsgSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4MaxMsgSize'], value)
 
     @property
     def Dhcp4NumRetry(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +158,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4NumRetry'])
     @Dhcp4NumRetry.setter
     def Dhcp4NumRetry(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4NumRetry'], value)
 
     @property
     def Dhcp4ResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +172,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeout'])
     @Dhcp4ResponseTimeout.setter
     def Dhcp4ResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeout'], value)
 
     @property
     def Dhcp4ResponseTimeoutFactor(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,10 +186,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeoutFactor'])
     @Dhcp4ResponseTimeoutFactor.setter
     def Dhcp4ResponseTimeoutFactor(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4ResponseTimeoutFactor'], value)
 
     @property
     def Dhcp4ServerPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -179,10 +200,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ServerPort'])
     @Dhcp4ServerPort.setter
     def Dhcp4ServerPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4ServerPort'], value)
 
     @property
     def Dhcp6EchoIaInfo(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,10 +214,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6EchoIaInfo'])
     @Dhcp6EchoIaInfo.setter
     def Dhcp6EchoIaInfo(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6EchoIaInfo'], value)
 
     @property
     def Dhcp6RebMaxRt(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -203,10 +228,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RebMaxRt'])
     @Dhcp6RebMaxRt.setter
     def Dhcp6RebMaxRt(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6RebMaxRt'], value)
 
     @property
     def Dhcp6RebTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -215,10 +242,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RebTimeout'])
     @Dhcp6RebTimeout.setter
     def Dhcp6RebTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6RebTimeout'], value)
 
     @property
     def Dhcp6RelMaxRc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -227,10 +256,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RelMaxRc'])
     @Dhcp6RelMaxRc.setter
     def Dhcp6RelMaxRc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6RelMaxRc'], value)
 
     @property
     def Dhcp6RelTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -239,10 +270,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RelTimeout'])
     @Dhcp6RelTimeout.setter
     def Dhcp6RelTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6RelTimeout'], value)
 
     @property
     def Dhcp6RenMaxRt(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -251,10 +284,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RenMaxRt'])
     @Dhcp6RenMaxRt.setter
     def Dhcp6RenMaxRt(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6RenMaxRt'], value)
 
     @property
     def Dhcp6RenTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -263,10 +298,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6RenTimeout'])
     @Dhcp6RenTimeout.setter
     def Dhcp6RenTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6RenTimeout'], value)
 
     @property
     def Dhcp6ReqMaxRc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -275,10 +312,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRc'])
     @Dhcp6ReqMaxRc.setter
     def Dhcp6ReqMaxRc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRc'], value)
 
     @property
     def Dhcp6ReqMaxRt(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -287,10 +326,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRt'])
     @Dhcp6ReqMaxRt.setter
     def Dhcp6ReqMaxRt(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6ReqMaxRt'], value)
 
     @property
     def Dhcp6ReqTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -299,10 +340,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ReqTimeout'])
     @Dhcp6ReqTimeout.setter
     def Dhcp6ReqTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6ReqTimeout'], value)
 
     @property
     def Dhcp6SolMaxRc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -311,10 +354,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRc'])
     @Dhcp6SolMaxRc.setter
     def Dhcp6SolMaxRc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRc'], value)
 
     @property
     def Dhcp6SolMaxRt(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -323,10 +368,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRt'])
     @Dhcp6SolMaxRt.setter
     def Dhcp6SolMaxRt(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6SolMaxRt'], value)
 
     @property
     def Dhcp6SolTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -335,10 +382,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6SolTimeout'])
     @Dhcp6SolTimeout.setter
     def Dhcp6SolTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6SolTimeout'], value)
 
     @property
     def MaxOutstandingReleases(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,10 +396,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -359,10 +410,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -372,6 +425,7 @@ class DhcpGlobals(Base):
 
     @property
     def RenewOnLinkUp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -380,10 +434,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RenewOnLinkUp'])
     @RenewOnLinkUp.setter
     def RenewOnLinkUp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RenewOnLinkUp'], value)
 
     @property
     def SetupRateIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -392,10 +448,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateIncrement'])
     @SetupRateIncrement.setter
     def SetupRateIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateIncrement'], value)
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -404,10 +462,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def SetupRateMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -416,10 +476,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateMax'])
     @SetupRateMax.setter
     def SetupRateMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateMax'], value)
 
     @property
     def SkipReleaseOnStop(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -428,10 +490,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipReleaseOnStop'])
     @SkipReleaseOnStop.setter
     def SkipReleaseOnStop(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipReleaseOnStop'], value)
 
     @property
     def TeardownRateIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -440,10 +504,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateIncrement'])
     @TeardownRateIncrement.setter
     def TeardownRateIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateIncrement'], value)
 
     @property
     def TeardownRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -452,10 +518,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     @property
     def TeardownRateMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -464,10 +532,12 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateMax'])
     @TeardownRateMax.setter
     def TeardownRateMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateMax'], value)
 
     @property
     def WaitForCompletion(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -476,9 +546,11 @@ class DhcpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, AcceptPartialConfig=None, Dhcp4AddrLeaseTime=None, Dhcp4ClientPort=None, Dhcp4MaxMsgSize=None, Dhcp4NumRetry=None, Dhcp4ResponseTimeout=None, Dhcp4ResponseTimeoutFactor=None, Dhcp4ServerPort=None, Dhcp6EchoIaInfo=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, SkipReleaseOnStop=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
+        # type: (bool, int, int, int, int, int, int, int, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, bool, int, int, int, bool, int, int, int, bool) -> DhcpGlobals
         """Updates dhcpGlobals resource on the server.
 
         Args
@@ -523,6 +595,7 @@ class DhcpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, Dhcp4AddrLeaseTime=None, Dhcp4ClientPort=None, Dhcp4MaxMsgSize=None, Dhcp4NumRetry=None, Dhcp4ResponseTimeout=None, Dhcp4ResponseTimeoutFactor=None, Dhcp4ServerPort=None, Dhcp6EchoIaInfo=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, SkipReleaseOnStop=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
+        # type: (bool, int, int, int, int, int, int, int, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, bool, int, int, int, bool, int, int, int, bool) -> DhcpGlobals
         """Adds a new dhcpGlobals resource on the server and adds it to the container.
 
         Args
@@ -581,6 +654,7 @@ class DhcpGlobals(Base):
         self._delete()
 
     def find(self, AcceptPartialConfig=None, Dhcp4AddrLeaseTime=None, Dhcp4ClientPort=None, Dhcp4MaxMsgSize=None, Dhcp4NumRetry=None, Dhcp4ResponseTimeout=None, Dhcp4ResponseTimeoutFactor=None, Dhcp4ServerPort=None, Dhcp6EchoIaInfo=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, RenewOnLinkUp=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None, SkipReleaseOnStop=None, TeardownRateIncrement=None, TeardownRateInitial=None, TeardownRateMax=None, WaitForCompletion=None):
+        # type: (bool, int, int, int, int, int, int, int, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, bool, int, int, int, bool, int, int, int, bool) -> DhcpGlobals
         """Finds and retrieves dhcpGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpGlobals resources from the server.

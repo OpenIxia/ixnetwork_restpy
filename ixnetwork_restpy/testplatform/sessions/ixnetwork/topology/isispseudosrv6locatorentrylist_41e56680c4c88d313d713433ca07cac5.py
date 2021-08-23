@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisPseudoSRv6LocatorEntryList(Base):
@@ -51,9 +52,11 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         'RouteOrigin': 'routeOrigin',
         'SidCount': 'sidCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisPseudoSRv6LocatorEntryList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisPseudoSRv6LocatorEntryList, self).__init__(parent, list_op)
 
     @property
     def IsisPseudoSRv6EndSIDList(self):
@@ -67,10 +70,14 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6endsidlist_7f1f5407e7e0f543c58ead0450ef8be9 import IsisPseudoSRv6EndSIDList
-        return IsisPseudoSRv6EndSIDList(self)._select()
+        if self._properties.get('IsisPseudoSRv6EndSIDList', None) is not None:
+            return self._properties.get('IsisPseudoSRv6EndSIDList')
+        else:
+            return IsisPseudoSRv6EndSIDList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -81,6 +88,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def AdvertiseLocatorAsPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def DBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +131,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,6 +141,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def Locator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +152,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def LocatorName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +163,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def LocatorSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +174,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def Metric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +185,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def MtApplicabilityForIPv6Locator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +207,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,10 +216,12 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +232,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def Redistribution(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +243,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def ReservedFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +254,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def RouteMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +265,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def RouteOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +276,7 @@ class IsisPseudoSRv6LocatorEntryList(Base):
 
     @property
     def SidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -259,9 +285,11 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SidCount'])
     @SidCount.setter
     def SidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SidCount'], value)
 
     def update(self, Name=None, SidCount=None):
+        # type: (str, int) -> IsisPseudoSRv6LocatorEntryList
         """Updates isisPseudoSRv6LocatorEntryList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -277,6 +305,66 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, DBit=None, Locator=None, LocatorName=None, LocatorSize=None, Metric=None, MtApplicabilityForIPv6Locator=None, MtId=None, PrefixLength=None, Redistribution=None, ReservedFlags=None, RouteMetric=None, RouteOrigin=None):
         """Base class infrastructure that gets a list of isisPseudoSRv6LocatorEntryList device ids encapsulated by this object.
@@ -311,42 +399,3 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

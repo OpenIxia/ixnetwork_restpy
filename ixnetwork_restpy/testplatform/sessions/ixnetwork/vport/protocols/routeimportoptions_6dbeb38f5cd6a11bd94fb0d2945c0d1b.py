@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RouteImportOptions(Base):
@@ -39,12 +40,15 @@ class RouteImportOptions(Base):
         'RouteFileType': 'routeFileType',
         'SendMultiExitDiscValue': 'sendMultiExitDiscValue',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RouteImportOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RouteImportOptions, self).__init__(parent, list_op)
 
     @property
     def AdverstiseBestRoutes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class RouteImportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdverstiseBestRoutes'])
     @AdverstiseBestRoutes.setter
     def AdverstiseBestRoutes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdverstiseBestRoutes'], value)
 
     @property
     def NextHopAsIs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class RouteImportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopAsIs'])
     @NextHopAsIs.setter
     def NextHopAsIs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopAsIs'], value)
 
     @property
     def NumberOfRoutesPerBlock(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class RouteImportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutesPerBlock'])
     @NumberOfRoutesPerBlock.setter
     def NumberOfRoutesPerBlock(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutesPerBlock'], value)
 
     @property
     def RouteFileType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class RouteImportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteFileType'])
     @RouteFileType.setter
     def RouteFileType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteFileType'], value)
 
     @property
     def SendMultiExitDiscValue(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,9 +113,11 @@ class RouteImportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendMultiExitDiscValue'])
     @SendMultiExitDiscValue.setter
     def SendMultiExitDiscValue(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendMultiExitDiscValue'], value)
 
     def update(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+        # type: (bool, bool, int, str, bool) -> RouteImportOptions
         """Updates routeImportOptions resource on the server.
 
         Args
@@ -121,6 +135,7 @@ class RouteImportOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+        # type: (bool, bool, int, str, bool) -> RouteImportOptions
         """Adds a new routeImportOptions resource on the server and adds it to the container.
 
         Args
@@ -152,6 +167,7 @@ class RouteImportOptions(Base):
         self._delete()
 
     def find(self, AdverstiseBestRoutes=None, NextHopAsIs=None, NumberOfRoutesPerBlock=None, RouteFileType=None, SendMultiExitDiscValue=None):
+        # type: (bool, bool, int, str, bool) -> RouteImportOptions
         """Finds and retrieves routeImportOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve routeImportOptions resources from the server.
@@ -194,10 +210,16 @@ class RouteImportOptions(Base):
         """
         return self._read(href)
 
-    def GetSupportedBGPRouteFileTypes(self):
+    def GetSupportedBGPRouteFileTypes(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getSupportedBGPRouteFileTypes operation on the server.
 
         This function allows to Get supported BGP router.
+
+        getSupportedBGPRouteFileTypes(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -205,16 +227,20 @@ class RouteImportOptions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getSupportedBGPRouteFileTypes', payload=payload, response_object=None)
 
     def ImportOpaqueRouteRangeFromFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the importOpaqueRouteRangeFromFile operation on the server.
 
         This function allows to import opaque route range from file.
 
-        importOpaqueRouteRangeFromFile(Arg2=href)
-        -----------------------------------------
+        importOpaqueRouteRangeFromFile(Arg2=href, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

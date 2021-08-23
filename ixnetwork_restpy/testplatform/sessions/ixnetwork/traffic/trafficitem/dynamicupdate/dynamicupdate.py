@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DynamicUpdate(Base):
@@ -38,12 +39,15 @@ class DynamicUpdate(Base):
         'EnabledDynamicUpdateFieldsDisplayNames': 'enabledDynamicUpdateFieldsDisplayNames',
         'EnabledSessionAwareTrafficFields': 'enabledSessionAwareTrafficFields',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DynamicUpdate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DynamicUpdate, self).__init__(parent, list_op)
 
     @property
     def AvailableDynamicUpdateFields(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class DynamicUpdate(Base):
 
     @property
     def AvailableSessionAwareTrafficFields(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class DynamicUpdate(Base):
 
     @property
     def EnabledDynamicUpdateFields(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -70,10 +76,12 @@ class DynamicUpdate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledDynamicUpdateFields'])
     @EnabledDynamicUpdateFields.setter
     def EnabledDynamicUpdateFields(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledDynamicUpdateFields'], value)
 
     @property
     def EnabledDynamicUpdateFieldsDisplayNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -83,6 +91,7 @@ class DynamicUpdate(Base):
 
     @property
     def EnabledSessionAwareTrafficFields(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -91,9 +100,11 @@ class DynamicUpdate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledSessionAwareTrafficFields'])
     @EnabledSessionAwareTrafficFields.setter
     def EnabledSessionAwareTrafficFields(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledSessionAwareTrafficFields'], value)
 
     def update(self, EnabledDynamicUpdateFields=None, EnabledSessionAwareTrafficFields=None):
+        # type: (List[str], List[str]) -> DynamicUpdate
         """Updates dynamicUpdate resource on the server.
 
         Args
@@ -107,7 +118,27 @@ class DynamicUpdate(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EnabledDynamicUpdateFields=None, EnabledSessionAwareTrafficFields=None):
+        # type: (List[str], List[str]) -> DynamicUpdate
+        """Adds a new dynamicUpdate resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnabledDynamicUpdateFields (list(str)): If true, enables the Dynamic Updates support.
+        - EnabledSessionAwareTrafficFields (list(str)): If true, enables the Kill Bit support.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved dynamicUpdate resources using find and the newly added dynamicUpdate resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AvailableDynamicUpdateFields=None, AvailableSessionAwareTrafficFields=None, EnabledDynamicUpdateFields=None, EnabledDynamicUpdateFieldsDisplayNames=None, EnabledSessionAwareTrafficFields=None):
+        # type: (List[str], List[str], List[str], List[str], List[str]) -> DynamicUpdate
         """Finds and retrieves dynamicUpdate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dynamicUpdate resources from the server.

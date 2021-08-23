@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbTopologyList(Base):
@@ -50,9 +51,11 @@ class SpbTopologyList(Base):
         'TopologyId': 'topologyId',
         'Vbit': 'vbit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbTopologyList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbTopologyList, self).__init__(parent, list_op)
 
     @property
     def BaseVidList(self):
@@ -66,10 +69,14 @@ class SpbTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.basevidlist_145d5b3b39acf879821ed1634b49f17f import BaseVidList
-        return BaseVidList(self)._select()
+        if self._properties.get('BaseVidList', None) is not None:
+            return self._properties.get('BaseVidList')
+        else:
+            return BaseVidList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class SpbTopologyList(Base):
 
     @property
     def AuxMcidConfName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -90,6 +98,7 @@ class SpbTopologyList(Base):
 
     @property
     def AuxMcidSignature(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +109,7 @@ class SpbTopologyList(Base):
 
     @property
     def BaseVidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,10 +118,12 @@ class SpbTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BaseVidCount'])
     @BaseVidCount.setter
     def BaseVidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BaseVidCount'], value)
 
     @property
     def BridgePriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -122,6 +134,7 @@ class SpbTopologyList(Base):
 
     @property
     def CistExternalRootCost(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,6 +145,7 @@ class SpbTopologyList(Base):
 
     @property
     def CistRootId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +156,7 @@ class SpbTopologyList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -151,6 +166,7 @@ class SpbTopologyList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -160,6 +176,7 @@ class SpbTopologyList(Base):
 
     @property
     def LinkMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +187,7 @@ class SpbTopologyList(Base):
 
     @property
     def McidConfName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +198,7 @@ class SpbTopologyList(Base):
 
     @property
     def McidSignature(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +209,7 @@ class SpbTopologyList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,10 +218,12 @@ class SpbTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfPorts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +234,7 @@ class SpbTopologyList(Base):
 
     @property
     def PortIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -222,6 +245,7 @@ class SpbTopologyList(Base):
 
     @property
     def SpSourceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -232,6 +256,7 @@ class SpbTopologyList(Base):
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -242,6 +267,7 @@ class SpbTopologyList(Base):
 
     @property
     def Vbit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +277,7 @@ class SpbTopologyList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vbit']))
 
     def update(self, BaseVidCount=None, Name=None):
+        # type: (int, str) -> SpbTopologyList
         """Updates spbTopologyList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

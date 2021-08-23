@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -41,9 +42,12 @@ class Router(Base):
         'UpdateInterval': 'updateInterval',
         'UpdateIntervalOffset': 'updateIntervalOffset',
     }
+    _SDM_ENUM_MAP = {
+        'receiveType': ['ignore', 'store'],
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
@@ -57,7 +61,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_ae15d2fc221167d74bd1e54f2452375b import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def RouteRange(self):
@@ -71,10 +78,14 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_9547e9183edfabd34063407e5c2e1c0b import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is not None:
+            return self._properties.get('RouteRange')
+        else:
+            return RouteRange(self)
 
     @property
     def EnableInterfaceMetric(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +94,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableInterfaceMetric'])
     @EnableInterfaceMetric.setter
     def EnableInterfaceMetric(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableInterfaceMetric'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +108,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ReceiveType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +122,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReceiveType'])
     @ReceiveType.setter
     def ReceiveType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReceiveType'], value)
 
     @property
     def RouterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +136,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
     @RouterId.setter
     def RouterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +150,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def UpdateInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +164,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateInterval'])
     @UpdateInterval.setter
     def UpdateInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateInterval'], value)
 
     @property
     def UpdateIntervalOffset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,9 +178,11 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateIntervalOffset'])
     @UpdateIntervalOffset.setter
     def UpdateIntervalOffset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateIntervalOffset'], value)
 
     def update(self, EnableInterfaceMetric=None, Enabled=None, ReceiveType=None, RouterId=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+        # type: (bool, bool, str, int, str, int, int) -> Router
         """Updates router resource on the server.
 
         Args
@@ -177,6 +202,7 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableInterfaceMetric=None, Enabled=None, ReceiveType=None, RouterId=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+        # type: (bool, bool, str, int, str, int, int) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
         Args
@@ -210,6 +236,7 @@ class Router(Base):
         self._delete()
 
     def find(self, EnableInterfaceMetric=None, Enabled=None, ReceiveType=None, RouterId=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+        # type: (bool, bool, str, int, str, int, int) -> Router
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.

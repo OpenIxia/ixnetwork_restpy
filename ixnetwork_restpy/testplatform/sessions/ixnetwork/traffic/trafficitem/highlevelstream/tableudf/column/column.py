@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Column(Base):
@@ -38,12 +39,16 @@ class Column(Base):
         'Size': 'size',
         'Values': 'values',
     }
+    _SDM_ENUM_MAP = {
+        'format': ['ascii', 'binary', 'custom', 'decimal', 'hex', 'ipv4', 'ipv6', 'mac'],
+    }
 
-    def __init__(self, parent):
-        super(Column, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Column, self).__init__(parent, list_op)
 
     @property
     def Format(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,10 +57,12 @@ class Column(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Format'])
     @Format.setter
     def Format(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Format'], value)
 
     @property
     def Offset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class Column(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def Size(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class Column(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Size'])
     @Size.setter
     def Size(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Size'], value)
 
     @property
     def Values(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -88,9 +99,11 @@ class Column(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, Format=None, Offset=None, Size=None, Values=None):
+        # type: (str, int, int, List[str]) -> Column
         """Updates column resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class Column(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Format=None, Offset=None, Size=None, Values=None):
+        # type: (str, int, int, List[str]) -> Column
         """Adds a new column resource on the server and adds it to the container.
 
         Args
@@ -137,6 +151,7 @@ class Column(Base):
         self._delete()
 
     def find(self, Format=None, Offset=None, Size=None, Values=None):
+        # type: (str, int, int, List[str]) -> Column
         """Finds and retrieves column resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve column resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrafficEndPoint(Base):
@@ -84,12 +85,20 @@ class TrafficEndPoint(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'etherType': ['custom', 'ipv4', 'ipv6', 'mplsUnicast'],
+        'ipProtocol': ['custom', 'tcp', 'udp'],
+        'ipv6NextHeader': ['custom', 'tcp', 'udp'],
+        'mplsPayloadType': ['ethernet', 'ipv4', 'ipv6'],
+        'pbbEtherType': ['bEtherType8100', 'bEtherType88A8', 'bEtherType88E7', 'bEtherType9100', 'bEtherType9200'],
+    }
 
-    def __init__(self, parent):
-        super(TrafficEndPoint, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrafficEndPoint, self).__init__(parent, list_op)
 
     @property
     def ArpViaInterface(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -98,10 +107,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpViaInterface'])
     @ArpViaInterface.setter
     def ArpViaInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpViaInterface'], value)
 
     @property
     def CustomEtherHeaderLength(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -110,10 +121,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomEtherHeaderLength'])
     @CustomEtherHeaderLength.setter
     def CustomEtherHeaderLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomEtherHeaderLength'], value)
 
     @property
     def CustomEtherHeaderValue(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -122,10 +135,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomEtherHeaderValue'])
     @CustomEtherHeaderValue.setter
     def CustomEtherHeaderValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomEtherHeaderValue'], value)
 
     @property
     def CustomEtherType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -134,10 +149,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomEtherType'])
     @CustomEtherType.setter
     def CustomEtherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomEtherType'], value)
 
     @property
     def CustomIpHeaderLength(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -146,10 +163,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomIpHeaderLength'])
     @CustomIpHeaderLength.setter
     def CustomIpHeaderLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomIpHeaderLength'], value)
 
     @property
     def CustomIpHeaderValue(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -158,10 +177,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomIpHeaderValue'])
     @CustomIpHeaderValue.setter
     def CustomIpHeaderValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomIpHeaderValue'], value)
 
     @property
     def CustomIpProtocol(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -170,10 +191,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomIpProtocol'])
     @CustomIpProtocol.setter
     def CustomIpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomIpProtocol'], value)
 
     @property
     def DestinationPort(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -182,10 +205,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationPort'])
     @DestinationPort.setter
     def DestinationPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationPort'], value)
 
     @property
     def EnableMacInMac(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -194,10 +219,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMacInMac'])
     @EnableMacInMac.setter
     def EnableMacInMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMacInMac'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -206,10 +233,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def EtherType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -218,10 +247,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EtherType'])
     @EtherType.setter
     def EtherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EtherType'], value)
 
     @property
     def GatewayMac(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -230,10 +261,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayMac'])
     @GatewayMac.setter
     def GatewayMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayMac'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -242,10 +275,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpMask(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -254,10 +289,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpMask'])
     @IpMask.setter
     def IpMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpMask'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -266,10 +303,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def IpTos(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -278,10 +317,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpTos'])
     @IpTos.setter
     def IpTos(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpTos'], value)
 
     @property
     def Ipv4Dscp(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -290,10 +331,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Dscp'])
     @Ipv4Dscp.setter
     def Ipv4Dscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Dscp'], value)
 
     @property
     def Ipv4Ecn(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -302,10 +345,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Ecn'])
     @Ipv4Ecn.setter
     def Ipv4Ecn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Ecn'], value)
 
     @property
     def Ipv6Address(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -314,10 +359,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Address'])
     @Ipv6Address.setter
     def Ipv6Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Address'], value)
 
     @property
     def Ipv6AddressMask(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -326,10 +373,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressMask'])
     @Ipv6AddressMask.setter
     def Ipv6AddressMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6AddressMask'], value)
 
     @property
     def Ipv6CustomHeaderLength(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -338,10 +387,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderLength'])
     @Ipv6CustomHeaderLength.setter
     def Ipv6CustomHeaderLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderLength'], value)
 
     @property
     def Ipv6CustomHeaderValue(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -350,10 +401,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderValue'])
     @Ipv6CustomHeaderValue.setter
     def Ipv6CustomHeaderValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderValue'], value)
 
     @property
     def Ipv6CustomNextHeader(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -362,10 +415,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6CustomNextHeader'])
     @Ipv6CustomNextHeader.setter
     def Ipv6CustomNextHeader(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6CustomNextHeader'], value)
 
     @property
     def Ipv6Dscp(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -374,10 +429,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Dscp'])
     @Ipv6Dscp.setter
     def Ipv6Dscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Dscp'], value)
 
     @property
     def Ipv6Ecn(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -386,10 +443,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Ecn'])
     @Ipv6Ecn.setter
     def Ipv6Ecn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Ecn'], value)
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -398,10 +457,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
 
     @property
     def Ipv6NextHeader(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -410,10 +471,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHeader'])
     @Ipv6NextHeader.setter
     def Ipv6NextHeader(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NextHeader'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -422,10 +485,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def MplsInnerMacSource(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -434,10 +499,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsInnerMacSource'])
     @MplsInnerMacSource.setter
     def MplsInnerMacSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsInnerMacSource'], value)
 
     @property
     def MplsInnerVlanId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -446,10 +513,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsInnerVlanId'])
     @MplsInnerVlanId.setter
     def MplsInnerVlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsInnerVlanId'], value)
 
     @property
     def MplsInnerVlanPriority(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -458,10 +527,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsInnerVlanPriority'])
     @MplsInnerVlanPriority.setter
     def MplsInnerVlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsInnerVlanPriority'], value)
 
     @property
     def MplsLabel(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -470,10 +541,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
     @MplsLabel.setter
     def MplsLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
 
     @property
     def MplsLabelStackSize(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -482,10 +555,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabelStackSize'])
     @MplsLabelStackSize.setter
     def MplsLabelStackSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabelStackSize'], value)
 
     @property
     def MplsPayloadType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -494,10 +569,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsPayloadType'])
     @MplsPayloadType.setter
     def MplsPayloadType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsPayloadType'], value)
 
     @property
     def MplsTrafficClass(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -506,10 +583,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsTrafficClass'])
     @MplsTrafficClass.setter
     def MplsTrafficClass(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsTrafficClass'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -518,10 +597,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PbbDestinamtionMac(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -530,10 +611,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbDestinamtionMac'])
     @PbbDestinamtionMac.setter
     def PbbDestinamtionMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbDestinamtionMac'], value)
 
     @property
     def PbbEtherType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -542,10 +625,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbEtherType'])
     @PbbEtherType.setter
     def PbbEtherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbEtherType'], value)
 
     @property
     def PbbIsId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -554,10 +639,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbIsId'])
     @PbbIsId.setter
     def PbbIsId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbIsId'], value)
 
     @property
     def PbbSourceMac(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -566,10 +653,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbSourceMac'])
     @PbbSourceMac.setter
     def PbbSourceMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbSourceMac'], value)
 
     @property
     def PbbVlanId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -578,10 +667,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbVlanId'])
     @PbbVlanId.setter
     def PbbVlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbVlanId'], value)
 
     @property
     def PbbVlanPcp(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -590,10 +681,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbVlanPcp'])
     @PbbVlanPcp.setter
     def PbbVlanPcp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbVlanPcp'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -602,10 +695,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     @property
     def RangeSize(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -614,10 +709,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RangeSize'])
     @RangeSize.setter
     def RangeSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RangeSize'], value)
 
     @property
     def SourcePort(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -626,10 +723,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourcePort'])
     @SourcePort.setter
     def SourcePort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourcePort'], value)
 
     @property
     def UdpDestination(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -638,10 +737,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
     @UdpDestination.setter
     def UdpDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
 
     @property
     def UdpSource(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -650,10 +751,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
     @UdpSource.setter
     def UdpSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -662,10 +765,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -674,10 +779,12 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -686,9 +793,11 @@ class TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableMacInMac=None, EnableVlan=None, EtherType=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, IpTos=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, int, str, str, str, bool, bool, str, str, str, int, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, int, str, str, str, int, str, str) -> TrafficEndPoint
         """Updates trafficEndPoint resource on the server.
 
         Args
@@ -751,6 +860,7 @@ class TrafficEndPoint(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableMacInMac=None, EnableVlan=None, EtherType=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, IpTos=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, int, str, str, str, bool, bool, str, str, str, int, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, int, str, str, str, int, str, str) -> TrafficEndPoint
         """Adds a new trafficEndPoint resource on the server and adds it to the container.
 
         Args
@@ -827,6 +937,7 @@ class TrafficEndPoint(Base):
         self._delete()
 
     def find(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableMacInMac=None, EnableVlan=None, EtherType=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, IpTos=None, Ipv4Dscp=None, Ipv4Ecn=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, MplsInnerMacSource=None, MplsInnerVlanId=None, MplsInnerVlanPriority=None, MplsLabel=None, MplsLabelStackSize=None, MplsPayloadType=None, MplsTrafficClass=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, int, str, str, str, bool, bool, str, str, str, int, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, int, str, str, str, int, str, str) -> TrafficEndPoint
         """Finds and retrieves trafficEndPoint resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficEndPoint resources from the server.

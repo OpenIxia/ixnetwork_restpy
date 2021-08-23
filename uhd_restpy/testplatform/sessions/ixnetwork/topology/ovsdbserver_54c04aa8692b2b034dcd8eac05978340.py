@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ovsdbserver(Base):
@@ -55,9 +56,12 @@ class Ovsdbserver(Base):
         'Status': 'status',
         'Vxlan': 'vxlan',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ovsdbserver, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ovsdbserver, self).__init__(parent, list_op)
 
     @property
     def Manager(self):
@@ -71,22 +75,28 @@ class Ovsdbserver(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.manager_c6443684a3a8badebe021783a46d1b90 import Manager
-        return Manager(self)._select()
+        if self._properties.get('Manager', None) is not None:
+            return self._properties.get('Manager')
+        else:
+            return Manager(self)._select()
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ConnectionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +107,7 @@ class Ovsdbserver(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +117,7 @@ class Ovsdbserver(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +127,7 @@ class Ovsdbserver(Base):
 
     @property
     def DirectoryName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,12 +141,13 @@ class Ovsdbserver(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def FileCaCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +158,7 @@ class Ovsdbserver(Base):
 
     @property
     def FileCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -154,6 +169,7 @@ class Ovsdbserver(Base):
 
     @property
     def FilePrivKey(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -164,6 +180,7 @@ class Ovsdbserver(Base):
 
     @property
     def ManagerCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,10 +189,12 @@ class Ovsdbserver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ManagerCount'])
     @ManagerCount.setter
     def ManagerCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ManagerCount'], value)
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -184,10 +203,12 @@ class Ovsdbserver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,10 +217,12 @@ class Ovsdbserver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OvsdbSchema(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -210,18 +233,21 @@ class Ovsdbserver(Base):
 
     @property
     def PseudoConnectedTo(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/topology/.../*): GUI-only connection
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
         """
         return self._get_attribute(self._SDM_ATT_MAP['PseudoConnectedTo'])
     @PseudoConnectedTo.setter
     def PseudoConnectedTo(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PseudoConnectedTo'], value)
 
     @property
     def PseudoMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -231,6 +257,7 @@ class Ovsdbserver(Base):
 
     @property
     def ServerTcpPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +268,7 @@ class Ovsdbserver(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -250,14 +278,16 @@ class Ovsdbserver(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -271,6 +301,7 @@ class Ovsdbserver(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -280,17 +311,20 @@ class Ovsdbserver(Base):
 
     @property
     def Vxlan(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/topology/.../*): 
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['Vxlan'])
     @Vxlan.setter
     def Vxlan(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vxlan'], value)
 
     def update(self, ConnectedVia=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, StackedLayers=None, Vxlan=None):
+        # type: (List[str], int, int, str, str, List[str], str) -> Ovsdbserver
         """Updates ovsdbserver resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -298,13 +332,13 @@ class Ovsdbserver(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - ManagerCount (number): Number of Managers the OVSDB Server will initiate connections to
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - PseudoConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): GUI-only connection
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - Vxlan (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): 
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
 
         Raises
         ------
@@ -313,17 +347,18 @@ class Ovsdbserver(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, ManagerCount=None, Multiplier=None, Name=None, PseudoConnectedTo=None, StackedLayers=None, Vxlan=None):
+        # type: (List[str], int, int, str, str, List[str], str) -> Ovsdbserver
         """Adds a new ovsdbserver resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - ManagerCount (number): Number of Managers the OVSDB Server will initiate connections to
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - PseudoConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): GUI-only connection
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - Vxlan (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): 
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
 
         Returns
         -------
@@ -354,20 +389,20 @@ class Ovsdbserver(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - ManagerCount (number): Number of Managers the OVSDB Server will initiate connections to
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - PseudoConnectedTo (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
         - PseudoMultiplier (number): Multiplier for GUI-only connection
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-        - Vxlan (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): 
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): 
 
         Returns
         -------
@@ -397,6 +432,134 @@ class Ovsdbserver(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ConnectionType=None, DirectoryName=None, FileCaCertificate=None, FileCertificate=None, FilePrivKey=None, OvsdbSchema=None, ServerTcpPort=None):
         """Base class infrastructure that gets a list of ovsdbserver device ids encapsulated by this object.
 
@@ -422,103 +585,3 @@ class Ovsdbserver(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

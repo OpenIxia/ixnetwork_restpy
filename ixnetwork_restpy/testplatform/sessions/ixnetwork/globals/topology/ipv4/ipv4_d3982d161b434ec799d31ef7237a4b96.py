@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4(Base):
@@ -43,9 +44,11 @@ class Ipv4(Base):
         'RowNames': 'rowNames',
         'SuppressArpForDuplicateGateway': 'suppressArpForDuplicateGateway',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4, self).__init__(parent, list_op)
 
     @property
     def ArpRate(self):
@@ -59,7 +62,10 @@ class Ipv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.arprate.arprate_fe6622efbe4e67c68598af1d6489b20c import ArpRate
-        return ArpRate(self)._select()
+        if self._properties.get('ArpRate', None) is not None:
+            return self._properties.get('ArpRate')
+        else:
+            return ArpRate(self)._select()
 
     @property
     def StartRate(self):
@@ -73,7 +79,10 @@ class Ipv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -87,10 +96,14 @@ class Ipv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +113,7 @@ class Ipv4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,6 +123,7 @@ class Ipv4(Base):
 
     @property
     def GratarpTransmitCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +134,7 @@ class Ipv4(Base):
 
     @property
     def GratarpTransmitInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +145,7 @@ class Ipv4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,10 +154,12 @@ class Ipv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PermanentMacForGateway(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +170,7 @@ class Ipv4(Base):
 
     @property
     def RarpTransmitCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +181,7 @@ class Ipv4(Base):
 
     @property
     def RarpTransmitInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +192,7 @@ class Ipv4(Base):
 
     @property
     def ReSendArpOnLinkUp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +203,7 @@ class Ipv4(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -190,6 +213,7 @@ class Ipv4(Base):
 
     @property
     def SuppressArpForDuplicateGateway(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +223,7 @@ class Ipv4(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressArpForDuplicateGateway']))
 
     def update(self, Name=None):
+        # type: (str) -> Ipv4
         """Updates ipv4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

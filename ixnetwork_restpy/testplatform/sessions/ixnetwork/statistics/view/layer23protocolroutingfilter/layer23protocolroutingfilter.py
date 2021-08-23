@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23ProtocolRoutingFilter(Base):
@@ -36,12 +37,15 @@ class Layer23ProtocolRoutingFilter(Base):
         'PortFilterIds': 'portFilterIds',
         'ProtocolFilterIds': 'protocolFilterIds',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Layer23ProtocolRoutingFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23ProtocolRoutingFilter, self).__init__(parent, list_op)
 
     @property
     def PortFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class Layer23ProtocolRoutingFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     @property
     def ProtocolFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -62,9 +68,11 @@ class Layer23ProtocolRoutingFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
 
     def update(self, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (List[str], List[str]) -> Layer23ProtocolRoutingFilter
         """Updates layer23ProtocolRoutingFilter resource on the server.
 
         Args
@@ -79,6 +87,7 @@ class Layer23ProtocolRoutingFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (List[str], List[str]) -> Layer23ProtocolRoutingFilter
         """Adds a new layer23ProtocolRoutingFilter resource on the server and adds it to the container.
 
         Args
@@ -107,6 +116,7 @@ class Layer23ProtocolRoutingFilter(Base):
         self._delete()
 
     def find(self, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (List[str], List[str]) -> Layer23ProtocolRoutingFilter
         """Finds and retrieves layer23ProtocolRoutingFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23ProtocolRoutingFilter resources from the server.

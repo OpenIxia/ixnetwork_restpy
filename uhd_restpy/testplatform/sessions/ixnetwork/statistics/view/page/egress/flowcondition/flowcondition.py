@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowCondition(Base):
@@ -38,12 +39,16 @@ class FlowCondition(Base):
         'TrackingFilterId': 'trackingFilterId',
         'Values': 'values',
     }
+    _SDM_ENUM_MAP = {
+        'operator': ['isBetween', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isSmaller'],
+    }
 
-    def __init__(self, parent):
-        super(FlowCondition, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowCondition, self).__init__(parent, list_op)
 
     @property
     def Operator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,10 +57,12 @@ class FlowCondition(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def ShowFirstMatchingSet(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,22 +71,26 @@ class FlowCondition(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowFirstMatchingSet'])
     @ShowFirstMatchingSet.setter
     def ShowFirstMatchingSet(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowFirstMatchingSet'], value)
 
     @property
     def TrackingFilterId(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     @property
     def Values(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -88,16 +99,18 @@ class FlowCondition(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+        # type: (str, bool, str, List[int]) -> FlowCondition
         """Updates flowCondition resource on the server.
 
         Args
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
         - ShowFirstMatchingSet (bool): If true, displays the first matching set.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Values (list(number)): Value to be matched for the condition.
 
         Raises
@@ -107,13 +120,14 @@ class FlowCondition(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+        # type: (str, bool, str, List[int]) -> FlowCondition
         """Adds a new flowCondition resource on the server and adds it to the container.
 
         Args
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
         - ShowFirstMatchingSet (bool): If true, displays the first matching set.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Values (list(number)): Value to be matched for the condition.
 
         Returns
@@ -137,6 +151,7 @@ class FlowCondition(Base):
         self._delete()
 
     def find(self, Operator=None, ShowFirstMatchingSet=None, TrackingFilterId=None, Values=None):
+        # type: (str, bool, str, List[int]) -> FlowCondition
         """Finds and retrieves flowCondition resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowCondition resources from the server.
@@ -147,7 +162,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
         - ShowFirstMatchingSet (bool): If true, displays the first matching set.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Values (list(number)): Value to be matched for the condition.
 
         Returns

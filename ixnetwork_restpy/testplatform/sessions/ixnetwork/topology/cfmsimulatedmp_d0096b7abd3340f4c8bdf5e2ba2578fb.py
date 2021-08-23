@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CfmSimulatedMp(Base):
@@ -154,9 +155,11 @@ class CfmSimulatedMp(Base):
         'VlanStacking': 'vlanStacking',
         'VlanTpid': 'vlanTpid',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CfmSimulatedMp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CfmSimulatedMp, self).__init__(parent, list_op)
 
     @property
     def CfmCustomTLVList(self):
@@ -170,7 +173,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import CfmCustomTLVList
-        return CfmCustomTLVList(self)
+        if self._properties.get('CfmCustomTLVList', None) is not None:
+            return self._properties.get('CfmCustomTLVList')
+        else:
+            return CfmCustomTLVList(self)
 
     @property
     def CfmSlm(self):
@@ -184,7 +190,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f import CfmSlm
-        return CfmSlm(self)._select()
+        if self._properties.get('CfmSlm', None) is not None:
+            return self._properties.get('CfmSlm')
+        else:
+            return CfmSlm(self)._select()
 
     @property
     def StartCcmSimulatedMpParams(self):
@@ -198,7 +207,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.startccmsimulatedmpparams_4c311ea185eeaa4106e3c4181a4ec347 import StartCcmSimulatedMpParams
-        return StartCcmSimulatedMpParams(self)._select()
+        if self._properties.get('StartCcmSimulatedMpParams', None) is not None:
+            return self._properties.get('StartCcmSimulatedMpParams')
+        else:
+            return StartCcmSimulatedMpParams(self)._select()
 
     @property
     def StopCcmSimulatedMpParams(self):
@@ -212,10 +224,14 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopccmsimulatedmpparams_93b05cff27480ec5b14accd9b8a754a7 import StopCcmSimulatedMpParams
-        return StopCcmSimulatedMpParams(self)._select()
+        if self._properties.get('StopCcmSimulatedMpParams', None) is not None:
+            return self._properties.get('StopCcmSimulatedMpParams')
+        else:
+            return StopCcmSimulatedMpParams(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +242,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AisEnableUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +253,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AisInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +264,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AisMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +275,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AisPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +286,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AisUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -276,6 +297,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoDmTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -286,6 +308,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoDmTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -296,6 +319,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLbIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +330,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLbTimeoutInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +341,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLbTimerInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +352,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLmIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +363,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLmTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -346,6 +374,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLmTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -356,6 +385,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLtIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -366,6 +396,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLtTimeoutInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -376,6 +407,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLtTimerInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -386,6 +418,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutoLtTtl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -396,6 +429,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def AutodmIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +440,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +451,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +462,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CVlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +473,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CciInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +484,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CcmLmmTxFcf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +495,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CcmLmmTxFcfStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +506,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CcmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -476,6 +517,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CcmRxFcb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -486,6 +528,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def CcmRxFcbStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -496,6 +539,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ChassisId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -506,6 +550,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ChassisIdLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -516,6 +561,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ChassisIdSubType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -526,6 +572,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -535,6 +582,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DataTlvLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -545,6 +593,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DataTlvValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -555,6 +604,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -564,6 +614,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DmAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -574,6 +625,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DmDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -584,6 +636,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DmMethod(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -594,6 +647,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def DmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -604,6 +658,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def Enable1slRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -614,6 +669,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableAisRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -624,6 +680,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableAutoDm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -634,6 +691,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableAutoLb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -644,6 +702,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableAutoLm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -654,6 +713,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableAutoLt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -664,6 +724,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableDataTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -674,6 +735,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableInterfaceStatusTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -684,6 +746,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableLckRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -694,6 +757,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableLmCounterUpdate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -704,6 +768,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableOrganizationSpecificTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -714,6 +779,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnablePortStatusTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -724,6 +790,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableSenderIdTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -734,6 +801,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableSlmRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -744,6 +812,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableTstRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -754,6 +823,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def EnableVlan(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -764,6 +834,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def InterRemoteMepRxIncrementStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -774,6 +845,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def InterRemoteMepTxIncrementStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -784,6 +856,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LbAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -794,6 +867,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LbDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -804,6 +878,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LbmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -814,6 +889,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LckEnableUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -824,6 +900,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LckInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -834,6 +911,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LckMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -844,6 +922,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LckPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -854,6 +933,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LckSupportAisGeneration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -864,6 +944,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LckUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -874,6 +955,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -884,6 +966,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -894,6 +977,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmMethodType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -904,6 +988,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -914,6 +999,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmrPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -924,6 +1010,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmrRxFcf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -934,6 +1021,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmrRxFcfStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -944,6 +1032,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmrTxFcb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -954,6 +1043,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LmrTxFcbStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -964,6 +1054,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LtAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -974,6 +1065,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LtDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -984,6 +1076,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def LtmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -994,6 +1087,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ManagementAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1004,6 +1098,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ManagementAddressDomain(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1014,6 +1109,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ManagementAddressDomainLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1024,6 +1120,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ManagementAddressLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1034,6 +1131,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MdMegLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1044,6 +1142,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MdName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1054,6 +1153,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MdNameFormat(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1064,6 +1164,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MegId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1074,6 +1175,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MegIdFormat(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1084,6 +1186,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MepId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1094,6 +1197,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def MpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1104,6 +1208,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1112,10 +1217,12 @@ class CfmSimulatedMp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfCustomTLVs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1124,10 +1231,12 @@ class CfmSimulatedMp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'])
     @NumberOfCustomTLVs.setter
     def NumberOfCustomTLVs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'], value)
 
     @property
     def NumberOfSlm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1136,10 +1245,12 @@ class CfmSimulatedMp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSlm'])
     @NumberOfSlm.setter
     def NumberOfSlm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfSlm'], value)
 
     @property
     def OrganizationSpecificTlvLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1150,6 +1261,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def OrganizationSpecificTlvValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1160,6 +1272,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def OverrideVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1170,6 +1283,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def Rdi(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1180,6 +1294,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def SVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1190,6 +1305,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def SVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1200,6 +1316,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def SVlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1210,6 +1327,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ShortMaName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1220,6 +1338,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def ShortMaNameFormat(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1230,6 +1349,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def SlmInitialTxfcb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1240,6 +1360,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def SlmSimulatedLossInRxPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1250,6 +1371,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def SlmTxfcbStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1260,6 +1382,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstEnableUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1270,6 +1393,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstIncrementPacketLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1280,6 +1404,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstInitialPatternValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1290,6 +1415,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1300,6 +1426,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1310,6 +1437,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstOverwriteSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1320,6 +1448,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstPacketLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1330,6 +1459,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstPacketLengthStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1340,6 +1470,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstPatternType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1350,6 +1481,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1360,6 +1492,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1370,6 +1503,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstTestType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1380,6 +1514,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def TstUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1390,6 +1525,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def VlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1400,6 +1536,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1410,6 +1547,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def VlanStacking(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1420,6 +1558,7 @@ class CfmSimulatedMp(Base):
 
     @property
     def VlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1429,6 +1568,7 @@ class CfmSimulatedMp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpid']))
 
     def update(self, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
+        # type: (str, int, int) -> CfmSimulatedMp
         """Updates cfmSimulatedMp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1446,7 +1586,28 @@ class CfmSimulatedMp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
+        # type: (str, int, int) -> CfmSimulatedMp
+        """Adds a new cfmSimulatedMp resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfCustomTLVs (number): Number of Custom TLVs for PDUs.
+        - NumberOfSlm (number): Number of SLM tests
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved cfmSimulatedMp resources using find and the newly added cfmSimulatedMp resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
+        # type: (int, str, str, int, int) -> CfmSimulatedMp
         """Finds and retrieves cfmSimulatedMp resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cfmSimulatedMp resources from the server.
@@ -1488,6 +1649,302 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ActivateMpSimulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the activateMpSimulated operation on the server.
+
+        Activate Simulated MP
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        activateMpSimulated(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateMpSimulated(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateMpSimulated(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('activateMpSimulated', payload=payload, response_object=None)
+
+    def DeactivateMpSimulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the deactivateMpSimulated operation on the server.
+
+        Deactivate Simulated MP
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        deactivateMpSimulated(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateMpSimulated(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateMpSimulated(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('deactivateMpSimulated', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def StartCcmSimulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startCcmSimulated operation on the server.
+
+        Start CCM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startCcmSimulated(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startCcmSimulated(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startCcmSimulated(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startCcmSimulated', payload=payload, response_object=None)
+
+    def StartCcmSimulatedMp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the startCcmSimulatedMp operation on the server.
+
+        Start CCM PDU Transmission
+
+        DEPRECATED startCcmSimulatedMp(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startCcmSimulatedMp', payload=payload, response_object=None)
+
+    def StartSlm(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startSlm operation on the server.
+
+        Start SLM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startSlm(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSlm(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSlm(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startSlm', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopCcmSimulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopCcmSimulated operation on the server.
+
+        Stop CCM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopCcmSimulated(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopCcmSimulated(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopCcmSimulated(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopCcmSimulated', payload=payload, response_object=None)
+
+    def StopCcmSimulatedMp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopCcmSimulatedMp operation on the server.
+
+        Stop CCM PDU Transmission
+
+        DEPRECATED stopCcmSimulatedMp(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopCcmSimulatedMp', payload=payload, response_object=None)
+
+    def StopSlm(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopSlm operation on the server.
+
+        Stop SLM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopSlm(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSlm(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSlm(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopSlm', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeoutInSec=None, AutoLbTimerInSec=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeoutInSec=None, AutoLtTimerInSec=None, AutoLtTtl=None, AutodmIteration=None, CVlanId=None, CVlanPriority=None, CVlanTpid=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStepPer100mSec=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStepPer100mSec=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmAllRemoteMeps=None, DmDestinationMacAddress=None, DmMethod=None, DmPriority=None, Enable1slRx=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableDataTlv=None, EnableInterfaceStatusTlv=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableOrganizationSpecificTlv=None, EnablePortStatusTlv=None, EnableSenderIdTlv=None, EnableSlmRx=None, EnableTstRx=None, EnableVlan=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbAllRemoteMeps=None, LbDestinationMacAddress=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethodType=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStepPer100mSec=None, LmrTxFcb=None, LmrTxFcbStepPer100mSec=None, LtAllRemoteMeps=None, LtDestinationMacAddress=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdMegLevel=None, MdName=None, MdNameFormat=None, MegId=None, MegIdFormat=None, MepId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, SVlanId=None, SVlanPriority=None, SVlanTpid=None, ShortMaName=None, ShortMaNameFormat=None, SlmInitialTxfcb=None, SlmSimulatedLossInRxPath=None, SlmTxfcbStep=None, TstEnableUnicastMac=None, TstIncrementPacketLength=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPacketLengthStep=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, VlanId=None, VlanPriority=None, VlanStacking=None, VlanTpid=None):
         """Base class infrastructure that gets a list of cfmSimulatedMp device ids encapsulated by this object.
@@ -1623,232 +2080,3 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ActivateMpSimulated(self, *args, **kwargs):
-        """Executes the activateMpSimulated operation on the server.
-
-        Activate Simulated MP
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        activateMpSimulated(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        activateMpSimulated(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('activateMpSimulated', payload=payload, response_object=None)
-
-    def DeactivateMpSimulated(self, *args, **kwargs):
-        """Executes the deactivateMpSimulated operation on the server.
-
-        Deactivate Simulated MP
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        deactivateMpSimulated(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        deactivateMpSimulated(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deactivateMpSimulated', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def StartCcmSimulated(self, *args, **kwargs):
-        """Executes the startCcmSimulated operation on the server.
-
-        Start CCM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startCcmSimulated(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startCcmSimulated(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCcmSimulated', payload=payload, response_object=None)
-
-    def StartCcmSimulatedMp(self, *args, **kwargs):
-        """Executes the startCcmSimulatedMp operation on the server.
-
-        Start CCM PDU Transmission
-
-        DEPRECATED startCcmSimulatedMp(Arg2=list)list
-        ---------------------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCcmSimulatedMp', payload=payload, response_object=None)
-
-    def StartSlm(self, *args, **kwargs):
-        """Executes the startSlm operation on the server.
-
-        Start SLM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startSlm(SessionIndices=list)
-        -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startSlm(SessionIndices=string)
-        -------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startSlm', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopCcmSimulated(self, *args, **kwargs):
-        """Executes the stopCcmSimulated operation on the server.
-
-        Stop CCM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopCcmSimulated(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopCcmSimulated(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCcmSimulated', payload=payload, response_object=None)
-
-    def StopCcmSimulatedMp(self, *args, **kwargs):
-        """Executes the stopCcmSimulatedMp operation on the server.
-
-        Stop CCM PDU Transmission
-
-        DEPRECATED stopCcmSimulatedMp(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCcmSimulatedMp', payload=payload, response_object=None)
-
-    def StopSlm(self, *args, **kwargs):
-        """Executes the stopSlm operation on the server.
-
-        Stop SLM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopSlm(SessionIndices=list)
-        ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopSlm(SessionIndices=string)
-        ------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopSlm', payload=payload, response_object=None)

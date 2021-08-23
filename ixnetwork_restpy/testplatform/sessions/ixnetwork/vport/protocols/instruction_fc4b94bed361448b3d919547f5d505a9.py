@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Instruction(Base):
@@ -38,12 +39,15 @@ class Instruction(Base):
         'WriteActions': 'writeActions',
         'WriteMetadata': 'writeMetadata',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Instruction, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Instruction, self).__init__(parent, list_op)
 
     @property
     def ApplyActions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActions'])
     @ApplyActions.setter
     def ApplyActions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActions'], value)
 
     @property
     def ClearActions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClearActions'])
     @ClearActions.setter
     def ClearActions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClearActions'], value)
 
     @property
     def GoToTable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GoToTable'])
     @GoToTable.setter
     def GoToTable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GoToTable'], value)
 
     @property
     def Meter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,10 +98,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Meter'])
     @Meter.setter
     def Meter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Meter'], value)
 
     @property
     def WriteActions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -100,10 +112,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActions'])
     @WriteActions.setter
     def WriteActions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActions'], value)
 
     @property
     def WriteMetadata(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,9 +126,11 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteMetadata'])
     @WriteMetadata.setter
     def WriteMetadata(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteMetadata'], value)
 
     def update(self, ApplyActions=None, ClearActions=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+        # type: (bool, bool, bool, bool, bool, bool) -> Instruction
         """Updates instruction resource on the server.
 
         Args

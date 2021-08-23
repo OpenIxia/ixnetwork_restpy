@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcp6ServerSessions(Base):
@@ -66,12 +67,15 @@ class Dhcp6ServerSessions(Base):
         'VpnId': 'vpnId',
         'VpnName': 'vpnName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcp6ServerSessions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcp6ServerSessions, self).__init__(parent, list_op)
 
     @property
     def AddressDuidMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +86,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def AddressDuidPattern(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +97,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def AddressesPerIA(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -102,6 +108,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +118,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def CustomRebindTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +129,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def CustomRenewTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +140,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def DefaultLeaseTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +151,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +161,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def EnableAddressMatchDuid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +172,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def EnablePrefixMatchDuid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +183,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def EnableVssAddrAssgnmt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +194,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IaType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +205,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def Ignore(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -200,6 +216,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IgnoreMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -210,6 +227,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IgnorePattern(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -220,6 +238,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -230,6 +249,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IpAddressIncrement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +260,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IpAddressPD(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +271,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IpPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +282,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def IpPrefixIncrement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +293,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def LeaseTimeIncrement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +304,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def Nak(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +315,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def NakMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +326,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def NakPattern(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +337,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -318,10 +346,12 @@ class Dhcp6ServerSessions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PoolPrefixSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -332,6 +362,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def PoolSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -342,6 +373,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def PrefixDuidIncrement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -352,6 +384,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def PrefixDuidStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -362,6 +395,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -372,6 +406,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def PrefixesPerIA(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -382,6 +417,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def UseCustomTimes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -392,6 +428,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def VpnId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -402,6 +439,7 @@ class Dhcp6ServerSessions(Base):
 
     @property
     def VpnName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -411,6 +449,7 @@ class Dhcp6ServerSessions(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnName']))
 
     def update(self, Name=None):
+        # type: (str) -> Dhcp6ServerSessions
         """Updates dhcp6ServerSessions resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

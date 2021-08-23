@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Config(Base):
@@ -39,12 +40,15 @@ class Config(Base):
         'NoStp': 'noStp',
         'PortDown': 'portDown',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Config, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Config, self).__init__(parent, list_op)
 
     @property
     def NoFlood(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoFlood'])
     @NoFlood.setter
     def NoFlood(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoFlood'], value)
 
     @property
     def NoForward(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoForward'])
     @NoForward.setter
     def NoForward(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoForward'], value)
 
     @property
     def NoPacketIn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoPacketIn'])
     @NoPacketIn.setter
     def NoPacketIn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoPacketIn'], value)
 
     @property
     def NoReceive(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoReceive'])
     @NoReceive.setter
     def NoReceive(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoReceive'], value)
 
     @property
     def NoReceiveStp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoReceiveStp'])
     @NoReceiveStp.setter
     def NoReceiveStp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoReceiveStp'], value)
 
     @property
     def NoStp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoStp'])
     @NoStp.setter
     def NoStp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoStp'], value)
 
     @property
     def PortDown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,9 +141,11 @@ class Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDown'])
     @PortDown.setter
     def PortDown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDown'], value)
 
     def update(self, NoFlood=None, NoForward=None, NoPacketIn=None, NoReceive=None, NoReceiveStp=None, NoStp=None, PortDown=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool) -> Config
         """Updates config resource on the server.
 
         Args

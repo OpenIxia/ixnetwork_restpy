@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrillMCastMacGroupList(Base):
@@ -47,12 +48,15 @@ class TrillMCastMacGroupList(Base):
         'UcastSrcCnt': 'ucastSrcCnt',
         'VlanId': 'vlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TrillMCastMacGroupList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrillMCastMacGroupList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +87,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def InterGrpUcastAddrIncr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def McastAddrCnt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -110,6 +119,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def McastAddrIncr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +130,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,10 +139,12 @@ class TrillMCastMacGroupList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SrcGrpMapping(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +155,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def StartMcastAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +166,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def StartUcastAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +177,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -172,6 +188,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def UcastAddrIncr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +199,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def UcastSrcCnt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +210,7 @@ class TrillMCastMacGroupList(Base):
 
     @property
     def VlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +220,7 @@ class TrillMCastMacGroupList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanId']))
 
     def update(self, Name=None):
+        # type: (str) -> TrillMCastMacGroupList
         """Updates trillMCastMacGroupList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

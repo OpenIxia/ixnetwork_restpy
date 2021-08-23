@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AdInclusiveMulticastRouteAttributes(Base):
@@ -57,12 +58,20 @@ class AdInclusiveMulticastRouteAttributes(Base):
         'OriginatorId': 'originatorId',
         'SetNextHop': 'setNextHop',
     }
+    _SDM_ENUM_MAP = {
+        'asSetMode': ['includeAsSeq', 'includeAsSeqConf', 'includeAsSet', 'includeAsSetConf', 'noInclude', 'prependAs'],
+        'nextHopIpType': ['ipv4', 'ipv6'],
+        'nextHopMode': ['fixed', 'incrementPerPeer'],
+        'origin': ['igp', 'egp', 'incomplete'],
+        'setNextHop': ['manually', 'sameAsLocalIp'],
+    }
 
-    def __init__(self, parent):
-        super(AdInclusiveMulticastRouteAttributes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AdInclusiveMulticastRouteAttributes, self).__init__(parent, list_op)
 
     @property
     def AggregatorAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,10 +80,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregatorAs'])
     @AggregatorAs.setter
     def AggregatorAs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregatorAs'], value)
 
     @property
     def AggregatorId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +94,7 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregatorId'])
     @AggregatorId.setter
     def AggregatorId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregatorId'], value)
 
     @property
@@ -99,6 +111,7 @@ class AdInclusiveMulticastRouteAttributes(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +120,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AsSetMode'])
     @AsSetMode.setter
     def AsSetMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AsSetMode'], value)
 
     @property
     def Cluster(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -119,10 +134,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Cluster'])
     @Cluster.setter
     def Cluster(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Cluster'], value)
 
     @property
     def Community(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -131,10 +148,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Community'])
     @Community.setter
     def Community(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Community'], value)
 
     @property
     def EnableAggregator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -143,10 +162,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAggregator'])
     @EnableAggregator.setter
     def EnableAggregator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAggregator'], value)
 
     @property
     def EnableAsPath(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +176,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsPath'])
     @EnableAsPath.setter
     def EnableAsPath(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsPath'], value)
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -167,10 +190,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate'])
     @EnableAtomicAggregate.setter
     def EnableAtomicAggregate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAtomicAggregate'], value)
 
     @property
     def EnableCluster(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -179,10 +204,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCluster'])
     @EnableCluster.setter
     def EnableCluster(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCluster'], value)
 
     @property
     def EnableCommunity(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,10 +218,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCommunity'])
     @EnableCommunity.setter
     def EnableCommunity(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCommunity'], value)
 
     @property
     def EnableLocalPref(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -203,10 +232,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLocalPref'])
     @EnableLocalPref.setter
     def EnableLocalPref(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLocalPref'], value)
 
     @property
     def EnableMultiExit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -215,10 +246,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMultiExit'])
     @EnableMultiExit.setter
     def EnableMultiExit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMultiExit'], value)
 
     @property
     def EnableNextHop(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -227,10 +260,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNextHop'])
     @EnableNextHop.setter
     def EnableNextHop(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNextHop'], value)
 
     @property
     def EnableOrigin(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -239,10 +274,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOrigin'])
     @EnableOrigin.setter
     def EnableOrigin(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOrigin'], value)
 
     @property
     def EnableOriginator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -251,6 +288,7 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOriginator'])
     @EnableOriginator.setter
     def EnableOriginator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOriginator'], value)
 
     @property
@@ -267,6 +305,7 @@ class AdInclusiveMulticastRouteAttributes(Base):
 
     @property
     def LocalPref(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -275,10 +314,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocalPref'])
     @LocalPref.setter
     def LocalPref(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocalPref'], value)
 
     @property
     def MultiExit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -287,10 +328,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MultiExit'])
     @MultiExit.setter
     def MultiExit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MultiExit'], value)
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +342,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
     @NextHop.setter
     def NextHop(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
 
     @property
     def NextHopIpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -311,10 +356,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopIpType'])
     @NextHopIpType.setter
     def NextHopIpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopIpType'], value)
 
     @property
     def NextHopMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -323,10 +370,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopMode'])
     @NextHopMode.setter
     def NextHopMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopMode'], value)
 
     @property
     def Origin(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -335,10 +384,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Origin'])
     @Origin.setter
     def Origin(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Origin'], value)
 
     @property
     def OriginatorId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -347,10 +398,12 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OriginatorId'])
     @OriginatorId.setter
     def OriginatorId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OriginatorId'], value)
 
     @property
     def SetNextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -359,6 +412,7 @@ class AdInclusiveMulticastRouteAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetNextHop'])
     @SetNextHop.setter
     def SetNextHop(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetNextHop'], value)
 
     def update(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):

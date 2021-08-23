@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedRoute(Base):
@@ -41,12 +42,15 @@ class LearnedRoute(Base):
         'Rd': 'rd',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedRoute, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedRoute, self).__init__(parent, list_op)
 
     @property
     def Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class LearnedRoute(Base):
 
     @property
     def Fd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class LearnedRoute(Base):
 
     @property
     def HopCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class LearnedRoute(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class LearnedRoute(Base):
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +100,7 @@ class LearnedRoute(Base):
 
     @property
     def Prefix(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class LearnedRoute(Base):
 
     @property
     def Rd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class LearnedRoute(Base):
 
     @property
     def Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,7 +128,21 @@ class LearnedRoute(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new learnedRoute resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedRoute resources using find and the newly added learnedRoute resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Destination=None, Fd=None, HopCount=None, Neighbor=None, NextHop=None, Prefix=None, Rd=None, Type=None):
+        # type: (str, int, int, str, str, int, int, int) -> LearnedRoute
         """Finds and retrieves learnedRoute resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedRoute resources from the server.

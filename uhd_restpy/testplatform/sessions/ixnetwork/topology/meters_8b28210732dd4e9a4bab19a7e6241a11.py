@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Meters(Base):
@@ -43,9 +44,11 @@ class Meters(Base):
         'Name': 'name',
         'NumberOfBands': 'numberOfBands',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Meters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Meters, self).__init__(parent, list_op)
 
     @property
     def Bands(self):
@@ -59,10 +62,14 @@ class Meters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bands_392f44cb40ca53ad5e0fc665cc14dea3 import Bands
-        return Bands(self)
+        if self._properties.get('Bands', None) is not None:
+            return self._properties.get('Bands')
+        else:
+            return Bands(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class Meters(Base):
 
     @property
     def Advertise(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +91,7 @@ class Meters(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class Meters(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class Meters(Base):
 
     @property
     def Flags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -111,6 +122,7 @@ class Meters(Base):
 
     @property
     def MeterDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +133,7 @@ class Meters(Base):
 
     @property
     def MeterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +144,7 @@ class Meters(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,10 +153,12 @@ class Meters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,10 +167,12 @@ class Meters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfBands(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -163,9 +181,11 @@ class Meters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfBands'])
     @NumberOfBands.setter
     def NumberOfBands(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfBands'], value)
 
     def update(self, Multiplier=None, Name=None, NumberOfBands=None):
+        # type: (int, str, int) -> Meters
         """Updates meters resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -183,7 +203,28 @@ class Meters(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Multiplier=None, Name=None, NumberOfBands=None):
+        # type: (int, str, int) -> Meters
+        """Adds a new meters resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Multiplier (number): Number of instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfBands (number): Specify the number of Bands.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved meters resources using find and the newly added meters resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Multiplier=None, Name=None, NumberOfBands=None):
+        # type: (int, str, int, str, int) -> Meters
         """Finds and retrieves meters resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meters resources from the server.
@@ -226,6 +267,92 @@ class Meters(Base):
         """
         return self._read(href)
 
+    def SendAllMeterAdd(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendAllMeterAdd operation on the server.
+
+        Sends a Meter Add on all meters.
+
+        sendAllMeterAdd(async_operation=bool)list
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendAllMeterAdd', payload=payload, response_object=None)
+
+    def SendAllMeterRemove(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendAllMeterRemove operation on the server.
+
+        Sends a Meter Remove on all meters.
+
+        sendAllMeterRemove(async_operation=bool)list
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendAllMeterRemove', payload=payload, response_object=None)
+
+    def SendMeterAdd(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendMeterAdd operation on the server.
+
+        Sends a Meter Add on selected Meter.
+
+        sendMeterAdd(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices into the meter range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendMeterAdd', payload=payload, response_object=None)
+
+    def SendMeterRemove(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendMeterRemove operation on the server.
+
+        Sends a Meter Remove on selected Meter.
+
+        sendMeterRemove(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the meter range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendMeterRemove', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, Advertise=None, Flags=None, MeterDesc=None, MeterId=None):
         """Base class infrastructure that gets a list of meters device ids encapsulated by this object.
 
@@ -249,69 +376,3 @@ class Meters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def SendAllMeterAdd(self):
-        """Executes the sendAllMeterAdd operation on the server.
-
-        Sends a Meter Add on all meters.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        return self._execute('sendAllMeterAdd', payload=payload, response_object=None)
-
-    def SendAllMeterRemove(self):
-        """Executes the sendAllMeterRemove operation on the server.
-
-        Sends a Meter Remove on all meters.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        return self._execute('sendAllMeterRemove', payload=payload, response_object=None)
-
-    def SendMeterAdd(self, *args, **kwargs):
-        """Executes the sendMeterAdd operation on the server.
-
-        Sends a Meter Add on selected Meter.
-
-        sendMeterAdd(Arg2=list)list
-        ---------------------------
-        - Arg2 (list(number)): List of indices into the meter range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterAdd', payload=payload, response_object=None)
-
-    def SendMeterRemove(self, *args, **kwargs):
-        """Executes the sendMeterRemove operation on the server.
-
-        Sends a Meter Remove on selected Meter.
-
-        sendMeterRemove(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the meter range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterRemove', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PimV4Interface(Base):
@@ -72,9 +73,12 @@ class PimV4Interface(Base):
         'TriggeredHelloDelay': 'triggeredHelloDelay',
         'V4Neighbor': 'v4Neighbor',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(PimV4Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PimV4Interface, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -88,7 +92,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def PimV4CandidateRPsList(self):
@@ -102,7 +109,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4candidaterpslist_8f7559105ce2b97021af17fcfae64d10 import PimV4CandidateRPsList
-        return PimV4CandidateRPsList(self)._select()
+        if self._properties.get('PimV4CandidateRPsList', None) is not None:
+            return self._properties.get('PimV4CandidateRPsList')
+        else:
+            return PimV4CandidateRPsList(self)._select()
 
     @property
     def PimV4JoinPruneList(self):
@@ -116,7 +126,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4joinprunelist_6cf76e8d5773a1dc5c5562875733510d import PimV4JoinPruneList
-        return PimV4JoinPruneList(self)._select()
+        if self._properties.get('PimV4JoinPruneList', None) is not None:
+            return self._properties.get('PimV4JoinPruneList')
+        else:
+            return PimV4JoinPruneList(self)._select()
 
     @property
     def PimV4SourcesList(self):
@@ -130,7 +143,10 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4sourceslist_75a6674b863a284f98faeffbb0b40d9f import PimV4SourcesList
-        return PimV4SourcesList(self)._select()
+        if self._properties.get('PimV4SourcesList', None) is not None:
+            return self._properties.get('PimV4SourcesList')
+        else:
+            return PimV4SourcesList(self)._select()
 
     @property
     def Tag(self):
@@ -144,10 +160,14 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +178,7 @@ class PimV4Interface(Base):
 
     @property
     def AutoPickNeighbor(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -168,6 +189,7 @@ class PimV4Interface(Base):
 
     @property
     def BootstrapHashMaskLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -178,6 +200,7 @@ class PimV4Interface(Base):
 
     @property
     def BootstrapInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -188,6 +211,7 @@ class PimV4Interface(Base):
 
     @property
     def BootstrapPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -198,6 +222,7 @@ class PimV4Interface(Base):
 
     @property
     def BootstrapTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -208,6 +233,7 @@ class PimV4Interface(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -216,10 +242,12 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -229,6 +257,7 @@ class PimV4Interface(Base):
 
     @property
     def CrpRanges(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -237,10 +266,12 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CrpRanges'])
     @CrpRanges.setter
     def CrpRanges(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CrpRanges'], value)
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,6 +281,7 @@ class PimV4Interface(Base):
 
     @property
     def DisableTriggered(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +292,7 @@ class PimV4Interface(Base):
 
     @property
     def DiscardLearnedRpInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +303,7 @@ class PimV4Interface(Base):
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +314,7 @@ class PimV4Interface(Base):
 
     @property
     def EnableBootstrap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +325,7 @@ class PimV4Interface(Base):
 
     @property
     def EnablePrune(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +345,7 @@ class PimV4Interface(Base):
 
     @property
     def ForceSemantic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +356,7 @@ class PimV4Interface(Base):
 
     @property
     def HelloHoldTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +367,7 @@ class PimV4Interface(Base):
 
     @property
     def HelloInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -339,6 +378,7 @@ class PimV4Interface(Base):
 
     @property
     def JoinPrunes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,10 +387,12 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JoinPrunes'])
     @JoinPrunes.setter
     def JoinPrunes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JoinPrunes'], value)
 
     @property
     def LanPruneTbit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -361,6 +403,7 @@ class PimV4Interface(Base):
 
     @property
     def LearnSelectedRpSet(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -371,6 +414,7 @@ class PimV4Interface(Base):
 
     @property
     def LocalRouterId(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -380,6 +424,7 @@ class PimV4Interface(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -388,10 +433,12 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -400,10 +447,12 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OverrideInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -414,6 +463,7 @@ class PimV4Interface(Base):
 
     @property
     def PruneDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -424,6 +474,7 @@ class PimV4Interface(Base):
 
     @property
     def SendBidirectional(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -434,6 +485,7 @@ class PimV4Interface(Base):
 
     @property
     def SendGenerationIdOption(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -444,6 +496,7 @@ class PimV4Interface(Base):
 
     @property
     def SendGenerationMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -454,6 +507,7 @@ class PimV4Interface(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -463,6 +517,7 @@ class PimV4Interface(Base):
 
     @property
     def Sources(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -471,10 +526,12 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Sources'])
     @Sources.setter
     def Sources(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Sources'], value)
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -483,6 +540,7 @@ class PimV4Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -496,6 +554,7 @@ class PimV4Interface(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -505,6 +564,7 @@ class PimV4Interface(Base):
 
     @property
     def SupportUnicastBsm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -515,6 +575,7 @@ class PimV4Interface(Base):
 
     @property
     def TriggeredHelloDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -525,6 +586,7 @@ class PimV4Interface(Base):
 
     @property
     def V4Neighbor(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -534,6 +596,7 @@ class PimV4Interface(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['V4Neighbor']))
 
     def update(self, ConnectedVia=None, CrpRanges=None, JoinPrunes=None, Multiplier=None, Name=None, Sources=None, StackedLayers=None):
+        # type: (List[str], int, int, int, str, int, List[str]) -> PimV4Interface
         """Updates pimV4Interface resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -556,6 +619,7 @@ class PimV4Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, CrpRanges=None, JoinPrunes=None, Multiplier=None, Name=None, Sources=None, StackedLayers=None):
+        # type: (List[str], int, int, int, str, int, List[str]) -> PimV4Interface
         """Adds a new pimV4Interface resource on the server and adds it to the container.
 
         Args
@@ -640,6 +704,470 @@ class PimV4Interface(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearLearnedInfo operation on the server.
+
+        Clear Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearLearnedInfo(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearLearnedInfo(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearLearnedInfo(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearLearnedInfo', payload=payload, response_object=None)
+
+    def GetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLearnedInfo operation on the server.
+
+        Get Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLearnedInfo(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+
+    def IncrementGenID(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the incrementGenID operation on the server.
+
+        Increment GenID
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        incrementGenID(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        incrementGenID(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        incrementGenID(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('incrementGenID', payload=payload, response_object=None)
+
+    def IncrementGenId(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the incrementGenId operation on the server.
+
+        Stops the protocol state machine for the given protocol session instances.
+
+        incrementGenId(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('incrementGenId', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumeBSM(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumeBSM operation on the server.
+
+        Resume Bootstrap
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeBSM(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeBSM(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeBSM(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeBSM(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeBSM', payload=payload, response_object=None)
+
+    def ResumeHello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumeHello operation on the server.
+
+        Resume Hello
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeHello(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeHello(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeHello(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeHello(Arg2=list, async_operation=bool)list
+        ------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeHello', payload=payload, response_object=None)
+
+    def SendBSM(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendBSM operation on the server.
+
+        Stop Bootstrap
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendBSM(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendBSM(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendBSM(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendBSM(Arg2=list, async_operation=bool)list
+        --------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendBSM', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopBSM(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopBSM operation on the server.
+
+        Stop Bootstrap
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopBSM(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopBSM(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopBSM(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopBSM(Arg2=list, async_operation=bool)list
+        --------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopBSM', payload=payload, response_object=None)
+
+    def StopHello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopHello operation on the server.
+
+        Stop Hello
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopHello(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopHello(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopHello(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopHello', payload=payload, response_object=None)
+
+    def Stophello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stophello operation on the server.
+
+        Stops the protocol state machine for the given protocol session instances.
+
+        stophello(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stophello', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AutoPickNeighbor=None, BootstrapHashMaskLength=None, BootstrapInterval=None, BootstrapPriority=None, BootstrapTimeout=None, DisableTriggered=None, DiscardLearnedRpInfo=None, EnableBfdRegistration=None, EnableBootstrap=None, EnablePrune=None, ForceSemantic=None, HelloHoldTime=None, HelloInterval=None, LanPruneTbit=None, LearnSelectedRpSet=None, OverrideInterval=None, PruneDelay=None, SendBidirectional=None, SendGenerationIdOption=None, SendGenerationMode=None, SupportUnicastBsm=None, TriggeredHelloDelay=None, V4Neighbor=None):
         """Base class infrastructure that gets a list of pimV4Interface device ids encapsulated by this object.
 
@@ -682,373 +1210,3 @@ class PimV4Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearLearnedInfo(self, *args, **kwargs):
-        """Executes the clearLearnedInfo operation on the server.
-
-        Clear Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearLearnedInfo(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearLearnedInfo(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        clearLearnedInfo(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearLearnedInfo', payload=payload, response_object=None)
-
-    def GetLearnedInfo(self, *args, **kwargs):
-        """Executes the getLearnedInfo operation on the server.
-
-        Get Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLearnedInfo(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLearnedInfo(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getLearnedInfo(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
-
-    def IncrementGenID(self, *args, **kwargs):
-        """Executes the incrementGenID operation on the server.
-
-        Increment GenID
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        incrementGenID(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        incrementGenID(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('incrementGenID', payload=payload, response_object=None)
-
-    def IncrementGenId(self, *args, **kwargs):
-        """Executes the incrementGenId operation on the server.
-
-        Stops the protocol state machine for the given protocol session instances.
-
-        incrementGenId(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('incrementGenId', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumeBSM(self, *args, **kwargs):
-        """Executes the resumeBSM operation on the server.
-
-        Resume Bootstrap
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeBSM(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeBSM(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        resumeBSM(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeBSM', payload=payload, response_object=None)
-
-    def ResumeHello(self, *args, **kwargs):
-        """Executes the resumeHello operation on the server.
-
-        Resume Hello
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeHello(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeHello(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        resumeHello(Arg2=list)list
-        --------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeHello', payload=payload, response_object=None)
-
-    def SendBSM(self, *args, **kwargs):
-        """Executes the sendBSM operation on the server.
-
-        Stop Bootstrap
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendBSM(SessionIndices=list)
-        ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendBSM(SessionIndices=string)
-        ------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendBSM(Arg2=list)list
-        ----------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendBSM', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopBSM(self, *args, **kwargs):
-        """Executes the stopBSM operation on the server.
-
-        Stop Bootstrap
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopBSM(SessionIndices=list)
-        ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopBSM(SessionIndices=string)
-        ------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopBSM(Arg2=list)list
-        ----------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopBSM', payload=payload, response_object=None)
-
-    def StopHello(self, *args, **kwargs):
-        """Executes the stopHello operation on the server.
-
-        Stop Hello
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopHello(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopHello(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopHello', payload=payload, response_object=None)
-
-    def Stophello(self, *args, **kwargs):
-        """Executes the stophello operation on the server.
-
-        Stops the protocol state machine for the given protocol session instances.
-
-        stophello(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stophello', payload=payload, response_object=None)

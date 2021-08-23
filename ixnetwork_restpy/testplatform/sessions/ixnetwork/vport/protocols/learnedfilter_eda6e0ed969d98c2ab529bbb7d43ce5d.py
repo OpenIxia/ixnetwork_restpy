@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedFilter(Base):
@@ -59,12 +60,15 @@ class LearnedFilter(Base):
         'ShowSummaryIpLsa': 'showSummaryIpLsa',
         'TotalLsaCount': 'totalLsaCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedFilter, self).__init__(parent, list_op)
 
     @property
     def AdvRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,10 +77,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvRouterId'])
     @AdvRouterId.setter
     def AdvRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvRouterId'], value)
 
     @property
     def AreaSummaryLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,6 +92,7 @@ class LearnedFilter(Base):
 
     @property
     def EnableAdvRouterId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -94,10 +101,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAdvRouterId'])
     @EnableAdvRouterId.setter
     def EnableAdvRouterId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAdvRouterId'], value)
 
     @property
     def EnableFilter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,10 +115,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFilter'])
     @EnableFilter.setter
     def EnableFilter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFilter'], value)
 
     @property
     def EnableLinkStateId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -118,10 +129,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLinkStateId'])
     @EnableLinkStateId.setter
     def EnableLinkStateId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLinkStateId'], value)
 
     @property
     def ExcludeAdvRouterId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -130,10 +143,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExcludeAdvRouterId'])
     @ExcludeAdvRouterId.setter
     def ExcludeAdvRouterId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExcludeAdvRouterId'], value)
 
     @property
     def ExcludeLinkStateId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,10 +157,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExcludeLinkStateId'])
     @ExcludeLinkStateId.setter
     def ExcludeLinkStateId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExcludeLinkStateId'], value)
 
     @property
     def ExternalLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,6 +172,7 @@ class LearnedFilter(Base):
 
     @property
     def ExternalSummaryLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -164,6 +182,7 @@ class LearnedFilter(Base):
 
     @property
     def IsComplete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -173,6 +192,7 @@ class LearnedFilter(Base):
 
     @property
     def LinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,10 +201,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkStateId'])
     @LinkStateId.setter
     def LinkStateId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkStateId'], value)
 
     @property
     def NetworkLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,6 +216,7 @@ class LearnedFilter(Base):
 
     @property
     def NssaLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -203,6 +226,7 @@ class LearnedFilter(Base):
 
     @property
     def OpaqueAreaScopeLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -212,6 +236,7 @@ class LearnedFilter(Base):
 
     @property
     def OpaqueAsScopeLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -221,6 +246,7 @@ class LearnedFilter(Base):
 
     @property
     def OpaqueLocalScopeLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,6 +256,7 @@ class LearnedFilter(Base):
 
     @property
     def RouterLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -239,6 +266,7 @@ class LearnedFilter(Base):
 
     @property
     def ShowExternalAsLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -247,10 +275,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowExternalAsLsa'])
     @ShowExternalAsLsa.setter
     def ShowExternalAsLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowExternalAsLsa'], value)
 
     @property
     def ShowNetworkLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -259,10 +289,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowNetworkLsa'])
     @ShowNetworkLsa.setter
     def ShowNetworkLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowNetworkLsa'], value)
 
     @property
     def ShowNssaLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -271,10 +303,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowNssaLsa'])
     @ShowNssaLsa.setter
     def ShowNssaLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowNssaLsa'], value)
 
     @property
     def ShowOpaqueAreaLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -283,10 +317,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowOpaqueAreaLsa'])
     @ShowOpaqueAreaLsa.setter
     def ShowOpaqueAreaLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowOpaqueAreaLsa'], value)
 
     @property
     def ShowOpaqueDomainLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -295,10 +331,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowOpaqueDomainLsa'])
     @ShowOpaqueDomainLsa.setter
     def ShowOpaqueDomainLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowOpaqueDomainLsa'], value)
 
     @property
     def ShowOpaqueLocalLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -307,10 +345,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowOpaqueLocalLsa'])
     @ShowOpaqueLocalLsa.setter
     def ShowOpaqueLocalLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowOpaqueLocalLsa'], value)
 
     @property
     def ShowRouterLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -319,10 +359,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowRouterLsa'])
     @ShowRouterLsa.setter
     def ShowRouterLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowRouterLsa'], value)
 
     @property
     def ShowSummaryAsLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -331,10 +373,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowSummaryAsLsa'])
     @ShowSummaryAsLsa.setter
     def ShowSummaryAsLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowSummaryAsLsa'], value)
 
     @property
     def ShowSummaryIpLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -343,10 +387,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowSummaryIpLsa'])
     @ShowSummaryIpLsa.setter
     def ShowSummaryIpLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowSummaryIpLsa'], value)
 
     @property
     def TotalLsaCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -355,6 +401,7 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TotalLsaCount'])
 
     def update(self, AdvRouterId=None, EnableAdvRouterId=None, EnableFilter=None, EnableLinkStateId=None, ExcludeAdvRouterId=None, ExcludeLinkStateId=None, LinkStateId=None, ShowExternalAsLsa=None, ShowNetworkLsa=None, ShowNssaLsa=None, ShowOpaqueAreaLsa=None, ShowOpaqueDomainLsa=None, ShowOpaqueLocalLsa=None, ShowRouterLsa=None, ShowSummaryAsLsa=None, ShowSummaryIpLsa=None):
+        # type: (str, bool, bool, bool, bool, bool, str, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LearnedFilter
         """Updates learnedFilter resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchGroupFeature(Base):
@@ -51,12 +52,16 @@ class SwitchGroupFeature(Base):
         'SetNetworkTtl': 'setNetworkTtl',
         'SetQueue': 'setQueue',
     }
+    _SDM_ENUM_MAP = {
+        'groupType': ['allGroup', 'selectGroup', 'indirectGroup', 'fastFailoverGroup'],
+    }
 
-    def __init__(self, parent):
-        super(SwitchGroupFeature, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchGroupFeature, self).__init__(parent, list_op)
 
     @property
     def ApplyGroup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +70,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyGroup'])
     @ApplyGroup.setter
     def ApplyGroup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyGroup'], value)
 
     @property
     def CopyTtlIn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +84,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CopyTtlIn'])
     @CopyTtlIn.setter
     def CopyTtlIn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CopyTtlIn'], value)
 
     @property
     def CopyTtlOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +98,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CopyTtlOut'])
     @CopyTtlOut.setter
     def CopyTtlOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CopyTtlOut'], value)
 
     @property
     def DecrementMplsTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +112,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DecrementMplsTtl'])
     @DecrementMplsTtl.setter
     def DecrementMplsTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DecrementMplsTtl'], value)
 
     @property
     def DecrementNetworkTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +126,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DecrementNetworkTtl'])
     @DecrementNetworkTtl.setter
     def DecrementNetworkTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DecrementNetworkTtl'], value)
 
     @property
     def GroupType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +141,7 @@ class SwitchGroupFeature(Base):
 
     @property
     def MaxNoOfGroups(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,10 +150,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNoOfGroups'])
     @MaxNoOfGroups.setter
     def MaxNoOfGroups(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNoOfGroups'], value)
 
     @property
     def Output(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -146,10 +164,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Output'])
     @Output.setter
     def Output(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Output'], value)
 
     @property
     def PopMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -158,10 +178,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PopMpls'])
     @PopMpls.setter
     def PopMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PopMpls'], value)
 
     @property
     def PopPbb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -170,10 +192,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PopPbb'])
     @PopPbb.setter
     def PopPbb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PopPbb'], value)
 
     @property
     def PopVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,10 +206,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PopVlan'])
     @PopVlan.setter
     def PopVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PopVlan'], value)
 
     @property
     def PushMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -194,10 +220,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PushMpls'])
     @PushMpls.setter
     def PushMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PushMpls'], value)
 
     @property
     def PushPbb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -206,10 +234,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PushPbb'])
     @PushPbb.setter
     def PushPbb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PushPbb'], value)
 
     @property
     def PushVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -218,10 +248,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PushVlan'])
     @PushVlan.setter
     def PushVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PushVlan'], value)
 
     @property
     def SetField(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,10 +262,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetField'])
     @SetField.setter
     def SetField(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetField'], value)
 
     @property
     def SetMplsTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -242,10 +276,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetMplsTtl'])
     @SetMplsTtl.setter
     def SetMplsTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetMplsTtl'], value)
 
     @property
     def SetNetworkTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -254,10 +290,12 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetNetworkTtl'])
     @SetNetworkTtl.setter
     def SetNetworkTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetNetworkTtl'], value)
 
     @property
     def SetQueue(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -266,9 +304,11 @@ class SwitchGroupFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetQueue'])
     @SetQueue.setter
     def SetQueue(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetQueue'], value)
 
     def update(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SwitchGroupFeature
         """Updates switchGroupFeature resource on the server.
 
         Args
@@ -297,7 +337,42 @@ class SwitchGroupFeature(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SwitchGroupFeature
+        """Adds a new switchGroupFeature resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - ApplyGroup (bool): If selected, table supports Apply Group capability.
+        - CopyTtlIn (bool): If selected, table supports Copy TTL In capability.
+        - CopyTtlOut (bool): If selected, table supports Copy TTL capability.
+        - DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL capability.
+        - DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL capability.
+        - MaxNoOfGroups (number): Specify the maximum number of groups supported per switch group type.
+        - Output (bool): If selected, table supports Output capability.
+        - PopMpls (bool): If selected, table supports Pop MPLS capability.
+        - PopPbb (bool): If selected, table supports Experimenter capability.
+        - PopVlan (bool): If selected, table supports Pop VLAN capability.
+        - PushMpls (bool): If selected, table supports Push MPLS capability.
+        - PushPbb (bool): If selected, table supports Push PBB capability.
+        - PushVlan (bool): If selected, table supports Push VLAN capability.
+        - SetField (bool): If selected, table supports Set Field capability.
+        - SetMplsTtl (bool): If selected, table supports Set MPLS TTL capability.
+        - SetNetworkTtl (bool): If selected, table supports Set Network TTL capability.
+        - SetQueue (bool): If selected, table supports Set Queue capability.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchGroupFeature resources using find and the newly added switchGroupFeature resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ApplyGroup=None, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, GroupType=None, MaxNoOfGroups=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SwitchGroupFeature
         """Finds and retrieves switchGroupFeature resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupFeature resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbSimEdgeTopologyList(Base):
@@ -43,9 +44,11 @@ class SpbSimEdgeTopologyList(Base):
         'TopologyId': 'topologyId',
         'Vbit': 'vbit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbSimEdgeTopologyList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbSimEdgeTopologyList, self).__init__(parent, list_op)
 
     @property
     def SpbSimEdgeBaseVidList(self):
@@ -59,10 +62,14 @@ class SpbSimEdgeTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.spbsimedgebasevidlist_166a7ab8274498ee804810aa449de276 import SpbSimEdgeBaseVidList
-        return SpbSimEdgeBaseVidList(self)._select()
+        if self._properties.get('SpbSimEdgeBaseVidList', None) is not None:
+            return self._properties.get('SpbSimEdgeBaseVidList')
+        else:
+            return SpbSimEdgeBaseVidList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def BaseVIDCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def CistExternalRootCost(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def CistRootId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -102,6 +112,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +122,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,6 +132,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,10 +141,12 @@ class SpbSimEdgeTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfPorts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +157,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def PortIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +168,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +179,7 @@ class SpbSimEdgeTopologyList(Base):
 
     @property
     def Vbit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +189,7 @@ class SpbSimEdgeTopologyList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vbit']))
 
     def update(self, Name=None):
+        # type: (str) -> SpbSimEdgeTopologyList
         """Updates spbSimEdgeTopologyList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

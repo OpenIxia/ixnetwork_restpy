@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EvpnMulticast(Base):
@@ -35,9 +36,11 @@ class EvpnMulticast(Base):
         'Neighbor': 'neighbor',
         'OriginatorsIp': 'originatorsIp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EvpnMulticast, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EvpnMulticast, self).__init__(parent, list_op)
 
     @property
     def NextHopInfo(self):
@@ -51,10 +54,14 @@ class EvpnMulticast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_27593f5bf51f1d6b95b80c04d9eaf7f0 import NextHopInfo
-        return NextHopInfo(self)
+        if self._properties.get('NextHopInfo', None) is not None:
+            return self._properties.get('NextHopInfo')
+        else:
+            return NextHopInfo(self)
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +71,7 @@ class EvpnMulticast(Base):
 
     @property
     def OriginatorsIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,7 +79,21 @@ class EvpnMulticast(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['OriginatorsIp'])
 
+    def add(self):
+        """Adds a new evpnMulticast resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved evpnMulticast resources using find and the newly added evpnMulticast resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Neighbor=None, OriginatorsIp=None):
+        # type: (str, str) -> EvpnMulticast
         """Finds and retrieves evpnMulticast resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evpnMulticast resources from the server.

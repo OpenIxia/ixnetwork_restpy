@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpRange(Base):
@@ -83,9 +84,11 @@ class DhcpRange(Base):
         'UseVendorClassId': 'useVendorClassId',
         'VendorClassId': 'vendorClassId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DhcpRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpRange, self).__init__(parent, list_op)
 
     @property
     def VlanIdInfo(self):
@@ -99,10 +102,14 @@ class DhcpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_5b58ad8a545b69da5b9179316b6965ef import VlanIdInfo
-        return VlanIdInfo(self)
+        if self._properties.get('VlanIdInfo', None) is not None:
+            return self._properties.get('VlanIdInfo')
+        else:
+            return VlanIdInfo(self)
 
     @property
     def ClientOptionSet(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +118,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientOptionSet'])
     @ClientOptionSet.setter
     def ClientOptionSet(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientOptionSet'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +132,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Dhcp4Broadcast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -135,10 +146,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4Broadcast'])
     @Dhcp4Broadcast.setter
     def Dhcp4Broadcast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4Broadcast'], value)
 
     @property
     def Dhcp4ParamRequestList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,10 +160,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ParamRequestList'])
     @Dhcp4ParamRequestList.setter
     def Dhcp4ParamRequestList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4ParamRequestList'], value)
 
     @property
     def Dhcp4ServerAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +174,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4ServerAddress'])
     @Dhcp4ServerAddress.setter
     def Dhcp4ServerAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4ServerAddress'], value)
 
     @property
     def Dhcp4UseFirstServer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -171,10 +188,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp4UseFirstServer'])
     @Dhcp4UseFirstServer.setter
     def Dhcp4UseFirstServer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp4UseFirstServer'], value)
 
     @property
     def Dhcp6DuidEnterpriseId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +202,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId'])
     @Dhcp6DuidEnterpriseId.setter
     def Dhcp6DuidEnterpriseId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId'], value)
 
     @property
     def Dhcp6DuidType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -195,10 +216,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidType'])
     @Dhcp6DuidType.setter
     def Dhcp6DuidType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidType'], value)
 
     @property
     def Dhcp6DuidVendorId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,10 +230,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId'])
     @Dhcp6DuidVendorId.setter
     def Dhcp6DuidVendorId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId'], value)
 
     @property
     def Dhcp6DuidVendorIdIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,10 +244,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorIdIncrement'])
     @Dhcp6DuidVendorIdIncrement.setter
     def Dhcp6DuidVendorIdIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorIdIncrement'], value)
 
     @property
     def Dhcp6IaId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -231,10 +258,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaId'])
     @Dhcp6IaId.setter
     def Dhcp6IaId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6IaId'], value)
 
     @property
     def Dhcp6IaIdIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -243,10 +272,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaIdIncrement'])
     @Dhcp6IaIdIncrement.setter
     def Dhcp6IaIdIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6IaIdIncrement'], value)
 
     @property
     def Dhcp6IaT1(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -255,10 +286,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaT1'])
     @Dhcp6IaT1.setter
     def Dhcp6IaT1(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6IaT1'], value)
 
     @property
     def Dhcp6IaT2(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -267,10 +300,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaT2'])
     @Dhcp6IaT2.setter
     def Dhcp6IaT2(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6IaT2'], value)
 
     @property
     def Dhcp6IaType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -279,10 +314,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6IaType'])
     @Dhcp6IaType.setter
     def Dhcp6IaType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6IaType'], value)
 
     @property
     def Dhcp6MasterRange(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -291,10 +328,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6MasterRange'])
     @Dhcp6MasterRange.setter
     def Dhcp6MasterRange(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6MasterRange'], value)
 
     @property
     def Dhcp6ParamRequestList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -303,10 +342,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ParamRequestList'])
     @Dhcp6ParamRequestList.setter
     def Dhcp6ParamRequestList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6ParamRequestList'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -315,10 +356,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -327,10 +370,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,10 +384,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -352,6 +399,7 @@ class DhcpRange(Base):
 
     @property
     def Relay6HostsPerOptInterfaceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -360,10 +408,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Relay6HostsPerOptInterfaceId'])
     @Relay6HostsPerOptInterfaceId.setter
     def Relay6HostsPerOptInterfaceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Relay6HostsPerOptInterfaceId'], value)
 
     @property
     def Relay6OptInterfaceId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -372,10 +422,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Relay6OptInterfaceId'])
     @Relay6OptInterfaceId.setter
     def Relay6OptInterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Relay6OptInterfaceId'], value)
 
     @property
     def Relay6UseOptInterfaceId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -384,10 +436,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Relay6UseOptInterfaceId'])
     @Relay6UseOptInterfaceId.setter
     def Relay6UseOptInterfaceId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Relay6UseOptInterfaceId'], value)
 
     @property
     def RelayAddressIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -396,10 +450,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayAddressIncrement'])
     @RelayAddressIncrement.setter
     def RelayAddressIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayAddressIncrement'], value)
 
     @property
     def RelayCircuitId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -408,10 +464,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayCircuitId'])
     @RelayCircuitId.setter
     def RelayCircuitId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayCircuitId'], value)
 
     @property
     def RelayCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -420,10 +478,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayCount'])
     @RelayCount.setter
     def RelayCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayCount'], value)
 
     @property
     def RelayDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -432,10 +492,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayDestination'])
     @RelayDestination.setter
     def RelayDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayDestination'], value)
 
     @property
     def RelayFirstAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -444,10 +506,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayFirstAddress'])
     @RelayFirstAddress.setter
     def RelayFirstAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayFirstAddress'], value)
 
     @property
     def RelayFirstVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -456,10 +520,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayFirstVlanId'])
     @RelayFirstVlanId.setter
     def RelayFirstVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayFirstVlanId'], value)
 
     @property
     def RelayGateway(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -468,10 +534,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayGateway'])
     @RelayGateway.setter
     def RelayGateway(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayGateway'], value)
 
     @property
     def RelayHostsPerCircuitId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -480,10 +548,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayHostsPerCircuitId'])
     @RelayHostsPerCircuitId.setter
     def RelayHostsPerCircuitId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayHostsPerCircuitId'], value)
 
     @property
     def RelayHostsPerRemoteId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -492,10 +562,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayHostsPerRemoteId'])
     @RelayHostsPerRemoteId.setter
     def RelayHostsPerRemoteId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayHostsPerRemoteId'], value)
 
     @property
     def RelayOptionSet(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -504,10 +576,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayOptionSet'])
     @RelayOptionSet.setter
     def RelayOptionSet(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayOptionSet'], value)
 
     @property
     def RelayOverrideVlanSettings(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -516,10 +590,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayOverrideVlanSettings'])
     @RelayOverrideVlanSettings.setter
     def RelayOverrideVlanSettings(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayOverrideVlanSettings'], value)
 
     @property
     def RelayRemoteId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -528,10 +604,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayRemoteId'])
     @RelayRemoteId.setter
     def RelayRemoteId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayRemoteId'], value)
 
     @property
     def RelaySubnet(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -540,10 +618,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelaySubnet'])
     @RelaySubnet.setter
     def RelaySubnet(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelaySubnet'], value)
 
     @property
     def RelayUseCircuitId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -552,10 +632,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayUseCircuitId'])
     @RelayUseCircuitId.setter
     def RelayUseCircuitId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayUseCircuitId'], value)
 
     @property
     def RelayUseRemoteId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -564,10 +646,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayUseRemoteId'])
     @RelayUseRemoteId.setter
     def RelayUseRemoteId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayUseRemoteId'], value)
 
     @property
     def RelayUseSuboption6(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -576,10 +660,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayUseSuboption6'])
     @RelayUseSuboption6.setter
     def RelayUseSuboption6(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayUseSuboption6'], value)
 
     @property
     def RelayVlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -588,10 +674,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayVlanCount'])
     @RelayVlanCount.setter
     def RelayVlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayVlanCount'], value)
 
     @property
     def RelayVlanIncrMode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -600,10 +688,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayVlanIncrMode'])
     @RelayVlanIncrMode.setter
     def RelayVlanIncrMode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayVlanIncrMode'], value)
 
     @property
     def RelayVlanIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -612,10 +702,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RelayVlanIncrement'])
     @RelayVlanIncrement.setter
     def RelayVlanIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RelayVlanIncrement'], value)
 
     @property
     def RenewTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -624,10 +716,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RenewTimer'])
     @RenewTimer.setter
     def RenewTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RenewTimer'], value)
 
     @property
     def Suboption6AddressSubnet(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -636,10 +730,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Suboption6AddressSubnet'])
     @Suboption6AddressSubnet.setter
     def Suboption6AddressSubnet(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Suboption6AddressSubnet'], value)
 
     @property
     def Suboption6FirstAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -648,10 +744,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Suboption6FirstAddress'])
     @Suboption6FirstAddress.setter
     def Suboption6FirstAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Suboption6FirstAddress'], value)
 
     @property
     def UseRapidCommit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -660,10 +758,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseRapidCommit'])
     @UseRapidCommit.setter
     def UseRapidCommit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseRapidCommit'], value)
 
     @property
     def UseRelayAgent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -672,10 +772,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseRelayAgent'])
     @UseRelayAgent.setter
     def UseRelayAgent(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseRelayAgent'], value)
 
     @property
     def UseTrustedNetworkElement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -684,10 +786,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseTrustedNetworkElement'])
     @UseTrustedNetworkElement.setter
     def UseTrustedNetworkElement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseTrustedNetworkElement'], value)
 
     @property
     def UseVendorClassId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -696,10 +800,12 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseVendorClassId'])
     @UseVendorClassId.setter
     def UseVendorClassId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseVendorClassId'], value)
 
     @property
     def VendorClassId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -708,9 +814,11 @@ class DhcpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorClassId'])
     @VendorClassId.setter
     def VendorClassId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorClassId'], value)
 
     def update(self, ClientOptionSet=None, Count=None, Dhcp4Broadcast=None, Dhcp4ParamRequestList=None, Dhcp4ServerAddress=None, Dhcp4UseFirstServer=None, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6IaId=None, Dhcp6IaIdIncrement=None, Dhcp6IaT1=None, Dhcp6IaT2=None, Dhcp6IaType=None, Dhcp6MasterRange=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, Relay6HostsPerOptInterfaceId=None, Relay6OptInterfaceId=None, Relay6UseOptInterfaceId=None, RelayAddressIncrement=None, RelayCircuitId=None, RelayCount=None, RelayDestination=None, RelayFirstAddress=None, RelayFirstVlanId=None, RelayGateway=None, RelayHostsPerCircuitId=None, RelayHostsPerRemoteId=None, RelayOptionSet=None, RelayOverrideVlanSettings=None, RelayRemoteId=None, RelaySubnet=None, RelayUseCircuitId=None, RelayUseRemoteId=None, RelayUseSuboption6=None, RelayVlanCount=None, RelayVlanIncrMode=None, RelayVlanIncrement=None, RenewTimer=None, Suboption6AddressSubnet=None, Suboption6FirstAddress=None, UseRapidCommit=None, UseRelayAgent=None, UseTrustedNetworkElement=None, UseVendorClassId=None, VendorClassId=None):
+        # type: (str, int, bool, str, str, bool, int, str, int, int, int, int, int, int, str, str, str, bool, str, str, int, str, bool, str, str, int, str, str, int, str, int, int, str, bool, str, int, bool, bool, bool, int, int, int, int, int, str, bool, bool, bool, bool, str) -> DhcpRange
         """Updates dhcpRange resource on the server.
 
         Args
@@ -773,14 +881,16 @@ class DhcpRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -793,13 +903,15 @@ class DhcpRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -813,13 +925,15 @@ class DhcpRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisBierSubDomainList(Base):
@@ -41,9 +42,11 @@ class IsisBierSubDomainList(Base):
         'NumberOfBSLen': 'numberOfBSLen',
         'SubDomainId': 'subDomainId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisBierSubDomainList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisBierSubDomainList, self).__init__(parent, list_op)
 
     @property
     def IsisBierBSObjectList(self):
@@ -57,10 +60,14 @@ class IsisBierSubDomainList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisbierbsobjectlist_72488dadc9d26969d482f402d7de2734 import IsisBierBSObjectList
-        return IsisBierBSObjectList(self)
+        if self._properties.get('IsisBierBSObjectList', None) is not None:
+            return self._properties.get('IsisBierBSObjectList')
+        else:
+            return IsisBierBSObjectList(self)
 
     @property
     def BAR(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -71,6 +78,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def BFRId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -81,6 +89,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def IPA(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -91,6 +100,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +131,7 @@ class IsisBierSubDomainList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,10 +140,12 @@ class IsisBierSubDomainList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfBSLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,10 +154,12 @@ class IsisBierSubDomainList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfBSLen'])
     @NumberOfBSLen.setter
     def NumberOfBSLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfBSLen'], value)
 
     @property
     def SubDomainId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +169,7 @@ class IsisBierSubDomainList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubDomainId']))
 
     def update(self, Name=None, NumberOfBSLen=None):
+        # type: (str, int) -> IsisBierSubDomainList
         """Updates isisBierSubDomainList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

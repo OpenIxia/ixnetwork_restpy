@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisPseudoSRv6AdjSIDList(Base):
@@ -71,12 +72,15 @@ class IsisPseudoSRv6AdjSIDList(Base):
         'Weight': 'weight',
         'WeightTo': 'weightTo',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisPseudoSRv6AdjSIDList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisPseudoSRv6AdjSIDList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +91,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def ActiveTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +102,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def AdvertiseCustomSubTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +113,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def AdvertiseCustomSubTLVTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +124,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +135,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def AlgorithmTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +146,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def ArgumentLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +157,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def ArgumentLengthTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +168,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -167,6 +179,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def BFlagTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -177,6 +190,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def CFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +201,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def CFlagTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -197,6 +212,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,6 +222,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def CustomEndPointFunction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +233,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def CustomEndPointFunctionTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +244,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def CustomSubTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +255,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def CustomSubTlvTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +266,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -255,6 +276,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def EndPointFunction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -265,6 +287,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def EndPointFunctionTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -275,6 +298,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def FunctionLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -285,6 +309,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def FunctionLengthTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -295,6 +320,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def IncludeSRv6SIDStructureSubSubTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -305,6 +331,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def IncludeSRv6SIDStructureSubSubTlvTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -315,6 +342,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Ipv6AdjSid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -325,6 +353,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Ipv6AdjSidTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -335,6 +364,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def LocatorBlockLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -345,6 +375,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def LocatorBlockLengthTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -355,6 +386,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def LocatorNodeLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -365,6 +397,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def LocatorNodeLengthTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -375,6 +408,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -383,10 +417,12 @@ class IsisPseudoSRv6AdjSIDList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -397,6 +433,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def PFlagTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -407,6 +444,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Reserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -417,6 +455,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def ReservedTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -427,6 +466,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def SFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -437,6 +477,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def SFlagTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -447,6 +488,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -457,6 +499,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
 
     @property
     def WeightTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +509,7 @@ class IsisPseudoSRv6AdjSIDList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WeightTo']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisPseudoSRv6AdjSIDList
         """Updates isisPseudoSRv6AdjSIDList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -480,6 +524,66 @@ class IsisPseudoSRv6AdjSIDList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, ActiveTo=None, AdvertiseCustomSubTLV=None, AdvertiseCustomSubTLVTo=None, Algorithm=None, AlgorithmTo=None, ArgumentLength=None, ArgumentLengthTo=None, BFlag=None, BFlagTo=None, CFlag=None, CFlagTo=None, CustomEndPointFunction=None, CustomEndPointFunctionTo=None, CustomSubTlv=None, CustomSubTlvTo=None, EndPointFunction=None, EndPointFunctionTo=None, FunctionLength=None, FunctionLengthTo=None, IncludeSRv6SIDStructureSubSubTlv=None, IncludeSRv6SIDStructureSubSubTlvTo=None, Ipv6AdjSid=None, Ipv6AdjSidTo=None, LocatorBlockLength=None, LocatorBlockLengthTo=None, LocatorNodeLength=None, LocatorNodeLengthTo=None, PFlag=None, PFlagTo=None, Reserved=None, ReservedTo=None, SFlag=None, SFlagTo=None, Weight=None, WeightTo=None):
         """Base class infrastructure that gets a list of isisPseudoSRv6AdjSIDList device ids encapsulated by this object.
@@ -535,42 +639,3 @@ class IsisPseudoSRv6AdjSIDList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

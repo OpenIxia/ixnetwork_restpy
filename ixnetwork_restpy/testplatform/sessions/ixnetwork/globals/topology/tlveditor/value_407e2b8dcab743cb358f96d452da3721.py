@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Value(Base):
@@ -33,9 +34,11 @@ class Value(Base):
     _SDM_ATT_MAP = {
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Value, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Value, self).__init__(parent, list_op)
 
     @property
     def Object(self):
@@ -49,10 +52,14 @@ class Value(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object_12e587bd6e412f6d3d8361017e8dcba9 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is not None:
+            return self._properties.get('Object')
+        else:
+            return Object(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,9 +68,11 @@ class Value(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Value
         """Updates value resource on the server.
 
         Args

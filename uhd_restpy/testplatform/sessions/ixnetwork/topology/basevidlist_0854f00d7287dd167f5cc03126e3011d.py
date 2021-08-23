@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BaseVidList(Base):
@@ -42,12 +43,15 @@ class BaseVidList(Base):
         'TopologyId': 'topologyId',
         'UseFlagBit': 'useFlagBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BaseVidList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BaseVidList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class BaseVidList(Base):
 
     @property
     def BaseVid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -68,6 +73,7 @@ class BaseVidList(Base):
 
     @property
     def BaseVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class BaseVidList(Base):
 
     @property
     def BvlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class BaseVidList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class BaseVidList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class BaseVidList(Base):
 
     @property
     def EctAlgorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -116,6 +126,7 @@ class BaseVidList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,10 +135,12 @@ class BaseVidList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -138,6 +151,7 @@ class BaseVidList(Base):
 
     @property
     def UseFlagBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +161,7 @@ class BaseVidList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseFlagBit']))
 
     def update(self, Name=None):
+        # type: (str) -> BaseVidList
         """Updates baseVidList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LabelSpace(Base):
@@ -37,12 +38,16 @@ class LabelSpace(Base):
         'Start': 'start',
         'Step': 'step',
     }
+    _SDM_ENUM_MAP = {
+        'mode': ['fixedLabel', 'incrementLabel'],
+    }
 
-    def __init__(self, parent):
-        super(LabelSpace, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LabelSpace, self).__init__(parent, list_op)
 
     @property
     def End(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,10 +56,12 @@ class LabelSpace(Base):
         return self._get_attribute(self._SDM_ATT_MAP['End'])
     @End.setter
     def End(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['End'], value)
 
     @property
     def LabelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class LabelSpace(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelId'])
     @LabelId.setter
     def LabelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelId'], value)
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,10 +84,12 @@ class LabelSpace(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def Start(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +98,12 @@ class LabelSpace(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Start'])
     @Start.setter
     def Start(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Start'], value)
 
     @property
     def Step(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,9 +112,11 @@ class LabelSpace(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Step'], value)
 
     def update(self, End=None, LabelId=None, Mode=None, Start=None, Step=None):
+        # type: (int, int, str, int, int) -> LabelSpace
         """Updates labelSpace resource on the server.
 
         Args

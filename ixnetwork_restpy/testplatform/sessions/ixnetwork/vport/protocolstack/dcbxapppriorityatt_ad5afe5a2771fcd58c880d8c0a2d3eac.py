@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DcbxAppPriorityAtt(Base):
@@ -39,12 +40,15 @@ class DcbxAppPriorityAtt(Base):
         'ProtocolId': 'protocolId',
         'Sel': 'sel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DcbxAppPriorityAtt, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DcbxAppPriorityAtt, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class DcbxAppPriorityAtt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,6 +72,7 @@ class DcbxAppPriorityAtt(Base):
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,10 +81,12 @@ class DcbxAppPriorityAtt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def ProtocolId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,10 +95,12 @@ class DcbxAppPriorityAtt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolId'])
     @ProtocolId.setter
     def ProtocolId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolId'], value)
 
     @property
     def Sel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,9 +109,11 @@ class DcbxAppPriorityAtt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Sel'])
     @Sel.setter
     def Sel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Sel'], value)
 
     def update(self, Enabled=None, Priority=None, ProtocolId=None, Sel=None):
+        # type: (bool, int, str, int) -> DcbxAppPriorityAtt
         """Updates dcbxAppPriorityAtt resource on the server.
 
         Args
@@ -117,6 +130,7 @@ class DcbxAppPriorityAtt(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Priority=None, ProtocolId=None, Sel=None):
+        # type: (bool, int, str, int) -> DcbxAppPriorityAtt
         """Adds a new dcbxAppPriorityAtt resource on the server and adds it to the container.
 
         Args
@@ -147,6 +161,7 @@ class DcbxAppPriorityAtt(Base):
         self._delete()
 
     def find(self, Enabled=None, ObjectId=None, Priority=None, ProtocolId=None, Sel=None):
+        # type: (bool, str, int, str, int) -> DcbxAppPriorityAtt
         """Finds and retrieves dcbxAppPriorityAtt resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxAppPriorityAtt resources from the server.
@@ -190,14 +205,16 @@ class DcbxAppPriorityAtt(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -210,13 +227,15 @@ class DcbxAppPriorityAtt(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -230,13 +249,15 @@ class DcbxAppPriorityAtt(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

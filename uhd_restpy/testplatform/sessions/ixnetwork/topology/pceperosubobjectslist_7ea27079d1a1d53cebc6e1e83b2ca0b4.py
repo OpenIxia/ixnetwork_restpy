@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PcepEroSubObjectsList(Base):
@@ -64,12 +65,15 @@ class PcepEroSubObjectsList(Base):
         'Tc': 'tc',
         'Ttl': 'ttl',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PcepEroSubObjectsList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PcepEroSubObjectsList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +84,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def AsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -90,6 +95,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Bos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +106,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +116,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,6 +126,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def FBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,6 +137,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Ipv4NodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -138,6 +148,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Ipv4Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -148,6 +159,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Ipv6NodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +170,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Ipv6Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -168,6 +181,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def LocalInterfaceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -178,6 +192,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def LocalIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -188,6 +203,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def LocalIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -198,6 +214,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def LocalNodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -208,6 +225,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def LooseHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -218,6 +236,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +247,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def NaiType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +258,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -246,10 +267,12 @@ class PcepEroSubObjectsList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +283,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def RemoteInterfaceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +294,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def RemoteIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +305,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def RemoteIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +316,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def RemoteNodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +327,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Sid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +338,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def SidType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +349,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Srv6FunctionCode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -330,6 +360,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Srv6Identifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -340,6 +371,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Srv6NaiType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +382,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def SubObjectType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +393,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Tc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +404,7 @@ class PcepEroSubObjectsList(Base):
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -379,6 +414,7 @@ class PcepEroSubObjectsList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
 
     def update(self, Name=None):
+        # type: (str) -> PcepEroSubObjectsList
         """Updates pcepEroSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -394,7 +430,26 @@ class PcepEroSubObjectsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> PcepEroSubObjectsList
+        """Adds a new pcepEroSubObjectsList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pcepEroSubObjectsList resources using find and the newly added pcepEroSubObjectsList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> PcepEroSubObjectsList
         """Finds and retrieves pcepEroSubObjectsList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcepEroSubObjectsList resources from the server.

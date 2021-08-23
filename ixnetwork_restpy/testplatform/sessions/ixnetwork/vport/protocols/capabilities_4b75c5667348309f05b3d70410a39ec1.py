@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Capabilities(Base):
@@ -40,12 +41,15 @@ class Capabilities(Base):
         'SpanningTree': 'spanningTree',
         'TableStatistics': 'tableStatistics',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Capabilities, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Capabilities, self).__init__(parent, list_op)
 
     @property
     def FlowStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatistics'])
     @FlowStatistics.setter
     def FlowStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatistics'], value)
 
     @property
     def MatchIpAddressInArpPackets(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchIpAddressInArpPackets'])
     @MatchIpAddressInArpPackets.setter
     def MatchIpAddressInArpPackets(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchIpAddressInArpPackets'], value)
 
     @property
     def PortStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortStatistics'])
     @PortStatistics.setter
     def PortStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortStatistics'], value)
 
     @property
     def QueueStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueStatistics'])
     @QueueStatistics.setter
     def QueueStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueStatistics'], value)
 
     @property
     def ReassambleIpFragments(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReassambleIpFragments'])
     @ReassambleIpFragments.setter
     def ReassambleIpFragments(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReassambleIpFragments'], value)
 
     @property
     def Reserved(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Reserved'])
     @Reserved.setter
     def Reserved(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Reserved'], value)
 
     @property
     def SpanningTree(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -126,10 +142,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpanningTree'])
     @SpanningTree.setter
     def SpanningTree(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpanningTree'], value)
 
     @property
     def TableStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,9 +156,11 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableStatistics'])
     @TableStatistics.setter
     def TableStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableStatistics'], value)
 
     def update(self, FlowStatistics=None, MatchIpAddressInArpPackets=None, PortStatistics=None, QueueStatistics=None, ReassambleIpFragments=None, Reserved=None, SpanningTree=None, TableStatistics=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool) -> Capabilities
         """Updates capabilities resource on the server.
 
         Args

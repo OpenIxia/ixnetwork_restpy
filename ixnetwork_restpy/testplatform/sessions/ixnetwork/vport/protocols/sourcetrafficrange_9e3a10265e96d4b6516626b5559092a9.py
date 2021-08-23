@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SourceTrafficRange(Base):
@@ -40,12 +41,16 @@ class SourceTrafficRange(Base):
         'SourceAddress': 'sourceAddress',
         'SrcCountPerLsp': 'srcCountPerLsp',
     }
+    _SDM_ENUM_MAP = {
+        'addrFamily': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(SourceTrafficRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SourceTrafficRange, self).__init__(parent, list_op)
 
     @property
     def AddrFamily(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -54,10 +59,12 @@ class SourceTrafficRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddrFamily'])
     @AddrFamily.setter
     def AddrFamily(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddrFamily'], value)
 
     @property
     def FilterOnGroupAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class SourceTrafficRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterOnGroupAddress'])
     @FilterOnGroupAddress.setter
     def FilterOnGroupAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterOnGroupAddress'], value)
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class SourceTrafficRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
     @GroupAddress.setter
     def GroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
 
     @property
     def GrpCountPerLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class SourceTrafficRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GrpCountPerLsp'])
     @GrpCountPerLsp.setter
     def GrpCountPerLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GrpCountPerLsp'], value)
 
     @property
     def SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +115,12 @@ class SourceTrafficRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
     @SourceAddress.setter
     def SourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddress'], value)
 
     @property
     def SrcCountPerLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,9 +129,11 @@ class SourceTrafficRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcCountPerLsp'])
     @SrcCountPerLsp.setter
     def SrcCountPerLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcCountPerLsp'], value)
 
     def update(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+        # type: (str, bool, str, int, str, int) -> SourceTrafficRange
         """Updates sourceTrafficRange resource on the server.
 
         Args
@@ -135,6 +152,7 @@ class SourceTrafficRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+        # type: (str, bool, str, int, str, int) -> SourceTrafficRange
         """Adds a new sourceTrafficRange resource on the server and adds it to the container.
 
         Args
@@ -167,6 +185,7 @@ class SourceTrafficRange(Base):
         self._delete()
 
     def find(self, AddrFamily=None, FilterOnGroupAddress=None, GroupAddress=None, GrpCountPerLsp=None, SourceAddress=None, SrcCountPerLsp=None):
+        # type: (str, bool, str, int, str, int) -> SourceTrafficRange
         """Finds and retrieves sourceTrafficRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve sourceTrafficRange resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IptvRange(Base):
@@ -51,9 +52,11 @@ class IptvRange(Base):
         'Version': 'version',
         'ViewingProfile': 'viewingProfile',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IptvRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IptvRange, self).__init__(parent, list_op)
 
     @property
     def IptvChannels(self):
@@ -67,10 +70,14 @@ class IptvRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvchannels_703e164c7e7a8591a84b893eb23c572a import IptvChannels
-        return IptvChannels(self)
+        if self._properties.get('IptvChannels', None) is not None:
+            return self._properties.get('IptvChannels')
+        else:
+            return IptvChannels(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,10 +86,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GeneralQueryResponseMode(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -91,10 +100,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryResponseMode'])
     @GeneralQueryResponseMode.setter
     def GeneralQueryResponseMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GeneralQueryResponseMode'], value)
 
     @property
     def ImmediateResponse(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -103,10 +114,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ImmediateResponse'])
     @ImmediateResponse.setter
     def ImmediateResponse(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ImmediateResponse'], value)
 
     @property
     def InterStbStartDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,10 +128,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterStbStartDelay'])
     @InterStbStartDelay.setter
     def InterStbStartDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterStbStartDelay'], value)
 
     @property
     def JoinLatencyThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,10 +142,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JoinLatencyThreshold'])
     @JoinLatencyThreshold.setter
     def JoinLatencyThreshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JoinLatencyThreshold'], value)
 
     @property
     def JoinLeaveMultiplier(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -139,10 +156,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'])
     @JoinLeaveMultiplier.setter
     def JoinLeaveMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JoinLeaveMultiplier'], value)
 
     @property
     def LeaveLatencyThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -151,10 +170,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LeaveLatencyThreshold'])
     @LeaveLatencyThreshold.setter
     def LeaveLatencyThreshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LeaveLatencyThreshold'], value)
 
     @property
     def LogFailureTimestamps(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -163,10 +184,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogFailureTimestamps'])
     @LogFailureTimestamps.setter
     def LogFailureTimestamps(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogFailureTimestamps'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -175,10 +198,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,6 +213,7 @@ class IptvRange(Base):
 
     @property
     def ReportFrequency(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -196,10 +222,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReportFrequency'])
     @ReportFrequency.setter
     def ReportFrequency(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReportFrequency'], value)
 
     @property
     def RouterAlert(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -208,10 +236,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterAlert'])
     @RouterAlert.setter
     def RouterAlert(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterAlert'], value)
 
     @property
     def SpecificQueryResponseMode(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -220,10 +250,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpecificQueryResponseMode'])
     @SpecificQueryResponseMode.setter
     def SpecificQueryResponseMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpecificQueryResponseMode'], value)
 
     @property
     def StbLeaveJoinDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -232,10 +264,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StbLeaveJoinDelay'])
     @StbLeaveJoinDelay.setter
     def StbLeaveJoinDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StbLeaveJoinDelay'], value)
 
     @property
     def UnsolicitedResponseMode(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -244,10 +278,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UnsolicitedResponseMode'])
     @UnsolicitedResponseMode.setter
     def UnsolicitedResponseMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UnsolicitedResponseMode'], value)
 
     @property
     def Version(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -256,10 +292,12 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Version'])
     @Version.setter
     def Version(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Version'], value)
 
     @property
     def ViewingProfile(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -268,9 +306,11 @@ class IptvRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ViewingProfile'])
     @ViewingProfile.setter
     def ViewingProfile(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ViewingProfile'], value)
 
     def update(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, InterStbStartDelay=None, JoinLatencyThreshold=None, JoinLeaveMultiplier=None, LeaveLatencyThreshold=None, LogFailureTimestamps=None, Name=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, StbLeaveJoinDelay=None, UnsolicitedResponseMode=None, Version=None, ViewingProfile=None):
+        # type: (bool, bool, bool, int, int, int, int, bool, str, int, bool, bool, int, bool, str, str) -> IptvRange
         """Updates iptvRange resource on the server.
 
         Args
@@ -299,6 +339,7 @@ class IptvRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, InterStbStartDelay=None, JoinLatencyThreshold=None, JoinLeaveMultiplier=None, LeaveLatencyThreshold=None, LogFailureTimestamps=None, Name=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, StbLeaveJoinDelay=None, UnsolicitedResponseMode=None, Version=None, ViewingProfile=None):
+        # type: (bool, bool, bool, int, int, int, int, bool, str, int, bool, bool, int, bool, str, str) -> IptvRange
         """Adds a new iptvRange resource on the server and adds it to the container.
 
         Args
@@ -341,6 +382,7 @@ class IptvRange(Base):
         self._delete()
 
     def find(self, Enabled=None, GeneralQueryResponseMode=None, ImmediateResponse=None, InterStbStartDelay=None, JoinLatencyThreshold=None, JoinLeaveMultiplier=None, LeaveLatencyThreshold=None, LogFailureTimestamps=None, Name=None, ObjectId=None, ReportFrequency=None, RouterAlert=None, SpecificQueryResponseMode=None, StbLeaveJoinDelay=None, UnsolicitedResponseMode=None, Version=None, ViewingProfile=None):
+        # type: (bool, bool, bool, int, int, int, int, bool, str, str, int, bool, bool, int, bool, str, str) -> IptvRange
         """Finds and retrieves iptvRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve iptvRange resources from the server.
@@ -396,14 +438,16 @@ class IptvRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -416,13 +460,15 @@ class IptvRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -436,13 +482,15 @@ class IptvRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -456,15 +504,21 @@ class IptvRange(Base):
         return self._execute('enableProtocolStack', payload=payload, response_object=None)
 
     def IptvStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the iptvStart operation on the server.
 
         Start IPTV on selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        iptvStart(Arg2=enum)
-        --------------------
+        iptvStart(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        iptvStart(Arg2=enum, async_operation=bool)
+        ------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpEndpoint/iptv,/vport/protocolStack/atm/dhcpEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/iptv,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/iptv,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/iptv,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/iptv,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/atm/ipEndpoint/iptv,/vport/protocolStack/atm/ipEndpoint/range/iptvRange,/vport/protocolStack/atm/pppox/dhcpoPppClientEndpoint/range/iptvRange,/vport/protocolStack/atm/pppox/dhcpoPppServerEndpoint/range/iptvRange,/vport/protocolStack/atm/pppox/iptv,/vport/protocolStack/atm/pppoxEndpoint/iptv,/vport/protocolStack/atm/pppoxEndpoint/range/iptvRange,/vport/protocolStack/ethernet/dhcpEndpoint/iptv,/vport/protocolStack/ethernet/dhcpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/iptv,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/iptv,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/iptv,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/iptv,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ipEndpoint/iptv,/vport/protocolStack/ethernet/ipEndpoint/range/iptvRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/iptvRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/iptvRange,/vport/protocolStack/ethernet/pppox/iptv,/vport/protocolStack/ethernet/pppoxEndpoint/iptv,/vport/protocolStack/ethernet/pppoxEndpoint/range/iptvRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -477,15 +531,21 @@ class IptvRange(Base):
         return self._execute('iptvStart', payload=payload, response_object=None)
 
     def IptvStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the iptvStop operation on the server.
 
         Stop IPTV on selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        iptvStop(Arg2=enum)
-        -------------------
+        iptvStop(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        iptvStop(Arg2=enum, async_operation=bool)
+        -----------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpEndpoint/iptv,/vport/protocolStack/atm/dhcpEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/iptv,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/iptv,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/iptv,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/iptv,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/atm/ipEndpoint/iptv,/vport/protocolStack/atm/ipEndpoint/range/iptvRange,/vport/protocolStack/atm/pppox/dhcpoPppClientEndpoint/range/iptvRange,/vport/protocolStack/atm/pppox/dhcpoPppServerEndpoint/range/iptvRange,/vport/protocolStack/atm/pppox/iptv,/vport/protocolStack/atm/pppoxEndpoint/iptv,/vport/protocolStack/atm/pppoxEndpoint/range/iptvRange,/vport/protocolStack/ethernet/dhcpEndpoint/iptv,/vport/protocolStack/ethernet/dhcpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/iptv,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/iptv,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/iptv,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/iptv,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/iptvRange,/vport/protocolStack/ethernet/ipEndpoint/iptv,/vport/protocolStack/ethernet/ipEndpoint/range/iptvRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/iptvRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/iptvRange,/vport/protocolStack/ethernet/pppox/iptv,/vport/protocolStack/ethernet/pppoxEndpoint/iptv,/vport/protocolStack/ethernet/pppoxEndpoint/range/iptvRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PortStatLearnedInformation(Base):
@@ -57,12 +58,15 @@ class PortStatLearnedInformation(Base):
         'TransmittedBytes': 'transmittedBytes',
         'TransmittedPackets': 'transmittedPackets',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PortStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PortStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def Collisions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +76,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def CrcErrors(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +86,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +96,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +106,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def Duration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,6 +116,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def DurationInNsec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,6 +126,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +136,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,6 +146,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def FrameAlignmentErrors(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,6 +156,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,6 +166,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,6 +176,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,6 +186,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def PacketsDroppedByRx(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,6 +196,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def PacketsDroppedByTx(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,6 +206,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def PacketsWithRxOverrun(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,6 +216,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def PortNo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,6 +226,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def ReceivedBytes(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,6 +236,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def ReceivedErrors(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -225,6 +246,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def ReceivedPackets(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,6 +256,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,6 +266,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -252,6 +276,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def TransmitErrors(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -261,6 +286,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def TransmittedBytes(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -270,6 +296,7 @@ class PortStatLearnedInformation(Base):
 
     @property
     def TransmittedPackets(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -277,7 +304,21 @@ class PortStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransmittedPackets'])
 
+    def add(self):
+        """Adds a new portStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved portStatLearnedInformation resources using find and the newly added portStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Collisions=None, CrcErrors=None, DataPathId=None, DataPathIdAsHex=None, Duration=None, DurationInNsec=None, ErrorCode=None, ErrorType=None, FrameAlignmentErrors=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketsDroppedByRx=None, PacketsDroppedByTx=None, PacketsWithRxOverrun=None, PortNo=None, ReceivedBytes=None, ReceivedErrors=None, ReceivedPackets=None, RemoteIp=None, ReplyState=None, TransmitErrors=None, TransmittedBytes=None, TransmittedPackets=None):
+        # type: (str, str, str, str, int, int, str, str, str, int, str, str, str, str, str, int, str, str, str, str, str, str, str, str) -> PortStatLearnedInformation
         """Finds and retrieves portStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portStatLearnedInformation resources from the server.

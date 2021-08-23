@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PacketInList(Base):
@@ -43,12 +44,15 @@ class PacketInList(Base):
         'SendPacketIn': 'sendPacketIn',
         'SwitchName': 'switchName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PacketInList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PacketInList, self).__init__(parent, list_op)
 
     @property
     def AuxiliaryId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -59,6 +63,7 @@ class PacketInList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,6 +73,7 @@ class PacketInList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,6 +83,7 @@ class PacketInList(Base):
 
     @property
     def FlowTable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +94,7 @@ class PacketInList(Base):
 
     @property
     def InPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class PacketInList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +114,12 @@ class PacketInList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PacketInName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +130,7 @@ class PacketInList(Base):
 
     @property
     def PhysicalInPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +141,7 @@ class PacketInList(Base):
 
     @property
     def SendPacketIn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +152,7 @@ class PacketInList(Base):
 
     @property
     def SwitchName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,6 +161,7 @@ class PacketInList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchName'])
 
     def update(self, Name=None):
+        # type: (str) -> PacketInList
         """Updates packetInList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -162,7 +177,26 @@ class PacketInList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> PacketInList
+        """Adds a new packetInList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved packetInList resources using find and the newly added packetInList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, SwitchName=None):
+        # type: (int, str, str, str) -> PacketInList
         """Finds and retrieves packetInList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve packetInList resources from the server.
@@ -204,6 +238,72 @@ class PacketInList(Base):
         """
         return self._read(href)
 
+    def SendPause(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendPause operation on the server.
+
+        Pause Sending PacketIn
+
+        sendPause(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of PacketIn.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPause', payload=payload, response_object=None)
+
+    def SendStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendStart operation on the server.
+
+        Start Sending PacketIn
+
+        sendStart(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of PacketIn.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendStart', payload=payload, response_object=None)
+
+    def SendStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendStop operation on the server.
+
+        Stop Sending PacketIn
+
+        sendStop(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of PacketIn.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendStop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, AuxiliaryId=None, FlowTable=None, InPort=None, PacketInName=None, PhysicalInPort=None, SendPacketIn=None):
         """Base class infrastructure that gets a list of packetInList device ids encapsulated by this object.
 
@@ -228,63 +328,3 @@ class PacketInList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def SendPause(self, *args, **kwargs):
-        """Executes the sendPause operation on the server.
-
-        Pause Sending PacketIn
-
-        sendPause(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of PacketIn.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPause', payload=payload, response_object=None)
-
-    def SendStart(self, *args, **kwargs):
-        """Executes the sendStart operation on the server.
-
-        Start Sending PacketIn
-
-        sendStart(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of PacketIn.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendStart', payload=payload, response_object=None)
-
-    def SendStop(self, *args, **kwargs):
-        """Executes the sendStop operation on the server.
-
-        Stop Sending PacketIn
-
-        sendStop(Arg2=list)list
-        -----------------------
-        - Arg2 (list(number)): List of PacketIn.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendStop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TargetPeer(Base):
@@ -39,12 +40,16 @@ class TargetPeer(Base):
         'IpAddress': 'ipAddress',
         'Md5Key': 'md5Key',
     }
+    _SDM_ENUM_MAP = {
+        'authentication': ['null', 'md5'],
+    }
 
-    def __init__(self, parent):
-        super(TargetPeer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TargetPeer, self).__init__(parent, list_op)
 
     @property
     def Authentication(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class TargetPeer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Authentication'])
     @Authentication.setter
     def Authentication(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Authentication'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class TargetPeer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InitiateTargetedHello(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class TargetPeer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InitiateTargetedHello'])
     @InitiateTargetedHello.setter
     def InitiateTargetedHello(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['InitiateTargetedHello'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +100,12 @@ class TargetPeer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def Md5Key(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +114,11 @@ class TargetPeer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Md5Key'])
     @Md5Key.setter
     def Md5Key(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Md5Key'], value)
 
     def update(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+        # type: (str, bool, bool, str, str) -> TargetPeer
         """Updates targetPeer resource on the server.
 
         Args
@@ -121,6 +136,7 @@ class TargetPeer(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+        # type: (str, bool, bool, str, str) -> TargetPeer
         """Adds a new targetPeer resource on the server and adds it to the container.
 
         Args
@@ -152,6 +168,7 @@ class TargetPeer(Base):
         self._delete()
 
     def find(self, Authentication=None, Enabled=None, InitiateTargetedHello=None, IpAddress=None, Md5Key=None):
+        # type: (str, bool, bool, str, str) -> TargetPeer
         """Finds and retrieves targetPeer resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve targetPeer resources from the server.

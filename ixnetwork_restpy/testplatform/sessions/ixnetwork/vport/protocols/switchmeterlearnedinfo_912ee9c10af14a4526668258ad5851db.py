@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchMeterLearnedInfo(Base):
@@ -44,9 +45,11 @@ class SwitchMeterLearnedInfo(Base):
         'NumOfBands': 'numOfBands',
         'PacketsInInput': 'packetsInInput',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchMeterLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchMeterLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def SwitchMeterBandLearnedInfo(self):
@@ -60,10 +63,14 @@ class SwitchMeterLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterbandlearnedinfo_442d49cfc16498298dbe4a2d5ee71127 import SwitchMeterBandLearnedInfo
-        return SwitchMeterBandLearnedInfo(self)
+        if self._properties.get('SwitchMeterBandLearnedInfo', None) is not None:
+            return self._properties.get('SwitchMeterBandLearnedInfo')
+        else:
+            return SwitchMeterBandLearnedInfo(self)
 
     @property
     def BytesInInput(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def DatapathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def DatapathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +100,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def DurationNSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +110,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def DurationSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +120,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def FlowCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +130,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +140,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def MeterConfigurationFlags(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +150,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,6 +160,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def NumOfBands(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,6 +170,7 @@ class SwitchMeterLearnedInfo(Base):
 
     @property
     def PacketsInInput(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,7 +178,21 @@ class SwitchMeterLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['PacketsInInput'])
 
+    def add(self):
+        """Adds a new switchMeterLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchMeterLearnedInfo resources using find and the newly added switchMeterLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BytesInInput=None, DatapathId=None, DatapathIdAsHex=None, DurationNSec=None, DurationSec=None, FlowCount=None, LocalIp=None, MeterConfigurationFlags=None, MeterId=None, NumOfBands=None, PacketsInInput=None):
+        # type: (int, str, str, int, int, int, str, str, int, int, int) -> SwitchMeterLearnedInfo
         """Finds and retrieves switchMeterLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchMeterLearnedInfo resources from the server.

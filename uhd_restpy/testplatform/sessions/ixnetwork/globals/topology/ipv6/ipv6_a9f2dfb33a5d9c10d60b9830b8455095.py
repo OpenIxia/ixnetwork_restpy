@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6(Base):
@@ -44,9 +45,11 @@ class Ipv6(Base):
         'RowNames': 'rowNames',
         'SuppressNsForDuplicateGateway': 'suppressNsForDuplicateGateway',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6, self).__init__(parent, list_op)
 
     @property
     def NsRate(self):
@@ -60,7 +63,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.nsrate.nsrate_2743e8b1b7c27242856a5d009e73521d import NsRate
-        return NsRate(self)._select()
+        if self._properties.get('NsRate', None) is not None:
+            return self._properties.get('NsRate')
+        else:
+            return NsRate(self)._select()
 
     @property
     def StartRate(self):
@@ -74,7 +80,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -88,10 +97,14 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,6 +114,7 @@ class Ipv6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +124,7 @@ class Ipv6(Base):
 
     @property
     def EnableNaRouterBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +135,7 @@ class Ipv6(Base):
 
     @property
     def InitialRaCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +146,7 @@ class Ipv6(Base):
 
     @property
     def MaxInitialRaInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +157,7 @@ class Ipv6(Base):
 
     @property
     def MaxRaInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +168,7 @@ class Ipv6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,10 +177,12 @@ class Ipv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PermanentMacForGateway(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -172,6 +193,7 @@ class Ipv6(Base):
 
     @property
     def RaRtrLifetime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +204,7 @@ class Ipv6(Base):
 
     @property
     def ReSendNsOnLinkUp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +215,7 @@ class Ipv6(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -201,6 +225,7 @@ class Ipv6(Base):
 
     @property
     def SuppressNsForDuplicateGateway(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -210,6 +235,7 @@ class Ipv6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressNsForDuplicateGateway']))
 
     def update(self, Name=None):
+        # type: (str) -> Ipv6
         """Updates ipv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

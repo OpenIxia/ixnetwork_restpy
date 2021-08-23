@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SaveResults(Base):
@@ -35,12 +36,16 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         'EnableAllResults': 'enableAllResults',
         'State': 'state',
     }
+    _SDM_ENUM_MAP = {
+        'state': ['done', 'failed', 'inProgress', 'none'],
+    }
 
-    def __init__(self, parent):
-        super(SaveResults, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SaveResults, self).__init__(parent, list_op)
 
     @property
     def EnableAllResults(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -49,10 +54,12 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         return self._get_attribute(self._SDM_ATT_MAP['EnableAllResults'])
     @EnableAllResults.setter
     def EnableAllResults(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAllResults'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +68,7 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     def update(self, EnableAllResults=None):
+        # type: (bool) -> SaveResults
         """Updates saveResults resource on the server.
 
         Args
@@ -73,10 +81,15 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def SaveDetailedResults(self):
+    def SaveDetailedResults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the saveDetailedResults operation on the server.
 
         NOT DEFINED
+
+        saveDetailedResults(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -84,17 +97,21 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('saveDetailedResults', payload=payload, response_object=None)
 
     def SaveFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the saveFile operation on the server.
 
         NOT DEFINED
 
-        saveFile(Arg2=enum, Arg3=string)
-        --------------------------------
+        saveFile(Arg2=enum, Arg3=string, async_operation=bool)
+        ------------------------------------------------------
         - Arg2 (str(csv | generic)): NOT DEFINED
         - Arg3 (str): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -106,10 +123,15 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('saveFile', payload=payload, response_object=None)
 
-    def SaveSummaryResults(self):
+    def SaveSummaryResults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the saveSummaryResults operation on the server.
 
         NOT DEFINED
+
+        saveSummaryResults(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -117,4 +139,6 @@ and saveDetailedResults. The execs are used to save the summary and detailed res
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('saveSummaryResults', payload=payload, response_object=None)

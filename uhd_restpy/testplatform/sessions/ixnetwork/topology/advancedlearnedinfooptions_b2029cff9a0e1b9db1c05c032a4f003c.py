@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AdvancedLearnedInfoOptions(Base):
@@ -123,12 +124,15 @@ class AdvancedLearnedInfoOptions(Base):
         'VlanTpidFilterLM': 'vlanTpidFilterLM',
         'VlanTpidFilterLT': 'vlanTpidFilterLT',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AdvancedLearnedInfoOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AdvancedLearnedInfoOptions, self).__init__(parent, list_op)
 
     @property
     def AllCVlanCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +143,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllDstMEPDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +154,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllDstMEPLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +165,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllDstMEPLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +176,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllDstMepLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +187,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllSVlanCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +198,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllSrcMEPDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +209,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllSrcMEPLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -209,6 +220,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllSrcMEPLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +231,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllSrcMepLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +242,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def AllVlanCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +253,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanIdFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +264,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanIdFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +275,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanIdFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -269,6 +286,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanIdFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +297,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanIdFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +308,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanPriorityFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -299,6 +319,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanPriorityFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +330,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanPriorityFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +341,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanPriorityFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +352,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanPriorityFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -339,6 +363,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanTpidFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -349,6 +374,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanTpidFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -359,6 +385,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanTpidFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -369,6 +396,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanTpidFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -379,6 +407,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def CVlanTpidFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -389,6 +418,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def ConfiguredVlanDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -399,6 +429,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def ConfiguredVlanLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +440,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def ConfiguredVlanLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -419,6 +451,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def ConfiguredVlanLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -429,6 +462,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -438,6 +472,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -447,6 +482,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def DestinationMpMacDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -457,6 +493,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def DestinationMpMacLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -467,6 +504,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def DestinationMpMacLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -477,6 +515,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def DestinationMpMacLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -487,6 +526,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def EnableVlanFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -497,6 +537,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def MdLevelLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -507,6 +548,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def MdLevelLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -517,6 +559,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def MdOrMegLevelCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -527,6 +570,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def MdOrMegLevelDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -537,6 +581,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def MdOrMegLevelLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -547,6 +592,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def MethodDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -557,6 +603,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -565,10 +612,12 @@ class AdvancedLearnedInfoOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SVlanIdFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -579,6 +628,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanIdFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -589,6 +639,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanIdFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -599,6 +650,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanIdFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -609,6 +661,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanIdFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -619,6 +672,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanPriorityFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -629,6 +683,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanPriorityFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -639,6 +694,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanPriorityFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -649,6 +705,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanPriorityFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -659,6 +716,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanPriorityFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -669,6 +727,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanTpidFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -679,6 +738,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanTpidFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -689,6 +749,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanTpidFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -699,6 +760,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanTpidFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -709,6 +771,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SVlanTpidFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -719,6 +782,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SourceMpMacDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -729,6 +793,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SourceMpMacLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -739,6 +804,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SourceMpMacLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -749,6 +815,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def SourceMpMacLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -759,6 +826,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TimeoutDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -769,6 +837,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TimeoutLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -779,6 +848,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TimeoutLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -789,6 +859,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TimeoutLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -799,6 +870,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TransactionIdLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -809,6 +881,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TransactionIdLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -819,6 +892,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TtlLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -829,6 +903,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def TypeDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -839,6 +914,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanIdFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -849,6 +925,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanIdFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -859,6 +936,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanIdFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -869,6 +947,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanIdFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -879,6 +958,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanIdFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -889,6 +969,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanPriorityFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -899,6 +980,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanPriorityFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -909,6 +991,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanPriorityFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -919,6 +1002,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanPriorityFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -929,6 +1013,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanPriorityFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -939,6 +1024,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanStackingCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -949,6 +1035,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanStackingDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -959,6 +1046,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanStackingLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -969,6 +1057,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanStackingLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -979,6 +1068,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanStackingLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -989,6 +1079,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanTpidFilterCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -999,6 +1090,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanTpidFilterDM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1009,6 +1101,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanTpidFilterLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1019,6 +1112,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanTpidFilterLM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1029,6 +1123,7 @@ class AdvancedLearnedInfoOptions(Base):
 
     @property
     def VlanTpidFilterLT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1038,6 +1133,7 @@ class AdvancedLearnedInfoOptions(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpidFilterLT']))
 
     def update(self, Name=None):
+        # type: (str) -> AdvancedLearnedInfoOptions
         """Updates advancedLearnedInfoOptions resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1052,6 +1148,292 @@ class AdvancedLearnedInfoOptions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clears All Learned Info for the selected Root MP.
+
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmAISDbLearnedInformation operation on the server.
+
+        Get Learned AIS Information
+
+        getCfmAISDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmCcmLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmCcmLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmCcmLearnedInformation(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmDMDbLearnedInformation operation on the server.
+
+        Get Learned DM Information
+
+        getCfmDMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLCKDbLearnedInformation operation on the server.
+
+        Get Learned LCK Information
+
+        getCfmLCKDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmLinkTraceDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLMDbLearnedInformation operation on the server.
+
+        Get Learned LM Information
+
+        getCfmLMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLoopbackDbLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmLoopbackDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmTSTDbLearnedInformation operation on the server.
+
+        Get Learned TST Information
+
+        getCfmTSTDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicDMLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicDMLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLBLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLBLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLMLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLMLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLTLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLTLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AllCVlanCCM=None, AllDstMEPDM=None, AllDstMEPLM=None, AllDstMEPLT=None, AllDstMepLB=None, AllSVlanCCM=None, AllSrcMEPDM=None, AllSrcMEPLM=None, AllSrcMEPLT=None, AllSrcMepLB=None, AllVlanCCM=None, CVlanIdFilterCCM=None, CVlanIdFilterDM=None, CVlanIdFilterLB=None, CVlanIdFilterLM=None, CVlanIdFilterLT=None, CVlanPriorityFilterCCM=None, CVlanPriorityFilterDM=None, CVlanPriorityFilterLB=None, CVlanPriorityFilterLM=None, CVlanPriorityFilterLT=None, CVlanTpidFilterCCM=None, CVlanTpidFilterDM=None, CVlanTpidFilterLB=None, CVlanTpidFilterLM=None, CVlanTpidFilterLT=None, ConfiguredVlanDM=None, ConfiguredVlanLB=None, ConfiguredVlanLM=None, ConfiguredVlanLT=None, DestinationMpMacDM=None, DestinationMpMacLB=None, DestinationMpMacLM=None, DestinationMpMacLT=None, EnableVlanFilterCCM=None, MdLevelLB=None, MdLevelLT=None, MdOrMegLevelCCM=None, MdOrMegLevelDM=None, MdOrMegLevelLM=None, MethodDM=None, SVlanIdFilterCCM=None, SVlanIdFilterDM=None, SVlanIdFilterLB=None, SVlanIdFilterLM=None, SVlanIdFilterLT=None, SVlanPriorityFilterCCM=None, SVlanPriorityFilterDM=None, SVlanPriorityFilterLB=None, SVlanPriorityFilterLM=None, SVlanPriorityFilterLT=None, SVlanTpidFilterCCM=None, SVlanTpidFilterDM=None, SVlanTpidFilterLB=None, SVlanTpidFilterLM=None, SVlanTpidFilterLT=None, SourceMpMacDM=None, SourceMpMacLB=None, SourceMpMacLM=None, SourceMpMacLT=None, TimeoutDM=None, TimeoutLB=None, TimeoutLM=None, TimeoutLT=None, TransactionIdLB=None, TransactionIdLT=None, TtlLT=None, TypeDM=None, VlanIdFilterCCM=None, VlanIdFilterDM=None, VlanIdFilterLB=None, VlanIdFilterLM=None, VlanIdFilterLT=None, VlanPriorityFilterCCM=None, VlanPriorityFilterDM=None, VlanPriorityFilterLB=None, VlanPriorityFilterLM=None, VlanPriorityFilterLT=None, VlanStackingCCM=None, VlanStackingDM=None, VlanStackingLB=None, VlanStackingLM=None, VlanStackingLT=None, VlanTpidFilterCCM=None, VlanTpidFilterDM=None, VlanTpidFilterLB=None, VlanTpidFilterLM=None, VlanTpidFilterLT=None):
         """Base class infrastructure that gets a list of advancedLearnedInfoOptions device ids encapsulated by this object.
@@ -1159,263 +1541,3 @@ class AdvancedLearnedInfoOptions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clears All Learned Info for the selected Root MP.
-
-        clearAllLearnedInfo(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmAISDbLearnedInformation operation on the server.
-
-        Get Learned AIS Information
-
-        getCfmAISDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmCcmLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmCcmLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmCcmLearnedInformation(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmDMDbLearnedInformation operation on the server.
-
-        Get Learned DM Information
-
-        getCfmDMDbLearnedInformation(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLCKDbLearnedInformation operation on the server.
-
-        Get Learned LCK Information
-
-        getCfmLCKDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmLinkTraceDbLearnedInformation(Arg2=list)list
-        --------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLMDbLearnedInformation operation on the server.
-
-        Get Learned LM Information
-
-        getCfmLMDbLearnedInformation(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLoopbackDbLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmLoopbackDbLearnedInformation(Arg2=list)list
-        -------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmTSTDbLearnedInformation operation on the server.
-
-        Get Learned TST Information
-
-        getCfmTSTDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicDMLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicDMLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLBLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLBLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLMLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLMLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLTLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLTLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)

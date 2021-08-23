@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DiscoveredLearnedInfo(Base):
@@ -59,12 +60,21 @@ class DiscoveredLearnedInfo(Base):
         'RemoteVariableRetrieval': 'remoteVariableRetrieval',
         'RemoteVendorSpecificInfo': 'remoteVendorSpecificInfo',
     }
+    _SDM_ENUM_MAP = {
+        'localDiscoveryStatus': ['fault', 'activeSendLocal', 'passiveWait', 'sendLocalRemote', 'sendLocalRemoteOk', 'sendAny'],
+        'localMuxAction': ['fwd', 'discard'],
+        'localParserAction': ['fwd', 'lb', 'discard'],
+        'remoteMode': ['active', 'passive'],
+        'remoteMuxAction': ['fwd', 'discard'],
+        'remoteParserAction': ['fwd', 'lb', 'discard'],
+    }
 
-    def __init__(self, parent):
-        super(DiscoveredLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DiscoveredLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def LocalDiscoveryStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +84,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def LocalEvaluating(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,6 +94,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def LocalMuxAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +104,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def LocalParserAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +114,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def LocalRevision(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +124,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def LocalStable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,6 +134,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteCriticalEvent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -128,6 +144,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteDyingGasp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -137,6 +154,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteEvaluating(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -146,6 +164,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteHeaderRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,6 +174,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteLinkEvent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -164,6 +184,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteLinkFault(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -173,6 +194,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteLoopbackSupport(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,6 +204,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,6 +214,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteMaxPduSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -200,6 +224,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -209,6 +234,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteMuxAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -218,6 +244,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteOamVersion(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -227,6 +254,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteOui(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -236,6 +264,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteParserAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -245,6 +274,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteRevision(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -254,6 +284,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteStable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -263,6 +294,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteTlvRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -272,6 +304,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteUnidirectionalSupport(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -281,6 +314,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteVariableRetrieval(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -290,6 +324,7 @@ class DiscoveredLearnedInfo(Base):
 
     @property
     def RemoteVendorSpecificInfo(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -297,7 +332,21 @@ class DiscoveredLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemoteVendorSpecificInfo'])
 
+    def add(self):
+        """Adds a new discoveredLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved discoveredLearnedInfo resources using find and the newly added discoveredLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, LocalDiscoveryStatus=None, LocalEvaluating=None, LocalMuxAction=None, LocalParserAction=None, LocalRevision=None, LocalStable=None, RemoteCriticalEvent=None, RemoteDyingGasp=None, RemoteEvaluating=None, RemoteHeaderRefreshed=None, RemoteLinkEvent=None, RemoteLinkFault=None, RemoteLoopbackSupport=None, RemoteMacAddress=None, RemoteMaxPduSize=None, RemoteMode=None, RemoteMuxAction=None, RemoteOamVersion=None, RemoteOui=None, RemoteParserAction=None, RemoteRevision=None, RemoteStable=None, RemoteTlvRefreshed=None, RemoteUnidirectionalSupport=None, RemoteVariableRetrieval=None, RemoteVendorSpecificInfo=None):
+        # type: (str, bool, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, str, str, int, str, str, int, bool, bool, bool, bool, str) -> DiscoveredLearnedInfo
         """Finds and retrieves discoveredLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve discoveredLearnedInfo resources from the server.

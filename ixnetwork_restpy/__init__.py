@@ -6,5 +6,6 @@ try:
     from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
     from ixnetwork_restpy.assistants.sessions.sessionassistant import SessionAssistant
     from ixnetwork_restpy.assistants.watch.watchassistant import WatchAssistant
+    from ixnetwork_restpy.assistants.config.configassistant import ConfigAssistant
 except:
     pass

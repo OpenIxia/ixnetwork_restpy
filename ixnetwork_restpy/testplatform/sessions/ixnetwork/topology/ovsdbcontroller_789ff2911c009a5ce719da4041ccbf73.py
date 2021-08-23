@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ovsdbcontroller(Base):
@@ -82,9 +83,12 @@ class Ovsdbcontroller(Base):
         'Vxlan': 'vxlan',
         'VxlanReplicator': 'vxlanReplicator',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ovsdbcontroller, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ovsdbcontroller, self).__init__(parent, list_op)
 
     @property
     def ClusterData(self):
@@ -98,7 +102,10 @@ class Ovsdbcontroller(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterdata_14465bf77bf9eb0d40ce3ac056e3b337 import ClusterData
-        return ClusterData(self)._select()
+        if self._properties.get('ClusterData', None) is not None:
+            return self._properties.get('ClusterData')
+        else:
+            return ClusterData(self)._select()
 
     @property
     def Connector(self):
@@ -112,10 +119,14 @@ class Ovsdbcontroller(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def ClearDumpDbFiles(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +137,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -134,10 +146,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ConnectionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -148,6 +162,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ControllerTcpPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +173,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,6 +183,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,6 +193,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def DirectoryName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +204,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def DumpdbDirectoryName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +215,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def EnableLogging(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +224,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLogging'])
     @EnableLogging.setter
     def EnableLogging(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLogging'], value)
 
     @property
     def EnableOvsdbServerIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -218,6 +240,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +251,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ErrorDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +262,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ErrorLogDirectoryName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +273,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ErrorLogicalSwitchName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +284,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ErrorPhysicalSwitchName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +295,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ErrorTimeStamp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -287,6 +315,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def FileCaCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -297,6 +326,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def FileCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -307,6 +337,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def FileHWGatewayCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -317,6 +348,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def FilePrivKey(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +359,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def HSCConfiguration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +370,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def LatestDumpDbFileNames(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -345,10 +379,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatestDumpDbFileNames'])
     @LatestDumpDbFileNames.setter
     def LatestDumpDbFileNames(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatestDumpDbFileNames'], value)
 
     @property
     def LatestErrorFileNames(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -357,10 +393,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatestErrorFileNames'])
     @LatestErrorFileNames.setter
     def LatestErrorFileNames(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatestErrorFileNames'], value)
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -369,10 +407,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -381,10 +421,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OvsdbSchema(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -395,6 +437,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def OvsdbServerIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -405,6 +448,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def PseudoConnectedTo(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -413,10 +457,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PseudoConnectedTo'])
     @PseudoConnectedTo.setter
     def PseudoConnectedTo(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PseudoConnectedTo'], value)
 
     @property
     def PseudoConnectedToBfd(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -425,10 +471,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PseudoConnectedToBfd'])
     @PseudoConnectedToBfd.setter
     def PseudoConnectedToBfd(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PseudoConnectedToBfd'], value)
 
     @property
     def PseudoConnectedToVxlanReplicator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -437,10 +485,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PseudoConnectedToVxlanReplicator'])
     @PseudoConnectedToVxlanReplicator.setter
     def PseudoConnectedToVxlanReplicator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PseudoConnectedToVxlanReplicator'], value)
 
     @property
     def PseudoMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -450,6 +500,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def PseudoMultiplierBfd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -459,6 +510,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def PseudoMultiplierVxlanReplicator(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -468,6 +520,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def Role(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -477,6 +530,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ServerAddDeleteConnectionError(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -485,10 +539,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerAddDeleteConnectionError'])
     @ServerAddDeleteConnectionError.setter
     def ServerAddDeleteConnectionError(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerAddDeleteConnectionError'], value)
 
     @property
     def ServerAddDeleteStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -498,6 +554,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def ServerConnectionIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -508,6 +565,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -517,6 +575,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -525,6 +584,7 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -538,6 +598,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -547,6 +608,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def TableNames(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -557,6 +619,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def TimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -565,10 +628,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeOut'])
     @TimeOut.setter
     def TimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeOut'], value)
 
     @property
     def VerifyHWGatewayCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -579,6 +644,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def VerifyPeerCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -589,6 +655,7 @@ class Ovsdbcontroller(Base):
 
     @property
     def Vxlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -597,10 +664,12 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vxlan'])
     @Vxlan.setter
     def Vxlan(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vxlan'], value)
 
     @property
     def VxlanReplicator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -609,9 +678,11 @@ class Ovsdbcontroller(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VxlanReplicator'])
     @VxlanReplicator.setter
     def VxlanReplicator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VxlanReplicator'], value)
 
     def update(self, ConnectedVia=None, EnableLogging=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, ServerAddDeleteConnectionError=None, StackedLayers=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
+        # type: (List[str], bool, str, str, int, str, str, str, str, str, List[str], int, str, str) -> Ovsdbcontroller
         """Updates ovsdbcontroller resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -641,6 +712,7 @@ class Ovsdbcontroller(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, EnableLogging=None, LatestDumpDbFileNames=None, LatestErrorFileNames=None, Multiplier=None, Name=None, PseudoConnectedTo=None, PseudoConnectedToBfd=None, PseudoConnectedToVxlanReplicator=None, ServerAddDeleteConnectionError=None, StackedLayers=None, TimeOut=None, Vxlan=None, VxlanReplicator=None):
+        # type: (List[str], bool, str, str, int, str, str, str, str, str, List[str], int, str, str) -> Ovsdbcontroller
         """Adds a new ovsdbcontroller resource on the server and adds it to the container.
 
         Args
@@ -743,6 +815,288 @@ class Ovsdbcontroller(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def AddServer(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the addServer operation on the server.
+
+        Add Server.
+
+        addServer(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices for which to Add Server.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('addServer', payload=payload, response_object=None)
+
+    def ClearLastErrors(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearLastErrors operation on the server.
+
+        Clear Error Messages reported due to Last Action.
+
+        clearLastErrors(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices for which to clear last reported error messages.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearLastErrors', payload=payload, response_object=None)
+
+    def ClearPortLogs(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearPortLogs operation on the server.
+
+        Add Server.
+
+        clearPortLogs(Arg2=list, async_operation=bool)list
+        --------------------------------------------------
+        - Arg2 (list(number)): List of indices for which to Add Server.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearPortLogs', payload=payload, response_object=None)
+
+    def ControllerDumpDB(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the controllerDumpDB operation on the server.
+
+        Command to fetch Tor Information stored internally.
+
+        controllerDumpDB(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('controllerDumpDB', payload=payload, response_object=None)
+
+    def DeleteServer(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the deleteServer operation on the server.
+
+        Delete Server.
+
+        deleteServer(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices for which to Delete Server.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('deleteServer', payload=payload, response_object=None)
+
+    def DumpDB(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the dumpDB operation on the server.
+
+        Attach.
+
+        dumpDB(Arg2=list, async_operation=bool)list
+        -------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('dumpDB', payload=payload, response_object=None)
+
+    def GetServerAddDeleteStatus(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getServerAddDeleteStatus operation on the server.
+
+        Get Server Status.
+
+        getServerAddDeleteStatus(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------
+        - Arg2 (list(number)): List of indices for which to get Server Status.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getServerAddDeleteStatus', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ClearDumpDbFiles=None, ConnectionType=None, ControllerTcpPort=None, DirectoryName=None, DumpdbDirectoryName=None, EnableOvsdbServerIp=None, ErrorCode=None, ErrorDesc=None, ErrorLogDirectoryName=None, ErrorLogicalSwitchName=None, ErrorPhysicalSwitchName=None, ErrorTimeStamp=None, FileCaCertificate=None, FileCertificate=None, FileHWGatewayCertificate=None, FilePrivKey=None, HSCConfiguration=None, OvsdbSchema=None, OvsdbServerIp=None, ServerConnectionIp=None, TableNames=None, VerifyHWGatewayCertificate=None, VerifyPeerCertificate=None):
         """Base class infrastructure that gets a list of ovsdbcontroller device ids encapsulated by this object.
 
@@ -784,243 +1138,3 @@ class Ovsdbcontroller(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def AddServer(self, *args, **kwargs):
-        """Executes the addServer operation on the server.
-
-        Add Server.
-
-        addServer(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices for which to Add Server.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('addServer', payload=payload, response_object=None)
-
-    def ClearLastErrors(self, *args, **kwargs):
-        """Executes the clearLastErrors operation on the server.
-
-        Clear Error Messages reported due to Last Action.
-
-        clearLastErrors(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices for which to clear last reported error messages.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearLastErrors', payload=payload, response_object=None)
-
-    def ClearPortLogs(self, *args, **kwargs):
-        """Executes the clearPortLogs operation on the server.
-
-        Add Server.
-
-        clearPortLogs(Arg2=list)list
-        ----------------------------
-        - Arg2 (list(number)): List of indices for which to Add Server.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearPortLogs', payload=payload, response_object=None)
-
-    def ControllerDumpDB(self, *args, **kwargs):
-        """Executes the controllerDumpDB operation on the server.
-
-        Command to fetch Tor Information stored internally.
-
-        controllerDumpDB(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('controllerDumpDB', payload=payload, response_object=None)
-
-    def DeleteServer(self, *args, **kwargs):
-        """Executes the deleteServer operation on the server.
-
-        Delete Server.
-
-        deleteServer(Arg2=list)list
-        ---------------------------
-        - Arg2 (list(number)): List of indices for which to Delete Server.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deleteServer', payload=payload, response_object=None)
-
-    def DumpDB(self, *args, **kwargs):
-        """Executes the dumpDB operation on the server.
-
-        Attach.
-
-        dumpDB(Arg2=list)list
-        ---------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('dumpDB', payload=payload, response_object=None)
-
-    def GetServerAddDeleteStatus(self, *args, **kwargs):
-        """Executes the getServerAddDeleteStatus operation on the server.
-
-        Get Server Status.
-
-        getServerAddDeleteStatus(Arg2=list)list
-        ---------------------------------------
-        - Arg2 (list(number)): List of indices for which to get Server Status.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getServerAddDeleteStatus', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

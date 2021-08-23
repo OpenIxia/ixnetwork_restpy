@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SubscribedStreams(Base):
@@ -38,12 +39,15 @@ class SubscribedStreams(Base):
         'Name': 'name',
         'StreamId': 'streamId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SubscribedStreams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SubscribedStreams, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class SubscribedStreams(Base):
 
     @property
     def AttributeType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class SubscribedStreams(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class SubscribedStreams(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class SubscribedStreams(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +98,12 @@ class SubscribedStreams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def StreamId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +113,7 @@ class SubscribedStreams(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StreamId']))
 
     def update(self, Name=None):
+        # type: (str) -> SubscribedStreams
         """Updates subscribedStreams resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -117,6 +128,50 @@ class SubscribedStreams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the start operation on the server.
+
+        Start
+
+        start(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stop operation on the server.
+
+        Stop
+
+        stop(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AttributeType=None, StreamId=None):
         """Base class infrastructure that gets a list of subscribedStreams device ids encapsulated by this object.
@@ -139,43 +194,3 @@ class SubscribedStreams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start
-
-        start(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop
-
-        stop(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

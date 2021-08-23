@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchHostRangeHopsLearnedInfo(Base):
@@ -42,12 +43,15 @@ class SwitchHostRangeHopsLearnedInfo(Base):
         'SwitchDataPathId': 'switchDataPathId',
         'SwitchIp': 'switchIp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchHostRangeHopsLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchHostRangeHopsLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def Action(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def DestinationHostMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def InputPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def InputTimeInMs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def OutputPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def OutputTimeInMs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,6 +111,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def SourceHostMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,6 +121,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def SwitchDataPathId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,6 +131,7 @@ class SwitchHostRangeHopsLearnedInfo(Base):
 
     @property
     def SwitchIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,7 +139,21 @@ class SwitchHostRangeHopsLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SwitchIp'])
 
+    def add(self):
+        """Adds a new switchHostRangeHopsLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchHostRangeHopsLearnedInfo resources using find and the newly added switchHostRangeHopsLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Action=None, DestinationHostMac=None, InputPort=None, InputTimeInMs=None, OutputPort=None, OutputTimeInMs=None, SourceHostMac=None, SwitchDataPathId=None, SwitchIp=None):
+        # type: (str, str, int, int, int, int, str, int, str) -> SwitchHostRangeHopsLearnedInfo
         """Finds and retrieves switchHostRangeHopsLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRangeHopsLearnedInfo resources from the server.

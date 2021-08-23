@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AvailableTrackingFilter(Base):
@@ -37,12 +38,15 @@ class AvailableTrackingFilter(Base):
         'TrackingType': 'trackingType',
         'ValueType': 'valueType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AvailableTrackingFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AvailableTrackingFilter, self).__init__(parent, list_op)
 
     @property
     def Constraints(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -52,6 +56,7 @@ class AvailableTrackingFilter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +66,7 @@ class AvailableTrackingFilter(Base):
 
     @property
     def TrackingType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +76,7 @@ class AvailableTrackingFilter(Base):
 
     @property
     def ValueType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,7 +84,21 @@ class AvailableTrackingFilter(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ValueType'])
 
+    def add(self):
+        """Adds a new availableTrackingFilter resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved availableTrackingFilter resources using find and the newly added availableTrackingFilter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Constraints=None, Name=None, TrackingType=None, ValueType=None):
+        # type: (List[str], str, str, str) -> AvailableTrackingFilter
         """Finds and retrieves availableTrackingFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableTrackingFilter resources from the server.

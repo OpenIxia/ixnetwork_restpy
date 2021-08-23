@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EvbStationRange(Base):
@@ -45,9 +46,11 @@ class EvbStationRange(Base):
         'TxDelay': 'txDelay',
         'TxInterval': 'txInterval',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EvbStationRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EvbStationRange, self).__init__(parent, list_op)
 
     @property
     def ErRange(self):
@@ -61,10 +64,14 @@ class EvbStationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_162ea2ac786a0c4f518cef35d874b832 import ErRange
-        return ErRange(self)
+        if self._properties.get('ErRange', None) is not None:
+            return self._properties.get('ErRange')
+        else:
+            return ErRange(self)
 
     @property
     def ChannelCapability(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,10 +80,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChannelCapability'])
     @ChannelCapability.setter
     def ChannelCapability(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChannelCapability'], value)
 
     @property
     def ChassisId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,10 +94,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChassisId'])
     @ChassisId.setter
     def ChassisId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChassisId'], value)
 
     @property
     def DefaultEr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,10 +108,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultEr'])
     @DefaultEr.setter
     def DefaultEr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultEr'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -109,10 +122,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def HoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,10 +136,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HoldTime'])
     @HoldTime.setter
     def HoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HoldTime'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,10 +150,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,6 +165,7 @@ class EvbStationRange(Base):
 
     @property
     def PortIdInterfaceName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,10 +174,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdInterfaceName'])
     @PortIdInterfaceName.setter
     def PortIdInterfaceName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdInterfaceName'], value)
 
     @property
     def PortIdMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,10 +188,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdMacAddress'])
     @PortIdMacAddress.setter
     def PortIdMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdMacAddress'], value)
 
     @property
     def PortIdSubType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -178,10 +202,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdSubType'])
     @PortIdSubType.setter
     def PortIdSubType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdSubType'], value)
 
     @property
     def SComponentMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,10 +216,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SComponentMode'])
     @SComponentMode.setter
     def SComponentMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SComponentMode'], value)
 
     @property
     def TxDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,10 +230,12 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
     @TxDelay.setter
     def TxDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
 
     @property
     def TxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,9 +244,11 @@ class EvbStationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxInterval'])
     @TxInterval.setter
     def TxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxInterval'], value)
 
     def update(self, ChannelCapability=None, ChassisId=None, DefaultEr=None, Enabled=None, HoldTime=None, Name=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, SComponentMode=None, TxDelay=None, TxInterval=None):
+        # type: (int, str, str, bool, int, str, str, str, int, str, int, int) -> EvbStationRange
         """Updates evbStationRange resource on the server.
 
         Args
@@ -241,14 +273,16 @@ class EvbStationRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -261,13 +295,15 @@ class EvbStationRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -281,13 +317,15 @@ class EvbStationRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

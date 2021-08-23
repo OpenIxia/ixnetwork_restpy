@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DedicatedBearer(Base):
@@ -55,12 +56,15 @@ class DedicatedBearer(Base):
         'Tft': 'tft',
         'TimeoutAction': 'timeoutAction',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DedicatedBearer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DedicatedBearer, self).__init__(parent, list_op)
 
     @property
     def ApnAmbrUpdateValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,10 +73,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApnAmbrUpdateValue'])
     @ApnAmbrUpdateValue.setter
     def ApnAmbrUpdateValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApnAmbrUpdateValue'], value)
 
     @property
     def Arp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +87,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Arp'])
     @Arp.setter
     def Arp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Arp'], value)
 
     @property
     def CustomTft(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +101,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomTft'])
     @CustomTft.setter
     def CustomTft(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomTft'], value)
 
     @property
     def EnableLifetime(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +115,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLifetime'])
     @EnableLifetime.setter
     def EnableLifetime(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLifetime'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -117,10 +129,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Gbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,10 +143,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Gbrd'])
     @Gbrd.setter
     def Gbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Gbrd'], value)
 
     @property
     def Gbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +157,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Gbru'])
     @Gbru.setter
     def Gbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Gbru'], value)
 
     @property
     def Lifetime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,10 +171,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Lifetime'])
     @Lifetime.setter
     def Lifetime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Lifetime'], value)
 
     @property
     def Mbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -165,10 +185,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mbrd'])
     @Mbrd.setter
     def Mbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mbrd'], value)
 
     @property
     def Mbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,10 +199,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mbru'])
     @Mbru.setter
     def Mbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mbru'], value)
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,10 +213,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -201,10 +227,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,6 +242,7 @@ class DedicatedBearer(Base):
 
     @property
     def PreemptionCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -222,10 +251,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreemptionCapability'])
     @PreemptionCapability.setter
     def PreemptionCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreemptionCapability'], value)
 
     @property
     def PreemptionVulnerability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -234,10 +265,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreemptionVulnerability'])
     @PreemptionVulnerability.setter
     def PreemptionVulnerability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreemptionVulnerability'], value)
 
     @property
     def PriorityLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -246,10 +279,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityLevel'])
     @PriorityLevel.setter
     def PriorityLevel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityLevel'], value)
 
     @property
     def Qci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -258,10 +293,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Qci'])
     @Qci.setter
     def Qci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Qci'], value)
 
     @property
     def QosLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -270,10 +307,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QosLabel'])
     @QosLabel.setter
     def QosLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['QosLabel'], value)
 
     @property
     def QosUpdateValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -282,10 +321,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QosUpdateValue'])
     @QosUpdateValue.setter
     def QosUpdateValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QosUpdateValue'], value)
 
     @property
     def Tft(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -294,10 +335,12 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tft'])
     @Tft.setter
     def Tft(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tft'], value)
 
     @property
     def TimeoutAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -306,9 +349,11 @@ class DedicatedBearer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeoutAction'])
     @TimeoutAction.setter
     def TimeoutAction(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeoutAction'], value)
 
     def update(self, ApnAmbrUpdateValue=None, Arp=None, CustomTft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
+        # type: (int, int, str, bool, bool, int, int, int, int, int, str, str, bool, bool, int, int, str, int, str, str) -> DedicatedBearer
         """Updates dedicatedBearer resource on the server.
 
         Args
@@ -341,6 +386,7 @@ class DedicatedBearer(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ApnAmbrUpdateValue=None, Arp=None, CustomTft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
+        # type: (int, int, str, bool, bool, int, int, int, int, int, str, str, bool, bool, int, int, str, int, str, str) -> DedicatedBearer
         """Adds a new dedicatedBearer resource on the server and adds it to the container.
 
         Args
@@ -387,6 +433,7 @@ class DedicatedBearer(Base):
         self._delete()
 
     def find(self, ApnAmbrUpdateValue=None, Arp=None, CustomTft=None, EnableLifetime=None, Enabled=None, Gbrd=None, Gbru=None, Lifetime=None, Mbrd=None, Mbru=None, Mode=None, Name=None, ObjectId=None, PreemptionCapability=None, PreemptionVulnerability=None, PriorityLevel=None, Qci=None, QosLabel=None, QosUpdateValue=None, Tft=None, TimeoutAction=None):
+        # type: (int, int, str, bool, bool, int, int, int, int, int, str, str, str, bool, bool, int, int, str, int, str, str) -> DedicatedBearer
         """Finds and retrieves dedicatedBearer resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dedicatedBearer resources from the server.
@@ -446,14 +493,16 @@ class DedicatedBearer(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -466,13 +515,15 @@ class DedicatedBearer(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -486,13 +537,15 @@ class DedicatedBearer(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

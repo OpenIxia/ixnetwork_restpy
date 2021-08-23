@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Field(Base):
@@ -46,12 +47,17 @@ class Field(Base):
         'SizeType': 'sizeType',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'encoding': ['iPv4', 'iPv6', 'mAC', 'mACVLAN', 'decimal', 'hex', 'aTM', 'mACSiteId', 'mACVLANSiteId', 'debug', 'fCID', 'unknown', 'hex8WithSpaces', 'bool', 'string', 'float', 'floatEng', 'hex8WithColons', 'mACMAC', 'decimalFixed2', 'varLenHex', 'decimalSigned8'],
+        'sizeType': ['byte', 'bit'],
+    }
 
-    def __init__(self, parent):
-        super(Field, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Field, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -61,6 +67,7 @@ class Field(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,10 +76,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Encoding(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,10 +90,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encoding'])
     @Encoding.setter
     def Encoding(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encoding'], value)
 
     @property
     def Enum(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +104,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enum'])
     @Enum.setter
     def Enum(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enum'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +118,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRepeatable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -117,10 +132,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
     @IsRepeatable.setter
     def IsRepeatable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -129,10 +146,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,10 +160,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SingleValue(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +174,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SingleValue'])
     @SingleValue.setter
     def SingleValue(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SingleValue'], value)
 
     @property
     def Size(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -165,10 +188,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Size'])
     @Size.setter
     def Size(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Size'], value)
 
     @property
     def SizeType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,10 +202,12 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SizeType'])
     @SizeType.setter
     def SizeType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SizeType'], value)
 
     @property
     def Value(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +217,7 @@ class Field(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
 
     def update(self, Description=None, Encoding=None, Enum=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+        # type: (str, str, str, bool, bool, bool, str, bool, int, str) -> Field
         """Updates field resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -215,6 +243,7 @@ class Field(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, Encoding=None, Enum=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+        # type: (str, str, str, bool, bool, bool, str, bool, int, str) -> Field
         """Adds a new field resource on the server and adds it to the container.
 
         Args
@@ -251,6 +280,7 @@ class Field(Base):
         self._delete()
 
     def find(self, Count=None, Description=None, Encoding=None, Enum=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None, SingleValue=None, Size=None, SizeType=None):
+        # type: (int, str, str, str, bool, bool, bool, str, bool, int, str) -> Field
         """Finds and retrieves field resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.

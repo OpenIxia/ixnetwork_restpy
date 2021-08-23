@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -53,9 +54,11 @@ class Interface(Base):
         'PollInterval': 'pollInterval',
         'TxInterval': 'txInterval',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def Session(self):
@@ -69,10 +72,14 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.session_528e31d9c93d0ad2afb513a10d9d8be3 import Session
-        return Session(self)
+        if self._properties.get('Session', None) is not None:
+            return self._properties.get('Session')
+        else:
+            return Session(self)
 
     @property
     def EchoConfigureSrcIp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -81,10 +88,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoConfigureSrcIp'])
     @EchoConfigureSrcIp.setter
     def EchoConfigureSrcIp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoConfigureSrcIp'], value)
 
     @property
     def EchoInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +102,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoInterval'])
     @EchoInterval.setter
     def EchoInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoInterval'], value)
 
     @property
     def EchoSrcIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +116,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoSrcIpv4Address'])
     @EchoSrcIpv4Address.setter
     def EchoSrcIpv4Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoSrcIpv4Address'], value)
 
     @property
     def EchoSrcIpv6Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,10 +130,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoSrcIpv6Address'])
     @EchoSrcIpv6Address.setter
     def EchoSrcIpv6Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoSrcIpv6Address'], value)
 
     @property
     def EchoTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,10 +144,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoTimeout'])
     @EchoTimeout.setter
     def EchoTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoTimeout'], value)
 
     @property
     def EchoTxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +158,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoTxInterval'])
     @EchoTxInterval.setter
     def EchoTxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoTxInterval'], value)
 
     @property
     def EnableCtrlPlaneIndependent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +172,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCtrlPlaneIndependent'])
     @EnableCtrlPlaneIndependent.setter
     def EnableCtrlPlaneIndependent(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCtrlPlaneIndependent'], value)
 
     @property
     def EnableDemandMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -165,10 +186,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDemandMode'])
     @EnableDemandMode.setter
     def EnableDemandMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDemandMode'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -177,10 +200,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FlapTxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,10 +214,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlapTxInterval'])
     @FlapTxInterval.setter
     def FlapTxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlapTxInterval'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -201,10 +228,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def InterfaceIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -213,10 +242,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -225,10 +256,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -237,10 +270,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     @property
     def IpDifferentiatedServiceField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -249,10 +284,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDifferentiatedServiceField'])
     @IpDifferentiatedServiceField.setter
     def IpDifferentiatedServiceField(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDifferentiatedServiceField'], value)
 
     @property
     def MinRxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -261,10 +298,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRxInterval'])
     @MinRxInterval.setter
     def MinRxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRxInterval'], value)
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -273,10 +312,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def PollInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -285,10 +326,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def TxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -297,9 +340,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxInterval'])
     @TxInterval.setter
     def TxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxInterval'], value)
 
     def update(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+        # type: (bool, int, str, str, int, int, bool, bool, bool, int, str, int, str, str, int, int, int, int, int) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -331,6 +376,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+        # type: (bool, int, str, str, int, int, bool, bool, bool, int, str, int, str, str, int, int, int, int, int) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -376,6 +422,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, EchoConfigureSrcIp=None, EchoInterval=None, EchoSrcIpv4Address=None, EchoSrcIpv6Address=None, EchoTimeout=None, EchoTxInterval=None, EnableCtrlPlaneIndependent=None, EnableDemandMode=None, Enabled=None, FlapTxInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IpDifferentiatedServiceField=None, MinRxInterval=None, Multiplier=None, PollInterval=None, TxInterval=None):
+        # type: (bool, int, str, str, int, int, bool, bool, bool, int, str, int, str, str, int, int, int, int, int) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
@@ -432,10 +479,16 @@ class Interface(Base):
         """
         return self._read(href)
 
-    def GetInterfaceAccessorIfaceList(self):
+    def GetInterfaceAccessorIfaceList(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
         NOT DEFINED
+
+        getInterfaceAccessorIfaceList(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -443,4 +496,6 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)

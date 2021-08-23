@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Type(Base):
@@ -35,9 +36,11 @@ class Type(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Type, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Type, self).__init__(parent, list_op)
 
     @property
     def Object(self):
@@ -51,10 +54,14 @@ class Type(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is not None:
+            return self._properties.get('Object')
+        else:
+            return Object(self)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class Type(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +84,12 @@ class Type(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,9 +98,11 @@ class Type(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, IsEditable=None, IsRequired=None, Name=None):
+        # type: (bool, bool, str) -> Type
         """Updates type resource on the server.
 
         Args

@@ -1,5 +1,19 @@
 # Release Notes
 
+### Aug 2021
+* 1.1.0
+  * Async operation enhancement that allows all operations to be executed asynchronously 
+    * issue details https://github.com/OpenIxia/ixnetwork_restpy/issues/51
+  * ConfigAssistant enhancement that allows for configuration with a single commit
+    * reduces rest api transactions
+    * uses traffic protocol templates stack and field names as class properties
+    * can export configuration as json
+  * fix Base.update() method to update all encapsulated resources
+  * fix Sessions.remove() method to optimize linux API server sessions removal
+  * new samples https://openixia.github.io/ixnetwork_restpy/#/samples
+    * config assistant: CustomTraffic.py, Evpn.py, NgpfBgp.py
+    * async operation: async_operation.py
+
 ### May 2021
 * 1.0.67
   * fix __str__ output of href

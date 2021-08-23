@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MacPools(Base):
@@ -45,9 +46,11 @@ class MacPools(Base):
         'UseVlans': 'useVlans',
         'VlanCount': 'vlanCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MacPools, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MacPools, self).__init__(parent, list_op)
 
     @property
     def CMacProperties(self):
@@ -61,7 +64,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is not None:
+            return self._properties.get('CMacProperties')
+        else:
+            return CMacProperties(self)
 
     @property
     def Connector(self):
@@ -75,7 +81,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -89,7 +98,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv4PrefixRange')
+        else:
+            return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -103,7 +115,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv6PrefixRange')
+        else:
+            return EvpnIPv6PrefixRange(self)
 
     @property
     def Ipv4PrefixPools(self):
@@ -117,7 +132,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools_2d6f2aedde61c058965d4e1b21741352 import Ipv4PrefixPools
-        return Ipv4PrefixPools(self)
+        if self._properties.get('Ipv4PrefixPools', None) is not None:
+            return self._properties.get('Ipv4PrefixPools')
+        else:
+            return Ipv4PrefixPools(self)
 
     @property
     def Ipv6PrefixPools(self):
@@ -131,7 +149,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools_f83aba85ff769655b348dc60ddcb30f2 import Ipv6PrefixPools
-        return Ipv6PrefixPools(self)
+        if self._properties.get('Ipv6PrefixPools', None) is not None:
+            return self._properties.get('Ipv6PrefixPools')
+        else:
+            return Ipv6PrefixPools(self)
 
     @property
     def IsisSpbMacCloudConfig(self):
@@ -145,7 +166,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig_791b0bf61c8f6877cabfa2621478ab8a import IsisSpbMacCloudConfig
-        return IsisSpbMacCloudConfig(self)
+        if self._properties.get('IsisSpbMacCloudConfig', None) is not None:
+            return self._properties.get('IsisSpbMacCloudConfig')
+        else:
+            return IsisSpbMacCloudConfig(self)
 
     @property
     def IsisTrillUCastMacConfig(self):
@@ -159,7 +183,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig_a91c5b3e28b2bee04ff08d2e22fad1e2 import IsisTrillUCastMacConfig
-        return IsisTrillUCastMacConfig(self)
+        if self._properties.get('IsisTrillUCastMacConfig', None) is not None:
+            return self._properties.get('IsisTrillUCastMacConfig')
+        else:
+            return IsisTrillUCastMacConfig(self)
 
     @property
     def Tag(self):
@@ -173,7 +200,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Vlan(self):
@@ -187,10 +217,14 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import Vlan
-        return Vlan(self)
+        if self._properties.get('Vlan', None) is not None:
+            return self._properties.get('Vlan')
+        else:
+            return Vlan(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -200,6 +234,7 @@ class MacPools(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -209,6 +244,7 @@ class MacPools(Base):
 
     @property
     def EnableVlans(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +255,7 @@ class MacPools(Base):
 
     @property
     def LastMacAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -228,6 +265,7 @@ class MacPools(Base):
 
     @property
     def Mac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +276,7 @@ class MacPools(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -246,10 +285,12 @@ class MacPools(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfAddresses(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -258,10 +299,12 @@ class MacPools(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfAddresses'])
     @NumberOfAddresses.setter
     def NumberOfAddresses(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfAddresses'], value)
 
     @property
     def NumberOfAddressesAsy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -272,6 +315,7 @@ class MacPools(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -282,6 +326,7 @@ class MacPools(Base):
 
     @property
     def UseVlans(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -290,10 +335,12 @@ class MacPools(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseVlans'])
     @UseVlans.setter
     def UseVlans(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseVlans'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -302,9 +349,11 @@ class MacPools(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     def update(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
+        # type: (str, int, bool, int) -> MacPools
         """Updates macPools resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -324,6 +373,7 @@ class MacPools(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
+        # type: (str, int, bool, int) -> MacPools
         """Adds a new macPools resource on the server and adds it to the container.
 
         Args
@@ -354,6 +404,7 @@ class MacPools(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, LastMacAddress=None, Name=None, NumberOfAddresses=None, UseVlans=None, VlanCount=None):
+        # type: (int, str, List[str], str, int, bool, int) -> MacPools
         """Finds and retrieves macPools resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macPools resources from the server.
@@ -398,6 +449,66 @@ class MacPools(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, EnableVlans=None, Mac=None, NumberOfAddressesAsy=None, PrefixLength=None):
         """Base class infrastructure that gets a list of macPools device ids encapsulated by this object.
 
@@ -420,42 +531,3 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

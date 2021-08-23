@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RsvpP2mpIngressSubLsps(Base):
@@ -50,9 +51,11 @@ class RsvpP2mpIngressSubLsps(Base):
         'SessionInformation': 'sessionInformation',
         'State': 'state',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RsvpP2mpIngressSubLsps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RsvpP2mpIngressSubLsps, self).__init__(parent, list_op)
 
     @property
     def RsvpEroSubObjectsList(self):
@@ -66,10 +69,14 @@ class RsvpP2mpIngressSubLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_c0ebecb067ebf96898ae4f90af81d688 import RsvpEroSubObjectsList
-        return RsvpEroSubObjectsList(self)
+        if self._properties.get('RsvpEroSubObjectsList', None) is not None:
+            return self._properties.get('RsvpEroSubObjectsList')
+        else:
+            return RsvpEroSubObjectsList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def AppendLeaf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -90,6 +98,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,6 +108,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,6 +118,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def EnableEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -118,6 +129,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def LeafIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,6 +140,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -137,6 +150,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,10 +159,12 @@ class RsvpP2mpIngressSubLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfEroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,10 +173,12 @@ class RsvpP2mpIngressSubLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
 
     @property
     def P2mpIdAsIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -170,6 +188,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def P2mpIdAsNum(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -179,6 +198,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def PrefixLengthOfDut(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +209,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def PrefixLengthOfLeaf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +220,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def PrependDut(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -209,6 +231,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def SendAsEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +242,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def SendAsSero(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +253,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def SessionInformation(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -238,6 +263,7 @@ class RsvpP2mpIngressSubLsps(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -246,6 +272,7 @@ class RsvpP2mpIngressSubLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     def update(self, Name=None, NumberOfEroSubObjects=None):
+        # type: (str, int) -> RsvpP2mpIngressSubLsps
         """Updates rsvpP2mpIngressSubLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -261,6 +288,94 @@ class RsvpP2mpIngressSubLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ExcludeEroOrSero(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the excludeEroOrSero operation on the server.
+
+        Prune Ingress P2MP SubLSP
+
+        excludeEroOrSero(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('excludeEroOrSero', payload=payload, response_object=None)
+
+    def GraftSubLsp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the graftSubLsp operation on the server.
+
+        Activate/Enable Tunnel selected SubLsp Ranges
+
+        graftSubLsp(Arg2=list, async_operation=bool)list
+        ------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('graftSubLsp', payload=payload, response_object=None)
+
+    def IncludeEroOrSero(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the includeEroOrSero operation on the server.
+
+        Graft Ingress P2MP SubLSP
+
+        includeEroOrSero(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('includeEroOrSero', payload=payload, response_object=None)
+
+    def PruneSubLsp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the pruneSubLsp operation on the server.
+
+        Deactivate/Disable selected Tunnel SubLsp Ranges
+
+        pruneSubLsp(Arg2=list, async_operation=bool)list
+        ------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pruneSubLsp', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AppendLeaf=None, EnableEro=None, LeafIp=None, PrefixLengthOfDut=None, PrefixLengthOfLeaf=None, PrependDut=None, SendAsEro=None, SendAsSero=None):
         """Base class infrastructure that gets a list of rsvpP2mpIngressSubLsps device ids encapsulated by this object.
@@ -289,83 +404,3 @@ class RsvpP2mpIngressSubLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ExcludeEroOrSero(self, *args, **kwargs):
-        """Executes the excludeEroOrSero operation on the server.
-
-        Prune Ingress P2MP SubLSP
-
-        excludeEroOrSero(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('excludeEroOrSero', payload=payload, response_object=None)
-
-    def GraftSubLsp(self, *args, **kwargs):
-        """Executes the graftSubLsp operation on the server.
-
-        Activate/Enable Tunnel selected SubLsp Ranges
-
-        graftSubLsp(Arg2=list)list
-        --------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('graftSubLsp', payload=payload, response_object=None)
-
-    def IncludeEroOrSero(self, *args, **kwargs):
-        """Executes the includeEroOrSero operation on the server.
-
-        Graft Ingress P2MP SubLSP
-
-        includeEroOrSero(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('includeEroOrSero', payload=payload, response_object=None)
-
-    def PruneSubLsp(self, *args, **kwargs):
-        """Executes the pruneSubLsp operation on the server.
-
-        Deactivate/Disable selected Tunnel SubLsp Ranges
-
-        pruneSubLsp(Arg2=list)list
-        --------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pruneSubLsp', payload=payload, response_object=None)

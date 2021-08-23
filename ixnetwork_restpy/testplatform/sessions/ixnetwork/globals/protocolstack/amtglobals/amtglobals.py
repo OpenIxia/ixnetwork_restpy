@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AmtGlobals(Base):
@@ -43,12 +44,15 @@ class AmtGlobals(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AmtGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AmtGlobals, self).__init__(parent, list_op)
 
     @property
     def DiscoveryTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -57,10 +61,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscoveryTimeout'])
     @DiscoveryTimeout.setter
     def DiscoveryTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscoveryTimeout'], value)
 
     @property
     def MaxOutstandingSessions(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,10 +75,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'])
     @MaxOutstandingSessions.setter
     def MaxOutstandingSessions(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'], value)
 
     @property
     def MaxRelayDiscoveryRetransmissionCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +89,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRelayDiscoveryRetransmissionCount'])
     @MaxRelayDiscoveryRetransmissionCount.setter
     def MaxRelayDiscoveryRetransmissionCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRelayDiscoveryRetransmissionCount'], value)
 
     @property
     def MaxRequestRetransmissionCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +103,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRequestRetransmissionCount'])
     @MaxRequestRetransmissionCount.setter
     def MaxRequestRetransmissionCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRequestRetransmissionCount'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +118,7 @@ class AmtGlobals(Base):
 
     @property
     def RequestTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,10 +127,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestTimeout'])
     @RequestTimeout.setter
     def RequestTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestTimeout'], value)
 
     @property
     def RetransmissionHolddown(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,10 +141,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetransmissionHolddown'])
     @RetransmissionHolddown.setter
     def RetransmissionHolddown(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetransmissionHolddown'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,10 +155,12 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,9 +169,11 @@ class AmtGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int, int, int, int, int, int) -> AmtGlobals
         """Updates amtGlobals resource on the server.
 
         Args
@@ -173,6 +194,7 @@ class AmtGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int, int, int, int, int, int) -> AmtGlobals
         """Adds a new amtGlobals resource on the server and adds it to the container.
 
         Args
@@ -207,6 +229,7 @@ class AmtGlobals(Base):
         self._delete()
 
     def find(self, DiscoveryTimeout=None, MaxOutstandingSessions=None, MaxRelayDiscoveryRetransmissionCount=None, MaxRequestRetransmissionCount=None, ObjectId=None, RequestTimeout=None, RetransmissionHolddown=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int, int, str, int, int, int, int) -> AmtGlobals
         """Finds and retrieves amtGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve amtGlobals resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6ClientRange(Base):
@@ -45,12 +46,15 @@ class Dhcpv6ClientRange(Base):
         'UseVendorClassId': 'useVendorClassId',
         'VendorClassId': 'vendorClassId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6ClientRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6ClientRange, self).__init__(parent, list_op)
 
     @property
     def Dhcp6DuidEnterpriseId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -59,10 +63,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId'])
     @Dhcp6DuidEnterpriseId.setter
     def Dhcp6DuidEnterpriseId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidEnterpriseId'], value)
 
     @property
     def Dhcp6DuidType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,10 +77,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidType'])
     @Dhcp6DuidType.setter
     def Dhcp6DuidType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidType'], value)
 
     @property
     def Dhcp6DuidVendorId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,10 +91,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId'])
     @Dhcp6DuidVendorId.setter
     def Dhcp6DuidVendorId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorId'], value)
 
     @property
     def Dhcp6DuidVendorIdIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorIdIncrement'])
     @Dhcp6DuidVendorIdIncrement.setter
     def Dhcp6DuidVendorIdIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6DuidVendorIdIncrement'], value)
 
     @property
     def Dhcp6ParamRequestList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6ParamRequestList'])
     @Dhcp6ParamRequestList.setter
     def Dhcp6ParamRequestList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6ParamRequestList'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +133,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +147,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,10 +161,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,6 +176,7 @@ class Dhcpv6ClientRange(Base):
 
     @property
     def UseVendorClassId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -164,10 +185,12 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseVendorClassId'])
     @UseVendorClassId.setter
     def UseVendorClassId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseVendorClassId'], value)
 
     @property
     def VendorClassId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,9 +199,11 @@ class Dhcpv6ClientRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorClassId'])
     @VendorClassId.setter
     def VendorClassId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorClassId'], value)
 
     def update(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, UseVendorClassId=None, VendorClassId=None):
+        # type: (int, str, int, int, str, bool, str, str, bool, str) -> Dhcpv6ClientRange
         """Updates dhcpv6ClientRange resource on the server.
 
         Args
@@ -201,6 +226,7 @@ class Dhcpv6ClientRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, UseVendorClassId=None, VendorClassId=None):
+        # type: (int, str, int, int, str, bool, str, str, bool, str) -> Dhcpv6ClientRange
         """Adds a new dhcpv6ClientRange resource on the server and adds it to the container.
 
         Args
@@ -237,6 +263,7 @@ class Dhcpv6ClientRange(Base):
         self._delete()
 
     def find(self, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, ObjectId=None, UseVendorClassId=None, VendorClassId=None):
+        # type: (int, str, int, int, str, bool, str, str, str, bool, str) -> Dhcpv6ClientRange
         """Finds and retrieves dhcpv6ClientRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ClientRange resources from the server.
@@ -286,14 +313,16 @@ class Dhcpv6ClientRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -306,13 +335,15 @@ class Dhcpv6ClientRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -326,13 +357,15 @@ class Dhcpv6ClientRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

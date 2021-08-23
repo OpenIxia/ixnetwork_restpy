@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DescriptionStatLearnedInformation(Base):
@@ -47,12 +48,15 @@ class DescriptionStatLearnedInformation(Base):
         'SerialNumber': 'serialNumber',
         'SoftwareDescription': 'softwareDescription',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DescriptionStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DescriptionStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def DataPathDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +66,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,6 +76,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,6 +86,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def HardwareDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,6 +116,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,6 +126,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +136,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def ManufacturerDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,6 +146,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +156,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,6 +166,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -161,6 +176,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def SerialNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,6 +186,7 @@ class DescriptionStatLearnedInformation(Base):
 
     @property
     def SoftwareDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,7 +194,21 @@ class DescriptionStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SoftwareDescription'])
 
+    def add(self):
+        """Adds a new descriptionStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved descriptionStatLearnedInformation resources using find and the newly added descriptionStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathDescription=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, HardwareDescription=None, Latency=None, LocalIp=None, ManufacturerDescription=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, SerialNumber=None, SoftwareDescription=None):
+        # type: (str, str, str, str, str, str, int, str, str, str, str, str, str, str) -> DescriptionStatLearnedInformation
         """Finds and retrieves descriptionStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve descriptionStatLearnedInformation resources from the server.

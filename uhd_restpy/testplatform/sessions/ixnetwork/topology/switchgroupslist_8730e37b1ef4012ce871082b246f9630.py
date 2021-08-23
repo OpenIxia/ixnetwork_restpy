@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchGroupsList(Base):
@@ -56,12 +57,15 @@ class SwitchGroupsList(Base):
         'SetNetwork': 'setNetwork',
         'SetQueue': 'setQueue',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchGroupsList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchGroupsList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -72,6 +76,7 @@ class SwitchGroupsList(Base):
 
     @property
     def ApplyGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +87,7 @@ class SwitchGroupsList(Base):
 
     @property
     def CopyTtlIn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +98,7 @@ class SwitchGroupsList(Base):
 
     @property
     def CopyTtlOut(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -102,6 +109,7 @@ class SwitchGroupsList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +119,7 @@ class SwitchGroupsList(Base):
 
     @property
     def DecrementMplsTtl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +130,7 @@ class SwitchGroupsList(Base):
 
     @property
     def DecrementNetwork(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +141,7 @@ class SwitchGroupsList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,6 +151,7 @@ class SwitchGroupsList(Base):
 
     @property
     def GroupType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +162,7 @@ class SwitchGroupsList(Base):
 
     @property
     def MaxNumberOfGroups(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +173,7 @@ class SwitchGroupsList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +182,12 @@ class SwitchGroupsList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Output(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +198,7 @@ class SwitchGroupsList(Base):
 
     @property
     def ParentSwitch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,6 +208,7 @@ class SwitchGroupsList(Base):
 
     @property
     def PopMpls(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +219,7 @@ class SwitchGroupsList(Base):
 
     @property
     def PopPbb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +230,7 @@ class SwitchGroupsList(Base):
 
     @property
     def PopVlan(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +241,7 @@ class SwitchGroupsList(Base):
 
     @property
     def PushMpls(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +252,7 @@ class SwitchGroupsList(Base):
 
     @property
     def PushPbb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +263,7 @@ class SwitchGroupsList(Base):
 
     @property
     def PushVlan(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +274,7 @@ class SwitchGroupsList(Base):
 
     @property
     def SetField(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -261,6 +285,7 @@ class SwitchGroupsList(Base):
 
     @property
     def SetMplsTtl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -271,6 +296,7 @@ class SwitchGroupsList(Base):
 
     @property
     def SetNetwork(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +307,7 @@ class SwitchGroupsList(Base):
 
     @property
     def SetQueue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +317,7 @@ class SwitchGroupsList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SetQueue']))
 
     def update(self, Name=None):
+        # type: (str) -> SwitchGroupsList
         """Updates switchGroupsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -305,7 +333,26 @@ class SwitchGroupsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> SwitchGroupsList
+        """Adds a new switchGroupsList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchGroupsList resources using find and the newly added switchGroupsList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, ParentSwitch=None):
+        # type: (int, str, str, str) -> SwitchGroupsList
         """Finds and retrieves switchGroupsList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupsList resources from the server.

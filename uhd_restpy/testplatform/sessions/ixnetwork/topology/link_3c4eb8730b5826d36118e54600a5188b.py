@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Link(Base):
@@ -41,12 +42,15 @@ class Link(Base):
         'ToMp': 'toMp',
         'ToMpIndex': 'toMpIndex',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Link, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Link, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class Link(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class Link(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class Link(Base):
 
     @property
     def FromMp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class Link(Base):
 
     @property
     def FromMpIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class Link(Base):
 
     @property
     def LinkType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +114,7 @@ class Link(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,10 +123,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ToMp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class Link(Base):
 
     @property
     def ToMpIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +149,7 @@ class Link(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToMpIndex']))
 
     def update(self, Name=None):
+        # type: (str) -> Link
         """Updates link resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

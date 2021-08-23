@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LocalEidRange(Base):
@@ -48,9 +49,13 @@ class LocalEidRange(Base):
         'Ttl': 'ttl',
         'UseAllInterfaceAddressesAsLocator': 'useAllInterfaceAddressesAsLocator',
     }
+    _SDM_ENUM_MAP = {
+        'enableWantMapNotifyBit': ['always', 'duringQuickRegistration', 'never'],
+        'family': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(LocalEidRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LocalEidRange, self).__init__(parent, list_op)
 
     @property
     def Locator(self):
@@ -64,10 +69,14 @@ class LocalEidRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.locator_1ac254d24fe1c15bb04dc97b760a864a import Locator
-        return Locator(self)
+        if self._properties.get('Locator', None) is not None:
+            return self._properties.get('Locator')
+        else:
+            return Locator(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EnableProxyMapReplyBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,10 +99,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableProxyMapReplyBit'])
     @EnableProxyMapReplyBit.setter
     def EnableProxyMapReplyBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableProxyMapReplyBit'], value)
 
     @property
     def EnableWantMapNotifyBit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,10 +113,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWantMapNotifyBit'])
     @EnableWantMapNotifyBit.setter
     def EnableWantMapNotifyBit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWantMapNotifyBit'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,10 +127,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Family(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,10 +141,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Family'])
     @Family.setter
     def Family(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Family'], value)
 
     @property
     def MaxRecordPerMapRegisterPacket(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -136,10 +155,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRecordPerMapRegisterPacket'])
     @MaxRecordPerMapRegisterPacket.setter
     def MaxRecordPerMapRegisterPacket(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRecordPerMapRegisterPacket'], value)
 
     @property
     def PeriodicRefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -148,10 +169,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicRefreshInterval'])
     @PeriodicRefreshInterval.setter
     def PeriodicRefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicRefreshInterval'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,10 +183,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
     @PrefixLength.setter
     def PrefixLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
 
     @property
     def QuickRegistrationPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,10 +197,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QuickRegistrationPeriod'])
     @QuickRegistrationPeriod.setter
     def QuickRegistrationPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QuickRegistrationPeriod'], value)
 
     @property
     def RefreshIntervalInQuickRegistrationPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -184,10 +211,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefreshIntervalInQuickRegistrationPeriod'])
     @RefreshIntervalInQuickRegistrationPeriod.setter
     def RefreshIntervalInQuickRegistrationPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefreshIntervalInQuickRegistrationPeriod'], value)
 
     @property
     def StartAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,10 +225,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartAddress'])
     @StartAddress.setter
     def StartAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartAddress'], value)
 
     @property
     def SupportSmrGeneration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -208,10 +239,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportSmrGeneration'])
     @SupportSmrGeneration.setter
     def SupportSmrGeneration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportSmrGeneration'], value)
 
     @property
     def Ttl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -220,10 +253,12 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ttl'])
     @Ttl.setter
     def Ttl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ttl'], value)
 
     @property
     def UseAllInterfaceAddressesAsLocator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -232,9 +267,11 @@ class LocalEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseAllInterfaceAddressesAsLocator'])
     @UseAllInterfaceAddressesAsLocator.setter
     def UseAllInterfaceAddressesAsLocator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseAllInterfaceAddressesAsLocator'], value)
 
     def update(self, Count=None, EnableProxyMapReplyBit=None, EnableWantMapNotifyBit=None, Enabled=None, Family=None, MaxRecordPerMapRegisterPacket=None, PeriodicRefreshInterval=None, PrefixLength=None, QuickRegistrationPeriod=None, RefreshIntervalInQuickRegistrationPeriod=None, StartAddress=None, SupportSmrGeneration=None, Ttl=None, UseAllInterfaceAddressesAsLocator=None):
+        # type: (int, bool, str, bool, str, int, int, int, int, int, str, bool, int, bool) -> LocalEidRange
         """Updates localEidRange resource on the server.
 
         Args
@@ -261,6 +298,7 @@ class LocalEidRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, EnableProxyMapReplyBit=None, EnableWantMapNotifyBit=None, Enabled=None, Family=None, MaxRecordPerMapRegisterPacket=None, PeriodicRefreshInterval=None, PrefixLength=None, QuickRegistrationPeriod=None, RefreshIntervalInQuickRegistrationPeriod=None, StartAddress=None, SupportSmrGeneration=None, Ttl=None, UseAllInterfaceAddressesAsLocator=None):
+        # type: (int, bool, str, bool, str, int, int, int, int, int, str, bool, int, bool) -> LocalEidRange
         """Adds a new localEidRange resource on the server and adds it to the container.
 
         Args
@@ -301,6 +339,7 @@ class LocalEidRange(Base):
         self._delete()
 
     def find(self, Count=None, EnableProxyMapReplyBit=None, EnableWantMapNotifyBit=None, Enabled=None, Family=None, MaxRecordPerMapRegisterPacket=None, PeriodicRefreshInterval=None, PrefixLength=None, QuickRegistrationPeriod=None, RefreshIntervalInQuickRegistrationPeriod=None, StartAddress=None, SupportSmrGeneration=None, Ttl=None, UseAllInterfaceAddressesAsLocator=None):
+        # type: (int, bool, str, bool, str, int, int, int, int, int, str, bool, int, bool) -> LocalEidRange
         """Finds and retrieves localEidRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve localEidRange resources from the server.

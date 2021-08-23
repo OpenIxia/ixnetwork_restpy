@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TableUdf(Base):
@@ -34,9 +35,11 @@ class TableUdf(Base):
     _SDM_ATT_MAP = {
         'Enabled': 'enabled',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TableUdf, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TableUdf, self).__init__(parent, list_op)
 
     @property
     def Column(self):
@@ -50,10 +53,14 @@ class TableUdf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column import Column
-        return Column(self)
+        if self._properties.get('Column', None) is not None:
+            return self._properties.get('Column')
+        else:
+            return Column(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,9 +69,11 @@ class TableUdf(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, Enabled=None):
+        # type: (bool) -> TableUdf
         """Updates tableUdf resource on the server.
 
         Args
@@ -77,7 +86,26 @@ class TableUdf(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Enabled=None):
+        # type: (bool) -> TableUdf
+        """Adds a new tableUdf resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Enabled (bool): If enabled, enables the UDF table for this flow group if it is supported.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tableUdf resources using find and the newly added tableUdf resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Enabled=None):
+        # type: (bool) -> TableUdf
         """Finds and retrieves tableUdf resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tableUdf resources from the server.

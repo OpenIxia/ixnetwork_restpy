@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IptvProfile(Base):
@@ -42,12 +43,15 @@ class IptvProfile(Base):
         'ZapInterval': 'zapInterval',
         'ZapIntervalType': 'zapIntervalType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IptvProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IptvProfile, self).__init__(parent, list_op)
 
     @property
     def ChangesBeforeView(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,10 +60,12 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChangesBeforeView'])
     @ChangesBeforeView.setter
     def ChangesBeforeView(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChangesBeforeView'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,10 +74,12 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +89,7 @@ class IptvProfile(Base):
 
     @property
     def ViewDuration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +98,12 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ViewDuration'])
     @ViewDuration.setter
     def ViewDuration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ViewDuration'], value)
 
     @property
     def ZapBehavior(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +112,12 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ZapBehavior'])
     @ZapBehavior.setter
     def ZapBehavior(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ZapBehavior'], value)
 
     @property
     def ZapDirection(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,10 +126,12 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ZapDirection'])
     @ZapDirection.setter
     def ZapDirection(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ZapDirection'], value)
 
     @property
     def ZapInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +140,12 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ZapInterval'])
     @ZapInterval.setter
     def ZapInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ZapInterval'], value)
 
     @property
     def ZapIntervalType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,9 +154,11 @@ class IptvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ZapIntervalType'])
     @ZapIntervalType.setter
     def ZapIntervalType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ZapIntervalType'], value)
 
     def update(self, ChangesBeforeView=None, Name=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+        # type: (int, str, int, str, str, int, str) -> IptvProfile
         """Updates iptvProfile resource on the server.
 
         Args
@@ -159,6 +178,7 @@ class IptvProfile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ChangesBeforeView=None, Name=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+        # type: (int, str, int, str, str, int, str) -> IptvProfile
         """Adds a new iptvProfile resource on the server and adds it to the container.
 
         Args
@@ -192,6 +212,7 @@ class IptvProfile(Base):
         self._delete()
 
     def find(self, ChangesBeforeView=None, Name=None, ObjectId=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
+        # type: (int, str, str, int, str, str, int, str) -> IptvProfile
         """Finds and retrieves iptvProfile resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve iptvProfile resources from the server.

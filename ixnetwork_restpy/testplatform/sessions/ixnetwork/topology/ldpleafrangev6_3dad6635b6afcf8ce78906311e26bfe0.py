@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LdpLeafRangeV6(Base):
@@ -48,9 +49,12 @@ class LdpLeafRangeV6(Base):
         'RootAddressCount': 'rootAddressCount',
         'RootAddressStep': 'rootAddressStep',
     }
+    _SDM_ENUM_MAP = {
+        'lSPType': ['p2MP'],
+    }
 
-    def __init__(self, parent):
-        super(LdpLeafRangeV6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LdpLeafRangeV6, self).__init__(parent, list_op)
 
     @property
     def LdpTLVList(self):
@@ -64,10 +68,14 @@ class LdpLeafRangeV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import LdpTLVList
-        return LdpTLVList(self)
+        if self._properties.get('LdpTLVList', None) is not None:
+            return self._properties.get('LdpTLVList')
+        else:
+            return LdpTLVList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -78,6 +86,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def ContinuousIncrementOVAcrossRoot(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +97,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,6 +107,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +117,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def GroupAddressV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -116,6 +128,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def GroupAddressV6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +139,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def GroupCountPerLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +150,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def LSPType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +159,12 @@ class LdpLeafRangeV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LSPType'])
     @LSPType.setter
     def LSPType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LSPType'], value)
 
     @property
     def LabelValueStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +175,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def LabelValueStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -168,6 +186,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def LspCountPerRoot(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -178,6 +197,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -186,10 +206,12 @@ class LdpLeafRangeV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfTLVs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,10 +220,12 @@ class LdpLeafRangeV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfTLVs'])
     @NumberOfTLVs.setter
     def NumberOfTLVs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfTLVs'], value)
 
     @property
     def RootAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +236,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def RootAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -222,6 +247,7 @@ class LdpLeafRangeV6(Base):
 
     @property
     def RootAddressStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +257,7 @@ class LdpLeafRangeV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RootAddressStep']))
 
     def update(self, LSPType=None, Name=None, NumberOfTLVs=None):
+        # type: (str, str, int) -> LdpLeafRangeV6
         """Updates ldpLeafRangeV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -247,6 +274,82 @@ class LdpLeafRangeV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ActivateLeafRange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the activateLeafRange operation on the server.
+
+        Activate Multicast Leaf Range
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        activateLeafRange(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateLeafRange(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateLeafRange(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateLeafRange(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('activateLeafRange', payload=payload, response_object=None)
+
+    def DeactivateLeafRange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the deactivateLeafRange operation on the server.
+
+        Deactivate Multicast Leaf Range
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        deactivateLeafRange(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateLeafRange(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateLeafRange(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateLeafRange(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('deactivateLeafRange', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, ContinuousIncrementOVAcrossRoot=None, GroupAddressV4=None, GroupAddressV6=None, GroupCountPerLsp=None, LabelValueStart=None, LabelValueStep=None, LspCountPerRoot=None, RootAddress=None, RootAddressCount=None, RootAddressStep=None):
         """Base class infrastructure that gets a list of ldpLeafRangeV6 device ids encapsulated by this object.
@@ -277,63 +380,3 @@ class LdpLeafRangeV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ActivateLeafRange(self, *args, **kwargs):
-        """Executes the activateLeafRange operation on the server.
-
-        Activate Multicast Leaf Range
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        activateLeafRange(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        activateLeafRange(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        activateLeafRange(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('activateLeafRange', payload=payload, response_object=None)
-
-    def DeactivateLeafRange(self, *args, **kwargs):
-        """Executes the deactivateLeafRange operation on the server.
-
-        Deactivate Multicast Leaf Range
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        deactivateLeafRange(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        deactivateLeafRange(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        deactivateLeafRange(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deactivateLeafRange', payload=payload, response_object=None)

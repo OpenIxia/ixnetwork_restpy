@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisPseudoInterface(Base):
@@ -37,9 +38,11 @@ class IsisPseudoInterface(Base):
         'LinkType': 'linkType',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisPseudoInterface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisPseudoInterface, self).__init__(parent, list_op)
 
     @property
     def IsisDcePseudoIfaceAttPoint1Config(self):
@@ -53,7 +56,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint1config_dce0066317952a09c055b9f568621953 import IsisDcePseudoIfaceAttPoint1Config
-        return IsisDcePseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisDcePseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisDcePseudoIfaceAttPoint1Config')
+        else:
+            return IsisDcePseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisDcePseudoIfaceAttPoint2Config(self):
@@ -67,7 +73,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint2config_08c96458d8806c0878ba2591f7235870 import IsisDcePseudoIfaceAttPoint2Config
-        return IsisDcePseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisDcePseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisDcePseudoIfaceAttPoint2Config')
+        else:
+            return IsisDcePseudoIfaceAttPoint2Config(self)
 
     @property
     def IsisL3PseudoIfaceAttPoint1Config(self):
@@ -81,7 +90,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint1config_e6b2374da4892fed3474f1ab974dbf1c import IsisL3PseudoIfaceAttPoint1Config
-        return IsisL3PseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisL3PseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisL3PseudoIfaceAttPoint1Config')
+        else:
+            return IsisL3PseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisL3PseudoIfaceAttPoint2Config(self):
@@ -95,7 +107,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint2config_37681cb7f2d7b1eb6c812c1b9f243542 import IsisL3PseudoIfaceAttPoint2Config
-        return IsisL3PseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisL3PseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisL3PseudoIfaceAttPoint2Config')
+        else:
+            return IsisL3PseudoIfaceAttPoint2Config(self)
 
     @property
     def IsisSpbPseudoIfaceAttPoint1Config(self):
@@ -109,7 +124,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint1config_04ab03c0f19e657e435c655358111db5 import IsisSpbPseudoIfaceAttPoint1Config
-        return IsisSpbPseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisSpbPseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisSpbPseudoIfaceAttPoint1Config')
+        else:
+            return IsisSpbPseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisSpbPseudoIfaceAttPoint2Config(self):
@@ -123,7 +141,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint2config_0781ccf029e86f2c708647212802930e import IsisSpbPseudoIfaceAttPoint2Config
-        return IsisSpbPseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisSpbPseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisSpbPseudoIfaceAttPoint2Config')
+        else:
+            return IsisSpbPseudoIfaceAttPoint2Config(self)
 
     @property
     def IsisTrillPseudoIfaceAttPoint1Config(self):
@@ -137,7 +158,10 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint1config_4c83cc199df8becee43d785e9ef03dc7 import IsisTrillPseudoIfaceAttPoint1Config
-        return IsisTrillPseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisTrillPseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisTrillPseudoIfaceAttPoint1Config')
+        else:
+            return IsisTrillPseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisTrillPseudoIfaceAttPoint2Config(self):
@@ -151,10 +175,14 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint2config_1910327d5bcdde39c812851ec539a846 import IsisTrillPseudoIfaceAttPoint2Config
-        return IsisTrillPseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisTrillPseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisTrillPseudoIfaceAttPoint2Config')
+        else:
+            return IsisTrillPseudoIfaceAttPoint2Config(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -164,6 +192,7 @@ class IsisPseudoInterface(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -173,6 +202,7 @@ class IsisPseudoInterface(Base):
 
     @property
     def LinkType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -183,6 +213,7 @@ class IsisPseudoInterface(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,9 +222,11 @@ class IsisPseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> IsisPseudoInterface
         """Updates isisPseudoInterface resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -209,7 +242,26 @@ class IsisPseudoInterface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> IsisPseudoInterface
+        """Adds a new isisPseudoInterface resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisPseudoInterface resources using find and the newly added isisPseudoInterface resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> IsisPseudoInterface
         """Finds and retrieves isisPseudoInterface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisPseudoInterface resources from the server.
@@ -250,6 +302,66 @@ class IsisPseudoInterface(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, LinkType=None):
         """Base class infrastructure that gets a list of isisPseudoInterface device ids encapsulated by this object.
 
@@ -269,42 +381,3 @@ class IsisPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UmhSelectionRouteRange(Base):
@@ -82,9 +83,18 @@ class UmhSelectionRouteRange(Base):
         'RouteStepAcrossVrfs': 'routeStepAcrossVrfs',
         'Step': 'step',
     }
+    _SDM_ENUM_MAP = {
+        'aggregatorIdIncrementMode': ['fixed', 'increment'],
+        'distinguisherMode': ['global', 'local'],
+        'distinguisherType': ['as', 'ip', 'asNumber2'],
+        'ipType': ['ipAny', 'ipv4', 'ipv6'],
+        'nextHopMode': ['nextHopIncrement', 'fixed', 'incrementPerPrefix'],
+        'nextHopSetMode': ['sameAsLocalIp', 'setManually'],
+        'originProtocol': ['igp', 'egp', 'incomplete'],
+    }
 
-    def __init__(self, parent):
-        super(UmhSelectionRouteRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UmhSelectionRouteRange, self).__init__(parent, list_op)
 
     @property
     def AsSegment(self):
@@ -98,7 +108,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_4988c478ce9b4241205f6811a359ffe8 import AsSegment
-        return AsSegment(self)._select()
+        if self._properties.get('AsSegment', None) is not None:
+            return self._properties.get('AsSegment')
+        else:
+            return AsSegment(self)._select()
 
     @property
     def Cluster(self):
@@ -112,7 +125,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f3997bb962d2128c99954ba076f70beb import Cluster
-        return Cluster(self)._select()
+        if self._properties.get('Cluster', None) is not None:
+            return self._properties.get('Cluster')
+        else:
+            return Cluster(self)._select()
 
     @property
     def Community(self):
@@ -126,7 +142,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_6aed3c83f2a302323de0f8dd850abdcc import Community
-        return Community(self)._select()
+        if self._properties.get('Community', None) is not None:
+            return self._properties.get('Community')
+        else:
+            return Community(self)._select()
 
     @property
     def ExtendedCommunity(self):
@@ -140,7 +159,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_1088c247b717ff4329d3c4e43ec9916b import ExtendedCommunity
-        return ExtendedCommunity(self)._select()
+        if self._properties.get('ExtendedCommunity', None) is not None:
+            return self._properties.get('ExtendedCommunity')
+        else:
+            return ExtendedCommunity(self)._select()
 
     @property
     def Flapping(self):
@@ -154,7 +176,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_0c191468e6dbc2508006af0395ecab15 import Flapping
-        return Flapping(self)._select()
+        if self._properties.get('Flapping', None) is not None:
+            return self._properties.get('Flapping')
+        else:
+            return Flapping(self)._select()
 
     @property
     def LabelSpace(self):
@@ -168,10 +193,14 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_f8e4bd27d1a26b770c2211ad8e011438 import LabelSpace
-        return LabelSpace(self)._select()
+        if self._properties.get('LabelSpace', None) is not None:
+            return self._properties.get('LabelSpace')
+        else:
+            return LabelSpace(self)._select()
 
     @property
     def AggregatorAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,10 +209,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregatorAsNumber'])
     @AggregatorAsNumber.setter
     def AggregatorAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregatorAsNumber'], value)
 
     @property
     def AggregatorIdIncrementMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,10 +223,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregatorIdIncrementMode'])
     @AggregatorIdIncrementMode.setter
     def AggregatorIdIncrementMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregatorIdIncrementMode'], value)
 
     @property
     def AggregatorIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +237,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregatorIpAddress'])
     @AggregatorIpAddress.setter
     def AggregatorIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregatorIpAddress'], value)
 
     @property
     def DistinguisherAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -216,10 +251,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAsNumber'])
     @DistinguisherAsNumber.setter
     def DistinguisherAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherAsNumber'], value)
 
     @property
     def DistinguisherAsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -228,10 +265,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStep'])
     @DistinguisherAsNumberStep.setter
     def DistinguisherAsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStep'], value)
 
     @property
     def DistinguisherAsNumberStepAcrossVrfs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,10 +279,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStepAcrossVrfs'])
     @DistinguisherAsNumberStepAcrossVrfs.setter
     def DistinguisherAsNumberStepAcrossVrfs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherAsNumberStepAcrossVrfs'], value)
 
     @property
     def DistinguisherAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +293,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumber'])
     @DistinguisherAssignedNumber.setter
     def DistinguisherAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumber'], value)
 
     @property
     def DistinguisherAssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -264,10 +307,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStep'])
     @DistinguisherAssignedNumberStep.setter
     def DistinguisherAssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStep'], value)
 
     @property
     def DistinguisherAssignedNumberStepAcrossVrfs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +321,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStepAcrossVrfs'])
     @DistinguisherAssignedNumberStepAcrossVrfs.setter
     def DistinguisherAssignedNumberStepAcrossVrfs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherAssignedNumberStepAcrossVrfs'], value)
 
     @property
     def DistinguisherCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,10 +335,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherCount'])
     @DistinguisherCount.setter
     def DistinguisherCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherCount'], value)
 
     @property
     def DistinguisherCountPerVrf(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,10 +349,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherCountPerVrf'])
     @DistinguisherCountPerVrf.setter
     def DistinguisherCountPerVrf(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherCountPerVrf'], value)
 
     @property
     def DistinguisherIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +363,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherIpAddress'])
     @DistinguisherIpAddress.setter
     def DistinguisherIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherIpAddress'], value)
 
     @property
     def DistinguisherIpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -324,10 +377,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStep'])
     @DistinguisherIpAddressStep.setter
     def DistinguisherIpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStep'], value)
 
     @property
     def DistinguisherIpAddressStepAcrossVrfs(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -336,10 +391,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStepAcrossVrfs'])
     @DistinguisherIpAddressStepAcrossVrfs.setter
     def DistinguisherIpAddressStepAcrossVrfs(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherIpAddressStepAcrossVrfs'], value)
 
     @property
     def DistinguisherMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,10 +405,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherMode'])
     @DistinguisherMode.setter
     def DistinguisherMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherMode'], value)
 
     @property
     def DistinguisherStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -360,10 +419,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherStep'])
     @DistinguisherStep.setter
     def DistinguisherStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherStep'], value)
 
     @property
     def DistinguisherType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -372,10 +433,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguisherType'])
     @DistinguisherType.setter
     def DistinguisherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguisherType'], value)
 
     @property
     def EnableAggregator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -384,10 +447,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAggregator'])
     @EnableAggregator.setter
     def EnableAggregator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAggregator'], value)
 
     @property
     def EnableAsPath(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -396,10 +461,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsPath'])
     @EnableAsPath.setter
     def EnableAsPath(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsPath'], value)
 
     @property
     def EnableAtomicAggregator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -408,10 +475,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAtomicAggregator'])
     @EnableAtomicAggregator.setter
     def EnableAtomicAggregator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAtomicAggregator'], value)
 
     @property
     def EnableCluster(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -420,10 +489,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCluster'])
     @EnableCluster.setter
     def EnableCluster(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCluster'], value)
 
     @property
     def EnableCommunity(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -432,10 +503,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCommunity'])
     @EnableCommunity.setter
     def EnableCommunity(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCommunity'], value)
 
     @property
     def EnableGenerateUniqueRoutes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -444,10 +517,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGenerateUniqueRoutes'])
     @EnableGenerateUniqueRoutes.setter
     def EnableGenerateUniqueRoutes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGenerateUniqueRoutes'], value)
 
     @property
     def EnableLocalPref(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -456,10 +531,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLocalPref'])
     @EnableLocalPref.setter
     def EnableLocalPref(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLocalPref'], value)
 
     @property
     def EnableMed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -468,10 +545,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMed'])
     @EnableMed.setter
     def EnableMed(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMed'], value)
 
     @property
     def EnableNextHop(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -480,10 +559,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNextHop'])
     @EnableNextHop.setter
     def EnableNextHop(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNextHop'], value)
 
     @property
     def EnableOrigin(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -492,10 +573,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOrigin'])
     @EnableOrigin.setter
     def EnableOrigin(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOrigin'], value)
 
     @property
     def EnableOriginator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -504,10 +587,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOriginator'])
     @EnableOriginator.setter
     def EnableOriginator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOriginator'], value)
 
     @property
     def EnableUseTraditionalNlri(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -516,10 +601,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUseTraditionalNlri'])
     @EnableUseTraditionalNlri.setter
     def EnableUseTraditionalNlri(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUseTraditionalNlri'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -528,10 +615,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstRoute(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -540,10 +629,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
     @FirstRoute.setter
     def FirstRoute(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
 
     @property
     def IncludeSourceAsExtendedCommunityPresent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -552,10 +643,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeSourceAsExtendedCommunityPresent'])
     @IncludeSourceAsExtendedCommunityPresent.setter
     def IncludeSourceAsExtendedCommunityPresent(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeSourceAsExtendedCommunityPresent'], value)
 
     @property
     def IncludeVrfRouteImportExtendedCommunityPresent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -564,10 +657,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeVrfRouteImportExtendedCommunityPresent'])
     @IncludeVrfRouteImportExtendedCommunityPresent.setter
     def IncludeVrfRouteImportExtendedCommunityPresent(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeVrfRouteImportExtendedCommunityPresent'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -576,10 +671,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def LocalPref(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -588,10 +685,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocalPref'])
     @LocalPref.setter
     def LocalPref(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocalPref'], value)
 
     @property
     def MaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -600,10 +699,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
     @MaskWidth.setter
     def MaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
 
     @property
     def MaskWidthTo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -612,10 +713,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaskWidthTo'])
     @MaskWidthTo.setter
     def MaskWidthTo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaskWidthTo'], value)
 
     @property
     def Med(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -624,10 +727,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Med'])
     @Med.setter
     def Med(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Med'], value)
 
     @property
     def NextHopIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -636,10 +741,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopIpAddress'])
     @NextHopIpAddress.setter
     def NextHopIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopIpAddress'], value)
 
     @property
     def NextHopMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -648,10 +755,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopMode'])
     @NextHopMode.setter
     def NextHopMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopMode'], value)
 
     @property
     def NextHopSetMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -660,10 +769,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopSetMode'])
     @NextHopSetMode.setter
     def NextHopSetMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopSetMode'], value)
 
     @property
     def OriginProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -672,10 +783,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OriginProtocol'])
     @OriginProtocol.setter
     def OriginProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OriginProtocol'], value)
 
     @property
     def OriginatorId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -684,10 +797,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OriginatorId'])
     @OriginatorId.setter
     def OriginatorId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OriginatorId'], value)
 
     @property
     def PackingFrom(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -696,10 +811,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PackingFrom'])
     @PackingFrom.setter
     def PackingFrom(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PackingFrom'], value)
 
     @property
     def PackingTo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -708,10 +825,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PackingTo'])
     @PackingTo.setter
     def PackingTo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PackingTo'], value)
 
     @property
     def RouteCountPerVrfs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -720,10 +839,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteCountPerVrfs'])
     @RouteCountPerVrfs.setter
     def RouteCountPerVrfs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteCountPerVrfs'], value)
 
     @property
     def RouteStepAcrossVrfs(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -732,10 +853,12 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteStepAcrossVrfs'])
     @RouteStepAcrossVrfs.setter
     def RouteStepAcrossVrfs(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteStepAcrossVrfs'], value)
 
     @property
     def Step(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -744,9 +867,11 @@ class UmhSelectionRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Step'], value)
 
     def update(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+        # type: (int, str, str, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, str, int, int, int, int, str, str, str, str, str, int, int, int, str, int) -> UmhSelectionRouteRange
         """Updates umhSelectionRouteRange resource on the server.
 
         Args
@@ -807,6 +932,7 @@ class UmhSelectionRouteRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+        # type: (int, str, str, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, str, int, int, int, int, str, str, str, str, str, int, int, int, str, int) -> UmhSelectionRouteRange
         """Adds a new umhSelectionRouteRange resource on the server and adds it to the container.
 
         Args
@@ -881,6 +1007,7 @@ class UmhSelectionRouteRange(Base):
         self._delete()
 
     def find(self, AggregatorAsNumber=None, AggregatorIdIncrementMode=None, AggregatorIpAddress=None, DistinguisherAsNumber=None, DistinguisherAsNumberStep=None, DistinguisherAsNumberStepAcrossVrfs=None, DistinguisherAssignedNumber=None, DistinguisherAssignedNumberStep=None, DistinguisherAssignedNumberStepAcrossVrfs=None, DistinguisherCount=None, DistinguisherCountPerVrf=None, DistinguisherIpAddress=None, DistinguisherIpAddressStep=None, DistinguisherIpAddressStepAcrossVrfs=None, DistinguisherMode=None, DistinguisherStep=None, DistinguisherType=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregator=None, EnableCluster=None, EnableCommunity=None, EnableGenerateUniqueRoutes=None, EnableLocalPref=None, EnableMed=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, EnableUseTraditionalNlri=None, Enabled=None, FirstRoute=None, IncludeSourceAsExtendedCommunityPresent=None, IncludeVrfRouteImportExtendedCommunityPresent=None, IpType=None, LocalPref=None, MaskWidth=None, MaskWidthTo=None, Med=None, NextHopIpAddress=None, NextHopMode=None, NextHopSetMode=None, OriginProtocol=None, OriginatorId=None, PackingFrom=None, PackingTo=None, RouteCountPerVrfs=None, RouteStepAcrossVrfs=None, Step=None):
+        # type: (int, str, str, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, str, int, int, int, int, str, str, str, str, str, int, int, int, str, int) -> UmhSelectionRouteRange
         """Finds and retrieves umhSelectionRouteRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve umhSelectionRouteRange resources from the server.

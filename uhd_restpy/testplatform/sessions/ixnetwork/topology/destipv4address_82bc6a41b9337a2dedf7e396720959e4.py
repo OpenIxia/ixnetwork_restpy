@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DestIpv4Address(Base):
@@ -33,12 +34,15 @@ class DestIpv4Address(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DestIpv4Address, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DestIpv4Address, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------

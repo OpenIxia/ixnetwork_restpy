@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbRbridges(Base):
@@ -49,12 +50,15 @@ class SpbRbridges(Base):
         'TBit': 'tBit',
         'UseFlagBit': 'useFlagBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbRbridges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbRbridges, self).__init__(parent, list_op)
 
     @property
     def Age(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class SpbRbridges(Base):
 
     @property
     def AuxillaryMcidConfigName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +78,7 @@ class SpbRbridges(Base):
 
     @property
     def BaseVid(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +88,7 @@ class SpbRbridges(Base):
 
     @property
     def BridgeMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class SpbRbridges(Base):
 
     @property
     def BridgePriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class SpbRbridges(Base):
 
     @property
     def EctAlgorithm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class SpbRbridges(Base):
 
     @property
     def HostName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class SpbRbridges(Base):
 
     @property
     def IsId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +138,7 @@ class SpbRbridges(Base):
 
     @property
     def LinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -136,6 +148,7 @@ class SpbRbridges(Base):
 
     @property
     def MBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -145,6 +158,7 @@ class SpbRbridges(Base):
 
     @property
     def McidConfigName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,6 +168,7 @@ class SpbRbridges(Base):
 
     @property
     def RBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -163,6 +178,7 @@ class SpbRbridges(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,6 +188,7 @@ class SpbRbridges(Base):
 
     @property
     def SystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,6 +198,7 @@ class SpbRbridges(Base):
 
     @property
     def TBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,6 +208,7 @@ class SpbRbridges(Base):
 
     @property
     def UseFlagBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -197,7 +216,21 @@ class SpbRbridges(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['UseFlagBit'])
 
+    def add(self):
+        """Adds a new spbRbridges resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved spbRbridges resources using find and the newly added spbRbridges resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Age=None, AuxillaryMcidConfigName=None, BaseVid=None, BridgeMacAddress=None, BridgePriority=None, EctAlgorithm=None, HostName=None, IsId=None, LinkMetric=None, MBit=None, McidConfigName=None, RBit=None, SequenceNumber=None, SystemId=None, TBit=None, UseFlagBit=None):
+        # type: (int, str, int, str, int, int, str, int, int, bool, str, bool, int, str, bool, bool) -> SpbRbridges
         """Finds and retrieves spbRbridges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbRbridges resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchAuxiliaryConnectionLearnedInfo(Base):
@@ -41,12 +42,16 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
         'RemoteIp': 'remoteIp',
         'RemotePort': 'remotePort',
     }
+    _SDM_ENUM_MAP = {
+        'connectionType': ['tcp', 'tls', 'udp'],
+    }
 
-    def __init__(self, parent):
-        super(SwitchAuxiliaryConnectionLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchAuxiliaryConnectionLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AuxiliaryId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,6 +61,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def ConnectionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +71,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +81,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +91,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def LocalPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
 
     @property
     def RemotePort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,7 +129,21 @@ class SwitchAuxiliaryConnectionLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemotePort'])
 
+    def add(self):
+        """Adds a new switchAuxiliaryConnectionLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchAuxiliaryConnectionLearnedInfo resources using find and the newly added switchAuxiliaryConnectionLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AuxiliaryId=None, ConnectionType=None, DataPathId=None, DataPathIdAsHex=None, LocalIp=None, LocalPort=None, RemoteIp=None, RemotePort=None):
+        # type: (int, str, str, str, str, int, str, int) -> SwitchAuxiliaryConnectionLearnedInfo
         """Finds and retrieves switchAuxiliaryConnectionLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchAuxiliaryConnectionLearnedInfo resources from the server.

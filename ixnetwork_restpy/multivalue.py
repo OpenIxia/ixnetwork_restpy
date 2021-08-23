@@ -24,15 +24,19 @@ from ixnetwork_restpy.base import Base
 
 class Multivalue(Base):
     """Multivalue class
+       Significant changes has been done in this class to accommodate code for config assistant.
+       Each multivalue pattern has code for protocols and traffic side in its function
     """
     def __init__(self, parent, href):
         """Multivalue constructor
 
-        Encapsulates a multivalue property. 
+        Encapsulates a multivalue property.
         """
         super(Multivalue, self).__init__(parent)
         self._href = href
         self._pattern = None
+        # this over lay index is used by config assistant
+        self._overlay_index = 0
 
     def _format_value(self, value):
         if self._properties['format'] == 'bool':
@@ -196,7 +200,21 @@ class Multivalue(Base):
         ----
         - value (str): The single value according to the format property
         """
-        self._set_pattern('singleValue', {'value': value})
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['singleValue'] = value
+                multivalue_dict['valueType'] = 'singleValue'
+                multivalue_dict['auto'] = False
+                multivalue_dict['optionalEnabled'] = True
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'singleValue')
+                multivalue_dict['value'] = value
+
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            self._set_pattern('singleValue', {'value': value})
 
     def Alternate(self, alternating_value):
         """Sets the multivalue pattern to an alternating pattern
@@ -205,7 +223,13 @@ class Multivalue(Base):
         ----
         - alternating_value (str): An alternating pattern can only be a boolean.
         """
-        self._set_pattern('alternate', {'value': alternating_value})
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'alternate')
+            multivalue_dict['value'] = alternating_value
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            self._set_pattern('alternate', {'value': alternating_value})
 
     def Increment(self, start_value=None, step_value=None):
         """Sets the multivalue to an incrementing pattern
@@ -215,14 +239,35 @@ class Multivalue(Base):
         - start_value (str): The value at which to begin incrementing
         - step_value (str): The value to increment by
         """
-        payload = {
-            'direction': 'increment'
-        }
-        if start_value is not None:
-            payload['start'] = start_value
-        if step_value is not None:
-            payload['step'] = step_value
-        self._set_pattern('counter', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['valueType'] = 'increment'
+                multivalue_dict['auto'] = False
+                multivalue_dict['optionalEnabled'] = True
+                if start_value is not None:
+                    multivalue_dict['startValue'] = start_value
+                if step_value is not None:
+                    multivalue_dict['stepValue'] = step_value
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'counter')
+                multivalue_dict['direction'] = 'increment'
+                if start_value is not None:
+                    multivalue_dict['start'] = start_value
+                if step_value is not None:
+                    multivalue_dict['step'] = step_value
+
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'direction': 'increment'
+            }
+            if start_value is not None:
+                payload['start'] = start_value
+            if step_value is not None:
+                payload['step'] = step_value
+            self._set_pattern('counter', payload)
 
     def Decrement(self, start_value=None, step_value=None):
         """Sets the multivalue to a decrementing pattern
@@ -232,14 +277,35 @@ class Multivalue(Base):
         - start_value (str): The value at which to begin decrementing
         - step_value (str): The value to decrement by
         """
-        payload = {
-            'direction': 'decrement'
-        }
-        if start_value is not None:
-            payload['start'] = start_value
-        if step_value is not None:
-            payload['step'] = step_value
-        self._set_pattern('counter', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['valueType'] = 'decrement'
+                multivalue_dict['auto'] = False
+                multivalue_dict['optionalEnabled'] = True
+                if start_value is not None:
+                    multivalue_dict['startValue'] = start_value
+                if step_value is not None:
+                    multivalue_dict['stepValue'] = step_value
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'counter')
+                multivalue_dict['direction'] = 'decrement'
+                if start_value is not None:
+                    multivalue_dict['start'] = start_value
+                if step_value is not None:
+                    multivalue_dict['step'] = step_value
+
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'direction': 'decrement'
+            }
+            if start_value is not None:
+                payload['start'] = start_value
+            if step_value is not None:
+                payload['step'] = step_value
+            self._set_pattern('counter', payload)
 
     def ValueList(self, values):
         """Sets the multivalue to a value list pattern
@@ -271,7 +337,21 @@ class Multivalue(Base):
                 values = [line.strip() for line in fp if line.strip()]
         else:
             values = [line.strip() for line in values if line.strip()]
-        self._set_pattern('valueList', {'values': values})
+
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['valueType'] = 'valueList'
+                multivalue_dict['valueList'] = values
+                multivalue_dict['auto'] = False
+                multivalue_dict['optionalEnabled'] = True
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'valueList')
+                multivalue_dict['values'] = values
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            self._set_pattern('valueList', {'values': values})
 
     def RandomRange(self, min_value=None, max_value=None, step_value=None, seed=None):
         """Sets the multivalue to a repeatable random range pattern
@@ -283,13 +363,40 @@ class Multivalue(Base):
         - step_value (str): Step value accoroding to the format property
         - seed (int): Seed value
         """
-        payload = {
-            'min': min_value,
-            'max': max_value,
-            'step': step_value,
-            'seed': seed
-        }
-        self._set_pattern('repeatableRandomRange', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['valueType'] = 'repeatableRandomRange'
+                multivalue_dict['auto'] = False
+                multivalue_dict['optionalEnabled'] = True
+                if min_value is not None:
+                    multivalue_dict['minValue'] = min_value
+                if max_value is not None:
+                    multivalue_dict['maxValue'] = max_value
+                if seed is not None:
+                    multivalue_dict['seed'] = seed
+                if step_value is not None:
+                    multivalue_dict['stepValue'] = step_value
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'repeatableRandomRange')
+                if min_value is not None:
+                    multivalue_dict['min'] = min_value
+                if max_value is not None:
+                    multivalue_dict['max'] = max_value
+                if seed is not None:
+                    multivalue_dict['seed'] = seed
+                if step_value is not None:
+                    multivalue_dict['step'] = step_value
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'min': min_value,
+                'max': max_value,
+                'step': step_value,
+                'seed': seed
+            }
+            self._set_pattern('repeatableRandomRange', payload)
 
     def RandomMask(self, fixed_value=None, mask_value=None, seed=None, count=None):
         """Sets the multivalue to a repeatable random pattern
@@ -301,18 +408,50 @@ class Multivalue(Base):
         - seed (int): Seed value 
         - count (int): Count value
         """
-        payload = {
-            'fixed': fixed_value,
-            'mask': mask_value,
-            'seed': seed,
-            'count': count
-        }
-        self._set_pattern('repeatableRandom', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            if 'stack' in self._parent._properties['xpath']:
+                multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
+                multivalue_dict['valueType'] = 'random'
+                multivalue_dict['auto'] = False
+                multivalue_dict['optionalEnabled'] = True
+                if fixed_value is not None:
+                    multivalue_dict['fixedBits'] = fixed_value
+                if mask_value is not None:
+                    multivalue_dict['randomMask'] = mask_value
+                if seed is not None:
+                    multivalue_dict['seed'] = seed
+                if count is not None:
+                    multivalue_dict['countValue'] = count
+            else:
+                multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'repeatableRandom')
+                if fixed_value is not None:
+                    multivalue_dict['fixed'] = fixed_value
+                if mask_value is not None:
+                    multivalue_dict['mask'] = mask_value
+                if seed is not None:
+                    multivalue_dict['seed'] = seed
+                if count is not None:
+                    multivalue_dict['count'] = count
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'fixed': fixed_value,
+                'mask': mask_value,
+                'seed': seed,
+                'count': count
+            }
+            self._set_pattern('repeatableRandom', payload)
 
     def Random(self):
         """Sets the multivalue to a non-repeatable random pattern
         """
-        self._set_pattern('random')
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'random')
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            self._set_pattern('random')
 
     def Distributed(self, algorithm=None, mode=None, values=None):
         """Sets the multivalue to a custom distributed pattern
@@ -323,22 +462,41 @@ class Multivalue(Base):
         - mode (str[perDevice | perTopology | perPort]): The mode indicates across what the the distribution is allocated
         - values (list[tuple(value, weight)]): A list of tuples. Each tuple is a value and and it's corresponding weight in the distribution
         """
-        formatted_values = None
-        if values is not None:
-            formatted_values = []
-            for value in values:
-                formatted_values.append(
-                    {
-                        'arg1': value[0],
-                        'arg2': value[1]
-                    }
-                )
-        payload = {
-            'algorithm': algorithm,
-            'mode': mode,
-            'values': formatted_values
-        }
-        self._set_pattern('customDistributed', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'customDistributed')
+            if algorithm is not None:
+                multivalue_dict['algorithm'] = algorithm
+            if mode is not None:
+                multivalue_dict['mode'] = mode
+            if values is not None and len(values) > 0:
+                formatted_values = []
+                for value in values:
+                    formatted_values.append(
+                        {
+                            'arg1': value[0],
+                            'arg2': value[1]
+                        }
+                    )
+                multivalue_dict['values'] = formatted_values
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            formatted_values = None
+            if values is not None:
+                formatted_values = []
+                for value in values:
+                    formatted_values.append(
+                        {
+                            'arg1': value[0],
+                            'arg2': value[1]
+                        }
+                    )
+            payload = {
+                'algorithm': algorithm,
+                'mode': mode,
+                'values': formatted_values
+            }
+            self._set_pattern('customDistributed', payload)
 
     def String(self, string_pattern=None):
         """Sets the multivalue to a string pattern
@@ -354,10 +512,16 @@ class Multivalue(Base):
         - hex_{Dec:0xFFFF}
         - Test-{Inc:100}-{"A", "B"}-{Dec:3, 1, 3}
         """
-        payload = {
-            'pattern': string_pattern
-        }
-        self._set_pattern('string', payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'string')
+            multivalue_dict['pattern'] = string_pattern
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'pattern': string_pattern
+            }
+            self._set_pattern('string', payload)
 
     def Custom(self, start_value=None, step_value=None, increments=None):
         """Sets the mutivalue to a custom pattern
@@ -379,14 +543,25 @@ class Multivalue(Base):
         ------
         - ValueError: if increments is incorrectly formatted or if start_value, step_value are in the incorrect format              
         """
-        payload = {
-            'start': start_value,
-            'step': step_value
-        }
-        self._set_pattern('custom', payload)
-        self._connection._delete('%s/custom/increment' % self._properties['href'])
-        self._add_custom_increments('%s/custom' % self._properties['href'], increments)
-        self._custom_select()
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            multivalue_dict = dict()
+            multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'custom')
+            if start_value is not None:
+                multivalue_dict['start'] = start_value
+            if step_value is not None:
+                multivalue_dict['step'] = step_value
+            if increments is not None:
+                multivalue_dict['increment'] = self._get_custom_increments(increments)
+            self._xpathObj._config.append(multivalue_dict)
+        else:
+            payload = {
+                'start': start_value,
+                'step': step_value
+            }
+            self._set_pattern('custom', payload)
+            self._connection._delete('%s/custom/increment' % self._properties['href'])
+            self._add_custom_increments('%s/custom' % self._properties['href'], increments)
+            self._custom_select()
 
     def _add_custom_increments(self, href, increments):
         if increments is not None:
@@ -468,17 +643,81 @@ class Multivalue(Base):
         - index (int): 1 based device index
         - value (str): the overlay value
         """
-        href = '%s/overlay' % (self._href)
-        payload = {
-            'count': 1,
-            'index': index,
-            'indexStep': 1,
-            'value': value
-        }
-        self._connection._create(href, payload)
+        if self._parent._xpathObj is not None and self._parent._xpathObj._mode == 'config':
+            if self.parent._properties.get('OverlayIndex', None) is not None:
+                self._overlay_index = self.parent._properties.get('OverlayIndex')
+            multivalue_dict = dict()
+            self._overlay_index += 1
+            pattern = 'overlay[' + str(self._overlay_index) + ']'
+            multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, pattern)
+            multivalue_dict['count'] = '1'
+            multivalue_dict['index'] = index
+            multivalue_dict['indexStep'] = '1'
+            multivalue_dict['value'] = value
+            self._xpathObj._config.append(multivalue_dict)
+            self.parent._properties['OverlayIndex'] = self._overlay_index
+        else:
+            href = '%s/overlay' % (self._href)
+            payload = {
+                'count': 1,
+                'index': index,
+                'indexStep': 1,
+                'value': value
+            }
+            self._connection._create(href, payload)
 
     def ClearOverlays(self):
         """Clears all overlays that have been added.
         """
         self._connection._update(self._href, {'clearOverlays': True})
         self._connection._update(self._href, {'clearOverlays': False})
+
+    def _get_multivalue_xpath(self, name, pattern):
+        """
+            This function is basically use to form the xpath for multivalue of nodes which are not related to traffic
+        """
+        source = "[@source = " + "'" + str(self.parent._properties['xpath']) + " " + name + "']"
+        xpath = '/multivalue' + source + '/' + pattern
+        return xpath
+
+    def _get_field_multivalue_xpath(self, name):
+        """
+            This function basically provides us with xpath for traffic fields
+        """
+        field_name = name
+        xpath = self.parent._properties['xpath'] + "/field[@alias = '" + field_name + "']"
+        return xpath
+
+    def _get_custom_increments(self, increments):
+        """
+            This function is related to custom multivalue, it basically refactors the increment list and prepares
+            it in the right format of xpath to be added to json
+        """
+        increment_list = []
+        self._rec_fill_increment_dict(increments, increment_list)
+        return increment_list
+
+    def _rec_fill_increment_dict(self, increments, increment_list, pattern=''):
+        """
+            This is a recursive utility function basically used by custom multivalue for formatting increments
+            in a proper fashion
+        """
+        for i, inc in enumerate(increments):
+            temp_dict = {}
+            if pattern == '':
+                pattern = 'custom/increment[' + str(i + 1) + ']'
+            elif i == 0:
+                pattern = pattern + '/increment[' + str(i + 1) + ']'
+            else:
+                pattern = '/'.join(pattern.split('/')[:-1]) + '/increment[' + str(i + 1) + ']'
+
+            temp_dict['xpath'] = self._get_multivalue_xpath(self._href, pattern)
+            inc_len = len(inc)
+            if inc_len >= 1:
+                temp_dict['value'] = inc[0]
+            if inc_len >= 2:
+                temp_dict['count'] = inc[1]
+            increment_list.append(temp_dict)
+            if inc_len == 3:
+                if len(inc[2]) != 0:
+                    self._rec_fill_increment_dict(inc[2], increment_list, pattern=pattern)

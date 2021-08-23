@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcp4RelayAgentTlvProfile(Base):
@@ -35,9 +36,11 @@ class Dhcp4RelayAgentTlvProfile(Base):
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcp4RelayAgentTlvProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcp4RelayAgentTlvProfile, self).__init__(parent, list_op)
 
     @property
     def TlvProfile(self):
@@ -51,10 +54,14 @@ class Dhcp4RelayAgentTlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is not None:
+            return self._properties.get('TlvProfile')
+        else:
+            return TlvProfile(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +71,7 @@ class Dhcp4RelayAgentTlvProfile(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +81,7 @@ class Dhcp4RelayAgentTlvProfile(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,9 +90,11 @@ class Dhcp4RelayAgentTlvProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Dhcp4RelayAgentTlvProfile
         """Updates dhcp4RelayAgentTlvProfile resource on the server.
 
         Args

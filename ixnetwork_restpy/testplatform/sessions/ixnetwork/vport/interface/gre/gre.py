@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Gre(Base):
@@ -39,12 +40,15 @@ class Gre(Base):
         'UseKey': 'useKey',
         'UseSequence': 'useSequence',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Gre, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Gre, self).__init__(parent, list_op)
 
     @property
     def Dest(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dest'])
     @Dest.setter
     def Dest(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dest'], value)
 
     @property
     def InKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InKey'])
     @InKey.setter
     def InKey(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InKey'], value)
 
     @property
     def OutKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutKey'])
     @OutKey.setter
     def OutKey(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutKey'], value)
 
     @property
     def Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Source'])
     @Source.setter
     def Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Source'], value)
 
     @property
     def UseChecksum(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseChecksum'])
     @UseChecksum.setter
     def UseChecksum(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseChecksum'], value)
 
     @property
     def UseKey(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseKey'])
     @UseKey.setter
     def UseKey(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseKey'], value)
 
     @property
     def UseSequence(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,9 +141,11 @@ class Gre(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseSequence'])
     @UseSequence.setter
     def UseSequence(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseSequence'], value)
 
     def update(self, Dest=None, InKey=None, OutKey=None, Source=None, UseChecksum=None, UseKey=None, UseSequence=None):
+        # type: (str, int, int, str, bool, bool, bool) -> Gre
         """Updates gre resource on the server.
 
         Args

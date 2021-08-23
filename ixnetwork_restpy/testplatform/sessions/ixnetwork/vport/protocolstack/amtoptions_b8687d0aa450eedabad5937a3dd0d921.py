@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AmtOptions(Base):
@@ -41,12 +42,15 @@ class AmtOptions(Base):
         'TeardownRate': 'teardownRate',
         'TunnelOriginate': 'tunnelOriginate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AmtOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AmtOptions, self).__init__(parent, list_op)
 
     @property
     def MaxOutstandingSessions(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class AmtOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'])
     @MaxOutstandingSessions.setter
     def MaxOutstandingSessions(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingSessions'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,6 +74,7 @@ class AmtOptions(Base):
 
     @property
     def OverrideGlobalSetupRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,10 +83,12 @@ class AmtOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
 
     @property
     def OverrideGlobalTeardownRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,10 +97,12 @@ class AmtOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalTeardownRate'])
     @OverrideGlobalTeardownRate.setter
     def OverrideGlobalTeardownRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalTeardownRate'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,10 +111,12 @@ class AmtOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,10 +125,12 @@ class AmtOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     @property
     def TunnelOriginate(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,9 +139,11 @@ class AmtOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelOriginate'])
     @TunnelOriginate.setter
     def TunnelOriginate(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelOriginate'], value)
 
     def update(self, MaxOutstandingSessions=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRate=None, TeardownRate=None, TunnelOriginate=None):
+        # type: (int, bool, bool, int, int, str) -> AmtOptions
         """Updates amtOptions resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class AmtOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxOutstandingSessions=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRate=None, TeardownRate=None, TunnelOriginate=None):
+        # type: (int, bool, bool, int, int, str) -> AmtOptions
         """Adds a new amtOptions resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class AmtOptions(Base):
         self._delete()
 
     def find(self, MaxOutstandingSessions=None, ObjectId=None, OverrideGlobalSetupRate=None, OverrideGlobalTeardownRate=None, SetupRate=None, TeardownRate=None, TunnelOriginate=None):
+        # type: (int, str, bool, bool, int, int, str) -> AmtOptions
         """Finds and retrieves amtOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve amtOptions resources from the server.
@@ -222,14 +241,16 @@ class AmtOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -242,13 +263,15 @@ class AmtOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -262,13 +285,15 @@ class AmtOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

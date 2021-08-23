@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LiveFlowsFilter(Base):
@@ -37,12 +38,16 @@ class LiveFlowsFilter(Base):
         'SortByStatisticId': 'sortByStatisticId',
         'SortingCondition': 'sortingCondition',
     }
+    _SDM_ENUM_MAP = {
+        'sortingCondition': ['bestPerformers', 'worstPerformers'],
+    }
 
-    def __init__(self, parent):
-        super(LiveFlowsFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LiveFlowsFilter, self).__init__(parent, list_op)
 
     @property
     def NumberOfResults(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,22 +56,26 @@ class LiveFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def SortByStatisticId(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter): The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SortByStatisticId'])
     @SortByStatisticId.setter
     def SortByStatisticId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortByStatisticId'], value)
 
     @property
     def SortingCondition(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,15 +84,17 @@ class LiveFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortingCondition'])
     @SortingCondition.setter
     def SortingCondition(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingCondition'], value)
 
     def update(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+        # type: (int, str, str) -> LiveFlowsFilter
         """Updates liveFlowsFilter resource on the server.
 
         Args
         ----
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - SortByStatisticId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
         - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display of the view according to best or worst performers.
 
         Raises
@@ -93,12 +104,13 @@ class LiveFlowsFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+        # type: (int, str, str) -> LiveFlowsFilter
         """Adds a new liveFlowsFilter resource on the server and adds it to the container.
 
         Args
         ----
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - SortByStatisticId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
         - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display of the view according to best or worst performers.
 
         Returns
@@ -122,6 +134,7 @@ class LiveFlowsFilter(Base):
         self._delete()
 
     def find(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+        # type: (int, str, str) -> LiveFlowsFilter
         """Finds and retrieves liveFlowsFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve liveFlowsFilter resources from the server.
@@ -131,7 +144,7 @@ class LiveFlowsFilter(Base):
         Args
         ----
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - SortByStatisticId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
+        - SortByStatisticId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableStatisticFilter)): The reference statistic by which the data will be sorted in created SV.
         - SortingCondition (str(bestPerformers | worstPerformers)): Sets the display of the view according to best or worst performers.
 
         Returns

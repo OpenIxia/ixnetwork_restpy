@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CistLearnedInfo(Base):
@@ -38,12 +39,15 @@ class CistLearnedInfo(Base):
         'RootMac': 'rootMac',
         'RootPriority': 'rootPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CistLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CistLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def RegRootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class CistLearnedInfo(Base):
 
     @property
     def RegRootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class CistLearnedInfo(Base):
 
     @property
     def RegRootPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class CistLearnedInfo(Base):
 
     @property
     def RootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class CistLearnedInfo(Base):
 
     @property
     def RootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +97,7 @@ class CistLearnedInfo(Base):
 
     @property
     def RootPriority(self):
+        # type: () -> int
         """
         Returns
         -------

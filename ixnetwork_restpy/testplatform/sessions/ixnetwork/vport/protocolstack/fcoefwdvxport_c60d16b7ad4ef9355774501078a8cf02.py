@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcoeFwdVxPort(Base):
@@ -57,12 +58,15 @@ class FcoeFwdVxPort(Base):
         'SwitchName': 'switchName',
         'VlanIds': 'vlanIds',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcoeFwdVxPort, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcoeFwdVxPort, self).__init__(parent, list_op)
 
     @property
     def B2bRxSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,10 +75,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
     @B2bRxSize.setter
     def B2bRxSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +89,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FabricName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,10 +103,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FabricName'])
     @FabricName.setter
     def FabricName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FabricName'], value)
 
     @property
     def FcMap(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +117,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FcMap'])
     @FcMap.setter
     def FcMap(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FcMap'], value)
 
     @property
     def FdiscRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +131,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FdiscRejectInterval'])
     @FdiscRejectInterval.setter
     def FdiscRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FdiscRejectInterval'], value)
 
     @property
     def FipAddressingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +145,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipAddressingMode'])
     @FipAddressingMode.setter
     def FipAddressingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipAddressingMode'], value)
 
     @property
     def FipAdvertisementPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +159,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipAdvertisementPeriod'])
     @FipAdvertisementPeriod.setter
     def FipAdvertisementPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipAdvertisementPeriod'], value)
 
     @property
     def FipClearVlinkOnExpire(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +173,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipClearVlinkOnExpire'])
     @FipClearVlinkOnExpire.setter
     def FipClearVlinkOnExpire(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipClearVlinkOnExpire'], value)
 
     @property
     def FipClearVlinkPortIds(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,10 +187,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipClearVlinkPortIds'])
     @FipClearVlinkPortIds.setter
     def FipClearVlinkPortIds(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipClearVlinkPortIds'], value)
 
     @property
     def FipEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -179,10 +201,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipEnabled'])
     @FipEnabled.setter
     def FipEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipEnabled'], value)
 
     @property
     def FipFkaDBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,10 +215,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipFkaDBit'])
     @FipFkaDBit.setter
     def FipFkaDBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipFkaDBit'], value)
 
     @property
     def FipPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -203,10 +229,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipPriority'])
     @FipPriority.setter
     def FipPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipPriority'], value)
 
     @property
     def FipVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -215,10 +243,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipVersion'])
     @FipVersion.setter
     def FipVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipVersion'], value)
 
     @property
     def FipVlanDiscovery(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -227,10 +257,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipVlanDiscovery'])
     @FipVlanDiscovery.setter
     def FipVlanDiscovery(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipVlanDiscovery'], value)
 
     @property
     def FipVnportKeepAlivePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -239,10 +271,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipVnportKeepAlivePeriod'])
     @FipVnportKeepAlivePeriod.setter
     def FipVnportKeepAlivePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipVnportKeepAlivePeriod'], value)
 
     @property
     def FlogiRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -251,10 +285,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlogiRejectInterval'])
     @FlogiRejectInterval.setter
     def FlogiRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlogiRejectInterval'], value)
 
     @property
     def LogoRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -263,10 +299,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogoRejectInterval'])
     @LogoRejectInterval.setter
     def LogoRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogoRejectInterval'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -275,10 +313,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NameServer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -287,10 +327,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NameServer'])
     @NameServer.setter
     def NameServer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NameServer'], value)
 
     @property
     def NameServerCommands(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -299,10 +341,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NameServerCommands'])
     @NameServerCommands.setter
     def NameServerCommands(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['NameServerCommands'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,6 +356,7 @@ class FcoeFwdVxPort(Base):
 
     @property
     def OperatingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -320,10 +365,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OperatingMode'])
     @OperatingMode.setter
     def OperatingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OperatingMode'], value)
 
     @property
     def PlogiRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -332,10 +379,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PlogiRejectInterval'])
     @PlogiRejectInterval.setter
     def PlogiRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PlogiRejectInterval'], value)
 
     @property
     def SwitchName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -344,10 +393,12 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchName'])
     @SwitchName.setter
     def SwitchName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchName'], value)
 
     @property
     def VlanIds(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -356,9 +407,11 @@ class FcoeFwdVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanIds'])
     @VlanIds.setter
     def VlanIds(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanIds'], value)
 
     def update(self, B2bRxSize=None, Enabled=None, FabricName=None, FcMap=None, FdiscRejectInterval=None, FipAddressingMode=None, FipAdvertisementPeriod=None, FipClearVlinkOnExpire=None, FipClearVlinkPortIds=None, FipEnabled=None, FipFkaDBit=None, FipPriority=None, FipVersion=None, FipVlanDiscovery=None, FipVnportKeepAlivePeriod=None, FlogiRejectInterval=None, LogoRejectInterval=None, Name=None, NameServer=None, NameServerCommands=None, OperatingMode=None, PlogiRejectInterval=None, SwitchName=None, VlanIds=None):
+        # type: (int, bool, str, str, int, str, int, bool, str, bool, bool, int, str, bool, int, int, int, str, bool, List[int], str, int, str, str) -> FcoeFwdVxPort
         """Updates fcoeFwdVxPort resource on the server.
 
         Args
@@ -395,14 +448,16 @@ class FcoeFwdVxPort(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -415,13 +470,15 @@ class FcoeFwdVxPort(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -435,13 +492,15 @@ class FcoeFwdVxPort(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

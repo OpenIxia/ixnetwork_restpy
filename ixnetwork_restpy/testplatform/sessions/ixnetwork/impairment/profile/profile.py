@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Profile(Base):
@@ -40,9 +41,11 @@ class Profile(Base):
         'Priority': 'priority',
         'ProfileId': 'profileId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Profile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Profile, self).__init__(parent, list_op)
 
     @property
     def AccumulateAndBurst(self):
@@ -56,7 +59,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.accumulateandburst.accumulateandburst import AccumulateAndBurst
-        return AccumulateAndBurst(self)._select()
+        if self._properties.get('AccumulateAndBurst', None) is not None:
+            return self._properties.get('AccumulateAndBurst')
+        else:
+            return AccumulateAndBurst(self)._select()
 
     @property
     def BitError(self):
@@ -70,7 +76,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.biterror.biterror import BitError
-        return BitError(self)._select()
+        if self._properties.get('BitError', None) is not None:
+            return self._properties.get('BitError')
+        else:
+            return BitError(self)._select()
 
     @property
     def Checksums(self):
@@ -84,7 +93,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.checksums.checksums import Checksums
-        return Checksums(self)._select()
+        if self._properties.get('Checksums', None) is not None:
+            return self._properties.get('Checksums')
+        else:
+            return Checksums(self)._select()
 
     @property
     def CustomDelayVariation(self):
@@ -98,7 +110,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customdelayvariation import CustomDelayVariation
-        return CustomDelayVariation(self)._select()
+        if self._properties.get('CustomDelayVariation', None) is not None:
+            return self._properties.get('CustomDelayVariation')
+        else:
+            return CustomDelayVariation(self)._select()
 
     @property
     def Delay(self):
@@ -112,7 +127,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.delay.delay import Delay
-        return Delay(self)._select()
+        if self._properties.get('Delay', None) is not None:
+            return self._properties.get('Delay')
+        else:
+            return Delay(self)._select()
 
     @property
     def DelayVariation(self):
@@ -126,7 +144,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.delayvariation.delayvariation import DelayVariation
-        return DelayVariation(self)._select()
+        if self._properties.get('DelayVariation', None) is not None:
+            return self._properties.get('DelayVariation')
+        else:
+            return DelayVariation(self)._select()
 
     @property
     def Drop(self):
@@ -140,7 +161,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.drop.drop import Drop
-        return Drop(self)._select()
+        if self._properties.get('Drop', None) is not None:
+            return self._properties.get('Drop')
+        else:
+            return Drop(self)._select()
 
     @property
     def Duplicate(self):
@@ -154,7 +178,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.duplicate.duplicate import Duplicate
-        return Duplicate(self)._select()
+        if self._properties.get('Duplicate', None) is not None:
+            return self._properties.get('Duplicate')
+        else:
+            return Duplicate(self)._select()
 
     @property
     def FixedClassifier(self):
@@ -168,7 +195,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.fixedclassifier.fixedclassifier import FixedClassifier
-        return FixedClassifier(self)
+        if self._properties.get('FixedClassifier', None) is not None:
+            return self._properties.get('FixedClassifier')
+        else:
+            return FixedClassifier(self)
 
     @property
     def Modifier(self):
@@ -182,7 +212,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.modifier.modifier import Modifier
-        return Modifier(self)
+        if self._properties.get('Modifier', None) is not None:
+            return self._properties.get('Modifier')
+        else:
+            return Modifier(self)
 
     @property
     def Reorder(self):
@@ -196,7 +229,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.reorder.reorder import Reorder
-        return Reorder(self)._select()
+        if self._properties.get('Reorder', None) is not None:
+            return self._properties.get('Reorder')
+        else:
+            return Reorder(self)._select()
 
     @property
     def RxRateLimit(self):
@@ -210,10 +246,14 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.rxratelimit.rxratelimit import RxRateLimit
-        return RxRateLimit(self)._select()
+        if self._properties.get('RxRateLimit', None) is not None:
+            return self._properties.get('RxRateLimit')
+        else:
+            return RxRateLimit(self)._select()
 
     @property
     def Links__(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -222,10 +262,12 @@ class Profile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Links__'])
     @Links__.setter
     def Links__(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Links__'], value)
 
     @property
     def AllLinks(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -234,10 +276,12 @@ class Profile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllLinks'])
     @AllLinks.setter
     def AllLinks(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllLinks'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -246,10 +290,12 @@ class Profile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -258,10 +304,12 @@ class Profile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -270,10 +318,12 @@ class Profile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def ProfileId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -282,6 +332,7 @@ class Profile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileId'])
 
     def update(self, Links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
+        # type: (List[str], bool, bool, str, int) -> Profile
         """Updates profile resource on the server.
 
         Args
@@ -299,6 +350,7 @@ class Profile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None):
+        # type: (List[str], bool, bool, str, int) -> Profile
         """Adds a new profile resource on the server and adds it to the container.
 
         Args
@@ -330,6 +382,7 @@ class Profile(Base):
         self._delete()
 
     def find(self, Links__=None, AllLinks=None, Enabled=None, Name=None, Priority=None, ProfileId=None):
+        # type: (List[str], bool, bool, str, int, int) -> Profile
         """Finds and retrieves profile resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve profile resources from the server.

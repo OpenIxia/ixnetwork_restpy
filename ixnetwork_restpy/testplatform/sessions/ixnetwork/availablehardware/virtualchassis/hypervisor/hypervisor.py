@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Hypervisor(Base):
@@ -39,12 +40,16 @@ class Hypervisor(Base):
         'Type': 'type',
         'User': 'user',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['qemu', 'vCenter', 'vmware'],
+    }
 
-    def __init__(self, parent):
-        super(Hypervisor, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Hypervisor, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class Hypervisor(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Password(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class Hypervisor(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Password'])
     @Password.setter
     def Password(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Password'], value)
 
     @property
     def ServerIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class Hypervisor(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerIp'])
     @ServerIp.setter
     def ServerIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerIp'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +100,12 @@ class Hypervisor(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def User(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +114,11 @@ class Hypervisor(Base):
         return self._get_attribute(self._SDM_ATT_MAP['User'])
     @User.setter
     def User(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['User'], value)
 
     def update(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
+        # type: (bool, str, str, str, str) -> Hypervisor
         """Updates hypervisor resource on the server.
 
         Args
@@ -121,6 +136,7 @@ class Hypervisor(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
+        # type: (bool, str, str, str, str) -> Hypervisor
         """Adds a new hypervisor resource on the server and adds it to the container.
 
         Args
@@ -152,6 +168,7 @@ class Hypervisor(Base):
         self._delete()
 
     def find(self, Enabled=None, Password=None, ServerIp=None, Type=None, User=None):
+        # type: (bool, str, str, str, str) -> Hypervisor
         """Finds and retrieves hypervisor resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve hypervisor resources from the server.

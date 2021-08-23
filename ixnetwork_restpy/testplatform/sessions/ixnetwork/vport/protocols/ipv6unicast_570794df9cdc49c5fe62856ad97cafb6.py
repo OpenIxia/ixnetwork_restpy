@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6Unicast(Base):
@@ -42,12 +43,15 @@ class Ipv6Unicast(Base):
         'OriginType': 'originType',
         'PrefixLength': 'prefixLength',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv6Unicast, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6Unicast, self).__init__(parent, list_op)
 
     @property
     def AsPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class Ipv6Unicast(Base):
 
     @property
     def Community(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class Ipv6Unicast(Base):
 
     @property
     def IpPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class Ipv6Unicast(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class Ipv6Unicast(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class Ipv6Unicast(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +111,7 @@ class Ipv6Unicast(Base):
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,6 +121,7 @@ class Ipv6Unicast(Base):
 
     @property
     def OriginType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,6 +131,7 @@ class Ipv6Unicast(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,7 +139,21 @@ class Ipv6Unicast(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
 
+    def add(self):
+        """Adds a new ipv6Unicast resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv6Unicast resources using find and the newly added ipv6Unicast resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AsPath=None, Community=None, IpPrefix=None, LocalPreference=None, MultiExitDiscriminator=None, Neighbor=None, NextHop=None, OriginType=None, PrefixLength=None):
+        # type: (str, str, str, int, int, str, str, str, int) -> Ipv6Unicast
         """Finds and retrieves ipv6Unicast resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6Unicast resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpCustomAfiSafiv6(Base):
@@ -40,12 +41,15 @@ class BgpCustomAfiSafiv6(Base):
         'Name': 'name',
         'SafiValue': 'safiValue',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpCustomAfiSafiv6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpCustomAfiSafiv6, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def AfiValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def DataValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,6 +102,7 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def LengthOfData(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -104,6 +113,7 @@ class BgpCustomAfiSafiv6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,10 +122,12 @@ class BgpCustomAfiSafiv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SafiValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +137,7 @@ class BgpCustomAfiSafiv6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SafiValue']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpCustomAfiSafiv6
         """Updates bgpCustomAfiSafiv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

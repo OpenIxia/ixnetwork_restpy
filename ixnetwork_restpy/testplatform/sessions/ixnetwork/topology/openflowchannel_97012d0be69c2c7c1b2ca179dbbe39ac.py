@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OpenFlowChannel(Base):
@@ -64,9 +65,12 @@ class OpenFlowChannel(Base):
         'TablesPerChannel': 'tablesPerChannel',
         'UseDatapathID': 'useDatapathID',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(OpenFlowChannel, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OpenFlowChannel, self).__init__(parent, list_op)
 
     @property
     def Groups(self):
@@ -80,7 +84,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.groups_b0203364879843ea921d92b31d3b37a9 import Groups
-        return Groups(self)
+        if self._properties.get('Groups', None) is not None:
+            return self._properties.get('Groups')
+        else:
+            return Groups(self)
 
     @property
     def Meters(self):
@@ -94,7 +101,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.meters_8b28210732dd4e9a4bab19a7e6241a11 import Meters
-        return Meters(self)
+        if self._properties.get('Meters', None) is not None:
+            return self._properties.get('Meters')
+        else:
+            return Meters(self)
 
     @property
     def Tables(self):
@@ -108,10 +118,14 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tables_3d687bbed07969785585da03f7a19e75 import Tables
-        return Tables(self)
+        if self._properties.get('Tables', None) is not None:
+            return self._properties.get('Tables')
+        else:
+            return Tables(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -122,6 +136,7 @@ class OpenFlowChannel(Base):
 
     @property
     def CalcFlowRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,6 +147,7 @@ class OpenFlowChannel(Base):
 
     @property
     def CalcFlowRateWithBarrier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +158,7 @@ class OpenFlowChannel(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -150,10 +167,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ControllerIndex(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -163,6 +182,7 @@ class OpenFlowChannel(Base):
 
     @property
     def ControllerName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -172,6 +192,7 @@ class OpenFlowChannel(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,6 +202,7 @@ class OpenFlowChannel(Base):
 
     @property
     def DatapathId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -191,6 +213,7 @@ class OpenFlowChannel(Base):
 
     @property
     def DatapathIdHex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +224,7 @@ class OpenFlowChannel(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,6 +234,7 @@ class OpenFlowChannel(Base):
 
     @property
     def EnableHelloElement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +254,7 @@ class OpenFlowChannel(Base):
 
     @property
     def FlowTxBurstSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +265,7 @@ class OpenFlowChannel(Base):
 
     @property
     def GroupsPerChannel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -247,10 +274,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupsPerChannel'])
     @GroupsPerChannel.setter
     def GroupsPerChannel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupsPerChannel'], value)
 
     @property
     def InterFlowBurstGap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -261,6 +290,7 @@ class OpenFlowChannel(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -270,6 +300,7 @@ class OpenFlowChannel(Base):
 
     @property
     def MaxFlowsAtATime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +311,7 @@ class OpenFlowChannel(Base):
 
     @property
     def MetersPerChannel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,10 +320,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MetersPerChannel'])
     @MetersPerChannel.setter
     def MetersPerChannel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MetersPerChannel'], value)
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,10 +334,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +348,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RemoteIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +364,7 @@ class OpenFlowChannel(Base):
 
     @property
     def SendRoleRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +375,7 @@ class OpenFlowChannel(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -345,6 +385,7 @@ class OpenFlowChannel(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -353,10 +394,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
     def StartupGenerationId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +410,7 @@ class OpenFlowChannel(Base):
 
     @property
     def StartupRoleRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -386,6 +430,7 @@ class OpenFlowChannel(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -395,6 +440,7 @@ class OpenFlowChannel(Base):
 
     @property
     def TablesPerChannel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -403,10 +449,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TablesPerChannel'])
     @TablesPerChannel.setter
     def TablesPerChannel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TablesPerChannel'], value)
 
     @property
     def UseDatapathID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +464,7 @@ class OpenFlowChannel(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseDatapathID']))
 
     def update(self, ConnectedVia=None, GroupsPerChannel=None, MetersPerChannel=None, Multiplier=None, Name=None, StackedLayers=None, TablesPerChannel=None):
+        # type: (List[str], int, int, int, str, List[str], int) -> OpenFlowChannel
         """Updates openFlowChannel resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -438,6 +487,7 @@ class OpenFlowChannel(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, GroupsPerChannel=None, MetersPerChannel=None, Multiplier=None, Name=None, StackedLayers=None, TablesPerChannel=None):
+        # type: (List[str], int, int, int, str, List[str], int) -> OpenFlowChannel
         """Adds a new openFlowChannel resource on the server and adds it to the container.
 
         Args
@@ -524,6 +574,1256 @@ class OpenFlowChannel(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def GetAsynchronousConfiguration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getAsynchronousConfiguration operation on the server.
+
+        Get Asynchronous Configurationr
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getAsynchronousConfiguration(async_operation=bool)
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAsynchronousConfiguration(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAsynchronousConfiguration(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAsynchronousConfiguration(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getAsynchronousConfiguration', payload=payload, response_object=None)
+
+    def InvokeSendRoleRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the invokeSendRoleRequest operation on the server.
+
+        Sends a Role Request for selected Channel.
+
+        invokeSendRoleRequest(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices in channel grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('invokeSendRoleRequest', payload=payload, response_object=None)
+
+    def PauseEchoReply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the pauseEchoReply operation on the server.
+
+        Pause Sending Echo Reply Messages
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        pauseEchoReply(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pauseEchoReply(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pauseEchoReply(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pauseEchoReply(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseEchoReply', payload=payload, response_object=None)
+
+    def PauseEchoRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the pauseEchoRequest operation on the server.
+
+        Pause Sending Echo Request Messages
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        pauseEchoRequest(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pauseEchoRequest(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pauseEchoRequest(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pauseEchoRequest(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pauseEchoRequest', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumeEchoReply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumeEchoReply operation on the server.
+
+        Resume Sending Echo Reply Messages
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeEchoReply(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeEchoReply(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeEchoReply(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeEchoReply(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeEchoReply', payload=payload, response_object=None)
+
+    def ResumeEchoRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumeEchoRequest operation on the server.
+
+        Resume Sending Echo Request Messages
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeEchoRequest(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeEchoRequest(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeEchoRequest(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeEchoRequest(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeEchoRequest', payload=payload, response_object=None)
+
+    def SendBarrierRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendBarrierRequest operation on the server.
+
+        Send Barrier Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendBarrierRequest(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendBarrierRequest(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendBarrierRequest(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendBarrierRequest(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendBarrierRequest', payload=payload, response_object=None)
+
+    def SendConfigRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendConfigRequest operation on the server.
+
+        Send Config Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendConfigRequest(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendConfigRequest(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendConfigRequest(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendConfigRequest(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendConfigRequest', payload=payload, response_object=None)
+
+    def SendDescriptionStatRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendDescriptionStatRequest operation on the server.
+
+        Send Description Stat Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendDescriptionStatRequest(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendDescriptionStatRequest(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendDescriptionStatRequest(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendDescriptionStatRequest(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendDescriptionStatRequest', payload=payload, response_object=None)
+
+    def SendEchoRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendEchoRequest operation on the server.
+
+        Send Echo Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number, async_operation=bool)
+        ------------------------------------------------------------------------------------
+        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
+        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number, SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------
+        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
+        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendEchoRequest(SessionIndices=string, EnableEchoTimeout=bool, EchoTimeoutVal=number, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a enableEchoTimeout of type kBool
+        - EnableEchoTimeout (bool): This parameter requires a echoTimeoutVal of type kInteger
+        - EchoTimeoutVal (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendEchoRequest(Arg2=list, Arg3=bool, Arg4=number, async_operation=bool)list
+        ----------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (bool): Enable Echo Timeout
+        - Arg4 (number): Echo Timeout Value
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendEchoRequest', payload=payload, response_object=None)
+
+    def SendExperimenterMessage(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendExperimenterMessage operation on the server.
+
+        Send Experimenter Message
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendExperimenterMessage(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, async_operation=bool)
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
+        - ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
+        - ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendExperimenterMessage(Arg2=list, Arg3=number, Arg4=number, Arg5=number, Arg6=string, async_operation=bool)list
+        ----------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (number): Experimenter Data Length.
+        - Arg4 (number): Experimenter ID.
+        - Arg5 (number): Experimenter ID
+        - Arg6 (str): Experimenter Data in Hex.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendExperimenterMessage', payload=payload, response_object=None)
+
+    def SendExperimenterStatRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendExperimenterStatRequest operation on the server.
+
+        Send Experimenter Stats Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ExperimenterData (str): This parameter requires a experimenterData of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendExperimenterStatRequest(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
+        - ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
+        - ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendExperimenterStatRequest(Arg2=list, Arg3=number, Arg4=number, Arg5=number, Arg6=string, async_operation=bool)list
+        --------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (number): Experimenter Data Length.
+        - Arg4 (number): Experimenter ID.
+        - Arg5 (number): Experimenter ID
+        - Arg6 (str): Experimenter Data in Hex.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendExperimenterStatRequest', payload=payload, response_object=None)
+
+    def SendFeatureRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendFeatureRequest operation on the server.
+
+        Send Feature Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendFeatureRequest(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendFeatureRequest(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendFeatureRequest(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendFeatureRequest(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendFeatureRequest', payload=payload, response_object=None)
+
+    def SendGetQueueConfigRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendGetQueueConfigRequest operation on the server.
+
+        Send Queue Stats Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGetQueueConfigRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        ----------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGetQueueConfigRequest(Arg2=list, Arg3=enum, Arg4=number, async_operation=bool)list
+        --------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
+        - Arg4 (number): Port ID
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendGetQueueConfigRequest', payload=payload, response_object=None)
+
+    def SendGroupDescriptionRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendGroupDescriptionRequest operation on the server.
+
+        Send Group Description Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendGroupDescriptionRequest(async_operation=bool)
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupDescriptionRequest(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupDescriptionRequest(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupDescriptionRequest(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendGroupDescriptionRequest', payload=payload, response_object=None)
+
+    def SendGroupFeaturesRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendGroupFeaturesRequest operation on the server.
+
+        Send Group Features Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendGroupFeaturesRequest(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupFeaturesRequest(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupFeaturesRequest(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupFeaturesRequest(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendGroupFeaturesRequest', payload=payload, response_object=None)
+
+    def SendGroupStatsRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendGroupStatsRequest operation on the server.
+
+        Send Group Stats Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendGroupStatsRequest(GroupIDType=enum, GroupID=number, async_operation=bool)
+        -----------------------------------------------------------------------------
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupID (number): This parameter requires a groupID of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupStatsRequest(GroupIDType=enum, GroupID=number, SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------------------------------
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupID (number): This parameter requires a groupID of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupStatsRequest(SessionIndices=string, GroupIDType=enum, GroupID=number, async_operation=bool)
+        ----------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
+        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupID of type kInteger
+        - GroupID (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendGroupStatsRequest(Arg2=list, Arg3=enum, Arg4=number, async_operation=bool)list
+        ----------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPG_ALL | oFPG_ANY | manual)): Group ID Type
+        - Arg4 (number): Group ID
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendGroupStatsRequest', payload=payload, response_object=None)
+
+    def SendMeterConfigRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendMeterConfigRequest operation on the server.
+
+        Send Meter Config Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        -----------------------------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterConfigRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        ----------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterConfigRequest(Arg2=list, Arg3=enum, Arg4=number, async_operation=bool)list
+        -----------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPM_SLOWPATH | oFPM_CONTROLLER | all | manual)): Meter ID Type
+        - Arg4 (number): Meter ID
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendMeterConfigRequest', payload=payload, response_object=None)
+
+    def SendMeterFeaturesRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendMeterFeaturesRequest operation on the server.
+
+        Send Meter Features Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendMeterFeaturesRequest(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterFeaturesRequest(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterFeaturesRequest(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterFeaturesRequest(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendMeterFeaturesRequest', payload=payload, response_object=None)
+
+    def SendMeterStatRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendMeterStatRequest operation on the server.
+
+        Send Meter Stat Request to Switch.
+
+        sendMeterStatRequest(Arg2=list, Arg3=enum, Arg4=number, async_operation=bool)list
+        ---------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPM_SLOWPATH | oFPM_CONTROLLER | all | manual)): Meter ID Type
+        - Arg4 (number): Meter ID
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendMeterStatRequest', payload=payload, response_object=None)
+
+    def SendMeterStatsRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the sendMeterStatsRequest operation on the server.
+
+        Send Meter Stats Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        ----------------------------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------------------------------------------------
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendMeterStatsRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
+        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendMeterStatsRequest', payload=payload, response_object=None)
+
+    def SendPortDescription(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendPortDescription operation on the server.
+
+        Send Port Description
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPortDescription(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortDescription(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortDescription(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortDescription(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPortDescription', payload=payload, response_object=None)
+
+    def SendPortStatsRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendPortStatsRequest operation on the server.
+
+        Send Port Stats Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        ------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortStatsRequest(Arg2=list, Arg3=enum, Arg4=number, async_operation=bool)list
+        ---------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
+        - Arg4 (number): Port ID
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPortStatsRequest', payload=payload, response_object=None)
+
+    def SendQueueStatsRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendQueueStatsRequest operation on the server.
+
+        Send Queue Stats Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendQueueStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
+        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
+        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendQueueStatsRequest(Arg2=list, Arg3=enum, Arg4=number, Arg5=enum, Arg6=number, async_operation=bool)list
+        ----------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
+        - Arg4 (number): Port ID
+        - Arg5 (str(oFPQ_ALL | manual)): Queue Type
+        - Arg6 (number): Queue ID
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendQueueStatsRequest', payload=payload, response_object=None)
+
+    def SendTableModRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendTableModRequest operation on the server.
+
+        Send Table Mod Request
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        ------------------------------------------------------------------------------------------------------------
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableId (number): This parameter requires a tableId of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null, SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------------------------------
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableId (number): This parameter requires a tableId of type kInteger
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendTableModRequest(SessionIndices=string, TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
+        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableId of type kInteger
+        - TableId (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
+        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendTableModRequest(Arg2=list, Arg3=enum, Arg4=number, Arg5=number, async_operation=bool)list
+        ---------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(aLL_TABLE | manual)): Table ID Type
+        - Arg4 (number): Table ID
+        - Arg5 (number): Table Config
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendTableModRequest', payload=payload, response_object=None)
+
+    def SendTableStatsRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendTableStatsRequest operation on the server.
+
+        Send Table Stats Request to Switch
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendTableStatsRequest(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendTableStatsRequest(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendTableStatsRequest(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendTableStatsRequest(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendTableStatsRequest', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def StartChannel(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startChannel operation on the server.
+
+        Start OpenFlow Channel
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startChannel(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startChannel(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startChannel(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startChannel', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopChannel(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopChannel operation on the server.
+
+        Stop OpenFlow Channel
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopChannel(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopChannel(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopChannel(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopChannel', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, CalcFlowRate=None, CalcFlowRateWithBarrier=None, DatapathId=None, DatapathIdHex=None, EnableHelloElement=None, FlowTxBurstSize=None, InterFlowBurstGap=None, MaxFlowsAtATime=None, RemoteIp=None, SendRoleRequest=None, StartupGenerationId=None, StartupRoleRequest=None, UseDatapathID=None):
         """Base class infrastructure that gets a list of openFlowChannel device ids encapsulated by this object.
 
@@ -556,1046 +1856,3 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def GetAsynchronousConfiguration(self, *args, **kwargs):
-        """Executes the getAsynchronousConfiguration operation on the server.
-
-        Get Asynchronous Configurationr
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getAsynchronousConfiguration(SessionIndices=list)
-        -------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getAsynchronousConfiguration(SessionIndices=string)
-        ---------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getAsynchronousConfiguration(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAsynchronousConfiguration', payload=payload, response_object=None)
-
-    def InvokeSendRoleRequest(self, *args, **kwargs):
-        """Executes the invokeSendRoleRequest operation on the server.
-
-        Sends a Role Request for selected Channel.
-
-        invokeSendRoleRequest(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices in channel grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('invokeSendRoleRequest', payload=payload, response_object=None)
-
-    def PauseEchoReply(self, *args, **kwargs):
-        """Executes the pauseEchoReply operation on the server.
-
-        Pause Sending Echo Reply Messages
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        pauseEchoReply(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        pauseEchoReply(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        pauseEchoReply(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseEchoReply', payload=payload, response_object=None)
-
-    def PauseEchoRequest(self, *args, **kwargs):
-        """Executes the pauseEchoRequest operation on the server.
-
-        Pause Sending Echo Request Messages
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        pauseEchoRequest(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        pauseEchoRequest(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        pauseEchoRequest(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pauseEchoRequest', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumeEchoReply(self, *args, **kwargs):
-        """Executes the resumeEchoReply operation on the server.
-
-        Resume Sending Echo Reply Messages
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeEchoReply(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeEchoReply(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        resumeEchoReply(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeEchoReply', payload=payload, response_object=None)
-
-    def ResumeEchoRequest(self, *args, **kwargs):
-        """Executes the resumeEchoRequest operation on the server.
-
-        Resume Sending Echo Request Messages
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeEchoRequest(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeEchoRequest(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        resumeEchoRequest(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeEchoRequest', payload=payload, response_object=None)
-
-    def SendBarrierRequest(self, *args, **kwargs):
-        """Executes the sendBarrierRequest operation on the server.
-
-        Send Barrier Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendBarrierRequest(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendBarrierRequest(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendBarrierRequest(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendBarrierRequest', payload=payload, response_object=None)
-
-    def SendConfigRequest(self, *args, **kwargs):
-        """Executes the sendConfigRequest operation on the server.
-
-        Send Config Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendConfigRequest(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendConfigRequest(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendConfigRequest(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendConfigRequest', payload=payload, response_object=None)
-
-    def SendDescriptionStatRequest(self, *args, **kwargs):
-        """Executes the sendDescriptionStatRequest operation on the server.
-
-        Send Description Stat Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendDescriptionStatRequest(SessionIndices=list)
-        -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendDescriptionStatRequest(SessionIndices=string)
-        -------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendDescriptionStatRequest(Arg2=list)list
-        -----------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendDescriptionStatRequest', payload=payload, response_object=None)
-
-    def SendEchoRequest(self, *args, **kwargs):
-        """Executes the sendEchoRequest operation on the server.
-
-        Send Echo Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number)
-        --------------------------------------------------------------
-        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
-        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
-
-        sendEchoRequest(EnableEchoTimeout=bool, EchoTimeoutVal=number, SessionIndices=list)
-        -----------------------------------------------------------------------------------
-        - EnableEchoTimeout (bool): This parameter requires a enableEchoTimeout of type kBool
-        - EchoTimeoutVal (number): This parameter requires a echoTimeoutVal of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendEchoRequest(SessionIndices=string, EnableEchoTimeout=bool, EchoTimeoutVal=number)
-        -------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a enableEchoTimeout of type kBool
-        - EnableEchoTimeout (bool): This parameter requires a echoTimeoutVal of type kInteger
-        - EchoTimeoutVal (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendEchoRequest(Arg2=list, Arg3=bool, Arg4=number)list
-        ------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (bool): Enable Echo Timeout
-        - Arg4 (number): Echo Timeout Value
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendEchoRequest', payload=payload, response_object=None)
-
-    def SendExperimenterMessage(self, *args, **kwargs):
-        """Executes the sendExperimenterMessage operation on the server.
-
-        Send Experimenter Message
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
-        -------------------------------------------------------------------------------------------------------------------------------------------------
-        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ExperimenterData (str): This parameter requires a experimenterData of type kString
-
-        sendExperimenterMessage(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list)
-        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ExperimenterData (str): This parameter requires a experimenterData of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendExperimenterMessage(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
-        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
-        - ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
-        - ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendExperimenterMessage(Arg2=list, Arg3=number, Arg4=number, Arg5=number, Arg6=string)list
-        ------------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (number): Experimenter Data Length.
-        - Arg4 (number): Experimenter ID.
-        - Arg5 (number): Experimenter ID
-        - Arg6 (str): Experimenter Data in Hex.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendExperimenterMessage', payload=payload, response_object=None)
-
-    def SendExperimenterStatRequest(self, *args, **kwargs):
-        """Executes the sendExperimenterStatRequest operation on the server.
-
-        Send Experimenter Stats Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
-        -----------------------------------------------------------------------------------------------------------------------------------------------------
-        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ExperimenterData (str): This parameter requires a experimenterData of type kString
-
-        sendExperimenterStatRequest(ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string, SessionIndices=list)
-        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - ExperimenterDataLength (number): This parameter requires a experimenterDataLength of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ExperimenterData (str): This parameter requires a experimenterData of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendExperimenterStatRequest(SessionIndices=string, ExperimenterDataLength=number, ErrorUnsupportedTypeFormat=null, ErrorUnsupportedTypeFormat=null, ExperimenterData=string)
-        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a experimenterDataLength of type kInteger
-        - ExperimenterDataLength (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a experimenterData of type kString
-        - ExperimenterData (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendExperimenterStatRequest(Arg2=list, Arg3=number, Arg4=number, Arg5=number, Arg6=string)list
-        ----------------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (number): Experimenter Data Length.
-        - Arg4 (number): Experimenter ID.
-        - Arg5 (number): Experimenter ID
-        - Arg6 (str): Experimenter Data in Hex.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendExperimenterStatRequest', payload=payload, response_object=None)
-
-    def SendFeatureRequest(self, *args, **kwargs):
-        """Executes the sendFeatureRequest operation on the server.
-
-        Send Feature Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendFeatureRequest(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendFeatureRequest(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendFeatureRequest(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendFeatureRequest', payload=payload, response_object=None)
-
-    def SendGetQueueConfigRequest(self, *args, **kwargs):
-        """Executes the sendGetQueueConfigRequest operation on the server.
-
-        Send Queue Stats Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
-        -------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
-        sendGetQueueConfigRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
-        ----------------------------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendGetQueueConfigRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
-        ------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendGetQueueConfigRequest(Arg2=list, Arg3=enum, Arg4=number)list
-        ----------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
-        - Arg4 (number): Port ID
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGetQueueConfigRequest', payload=payload, response_object=None)
-
-    def SendGroupDescriptionRequest(self, *args, **kwargs):
-        """Executes the sendGroupDescriptionRequest operation on the server.
-
-        Send Group Description Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendGroupDescriptionRequest(SessionIndices=list)
-        ------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendGroupDescriptionRequest(SessionIndices=string)
-        --------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendGroupDescriptionRequest(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupDescriptionRequest', payload=payload, response_object=None)
-
-    def SendGroupFeaturesRequest(self, *args, **kwargs):
-        """Executes the sendGroupFeaturesRequest operation on the server.
-
-        Send Group Features Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendGroupFeaturesRequest(SessionIndices=list)
-        ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendGroupFeaturesRequest(SessionIndices=string)
-        -----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendGroupFeaturesRequest(Arg2=list)list
-        ---------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupFeaturesRequest', payload=payload, response_object=None)
-
-    def SendGroupStatsRequest(self, *args, **kwargs):
-        """Executes the sendGroupStatsRequest operation on the server.
-
-        Send Group Stats Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendGroupStatsRequest(GroupIDType=enum, GroupID=number)
-        -------------------------------------------------------
-        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-        - GroupID (number): This parameter requires a groupID of type kInteger
-
-        sendGroupStatsRequest(GroupIDType=enum, GroupID=number, SessionIndices=list)
-        ----------------------------------------------------------------------------
-        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-        - GroupID (number): This parameter requires a groupID of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendGroupStatsRequest(SessionIndices=string, GroupIDType=enum, GroupID=number)
-        ------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a groupIDType of type kEnumValue=enumOpt-Manual,enumOpt-OFPG_ALL,enumOpt-OFPG_ANY
-        - GroupIDType (str(enumOpt-Manual | enumOpt-OFPG_ALL | enumOpt-OFPG_ANY)): This parameter requires a groupID of type kInteger
-        - GroupID (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendGroupStatsRequest(Arg2=list, Arg3=enum, Arg4=number)list
-        ------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(oFPG_ALL | oFPG_ANY | manual)): Group ID Type
-        - Arg4 (number): Group ID
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupStatsRequest', payload=payload, response_object=None)
-
-    def SendMeterConfigRequest(self, *args, **kwargs):
-        """Executes the sendMeterConfigRequest operation on the server.
-
-        Send Meter Config Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
-        -------------------------------------------------------------------------
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
-        sendMeterConfigRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
-        ----------------------------------------------------------------------------------------------
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendMeterConfigRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
-        ------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendMeterConfigRequest(Arg2=list, Arg3=enum, Arg4=number)list
-        -------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(oFPM_SLOWPATH | oFPM_CONTROLLER | all | manual)): Meter ID Type
-        - Arg4 (number): Meter ID
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterConfigRequest', payload=payload, response_object=None)
-
-    def SendMeterFeaturesRequest(self, *args, **kwargs):
-        """Executes the sendMeterFeaturesRequest operation on the server.
-
-        Send Meter Features Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendMeterFeaturesRequest(SessionIndices=list)
-        ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendMeterFeaturesRequest(SessionIndices=string)
-        -----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendMeterFeaturesRequest(Arg2=list)list
-        ---------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterFeaturesRequest', payload=payload, response_object=None)
-
-    def SendMeterStatRequest(self, *args, **kwargs):
-        """Executes the sendMeterStatRequest operation on the server.
-
-        Send Meter Stat Request to Switch.
-
-        sendMeterStatRequest(Arg2=list, Arg3=enum, Arg4=number)list
-        -----------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(oFPM_SLOWPATH | oFPM_CONTROLLER | all | manual)): Meter ID Type
-        - Arg4 (number): Meter ID
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterStatRequest', payload=payload, response_object=None)
-
-    def SendMeterStatsRequest(self, *args, **kwargs):
-        """Executes the sendMeterStatsRequest operation on the server.
-
-        Send Meter Stats Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
-        ------------------------------------------------------------------------
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
-        sendMeterStatsRequest(MeterIDType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
-        ---------------------------------------------------------------------------------------------
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendMeterStatsRequest(SessionIndices=string, MeterIDType=enum, ErrorUnsupportedTypeFormat=null)
-        -----------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a meterIDType of type kEnumValue=enumOpt-ALL,enumOpt-MANUAL,enumOpt-OFPM_CONTROLLER,enumOpt-OFPM_SLOWPATH
-        - MeterIDType (str(enumOpt-ALL | enumOpt-MANUAL | enumOpt-OFPM_CONTROLLER | enumOpt-OFPM_SLOWPATH)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendMeterStatsRequest', payload=payload, response_object=None)
-
-    def SendPortDescription(self, *args, **kwargs):
-        """Executes the sendPortDescription operation on the server.
-
-        Send Port Description
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPortDescription(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendPortDescription(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendPortDescription(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortDescription', payload=payload, response_object=None)
-
-    def SendPortStatsRequest(self, *args, **kwargs):
-        """Executes the sendPortStatsRequest operation on the server.
-
-        Send Port Stats Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
-        --------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
-        sendPortStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
-        -----------------------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendPortStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null)
-        -------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY,enumOpt-OFPP_NONE
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY | enumOpt-OFPP_NONE)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendPortStatsRequest(Arg2=list, Arg3=enum, Arg4=number)list
-        -----------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
-        - Arg4 (number): Port ID
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortStatsRequest', payload=payload, response_object=None)
-
-    def SendQueueStatsRequest(self, *args, **kwargs):
-        """Executes the sendQueueStatsRequest operation on the server.
-
-        Send Queue Stats Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
-        ----------------------------------------------------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
-        sendQueueStatsRequest(OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
-        -------------------------------------------------------------------------------------------------------------------------------------------------
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendQueueStatsRequest(SessionIndices=string, OutputPortType=enum, ErrorUnsupportedTypeFormat=null, QueueType=enum, ErrorUnsupportedTypeFormat=null)
-        ---------------------------------------------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a outputPortType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPP_ANY
-        - OutputPortType (str(enumOpt-MANUAL | enumOpt-OFPP_ANY)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a queueType of type kEnumValue=enumOpt-MANUAL,enumOpt-OFPQ_ALL
-        - QueueType (str(enumOpt-MANUAL | enumOpt-OFPQ_ALL)): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendQueueStatsRequest(Arg2=list, Arg3=enum, Arg4=number, Arg5=enum, Arg6=number)list
-        ------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(oFPP_IN_PORT | oFPP_NORMAL | oFPP_FLOOD | oFPP_ALL | oFPP_CONTROLLER | oFPP_LOCAL | mANUAL | oFPP_TABLE | oFPP_NONE | oFPP_ANY)): Output Port Type
-        - Arg4 (number): Port ID
-        - Arg5 (str(oFPQ_ALL | manual)): Queue Type
-        - Arg6 (number): Queue ID
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendQueueStatsRequest', payload=payload, response_object=None)
-
-    def SendTableModRequest(self, *args, **kwargs):
-        """Executes the sendTableModRequest operation on the server.
-
-        Send Table Mod Request
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
-        --------------------------------------------------------------------------------------
-        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-        - TableId (number): This parameter requires a tableId of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-
-        sendTableModRequest(TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null, SessionIndices=list)
-        -----------------------------------------------------------------------------------------------------------
-        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-        - TableId (number): This parameter requires a tableId of type kInteger
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendTableModRequest(SessionIndices=string, TableIdType=enum, TableId=number, ErrorUnsupportedTypeFormat=null)
-        -------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a tableIdType of type kEnumValue=enumOpt-ALL_TABLE,enumOpt-MANUAL
-        - TableIdType (str(enumOpt-ALL_TABLE | enumOpt-MANUAL)): This parameter requires a tableId of type kInteger
-        - TableId (number): This parameter requires a errorUnsupportedTypeFormat of type kVoid
-        - ErrorUnsupportedTypeFormat (null): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendTableModRequest(Arg2=list, Arg3=enum, Arg4=number, Arg5=number)list
-        -----------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(aLL_TABLE | manual)): Table ID Type
-        - Arg4 (number): Table ID
-        - Arg5 (number): Table Config
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendTableModRequest', payload=payload, response_object=None)
-
-    def SendTableStatsRequest(self, *args, **kwargs):
-        """Executes the sendTableStatsRequest operation on the server.
-
-        Send Table Stats Request to Switch
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendTableStatsRequest(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendTableStatsRequest(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendTableStatsRequest(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendTableStatsRequest', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def StartChannel(self, *args, **kwargs):
-        """Executes the startChannel operation on the server.
-
-        Start OpenFlow Channel
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startChannel(SessionIndices=list)
-        ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startChannel(SessionIndices=string)
-        -----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startChannel', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopChannel(self, *args, **kwargs):
-        """Executes the stopChannel operation on the server.
-
-        Stop OpenFlow Channel
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopChannel(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopChannel(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopChannel', payload=payload, response_object=None)

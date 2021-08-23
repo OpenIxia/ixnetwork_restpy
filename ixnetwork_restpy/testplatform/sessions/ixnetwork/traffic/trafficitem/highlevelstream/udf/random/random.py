@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Random(Base):
@@ -36,12 +37,16 @@ class Random(Base):
         'Mask': 'mask',
         'Width': 'width',
     }
+    _SDM_ENUM_MAP = {
+        'width': ['16', '24', '32', '8'],
+    }
 
-    def __init__(self, parent):
-        super(Random, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Random, self).__init__(parent, list_op)
 
     @property
     def AvailableWidths(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -51,6 +56,7 @@ class Random(Base):
 
     @property
     def Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -59,10 +65,12 @@ class Random(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def Width(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,9 +79,11 @@ class Random(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, Mask=None, Width=None):
+        # type: (str, str) -> Random
         """Updates random resource on the server.
 
         Args
@@ -87,7 +97,27 @@ class Random(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Mask=None, Width=None):
+        # type: (str, str) -> Random
+        """Adds a new random resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Mask (str): Sets the UDF mask.
+        - Width (str(16 | 24 | 32 | 8)): Specifies the width of the UDF.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved random resources using find and the newly added random resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AvailableWidths=None, Mask=None, Width=None):
+        # type: (List[str], str, str) -> Random
         """Finds and retrieves random resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve random resources from the server.

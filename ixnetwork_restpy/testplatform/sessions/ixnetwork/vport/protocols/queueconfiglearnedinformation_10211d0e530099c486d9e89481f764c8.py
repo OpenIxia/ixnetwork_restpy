@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class QueueConfigLearnedInformation(Base):
@@ -50,12 +51,15 @@ class QueueConfigLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(QueueConfigLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(QueueConfigLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +69,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +79,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +89,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +99,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +109,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +119,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def ExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,6 +129,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,6 +139,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,6 +149,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,6 +159,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,6 +169,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def PropertyRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -164,6 +179,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def QueueId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -173,6 +189,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def QueuePortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -182,6 +199,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def QueueProperty(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,6 +209,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,6 +219,7 @@ class QueueConfigLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -207,7 +227,21 @@ class QueueConfigLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
 
+    def add(self):
+        """Adds a new queueConfigLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved queueConfigLearnedInformation resources using find and the newly added queueConfigLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PortNumber=None, PropertyRate=None, QueueId=None, QueuePortNumber=None, QueueProperty=None, RemoteIp=None, ReplyState=None):
+        # type: (str, str, str, str, str, int, int, int, str, str, int, int, int, int, str, str, str) -> QueueConfigLearnedInformation
         """Finds and retrieves queueConfigLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve queueConfigLearnedInformation resources from the server.

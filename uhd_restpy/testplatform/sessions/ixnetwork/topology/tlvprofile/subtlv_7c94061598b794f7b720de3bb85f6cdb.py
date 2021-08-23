@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SubTlv(Base):
@@ -37,9 +38,11 @@ class SubTlv(Base):
         'IsEnabled': 'isEnabled',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SubTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SubTlv, self).__init__(parent, list_op)
 
     @property
     def Value(self):
@@ -53,10 +56,14 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import Value
-        return Value(self)._select()
+        if self._properties.get('Value', None) is not None:
+            return self._properties.get('Value')
+        else:
+            return Value(self)._select()
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def EnablePerSession(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -79,6 +88,7 @@ class SubTlv(Base):
 
     @property
     def IsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
     @IsEnabled.setter
     def IsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,9 +111,11 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEnabled=None, Name=None):
+        # type: (str, bool, str) -> SubTlv
         """Updates subTlv resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -119,7 +133,28 @@ class SubTlv(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Description=None, IsEnabled=None, Name=None):
+        # type: (str, bool, str) -> SubTlv
+        """Adds a new subTlv resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - IsEnabled (bool): Enables/disables this tlv
+        - Name (str): Name of the tlv
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved subTlv resources using find and the newly added subTlv resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Description=None, IsEnabled=None, Name=None):
+        # type: (str, bool, str) -> SubTlv
         """Finds and retrieves subTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve subTlv resources from the server.

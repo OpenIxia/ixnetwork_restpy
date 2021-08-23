@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbSimEdgeBaseVidList(Base):
@@ -42,9 +43,11 @@ class SpbSimEdgeBaseVidList(Base):
         'Name': 'name',
         'UseFlagBit': 'useFlagBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbSimEdgeBaseVidList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbSimEdgeBaseVidList, self).__init__(parent, list_op)
 
     @property
     def SpbSimEdgeIsidList(self):
@@ -58,10 +61,14 @@ class SpbSimEdgeBaseVidList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbsimedgeisidlist_cfeb124762b8e4653da4ea2e084e78c8 import SpbSimEdgeIsidList
-        return SpbSimEdgeIsidList(self)._select()
+        if self._properties.get('SpbSimEdgeIsidList', None) is not None:
+            return self._properties.get('SpbSimEdgeIsidList')
+        else:
+            return SpbSimEdgeIsidList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -72,6 +79,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def BaseVid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def BaseVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def BvlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -102,6 +112,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +122,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,6 +132,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def EctAlgorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +143,7 @@ class SpbSimEdgeBaseVidList(Base):
 
     @property
     def IsidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,10 +152,12 @@ class SpbSimEdgeBaseVidList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsidCount'])
     @IsidCount.setter
     def IsidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsidCount'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,10 +166,12 @@ class SpbSimEdgeBaseVidList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def UseFlagBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +181,7 @@ class SpbSimEdgeBaseVidList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseFlagBit']))
 
     def update(self, IsidCount=None, Name=None):
+        # type: (int, str) -> SpbSimEdgeBaseVidList
         """Updates spbSimEdgeBaseVidList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

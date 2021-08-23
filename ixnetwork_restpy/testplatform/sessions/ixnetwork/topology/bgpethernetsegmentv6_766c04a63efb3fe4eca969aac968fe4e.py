@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpEthernetSegmentV6(Base):
@@ -90,9 +91,11 @@ class BgpEthernetSegmentV6(Base):
         'UseSameSequenceNumber': 'useSameSequenceNumber',
         'VTEPIP6Address': 'vTEPIP6Address',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpEthernetSegmentV6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpEthernetSegmentV6, self).__init__(parent, list_op)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -106,7 +109,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpAsPathSegmentList')
+        else:
+            return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -120,7 +126,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is not None:
+            return self._properties.get('BgpClusterIdList')
+        else:
+            return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -134,7 +143,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is not None:
+            return self._properties.get('BgpCommunitiesList')
+        else:
+            return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -148,7 +160,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpExtendedCommunitiesList')
+        else:
+            return BgpExtendedCommunitiesList(self)
 
     @property
     def Bgpv6BMacMappedIpList(self):
@@ -162,10 +177,14 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6bmacmappediplist_817eaa9cef28501f557db118314de575 import Bgpv6BMacMappedIpList
-        return Bgpv6BMacMappedIpList(self)._select()
+        if self._properties.get('Bgpv6BMacMappedIpList', None) is not None:
+            return self._properties.get('Bgpv6BMacMappedIpList')
+        else:
+            return Bgpv6BMacMappedIpList(self)._select()
 
     @property
     def AdvertiseAliasingBeforeAdPerEsRoute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +195,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AdvertiseInclusiveMulticastRoute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +206,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AliasingRouteGranularity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +217,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +228,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AdvertiseAliasingAutomatically(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +239,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AdvertiseSRv6ESIFilteringSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +250,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AggregatorAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +261,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +272,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +283,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def AutoConfigureEsImport(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +294,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def BMacPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -276,6 +305,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def BMacPrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -286,6 +316,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -295,6 +326,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -304,6 +336,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def DfElectionTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -314,6 +347,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableAggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -324,6 +358,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -334,6 +369,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -344,6 +380,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -354,6 +391,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -364,6 +402,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -374,6 +413,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableLocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -384,6 +424,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableMultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -394,6 +435,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -404,6 +446,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -414,6 +457,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableOriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -424,6 +468,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableSingleActive(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -434,6 +479,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EnableStickyStaticFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -444,6 +490,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EsImport(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -454,6 +501,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EsiLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -464,6 +512,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EsiType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -474,6 +523,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EsiValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -484,6 +534,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def EvisCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -492,10 +543,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvisCount'])
     @EvisCount.setter
     def EvisCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvisCount'], value)
 
     @property
     def IncludeMacMobilityExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -506,6 +559,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -516,6 +570,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -526,6 +581,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def IrbIPv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -536,6 +592,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def IrbInterfaceLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -546,6 +603,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -556,6 +614,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -566,6 +625,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -574,10 +634,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -586,10 +648,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
 
     @property
     def NoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -598,10 +662,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
     @NoOfClusters.setter
     def NoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
 
     @property
     def NoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -610,10 +676,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
 
     @property
     def NoOfExtendedCommunity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -622,10 +690,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
     def NoOfbMacMappedIpsV6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -634,10 +704,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfbMacMappedIpsV6'])
     @NoOfbMacMappedIpsV6.setter
     def NoOfbMacMappedIpsV6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfbMacMappedIpsV6'], value)
 
     @property
     def Origin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -648,6 +720,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def OriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -658,6 +731,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def OverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -668,6 +742,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def RouterMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -678,6 +753,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -688,6 +764,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -698,6 +775,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def Srv6Sid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -708,6 +786,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def SupportFastConvergence(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -718,6 +797,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def SupportMultihomedEsAutoDiscovery(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -728,6 +808,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def UseControlWord(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -736,10 +817,12 @@ class BgpEthernetSegmentV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseControlWord'])
     @UseControlWord.setter
     def UseControlWord(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseControlWord'], value)
 
     @property
     def UseSameSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -750,6 +833,7 @@ class BgpEthernetSegmentV6(Base):
 
     @property
     def VTEPIP6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -759,6 +843,7 @@ class BgpEthernetSegmentV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VTEPIP6Address']))
 
     def update(self, EvisCount=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfbMacMappedIpsV6=None, UseControlWord=None):
+        # type: (int, str, int, int, int, int, int, bool) -> BgpEthernetSegmentV6
         """Updates bgpEthernetSegmentV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -780,6 +865,88 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def AdvertiseAdPerEsRoute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the advertiseAdPerEsRoute operation on the server.
+
+        Advertise AD per ES Route.
+
+        advertiseAdPerEsRoute(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertiseAdPerEsRoute', payload=payload, response_object=None)
+
+    def FlushRemoteCMACForwardingTable(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the flushRemoteCMACForwardingTable operation on the server.
+
+        Flush Remote CMAC Forwarding Table
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        flushRemoteCMACForwardingTable(async_operation=bool)
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        flushRemoteCMACForwardingTable(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        flushRemoteCMACForwardingTable(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        flushRemoteCMACForwardingTable(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('flushRemoteCMACForwardingTable', payload=payload, response_object=None)
+
+    def WithdrawAdPerEsRoute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the withdrawAdPerEsRoute operation on the server.
+
+        Withdraw AD per ES Route.
+
+        withdrawAdPerEsRoute(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawAdPerEsRoute', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AdvertiseAliasingBeforeAdPerEsRoute=None, AdvertiseInclusiveMulticastRoute=None, AliasingRouteGranularity=None, Active=None, AdvertiseAliasingAutomatically=None, AdvertiseSRv6ESIFilteringSID=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionTimer=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSingleActive=None, EnableStickyStaticFlag=None, EsImport=None, EsiLabel=None, EsiType=None, EsiValue=None, IncludeMacMobilityExtendedCommunity=None, Ipv4NextHop=None, Ipv6NextHop=None, IrbIPv6Address=None, IrbInterfaceLabel=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, RouterMacAddress=None, SetNextHop=None, SetNextHopIpType=None, Srv6Sid=None, SupportFastConvergence=None, SupportMultihomedEsAutoDiscovery=None, UseSameSequenceNumber=None, VTEPIP6Address=None):
         """Base class infrastructure that gets a list of bgpEthernetSegmentV6 device ids encapsulated by this object.
@@ -847,73 +1014,3 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def AdvertiseAdPerEsRoute(self, *args, **kwargs):
-        """Executes the advertiseAdPerEsRoute operation on the server.
-
-        Advertise AD per ES Route.
-
-        advertiseAdPerEsRoute(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAdPerEsRoute', payload=payload, response_object=None)
-
-    def FlushRemoteCMACForwardingTable(self, *args, **kwargs):
-        """Executes the flushRemoteCMACForwardingTable operation on the server.
-
-        Flush Remote CMAC Forwarding Table
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        flushRemoteCMACForwardingTable(SessionIndices=list)
-        ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        flushRemoteCMACForwardingTable(SessionIndices=string)
-        -----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        flushRemoteCMACForwardingTable(Arg2=list)list
-        ---------------------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('flushRemoteCMACForwardingTable', payload=payload, response_object=None)
-
-    def WithdrawAdPerEsRoute(self, *args, **kwargs):
-        """Executes the withdrawAdPerEsRoute operation on the server.
-
-        Withdraw AD per ES Route.
-
-        withdrawAdPerEsRoute(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAdPerEsRoute', payload=payload, response_object=None)

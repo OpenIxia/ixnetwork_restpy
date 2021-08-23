@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpQuerier(Base):
@@ -59,9 +60,12 @@ class IgmpQuerier(Base):
         'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
         'VersionType': 'versionType',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(IgmpQuerier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpQuerier, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -75,10 +79,14 @@ class IgmpQuerier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,18 +97,21 @@ class IgmpQuerier(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class IgmpQuerier(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +131,7 @@ class IgmpQuerier(Base):
 
     @property
     def DiscardLearntInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,12 +145,13 @@ class IgmpQuerier(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def GeneralQueryInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -148,6 +162,7 @@ class IgmpQuerier(Base):
 
     @property
     def GeneralQueryResponseInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +173,7 @@ class IgmpQuerier(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,10 +182,12 @@ class IgmpQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,10 +196,12 @@ class IgmpQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ProxyQuerier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +212,7 @@ class IgmpQuerier(Base):
 
     @property
     def RobustnessVariable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +223,7 @@ class IgmpQuerier(Base):
 
     @property
     def RouterAlert(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +234,7 @@ class IgmpQuerier(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -221,6 +244,7 @@ class IgmpQuerier(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -230,6 +254,7 @@ class IgmpQuerier(Base):
 
     @property
     def SpecificQueryResponseInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +265,7 @@ class IgmpQuerier(Base):
 
     @property
     def SpecificQueryTransmissionCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,18 +276,21 @@ class IgmpQuerier(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
     def StartupQueryCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +310,7 @@ class IgmpQuerier(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -290,6 +320,7 @@ class IgmpQuerier(Base):
 
     @property
     def SupportElection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +331,7 @@ class IgmpQuerier(Base):
 
     @property
     def SupportOlderVersionHost(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +342,7 @@ class IgmpQuerier(Base):
 
     @property
     def SupportOlderVersionQuerier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +353,7 @@ class IgmpQuerier(Base):
 
     @property
     def VersionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +363,7 @@ class IgmpQuerier(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionType']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> IgmpQuerier
         """Updates igmpQuerier resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -336,10 +371,10 @@ class IgmpQuerier(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -348,14 +383,15 @@ class IgmpQuerier(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> IgmpQuerier
         """Adds a new igmpQuerier resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -386,15 +422,15 @@ class IgmpQuerier(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SessionInfo (list(str[noIfaceUp | up])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -425,6 +461,532 @@ class IgmpQuerier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfoInClient operation on the server.
+
+        Clears ALL routes from GUI grid for the selected BGP Peers.
+
+        clearAllLearnedInfoInClient(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+
+    def GetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLearnedInfo operation on the server.
+
+        Gets all the LSPs and Topologies learnt by this IGMP Querier.
+
+        getLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+
+    def IgmpGetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpGetLearnedInfo operation on the server.
+
+        Get Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpGetLearnedInfo(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpGetLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpGetLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpGetLearnedInfo', payload=payload, response_object=None)
+
+    def IgmpResumePeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpResumePeriodicGenQuery operation on the server.
+
+        Resume Periodic General Query
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpResumePeriodicGenQuery(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpResumePeriodicGenQuery(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpResumePeriodicGenQuery(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpResumePeriodicGenQuery', payload=payload, response_object=None)
+
+    def IgmpSendSpecificQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpSendSpecificQuery operation on the server.
+
+        Send Specific Query
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - Start_group_address (str): This parameter requires a start_group_address of type kString
+        - Group_count (number): This parameter requires a group_count of type kInteger
+        - Start_source_address (str): This parameter requires a start_source_address of type kString
+        - Source_count (number): This parameter requires a source_count of type kInteger
+        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - Start_group_address (str): This parameter requires a start_group_address of type kString
+        - Group_count (number): This parameter requires a group_count of type kInteger
+        - Start_source_address (str): This parameter requires a start_source_address of type kString
+        - Source_count (number): This parameter requires a source_count of type kInteger
+        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpSendSpecificQuery(SessionIndices=string, Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a start_group_address of type kString
+        - Start_group_address (str): This parameter requires a group_count of type kInteger
+        - Group_count (number): This parameter requires a start_source_address of type kString
+        - Start_source_address (str): This parameter requires a source_count of type kInteger
+        - Source_count (number): This parameter requires a source_increment_step of type kInteger
+        - Source_increment_step (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpSendSpecificQuery', payload=payload, response_object=None)
+
+    def IgmpStartQuerier(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpStartQuerier operation on the server.
+
+        Start IGMP Querier
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpStartQuerier(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpStartQuerier(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpStartQuerier(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpStartQuerier', payload=payload, response_object=None)
+
+    def IgmpStopPeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpStopPeriodicGenQuery operation on the server.
+
+        Stop Periodic General Query
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpStopPeriodicGenQuery(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpStopPeriodicGenQuery(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpStopPeriodicGenQuery(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpStopPeriodicGenQuery', payload=payload, response_object=None)
+
+    def IgmpStopQuerier(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpStopQuerier operation on the server.
+
+        Stop IGMP Querier
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpStopQuerier(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpStopQuerier(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpStopQuerier(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpStopQuerier', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumePeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumePeriodicGenQuery operation on the server.
+
+        Resume Sending Periodic General Query
+
+        resumePeriodicGenQuery(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumePeriodicGenQuery', payload=payload, response_object=None)
+
+    def SendSpecificQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendSpecificQuery operation on the server.
+
+        Send Specific Query
+
+        sendSpecificQuery(Arg2=list, Arg3=string, Arg4=number, Arg5=string, Arg6=number, Arg7=number, async_operation=bool)list
+        -----------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str): Start Group Address.
+        - Arg4 (number): Group Count.
+        - Arg5 (str): Start Source Address.
+        - Arg6 (number): Source Count.
+        - Arg7 (number): Source Increment Step.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendSpecificQuery', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def StartIGMP(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startIGMP operation on the server.
+
+        Start IGMP protocol in selected interfaces
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startIGMP(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startIGMP(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startIGMP(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startIGMP(Arg2=string, Arg3=list, async_operation=bool)
+        -------------------------------------------------------
+        - Arg2 (str): ID to associate each async action invocation
+        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startIGMP', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopIGMP(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopIGMP operation on the server.
+
+        Stop IGMP protocol in selected interfaces
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopIGMP(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopIGMP(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopIGMP(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopIGMP(Arg2=string, Arg3=list, async_operation=bool)
+        ------------------------------------------------------
+        - Arg2 (str): ID to associate each async action invocation
+        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopIGMP', payload=payload, response_object=None)
+
+    def StopPeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopPeriodicGenQuery operation on the server.
+
+        Stop Sending Periodic General Query
+
+        stopPeriodicGenQuery(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopPeriodicGenQuery', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, DiscardLearntInfo=None, GeneralQueryInterval=None, GeneralQueryResponseInterval=None, ProxyQuerier=None, RobustnessVariable=None, RouterAlert=None, SpecificQueryResponseInterval=None, SpecificQueryTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, VersionType=None):
         """Base class infrastructure that gets a list of igmpQuerier device ids encapsulated by this object.
@@ -458,436 +1020,3 @@ class IgmpQuerier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfoInClient operation on the server.
-
-        Clears ALL routes from GUI grid for the selected BGP Peers.
-
-        clearAllLearnedInfoInClient(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
-
-    def GetLearnedInfo(self, *args, **kwargs):
-        """Executes the getLearnedInfo operation on the server.
-
-        Gets all the LSPs and Topologies learnt by this IGMP Querier.
-
-        getLearnedInfo(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
-
-    def IgmpGetLearnedInfo(self, *args, **kwargs):
-        """Executes the igmpGetLearnedInfo operation on the server.
-
-        Get Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpGetLearnedInfo(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpGetLearnedInfo(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpGetLearnedInfo', payload=payload, response_object=None)
-
-    def IgmpResumePeriodicGenQuery(self, *args, **kwargs):
-        """Executes the igmpResumePeriodicGenQuery operation on the server.
-
-        Resume Periodic General Query
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpResumePeriodicGenQuery(SessionIndices=list)
-        -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpResumePeriodicGenQuery(SessionIndices=string)
-        -------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpResumePeriodicGenQuery', payload=payload, response_object=None)
-
-    def IgmpSendSpecificQuery(self, *args, **kwargs):
-        """Executes the igmpSendSpecificQuery operation on the server.
-
-        Send Specific Query
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, SessionIndices=list)
-        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - Start_group_address (str): This parameter requires a start_group_address of type kString
-        - Group_count (number): This parameter requires a group_count of type kInteger
-        - Start_source_address (str): This parameter requires a start_source_address of type kString
-        - Source_count (number): This parameter requires a source_count of type kInteger
-        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number)
-        -----------------------------------------------------------------------------------------------------------------------------------------------------
-        - Start_group_address (str): This parameter requires a start_group_address of type kString
-        - Group_count (number): This parameter requires a group_count of type kInteger
-        - Start_source_address (str): This parameter requires a start_source_address of type kString
-        - Source_count (number): This parameter requires a source_count of type kInteger
-        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
-
-        igmpSendSpecificQuery(SessionIndices=string, Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number)
-        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a start_group_address of type kString
-        - Start_group_address (str): This parameter requires a group_count of type kInteger
-        - Group_count (number): This parameter requires a start_source_address of type kString
-        - Start_source_address (str): This parameter requires a source_count of type kInteger
-        - Source_count (number): This parameter requires a source_increment_step of type kInteger
-        - Source_increment_step (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpSendSpecificQuery', payload=payload, response_object=None)
-
-    def IgmpStartQuerier(self, *args, **kwargs):
-        """Executes the igmpStartQuerier operation on the server.
-
-        Start IGMP Querier
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpStartQuerier(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpStartQuerier(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpStartQuerier', payload=payload, response_object=None)
-
-    def IgmpStopPeriodicGenQuery(self, *args, **kwargs):
-        """Executes the igmpStopPeriodicGenQuery operation on the server.
-
-        Stop Periodic General Query
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpStopPeriodicGenQuery(SessionIndices=list)
-        ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpStopPeriodicGenQuery(SessionIndices=string)
-        -----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpStopPeriodicGenQuery', payload=payload, response_object=None)
-
-    def IgmpStopQuerier(self, *args, **kwargs):
-        """Executes the igmpStopQuerier operation on the server.
-
-        Stop IGMP Querier
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpStopQuerier(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpStopQuerier(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpStopQuerier', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumePeriodicGenQuery(self, *args, **kwargs):
-        """Executes the resumePeriodicGenQuery operation on the server.
-
-        Resume Sending Periodic General Query
-
-        resumePeriodicGenQuery(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumePeriodicGenQuery', payload=payload, response_object=None)
-
-    def SendSpecificQuery(self, *args, **kwargs):
-        """Executes the sendSpecificQuery operation on the server.
-
-        Send Specific Query
-
-        sendSpecificQuery(Arg2=list, Arg3=string, Arg4=number, Arg5=string, Arg6=number, Arg7=number)list
-        -------------------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str): Start Group Address.
-        - Arg4 (number): Group Count.
-        - Arg5 (str): Start Source Address.
-        - Arg6 (number): Source Count.
-        - Arg7 (number): Source Increment Step.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendSpecificQuery', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def StartIGMP(self, *args, **kwargs):
-        """Executes the startIGMP operation on the server.
-
-        Start IGMP protocol in selected interfaces
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startIGMP(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startIGMP(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        startIGMP(Arg2=string, Arg3=list)
-        ---------------------------------
-        - Arg2 (str): ID to associate each async action invocation
-        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startIGMP', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopIGMP(self, *args, **kwargs):
-        """Executes the stopIGMP operation on the server.
-
-        Stop IGMP protocol in selected interfaces
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopIGMP(SessionIndices=list)
-        -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopIGMP(SessionIndices=string)
-        -------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopIGMP(Arg2=string, Arg3=list)
-        --------------------------------
-        - Arg2 (str): ID to associate each async action invocation
-        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopIGMP', payload=payload, response_object=None)
-
-    def StopPeriodicGenQuery(self, *args, **kwargs):
-        """Executes the stopPeriodicGenQuery operation on the server.
-
-        Stop Sending Periodic General Query
-
-        stopPeriodicGenQuery(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPeriodicGenQuery', payload=payload, response_object=None)

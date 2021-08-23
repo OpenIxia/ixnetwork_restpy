@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfChannelLearnedInformation(Base):
@@ -53,9 +54,11 @@ class OfChannelLearnedInformation(Base):
         'Role': 'role',
         'SessionType': 'sessionType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfChannelLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfChannelLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def ControllerAuxiliaryConnectionLearnedInfo(self):
@@ -69,7 +72,10 @@ class OfChannelLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllerauxiliaryconnectionlearnedinfo_ab5a755c40a9da1388ea17855c2a32b0 import ControllerAuxiliaryConnectionLearnedInfo
-        return ControllerAuxiliaryConnectionLearnedInfo(self)
+        if self._properties.get('ControllerAuxiliaryConnectionLearnedInfo', None) is not None:
+            return self._properties.get('ControllerAuxiliaryConnectionLearnedInfo')
+        else:
+            return ControllerAuxiliaryConnectionLearnedInfo(self)
 
     @property
     def OfChannelPortsLearnedInformation(self):
@@ -83,10 +89,14 @@ class OfChannelLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelportslearnedinformation_4d9d59409f73e69eb94129e9e84242be import OfChannelPortsLearnedInformation
-        return OfChannelPortsLearnedInformation(self)
+        if self._properties.get('OfChannelPortsLearnedInformation', None) is not None:
+            return self._properties.get('OfChannelPortsLearnedInformation')
+        else:
+            return OfChannelPortsLearnedInformation(self)
 
     @property
     def ActionsSupported(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +106,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def Capabilities(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +116,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +126,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,6 +136,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def FlowRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,6 +146,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def GenerationId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,6 +156,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def LastErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +166,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def LastErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,6 +176,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,6 +186,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def LocalPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,6 +196,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def MaxBufferSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -186,6 +206,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,6 +216,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def NumberOfErrorsReceived(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,6 +226,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def NumberOfPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -213,6 +236,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def NumberOfTables(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -222,6 +246,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,6 +256,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def RemotePortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,6 +266,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -249,6 +276,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def Role(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -258,6 +286,7 @@ class OfChannelLearnedInformation(Base):
 
     @property
     def SessionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -265,7 +294,21 @@ class OfChannelLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SessionType'])
 
+    def add(self):
+        """Adds a new ofChannelLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ofChannelLearnedInformation resources using find and the newly added ofChannelLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActionsSupported=None, Capabilities=None, DataPathId=None, DataPathIdAsHex=None, FlowRate=None, GenerationId=None, LastErrorCode=None, LastErrorType=None, LocalIp=None, LocalPortNumber=None, MaxBufferSize=None, NegotiatedVersion=None, NumberOfErrorsReceived=None, NumberOfPorts=None, NumberOfTables=None, RemoteIp=None, RemotePortNumber=None, ReplyState=None, Role=None, SessionType=None):
+        # type: (str, str, str, str, int, str, str, str, str, int, int, int, int, int, int, str, int, str, str, str) -> OfChannelLearnedInformation
         """Finds and retrieves ofChannelLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofChannelLearnedInformation resources from the server.
@@ -323,28 +366,44 @@ class OfChannelLearnedInformation(Base):
         """
         return self._read(href)
 
-    def AddRecordForTrigger(self):
+    def AddRecordForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the addRecordForTrigger operation on the server.
 
         This describes the record added for trigger settings.
 
+        addRecordForTrigger(async_operation=bool)bool
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addRecordForTrigger', payload=payload, response_object=None)
 
-    def ConfigureOfChannel(self):
+    def ConfigureOfChannel(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the configureOfChannel operation on the server.
 
         It is a command that will configure controller OF channel from controller OF channel learned information.
 
+        configureOfChannel(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('configureOfChannel', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgressTracking(Base):
@@ -40,9 +41,11 @@ class EgressTracking(Base):
         'Encapsulation': 'encapsulation',
         'Offset': 'offset',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgressTracking, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgressTracking, self).__init__(parent, list_op)
 
     @property
     def FieldOffset(self):
@@ -56,10 +59,14 @@ class EgressTracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset import FieldOffset
-        return FieldOffset(self)._select()
+        if self._properties.get('FieldOffset', None) is not None:
+            return self._properties.get('FieldOffset')
+        else:
+            return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -69,6 +76,7 @@ class EgressTracking(Base):
 
     @property
     def AvailableOffsets(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -78,6 +86,7 @@ class EgressTracking(Base):
 
     @property
     def CustomOffsetBits(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,10 +95,12 @@ class EgressTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomOffsetBits'])
     @CustomOffsetBits.setter
     def CustomOffsetBits(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomOffsetBits'], value)
 
     @property
     def CustomWidthBits(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,10 +109,12 @@ class EgressTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomWidthBits'])
     @CustomWidthBits.setter
     def CustomWidthBits(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomWidthBits'], value)
 
     @property
     def Encapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,10 +123,12 @@ class EgressTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def Offset(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,9 +137,11 @@ class EgressTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     def update(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
+        # type: (int, int, str, str) -> EgressTracking
         """Updates egressTracking resource on the server.
 
         Args
@@ -141,6 +158,7 @@ class EgressTracking(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
+        # type: (int, int, str, str) -> EgressTracking
         """Adds a new egressTracking resource on the server and adds it to the container.
 
         Args
@@ -171,6 +189,7 @@ class EgressTracking(Base):
         self._delete()
 
     def find(self, AvailableEncapsulations=None, AvailableOffsets=None, CustomOffsetBits=None, CustomWidthBits=None, Encapsulation=None, Offset=None):
+        # type: (List[str], List[str], int, int, str, str) -> EgressTracking
         """Finds and retrieves egressTracking resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egressTracking resources from the server.

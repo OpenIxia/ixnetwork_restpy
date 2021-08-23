@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Hops(Base):
@@ -37,12 +38,15 @@ class Hops(Base):
         'SrcIp': 'srcIp',
         'Ttl': 'ttl',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Hops, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Hops, self).__init__(parent, list_op)
 
     @property
     def ReturnCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,6 +56,7 @@ class Hops(Base):
 
     @property
     def ReturnSubCode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -61,6 +66,7 @@ class Hops(Base):
 
     @property
     def SrcIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +76,7 @@ class Hops(Base):
 
     @property
     def Ttl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,7 +84,21 @@ class Hops(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Ttl'])
 
+    def add(self):
+        """Adds a new hops resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved hops resources using find and the newly added hops resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ReturnCode=None, ReturnSubCode=None, SrcIp=None, Ttl=None):
+        # type: (str, int, str, int) -> Hops
         """Finds and retrieves hops resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve hops resources from the server.

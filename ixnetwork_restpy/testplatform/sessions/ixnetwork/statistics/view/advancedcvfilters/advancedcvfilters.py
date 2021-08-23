@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AdvancedCVFilters(Base):
@@ -41,12 +42,15 @@ class AdvancedCVFilters(Base):
         'Protocol': 'protocol',
         'SortingStats': 'sortingStats',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AdvancedCVFilters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AdvancedCVFilters, self).__init__(parent, list_op)
 
     @property
     def AvailableFilterOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class AdvancedCVFilters(Base):
 
     @property
     def AvailableGroupingOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class AdvancedCVFilters(Base):
 
     @property
     def Caption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,10 +79,12 @@ class AdvancedCVFilters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def Expression(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,10 +93,12 @@ class AdvancedCVFilters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Expression'])
     @Expression.setter
     def Expression(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Expression'], value)
 
     @property
     def Grouping(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,10 +107,12 @@ class AdvancedCVFilters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Grouping'])
     @Grouping.setter
     def Grouping(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Grouping'], value)
 
     @property
     def Protocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,10 +121,12 @@ class AdvancedCVFilters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Protocol'])
     @Protocol.setter
     def Protocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Protocol'], value)
 
     @property
     def SortingStats(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,9 +135,11 @@ class AdvancedCVFilters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortingStats'])
     @SortingStats.setter
     def SortingStats(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingStats'], value)
 
     def update(self, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
+        # type: (str, str, str, str, str) -> AdvancedCVFilters
         """Updates advancedCVFilters resource on the server.
 
         Args
@@ -141,6 +157,7 @@ class AdvancedCVFilters(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
+        # type: (str, str, str, str, str) -> AdvancedCVFilters
         """Adds a new advancedCVFilters resource on the server and adds it to the container.
 
         Args
@@ -172,6 +189,7 @@ class AdvancedCVFilters(Base):
         self._delete()
 
     def find(self, AvailableFilterOptions=None, AvailableGroupingOptions=None, Caption=None, Expression=None, Grouping=None, Protocol=None, SortingStats=None):
+        # type: (str, str, str, str, str, str, str) -> AdvancedCVFilters
         """Finds and retrieves advancedCVFilters resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve advancedCVFilters resources from the server.

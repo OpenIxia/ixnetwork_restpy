@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bucket(Base):
@@ -38,9 +39,11 @@ class Bucket(Base):
         'WatchPort': 'watchPort',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Bucket, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bucket, self).__init__(parent, list_op)
 
     @property
     def BucketAction(self):
@@ -54,10 +57,14 @@ class Bucket(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucketaction_965ab5c99e9b19e16bf56a5314ddc36b import BucketAction
-        return BucketAction(self)
+        if self._properties.get('BucketAction', None) is not None:
+            return self._properties.get('BucketAction')
+        else:
+            return BucketAction(self)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class Bucket(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def WatchGroup(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class Bucket(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WatchGroup'])
     @WatchGroup.setter
     def WatchGroup(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WatchGroup'], value)
 
     @property
     def WatchPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class Bucket(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WatchPort'])
     @WatchPort.setter
     def WatchPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WatchPort'], value)
 
     @property
     def Weight(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,9 +115,11 @@ class Bucket(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Weight'])
     @Weight.setter
     def Weight(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Weight'], value)
 
     def update(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
+        # type: (str, int, int, int) -> Bucket
         """Updates bucket resource on the server.
 
         Args
@@ -121,6 +136,7 @@ class Bucket(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
+        # type: (str, int, int, int) -> Bucket
         """Adds a new bucket resource on the server and adds it to the container.
 
         Args
@@ -151,6 +167,7 @@ class Bucket(Base):
         self._delete()
 
     def find(self, Description=None, WatchGroup=None, WatchPort=None, Weight=None):
+        # type: (str, int, int, int) -> Bucket
         """Finds and retrieves bucket resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bucket resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpGlobals(Base):
@@ -36,9 +37,11 @@ class IgmpGlobals(Base):
         'MaxPacketsPerSecond': 'maxPacketsPerSecond',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IgmpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpGlobals, self).__init__(parent, list_op)
 
     @property
     def IgmpGroupRange(self):
@@ -52,10 +55,14 @@ class IgmpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
-        return IgmpGroupRange(self)
+        if self._properties.get('IgmpGroupRange', None) is not None:
+            return self._properties.get('IgmpGroupRange')
+        else:
+            return IgmpGroupRange(self)
 
     @property
     def MaxPacketsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class IgmpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +85,7 @@ class IgmpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, MaxPacketsPerSecond=None):
+        # type: (int) -> IgmpGlobals
         """Updates igmpGlobals resource on the server.
 
         Args
@@ -89,6 +99,7 @@ class IgmpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxPacketsPerSecond=None):
+        # type: (int) -> IgmpGlobals
         """Adds a new igmpGlobals resource on the server and adds it to the container.
 
         Args
@@ -116,6 +127,7 @@ class IgmpGlobals(Base):
         self._delete()
 
     def find(self, MaxPacketsPerSecond=None, ObjectId=None):
+        # type: (int, str) -> IgmpGlobals
         """Finds and retrieves igmpGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve igmpGlobals resources from the server.

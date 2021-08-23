@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Nssa(Base):
@@ -40,12 +41,15 @@ class Nssa(Base):
         'NumberOfLsa': 'numberOfLsa',
         'RouteTag': 'routeTag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Nssa, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Nssa, self).__init__(parent, list_op)
 
     @property
     def EBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EBit'])
     @EBit.setter
     def EBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
 
     @property
     def ForwardingAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForwardingAddress'])
     @ForwardingAddress.setter
     def ForwardingAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForwardingAddress'], value)
 
     @property
     def IncrementLinkStateIdBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementLinkStateIdBy'])
     @IncrementLinkStateIdBy.setter
     def IncrementLinkStateIdBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementLinkStateIdBy'], value)
 
     @property
     def Metric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metric'])
     @Metric.setter
     def Metric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
 
     @property
     def NetworkMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NetworkMask'])
     @NetworkMask.setter
     def NetworkMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NetworkMask'], value)
 
     @property
     def NumberOfLsa(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfLsa'])
     @NumberOfLsa.setter
     def NumberOfLsa(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfLsa'], value)
 
     @property
     def RouteTag(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,9 +142,11 @@ class Nssa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTag'])
     @RouteTag.setter
     def RouteTag(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTag'], value)
 
     def update(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+        # type: (bool, str, str, int, str, int, str) -> Nssa
         """Updates nssa resource on the server.
 
         Args
@@ -147,7 +165,32 @@ class Nssa(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+        # type: (bool, str, str, int, str, int, str) -> Nssa
+        """Adds a new nssa resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EBit (bool): 
+        - ForwardingAddress (str): 
+        - IncrementLinkStateIdBy (str): 
+        - Metric (number): 
+        - NetworkMask (str): 
+        - NumberOfLsa (number): 
+        - RouteTag (str): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved nssa resources using find and the newly added nssa resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, EBit=None, ForwardingAddress=None, IncrementLinkStateIdBy=None, Metric=None, NetworkMask=None, NumberOfLsa=None, RouteTag=None):
+        # type: (bool, str, str, int, str, int, str) -> Nssa
         """Finds and retrieves nssa resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nssa resources from the server.

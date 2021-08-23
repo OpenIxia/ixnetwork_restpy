@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EapoUdpGlobals(Base):
@@ -47,9 +48,11 @@ class EapoUdpGlobals(Base):
         'WaitBeforeRun': 'waitBeforeRun',
         'WaitForCompletion': 'waitForCompletion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EapoUdpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EapoUdpGlobals, self).__init__(parent, list_op)
 
     @property
     def CertInfo(self):
@@ -63,7 +66,10 @@ class EapoUdpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo import CertInfo
-        return CertInfo(self)._select()
+        if self._properties.get('CertInfo', None) is not None:
+            return self._properties.get('CertInfo')
+        else:
+            return CertInfo(self)._select()
 
     @property
     def NacSettings(self):
@@ -77,10 +83,14 @@ class EapoUdpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings import NacSettings
-        return NacSettings(self)._select()
+        if self._properties.get('NacSettings', None) is not None:
+            return self._properties.get('NacSettings')
+        else:
+            return NacSettings(self)._select()
 
     @property
     def ChangeStatusQuery(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChangeStatusQuery'])
     @ChangeStatusQuery.setter
     def ChangeStatusQuery(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChangeStatusQuery'], value)
 
     @property
     def CookieSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CookieSize'])
     @CookieSize.setter
     def CookieSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CookieSize'], value)
 
     @property
     def FragmentSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FragmentSize'])
     @FragmentSize.setter
     def FragmentSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FragmentSize'], value)
 
     @property
     def MaxClientsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +141,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -137,10 +155,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +170,7 @@ class EapoUdpGlobals(Base):
 
     @property
     def Port(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,10 +179,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Port'])
     @Port.setter
     def Port(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Port'], value)
 
     @property
     def Timeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,10 +193,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Timeout'])
     @Timeout.setter
     def Timeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Timeout'], value)
 
     @property
     def TriggerCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -182,10 +207,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggerCount'])
     @TriggerCount.setter
     def TriggerCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggerCount'], value)
 
     @property
     def TriggerOrigin(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,10 +221,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggerOrigin'])
     @TriggerOrigin.setter
     def TriggerOrigin(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggerOrigin'], value)
 
     @property
     def TriggerType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -206,10 +235,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggerType'])
     @TriggerType.setter
     def TriggerType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggerType'], value)
 
     @property
     def WaitBeforeRun(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +249,12 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun'])
     @WaitBeforeRun.setter
     def WaitBeforeRun(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitBeforeRun'], value)
 
     @property
     def WaitForCompletion(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,9 +263,11 @@ class EapoUdpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (int, int, int, int, int, int, int, int, str, str, int, bool) -> EapoUdpGlobals
         """Updates eapoUdpGlobals resource on the server.
 
         Args
@@ -257,6 +292,7 @@ class EapoUdpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (int, int, int, int, int, int, int, int, str, str, int, bool) -> EapoUdpGlobals
         """Adds a new eapoUdpGlobals resource on the server and adds it to the container.
 
         Args
@@ -295,6 +331,7 @@ class EapoUdpGlobals(Base):
         self._delete()
 
     def find(self, ChangeStatusQuery=None, CookieSize=None, FragmentSize=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, Port=None, Timeout=None, TriggerCount=None, TriggerOrigin=None, TriggerType=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (int, int, int, int, int, str, int, int, int, str, str, int, bool) -> EapoUdpGlobals
         """Finds and retrieves eapoUdpGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eapoUdpGlobals resources from the server.

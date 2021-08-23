@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Static(Base):
@@ -32,9 +33,11 @@ class Static(Base):
     _SDM_NAME = 'static'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Static, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Static, self).__init__(parent, list_op)
 
     @property
     def Atm(self):
@@ -48,7 +51,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atm_9bbaac5d21c0632b71ee4c92d14864c3 import Atm
-        return Atm(self)
+        if self._properties.get('Atm', None) is not None:
+            return self._properties.get('Atm')
+        else:
+            return Atm(self)
 
     @property
     def Fr(self):
@@ -62,7 +68,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fr_ebc5d45018c74d53700c88afea530ca2 import Fr
-        return Fr(self)
+        if self._properties.get('Fr', None) is not None:
+            return self._properties.get('Fr')
+        else:
+            return Fr(self)
 
     @property
     def InterfaceGroup(self):
@@ -76,7 +85,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacegroup_c2c90e7b7cf8bf4a351e197fc18ccb92 import InterfaceGroup
-        return InterfaceGroup(self)
+        if self._properties.get('InterfaceGroup', None) is not None:
+            return self._properties.get('InterfaceGroup')
+        else:
+            return InterfaceGroup(self)
 
     @property
     def Ip(self):
@@ -90,7 +102,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ip_205717d3d79aa12a8dcea858982c666e import Ip
-        return Ip(self)
+        if self._properties.get('Ip', None) is not None:
+            return self._properties.get('Ip')
+        else:
+            return Ip(self)
 
     @property
     def Lan(self):
@@ -104,4 +119,7 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_a0c3771a1420d267c519e60205c6a8e6 import Lan
-        return Lan(self)
+        if self._properties.get('Lan', None) is not None:
+            return self._properties.get('Lan')
+        else:
+            return Lan(self)

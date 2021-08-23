@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedIpv4P2mpLables(Base):
@@ -37,9 +38,11 @@ class LearnedIpv4P2mpLables(Base):
         'PeerIpAddress': 'peerIpAddress',
         'RootAddress': 'rootAddress',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedIpv4P2mpLables, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedIpv4P2mpLables, self).__init__(parent, list_op)
 
     @property
     def OpaqueValueElement(self):
@@ -53,10 +56,14 @@ class LearnedIpv4P2mpLables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_bcb70021648725c2761a10020b6ef5cc import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is not None:
+            return self._properties.get('OpaqueValueElement')
+        else:
+            return OpaqueValueElement(self)
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,6 +73,7 @@ class LearnedIpv4P2mpLables(Base):
 
     @property
     def LabelSpaceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +83,7 @@ class LearnedIpv4P2mpLables(Base):
 
     @property
     def PeerIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +93,7 @@ class LearnedIpv4P2mpLables(Base):
 
     @property
     def RootAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,7 +101,21 @@ class LearnedIpv4P2mpLables(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RootAddress'])
 
+    def add(self):
+        """Adds a new learnedIpv4P2mpLables resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedIpv4P2mpLables resources using find and the newly added learnedIpv4P2mpLables resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Label=None, LabelSpaceId=None, PeerIpAddress=None, RootAddress=None):
+        # type: (int, int, str, str) -> LearnedIpv4P2mpLables
         """Finds and retrieves learnedIpv4P2mpLables resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedIpv4P2mpLables resources from the server.

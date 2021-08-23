@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Lan(Base):
@@ -42,12 +43,15 @@ class Lan(Base):
         'VlanId': 'vlanId',
         'VlanIncrement': 'vlanIncrement',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Lan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Lan, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -56,10 +60,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,10 +74,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def MacCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +88,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacCount'])
     @MacCount.setter
     def MacCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacCount'], value)
 
     @property
     def MacIncrement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +102,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacIncrement'])
     @MacIncrement.setter
     def MacIncrement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacIncrement'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +116,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def VlanEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,10 +130,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanEnabled'])
     @VlanEnabled.setter
     def VlanEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanEnabled'], value)
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,10 +144,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanIncrement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -140,9 +158,11 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanIncrement'])
     @VlanIncrement.setter
     def VlanIncrement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanIncrement'], value)
 
     def update(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+        # type: (bool, str, int, bool, str, bool, int, bool) -> Lan
         """Updates lan resource on the server.
 
         Args
@@ -163,6 +183,7 @@ class Lan(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+        # type: (bool, str, int, bool, str, bool, int, bool) -> Lan
         """Adds a new lan resource on the server and adds it to the container.
 
         Args
@@ -197,6 +218,7 @@ class Lan(Base):
         self._delete()
 
     def find(self, Enabled=None, MacAddress=None, MacCount=None, MacIncrement=None, TrafficGroupId=None, VlanEnabled=None, VlanId=None, VlanIncrement=None):
+        # type: (bool, str, int, bool, str, bool, int, bool) -> Lan
         """Finds and retrieves lan resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lan resources from the server.

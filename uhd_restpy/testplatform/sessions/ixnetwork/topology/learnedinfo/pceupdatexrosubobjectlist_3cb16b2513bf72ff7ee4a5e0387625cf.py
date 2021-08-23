@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceUpdateXroSubObjectList(Base):
@@ -47,12 +48,15 @@ class PceUpdateXroSubObjectList(Base):
         'SubObjectType': 'subObjectType',
         'XBit': 'xBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceUpdateXroSubObjectList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceUpdateXroSubObjectList, self).__init__(parent, list_op)
 
     @property
     def ActiveXRO(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def AsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +78,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def Attribute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +89,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def InterfaceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +100,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def Ipv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +111,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def Ipv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +122,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def PFlagXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +133,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def PceId128(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -133,6 +144,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def PceId32(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -143,6 +155,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -153,6 +166,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def RouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +177,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def SrlgId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +188,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def SubObjectType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -183,6 +199,7 @@ class PceUpdateXroSubObjectList(Base):
 
     @property
     def XBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +207,19 @@ class PceUpdateXroSubObjectList(Base):
         """
         from uhd_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['XBit']))
+
+    def add(self):
+        """Adds a new pceUpdateXroSubObjectList resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pceUpdateXroSubObjectList resources using find and the newly added pceUpdateXroSubObjectList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves pceUpdateXroSubObjectList resources from the server.

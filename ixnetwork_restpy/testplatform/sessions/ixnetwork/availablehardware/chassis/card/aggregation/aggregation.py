@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Aggregation(Base):
@@ -38,12 +39,16 @@ class Aggregation(Base):
         'Mode': 'mode',
         'ResourcePorts': 'resourcePorts',
     }
+    _SDM_ENUM_MAP = {
+        'mode': ['normal', 'tenGig', 'fortyGig', 'singleMode', 'dualMode', 'hundredGigNonFanOut', 'fortyGigFanOut', 'threeByTenGigFanOut', 'eightByTenGigFanOut', 'fourByTwentyFiveGigNonFanOut', 'twoByTwentyFiveGigNonFanOut', 'oneByFiftyGigNonFanOut', 'fortyGigNonFanOut', 'oneByTenGigFanOut', 'fourByTenGigFanOut', 'incompatibleMode', 'hundredGigCapturePlayback', 'fortyGigCapturePlayback', 'novusHundredGigNonFanOut', 'novusFourByTwentyFiveGigNonFanOut', 'novusTwoByFiftyGigNonFanOut', 'novusOneByFortyGigNonFanOut', 'novusFourByTenGigNonFanOut', 'krakenOneByFourHundredGigNonFanOut', 'krakenOneByTwoHundredGigNonFanOut', 'krakenTwoByOneHundredGigFanOut', 'krakenFourByFiftyGigFanOut', 'aresOneOneByFourHundredGigNonFanOut', 'aresOneTwoByTwoHundredGigFanOut', 'aresOneFourByOneHundredGigFanOut', 'aresOneFourByOneHundredGigMacSecFanOut', 'aresOneEightByFiftyGigFanOut', 'uhdOneHundredEightByHundredGigNonFanOut', 'uhdOneHundredEightByFortyGigNonFanOut', 'uhdOneHundredSixteenByFiftyGigFanOut', 'uhdOneHundredThirtyTwoByTwentyFiveGigFanOut', 'uhdOneHundredThirtyTwoByTenGigFanOut'],
+    }
 
-    def __init__(self, parent):
-        super(Aggregation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Aggregation, self).__init__(parent, list_op)
 
     @property
     def ActivePort(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -53,6 +58,7 @@ class Aggregation(Base):
 
     @property
     def ActivePorts(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -62,6 +68,7 @@ class Aggregation(Base):
 
     @property
     def AvailableModes(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -71,6 +78,7 @@ class Aggregation(Base):
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class Aggregation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def ResourcePorts(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class Aggregation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResourcePorts'])
 
     def update(self, Mode=None):
+        # type: (str) -> Aggregation
         """Updates aggregation resource on the server.
 
         Args
@@ -103,7 +114,26 @@ class Aggregation(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Mode=None):
+        # type: (str) -> Aggregation
+        """Adds a new aggregation resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Mode (str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut)): Resource Group mode.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved aggregation resources using find and the newly added aggregation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActivePort=None, ActivePorts=None, AvailableModes=None, Mode=None, ResourcePorts=None):
+        # type: (str, List[str], List[str], str, List[str]) -> Aggregation
         """Finds and retrieves aggregation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve aggregation resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Host(Base):
@@ -49,9 +50,12 @@ class Host(Base):
         'TrafficGroupId': 'trafficGroupId',
         'Version': 'version',
     }
+    _SDM_ENUM_MAP = {
+        'version': ['version1', 'version2'],
+    }
 
-    def __init__(self, parent):
-        super(Host, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Host, self).__init__(parent, list_op)
 
     @property
     def GroupRange(self):
@@ -65,10 +69,14 @@ class Host(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.grouprange_f61fdd85e4f0ee7466748db193fd2ec8 import GroupRange
-        return GroupRange(self)
+        if self._properties.get('GroupRange', None) is not None:
+            return self._properties.get('GroupRange')
+        else:
+            return GroupRange(self)
 
     @property
     def EnableImmediateResp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableImmediateResp'])
     @EnableImmediateResp.setter
     def EnableImmediateResp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableImmediateResp'], value)
 
     @property
     def EnableQueryResMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableQueryResMode'])
     @EnableQueryResMode.setter
     def EnableQueryResMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableQueryResMode'], value)
 
     @property
     def EnableRouterAlert(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRouterAlert'])
     @EnableRouterAlert.setter
     def EnableRouterAlert(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRouterAlert'], value)
 
     @property
     def EnableSpecificResMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSpecificResMode'])
     @EnableSpecificResMode.setter
     def EnableSpecificResMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSpecificResMode'], value)
 
     @property
     def EnableSuppressReport(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,10 +141,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSuppressReport'])
     @EnableSuppressReport.setter
     def EnableSuppressReport(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSuppressReport'], value)
 
     @property
     def EnableUnsolicitedResMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -137,10 +155,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUnsolicitedResMode'])
     @EnableUnsolicitedResMode.setter
     def EnableUnsolicitedResMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUnsolicitedResMode'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -149,10 +169,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InterfaceIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,10 +183,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -173,10 +197,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -185,10 +211,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -197,10 +225,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     @property
     def ReportFreq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -209,10 +239,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReportFreq'])
     @ReportFreq.setter
     def ReportFreq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReportFreq'], value)
 
     @property
     def RobustnessVariable(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -221,10 +253,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RobustnessVariable'])
     @RobustnessVariable.setter
     def RobustnessVariable(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RobustnessVariable'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -233,10 +267,12 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def Version(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -245,9 +281,11 @@ class Host(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Version'])
     @Version.setter
     def Version(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Version'], value)
 
     def update(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, int, str, str) -> Host
         """Updates host resource on the server.
 
         Args
@@ -275,6 +313,7 @@ class Host(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, int, str, str) -> Host
         """Adds a new host resource on the server and adds it to the container.
 
         Args
@@ -316,6 +355,7 @@ class Host(Base):
         self._delete()
 
     def find(self, EnableImmediateResp=None, EnableQueryResMode=None, EnableRouterAlert=None, EnableSpecificResMode=None, EnableSuppressReport=None, EnableUnsolicitedResMode=None, Enabled=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, ProtocolInterface=None, ReportFreq=None, RobustnessVariable=None, TrafficGroupId=None, Version=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, int, str, str) -> Host
         """Finds and retrieves host resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve host resources from the server.
@@ -368,10 +408,16 @@ class Host(Base):
         """
         return self._read(href)
 
-    def GetInterfaceAccessorIfaceList(self):
+    def GetInterfaceAccessorIfaceList(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
         Gets the interface accesor Iface list.
+
+        getInterfaceAccessorIfaceList(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -379,4 +425,6 @@ class Host(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)

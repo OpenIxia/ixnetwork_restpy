@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RBridges(Base):
@@ -47,12 +48,15 @@ class RBridges(Base):
         'SwitchId': 'switchId',
         'SystemId': 'systemId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RBridges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RBridges, self).__init__(parent, list_op)
 
     @property
     def Age(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,6 +66,7 @@ class RBridges(Base):
 
     @property
     def EnableCommonMtId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,6 +76,7 @@ class RBridges(Base):
 
     @property
     def ExtendedCircuitId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +86,7 @@ class RBridges(Base):
 
     @property
     def GraphId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class RBridges(Base):
 
     @property
     def HostName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class RBridges(Base):
 
     @property
     def LinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,6 +116,7 @@ class RBridges(Base):
 
     @property
     def MtId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,6 +126,7 @@ class RBridges(Base):
 
     @property
     def PrimaryFtag(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,6 +136,7 @@ class RBridges(Base):
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,6 +146,7 @@ class RBridges(Base):
 
     @property
     def Role(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +156,7 @@ class RBridges(Base):
 
     @property
     def SecondaryFtag(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -152,6 +166,7 @@ class RBridges(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,6 +176,7 @@ class RBridges(Base):
 
     @property
     def SwitchId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,6 +186,7 @@ class RBridges(Base):
 
     @property
     def SystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,7 +194,21 @@ class RBridges(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SystemId'])
 
+    def add(self):
+        """Adds a new rBridges resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved rBridges resources using find and the newly added rBridges resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Age=None, EnableCommonMtId=None, ExtendedCircuitId=None, GraphId=None, HostName=None, LinkMetric=None, MtId=None, PrimaryFtag=None, Priority=None, Role=None, SecondaryFtag=None, SequenceNumber=None, SwitchId=None, SystemId=None):
+        # type: (int, bool, int, int, str, int, int, int, int, str, int, int, int, str) -> RBridges
         """Finds and retrieves rBridges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rBridges resources from the server.

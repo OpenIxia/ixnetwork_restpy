@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcFportVnPortRange(Base):
@@ -49,12 +50,15 @@ class FcFportVnPortRange(Base):
         'Simulated': 'simulated',
         'VxPortName': 'vxPortName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcFportVnPortRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcFportVnPortRange, self).__init__(parent, list_op)
 
     @property
     def B2bRxSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +67,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
     @B2bRxSize.setter
     def B2bRxSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,10 +81,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +95,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +109,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NodeWwnIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +123,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'])
     @NodeWwnIncrement.setter
     def NodeWwnIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NodeWwnIncrement'], value)
 
     @property
     def NodeWwnStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +137,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NodeWwnStart'])
     @NodeWwnStart.setter
     def NodeWwnStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NodeWwnStart'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +152,7 @@ class FcFportVnPortRange(Base):
 
     @property
     def PlogiDestId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +161,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PlogiDestId'])
     @PlogiDestId.setter
     def PlogiDestId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PlogiDestId'], value)
 
     @property
     def PlogiEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +175,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PlogiEnabled'])
     @PlogiEnabled.setter
     def PlogiEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PlogiEnabled'], value)
 
     @property
     def PlogiMeshMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +189,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PlogiMeshMode'])
     @PlogiMeshMode.setter
     def PlogiMeshMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PlogiMeshMode'], value)
 
     @property
     def PlogiTargetName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +203,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PlogiTargetName'])
     @PlogiTargetName.setter
     def PlogiTargetName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PlogiTargetName'], value)
 
     @property
     def PortIdIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,10 +217,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdIncrement'])
     @PortIdIncrement.setter
     def PortIdIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdIncrement'], value)
 
     @property
     def PortIdStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +231,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdStart'])
     @PortIdStart.setter
     def PortIdStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdStart'], value)
 
     @property
     def PortWwnIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +245,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortWwnIncrement'])
     @PortWwnIncrement.setter
     def PortWwnIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortWwnIncrement'], value)
 
     @property
     def PortWwnStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -228,10 +259,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortWwnStart'])
     @PortWwnStart.setter
     def PortWwnStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortWwnStart'], value)
 
     @property
     def Simulated(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -240,10 +273,12 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Simulated'])
     @Simulated.setter
     def Simulated(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Simulated'], value)
 
     @property
     def VxPortName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -252,9 +287,11 @@ class FcFportVnPortRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VxPortName'])
     @VxPortName.setter
     def VxPortName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VxPortName'], value)
 
     def update(self, B2bRxSize=None, Count=None, Enabled=None, Name=None, NodeWwnIncrement=None, NodeWwnStart=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortIdIncrement=None, PortIdStart=None, PortWwnIncrement=None, PortWwnStart=None, Simulated=None, VxPortName=None):
+        # type: (int, int, bool, str, str, str, str, bool, str, str, str, str, str, str, bool, str) -> FcFportVnPortRange
         """Updates fcFportVnPortRange resource on the server.
 
         Args
@@ -283,14 +320,16 @@ class FcFportVnPortRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -303,13 +342,15 @@ class FcFportVnPortRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -323,13 +364,15 @@ class FcFportVnPortRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

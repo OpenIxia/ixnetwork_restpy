@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ActionsTemplate(Base):
@@ -32,9 +33,11 @@ class ActionsTemplate(Base):
     _SDM_NAME = 'actionsTemplate'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ActionsTemplate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ActionsTemplate, self).__init__(parent, list_op)
 
     @property
     def ActionTemplate(self):
@@ -48,7 +51,10 @@ class ActionsTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.actiontemplate_fa40ad00e03788c7e139f3ecbe0f7842 import ActionTemplate
-        return ActionTemplate(self)
+        if self._properties.get('ActionTemplate', None) is not None:
+            return self._properties.get('ActionTemplate')
+        else:
+            return ActionTemplate(self)
 
     @property
     def Predefined(self):
@@ -62,4 +68,7 @@ class ActionsTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined_948d5a993970b6a0e72926850bcf371e import Predefined
-        return Predefined(self)
+        if self._properties.get('Predefined', None) is not None:
+            return self._properties.get('Predefined')
+        else:
+            return Predefined(self)

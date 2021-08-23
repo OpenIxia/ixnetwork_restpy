@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BackupLspEROSubObjectsList(Base):
@@ -42,12 +43,15 @@ class BackupLspEROSubObjectsList(Base):
         'PrefixLength': 'prefixLength',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BackupLspEROSubObjectsList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BackupLspEROSubObjectsList, self).__init__(parent, list_op)
 
     @property
     def AsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def Ip(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def LooseFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +114,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,10 +123,12 @@ class BackupLspEROSubObjectsList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class BackupLspEROSubObjectsList(Base):
 
     @property
     def Type(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +149,7 @@ class BackupLspEROSubObjectsList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
 
     def update(self, Name=None):
+        # type: (str) -> BackupLspEROSubObjectsList
         """Updates backupLspEROSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -151,7 +165,26 @@ class BackupLspEROSubObjectsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> BackupLspEROSubObjectsList
+        """Adds a new backupLspEROSubObjectsList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved backupLspEROSubObjectsList resources using find and the newly added backupLspEROSubObjectsList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None):
+        # type: (int, str, List[str], str) -> BackupLspEROSubObjectsList
         """Finds and retrieves backupLspEROSubObjectsList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve backupLspEROSubObjectsList resources from the server.

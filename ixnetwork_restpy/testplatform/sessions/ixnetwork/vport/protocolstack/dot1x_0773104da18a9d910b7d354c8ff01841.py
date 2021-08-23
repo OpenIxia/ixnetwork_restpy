@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dot1x(Base):
@@ -36,12 +37,15 @@ class Dot1x(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dot1x, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dot1x, self).__init__(parent, list_op)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class Dot1x(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +68,7 @@ class Dot1x(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Name=None):
+        # type: (str) -> Dot1x
         """Updates dot1x resource on the server.
 
         Args
@@ -75,6 +82,7 @@ class Dot1x(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> Dot1x
         """Adds a new dot1x resource on the server and adds it to the container.
 
         Args
@@ -102,6 +110,7 @@ class Dot1x(Base):
         self._delete()
 
     def find(self, Name=None, ObjectId=None):
+        # type: (str, str) -> Dot1x
         """Finds and retrieves dot1x resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dot1x resources from the server.
@@ -142,14 +151,16 @@ class Dot1x(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -162,13 +173,15 @@ class Dot1x(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -182,15 +195,21 @@ class Dot1x(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def Dot1xStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the dot1xStart operation on the server.
 
         Negotiate 802.1x for selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        dot1xStart(Arg2=enum)
-        ---------------------
+        dot1xStart(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        dot1xStart(Arg2=enum, async_operation=bool)
+        -------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/ethernet/dot1x,/vport/protocolStack/ethernetEndpoint/dot1x]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -203,15 +222,21 @@ class Dot1x(Base):
         return self._execute('dot1xStart', payload=payload, response_object=None)
 
     def Dot1xStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the dot1xStop operation on the server.
 
         Release 802.1x for selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        dot1xStop(Arg2=enum)
-        --------------------
+        dot1xStop(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        dot1xStop(Arg2=enum, async_operation=bool)
+        ------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/ethernet/dot1x,/vport/protocolStack/ethernetEndpoint/dot1x]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -224,13 +249,15 @@ class Dot1x(Base):
         return self._execute('dot1xStop', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

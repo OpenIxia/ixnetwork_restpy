@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LatencyBin(Base):
@@ -35,12 +36,15 @@ class LatencyBin(Base):
         'Enabled': 'enabled',
         'NumberOfBins': 'numberOfBins',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LatencyBin, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LatencyBin, self).__init__(parent, list_op)
 
     @property
     def BinLimits(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class LatencyBin(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinLimits'])
     @BinLimits.setter
     def BinLimits(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinLimits'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +67,12 @@ class LatencyBin(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def NumberOfBins(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,9 +81,11 @@ class LatencyBin(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfBins'])
     @NumberOfBins.setter
     def NumberOfBins(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfBins'], value)
 
     def update(self, BinLimits=None, Enabled=None, NumberOfBins=None):
+        # type: (List[int], bool, int) -> LatencyBin
         """Updates latencyBin resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Options(Base):
@@ -46,12 +47,15 @@ class Options(Base):
         'RouterSolicitationInterval': 'routerSolicitationInterval',
         'RouterSolicitations': 'routerSolicitations',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Options, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Options, self).__init__(parent, list_op)
 
     @property
     def ActOnGratArp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -60,10 +64,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActOnGratArp'])
     @ActOnGratArp.setter
     def ActOnGratArp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActOnGratArp'], value)
 
     @property
     def ArpRefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,10 +78,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'])
     @ArpRefreshInterval.setter
     def ArpRefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'], value)
 
     @property
     def DadEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +92,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DadEnabled'])
     @DadEnabled.setter
     def DadEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DadEnabled'], value)
 
     @property
     def DadTransmits(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +106,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DadTransmits'])
     @DadTransmits.setter
     def DadTransmits(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DadTransmits'], value)
 
     @property
     def IgnoreMldQueries(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +120,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IgnoreMldQueries'])
     @IgnoreMldQueries.setter
     def IgnoreMldQueries(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IgnoreMldQueries'], value)
 
     @property
     def Ipv4McastSolicit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4McastSolicit'])
     @Ipv4McastSolicit.setter
     def Ipv4McastSolicit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4McastSolicit'], value)
 
     @property
     def Ipv4RetransTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +148,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4RetransTime'])
     @Ipv4RetransTime.setter
     def Ipv4RetransTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4RetransTime'], value)
 
     @property
     def Mcast_solicit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,10 +162,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mcast_solicit'])
     @Mcast_solicit.setter
     def Mcast_solicit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mcast_solicit'], value)
 
     @property
     def NsRefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -156,10 +176,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NsRefreshInterval'])
     @NsRefreshInterval.setter
     def NsRefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NsRefreshInterval'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +191,7 @@ class Options(Base):
 
     @property
     def RetransTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,10 +200,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetransTime'])
     @RetransTime.setter
     def RetransTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetransTime'], value)
 
     @property
     def RouterSolicitationDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,10 +214,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterSolicitationDelay'])
     @RouterSolicitationDelay.setter
     def RouterSolicitationDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterSolicitationDelay'], value)
 
     @property
     def RouterSolicitationInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -201,10 +228,12 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterSolicitationInterval'])
     @RouterSolicitationInterval.setter
     def RouterSolicitationInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterSolicitationInterval'], value)
 
     @property
     def RouterSolicitations(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -213,9 +242,11 @@ class Options(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterSolicitations'])
     @RouterSolicitations.setter
     def RouterSolicitations(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterSolicitations'], value)
 
     def update(self, ActOnGratArp=None, ArpRefreshInterval=None, DadEnabled=None, DadTransmits=None, IgnoreMldQueries=None, Ipv4McastSolicit=None, Ipv4RetransTime=None, Mcast_solicit=None, NsRefreshInterval=None, RetransTime=None, RouterSolicitationDelay=None, RouterSolicitationInterval=None, RouterSolicitations=None):
+        # type: (bool, int, bool, int, bool, int, int, int, int, int, int, int, int) -> Options
         """Updates options resource on the server.
 
         Args
@@ -241,14 +272,16 @@ class Options(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -261,13 +294,15 @@ class Options(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -281,13 +316,15 @@ class Options(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

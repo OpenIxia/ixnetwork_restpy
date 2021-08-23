@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AncpGlobals(Base):
@@ -38,9 +39,11 @@ class AncpGlobals(Base):
         'PortUpRate': 'portUpRate',
         'ResyncRate': 'resyncRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AncpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AncpGlobals, self).__init__(parent, list_op)
 
     @property
     def AncpDslProfile(self):
@@ -54,7 +57,10 @@ class AncpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslprofile.ancpdslprofile import AncpDslProfile
-        return AncpDslProfile(self)
+        if self._properties.get('AncpDslProfile', None) is not None:
+            return self._properties.get('AncpDslProfile')
+        else:
+            return AncpDslProfile(self)
 
     @property
     def AncpDslResyncProfile(self):
@@ -68,10 +74,14 @@ class AncpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslresyncprofile.ancpdslresyncprofile import AncpDslResyncProfile
-        return AncpDslResyncProfile(self)
+        if self._properties.get('AncpDslResyncProfile', None) is not None:
+            return self._properties.get('AncpDslResyncProfile')
+        else:
+            return AncpDslResyncProfile(self)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +91,7 @@ class AncpGlobals(Base):
 
     @property
     def PortDownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +100,12 @@ class AncpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDownRate'])
     @PortDownRate.setter
     def PortDownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDownRate'], value)
 
     @property
     def PortUpRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,10 +114,12 @@ class AncpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortUpRate'])
     @PortUpRate.setter
     def PortUpRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortUpRate'], value)
 
     @property
     def ResyncRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -113,9 +128,11 @@ class AncpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResyncRate'])
     @ResyncRate.setter
     def ResyncRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResyncRate'], value)
 
     def update(self, PortDownRate=None, PortUpRate=None, ResyncRate=None):
+        # type: (int, int, int) -> AncpGlobals
         """Updates ancpGlobals resource on the server.
 
         Args
@@ -131,6 +148,7 @@ class AncpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortDownRate=None, PortUpRate=None, ResyncRate=None):
+        # type: (int, int, int) -> AncpGlobals
         """Adds a new ancpGlobals resource on the server and adds it to the container.
 
         Args
@@ -160,6 +178,7 @@ class AncpGlobals(Base):
         self._delete()
 
     def find(self, ObjectId=None, PortDownRate=None, PortUpRate=None, ResyncRate=None):
+        # type: (str, int, int, int) -> AncpGlobals
         """Finds and retrieves ancpGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpGlobals resources from the server.

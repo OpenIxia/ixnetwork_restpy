@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ValueList(Base):
@@ -36,12 +37,16 @@ class ValueList(Base):
         'StartValueList': 'startValueList',
         'Width': 'width',
     }
+    _SDM_ENUM_MAP = {
+        'width': ['16', '24', '32', '8'],
+    }
 
-    def __init__(self, parent):
-        super(ValueList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ValueList, self).__init__(parent, list_op)
 
     @property
     def AvailableWidths(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -51,6 +56,7 @@ class ValueList(Base):
 
     @property
     def StartValueList(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -59,10 +65,12 @@ class ValueList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartValueList'])
     @StartValueList.setter
     def StartValueList(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartValueList'], value)
 
     @property
     def Width(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,9 +79,11 @@ class ValueList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, StartValueList=None, Width=None):
+        # type: (List[int], str) -> ValueList
         """Updates valueList resource on the server.
 
         Args
@@ -87,7 +97,27 @@ class ValueList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, StartValueList=None, Width=None):
+        # type: (List[int], str) -> ValueList
+        """Adds a new valueList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - StartValueList (list(number)): Specifies the starting value for a particular UDF.
+        - Width (str(16 | 24 | 32 | 8)): Specifies the width of the UDF.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved valueList resources using find and the newly added valueList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AvailableWidths=None, StartValueList=None, Width=None):
+        # type: (List[str], List[int], str) -> ValueList
         """Finds and retrieves valueList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve valueList resources from the server.

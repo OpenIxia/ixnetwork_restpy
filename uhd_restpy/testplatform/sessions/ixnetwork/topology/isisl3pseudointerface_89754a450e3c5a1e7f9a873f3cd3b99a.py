@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3PseudoInterface(Base):
@@ -92,9 +93,11 @@ class IsisL3PseudoInterface(Base):
         'VFlag': 'vFlag',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3PseudoInterface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3PseudoInterface, self).__init__(parent, list_op)
 
     @property
     def IsisPseudoMultiTopologyValuesList(self):
@@ -108,7 +111,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist_611d6ab2b1a502e3b27f153266aa7670 import IsisPseudoMultiTopologyValuesList
-        return IsisPseudoMultiTopologyValuesList(self)
+        if self._properties.get('IsisPseudoMultiTopologyValuesList', None) is not None:
+            return self._properties.get('IsisPseudoMultiTopologyValuesList')
+        else:
+            return IsisPseudoMultiTopologyValuesList(self)
 
     @property
     def IsisDcePseudoIfaceAttPoint1Config(self):
@@ -122,7 +128,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint1config_dce0066317952a09c055b9f568621953 import IsisDcePseudoIfaceAttPoint1Config
-        return IsisDcePseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisDcePseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisDcePseudoIfaceAttPoint1Config')
+        else:
+            return IsisDcePseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisDcePseudoIfaceAttPoint2Config(self):
@@ -136,7 +145,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudoifaceattpoint2config_08c96458d8806c0878ba2591f7235870 import IsisDcePseudoIfaceAttPoint2Config
-        return IsisDcePseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisDcePseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisDcePseudoIfaceAttPoint2Config')
+        else:
+            return IsisDcePseudoIfaceAttPoint2Config(self)
 
     @property
     def IsisL3PseudoIfaceAttPoint1Config(self):
@@ -150,7 +162,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint1config_e6b2374da4892fed3474f1ab974dbf1c import IsisL3PseudoIfaceAttPoint1Config
-        return IsisL3PseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisL3PseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisL3PseudoIfaceAttPoint1Config')
+        else:
+            return IsisL3PseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisL3PseudoIfaceAttPoint2Config(self):
@@ -164,7 +179,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoifaceattpoint2config_37681cb7f2d7b1eb6c812c1b9f243542 import IsisL3PseudoIfaceAttPoint2Config
-        return IsisL3PseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisL3PseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisL3PseudoIfaceAttPoint2Config')
+        else:
+            return IsisL3PseudoIfaceAttPoint2Config(self)
 
     @property
     def IsisPseudoAppSpecSrlgList(self):
@@ -178,7 +196,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudoappspecsrlglist_16c6e7265cceee1929bab1415b66b941 import IsisPseudoAppSpecSrlgList
-        return IsisPseudoAppSpecSrlgList(self)._select()
+        if self._properties.get('IsisPseudoAppSpecSrlgList', None) is not None:
+            return self._properties.get('IsisPseudoAppSpecSrlgList')
+        else:
+            return IsisPseudoAppSpecSrlgList(self)._select()
 
     @property
     def IsisPseudoSRv6AdjSIDList(self):
@@ -192,7 +213,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6adjsidlist_a4accfad43c24472cae4caba4a095a9e import IsisPseudoSRv6AdjSIDList
-        return IsisPseudoSRv6AdjSIDList(self)._select()
+        if self._properties.get('IsisPseudoSRv6AdjSIDList', None) is not None:
+            return self._properties.get('IsisPseudoSRv6AdjSIDList')
+        else:
+            return IsisPseudoSRv6AdjSIDList(self)._select()
 
     @property
     def IsisPseudoTraffEngProfile(self):
@@ -206,7 +230,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudotraffengprofile_be938579b53ed57cbd516f916bab91c4 import IsisPseudoTraffEngProfile
-        return IsisPseudoTraffEngProfile(self)._select()
+        if self._properties.get('IsisPseudoTraffEngProfile', None) is not None:
+            return self._properties.get('IsisPseudoTraffEngProfile')
+        else:
+            return IsisPseudoTraffEngProfile(self)._select()
 
     @property
     def IsisSpbPseudoIfaceAttPoint1Config(self):
@@ -220,7 +247,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint1config_04ab03c0f19e657e435c655358111db5 import IsisSpbPseudoIfaceAttPoint1Config
-        return IsisSpbPseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisSpbPseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisSpbPseudoIfaceAttPoint1Config')
+        else:
+            return IsisSpbPseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisSpbPseudoIfaceAttPoint2Config(self):
@@ -234,7 +264,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudoifaceattpoint2config_0781ccf029e86f2c708647212802930e import IsisSpbPseudoIfaceAttPoint2Config
-        return IsisSpbPseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisSpbPseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisSpbPseudoIfaceAttPoint2Config')
+        else:
+            return IsisSpbPseudoIfaceAttPoint2Config(self)
 
     @property
     def IsisTrillPseudoIfaceAttPoint1Config(self):
@@ -248,7 +281,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint1config_4c83cc199df8becee43d785e9ef03dc7 import IsisTrillPseudoIfaceAttPoint1Config
-        return IsisTrillPseudoIfaceAttPoint1Config(self)
+        if self._properties.get('IsisTrillPseudoIfaceAttPoint1Config', None) is not None:
+            return self._properties.get('IsisTrillPseudoIfaceAttPoint1Config')
+        else:
+            return IsisTrillPseudoIfaceAttPoint1Config(self)
 
     @property
     def IsisTrillPseudoIfaceAttPoint2Config(self):
@@ -262,7 +298,10 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudoifaceattpoint2config_1910327d5bcdde39c812851ec539a846 import IsisTrillPseudoIfaceAttPoint2Config
-        return IsisTrillPseudoIfaceAttPoint2Config(self)
+        if self._properties.get('IsisTrillPseudoIfaceAttPoint2Config', None) is not None:
+            return self._properties.get('IsisTrillPseudoIfaceAttPoint2Config')
+        else:
+            return IsisTrillPseudoIfaceAttPoint2Config(self)
 
     @property
     def SrlgValueList(self):
@@ -276,10 +315,14 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
-        return SrlgValueList(self)
+        if self._properties.get('SrlgValueList', None) is not None:
+            return self._properties.get('SrlgValueList')
+        else:
+            return SrlgValueList(self)
 
     @property
     def AdjSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +333,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def AdjSidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -298,10 +342,12 @@ class IsisL3PseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdjSidCount'])
     @AdjSidCount.setter
     def AdjSidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdjSidCount'], value)
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -312,6 +358,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def AdvertiseLinkMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -322,6 +369,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -332,6 +380,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority0_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -342,6 +391,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority1_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -352,6 +402,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority2_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -362,6 +413,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority3_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -372,6 +424,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority4_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -382,6 +435,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority5_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -392,6 +446,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority6_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -402,6 +457,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def BandwidthPriority7_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -412,6 +468,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -421,6 +478,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def DedicatedOnePlusOne(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -431,6 +489,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def DedicatedOneToOne(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -441,6 +500,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -450,6 +510,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def EnableAdjSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -460,6 +521,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def EnableAppSpecSrlg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -470,6 +532,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def EnableIPv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -480,6 +543,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def EnableLinkProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -490,6 +554,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def EnableMT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -500,6 +565,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def EnableSRLG(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -510,6 +576,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Enhanced(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -520,6 +587,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def ExtraTraffic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -530,6 +598,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def FFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -540,6 +609,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Funcflags(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -550,6 +620,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Function(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -560,6 +631,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def IncludeMaxSlMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -570,6 +642,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def IncludeMaximumEndDMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -580,6 +653,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def IncludeMaximumEndPopMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -590,6 +664,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def IncludeMaximumTEncapMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -600,6 +675,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def IncludeMaximumTInsertMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -610,6 +686,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Ipv6SidValue(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -620,6 +697,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -630,6 +708,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def LinkType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -640,6 +719,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxBandwidth_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -650,6 +730,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxEndDMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -660,6 +741,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxEndPopMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -670,6 +752,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxReservableBandwidth_Bps(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -680,6 +763,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxSlMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -690,6 +774,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxTEncap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -700,6 +785,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MaxTInsertMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -710,6 +796,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -720,6 +807,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def MtCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -729,6 +817,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -737,10 +826,12 @@ class IsisL3PseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfAppSpecSrlg(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -749,10 +840,12 @@ class IsisL3PseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'])
     @NoOfAppSpecSrlg.setter
     def NoOfAppSpecSrlg(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'], value)
 
     @property
     def NoOfTeProfile(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -761,10 +854,12 @@ class IsisL3PseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfTeProfile'])
     @NoOfTeProfile.setter
     def NoOfTeProfile(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfTeProfile'], value)
 
     @property
     def OverrideFFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -775,6 +870,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -785,6 +881,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Reserved0x40(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -795,6 +892,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Reserved0x80(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -805,6 +903,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def SFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -815,6 +914,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Shared(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -825,6 +925,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def SrlgCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -833,10 +934,12 @@ class IsisL3PseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrlgCount'])
     @SrlgCount.setter
     def SrlgCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrlgCount'], value)
 
     @property
     def Srv6SidFlags(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -847,6 +950,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Unprotected(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -857,6 +961,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -867,6 +972,7 @@ class IsisL3PseudoInterface(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -876,6 +982,7 @@ class IsisL3PseudoInterface(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, AdjSidCount=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None):
+        # type: (int, str, int, int, int) -> IsisL3PseudoInterface
         """Updates isisL3PseudoInterface resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -895,7 +1002,30 @@ class IsisL3PseudoInterface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, AdjSidCount=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None):
+        # type: (int, str, int, int, int) -> IsisL3PseudoInterface
+        """Adds a new isisL3PseudoInterface resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - AdjSidCount (number): Adj SID Count
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfAppSpecSrlg (number): This field value shows how many SRLG Value columns would be there in the GUI.
+        - NoOfTeProfile (number): Number of TE Profile
+        - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisL3PseudoInterface resources using find and the newly added isisL3PseudoInterface resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AdjSidCount=None, Count=None, DescriptiveName=None, MtCount=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None):
+        # type: (int, int, str, int, str, int, int, int) -> IsisL3PseudoInterface
         """Finds and retrieves isisL3PseudoInterface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3PseudoInterface resources from the server.
@@ -940,6 +1070,66 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AdjSID=None, AdministratorGroup=None, AdvertiseLinkMsd=None, BFlag=None, BandwidthPriority0_Bps=None, BandwidthPriority1_Bps=None, BandwidthPriority2_Bps=None, BandwidthPriority3_Bps=None, BandwidthPriority4_Bps=None, BandwidthPriority5_Bps=None, BandwidthPriority6_Bps=None, BandwidthPriority7_Bps=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, EnableAdjSID=None, EnableAppSpecSrlg=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableMT=None, EnableSRLG=None, Enhanced=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTInsertMsd=None, Ipv6SidValue=None, LFlag=None, LinkType=None, MaxBandwidth_Bps=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxReservableBandwidth_Bps=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsertMsd=None, MetricLevel=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, Unprotected=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of isisL3PseudoInterface device ids encapsulated by this object.
@@ -1010,42 +1200,3 @@ class IsisL3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

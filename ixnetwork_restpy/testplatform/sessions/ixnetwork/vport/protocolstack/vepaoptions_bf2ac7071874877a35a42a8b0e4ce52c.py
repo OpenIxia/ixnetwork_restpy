@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VepaOptions(Base):
@@ -43,12 +44,15 @@ class VepaOptions(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VepaOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VepaOptions, self).__init__(parent, list_op)
 
     @property
     def EcpDestinationMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,10 +61,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EcpDestinationMac'])
     @EcpDestinationMac.setter
     def EcpDestinationMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EcpDestinationMac'], value)
 
     @property
     def EcpEthertype(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,10 +75,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EcpEthertype'])
     @EcpEthertype.setter
     def EcpEthertype(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EcpEthertype'], value)
 
     @property
     def LldpCdcpDestinationMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,10 +89,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LldpCdcpDestinationMac'])
     @LldpCdcpDestinationMac.setter
     def LldpCdcpDestinationMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LldpCdcpDestinationMac'], value)
 
     @property
     def LldpEvbDestinationMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +103,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LldpEvbDestinationMac'])
     @LldpEvbDestinationMac.setter
     def LldpEvbDestinationMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LldpEvbDestinationMac'], value)
 
     @property
     def MaxVdpCommands(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,10 +117,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxVdpCommands'])
     @MaxVdpCommands.setter
     def MaxVdpCommands(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxVdpCommands'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,6 +132,7 @@ class VepaOptions(Base):
 
     @property
     def OverrideGlobalVsiRateControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -126,10 +141,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalVsiRateControl'])
     @OverrideGlobalVsiRateControl.setter
     def OverrideGlobalVsiRateControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalVsiRateControl'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,10 +155,12 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,9 +169,11 @@ class VepaOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, EcpDestinationMac=None, EcpEthertype=None, LldpCdcpDestinationMac=None, LldpEvbDestinationMac=None, MaxVdpCommands=None, OverrideGlobalVsiRateControl=None, SetupRate=None, TeardownRate=None):
+        # type: (str, str, str, str, int, bool, int, int) -> VepaOptions
         """Updates vepaOptions resource on the server.
 
         Args
@@ -173,6 +194,7 @@ class VepaOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EcpDestinationMac=None, EcpEthertype=None, LldpCdcpDestinationMac=None, LldpEvbDestinationMac=None, MaxVdpCommands=None, OverrideGlobalVsiRateControl=None, SetupRate=None, TeardownRate=None):
+        # type: (str, str, str, str, int, bool, int, int) -> VepaOptions
         """Adds a new vepaOptions resource on the server and adds it to the container.
 
         Args
@@ -207,6 +229,7 @@ class VepaOptions(Base):
         self._delete()
 
     def find(self, EcpDestinationMac=None, EcpEthertype=None, LldpCdcpDestinationMac=None, LldpEvbDestinationMac=None, MaxVdpCommands=None, ObjectId=None, OverrideGlobalVsiRateControl=None, SetupRate=None, TeardownRate=None):
+        # type: (str, str, str, str, int, str, bool, int, int) -> VepaOptions
         """Finds and retrieves vepaOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vepaOptions resources from the server.
@@ -254,14 +277,16 @@ class VepaOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -274,13 +299,15 @@ class VepaOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -294,13 +321,15 @@ class VepaOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

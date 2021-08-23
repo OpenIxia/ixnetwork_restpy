@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Source(Base):
@@ -36,12 +37,15 @@ class Source(Base):
         'SourceRangeCount': 'sourceRangeCount',
         'SourceRangeStart': 'sourceRangeStart',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Source, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Source, self).__init__(parent, list_op)
 
     @property
     def SourceRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class Source(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceRangeCount'])
     @SourceRangeCount.setter
     def SourceRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceRangeCount'], value)
 
     @property
     def SourceRangeStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,9 +68,11 @@ class Source(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceRangeStart'])
     @SourceRangeStart.setter
     def SourceRangeStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceRangeStart'], value)
 
     def update(self, SourceRangeCount=None, SourceRangeStart=None):
+        # type: (int, str) -> Source
         """Updates source resource on the server.
 
         Args
@@ -79,6 +87,7 @@ class Source(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, SourceRangeCount=None, SourceRangeStart=None):
+        # type: (int, str) -> Source
         """Adds a new source resource on the server and adds it to the container.
 
         Args
@@ -107,6 +116,7 @@ class Source(Base):
         self._delete()
 
     def find(self, SourceRangeCount=None, SourceRangeStart=None):
+        # type: (int, str) -> Source
         """Finds and retrieves source resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve source resources from the server.

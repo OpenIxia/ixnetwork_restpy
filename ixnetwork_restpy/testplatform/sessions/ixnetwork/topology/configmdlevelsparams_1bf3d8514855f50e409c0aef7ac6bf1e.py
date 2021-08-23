@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ConfigMDLevelsParams(Base):
@@ -57,12 +58,23 @@ class ConfigMDLevelsParams(Base):
         'MdNameFormat8': 'mdNameFormat8',
         'NumMDLevels': 'numMDLevels',
     }
+    _SDM_ENUM_MAP = {
+        'mdNameFormat1': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat2': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat3': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat4': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat5': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat6': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat7': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+        'mdNameFormat8': ['mdNameFormatNoMaintenanceDomainName', 'mdNameFormatDomainNameBasedStr', 'mdNameFormatMacPlusTwoOctetInt', 'mdNameFormatCharacterStr'],
+    }
 
-    def __init__(self, parent):
-        super(ConfigMDLevelsParams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ConfigMDLevelsParams, self).__init__(parent, list_op)
 
     @property
     def MdLevel1(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,10 +83,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel1'])
     @MdLevel1.setter
     def MdLevel1(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel1'], value)
 
     @property
     def MdLevel2(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,10 +97,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel2'])
     @MdLevel2.setter
     def MdLevel2(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel2'], value)
 
     @property
     def MdLevel3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +111,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel3'])
     @MdLevel3.setter
     def MdLevel3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel3'], value)
 
     @property
     def MdLevel4(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +125,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel4'])
     @MdLevel4.setter
     def MdLevel4(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel4'], value)
 
     @property
     def MdLevel5(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +139,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel5'])
     @MdLevel5.setter
     def MdLevel5(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel5'], value)
 
     @property
     def MdLevel6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +153,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel6'])
     @MdLevel6.setter
     def MdLevel6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel6'], value)
 
     @property
     def MdLevel7(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +167,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel7'])
     @MdLevel7.setter
     def MdLevel7(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel7'], value)
 
     @property
     def MdLevel8(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +181,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevel8'])
     @MdLevel8.setter
     def MdLevel8(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevel8'], value)
 
     @property
     def MdName1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,10 +195,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName1'])
     @MdName1.setter
     def MdName1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName1'], value)
 
     @property
     def MdName2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,10 +209,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName2'])
     @MdName2.setter
     def MdName2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName2'], value)
 
     @property
     def MdName3(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,10 +223,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName3'])
     @MdName3.setter
     def MdName3(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName3'], value)
 
     @property
     def MdName4(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,10 +237,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName4'])
     @MdName4.setter
     def MdName4(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName4'], value)
 
     @property
     def MdName5(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -215,10 +251,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName5'])
     @MdName5.setter
     def MdName5(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName5'], value)
 
     @property
     def MdName6(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -227,10 +265,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName6'])
     @MdName6.setter
     def MdName6(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName6'], value)
 
     @property
     def MdName7(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,10 +279,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName7'])
     @MdName7.setter
     def MdName7(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName7'], value)
 
     @property
     def MdName8(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -251,10 +293,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName8'])
     @MdName8.setter
     def MdName8(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName8'], value)
 
     @property
     def MdNameFormat1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -263,10 +307,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat1'])
     @MdNameFormat1.setter
     def MdNameFormat1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat1'], value)
 
     @property
     def MdNameFormat2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -275,10 +321,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat2'])
     @MdNameFormat2.setter
     def MdNameFormat2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat2'], value)
 
     @property
     def MdNameFormat3(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,10 +335,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat3'])
     @MdNameFormat3.setter
     def MdNameFormat3(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat3'], value)
 
     @property
     def MdNameFormat4(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +349,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat4'])
     @MdNameFormat4.setter
     def MdNameFormat4(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat4'], value)
 
     @property
     def MdNameFormat5(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -311,10 +363,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat5'])
     @MdNameFormat5.setter
     def MdNameFormat5(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat5'], value)
 
     @property
     def MdNameFormat6(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -323,10 +377,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat6'])
     @MdNameFormat6.setter
     def MdNameFormat6(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat6'], value)
 
     @property
     def MdNameFormat7(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -335,10 +391,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat7'])
     @MdNameFormat7.setter
     def MdNameFormat7(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat7'], value)
 
     @property
     def MdNameFormat8(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -347,10 +405,12 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat8'])
     @MdNameFormat8.setter
     def MdNameFormat8(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat8'], value)
 
     @property
     def NumMDLevels(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -359,9 +419,11 @@ class ConfigMDLevelsParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumMDLevels'])
     @NumMDLevels.setter
     def NumMDLevels(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumMDLevels'], value)
 
     def update(self, MdLevel1=None, MdLevel2=None, MdLevel3=None, MdLevel4=None, MdLevel5=None, MdLevel6=None, MdLevel7=None, MdLevel8=None, MdName1=None, MdName2=None, MdName3=None, MdName4=None, MdName5=None, MdName6=None, MdName7=None, MdName8=None, MdNameFormat1=None, MdNameFormat2=None, MdNameFormat3=None, MdNameFormat4=None, MdNameFormat5=None, MdNameFormat6=None, MdNameFormat7=None, MdNameFormat8=None, NumMDLevels=None):
+        # type: (int, int, int, int, int, int, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int) -> ConfigMDLevelsParams
         """Updates configMDLevelsParams resource on the server.
 
         Args
@@ -398,10 +460,15 @@ class ConfigMDLevelsParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ConfigMDLevels(self):
+    def ConfigMDLevels(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the configMDLevels operation on the server.
 
         Import IPv6 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
+
+        configMDLevels(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -409,4 +476,6 @@ class ConfigMDLevelsParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('configMDLevels', payload=payload, response_object=None)

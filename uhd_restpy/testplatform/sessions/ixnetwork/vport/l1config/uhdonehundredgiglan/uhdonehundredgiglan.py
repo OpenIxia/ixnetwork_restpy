@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UhdOneHundredGigLan(Base):
@@ -53,9 +54,13 @@ class UhdOneHundredGigLan(Base):
         'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
     }
+    _SDM_ENUM_MAP = {
+        'autoInstrumentation': ['endOfFrame', 'floating'],
+        'speed': ['speed100g', 'speed10g', 'speed25g', 'speed40g', 'speed50g'],
+    }
 
-    def __init__(self, parent):
-        super(UhdOneHundredGigLan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UhdOneHundredGigLan, self).__init__(parent, list_op)
 
     @property
     def Fcoe(self):
@@ -69,10 +74,14 @@ class UhdOneHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.fcoe.fcoe import Fcoe
-        return Fcoe(self)._select()
+        if self._properties.get('Fcoe', None) is not None:
+            return self._properties.get('Fcoe')
+        else:
+            return Fcoe(self)._select()
 
     @property
     def AutoInstrumentation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,10 +90,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -94,6 +105,7 @@ class UhdOneHundredGigLan(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,6 +115,7 @@ class UhdOneHundredGigLan(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,6 +125,7 @@ class UhdOneHundredGigLan(Base):
 
     @property
     def EnableAutoNegotiation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'])
     @EnableAutoNegotiation.setter
     def EnableAutoNegotiation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoNegotiation'], value)
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -133,6 +149,7 @@ class UhdOneHundredGigLan(Base):
 
     @property
     def EnableRsFec(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -141,10 +158,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRsFec'])
     @EnableRsFec.setter
     def EnableRsFec(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRsFec'], value)
 
     @property
     def EnabledFlowControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +172,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FirecodeForceOff(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -165,10 +186,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirecodeForceOff'])
     @FirecodeForceOff.setter
     def FirecodeForceOff(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOff'], value)
 
     @property
     def FirecodeForceOn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -177,10 +200,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirecodeForceOn'])
     @FirecodeForceOn.setter
     def FirecodeForceOn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOn'], value)
 
     @property
     def ForceDisableFEC(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -189,10 +214,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForceDisableFEC'])
     @ForceDisableFEC.setter
     def ForceDisableFEC(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForceDisableFEC'], value)
 
     @property
     def IeeeL1Defaults(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -201,10 +228,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IeeeL1Defaults'])
     @IeeeL1Defaults.setter
     def IeeeL1Defaults(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IeeeL1Defaults'], value)
 
     @property
     def LaserOn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -213,10 +242,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LaserOn'])
     @LaserOn.setter
     def LaserOn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LaserOn'], value)
 
     @property
     def LinkTraining(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -225,10 +256,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkTraining'])
     @LinkTraining.setter
     def LinkTraining(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkTraining'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -237,10 +270,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -249,10 +284,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -262,6 +299,7 @@ class UhdOneHundredGigLan(Base):
 
     @property
     def PromiscuousMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -271,6 +309,7 @@ class UhdOneHundredGigLan(Base):
 
     @property
     def RsFecForceOn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -279,10 +318,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RsFecForceOn'])
     @RsFecForceOn.setter
     def RsFecForceOn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsFecForceOn'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -291,10 +332,12 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def Speed(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -303,9 +346,11 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     def update(self, AutoInstrumentation=None, EnableAutoNegotiation=None, EnableRsFec=None, EnabledFlowControl=None, FirecodeForceOff=None, FirecodeForceOn=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, RsFecForceOn=None, SelectedSpeeds=None, Speed=None):
+        # type: (str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, List[str], str) -> UhdOneHundredGigLan
         """Updates uhdOneHundredGigLan resource on the server.
 
         Args

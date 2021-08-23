@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpEvpnSpmsiV4(Base):
@@ -52,12 +53,15 @@ class BgpEvpnSpmsiV4(Base):
         'UpstreamAssignedLabelStep': 'upstreamAssignedLabelStep',
         'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpEvpnSpmsiV4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpEvpnSpmsiV4, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -68,6 +72,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,6 +82,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,6 +92,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def EnableSpmsiTraffic(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -94,10 +101,12 @@ class BgpEvpnSpmsiV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSpmsiTraffic'])
     @EnableSpmsiTraffic.setter
     def EnableSpmsiTraffic(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSpmsiTraffic'], value)
 
     @property
     def GroupAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def GroupAddressCountSPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def GroupAddressStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,6 +139,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def Mode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -138,6 +150,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def MulticastTunnelType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -148,6 +161,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,10 +170,12 @@ class BgpEvpnSpmsiV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SPmsiTunnelCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +186,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def SenderAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def SenderAddressStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +208,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def SourceAddressCountSPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -200,6 +219,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def SourceGroupMappingSPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -210,6 +230,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def StartGroupAddressSPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -220,6 +241,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def StartSourceAddressIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -230,6 +252,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def UpstreamAssignedLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +263,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def UpstreamAssignedLabelStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +274,7 @@ class BgpEvpnSpmsiV4(Base):
 
     @property
     def UseUpstreamAssignedLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +284,7 @@ class BgpEvpnSpmsiV4(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseUpstreamAssignedLabel']))
 
     def update(self, EnableSpmsiTraffic=None, Name=None):
+        # type: (bool, str) -> BgpEvpnSpmsiV4
         """Updates bgpEvpnSpmsiV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

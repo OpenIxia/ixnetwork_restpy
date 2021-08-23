@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Licensing(Base):
@@ -35,12 +36,16 @@ class Licensing(Base):
         'Mode': 'mode',
         'Tier': 'tier',
     }
+    _SDM_ENUM_MAP = {
+        'mode': ['aggregation', 'mixed', 'perpetual', 'subscription'],
+    }
 
-    def __init__(self, parent):
-        super(Licensing, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Licensing, self).__init__(parent, list_op)
 
     @property
     def LicensingServers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -49,10 +54,12 @@ class Licensing(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LicensingServers'])
     @LicensingServers.setter
     def LicensingServers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['LicensingServers'], value)
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,10 +68,12 @@ class Licensing(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def Tier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,9 +82,11 @@ class Licensing(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tier'])
     @Tier.setter
     def Tier(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tier'], value)
 
     def update(self, LicensingServers=None, Mode=None, Tier=None):
+        # type: (List[str], str, str) -> Licensing
         """Updates licensing resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NicknameRecordList(Base):
@@ -40,12 +41,15 @@ class NicknameRecordList(Base):
         'Nickname': 'nickname',
         'Priority': 'priority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NicknameRecordList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NicknameRecordList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class NicknameRecordList(Base):
 
     @property
     def BroadcastRootPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class NicknameRecordList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class NicknameRecordList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class NicknameRecordList(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class NicknameRecordList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +110,12 @@ class NicknameRecordList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Nickname(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class NicknameRecordList(Base):
 
     @property
     def Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +136,7 @@ class NicknameRecordList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
 
     def update(self, Name=None):
+        # type: (str) -> NicknameRecordList
         """Updates nicknameRecordList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

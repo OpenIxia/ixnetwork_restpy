@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Mka(Base):
@@ -77,9 +78,15 @@ class Mka(Base):
         'Status': 'status',
         'TxChannelCount': 'txChannelCount',
     }
+    _SDM_ENUM_MAP = {
+        'keyType': ['psk'],
+        'rekeyBehaviour': ['dontRekey', 'rekeyContinuous', 'rekeyFixedCount'],
+        'rekeyMode': ['timerBased', 'pNBased'],
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Mka, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Mka, self).__init__(parent, list_op)
 
     @property
     def CakCache(self):
@@ -93,7 +100,10 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cakcache_9d23d3bf0d5a4d71a4e75ece8ff0a1ea import CakCache
-        return CakCache(self)._select()
+        if self._properties.get('CakCache', None) is not None:
+            return self._properties.get('CakCache')
+        else:
+            return CakCache(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -107,7 +117,10 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def TxChannels(self):
@@ -121,10 +134,14 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.txchannels_a961f7f036af2edebf4e1957fed8ab53 import TxChannels
-        return TxChannels(self)._select()
+        if self._properties.get('TxChannels', None) is not None:
+            return self._properties.get('TxChannels')
+        else:
+            return TxChannels(self)._select()
 
     @property
     def ActiveDevice(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +152,7 @@ class Mka(Base):
 
     @property
     def AssociationNumber(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -144,6 +162,7 @@ class Mka(Base):
 
     @property
     def CakCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,6 +172,7 @@ class Mka(Base):
 
     @property
     def CipherSuite(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +183,7 @@ class Mka(Base):
 
     @property
     def ConfidentialityOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +194,7 @@ class Mka(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -181,10 +203,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,6 +218,7 @@ class Mka(Base):
 
     @property
     def DelayProtect(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -204,6 +229,7 @@ class Mka(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -213,6 +239,7 @@ class Mka(Base):
 
     @property
     def ElectedKeyServer(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -231,6 +258,7 @@ class Mka(Base):
 
     @property
     def KeyDerivationFunction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +269,7 @@ class Mka(Base):
 
     @property
     def KeyServerPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +280,7 @@ class Mka(Base):
 
     @property
     def KeyType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -259,10 +289,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KeyType'])
     @KeyType.setter
     def KeyType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['KeyType'], value)
 
     @property
     def LlpnStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -273,6 +305,7 @@ class Mka(Base):
 
     @property
     def MacsecCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -283,6 +316,7 @@ class Mka(Base):
 
     @property
     def MacsecDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -293,6 +327,7 @@ class Mka(Base):
 
     @property
     def MemberIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -303,6 +338,7 @@ class Mka(Base):
 
     @property
     def MirroredMacAddr(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -312,6 +348,7 @@ class Mka(Base):
 
     @property
     def MkaHelloTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -322,6 +359,7 @@ class Mka(Base):
 
     @property
     def MkaLifeTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -330,10 +368,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MkaLifeTime'])
     @MkaLifeTime.setter
     def MkaLifeTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MkaLifeTime'], value)
 
     @property
     def MkaVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -344,6 +384,7 @@ class Mka(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -352,10 +393,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -364,10 +407,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OlpnStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -378,6 +423,7 @@ class Mka(Base):
 
     @property
     def PeriodicRekeyAttempts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -386,10 +432,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicRekeyAttempts'])
     @PeriodicRekeyAttempts.setter
     def PeriodicRekeyAttempts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicRekeyAttempts'], value)
 
     @property
     def PeriodicRekeyInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -398,10 +446,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicRekeyInterval'])
     @PeriodicRekeyInterval.setter
     def PeriodicRekeyInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicRekeyInterval'], value)
 
     @property
     def RandomizeMemberIdentifier(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -410,10 +460,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RandomizeMemberIdentifier'])
     @RandomizeMemberIdentifier.setter
     def RandomizeMemberIdentifier(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RandomizeMemberIdentifier'], value)
 
     @property
     def RekeyBehaviour(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -422,10 +474,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RekeyBehaviour'])
     @RekeyBehaviour.setter
     def RekeyBehaviour(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RekeyBehaviour'], value)
 
     @property
     def RekeyMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -434,10 +488,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RekeyMode'])
     @RekeyMode.setter
     def RekeyMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RekeyMode'], value)
 
     @property
     def RekeyThresholdPN(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -448,6 +504,7 @@ class Mka(Base):
 
     @property
     def RekeyThresholdXPN(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -458,6 +515,7 @@ class Mka(Base):
 
     @property
     def Sak(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -467,6 +525,7 @@ class Mka(Base):
 
     @property
     def SendICVIndicator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -477,6 +536,7 @@ class Mka(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -486,6 +546,7 @@ class Mka(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -494,10 +555,12 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
     def StartingDistributedAN(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -508,6 +571,7 @@ class Mka(Base):
 
     @property
     def StartingKeyNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -518,6 +582,7 @@ class Mka(Base):
 
     @property
     def StartingLLPN(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -528,6 +593,7 @@ class Mka(Base):
 
     @property
     def StartingOLPN(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -547,6 +613,7 @@ class Mka(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -556,6 +623,7 @@ class Mka(Base):
 
     @property
     def TxChannelCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -564,6 +632,7 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxChannelCount'])
 
     def update(self, ConnectedVia=None, KeyType=None, MkaLifeTime=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RandomizeMemberIdentifier=None, RekeyBehaviour=None, RekeyMode=None, StackedLayers=None):
+        # type: (List[str], str, int, int, str, int, int, bool, str, str, List[str]) -> Mka
         """Updates mka resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -590,6 +659,7 @@ class Mka(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, KeyType=None, MkaLifeTime=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RandomizeMemberIdentifier=None, RekeyBehaviour=None, RekeyMode=None, StackedLayers=None):
+        # type: (List[str], str, int, int, str, int, int, bool, str, str, List[str]) -> Mka
         """Adds a new mka resource on the server and adds it to the container.
 
         Args
@@ -687,6 +757,276 @@ class Mka(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear All Learned Info.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLearnedInfo operation on the server.
+
+        Get Learned Info.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLearnedInfo(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+
+    def PausePeriodicRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the pausePeriodicRekey operation on the server.
+
+        Pause the periodic rekey timer if it is running.
+
+        pausePeriodicRekey(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pausePeriodicRekey', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def RestartPeriodicRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the restartPeriodicRekey operation on the server.
+
+        Restart the periodic rekey timer if it was stopped.
+
+        restartPeriodicRekey(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartPeriodicRekey', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def TriggerRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the triggerRekey operation on the server.
+
+        Trigger a Rekey Event from Keysight emulated KeyServer.
+
+        triggerRekey(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('triggerRekey', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ActiveDevice=None, CipherSuite=None, ConfidentialityOffset=None, DelayProtect=None, KeyDerivationFunction=None, KeyServerPriority=None, LlpnStep=None, MacsecCapability=None, MacsecDesired=None, MemberIdentifier=None, MkaHelloTime=None, MkaVersion=None, OlpnStep=None, RekeyThresholdPN=None, RekeyThresholdXPN=None, SendICVIndicator=None, StartingDistributedAN=None, StartingKeyNumber=None, StartingLLPN=None, StartingOLPN=None):
         """Base class infrastructure that gets a list of mka device ids encapsulated by this object.
 
@@ -725,223 +1065,3 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear All Learned Info.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearAllLearnedInfo(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearAllLearnedInfo(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        clearAllLearnedInfo(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetLearnedInfo(self, *args, **kwargs):
-        """Executes the getLearnedInfo operation on the server.
-
-        Get Learned Info.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLearnedInfo(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLearnedInfo(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getLearnedInfo(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
-
-    def PausePeriodicRekey(self, *args, **kwargs):
-        """Executes the pausePeriodicRekey operation on the server.
-
-        Pause the periodic rekey timer if it is running.
-
-        pausePeriodicRekey(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('pausePeriodicRekey', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def RestartPeriodicRekey(self, *args, **kwargs):
-        """Executes the restartPeriodicRekey operation on the server.
-
-        Restart the periodic rekey timer if it was stopped.
-
-        restartPeriodicRekey(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartPeriodicRekey', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def TriggerRekey(self, *args, **kwargs):
-        """Executes the triggerRekey operation on the server.
-
-        Trigger a Rekey Event from Keysight emulated KeyServer.
-
-        triggerRekey(Arg2=list)list
-        ---------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('triggerRekey', payload=payload, response_object=None)

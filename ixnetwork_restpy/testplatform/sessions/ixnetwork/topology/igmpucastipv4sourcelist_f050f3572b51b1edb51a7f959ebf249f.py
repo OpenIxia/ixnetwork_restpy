@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpUcastIPv4SourceList(Base):
@@ -40,12 +41,15 @@ class IgmpUcastIPv4SourceList(Base):
         'UcastAddrIncr': 'ucastAddrIncr',
         'UcastSrcAddrCnt': 'ucastSrcAddrCnt',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IgmpUcastIPv4SourceList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpUcastIPv4SourceList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class IgmpUcastIPv4SourceList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class IgmpUcastIPv4SourceList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class IgmpUcastIPv4SourceList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,10 +89,12 @@ class IgmpUcastIPv4SourceList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def StartUcastAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -96,6 +105,7 @@ class IgmpUcastIPv4SourceList(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class IgmpUcastIPv4SourceList(Base):
 
     @property
     def UcastAddrIncr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class IgmpUcastIPv4SourceList(Base):
 
     @property
     def UcastSrcAddrCnt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +136,7 @@ class IgmpUcastIPv4SourceList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UcastSrcAddrCnt']))
 
     def update(self, Name=None):
+        # type: (str) -> IgmpUcastIPv4SourceList
         """Updates igmpUcastIPv4SourceList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -138,6 +151,114 @@ class IgmpUcastIPv4SourceList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def IgmpJoinSource(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpJoinSource operation on the server.
+
+        Join Source
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpJoinSource(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpJoinSource(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpJoinSource(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpJoinSource', payload=payload, response_object=None)
+
+    def IgmpLeaveSource(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpLeaveSource operation on the server.
+
+        Leave Source
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpLeaveSource(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpLeaveSource(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpLeaveSource(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpLeaveSource', payload=payload, response_object=None)
+
+    def Join(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the join operation on the server.
+
+        Sends a Join on selected Source Ranges
+
+        join(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the source range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('join', payload=payload, response_object=None)
+
+    def Leave(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the leave operation on the server.
+
+        Sends a Leave on selected Source Range
+
+        leave(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the source range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('leave', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, StartUcastAddr=None, UcastAddrIncr=None, UcastSrcAddrCnt=None):
         """Base class infrastructure that gets a list of igmpUcastIPv4SourceList device ids encapsulated by this object.
@@ -161,93 +282,3 @@ class IgmpUcastIPv4SourceList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def IgmpJoinSource(self, *args, **kwargs):
-        """Executes the igmpJoinSource operation on the server.
-
-        Join Source
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpJoinSource(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpJoinSource(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpJoinSource', payload=payload, response_object=None)
-
-    def IgmpLeaveSource(self, *args, **kwargs):
-        """Executes the igmpLeaveSource operation on the server.
-
-        Leave Source
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpLeaveSource(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpLeaveSource(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpLeaveSource', payload=payload, response_object=None)
-
-    def Join(self, *args, **kwargs):
-        """Executes the join operation on the server.
-
-        Sends a Join on selected Source Ranges
-
-        join(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the source range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('join', payload=payload, response_object=None)
-
-    def Leave(self, *args, **kwargs):
-        """Executes the leave operation on the server.
-
-        Sends a Leave on selected Source Range
-
-        leave(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the source range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('leave', payload=payload, response_object=None)

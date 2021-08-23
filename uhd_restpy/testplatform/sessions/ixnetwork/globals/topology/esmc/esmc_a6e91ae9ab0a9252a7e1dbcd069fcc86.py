@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Esmc(Base):
@@ -36,9 +37,11 @@ class Esmc(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Esmc, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Esmc, self).__init__(parent, list_op)
 
     @property
     def StartRateAndFlowControl(self):
@@ -52,7 +55,10 @@ class Esmc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.startrateandflowcontrol.startrateandflowcontrol_585d8f39c08d7894b1219834ab4ac841 import StartRateAndFlowControl
-        return StartRateAndFlowControl(self)._select()
+        if self._properties.get('StartRateAndFlowControl', None) is not None:
+            return self._properties.get('StartRateAndFlowControl')
+        else:
+            return StartRateAndFlowControl(self)._select()
 
     @property
     def StopRateAndFlowControl(self):
@@ -66,10 +72,14 @@ class Esmc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.stoprateandflowcontrol.stoprateandflowcontrol_1859cdc6da8001544275aa8ebcd9d250 import StopRateAndFlowControl
-        return StopRateAndFlowControl(self)._select()
+        if self._properties.get('StopRateAndFlowControl', None) is not None:
+            return self._properties.get('StopRateAndFlowControl')
+        else:
+            return StopRateAndFlowControl(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,6 +89,7 @@ class Esmc(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +99,7 @@ class Esmc(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +108,12 @@ class Esmc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -108,6 +122,7 @@ class Esmc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> Esmc
         """Updates esmc resource on the server.
 
         Args

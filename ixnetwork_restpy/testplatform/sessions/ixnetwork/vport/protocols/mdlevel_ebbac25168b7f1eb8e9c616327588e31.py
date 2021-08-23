@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MdLevel(Base):
@@ -38,12 +39,16 @@ class MdLevel(Base):
         'MdName': 'mdName',
         'MdNameFormat': 'mdNameFormat',
     }
+    _SDM_ENUM_MAP = {
+        'mdNameFormat': ['noDomainName', 'domainNameBasedString', 'macAddress2OctetInteger', 'characterString'],
+    }
 
-    def __init__(self, parent):
-        super(MdLevel, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MdLevel, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +57,12 @@ class MdLevel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def MdLevelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class MdLevel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevelId'])
     @MdLevelId.setter
     def MdLevelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevelId'], value)
 
     @property
     def MdName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class MdLevel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName'])
     @MdName.setter
     def MdName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName'], value)
 
     @property
     def MdNameFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,9 +99,11 @@ class MdLevel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat'])
     @MdNameFormat.setter
     def MdNameFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat'], value)
 
     def update(self, Enabled=None, MdLevelId=None, MdName=None, MdNameFormat=None):
+        # type: (bool, int, str, str) -> MdLevel
         """Updates mdLevel resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class MdLevel(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, MdLevelId=None, MdName=None, MdNameFormat=None):
+        # type: (bool, int, str, str) -> MdLevel
         """Adds a new mdLevel resource on the server and adds it to the container.
 
         Args
@@ -137,6 +151,7 @@ class MdLevel(Base):
         self._delete()
 
     def find(self, Enabled=None, MdLevelId=None, MdName=None, MdNameFormat=None):
+        # type: (bool, int, str, str) -> MdLevel
         """Finds and retrieves mdLevel resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mdLevel resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DynamicFrameSize(Base):
@@ -39,12 +40,16 @@ class DynamicFrameSize(Base):
         'TrafficItemName': 'trafficItemName',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['fixed', 'random'],
+    }
 
-    def __init__(self, parent):
-        super(DynamicFrameSize, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DynamicFrameSize, self).__init__(parent, list_op)
 
     @property
     def FixedSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class DynamicFrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FixedSize'])
     @FixedSize.setter
     def FixedSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FixedSize'], value)
 
     @property
     def HighLevelStreamName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,6 +73,7 @@ class DynamicFrameSize(Base):
 
     @property
     def RandomMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class DynamicFrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RandomMax'])
     @RandomMax.setter
     def RandomMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RandomMax'], value)
 
     @property
     def RandomMin(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,10 +96,12 @@ class DynamicFrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RandomMin'])
     @RandomMin.setter
     def RandomMin(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RandomMin'], value)
 
     @property
     def TrafficItemName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +111,7 @@ class DynamicFrameSize(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,9 +120,11 @@ class DynamicFrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
+        # type: (int, int, int, str) -> DynamicFrameSize
         """Updates dynamicFrameSize resource on the server.
 
         Args
@@ -125,7 +140,29 @@ class DynamicFrameSize(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, FixedSize=None, RandomMax=None, RandomMin=None, Type=None):
+        # type: (int, int, int, str) -> DynamicFrameSize
+        """Adds a new dynamicFrameSize resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
+        - RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+        - RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+        - Type (str(fixed | random)): Sets the frame size to either fixed or random lengths in bytes.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved dynamicFrameSize resources using find and the newly added dynamicFrameSize resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, FixedSize=None, HighLevelStreamName=None, RandomMax=None, RandomMin=None, TrafficItemName=None, Type=None):
+        # type: (int, str, int, int, str, str) -> DynamicFrameSize
         """Finds and retrieves dynamicFrameSize resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dynamicFrameSize resources from the server.

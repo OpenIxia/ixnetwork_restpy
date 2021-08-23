@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RsvpPcepExpectedInitiatedLsps(Base):
@@ -43,9 +44,11 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         'State': 'state',
         'SymbolicPathName': 'symbolicPathName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RsvpPcepExpectedInitiatedLsps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RsvpPcepExpectedInitiatedLsps, self).__init__(parent, list_op)
 
     @property
     def RsvpIngressRROSubObjectsList(self):
@@ -59,7 +62,10 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import RsvpIngressRROSubObjectsList
-        return RsvpIngressRROSubObjectsList(self)
+        if self._properties.get('RsvpIngressRROSubObjectsList', None) is not None:
+            return self._properties.get('RsvpIngressRROSubObjectsList')
+        else:
+            return RsvpIngressRROSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -73,10 +79,14 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +97,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def BackupLspId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +108,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +118,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +128,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def EnableRRO(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +139,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -134,6 +149,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,10 +158,12 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfRroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,10 +172,12 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'])
     @NumberOfRroSubObjects.setter
     def NumberOfRroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'], value)
 
     @property
     def SessionInformation(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -167,6 +187,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -176,6 +197,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
 
     @property
     def SymbolicPathName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +207,7 @@ class RsvpPcepExpectedInitiatedLsps(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SymbolicPathName']))
 
     def update(self, Name=None, NumberOfRroSubObjects=None):
+        # type: (str, int) -> RsvpPcepExpectedInitiatedLsps
         """Updates rsvpPcepExpectedInitiatedLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

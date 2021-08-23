@@ -1,7 +1,7 @@
 import pytest
 from collections import namedtuple
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-
+from ixnetwork_restpy import ConfigAssistant
 
 def pytest_addoption(parser):
     parser.addoption('--server',default=[],action='append',help='''server: <server_ip>:<server_port>:<server_platform>
@@ -80,11 +80,20 @@ def ixnetwork(test_platform):
     #if server_obj.platform != 'windows':
     #    session.remove()
 
+@pytest.fixture
+def config_assistant(ixnetwork):
+    return ConfigAssistant(ixnetwork)
 
 @pytest.fixture
 def vports(ixnetwork):
     # returns a couple of vports
     return ixnetwork.Vport.add(Name='ethernet-1').add(Name='ethernet-2')
+
+@pytest.fixture
+def ca_vports(config_assistant):
+    # returns a couple of vports
+    vport1, vport2 = config_assistant.config.Vport.add(Name='ethernet-1').add(Name='ethernet-2')
+    return vport1, vport2, config_assistant
 
 @pytest.fixture
 def topologies(vports):
@@ -94,11 +103,25 @@ def topologies(vports):
     return topology_1, topology_2
 
 @pytest.fixture
+def ca_topologies(ca_vports):
+    vport_1, vport_2 , config_assistant = ca_vports
+    config = vport_1._parent
+    topology_1, topology_2 = config.Topology.add(Vports=vport_1).add(Vports=vport_2)
+    return topology_1, topology_2, config_assistant
+
+@pytest.fixture
 def device_groups(topologies):
     topology_1, topology_2 = topologies
     dg1 = topology_1.DeviceGroup.add()
     dg2 = topology_2.DeviceGroup.add()
     return dg1, dg2
+
+@pytest.fixture
+def ca_device_groups(ca_topologies):
+    topology_1, topology_2, config_assistant = ca_topologies
+    dg1 = topology_1.DeviceGroup.add()
+    dg2 = topology_2.DeviceGroup.add()
+    return dg1, dg2, config_assistant
 
 @pytest.fixture
 def ethernet_stacks(device_groups):
@@ -108,8 +131,22 @@ def ethernet_stacks(device_groups):
     return eth_1, eth_2
 
 @pytest.fixture
+def ca_ethernet_stacks(ca_device_groups):
+    dg1, dg2, config_assistant = ca_device_groups
+    eth_1 = dg1.Ethernet.add()
+    eth_2 = dg2.Ethernet.add()
+    return eth_1, eth_2, config_assistant
+
+@pytest.fixture
 def ipv4_stacks(ethernet_stacks):
     eth_1, eth_2 = ethernet_stacks
     ipv4_1 = eth_1.Ipv4.add()
     ipv4_2 = eth_2.Ipv4.add()
     return ipv4_1, ipv4_2
+
+@pytest.fixture
+def ca_ipv4_stacks(ca_ethernet_stacks):
+    eth_1, eth_2, config_assistant = ca_ethernet_stacks
+    ipv4_1 = eth_1.Ipv4.add()
+    ipv4_2 = eth_2.Ipv4.add()
+    return ipv4_1, ipv4_2, config_assistant

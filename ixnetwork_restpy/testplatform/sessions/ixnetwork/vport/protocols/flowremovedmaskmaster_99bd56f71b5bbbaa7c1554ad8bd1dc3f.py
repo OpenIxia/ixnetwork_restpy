@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowRemovedMaskMaster(Base):
@@ -36,12 +37,15 @@ class FlowRemovedMaskMaster(Base):
         'HardTimeout': 'hardTimeout',
         'IdleTimeout': 'idleTimeout',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowRemovedMaskMaster, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowRemovedMaskMaster, self).__init__(parent, list_op)
 
     @property
     def Delete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class FlowRemovedMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Delete'])
     @Delete.setter
     def Delete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Delete'], value)
 
     @property
     def GroupDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class FlowRemovedMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupDelete'])
     @GroupDelete.setter
     def GroupDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupDelete'], value)
 
     @property
     def HardTimeout(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class FlowRemovedMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HardTimeout'])
     @HardTimeout.setter
     def HardTimeout(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['HardTimeout'], value)
 
     @property
     def IdleTimeout(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class FlowRemovedMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IdleTimeout'])
     @IdleTimeout.setter
     def IdleTimeout(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IdleTimeout'], value)
 
     def update(self, Delete=None, GroupDelete=None, HardTimeout=None, IdleTimeout=None):
+        # type: (bool, bool, bool, bool) -> FlowRemovedMaskMaster
         """Updates flowRemovedMaskMaster resource on the server.
 
         Args

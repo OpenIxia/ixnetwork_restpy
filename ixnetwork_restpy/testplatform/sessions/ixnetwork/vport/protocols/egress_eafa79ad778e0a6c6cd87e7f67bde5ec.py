@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Egress(Base):
@@ -45,12 +46,17 @@ class Egress(Base):
         'SendResvConfirmation': 'sendResvConfirmation',
         'TimeoutMultiplier': 'timeoutMultiplier',
     }
+    _SDM_ENUM_MAP = {
+        'egressBehavior': ['alwaysUseConfiguredStyle', 'useSeWhenIndicatedInSessionAttribute'],
+        'reservationStyle': ['se', 'ff', 'wf'],
+    }
 
-    def __init__(self, parent):
-        super(Egress, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Egress, self).__init__(parent, list_op)
 
     @property
     def Bandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -59,10 +65,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
     @Bandwidth.setter
     def Bandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
 
     @property
     def EgressBehavior(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,10 +79,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EgressBehavior'])
     @EgressBehavior.setter
     def EgressBehavior(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EgressBehavior'], value)
 
     @property
     def EnableFixedLabelForResv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +93,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFixedLabelForResv'])
     @EnableFixedLabelForResv.setter
     def EnableFixedLabelForResv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFixedLabelForResv'], value)
 
     @property
     def LabelValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,6 +107,7 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelValue'])
     @LabelValue.setter
     def LabelValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelValue'], value)
 
     @property
@@ -111,6 +124,7 @@ class Egress(Base):
 
     @property
     def ReflectRro(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +133,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReflectRro'])
     @ReflectRro.setter
     def ReflectRro(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReflectRro'], value)
 
     @property
     def RefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +147,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefreshInterval'])
     @RefreshInterval.setter
     def RefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefreshInterval'], value)
 
     @property
     def ReservationStyle(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +161,7 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReservationStyle'])
     @ReservationStyle.setter
     def ReservationStyle(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReservationStyle'], value)
 
     @property
@@ -183,6 +202,7 @@ class Egress(Base):
 
     @property
     def SendResvConfirmation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,10 +211,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendResvConfirmation'])
     @SendResvConfirmation.setter
     def SendResvConfirmation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendResvConfirmation'], value)
 
     @property
     def TimeoutMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -203,6 +225,7 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'])
     @TimeoutMultiplier.setter
     def TimeoutMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'], value)
 
     def update(self, Bandwidth=None, EgressBehavior=None, EnableFixedLabelForResv=None, LabelValue=None, PathErrorTlv=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, ReservationTearTlv=None, ReservationTlv=None, Rro=None, SendResvConfirmation=None, TimeoutMultiplier=None):

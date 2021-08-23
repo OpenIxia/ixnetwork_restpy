@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UniStatusLearnedInfo(Base):
@@ -55,12 +56,15 @@ class UniStatusLearnedInfo(Base):
         'UserPriorityBits110': 'userPriorityBits110',
         'UserPriorityBits111': 'userPriorityBits111',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(UniStatusLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UniStatusLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def CbsMagnitude(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +74,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def CbsMultiplier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +84,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def Cf(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +94,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def CirMagnitude(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,6 +104,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def CirMultiplier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +114,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def Cm(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +124,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def EbsMagnitude(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def EbsMultiplier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +144,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def EirMagnitude(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,6 +154,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def EirMultiplier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,6 +164,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def EvcMapType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -160,6 +174,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def PerCos(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +184,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UniId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,6 +194,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UniIdLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -187,6 +204,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits000(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,6 +214,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits001(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -205,6 +224,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits010(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,6 +234,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits011(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,6 +244,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits100(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -232,6 +254,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits101(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -241,6 +264,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits110(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,6 +274,7 @@ class UniStatusLearnedInfo(Base):
 
     @property
     def UserPriorityBits111(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -257,7 +282,21 @@ class UniStatusLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits111'])
 
+    def add(self):
+        """Adds a new uniStatusLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved uniStatusLearnedInfo resources using find and the newly added uniStatusLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, EvcMapType=None, PerCos=None, UniId=None, UniIdLength=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str, str) -> UniStatusLearnedInfo
         """Finds and retrieves uniStatusLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve uniStatusLearnedInfo resources from the server.

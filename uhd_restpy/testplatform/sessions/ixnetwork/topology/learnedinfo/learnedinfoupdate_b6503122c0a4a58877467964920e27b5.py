@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInfoUpdate(Base):
@@ -33,9 +34,11 @@ class LearnedInfoUpdate(Base):
     _SDM_NAME = 'learnedInfoUpdate'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedInfoUpdate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInfoUpdate, self).__init__(parent, list_op)
 
     @property
     def PceBasicRsvpSyncLspUpdateParams(self):
@@ -49,7 +52,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicrsvpsynclspupdateparams_e7500ea8c91e971fd00002ae540798a6 import PceBasicRsvpSyncLspUpdateParams
-        return PceBasicRsvpSyncLspUpdateParams(self)
+        if self._properties.get('PceBasicRsvpSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceBasicRsvpSyncLspUpdateParams')
+        else:
+            return PceBasicRsvpSyncLspUpdateParams(self)
 
     @property
     def PceBasicSrSyncLspUpdateParams(self):
@@ -63,7 +69,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrsynclspupdateparams_606beb3779cf3f742dce2344800dff3d import PceBasicSrSyncLspUpdateParams
-        return PceBasicSrSyncLspUpdateParams(self)
+        if self._properties.get('PceBasicSrSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceBasicSrSyncLspUpdateParams')
+        else:
+            return PceBasicSrSyncLspUpdateParams(self)
 
     @property
     def PceBasicSrv6SyncLspUpdateParams(self):
@@ -77,7 +86,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams_04588ed4e13802f09f194723c60e78bd import PceBasicSrv6SyncLspUpdateParams
-        return PceBasicSrv6SyncLspUpdateParams(self)
+        if self._properties.get('PceBasicSrv6SyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceBasicSrv6SyncLspUpdateParams')
+        else:
+            return PceBasicSrv6SyncLspUpdateParams(self)
 
     @property
     def PceDetailedRsvpSyncLspUpdateParams(self):
@@ -91,7 +103,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedrsvpsynclspupdateparams_9325006dc5dbaed40e76f97b83ba5529 import PceDetailedRsvpSyncLspUpdateParams
-        return PceDetailedRsvpSyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedRsvpSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceDetailedRsvpSyncLspUpdateParams')
+        else:
+            return PceDetailedRsvpSyncLspUpdateParams(self)
 
     @property
     def PceDetailedSrSyncLspUpdateParams(self):
@@ -105,7 +120,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams_099ec5956b09590499b5079ba90354c9 import PceDetailedSrSyncLspUpdateParams
-        return PceDetailedSrSyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedSrSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceDetailedSrSyncLspUpdateParams')
+        else:
+            return PceDetailedSrSyncLspUpdateParams(self)
 
     @property
     def PceDetailedSrv6SyncLspUpdateParams(self):
@@ -119,7 +137,23 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams_6c64a4614ee301152c8e22c6a805a4b7 import PceDetailedSrv6SyncLspUpdateParams
-        return PceDetailedSrv6SyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedSrv6SyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceDetailedSrv6SyncLspUpdateParams')
+        else:
+            return PceDetailedSrv6SyncLspUpdateParams(self)
+
+    def add(self):
+        """Adds a new learnedInfoUpdate resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedInfoUpdate resources using find and the newly added learnedInfoUpdate resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves learnedInfoUpdate resources from the server.

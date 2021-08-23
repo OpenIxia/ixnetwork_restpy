@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IxNetCodeOptions(Base):
@@ -42,12 +43,15 @@ class IxNetCodeOptions(Base):
         'IncludeTrafficFlowGroup': 'includeTrafficFlowGroup',
         'IncludeTrafficStack': 'includeTrafficStack',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IxNetCodeOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IxNetCodeOptions, self).__init__(parent, list_op)
 
     @property
     def IncludeAvailableHardware(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -56,10 +60,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeAvailableHardware'])
     @IncludeAvailableHardware.setter
     def IncludeAvailableHardware(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeAvailableHardware'], value)
 
     @property
     def IncludeConnect(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -68,10 +74,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeConnect'])
     @IncludeConnect.setter
     def IncludeConnect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeConnect'], value)
 
     @property
     def IncludeDefaultValues(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,10 +88,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'])
     @IncludeDefaultValues.setter
     def IncludeDefaultValues(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'], value)
 
     @property
     def IncludeQuickTest(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +102,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeQuickTest'])
     @IncludeQuickTest.setter
     def IncludeQuickTest(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeQuickTest'], value)
 
     @property
     def IncludeStatistic(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -104,10 +116,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeStatistic'])
     @IncludeStatistic.setter
     def IncludeStatistic(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeStatistic'], value)
 
     @property
     def IncludeTAPSettings(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,10 +130,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTAPSettings'])
     @IncludeTAPSettings.setter
     def IncludeTAPSettings(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTAPSettings'], value)
 
     @property
     def IncludeTestComposer(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -128,10 +144,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTestComposer'])
     @IncludeTestComposer.setter
     def IncludeTestComposer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTestComposer'], value)
 
     @property
     def IncludeTraffic(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -140,10 +158,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTraffic'])
     @IncludeTraffic.setter
     def IncludeTraffic(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTraffic'], value)
 
     @property
     def IncludeTrafficFlowGroup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -152,10 +172,12 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTrafficFlowGroup'])
     @IncludeTrafficFlowGroup.setter
     def IncludeTrafficFlowGroup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTrafficFlowGroup'], value)
 
     @property
     def IncludeTrafficStack(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -164,9 +186,11 @@ class IxNetCodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTrafficStack'])
     @IncludeTrafficStack.setter
     def IncludeTrafficStack(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTrafficStack'], value)
 
     def update(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IxNetCodeOptions
         """Updates ixNetCodeOptions resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbSimEdgeIsidList(Base):
@@ -41,9 +42,11 @@ class SpbSimEdgeIsidList(Base):
         'Tbit': 'tbit',
         'TransmissionType': 'transmissionType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbSimEdgeIsidList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbSimEdgeIsidList, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -57,10 +60,14 @@ class SpbSimEdgeIsidList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -71,6 +78,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +88,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +98,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def Isid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +109,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def ItagEthernetType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +120,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,10 +129,12 @@ class SpbSimEdgeIsidList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Rbit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +145,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def Tbit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +156,7 @@ class SpbSimEdgeIsidList(Base):
 
     @property
     def TransmissionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +166,7 @@ class SpbSimEdgeIsidList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionType']))
 
     def update(self, Name=None):
+        # type: (str) -> SpbSimEdgeIsidList
         """Updates spbSimEdgeIsidList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

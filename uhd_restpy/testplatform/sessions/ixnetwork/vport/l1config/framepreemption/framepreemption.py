@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FramePreemption(Base):
@@ -34,12 +35,15 @@ class FramePreemption(Base):
         'IsFramePreemptionEnabled': 'isFramePreemptionEnabled',
         'IsSmdVREnabled': 'isSmdVREnabled',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FramePreemption, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FramePreemption, self).__init__(parent, list_op)
 
     @property
     def IsFramePreemptionEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsFramePreemptionEnabled'])
     @IsFramePreemptionEnabled.setter
     def IsFramePreemptionEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsFramePreemptionEnabled'], value)
 
     @property
     def IsSmdVREnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsSmdVREnabled'])
     @IsSmdVREnabled.setter
     def IsSmdVREnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsSmdVREnabled'], value)
 
     def update(self, IsFramePreemptionEnabled=None, IsSmdVREnabled=None):
+        # type: (bool, bool) -> FramePreemption
         """Updates framePreemption resource on the server.
 
         Args

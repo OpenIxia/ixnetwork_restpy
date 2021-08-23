@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AssignedLabel(Base):
@@ -43,12 +44,15 @@ class AssignedLabel(Base):
         'TunnelId': 'tunnelId',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AssignedLabel, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AssignedLabel, self).__init__(parent, list_op)
 
     @property
     def CurrentLspOrSubLspUpTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class AssignedLabel(Base):
 
     @property
     def DestinationIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class AssignedLabel(Base):
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class AssignedLabel(Base):
 
     @property
     def LeafIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class AssignedLabel(Base):
 
     @property
     def LspId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +102,7 @@ class AssignedLabel(Base):
 
     @property
     def LspOrSubLspSetupTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,6 +112,7 @@ class AssignedLabel(Base):
 
     @property
     def ReservationState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +122,7 @@ class AssignedLabel(Base):
 
     @property
     def SourceIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +132,7 @@ class AssignedLabel(Base):
 
     @property
     def TunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class AssignedLabel(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,7 +150,21 @@ class AssignedLabel(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new assignedLabel resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved assignedLabel resources using find and the newly added assignedLabel resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CurrentLspOrSubLspUpTime=None, DestinationIp=None, Label=None, LeafIp=None, LspId=None, LspOrSubLspSetupTime=None, ReservationState=None, SourceIp=None, TunnelId=None, Type=None):
+        # type: (int, str, int, str, int, int, str, str, int, str) -> AssignedLabel
         """Finds and retrieves assignedLabel resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve assignedLabel resources from the server.

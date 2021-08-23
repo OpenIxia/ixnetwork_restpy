@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpPgwS5S8Range(Base):
@@ -48,9 +49,11 @@ class EgtpPgwS5S8Range(Base):
         'UseCpIp': 'useCpIp',
         'UseUpIp': 'useUpIp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpPgwS5S8Range, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpPgwS5S8Range, self).__init__(parent, list_op)
 
     @property
     def CpIpRangeS5S8(self):
@@ -64,7 +67,10 @@ class EgtpPgwS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpipranges5s8_1cca5f37fe8bb4e7f58f5ea17e2416aa import CpIpRangeS5S8
-        return CpIpRangeS5S8(self)._select()
+        if self._properties.get('CpIpRangeS5S8', None) is not None:
+            return self._properties.get('CpIpRangeS5S8')
+        else:
+            return CpIpRangeS5S8(self)._select()
 
     @property
     def CpMacRangeS5S8(self):
@@ -78,7 +84,10 @@ class EgtpPgwS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacranges5s8_bab5f80b76fc5e2c069a9e1cd0b98507 import CpMacRangeS5S8
-        return CpMacRangeS5S8(self)._select()
+        if self._properties.get('CpMacRangeS5S8', None) is not None:
+            return self._properties.get('CpMacRangeS5S8')
+        else:
+            return CpMacRangeS5S8(self)._select()
 
     @property
     def CpVlanRangeS5S8(self):
@@ -92,7 +101,10 @@ class EgtpPgwS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanranges5s8_3824655656788ae08e6b4e6a675820e8 import CpVlanRangeS5S8
-        return CpVlanRangeS5S8(self)._select()
+        if self._properties.get('CpVlanRangeS5S8', None) is not None:
+            return self._properties.get('CpVlanRangeS5S8')
+        else:
+            return CpVlanRangeS5S8(self)._select()
 
     @property
     def UpIpRangeS5S8(self):
@@ -106,7 +118,10 @@ class EgtpPgwS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upipranges5s8_b2cf7425f0a637259bbba1a7f2683571 import UpIpRangeS5S8
-        return UpIpRangeS5S8(self)._select()
+        if self._properties.get('UpIpRangeS5S8', None) is not None:
+            return self._properties.get('UpIpRangeS5S8')
+        else:
+            return UpIpRangeS5S8(self)._select()
 
     @property
     def UpMacRangeS5S8(self):
@@ -120,7 +135,10 @@ class EgtpPgwS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacranges5s8_bc238c27470386abadf29c03c69f3399 import UpMacRangeS5S8
-        return UpMacRangeS5S8(self)._select()
+        if self._properties.get('UpMacRangeS5S8', None) is not None:
+            return self._properties.get('UpMacRangeS5S8')
+        else:
+            return UpMacRangeS5S8(self)._select()
 
     @property
     def UpVlanRangeS5S8(self):
@@ -134,10 +152,14 @@ class EgtpPgwS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanranges5s8_11ba4e008bde71d81bbb2f8a427eb346 import UpVlanRangeS5S8
-        return UpVlanRangeS5S8(self)._select()
+        if self._properties.get('UpVlanRangeS5S8', None) is not None:
+            return self._properties.get('UpVlanRangeS5S8')
+        else:
+            return UpVlanRangeS5S8(self)._select()
 
     @property
     def ChangeReportingMode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,10 +168,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChangeReportingMode'])
     @ChangeReportingMode.setter
     def ChangeReportingMode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChangeReportingMode'], value)
 
     @property
     def EnableEchoRequest(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -158,10 +182,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEchoRequest'])
     @EnableEchoRequest.setter
     def EnableEchoRequest(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEchoRequest'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -170,10 +196,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,10 +210,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def N3CreateBearerReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,10 +224,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['N3CreateBearerReq'])
     @N3CreateBearerReq.setter
     def N3CreateBearerReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['N3CreateBearerReq'], value)
 
     @property
     def N3DeleteBearerReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +238,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['N3DeleteBearerReq'])
     @N3DeleteBearerReq.setter
     def N3DeleteBearerReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['N3DeleteBearerReq'], value)
 
     @property
     def N3EchoReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +252,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['N3EchoReq'])
     @N3EchoReq.setter
     def N3EchoReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['N3EchoReq'], value)
 
     @property
     def N3UpdateBearerReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,10 +266,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['N3UpdateBearerReq'])
     @N3UpdateBearerReq.setter
     def N3UpdateBearerReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['N3UpdateBearerReq'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -242,10 +280,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -255,6 +295,7 @@ class EgtpPgwS5S8Range(Base):
 
     @property
     def T3CreateBearerReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -263,10 +304,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['T3CreateBearerReq'])
     @T3CreateBearerReq.setter
     def T3CreateBearerReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['T3CreateBearerReq'], value)
 
     @property
     def T3DeleteBearerReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -275,10 +318,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['T3DeleteBearerReq'])
     @T3DeleteBearerReq.setter
     def T3DeleteBearerReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['T3DeleteBearerReq'], value)
 
     @property
     def T3EchoReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -287,10 +332,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['T3EchoReq'])
     @T3EchoReq.setter
     def T3EchoReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['T3EchoReq'], value)
 
     @property
     def T3UpdateBearerReq(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -299,10 +346,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['T3UpdateBearerReq'])
     @T3UpdateBearerReq.setter
     def T3UpdateBearerReq(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['T3UpdateBearerReq'], value)
 
     @property
     def UseCpIp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -311,10 +360,12 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseCpIp'])
     @UseCpIp.setter
     def UseCpIp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseCpIp'], value)
 
     @property
     def UseUpIp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -323,9 +374,11 @@ class EgtpPgwS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseUpIp'])
     @UseUpIp.setter
     def UseUpIp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseUpIp'], value)
 
     def update(self, ChangeReportingMode=None, EnableEchoRequest=None, Enabled=None, IpType=None, N3CreateBearerReq=None, N3DeleteBearerReq=None, N3EchoReq=None, N3UpdateBearerReq=None, Name=None, T3CreateBearerReq=None, T3DeleteBearerReq=None, T3EchoReq=None, T3UpdateBearerReq=None, UseCpIp=None, UseUpIp=None):
+        # type: (int, bool, bool, str, int, int, int, int, str, int, int, int, int, bool, bool) -> EgtpPgwS5S8Range
         """Updates egtpPgwS5S8Range resource on the server.
 
         Args
@@ -353,14 +406,16 @@ class EgtpPgwS5S8Range(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -373,13 +428,15 @@ class EgtpPgwS5S8Range(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -393,13 +450,15 @@ class EgtpPgwS5S8Range(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -92,9 +93,15 @@ class Router(Base):
         'TeRouterId': 'teRouterId',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+        'areaAuthType': ['none', 'password', 'md5'],
+        'domainAuthType': ['none', 'password', 'md5'],
+        'restartMode': ['normalRouter', 'restartingRouter', 'startingRouter', 'helperRouter'],
+        'restartVersion': ['version3', 'version4'],
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def CustomTlv(self):
@@ -108,7 +115,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_9b3af0590ed159139a0d6ee63aafb653 import CustomTlv
-        return CustomTlv(self)
+        if self._properties.get('CustomTlv', None) is not None:
+            return self._properties.get('CustomTlv')
+        else:
+            return CustomTlv(self)
 
     @property
     def CustomTopology(self):
@@ -122,7 +132,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_95c201c50eb168382a558d283f2bec6c import CustomTopology
-        return CustomTopology(self)
+        if self._properties.get('CustomTopology', None) is not None:
+            return self._properties.get('CustomTopology')
+        else:
+            return CustomTopology(self)
 
     @property
     def DceMulticastIpv4GroupRange(self):
@@ -136,7 +149,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_137811bdde8c702243d4c46d844116e9 import DceMulticastIpv4GroupRange
-        return DceMulticastIpv4GroupRange(self)
+        if self._properties.get('DceMulticastIpv4GroupRange', None) is not None:
+            return self._properties.get('DceMulticastIpv4GroupRange')
+        else:
+            return DceMulticastIpv4GroupRange(self)
 
     @property
     def DceMulticastIpv6GroupRange(self):
@@ -150,7 +166,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_ff34b9b498a42af784ac1d9e6870d89b import DceMulticastIpv6GroupRange
-        return DceMulticastIpv6GroupRange(self)
+        if self._properties.get('DceMulticastIpv6GroupRange', None) is not None:
+            return self._properties.get('DceMulticastIpv6GroupRange')
+        else:
+            return DceMulticastIpv6GroupRange(self)
 
     @property
     def DceMulticastMacRange(self):
@@ -164,7 +183,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_cc6bbd6d9c9c0e88f6e630afd3a84823 import DceMulticastMacRange
-        return DceMulticastMacRange(self)
+        if self._properties.get('DceMulticastMacRange', None) is not None:
+            return self._properties.get('DceMulticastMacRange')
+        else:
+            return DceMulticastMacRange(self)
 
     @property
     def DceNetworkRange(self):
@@ -178,7 +200,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_de592cf3e2529092f28b2f14e5282a24 import DceNetworkRange
-        return DceNetworkRange(self)
+        if self._properties.get('DceNetworkRange', None) is not None:
+            return self._properties.get('DceNetworkRange')
+        else:
+            return DceNetworkRange(self)
 
     @property
     def DceTopologyRange(self):
@@ -192,7 +217,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e13ee59af806de98161bf79b499b2a3b import DceTopologyRange
-        return DceTopologyRange(self)
+        if self._properties.get('DceTopologyRange', None) is not None:
+            return self._properties.get('DceTopologyRange')
+        else:
+            return DceTopologyRange(self)
 
     @property
     def Interface(self):
@@ -206,7 +234,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_54e892c04a4d57ef720d90ef82e8d6e6 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def LearnedInformation(self):
@@ -220,7 +251,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_0f99cbd8f68676519789d627dcbdf3bd import LearnedInformation
-        return LearnedInformation(self)._select()
+        if self._properties.get('LearnedInformation', None) is not None:
+            return self._properties.get('LearnedInformation')
+        else:
+            return LearnedInformation(self)._select()
 
     @property
     def NetworkRange(self):
@@ -234,7 +268,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_13f65c2451ab57b34c6f824d4665d3ea import NetworkRange
-        return NetworkRange(self)
+        if self._properties.get('NetworkRange', None) is not None:
+            return self._properties.get('NetworkRange')
+        else:
+            return NetworkRange(self)
 
     @property
     def RouteRange(self):
@@ -248,7 +285,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_f356b867b4b5aaa0b94fb4b00d34a328 import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is not None:
+            return self._properties.get('RouteRange')
+        else:
+            return RouteRange(self)
 
     @property
     def SpbNetworkRange(self):
@@ -262,7 +302,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_d4c634041e8e33458ec27f522c953b2a import SpbNetworkRange
-        return SpbNetworkRange(self)
+        if self._properties.get('SpbNetworkRange', None) is not None:
+            return self._properties.get('SpbNetworkRange')
+        else:
+            return SpbNetworkRange(self)
 
     @property
     def SpbTopologyRange(self):
@@ -276,7 +319,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_922b3eacc2d72dd7a24481d9cb1ee831 import SpbTopologyRange
-        return SpbTopologyRange(self)
+        if self._properties.get('SpbTopologyRange', None) is not None:
+            return self._properties.get('SpbTopologyRange')
+        else:
+            return SpbTopologyRange(self)
 
     @property
     def TrillPingOam(self):
@@ -290,7 +336,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_1ad2c6d3f05ae8ebfc87ba18f1512d39 import TrillPingOam
-        return TrillPingOam(self)._select()
+        if self._properties.get('TrillPingOam', None) is not None:
+            return self._properties.get('TrillPingOam')
+        else:
+            return TrillPingOam(self)._select()
 
     @property
     def TrillUnicastMacRange(self):
@@ -304,10 +353,14 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_1a357144d008fb5372e816e033477ead import TrillUnicastMacRange
-        return TrillUnicastMacRange(self)
+        if self._properties.get('TrillUnicastMacRange', None) is not None:
+            return self._properties.get('TrillUnicastMacRange')
+        else:
+            return TrillUnicastMacRange(self)
 
     @property
     def AreaAddressList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -316,10 +369,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AreaAddressList'])
     @AreaAddressList.setter
     def AreaAddressList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['AreaAddressList'], value)
 
     @property
     def AreaAuthType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -328,10 +383,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AreaAuthType'])
     @AreaAuthType.setter
     def AreaAuthType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AreaAuthType'], value)
 
     @property
     def AreaReceivedPasswordList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -340,10 +397,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AreaReceivedPasswordList'])
     @AreaReceivedPasswordList.setter
     def AreaReceivedPasswordList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['AreaReceivedPasswordList'], value)
 
     @property
     def AreaTransmitPassword(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -352,10 +411,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AreaTransmitPassword'])
     @AreaTransmitPassword.setter
     def AreaTransmitPassword(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AreaTransmitPassword'], value)
 
     @property
     def BroadcastRootPriority(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -364,10 +425,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BroadcastRootPriority'])
     @BroadcastRootPriority.setter
     def BroadcastRootPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BroadcastRootPriority'], value)
 
     @property
     def CapabilityRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -376,10 +439,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CapabilityRouterId'])
     @CapabilityRouterId.setter
     def CapabilityRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CapabilityRouterId'], value)
 
     @property
     def DeviceId(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -388,10 +453,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeviceId'])
     @DeviceId.setter
     def DeviceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeviceId'], value)
 
     @property
     def DevicePriority(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -400,10 +467,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DevicePriority'])
     @DevicePriority.setter
     def DevicePriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DevicePriority'], value)
 
     @property
     def DomainAuthType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -412,10 +481,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DomainAuthType'])
     @DomainAuthType.setter
     def DomainAuthType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DomainAuthType'], value)
 
     @property
     def DomainReceivedPasswordList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -424,10 +495,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DomainReceivedPasswordList'])
     @DomainReceivedPasswordList.setter
     def DomainReceivedPasswordList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['DomainReceivedPasswordList'], value)
 
     @property
     def DomainTransmitPassword(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -436,10 +509,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DomainTransmitPassword'])
     @DomainTransmitPassword.setter
     def DomainTransmitPassword(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DomainTransmitPassword'], value)
 
     @property
     def EnableAttached(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -448,10 +523,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAttached'])
     @EnableAttached.setter
     def EnableAttached(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAttached'], value)
 
     @property
     def EnableAutoLoopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -460,10 +537,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoLoopback'])
     @EnableAutoLoopback.setter
     def EnableAutoLoopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoLoopback'], value)
 
     @property
     def EnableDiscardLearnedLsps(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -472,10 +551,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDiscardLearnedLsps'])
     @EnableDiscardLearnedLsps.setter
     def EnableDiscardLearnedLsps(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDiscardLearnedLsps'], value)
 
     @property
     def EnableHelloPadding(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -484,10 +565,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHelloPadding'])
     @EnableHelloPadding.setter
     def EnableHelloPadding(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHelloPadding'], value)
 
     @property
     def EnableHitlessRestart(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -496,10 +579,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHitlessRestart'])
     @EnableHitlessRestart.setter
     def EnableHitlessRestart(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHitlessRestart'], value)
 
     @property
     def EnableHostName(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -508,10 +593,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
     @EnableHostName.setter
     def EnableHostName(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
 
     @property
     def EnableIgnoreMtPortCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -520,10 +607,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIgnoreMtPortCapability'])
     @EnableIgnoreMtPortCapability.setter
     def EnableIgnoreMtPortCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIgnoreMtPortCapability'], value)
 
     @property
     def EnableIgnoreRecvMd5(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -532,10 +621,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIgnoreRecvMd5'])
     @EnableIgnoreRecvMd5.setter
     def EnableIgnoreRecvMd5(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIgnoreRecvMd5'], value)
 
     @property
     def EnableMtIpv6(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -544,10 +635,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMtIpv6'])
     @EnableMtIpv6.setter
     def EnableMtIpv6(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMtIpv6'], value)
 
     @property
     def EnableMtuProbe(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -556,10 +649,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMtuProbe'])
     @EnableMtuProbe.setter
     def EnableMtuProbe(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMtuProbe'], value)
 
     @property
     def EnableMultiTopology(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -568,10 +663,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMultiTopology'])
     @EnableMultiTopology.setter
     def EnableMultiTopology(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMultiTopology'], value)
 
     @property
     def EnableOverloaded(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -580,10 +677,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOverloaded'])
     @EnableOverloaded.setter
     def EnableOverloaded(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOverloaded'], value)
 
     @property
     def EnablePartitionRepair(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -592,10 +691,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePartitionRepair'])
     @EnablePartitionRepair.setter
     def EnablePartitionRepair(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePartitionRepair'], value)
 
     @property
     def EnableTrillOam(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -604,10 +705,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableTrillOam'])
     @EnableTrillOam.setter
     def EnableTrillOam(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableTrillOam'], value)
 
     @property
     def EnableWideMetric(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -616,10 +719,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWideMetric'])
     @EnableWideMetric.setter
     def EnableWideMetric(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWideMetric'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -628,10 +733,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FTagValue(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -640,10 +747,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FTagValue'])
     @FTagValue.setter
     def FTagValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FTagValue'], value)
 
     @property
     def FilterIpv4MulticastTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -652,10 +761,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterIpv4MulticastTlvs'])
     @FilterIpv4MulticastTlvs.setter
     def FilterIpv4MulticastTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterIpv4MulticastTlvs'], value)
 
     @property
     def FilterIpv6MulticastTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -664,10 +775,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterIpv6MulticastTlvs'])
     @FilterIpv6MulticastTlvs.setter
     def FilterIpv6MulticastTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterIpv6MulticastTlvs'], value)
 
     @property
     def FilterLearnedIpv4Prefixes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -676,10 +789,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedIpv4Prefixes'])
     @FilterLearnedIpv4Prefixes.setter
     def FilterLearnedIpv4Prefixes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterLearnedIpv4Prefixes'], value)
 
     @property
     def FilterLearnedIpv6Prefixes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -688,10 +803,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedIpv6Prefixes'])
     @FilterLearnedIpv6Prefixes.setter
     def FilterLearnedIpv6Prefixes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterLearnedIpv6Prefixes'], value)
 
     @property
     def FilterLearnedRbridges(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -700,10 +817,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedRbridges'])
     @FilterLearnedRbridges.setter
     def FilterLearnedRbridges(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterLearnedRbridges'], value)
 
     @property
     def FilterLearnedSpbRbridges(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -712,10 +831,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedSpbRbridges'])
     @FilterLearnedSpbRbridges.setter
     def FilterLearnedSpbRbridges(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterLearnedSpbRbridges'], value)
 
     @property
     def FilterLearnedTrillMacUnicast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -724,10 +845,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterLearnedTrillMacUnicast'])
     @FilterLearnedTrillMacUnicast.setter
     def FilterLearnedTrillMacUnicast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterLearnedTrillMacUnicast'], value)
 
     @property
     def FilterMacMulticastTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -736,10 +859,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterMacMulticastTlvs'])
     @FilterMacMulticastTlvs.setter
     def FilterMacMulticastTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterMacMulticastTlvs'], value)
 
     @property
     def HostName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -748,10 +873,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostName'])
     @HostName.setter
     def HostName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostName'], value)
 
     @property
     def InterLspMgroupPduBurstGap(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -760,10 +887,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterLspMgroupPduBurstGap'])
     @InterLspMgroupPduBurstGap.setter
     def InterLspMgroupPduBurstGap(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterLspMgroupPduBurstGap'], value)
 
     @property
     def LspLifeTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -772,10 +901,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspLifeTime'])
     @LspLifeTime.setter
     def LspLifeTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspLifeTime'], value)
 
     @property
     def LspMaxSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -784,10 +915,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspMaxSize'])
     @LspMaxSize.setter
     def LspMaxSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspMaxSize'], value)
 
     @property
     def LspMgroupPduMinTransmissionInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -796,10 +929,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspMgroupPduMinTransmissionInterval'])
     @LspMgroupPduMinTransmissionInterval.setter
     def LspMgroupPduMinTransmissionInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspMgroupPduMinTransmissionInterval'], value)
 
     @property
     def LspRefreshRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -808,10 +943,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspRefreshRate'])
     @LspRefreshRate.setter
     def LspRefreshRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspRefreshRate'], value)
 
     @property
     def MaxAreaAddresses(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -820,10 +957,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxAreaAddresses'])
     @MaxAreaAddresses.setter
     def MaxAreaAddresses(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxAreaAddresses'], value)
 
     @property
     def MaxLspMgroupPdusPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -832,10 +971,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxLspMgroupPdusPerBurst'])
     @MaxLspMgroupPdusPerBurst.setter
     def MaxLspMgroupPdusPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxLspMgroupPdusPerBurst'], value)
 
     @property
     def NumberOfMtuProbes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -844,10 +985,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfMtuProbes'])
     @NumberOfMtuProbes.setter
     def NumberOfMtuProbes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfMtuProbes'], value)
 
     @property
     def NumberOfMultiDestinationTrees(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -856,10 +999,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfMultiDestinationTrees'])
     @NumberOfMultiDestinationTrees.setter
     def NumberOfMultiDestinationTrees(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfMultiDestinationTrees'], value)
 
     @property
     def OriginatingLspBufSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -868,10 +1013,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OriginatingLspBufSize'])
     @OriginatingLspBufSize.setter
     def OriginatingLspBufSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OriginatingLspBufSize'], value)
 
     @property
     def PsnpInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -880,10 +1027,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PsnpInterval'])
     @PsnpInterval.setter
     def PsnpInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PsnpInterval'], value)
 
     @property
     def RestartMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -892,10 +1041,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RestartMode'])
     @RestartMode.setter
     def RestartMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RestartMode'], value)
 
     @property
     def RestartTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -904,10 +1055,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RestartTime'])
     @RestartTime.setter
     def RestartTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RestartTime'], value)
 
     @property
     def RestartVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -916,10 +1069,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RestartVersion'])
     @RestartVersion.setter
     def RestartVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RestartVersion'], value)
 
     @property
     def StartFtagValue(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -928,10 +1083,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartFtagValue'])
     @StartFtagValue.setter
     def StartFtagValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartFtagValue'], value)
 
     @property
     def SwitchId(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -940,10 +1097,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchId'])
     @SwitchId.setter
     def SwitchId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchId'], value)
 
     @property
     def SwitchIdPriority(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -952,10 +1111,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchIdPriority'])
     @SwitchIdPriority.setter
     def SwitchIdPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchIdPriority'], value)
 
     @property
     def SystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -964,10 +1125,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SystemId'])
     @SystemId.setter
     def SystemId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SystemId'], value)
 
     @property
     def TeEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -976,10 +1139,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeEnable'])
     @TeEnable.setter
     def TeEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeEnable'], value)
 
     @property
     def TeRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -988,10 +1153,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeRouterId'])
     @TeRouterId.setter
     def TeRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeRouterId'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1000,9 +1167,11 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
+        # type: (List[str], str, List[str], str, int, str, int, int, str, List[str], str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int, int, int, str, int, str, int, int, int, str, bool, str, str) -> Router
         """Updates router resource on the server.
 
         Args
@@ -1073,6 +1242,7 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
+        # type: (List[str], str, List[str], str, int, str, int, int, str, List[str], str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int, int, int, str, int, str, int, int, int, str, bool, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
         Args
@@ -1157,6 +1327,7 @@ class Router(Base):
         self._delete()
 
     def find(self, AreaAddressList=None, AreaAuthType=None, AreaReceivedPasswordList=None, AreaTransmitPassword=None, BroadcastRootPriority=None, CapabilityRouterId=None, DeviceId=None, DevicePriority=None, DomainAuthType=None, DomainReceivedPasswordList=None, DomainTransmitPassword=None, EnableAttached=None, EnableAutoLoopback=None, EnableDiscardLearnedLsps=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableIgnoreMtPortCapability=None, EnableIgnoreRecvMd5=None, EnableMtIpv6=None, EnableMtuProbe=None, EnableMultiTopology=None, EnableOverloaded=None, EnablePartitionRepair=None, EnableTrillOam=None, EnableWideMetric=None, Enabled=None, FTagValue=None, FilterIpv4MulticastTlvs=None, FilterIpv6MulticastTlvs=None, FilterLearnedIpv4Prefixes=None, FilterLearnedIpv6Prefixes=None, FilterLearnedRbridges=None, FilterLearnedSpbRbridges=None, FilterLearnedTrillMacUnicast=None, FilterMacMulticastTlvs=None, HostName=None, InterLspMgroupPduBurstGap=None, LspLifeTime=None, LspMaxSize=None, LspMgroupPduMinTransmissionInterval=None, LspRefreshRate=None, MaxAreaAddresses=None, MaxLspMgroupPdusPerBurst=None, NumberOfMtuProbes=None, NumberOfMultiDestinationTrees=None, OriginatingLspBufSize=None, PsnpInterval=None, RestartMode=None, RestartTime=None, RestartVersion=None, StartFtagValue=None, SwitchId=None, SwitchIdPriority=None, SystemId=None, TeEnable=None, TeRouterId=None, TrafficGroupId=None):
+        # type: (List[str], str, List[str], str, int, str, int, int, str, List[str], str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int, int, int, str, int, str, int, int, int, str, bool, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
@@ -1252,28 +1423,44 @@ class Router(Base):
         """
         return self._read(href)
 
-    def RefreshLearnedInformation(self):
+    def RefreshLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInformation operation on the server.
 
         This option refreshes the learned information of ISIS router.
 
+        refreshLearnedInformation(async_operation=bool)bool
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: Boolean.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInformation', payload=payload, response_object=None)
 
-    def SendTrillOamPing(self):
+    def SendTrillOamPing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the sendTrillOamPing operation on the server.
 
         This option will send trill OAM ping.
 
+        sendTrillOamPing(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: Boolean.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendTrillOamPing', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PbbTeCcmLearnedInfo(Base):
@@ -58,12 +59,15 @@ class PbbTeCcmLearnedInfo(Base):
         'SrcMacAddress': 'srcMacAddress',
         'SrcMepId': 'srcMepId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PbbTeCcmLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PbbTeCcmLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def BVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +77,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def CciInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +87,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ErrCcmDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -91,6 +97,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ErrCcmDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +107,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def IfaceTlvDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +117,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +127,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def MdName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def MdNameFormat(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -136,6 +147,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def OutOfSequenceCcmCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,6 +157,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def PortTlvDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,6 +167,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RdiRxCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -163,6 +177,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RdiRxState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -172,6 +187,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RdiTxCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,6 +197,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RdiTxState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,6 +207,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ReceivedIfaceTlvDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -199,6 +217,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ReceivedPortTlvDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -208,6 +227,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ReceivedRdi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -217,6 +237,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RemoteMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,6 +247,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RemoteMepDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -235,6 +257,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RemoteMepId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -244,6 +267,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def RmepCcmDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -253,6 +277,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ShortMaName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -262,6 +287,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def ShortMaNameFormat(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -271,6 +297,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -280,6 +307,7 @@ class PbbTeCcmLearnedInfo(Base):
 
     @property
     def SrcMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -287,7 +315,21 @@ class PbbTeCcmLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SrcMepId'])
 
+    def add(self):
+        """Adds a new pbbTeCcmLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pbbTeCcmLearnedInfo resources using find and the newly added pbbTeCcmLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BVlan=None, CciInterval=None, ErrCcmDefect=None, ErrCcmDefectCount=None, IfaceTlvDefectCount=None, MdLevel=None, MdName=None, MdNameFormat=None, OutOfSequenceCcmCount=None, PortTlvDefectCount=None, RdiRxCount=None, RdiRxState=None, RdiTxCount=None, RdiTxState=None, ReceivedIfaceTlvDefect=None, ReceivedPortTlvDefect=None, ReceivedRdi=None, RemoteMacAddress=None, RemoteMepDefectCount=None, RemoteMepId=None, RmepCcmDefect=None, ShortMaName=None, ShortMaNameFormat=None, SrcMacAddress=None, SrcMepId=None):
+        # type: (str, str, bool, int, int, int, str, int, int, int, int, str, int, str, bool, bool, bool, str, int, str, bool, str, int, str, int) -> PbbTeCcmLearnedInfo
         """Finds and retrieves pbbTeCcmLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pbbTeCcmLearnedInfo resources from the server.

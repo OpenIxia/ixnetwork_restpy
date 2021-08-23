@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Stack(Base):
@@ -34,9 +35,11 @@ class Stack(Base):
     _SDM_ATT_MAP = {
         'DisplayName': 'displayName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Stack, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Stack, self).__init__(parent, list_op)
 
     @property
     def Field(self):
@@ -50,10 +53,14 @@ class Stack(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.field.field import Field
-        return Field(self)
+        if self._properties.get('Field', None) is not None:
+            return self._properties.get('Field')
+        else:
+            return Field(self)
 
     @property
     def DisplayName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,7 +68,21 @@ class Stack(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
+    def add(self):
+        """Adds a new stack resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved stack resources using find and the newly added stack resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DisplayName=None):
+        # type: (str) -> Stack
         """Finds and retrieves stack resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stack resources from the server.

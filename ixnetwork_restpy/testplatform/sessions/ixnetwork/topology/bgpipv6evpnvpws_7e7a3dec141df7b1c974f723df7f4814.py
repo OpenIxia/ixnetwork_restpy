@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpIPv6EvpnVpws(Base):
@@ -136,9 +137,12 @@ class BgpIPv6EvpnVpws(Base):
         'UseIpv4MappedIpv6Address': 'useIpv4MappedIpv6Address',
         'UseUpstreamDownstreamAssignedMplsLabel': 'useUpstreamDownstreamAssignedMplsLabel',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(BgpIPv6EvpnVpws, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpIPv6EvpnVpws, self).__init__(parent, list_op)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -152,7 +156,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpAsPathSegmentList')
+        else:
+            return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -166,7 +173,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is not None:
+            return self._properties.get('BgpClusterIdList')
+        else:
+            return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -180,7 +190,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is not None:
+            return self._properties.get('BgpCommunitiesList')
+        else:
+            return BgpCommunitiesList(self)
 
     @property
     def BgpExportRouteTargetList(self):
@@ -194,7 +207,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import BgpExportRouteTargetList
-        return BgpExportRouteTargetList(self)
+        if self._properties.get('BgpExportRouteTargetList', None) is not None:
+            return self._properties.get('BgpExportRouteTargetList')
+        else:
+            return BgpExportRouteTargetList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -208,7 +224,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpExtendedCommunitiesList')
+        else:
+            return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpImportRouteTargetList(self):
@@ -222,7 +241,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import BgpImportRouteTargetList
-        return BgpImportRouteTargetList(self)
+        if self._properties.get('BgpImportRouteTargetList', None) is not None:
+            return self._properties.get('BgpImportRouteTargetList')
+        else:
+            return BgpImportRouteTargetList(self)
 
     @property
     def BgpL3VNIExportRouteTargetList(self):
@@ -236,7 +258,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniexportroutetargetlist_0ceb637a2c3fee9e0d0bdf68e75d9054 import BgpL3VNIExportRouteTargetList
-        return BgpL3VNIExportRouteTargetList(self)
+        if self._properties.get('BgpL3VNIExportRouteTargetList', None) is not None:
+            return self._properties.get('BgpL3VNIExportRouteTargetList')
+        else:
+            return BgpL3VNIExportRouteTargetList(self)
 
     @property
     def BgpL3VNIImportRouteTargetList(self):
@@ -250,7 +275,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniimportroutetargetlist_f9fc41787790538b1714fae483245f7d import BgpL3VNIImportRouteTargetList
-        return BgpL3VNIImportRouteTargetList(self)
+        if self._properties.get('BgpL3VNIImportRouteTargetList', None) is not None:
+            return self._properties.get('BgpL3VNIImportRouteTargetList')
+        else:
+            return BgpL3VNIImportRouteTargetList(self)
 
     @property
     def BroadcastDomainV6Vpws(self):
@@ -264,7 +292,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.broadcastdomainv6vpws_59a832939f2a9320bf834055352368fd import BroadcastDomainV6Vpws
-        return BroadcastDomainV6Vpws(self)._select()
+        if self._properties.get('BroadcastDomainV6Vpws', None) is not None:
+            return self._properties.get('BroadcastDomainV6Vpws')
+        else:
+            return BroadcastDomainV6Vpws(self)._select()
 
     @property
     def Connector(self):
@@ -278,7 +309,10 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def Tag(self):
@@ -292,10 +326,14 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +344,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AdRouteLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +355,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AdvSrv6SidInIgp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +366,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AdvSrv6SidInIgpPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +377,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AdvertiseL3vniSeparately(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -346,6 +388,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AdvertiseSRv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -356,6 +399,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AdvertiseSRv6SIDPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -366,6 +410,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AggregatorAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -376,6 +421,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -386,6 +432,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def ArgumentLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -396,6 +443,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +454,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AutoConfigOriginatingRouterIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +465,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AutoConfigPMSITunnelId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +476,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def AutoConfigureRdIpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +487,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def BMacFirstLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +498,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def BMacSecondLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +509,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -464,10 +518,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -477,6 +533,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -486,6 +543,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableAggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -496,6 +554,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -506,6 +565,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -516,6 +576,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableBMacSecondLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -526,6 +587,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -536,6 +598,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -546,6 +609,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -556,6 +620,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableL3TargetOnlyForRouteType5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -566,6 +631,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableL3vniTargetList(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -576,6 +642,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableLocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -586,6 +653,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableMultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -596,6 +664,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -606,6 +675,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -616,6 +686,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EnableOriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -635,6 +706,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EsiType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -645,6 +717,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def EsiValue(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -654,6 +727,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def FunctionLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -664,6 +738,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def ImportRtListSameAsExportRtList(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -672,10 +747,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ImportRtListSameAsExportRtList'])
     @ImportRtListSameAsExportRtList.setter
     def ImportRtListSameAsExportRtList(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ImportRtListSameAsExportRtList'], value)
 
     @property
     def IncludePmsiTunnelAttribute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -686,6 +763,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -696,6 +774,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -706,6 +785,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def L3vniImportRtListSameAsL3vniExportRtList(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -714,10 +794,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L3vniImportRtListSameAsL3vniExportRtList'])
     @L3vniImportRtListSameAsL3vniExportRtList.setter
     def L3vniImportRtListSameAsL3vniExportRtList(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['L3vniImportRtListSameAsL3vniExportRtList'], value)
 
     @property
     def LocBlockLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -728,6 +810,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def LocNodeLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -738,6 +821,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -748,6 +832,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -758,6 +843,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def MulticastTunnelType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -768,6 +854,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -776,10 +863,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def MvEnableTransposition(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -790,6 +879,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def MvIncSrv6SidStructSsTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -800,6 +890,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -808,10 +899,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -820,10 +913,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
 
     @property
     def NoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -832,10 +927,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
     @NoOfClusters.setter
     def NoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
 
     @property
     def NoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -844,10 +941,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
 
     @property
     def NoOfExtendedCommunity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -856,10 +955,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
     def NumBroadcastDomainV6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -868,10 +969,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumBroadcastDomainV6'])
     @NumBroadcastDomainV6.setter
     def NumBroadcastDomainV6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumBroadcastDomainV6'], value)
 
     @property
     def NumRtInExportRouteTargetList(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -880,10 +983,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRtInExportRouteTargetList'])
     @NumRtInExportRouteTargetList.setter
     def NumRtInExportRouteTargetList(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRtInExportRouteTargetList'], value)
 
     @property
     def NumRtInImportRouteTargetList(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -892,10 +997,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRtInImportRouteTargetList'])
     @NumRtInImportRouteTargetList.setter
     def NumRtInImportRouteTargetList(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRtInImportRouteTargetList'], value)
 
     @property
     def NumRtInL3vniExportRouteTargetList(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -904,10 +1011,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRtInL3vniExportRouteTargetList'])
     @NumRtInL3vniExportRouteTargetList.setter
     def NumRtInL3vniExportRouteTargetList(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRtInL3vniExportRouteTargetList'], value)
 
     @property
     def NumRtInL3vniImportRouteTargetList(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -916,10 +1025,12 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRtInL3vniImportRouteTargetList'])
     @NumRtInL3vniImportRouteTargetList.setter
     def NumRtInL3vniImportRouteTargetList(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRtInL3vniImportRouteTargetList'], value)
 
     @property
     def Origin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -930,6 +1041,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def OriginatingRouterIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -940,6 +1052,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def OriginatingRouterIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -950,6 +1063,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def OriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -960,6 +1074,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def OverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -970,6 +1085,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def PmsiTunnelIDv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -980,6 +1096,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def PmsiTunnelIDv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -990,6 +1107,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def RdASNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1000,6 +1118,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def RdEvi(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1010,6 +1129,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def RdIpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1020,6 +1140,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def RdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1030,6 +1151,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def SendSRv6SIDOptionalInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1040,6 +1162,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def SendSRv6SIDOptionalInfoPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1050,6 +1173,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1059,6 +1183,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1069,6 +1194,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1079,6 +1205,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6EndpointBehavior(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1089,6 +1216,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6EndpointBehaviorPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1099,6 +1227,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SIDOptionalInformation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1109,6 +1238,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SIDOptionalInformationPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1119,6 +1249,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1129,6 +1260,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidFlagsPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1139,6 +1271,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidLoc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1149,6 +1282,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidLocLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1159,6 +1293,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidLocLenPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1169,6 +1304,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidLocMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1179,6 +1315,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidLocMetricPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1189,6 +1326,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidLocPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1199,6 +1337,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidReserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1209,6 +1348,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidReserved1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1219,6 +1359,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidReserved1PMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1229,6 +1370,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidReserved2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1239,6 +1381,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidReserved2PMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1249,6 +1392,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Srv6SidReservedPMSI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1259,6 +1403,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1267,6 +1412,7 @@ class BgpIPv6EvpnVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -1280,6 +1426,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1289,6 +1436,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def TranpositionLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1299,6 +1447,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def TranpositionOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1309,6 +1458,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def UpstreamDownstreamAssignedMplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1319,6 +1469,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def UseIpv4MappedIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1329,6 +1480,7 @@ class BgpIPv6EvpnVpws(Base):
 
     @property
     def UseUpstreamDownstreamAssignedMplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1338,6 +1490,7 @@ class BgpIPv6EvpnVpws(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseUpstreamDownstreamAssignedMplsLabel']))
 
     def update(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, L3vniImportRtListSameAsL3vniExportRtList=None, Multiplier=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumBroadcastDomainV6=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInL3vniExportRouteTargetList=None, NumRtInL3vniImportRouteTargetList=None, StackedLayers=None):
+        # type: (List[str], bool, bool, int, str, int, int, int, int, int, int, int, int, int, List[str]) -> BgpIPv6EvpnVpws
         """Updates bgpIPv6EvpnVpws resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1368,6 +1521,7 @@ class BgpIPv6EvpnVpws(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, ImportRtListSameAsExportRtList=None, L3vniImportRtListSameAsL3vniExportRtList=None, Multiplier=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumBroadcastDomainV6=None, NumRtInExportRouteTargetList=None, NumRtInImportRouteTargetList=None, NumRtInL3vniExportRouteTargetList=None, NumRtInL3vniImportRouteTargetList=None, StackedLayers=None):
+        # type: (List[str], bool, bool, int, str, int, int, int, int, int, int, int, int, int, List[str]) -> BgpIPv6EvpnVpws
         """Adds a new bgpIPv6EvpnVpws resource on the server and adds it to the container.
 
         Args
@@ -1468,6 +1622,134 @@ class BgpIPv6EvpnVpws(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AdvSrv6SidInIgp=None, AdvSrv6SidInIgpPMSI=None, AdvertiseL3vniSeparately=None, AdvertiseSRv6SID=None, AdvertiseSRv6SIDPMSI=None, AggregatorAs=None, AggregatorId=None, ArgumentLength=None, AsSetMode=None, AutoConfigOriginatingRouterIp=None, AutoConfigPMSITunnelId=None, AutoConfigureRdIpAddress=None, BMacFirstLabel=None, BMacSecondLabel=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableBMacSecondLabel=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableL3TargetOnlyForRouteType5=None, EnableL3vniTargetList=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EsiType=None, FunctionLength=None, IncludePmsiTunnelAttribute=None, Ipv4NextHop=None, Ipv6NextHop=None, LocBlockLength=None, LocNodeLength=None, LocalPreference=None, MultiExitDiscriminator=None, MulticastTunnelType=None, MvEnableTransposition=None, MvIncSrv6SidStructSsTlv=None, Origin=None, OriginatingRouterIpv4=None, OriginatingRouterIpv6=None, OriginatorId=None, OverridePeerAsSetMode=None, PmsiTunnelIDv4=None, PmsiTunnelIDv6=None, RdASNumber=None, RdEvi=None, RdIpAddress=None, RdType=None, SendSRv6SIDOptionalInfo=None, SendSRv6SIDOptionalInfoPMSI=None, SetNextHop=None, SetNextHopIpType=None, Srv6EndpointBehavior=None, Srv6EndpointBehaviorPMSI=None, Srv6SIDOptionalInformation=None, Srv6SIDOptionalInformationPMSI=None, Srv6SidFlags=None, Srv6SidFlagsPMSI=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocLenPMSI=None, Srv6SidLocMetric=None, Srv6SidLocMetricPMSI=None, Srv6SidLocPMSI=None, Srv6SidReserved=None, Srv6SidReserved1=None, Srv6SidReserved1PMSI=None, Srv6SidReserved2=None, Srv6SidReserved2PMSI=None, Srv6SidReservedPMSI=None, TranpositionLength=None, TranpositionOffset=None, UpstreamDownstreamAssignedMplsLabel=None, UseIpv4MappedIpv6Address=None, UseUpstreamDownstreamAssignedMplsLabel=None):
         """Base class infrastructure that gets a list of bgpIPv6EvpnVpws device ids encapsulated by this object.
 
@@ -1566,103 +1848,3 @@ class BgpIPv6EvpnVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

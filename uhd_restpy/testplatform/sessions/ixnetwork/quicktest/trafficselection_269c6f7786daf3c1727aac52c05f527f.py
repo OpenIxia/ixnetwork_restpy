@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrafficSelection(Base):
@@ -39,24 +40,32 @@ class TrafficSelection(Base):
         'ItemType': 'itemType',
         'TrafficItemType': 'trafficItemType',
     }
+    _SDM_ENUM_MAP = {
+        'includeMode': ['background', 'inTest'],
+        'itemType': ['flowGroup', 'trafficItem'],
+        'trafficItemType': ['ipv4', 'ipv6', 'mac'],
+    }
 
-    def __init__(self, parent):
-        super(TrafficSelection, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrafficSelection, self).__init__(parent, list_op)
 
     @property
     def Id__(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/9/ixnetwork/traffic/.../highLevelStream): 
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['Id__'])
     @Id__.setter
     def Id__(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
 
     @property
     def IncludeMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +74,12 @@ class TrafficSelection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeMode'])
     @IncludeMode.setter
     def IncludeMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeMode'], value)
 
     @property
     def IsGenerated(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +88,12 @@ class TrafficSelection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsGenerated'])
     @IsGenerated.setter
     def IsGenerated(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsGenerated'], value)
 
     @property
     def ItemType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +102,12 @@ class TrafficSelection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ItemType'])
     @ItemType.setter
     def ItemType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ItemType'], value)
 
     @property
     def TrafficItemType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,14 +116,16 @@ class TrafficSelection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficItemType'])
     @TrafficItemType.setter
     def TrafficItemType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficItemType'], value)
 
     def update(self, Id__=None, IncludeMode=None, IsGenerated=None, ItemType=None, TrafficItemType=None):
+        # type: (str, str, bool, str, str) -> TrafficSelection
         """Updates trafficSelection resource on the server.
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/9/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/9/ixnetwork/traffic/.../highLevelStream)): 
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): 
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): 
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -121,11 +138,12 @@ class TrafficSelection(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Id__=None, IncludeMode=None, IsGenerated=None, ItemType=None, TrafficItemType=None):
+        # type: (str, str, bool, str, str) -> TrafficSelection
         """Adds a new trafficSelection resource on the server and adds it to the container.
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/9/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/9/ixnetwork/traffic/.../highLevelStream)): 
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): 
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): 
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -152,6 +170,7 @@ class TrafficSelection(Base):
         self._delete()
 
     def find(self, Id__=None, IncludeMode=None, IsGenerated=None, ItemType=None, TrafficItemType=None):
+        # type: (str, str, bool, str, str) -> TrafficSelection
         """Finds and retrieves trafficSelection resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficSelection resources from the server.
@@ -160,7 +179,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/9/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/9/ixnetwork/traffic/.../highLevelStream)): 
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): 
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): 
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -194,32 +213,52 @@ class TrafficSelection(Base):
         """
         return self._read(href)
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)
 
-    def ApplyAsync(self):
+    def ApplyAsync(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyAsync operation on the server.
 
+        applyAsync(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsync', payload=payload, response_object=None)
 
-    def ApplyAsyncResult(self):
+    def ApplyAsyncResult(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the applyAsyncResult operation on the server.
+
+        applyAsyncResult(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: 
 
         Raises
         ------
@@ -227,44 +266,68 @@ class TrafficSelection(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
 
-    def ApplyITWizardConfiguration(self):
+    def ApplyITWizardConfiguration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyITWizardConfiguration operation on the server.
 
         Applies the specified Quick Test.
 
+        applyITWizardConfiguration(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
 
-    def GenerateReport(self):
+    def GenerateReport(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the generateReport operation on the server.
 
         Generate a PDF report for the last succesfull test run.
 
+        generateReport(async_operation=bool)string
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: This method is asynchronous and has no return value.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('generateReport', payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the run operation on the server.
 
         Starts the specified Quick Test and waits for its execution to finish.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run(InputParameters=string)list
-        -------------------------------
+        run(async_operation=bool)list
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        run(InputParameters=string, async_operation=bool)list
+        -----------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): This method is synchronous and returns the result of the test.
 
         Raises
@@ -278,15 +341,21 @@ class TrafficSelection(Base):
         return self._execute('run', payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the specified Quick Test.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start(InputParameters=string)
-        -----------------------------
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(InputParameters=string, async_operation=bool)
+        ---------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -298,28 +367,43 @@ class TrafficSelection(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the currently running Quick Test.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def WaitForTest(self):
+    def WaitForTest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the waitForTest operation on the server.
 
         Waits for the execution of the specified Quick Test to be completed.
 
+        waitForTest(async_operation=bool)list
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('waitForTest', payload=payload, response_object=None)

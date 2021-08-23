@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Flapping(Base):
@@ -38,12 +39,15 @@ class Flapping(Base):
         'RoutesToFlapTo': 'routesToFlapTo',
         'UpTime': 'upTime',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Flapping, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Flapping, self).__init__(parent, list_op)
 
     @property
     def DownTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class Flapping(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownTime'])
     @DownTime.setter
     def DownTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownTime'], value)
 
     @property
     def EnablePartialFlap(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class Flapping(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePartialFlap'])
     @EnablePartialFlap.setter
     def EnablePartialFlap(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePartialFlap'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class Flapping(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def RoutesToFlapFrom(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,10 +98,12 @@ class Flapping(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RoutesToFlapFrom'])
     @RoutesToFlapFrom.setter
     def RoutesToFlapFrom(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RoutesToFlapFrom'], value)
 
     @property
     def RoutesToFlapTo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,10 +112,12 @@ class Flapping(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RoutesToFlapTo'])
     @RoutesToFlapTo.setter
     def RoutesToFlapTo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RoutesToFlapTo'], value)
 
     @property
     def UpTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,9 +126,11 @@ class Flapping(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpTime'])
     @UpTime.setter
     def UpTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpTime'], value)
 
     def update(self, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
+        # type: (int, bool, bool, int, int, int) -> Flapping
         """Updates flapping resource on the server.
 
         Args

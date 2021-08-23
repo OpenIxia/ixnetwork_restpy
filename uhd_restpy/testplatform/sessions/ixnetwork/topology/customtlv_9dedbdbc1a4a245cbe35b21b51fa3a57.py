@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomTLV(Base):
@@ -45,12 +46,15 @@ class CustomTLV(Base):
         'Type': 'type',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomTLV, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomTLV, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class CustomTLV(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinCCM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinLBM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinLBR(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinLMM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinLMR(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +129,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinLTM(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +140,7 @@ class CustomTLV(Base):
 
     @property
     def IncludeTLVinLTR(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class CustomTLV(Base):
 
     @property
     def Length(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +162,7 @@ class CustomTLV(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,10 +171,12 @@ class CustomTLV(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Type(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class CustomTLV(Base):
 
     @property
     def Value(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class CustomTLV(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
 
     def update(self, Name=None):
+        # type: (str) -> CustomTLV
         """Updates customTLV resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

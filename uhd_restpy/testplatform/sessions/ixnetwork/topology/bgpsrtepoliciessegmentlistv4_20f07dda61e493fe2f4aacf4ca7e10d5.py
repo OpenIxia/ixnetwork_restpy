@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpSRTEPoliciesSegmentListV4(Base):
@@ -42,9 +43,11 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         'SrtepolicyName': 'srtepolicyName',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpSRTEPoliciesSegmentListV4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpSRTEPoliciesSegmentListV4, self).__init__(parent, list_op)
 
     @property
     def BgpSRTEPoliciesSegmentsCollectionV4(self):
@@ -58,10 +61,14 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv4_ead105bb7a5ed3e3f7f0b52d86938b24 import BgpSRTEPoliciesSegmentsCollectionV4
-        return BgpSRTEPoliciesSegmentsCollectionV4(self)._select()
+        if self._properties.get('BgpSRTEPoliciesSegmentsCollectionV4', None) is not None:
+            return self._properties.get('BgpSRTEPoliciesSegmentsCollectionV4')
+        else:
+            return BgpSRTEPoliciesSegmentsCollectionV4(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -72,6 +79,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,6 +89,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +99,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def EnWeight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +110,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +119,12 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfActiveSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -122,6 +135,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def NumberOfSegmentsV4(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +144,12 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSegmentsV4'])
     @NumberOfSegmentsV4.setter
     def NumberOfSegmentsV4(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfSegmentsV4'], value)
 
     @property
     def SegmentListNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +160,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def SrtepolicyName(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -153,6 +170,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +180,7 @@ class BgpSRTEPoliciesSegmentListV4(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Name=None, NumberOfSegmentsV4=None):
+        # type: (str, int) -> BgpSRTEPoliciesSegmentListV4
         """Updates bgpSRTEPoliciesSegmentListV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

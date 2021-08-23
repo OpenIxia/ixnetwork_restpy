@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Page(Base):
@@ -48,9 +49,12 @@ class Page(Base):
         'TotalPages': 'totalPages',
         'TotalRows': 'totalRows',
     }
+    _SDM_ENUM_MAP = {
+        'egressMode': ['conditional', 'paged'],
+    }
 
-    def __init__(self, parent):
-        super(Page, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Page, self).__init__(parent, list_op)
 
     @property
     def Egress(self):
@@ -64,7 +68,10 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
-        return Egress(self)
+        if self._properties.get('Egress', None) is not None:
+            return self._properties.get('Egress')
+        else:
+            return Egress(self)
 
     @property
     def EgressRxCondition(self):
@@ -78,10 +85,14 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
-        return EgressRxCondition(self)._select()
+        if self._properties.get('EgressRxCondition', None) is not None:
+            return self._properties.get('EgressRxCondition')
+        else:
+            return EgressRxCondition(self)._select()
 
     @property
     def AllowPaging(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -91,6 +102,7 @@ class Page(Base):
 
     @property
     def ColumnCaptions(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -100,6 +112,7 @@ class Page(Base):
 
     @property
     def ColumnCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +122,7 @@ class Page(Base):
 
     @property
     def CurrentPage(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,10 +131,12 @@ class Page(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
     @CurrentPage.setter
     def CurrentPage(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
 
     @property
     def EgressMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,10 +145,12 @@ class Page(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EgressMode'])
     @EgressMode.setter
     def EgressMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
 
     @property
     def EgressPageSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +159,12 @@ class Page(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EgressPageSize'])
     @EgressPageSize.setter
     def EgressPageSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EgressPageSize'], value)
 
     @property
     def IsBlocked(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -154,6 +174,7 @@ class Page(Base):
 
     @property
     def IsReady(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -163,6 +184,7 @@ class Page(Base):
 
     @property
     def IsReadyTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,10 +193,12 @@ class Page(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsReadyTimeout'])
     @IsReadyTimeout.setter
     def IsReadyTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsReadyTimeout'], value)
 
     @property
     def PageSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,6 +207,7 @@ class Page(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PageSize'])
     @PageSize.setter
     def PageSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PageSize'], value)
 
     @property
@@ -196,6 +221,7 @@ class Page(Base):
 
     @property
     def RowCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,6 +240,7 @@ class Page(Base):
 
     @property
     def Timestamp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -223,6 +250,7 @@ class Page(Base):
 
     @property
     def TotalPages(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -232,6 +260,7 @@ class Page(Base):
 
     @property
     def TotalRows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,6 +269,7 @@ class Page(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
 
     def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
+        # type: (int, str, int, int, int) -> Page
         """Updates page resource on the server.
 
         Args

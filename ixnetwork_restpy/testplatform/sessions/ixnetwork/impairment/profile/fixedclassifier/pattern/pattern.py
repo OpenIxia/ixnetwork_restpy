@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Pattern(Base):
@@ -41,12 +42,15 @@ class Pattern(Base):
         'Value': 'value',
         'Width': 'width',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Pattern, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Pattern, self).__init__(parent, list_op)
 
     @property
     def BitOffset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BitOffset'])
     @BitOffset.setter
     def BitOffset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BitOffset'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Offset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,10 +115,12 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,10 +129,12 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     @property
     def Width(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,9 +143,11 @@ class Pattern(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Width'])
     @Width.setter
     def Width(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Width'], value)
 
     def update(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+        # type: (int, bool, str, str, int, str, int) -> Pattern
         """Updates pattern resource on the server.
 
         Args
@@ -149,6 +167,7 @@ class Pattern(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+        # type: (int, bool, str, str, int, str, int) -> Pattern
         """Adds a new pattern resource on the server and adds it to the container.
 
         Args
@@ -182,6 +201,7 @@ class Pattern(Base):
         self._delete()
 
     def find(self, BitOffset=None, Enabled=None, Mask=None, Name=None, Offset=None, Value=None, Width=None):
+        # type: (int, bool, str, str, int, str, int) -> Pattern
         """Finds and retrieves pattern resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pattern resources from the server.

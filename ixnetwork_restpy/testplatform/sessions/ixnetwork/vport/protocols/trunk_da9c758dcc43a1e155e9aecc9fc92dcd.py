@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Trunk(Base):
@@ -128,9 +129,25 @@ class Trunk(Base):
         'TstTestType': 'tstTestType',
         'Ttl': 'ttl',
     }
+    _SDM_ENUM_MAP = {
+        'aisInterval': ['oneSec', 'oneMin'],
+        'aisMode': ['auto', 'start', 'stop'],
+        'cciInterval': ['3.33msec', '10msec', '100msec', '1sec', '10sec', '1min', '10min'],
+        'chassisIdSubType': ['chassisComponent', 'interfaceAlias', 'portComponent', 'macAddress', 'networkAddress', 'interfaceName', 'locallyAssigned'],
+        'dmMethod': ['twoWay', 'oneWay'],
+        'lckInterval': ['oneSec', 'oneMin'],
+        'lckMode': ['auto', 'start', 'stop'],
+        'lmMethod': ['singleEnded', 'dualEnded'],
+        'mdNameFormat': ['noDomainName', 'domainNameBasedString', 'macAddress2OctetInteger', 'characterString'],
+        'rdi': ['auto', 'on', 'off'],
+        'shortMaNameFormat': ['primaryVid', 'characterString', '2octetInteger', 'rfc2685VpnId'],
+        'tstMode': ['start', 'stop'],
+        'tstPatternType': ['nullSignalWithoutCrc32', 'nullSignalWithCrc32', 'prbs2311WithoutCrc32', 'prbs2311WithCrc32'],
+        'tstTestType': ['inService', 'outOfService'],
+    }
 
-    def __init__(self, parent):
-        super(Trunk, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Trunk, self).__init__(parent, list_op)
 
     @property
     def MacRanges(self):
@@ -144,10 +161,14 @@ class Trunk(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_73cee592904a08c0f6dad66b39c954fd import MacRanges
-        return MacRanges(self)
+        if self._properties.get('MacRanges', None) is not None:
+            return self._properties.get('MacRanges')
+        else:
+            return MacRanges(self)
 
     @property
     def AddCcmCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +177,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddCcmCustomTlvs'])
     @AddCcmCustomTlvs.setter
     def AddCcmCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddCcmCustomTlvs'], value)
 
     @property
     def AddDataTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +191,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddDataTlv'])
     @AddDataTlv.setter
     def AddDataTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddDataTlv'], value)
 
     @property
     def AddInterfaceStatusTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,10 +205,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddInterfaceStatusTlv'])
     @AddInterfaceStatusTlv.setter
     def AddInterfaceStatusTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddInterfaceStatusTlv'], value)
 
     @property
     def AddLbmCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -192,10 +219,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddLbmCustomTlvs'])
     @AddLbmCustomTlvs.setter
     def AddLbmCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddLbmCustomTlvs'], value)
 
     @property
     def AddLbrCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +233,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddLbrCustomTlvs'])
     @AddLbrCustomTlvs.setter
     def AddLbrCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddLbrCustomTlvs'], value)
 
     @property
     def AddLmmCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,10 +247,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddLmmCustomTlvs'])
     @AddLmmCustomTlvs.setter
     def AddLmmCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddLmmCustomTlvs'], value)
 
     @property
     def AddLmrCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -228,10 +261,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddLmrCustomTlvs'])
     @AddLmrCustomTlvs.setter
     def AddLmrCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddLmrCustomTlvs'], value)
 
     @property
     def AddLtmCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -240,10 +275,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddLtmCustomTlvs'])
     @AddLtmCustomTlvs.setter
     def AddLtmCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddLtmCustomTlvs'], value)
 
     @property
     def AddLtrCustomTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -252,10 +289,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddLtrCustomTlvs'])
     @AddLtrCustomTlvs.setter
     def AddLtrCustomTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddLtrCustomTlvs'], value)
 
     @property
     def AddOrganizationSpecificTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -264,10 +303,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddOrganizationSpecificTlv'])
     @AddOrganizationSpecificTlv.setter
     def AddOrganizationSpecificTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddOrganizationSpecificTlv'], value)
 
     @property
     def AddPortStatusTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -276,10 +317,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddPortStatusTlv'])
     @AddPortStatusTlv.setter
     def AddPortStatusTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddPortStatusTlv'], value)
 
     @property
     def AddSenderIdTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -288,10 +331,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddSenderIdTlv'])
     @AddSenderIdTlv.setter
     def AddSenderIdTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddSenderIdTlv'], value)
 
     @property
     def AisInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -300,10 +345,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AisInterval'])
     @AisInterval.setter
     def AisInterval(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AisInterval'], value)
 
     @property
     def AisMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +359,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AisMode'])
     @AisMode.setter
     def AisMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AisMode'], value)
 
     @property
     def AisPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -324,10 +373,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AisPriority'])
     @AisPriority.setter
     def AisPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AisPriority'], value)
 
     @property
     def AutoDmIteration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -336,10 +387,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoDmIteration'])
     @AutoDmIteration.setter
     def AutoDmIteration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoDmIteration'], value)
 
     @property
     def AutoDmTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -348,10 +401,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoDmTimeout'])
     @AutoDmTimeout.setter
     def AutoDmTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoDmTimeout'], value)
 
     @property
     def AutoDmTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -360,10 +415,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoDmTimer'])
     @AutoDmTimer.setter
     def AutoDmTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoDmTimer'], value)
 
     @property
     def AutoLbIteration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -372,10 +429,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLbIteration'])
     @AutoLbIteration.setter
     def AutoLbIteration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLbIteration'], value)
 
     @property
     def AutoLbTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -384,10 +443,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLbTimeout'])
     @AutoLbTimeout.setter
     def AutoLbTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLbTimeout'], value)
 
     @property
     def AutoLbTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -396,10 +457,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLbTimer'])
     @AutoLbTimer.setter
     def AutoLbTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLbTimer'], value)
 
     @property
     def AutoLmIteration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -408,10 +471,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLmIteration'])
     @AutoLmIteration.setter
     def AutoLmIteration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLmIteration'], value)
 
     @property
     def AutoLmTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -420,10 +485,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLmTimeout'])
     @AutoLmTimeout.setter
     def AutoLmTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLmTimeout'], value)
 
     @property
     def AutoLmTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -432,10 +499,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLmTimer'])
     @AutoLmTimer.setter
     def AutoLmTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLmTimer'], value)
 
     @property
     def AutoLtIteration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -444,10 +513,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLtIteration'])
     @AutoLtIteration.setter
     def AutoLtIteration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLtIteration'], value)
 
     @property
     def AutoLtTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -456,10 +527,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLtTimeout'])
     @AutoLtTimeout.setter
     def AutoLtTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLtTimeout'], value)
 
     @property
     def AutoLtTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -468,10 +541,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoLtTimer'])
     @AutoLtTimer.setter
     def AutoLtTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoLtTimer'], value)
 
     @property
     def BVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -480,10 +555,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanId'])
     @BVlanId.setter
     def BVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanId'], value)
 
     @property
     def BVlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -492,10 +569,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
     @BVlanPriority.setter
     def BVlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
 
     @property
     def BVlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -504,10 +583,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
     @BVlanTpId.setter
     def BVlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
 
     @property
     def CciInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -516,10 +597,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CciInterval'])
     @CciInterval.setter
     def CciInterval(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CciInterval'], value)
 
     @property
     def CcmLmmTxFcf(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -528,10 +611,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CcmLmmTxFcf'])
     @CcmLmmTxFcf.setter
     def CcmLmmTxFcf(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CcmLmmTxFcf'], value)
 
     @property
     def CcmLmmTxFcfStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -540,10 +625,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CcmLmmTxFcfStep'])
     @CcmLmmTxFcfStep.setter
     def CcmLmmTxFcfStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CcmLmmTxFcfStep'], value)
 
     @property
     def CcmPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -552,10 +639,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CcmPriority'])
     @CcmPriority.setter
     def CcmPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CcmPriority'], value)
 
     @property
     def CcmRxFcb(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -564,10 +653,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CcmRxFcb'])
     @CcmRxFcb.setter
     def CcmRxFcb(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CcmRxFcb'], value)
 
     @property
     def CcmRxFcbStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -576,10 +667,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CcmRxFcbStep'])
     @CcmRxFcbStep.setter
     def CcmRxFcbStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CcmRxFcbStep'], value)
 
     @property
     def ChassisId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -588,10 +681,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChassisId'])
     @ChassisId.setter
     def ChassisId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChassisId'], value)
 
     @property
     def ChassisIdLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -600,10 +695,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChassisIdLength'])
     @ChassisIdLength.setter
     def ChassisIdLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChassisIdLength'], value)
 
     @property
     def ChassisIdSubType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -612,10 +709,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChassisIdSubType'])
     @ChassisIdSubType.setter
     def ChassisIdSubType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChassisIdSubType'], value)
 
     @property
     def DataTlvLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -624,10 +723,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataTlvLength'])
     @DataTlvLength.setter
     def DataTlvLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataTlvLength'], value)
 
     @property
     def DataTlvValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -636,10 +737,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataTlvValue'])
     @DataTlvValue.setter
     def DataTlvValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataTlvValue'], value)
 
     @property
     def DmMethod(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -648,10 +751,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmMethod'])
     @DmMethod.setter
     def DmMethod(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmMethod'], value)
 
     @property
     def DmPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -660,10 +765,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmPriority'])
     @DmPriority.setter
     def DmPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmPriority'], value)
 
     @property
     def DmmPriority(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -672,10 +779,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmmPriority'])
     @DmmPriority.setter
     def DmmPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmmPriority'], value)
 
     @property
     def DstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -684,10 +793,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DstMacAddress'])
     @DstMacAddress.setter
     def DstMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DstMacAddress'], value)
 
     @property
     def EnableAisRx(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -696,10 +807,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAisRx'])
     @EnableAisRx.setter
     def EnableAisRx(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAisRx'], value)
 
     @property
     def EnableAutoDm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -708,10 +821,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoDm'])
     @EnableAutoDm.setter
     def EnableAutoDm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoDm'], value)
 
     @property
     def EnableAutoLb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -720,10 +835,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoLb'])
     @EnableAutoLb.setter
     def EnableAutoLb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoLb'], value)
 
     @property
     def EnableAutoLm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -732,10 +849,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoLm'])
     @EnableAutoLm.setter
     def EnableAutoLm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoLm'], value)
 
     @property
     def EnableAutoLt(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -744,10 +863,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoLt'])
     @EnableAutoLt.setter
     def EnableAutoLt(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoLt'], value)
 
     @property
     def EnableLckRx(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -756,10 +877,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLckRx'])
     @EnableLckRx.setter
     def EnableLckRx(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLckRx'], value)
 
     @property
     def EnableLmCounterUpdate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -768,10 +891,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLmCounterUpdate'])
     @EnableLmCounterUpdate.setter
     def EnableLmCounterUpdate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLmCounterUpdate'], value)
 
     @property
     def EnableReverseBvlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -780,10 +905,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableReverseBvlan'])
     @EnableReverseBvlan.setter
     def EnableReverseBvlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableReverseBvlan'], value)
 
     @property
     def EnableTstRx(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -792,10 +919,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableTstRx'])
     @EnableTstRx.setter
     def EnableTstRx(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableTstRx'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -804,10 +933,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LbmPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -816,10 +947,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LbmPriority'])
     @LbmPriority.setter
     def LbmPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LbmPriority'], value)
 
     @property
     def LckInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -828,10 +961,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LckInterval'])
     @LckInterval.setter
     def LckInterval(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LckInterval'], value)
 
     @property
     def LckMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -840,10 +975,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LckMode'])
     @LckMode.setter
     def LckMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LckMode'], value)
 
     @property
     def LckPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -852,10 +989,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LckPriority'])
     @LckPriority.setter
     def LckPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LckPriority'], value)
 
     @property
     def LckSupportAisGeneration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -864,10 +1003,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LckSupportAisGeneration'])
     @LckSupportAisGeneration.setter
     def LckSupportAisGeneration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LckSupportAisGeneration'], value)
 
     @property
     def LmMethod(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -876,10 +1017,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmMethod'])
     @LmMethod.setter
     def LmMethod(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmMethod'], value)
 
     @property
     def LmmPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -888,10 +1031,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmmPriority'])
     @LmmPriority.setter
     def LmmPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmmPriority'], value)
 
     @property
     def LmrPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -900,10 +1045,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmrPriority'])
     @LmrPriority.setter
     def LmrPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmrPriority'], value)
 
     @property
     def LmrRxFcf(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -912,10 +1059,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmrRxFcf'])
     @LmrRxFcf.setter
     def LmrRxFcf(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmrRxFcf'], value)
 
     @property
     def LmrRxFcfStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -924,10 +1073,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmrRxFcfStep'])
     @LmrRxFcfStep.setter
     def LmrRxFcfStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmrRxFcfStep'], value)
 
     @property
     def LtmPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -936,10 +1087,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LtmPriority'])
     @LtmPriority.setter
     def LtmPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LtmPriority'], value)
 
     @property
     def ManagementAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -948,10 +1101,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ManagementAddress'])
     @ManagementAddress.setter
     def ManagementAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ManagementAddress'], value)
 
     @property
     def ManagementAddressDomain(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -960,10 +1115,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomain'])
     @ManagementAddressDomain.setter
     def ManagementAddressDomain(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ManagementAddressDomain'], value)
 
     @property
     def ManagementAddressDomainLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -972,10 +1129,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ManagementAddressDomainLength'])
     @ManagementAddressDomainLength.setter
     def ManagementAddressDomainLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ManagementAddressDomainLength'], value)
 
     @property
     def ManagementAddressLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -984,10 +1143,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ManagementAddressLength'])
     @ManagementAddressLength.setter
     def ManagementAddressLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ManagementAddressLength'], value)
 
     @property
     def MdLevelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -996,10 +1157,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdLevelId'])
     @MdLevelId.setter
     def MdLevelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdLevelId'], value)
 
     @property
     def MdName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1008,10 +1171,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdName'])
     @MdName.setter
     def MdName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdName'], value)
 
     @property
     def MdNameFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1020,10 +1185,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MdNameFormat'])
     @MdNameFormat.setter
     def MdNameFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MdNameFormat'], value)
 
     @property
     def MepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1032,10 +1199,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MepId'])
     @MepId.setter
     def MepId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MepId'], value)
 
     @property
     def OrganizationSpecificTlvLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1044,10 +1213,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTlvLength'])
     @OrganizationSpecificTlvLength.setter
     def OrganizationSpecificTlvLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OrganizationSpecificTlvLength'], value)
 
     @property
     def OrganizationSpecificTlvValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1056,10 +1227,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OrganizationSpecificTlvValue'])
     @OrganizationSpecificTlvValue.setter
     def OrganizationSpecificTlvValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OrganizationSpecificTlvValue'], value)
 
     @property
     def OverrideVlanPriority(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1068,10 +1241,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideVlanPriority'])
     @OverrideVlanPriority.setter
     def OverrideVlanPriority(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideVlanPriority'], value)
 
     @property
     def Rdi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1080,10 +1255,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rdi'])
     @Rdi.setter
     def Rdi(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rdi'], value)
 
     @property
     def ReverseBvlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1092,10 +1269,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReverseBvlanId'])
     @ReverseBvlanId.setter
     def ReverseBvlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReverseBvlanId'], value)
 
     @property
     def ShortMaName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1104,10 +1283,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShortMaName'])
     @ShortMaName.setter
     def ShortMaName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShortMaName'], value)
 
     @property
     def ShortMaNameFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1116,10 +1297,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShortMaNameFormat'])
     @ShortMaNameFormat.setter
     def ShortMaNameFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShortMaNameFormat'], value)
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1128,10 +1311,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
     @SrcMacAddress.setter
     def SrcMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcMacAddress'], value)
 
     @property
     def TstIncrPacketLength(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1140,10 +1325,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstIncrPacketLength'])
     @TstIncrPacketLength.setter
     def TstIncrPacketLength(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstIncrPacketLength'], value)
 
     @property
     def TstIncrPacketLengthStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1152,10 +1339,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstIncrPacketLengthStep'])
     @TstIncrPacketLengthStep.setter
     def TstIncrPacketLengthStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstIncrPacketLengthStep'], value)
 
     @property
     def TstInitialPatternValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1164,10 +1353,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstInitialPatternValue'])
     @TstInitialPatternValue.setter
     def TstInitialPatternValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstInitialPatternValue'], value)
 
     @property
     def TstInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1176,10 +1367,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstInterval'])
     @TstInterval.setter
     def TstInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstInterval'], value)
 
     @property
     def TstMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1188,10 +1381,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstMode'])
     @TstMode.setter
     def TstMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstMode'], value)
 
     @property
     def TstOverwriteSequenceNumber(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1200,10 +1395,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstOverwriteSequenceNumber'])
     @TstOverwriteSequenceNumber.setter
     def TstOverwriteSequenceNumber(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstOverwriteSequenceNumber'], value)
 
     @property
     def TstPacketLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1212,10 +1409,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstPacketLength'])
     @TstPacketLength.setter
     def TstPacketLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstPacketLength'], value)
 
     @property
     def TstPatternType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1224,10 +1423,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstPatternType'])
     @TstPatternType.setter
     def TstPatternType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstPatternType'], value)
 
     @property
     def TstPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1236,10 +1437,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstPriority'])
     @TstPriority.setter
     def TstPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstPriority'], value)
 
     @property
     def TstSequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1248,10 +1451,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstSequenceNumber'])
     @TstSequenceNumber.setter
     def TstSequenceNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstSequenceNumber'], value)
 
     @property
     def TstTestType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1260,10 +1465,12 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TstTestType'])
     @TstTestType.setter
     def TstTestType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TstTestType'], value)
 
     @property
     def Ttl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1272,9 +1479,11 @@ class Trunk(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ttl'])
     @Ttl.setter
     def Ttl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ttl'], value)
 
     def update(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisInterval=None, AisMode=None, AisPriority=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, DstMacAddress=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableReverseBvlan=None, EnableTstRx=None, Enabled=None, LbmPriority=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevelId=None, MdName=None, MdNameFormat=None, MepId=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ReverseBvlanId=None, ShortMaName=None, ShortMaNameFormat=None, SrcMacAddress=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, Ttl=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, int, int, int, int, int, str, int, str, int, str, str, int, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, str, str, int, bool, str, int, int, int, int, int, str, str, int, int, int, str, str, int, int, str, bool, str, int, str, str, str, bool, int, int, int, str, bool, int, str, int, int, str, int) -> Trunk
         """Updates trunk resource on the server.
 
         Args
@@ -1381,6 +1590,7 @@ class Trunk(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisInterval=None, AisMode=None, AisPriority=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, DstMacAddress=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableReverseBvlan=None, EnableTstRx=None, Enabled=None, LbmPriority=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevelId=None, MdName=None, MdNameFormat=None, MepId=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ReverseBvlanId=None, ShortMaName=None, ShortMaNameFormat=None, SrcMacAddress=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, Ttl=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, int, int, int, int, int, str, int, str, int, str, str, int, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, str, str, int, bool, str, int, int, int, int, int, str, str, int, int, int, str, str, int, int, str, bool, str, int, str, str, str, bool, int, int, int, str, bool, int, str, int, int, str, int) -> Trunk
         """Adds a new trunk resource on the server and adds it to the container.
 
         Args
@@ -1501,6 +1711,7 @@ class Trunk(Base):
         self._delete()
 
     def find(self, AddCcmCustomTlvs=None, AddDataTlv=None, AddInterfaceStatusTlv=None, AddLbmCustomTlvs=None, AddLbrCustomTlvs=None, AddLmmCustomTlvs=None, AddLmrCustomTlvs=None, AddLtmCustomTlvs=None, AddLtrCustomTlvs=None, AddOrganizationSpecificTlv=None, AddPortStatusTlv=None, AddSenderIdTlv=None, AisInterval=None, AisMode=None, AisPriority=None, AutoDmIteration=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeout=None, AutoLbTimer=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeout=None, AutoLtTimer=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStep=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStep=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmMethod=None, DmPriority=None, DmmPriority=None, DstMacAddress=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableReverseBvlan=None, EnableTstRx=None, Enabled=None, LbmPriority=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LmMethod=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStep=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdLevelId=None, MdName=None, MdNameFormat=None, MepId=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, ReverseBvlanId=None, ShortMaName=None, ShortMaNameFormat=None, SrcMacAddress=None, TstIncrPacketLength=None, TstIncrPacketLengthStep=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, Ttl=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, int, int, int, int, int, str, int, str, int, str, str, int, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, str, str, int, bool, str, int, int, int, int, int, str, str, int, int, int, str, str, int, int, str, bool, str, int, str, str, str, bool, int, int, int, str, bool, int, str, int, int, str, int) -> Trunk
         """Finds and retrieves trunk resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trunk resources from the server.

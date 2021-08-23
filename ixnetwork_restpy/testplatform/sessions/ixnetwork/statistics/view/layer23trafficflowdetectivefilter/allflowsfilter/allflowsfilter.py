@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AllFlowsFilter(Base):
@@ -37,12 +38,16 @@ class AllFlowsFilter(Base):
         'SortByStatisticId': 'sortByStatisticId',
         'SortingCondition': 'sortingCondition',
     }
+    _SDM_ENUM_MAP = {
+        'sortingCondition': ['bestPerformers', 'worstPerformers'],
+    }
 
-    def __init__(self, parent):
-        super(AllFlowsFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AllFlowsFilter, self).__init__(parent, list_op)
 
     @property
     def NumberOfResults(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,10 +56,12 @@ class AllFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def SortByStatisticId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class AllFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortByStatisticId'])
     @SortByStatisticId.setter
     def SortByStatisticId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortByStatisticId'], value)
 
     @property
     def SortingCondition(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +84,11 @@ class AllFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortingCondition'])
     @SortingCondition.setter
     def SortingCondition(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingCondition'], value)
 
     def update(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+        # type: (int, str, str) -> AllFlowsFilter
         """Updates allFlowsFilter resource on the server.
 
         Args
@@ -93,6 +104,7 @@ class AllFlowsFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+        # type: (int, str, str) -> AllFlowsFilter
         """Adds a new allFlowsFilter resource on the server and adds it to the container.
 
         Args
@@ -122,6 +134,7 @@ class AllFlowsFilter(Base):
         self._delete()
 
     def find(self, NumberOfResults=None, SortByStatisticId=None, SortingCondition=None):
+        # type: (int, str, str) -> AllFlowsFilter
         """Finds and retrieves allFlowsFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve allFlowsFilter resources from the server.

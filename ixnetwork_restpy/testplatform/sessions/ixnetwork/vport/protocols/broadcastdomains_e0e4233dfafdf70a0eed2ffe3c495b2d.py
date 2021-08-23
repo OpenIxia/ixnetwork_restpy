@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BroadcastDomains(Base):
@@ -40,9 +41,12 @@ class BroadcastDomains(Base):
         'Enabled': 'enabled',
         'EthernetTagId': 'ethernetTagId',
     }
+    _SDM_ENUM_MAP = {
+        'bVlanTpId': ['0x8100', '0x9100', '0x9200', '0x88A8'],
+    }
 
-    def __init__(self, parent):
-        super(BroadcastDomains, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BroadcastDomains, self).__init__(parent, list_op)
 
     @property
     def CMacRange(self):
@@ -56,10 +60,14 @@ class BroadcastDomains(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrange_8ee0ca3976d10bdf7e1defed5469922a import CMacRange
-        return CMacRange(self)
+        if self._properties.get('CMacRange', None) is not None:
+            return self._properties.get('CMacRange')
+        else:
+            return CMacRange(self)
 
     @property
     def AdRouteLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +76,12 @@ class BroadcastDomains(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdRouteLabel'])
     @AdRouteLabel.setter
     def AdRouteLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdRouteLabel'], value)
 
     @property
     def BVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +90,12 @@ class BroadcastDomains(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanId'])
     @BVlanId.setter
     def BVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanId'], value)
 
     @property
     def BVlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -92,10 +104,12 @@ class BroadcastDomains(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
     @BVlanPriority.setter
     def BVlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
 
     @property
     def BVlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +118,12 @@ class BroadcastDomains(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
     @BVlanTpId.setter
     def BVlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,10 +132,12 @@ class BroadcastDomains(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EthernetTagId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,9 +146,11 @@ class BroadcastDomains(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetTagId'])
     @EthernetTagId.setter
     def EthernetTagId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetTagId'], value)
 
     def update(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+        # type: (int, int, int, str, bool, int) -> BroadcastDomains
         """Updates broadcastDomains resource on the server.
 
         Args
@@ -149,6 +169,7 @@ class BroadcastDomains(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+        # type: (int, int, int, str, bool, int) -> BroadcastDomains
         """Adds a new broadcastDomains resource on the server and adds it to the container.
 
         Args
@@ -181,6 +202,7 @@ class BroadcastDomains(Base):
         self._delete()
 
     def find(self, AdRouteLabel=None, BVlanId=None, BVlanPriority=None, BVlanTpId=None, Enabled=None, EthernetTagId=None):
+        # type: (int, int, int, str, bool, int) -> BroadcastDomains
         """Finds and retrieves broadcastDomains resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve broadcastDomains resources from the server.
@@ -224,28 +246,44 @@ class BroadcastDomains(Base):
         """
         return self._read(href)
 
-    def AdvertiseAliasing(self):
+    def AdvertiseAliasing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the advertiseAliasing operation on the server.
 
         NOT DEFINED
 
+        advertiseAliasing(async_operation=bool)string
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('advertiseAliasing', payload=payload, response_object=None)
 
-    def WithdrawAliasing(self):
+    def WithdrawAliasing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the withdrawAliasing operation on the server.
 
         NOT DEFINED
 
+        withdrawAliasing(async_operation=bool)string
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('withdrawAliasing', payload=payload, response_object=None)

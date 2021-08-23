@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BitError(Base):
@@ -36,12 +37,15 @@ class BitError(Base):
         'SkipEndOctets': 'skipEndOctets',
         'SkipStartOctets': 'skipStartOctets',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BitError, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BitError, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class BitError(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LogRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class BitError(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogRate'])
     @LogRate.setter
     def LogRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogRate'], value)
 
     @property
     def SkipEndOctets(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class BitError(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipEndOctets'])
     @SkipEndOctets.setter
     def SkipEndOctets(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipEndOctets'], value)
 
     @property
     def SkipStartOctets(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class BitError(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipStartOctets'])
     @SkipStartOctets.setter
     def SkipStartOctets(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipStartOctets'], value)
 
     def update(self, Enabled=None, LogRate=None, SkipEndOctets=None, SkipStartOctets=None):
+        # type: (bool, int, int, int) -> BitError
         """Updates bitError resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UnicastMacItem(Base):
@@ -34,12 +35,15 @@ class UnicastMacItem(Base):
     _SDM_ATT_MAP = {
         'UnicastSourceMacAddress': 'unicastSourceMacAddress',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(UnicastMacItem, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UnicastMacItem, self).__init__(parent, list_op)
 
     @property
     def UnicastSourceMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -47,7 +51,21 @@ class UnicastMacItem(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['UnicastSourceMacAddress'])
 
+    def add(self):
+        """Adds a new unicastMacItem resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved unicastMacItem resources using find and the newly added unicastMacItem resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, UnicastSourceMacAddress=None):
+        # type: (str) -> UnicastMacItem
         """Finds and retrieves unicastMacItem resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve unicastMacItem resources from the server.

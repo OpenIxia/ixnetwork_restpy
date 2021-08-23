@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ExternalLink(Base):
@@ -37,12 +38,15 @@ class ExternalLink(Base):
         'ToNetworkTopology': 'toNetworkTopology',
         'ToNodeIndex': 'toNodeIndex',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ExternalLink, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ExternalLink, self).__init__(parent, list_op)
 
     @property
     def FromNodeIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,22 +55,26 @@ class ExternalLink(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FromNodeIndex'])
     @FromNodeIndex.setter
     def FromNodeIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FromNodeIndex'], value)
 
     @property
     def ToNetworkTopology(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/topology/.../*): Network Topology this link is pointing to
+        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): Network Topology this link is pointing to
         """
         return self._get_attribute(self._SDM_ATT_MAP['ToNetworkTopology'])
     @ToNetworkTopology.setter
     def ToNetworkTopology(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ToNetworkTopology'], value)
 
     @property
     def ToNodeIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,15 +83,17 @@ class ExternalLink(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ToNodeIndex'])
     @ToNodeIndex.setter
     def ToNodeIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ToNodeIndex'], value)
 
     def update(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
+        # type: (int, str, int) -> ExternalLink
         """Updates externalLink resource on the server.
 
         Args
         ----
         - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-        - ToNetworkTopology (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
         - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
         Raises
@@ -93,12 +103,13 @@ class ExternalLink(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
+        # type: (int, str, int) -> ExternalLink
         """Adds a new externalLink resource on the server and adds it to the container.
 
         Args
         ----
         - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-        - ToNetworkTopology (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
         - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
         Returns
@@ -122,6 +133,7 @@ class ExternalLink(Base):
         self._delete()
 
     def find(self, FromNodeIndex=None, ToNetworkTopology=None, ToNodeIndex=None):
+        # type: (int, str, int) -> ExternalLink
         """Finds and retrieves externalLink resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve externalLink resources from the server.
@@ -131,7 +143,7 @@ class ExternalLink(Base):
         Args
         ----
         - FromNodeIndex (number): Index of the originating node as defined in fromNetworkTopology
-        - ToNetworkTopology (str(None | /api/v1/sessions/9/ixnetwork/topology/.../*)): Network Topology this link is pointing to
+        - ToNetworkTopology (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): Network Topology this link is pointing to
         - ToNodeIndex (number): Index of the target node as defined in toNetworkTopology
 
         Returns

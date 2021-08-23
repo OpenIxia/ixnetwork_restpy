@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Protocols(Base):
@@ -34,9 +35,11 @@ class Protocols(Base):
     _SDM_ATT_MAP = {
         'ProtocolMaxNodeCount': 'protocolMaxNodeCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Protocols, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Protocols, self).__init__(parent, list_op)
 
     @property
     def Arp(self):
@@ -50,7 +53,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.arp_067eba21ef07a3fc09f15f554aa27f62 import Arp
-        return Arp(self)
+        if self._properties.get('Arp', None) is not None:
+            return self._properties.get('Arp')
+        else:
+            return Arp(self)
 
     @property
     def Bfd(self):
@@ -64,7 +70,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bfd_13635869671ecd9754ea8412fc59454e import Bfd
-        return Bfd(self)._select()
+        if self._properties.get('Bfd', None) is not None:
+            return self._properties.get('Bfd')
+        else:
+            return Bfd(self)._select()
 
     @property
     def Bgp(self):
@@ -78,7 +87,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp_3e6d8e0b1b17db8a0c58ab51996aae2b import Bgp
-        return Bgp(self)._select()
+        if self._properties.get('Bgp', None) is not None:
+            return self._properties.get('Bgp')
+        else:
+            return Bgp(self)._select()
 
     @property
     def Cfm(self):
@@ -92,7 +104,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cfm_f86ba26f5f0b238d459dfdf495bb75c0 import Cfm
-        return Cfm(self)._select()
+        if self._properties.get('Cfm', None) is not None:
+            return self._properties.get('Cfm')
+        else:
+            return Cfm(self)._select()
 
     @property
     def Eigrp(self):
@@ -106,7 +121,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eigrp_87f33acf176dcbe78849cf8e8791c70d import Eigrp
-        return Eigrp(self)._select()
+        if self._properties.get('Eigrp', None) is not None:
+            return self._properties.get('Eigrp')
+        else:
+            return Eigrp(self)._select()
 
     @property
     def Elmi(self):
@@ -120,7 +138,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.elmi_701893b9b99429bda254793bfb384df2 import Elmi
-        return Elmi(self)._select()
+        if self._properties.get('Elmi', None) is not None:
+            return self._properties.get('Elmi')
+        else:
+            return Elmi(self)._select()
 
     @property
     def Igmp(self):
@@ -134,7 +155,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.igmp_5181803aa94412c9279b9f387c23a716 import Igmp
-        return Igmp(self)._select()
+        if self._properties.get('Igmp', None) is not None:
+            return self._properties.get('Igmp')
+        else:
+            return Igmp(self)._select()
 
     @property
     def Isis(self):
@@ -148,7 +172,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.isis_050bb4482a1df0a3d61c7b64496e330d import Isis
-        return Isis(self)._select()
+        if self._properties.get('Isis', None) is not None:
+            return self._properties.get('Isis')
+        else:
+            return Isis(self)._select()
 
     @property
     def Lacp(self):
@@ -162,7 +189,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lacp_2de629e1f1c006bff7fad33825e4d91b import Lacp
-        return Lacp(self)._select()
+        if self._properties.get('Lacp', None) is not None:
+            return self._properties.get('Lacp')
+        else:
+            return Lacp(self)._select()
 
     @property
     def Ldp(self):
@@ -176,7 +206,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ldp_da338dbe787e89d2068f6bd186367c37 import Ldp
-        return Ldp(self)._select()
+        if self._properties.get('Ldp', None) is not None:
+            return self._properties.get('Ldp')
+        else:
+            return Ldp(self)._select()
 
     @property
     def LinkOam(self):
@@ -190,7 +223,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkoam_efc27e762f17d4ddecbc0652ec4c7ac4 import LinkOam
-        return LinkOam(self)._select()
+        if self._properties.get('LinkOam', None) is not None:
+            return self._properties.get('LinkOam')
+        else:
+            return LinkOam(self)._select()
 
     @property
     def Lisp(self):
@@ -204,7 +240,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lisp_cfcf8310ab534e86e05d76bfc192cb8f import Lisp
-        return Lisp(self)._select()
+        if self._properties.get('Lisp', None) is not None:
+            return self._properties.get('Lisp')
+        else:
+            return Lisp(self)._select()
 
     @property
     def Mld(self):
@@ -218,7 +257,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mld_addc243f110a2e6cdaa60cfde19d5efe import Mld
-        return Mld(self)._select()
+        if self._properties.get('Mld', None) is not None:
+            return self._properties.get('Mld')
+        else:
+            return Mld(self)._select()
 
     @property
     def MplsOam(self):
@@ -232,7 +274,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsoam_e3ac69344e2bf92870f02216ee81dec3 import MplsOam
-        return MplsOam(self)._select()
+        if self._properties.get('MplsOam', None) is not None:
+            return self._properties.get('MplsOam')
+        else:
+            return MplsOam(self)._select()
 
     @property
     def MplsTp(self):
@@ -246,7 +291,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstp_8fb90eb694dc0efb0ff6a231453357c5 import MplsTp
-        return MplsTp(self)._select()
+        if self._properties.get('MplsTp', None) is not None:
+            return self._properties.get('MplsTp')
+        else:
+            return MplsTp(self)._select()
 
     @property
     def OpenFlow(self):
@@ -260,7 +308,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.openflow_81b0892fb793919c2b8ec714a09eb3dc import OpenFlow
-        return OpenFlow(self)._select()
+        if self._properties.get('OpenFlow', None) is not None:
+            return self._properties.get('OpenFlow')
+        else:
+            return OpenFlow(self)._select()
 
     @property
     def Ospf(self):
@@ -274,7 +325,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospf_e7cbc892bf16b0ebe7b056298a38b949 import Ospf
-        return Ospf(self)._select()
+        if self._properties.get('Ospf', None) is not None:
+            return self._properties.get('Ospf')
+        else:
+            return Ospf(self)._select()
 
     @property
     def OspfV3(self):
@@ -288,7 +342,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ospfv3_fd46b6ab89f8ad7a237ac12140f8a863 import OspfV3
-        return OspfV3(self)._select()
+        if self._properties.get('OspfV3', None) is not None:
+            return self._properties.get('OspfV3')
+        else:
+            return OspfV3(self)._select()
 
     @property
     def Pimsm(self):
@@ -302,7 +359,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pimsm_5b2c0eab6298f36b1362558022b2d248 import Pimsm
-        return Pimsm(self)._select()
+        if self._properties.get('Pimsm', None) is not None:
+            return self._properties.get('Pimsm')
+        else:
+            return Pimsm(self)._select()
 
     @property
     def Ping(self):
@@ -316,7 +376,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ping_95a393f5ad3a6b0c563501c39f382cae import Ping
-        return Ping(self)
+        if self._properties.get('Ping', None) is not None:
+            return self._properties.get('Ping')
+        else:
+            return Ping(self)
 
     @property
     def Rip(self):
@@ -330,7 +393,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rip_e819d24fd3ca51fc2aa4d2bb9ad9b9e2 import Rip
-        return Rip(self)._select()
+        if self._properties.get('Rip', None) is not None:
+            return self._properties.get('Rip')
+        else:
+            return Rip(self)._select()
 
     @property
     def Ripng(self):
@@ -344,7 +410,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ripng_ba15454897784b789bbbbfa92adc4ccd import Ripng
-        return Ripng(self)._select()
+        if self._properties.get('Ripng', None) is not None:
+            return self._properties.get('Ripng')
+        else:
+            return Ripng(self)._select()
 
     @property
     def Rsvp(self):
@@ -358,7 +427,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rsvp_1a88cb229a9aae7ce8ea61139e8fb910 import Rsvp
-        return Rsvp(self)._select()
+        if self._properties.get('Rsvp', None) is not None:
+            return self._properties.get('Rsvp')
+        else:
+            return Rsvp(self)._select()
 
     @property
     def Static(self):
@@ -372,7 +444,10 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_5795de030fada71c167436cb330786b5 import Static
-        return Static(self)._select()
+        if self._properties.get('Static', None) is not None:
+            return self._properties.get('Static')
+        else:
+            return Static(self)._select()
 
     @property
     def Stp(self):
@@ -386,10 +461,14 @@ class Protocols(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.stp_af850ad90f47656e0033090898ef0f0c import Stp
-        return Stp(self)._select()
+        if self._properties.get('Stp', None) is not None:
+            return self._properties.get('Stp')
+        else:
+            return Stp(self)._select()
 
     @property
     def ProtocolMaxNodeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -397,7 +476,21 @@ class Protocols(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolMaxNodeCount'])
 
+    def add(self):
+        """Adds a new protocols resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved protocols resources using find and the newly added protocols resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ProtocolMaxNodeCount=None):
+        # type: (int) -> Protocols
         """Finds and retrieves protocols resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve protocols resources from the server.

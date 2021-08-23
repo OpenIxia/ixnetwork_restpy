@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceUpdateSrv6EroSubObjectList(Base):
@@ -42,12 +43,15 @@ class PceUpdateSrv6EroSubObjectList(Base):
         'Srv6Identifier': 'srv6Identifier',
         'Srv6NaiType': 'srv6NaiType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceUpdateSrv6EroSubObjectList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceUpdateSrv6EroSubObjectList, self).__init__(parent, list_op)
 
     @property
     def ActiveThisEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def FBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -68,6 +73,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def Ipv6NodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def LocalIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def LooseHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def RemoteIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def Srv6FunctionCode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def Srv6Identifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,6 +139,7 @@ class PceUpdateSrv6EroSubObjectList(Base):
 
     @property
     def Srv6NaiType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +147,19 @@ class PceUpdateSrv6EroSubObjectList(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6NaiType']))
+
+    def add(self):
+        """Adds a new pceUpdateSrv6EroSubObjectList resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pceUpdateSrv6EroSubObjectList resources using find and the newly added pceUpdateSrv6EroSubObjectList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves pceUpdateSrv6EroSubObjectList resources from the server.

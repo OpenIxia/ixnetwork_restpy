@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SiteEidRange(Base):
@@ -41,12 +42,17 @@ class SiteEidRange(Base):
         'InstanceId': 'instanceId',
         'PrefixLength': 'prefixLength',
     }
+    _SDM_ENUM_MAP = {
+        'family': ['ipv4', 'ipv6'],
+        'includeOrExclude': ['include', 'exclude'],
+    }
 
-    def __init__(self, parent):
-        super(SiteEidRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SiteEidRange, self).__init__(parent, list_op)
 
     @property
     def Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,10 +61,12 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Address'])
     @Address.setter
     def Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Address'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +75,12 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,10 +89,12 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Family(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +103,12 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Family'])
     @Family.setter
     def Family(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Family'], value)
 
     @property
     def IncludeOrExclude(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +117,12 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeOrExclude'])
     @IncludeOrExclude.setter
     def IncludeOrExclude(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeOrExclude'], value)
 
     @property
     def InstanceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,10 +131,12 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstanceId'])
     @InstanceId.setter
     def InstanceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstanceId'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,9 +145,11 @@ class SiteEidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
     @PrefixLength.setter
     def PrefixLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
 
     def update(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
+        # type: (str, int, bool, str, str, int, int) -> SiteEidRange
         """Updates siteEidRange resource on the server.
 
         Args
@@ -149,6 +169,7 @@ class SiteEidRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
+        # type: (str, int, bool, str, str, int, int) -> SiteEidRange
         """Adds a new siteEidRange resource on the server and adds it to the container.
 
         Args
@@ -182,6 +203,7 @@ class SiteEidRange(Base):
         self._delete()
 
     def find(self, Address=None, Count=None, Enabled=None, Family=None, IncludeOrExclude=None, InstanceId=None, PrefixLength=None):
+        # type: (str, int, bool, str, str, int, int) -> SiteEidRange
         """Finds and retrieves siteEidRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve siteEidRange resources from the server.

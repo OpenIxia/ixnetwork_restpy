@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedLsa(Base):
@@ -41,12 +42,15 @@ class LearnedLsa(Base):
         'SequenceNo': 'sequenceNo',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedLsa, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedLsa, self).__init__(parent, list_op)
 
     @property
     def AdvRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class LearnedLsa(Base):
 
     @property
     def Age(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class LearnedLsa(Base):
 
     @property
     def LinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class LearnedLsa(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class LearnedLsa(Base):
 
     @property
     def PrefixV4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +100,7 @@ class LearnedLsa(Base):
 
     @property
     def PrefixV6Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class LearnedLsa(Base):
 
     @property
     def SequenceNo(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class LearnedLsa(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,7 +128,21 @@ class LearnedLsa(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new learnedLsa resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedLsa resources using find and the newly added learnedLsa resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AdvRouterId=None, Age=None, LinkStateId=None, PrefixLength=None, PrefixV4Address=None, PrefixV6Address=None, SequenceNo=None, Type=None):
+        # type: (str, int, str, int, str, str, str, str) -> LearnedLsa
         """Finds and retrieves learnedLsa resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedLsa resources from the server.

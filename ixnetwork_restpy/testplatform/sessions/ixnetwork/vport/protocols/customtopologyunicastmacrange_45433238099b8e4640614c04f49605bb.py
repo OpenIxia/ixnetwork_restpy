@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomTopologyUnicastMacRange(Base):
@@ -40,12 +41,15 @@ class CustomTopologyUnicastMacRange(Base):
         'StartMac': 'startMac',
         'StartVlanId': 'startVlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomTopologyUnicastMacRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomTopologyUnicastMacRange, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class CustomTopologyUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class CustomTopologyUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InterNodeMacIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class CustomTopologyUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterNodeMacIncrement'])
     @InterNodeMacIncrement.setter
     def InterNodeMacIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterNodeMacIncrement'], value)
 
     @property
     def MacIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class CustomTopologyUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacIncrement'])
     @MacIncrement.setter
     def MacIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacIncrement'], value)
 
     @property
     def StartMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class CustomTopologyUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartMac'])
     @StartMac.setter
     def StartMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartMac'], value)
 
     @property
     def StartVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,9 +128,11 @@ class CustomTopologyUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartVlanId'])
     @StartVlanId.setter
     def StartVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartVlanId'], value)
 
     def update(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+        # type: (int, bool, str, str, str, int) -> CustomTopologyUnicastMacRange
         """Updates customTopologyUnicastMacRange resource on the server.
 
         Args
@@ -135,6 +151,7 @@ class CustomTopologyUnicastMacRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+        # type: (int, bool, str, str, str, int) -> CustomTopologyUnicastMacRange
         """Adds a new customTopologyUnicastMacRange resource on the server and adds it to the container.
 
         Args
@@ -167,6 +184,7 @@ class CustomTopologyUnicastMacRange(Base):
         self._delete()
 
     def find(self, Count=None, Enabled=None, InterNodeMacIncrement=None, MacIncrement=None, StartMac=None, StartVlanId=None):
+        # type: (int, bool, str, str, str, int) -> CustomTopologyUnicastMacRange
         """Finds and retrieves customTopologyUnicastMacRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyUnicastMacRange resources from the server.

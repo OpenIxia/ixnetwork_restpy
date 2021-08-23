@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PcepMetricSubObjectsList(Base):
@@ -40,12 +41,15 @@ class PcepMetricSubObjectsList(Base):
         'MetricValue': 'metricValue',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PcepMetricSubObjectsList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PcepMetricSubObjectsList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def MetricType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -94,6 +102,7 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def MetricValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -104,6 +113,7 @@ class PcepMetricSubObjectsList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,9 +122,11 @@ class PcepMetricSubObjectsList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> PcepMetricSubObjectsList
         """Updates pcepMetricSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -130,7 +142,26 @@ class PcepMetricSubObjectsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> PcepMetricSubObjectsList
+        """Adds a new pcepMetricSubObjectsList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pcepMetricSubObjectsList resources using find and the newly added pcepMetricSubObjectsList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> PcepMetricSubObjectsList
         """Finds and retrieves pcepMetricSubObjectsList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcepMetricSubObjectsList resources from the server.

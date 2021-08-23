@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RadiusGlobals(Base):
@@ -35,9 +36,11 @@ class RadiusGlobals(Base):
     _SDM_ATT_MAP = {
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RadiusGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RadiusGlobals, self).__init__(parent, list_op)
 
     @property
     def DhcpOptionSet(self):
@@ -51,10 +54,14 @@ class RadiusGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.radiusglobals.dhcpoptionset.dhcpoptionset import DhcpOptionSet
-        return DhcpOptionSet(self)
+        if self._properties.get('DhcpOptionSet', None) is not None:
+            return self._properties.get('DhcpOptionSet')
+        else:
+            return DhcpOptionSet(self)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class RadiusGlobals(Base):
         self._delete()
 
     def find(self, ObjectId=None):
+        # type: (str) -> RadiusGlobals
         """Finds and retrieves radiusGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve radiusGlobals resources from the server.

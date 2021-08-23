@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class State(Base):
@@ -39,12 +40,15 @@ class State(Base):
         'StpLearn': 'stpLearn',
         'StpListen': 'stpListen',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(State, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(State, self).__init__(parent, list_op)
 
     @property
     def Blocked(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Blocked'])
     @Blocked.setter
     def Blocked(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Blocked'], value)
 
     @property
     def LinkDown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkDown'])
     @LinkDown.setter
     def LinkDown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkDown'], value)
 
     @property
     def LiveForFastFailoverGroup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LiveForFastFailoverGroup'])
     @LiveForFastFailoverGroup.setter
     def LiveForFastFailoverGroup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LiveForFastFailoverGroup'], value)
 
     @property
     def StpBlock(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StpBlock'])
     @StpBlock.setter
     def StpBlock(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StpBlock'], value)
 
     @property
     def StpForward(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StpForward'])
     @StpForward.setter
     def StpForward(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StpForward'], value)
 
     @property
     def StpLearn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StpLearn'])
     @StpLearn.setter
     def StpLearn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StpLearn'], value)
 
     @property
     def StpListen(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,9 +141,11 @@ class State(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StpListen'])
     @StpListen.setter
     def StpListen(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StpListen'], value)
 
     def update(self, Blocked=None, LinkDown=None, LiveForFastFailoverGroup=None, StpBlock=None, StpForward=None, StpLearn=None, StpListen=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool) -> State
         """Updates state resource on the server.
 
         Args

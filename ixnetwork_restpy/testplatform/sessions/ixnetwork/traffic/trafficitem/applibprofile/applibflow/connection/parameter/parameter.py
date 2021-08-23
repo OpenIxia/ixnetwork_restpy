@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Parameter(Base):
@@ -36,9 +37,12 @@ class Parameter(Base):
         'Option': 'option',
         'SupportedOptions': 'supportedOptions',
     }
+    _SDM_ENUM_MAP = {
+        'option': ['choice', 'range', 'value'],
+    }
 
-    def __init__(self, parent):
-        super(Parameter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Parameter, self).__init__(parent, list_op)
 
     @property
     def Bool(self):
@@ -52,7 +56,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.bool.bool import Bool
-        return Bool(self)
+        if self._properties.get('Bool', None) is not None:
+            return self._properties.get('Bool')
+        else:
+            return Bool(self)
 
     @property
     def Choice(self):
@@ -66,7 +73,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.choice.choice import Choice
-        return Choice(self)
+        if self._properties.get('Choice', None) is not None:
+            return self._properties.get('Choice')
+        else:
+            return Choice(self)
 
     @property
     def Hex(self):
@@ -80,7 +90,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.hex.hex import Hex
-        return Hex(self)
+        if self._properties.get('Hex', None) is not None:
+            return self._properties.get('Hex')
+        else:
+            return Hex(self)
 
     @property
     def Number(self):
@@ -94,7 +107,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.number.number import Number
-        return Number(self)
+        if self._properties.get('Number', None) is not None:
+            return self._properties.get('Number')
+        else:
+            return Number(self)
 
     @property
     def Range(self):
@@ -108,7 +124,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.range.range import Range
-        return Range(self)
+        if self._properties.get('Range', None) is not None:
+            return self._properties.get('Range')
+        else:
+            return Range(self)
 
     @property
     def String(self):
@@ -122,10 +141,14 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.parameter.string.string import String
-        return String(self)
+        if self._properties.get('String', None) is not None:
+            return self._properties.get('String')
+        else:
+            return String(self)
 
     @property
     def DisplayValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,6 +158,7 @@ class Parameter(Base):
 
     @property
     def Option(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,10 +167,12 @@ class Parameter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Option'])
     @Option.setter
     def Option(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Option'], value)
 
     @property
     def SupportedOptions(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -155,6 +181,7 @@ class Parameter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportedOptions'])
 
     def update(self, Option=None):
+        # type: (str) -> Parameter
         """Updates parameter resource on the server.
 
         Args
@@ -167,7 +194,26 @@ class Parameter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Option=None):
+        # type: (str) -> Parameter
+        """Adds a new parameter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved parameter resources using find and the newly added parameter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DisplayValue=None, Option=None, SupportedOptions=None):
+        # type: (str, str, List[str]) -> Parameter
         """Finds and retrieves parameter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve parameter resources from the server.

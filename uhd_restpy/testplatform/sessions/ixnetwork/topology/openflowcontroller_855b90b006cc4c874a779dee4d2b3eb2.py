@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OpenFlowController(Base):
@@ -82,9 +83,12 @@ class OpenFlowController(Base):
         'Version': 'version',
         'VersionSupported': 'versionSupported',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(OpenFlowController, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OpenFlowController, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -98,7 +102,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def LearnedInfoUpdate(self):
@@ -112,7 +119,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        return LearnedInfoUpdate(self)
+        if self._properties.get('LearnedInfoUpdate', None) is not None:
+            return self._properties.get('LearnedInfoUpdate')
+        else:
+            return LearnedInfoUpdate(self)
 
     @property
     def OpenFlowChannel(self):
@@ -126,10 +136,14 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.openflowchannel_97012d0be69c2c7c1b2ca179dbbe39ac import OpenFlowChannel
-        return OpenFlowChannel(self)
+        if self._properties.get('OpenFlowChannel', None) is not None:
+            return self._properties.get('OpenFlowChannel')
+        else:
+            return OpenFlowChannel(self)
 
     @property
     def AcceptUnconfiguredChannel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +154,7 @@ class OpenFlowController(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +165,7 @@ class OpenFlowController(Base):
 
     @property
     def AuxConnTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +176,7 @@ class OpenFlowController(Base):
 
     @property
     def AuxNonHelloStartupOption(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +187,7 @@ class OpenFlowController(Base):
 
     @property
     def BadVersionErrorAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,18 +198,21 @@ class OpenFlowController(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ControllerLocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -201,6 +222,7 @@ class OpenFlowController(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,6 +232,7 @@ class OpenFlowController(Base):
 
     @property
     def DelFlowsAtStartup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -220,6 +243,7 @@ class OpenFlowController(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -229,6 +253,7 @@ class OpenFlowController(Base):
 
     @property
     def DirectoryName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +264,7 @@ class OpenFlowController(Base):
 
     @property
     def EchoInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +275,7 @@ class OpenFlowController(Base):
 
     @property
     def EchoTimeOut(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -262,12 +289,13 @@ class OpenFlowController(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def FeatRequestTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -278,6 +306,7 @@ class OpenFlowController(Base):
 
     @property
     def FeatureRquestTimeoutAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -288,6 +317,7 @@ class OpenFlowController(Base):
 
     @property
     def FileCaCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -298,6 +328,7 @@ class OpenFlowController(Base):
 
     @property
     def FileCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +339,7 @@ class OpenFlowController(Base):
 
     @property
     def FilePrivKey(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +350,7 @@ class OpenFlowController(Base):
 
     @property
     def InstallFlowForLLDP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -328,6 +361,7 @@ class OpenFlowController(Base):
 
     @property
     def InstallLLDPFlow(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +372,7 @@ class OpenFlowController(Base):
 
     @property
     def LLDPDestinactionMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -348,6 +383,7 @@ class OpenFlowController(Base):
 
     @property
     def LldpDstMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -358,6 +394,7 @@ class OpenFlowController(Base):
 
     @property
     def ModeOfConnection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -368,6 +405,7 @@ class OpenFlowController(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -376,10 +414,12 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -388,10 +428,12 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfChannels(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -400,10 +442,12 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfChannels'])
     @NumberOfChannels.setter
     def NumberOfChannels(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfChannels'], value)
 
     @property
     def PeriodicEcho(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -414,6 +458,7 @@ class OpenFlowController(Base):
 
     @property
     def PeriodicLLDP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -424,6 +469,7 @@ class OpenFlowController(Base):
 
     @property
     def PeriodicLLDPInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -434,6 +480,7 @@ class OpenFlowController(Base):
 
     @property
     def ResponseTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -444,6 +491,7 @@ class OpenFlowController(Base):
 
     @property
     def SendPortFeatureAtStartup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -454,6 +502,7 @@ class OpenFlowController(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -463,6 +512,7 @@ class OpenFlowController(Base):
 
     @property
     def SetAsyncConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -471,10 +521,12 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetAsyncConfig'])
     @SetAsyncConfig.setter
     def SetAsyncConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetAsyncConfig'], value)
 
     @property
     def SetSwitchConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -483,22 +535,26 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetSwitchConfig'])
     @SetSwitchConfig.setter
     def SetSwitchConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetSwitchConfig'], value)
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
     def StartupEmptyTableFeatureRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -509,6 +565,7 @@ class OpenFlowController(Base):
 
     @property
     def StartupFeatureRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -528,6 +585,7 @@ class OpenFlowController(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -537,6 +595,7 @@ class OpenFlowController(Base):
 
     @property
     def TcpPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -547,6 +606,7 @@ class OpenFlowController(Base):
 
     @property
     def TimeoutOption(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -557,6 +617,7 @@ class OpenFlowController(Base):
 
     @property
     def TimeoutOptionValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -567,6 +628,7 @@ class OpenFlowController(Base):
 
     @property
     def TlsVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -577,6 +639,7 @@ class OpenFlowController(Base):
 
     @property
     def TriggerLldp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -587,6 +650,7 @@ class OpenFlowController(Base):
 
     @property
     def TypeOfConnection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -597,6 +661,7 @@ class OpenFlowController(Base):
 
     @property
     def Version(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -606,6 +671,7 @@ class OpenFlowController(Base):
 
     @property
     def VersionSupported(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -615,6 +681,7 @@ class OpenFlowController(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionSupported']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfChannels=None, SetAsyncConfig=None, SetSwitchConfig=None, StackedLayers=None):
+        # type: (List[str], int, str, int, bool, bool, List[str]) -> OpenFlowController
         """Updates openFlowController resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -622,13 +689,13 @@ class OpenFlowController(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfChannels (number): Total number of OpenFlow channels to be added for this protocol interface.
         - SetAsyncConfig (bool): Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
         - SetSwitchConfig (bool): Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -637,17 +704,18 @@ class OpenFlowController(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfChannels=None, SetAsyncConfig=None, SetSwitchConfig=None, StackedLayers=None):
+        # type: (List[str], int, str, int, bool, bool, List[str]) -> OpenFlowController
         """Adds a new openFlowController resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfChannels (number): Total number of OpenFlow channels to be added for this protocol interface.
         - SetAsyncConfig (bool): Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
         - SetSwitchConfig (bool): Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -678,18 +746,18 @@ class OpenFlowController(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - ControllerLocalIp (list(str)): The local IP address of the interface. This field is auto-populated and cannot be changed.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfChannels (number): Total number of OpenFlow channels to be added for this protocol interface.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - SetAsyncConfig (bool): Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
         - SetSwitchConfig (bool): Un-checked state means getting the async config, Checked means setting asynchronous config with available parameters
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - Version (number): Implementation Version
@@ -721,6 +789,362 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetOFChannelLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getOFChannelLearnedInfo operation on the server.
+
+        Get OF Channel Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getOFChannelLearnedInfo(async_operation=bool)
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getOFChannelLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getOFChannelLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getOFChannelLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------
+        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getOFChannelLearnedInfo', payload=payload, response_object=None)
+
+    def GetOFTopologyLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getOFTopologyLearnedInfo operation on the server.
+
+        Get OF Topology Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getOFTopologyLearnedInfo(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getOFTopologyLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getOFTopologyLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getOFTopologyLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------
+        - Arg2 (list(number)): List of OF session into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getOFTopologyLearnedInfo', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendLLDPPacketOut(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendLLDPPacketOut operation on the server.
+
+        Send LLDP Packet Out
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendLLDPPacketOut(LldpDestination=string, EnableLldpFlowAdd=bool, LldpTimeoutVal=number, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------
+        - LldpDestination (str): This parameter requires a lldpDestination of type kString
+        - EnableLldpFlowAdd (bool): This parameter requires a enableLldpFlowAdd of type kBool
+        - LldpTimeoutVal (number): This parameter requires a lldpTimeoutVal of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendLLDPPacketOut(LldpDestination=string, EnableLldpFlowAdd=bool, LldpTimeoutVal=number, SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------------------------------
+        - LldpDestination (str): This parameter requires a lldpDestination of type kString
+        - EnableLldpFlowAdd (bool): This parameter requires a enableLldpFlowAdd of type kBool
+        - LldpTimeoutVal (number): This parameter requires a lldpTimeoutVal of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendLLDPPacketOut(SessionIndices=string, LldpDestination=string, EnableLldpFlowAdd=bool, LldpTimeoutVal=number, async_operation=bool)
+        -------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a lldpDestination of type kString
+        - LldpDestination (str): This parameter requires a enableLldpFlowAdd of type kBool
+        - EnableLldpFlowAdd (bool): This parameter requires a lldpTimeoutVal of type kInteger
+        - LldpTimeoutVal (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendLLDPPacketOut(Arg2=list, Arg3=string, Arg4=bool, Arg5=number, async_operation=bool)list
+        -------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str): LLDP Destination MAC
+        - Arg4 (bool): Enable LLDP Flow Add in Switch
+        - Arg5 (number): LLDP Timeout Value
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendLLDPPacketOut', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def StartController(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startController operation on the server.
+
+        Start OpenFlow Controller
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startController(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startController(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startController(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startController', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopController(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopController operation on the server.
+
+        Stop OpenFlow Controller
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopController(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopController(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopController(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopController', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AcceptUnconfiguredChannel=None, Active=None, AuxConnTimeout=None, AuxNonHelloStartupOption=None, BadVersionErrorAction=None, DelFlowsAtStartup=None, DirectoryName=None, EchoInterval=None, EchoTimeOut=None, FeatRequestTimeout=None, FeatureRquestTimeoutAction=None, FileCaCertificate=None, FileCertificate=None, FilePrivKey=None, InstallFlowForLLDP=None, InstallLLDPFlow=None, LLDPDestinactionMac=None, LldpDstMacAddress=None, ModeOfConnection=None, PeriodicEcho=None, PeriodicLLDP=None, PeriodicLLDPInterval=None, ResponseTimeout=None, SendPortFeatureAtStartup=None, StartupEmptyTableFeatureRequest=None, StartupFeatureRequest=None, TcpPort=None, TimeoutOption=None, TimeoutOptionValue=None, TlsVersion=None, TriggerLldp=None, TypeOfConnection=None, VersionSupported=None):
         """Base class infrastructure that gets a list of openFlowController device ids encapsulated by this object.
@@ -773,288 +1197,3 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearAllLearnedInfo(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearAllLearnedInfo(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        clearAllLearnedInfo(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetOFChannelLearnedInfo(self, *args, **kwargs):
-        """Executes the getOFChannelLearnedInfo operation on the server.
-
-        Get OF Channel Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getOFChannelLearnedInfo(SessionIndices=list)
-        --------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getOFChannelLearnedInfo(SessionIndices=string)
-        ----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getOFChannelLearnedInfo(Arg2=list)list
-        --------------------------------------
-        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFChannelLearnedInfo', payload=payload, response_object=None)
-
-    def GetOFTopologyLearnedInfo(self, *args, **kwargs):
-        """Executes the getOFTopologyLearnedInfo operation on the server.
-
-        Get OF Topology Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getOFTopologyLearnedInfo(SessionIndices=list)
-        ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getOFTopologyLearnedInfo(SessionIndices=string)
-        -----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getOFTopologyLearnedInfo(Arg2=list)list
-        ---------------------------------------
-        - Arg2 (list(number)): List of OF session into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFTopologyLearnedInfo', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def SendLLDPPacketOut(self, *args, **kwargs):
-        """Executes the sendLLDPPacketOut operation on the server.
-
-        Send LLDP Packet Out
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendLLDPPacketOut(LldpDestination=string, EnableLldpFlowAdd=bool, LldpTimeoutVal=number, SessionIndices=list)
-        -------------------------------------------------------------------------------------------------------------
-        - LldpDestination (str): This parameter requires a lldpDestination of type kString
-        - EnableLldpFlowAdd (bool): This parameter requires a enableLldpFlowAdd of type kBool
-        - LldpTimeoutVal (number): This parameter requires a lldpTimeoutVal of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendLLDPPacketOut(LldpDestination=string, EnableLldpFlowAdd=bool, LldpTimeoutVal=number)
-        ----------------------------------------------------------------------------------------
-        - LldpDestination (str): This parameter requires a lldpDestination of type kString
-        - EnableLldpFlowAdd (bool): This parameter requires a enableLldpFlowAdd of type kBool
-        - LldpTimeoutVal (number): This parameter requires a lldpTimeoutVal of type kInteger
-
-        sendLLDPPacketOut(SessionIndices=string, LldpDestination=string, EnableLldpFlowAdd=bool, LldpTimeoutVal=number)
-        ---------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a lldpDestination of type kString
-        - LldpDestination (str): This parameter requires a enableLldpFlowAdd of type kBool
-        - EnableLldpFlowAdd (bool): This parameter requires a lldpTimeoutVal of type kInteger
-        - LldpTimeoutVal (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendLLDPPacketOut(Arg2=list, Arg3=string, Arg4=bool, Arg5=number)list
-        ---------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str): LLDP Destination MAC
-        - Arg4 (bool): Enable LLDP Flow Add in Switch
-        - Arg5 (number): LLDP Timeout Value
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendLLDPPacketOut', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def StartController(self, *args, **kwargs):
-        """Executes the startController operation on the server.
-
-        Start OpenFlow Controller
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startController(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startController(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startController', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopController(self, *args, **kwargs):
-        """Executes the stopController operation on the server.
-
-        Stop OpenFlow Controller
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopController(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopController(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopController', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ErRange(Base):
@@ -47,9 +48,11 @@ class ErRange(Base):
         'SchannelIdMac': 'schannelIdMac',
         'SchannelVlanId': 'schannelVlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ErRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ErRange, self).__init__(parent, list_op)
 
     @property
     def VsiRange(self):
@@ -63,10 +66,14 @@ class ErRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsirange_89147b4a94e33164f96e37b09ee46b58 import VsiRange
-        return VsiRange(self)
+        if self._properties.get('VsiRange', None) is not None:
+            return self._properties.get('VsiRange')
+        else:
+            return VsiRange(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,10 +82,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EcpAckTimerInit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EcpAckTimerInit'])
     @EcpAckTimerInit.setter
     def EcpAckTimerInit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EcpAckTimerInit'], value)
 
     @property
     def EcpMaxRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EcpMaxRetries'])
     @EcpMaxRetries.setter
     def EcpMaxRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EcpMaxRetries'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,10 +124,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ErMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +138,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ErMode'])
     @ErMode.setter
     def ErMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ErMode'], value)
 
     @property
     def EvbMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,10 +152,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvbMode'])
     @EvbMode.setter
     def EvbMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvbMode'], value)
 
     @property
     def EvbRka(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -147,10 +166,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvbRka'])
     @EvbRka.setter
     def EvbRka(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvbRka'], value)
 
     @property
     def EvbRwd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -159,10 +180,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvbRwd'])
     @EvbRwd.setter
     def EvbRwd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvbRwd'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +194,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,6 +209,7 @@ class ErRange(Base):
 
     @property
     def SchannelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +218,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SchannelId'])
     @SchannelId.setter
     def SchannelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SchannelId'], value)
 
     @property
     def SchannelIdMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +232,12 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SchannelIdMac'])
     @SchannelIdMac.setter
     def SchannelIdMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SchannelIdMac'], value)
 
     @property
     def SchannelVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -216,9 +246,11 @@ class ErRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SchannelVlanId'])
     @SchannelVlanId.setter
     def SchannelVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SchannelVlanId'], value)
 
     def update(self, Count=None, EcpAckTimerInit=None, EcpMaxRetries=None, Enabled=None, ErMode=None, EvbMode=None, EvbRka=None, EvbRwd=None, Name=None, SchannelId=None, SchannelIdMac=None, SchannelVlanId=None):
+        # type: (int, int, int, bool, str, str, int, int, str, int, str, int) -> ErRange
         """Updates erRange resource on the server.
 
         Args
@@ -243,6 +275,7 @@ class ErRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, EcpAckTimerInit=None, EcpMaxRetries=None, Enabled=None, ErMode=None, EvbMode=None, EvbRka=None, EvbRwd=None, Name=None, SchannelId=None, SchannelIdMac=None, SchannelVlanId=None):
+        # type: (int, int, int, bool, str, str, int, int, str, int, str, int) -> ErRange
         """Adds a new erRange resource on the server and adds it to the container.
 
         Args
@@ -281,6 +314,7 @@ class ErRange(Base):
         self._delete()
 
     def find(self, Count=None, EcpAckTimerInit=None, EcpMaxRetries=None, Enabled=None, ErMode=None, EvbMode=None, EvbRka=None, EvbRwd=None, Name=None, ObjectId=None, SchannelId=None, SchannelIdMac=None, SchannelVlanId=None):
+        # type: (int, int, int, bool, str, str, int, int, str, str, int, str, int) -> ErRange
         """Finds and retrieves erRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve erRange resources from the server.
@@ -332,14 +366,16 @@ class ErRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -352,13 +388,15 @@ class ErRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -372,13 +410,15 @@ class ErRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

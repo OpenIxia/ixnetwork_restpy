@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv4client(Base):
@@ -56,9 +57,12 @@ class Dhcpv4client(Base):
         'Status': 'status',
         'UseRapidCommit': 'useRapidCommit',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv4client, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv4client, self).__init__(parent, list_op)
 
     @property
     def Bfdv4Interface(self):
@@ -72,7 +76,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
-        return Bfdv4Interface(self)
+        if self._properties.get('Bfdv4Interface', None) is not None:
+            return self._properties.get('Bfdv4Interface')
+        else:
+            return Bfdv4Interface(self)
 
     @property
     def BgpIpv4Peer(self):
@@ -86,7 +93,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import BgpIpv4Peer
-        return BgpIpv4Peer(self)
+        if self._properties.get('BgpIpv4Peer', None) is not None:
+            return self._properties.get('BgpIpv4Peer')
+        else:
+            return BgpIpv4Peer(self)
 
     @property
     def ECpriRe(self):
@@ -100,7 +110,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        return ECpriRe(self)
+        if self._properties.get('ECpriRe', None) is not None:
+            return self._properties.get('ECpriRe')
+        else:
+            return ECpriRe(self)
 
     @property
     def ECpriRec(self):
@@ -114,7 +127,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        return ECpriRec(self)
+        if self._properties.get('ECpriRec', None) is not None:
+            return self._properties.get('ECpriRec')
+        else:
+            return ECpriRec(self)
 
     @property
     def Geneve(self):
@@ -128,7 +144,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import Geneve
-        return Geneve(self)
+        if self._properties.get('Geneve', None) is not None:
+            return self._properties.get('Geneve')
+        else:
+            return Geneve(self)
 
     @property
     def IgmpHost(self):
@@ -142,7 +161,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import IgmpHost
-        return IgmpHost(self)
+        if self._properties.get('IgmpHost', None) is not None:
+            return self._properties.get('IgmpHost')
+        else:
+            return IgmpHost(self)
 
     @property
     def IgmpQuerier(self):
@@ -156,7 +178,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is not None:
+            return self._properties.get('IgmpQuerier')
+        else:
+            return IgmpQuerier(self)
 
     @property
     def MplsOam(self):
@@ -170,7 +195,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import MplsOam
-        return MplsOam(self)
+        if self._properties.get('MplsOam', None) is not None:
+            return self._properties.get('MplsOam')
+        else:
+            return MplsOam(self)
 
     @property
     def NetconfClient(self):
@@ -184,7 +212,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import NetconfClient
-        return NetconfClient(self)
+        if self._properties.get('NetconfClient', None) is not None:
+            return self._properties.get('NetconfClient')
+        else:
+            return NetconfClient(self)
 
     @property
     def NetconfServer(self):
@@ -198,7 +229,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_127e77a6a13ccfa768d079b1f0b3dbbc import NetconfServer
-        return NetconfServer(self)
+        if self._properties.get('NetconfServer', None) is not None:
+            return self._properties.get('NetconfServer')
+        else:
+            return NetconfServer(self)
 
     @property
     def Ospfv2(self):
@@ -212,7 +246,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import Ospfv2
-        return Ospfv2(self)
+        if self._properties.get('Ospfv2', None) is not None:
+            return self._properties.get('Ospfv2')
+        else:
+            return Ospfv2(self)
 
     @property
     def Pcc(self):
@@ -226,7 +263,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import Pcc
-        return Pcc(self)
+        if self._properties.get('Pcc', None) is not None:
+            return self._properties.get('Pcc')
+        else:
+            return Pcc(self)
 
     @property
     def Pce(self):
@@ -240,7 +280,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import Pce
-        return Pce(self)
+        if self._properties.get('Pce', None) is not None:
+            return self._properties.get('Pce')
+        else:
+            return Pce(self)
 
     @property
     def PimV4Interface(self):
@@ -254,7 +297,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import PimV4Interface
-        return PimV4Interface(self)
+        if self._properties.get('PimV4Interface', None) is not None:
+            return self._properties.get('PimV4Interface')
+        else:
+            return PimV4Interface(self)
 
     @property
     def Tag(self):
@@ -268,7 +314,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def TlvProfile(self):
@@ -282,7 +331,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is not None:
+            return self._properties.get('TlvProfile')
+        else:
+            return TlvProfile(self)
 
     @property
     def Vxlan(self):
@@ -296,10 +348,14 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import Vxlan
-        return Vxlan(self)
+        if self._properties.get('Vxlan', None) is not None:
+            return self._properties.get('Vxlan')
+        else:
+            return Vxlan(self)
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -308,10 +364,12 @@ class Dhcpv4client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -321,6 +379,7 @@ class Dhcpv4client(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -330,6 +389,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4Broadcast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -340,6 +400,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4GatewayAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +411,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4GatewayMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +422,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4ServerAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +433,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4UseFirstServer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +444,7 @@ class Dhcpv4client(Base):
 
     @property
     def DiscoveredAddresses(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -389,6 +454,7 @@ class Dhcpv4client(Base):
 
     @property
     def DiscoveredGateways(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -398,6 +464,7 @@ class Dhcpv4client(Base):
 
     @property
     def DiscoveredPrefix(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -416,6 +483,7 @@ class Dhcpv4client(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -424,10 +492,12 @@ class Dhcpv4client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -436,10 +506,12 @@ class Dhcpv4client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PadSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -450,6 +522,7 @@ class Dhcpv4client(Base):
 
     @property
     def RenewTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -460,6 +533,7 @@ class Dhcpv4client(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -469,6 +543,7 @@ class Dhcpv4client(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -478,6 +553,7 @@ class Dhcpv4client(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -486,6 +562,7 @@ class Dhcpv4client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -499,6 +576,7 @@ class Dhcpv4client(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -508,6 +586,7 @@ class Dhcpv4client(Base):
 
     @property
     def UseRapidCommit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -517,6 +596,7 @@ class Dhcpv4client(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseRapidCommit']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Dhcpv4client
         """Updates dhcpv4client resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -536,6 +616,7 @@ class Dhcpv4client(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Dhcpv4client
         """Adds a new dhcpv4client resource on the server and adds it to the container.
 
         Args
@@ -617,6 +698,299 @@ class Dhcpv4client(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Inform(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the inform operation on the server.
+
+        Sends Inform packet.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        inform(async_operation=bool)
+        ----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        inform(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        inform(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('inform', payload=payload, response_object=None)
+
+    def Rebind(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the rebind operation on the server.
+
+        Rebind selected DHCP items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        rebind(async_operation=bool)
+        ----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        rebind(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        rebind(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('rebind', payload=payload, response_object=None)
+
+    def Renew(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the renew operation on the server.
+
+        Renew selected DHCP items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        renew(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        renew(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        renew(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('renew', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendArp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the sendArp operation on the server.
+
+        Sends Arp for its corresponding gateway
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendArp(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendArp(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendArp(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendArp', payload=payload, response_object=None)
+
+    def SendPing(self, *args, **kwargs):
+        """Executes the sendPing operation on the server.
+
+        Send ping for selected DHCP items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPing(DestIP=string, async_operation=bool)list
+        -------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing(DestIP=string, SessionIndices=list, async_operation=bool)list
+        ----------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing(SessionIndices=string, DestIP=string, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIP of type kString
+        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPing', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Dhcp4Broadcast=None, Dhcp4GatewayAddress=None, Dhcp4GatewayMac=None, Dhcp4ServerAddress=None, Dhcp4UseFirstServer=None, PadSize=None, RenewTimer=None, UseRapidCommit=None):
         """Base class infrastructure that gets a list of dhcpv4client device ids encapsulated by this object.
 
@@ -643,237 +1017,3 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Inform(self, *args, **kwargs):
-        """Executes the inform operation on the server.
-
-        Sends Inform packet.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        inform(SessionIndices=list)
-        ---------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        inform(SessionIndices=string)
-        -----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('inform', payload=payload, response_object=None)
-
-    def Rebind(self, *args, **kwargs):
-        """Executes the rebind operation on the server.
-
-        Rebind selected DHCP items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        rebind(SessionIndices=list)
-        ---------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        rebind(SessionIndices=string)
-        -----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('rebind', payload=payload, response_object=None)
-
-    def Renew(self, *args, **kwargs):
-        """Executes the renew operation on the server.
-
-        Renew selected DHCP items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        renew(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        renew(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('renew', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def SendArp(self, *args, **kwargs):
-        """Executes the sendArp operation on the server.
-
-        Sends Arp for its corresponding gateway
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendArp(SessionIndices=list)
-        ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendArp(SessionIndices=string)
-        ------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendArp', payload=payload, response_object=None)
-
-    def SendPing(self, *args, **kwargs):
-        """Executes the sendPing operation on the server.
-
-        Send ping for selected DHCP items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPing(DestIP=string)list
-        ---------------------------
-        - DestIP (str): This parameter requires a destIP of type kString
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(DestIP=string, SessionIndices=list)list
-        ------------------------------------------------
-        - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(SessionIndices=string, DestIP=string)list
-        --------------------------------------------------
-        - SessionIndices (str): This parameter requires a destIP of type kString
-        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

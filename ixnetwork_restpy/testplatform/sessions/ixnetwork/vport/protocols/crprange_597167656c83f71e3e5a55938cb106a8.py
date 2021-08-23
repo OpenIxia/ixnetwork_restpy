@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CrpRange(Base):
@@ -48,12 +49,17 @@ class CrpRange(Base):
         'RouterCount': 'routerCount',
         'TriggeredCrpMessageCount': 'triggeredCrpMessageCount',
     }
+    _SDM_ENUM_MAP = {
+        'meshingType': ['fullyMeshed', 'oneToOne'],
+        'priorityType': ['same', 'incremental', 'random'],
+    }
 
-    def __init__(self, parent):
-        super(CrpRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CrpRange, self).__init__(parent, list_op)
 
     @property
     def AdvertisementHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvertisementHoldTime'])
     @AdvertisementHoldTime.setter
     def AdvertisementHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvertisementHoldTime'], value)
 
     @property
     def BackOffInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BackOffInterval'])
     @BackOffInterval.setter
     def BackOffInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BackOffInterval'], value)
 
     @property
     def CrpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,10 +96,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CrpAddress'])
     @CrpAddress.setter
     def CrpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CrpAddress'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,10 +110,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,10 +124,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
     @GroupAddress.setter
     def GroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
 
     @property
     def GroupCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +138,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupCount'])
     @GroupCount.setter
     def GroupCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupCount'], value)
 
     @property
     def GroupMaskLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,10 +152,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupMaskLen'])
     @GroupMaskLen.setter
     def GroupMaskLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupMaskLen'], value)
 
     @property
     def MeshingType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,10 +166,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeshingType'])
     @MeshingType.setter
     def MeshingType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeshingType'], value)
 
     @property
     def PeriodicAdvertisementInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,10 +180,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicAdvertisementInterval'])
     @PeriodicAdvertisementInterval.setter
     def PeriodicAdvertisementInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicAdvertisementInterval'], value)
 
     @property
     def PriorityChangeInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,10 +194,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityChangeInterval'])
     @PriorityChangeInterval.setter
     def PriorityChangeInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityChangeInterval'], value)
 
     @property
     def PriorityType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,10 +208,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityType'])
     @PriorityType.setter
     def PriorityType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityType'], value)
 
     @property
     def PriorityValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,10 +222,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityValue'])
     @PriorityValue.setter
     def PriorityValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityValue'], value)
 
     @property
     def RouterCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +236,12 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterCount'])
     @RouterCount.setter
     def RouterCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterCount'], value)
 
     @property
     def TriggeredCrpMessageCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,9 +250,11 @@ class CrpRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggeredCrpMessageCount'])
     @TriggeredCrpMessageCount.setter
     def TriggeredCrpMessageCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggeredCrpMessageCount'], value)
 
     def update(self, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, PriorityChangeInterval=None, PriorityType=None, PriorityValue=None, RouterCount=None, TriggeredCrpMessageCount=None):
+        # type: (int, int, str, bool, str, int, int, str, int, int, str, int, int, int) -> CrpRange
         """Updates crpRange resource on the server.
 
         Args
@@ -247,6 +281,7 @@ class CrpRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, PriorityChangeInterval=None, PriorityType=None, PriorityValue=None, RouterCount=None, TriggeredCrpMessageCount=None):
+        # type: (int, int, str, bool, str, int, int, str, int, int, str, int, int, int) -> CrpRange
         """Adds a new crpRange resource on the server and adds it to the container.
 
         Args
@@ -287,6 +322,7 @@ class CrpRange(Base):
         self._delete()
 
     def find(self, AdvertisementHoldTime=None, BackOffInterval=None, CrpAddress=None, Enabled=None, GroupAddress=None, GroupCount=None, GroupMaskLen=None, MeshingType=None, PeriodicAdvertisementInterval=None, PriorityChangeInterval=None, PriorityType=None, PriorityValue=None, RouterCount=None, TriggeredCrpMessageCount=None):
+        # type: (int, int, str, bool, str, int, int, str, int, int, str, int, int, int) -> CrpRange
         """Finds and retrieves crpRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve crpRange resources from the server.

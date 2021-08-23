@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RouteRange(Base):
@@ -42,12 +43,16 @@ class RouteRange(Base):
         'Propagate': 'propagate',
         'Step': 'step',
     }
+    _SDM_ENUM_MAP = {
+        'origin': ['area', 'externalType1', 'externalType2', 'nssa', 'sameArea'],
+    }
 
-    def __init__(self, parent):
-        super(RouteRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RouteRange, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -56,10 +61,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Mask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +75,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def Metric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +89,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metric'])
     @Metric.setter
     def Metric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
 
     @property
     def NetworkNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,10 +103,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NetworkNumber'])
     @NetworkNumber.setter
     def NetworkNumber(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NetworkNumber'], value)
 
     @property
     def NumberOfRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,10 +117,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
 
     @property
     def Origin(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +131,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Origin'])
     @Origin.setter
     def Origin(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Origin'], value)
 
     @property
     def Propagate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -128,10 +145,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Propagate'])
     @Propagate.setter
     def Propagate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Propagate'], value)
 
     @property
     def Step(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -140,6 +159,7 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
 
     def update(self, Enabled=None, Mask=None, Metric=None, NetworkNumber=None, NumberOfRoutes=None, Origin=None, Propagate=None):
+        # type: (bool, int, int, str, int, str, bool) -> RouteRange
         """Updates routeRange resource on the server.
 
         Args
@@ -159,6 +179,7 @@ class RouteRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Mask=None, Metric=None, NetworkNumber=None, NumberOfRoutes=None, Origin=None, Propagate=None):
+        # type: (bool, int, int, str, int, str, bool) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
         Args
@@ -192,6 +213,7 @@ class RouteRange(Base):
         self._delete()
 
     def find(self, Enabled=None, Mask=None, Metric=None, NetworkNumber=None, NumberOfRoutes=None, Origin=None, Propagate=None, Step=None):
+        # type: (bool, int, int, str, int, str, bool, int) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve routeRange resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInterface(Base):
@@ -40,12 +41,15 @@ class LearnedInterface(Base):
         'InterfaceRole': 'interfaceRole',
         'InterfaceState': 'interfaceState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedInterface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInterface, self).__init__(parent, list_op)
 
     @property
     def DesignatedMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class LearnedInterface(Base):
 
     @property
     def DesignatedPortId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class LearnedInterface(Base):
 
     @property
     def DesignatedPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class LearnedInterface(Base):
 
     @property
     def InterfaceDesc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class LearnedInterface(Base):
 
     @property
     def InterfaceRole(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class LearnedInterface(Base):
 
     @property
     def InterfaceState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,6 +131,7 @@ class LearnedInterface(Base):
         self._delete()
 
     def find(self, DesignatedMac=None, DesignatedPortId=None, DesignatedPriority=None, InterfaceDesc=None, InterfaceRole=None, InterfaceState=None):
+        # type: (str, int, int, str, str, str) -> LearnedInterface
         """Finds and retrieves learnedInterface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedInterface resources from the server.

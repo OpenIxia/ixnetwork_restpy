@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisMTIDList(Base):
@@ -39,12 +40,15 @@ class IsisMTIDList(Base):
         'Name': 'name',
         'SessionInfo': 'sessionInfo',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisMTIDList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisMTIDList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class IsisMTIDList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class IsisMTIDList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class IsisMTIDList(Base):
 
     @property
     def LinkMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class IsisMTIDList(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class IsisMTIDList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +110,12 @@ class IsisMTIDList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -113,6 +124,7 @@ class IsisMTIDList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
 
     def update(self, Name=None):
+        # type: (str) -> IsisMTIDList
         """Updates isisMTIDList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

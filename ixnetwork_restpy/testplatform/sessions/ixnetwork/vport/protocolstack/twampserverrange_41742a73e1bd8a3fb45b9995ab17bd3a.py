@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TwampServerRange(Base):
@@ -50,12 +51,15 @@ class TwampServerRange(Base):
         'ReflectorPort': 'reflectorPort',
         'Secret': 'secret',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TwampServerRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TwampServerRange, self).__init__(parent, list_op)
 
     @property
     def NegotiateReflectorPort(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,10 +68,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NegotiateReflectorPort'])
     @NegotiateReflectorPort.setter
     def NegotiateReflectorPort(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NegotiateReflectorPort'], value)
 
     @property
     def ControlPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +82,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlPort'])
     @ControlPort.setter
     def ControlPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlPort'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,10 +96,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EnableAccessControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -100,10 +110,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAccessControl'])
     @EnableAccessControl.setter
     def EnableAccessControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAccessControl'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,10 +124,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IterationCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,10 +138,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IterationCount'])
     @IterationCount.setter
     def IterationCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IterationCount'], value)
 
     @property
     def KeyId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,10 +152,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KeyId'])
     @KeyId.setter
     def KeyId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['KeyId'], value)
 
     @property
     def MaxTestSessions(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -148,10 +166,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxTestSessions'])
     @MaxTestSessions.setter
     def MaxTestSessions(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxTestSessions'], value)
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -160,10 +180,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -172,10 +194,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -185,6 +209,7 @@ class TwampServerRange(Base):
 
     @property
     def PermittedIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -193,10 +218,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PermittedIp'])
     @PermittedIp.setter
     def PermittedIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PermittedIp'], value)
 
     @property
     def PermittedIpIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -205,10 +232,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PermittedIpIncrement'])
     @PermittedIpIncrement.setter
     def PermittedIpIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PermittedIpIncrement'], value)
 
     @property
     def PermittedSenderPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -217,10 +246,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PermittedSenderPort'])
     @PermittedSenderPort.setter
     def PermittedSenderPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PermittedSenderPort'], value)
 
     @property
     def ReflectorPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -229,10 +260,12 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReflectorPort'])
     @ReflectorPort.setter
     def ReflectorPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReflectorPort'], value)
 
     @property
     def Secret(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -241,9 +274,11 @@ class TwampServerRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Secret'])
     @Secret.setter
     def Secret(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Secret'], value)
 
     def update(self, NegotiateReflectorPort=None, ControlPort=None, Count=None, EnableAccessControl=None, Enabled=None, IterationCount=None, KeyId=None, MaxTestSessions=None, Mode=None, Name=None, PermittedIp=None, PermittedIpIncrement=None, PermittedSenderPort=None, ReflectorPort=None, Secret=None):
+        # type: (bool, int, int, bool, bool, int, str, int, str, str, str, str, int, int, str) -> TwampServerRange
         """Updates twampServerRange resource on the server.
 
         Args
@@ -271,6 +306,7 @@ class TwampServerRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NegotiateReflectorPort=None, ControlPort=None, Count=None, EnableAccessControl=None, Enabled=None, IterationCount=None, KeyId=None, MaxTestSessions=None, Mode=None, Name=None, PermittedIp=None, PermittedIpIncrement=None, PermittedSenderPort=None, ReflectorPort=None, Secret=None):
+        # type: (bool, int, int, bool, bool, int, str, int, str, str, str, str, int, int, str) -> TwampServerRange
         """Adds a new twampServerRange resource on the server and adds it to the container.
 
         Args
@@ -312,6 +348,7 @@ class TwampServerRange(Base):
         self._delete()
 
     def find(self, NegotiateReflectorPort=None, ControlPort=None, Count=None, EnableAccessControl=None, Enabled=None, IterationCount=None, KeyId=None, MaxTestSessions=None, Mode=None, Name=None, ObjectId=None, PermittedIp=None, PermittedIpIncrement=None, PermittedSenderPort=None, ReflectorPort=None, Secret=None):
+        # type: (bool, int, int, bool, bool, int, str, int, str, str, str, str, str, int, int, str) -> TwampServerRange
         """Finds and retrieves twampServerRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve twampServerRange resources from the server.
@@ -366,14 +403,16 @@ class TwampServerRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -386,13 +425,15 @@ class TwampServerRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -406,13 +447,15 @@ class TwampServerRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

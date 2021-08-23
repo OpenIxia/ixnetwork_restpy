@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedIpv4Label(Base):
@@ -38,12 +39,15 @@ class LearnedIpv4Label(Base):
         'LabelSpaceId': 'labelSpaceId',
         'PeerIpAddress': 'peerIpAddress',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedIpv4Label, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedIpv4Label, self).__init__(parent, list_op)
 
     @property
     def Fec(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class LearnedIpv4Label(Base):
 
     @property
     def FecPrefixLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class LearnedIpv4Label(Base):
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class LearnedIpv4Label(Base):
 
     @property
     def LabelSpaceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class LearnedIpv4Label(Base):
 
     @property
     def PeerIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,7 +95,21 @@ class LearnedIpv4Label(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['PeerIpAddress'])
 
+    def add(self):
+        """Adds a new learnedIpv4Label resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedIpv4Label resources using find and the newly added learnedIpv4Label resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Fec=None, FecPrefixLen=None, Label=None, LabelSpaceId=None, PeerIpAddress=None):
+        # type: (str, int, int, int, str) -> LearnedIpv4Label
         """Finds and retrieves learnedIpv4Label resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedIpv4Label resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LdpBasicRouterV6(Base):
@@ -65,9 +66,13 @@ class LdpBasicRouterV6(Base):
         'StateCounts': 'stateCounts',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'ldpVersion': ['version1', 'version2'],
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(LdpBasicRouterV6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LdpBasicRouterV6, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -81,7 +86,10 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def LdpLeafRangeV6(self):
@@ -95,7 +103,10 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpleafrangev6_3dad6635b6afcf8ce78906311e26bfe0 import LdpLeafRangeV6
-        return LdpLeafRangeV6(self)._select()
+        if self._properties.get('LdpLeafRangeV6', None) is not None:
+            return self._properties.get('LdpLeafRangeV6')
+        else:
+            return LdpLeafRangeV6(self)._select()
 
     @property
     def LdpRootRangeV6(self):
@@ -109,7 +120,10 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldprootrangev6_45885b6f21e934c88aa56da8381f4ec3 import LdpRootRangeV6
-        return LdpRootRangeV6(self)._select()
+        if self._properties.get('LdpRootRangeV6', None) is not None:
+            return self._properties.get('LdpRootRangeV6')
+        else:
+            return LdpRootRangeV6(self)._select()
 
     @property
     def Ldpotherpws(self):
@@ -123,7 +137,10 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpotherpws_c7a119da3cff2b6dc1e78257b76d70b9 import Ldpotherpws
-        return Ldpotherpws(self)
+        if self._properties.get('Ldpotherpws', None) is not None:
+            return self._properties.get('Ldpotherpws')
+        else:
+            return Ldpotherpws(self)
 
     @property
     def Ldppwvpls(self):
@@ -137,7 +154,10 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldppwvpls_e691d6b250f877cef17952ec6e6b30b9 import Ldppwvpls
-        return Ldppwvpls(self)
+        if self._properties.get('Ldppwvpls', None) is not None:
+            return self._properties.get('Ldppwvpls')
+        else:
+            return Ldppwvpls(self)
 
     @property
     def Ldpvplsbgpad(self):
@@ -151,7 +171,10 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpvplsbgpad_0f32fa32863dd9e13cd7e772a3fb8771 import Ldpvplsbgpad
-        return Ldpvplsbgpad(self)
+        if self._properties.get('Ldpvplsbgpad', None) is not None:
+            return self._properties.get('Ldpvplsbgpad')
+        else:
+            return Ldpvplsbgpad(self)
 
     @property
     def LearnedInfo(self):
@@ -165,10 +188,14 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +206,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -187,10 +215,12 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -200,6 +230,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -209,6 +240,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableBfdMplsLearnedLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +251,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableFec128Advertisement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +262,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableFec129Advertisement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +273,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableGracefulRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +284,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableIpv4Advertisement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +295,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableIpv6Advertisement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -269,6 +306,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableLspPingLearnedLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +317,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def EnableP2MPCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -298,6 +337,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def IgnoreStateAdvertisementControlCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +348,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def IncludeSac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +359,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def KeepAliveHoldTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -328,6 +370,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def KeepAliveInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +381,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def LdpVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -346,10 +390,12 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LdpVersion'])
     @LdpVersion.setter
     def LdpVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LdpVersion'], value)
 
     @property
     def LeafRangesCountV6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -358,10 +404,12 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LeafRangesCountV6'])
     @LeafRangesCountV6.setter
     def LeafRangesCountV6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LeafRangesCountV6'], value)
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -371,6 +419,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -379,10 +428,12 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -391,10 +442,12 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ReconnectTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -405,6 +458,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def RecoveryTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -415,6 +469,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def RootRangesCountV6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -423,10 +478,12 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootRangesCountV6'])
     @RootRangesCountV6.setter
     def RootRangesCountV6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootRangesCountV6'], value)
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -436,6 +493,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def SessionPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +504,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -455,6 +514,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -463,6 +523,7 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -476,6 +537,7 @@ class LdpBasicRouterV6(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -484,6 +546,7 @@ class LdpBasicRouterV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, ConnectedVia=None, LdpVersion=None, LeafRangesCountV6=None, Multiplier=None, Name=None, RootRangesCountV6=None, StackedLayers=None):
+        # type: (List[str], str, int, int, str, int, List[str]) -> LdpBasicRouterV6
         """Updates ldpBasicRouterV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -506,6 +569,7 @@ class LdpBasicRouterV6(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, LdpVersion=None, LeafRangesCountV6=None, Multiplier=None, Name=None, RootRangesCountV6=None, StackedLayers=None):
+        # type: (List[str], str, int, int, str, int, List[str]) -> LdpBasicRouterV6
         """Adds a new ldpBasicRouterV6 resource on the server and adds it to the container.
 
         Args
@@ -591,6 +655,566 @@ class LdpBasicRouterV6(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfoInClient operation on the server.
+
+        Clears ALL routes from GUI grid for the selected LDP Router.
+
+        clearAllLearnedInfoInClient(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+
+    def GetAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getAllLearnedInfo operation on the server.
+
+        Get All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getAllLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetFEC128LearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getFEC128LearnedInfo operation on the server.
+
+        Get FEC 128 Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getFEC128LearnedInfo(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getFEC128LearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getFEC128LearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getFEC128LearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getFEC128LearnedInfo', payload=payload, response_object=None)
+
+    def GetFEC129LearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getFEC129LearnedInfo operation on the server.
+
+        Get FEC 129 Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getFEC129LearnedInfo(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getFEC129LearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getFEC129LearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getFEC129LearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getFEC129LearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv4FECLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv4FECLearnedInfo operation on the server.
+
+        Get IPv4 FEC Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getIPv4FECLearnedInfo(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4FECLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4FECLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4FECLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv4FECLearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv6FECLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv6FECLearnedInfo operation on the server.
+
+        Get IPv6 FEC Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getIPv6FECLearnedInfo(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6FECLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6FECLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6FECLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv6FECLearnedInfo', payload=payload, response_object=None)
+
+    def GetP2MPFECLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getP2MPFECLearnedInfo operation on the server.
+
+        Get P2MP FEC Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getP2MPFECLearnedInfo(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getP2MPFECLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getP2MPFECLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getP2MPFECLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getP2MPFECLearnedInfo', payload=payload, response_object=None)
+
+    def GracefullyRestart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the gracefullyRestart operation on the server.
+
+        Gracefully Restart
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        gracefullyRestart(Delay=number, async_operation=bool)
+        -----------------------------------------------------
+        - Delay (number): This parameter requires a delay of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        gracefullyRestart(Delay=number, SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------
+        - Delay (number): This parameter requires a delay of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        gracefullyRestart(SessionIndices=string, Delay=number, async_operation=bool)
+        ----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a delay of type kInteger
+        - Delay (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        gracefullyRestart(Arg2=list, Arg3=number, async_operation=bool)list
+        -------------------------------------------------------------------
+        - Arg2 (list(number)): Action indices for gracefully restart
+        - Arg3 (number): Restart After Time (in secs)
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('gracefullyRestart', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumeKeepAlive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the resumeKeepAlive operation on the server.
+
+        Resume sending KeepAlive
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeKeepAlive(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeKeepAlive(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeKeepAlive(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeKeepAlive', payload=payload, response_object=None)
+
+    def Resumekeepalive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumekeepalive operation on the server.
+
+        Start Sending Keep Alive Messages.
+
+        resumekeepalive(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumekeepalive', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopKeepAlive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopKeepAlive operation on the server.
+
+        Stop sending KeepAlive
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopKeepAlive(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopKeepAlive(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopKeepAlive(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopKeepAlive', payload=payload, response_object=None)
+
+    def Stopkeepalive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopkeepalive operation on the server.
+
+        Stop Sending Keep Alive Messages.
+
+        stopkeepalive(Arg2=list, async_operation=bool)list
+        --------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopkeepalive', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, EnableBfdMplsLearnedLsp=None, EnableFec128Advertisement=None, EnableFec129Advertisement=None, EnableGracefulRestart=None, EnableIpv4Advertisement=None, EnableIpv6Advertisement=None, EnableLspPingLearnedLsp=None, EnableP2MPCapability=None, IgnoreStateAdvertisementControlCapability=None, IncludeSac=None, KeepAliveHoldTime=None, KeepAliveInterval=None, ReconnectTime=None, RecoveryTime=None, SessionPreference=None):
         """Base class infrastructure that gets a list of ldpBasicRouterV6 device ids encapsulated by this object.
 
@@ -625,455 +1249,3 @@ class LdpBasicRouterV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearAllLearnedInfo(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearAllLearnedInfo(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfoInClient operation on the server.
-
-        Clears ALL routes from GUI grid for the selected LDP Router.
-
-        clearAllLearnedInfoInClient(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
-
-    def GetAllLearnedInfo(self, *args, **kwargs):
-        """Executes the getAllLearnedInfo operation on the server.
-
-        Get All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getAllLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getAllLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getAllLearnedInfo(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetFEC128LearnedInfo(self, *args, **kwargs):
-        """Executes the getFEC128LearnedInfo operation on the server.
-
-        Get FEC 128 Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getFEC128LearnedInfo(SessionIndices=list)
-        -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getFEC128LearnedInfo(SessionIndices=string)
-        -------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getFEC128LearnedInfo(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getFEC128LearnedInfo', payload=payload, response_object=None)
-
-    def GetFEC129LearnedInfo(self, *args, **kwargs):
-        """Executes the getFEC129LearnedInfo operation on the server.
-
-        Get FEC 129 Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getFEC129LearnedInfo(SessionIndices=list)
-        -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getFEC129LearnedInfo(SessionIndices=string)
-        -------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getFEC129LearnedInfo(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getFEC129LearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv4FECLearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv4FECLearnedInfo operation on the server.
-
-        Get IPv4 FEC Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getIPv4FECLearnedInfo(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getIPv4FECLearnedInfo(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getIPv4FECLearnedInfo(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv4FECLearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv6FECLearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv6FECLearnedInfo operation on the server.
-
-        Get IPv6 FEC Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getIPv6FECLearnedInfo(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getIPv6FECLearnedInfo(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getIPv6FECLearnedInfo(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv6FECLearnedInfo', payload=payload, response_object=None)
-
-    def GetP2MPFECLearnedInfo(self, *args, **kwargs):
-        """Executes the getP2MPFECLearnedInfo operation on the server.
-
-        Get P2MP FEC Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getP2MPFECLearnedInfo(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getP2MPFECLearnedInfo(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getP2MPFECLearnedInfo(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getP2MPFECLearnedInfo', payload=payload, response_object=None)
-
-    def GracefullyRestart(self, *args, **kwargs):
-        """Executes the gracefullyRestart operation on the server.
-
-        Gracefully Restart
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        gracefullyRestart(Delay=number)
-        -------------------------------
-        - Delay (number): This parameter requires a delay of type kInteger
-
-        gracefullyRestart(Delay=number, SessionIndices=list)
-        ----------------------------------------------------
-        - Delay (number): This parameter requires a delay of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        gracefullyRestart(SessionIndices=string, Delay=number)
-        ------------------------------------------------------
-        - SessionIndices (str): This parameter requires a delay of type kInteger
-        - Delay (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        gracefullyRestart(Arg2=list, Arg3=number)list
-        ---------------------------------------------
-        - Arg2 (list(number)): Action indices for gracefully restart
-        - Arg3 (number): Restart After Time (in secs)
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('gracefullyRestart', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumeKeepAlive(self, *args, **kwargs):
-        """Executes the resumeKeepAlive operation on the server.
-
-        Resume sending KeepAlive
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeKeepAlive(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeKeepAlive(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeKeepAlive', payload=payload, response_object=None)
-
-    def Resumekeepalive(self, *args, **kwargs):
-        """Executes the resumekeepalive operation on the server.
-
-        Start Sending Keep Alive Messages.
-
-        resumekeepalive(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumekeepalive', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopKeepAlive(self, *args, **kwargs):
-        """Executes the stopKeepAlive operation on the server.
-
-        Stop sending KeepAlive
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopKeepAlive(SessionIndices=list)
-        ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopKeepAlive(SessionIndices=string)
-        ------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopKeepAlive', payload=payload, response_object=None)
-
-    def Stopkeepalive(self, *args, **kwargs):
-        """Executes the stopkeepalive operation on the server.
-
-        Stop Sending Keep Alive Messages.
-
-        stopkeepalive(Arg2=list)list
-        ----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopkeepalive', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Macsec(Base):
@@ -41,9 +42,12 @@ class Macsec(Base):
         'RxSecTagOffset': 'rxSecTagOffset',
         'SecTagOffsetUnknown': 'secTagOffsetUnknown',
     }
+    _SDM_ENUM_MAP = {
+        'keyGenerationMode': ['staticKeyGenerationMode', 'dynamicKeyGenerationMode'],
+    }
 
-    def __init__(self, parent):
-        super(Macsec, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Macsec, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -57,7 +61,10 @@ class Macsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -71,10 +78,14 @@ class Macsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +95,7 @@ class Macsec(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,6 +105,7 @@ class Macsec(Base):
 
     @property
     def KeyGenerationMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +114,12 @@ class Macsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KeyGenerationMode'])
     @KeyGenerationMode.setter
     def KeyGenerationMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['KeyGenerationMode'], value)
 
     @property
     def MacsecValidation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +130,7 @@ class Macsec(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +139,12 @@ class Macsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ReplayProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +155,7 @@ class Macsec(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -146,6 +165,7 @@ class Macsec(Base):
 
     @property
     def RxSecTagOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -156,6 +176,7 @@ class Macsec(Base):
 
     @property
     def SecTagOffsetUnknown(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +186,7 @@ class Macsec(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SecTagOffsetUnknown']))
 
     def update(self, KeyGenerationMode=None, Name=None):
+        # type: (str, str) -> Macsec
         """Updates macsec resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

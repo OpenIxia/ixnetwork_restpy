@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpSRTEPoliciesListV6(Base):
@@ -75,9 +76,11 @@ class BgpSRTEPoliciesListV6(Base):
         'SetNextHopIpType': 'setNextHopIpType',
         'SrtepolicyName': 'srtepolicyName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpSRTEPoliciesListV6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpSRTEPoliciesListV6, self).__init__(parent, list_op)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -91,7 +94,10 @@ class BgpSRTEPoliciesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpAsPathSegmentList')
+        else:
+            return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -105,7 +111,10 @@ class BgpSRTEPoliciesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is not None:
+            return self._properties.get('BgpClusterIdList')
+        else:
+            return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -119,7 +128,10 @@ class BgpSRTEPoliciesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is not None:
+            return self._properties.get('BgpCommunitiesList')
+        else:
+            return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -133,7 +145,10 @@ class BgpSRTEPoliciesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpExtendedCommunitiesList')
+        else:
+            return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpSRTEPoliciesTunnelEncapsulationListV6(self):
@@ -147,10 +162,14 @@ class BgpSRTEPoliciesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv6_9315685a3a1214848fa83eedc43fc2ea import BgpSRTEPoliciesTunnelEncapsulationListV6
-        return BgpSRTEPoliciesTunnelEncapsulationListV6(self)._select()
+        if self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV6', None) is not None:
+            return self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV6')
+        else:
+            return BgpSRTEPoliciesTunnelEncapsulationListV6(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +180,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def AddPathId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +191,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def AggregatorAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +202,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def AggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -191,6 +213,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +224,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,6 +234,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -219,6 +244,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def Distinguisher(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +255,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableAddPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +266,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableAggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +277,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +288,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -269,6 +299,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +310,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +321,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -299,6 +332,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableLinkLocal(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +343,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableLocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +354,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableMultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +365,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -339,6 +376,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -349,6 +387,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableOriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -359,6 +398,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EnableSendWithdraw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -369,6 +409,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EndPointV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -379,6 +420,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def EndPointV6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -389,6 +431,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -399,6 +442,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def Ipv6LinkLocalNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +453,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -419,6 +464,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -429,6 +475,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -439,6 +486,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -447,10 +495,12 @@ class BgpSRTEPoliciesListV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -459,10 +509,12 @@ class BgpSRTEPoliciesListV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
 
     @property
     def NoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -471,10 +523,12 @@ class BgpSRTEPoliciesListV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
     @NoOfClusters.setter
     def NoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
 
     @property
     def NoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -483,10 +537,12 @@ class BgpSRTEPoliciesListV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
 
     @property
     def NoOfExtendedCommunity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -495,10 +551,12 @@ class BgpSRTEPoliciesListV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
     def NumberOfTunnelsV6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -507,10 +565,12 @@ class BgpSRTEPoliciesListV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV6'])
     @NumberOfTunnelsV6.setter
     def NumberOfTunnelsV6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfTunnelsV6'], value)
 
     @property
     def Origin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -521,6 +581,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def OriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -531,6 +592,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def OverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -541,6 +603,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def PolicyColor(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -551,6 +614,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def PolicyType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -561,6 +625,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -571,6 +636,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -581,6 +647,7 @@ class BgpSRTEPoliciesListV6(Base):
 
     @property
     def SrtepolicyName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -590,6 +657,7 @@ class BgpSRTEPoliciesListV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrtepolicyName']))
 
     def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV6=None):
+        # type: (str, int, int, int, int, int) -> BgpSRTEPoliciesListV6
         """Updates bgpSRTEPoliciesListV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

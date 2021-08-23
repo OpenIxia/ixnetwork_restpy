@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Fr(Base):
@@ -39,12 +40,15 @@ class Fr(Base):
         'Enabled': 'enabled',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Fr, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Fr, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class Fr(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Dlci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class Fr(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dlci'])
     @Dlci.setter
     def Dlci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dlci'], value)
 
     @property
     def EnableIncrement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class Fr(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncrement'])
     @EnableIncrement.setter
     def EnableIncrement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncrement'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class Fr(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +113,11 @@ class Fr(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
+        # type: (int, int, bool, bool, str) -> Fr
         """Updates fr resource on the server.
 
         Args
@@ -121,6 +135,7 @@ class Fr(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
+        # type: (int, int, bool, bool, str) -> Fr
         """Adds a new fr resource on the server and adds it to the container.
 
         Args
@@ -152,6 +167,7 @@ class Fr(Base):
         self._delete()
 
     def find(self, Count=None, Dlci=None, EnableIncrement=None, Enabled=None, TrafficGroupId=None):
+        # type: (int, int, bool, bool, str) -> Fr
         """Finds and retrieves fr resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fr resources from the server.

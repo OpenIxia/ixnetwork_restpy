@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfChannelPortsLearnedInformation(Base):
@@ -48,12 +49,15 @@ class OfChannelPortsLearnedInformation(Base):
         'State': 'state',
         'SupportedFeatures': 'supportedFeatures',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfChannelPortsLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfChannelPortsLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def AdvertisedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def Config(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def CurrentFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +87,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def CurrentSpeed(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,6 +97,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def EthernetAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,6 +127,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +137,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def MaximumSpeed(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,6 +147,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,6 +157,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def PeerAdvertisedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,6 +167,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -162,6 +177,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class OfChannelPortsLearnedInformation(Base):
 
     @property
     def SupportedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,7 +205,21 @@ class OfChannelPortsLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SupportedFeatures'])
 
+    def add(self):
+        """Adds a new ofChannelPortsLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ofChannelPortsLearnedInformation resources using find and the newly added ofChannelPortsLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, EthernetAddress=None, LocalIp=None, MaximumSpeed=None, Name=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, State=None, SupportedFeatures=None):
+        # type: (str, str, str, int, int, str, str, str, int, str, str, int, str, str, str) -> OfChannelPortsLearnedInformation
         """Finds and retrieves ofChannelPortsLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofChannelPortsLearnedInformation resources from the server.

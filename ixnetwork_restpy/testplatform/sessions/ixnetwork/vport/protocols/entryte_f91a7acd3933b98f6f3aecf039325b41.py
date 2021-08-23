@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EntryTe(Base):
@@ -40,12 +41,15 @@ class EntryTe(Base):
         'EteRouterIdIncrement': 'eteRouterIdIncrement',
         'EteUnreservedBandWidth': 'eteUnreservedBandWidth',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EntryTe, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EntryTe, self).__init__(parent, list_op)
 
     @property
     def EnableEntryTe(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEntryTe'])
     @EnableEntryTe.setter
     def EnableEntryTe(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEntryTe'], value)
 
     @property
     def EteAdmGroup(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteAdmGroup'])
     @EteAdmGroup.setter
     def EteAdmGroup(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteAdmGroup'], value)
 
     @property
     def EteLinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteLinkMetric'])
     @EteLinkMetric.setter
     def EteLinkMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteLinkMetric'], value)
 
     @property
     def EteMaxBandWidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteMaxBandWidth'])
     @EteMaxBandWidth.setter
     def EteMaxBandWidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteMaxBandWidth'], value)
 
     @property
     def EteMaxReserveBandWidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteMaxReserveBandWidth'])
     @EteMaxReserveBandWidth.setter
     def EteMaxReserveBandWidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteMaxReserveBandWidth'], value)
 
     @property
     def EteRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteRouterId'])
     @EteRouterId.setter
     def EteRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteRouterId'], value)
 
     @property
     def EteRouterIdIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,10 +142,12 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteRouterIdIncrement'])
     @EteRouterIdIncrement.setter
     def EteRouterIdIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteRouterIdIncrement'], value)
 
     @property
     def EteUnreservedBandWidth(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -138,9 +156,11 @@ class EntryTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EteUnreservedBandWidth'])
     @EteUnreservedBandWidth.setter
     def EteUnreservedBandWidth(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['EteUnreservedBandWidth'], value)
 
     def update(self, EnableEntryTe=None, EteAdmGroup=None, EteLinkMetric=None, EteMaxBandWidth=None, EteMaxReserveBandWidth=None, EteRouterId=None, EteRouterIdIncrement=None, EteUnreservedBandWidth=None):
+        # type: (bool, str, int, str, str, str, str, List[str]) -> EntryTe
         """Updates entryTe resource on the server.
 
         Args

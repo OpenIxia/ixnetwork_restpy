@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetTopologyCustom(Base):
@@ -37,9 +38,11 @@ class NetTopologyCustom(Base):
         'LinkMultiplier': 'linkMultiplier',
         'NumberOfNodes': 'numberOfNodes',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetTopologyCustom, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetTopologyCustom, self).__init__(parent, list_op)
 
     @property
     def LinkTable(self):
@@ -53,10 +56,14 @@ class NetTopologyCustom(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.linktable_208cab015f6cc01eff274874a65e7fec import LinkTable
-        return LinkTable(self)._select()
+        if self._properties.get('LinkTable', None) is not None:
+            return self._properties.get('LinkTable')
+        else:
+            return LinkTable(self)._select()
 
     @property
     def IncludeEntryPoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class NetTopologyCustom(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
 
     @property
     def LinkMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class NetTopologyCustom(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
 
     @property
     def NumberOfNodes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +100,7 @@ class NetTopologyCustom(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfNodes'])
 
     def update(self, IncludeEntryPoint=None, LinkMultiplier=None):
+        # type: (bool, int) -> NetTopologyCustom
         """Updates netTopologyCustom resource on the server.
 
         Args
@@ -103,6 +115,7 @@ class NetTopologyCustom(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, IncludeEntryPoint=None, LinkMultiplier=None):
+        # type: (bool, int) -> NetTopologyCustom
         """Adds a new netTopologyCustom resource on the server and adds it to the container.
 
         Args
@@ -131,6 +144,7 @@ class NetTopologyCustom(Base):
         self._delete()
 
     def find(self, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfNodes=None):
+        # type: (bool, int, int) -> NetTopologyCustom
         """Finds and retrieves netTopologyCustom resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyCustom resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ldpvplsbgpad(Base):
@@ -81,9 +82,12 @@ class Ldpvplsbgpad(Base):
         'TypeVplsId': 'typeVplsId',
         'UpInterval': 'upInterval',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ldpvplsbgpad, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ldpvplsbgpad, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -97,7 +101,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def Ethernet(self):
@@ -111,7 +118,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        return Ethernet(self)
+        if self._properties.get('Ethernet', None) is not None:
+            return self._properties.get('Ethernet')
+        else:
+            return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
@@ -125,7 +135,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        return Ipv4Loopback(self)
+        if self._properties.get('Ipv4Loopback', None) is not None:
+            return self._properties.get('Ipv4Loopback')
+        else:
+            return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
@@ -139,7 +152,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        return Ipv6Loopback(self)
+        if self._properties.get('Ipv6Loopback', None) is not None:
+            return self._properties.get('Ipv6Loopback')
+        else:
+            return Ipv6Loopback(self)
 
     @property
     def LdpBasicRouter(self):
@@ -153,7 +169,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
-        return LdpBasicRouter(self)
+        if self._properties.get('LdpBasicRouter', None) is not None:
+            return self._properties.get('LdpBasicRouter')
+        else:
+            return LdpBasicRouter(self)
 
     @property
     def LdpBasicRouterV6(self):
@@ -167,7 +186,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        return LdpBasicRouterV6(self)
+        if self._properties.get('LdpBasicRouterV6', None) is not None:
+            return self._properties.get('LdpBasicRouterV6')
+        else:
+            return LdpBasicRouterV6(self)
 
     @property
     def LdpTargetedRouter(self):
@@ -181,7 +203,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        return LdpTargetedRouter(self)
+        if self._properties.get('LdpTargetedRouter', None) is not None:
+            return self._properties.get('LdpTargetedRouter')
+        else:
+            return LdpTargetedRouter(self)
 
     @property
     def LdpTargetedRouterV6(self):
@@ -195,7 +220,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        return LdpTargetedRouterV6(self)
+        if self._properties.get('LdpTargetedRouterV6', None) is not None:
+            return self._properties.get('LdpTargetedRouterV6')
+        else:
+            return LdpTargetedRouterV6(self)
 
     @property
     def Tag(self):
@@ -209,10 +237,14 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -223,6 +255,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def AsNumberVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -233,6 +266,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def AssignedNumberVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -243,6 +277,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def AutoPeerID(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -253,6 +288,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def AutoPeerId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -261,10 +297,12 @@ class Ldpvplsbgpad(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoPeerId'])
     @AutoPeerId.setter
     def AutoPeerId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoPeerId'], value)
 
     @property
     def BfdPwCV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -275,6 +313,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def BfdUdpCV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -285,6 +324,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def CBitEnabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -295,6 +335,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -303,10 +344,12 @@ class Ldpvplsbgpad(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -316,6 +359,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def DescEnabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +370,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Description(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +381,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -345,6 +391,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def DownInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -355,6 +402,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def DownStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -365,6 +413,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def EnableCCCVNegotiation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -375,6 +424,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def EnablePWStatus(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -394,6 +444,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def GroupId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -404,6 +455,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def InterfaceType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -414,6 +466,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def IpAddressVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -424,6 +477,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Ipv6PeerId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -434,6 +488,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def LSPPingCV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -444,6 +499,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Label(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -454,6 +510,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -463,6 +520,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Mtu(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -473,6 +531,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -481,10 +540,12 @@ class Ldpvplsbgpad(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -493,10 +554,12 @@ class Ldpvplsbgpad(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PWACHCC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -507,6 +570,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def PWStatusCode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -517,6 +581,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def PeerId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -527,6 +592,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def ProvisioningModelType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -537,6 +603,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def PwStatusSendNotification(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -547,6 +614,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def RepeatCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -557,6 +625,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def RouterAlertCC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -567,6 +636,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -576,6 +646,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def SourceAIIType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -586,6 +657,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def SourceAIIasIP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -596,6 +668,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def SourceAIIasNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -606,6 +679,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -614,6 +688,7 @@ class Ldpvplsbgpad(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -627,6 +702,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -636,6 +712,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def TargetAIIType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -646,6 +723,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def TargetAIIasIP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -656,6 +734,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def TargetAIIasNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -666,6 +745,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def TypeVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -676,6 +756,7 @@ class Ldpvplsbgpad(Base):
 
     @property
     def UpInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -685,6 +766,7 @@ class Ldpvplsbgpad(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpInterval']))
 
     def update(self, AutoPeerId=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (bool, List[str], int, str, List[str]) -> Ldpvplsbgpad
         """Updates ldpvplsbgpad resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -705,6 +787,7 @@ class Ldpvplsbgpad(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoPeerId=None, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (bool, List[str], int, str, List[str]) -> Ldpvplsbgpad
         """Adds a new ldpvplsbgpad resource on the server and adds it to the container.
 
         Args
@@ -785,6 +868,234 @@ class Ldpvplsbgpad(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def PurgeVCRanges(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the purgeVCRanges operation on the server.
+
+        Purge VC Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        purgeVCRanges(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        purgeVCRanges(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        purgeVCRanges(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('purgeVCRanges', payload=payload, response_object=None)
+
+    def Purgevcranges(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the purgevcranges operation on the server.
+
+        Purge Ethernet VC. Sends Address Withdraw message to purge all MACs learnt for this VC. Applicable for Ethernet Type VC only ( not VLAN).
+
+        purgevcranges(Arg2=list, async_operation=bool)list
+        --------------------------------------------------
+        - Arg2 (list(number)): Purge VC Ranges.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('purgevcranges', payload=payload, response_object=None)
+
+    def PurgeVPLSMac(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the purgeVPLSMac operation on the server.
+
+        Purge VPLS MAC
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        purgeVPLSMac(Mac_count=number, Mac=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - Mac_count (number): This parameter requires a mac_count of type kInteger
+        - Mac (str): This parameter requires a mac of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        purgeVPLSMac(Mac_count=number, Mac=string, SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------------------
+        - Mac_count (number): This parameter requires a mac_count of type kInteger
+        - Mac (str): This parameter requires a mac of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        purgeVPLSMac(SessionIndices=string, Mac_count=number, Mac=string, async_operation=bool)
+        ---------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a mac_count of type kInteger
+        - Mac_count (number): This parameter requires a mac of type kString
+        - Mac (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        purgeVPLSMac(Arg2=list, Arg3=number, Arg4=string, async_operation=bool)list
+        ---------------------------------------------------------------------------
+        - Arg2 (list(number)): Purge Ethernet MAC.
+        - Arg3 (number): Number of Mac addresses to purge
+        - Arg4 (str): Mac addresses start
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('purgeVPLSMac', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AsNumberVplsId=None, AssignedNumberVplsId=None, AutoPeerID=None, BfdPwCV=None, BfdUdpCV=None, CBitEnabled=None, DescEnabled=None, Description=None, DownInterval=None, DownStart=None, EnableCCCVNegotiation=None, EnablePWStatus=None, GroupId=None, InterfaceType=None, IpAddressVplsId=None, Ipv6PeerId=None, LSPPingCV=None, Label=None, Mtu=None, PWACHCC=None, PWStatusCode=None, PeerId=None, ProvisioningModelType=None, PwStatusSendNotification=None, RepeatCount=None, RouterAlertCC=None, SourceAIIType=None, SourceAIIasIP=None, SourceAIIasNumber=None, TargetAIIType=None, TargetAIIasIP=None, TargetAIIasNumber=None, TypeVplsId=None, UpInterval=None):
         """Base class infrastructure that gets a list of ldpvplsbgpad device ids encapsulated by this object.
 
@@ -838,189 +1149,3 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def PurgeVCRanges(self, *args, **kwargs):
-        """Executes the purgeVCRanges operation on the server.
-
-        Purge VC Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        purgeVCRanges(SessionIndices=list)
-        ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        purgeVCRanges(SessionIndices=string)
-        ------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('purgeVCRanges', payload=payload, response_object=None)
-
-    def Purgevcranges(self, *args, **kwargs):
-        """Executes the purgevcranges operation on the server.
-
-        Purge Ethernet VC. Sends Address Withdraw message to purge all MACs learnt for this VC. Applicable for Ethernet Type VC only ( not VLAN).
-
-        purgevcranges(Arg2=list)list
-        ----------------------------
-        - Arg2 (list(number)): Purge VC Ranges.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('purgevcranges', payload=payload, response_object=None)
-
-    def PurgeVPLSMac(self, *args, **kwargs):
-        """Executes the purgeVPLSMac operation on the server.
-
-        Purge VPLS MAC
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        purgeVPLSMac(Mac_count=number, Mac=string)
-        ------------------------------------------
-        - Mac_count (number): This parameter requires a mac_count of type kInteger
-        - Mac (str): This parameter requires a mac of type kString
-
-        purgeVPLSMac(Mac_count=number, Mac=string, SessionIndices=list)
-        ---------------------------------------------------------------
-        - Mac_count (number): This parameter requires a mac_count of type kInteger
-        - Mac (str): This parameter requires a mac of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        purgeVPLSMac(SessionIndices=string, Mac_count=number, Mac=string)
-        -----------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a mac_count of type kInteger
-        - Mac_count (number): This parameter requires a mac of type kString
-        - Mac (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        purgeVPLSMac(Arg2=list, Arg3=number, Arg4=string)list
-        -----------------------------------------------------
-        - Arg2 (list(number)): Purge Ethernet MAC.
-        - Arg3 (number): Number of Mac addresses to purge
-        - Arg4 (str): Mac addresses start
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('purgeVPLSMac', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

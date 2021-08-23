@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ListWatch(Base):
@@ -44,12 +45,15 @@ class ListWatch(Base):
         'Token': 'token',
         'Topic': 'topic',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ListWatch, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ListWatch, self).__init__(parent, list_op)
 
     @property
     def AttributesToWatch(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -58,10 +62,12 @@ class ListWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AttributesToWatch'])
     @AttributesToWatch.setter
     def AttributesToWatch(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['AttributesToWatch'], value)
 
     @property
     def AverageExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class ListWatch(Base):
 
     @property
     def IsDisabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class ListWatch(Base):
 
     @property
     def LastExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +97,7 @@ class ListWatch(Base):
 
     @property
     def LastNotification(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +107,7 @@ class ListWatch(Base):
 
     @property
     def MaxExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,10 +116,12 @@ class ListWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def ObjectIdToWatch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,10 +130,12 @@ class ListWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectIdToWatch'])
     @ObjectIdToWatch.setter
     def ObjectIdToWatch(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ObjectIdToWatch'], value)
 
     @property
     def PollInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +144,12 @@ class ListWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def Token(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,6 +159,7 @@ class ListWatch(Base):
 
     @property
     def Topic(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,9 +168,11 @@ class ListWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
+        # type: (List[str], int, str, int, str) -> ListWatch
         """Updates listWatch resource on the server.
 
         Args
@@ -171,6 +190,7 @@ class ListWatch(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AttributesToWatch=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Topic=None):
+        # type: (List[str], int, str, int, str) -> ListWatch
         """Adds a new listWatch resource on the server and adds it to the container.
 
         Args
@@ -202,6 +222,7 @@ class ListWatch(Base):
         self._delete()
 
     def find(self, AttributesToWatch=None, AverageExecutionTime=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, ObjectIdToWatch=None, PollInterval=None, Token=None, Topic=None):
+        # type: (List[str], int, bool, int, str, int, str, int, int, str) -> ListWatch
         """Finds and retrieves listWatch resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve listWatch resources from the server.

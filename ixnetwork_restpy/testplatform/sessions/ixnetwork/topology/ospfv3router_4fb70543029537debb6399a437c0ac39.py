@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ospfv3Router(Base):
@@ -70,9 +71,12 @@ class Ospfv3Router(Base):
         'Status': 'status',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ospfv3Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ospfv3Router, self).__init__(parent, list_op)
 
     @property
     def Ospfv3SRGBRangeSubObjectsList(self):
@@ -86,10 +90,14 @@ class Ospfv3Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srgbrangesubobjectslist_be527e153c8e6d4e5c3f4321aa8409c4 import Ospfv3SRGBRangeSubObjectsList
-        return Ospfv3SRGBRangeSubObjectsList(self)
+        if self._properties.get('Ospfv3SRGBRangeSubObjectsList', None) is not None:
+            return self._properties.get('Ospfv3SRGBRangeSubObjectsList')
+        else:
+            return Ospfv3SRGBRangeSubObjectsList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class Ospfv3Router(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -110,6 +119,7 @@ class Ospfv3Router(Base):
 
     @property
     def BBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +130,7 @@ class Ospfv3Router(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +141,7 @@ class Ospfv3Router(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class Ospfv3Router(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,6 +161,7 @@ class Ospfv3Router(Base):
 
     @property
     def DisableAutoGenerateLinkLsa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +172,7 @@ class Ospfv3Router(Base):
 
     @property
     def DisableAutoGenerateRouterLsa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -168,6 +183,7 @@ class Ospfv3Router(Base):
 
     @property
     def DiscardLearnedLsa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -178,6 +194,7 @@ class Ospfv3Router(Base):
 
     @property
     def EBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -188,6 +205,7 @@ class Ospfv3Router(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -198,6 +216,7 @@ class Ospfv3Router(Base):
 
     @property
     def EnableGracefulRestartHelperMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -208,6 +227,7 @@ class Ospfv3Router(Base):
 
     @property
     def EnableSrMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,10 +236,12 @@ class Ospfv3Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSrMpls'])
     @EnableSrMpls.setter
     def EnableSrMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSrMpls'], value)
 
     @property
     def EnableStrictLsaChecking(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -230,6 +252,7 @@ class Ospfv3Router(Base):
 
     @property
     def EnableSupportReasonSwReloadUpgrade(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +263,7 @@ class Ospfv3Router(Base):
 
     @property
     def EnableSupportReasonSwRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +274,7 @@ class Ospfv3Router(Base):
 
     @property
     def EnableSupportReasonSwitchToRedundantControlProcessor(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +285,7 @@ class Ospfv3Router(Base):
 
     @property
     def EnableSupportReasonUnknown(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +305,7 @@ class Ospfv3Router(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +316,7 @@ class Ospfv3Router(Base):
 
     @property
     def LocalRouterId(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -298,6 +326,7 @@ class Ospfv3Router(Base):
 
     @property
     def LoopbackAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +337,7 @@ class Ospfv3Router(Base):
 
     @property
     def LsaRefreshTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +348,7 @@ class Ospfv3Router(Base):
 
     @property
     def LsaRetransmitTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -328,6 +359,7 @@ class Ospfv3Router(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +370,7 @@ class Ospfv3Router(Base):
 
     @property
     def MaxNumLsaPerSecond(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -348,6 +381,7 @@ class Ospfv3Router(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -356,10 +390,12 @@ class Ospfv3Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +406,7 @@ class Ospfv3Router(Base):
 
     @property
     def PrefixOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +417,7 @@ class Ospfv3Router(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -389,6 +427,7 @@ class Ospfv3Router(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -398,6 +437,7 @@ class Ospfv3Router(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -408,6 +448,7 @@ class Ospfv3Router(Base):
 
     @property
     def SrgbRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -416,6 +457,7 @@ class Ospfv3Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrgbRangeCount'])
     @SrgbRangeCount.setter
     def SrgbRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrgbRangeCount'], value)
 
     @property
@@ -429,6 +471,7 @@ class Ospfv3Router(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -438,6 +481,7 @@ class Ospfv3Router(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -447,6 +491,7 @@ class Ospfv3Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+        # type: (bool, str, int) -> Ospfv3Router
         """Updates ospfv3Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -465,6 +510,7 @@ class Ospfv3Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+        # type: (bool, str, int) -> Ospfv3Router
         """Adds a new ospfv3Router resource on the server and adds it to the container.
 
         Args
@@ -542,6 +588,198 @@ class Ospfv3Router(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Ospfv3StartRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the ospfv3StartRouter operation on the server.
+
+        Start OSPFv3 Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        ospfv3StartRouter(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfv3StartRouter(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfv3StartRouter(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('ospfv3StartRouter', payload=payload, response_object=None)
+
+    def Ospfv3StopRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the ospfv3StopRouter operation on the server.
+
+        Stop OSPFv3 Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        ospfv3StopRouter(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfv3StopRouter(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfv3StopRouter(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('ospfv3StopRouter', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EBit=None, EFlag=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, LFlag=None, LoopbackAddress=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MaxNumLsaPerSecond=None, NpFlag=None, PrefixOptions=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv3Router device ids encapsulated by this object.
 
@@ -585,153 +823,3 @@ class Ospfv3Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Ospfv3StartRouter(self, *args, **kwargs):
-        """Executes the ospfv3StartRouter operation on the server.
-
-        Start OSPFv3 Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        ospfv3StartRouter(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        ospfv3StartRouter(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ospfv3StartRouter', payload=payload, response_object=None)
-
-    def Ospfv3StopRouter(self, *args, **kwargs):
-        """Executes the ospfv3StopRouter operation on the server.
-
-        Stop OSPFv3 Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        ospfv3StopRouter(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        ospfv3StopRouter(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ospfv3StopRouter', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

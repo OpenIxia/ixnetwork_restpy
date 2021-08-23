@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Instructions(Base):
@@ -38,9 +39,11 @@ class Instructions(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Instructions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Instructions, self).__init__(parent, list_op)
 
     @property
     def Instruction(self):
@@ -54,10 +57,14 @@ class Instructions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.instruction_fc266397b5416d1a0c5f0d72b75b70d3 import Instruction
-        return Instruction(self)
+        if self._properties.get('Instruction', None) is not None:
+            return self._properties.get('Instruction')
+        else:
+            return Instruction(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +74,7 @@ class Instructions(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,10 +83,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRepeatable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,10 +111,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
     @IsRepeatable.setter
     def IsRepeatable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,10 +125,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,9 +139,11 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> Instructions
         """Updates instructions resource on the server.
 
         Args

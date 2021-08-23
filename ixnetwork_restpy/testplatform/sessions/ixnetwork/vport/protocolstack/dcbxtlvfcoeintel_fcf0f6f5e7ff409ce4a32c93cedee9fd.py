@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DcbxTlvFcoeIntel(Base):
@@ -34,12 +35,15 @@ class DcbxTlvFcoeIntel(Base):
         'ObjectId': 'objectId',
         'PriorityMap': 'priorityMap',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DcbxTlvFcoeIntel, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DcbxTlvFcoeIntel, self).__init__(parent, list_op)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,6 +53,7 @@ class DcbxTlvFcoeIntel(Base):
 
     @property
     def PriorityMap(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -57,9 +62,11 @@ class DcbxTlvFcoeIntel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityMap'])
     @PriorityMap.setter
     def PriorityMap(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityMap'], value)
 
     def update(self, PriorityMap=None):
+        # type: (List[int]) -> DcbxTlvFcoeIntel
         """Updates dcbxTlvFcoeIntel resource on the server.
 
         Args
@@ -73,14 +80,16 @@ class DcbxTlvFcoeIntel(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -93,13 +102,15 @@ class DcbxTlvFcoeIntel(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -113,13 +124,15 @@ class DcbxTlvFcoeIntel(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

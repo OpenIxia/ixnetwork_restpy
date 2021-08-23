@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Multicast(Base):
@@ -35,9 +36,11 @@ class Multicast(Base):
         'EnableMulticastCluster': 'enableMulticastCluster',
         'GroupAddress': 'groupAddress',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Multicast, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Multicast, self).__init__(parent, list_op)
 
     @property
     def Cluster(self):
@@ -51,7 +54,10 @@ class Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_8dcd05006226c29e0542a45bb95b4f8f import Cluster
-        return Cluster(self)._select()
+        if self._properties.get('Cluster', None) is not None:
+            return self._properties.get('Cluster')
+        else:
+            return Cluster(self)._select()
 
     @property
     def RouteDistinguisher(self):
@@ -65,10 +71,14 @@ class Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routedistinguisher_2c6f642c4d203efc1987442fcc10ae18 import RouteDistinguisher
-        return RouteDistinguisher(self)._select()
+        if self._properties.get('RouteDistinguisher', None) is not None:
+            return self._properties.get('RouteDistinguisher')
+        else:
+            return RouteDistinguisher(self)._select()
 
     @property
     def EnableMulticast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +87,12 @@ class Multicast(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMulticast'])
     @EnableMulticast.setter
     def EnableMulticast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMulticast'], value)
 
     @property
     def EnableMulticastCluster(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +101,12 @@ class Multicast(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMulticastCluster'])
     @EnableMulticastCluster.setter
     def EnableMulticastCluster(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMulticastCluster'], value)
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +115,11 @@ class Multicast(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
     @GroupAddress.setter
     def GroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
 
     def update(self, EnableMulticast=None, EnableMulticastCluster=None, GroupAddress=None):
+        # type: (bool, bool, str) -> Multicast
         """Updates multicast resource on the server.
 
         Args

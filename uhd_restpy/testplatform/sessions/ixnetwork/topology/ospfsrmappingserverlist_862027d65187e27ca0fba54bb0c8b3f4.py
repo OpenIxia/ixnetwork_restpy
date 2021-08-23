@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfSRMappingServerList(Base):
@@ -49,12 +50,15 @@ class OspfSRMappingServerList(Base):
         'SidIndexLabel': 'sidIndexLabel',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfSRMappingServerList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfSRMappingServerList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -65,6 +69,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -75,6 +80,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +90,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,6 +100,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +111,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def IaFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +122,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +133,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def LastNetworkAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -132,6 +143,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -141,6 +153,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +164,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +173,12 @@ class OspfSRMappingServerList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +189,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -183,6 +200,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -193,6 +211,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def Range(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -203,6 +222,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -213,6 +233,7 @@ class OspfSRMappingServerList(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -222,6 +243,7 @@ class OspfSRMappingServerList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, Name=None):
+        # type: (str) -> OspfSRMappingServerList
         """Updates ospfSRMappingServerList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -236,6 +258,50 @@ class OspfSRMappingServerList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Advertise(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the advertise operation on the server.
+
+        Advertise the Mapping Server mapping
+
+        advertise(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertise', payload=payload, response_object=None)
+
+    def Withdraw(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the withdraw operation on the server.
+
+        Withdraw the Mapping Server mapping
+
+        withdraw(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdraw', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, EFlag=None, IaFlag=None, LFlag=None, MFlag=None, NetworkAddress=None, NpFlag=None, PrefixLength=None, Range=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfSRMappingServerList device ids encapsulated by this object.
@@ -267,43 +333,3 @@ class OspfSRMappingServerList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Advertise(self, *args, **kwargs):
-        """Executes the advertise operation on the server.
-
-        Advertise the Mapping Server mapping
-
-        advertise(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
-
-    def Withdraw(self, *args, **kwargs):
-        """Executes the withdraw operation on the server.
-
-        Withdraw the Mapping Server mapping
-
-        withdraw(Arg2=list)list
-        -----------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)

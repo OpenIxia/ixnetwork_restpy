@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisMappingServerIPV4List(Base):
@@ -53,12 +54,15 @@ class IsisMappingServerIPV4List(Base):
         'VFlag': 'vFlag',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisMappingServerIPV4List, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisMappingServerIPV4List, self).__init__(parent, list_op)
 
     @property
     def AFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -69,6 +73,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -79,6 +84,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +95,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,6 +105,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def DFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +116,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,6 +126,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def FECPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +148,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +159,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def LastFECAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -156,6 +169,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +180,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def NFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +191,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,10 +200,12 @@ class IsisMappingServerIPV4List(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -198,6 +216,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -208,6 +227,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def RFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -218,6 +238,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def Range(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +249,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def SFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +260,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def StartSIDLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +271,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +282,7 @@ class IsisMappingServerIPV4List(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -267,6 +292,7 @@ class IsisMappingServerIPV4List(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisMappingServerIPV4List
         """Updates isisMappingServerIPV4List resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -281,6 +307,50 @@ class IsisMappingServerIPV4List(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Advertise(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the advertise operation on the server.
+
+        Advertise the V4 Mapping Server Range TLVs
+
+        advertise(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertise', payload=payload, response_object=None)
+
+    def Withdraw(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the withdraw operation on the server.
+
+        Withdraw the V4 Mapping Server Range TLVs
+
+        withdraw(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdraw', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AFlag=None, Active=None, Algorithm=None, DFlag=None, EFlag=None, FECPrefix=None, LFlag=None, MFlag=None, NFlag=None, PFlag=None, PrefixLength=None, RFlag=None, Range=None, SFlag=None, StartSIDLabel=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of isisMappingServerIPV4List device ids encapsulated by this object.
@@ -317,43 +387,3 @@ class IsisMappingServerIPV4List(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Advertise(self, *args, **kwargs):
-        """Executes the advertise operation on the server.
-
-        Advertise the V4 Mapping Server Range TLVs
-
-        advertise(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
-
-    def Withdraw(self, *args, **kwargs):
-        """Executes the withdraw operation on the server.
-
-        Withdraw the V4 Mapping Server Range TLVs
-
-        withdraw(Arg2=list)list
-        -----------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)

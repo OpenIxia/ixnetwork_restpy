@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Session(Base):
@@ -43,12 +44,17 @@ class Session(Base):
         'RemoteDisc': 'remoteDisc',
         'RemoteDiscLearned': 'remoteDiscLearned',
     }
+    _SDM_ENUM_MAP = {
+        'bfdSessionType': ['singleHop', 'multipleHops'],
+        'ipType': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(Session, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Session, self).__init__(parent, list_op)
 
     @property
     def BfdSessionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,10 +63,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BfdSessionType'])
     @BfdSessionType.setter
     def BfdSessionType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BfdSessionType'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -69,10 +77,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EnabledAutoChooseSource(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -81,10 +91,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledAutoChooseSource'])
     @EnabledAutoChooseSource.setter
     def EnabledAutoChooseSource(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledAutoChooseSource'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +105,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def LocalBfdAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +119,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocalBfdAddress'])
     @LocalBfdAddress.setter
     def LocalBfdAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocalBfdAddress'], value)
 
     @property
     def MyDisc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,10 +133,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MyDisc'])
     @MyDisc.setter
     def MyDisc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MyDisc'], value)
 
     @property
     def RemoteBfdAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,10 +147,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RemoteBfdAddress'])
     @RemoteBfdAddress.setter
     def RemoteBfdAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RemoteBfdAddress'], value)
 
     @property
     def RemoteDisc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +161,12 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RemoteDisc'])
     @RemoteDisc.setter
     def RemoteDisc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RemoteDisc'], value)
 
     @property
     def RemoteDiscLearned(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,9 +175,11 @@ class Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RemoteDiscLearned'])
     @RemoteDiscLearned.setter
     def RemoteDiscLearned(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RemoteDiscLearned'], value)
 
     def update(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
+        # type: (str, bool, bool, str, str, int, str, int, bool) -> Session
         """Updates session resource on the server.
 
         Args
@@ -177,6 +201,7 @@ class Session(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
+        # type: (str, bool, bool, str, str, int, str, int, bool) -> Session
         """Adds a new session resource on the server and adds it to the container.
 
         Args
@@ -212,6 +237,7 @@ class Session(Base):
         self._delete()
 
     def find(self, BfdSessionType=None, Enabled=None, EnabledAutoChooseSource=None, IpType=None, LocalBfdAddress=None, MyDisc=None, RemoteBfdAddress=None, RemoteDisc=None, RemoteDiscLearned=None):
+        # type: (str, bool, bool, str, str, int, str, int, bool) -> Session
         """Finds and retrieves session resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve session resources from the server.

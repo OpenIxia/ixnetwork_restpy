@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SbfdInitiator(Base):
@@ -43,9 +44,11 @@ class SbfdInitiator(Base):
         'TimeoutMultiplier': 'timeoutMultiplier',
         'TxInterval': 'txInterval',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SbfdInitiator, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SbfdInitiator, self).__init__(parent, list_op)
 
     @property
     def MplsLabelList(self):
@@ -59,10 +62,14 @@ class SbfdInitiator(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplslabellist_37213b54082ea2315b262cbc86661827 import MplsLabelList
-        return MplsLabelList(self)
+        if self._properties.get('MplsLabelList', None) is not None:
+            return self._properties.get('MplsLabelList')
+        else:
+            return MplsLabelList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class SbfdInitiator(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class SbfdInitiator(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +100,7 @@ class SbfdInitiator(Base):
 
     @property
     def DestIPAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class SbfdInitiator(Base):
 
     @property
     def MplsLabelCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,10 +120,12 @@ class SbfdInitiator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabelCount'])
     @MplsLabelCount.setter
     def MplsLabelCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabelCount'], value)
 
     @property
     def MyDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +136,7 @@ class SbfdInitiator(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +145,12 @@ class SbfdInitiator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PeerDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +161,7 @@ class SbfdInitiator(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -154,6 +171,7 @@ class SbfdInitiator(Base):
 
     @property
     def TimeoutMultiplier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -164,6 +182,7 @@ class SbfdInitiator(Base):
 
     @property
     def TxInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +192,7 @@ class SbfdInitiator(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxInterval']))
 
     def update(self, MplsLabelCount=None, Name=None):
+        # type: (int, str) -> SbfdInitiator
         """Updates sbfdInitiator resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

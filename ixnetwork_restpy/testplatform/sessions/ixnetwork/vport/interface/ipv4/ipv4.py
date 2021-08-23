@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4(Base):
@@ -37,12 +38,15 @@ class Ipv4(Base):
         'Ip': 'ip',
         'MaskWidth': 'maskWidth',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4, self).__init__(parent, list_op)
 
     @property
     def Gateway(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Ipv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Gateway'])
     @Gateway.setter
     def Gateway(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Gateway'], value)
 
     @property
     def Ip(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class Ipv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ip'])
     @Ip.setter
     def Ip(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ip'], value)
 
     @property
     def MaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,9 +83,11 @@ class Ipv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
     @MaskWidth.setter
     def MaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
 
     def update(self, Gateway=None, Ip=None, MaskWidth=None):
+        # type: (str, str, int) -> Ipv4
         """Updates ipv4 resource on the server.
 
         Args
@@ -93,6 +103,7 @@ class Ipv4(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Gateway=None, Ip=None, MaskWidth=None):
+        # type: (str, str, int) -> Ipv4
         """Adds a new ipv4 resource on the server and adds it to the container.
 
         Args
@@ -122,6 +133,7 @@ class Ipv4(Base):
         self._delete()
 
     def find(self, Gateway=None, Ip=None, MaskWidth=None):
+        # type: (str, str, int) -> Ipv4
         """Finds and retrieves ipv4 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4 resources from the server.

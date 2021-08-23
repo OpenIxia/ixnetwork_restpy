@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SupportedActions(Base):
@@ -44,12 +45,15 @@ class SupportedActions(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SupportedActions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SupportedActions, self).__init__(parent, list_op)
 
     @property
     def Enqueue(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -58,10 +62,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enqueue'])
     @Enqueue.setter
     def Enqueue(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enqueue'], value)
 
     @property
     def EthernetDestination(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -70,10 +76,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
     @EthernetDestination.setter
     def EthernetDestination(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
 
     @property
     def EthernetSource(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,10 +90,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
     @EthernetSource.setter
     def EthernetSource(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
 
     @property
     def IpDscp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -94,10 +104,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
     @IpDscp.setter
     def IpDscp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
 
     @property
     def Ipv4Destination(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,10 +118,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
 
     @property
     def Ipv4Source(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -118,10 +132,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
     @Ipv4Source.setter
     def Ipv4Source(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
 
     @property
     def Output(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -130,10 +146,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Output'])
     @Output.setter
     def Output(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Output'], value)
 
     @property
     def StripVlanHeader(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,10 +160,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StripVlanHeader'])
     @StripVlanHeader.setter
     def StripVlanHeader(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StripVlanHeader'], value)
 
     @property
     def TransportDestination(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -154,10 +174,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportDestination'])
     @TransportDestination.setter
     def TransportDestination(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportDestination'], value)
 
     @property
     def TransportSource(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -166,10 +188,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportSource'])
     @TransportSource.setter
     def TransportSource(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportSource'], value)
 
     @property
     def VlanId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +202,12 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,9 +216,11 @@ class SupportedActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, Enqueue=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, Output=None, StripVlanHeader=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SupportedActions
         """Updates supportedActions resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MeterConfigStatsLearnedInformation(Base):
@@ -47,9 +48,11 @@ class MeterConfigStatsLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MeterConfigStatsLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MeterConfigStatsLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def MeterConfigStatsBandLearnedInformation(self):
@@ -63,10 +66,14 @@ class MeterConfigStatsLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterconfigstatsbandlearnedinformation_286ea4e162fea52a8f873cffc4aff2fb import MeterConfigStatsBandLearnedInformation
-        return MeterConfigStatsBandLearnedInformation(self)
+        if self._properties.get('MeterConfigStatsBandLearnedInformation', None) is not None:
+            return self._properties.get('MeterConfigStatsBandLearnedInformation')
+        else:
+            return MeterConfigStatsBandLearnedInformation(self)
 
     @property
     def DataPathId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +83,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +93,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,6 +103,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +113,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def Flags(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +123,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def LastErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +133,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def LastErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,6 +143,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,6 +153,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,6 +163,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,6 +173,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,6 +183,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def NumberOfBands(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -175,6 +193,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,6 +203,7 @@ class MeterConfigStatsLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,7 +211,21 @@ class MeterConfigStatsLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
 
+    def add(self):
+        """Adds a new meterConfigStatsLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved meterConfigStatsLearnedInformation resources using find and the newly added meterConfigStatsLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, Flags=None, LastErrorCode=None, LastErrorType=None, Latency=None, LocalIp=None, MeterId=None, NegotiatedVersion=None, NumberOfBands=None, RemoteIp=None, ReplyState=None):
+        # type: (int, str, str, str, str, str, str, int, str, int, str, int, str, str) -> MeterConfigStatsLearnedInformation
         """Finds and retrieves meterConfigStatsLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meterConfigStatsLearnedInformation resources from the server.

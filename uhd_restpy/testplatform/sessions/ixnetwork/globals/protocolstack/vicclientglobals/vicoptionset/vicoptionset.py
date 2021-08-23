@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VicOptionSet(Base):
@@ -38,9 +39,11 @@ class VicOptionSet(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VicOptionSet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VicOptionSet, self).__init__(parent, list_op)
 
     @property
     def VicOptionTlv(self):
@@ -54,10 +57,14 @@ class VicOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.vicclientglobals.vicoptionset.vicoptiontlv.vicoptiontlv import VicOptionTlv
-        return VicOptionTlv(self)
+        if self._properties.get('VicOptionTlv', None) is not None:
+            return self._properties.get('VicOptionTlv')
+        else:
+            return VicOptionTlv(self)
 
     @property
     def Defaultp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class VicOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
     @Defaultp.setter
     def Defaultp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
 
     @property
     def FeatureType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class VicOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FeatureType'])
     @FeatureType.setter
     def FeatureType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FeatureType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class VicOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +115,7 @@ class VicOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Defaultp=None, FeatureType=None, Name=None):
+        # type: (bool, int, str) -> VicOptionSet
         """Updates vicOptionSet resource on the server.
 
         Args
@@ -117,6 +131,7 @@ class VicOptionSet(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Defaultp=None, FeatureType=None, Name=None):
+        # type: (bool, int, str) -> VicOptionSet
         """Adds a new vicOptionSet resource on the server and adds it to the container.
 
         Args
@@ -146,6 +161,7 @@ class VicOptionSet(Base):
         self._delete()
 
     def find(self, Defaultp=None, FeatureType=None, Name=None, ObjectId=None):
+        # type: (bool, int, str, str) -> VicOptionSet
         """Finds and retrieves vicOptionSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vicOptionSet resources from the server.

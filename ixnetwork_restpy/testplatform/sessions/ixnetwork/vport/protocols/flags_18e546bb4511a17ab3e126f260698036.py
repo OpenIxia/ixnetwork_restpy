@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Flags(Base):
@@ -36,12 +37,15 @@ class Flags(Base):
         'RateKb': 'rateKb',
         'RatePacket': 'ratePacket',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Flags, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Flags, self).__init__(parent, list_op)
 
     @property
     def BurstSize(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class Flags(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
     @BurstSize.setter
     def BurstSize(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
 
     @property
     def CollectStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class Flags(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CollectStatistics'])
     @CollectStatistics.setter
     def CollectStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CollectStatistics'], value)
 
     @property
     def RateKb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class Flags(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RateKb'])
     @RateKb.setter
     def RateKb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RateKb'], value)
 
     @property
     def RatePacket(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class Flags(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RatePacket'])
     @RatePacket.setter
     def RatePacket(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RatePacket'], value)
 
     def update(self, BurstSize=None, CollectStatistics=None, RateKb=None, RatePacket=None):
+        # type: (bool, bool, bool, bool) -> Flags
         """Updates flags resource on the server.
 
         Args

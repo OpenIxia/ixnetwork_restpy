@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3SimulatedTopologyConfig(Base):
@@ -41,9 +42,11 @@ class IsisL3SimulatedTopologyConfig(Base):
         'IsisL3Ipv6NodeRouteCount': 'isisL3Ipv6NodeRouteCount',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3SimulatedTopologyConfig, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3SimulatedTopologyConfig, self).__init__(parent, list_op)
 
     @property
     def IsisL3ipv4NodeRouteList(self):
@@ -57,7 +60,10 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv4noderoutelist_ae7695e0538209b004b305811ac652f1 import IsisL3ipv4NodeRouteList
-        return IsisL3ipv4NodeRouteList(self)._select()
+        if self._properties.get('IsisL3ipv4NodeRouteList', None) is not None:
+            return self._properties.get('IsisL3ipv4NodeRouteList')
+        else:
+            return IsisL3ipv4NodeRouteList(self)._select()
 
     @property
     def IsisL3ipv6NodeRouteList(self):
@@ -71,10 +77,14 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv6noderoutelist_305cdb4f4026728819c2e41364d4f782 import IsisL3ipv6NodeRouteList
-        return IsisL3ipv6NodeRouteList(self)._select()
+        if self._properties.get('IsisL3ipv6NodeRouteList', None) is not None:
+            return self._properties.get('IsisL3ipv6NodeRouteList')
+        else:
+            return IsisL3ipv6NodeRouteList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +95,7 @@ class IsisL3SimulatedTopologyConfig(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +105,7 @@ class IsisL3SimulatedTopologyConfig(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +115,7 @@ class IsisL3SimulatedTopologyConfig(Base):
 
     @property
     def EnableHostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +126,7 @@ class IsisL3SimulatedTopologyConfig(Base):
 
     @property
     def HostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +137,7 @@ class IsisL3SimulatedTopologyConfig(Base):
 
     @property
     def IsisL3Ipv4NodeRouteCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +146,12 @@ class IsisL3SimulatedTopologyConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsisL3Ipv4NodeRouteCount'])
     @IsisL3Ipv4NodeRouteCount.setter
     def IsisL3Ipv4NodeRouteCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsisL3Ipv4NodeRouteCount'], value)
 
     @property
     def IsisL3Ipv6NodeRouteCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +160,12 @@ class IsisL3SimulatedTopologyConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsisL3Ipv6NodeRouteCount'])
     @IsisL3Ipv6NodeRouteCount.setter
     def IsisL3Ipv6NodeRouteCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsisL3Ipv6NodeRouteCount'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,9 +174,11 @@ class IsisL3SimulatedTopologyConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+        # type: (int, int, str) -> IsisL3SimulatedTopologyConfig
         """Updates isisL3SimulatedTopologyConfig resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -175,7 +196,28 @@ class IsisL3SimulatedTopologyConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+        # type: (int, int, str) -> IsisL3SimulatedTopologyConfig
+        """Adds a new isisL3SimulatedTopologyConfig resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - IsisL3Ipv4NodeRouteCount (number): Node Route Range Count(multiplier)
+        - IsisL3Ipv6NodeRouteCount (number): Node Route Range Count(multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisL3SimulatedTopologyConfig resources using find and the newly added isisL3SimulatedTopologyConfig resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, IsisL3Ipv4NodeRouteCount=None, IsisL3Ipv6NodeRouteCount=None, Name=None):
+        # type: (int, str, int, int, str) -> IsisL3SimulatedTopologyConfig
         """Finds and retrieves isisL3SimulatedTopologyConfig resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3SimulatedTopologyConfig resources from the server.
@@ -218,6 +260,90 @@ class IsisL3SimulatedTopologyConfig(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, EnableHostName=None, HostName=None):
         """Base class infrastructure that gets a list of isisL3SimulatedTopologyConfig device ids encapsulated by this object.
 
@@ -239,66 +365,3 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start Isis Simulated Topology
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop Isis Simulated Topology
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TlvProfile(Base):
@@ -33,9 +34,11 @@ class TlvProfile(Base):
     _SDM_NAME = 'tlvProfile'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TlvProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TlvProfile, self).__init__(parent, list_op)
 
     @property
     def DefaultTlv(self):
@@ -49,7 +52,10 @@ class TlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv_8e41257d3d01ec013783dd0fd6697862 import DefaultTlv
-        return DefaultTlv(self)
+        if self._properties.get('DefaultTlv', None) is not None:
+            return self._properties.get('DefaultTlv')
+        else:
+            return DefaultTlv(self)
 
     @property
     def Tlv(self):
@@ -63,7 +69,23 @@ class TlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv_d2b702d35a057ccb264f716c5f342298 import Tlv
-        return Tlv(self)
+        if self._properties.get('Tlv', None) is not None:
+            return self._properties.get('Tlv')
+        else:
+            return Tlv(self)
+
+    def add(self):
+        """Adds a new tlvProfile resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tlvProfile resources using find and the newly added tlvProfile resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves tlvProfile resources from the server.
@@ -101,13 +123,15 @@ class TlvProfile(Base):
         return self._read(href)
 
     def CopyTlv(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the copyTlv operation on the server.
 
         Copy a template tlv to a topology tlv profile
 
-        copyTlv(Arg2=href)href
-        ----------------------
-        - Arg2 (str(None | /api/v1/sessions/9/ixnetwork/globals/.../topology)): An object reference to a source template tlv
+        copyTlv(Arg2=href, async_operation=bool)href
+        --------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/globals/.../topology)): An object reference to a source template tlv
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str(None): An object reference to the newly created topology tlv as a result of the copy operation
 
         Raises

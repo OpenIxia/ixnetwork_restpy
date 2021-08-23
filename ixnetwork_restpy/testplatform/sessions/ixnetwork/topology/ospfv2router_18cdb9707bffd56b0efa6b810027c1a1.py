@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ospfv2Router(Base):
@@ -96,9 +97,12 @@ class Ospfv2Router(Base):
         'Unused': 'unused',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ospfv2Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ospfv2Router, self).__init__(parent, list_op)
 
     @property
     def OspfBierSubDomainList(self):
@@ -112,7 +116,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfbiersubdomainlist_a244513d4753b7b3d307266e2c9b6c70 import OspfBierSubDomainList
-        return OspfBierSubDomainList(self)._select()
+        if self._properties.get('OspfBierSubDomainList', None) is not None:
+            return self._properties.get('OspfBierSubDomainList')
+        else:
+            return OspfBierSubDomainList(self)._select()
 
     @property
     def OspfFlexAlgorithmList(self):
@@ -126,7 +133,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfflexalgorithmlist_4ae63bf2db7540120979d438049bb34e import OspfFlexAlgorithmList
-        return OspfFlexAlgorithmList(self)._select()
+        if self._properties.get('OspfFlexAlgorithmList', None) is not None:
+            return self._properties.get('OspfFlexAlgorithmList')
+        else:
+            return OspfFlexAlgorithmList(self)._select()
 
     @property
     def OspfRoutersSid(self):
@@ -140,7 +150,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouterssid_5e55e392a518bc7ace38c8d3b21972c4 import OspfRoutersSid
-        return OspfRoutersSid(self)._select()
+        if self._properties.get('OspfRoutersSid', None) is not None:
+            return self._properties.get('OspfRoutersSid')
+        else:
+            return OspfRoutersSid(self)._select()
 
     @property
     def OspfSRAlgorithmList(self):
@@ -154,7 +167,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import OspfSRAlgorithmList
-        return OspfSRAlgorithmList(self)
+        if self._properties.get('OspfSRAlgorithmList', None) is not None:
+            return self._properties.get('OspfSRAlgorithmList')
+        else:
+            return OspfSRAlgorithmList(self)
 
     @property
     def OspfSRGBRangeSubObjectsList(self):
@@ -168,7 +184,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import OspfSRGBRangeSubObjectsList
-        return OspfSRGBRangeSubObjectsList(self)
+        if self._properties.get('OspfSRGBRangeSubObjectsList', None) is not None:
+            return self._properties.get('OspfSRGBRangeSubObjectsList')
+        else:
+            return OspfSRGBRangeSubObjectsList(self)
 
     @property
     def OspfSRLBRangeSubObjectsList(self):
@@ -182,10 +201,14 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import OspfSRLBRangeSubObjectsList
-        return OspfSRLBRangeSubObjectsList(self)
+        if self._properties.get('OspfSRLBRangeSubObjectsList', None) is not None:
+            return self._properties.get('OspfSRLBRangeSubObjectsList')
+        else:
+            return OspfSRLBRangeSubObjectsList(self)
 
     @property
     def BIERPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +219,7 @@ class Ospfv2Router(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +230,7 @@ class Ospfv2Router(Base):
 
     @property
     def AdvertiseFapm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +241,7 @@ class Ospfv2Router(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +252,7 @@ class Ospfv2Router(Base):
 
     @property
     def BBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +263,7 @@ class Ospfv2Router(Base):
 
     @property
     def BierAFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +274,7 @@ class Ospfv2Router(Base):
 
     @property
     def BierNFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +285,7 @@ class Ospfv2Router(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +296,7 @@ class Ospfv2Router(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -275,6 +306,7 @@ class Ospfv2Router(Base):
 
     @property
     def DemandCircuit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -285,6 +317,7 @@ class Ospfv2Router(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -294,6 +327,7 @@ class Ospfv2Router(Base):
 
     @property
     def DiscardLearnedLsa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -304,6 +338,7 @@ class Ospfv2Router(Base):
 
     @property
     def DoNotGenerateRouterLsa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -314,6 +349,7 @@ class Ospfv2Router(Base):
 
     @property
     def EBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -324,6 +360,7 @@ class Ospfv2Router(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -334,6 +371,7 @@ class Ospfv2Router(Base):
 
     @property
     def EnableBIER(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -342,10 +380,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBIER'])
     @EnableBIER.setter
     def EnableBIER(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBIER'], value)
 
     @property
     def EnableMappingServer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -356,6 +396,7 @@ class Ospfv2Router(Base):
 
     @property
     def EnableMappingServerPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -366,6 +407,7 @@ class Ospfv2Router(Base):
 
     @property
     def EnableSegmentRouting(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -374,10 +416,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'])
     @EnableSegmentRouting.setter
     def EnableSegmentRouting(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'], value)
 
     @property
     def EnableSrlb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -386,6 +430,7 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSrlb'])
     @EnableSrlb.setter
     def EnableSrlb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSrlb'], value)
 
     @property
@@ -399,6 +444,7 @@ class Ospfv2Router(Base):
 
     @property
     def ExtendedPrefixFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +455,7 @@ class Ospfv2Router(Base):
 
     @property
     def ExternalAttribute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -419,6 +466,7 @@ class Ospfv2Router(Base):
 
     @property
     def ExternalCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -429,6 +477,7 @@ class Ospfv2Router(Base):
 
     @property
     def FapmMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -439,6 +488,7 @@ class Ospfv2Router(Base):
 
     @property
     def FlexAlgoCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -447,10 +497,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlexAlgoCount'])
     @FlexAlgoCount.setter
     def FlexAlgoCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlexAlgoCount'], value)
 
     @property
     def GracefulRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -461,6 +513,7 @@ class Ospfv2Router(Base):
 
     @property
     def HighPerfLearningModeForSR(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -471,6 +524,7 @@ class Ospfv2Router(Base):
 
     @property
     def InterFloodLsUpdateBurstGap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -481,6 +535,7 @@ class Ospfv2Router(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -491,6 +546,7 @@ class Ospfv2Router(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -500,6 +556,7 @@ class Ospfv2Router(Base):
 
     @property
     def LoopBackAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -509,6 +566,7 @@ class Ospfv2Router(Base):
 
     @property
     def LsaRefreshTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -519,6 +577,7 @@ class Ospfv2Router(Base):
 
     @property
     def LsaRetransmitTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -529,6 +588,7 @@ class Ospfv2Router(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -539,6 +599,7 @@ class Ospfv2Router(Base):
 
     @property
     def MappingServerPreferenceValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -549,6 +610,7 @@ class Ospfv2Router(Base):
 
     @property
     def MaxLsUpdatesPerBurst(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -559,6 +621,7 @@ class Ospfv2Router(Base):
 
     @property
     def MulticastCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -569,6 +632,7 @@ class Ospfv2Router(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -577,10 +641,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfAddiotnalAlgoSidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -589,10 +655,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfAddiotnalAlgoSidCount'])
     @NoOfAddiotnalAlgoSidCount.setter
     def NoOfAddiotnalAlgoSidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfAddiotnalAlgoSidCount'], value)
 
     @property
     def NoOfAddressPrefix(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -601,10 +669,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfAddressPrefix'])
     @NoOfAddressPrefix.setter
     def NoOfAddressPrefix(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfAddressPrefix'], value)
 
     @property
     def NoOfBIERSubDomains(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -613,10 +683,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfBIERSubDomains'])
     @NoOfBIERSubDomains.setter
     def NoOfBIERSubDomains(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfBIERSubDomains'], value)
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -627,6 +699,7 @@ class Ospfv2Router(Base):
 
     @property
     def NssaCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -637,6 +710,7 @@ class Ospfv2Router(Base):
 
     @property
     def OobResyncBreakout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -647,6 +721,7 @@ class Ospfv2Router(Base):
 
     @property
     def OpaqueLsaForwarded(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -657,6 +732,7 @@ class Ospfv2Router(Base):
 
     @property
     def SRAlgorithmCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -665,10 +741,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'])
     @SRAlgorithmCount.setter
     def SRAlgorithmCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'], value)
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -678,6 +756,7 @@ class Ospfv2Router(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -687,6 +766,7 @@ class Ospfv2Router(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -697,6 +777,7 @@ class Ospfv2Router(Base):
 
     @property
     def SrgbRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -705,10 +786,12 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrgbRangeCount'])
     @SrgbRangeCount.setter
     def SrgbRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrgbRangeCount'], value)
 
     @property
     def SrlbRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -717,6 +800,7 @@ class Ospfv2Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrlbRangeCount'])
     @SrlbRangeCount.setter
     def SrlbRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrlbRangeCount'], value)
 
     @property
@@ -730,6 +814,7 @@ class Ospfv2Router(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -739,6 +824,7 @@ class Ospfv2Router(Base):
 
     @property
     def StrictLsaChecking(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -749,6 +835,7 @@ class Ospfv2Router(Base):
 
     @property
     def SupportForRfc3623(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -759,6 +846,7 @@ class Ospfv2Router(Base):
 
     @property
     def SupportReasonSoftReloadUpgrade(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -769,6 +857,7 @@ class Ospfv2Router(Base):
 
     @property
     def SupportReasonSoftRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -779,6 +868,7 @@ class Ospfv2Router(Base):
 
     @property
     def SupportReasonSwitchRedundantCntrlProcessor(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -789,6 +879,7 @@ class Ospfv2Router(Base):
 
     @property
     def SupportReasonUnknown(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -799,6 +890,7 @@ class Ospfv2Router(Base):
 
     @property
     def TypeOfServiceRouting(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -809,6 +901,7 @@ class Ospfv2Router(Base):
 
     @property
     def Unused(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -819,6 +912,7 @@ class Ospfv2Router(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -828,6 +922,7 @@ class Ospfv2Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, EnableBIER=None, EnableSegmentRouting=None, EnableSrlb=None, FlexAlgoCount=None, Name=None, NoOfAddiotnalAlgoSidCount=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        # type: (bool, bool, bool, int, str, int, int, int, int, int, int) -> Ospfv2Router
         """Updates ospfv2Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -852,6 +947,34 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, EnableBIER=None, EnableSegmentRouting=None, EnableSrlb=None, FlexAlgoCount=None, Name=None, NoOfAddiotnalAlgoSidCount=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        # type: (bool, bool, bool, int, str, int, int, int, int, int, int) -> Ospfv2Router
+        """Adds a new ospfv2Router resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableBIER (bool): Enable BIER
+        - EnableSegmentRouting (bool): Enable Segment Routing
+        - EnableSrlb (bool): Enable SRLB
+        - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear after OSPF RTR tab. Default is 0. Range is 0-128.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfAddiotnalAlgoSidCount (number): Additional Algo/SID Count
+        - NoOfAddressPrefix (number): Number Of Address Prefix Range
+        - NoOfBIERSubDomains (number): Number of BIER Sub Domains
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SrgbRangeCount (number): SRGB Range Count
+        - SrlbRangeCount (number): SRLB Range Count
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ospfv2Router resources using find and the newly added ospfv2Router resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Count=None, DescriptiveName=None, EnableBIER=None, EnableSegmentRouting=None, EnableSrlb=None, Errors=None, FlexAlgoCount=None, LocalRouterID=None, LoopBackAddress=None, Name=None, NoOfAddiotnalAlgoSidCount=None, NoOfAddressPrefix=None, NoOfBIERSubDomains=None, SRAlgorithmCount=None, SessionInfo=None, SessionStatus=None, SrgbRangeCount=None, SrlbRangeCount=None, StateCounts=None, Status=None):
         """Finds and retrieves ospfv2Router resources from the server.
@@ -910,6 +1033,198 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def OspfStartRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the ospfStartRouter operation on the server.
+
+        Start OSPF Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        ospfStartRouter(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfStartRouter(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfStartRouter(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('ospfStartRouter', payload=payload, response_object=None)
+
+    def OspfStopRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the ospfStopRouter operation on the server.
+
+        Stop OSPF Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        ospfStopRouter(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfStopRouter(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        ospfStopRouter(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('ospfStopRouter', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, BIERPrefix=None, Active=None, AdvertiseFapm=None, Algorithm=None, BBit=None, BierAFlag=None, BierNFlag=None, ConfigureSIDIndexLabel=None, DemandCircuit=None, DiscardLearnedLsa=None, DoNotGenerateRouterLsa=None, EBit=None, EFlag=None, EnableMappingServer=None, EnableMappingServerPreference=None, ExtendedPrefixFlags=None, ExternalAttribute=None, ExternalCapability=None, FapmMetric=None, GracefulRestart=None, HighPerfLearningModeForSR=None, InterFloodLsUpdateBurstGap=None, LFlag=None, LsaRefreshTime=None, LsaRetransmitTime=None, MFlag=None, MappingServerPreferenceValue=None, MaxLsUpdatesPerBurst=None, MulticastCapability=None, NpFlag=None, NssaCapability=None, OobResyncBreakout=None, OpaqueLsaForwarded=None, SidIndexLabel=None, StrictLsaChecking=None, SupportForRfc3623=None, SupportReasonSoftReloadUpgrade=None, SupportReasonSoftRestart=None, SupportReasonSwitchRedundantCntrlProcessor=None, SupportReasonUnknown=None, TypeOfServiceRouting=None, Unused=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv2Router device ids encapsulated by this object.
@@ -972,153 +1287,3 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def OspfStartRouter(self, *args, **kwargs):
-        """Executes the ospfStartRouter operation on the server.
-
-        Start OSPF Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        ospfStartRouter(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        ospfStartRouter(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ospfStartRouter', payload=payload, response_object=None)
-
-    def OspfStopRouter(self, *args, **kwargs):
-        """Executes the ospfStopRouter operation on the server.
-
-        Stop OSPF Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        ospfStopRouter(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        ospfStopRouter(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('ospfStopRouter', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class L1Config(Base):
@@ -33,9 +34,12 @@ class L1Config(Base):
     _SDM_ATT_MAP = {
         'CurrentType': 'currentType',
     }
+    _SDM_ENUM_MAP = {
+        'currentType': ['uhdOneHundredGigLan'],
+    }
 
-    def __init__(self, parent):
-        super(L1Config, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(L1Config, self).__init__(parent, list_op)
 
     @property
     def OAM(self):
@@ -49,7 +53,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.oam.oam import OAM
-        return OAM(self)._select()
+        if self._properties.get('OAM', None) is not None:
+            return self._properties.get('OAM')
+        else:
+            return OAM(self)._select()
 
     @property
     def FramePreemption(self):
@@ -63,7 +70,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.framepreemption.framepreemption import FramePreemption
-        return FramePreemption(self)._select()
+        if self._properties.get('FramePreemption', None) is not None:
+            return self._properties.get('FramePreemption')
+        else:
+            return FramePreemption(self)._select()
 
     @property
     def RxFilters(self):
@@ -77,7 +87,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.rxfilters import RxFilters
-        return RxFilters(self)._select()
+        if self._properties.get('RxFilters', None) is not None:
+            return self._properties.get('RxFilters')
+        else:
+            return RxFilters(self)._select()
 
     @property
     def UhdOneHundredGigLan(self):
@@ -91,10 +104,14 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.uhdonehundredgiglan import UhdOneHundredGigLan
-        return UhdOneHundredGigLan(self)._select()
+        if self._properties.get('UhdOneHundredGigLan', None) is not None:
+            return self._properties.get('UhdOneHundredGigLan')
+        else:
+            return UhdOneHundredGigLan(self)._select()
 
     @property
     def CurrentType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,9 +120,11 @@ class L1Config(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CurrentType'])
     @CurrentType.setter
     def CurrentType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CurrentType'], value)
 
     def update(self, CurrentType=None):
+        # type: (str) -> L1Config
         """Updates l1Config resource on the server.
 
         Args

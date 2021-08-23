@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Globals(Base):
@@ -50,12 +51,15 @@ class Globals(Base):
         'UseDefaultRootPath': 'useDefaultRootPath',
         'Version': 'version',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Globals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Globals, self).__init__(parent, list_op)
 
     @property
     def Comments(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +68,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Comments'])
     @Comments.setter
     def Comments(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Comments'], value)
 
     @property
     def EnableAbortIfLinkDown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,10 +82,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAbortIfLinkDown'])
     @EnableAbortIfLinkDown.setter
     def EnableAbortIfLinkDown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAbortIfLinkDown'], value)
 
     @property
     def EnableCapture(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,10 +96,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCapture'])
     @EnableCapture.setter
     def EnableCapture(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCapture'], value)
 
     @property
     def EnableCheckLinkState(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -100,10 +110,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCheckLinkState'])
     @EnableCheckLinkState.setter
     def EnableCheckLinkState(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCheckLinkState'], value)
 
     @property
     def EnableGenerateReportAfterRun(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,10 +124,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGenerateReportAfterRun'])
     @EnableGenerateReportAfterRun.setter
     def EnableGenerateReportAfterRun(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGenerateReportAfterRun'], value)
 
     @property
     def EnableRebootCpu(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -124,10 +138,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRebootCpu'])
     @EnableRebootCpu.setter
     def EnableRebootCpu(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRebootCpu'], value)
 
     @property
     def EnableSwitchToResult(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -136,10 +152,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSwitchToResult'])
     @EnableSwitchToResult.setter
     def EnableSwitchToResult(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSwitchToResult'], value)
 
     @property
     def EnableSwitchToStats(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -148,10 +166,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSwitchToStats'])
     @EnableSwitchToStats.setter
     def EnableSwitchToStats(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSwitchToStats'], value)
 
     @property
     def LinkDownTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,10 +180,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkDownTimeout'])
     @LinkDownTimeout.setter
     def LinkDownTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkDownTimeout'], value)
 
     @property
     def MaxLinesToDisplay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,10 +194,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxLinesToDisplay'])
     @MaxLinesToDisplay.setter
     def MaxLinesToDisplay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxLinesToDisplay'], value)
 
     @property
     def OutputRootPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,10 +208,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutputRootPath'])
     @OutputRootPath.setter
     def OutputRootPath(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutputRootPath'], value)
 
     @property
     def ProductLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,10 +222,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProductLabel'])
     @ProductLabel.setter
     def ProductLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProductLabel'], value)
 
     @property
     def SaveCaptureBeforeRun(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -208,10 +236,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SaveCaptureBeforeRun'])
     @SaveCaptureBeforeRun.setter
     def SaveCaptureBeforeRun(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SaveCaptureBeforeRun'], value)
 
     @property
     def SerialNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -220,10 +250,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SerialNumber'])
     @SerialNumber.setter
     def SerialNumber(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SerialNumber'], value)
 
     @property
     def SleepTimeAfterReboot(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -232,10 +264,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SleepTimeAfterReboot'])
     @SleepTimeAfterReboot.setter
     def SleepTimeAfterReboot(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SleepTimeAfterReboot'], value)
 
     @property
     def TitlePageComments(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -244,10 +278,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TitlePageComments'])
     @TitlePageComments.setter
     def TitlePageComments(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TitlePageComments'], value)
 
     @property
     def UseDefaultRootPath(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -256,10 +292,12 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseDefaultRootPath'])
     @UseDefaultRootPath.setter
     def UseDefaultRootPath(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseDefaultRootPath'], value)
 
     @property
     def Version(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -268,9 +306,11 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Version'])
     @Version.setter
     def Version(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Version'], value)
 
     def update(self, Comments=None, EnableAbortIfLinkDown=None, EnableCapture=None, EnableCheckLinkState=None, EnableGenerateReportAfterRun=None, EnableRebootCpu=None, EnableSwitchToResult=None, EnableSwitchToStats=None, LinkDownTimeout=None, MaxLinesToDisplay=None, OutputRootPath=None, ProductLabel=None, SaveCaptureBeforeRun=None, SerialNumber=None, SleepTimeAfterReboot=None, TitlePageComments=None, UseDefaultRootPath=None, Version=None):
+        # type: (str, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, bool, str, int, str, bool, str) -> Globals
         """Updates globals resource on the server.
 
         Args
@@ -300,32 +340,52 @@ class Globals(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)
 
-    def ApplyAsync(self):
+    def ApplyAsync(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyAsync operation on the server.
 
+        applyAsync(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsync', payload=payload, response_object=None)
 
-    def ApplyAsyncResult(self):
+    def ApplyAsyncResult(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the applyAsyncResult operation on the server.
+
+        applyAsyncResult(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: 
 
         Raises
         ------
@@ -333,44 +393,68 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
 
-    def ApplyITWizardConfiguration(self):
+    def ApplyITWizardConfiguration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyITWizardConfiguration operation on the server.
 
         Applies the specified Quick Test.
 
+        applyITWizardConfiguration(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
 
-    def GenerateReport(self):
+    def GenerateReport(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the generateReport operation on the server.
 
         Generate a PDF report for the last succesfull test run.
 
+        generateReport(async_operation=bool)string
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: This method is asynchronous and has no return value.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('generateReport', payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the run operation on the server.
 
         Starts the specified Quick Test and waits for its execution to finish.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run(InputParameters=string)list
-        -------------------------------
+        run(async_operation=bool)list
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        run(InputParameters=string, async_operation=bool)list
+        -----------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): This method is synchronous and returns the result of the test.
 
         Raises
@@ -384,15 +468,21 @@ class Globals(Base):
         return self._execute('run', payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the specified Quick Test.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start(InputParameters=string)
-        -----------------------------
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(InputParameters=string, async_operation=bool)
+        ---------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -404,28 +494,43 @@ class Globals(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the currently running Quick Test.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def WaitForTest(self):
+    def WaitForTest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the waitForTest operation on the server.
 
         Waits for the execution of the specified Quick Test to be completed.
 
+        waitForTest(async_operation=bool)list
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('waitForTest', payload=payload, response_object=None)

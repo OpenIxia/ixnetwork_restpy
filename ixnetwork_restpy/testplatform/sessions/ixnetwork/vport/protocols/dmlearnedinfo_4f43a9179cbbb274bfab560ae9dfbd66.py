@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DmLearnedInfo(Base):
@@ -46,12 +47,15 @@ class DmLearnedInfo(Base):
         'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DmLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DmLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AverageLooseRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +65,7 @@ class DmLearnedInfo(Base):
 
     @property
     def AverageLooseRttVariation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class DmLearnedInfo(Base):
 
     @property
     def AverageStrictRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class DmLearnedInfo(Base):
 
     @property
     def AverageStrictRttVariation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class DmLearnedInfo(Base):
 
     @property
     def DmQueriesSent(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class DmLearnedInfo(Base):
 
     @property
     def DmResponsesReceived(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class DmLearnedInfo(Base):
 
     @property
     def IncomingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +125,7 @@ class DmLearnedInfo(Base):
 
     @property
     def MaxLooseRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,6 +135,7 @@ class DmLearnedInfo(Base):
 
     @property
     def MaxStrictRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +145,7 @@ class DmLearnedInfo(Base):
 
     @property
     def MinLooseRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,6 +155,7 @@ class DmLearnedInfo(Base):
 
     @property
     def MinStrictRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,6 +165,7 @@ class DmLearnedInfo(Base):
 
     @property
     def OutgoingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -160,6 +175,7 @@ class DmLearnedInfo(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,7 +183,21 @@ class DmLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new dmLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved dmLearnedInfo resources using find and the newly added dmLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AverageLooseRtt=None, AverageLooseRttVariation=None, AverageStrictRtt=None, AverageStrictRttVariation=None, DmQueriesSent=None, DmResponsesReceived=None, IncomingLabelOuterInner=None, MaxLooseRtt=None, MaxStrictRtt=None, MinLooseRtt=None, MinStrictRtt=None, OutgoingLabelOuterInner=None, Type=None):
+        # type: (str, str, str, str, int, int, str, str, str, str, str, str, str) -> DmLearnedInfo
         """Finds and retrieves dmLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dmLearnedInfo resources from the server.

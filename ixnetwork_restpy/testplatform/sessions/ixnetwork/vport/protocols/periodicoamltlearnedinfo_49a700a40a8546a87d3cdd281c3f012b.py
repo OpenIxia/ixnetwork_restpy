@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PeriodicOamLtLearnedInfo(Base):
@@ -46,9 +47,11 @@ class PeriodicOamLtLearnedInfo(Base):
         'SVlan': 'sVlan',
         'SrcMacAddress': 'srcMacAddress',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PeriodicOamLtLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PeriodicOamLtLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def LtLearnedHop(self):
@@ -62,10 +65,14 @@ class PeriodicOamLtLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_c9dfd2b401fd7b7df6753d431bdbe5b5 import LtLearnedHop
-        return LtLearnedHop(self)
+        if self._properties.get('LtLearnedHop', None) is not None:
+            return self._properties.get('LtLearnedHop')
+        else:
+            return LtLearnedHop(self)
 
     @property
     def AverageHopCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +82,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +92,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def CompleteReplyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +102,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def DstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +112,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def LtmSentCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +122,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,6 +132,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def NoReplyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,6 +142,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def PartialReplyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,6 +152,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def RecentHopCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -147,6 +162,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def RecentHops(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,6 +172,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def RecentReplyStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -165,6 +182,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -174,6 +192,7 @@ class PeriodicOamLtLearnedInfo(Base):
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,7 +200,21 @@ class PeriodicOamLtLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
 
+    def add(self):
+        """Adds a new periodicOamLtLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved periodicOamLtLearnedInfo resources using find and the newly added periodicOamLtLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AverageHopCount=None, CVlan=None, CompleteReplyCount=None, DstMacAddress=None, LtmSentCount=None, MdLevel=None, NoReplyCount=None, PartialReplyCount=None, RecentHopCount=None, RecentHops=None, RecentReplyStatus=None, SVlan=None, SrcMacAddress=None):
+        # type: (int, str, int, str, int, int, int, int, int, str, str, str, str) -> PeriodicOamLtLearnedInfo
         """Finds and retrieves periodicOamLtLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve periodicOamLtLearnedInfo resources from the server.

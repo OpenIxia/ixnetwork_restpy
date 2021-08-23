@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CfmSlm(Base):
@@ -55,9 +56,11 @@ class CfmSlm(Base):
         'SlmTxFCfInfo': 'slmTxFCfInfo',
         'SlmUnicastMac': 'slmUnicastMac',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CfmSlm, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CfmSlm, self).__init__(parent, list_op)
 
     @property
     def StopSlmParams(self):
@@ -71,10 +74,14 @@ class CfmSlm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopslmparams_2117fd9e6d0ad885042f04f4604813e9 import StopSlmParams
-        return StopSlmParams(self)._select()
+        if self._properties.get('StopSlmParams', None) is not None:
+            return self._properties.get('StopSlmParams')
+        else:
+            return StopSlmParams(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class CfmSlm(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class CfmSlm(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +110,12 @@ class CfmSlm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SlmAutoTestId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class CfmSlm(Base):
 
     @property
     def SlmBurstCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +137,7 @@ class CfmSlm(Base):
 
     @property
     def SlmBurstGap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +148,7 @@ class CfmSlm(Base):
 
     @property
     def SlmContinuousBurst(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +159,7 @@ class CfmSlm(Base):
 
     @property
     def SlmDestinationType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +170,7 @@ class CfmSlm(Base):
 
     @property
     def SlmFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +181,7 @@ class CfmSlm(Base):
 
     @property
     def SlmFrameSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +192,7 @@ class CfmSlm(Base):
 
     @property
     def SlmFrameTxCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +203,7 @@ class CfmSlm(Base):
 
     @property
     def SlmFramesPerBurst(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +214,7 @@ class CfmSlm(Base):
 
     @property
     def SlmInitialTxfcf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +225,7 @@ class CfmSlm(Base):
 
     @property
     def SlmMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +236,7 @@ class CfmSlm(Base):
 
     @property
     def SlmOverridePriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -225,6 +247,7 @@ class CfmSlm(Base):
 
     @property
     def SlmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -235,6 +258,7 @@ class CfmSlm(Base):
 
     @property
     def SlmProactiveStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -245,6 +269,7 @@ class CfmSlm(Base):
 
     @property
     def SlmSimulatedLossInTx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -255,6 +280,7 @@ class CfmSlm(Base):
 
     @property
     def SlmStateInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -264,6 +290,7 @@ class CfmSlm(Base):
 
     @property
     def SlmTestId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -274,6 +301,7 @@ class CfmSlm(Base):
 
     @property
     def SlmTestIdInfo(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -283,6 +311,7 @@ class CfmSlm(Base):
 
     @property
     def SlmTxFCfInfo(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -292,6 +321,7 @@ class CfmSlm(Base):
 
     @property
     def SlmUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -301,6 +331,7 @@ class CfmSlm(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SlmUnicastMac']))
 
     def update(self, Name=None):
+        # type: (str) -> CfmSlm
         """Updates cfmSlm resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -315,6 +346,82 @@ class CfmSlm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def StartSlm(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the startSlm operation on the server.
+
+        Start SLM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startSlm(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSlm(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSlm(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSlm(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startSlm', payload=payload, response_object=None)
+
+    def StopSlm(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopSlm operation on the server.
+
+        Stop SLM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopSlm(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSlm(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSlm(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        DEPRECATED stopSlm(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopSlm', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, SlmAutoTestId=None, SlmBurstCount=None, SlmBurstGap=None, SlmContinuousBurst=None, SlmDestinationType=None, SlmFlags=None, SlmFrameSize=None, SlmFrameTxCount=None, SlmFramesPerBurst=None, SlmInitialTxfcf=None, SlmMode=None, SlmOverridePriority=None, SlmPriority=None, SlmProactiveStart=None, SlmSimulatedLossInTx=None, SlmTestId=None, SlmUnicastMac=None):
         """Base class infrastructure that gets a list of cfmSlm device ids encapsulated by this object.
@@ -351,63 +458,3 @@ class CfmSlm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def StartSlm(self, *args, **kwargs):
-        """Executes the startSlm operation on the server.
-
-        Start SLM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startSlm(SessionIndices=list)
-        -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startSlm(SessionIndices=string)
-        -------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        startSlm(Arg2=list)list
-        -----------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startSlm', payload=payload, response_object=None)
-
-    def StopSlm(self, *args, **kwargs):
-        """Executes the stopSlm operation on the server.
-
-        Stop SLM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopSlm(SessionIndices=list)
-        ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopSlm(SessionIndices=string)
-        ------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        DEPRECATED stopSlm(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopSlm', payload=payload, response_object=None)

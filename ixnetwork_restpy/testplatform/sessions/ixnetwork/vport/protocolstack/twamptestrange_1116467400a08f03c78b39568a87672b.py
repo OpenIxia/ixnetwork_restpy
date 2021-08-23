@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TwampTestRange(Base):
@@ -51,12 +52,15 @@ class TwampTestRange(Base):
         'Timeout': 'timeout',
         'TypepDescriptor': 'typepDescriptor',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TwampTestRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TwampTestRange, self).__init__(parent, list_op)
 
     @property
     def NegotiateReflectorPort(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +69,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NegotiateReflectorPort'])
     @NegotiateReflectorPort.setter
     def NegotiateReflectorPort(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NegotiateReflectorPort'], value)
 
     @property
     def ControlRangeName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +83,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlRangeName'])
     @ControlRangeName.setter
     def ControlRangeName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlRangeName'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +97,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Explicit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +111,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Explicit'])
     @Explicit.setter
     def Explicit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Explicit'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,10 +125,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfPackets(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +139,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfPackets'])
     @NumberOfPackets.setter
     def NumberOfPackets(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfPackets'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,6 +154,7 @@ class TwampTestRange(Base):
 
     @property
     def PacketLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,10 +163,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketLength'])
     @PacketLength.setter
     def PacketLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketLength'], value)
 
     @property
     def PacketsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,10 +177,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketsPerSecond'])
     @PacketsPerSecond.setter
     def PacketsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketsPerSecond'], value)
 
     @property
     def PaddingWithZero(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -170,10 +191,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PaddingWithZero'])
     @PaddingWithZero.setter
     def PaddingWithZero(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PaddingWithZero'], value)
 
     @property
     def SessionReflectorPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -182,10 +205,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionReflectorPort'])
     @SessionReflectorPort.setter
     def SessionReflectorPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionReflectorPort'], value)
 
     @property
     def SessionReflectorPortIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,10 +219,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionReflectorPortIncrement'])
     @SessionReflectorPortIncrement.setter
     def SessionReflectorPortIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionReflectorPortIncrement'], value)
 
     @property
     def SessionSenderPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +233,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionSenderPort'])
     @SessionSenderPort.setter
     def SessionSenderPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionSenderPort'], value)
 
     @property
     def SessionSenderPortIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +247,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionSenderPortIncrement'])
     @SessionSenderPortIncrement.setter
     def SessionSenderPortIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionSenderPortIncrement'], value)
 
     @property
     def TestSessionsCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,10 +261,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestSessionsCount'])
     @TestSessionsCount.setter
     def TestSessionsCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestSessionsCount'], value)
 
     @property
     def Timeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -242,10 +275,12 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Timeout'])
     @Timeout.setter
     def Timeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Timeout'], value)
 
     @property
     def TypepDescriptor(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -254,9 +289,11 @@ class TwampTestRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TypepDescriptor'])
     @TypepDescriptor.setter
     def TypepDescriptor(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TypepDescriptor'], value)
 
     def update(self, NegotiateReflectorPort=None, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
+        # type: (bool, str, bool, bool, str, int, int, int, bool, int, int, int, int, int, int, int) -> TwampTestRange
         """Updates twampTestRange resource on the server.
 
         Args
@@ -285,6 +322,7 @@ class TwampTestRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NegotiateReflectorPort=None, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
+        # type: (bool, str, bool, bool, str, int, int, int, bool, int, int, int, int, int, int, int) -> TwampTestRange
         """Adds a new twampTestRange resource on the server and adds it to the container.
 
         Args
@@ -327,6 +365,7 @@ class TwampTestRange(Base):
         self._delete()
 
     def find(self, NegotiateReflectorPort=None, ControlRangeName=None, Enabled=None, Explicit=None, Name=None, NumberOfPackets=None, ObjectId=None, PacketLength=None, PacketsPerSecond=None, PaddingWithZero=None, SessionReflectorPort=None, SessionReflectorPortIncrement=None, SessionSenderPort=None, SessionSenderPortIncrement=None, TestSessionsCount=None, Timeout=None, TypepDescriptor=None):
+        # type: (bool, str, bool, bool, str, int, str, int, int, bool, int, int, int, int, int, int, int) -> TwampTestRange
         """Finds and retrieves twampTestRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve twampTestRange resources from the server.
@@ -382,14 +421,16 @@ class TwampTestRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -402,13 +443,15 @@ class TwampTestRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -422,13 +465,15 @@ class TwampTestRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -442,15 +487,21 @@ class TwampTestRange(Base):
         return self._execute('enableProtocolStack', payload=payload, response_object=None)
 
     def TwampDeleteTestRange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the twampDeleteTestRange operation on the server.
 
         Deletes a Test Range Object
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        twampDeleteTestRange(Arg2=enum)
-        -------------------------------
+        twampDeleteTestRange(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        twampDeleteTestRange(Arg2=enum, async_operation=bool)
+        -----------------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/atm/ipEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/twampTestRange,/vport/protocolStack/ethernet/ipEndpoint/range/twampTestRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

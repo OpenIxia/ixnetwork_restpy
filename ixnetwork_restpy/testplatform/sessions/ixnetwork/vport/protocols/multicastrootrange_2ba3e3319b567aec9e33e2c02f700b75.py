@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MulticastRootRange(Base):
@@ -40,9 +41,11 @@ class MulticastRootRange(Base):
         'RootAddress': 'rootAddress',
         'RootAddressCount': 'rootAddressCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MulticastRootRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MulticastRootRange, self).__init__(parent, list_op)
 
     @property
     def OpaqueValueElement(self):
@@ -56,7 +59,10 @@ class MulticastRootRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_dba87f250e9ae82d8aff17b985d5ef44 import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is not None:
+            return self._properties.get('OpaqueValueElement')
+        else:
+            return OpaqueValueElement(self)
 
     @property
     def SourceTrafficRange(self):
@@ -70,10 +76,14 @@ class MulticastRootRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcetrafficrange_9e3a10265e96d4b6516626b5559092a9 import SourceTrafficRange
-        return SourceTrafficRange(self)
+        if self._properties.get('SourceTrafficRange', None) is not None:
+            return self._properties.get('SourceTrafficRange')
+        else:
+            return SourceTrafficRange(self)
 
     @property
     def ContinuousIncrOpaqueValuesAcrossRoot(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,10 +92,12 @@ class MulticastRootRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ContinuousIncrOpaqueValuesAcrossRoot'])
     @ContinuousIncrOpaqueValuesAcrossRoot.setter
     def ContinuousIncrOpaqueValuesAcrossRoot(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ContinuousIncrOpaqueValuesAcrossRoot'], value)
 
     @property
     def LspCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,10 +106,12 @@ class MulticastRootRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspCount'])
     @LspCount.setter
     def LspCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspCount'], value)
 
     @property
     def LspType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,6 +121,7 @@ class MulticastRootRange(Base):
 
     @property
     def RootAddrStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,10 +130,12 @@ class MulticastRootRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootAddrStep'])
     @RootAddrStep.setter
     def RootAddrStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootAddrStep'], value)
 
     @property
     def RootAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,10 +144,12 @@ class MulticastRootRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootAddress'])
     @RootAddress.setter
     def RootAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootAddress'], value)
 
     @property
     def RootAddressCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,9 +158,11 @@ class MulticastRootRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootAddressCount'])
     @RootAddressCount.setter
     def RootAddressCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootAddressCount'], value)
 
     def update(self, ContinuousIncrOpaqueValuesAcrossRoot=None, LspCount=None, RootAddrStep=None, RootAddress=None, RootAddressCount=None):
+        # type: (bool, int, str, str, int) -> MulticastRootRange
         """Updates multicastRootRange resource on the server.
 
         Args
@@ -159,6 +180,7 @@ class MulticastRootRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ContinuousIncrOpaqueValuesAcrossRoot=None, LspCount=None, RootAddrStep=None, RootAddress=None, RootAddressCount=None):
+        # type: (bool, int, str, str, int) -> MulticastRootRange
         """Adds a new multicastRootRange resource on the server and adds it to the container.
 
         Args
@@ -190,6 +212,7 @@ class MulticastRootRange(Base):
         self._delete()
 
     def find(self, ContinuousIncrOpaqueValuesAcrossRoot=None, LspCount=None, LspType=None, RootAddrStep=None, RootAddress=None, RootAddressCount=None):
+        # type: (bool, int, str, str, str, int) -> MulticastRootRange
         """Finds and retrieves multicastRootRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve multicastRootRange resources from the server.

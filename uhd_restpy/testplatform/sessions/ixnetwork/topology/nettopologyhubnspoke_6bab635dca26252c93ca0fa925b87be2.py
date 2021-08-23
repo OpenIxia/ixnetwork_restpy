@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetTopologyHubNSpoke(Base):
@@ -39,12 +40,15 @@ class NetTopologyHubNSpoke(Base):
         'NumberOfFirstLevelSpokes': 'numberOfFirstLevelSpokes',
         'NumberOfSecondLevelSpokes': 'numberOfSecondLevelSpokes',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetTopologyHubNSpoke, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetTopologyHubNSpoke, self).__init__(parent, list_op)
 
     @property
     def EnableLevel2Spokes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class NetTopologyHubNSpoke(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLevel2Spokes'])
     @EnableLevel2Spokes.setter
     def EnableLevel2Spokes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLevel2Spokes'], value)
 
     @property
     def IncludeEntryPoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class NetTopologyHubNSpoke(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
 
     @property
     def LinkMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class NetTopologyHubNSpoke(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
 
     @property
     def NumberOfFirstLevelSpokes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class NetTopologyHubNSpoke(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfFirstLevelSpokes'])
     @NumberOfFirstLevelSpokes.setter
     def NumberOfFirstLevelSpokes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfFirstLevelSpokes'], value)
 
     @property
     def NumberOfSecondLevelSpokes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,9 +113,11 @@ class NetTopologyHubNSpoke(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSecondLevelSpokes'])
     @NumberOfSecondLevelSpokes.setter
     def NumberOfSecondLevelSpokes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfSecondLevelSpokes'], value)
 
     def update(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+        # type: (bool, bool, int, int, int) -> NetTopologyHubNSpoke
         """Updates netTopologyHubNSpoke resource on the server.
 
         Args
@@ -121,6 +135,7 @@ class NetTopologyHubNSpoke(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+        # type: (bool, bool, int, int, int) -> NetTopologyHubNSpoke
         """Adds a new netTopologyHubNSpoke resource on the server and adds it to the container.
 
         Args
@@ -152,6 +167,7 @@ class NetTopologyHubNSpoke(Base):
         self._delete()
 
     def find(self, EnableLevel2Spokes=None, IncludeEntryPoint=None, LinkMultiplier=None, NumberOfFirstLevelSpokes=None, NumberOfSecondLevelSpokes=None):
+        # type: (bool, bool, int, int, int) -> NetTopologyHubNSpoke
         """Finds and retrieves netTopologyHubNSpoke resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyHubNSpoke resources from the server.

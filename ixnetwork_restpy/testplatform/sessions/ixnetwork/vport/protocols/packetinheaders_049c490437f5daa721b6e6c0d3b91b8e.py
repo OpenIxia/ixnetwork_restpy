@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PacketInHeaders(Base):
@@ -48,12 +49,15 @@ class PacketInHeaders(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PacketInHeaders, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PacketInHeaders, self).__init__(parent, list_op)
 
     @property
     def EthernetDestinationAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class PacketInHeaders(Base):
 
     @property
     def EthernetSourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class PacketInHeaders(Base):
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +87,7 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv4DestinationAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +97,7 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv4Protocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv4SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv6DestinationAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,6 +127,7 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +137,7 @@ class PacketInHeaders(Base):
 
     @property
     def Ipv6SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,6 +147,7 @@ class PacketInHeaders(Base):
 
     @property
     def TcpDestinationPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,6 +157,7 @@ class PacketInHeaders(Base):
 
     @property
     def TcpSourcePort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,6 +167,7 @@ class PacketInHeaders(Base):
 
     @property
     def UdpDestinationPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,6 +177,7 @@ class PacketInHeaders(Base):
 
     @property
     def UdpSourcePort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class PacketInHeaders(Base):
 
     @property
     def UniquePacketCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class PacketInHeaders(Base):
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,6 +207,7 @@ class PacketInHeaders(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------

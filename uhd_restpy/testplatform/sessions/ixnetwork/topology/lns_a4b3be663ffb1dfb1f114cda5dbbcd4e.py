@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Lns(Base):
@@ -72,9 +73,12 @@ class Lns(Base):
         'UseOffsetBitInPayload': 'useOffsetBitInPayload',
         'UseSequenceNoInPayload': 'useSequenceNoInPayload',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Lns, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Lns, self).__init__(parent, list_op)
 
     @property
     def LnsAuthCredentials(self):
@@ -88,7 +92,10 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lnsauthcredentials_caa048d94ca4e6927df8160f32c829bf import LnsAuthCredentials
-        return LnsAuthCredentials(self)._select()
+        if self._properties.get('LnsAuthCredentials', None) is not None:
+            return self._properties.get('LnsAuthCredentials')
+        else:
+            return LnsAuthCredentials(self)._select()
 
     @property
     def Pppoxserver(self):
@@ -102,7 +109,10 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import Pppoxserver
-        return Pppoxserver(self)
+        if self._properties.get('Pppoxserver', None) is not None:
+            return self._properties.get('Pppoxserver')
+        else:
+            return Pppoxserver(self)
 
     @property
     def Tag(self):
@@ -116,10 +126,14 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def BearerCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +144,7 @@ class Lns(Base):
 
     @property
     def BearerType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,18 +155,21 @@ class Lns(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ControlMsgsRetryCounter(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +180,7 @@ class Lns(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,6 +190,7 @@ class Lns(Base):
 
     @property
     def CredentialsCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -179,10 +199,12 @@ class Lns(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CredentialsCount'])
     @CredentialsCount.setter
     def CredentialsCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CredentialsCount'], value)
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,6 +214,7 @@ class Lns(Base):
 
     @property
     def EnableControlChecksum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +225,7 @@ class Lns(Base):
 
     @property
     def EnableDataChecksum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +236,7 @@ class Lns(Base):
 
     @property
     def EnableExcludeHdlc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -220,10 +245,12 @@ class Lns(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'])
     @EnableExcludeHdlc.setter
     def EnableExcludeHdlc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'], value)
 
     @property
     def EnableHelloRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +261,7 @@ class Lns(Base):
 
     @property
     def EnablePeriodicCSURQ(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,12 +275,13 @@ class Lns(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def FramingCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -263,6 +292,7 @@ class Lns(Base):
 
     @property
     def HelloRequestInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -273,6 +303,7 @@ class Lns(Base):
 
     @property
     def InitRetransmitInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -283,6 +314,7 @@ class Lns(Base):
 
     @property
     def LacHostName(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -293,6 +325,7 @@ class Lns(Base):
 
     @property
     def LacSecret(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -303,6 +336,7 @@ class Lns(Base):
 
     @property
     def LnsHostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -313,6 +347,7 @@ class Lns(Base):
 
     @property
     def MaxRetransmitInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -323,6 +358,7 @@ class Lns(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -331,10 +367,12 @@ class Lns(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -343,10 +381,12 @@ class Lns(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoCallTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +397,7 @@ class Lns(Base):
 
     @property
     def OffsetByte(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +408,7 @@ class Lns(Base):
 
     @property
     def OffsetLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +419,7 @@ class Lns(Base):
 
     @property
     def PeriodicCSURQInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -387,6 +430,7 @@ class Lns(Base):
 
     @property
     def ReceiveWindowSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -397,6 +441,7 @@ class Lns(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -406,14 +451,16 @@ class Lns(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -427,6 +474,7 @@ class Lns(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -436,6 +484,7 @@ class Lns(Base):
 
     @property
     def TunnelAuthentication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +495,7 @@ class Lns(Base):
 
     @property
     def UdpDestinationPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +506,7 @@ class Lns(Base):
 
     @property
     def UdpSourcePort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +517,7 @@ class Lns(Base):
 
     @property
     def UseHiddenAVPs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -476,6 +528,7 @@ class Lns(Base):
 
     @property
     def UseLengthBitInPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -486,6 +539,7 @@ class Lns(Base):
 
     @property
     def UseOffsetBitInPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -496,6 +550,7 @@ class Lns(Base):
 
     @property
     def UseSequenceNoInPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -505,6 +560,7 @@ class Lns(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSequenceNoInPayload']))
 
     def update(self, ConnectedVia=None, CredentialsCount=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, bool, int, str, List[str]) -> Lns
         """Updates lns resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -512,12 +568,12 @@ class Lns(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - CredentialsCount (number): Number of L2TP authentication credentials the LNS accepts for multiple tunnels establishment.
         - EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -526,16 +582,17 @@ class Lns(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, CredentialsCount=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, bool, int, str, List[str]) -> Lns
         """Adds a new lns resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - CredentialsCount (number): Number of L2TP authentication credentials the LNS accepts for multiple tunnels establishment.
         - EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -566,16 +623,16 @@ class Lns(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - CredentialsCount (number): Number of L2TP authentication credentials the LNS accepts for multiple tunnels establishment.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableExcludeHdlc (bool): If checked, HDLC header is not encoded in the L2TP packets.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -606,6 +663,180 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendCSURQ(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendCSURQ operation on the server.
+
+        Sends CSURQ from LNS
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendCSURQ(RemoteSessionId=string, TunnelId=number, async_operation=bool)
+        ------------------------------------------------------------------------
+        - RemoteSessionId (str): This parameter requires a remoteSessionId of type kString
+        - TunnelId (number): This parameter requires a tunnelId of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendCSURQ(RemoteSessionId=string, TunnelId=number, SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------------------------
+        - RemoteSessionId (str): This parameter requires a remoteSessionId of type kString
+        - TunnelId (number): This parameter requires a tunnelId of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendCSURQ(SessionIndices=string, RemoteSessionId=string, TunnelId=number, async_operation=bool)
+        -----------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a remoteSessionId of type kString
+        - RemoteSessionId (str): This parameter requires a tunnelId of type kInteger
+        - TunnelId (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendCSURQ(Arg2=list, Arg3=string, Arg4=number, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IPv4 addresses are used as the source of the request messages.
+        - Arg3 (str): Session id for which CSURQ will be sent
+        - Arg4 (number): Tunnel id for which CSURQ will be sent
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendCSURQ', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, BearerCapability=None, BearerType=None, ControlMsgsRetryCounter=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableHelloRequest=None, EnablePeriodicCSURQ=None, FramingCapability=None, HelloRequestInterval=None, InitRetransmitInterval=None, LacHostName=None, LacSecret=None, LnsHostName=None, MaxRetransmitInterval=None, NoCallTimeout=None, OffsetByte=None, OffsetLength=None, PeriodicCSURQInterval=None, ReceiveWindowSize=None, TunnelAuthentication=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAVPs=None, UseLengthBitInPayload=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
         """Base class infrastructure that gets a list of lns device ids encapsulated by this object.
@@ -651,144 +882,3 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def SendCSURQ(self, *args, **kwargs):
-        """Executes the sendCSURQ operation on the server.
-
-        Sends CSURQ from LNS
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendCSURQ(RemoteSessionId=string, TunnelId=number, SessionIndices=list)
-        -----------------------------------------------------------------------
-        - RemoteSessionId (str): This parameter requires a remoteSessionId of type kString
-        - TunnelId (number): This parameter requires a tunnelId of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendCSURQ(RemoteSessionId=string, TunnelId=number)
-        --------------------------------------------------
-        - RemoteSessionId (str): This parameter requires a remoteSessionId of type kString
-        - TunnelId (number): This parameter requires a tunnelId of type kInteger
-
-        sendCSURQ(SessionIndices=string, RemoteSessionId=string, TunnelId=number)
-        -------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a remoteSessionId of type kString
-        - RemoteSessionId (str): This parameter requires a tunnelId of type kInteger
-        - TunnelId (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendCSURQ(Arg2=list, Arg3=string, Arg4=number)list
-        --------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IPv4 addresses are used as the source of the request messages.
-        - Arg3 (str): Session id for which CSURQ will be sent
-        - Arg4 (number): Tunnel id for which CSURQ will be sent
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendCSURQ', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

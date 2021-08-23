@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3PseudoRouteMtIdIPv6(Base):
@@ -38,12 +39,15 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
         'MtId': 'mtId',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3PseudoRouteMtIdIPv6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3PseudoRouteMtIdIPv6, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +78,7 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
 
     @property
     def LinkMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +100,7 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,9 +109,11 @@ class IsisL3PseudoRouteMtIdIPv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> IsisL3PseudoRouteMtIdIPv6
         """Updates isisL3PseudoRouteMtIdIPv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

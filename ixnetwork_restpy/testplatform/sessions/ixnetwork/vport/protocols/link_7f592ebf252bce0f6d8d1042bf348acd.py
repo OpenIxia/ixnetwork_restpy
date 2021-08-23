@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Link(Base):
@@ -45,12 +46,15 @@ class Link(Base):
         'Prefixes': 'prefixes',
         'RouterPriority': 'routerPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Link, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Link, self).__init__(parent, list_op)
 
     @property
     def CountLsa(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -59,10 +63,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CountLsa'])
     @CountLsa.setter
     def CountLsa(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CountLsa'], value)
 
     @property
     def IncrLinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,10 +77,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
 
     @property
     def LocalInterfaceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +91,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocalInterfaceAddress'])
     @LocalInterfaceAddress.setter
     def LocalInterfaceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocalInterfaceAddress'], value)
 
     @property
     def OptBitDc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitDc'])
     @OptBitDc.setter
     def OptBitDc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitDc'], value)
 
     @property
     def OptBitE(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitE'])
     @OptBitE.setter
     def OptBitE(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitE'], value)
 
     @property
     def OptBitMc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +133,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
     @OptBitMc.setter
     def OptBitMc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
 
     @property
     def OptBitN(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -131,10 +147,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitN'])
     @OptBitN.setter
     def OptBitN(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitN'], value)
 
     @property
     def OptBitR(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -143,10 +161,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitR'])
     @OptBitR.setter
     def OptBitR(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitR'], value)
 
     @property
     def OptBitV6(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +175,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitV6'])
     @OptBitV6.setter
     def OptBitV6(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitV6'], value)
 
     @property
     def Option(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,6 +189,7 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Option'])
     @Option.setter
     def Option(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Option'], value)
 
     @property
@@ -183,6 +206,7 @@ class Link(Base):
 
     @property
     def RouterPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -191,6 +215,7 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterPriority'])
     @RouterPriority.setter
     def RouterPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterPriority'], value)
 
     def update(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
@@ -216,6 +241,34 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
+        """Adds a new link resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - CountLsa (number): 
+        - IncrLinkStateId (str): 
+        - LocalInterfaceAddress (str): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number))): 
+        - RouterPriority (number): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved link resources using find and the newly added link resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, CountLsa=None, IncrLinkStateId=None, LocalInterfaceAddress=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, Prefixes=None, RouterPriority=None):
         """Finds and retrieves link resources from the server.

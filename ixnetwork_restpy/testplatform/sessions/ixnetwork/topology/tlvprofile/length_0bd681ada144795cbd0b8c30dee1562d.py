@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Length(Base):
@@ -40,9 +41,13 @@ class Length(Base):
         'SizeType': 'sizeType',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'encoding': ['bool', 'decimal', 'fcid', 'float', 'hex', 'ipv4', 'ipv6', 'mac', 'string', 'varLenHex'],
+        'sizeType': ['bit', 'byte'],
+    }
 
-    def __init__(self, parent):
-        super(Length, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Length, self).__init__(parent, list_op)
 
     @property
     def Restriction(self):
@@ -56,10 +61,14 @@ class Length(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.restriction_cf6d803d11c6dbc385b70d3f8adf1e34 import Restriction
-        return Restriction(self)
+        if self._properties.get('Restriction', None) is not None:
+            return self._properties.get('Restriction')
+        else:
+            return Restriction(self)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,10 +77,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Encoding(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +91,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encoding'])
     @Encoding.setter
     def Encoding(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encoding'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +105,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -104,10 +119,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
     @IsEnabled.setter
     def IsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +133,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Size(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,10 +147,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Size'])
     @Size.setter
     def Size(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Size'], value)
 
     @property
     def SizeType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,10 +161,12 @@ class Length(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SizeType'])
     @SizeType.setter
     def SizeType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SizeType'], value)
 
     @property
     def Value(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -153,6 +176,7 @@ class Length(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
 
     def update(self, Description=None, Encoding=None, IsEditable=None, IsEnabled=None, Name=None, Size=None, SizeType=None):
+        # type: (str, str, bool, bool, str, int, str) -> Length
         """Updates length resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

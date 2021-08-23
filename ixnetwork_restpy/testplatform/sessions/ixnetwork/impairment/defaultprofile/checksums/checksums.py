@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Checksums(Base):
@@ -37,12 +38,15 @@ class Checksums(Base):
         'CorrectTxL2FcsErrors': 'correctTxL2FcsErrors',
         'DropRxL2FcsErrors': 'dropRxL2FcsErrors',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Checksums, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Checksums, self).__init__(parent, list_op)
 
     @property
     def AlwaysCorrectWhenModifying(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Checksums(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AlwaysCorrectWhenModifying'])
     @AlwaysCorrectWhenModifying.setter
     def AlwaysCorrectWhenModifying(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AlwaysCorrectWhenModifying'], value)
 
     @property
     def CorrectTxChecksumOverIp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class Checksums(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CorrectTxChecksumOverIp'])
     @CorrectTxChecksumOverIp.setter
     def CorrectTxChecksumOverIp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CorrectTxChecksumOverIp'], value)
 
     @property
     def CorrectTxIpv4Checksum(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +83,12 @@ class Checksums(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CorrectTxIpv4Checksum'])
     @CorrectTxIpv4Checksum.setter
     def CorrectTxIpv4Checksum(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CorrectTxIpv4Checksum'], value)
 
     @property
     def CorrectTxL2FcsErrors(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class Checksums(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CorrectTxL2FcsErrors'])
     @CorrectTxL2FcsErrors.setter
     def CorrectTxL2FcsErrors(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CorrectTxL2FcsErrors'], value)
 
     @property
     def DropRxL2FcsErrors(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,9 +111,11 @@ class Checksums(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DropRxL2FcsErrors'])
     @DropRxL2FcsErrors.setter
     def DropRxL2FcsErrors(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DropRxL2FcsErrors'], value)
 
     def update(self, AlwaysCorrectWhenModifying=None, CorrectTxChecksumOverIp=None, CorrectTxIpv4Checksum=None, CorrectTxL2FcsErrors=None, DropRxL2FcsErrors=None):
+        # type: (bool, bool, bool, bool, bool) -> Checksums
         """Updates checksums resource on the server.
 
         Args

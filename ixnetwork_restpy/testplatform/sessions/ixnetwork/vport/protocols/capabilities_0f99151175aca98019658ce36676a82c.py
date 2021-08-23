@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Capabilities(Base):
@@ -49,12 +50,15 @@ class Capabilities(Base):
         'IpV6Unicast': 'ipV6Unicast',
         'Vpls': 'vpls',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Capabilities, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Capabilities, self).__init__(parent, list_op)
 
     @property
     def AdVpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +67,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdVpls'])
     @AdVpls.setter
     def AdVpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdVpls'], value)
 
     @property
     def Evpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +81,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Evpn'])
     @Evpn.setter
     def Evpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Evpn'], value)
 
     @property
     def FetchDetailedIpV4UnicastInfo(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +95,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FetchDetailedIpV4UnicastInfo'])
     @FetchDetailedIpV4UnicastInfo.setter
     def FetchDetailedIpV4UnicastInfo(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FetchDetailedIpV4UnicastInfo'], value)
 
     @property
     def FetchDetailedIpV6UnicastInfo(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,10 +109,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FetchDetailedIpV6UnicastInfo'])
     @FetchDetailedIpV6UnicastInfo.setter
     def FetchDetailedIpV6UnicastInfo(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FetchDetailedIpV6UnicastInfo'], value)
 
     @property
     def IpV4Mpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,10 +123,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV4Mpls'])
     @IpV4Mpls.setter
     def IpV4Mpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV4Mpls'], value)
 
     @property
     def IpV4MplsVpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +137,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV4MplsVpn'])
     @IpV4MplsVpn.setter
     def IpV4MplsVpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV4MplsVpn'], value)
 
     @property
     def IpV4Multicast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -135,10 +151,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV4Multicast'])
     @IpV4Multicast.setter
     def IpV4Multicast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV4Multicast'], value)
 
     @property
     def IpV4MulticastMplsVpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,10 +165,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV4MulticastMplsVpn'])
     @IpV4MulticastMplsVpn.setter
     def IpV4MulticastMplsVpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV4MulticastMplsVpn'], value)
 
     @property
     def IpV4MulticastVpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -159,10 +179,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV4MulticastVpn'])
     @IpV4MulticastVpn.setter
     def IpV4MulticastVpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV4MulticastVpn'], value)
 
     @property
     def IpV4Unicast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -171,10 +193,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV4Unicast'])
     @IpV4Unicast.setter
     def IpV4Unicast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV4Unicast'], value)
 
     @property
     def IpV6Mpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -183,10 +207,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV6Mpls'])
     @IpV6Mpls.setter
     def IpV6Mpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV6Mpls'], value)
 
     @property
     def IpV6MplsVpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -195,10 +221,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV6MplsVpn'])
     @IpV6MplsVpn.setter
     def IpV6MplsVpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV6MplsVpn'], value)
 
     @property
     def IpV6Multicast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -207,10 +235,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV6Multicast'])
     @IpV6Multicast.setter
     def IpV6Multicast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV6Multicast'], value)
 
     @property
     def IpV6MulticastMplsVpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -219,10 +249,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV6MulticastMplsVpn'])
     @IpV6MulticastMplsVpn.setter
     def IpV6MulticastMplsVpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV6MulticastMplsVpn'], value)
 
     @property
     def IpV6MulticastVpn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -231,10 +263,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV6MulticastVpn'])
     @IpV6MulticastVpn.setter
     def IpV6MulticastVpn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV6MulticastVpn'], value)
 
     @property
     def IpV6Unicast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -243,10 +277,12 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpV6Unicast'])
     @IpV6Unicast.setter
     def IpV6Unicast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpV6Unicast'], value)
 
     @property
     def Vpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -255,9 +291,11 @@ class Capabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vpls'])
     @Vpls.setter
     def Vpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vpls'], value)
 
     def update(self, AdVpls=None, Evpn=None, FetchDetailedIpV4UnicastInfo=None, FetchDetailedIpV6UnicastInfo=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastMplsVpn=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastMplsVpn=None, IpV6MulticastVpn=None, IpV6Unicast=None, Vpls=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Capabilities
         """Updates capabilities resource on the server.
 
         Args

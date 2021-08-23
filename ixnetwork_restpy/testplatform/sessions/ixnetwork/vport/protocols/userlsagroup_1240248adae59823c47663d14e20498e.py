@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UserLsaGroup(Base):
@@ -37,9 +38,11 @@ class UserLsaGroup(Base):
         'Description': 'description',
         'Enabled': 'enabled',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(UserLsaGroup, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UserLsaGroup, self).__init__(parent, list_op)
 
     @property
     def UserLsa(self):
@@ -53,10 +56,14 @@ class UserLsaGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_fccdf05a72e451f4591323a7ac50aa51 import UserLsa
-        return UserLsa(self)
+        if self._properties.get('UserLsa', None) is not None:
+            return self._properties.get('UserLsa')
+        else:
+            return UserLsa(self)
 
     @property
     def AreaId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class UserLsaGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AreaId'])
     @AreaId.setter
     def AreaId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AreaId'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class UserLsaGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,9 +100,11 @@ class UserLsaGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     def update(self, AreaId=None, Description=None, Enabled=None):
+        # type: (int, str, bool) -> UserLsaGroup
         """Updates userLsaGroup resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class UserLsaGroup(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AreaId=None, Description=None, Enabled=None):
+        # type: (int, str, bool) -> UserLsaGroup
         """Adds a new userLsaGroup resource on the server and adds it to the container.
 
         Args
@@ -136,6 +150,7 @@ class UserLsaGroup(Base):
         self._delete()
 
     def find(self, AreaId=None, Description=None, Enabled=None):
+        # type: (int, str, bool) -> UserLsaGroup
         """Finds and retrieves userLsaGroup resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userLsaGroup resources from the server.

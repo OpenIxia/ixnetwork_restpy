@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LinkType(Base):
@@ -34,12 +35,15 @@ class LinkType(Base):
         'OfppfCopper': 'ofppfCopper',
         'OfppfFiber': 'ofppfFiber',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LinkType, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LinkType, self).__init__(parent, list_op)
 
     @property
     def OfppfCopper(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class LinkType(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OfppfCopper'])
     @OfppfCopper.setter
     def OfppfCopper(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OfppfCopper'], value)
 
     @property
     def OfppfFiber(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class LinkType(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OfppfFiber'])
     @OfppfFiber.setter
     def OfppfFiber(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OfppfFiber'], value)
 
     def update(self, OfppfCopper=None, OfppfFiber=None):
+        # type: (bool, bool) -> LinkType
         """Updates linkType resource on the server.
 
         Args

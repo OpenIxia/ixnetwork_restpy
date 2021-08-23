@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Pimsm(Base):
@@ -47,9 +48,13 @@ class Pimsm(Base):
         'RegisterStopMessagesPerInterval': 'registerStopMessagesPerInterval',
         'RunningState': 'runningState',
     }
+    _SDM_ENUM_MAP = {
+        'greFilterType': ['noDataMdt', 'dataMdtIpv4'],
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Pimsm, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Pimsm, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -63,10 +68,14 @@ class Pimsm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_904e72c6fa0992bd72a34758e59774b5 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def BsmFramePerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,10 +84,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BsmFramePerInterval'])
     @BsmFramePerInterval.setter
     def BsmFramePerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BsmFramePerInterval'], value)
 
     @property
     def CrpFramePerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +98,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CrpFramePerInterval'])
     @CrpFramePerInterval.setter
     def CrpFramePerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CrpFramePerInterval'], value)
 
     @property
     def DataMdtFramePerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +112,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataMdtFramePerInterval'])
     @DataMdtFramePerInterval.setter
     def DataMdtFramePerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataMdtFramePerInterval'], value)
 
     @property
     def DenyGrePimIpPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +126,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DenyGrePimIpPrefix'])
     @DenyGrePimIpPrefix.setter
     def DenyGrePimIpPrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DenyGrePimIpPrefix'], value)
 
     @property
     def EnableDiscardJoinPruneProcessing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +140,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDiscardJoinPruneProcessing'])
     @EnableDiscardJoinPruneProcessing.setter
     def EnableDiscardJoinPruneProcessing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDiscardJoinPruneProcessing'], value)
 
     @property
     def EnableRateControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -135,10 +154,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRateControl'])
     @EnableRateControl.setter
     def EnableRateControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRateControl'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,10 +168,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GreFilterType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +182,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GreFilterType'])
     @GreFilterType.setter
     def GreFilterType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GreFilterType'], value)
 
     @property
     def HelloMsgsPerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,10 +196,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloMsgsPerInterval'])
     @HelloMsgsPerInterval.setter
     def HelloMsgsPerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloMsgsPerInterval'], value)
 
     @property
     def Interval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +210,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interval'])
     @Interval.setter
     def Interval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interval'], value)
 
     @property
     def JoinPruneMessagesPerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +224,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JoinPruneMessagesPerInterval'])
     @JoinPruneMessagesPerInterval.setter
     def JoinPruneMessagesPerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JoinPruneMessagesPerInterval'], value)
 
     @property
     def OverrideSourceIpForSmInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -207,10 +238,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideSourceIpForSmInterface'])
     @OverrideSourceIpForSmInterface.setter
     def OverrideSourceIpForSmInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideSourceIpForSmInterface'], value)
 
     @property
     def RegisterMessagesPerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,10 +252,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RegisterMessagesPerInterval'])
     @RegisterMessagesPerInterval.setter
     def RegisterMessagesPerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RegisterMessagesPerInterval'], value)
 
     @property
     def RegisterStopMessagesPerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -231,10 +266,12 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RegisterStopMessagesPerInterval'])
     @RegisterStopMessagesPerInterval.setter
     def RegisterStopMessagesPerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RegisterStopMessagesPerInterval'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,6 +280,7 @@ class Pimsm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
 
     def update(self, BsmFramePerInterval=None, CrpFramePerInterval=None, DataMdtFramePerInterval=None, DenyGrePimIpPrefix=None, EnableDiscardJoinPruneProcessing=None, EnableRateControl=None, Enabled=None, GreFilterType=None, HelloMsgsPerInterval=None, Interval=None, JoinPruneMessagesPerInterval=None, OverrideSourceIpForSmInterface=None, RegisterMessagesPerInterval=None, RegisterStopMessagesPerInterval=None):
+        # type: (int, int, int, str, bool, bool, bool, str, int, int, int, bool, int, int) -> Pimsm
         """Updates pimsm resource on the server.
 
         Args
@@ -268,28 +306,42 @@ class Pimsm(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the PIMSM protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the PIMSM protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

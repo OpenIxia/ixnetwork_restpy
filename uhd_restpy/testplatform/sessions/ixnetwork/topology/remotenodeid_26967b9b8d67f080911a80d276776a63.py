@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RemoteNodeId(Base):
@@ -33,12 +34,15 @@ class RemoteNodeId(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RemoteNodeId, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RemoteNodeId, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------

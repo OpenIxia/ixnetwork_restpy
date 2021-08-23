@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class String(Base):
@@ -35,12 +36,15 @@ class String(Base):
         'Default': 'default',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(String, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(String, self).__init__(parent, list_op)
 
     @property
     def Default(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,6 +54,7 @@ class String(Base):
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -58,9 +63,11 @@ class String(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Value=None):
+        # type: (str) -> String
         """Updates string resource on the server.
 
         Args
@@ -73,7 +80,26 @@ class String(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Value=None):
+        # type: (str) -> String
+        """Adds a new string resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Value (str): Parameter string value.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved string resources using find and the newly added string resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Default=None, Value=None):
+        # type: (str, str) -> String
         """Finds and retrieves string resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve string resources from the server.

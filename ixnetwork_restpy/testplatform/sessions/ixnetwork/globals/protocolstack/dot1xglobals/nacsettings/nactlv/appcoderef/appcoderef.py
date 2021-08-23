@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AppCodeRef(Base):
@@ -35,12 +36,15 @@ class AppCodeRef(Base):
         'ObjectId': 'objectId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AppCodeRef, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AppCodeRef, self).__init__(parent, list_op)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class AppCodeRef(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +68,7 @@ class AppCodeRef(Base):
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,9 +77,11 @@ class AppCodeRef(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
+        # type: (str, int) -> AppCodeRef
         """Updates appCodeRef resource on the server.
 
         Args

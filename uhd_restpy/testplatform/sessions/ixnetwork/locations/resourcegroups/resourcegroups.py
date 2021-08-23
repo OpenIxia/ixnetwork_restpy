@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ResourceGroups(Base):
@@ -36,12 +37,15 @@ class ResourceGroups(Base):
         'Card': 'card',
         'FrontPanelPorts': 'frontPanelPorts',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ResourceGroups, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ResourceGroups, self).__init__(parent, list_op)
 
     @property
     def AvailableResourceModes(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -51,6 +55,7 @@ class ResourceGroups(Base):
 
     @property
     def Card(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,6 +65,7 @@ class ResourceGroups(Base):
 
     @property
     def FrontPanelPorts(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -67,7 +73,21 @@ class ResourceGroups(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['FrontPanelPorts'])
 
+    def add(self):
+        """Adds a new resourceGroups resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved resourceGroups resources using find and the newly added resourceGroups resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AvailableResourceModes=None, Card=None, FrontPanelPorts=None):
+        # type: (List[str], str, List[int]) -> ResourceGroups
         """Finds and retrieves resourceGroups resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve resourceGroups resources from the server.

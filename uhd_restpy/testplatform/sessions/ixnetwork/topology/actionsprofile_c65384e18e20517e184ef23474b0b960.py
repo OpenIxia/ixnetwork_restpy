@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ActionsProfile(Base):
@@ -35,9 +36,11 @@ class ActionsProfile(Base):
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ActionsProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ActionsProfile, self).__init__(parent, list_op)
 
     @property
     def Action(self):
@@ -51,10 +54,14 @@ class ActionsProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.action_910bcbfd3b7898385321127395ab1bd5 import Action
-        return Action(self)
+        if self._properties.get('Action', None) is not None:
+            return self._properties.get('Action')
+        else:
+            return Action(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +71,7 @@ class ActionsProfile(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +81,7 @@ class ActionsProfile(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,9 +90,11 @@ class ActionsProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> ActionsProfile
         """Updates actionsProfile resource on the server.
 
         Args
@@ -97,13 +108,15 @@ class ActionsProfile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def AddFromTemplate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addFromTemplate operation on the server.
 
         Adds an Action item.
 
-        addFromTemplate(Arg2=href)
-        --------------------------
-        - Arg2 (str(None | /api/v1/sessions/9/ixnetwork//.../*)): 
+        addFromTemplate(Arg2=href, async_operation=bool)
+        ------------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

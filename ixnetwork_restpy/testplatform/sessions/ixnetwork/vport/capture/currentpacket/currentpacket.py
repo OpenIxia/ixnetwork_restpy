@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CurrentPacket(Base):
@@ -33,9 +34,11 @@ class CurrentPacket(Base):
     _SDM_ATT_MAP = {
         'PacketHex': 'packetHex',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CurrentPacket, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CurrentPacket, self).__init__(parent, list_op)
 
     @property
     def Stack(self):
@@ -49,10 +52,14 @@ class CurrentPacket(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack import Stack
-        return Stack(self)
+        if self._properties.get('Stack', None) is not None:
+            return self._properties.get('Stack')
+        else:
+            return Stack(self)
 
     @property
     def PacketHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,13 +68,15 @@ class CurrentPacket(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketHex'])
 
     def GetPacketFromControlCapture(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the getPacketFromControlCapture operation on the server.
 
         The command retrieves a packet from the control capture started on a port.
 
-        getPacketFromControlCapture(Arg2=number)
-        ----------------------------------------
+        getPacketFromControlCapture(Arg2=number, async_operation=bool)
+        --------------------------------------------------------------
         - Arg2 (number): The packet index.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -80,13 +89,15 @@ class CurrentPacket(Base):
         return self._execute('getPacketFromControlCapture', payload=payload, response_object=None)
 
     def GetPacketFromDataCapture(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the getPacketFromDataCapture operation on the server.
 
         The command retrieves a packet from the data capture started on a port.
 
-        getPacketFromDataCapture(Arg2=number)
-        -------------------------------------
+        getPacketFromDataCapture(Arg2=number, async_operation=bool)
+        -----------------------------------------------------------
         - Arg2 (number): The packet index.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

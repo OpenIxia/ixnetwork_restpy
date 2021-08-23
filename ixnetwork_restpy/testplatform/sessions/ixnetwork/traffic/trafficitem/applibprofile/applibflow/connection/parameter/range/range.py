@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Range(Base):
@@ -37,12 +38,15 @@ class Range(Base):
         'MinValue': 'minValue',
         'To': 'to',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Range, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Range, self).__init__(parent, list_op)
 
     @property
     def From(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['From'])
     @From.setter
     def From(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['From'], value)
 
     @property
     def MaxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +70,7 @@ class Range(Base):
 
     @property
     def MinValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class Range(Base):
 
     @property
     def To(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,9 +89,11 @@ class Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['To'])
     @To.setter
     def To(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['To'], value)
 
     def update(self, From=None, To=None):
+        # type: (int, int) -> Range
         """Updates range resource on the server.
 
         Args
@@ -97,7 +107,27 @@ class Range(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, From=None, To=None):
+        # type: (int, int) -> Range
+        """Adds a new range resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - From (number): Start range value.
+        - To (number): End range value.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved range resources using find and the newly added range resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, From=None, MaxValue=None, MinValue=None, To=None):
+        # type: (int, int, int, int) -> Range
         """Finds and retrieves range resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve range resources from the server.

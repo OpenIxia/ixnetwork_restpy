@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LinkFeature(Base):
@@ -35,12 +36,15 @@ class LinkFeature(Base):
         'OfppfPause': 'ofppfPause',
         'OfppfPauseAsym': 'ofppfPauseAsym',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LinkFeature, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LinkFeature, self).__init__(parent, list_op)
 
     @property
     def OfppfAutoNegotiation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class LinkFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OfppfAutoNegotiation'])
     @OfppfAutoNegotiation.setter
     def OfppfAutoNegotiation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OfppfAutoNegotiation'], value)
 
     @property
     def OfppfPause(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +67,12 @@ class LinkFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OfppfPause'])
     @OfppfPause.setter
     def OfppfPause(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OfppfPause'], value)
 
     @property
     def OfppfPauseAsym(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,9 +81,11 @@ class LinkFeature(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OfppfPauseAsym'])
     @OfppfPauseAsym.setter
     def OfppfPauseAsym(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OfppfPauseAsym'], value)
 
     def update(self, OfppfAutoNegotiation=None, OfppfPause=None, OfppfPauseAsym=None):
+        # type: (bool, bool, bool) -> LinkFeature
         """Updates linkFeature resource on the server.
 
         Args

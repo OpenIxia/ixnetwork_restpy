@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NsRate(Base):
@@ -39,12 +40,16 @@ class NsRate(Base):
         'RowNames': 'rowNames',
         'ScaleMode': 'scaleMode',
     }
+    _SDM_ENUM_MAP = {
+        'scaleMode': ['port', 'deviceGroup'],
+    }
 
-    def __init__(self, parent):
-        super(NsRate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NsRate, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,6 +59,7 @@ class NsRate(Base):
 
     @property
     def Enabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -64,6 +70,7 @@ class NsRate(Base):
 
     @property
     def Interval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +81,7 @@ class NsRate(Base):
 
     @property
     def MaxOutstanding(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +92,7 @@ class NsRate(Base):
 
     @property
     def Rate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -94,6 +103,7 @@ class NsRate(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -103,6 +113,7 @@ class NsRate(Base):
 
     @property
     def ScaleMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,9 +122,11 @@ class NsRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ScaleMode'])
     @ScaleMode.setter
     def ScaleMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ScaleMode'], value)
 
     def update(self, ScaleMode=None):
+        # type: (str) -> NsRate
         """Updates nsRate resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

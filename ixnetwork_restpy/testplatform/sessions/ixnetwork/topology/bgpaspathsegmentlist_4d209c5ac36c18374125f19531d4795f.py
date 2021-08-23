@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpAsPathSegmentList(Base):
@@ -39,9 +40,11 @@ class BgpAsPathSegmentList(Base):
         'NumberOfAsNumberInSegment': 'numberOfAsNumberInSegment',
         'SegmentType': 'segmentType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpAsPathSegmentList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpAsPathSegmentList, self).__init__(parent, list_op)
 
     @property
     def BgpAsNumberList(self):
@@ -55,10 +58,14 @@ class BgpAsPathSegmentList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist_1529f0c2f511c5c16621b75c6205cf08 import BgpAsNumberList
-        return BgpAsNumberList(self)
+        if self._properties.get('BgpAsNumberList', None) is not None:
+            return self._properties.get('BgpAsNumberList')
+        else:
+            return BgpAsNumberList(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,6 +75,7 @@ class BgpAsPathSegmentList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,6 +85,7 @@ class BgpAsPathSegmentList(Base):
 
     @property
     def EnableASPathSegment(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +96,7 @@ class BgpAsPathSegmentList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class BgpAsPathSegmentList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfAsNumberInSegment(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class BgpAsPathSegmentList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfAsNumberInSegment'])
     @NumberOfAsNumberInSegment.setter
     def NumberOfAsNumberInSegment(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfAsNumberInSegment'], value)
 
     @property
     def SegmentType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +134,7 @@ class BgpAsPathSegmentList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SegmentType']))
 
     def update(self, Name=None, NumberOfAsNumberInSegment=None):
+        # type: (str, int) -> BgpAsPathSegmentList
         """Updates bgpAsPathSegmentList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -136,7 +151,27 @@ class BgpAsPathSegmentList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None, NumberOfAsNumberInSegment=None):
+        # type: (str, int) -> BgpAsPathSegmentList
+        """Adds a new bgpAsPathSegmentList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAsNumberInSegment (number): Number of AS Number In Segment
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpAsPathSegmentList resources using find and the newly added bgpAsPathSegmentList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfAsNumberInSegment=None):
+        # type: (int, str, str, int) -> BgpAsPathSegmentList
         """Finds and retrieves bgpAsPathSegmentList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpAsPathSegmentList resources from the server.

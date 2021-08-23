@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Rfc8277LabelStack(Base):
@@ -39,12 +40,15 @@ class Rfc8277LabelStack(Base):
         'MplsLabelStep': 'mplsLabelStep',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Rfc8277LabelStack, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Rfc8277LabelStack, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class Rfc8277LabelStack(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class Rfc8277LabelStack(Base):
 
     @property
     def MplsLabelEnd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class Rfc8277LabelStack(Base):
 
     @property
     def MplsLabelStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class Rfc8277LabelStack(Base):
 
     @property
     def MplsLabelStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class Rfc8277LabelStack(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +110,11 @@ class Rfc8277LabelStack(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Rfc8277LabelStack
         """Updates Rfc8277LabelStack resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -119,7 +130,26 @@ class Rfc8277LabelStack(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> Rfc8277LabelStack
+        """Adds a new Rfc8277LabelStack resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved Rfc8277LabelStack resources using find and the newly added Rfc8277LabelStack resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> Rfc8277LabelStack
         """Finds and retrieves Rfc8277LabelStack resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve Rfc8277LabelStack resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbTopologyRange(Base):
@@ -47,9 +48,11 @@ class SpbTopologyRange(Base):
         'PortIdentifier': 'portIdentifier',
         'SpSourceId': 'spSourceId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbTopologyRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbTopologyRange, self).__init__(parent, list_op)
 
     @property
     def SpbBaseVidRange(self):
@@ -63,10 +66,14 @@ class SpbTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_1c9fe669457e475f948c1f67d34ad28c import SpbBaseVidRange
-        return SpbBaseVidRange(self)
+        if self._properties.get('SpbBaseVidRange', None) is not None:
+            return self._properties.get('SpbBaseVidRange')
+        else:
+            return SpbBaseVidRange(self)
 
     @property
     def AuxMcidConfigName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,10 +82,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuxMcidConfigName'])
     @AuxMcidConfigName.setter
     def AuxMcidConfigName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuxMcidConfigName'], value)
 
     @property
     def AuxMcidSignature(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuxMcidSignature'])
     @AuxMcidSignature.setter
     def AuxMcidSignature(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuxMcidSignature'], value)
 
     @property
     def BridgePriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
     @BridgePriority.setter
     def BridgePriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgePriority'], value)
 
     @property
     def CistExternalRootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,10 +124,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistExternalRootCost'])
     @CistExternalRootCost.setter
     def CistExternalRootCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistExternalRootCost'], value)
 
     @property
     def CistRootIdentiifer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +138,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistRootIdentiifer'])
     @CistRootIdentiifer.setter
     def CistRootIdentiifer(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistRootIdentiifer'], value)
 
     @property
     def EnableVbit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -135,10 +152,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVbit'])
     @EnableVbit.setter
     def EnableVbit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVbit'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,10 +166,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -159,10 +180,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
     @LinkMetric.setter
     def LinkMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
 
     @property
     def McidConfigName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +194,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['McidConfigName'])
     @McidConfigName.setter
     def McidConfigName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['McidConfigName'], value)
 
     @property
     def McidSignature(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -183,10 +208,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['McidSignature'])
     @McidSignature.setter
     def McidSignature(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['McidSignature'], value)
 
     @property
     def NoOfPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +222,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfPorts'])
     @NoOfPorts.setter
     def NoOfPorts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfPorts'], value)
 
     @property
     def PortIdentifier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,10 +236,12 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdentifier'])
     @PortIdentifier.setter
     def PortIdentifier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdentifier'], value)
 
     @property
     def SpSourceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,9 +250,11 @@ class SpbTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpSourceId'])
     @SpSourceId.setter
     def SpSourceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpSourceId'], value)
 
     def update(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+        # type: (str, str, int, int, str, bool, bool, int, str, str, int, int, int) -> SpbTopologyRange
         """Updates spbTopologyRange resource on the server.
 
         Args
@@ -247,6 +280,7 @@ class SpbTopologyRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+        # type: (str, str, int, int, str, bool, bool, int, str, str, int, int, int) -> SpbTopologyRange
         """Adds a new spbTopologyRange resource on the server and adds it to the container.
 
         Args
@@ -286,6 +320,7 @@ class SpbTopologyRange(Base):
         self._delete()
 
     def find(self, AuxMcidConfigName=None, AuxMcidSignature=None, BridgePriority=None, CistExternalRootCost=None, CistRootIdentiifer=None, EnableVbit=None, Enabled=None, LinkMetric=None, McidConfigName=None, McidSignature=None, NoOfPorts=None, PortIdentifier=None, SpSourceId=None):
+        # type: (str, str, int, int, str, bool, bool, int, str, str, int, int, int) -> SpbTopologyRange
         """Finds and retrieves spbTopologyRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbTopologyRange resources from the server.

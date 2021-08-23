@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetworkRange(Base):
@@ -49,12 +50,16 @@ class NetworkRange(Base):
         'PrefixMask': 'prefixMask',
         'Rid': 'rid',
     }
+    _SDM_ENUM_MAP = {
+        'linkType': ['broadcast', 'pointToPoint'],
+    }
 
-    def __init__(self, parent):
-        super(NetworkRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetworkRange, self).__init__(parent, list_op)
 
     @property
     def BBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +68,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BBit'])
     @BBit.setter
     def BBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
 
     @property
     def EBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +82,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EBit'])
     @EBit.setter
     def EBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
 
     @property
     def EnableAdvertiseNetworkRange(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'])
     @EnableAdvertiseNetworkRange.setter
     def EnableAdvertiseNetworkRange(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'], value)
 
     @property
     def EntryAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryAddress'])
     @EntryAddress.setter
     def EntryAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryAddress'], value)
 
     @property
     def EntryColumn(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,10 +124,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryColumn'])
     @EntryColumn.setter
     def EntryColumn(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryColumn'], value)
 
     @property
     def EntryMaskLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +138,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryMaskLength'])
     @EntryMaskLength.setter
     def EntryMaskLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryMaskLength'], value)
 
     @property
     def EntryRow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,10 +152,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
     @EntryRow.setter
     def EntryRow(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
 
     @property
     def IncrementByRid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,10 +166,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementByRid'])
     @IncrementByRid.setter
     def IncrementByRid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementByRid'], value)
 
     @property
     def LinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -159,10 +180,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
     @LinkMetric.setter
     def LinkMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
 
     @property
     def LinkType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +194,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
     @LinkType.setter
     def LinkType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
 
     @property
     def NumCols(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +208,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumCols'])
     @NumCols.setter
     def NumCols(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumCols'], value)
 
     @property
     def NumRows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +222,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRows'])
     @NumRows.setter
     def NumRows(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRows'], value)
 
     @property
     def PrefixAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -207,10 +236,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrefixAddress'])
     @PrefixAddress.setter
     def PrefixAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrefixAddress'], value)
 
     @property
     def PrefixMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,10 +250,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrefixMask'])
     @PrefixMask.setter
     def PrefixMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrefixMask'], value)
 
     @property
     def Rid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,9 +264,11 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rid'])
     @Rid.setter
     def Rid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rid'], value)
 
     def update(self, BBit=None, EBit=None, EnableAdvertiseNetworkRange=None, EntryAddress=None, EntryColumn=None, EntryMaskLength=None, EntryRow=None, IncrementByRid=None, LinkMetric=None, LinkType=None, NumCols=None, NumRows=None, PrefixAddress=None, PrefixMask=None, Rid=None):
+        # type: (bool, bool, bool, str, int, int, int, str, int, str, int, int, str, int, str) -> NetworkRange
         """Updates networkRange resource on the server.
 
         Args
@@ -261,6 +296,7 @@ class NetworkRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BBit=None, EBit=None, EnableAdvertiseNetworkRange=None, EntryAddress=None, EntryColumn=None, EntryMaskLength=None, EntryRow=None, IncrementByRid=None, LinkMetric=None, LinkType=None, NumCols=None, NumRows=None, PrefixAddress=None, PrefixMask=None, Rid=None):
+        # type: (bool, bool, bool, str, int, int, int, str, int, str, int, int, str, int, str) -> NetworkRange
         """Adds a new networkRange resource on the server and adds it to the container.
 
         Args
@@ -302,6 +338,7 @@ class NetworkRange(Base):
         self._delete()
 
     def find(self, BBit=None, EBit=None, EnableAdvertiseNetworkRange=None, EntryAddress=None, EntryColumn=None, EntryMaskLength=None, EntryRow=None, IncrementByRid=None, LinkMetric=None, LinkType=None, NumCols=None, NumRows=None, PrefixAddress=None, PrefixMask=None, Rid=None):
+        # type: (bool, bool, bool, str, int, int, int, str, int, str, int, int, str, int, str) -> NetworkRange
         """Finds and retrieves networkRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkRange resources from the server.

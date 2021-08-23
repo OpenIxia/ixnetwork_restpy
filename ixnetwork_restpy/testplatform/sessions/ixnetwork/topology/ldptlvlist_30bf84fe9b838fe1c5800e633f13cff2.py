@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LdpTLVList(Base):
@@ -41,12 +42,15 @@ class LdpTLVList(Base):
         'Type': 'type',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LdpTLVList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LdpTLVList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class LdpTLVList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class LdpTLVList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class LdpTLVList(Base):
 
     @property
     def Increment(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class LdpTLVList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +101,12 @@ class LdpTLVList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TlvLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +117,7 @@ class LdpTLVList(Base):
 
     @property
     def Type(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class LdpTLVList(Base):
 
     @property
     def Value(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +138,7 @@ class LdpTLVList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Value']))
 
     def update(self, Name=None):
+        # type: (str) -> LdpTLVList
         """Updates ldpTLVList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -141,7 +154,26 @@ class LdpTLVList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> LdpTLVList
+        """Adds a new ldpTLVList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ldpTLVList resources using find and the newly added ldpTLVList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> LdpTLVList
         """Finds and retrieves ldpTLVList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ldpTLVList resources from the server.

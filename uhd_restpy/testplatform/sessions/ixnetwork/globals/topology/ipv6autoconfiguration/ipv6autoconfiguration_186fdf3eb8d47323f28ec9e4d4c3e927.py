@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6Autoconfiguration(Base):
@@ -36,9 +37,11 @@ class Ipv6Autoconfiguration(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv6Autoconfiguration, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6Autoconfiguration, self).__init__(parent, list_op)
 
     @property
     def NsRate(self):
@@ -52,7 +55,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.nsrate.nsrate_2743e8b1b7c27242856a5d009e73521d import NsRate
-        return NsRate(self)._select()
+        if self._properties.get('NsRate', None) is not None:
+            return self._properties.get('NsRate')
+        else:
+            return NsRate(self)._select()
 
     @property
     def RsRate(self):
@@ -66,7 +72,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.rsrate.rsrate_44054eb5e1dd8d1093195cce7529f12f import RsRate
-        return RsRate(self)._select()
+        if self._properties.get('RsRate', None) is not None:
+            return self._properties.get('RsRate')
+        else:
+            return RsRate(self)._select()
 
     @property
     def StartRate(self):
@@ -80,7 +89,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -94,10 +106,14 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,6 +123,7 @@ class Ipv6Autoconfiguration(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,6 +133,7 @@ class Ipv6Autoconfiguration(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,10 +142,12 @@ class Ipv6Autoconfiguration(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -136,6 +156,7 @@ class Ipv6Autoconfiguration(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> Ipv6Autoconfiguration
         """Updates ipv6Autoconfiguration resource on the server.
 
         Args

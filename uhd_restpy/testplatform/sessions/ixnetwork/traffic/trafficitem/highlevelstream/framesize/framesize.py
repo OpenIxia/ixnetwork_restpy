@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FrameSize(Base):
@@ -43,12 +44,17 @@ class FrameSize(Base):
         'WeightedPairs': 'weightedPairs',
         'WeightedRangePairs': 'weightedRangePairs',
     }
+    _SDM_ENUM_MAP = {
+        'presetDistribution': ['cisco', 'imix', 'ipSecImix', 'ipV6Imix', 'rprQuar', 'rprTri', 'standardImix', 'tcpImix', 'tolly'],
+        'type': ['auto', 'fixed', 'increment', 'presetDistribution', 'quadGaussian', 'random', 'weightedPairs'],
+    }
 
-    def __init__(self, parent):
-        super(FrameSize, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FrameSize, self).__init__(parent, list_op)
 
     @property
     def FixedSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -57,10 +63,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FixedSize'])
     @FixedSize.setter
     def FixedSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FixedSize'], value)
 
     @property
     def IncrementFrom(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,10 +77,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementFrom'])
     @IncrementFrom.setter
     def IncrementFrom(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementFrom'], value)
 
     @property
     def IncrementStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +91,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
     @IncrementStep.setter
     def IncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
 
     @property
     def IncrementTo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +105,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementTo'])
     @IncrementTo.setter
     def IncrementTo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementTo'], value)
 
     @property
     def PresetDistribution(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +119,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PresetDistribution'])
     @PresetDistribution.setter
     def PresetDistribution(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PresetDistribution'], value)
 
     @property
     def QuadGaussian(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -117,10 +133,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QuadGaussian'])
     @QuadGaussian.setter
     def QuadGaussian(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['QuadGaussian'], value)
 
     @property
     def RandomMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,10 +147,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RandomMax'])
     @RandomMax.setter
     def RandomMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RandomMax'], value)
 
     @property
     def RandomMin(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +161,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RandomMin'])
     @RandomMin.setter
     def RandomMin(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RandomMin'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,10 +175,12 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def WeightedPairs(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -165,6 +189,7 @@ class FrameSize(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WeightedPairs'])
     @WeightedPairs.setter
     def WeightedPairs(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['WeightedPairs'], value)
 
     @property

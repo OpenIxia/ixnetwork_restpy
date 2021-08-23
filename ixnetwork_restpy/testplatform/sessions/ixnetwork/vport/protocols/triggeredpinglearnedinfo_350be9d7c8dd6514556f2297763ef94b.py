@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TriggeredPingLearnedInfo(Base):
@@ -41,12 +42,15 @@ class TriggeredPingLearnedInfo(Base):
         'ReturnSubCode': 'returnSubCode',
         'Rtt': 'rtt',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TriggeredPingLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TriggeredPingLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def Fec(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def IncomingLabelStack(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def OutgoingLabelStack(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def PeerIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def Reachability(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +100,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def ReturnCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def ReturnSubCode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class TriggeredPingLearnedInfo(Base):
 
     @property
     def Rtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,7 +128,21 @@ class TriggeredPingLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Rtt'])
 
+    def add(self):
+        """Adds a new triggeredPingLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved triggeredPingLearnedInfo resources using find and the newly added triggeredPingLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Fec=None, IncomingLabelStack=None, OutgoingLabelStack=None, PeerIpAddress=None, Reachability=None, ReturnCode=None, ReturnSubCode=None, Rtt=None):
+        # type: (str, str, str, str, str, str, int, str) -> TriggeredPingLearnedInfo
         """Finds and retrieves triggeredPingLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve triggeredPingLearnedInfo resources from the server.

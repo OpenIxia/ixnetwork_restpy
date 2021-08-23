@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Diagnostics(Base):
@@ -32,9 +33,11 @@ class Diagnostics(Base):
     _SDM_NAME = 'diagnostics'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Diagnostics, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Diagnostics, self).__init__(parent, list_op)
 
     @property
     def Cleanup(self):
@@ -48,4 +51,7 @@ class Diagnostics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.cleanup.cleanup import Cleanup
-        return Cleanup(self)._select()
+        if self._properties.get('Cleanup', None) is not None:
+            return self._properties.get('Cleanup')
+        else:
+            return Cleanup(self)._select()

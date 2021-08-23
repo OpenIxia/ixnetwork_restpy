@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6Prefixes(Base):
@@ -40,12 +41,15 @@ class Ipv6Prefixes(Base):
         'Metric': 'metric',
         'SequenceNumber': 'sequenceNumber',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv6Prefixes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6Prefixes, self).__init__(parent, list_op)
 
     @property
     def Age(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class Ipv6Prefixes(Base):
 
     @property
     def HostName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class Ipv6Prefixes(Base):
 
     @property
     def Ipv6Prefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class Ipv6Prefixes(Base):
 
     @property
     def LearnedVia(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class Ipv6Prefixes(Base):
 
     @property
     def LspId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class Ipv6Prefixes(Base):
 
     @property
     def Metric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +109,7 @@ class Ipv6Prefixes(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,7 +117,21 @@ class Ipv6Prefixes(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SequenceNumber'])
 
+    def add(self):
+        """Adds a new ipv6Prefixes resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv6Prefixes resources using find and the newly added ipv6Prefixes resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Age=None, HostName=None, Ipv6Prefix=None, LearnedVia=None, LspId=None, Metric=None, SequenceNumber=None):
+        # type: (int, str, str, str, str, int, int) -> Ipv6Prefixes
         """Finds and retrieves ipv6Prefixes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6Prefixes resources from the server.

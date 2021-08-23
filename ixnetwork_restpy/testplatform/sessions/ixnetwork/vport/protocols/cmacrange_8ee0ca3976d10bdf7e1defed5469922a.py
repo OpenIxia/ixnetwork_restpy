@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CMacRange(Base):
@@ -52,9 +53,14 @@ class CMacRange(Base):
         'SvlanTpId': 'svlanTpId',
         'UseSameSequenceNumber': 'useSameSequenceNumber',
     }
+    _SDM_ENUM_MAP = {
+        'cvlanTpId': ['0x8100', '0x9100', '0x9200', '0x88A8'],
+        'labelMode': ['fixed', 'increment'],
+        'svlanTpId': ['0x8100', '0x9100', '0x9200', '0x88A8'],
+    }
 
-    def __init__(self, parent):
-        super(CMacRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CMacRange, self).__init__(parent, list_op)
 
     @property
     def CMacMappedIp(self):
@@ -68,7 +74,10 @@ class CMacRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacmappedip_48b7535562046322b0adbf2eb95cecf1 import CMacMappedIp
-        return CMacMappedIp(self)
+        if self._properties.get('CMacMappedIp', None) is not None:
+            return self._properties.get('CMacMappedIp')
+        else:
+            return CMacMappedIp(self)
 
     @property
     def CmacRouteAttributes(self):
@@ -82,10 +91,14 @@ class CMacRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrouteattributes_a2fb1110b2532702570503443080f315 import CmacRouteAttributes
-        return CmacRouteAttributes(self)._select()
+        if self._properties.get('CmacRouteAttributes', None) is not None:
+            return self._properties.get('CmacRouteAttributes')
+        else:
+            return CmacRouteAttributes(self)._select()
 
     @property
     def CmacPrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,10 +107,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CmacPrefixLength'])
     @CmacPrefixLength.setter
     def CmacPrefixLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CmacPrefixLength'], value)
 
     @property
     def CvlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,10 +121,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanId'])
     @CvlanId.setter
     def CvlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanId'], value)
 
     @property
     def CvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,10 +135,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanPriority'])
     @CvlanPriority.setter
     def CvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanPriority'], value)
 
     @property
     def CvlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,10 +149,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanTpId'])
     @CvlanTpId.setter
     def CvlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanTpId'], value)
 
     @property
     def EnableCvlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,10 +163,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCvlan'])
     @EnableCvlan.setter
     def EnableCvlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCvlan'], value)
 
     @property
     def EnableSecondLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -154,10 +177,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSecondLabel'])
     @EnableSecondLabel.setter
     def EnableSecondLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSecondLabel'], value)
 
     @property
     def EnableSvlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -166,10 +191,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSvlan'])
     @EnableSvlan.setter
     def EnableSvlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSvlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +205,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstLabelStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -190,10 +219,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstLabelStart'])
     @FirstLabelStart.setter
     def FirstLabelStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstLabelStart'], value)
 
     @property
     def LabelMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,10 +233,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelMode'])
     @LabelMode.setter
     def LabelMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelMode'], value)
 
     @property
     def LabelStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,10 +247,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelStep'])
     @LabelStep.setter
     def LabelStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelStep'], value)
 
     @property
     def NoOfCmacs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -226,10 +261,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCmacs'])
     @NoOfCmacs.setter
     def NoOfCmacs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCmacs'], value)
 
     @property
     def SecondLabelStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -238,10 +275,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SecondLabelStart'])
     @SecondLabelStart.setter
     def SecondLabelStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SecondLabelStart'], value)
 
     @property
     def StartCmacPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,10 +289,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartCmacPrefix'])
     @StartCmacPrefix.setter
     def StartCmacPrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartCmacPrefix'], value)
 
     @property
     def SvlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -262,10 +303,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanId'])
     @SvlanId.setter
     def SvlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanId'], value)
 
     @property
     def SvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -274,10 +317,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanPriority'])
     @SvlanPriority.setter
     def SvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanPriority'], value)
 
     @property
     def SvlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -286,10 +331,12 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanTpId'])
     @SvlanTpId.setter
     def SvlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanTpId'], value)
 
     @property
     def UseSameSequenceNumber(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -298,9 +345,11 @@ class CMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber'])
     @UseSameSequenceNumber.setter
     def UseSameSequenceNumber(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber'], value)
 
     def update(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+        # type: (int, int, int, str, bool, bool, bool, bool, int, str, int, int, int, str, int, int, str, bool) -> CMacRange
         """Updates cMacRange resource on the server.
 
         Args
@@ -331,6 +380,7 @@ class CMacRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+        # type: (int, int, int, str, bool, bool, bool, bool, int, str, int, int, int, str, int, int, str, bool) -> CMacRange
         """Adds a new cMacRange resource on the server and adds it to the container.
 
         Args
@@ -375,6 +425,7 @@ class CMacRange(Base):
         self._delete()
 
     def find(self, CmacPrefixLength=None, CvlanId=None, CvlanPriority=None, CvlanTpId=None, EnableCvlan=None, EnableSecondLabel=None, EnableSvlan=None, Enabled=None, FirstLabelStart=None, LabelMode=None, LabelStep=None, NoOfCmacs=None, SecondLabelStart=None, StartCmacPrefix=None, SvlanId=None, SvlanPriority=None, SvlanTpId=None, UseSameSequenceNumber=None):
+        # type: (int, int, int, str, bool, bool, bool, bool, int, str, int, int, int, str, int, int, str, bool) -> CMacRange
         """Finds and retrieves cMacRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cMacRange resources from the server.
@@ -430,10 +481,16 @@ class CMacRange(Base):
         """
         return self._read(href)
 
-    def ReadvertiseCmac(self):
+    def ReadvertiseCmac(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the readvertiseCmac operation on the server.
 
         NOT DEFINED
+
+        readvertiseCmac(async_operation=bool)string
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -441,4 +498,6 @@ class CMacRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('readvertiseCmac', payload=payload, response_object=None)

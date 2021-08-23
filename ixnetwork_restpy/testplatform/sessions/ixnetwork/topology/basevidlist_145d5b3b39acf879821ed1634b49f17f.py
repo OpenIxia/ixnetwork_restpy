@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BaseVidList(Base):
@@ -45,9 +46,11 @@ class BaseVidList(Base):
         'TopologyId': 'topologyId',
         'UseFlagBit': 'useFlagBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BaseVidList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BaseVidList, self).__init__(parent, list_op)
 
     @property
     def IsidList(self):
@@ -61,10 +64,14 @@ class BaseVidList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isidlist_e6ba204fca19b050969280a4a79443f8 import IsidList
-        return IsidList(self)._select()
+        if self._properties.get('IsidList', None) is not None:
+            return self._properties.get('IsidList')
+        else:
+            return IsidList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -75,6 +82,7 @@ class BaseVidList(Base):
 
     @property
     def BaseVid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +93,7 @@ class BaseVidList(Base):
 
     @property
     def BaseVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +104,7 @@ class BaseVidList(Base):
 
     @property
     def Bmac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class BaseVidList(Base):
 
     @property
     def BmacSameAsSystemId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class BaseVidList(Base):
 
     @property
     def BvlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +137,7 @@ class BaseVidList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,6 +147,7 @@ class BaseVidList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +157,7 @@ class BaseVidList(Base):
 
     @property
     def EctAlgorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -153,6 +168,7 @@ class BaseVidList(Base):
 
     @property
     def IsidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,10 +177,12 @@ class BaseVidList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsidCount'])
     @IsidCount.setter
     def IsidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsidCount'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -173,10 +191,12 @@ class BaseVidList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +207,7 @@ class BaseVidList(Base):
 
     @property
     def UseFlagBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +217,7 @@ class BaseVidList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseFlagBit']))
 
     def update(self, IsidCount=None, Name=None):
+        # type: (int, str) -> BaseVidList
         """Updates baseVidList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

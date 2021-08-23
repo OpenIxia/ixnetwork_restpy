@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dcc(Base):
@@ -39,12 +40,18 @@ class Dcc(Base):
         'SelectedSpeeds': 'selectedSpeeds',
         'TimeFill': 'timeFill',
     }
+    _SDM_ENUM_MAP = {
+        'crc': ['crc16', 'crc32'],
+        'overheadByte': ['loh', 'soh'],
+        'timeFill': ['flag7E', 'markIdle'],
+    }
 
-    def __init__(self, parent):
-        super(Dcc, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dcc, self).__init__(parent, list_op)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -54,6 +61,7 @@ class Dcc(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,6 +71,7 @@ class Dcc(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,6 +81,7 @@ class Dcc(Base):
 
     @property
     def Crc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +90,12 @@ class Dcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Crc'])
     @Crc.setter
     def Crc(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Crc'], value)
 
     @property
     def OverheadByte(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,10 +104,12 @@ class Dcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverheadByte'])
     @OverheadByte.setter
     def OverheadByte(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverheadByte'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -104,10 +118,12 @@ class Dcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def TimeFill(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,9 +132,11 @@ class Dcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeFill'])
     @TimeFill.setter
     def TimeFill(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeFill'], value)
 
     def update(self, Crc=None, OverheadByte=None, SelectedSpeeds=None, TimeFill=None):
+        # type: (str, str, List[str], str) -> Dcc
         """Updates dcc resource on the server.
 
         Args

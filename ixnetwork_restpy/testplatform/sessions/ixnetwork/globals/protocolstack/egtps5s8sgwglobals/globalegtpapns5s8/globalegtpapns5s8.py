@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GlobalEgtpApnS5S8(Base):
@@ -62,12 +63,15 @@ class GlobalEgtpApnS5S8(Base):
         'UpdateAmbrTimeout': 'updateAmbrTimeout',
         'UseFullApn': 'useFullApn',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GlobalEgtpApnS5S8, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GlobalEgtpApnS5S8, self).__init__(parent, list_op)
 
     @property
     def AddressPoolStartIPv4(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +80,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv4'])
     @AddressPoolStartIPv4.setter
     def AddressPoolStartIPv4(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv4'], value)
 
     @property
     def AddressPoolStartIPv6(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,10 +94,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv6'])
     @AddressPoolStartIPv6.setter
     def AddressPoolStartIPv6(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddressPoolStartIPv6'], value)
 
     @property
     def AmbrDL(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,10 +108,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AmbrDL'])
     @AmbrDL.setter
     def AmbrDL(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AmbrDL'], value)
 
     @property
     def AmbrUL(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,10 +122,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AmbrUL'])
     @AmbrUL.setter
     def AmbrUL(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AmbrUL'], value)
 
     @property
     def ArpPreemptionCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -124,10 +136,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpPreemptionCapability'])
     @ArpPreemptionCapability.setter
     def ArpPreemptionCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpPreemptionCapability'], value)
 
     @property
     def ArpPreemptionVulnerability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -136,10 +150,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpPreemptionVulnerability'])
     @ArpPreemptionVulnerability.setter
     def ArpPreemptionVulnerability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpPreemptionVulnerability'], value)
 
     @property
     def ArpPriorityLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -148,10 +164,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpPriorityLevel'])
     @ArpPriorityLevel.setter
     def ArpPriorityLevel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpPriorityLevel'], value)
 
     @property
     def EnableLifetime(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -160,10 +178,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLifetime'])
     @EnableLifetime.setter
     def EnableLifetime(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLifetime'], value)
 
     @property
     def EnablePgwDistribution(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -172,10 +192,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePgwDistribution'])
     @EnablePgwDistribution.setter
     def EnablePgwDistribution(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePgwDistribution'], value)
 
     @property
     def EnableStaticIpAllocation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -184,10 +206,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStaticIpAllocation'])
     @EnableStaticIpAllocation.setter
     def EnableStaticIpAllocation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStaticIpAllocation'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -196,10 +220,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -208,10 +234,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Lifetime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -220,10 +248,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Lifetime'])
     @Lifetime.setter
     def Lifetime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Lifetime'], value)
 
     @property
     def Mbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -232,10 +262,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mbrd'])
     @Mbrd.setter
     def Mbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mbrd'], value)
 
     @property
     def Mbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -244,10 +276,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mbru'])
     @Mbru.setter
     def Mbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mbru'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -256,10 +290,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -269,6 +305,7 @@ class GlobalEgtpApnS5S8(Base):
 
     @property
     def PgwCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -277,10 +314,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PgwCount'])
     @PgwCount.setter
     def PgwCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PgwCount'], value)
 
     @property
     def PgwIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -289,10 +328,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PgwIp'])
     @PgwIp.setter
     def PgwIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PgwIp'], value)
 
     @property
     def PgwIpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -301,10 +342,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PgwIpCount'])
     @PgwIpCount.setter
     def PgwIpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PgwIpCount'], value)
 
     @property
     def Qci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -313,10 +356,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Qci'])
     @Qci.setter
     def Qci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Qci'], value)
 
     @property
     def Restriction(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -325,10 +370,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Restriction'])
     @Restriction.setter
     def Restriction(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Restriction'], value)
 
     @property
     def SelectionMode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -337,10 +384,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectionMode'])
     @SelectionMode.setter
     def SelectionMode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectionMode'], value)
 
     @property
     def UpdateAmbrEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -349,10 +398,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrEnable'])
     @UpdateAmbrEnable.setter
     def UpdateAmbrEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrEnable'], value)
 
     @property
     def UpdateAmbrIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -361,10 +412,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrIncrement'])
     @UpdateAmbrIncrement.setter
     def UpdateAmbrIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrIncrement'], value)
 
     @property
     def UpdateAmbrIterations(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -373,10 +426,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrIterations'])
     @UpdateAmbrIterations.setter
     def UpdateAmbrIterations(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrIterations'], value)
 
     @property
     def UpdateAmbrTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -385,10 +440,12 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrTimeout'])
     @UpdateAmbrTimeout.setter
     def UpdateAmbrTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrTimeout'], value)
 
     @property
     def UseFullApn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -397,9 +454,11 @@ class GlobalEgtpApnS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseFullApn'])
     @UseFullApn.setter
     def UseFullApn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseFullApn'], value)
 
     def update(self, AddressPoolStartIPv4=None, AddressPoolStartIPv6=None, AmbrDL=None, AmbrUL=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnablePgwDistribution=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, PgwCount=None, PgwIp=None, PgwIpCount=None, Qci=None, Restriction=None, SelectionMode=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
+        # type: (str, str, int, int, bool, bool, int, bool, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, bool, int, int, int, bool) -> GlobalEgtpApnS5S8
         """Updates globalEgtpApnS5S8 resource on the server.
 
         Args
@@ -439,6 +498,7 @@ class GlobalEgtpApnS5S8(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AddressPoolStartIPv4=None, AddressPoolStartIPv6=None, AmbrDL=None, AmbrUL=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnablePgwDistribution=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, PgwCount=None, PgwIp=None, PgwIpCount=None, Qci=None, Restriction=None, SelectionMode=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
+        # type: (str, str, int, int, bool, bool, int, bool, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, bool, int, int, int, bool) -> GlobalEgtpApnS5S8
         """Adds a new globalEgtpApnS5S8 resource on the server and adds it to the container.
 
         Args
@@ -492,6 +552,7 @@ class GlobalEgtpApnS5S8(Base):
         self._delete()
 
     def find(self, AddressPoolStartIPv4=None, AddressPoolStartIPv6=None, AmbrDL=None, AmbrUL=None, ArpPreemptionCapability=None, ArpPreemptionVulnerability=None, ArpPriorityLevel=None, EnableLifetime=None, EnablePgwDistribution=None, EnableStaticIpAllocation=None, Enabled=None, IpType=None, Lifetime=None, Mbrd=None, Mbru=None, Name=None, ObjectId=None, PgwCount=None, PgwIp=None, PgwIpCount=None, Qci=None, Restriction=None, SelectionMode=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None, UseFullApn=None):
+        # type: (str, str, int, int, bool, bool, int, bool, bool, bool, bool, str, int, int, int, str, str, int, str, int, int, int, int, bool, int, int, int, bool) -> GlobalEgtpApnS5S8
         """Finds and retrieves globalEgtpApnS5S8 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globalEgtpApnS5S8 resources from the server.

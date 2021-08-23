@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6ClientOptions(Base):
@@ -41,12 +42,15 @@ class Dhcpv6ClientOptions(Base):
         'SetupRateInitial': 'setupRateInitial',
         'SetupRateMax': 'setupRateMax',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6ClientOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6ClientOptions, self).__init__(parent, list_op)
 
     @property
     def Associates(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class Dhcpv6ClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Associates'])
     @Associates.setter
     def Associates(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class Dhcpv6ClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,6 +88,7 @@ class Dhcpv6ClientOptions(Base):
 
     @property
     def OverrideGlobalSetupRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,10 +97,12 @@ class Dhcpv6ClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
 
     @property
     def SetupRateIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,10 +111,12 @@ class Dhcpv6ClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateIncrement'])
     @SetupRateIncrement.setter
     def SetupRateIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateIncrement'], value)
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,10 +125,12 @@ class Dhcpv6ClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def SetupRateMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,9 +139,11 @@ class Dhcpv6ClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateMax'])
     @SetupRateMax.setter
     def SetupRateMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateMax'], value)
 
     def update(self, Associates=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
+        # type: (List[str], int, bool, int, int, int) -> Dhcpv6ClientOptions
         """Updates dhcpv6ClientOptions resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class Dhcpv6ClientOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Associates=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
+        # type: (List[str], int, bool, int, int, int) -> Dhcpv6ClientOptions
         """Adds a new dhcpv6ClientOptions resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class Dhcpv6ClientOptions(Base):
         self._delete()
 
     def find(self, Associates=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalSetupRate=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
+        # type: (List[str], int, str, bool, int, int, int) -> Dhcpv6ClientOptions
         """Finds and retrieves dhcpv6ClientOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ClientOptions resources from the server.
@@ -222,14 +241,16 @@ class Dhcpv6ClientOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -242,13 +263,15 @@ class Dhcpv6ClientOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -262,13 +285,15 @@ class Dhcpv6ClientOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Cleanup(Base):
@@ -46,12 +47,15 @@ class Cleanup(Base):
         'ProfileStackmanager': 'profileStackmanager',
         'ProfileStatviewerreporter': 'profileStatviewerreporter',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Cleanup, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Cleanup, self).__init__(parent, list_op)
 
     @property
     def ChassisDaysOld(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,10 +64,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChassisDaysOld'])
     @ChassisDaysOld.setter
     def ChassisDaysOld(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChassisDaysOld'], value)
 
     @property
     def CleanupChassis(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,10 +78,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CleanupChassis'])
     @CleanupChassis.setter
     def CleanupChassis(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CleanupChassis'], value)
 
     @property
     def CleanupClient(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +92,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CleanupClient'])
     @CleanupClient.setter
     def CleanupClient(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CleanupClient'], value)
 
     @property
     def ClientDaysOld(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +106,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientDaysOld'])
     @ClientDaysOld.setter
     def ClientDaysOld(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientDaysOld'], value)
 
     @property
     def ProfileAes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +120,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileAes'])
     @ProfileAes.setter
     def ProfileAes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileAes'], value)
 
     @property
     def ProfileAllprofiles(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileAllprofiles'])
     @ProfileAllprofiles.setter
     def ProfileAllprofiles(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileAllprofiles'], value)
 
     @property
     def ProfileAnalyzer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -132,10 +148,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileAnalyzer'])
     @ProfileAnalyzer.setter
     def ProfileAnalyzer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileAnalyzer'], value)
 
     @property
     def ProfileHlapi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -144,10 +162,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileHlapi'])
     @ProfileHlapi.setter
     def ProfileHlapi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileHlapi'], value)
 
     @property
     def ProfileImpairment(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +176,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileImpairment'])
     @ProfileImpairment.setter
     def ProfileImpairment(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileImpairment'], value)
 
     @property
     def ProfileIxloadlite(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +190,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileIxloadlite'])
     @ProfileIxloadlite.setter
     def ProfileIxloadlite(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileIxloadlite'], value)
 
     @property
     def ProfileMiddleware(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,10 +204,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileMiddleware'])
     @ProfileMiddleware.setter
     def ProfileMiddleware(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileMiddleware'], value)
 
     @property
     def ProfileQuicktests(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -192,10 +218,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileQuicktests'])
     @ProfileQuicktests.setter
     def ProfileQuicktests(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileQuicktests'], value)
 
     @property
     def ProfileStackmanager(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +232,12 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileStackmanager'])
     @ProfileStackmanager.setter
     def ProfileStackmanager(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileStackmanager'], value)
 
     @property
     def ProfileStatviewerreporter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,9 +246,11 @@ class Cleanup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProfileStatviewerreporter'])
     @ProfileStatviewerreporter.setter
     def ProfileStatviewerreporter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProfileStatviewerreporter'], value)
 
     def update(self, ChassisDaysOld=None, CleanupChassis=None, CleanupClient=None, ClientDaysOld=None, ProfileAes=None, ProfileAllprofiles=None, ProfileAnalyzer=None, ProfileHlapi=None, ProfileImpairment=None, ProfileIxloadlite=None, ProfileMiddleware=None, ProfileQuicktests=None, ProfileStackmanager=None, ProfileStatviewerreporter=None):
+        # type: (int, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Cleanup
         """Updates cleanup resource on the server.
 
         Args
@@ -244,8 +276,13 @@ class Cleanup(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def CleanupLogs(self):
+    def CleanupLogs(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the cleanupLogs operation on the server.
+
+        cleanupLogs(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -253,4 +290,6 @@ class Cleanup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('cleanupLogs', payload=payload, response_object=None)

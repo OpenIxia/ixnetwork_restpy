@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AppErrors(Base):
@@ -36,9 +37,11 @@ class AppErrors(Base):
         'LastModified': 'lastModified',
         'WarningCount': 'warningCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AppErrors, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AppErrors, self).__init__(parent, list_op)
 
     @property
     def Error(self):
@@ -52,10 +55,14 @@ class AppErrors(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.apperrors.error.error import Error
-        return Error(self)
+        if self._properties.get('Error', None) is not None:
+            return self._properties.get('Error')
+        else:
+            return Error(self)
 
     @property
     def ErrorCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,6 +72,7 @@ class AppErrors(Base):
 
     @property
     def LastModified(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +82,7 @@ class AppErrors(Base):
 
     @property
     def WarningCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,7 +90,21 @@ class AppErrors(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['WarningCount'])
 
+    def add(self):
+        """Adds a new appErrors resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved appErrors resources using find and the newly added appErrors resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ErrorCount=None, LastModified=None, WarningCount=None):
+        # type: (int, str, int) -> AppErrors
         """Finds and retrieves appErrors resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve appErrors resources from the server.

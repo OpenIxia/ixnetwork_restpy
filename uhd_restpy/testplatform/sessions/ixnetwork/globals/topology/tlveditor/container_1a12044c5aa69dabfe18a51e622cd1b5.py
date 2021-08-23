@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Container(Base):
@@ -39,9 +40,11 @@ class Container(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Container, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Container, self).__init__(parent, list_op)
 
     @property
     def Object(self):
@@ -55,10 +58,14 @@ class Container(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.object_12e587bd6e412f6d3d8361017e8dcba9 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is not None:
+            return self._properties.get('Object')
+        else:
+            return Object(self)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,10 +74,12 @@ class Container(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,10 +88,12 @@ class Container(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRepeatable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -91,10 +102,12 @@ class Container(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
     @IsRepeatable.setter
     def IsRepeatable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +116,12 @@ class Container(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,9 +130,11 @@ class Container(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> Container
         """Updates container resource on the server.
 
         Args
@@ -135,6 +152,7 @@ class Container(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> Container
         """Adds a new container resource on the server and adds it to the container.
 
         Args
@@ -166,6 +184,7 @@ class Container(Base):
         self._delete()
 
     def find(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> Container
         """Finds and retrieves container resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve container resources from the server.

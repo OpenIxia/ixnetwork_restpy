@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrillOamPing(Base):
@@ -43,12 +44,16 @@ class TrillOamPing(Base):
         'SourceNickname': 'sourceNickname',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['Failure', 'Success'],
+    }
 
-    def __init__(self, parent):
-        super(TrillOamPing, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrillOamPing, self).__init__(parent, list_op)
 
     @property
     def DestinationNickname(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,6 +63,7 @@ class TrillOamPing(Base):
 
     @property
     def IncomingPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +73,7 @@ class TrillOamPing(Base):
 
     @property
     def NextHop(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +83,7 @@ class TrillOamPing(Base):
 
     @property
     def OutgoingPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,6 +93,7 @@ class TrillOamPing(Base):
 
     @property
     def OutgoingPortMtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +103,7 @@ class TrillOamPing(Base):
 
     @property
     def PreviousHop(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,6 +113,7 @@ class TrillOamPing(Base):
 
     @property
     def ResponseTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,6 +123,7 @@ class TrillOamPing(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,6 +133,7 @@ class TrillOamPing(Base):
 
     @property
     def SourceNickname(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +143,7 @@ class TrillOamPing(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,7 +151,21 @@ class TrillOamPing(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
+    def add(self):
+        """Adds a new trillOamPing resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved trillOamPing resources using find and the newly added trillOamPing resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DestinationNickname=None, IncomingPort=None, NextHop=None, OutgoingPort=None, OutgoingPortMtu=None, PreviousHop=None, ResponseTime=None, SequenceNumber=None, SourceNickname=None, Status=None):
+        # type: (int, int, int, int, int, int, int, int, int, str) -> TrillOamPing
         """Finds and retrieves trillOamPing resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trillOamPing resources from the server.

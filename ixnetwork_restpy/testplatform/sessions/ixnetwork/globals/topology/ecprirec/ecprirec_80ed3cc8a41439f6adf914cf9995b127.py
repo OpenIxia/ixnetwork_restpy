@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ECpriRec(Base):
@@ -40,12 +41,15 @@ class ECpriRec(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ECpriRec, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ECpriRec, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class ECpriRec(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class ECpriRec(Base):
 
     @property
     def ECpriProtocolRevision(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class ECpriRec(Base):
 
     @property
     def ECpriUdpDestinationPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class ECpriRec(Base):
 
     @property
     def EcpriProtocolRevision(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -94,6 +102,7 @@ class ECpriRec(Base):
 
     @property
     def EcpriUdpDestinationPort(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -104,6 +113,7 @@ class ECpriRec(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,10 +122,12 @@ class ECpriRec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -124,6 +136,7 @@ class ECpriRec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> ECpriRec
         """Updates eCpriRec resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

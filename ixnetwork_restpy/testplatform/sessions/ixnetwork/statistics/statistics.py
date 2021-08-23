@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Statistics(Base):
@@ -46,9 +47,14 @@ class Statistics(Base):
         'TimestampPrecision': 'timestampPrecision',
         'UgsTcpPort': 'ugsTcpPort',
     }
+    _SDM_ENUM_MAP = {
+        'additionalFcoeStat1': ['fcoeInvalidDelimiter', 'fcoeInvalidFrames', 'fcoeInvalidSize', 'fcoeNormalSizeBadFcCRC', 'fcoeNormalSizeGoodFcCRC', 'fcoeUndersizeBadFcCRC', 'fcoeUndersizeGoodFcCRC', 'fcoeValidFrames'],
+        'additionalFcoeStat2': ['fcoeInvalidDelimiter', 'fcoeInvalidFrames', 'fcoeInvalidSize', 'fcoeNormalSizeBadFcCRC', 'fcoeNormalSizeGoodFcCRC', 'fcoeUndersizeBadFcCRC', 'fcoeUndersizeGoodFcCRC', 'fcoeValidFrames'],
+        'timeSynchronization': ['syncTimeToSystemClock', 'syncTimeToTestStart'],
+    }
 
-    def __init__(self, parent):
-        super(Statistics, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Statistics, self).__init__(parent, list_op)
 
     @property
     def AutoRefresh(self):
@@ -62,7 +68,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh import AutoRefresh
-        return AutoRefresh(self)._select()
+        if self._properties.get('AutoRefresh', None) is not None:
+            return self._properties.get('AutoRefresh')
+        else:
+            return AutoRefresh(self)._select()
 
     @property
     def CsvSnapshot(self):
@@ -76,7 +85,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot import CsvSnapshot
-        return CsvSnapshot(self)._select()
+        if self._properties.get('CsvSnapshot', None) is not None:
+            return self._properties.get('CsvSnapshot')
+        else:
+            return CsvSnapshot(self)._select()
 
     @property
     def Ixreporter(self):
@@ -90,7 +102,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter import Ixreporter
-        return Ixreporter(self)._select()
+        if self._properties.get('Ixreporter', None) is not None:
+            return self._properties.get('Ixreporter')
+        else:
+            return Ixreporter(self)._select()
 
     @property
     def MeasurementMode(self):
@@ -104,7 +119,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode import MeasurementMode
-        return MeasurementMode(self)._select()
+        if self._properties.get('MeasurementMode', None) is not None:
+            return self._properties.get('MeasurementMode')
+        else:
+            return MeasurementMode(self)._select()
 
     @property
     def RawData(self):
@@ -118,7 +136,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata import RawData
-        return RawData(self)._select()
+        if self._properties.get('RawData', None) is not None:
+            return self._properties.get('RawData')
+        else:
+            return RawData(self)._select()
 
     @property
     def View(self):
@@ -132,10 +153,14 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.view import View
-        return View(self)
+        if self._properties.get('View', None) is not None:
+            return self._properties.get('View')
+        else:
+            return View(self)
 
     @property
     def AdditionalFcoeStat1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +169,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'])
     @AdditionalFcoeStat1.setter
     def AdditionalFcoeStat1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat1'], value)
 
     @property
     def AdditionalFcoeStat2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,10 +183,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'])
     @AdditionalFcoeStat2.setter
     def AdditionalFcoeStat2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdditionalFcoeStat2'], value)
 
     @property
     def CsvFilePath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +197,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvFilePath'])
     @CsvFilePath.setter
     def CsvFilePath(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvFilePath'], value)
 
     @property
     def CsvLogPollIntervalMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,10 +211,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvLogPollIntervalMultiplier'])
     @CsvLogPollIntervalMultiplier.setter
     def CsvLogPollIntervalMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvLogPollIntervalMultiplier'], value)
 
     @property
     def DataStorePollingIntervalMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +225,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'])
     @DataStorePollingIntervalMultiplier.setter
     def DataStorePollingIntervalMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataStorePollingIntervalMultiplier'], value)
 
     @property
     def EnableAutoDataStore(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +239,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoDataStore'])
     @EnableAutoDataStore.setter
     def EnableAutoDataStore(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoDataStore'], value)
 
     @property
     def EnableCsvLogging(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,10 +253,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCsvLogging'])
     @EnableCsvLogging.setter
     def EnableCsvLogging(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCsvLogging'], value)
 
     @property
     def EnableDataCenterSharedStats(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -228,10 +267,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'])
     @EnableDataCenterSharedStats.setter
     def EnableDataCenterSharedStats(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDataCenterSharedStats'], value)
 
     @property
     def GuardrailEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -240,10 +281,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GuardrailEnabled'])
     @GuardrailEnabled.setter
     def GuardrailEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GuardrailEnabled'], value)
 
     @property
     def MaxNumberOfStatsPerCustomGraph(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +295,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfStatsPerCustomGraph'])
     @MaxNumberOfStatsPerCustomGraph.setter
     def MaxNumberOfStatsPerCustomGraph(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfStatsPerCustomGraph'], value)
 
     @property
     def PollInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -264,10 +309,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def TimeSynchronization(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -276,10 +323,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeSynchronization'])
     @TimeSynchronization.setter
     def TimeSynchronization(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeSynchronization'], value)
 
     @property
     def TimestampPrecision(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,10 +337,12 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimestampPrecision'])
     @TimestampPrecision.setter
     def TimestampPrecision(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimestampPrecision'], value)
 
     @property
     def UgsTcpPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,6 +351,7 @@ class Statistics(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UgsTcpPort'])
 
     def update(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None):
+        # type: (str, str, str, int, int, bool, bool, bool, bool, int, int, str, int) -> Statistics
         """Updates statistics resource on the server.
 
         Args
@@ -325,13 +377,15 @@ class Statistics(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CheckViewTreeGroupExists(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the checkViewTreeGroupExists operation on the server.
 
         This command verifies that the specified group name exists in the StatViewer tree.
 
-        checkViewTreeGroupExists(Arg2=string)
-        -------------------------------------
+        checkViewTreeGroupExists(Arg2=string, async_operation=bool)
+        -----------------------------------------------------------
         - Arg2 (str): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -343,10 +397,15 @@ class Statistics(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('checkViewTreeGroupExists', payload=payload, response_object=None)
 
-    def DockStatViewer(self):
+    def DockStatViewer(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the dockStatViewer operation on the server.
 
         NOT DEFINED
+
+        dockStatViewer(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -354,17 +413,21 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('dockStatViewer', payload=payload, response_object=None)
 
     def GetPGIDList(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the getPGIDList operation on the server.
 
         NOT DEFINED
 
-        getPGIDList(Arg2=string, Arg3=string)list
-        -----------------------------------------
+        getPGIDList(Arg2=string, Arg3=string, async_operation=bool)list
+        ---------------------------------------------------------------
         - Arg2 (str): NOT DEFINED
         - Arg3 (str): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): NOT DEFINED
 
         Raises
@@ -378,15 +441,17 @@ class Statistics(Base):
         return self._execute('getPGIDList', payload=payload, response_object=None)
 
     def GetStatsFooters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getStatsFooters operation on the server.
 
         This command retrieves Stats Footers from traffic stats.
 
-        getStatsFooters(Arg2=string, Arg3=string, Arg4=string)string
-        ------------------------------------------------------------
+        getStatsFooters(Arg2=string, Arg3=string, Arg4=string, async_operation=bool)string
+        ----------------------------------------------------------------------------------
         - Arg2 (str): NOT DEFINED
         - Arg3 (str): NOT DEFINED
         - Arg4 (str): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: NOT DEFINED
 
         Raises

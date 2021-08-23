@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Locator(Base):
@@ -45,12 +46,16 @@ class Locator(Base):
         'Reachability': 'reachability',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+        'family': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(Locator, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Locator, self).__init__(parent, list_op)
 
     @property
     def Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -59,10 +64,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Address'])
     @Address.setter
     def Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Address'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +78,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Family(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +92,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Family'])
     @Family.setter
     def Family(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Family'], value)
 
     @property
     def LispInterfaceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +106,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LispInterfaceId'])
     @LispInterfaceId.setter
     def LispInterfaceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LispInterfaceId'], value)
 
     @property
     def LocalLocator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +120,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocalLocator'])
     @LocalLocator.setter
     def LocalLocator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocalLocator'], value)
 
     @property
     def MPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +134,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MPriority'])
     @MPriority.setter
     def MPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MPriority'], value)
 
     @property
     def MWeight(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +148,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MWeight'])
     @MWeight.setter
     def MWeight(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MWeight'], value)
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +162,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def ProtocolInterfaceIpItemId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +176,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterfaceIpItemId'])
     @ProtocolInterfaceIpItemId.setter
     def ProtocolInterfaceIpItemId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterfaceIpItemId'], value)
 
     @property
     def Reachability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -167,10 +190,12 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Reachability'])
     @Reachability.setter
     def Reachability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Reachability'], value)
 
     @property
     def Weight(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -179,9 +204,11 @@ class Locator(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Weight'])
     @Weight.setter
     def Weight(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Weight'], value)
 
     def update(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+        # type: (str, bool, str, int, bool, int, int, int, int, bool, int) -> Locator
         """Updates locator resource on the server.
 
         Args
@@ -205,6 +232,7 @@ class Locator(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+        # type: (str, bool, str, int, bool, int, int, int, int, bool, int) -> Locator
         """Adds a new locator resource on the server and adds it to the container.
 
         Args
@@ -242,6 +270,7 @@ class Locator(Base):
         self._delete()
 
     def find(self, Address=None, Enabled=None, Family=None, LispInterfaceId=None, LocalLocator=None, MPriority=None, MWeight=None, Priority=None, ProtocolInterfaceIpItemId=None, Reachability=None, Weight=None):
+        # type: (str, bool, str, int, bool, int, int, int, int, bool, int) -> Locator
         """Finds and retrieves locator resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve locator resources from the server.

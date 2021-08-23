@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UserLsa(Base):
@@ -39,9 +40,12 @@ class UserLsa(Base):
         'LinkStateId': 'linkStateId',
         'LsaType': 'lsaType',
     }
+    _SDM_ENUM_MAP = {
+        'lsaType': ['router', 'network', 'interAreaPrefix', 'interAreaRouter', 'asExternal', 'link', 'intraAreaPrefix'],
+    }
 
-    def __init__(self, parent):
-        super(UserLsa, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UserLsa, self).__init__(parent, list_op)
 
     @property
     def AsExternal(self):
@@ -55,7 +59,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asexternal_12dfafe33ad036e6bec4644070502044 import AsExternal
-        return AsExternal(self)
+        if self._properties.get('AsExternal', None) is not None:
+            return self._properties.get('AsExternal')
+        else:
+            return AsExternal(self)
 
     @property
     def InterAreaPrefix(self):
@@ -69,7 +76,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interareaprefix_51bc1fa5c3615d5498ea43e228445c3c import InterAreaPrefix
-        return InterAreaPrefix(self)
+        if self._properties.get('InterAreaPrefix', None) is not None:
+            return self._properties.get('InterAreaPrefix')
+        else:
+            return InterAreaPrefix(self)
 
     @property
     def InterAreaRouter(self):
@@ -83,7 +93,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interarearouter_edc636547087f303c13b929510c197e4 import InterAreaRouter
-        return InterAreaRouter(self)
+        if self._properties.get('InterAreaRouter', None) is not None:
+            return self._properties.get('InterAreaRouter')
+        else:
+            return InterAreaRouter(self)
 
     @property
     def IntraAreaPrefix(self):
@@ -97,7 +110,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.intraareaprefix_4ec65d4b4fd020944df3498606a28a76 import IntraAreaPrefix
-        return IntraAreaPrefix(self)
+        if self._properties.get('IntraAreaPrefix', None) is not None:
+            return self._properties.get('IntraAreaPrefix')
+        else:
+            return IntraAreaPrefix(self)
 
     @property
     def Link(self):
@@ -111,7 +127,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_7f592ebf252bce0f6d8d1042bf348acd import Link
-        return Link(self)
+        if self._properties.get('Link', None) is not None:
+            return self._properties.get('Link')
+        else:
+            return Link(self)
 
     @property
     def Network(self):
@@ -125,7 +144,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_6984533d658be615d6eb86f965975b8b import Network
-        return Network(self)
+        if self._properties.get('Network', None) is not None:
+            return self._properties.get('Network')
+        else:
+            return Network(self)
 
     @property
     def Router(self):
@@ -139,10 +161,14 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_b249d35e2a940b6bd8f505a80cb0d44a import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def AdvertisingRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,10 +177,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvertisingRouterId'])
     @AdvertisingRouterId.setter
     def AdvertisingRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvertisingRouterId'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -163,10 +191,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExpandIntoLinksOrAttachedRouters(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -175,10 +205,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExpandIntoLinksOrAttachedRouters'])
     @ExpandIntoLinksOrAttachedRouters.setter
     def ExpandIntoLinksOrAttachedRouters(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExpandIntoLinksOrAttachedRouters'], value)
 
     @property
     def LinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,10 +219,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkStateId'])
     @LinkStateId.setter
     def LinkStateId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkStateId'], value)
 
     @property
     def LsaType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -199,9 +233,11 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LsaType'])
     @LsaType.setter
     def LsaType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LsaType'], value)
 
     def update(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None):
+        # type: (str, bool, bool, str, str) -> UserLsa
         """Updates userLsa resource on the server.
 
         Args
@@ -219,6 +255,7 @@ class UserLsa(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None):
+        # type: (str, bool, bool, str, str) -> UserLsa
         """Adds a new userLsa resource on the server and adds it to the container.
 
         Args
@@ -250,6 +287,7 @@ class UserLsa(Base):
         self._delete()
 
     def find(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None):
+        # type: (str, bool, bool, str, str) -> UserLsa
         """Finds and retrieves userLsa resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userLsa resources from the server.

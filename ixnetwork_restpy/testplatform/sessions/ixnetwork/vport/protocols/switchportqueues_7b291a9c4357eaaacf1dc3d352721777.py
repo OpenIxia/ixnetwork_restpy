@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchPortQueues(Base):
@@ -38,9 +39,11 @@ class SwitchPortQueues(Base):
         'NumberOfQueues': 'numberOfQueues',
         'QueueId': 'queueId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchPortQueues, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchPortQueues, self).__init__(parent, list_op)
 
     @property
     def QueueProperty(self):
@@ -54,10 +57,14 @@ class SwitchPortQueues(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueproperty_a755ca2d7ba5959c2e5e1aa284875864 import QueueProperty
-        return QueueProperty(self)._select()
+        if self._properties.get('QueueProperty', None) is not None:
+            return self._properties.get('QueueProperty')
+        else:
+            return QueueProperty(self)._select()
 
     @property
     def MaxRate(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class SwitchPortQueues(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRate'])
     @MaxRate.setter
     def MaxRate(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRate'], value)
 
     @property
     def MinRate(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class SwitchPortQueues(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRate'])
     @MinRate.setter
     def MinRate(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRate'], value)
 
     @property
     def NumberOfQueues(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class SwitchPortQueues(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfQueues'])
     @NumberOfQueues.setter
     def NumberOfQueues(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfQueues'], value)
 
     @property
     def QueueId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,9 +115,11 @@ class SwitchPortQueues(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
     @QueueId.setter
     def QueueId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueId'], value)
 
     def update(self, MaxRate=None, MinRate=None, NumberOfQueues=None, QueueId=None):
+        # type: (str, str, int, str) -> SwitchPortQueues
         """Updates switchPortQueues resource on the server.
 
         Args
@@ -121,6 +136,7 @@ class SwitchPortQueues(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxRate=None, MinRate=None, NumberOfQueues=None, QueueId=None):
+        # type: (str, str, int, str) -> SwitchPortQueues
         """Adds a new switchPortQueues resource on the server and adds it to the container.
 
         Args
@@ -151,6 +167,7 @@ class SwitchPortQueues(Base):
         self._delete()
 
     def find(self, MaxRate=None, MinRate=None, NumberOfQueues=None, QueueId=None):
+        # type: (str, str, int, str) -> SwitchPortQueues
         """Finds and retrieves switchPortQueues resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchPortQueues resources from the server.

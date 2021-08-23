@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LckLearnedInfo(Base):
@@ -43,12 +44,15 @@ class LckLearnedInfo(Base):
         'TxCount': 'txCount',
         'TxState': 'txState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LckLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LckLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def BVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class LckLearnedInfo(Base):
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class LckLearnedInfo(Base):
 
     @property
     def MepMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class LckLearnedInfo(Base):
 
     @property
     def RemoteMepMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class LckLearnedInfo(Base):
 
     @property
     def RxCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +102,7 @@ class LckLearnedInfo(Base):
 
     @property
     def RxInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +112,7 @@ class LckLearnedInfo(Base):
 
     @property
     def RxState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +122,7 @@ class LckLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +132,7 @@ class LckLearnedInfo(Base):
 
     @property
     def TxCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class LckLearnedInfo(Base):
 
     @property
     def TxState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,7 +150,21 @@ class LckLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxState'])
 
+    def add(self):
+        """Adds a new lckLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved lckLearnedInfo resources using find and the newly added lckLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BVlan=None, CVlan=None, MepMacAddress=None, RemoteMepMacAddress=None, RxCount=None, RxInterval=None, RxState=None, SVlan=None, TxCount=None, TxState=None):
+        # type: (str, str, str, str, int, str, str, str, int, str) -> LckLearnedInfo
         """Finds and retrieves lckLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lckLearnedInfo resources from the server.

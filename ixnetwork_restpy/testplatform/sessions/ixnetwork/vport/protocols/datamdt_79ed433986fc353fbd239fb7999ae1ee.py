@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DataMdt(Base):
@@ -45,9 +46,12 @@ class DataMdt(Base):
         'PackTlv': 'packTlv',
         'RangeType': 'rangeType',
     }
+    _SDM_ENUM_MAP = {
+        'rangeType': ['fullyMeshed', 'oneToOne'],
+    }
 
-    def __init__(self, parent):
-        super(DataMdt, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DataMdt, self).__init__(parent, list_op)
 
     @property
     def LearnedMdtState(self):
@@ -61,10 +65,14 @@ class DataMdt(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_dde8b4051ae44ed52084e863309783f6 import LearnedMdtState
-        return LearnedMdtState(self)
+        if self._properties.get('LearnedMdtState', None) is not None:
+            return self._properties.get('LearnedMdtState')
+        else:
+            return LearnedMdtState(self)
 
     @property
     def ActivationInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,10 +81,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActivationInterval'])
     @ActivationInterval.setter
     def ActivationInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActivationInterval'], value)
 
     @property
     def CeGroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,10 +95,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CeGroupAddress'])
     @CeGroupAddress.setter
     def CeGroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CeGroupAddress'], value)
 
     @property
     def CeGroupCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,10 +109,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CeGroupCount'])
     @CeGroupCount.setter
     def CeGroupCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CeGroupCount'], value)
 
     @property
     def CeSourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,10 +123,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CeSourceAddress'])
     @CeSourceAddress.setter
     def CeSourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CeSourceAddress'], value)
 
     @property
     def CeSourceCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,10 +137,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CeSourceCount'])
     @CeSourceCount.setter
     def CeSourceCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CeSourceCount'], value)
 
     @property
     def DataMdtGroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,10 +151,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataMdtGroupAddress'])
     @DataMdtGroupAddress.setter
     def DataMdtGroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataMdtGroupAddress'], value)
 
     @property
     def DataMdtGroupAddressCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,10 +165,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataMdtGroupAddressCount'])
     @DataMdtGroupAddressCount.setter
     def DataMdtGroupAddressCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataMdtGroupAddressCount'], value)
 
     @property
     def DiscardLearnedState(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -157,10 +179,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedState'])
     @DiscardLearnedState.setter
     def DiscardLearnedState(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedState'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -169,10 +193,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def PackTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -181,10 +207,12 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PackTlv'])
     @PackTlv.setter
     def PackTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PackTlv'], value)
 
     @property
     def RangeType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -193,9 +221,11 @@ class DataMdt(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RangeType'])
     @RangeType.setter
     def RangeType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RangeType'], value)
 
     def update(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
+        # type: (int, str, int, str, int, str, int, bool, bool, bool, str) -> DataMdt
         """Updates dataMdt resource on the server.
 
         Args
@@ -219,6 +249,7 @@ class DataMdt(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
+        # type: (int, str, int, str, int, str, int, bool, bool, bool, str) -> DataMdt
         """Adds a new dataMdt resource on the server and adds it to the container.
 
         Args
@@ -256,6 +287,7 @@ class DataMdt(Base):
         self._delete()
 
     def find(self, ActivationInterval=None, CeGroupAddress=None, CeGroupCount=None, CeSourceAddress=None, CeSourceCount=None, DataMdtGroupAddress=None, DataMdtGroupAddressCount=None, DiscardLearnedState=None, Enabled=None, PackTlv=None, RangeType=None):
+        # type: (int, str, int, str, int, str, int, bool, bool, bool, str) -> DataMdt
         """Finds and retrieves dataMdt resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dataMdt resources from the server.

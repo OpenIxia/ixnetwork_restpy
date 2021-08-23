@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class WebAuthGlobals(Base):
@@ -60,12 +61,15 @@ class WebAuthGlobals(Base):
         'WaitBeforeRun': 'waitBeforeRun',
         'WaitForCompletion': 'waitForCompletion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(WebAuthGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(WebAuthGlobals, self).__init__(parent, list_op)
 
     @property
     def AuthFailure(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,10 +78,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthFailure'])
     @AuthFailure.setter
     def AuthFailure(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthFailure'], value)
 
     @property
     def AuthSuccess(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,10 +92,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthSuccess'])
     @AuthSuccess.setter
     def AuthSuccess(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthSuccess'], value)
 
     @property
     def AuthTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,10 +106,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthTimeout'])
     @AuthTimeout.setter
     def AuthTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthTimeout'], value)
 
     @property
     def DefaultFields(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -110,10 +120,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultFields'])
     @DefaultFields.setter
     def DefaultFields(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultFields'], value)
 
     @property
     def DelayDhcp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +134,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayDhcp'])
     @DelayDhcp.setter
     def DelayDhcp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayDhcp'], value)
 
     @property
     def DisableArpResponse(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,10 +148,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisableArpResponse'])
     @DisableArpResponse.setter
     def DisableArpResponse(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisableArpResponse'], value)
 
     @property
     def EnableMaxOutstanding(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -146,10 +162,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMaxOutstanding'])
     @EnableMaxOutstanding.setter
     def EnableMaxOutstanding(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMaxOutstanding'], value)
 
     @property
     def InputField1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,10 +176,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InputField1'])
     @InputField1.setter
     def InputField1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InputField1'], value)
 
     @property
     def InputField2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +190,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InputField2'])
     @InputField2.setter
     def InputField2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InputField2'], value)
 
     @property
     def InputField3(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,10 +204,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InputField3'])
     @InputField3.setter
     def InputField3(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InputField3'], value)
 
     @property
     def MaxClientsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,10 +218,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +232,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def NumRetry(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +246,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRetry'])
     @NumRetry.setter
     def NumRetry(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRetry'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,6 +261,7 @@ class WebAuthGlobals(Base):
 
     @property
     def PolicyEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -239,10 +270,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PolicyEnable'])
     @PolicyEnable.setter
     def PolicyEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PolicyEnable'], value)
 
     @property
     def PolicySuccess(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -251,10 +284,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PolicySuccess'])
     @PolicySuccess.setter
     def PolicySuccess(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PolicySuccess'], value)
 
     @property
     def PolicyTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -263,10 +298,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PolicyTimeout'])
     @PolicyTimeout.setter
     def PolicyTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PolicyTimeout'], value)
 
     @property
     def Port(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -275,10 +312,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Port'])
     @Port.setter
     def Port(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Port'], value)
 
     @property
     def Protocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,10 +326,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Protocol'])
     @Protocol.setter
     def Protocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Protocol'], value)
 
     @property
     def RedirectFailureUrl(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +340,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RedirectFailureUrl'])
     @RedirectFailureUrl.setter
     def RedirectFailureUrl(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RedirectFailureUrl'], value)
 
     @property
     def RedirectLoginUrl(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -311,10 +354,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RedirectLoginUrl'])
     @RedirectLoginUrl.setter
     def RedirectLoginUrl(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RedirectLoginUrl'], value)
 
     @property
     def RenewDhcp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -323,10 +368,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RenewDhcp'])
     @RenewDhcp.setter
     def RenewDhcp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RenewDhcp'], value)
 
     @property
     def RequestUrl(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -335,10 +382,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestUrl'])
     @RequestUrl.setter
     def RequestUrl(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestUrl'], value)
 
     @property
     def ResponseDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,10 +396,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResponseDelay'])
     @ResponseDelay.setter
     def ResponseDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResponseDelay'], value)
 
     @property
     def WaitBeforeRun(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -359,10 +410,12 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun'])
     @WaitBeforeRun.setter
     def WaitBeforeRun(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitBeforeRun'], value)
 
     @property
     def WaitForCompletion(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -371,9 +424,11 @@ class WebAuthGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (str, str, int, bool, int, bool, bool, str, str, str, int, int, int, bool, str, int, int, str, str, str, bool, str, int, int, bool) -> WebAuthGlobals
         """Updates webAuthGlobals resource on the server.
 
         Args
@@ -411,6 +466,7 @@ class WebAuthGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (str, str, int, bool, int, bool, bool, str, str, str, int, int, int, bool, str, int, int, str, str, str, bool, str, int, int, bool) -> WebAuthGlobals
         """Adds a new webAuthGlobals resource on the server and adds it to the container.
 
         Args
@@ -462,6 +518,7 @@ class WebAuthGlobals(Base):
         self._delete()
 
     def find(self, AuthFailure=None, AuthSuccess=None, AuthTimeout=None, DefaultFields=None, DelayDhcp=None, DisableArpResponse=None, EnableMaxOutstanding=None, InputField1=None, InputField2=None, InputField3=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, NumRetry=None, ObjectId=None, PolicyEnable=None, PolicySuccess=None, PolicyTimeout=None, Port=None, Protocol=None, RedirectFailureUrl=None, RedirectLoginUrl=None, RenewDhcp=None, RequestUrl=None, ResponseDelay=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (str, str, int, bool, int, bool, bool, str, str, str, int, int, int, str, bool, str, int, int, str, str, str, bool, str, int, int, bool) -> WebAuthGlobals
         """Finds and retrieves webAuthGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve webAuthGlobals resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TenGigWan(Base):
@@ -48,9 +49,14 @@ class TenGigWan(Base):
         'TransmitClocking': 'transmitClocking',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
+    _SDM_ENUM_MAP = {
+        'autoInstrumentation': ['endOfFrame', 'floating'],
+        'interfaceType': ['wanSdh', 'wanSonet'],
+        'transmitClocking': ['external', 'internal', 'recovered'],
+    }
 
-    def __init__(self, parent):
-        super(TenGigWan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TenGigWan, self).__init__(parent, list_op)
 
     @property
     def Fcoe(self):
@@ -64,7 +70,10 @@ class TenGigWan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe import Fcoe
-        return Fcoe(self)._select()
+        if self._properties.get('Fcoe', None) is not None:
+            return self._properties.get('Fcoe')
+        else:
+            return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -78,10 +87,14 @@ class TenGigWan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane import TxLane
-        return TxLane(self)._select()
+        if self._properties.get('TxLane', None) is not None:
+            return self._properties.get('TxLane')
+        else:
+            return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +103,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -103,6 +118,7 @@ class TenGigWan(Base):
 
     @property
     def C2Expected(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,10 +127,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['C2Expected'])
     @C2Expected.setter
     def C2Expected(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['C2Expected'], value)
 
     @property
     def C2Tx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +141,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['C2Tx'])
     @C2Tx.setter
     def C2Tx(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -136,6 +156,7 @@ class TenGigWan(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -145,6 +166,7 @@ class TenGigWan(Base):
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +175,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -165,10 +189,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,10 +203,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def IfsStretch(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -189,10 +217,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IfsStretch'])
     @IfsStretch.setter
     def IfsStretch(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IfsStretch'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -201,10 +231,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -213,10 +245,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -225,10 +259,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -237,10 +273,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def TransmitClocking(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -249,10 +287,12 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -261,9 +301,11 @@ class TenGigWan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, AutoInstrumentation=None, C2Expected=None, C2Tx=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, int, int, bool, bool, str, bool, str, bool, int, List[str], str, bool) -> TenGigWan
         """Updates tenGigWan resource on the server.
 
         Args

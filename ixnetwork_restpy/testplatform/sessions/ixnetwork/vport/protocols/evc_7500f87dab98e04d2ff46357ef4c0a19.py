@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Evc(Base):
@@ -42,9 +43,13 @@ class Evc(Base):
         'ReferenceId': 'referenceId',
         'UntaggedPriorityTagged': 'untaggedPriorityTagged',
     }
+    _SDM_ENUM_MAP = {
+        'evcStatus': ['notActive', 'newAndNotActive', 'active', 'newAndActive', 'partiallyActive', 'newAndPartiallyActive'],
+        'evcType': ['pointToPoint', 'multipointToMultipoint'],
+    }
 
-    def __init__(self, parent):
-        super(Evc, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Evc, self).__init__(parent, list_op)
 
     @property
     def BwProfile(self):
@@ -58,7 +63,10 @@ class Evc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_c7210d4d2555c28ee509abc680d0b951 import BwProfile
-        return BwProfile(self)
+        if self._properties.get('BwProfile', None) is not None:
+            return self._properties.get('BwProfile')
+        else:
+            return BwProfile(self)
 
     @property
     def CeVlanIdRange(self):
@@ -72,10 +80,14 @@ class Evc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cevlanidrange_c020c993f4d4b311a0a67accf3fbe3cd import CeVlanIdRange
-        return CeVlanIdRange(self)
+        if self._properties.get('CeVlanIdRange', None) is not None:
+            return self._properties.get('CeVlanIdRange')
+        else:
+            return CeVlanIdRange(self)
 
     @property
     def DefaultEvc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +96,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultEvc'])
     @DefaultEvc.setter
     def DefaultEvc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultEvc'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +110,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EvcIdentifier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +124,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvcIdentifier'])
     @EvcIdentifier.setter
     def EvcIdentifier(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvcIdentifier'], value)
 
     @property
     def EvcIdentifierLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +138,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvcIdentifierLength'])
     @EvcIdentifierLength.setter
     def EvcIdentifierLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvcIdentifierLength'], value)
 
     @property
     def EvcStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,10 +152,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvcStatus'])
     @EvcStatus.setter
     def EvcStatus(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvcStatus'], value)
 
     @property
     def EvcType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +166,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvcType'])
     @EvcType.setter
     def EvcType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvcType'], value)
 
     @property
     def ReferenceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -156,10 +180,12 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReferenceId'])
     @ReferenceId.setter
     def ReferenceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReferenceId'], value)
 
     @property
     def UntaggedPriorityTagged(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,9 +194,11 @@ class Evc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UntaggedPriorityTagged'])
     @UntaggedPriorityTagged.setter
     def UntaggedPriorityTagged(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UntaggedPriorityTagged'], value)
 
     def update(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+        # type: (bool, bool, str, int, str, str, int, bool) -> Evc
         """Updates evc resource on the server.
 
         Args
@@ -191,6 +219,7 @@ class Evc(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+        # type: (bool, bool, str, int, str, str, int, bool) -> Evc
         """Adds a new evc resource on the server and adds it to the container.
 
         Args
@@ -225,6 +254,7 @@ class Evc(Base):
         self._delete()
 
     def find(self, DefaultEvc=None, Enabled=None, EvcIdentifier=None, EvcIdentifierLength=None, EvcStatus=None, EvcType=None, ReferenceId=None, UntaggedPriorityTagged=None):
+        # type: (bool, bool, str, int, str, str, int, bool) -> Evc
         """Finds and retrieves evc resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evc resources from the server.

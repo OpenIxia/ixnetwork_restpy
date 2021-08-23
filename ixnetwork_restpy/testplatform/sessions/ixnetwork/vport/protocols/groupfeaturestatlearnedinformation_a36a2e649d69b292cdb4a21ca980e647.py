@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GroupFeatureStatLearnedInformation(Base):
@@ -52,12 +53,15 @@ class GroupFeatureStatLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GroupFeatureStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GroupFeatureStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def ActionsAll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,6 +71,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def ActionsFastFailOver(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +81,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def ActionsIndirect(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +91,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def ActionsSelect(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,6 +101,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +111,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def DatapathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +121,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +131,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,6 +141,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def GroupCapabilities(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def GroupType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,6 +161,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,6 +171,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,6 +181,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def MaxGroupsAll(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -175,6 +191,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def MaxGroupsFastFailOver(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -184,6 +201,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def MaxGroupsIndirect(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -193,6 +211,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def MaxGroupsSelect(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,6 +221,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -211,6 +231,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -220,6 +241,7 @@ class GroupFeatureStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -227,7 +249,21 @@ class GroupFeatureStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
 
+    def add(self):
+        """Adds a new groupFeatureStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved groupFeatureStatLearnedInformation resources using find and the newly added groupFeatureStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActionsAll=None, ActionsFastFailOver=None, ActionsIndirect=None, ActionsSelect=None, DataPathIdAsHex=None, DatapathId=None, ErrorCode=None, ErrorType=None, GroupCapabilities=None, GroupType=None, Latency=None, LocalIp=None, MaxGroupsAll=None, MaxGroupsFastFailOver=None, MaxGroupsIndirect=None, MaxGroupsSelect=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, int, str, int, int, int, int, str, str, str) -> GroupFeatureStatLearnedInformation
         """Finds and retrieves groupFeatureStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupFeatureStatLearnedInformation resources from the server.

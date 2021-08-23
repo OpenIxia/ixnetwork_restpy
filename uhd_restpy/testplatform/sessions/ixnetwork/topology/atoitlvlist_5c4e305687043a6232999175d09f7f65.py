@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AtoiTLVList(Base):
@@ -41,12 +42,15 @@ class AtoiTLVList(Base):
         'Name': 'name',
         'TimeOfNextJump': 'timeOfNextJump',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AtoiTLVList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AtoiTLVList, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class AtoiTLVList(Base):
 
     @property
     def CurrentOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class AtoiTLVList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class AtoiTLVList(Base):
 
     @property
     def DisplayName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class AtoiTLVList(Base):
 
     @property
     def JumpSeconds(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class AtoiTLVList(Base):
 
     @property
     def KeyField(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +114,7 @@ class AtoiTLVList(Base):
 
     @property
     def MvActive(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +125,7 @@ class AtoiTLVList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +134,12 @@ class AtoiTLVList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TimeOfNextJump(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +149,7 @@ class AtoiTLVList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeOfNextJump']))
 
     def update(self, Name=None):
+        # type: (str) -> AtoiTLVList
         """Updates atoiTLVList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

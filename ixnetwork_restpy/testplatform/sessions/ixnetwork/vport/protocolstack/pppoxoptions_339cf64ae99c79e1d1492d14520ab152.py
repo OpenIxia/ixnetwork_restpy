@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PppoxOptions(Base):
@@ -51,12 +52,15 @@ class PppoxOptions(Base):
         'WaitForCompletionTimeout': 'waitForCompletionTimeout',
         'WaitingTimeUntilReconnect': 'waitingTimeUntilReconnect',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PppoxOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PppoxOptions, self).__init__(parent, list_op)
 
     @property
     def Associates(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -65,10 +69,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Associates'])
     @Associates.setter
     def Associates(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
 
     @property
     def EnablePerSessionStatGeneration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +83,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePerSessionStatGeneration'])
     @EnablePerSessionStatGeneration.setter
     def EnablePerSessionStatGeneration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePerSessionStatGeneration'], value)
 
     @property
     def FilterDataPlaneBeforeL7(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -89,10 +97,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterDataPlaneBeforeL7'])
     @FilterDataPlaneBeforeL7.setter
     def FilterDataPlaneBeforeL7(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterDataPlaneBeforeL7'], value)
 
     @property
     def Ipv6GlobalAddressMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +111,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6GlobalAddressMode'])
     @Ipv6GlobalAddressMode.setter
     def Ipv6GlobalAddressMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6GlobalAddressMode'], value)
 
     @property
     def MaxOutstandingReleases(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -113,10 +125,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +139,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,6 +154,7 @@ class PppoxOptions(Base):
 
     @property
     def OverrideGlobalRateControls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -146,10 +163,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'])
     @OverrideGlobalRateControls.setter
     def OverrideGlobalRateControls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'], value)
 
     @property
     def PerSessionStatFilePrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,10 +177,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PerSessionStatFilePrefix'])
     @PerSessionStatFilePrefix.setter
     def PerSessionStatFilePrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PerSessionStatFilePrefix'], value)
 
     @property
     def RaTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,10 +191,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RaTimeout'])
     @RaTimeout.setter
     def RaTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RaTimeout'], value)
 
     @property
     def ReConnectOnLinkUp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,10 +205,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReConnectOnLinkUp'])
     @ReConnectOnLinkUp.setter
     def ReConnectOnLinkUp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReConnectOnLinkUp'], value)
 
     @property
     def Role(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,10 +219,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Role'])
     @Role.setter
     def Role(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Role'], value)
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +233,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def TeardownRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +247,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     @property
     def UseWaitForCompletionTimeout(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,10 +261,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseWaitForCompletionTimeout'])
     @UseWaitForCompletionTimeout.setter
     def UseWaitForCompletionTimeout(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseWaitForCompletionTimeout'], value)
 
     @property
     def WaitForCompletionTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -242,10 +275,12 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletionTimeout'])
     @WaitForCompletionTimeout.setter
     def WaitForCompletionTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitForCompletionTimeout'], value)
 
     @property
     def WaitingTimeUntilReconnect(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -254,9 +289,11 @@ class PppoxOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitingTimeUntilReconnect'])
     @WaitingTimeUntilReconnect.setter
     def WaitingTimeUntilReconnect(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitingTimeUntilReconnect'], value)
 
     def update(self, Associates=None, EnablePerSessionStatGeneration=None, FilterDataPlaneBeforeL7=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, ReConnectOnLinkUp=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None, WaitingTimeUntilReconnect=None):
+        # type: (List[str], bool, bool, str, int, int, bool, str, int, bool, str, int, int, bool, int, int) -> PppoxOptions
         """Updates pppoxOptions resource on the server.
 
         Args
@@ -285,6 +322,7 @@ class PppoxOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Associates=None, EnablePerSessionStatGeneration=None, FilterDataPlaneBeforeL7=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, ReConnectOnLinkUp=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None, WaitingTimeUntilReconnect=None):
+        # type: (List[str], bool, bool, str, int, int, bool, str, int, bool, str, int, int, bool, int, int) -> PppoxOptions
         """Adds a new pppoxOptions resource on the server and adds it to the container.
 
         Args
@@ -327,6 +365,7 @@ class PppoxOptions(Base):
         self._delete()
 
     def find(self, Associates=None, EnablePerSessionStatGeneration=None, FilterDataPlaneBeforeL7=None, Ipv6GlobalAddressMode=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PerSessionStatFilePrefix=None, RaTimeout=None, ReConnectOnLinkUp=None, Role=None, SetupRateInitial=None, TeardownRateInitial=None, UseWaitForCompletionTimeout=None, WaitForCompletionTimeout=None, WaitingTimeUntilReconnect=None):
+        # type: (List[str], bool, bool, str, int, int, str, bool, str, int, bool, str, int, int, bool, int, int) -> PppoxOptions
         """Finds and retrieves pppoxOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pppoxOptions resources from the server.
@@ -382,14 +421,16 @@ class PppoxOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -402,13 +443,15 @@ class PppoxOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -422,13 +465,15 @@ class PppoxOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedFilter(Base):
@@ -36,9 +37,11 @@ class LearnedFilter(Base):
         'EnablePrefix': 'enablePrefix',
         'Safi': 'safi',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedFilter, self).__init__(parent, list_op)
 
     @property
     def Capabilities(self):
@@ -52,7 +55,10 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_0f99151175aca98019658ce36676a82c import Capabilities
-        return Capabilities(self)._select()
+        if self._properties.get('Capabilities', None) is not None:
+            return self._properties.get('Capabilities')
+        else:
+            return Capabilities(self)._select()
 
     @property
     def Prefix(self):
@@ -66,10 +72,14 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_0eba571084c9891c5e7d1691a9106eeb import Prefix
-        return Prefix(self)._select()
+        if self._properties.get('Prefix', None) is not None:
+            return self._properties.get('Prefix')
+        else:
+            return Prefix(self)._select()
 
     @property
     def Afi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +88,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Afi'])
     @Afi.setter
     def Afi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Afi'], value)
 
     @property
     def EnableAfiSafi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,10 +102,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAfiSafi'])
     @EnableAfiSafi.setter
     def EnableAfiSafi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAfiSafi'], value)
 
     @property
     def EnablePrefix(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,10 +116,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePrefix'])
     @EnablePrefix.setter
     def EnablePrefix(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePrefix'], value)
 
     @property
     def Safi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,9 +130,11 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Safi'])
     @Safi.setter
     def Safi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Safi'], value)
 
     def update(self, Afi=None, EnableAfiSafi=None, EnablePrefix=None, Safi=None):
+        # type: (int, bool, bool, int) -> LearnedFilter
         """Updates learnedFilter resource on the server.
 
         Args

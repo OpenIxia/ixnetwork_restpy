@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DeadFlowsFilter(Base):
@@ -36,12 +37,16 @@ class DeadFlowsFilter(Base):
         'NumberOfResults': 'numberOfResults',
         'SortingCondition': 'sortingCondition',
     }
+    _SDM_ENUM_MAP = {
+        'sortingCondition': ['ascending', 'descending'],
+    }
 
-    def __init__(self, parent):
-        super(DeadFlowsFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DeadFlowsFilter, self).__init__(parent, list_op)
 
     @property
     def NumberOfResults(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -50,10 +55,12 @@ class DeadFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def SortingCondition(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,9 +69,11 @@ class DeadFlowsFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortingCondition'])
     @SortingCondition.setter
     def SortingCondition(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingCondition'], value)
 
     def update(self, NumberOfResults=None, SortingCondition=None):
+        # type: (int, str) -> DeadFlowsFilter
         """Updates deadFlowsFilter resource on the server.
 
         Args
@@ -79,6 +88,7 @@ class DeadFlowsFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, NumberOfResults=None, SortingCondition=None):
+        # type: (int, str) -> DeadFlowsFilter
         """Adds a new deadFlowsFilter resource on the server and adds it to the container.
 
         Args
@@ -107,6 +117,7 @@ class DeadFlowsFilter(Base):
         self._delete()
 
     def find(self, NumberOfResults=None, SortingCondition=None):
+        # type: (int, str) -> DeadFlowsFilter
         """Finds and retrieves deadFlowsFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve deadFlowsFilter resources from the server.

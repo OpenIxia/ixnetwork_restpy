@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AtmLabelRange(Base):
@@ -38,12 +39,15 @@ class AtmLabelRange(Base):
         'MinVci': 'minVci',
         'MinVpi': 'minVpi',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AtmLabelRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AtmLabelRange, self).__init__(parent, list_op)
 
     @property
     def MaxVci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class AtmLabelRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxVci'])
     @MaxVci.setter
     def MaxVci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxVci'], value)
 
     @property
     def MaxVpi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class AtmLabelRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxVpi'])
     @MaxVpi.setter
     def MaxVpi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxVpi'], value)
 
     @property
     def MinVci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class AtmLabelRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinVci'])
     @MinVci.setter
     def MinVci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinVci'], value)
 
     @property
     def MinVpi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,9 +98,11 @@ class AtmLabelRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinVpi'])
     @MinVpi.setter
     def MinVpi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinVpi'], value)
 
     def update(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
+        # type: (int, int, int, int) -> AtmLabelRange
         """Updates atmLabelRange resource on the server.
 
         Args
@@ -107,6 +119,7 @@ class AtmLabelRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
+        # type: (int, int, int, int) -> AtmLabelRange
         """Adds a new atmLabelRange resource on the server and adds it to the container.
 
         Args
@@ -137,6 +150,7 @@ class AtmLabelRange(Base):
         self._delete()
 
     def find(self, MaxVci=None, MaxVpi=None, MinVci=None, MinVpi=None):
+        # type: (int, int, int, int) -> AtmLabelRange
         """Finds and retrieves atmLabelRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve atmLabelRange resources from the server.

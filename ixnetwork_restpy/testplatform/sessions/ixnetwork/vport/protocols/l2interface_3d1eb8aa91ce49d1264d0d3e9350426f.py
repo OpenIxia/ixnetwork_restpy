@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class L2Interface(Base):
@@ -39,9 +40,12 @@ class L2Interface(Base):
         'TrafficGroupId': 'trafficGroupId',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['frameRelay', 'atmaal5', 'atmxCell', 'vlan', 'ethernet', 'hdlc', 'ppp', 'cem', 'atmvcc', 'atmvpc', 'ip', 'satopE1', 'satopT1', 'satopE3', 'satopT3', 'cesoPsnBasic', 'cesoPsnCas', 'frameRelayRfc4619'],
+    }
 
-    def __init__(self, parent):
-        super(L2Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(L2Interface, self).__init__(parent, list_op)
 
     @property
     def L2VcRange(self):
@@ -55,10 +59,14 @@ class L2Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vcrange_651ba042aec36c4cae0dc6de31d6d00a import L2VcRange
-        return L2VcRange(self)
+        if self._properties.get('L2VcRange', None) is not None:
+            return self._properties.get('L2VcRange')
+        else:
+            return L2VcRange(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +75,12 @@ class L2Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,10 +89,12 @@ class L2Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,10 +103,12 @@ class L2Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
     @GroupId.setter
     def GroupId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupId'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +117,12 @@ class L2Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,9 +131,11 @@ class L2Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+        # type: (int, bool, int, str, str) -> L2Interface
         """Updates l2Interface resource on the server.
 
         Args
@@ -135,6 +153,7 @@ class L2Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+        # type: (int, bool, int, str, str) -> L2Interface
         """Adds a new l2Interface resource on the server and adds it to the container.
 
         Args
@@ -166,6 +185,7 @@ class L2Interface(Base):
         self._delete()
 
     def find(self, Count=None, Enabled=None, GroupId=None, TrafficGroupId=None, Type=None):
+        # type: (int, bool, int, str, str) -> L2Interface
         """Finds and retrieves l2Interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l2Interface resources from the server.

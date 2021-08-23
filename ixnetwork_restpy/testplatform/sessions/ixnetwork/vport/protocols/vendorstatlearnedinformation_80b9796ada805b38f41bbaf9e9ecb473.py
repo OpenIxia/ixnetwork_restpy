@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VendorStatLearnedInformation(Base):
@@ -46,12 +47,15 @@ class VendorStatLearnedInformation(Base):
         'VendorId': 'vendorId',
         'VendorMessage': 'vendorMessage',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VendorStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VendorStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +65,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def ExperimenterType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +125,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def MessageLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,6 +135,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +145,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,6 +155,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,6 +165,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def VendorId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,6 +175,7 @@ class VendorStatLearnedInformation(Base):
 
     @property
     def VendorMessage(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,7 +183,21 @@ class VendorStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VendorMessage'])
 
+    def add(self):
+        """Adds a new vendorStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved vendorStatLearnedInformation resources using find and the newly added vendorStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, ExperimenterType=None, Latency=None, LocalIp=None, MessageLength=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, VendorId=None, VendorMessage=None):
+        # type: (str, str, str, str, int, int, str, int, str, str, str, int, str) -> VendorStatLearnedInformation
         """Finds and retrieves vendorStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vendorStatLearnedInformation resources from the server.

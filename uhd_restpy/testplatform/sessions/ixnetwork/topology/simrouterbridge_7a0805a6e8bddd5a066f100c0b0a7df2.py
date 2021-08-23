@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SimRouterBridge(Base):
@@ -39,9 +40,11 @@ class SimRouterBridge(Base):
         'SystemId': 'systemId',
         'SystemMAC': 'systemMAC',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SimRouterBridge, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SimRouterBridge, self).__init__(parent, list_op)
 
     @property
     def CfmSimulatedMp(self):
@@ -55,7 +58,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_67cd757b726cce9c0de4f91be721d97e import CfmSimulatedMp
-        return CfmSimulatedMp(self)
+        if self._properties.get('CfmSimulatedMp', None) is not None:
+            return self._properties.get('CfmSimulatedMp')
+        else:
+            return CfmSimulatedMp(self)
 
     @property
     def Connector(self):
@@ -69,7 +75,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def IsisDcePseudoNode(self):
@@ -83,7 +92,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudonode_6416adf40a9c10f6ed462f220e3c16ff import IsisDcePseudoNode
-        return IsisDcePseudoNode(self)
+        if self._properties.get('IsisDcePseudoNode', None) is not None:
+            return self._properties.get('IsisDcePseudoNode')
+        else:
+            return IsisDcePseudoNode(self)
 
     @property
     def IsisSpbPseudoNode(self):
@@ -97,7 +109,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudonode_e0862fd97cf99212ff106c16f6c049cb import IsisSpbPseudoNode
-        return IsisSpbPseudoNode(self)
+        if self._properties.get('IsisSpbPseudoNode', None) is not None:
+            return self._properties.get('IsisSpbPseudoNode')
+        else:
+            return IsisSpbPseudoNode(self)
 
     @property
     def IsisTrillPseudoNode(self):
@@ -111,10 +126,14 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudonode_173e4463dccc2001457569c77f3570e0 import IsisTrillPseudoNode
-        return IsisTrillPseudoNode(self)
+        if self._properties.get('IsisTrillPseudoNode', None) is not None:
+            return self._properties.get('IsisTrillPseudoNode')
+        else:
+            return IsisTrillPseudoNode(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,6 +143,7 @@ class SimRouterBridge(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +153,7 @@ class SimRouterBridge(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,10 +162,12 @@ class SimRouterBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NodeIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +178,7 @@ class SimRouterBridge(Base):
 
     @property
     def SystemId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +189,7 @@ class SimRouterBridge(Base):
 
     @property
     def SystemMAC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -174,6 +199,7 @@ class SimRouterBridge(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SystemMAC']))
 
     def update(self, Name=None):
+        # type: (str) -> SimRouterBridge
         """Updates simRouterBridge resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -189,7 +215,26 @@ class SimRouterBridge(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> SimRouterBridge
+        """Adds a new simRouterBridge resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved simRouterBridge resources using find and the newly added simRouterBridge resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> SimRouterBridge
         """Finds and retrieves simRouterBridge resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve simRouterBridge resources from the server.
@@ -230,6 +275,66 @@ class SimRouterBridge(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, NodeIndex=None, SystemId=None, SystemMAC=None):
         """Base class infrastructure that gets a list of simRouterBridge device ids encapsulated by this object.
 
@@ -251,42 +356,3 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

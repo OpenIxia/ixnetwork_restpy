@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LspPwRange(Base):
@@ -131,12 +132,29 @@ class LspPwRange(Base):
         'VlanTpId': 'vlanTpId',
         'WaitToRevertTime': 'waitToRevertTime',
     }
+    _SDM_ENUM_MAP = {
+        'alarmType': ['ietf', 'y1731'],
+        'apsType': ['ietf', 'y1731'],
+        'cccvType': ['bfdCc', 'bfdCccv', 'y1731', 'none'],
+        'destVplsIdType': ['asNumber', 'ipAddress', 'asNumber4Bytes'],
+        'dmTimeFormat': ['ieee', 'ntp'],
+        'dmType': ['ietf', 'y1731'],
+        'ipType': ['ipv4', 'ipv6'],
+        'lmCounterType': ['32Bit', '64Bit'],
+        'lmType': ['ietf', 'y1731'],
+        'rangeRole': ['none', 'working', 'protect'],
+        'srcVplsIdType': ['asNumber', 'ipAddress', 'asNumber4Bytes'],
+        'typeOfProtectionSwitching': ['1+1Unidirectional', '1:1Bidirectional', '1+1Bidirectional'],
+        'typeOfRange': ['lsp', 'pw', 'nestedLspPw'],
+        'vlanIncrementMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+    }
 
-    def __init__(self, parent):
-        super(LspPwRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LspPwRange, self).__init__(parent, list_op)
 
     @property
     def AlarmTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,10 +163,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AlarmTrafficClass'])
     @AlarmTrafficClass.setter
     def AlarmTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AlarmTrafficClass'], value)
 
     @property
     def AlarmType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,10 +177,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AlarmType'])
     @AlarmType.setter
     def AlarmType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AlarmType'], value)
 
     @property
     def ApsTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -169,10 +191,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApsTrafficClass'])
     @ApsTrafficClass.setter
     def ApsTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApsTrafficClass'], value)
 
     @property
     def ApsType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,10 +205,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApsType'])
     @ApsType.setter
     def ApsType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApsType'], value)
 
     @property
     def CccvInterval(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -193,10 +219,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CccvInterval'])
     @CccvInterval.setter
     def CccvInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CccvInterval'], value)
 
     @property
     def CccvTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -205,10 +233,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CccvTrafficClass'])
     @CccvTrafficClass.setter
     def CccvTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CccvTrafficClass'], value)
 
     @property
     def CccvType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -217,10 +247,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CccvType'])
     @CccvType.setter
     def CccvType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CccvType'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -229,10 +261,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def DestAcId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -241,10 +275,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestAcId'])
     @DestAcId.setter
     def DestAcId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestAcId'], value)
 
     @property
     def DestAcIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -253,10 +289,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestAcIdStep'])
     @DestAcIdStep.setter
     def DestAcIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestAcIdStep'], value)
 
     @property
     def DestGlobalId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -265,10 +303,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestGlobalId'])
     @DestGlobalId.setter
     def DestGlobalId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestGlobalId'], value)
 
     @property
     def DestLspNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -277,10 +317,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestLspNumber'])
     @DestLspNumber.setter
     def DestLspNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestLspNumber'], value)
 
     @property
     def DestLspNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -289,10 +331,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestLspNumberStep'])
     @DestLspNumberStep.setter
     def DestLspNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestLspNumberStep'], value)
 
     @property
     def DestMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -301,10 +345,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestMepId'])
     @DestMepId.setter
     def DestMepId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestMepId'], value)
 
     @property
     def DestMepIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -313,10 +359,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestMepIdStep'])
     @DestMepIdStep.setter
     def DestMepIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestMepIdStep'], value)
 
     @property
     def DestNodeId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -325,10 +373,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestNodeId'])
     @DestNodeId.setter
     def DestNodeId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestNodeId'], value)
 
     @property
     def DestTunnelNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -337,10 +387,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestTunnelNumber'])
     @DestTunnelNumber.setter
     def DestTunnelNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestTunnelNumber'], value)
 
     @property
     def DestTunnelNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -349,10 +401,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestTunnelNumberStep'])
     @DestTunnelNumberStep.setter
     def DestTunnelNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestTunnelNumberStep'], value)
 
     @property
     def DestVplsIdAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -361,10 +415,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumber'])
     @DestVplsIdAsNumber.setter
     def DestVplsIdAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumber'], value)
 
     @property
     def DestVplsIdAsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -373,10 +429,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumberStep'])
     @DestVplsIdAsNumberStep.setter
     def DestVplsIdAsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAsNumberStep'], value)
 
     @property
     def DestVplsIdAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -385,10 +443,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumber'])
     @DestVplsIdAssignedNumber.setter
     def DestVplsIdAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumber'], value)
 
     @property
     def DestVplsIdAssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -397,10 +457,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumberStep'])
     @DestVplsIdAssignedNumberStep.setter
     def DestVplsIdAssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdAssignedNumberStep'], value)
 
     @property
     def DestVplsIdIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -409,10 +471,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddress'])
     @DestVplsIdIpAddress.setter
     def DestVplsIdIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddress'], value)
 
     @property
     def DestVplsIdIpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -421,10 +485,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddressStep'])
     @DestVplsIdIpAddressStep.setter
     def DestVplsIdIpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdIpAddressStep'], value)
 
     @property
     def DestVplsIdType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -433,10 +499,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestVplsIdType'])
     @DestVplsIdType.setter
     def DestVplsIdType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestVplsIdType'], value)
 
     @property
     def DmTimeFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -445,10 +513,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmTimeFormat'])
     @DmTimeFormat.setter
     def DmTimeFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmTimeFormat'], value)
 
     @property
     def DmTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -457,10 +527,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmTrafficClass'])
     @DmTrafficClass.setter
     def DmTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmTrafficClass'], value)
 
     @property
     def DmType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -469,10 +541,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmType'])
     @DmType.setter
     def DmType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmType'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -481,10 +555,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -493,10 +569,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -505,10 +583,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpAddressMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -517,10 +597,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddressMask'])
     @IpAddressMask.setter
     def IpAddressMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddressMask'], value)
 
     @property
     def IpAddressStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -529,10 +611,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddressStep'])
     @IpAddressStep.setter
     def IpAddressStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddressStep'], value)
 
     @property
     def IpHostPerLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -541,10 +625,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpHostPerLsp'])
     @IpHostPerLsp.setter
     def IpHostPerLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpHostPerLsp'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -553,10 +639,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def LmCounterType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -565,10 +653,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmCounterType'])
     @LmCounterType.setter
     def LmCounterType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmCounterType'], value)
 
     @property
     def LmInitialRxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -577,10 +667,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmInitialRxValue'])
     @LmInitialRxValue.setter
     def LmInitialRxValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmInitialRxValue'], value)
 
     @property
     def LmInitialTxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -589,10 +681,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmInitialTxValue'])
     @LmInitialTxValue.setter
     def LmInitialTxValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmInitialTxValue'], value)
 
     @property
     def LmRxStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -601,10 +695,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmRxStep'])
     @LmRxStep.setter
     def LmRxStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmRxStep'], value)
 
     @property
     def LmTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -613,10 +709,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmTrafficClass'])
     @LmTrafficClass.setter
     def LmTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmTrafficClass'], value)
 
     @property
     def LmTxStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -625,10 +723,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmTxStep'])
     @LmTxStep.setter
     def LmTxStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmTxStep'], value)
 
     @property
     def LmType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -637,10 +737,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmType'])
     @LmType.setter
     def LmType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmType'], value)
 
     @property
     def LspIncomingLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -649,10 +751,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspIncomingLabel'])
     @LspIncomingLabel.setter
     def LspIncomingLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspIncomingLabel'], value)
 
     @property
     def LspIncomingLabelStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -661,10 +765,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspIncomingLabelStep'])
     @LspIncomingLabelStep.setter
     def LspIncomingLabelStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspIncomingLabelStep'], value)
 
     @property
     def LspOutgoingLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -673,10 +779,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspOutgoingLabel'])
     @LspOutgoingLabel.setter
     def LspOutgoingLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspOutgoingLabel'], value)
 
     @property
     def LspOutgoingLabelStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -685,10 +793,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspOutgoingLabelStep'])
     @LspOutgoingLabelStep.setter
     def LspOutgoingLabelStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspOutgoingLabelStep'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -697,10 +807,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def MacPerPw(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -709,10 +821,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacPerPw'])
     @MacPerPw.setter
     def MacPerPw(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacPerPw'], value)
 
     @property
     def MegIdIntegerStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -721,10 +835,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MegIdIntegerStep'])
     @MegIdIntegerStep.setter
     def MegIdIntegerStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MegIdIntegerStep'], value)
 
     @property
     def MegIdPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -733,10 +849,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MegIdPrefix'])
     @MegIdPrefix.setter
     def MegIdPrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MegIdPrefix'], value)
 
     @property
     def MegLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -745,10 +863,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MegLevel'])
     @MegLevel.setter
     def MegLevel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MegLevel'], value)
 
     @property
     def MinRxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -757,10 +877,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRxInterval'])
     @MinRxInterval.setter
     def MinRxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRxInterval'], value)
 
     @property
     def MinTxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -769,10 +891,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinTxInterval'])
     @MinTxInterval.setter
     def MinTxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinTxInterval'], value)
 
     @property
     def NumberOfLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -781,10 +905,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfLsp'])
     @NumberOfLsp.setter
     def NumberOfLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfLsp'], value)
 
     @property
     def NumberOfPwPerLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -793,10 +919,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfPwPerLsp'])
     @NumberOfPwPerLsp.setter
     def NumberOfPwPerLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfPwPerLsp'], value)
 
     @property
     def OnDemandCvTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -805,10 +933,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvTrafficClass'])
     @OnDemandCvTrafficClass.setter
     def OnDemandCvTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvTrafficClass'], value)
 
     @property
     def PeerLspOrPwRange(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -817,10 +947,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeerLspOrPwRange'])
     @PeerLspOrPwRange.setter
     def PeerLspOrPwRange(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeerLspOrPwRange'], value)
 
     @property
     def PeerNestedLspPwRange(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -829,10 +961,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeerNestedLspPwRange'])
     @PeerNestedLspPwRange.setter
     def PeerNestedLspPwRange(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeerNestedLspPwRange'], value)
 
     @property
     def PwIncomingLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -841,10 +975,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwIncomingLabel'])
     @PwIncomingLabel.setter
     def PwIncomingLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwIncomingLabel'], value)
 
     @property
     def PwIncomingLabelStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -853,10 +989,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwIncomingLabelStep'])
     @PwIncomingLabelStep.setter
     def PwIncomingLabelStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwIncomingLabelStep'], value)
 
     @property
     def PwIncomingLabelStepAcrossLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -865,10 +1003,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwIncomingLabelStepAcrossLsp'])
     @PwIncomingLabelStepAcrossLsp.setter
     def PwIncomingLabelStepAcrossLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwIncomingLabelStepAcrossLsp'], value)
 
     @property
     def PwOutgoingLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -877,10 +1017,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwOutgoingLabel'])
     @PwOutgoingLabel.setter
     def PwOutgoingLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwOutgoingLabel'], value)
 
     @property
     def PwOutgoingLabelStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -889,10 +1031,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStep'])
     @PwOutgoingLabelStep.setter
     def PwOutgoingLabelStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStep'], value)
 
     @property
     def PwOutgoingLabelStepAcrossLsp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -901,10 +1045,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStepAcrossLsp'])
     @PwOutgoingLabelStepAcrossLsp.setter
     def PwOutgoingLabelStepAcrossLsp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwOutgoingLabelStepAcrossLsp'], value)
 
     @property
     def PwStatusFaultReplyInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -913,10 +1059,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusFaultReplyInterval'])
     @PwStatusFaultReplyInterval.setter
     def PwStatusFaultReplyInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusFaultReplyInterval'], value)
 
     @property
     def PwStatusTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -925,10 +1073,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusTrafficClass'])
     @PwStatusTrafficClass.setter
     def PwStatusTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusTrafficClass'], value)
 
     @property
     def RangeRole(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -937,10 +1087,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RangeRole'])
     @RangeRole.setter
     def RangeRole(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RangeRole'], value)
 
     @property
     def RepeatMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -949,10 +1101,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RepeatMac'])
     @RepeatMac.setter
     def RepeatMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RepeatMac'], value)
 
     @property
     def Revertive(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -961,10 +1115,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Revertive'])
     @Revertive.setter
     def Revertive(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Revertive'], value)
 
     @property
     def SkipZeroVlanId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -973,10 +1129,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipZeroVlanId'])
     @SkipZeroVlanId.setter
     def SkipZeroVlanId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipZeroVlanId'], value)
 
     @property
     def SrcAcId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -985,10 +1143,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcAcId'])
     @SrcAcId.setter
     def SrcAcId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcAcId'], value)
 
     @property
     def SrcAcIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -997,10 +1157,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcAcIdStep'])
     @SrcAcIdStep.setter
     def SrcAcIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcAcIdStep'], value)
 
     @property
     def SrcGlobalId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1009,10 +1171,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcGlobalId'])
     @SrcGlobalId.setter
     def SrcGlobalId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcGlobalId'], value)
 
     @property
     def SrcLspNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1021,10 +1185,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcLspNumber'])
     @SrcLspNumber.setter
     def SrcLspNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcLspNumber'], value)
 
     @property
     def SrcLspNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1033,10 +1199,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcLspNumberStep'])
     @SrcLspNumberStep.setter
     def SrcLspNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcLspNumberStep'], value)
 
     @property
     def SrcMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1045,10 +1213,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcMepId'])
     @SrcMepId.setter
     def SrcMepId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcMepId'], value)
 
     @property
     def SrcMepIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1057,10 +1227,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcMepIdStep'])
     @SrcMepIdStep.setter
     def SrcMepIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcMepIdStep'], value)
 
     @property
     def SrcNodeId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1069,10 +1241,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcNodeId'])
     @SrcNodeId.setter
     def SrcNodeId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcNodeId'], value)
 
     @property
     def SrcTunnelNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1081,10 +1255,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcTunnelNumber'])
     @SrcTunnelNumber.setter
     def SrcTunnelNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcTunnelNumber'], value)
 
     @property
     def SrcTunnelNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1093,10 +1269,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcTunnelNumberStep'])
     @SrcTunnelNumberStep.setter
     def SrcTunnelNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcTunnelNumberStep'], value)
 
     @property
     def SrcVplsIdAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1105,10 +1283,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumber'])
     @SrcVplsIdAsNumber.setter
     def SrcVplsIdAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumber'], value)
 
     @property
     def SrcVplsIdAsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1117,10 +1297,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumberStep'])
     @SrcVplsIdAsNumberStep.setter
     def SrcVplsIdAsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAsNumberStep'], value)
 
     @property
     def SrcVplsIdAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1129,10 +1311,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumber'])
     @SrcVplsIdAssignedNumber.setter
     def SrcVplsIdAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumber'], value)
 
     @property
     def SrcVplsIdAssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1141,10 +1325,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumberStep'])
     @SrcVplsIdAssignedNumberStep.setter
     def SrcVplsIdAssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdAssignedNumberStep'], value)
 
     @property
     def SrcVplsIdIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1153,10 +1339,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddress'])
     @SrcVplsIdIpAddress.setter
     def SrcVplsIdIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddress'], value)
 
     @property
     def SrcVplsIdIpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1165,10 +1353,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddressStep'])
     @SrcVplsIdIpAddressStep.setter
     def SrcVplsIdIpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdIpAddressStep'], value)
 
     @property
     def SrcVplsIdType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1177,10 +1367,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcVplsIdType'])
     @SrcVplsIdType.setter
     def SrcVplsIdType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcVplsIdType'], value)
 
     @property
     def SupportSlowStart(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -1189,10 +1381,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportSlowStart'])
     @SupportSlowStart.setter
     def SupportSlowStart(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportSlowStart'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1201,10 +1395,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def TypeOfProtectionSwitching(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1213,10 +1409,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TypeOfProtectionSwitching'])
     @TypeOfProtectionSwitching.setter
     def TypeOfProtectionSwitching(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TypeOfProtectionSwitching'], value)
 
     @property
     def TypeOfRange(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1225,10 +1423,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TypeOfRange'])
     @TypeOfRange.setter
     def TypeOfRange(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TypeOfRange'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1237,10 +1437,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1249,10 +1451,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanIncrementMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1261,10 +1465,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanIncrementMode'])
     @VlanIncrementMode.setter
     def VlanIncrementMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanIncrementMode'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1273,10 +1479,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     @property
     def VlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1285,10 +1493,12 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanTpId'])
     @VlanTpId.setter
     def VlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanTpId'], value)
 
     @property
     def WaitToRevertTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1297,9 +1507,11 @@ class LspPwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitToRevertTime'])
     @WaitToRevertTime.setter
     def WaitToRevertTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitToRevertTime'], value)
 
     def update(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+        # type: (int, str, int, str, int, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, str, int, int, int, str, str, int, int, int, int, int, str, int, int, int, int, str, int, int, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, int, int, str, bool, bool, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, str, str, str, int) -> LspPwRange
         """Updates lspPwRange resource on the server.
 
         Args
@@ -1409,6 +1621,7 @@ class LspPwRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+        # type: (int, str, int, str, int, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, str, int, int, int, str, str, int, int, int, int, int, str, int, int, int, int, str, int, int, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, int, int, str, bool, bool, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, str, str, str, int) -> LspPwRange
         """Adds a new lspPwRange resource on the server and adds it to the container.
 
         Args
@@ -1532,6 +1745,7 @@ class LspPwRange(Base):
         self._delete()
 
     def find(self, AlarmTrafficClass=None, AlarmType=None, ApsTrafficClass=None, ApsType=None, CccvInterval=None, CccvTrafficClass=None, CccvType=None, Description=None, DestAcId=None, DestAcIdStep=None, DestGlobalId=None, DestLspNumber=None, DestLspNumberStep=None, DestMepId=None, DestMepIdStep=None, DestNodeId=None, DestTunnelNumber=None, DestTunnelNumberStep=None, DestVplsIdAsNumber=None, DestVplsIdAsNumberStep=None, DestVplsIdAssignedNumber=None, DestVplsIdAssignedNumberStep=None, DestVplsIdIpAddress=None, DestVplsIdIpAddressStep=None, DestVplsIdType=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableVlan=None, Enabled=None, IpAddress=None, IpAddressMask=None, IpAddressStep=None, IpHostPerLsp=None, IpType=None, LmCounterType=None, LmInitialRxValue=None, LmInitialTxValue=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspIncomingLabel=None, LspIncomingLabelStep=None, LspOutgoingLabel=None, LspOutgoingLabelStep=None, MacAddress=None, MacPerPw=None, MegIdIntegerStep=None, MegIdPrefix=None, MegLevel=None, MinRxInterval=None, MinTxInterval=None, NumberOfLsp=None, NumberOfPwPerLsp=None, OnDemandCvTrafficClass=None, PeerLspOrPwRange=None, PeerNestedLspPwRange=None, PwIncomingLabel=None, PwIncomingLabelStep=None, PwIncomingLabelStepAcrossLsp=None, PwOutgoingLabel=None, PwOutgoingLabelStep=None, PwOutgoingLabelStepAcrossLsp=None, PwStatusFaultReplyInterval=None, PwStatusTrafficClass=None, RangeRole=None, RepeatMac=None, Revertive=None, SkipZeroVlanId=None, SrcAcId=None, SrcAcIdStep=None, SrcGlobalId=None, SrcLspNumber=None, SrcLspNumberStep=None, SrcMepId=None, SrcMepIdStep=None, SrcNodeId=None, SrcTunnelNumber=None, SrcTunnelNumberStep=None, SrcVplsIdAsNumber=None, SrcVplsIdAsNumberStep=None, SrcVplsIdAssignedNumber=None, SrcVplsIdAssignedNumberStep=None, SrcVplsIdIpAddress=None, SrcVplsIdIpAddressStep=None, SrcVplsIdType=None, SupportSlowStart=None, TrafficGroupId=None, TypeOfProtectionSwitching=None, TypeOfRange=None, VlanCount=None, VlanId=None, VlanIncrementMode=None, VlanPriority=None, VlanTpId=None, WaitToRevertTime=None):
+        # type: (int, str, int, str, int, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, str, int, str, bool, bool, str, int, int, int, str, str, int, int, int, int, int, str, int, int, int, int, str, int, int, str, int, int, int, int, int, int, str, str, int, int, int, int, int, int, int, int, str, bool, bool, bool, int, int, int, int, int, int, int, int, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, str, str, str, int) -> LspPwRange
         """Finds and retrieves lspPwRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lspPwRange resources from the server.

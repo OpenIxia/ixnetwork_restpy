@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PeriodicOamLmLearnedInfo(Base):
@@ -58,12 +59,15 @@ class PeriodicOamLmLearnedInfo(Base):
         'SourceMacAddress': 'sourceMacAddress',
         'SourceMepId': 'sourceMepId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PeriodicOamLmLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PeriodicOamLmLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AvgFarEndLoss(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +77,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def AvgNearEndLoss(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +87,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def BVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +97,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +107,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CcmReceivedCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +117,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CcmSentCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +127,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CurrentFarEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CurrentFarEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +147,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CurrentNearEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,6 +157,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def CurrentNearEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,6 +167,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def DestinationMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -163,6 +177,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def LmmSentCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,6 +187,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MaxFarEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,6 +197,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MaxFarEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,6 +207,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MaxNearEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -199,6 +217,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MaxNearEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -208,6 +227,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -217,6 +237,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MinFarEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -226,6 +247,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MinFarEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -235,6 +257,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MinNearEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -244,6 +267,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def MinNearEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -253,6 +277,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def NoReplyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -262,6 +287,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -271,6 +297,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def SourceMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -280,6 +307,7 @@ class PeriodicOamLmLearnedInfo(Base):
 
     @property
     def SourceMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -287,7 +315,21 @@ class PeriodicOamLmLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SourceMepId'])
 
+    def add(self):
+        """Adds a new periodicOamLmLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved periodicOamLmLearnedInfo resources using find and the newly added periodicOamLmLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AvgFarEndLoss=None, AvgNearEndLoss=None, BVlan=None, CVlan=None, CcmReceivedCount=None, CcmSentCount=None, CurrentFarEndLoss=None, CurrentFarEndLossRatio=None, CurrentNearEndLoss=None, CurrentNearEndLossRatio=None, DestinationMacAddress=None, LmmSentCount=None, MaxFarEndLoss=None, MaxFarEndLossRatio=None, MaxNearEndLoss=None, MaxNearEndLossRatio=None, MdLevel=None, MinFarEndLoss=None, MinFarEndLossRatio=None, MinNearEndLoss=None, MinNearEndLossRatio=None, NoReplyCount=None, SVlan=None, SourceMacAddress=None, SourceMepId=None):
+        # type: (str, str, str, str, int, int, int, str, int, str, str, int, int, str, int, str, int, int, str, int, str, int, str, str, int) -> PeriodicOamLmLearnedInfo
         """Finds and retrieves periodicOamLmLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve periodicOamLmLearnedInfo resources from the server.

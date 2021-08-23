@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Filter(Base):
@@ -41,12 +42,19 @@ class Filter(Base):
         'CaptureFilterPattern': 'captureFilterPattern',
         'CaptureFilterSA': 'captureFilterSA',
     }
+    _SDM_ENUM_MAP = {
+        'captureFilterDA': ['addr1', 'addr2', 'anyAddr', 'notAddr1', 'notAddr2'],
+        'captureFilterError': ['errAnyFrame', 'errAnyIpTcpUdpChecksumError', 'errAnySequencekError', 'errBadCRC', 'errBadFrame', 'errBigSequenceError', 'errDataIntegrityError', 'errGoodFrame', 'errInvalidFcoeFrame', 'errReverseSequenceError', 'errSmallSequenceError'],
+        'captureFilterPattern': ['anyPattern', 'notPattern1', 'notPattern2', 'pattern1', 'pattern1AndPattern2', 'pattern2'],
+        'captureFilterSA': ['addr1', 'addr2', 'anyAddr', 'notAddr1', 'notAddr2'],
+    }
 
-    def __init__(self, parent):
-        super(Filter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Filter, self).__init__(parent, list_op)
 
     @property
     def CaptureFilterDA(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,10 +63,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterDA'])
     @CaptureFilterDA.setter
     def CaptureFilterDA(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterDA'], value)
 
     @property
     def CaptureFilterEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +77,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterEnable'])
     @CaptureFilterEnable.setter
     def CaptureFilterEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterEnable'], value)
 
     @property
     def CaptureFilterError(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +91,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterError'])
     @CaptureFilterError.setter
     def CaptureFilterError(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterError'], value)
 
     @property
     def CaptureFilterExpressionString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +105,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterExpressionString'])
     @CaptureFilterExpressionString.setter
     def CaptureFilterExpressionString(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterExpressionString'], value)
 
     @property
     def CaptureFilterFrameSizeEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +119,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeEnable'])
     @CaptureFilterFrameSizeEnable.setter
     def CaptureFilterFrameSizeEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeEnable'], value)
 
     @property
     def CaptureFilterFrameSizeFrom(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,10 +133,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeFrom'])
     @CaptureFilterFrameSizeFrom.setter
     def CaptureFilterFrameSizeFrom(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeFrom'], value)
 
     @property
     def CaptureFilterFrameSizeTo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,10 +147,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeTo'])
     @CaptureFilterFrameSizeTo.setter
     def CaptureFilterFrameSizeTo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterFrameSizeTo'], value)
 
     @property
     def CaptureFilterPattern(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,10 +161,12 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterPattern'])
     @CaptureFilterPattern.setter
     def CaptureFilterPattern(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterPattern'], value)
 
     @property
     def CaptureFilterSA(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,9 +175,11 @@ class Filter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterSA'])
     @CaptureFilterSA.setter
     def CaptureFilterSA(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureFilterSA'], value)
 
     def update(self, CaptureFilterDA=None, CaptureFilterEnable=None, CaptureFilterError=None, CaptureFilterExpressionString=None, CaptureFilterFrameSizeEnable=None, CaptureFilterFrameSizeFrom=None, CaptureFilterFrameSizeTo=None, CaptureFilterPattern=None, CaptureFilterSA=None):
+        # type: (str, bool, str, str, bool, int, int, str, str) -> Filter
         """Updates filter resource on the server.
 
         Args

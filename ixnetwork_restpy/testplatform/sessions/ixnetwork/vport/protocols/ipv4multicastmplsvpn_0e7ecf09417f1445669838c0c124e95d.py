@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IpV4MulticastMplsVpn(Base):
@@ -40,12 +41,15 @@ class IpV4MulticastMplsVpn(Base):
         'PrefixLength': 'prefixLength',
         'RouteDistinguisher': 'routeDistinguisher',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IpV4MulticastMplsVpn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IpV4MulticastMplsVpn, self).__init__(parent, list_op)
 
     @property
     def AsPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class IpV4MulticastMplsVpn(Base):
 
     @property
     def IpPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class IpV4MulticastMplsVpn(Base):
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class IpV4MulticastMplsVpn(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class IpV4MulticastMplsVpn(Base):
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class IpV4MulticastMplsVpn(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +109,7 @@ class IpV4MulticastMplsVpn(Base):
 
     @property
     def RouteDistinguisher(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,7 +117,21 @@ class IpV4MulticastMplsVpn(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisher'])
 
+    def add(self):
+        """Adds a new ipV4MulticastMplsVpn resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipV4MulticastMplsVpn resources using find and the newly added ipV4MulticastMplsVpn resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AsPath=None, IpPrefix=None, Label=None, Neighbor=None, NextHop=None, PrefixLength=None, RouteDistinguisher=None):
+        # type: (str, str, int, str, str, int, str) -> IpV4MulticastMplsVpn
         """Finds and retrieves ipV4MulticastMplsVpn resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipV4MulticastMplsVpn resources from the server.

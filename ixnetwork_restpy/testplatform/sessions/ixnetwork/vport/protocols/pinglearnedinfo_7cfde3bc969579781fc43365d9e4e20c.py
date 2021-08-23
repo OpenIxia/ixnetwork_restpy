@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PingLearnedInfo(Base):
@@ -47,12 +48,15 @@ class PingLearnedInfo(Base):
         'SequenceNumber': 'sequenceNumber',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PingLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PingLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def ErrorTlvType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,6 +66,7 @@ class PingLearnedInfo(Base):
 
     @property
     def IncomingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,6 +76,7 @@ class PingLearnedInfo(Base):
 
     @property
     def InterfaceLabelStackTlvInterface(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +86,7 @@ class PingLearnedInfo(Base):
 
     @property
     def InterfaceLabelStackTlvIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class PingLearnedInfo(Base):
 
     @property
     def InterfaceLabelStackTlvLabels(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class PingLearnedInfo(Base):
 
     @property
     def OutgoingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,6 +116,7 @@ class PingLearnedInfo(Base):
 
     @property
     def Reachability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,6 +126,7 @@ class PingLearnedInfo(Base):
 
     @property
     def ReturnCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +136,7 @@ class PingLearnedInfo(Base):
 
     @property
     def ReturnSubcode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,6 +146,7 @@ class PingLearnedInfo(Base):
 
     @property
     def ReversePathVerificationCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +156,7 @@ class PingLearnedInfo(Base):
 
     @property
     def Rtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,6 +166,7 @@ class PingLearnedInfo(Base):
 
     @property
     def SenderHandle(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,6 +176,7 @@ class PingLearnedInfo(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,6 +186,7 @@ class PingLearnedInfo(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,7 +194,21 @@ class PingLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new pingLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pingLearnedInfo resources using find and the newly added pingLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ErrorTlvType=None, IncomingLabelOuterInner=None, InterfaceLabelStackTlvInterface=None, InterfaceLabelStackTlvIpAddress=None, InterfaceLabelStackTlvLabels=None, OutgoingLabelOuterInner=None, Reachability=None, ReturnCode=None, ReturnSubcode=None, ReversePathVerificationCode=None, Rtt=None, SenderHandle=None, SequenceNumber=None, Type=None):
+        # type: (int, str, int, str, str, str, bool, str, int, str, str, int, int, str) -> PingLearnedInfo
         """Finds and retrieves pingLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pingLearnedInfo resources from the server.

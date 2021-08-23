@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MldQuerier(Base):
@@ -59,9 +60,12 @@ class MldQuerier(Base):
         'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
         'VersionType': 'versionType',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(MldQuerier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MldQuerier, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -75,10 +79,14 @@ class MldQuerier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +97,7 @@ class MldQuerier(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -97,10 +106,12 @@ class MldQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class MldQuerier(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +131,7 @@ class MldQuerier(Base):
 
     @property
     def DiscardLearntInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -138,6 +151,7 @@ class MldQuerier(Base):
 
     @property
     def GeneralQueryInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -148,6 +162,7 @@ class MldQuerier(Base):
 
     @property
     def GeneralQueryResponseInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +173,7 @@ class MldQuerier(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,10 +182,12 @@ class MldQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,10 +196,12 @@ class MldQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ProxyQuerier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +212,7 @@ class MldQuerier(Base):
 
     @property
     def RobustnessVariable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +223,7 @@ class MldQuerier(Base):
 
     @property
     def RouterAlert(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +234,7 @@ class MldQuerier(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -221,6 +244,7 @@ class MldQuerier(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -230,6 +254,7 @@ class MldQuerier(Base):
 
     @property
     def SpecificQueryResponseInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +265,7 @@ class MldQuerier(Base):
 
     @property
     def SpecificQueryTransmissionCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +276,7 @@ class MldQuerier(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -258,10 +285,12 @@ class MldQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
     def StartupQueryCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +310,7 @@ class MldQuerier(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -290,6 +320,7 @@ class MldQuerier(Base):
 
     @property
     def SupportElection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +331,7 @@ class MldQuerier(Base):
 
     @property
     def SupportOlderVersionHost(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +342,7 @@ class MldQuerier(Base):
 
     @property
     def SupportOlderVersionQuerier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +353,7 @@ class MldQuerier(Base):
 
     @property
     def VersionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +363,7 @@ class MldQuerier(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionType']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> MldQuerier
         """Updates mldQuerier resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -348,6 +383,7 @@ class MldQuerier(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> MldQuerier
         """Adds a new mldQuerier resource on the server and adds it to the container.
 
         Args
@@ -426,6 +462,532 @@ class MldQuerier(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfoInClient operation on the server.
+
+        Clears ALL routes from GUI grid for the selected BGP Peers.
+
+        clearAllLearnedInfoInClient(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+
+    def GetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLearnedInfo operation on the server.
+
+        Gets all the LSPs and Topologies learnt by this MLD Querier.
+
+        getLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+
+    def MldGetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the mldGetLearnedInfo operation on the server.
+
+        Get Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        mldGetLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldGetLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldGetLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('mldGetLearnedInfo', payload=payload, response_object=None)
+
+    def MldResumePeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the mldResumePeriodicGenQuery operation on the server.
+
+        Resume Periodic General Query
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        mldResumePeriodicGenQuery(async_operation=bool)
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldResumePeriodicGenQuery(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldResumePeriodicGenQuery(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('mldResumePeriodicGenQuery', payload=payload, response_object=None)
+
+    def MldSendSpecificQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the mldSendSpecificQuery operation on the server.
+
+        Send Specific Query
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        mldSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - Start_group_address (str): This parameter requires a start_group_address of type kString
+        - Group_count (number): This parameter requires a group_count of type kInteger
+        - Start_source_address (str): This parameter requires a start_source_address of type kString
+        - Source_count (number): This parameter requires a source_count of type kInteger
+        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - Start_group_address (str): This parameter requires a start_group_address of type kString
+        - Group_count (number): This parameter requires a group_count of type kInteger
+        - Start_source_address (str): This parameter requires a start_source_address of type kString
+        - Source_count (number): This parameter requires a source_count of type kInteger
+        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldSendSpecificQuery(SessionIndices=string, Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, async_operation=bool)
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a start_group_address of type kString
+        - Start_group_address (str): This parameter requires a group_count of type kInteger
+        - Group_count (number): This parameter requires a start_source_address of type kString
+        - Start_source_address (str): This parameter requires a source_count of type kInteger
+        - Source_count (number): This parameter requires a source_increment_step of type kInteger
+        - Source_increment_step (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('mldSendSpecificQuery', payload=payload, response_object=None)
+
+    def MldStartQuerier(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the mldStartQuerier operation on the server.
+
+        Start MLD Querier
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        mldStartQuerier(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldStartQuerier(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldStartQuerier(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('mldStartQuerier', payload=payload, response_object=None)
+
+    def MldStopPeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the mldStopPeriodicGenQuery operation on the server.
+
+        Stop Periodic General Query
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        mldStopPeriodicGenQuery(async_operation=bool)
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldStopPeriodicGenQuery(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldStopPeriodicGenQuery(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('mldStopPeriodicGenQuery', payload=payload, response_object=None)
+
+    def MldStopQuerier(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the mldStopQuerier operation on the server.
+
+        Stop MLD Querier
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        mldStopQuerier(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldStopQuerier(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        mldStopQuerier(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('mldStopQuerier', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumePeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumePeriodicGenQuery operation on the server.
+
+        Resume Sending Periodic General Query
+
+        resumePeriodicGenQuery(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumePeriodicGenQuery', payload=payload, response_object=None)
+
+    def SendSpecificQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendSpecificQuery operation on the server.
+
+        Send Specific Query
+
+        sendSpecificQuery(Arg2=list, Arg3=string, Arg4=number, Arg5=string, Arg6=number, Arg7=number, async_operation=bool)list
+        -----------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str): Start Group Address.
+        - Arg4 (number): Group Count.
+        - Arg5 (str): Start Source Address.
+        - Arg6 (number): Source Count.
+        - Arg7 (number): Source Increment Step.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendSpecificQuery', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def StartMLD(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startMLD operation on the server.
+
+        Start MLD protocol on selected interfaces
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startMLD(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startMLD(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startMLD(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startMLD(Arg2=string, Arg3=list, async_operation=bool)
+        ------------------------------------------------------
+        - Arg2 (str): ID to associate each async action invocation
+        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startMLD', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopMLD(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopMLD operation on the server.
+
+        Stop MLD protocol on selected interfaces
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopMLD(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopMLD(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopMLD(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopMLD(Arg2=string, Arg3=list, async_operation=bool)
+        -----------------------------------------------------
+        - Arg2 (str): ID to associate each async action invocation
+        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopMLD', payload=payload, response_object=None)
+
+    def StopPeriodicGenQuery(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopPeriodicGenQuery operation on the server.
+
+        Stop Sending Periodic General Query
+
+        stopPeriodicGenQuery(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopPeriodicGenQuery', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, DiscardLearntInfo=None, GeneralQueryInterval=None, GeneralQueryResponseInterval=None, ProxyQuerier=None, RobustnessVariable=None, RouterAlert=None, SpecificQueryResponseInterval=None, SpecificQueryTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, VersionType=None):
         """Base class infrastructure that gets a list of mldQuerier device ids encapsulated by this object.
 
@@ -458,436 +1020,3 @@ class MldQuerier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfoInClient operation on the server.
-
-        Clears ALL routes from GUI grid for the selected BGP Peers.
-
-        clearAllLearnedInfoInClient(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
-
-    def GetLearnedInfo(self, *args, **kwargs):
-        """Executes the getLearnedInfo operation on the server.
-
-        Gets all the LSPs and Topologies learnt by this MLD Querier.
-
-        getLearnedInfo(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
-
-    def MldGetLearnedInfo(self, *args, **kwargs):
-        """Executes the mldGetLearnedInfo operation on the server.
-
-        Get Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        mldGetLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        mldGetLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldGetLearnedInfo', payload=payload, response_object=None)
-
-    def MldResumePeriodicGenQuery(self, *args, **kwargs):
-        """Executes the mldResumePeriodicGenQuery operation on the server.
-
-        Resume Periodic General Query
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        mldResumePeriodicGenQuery(SessionIndices=list)
-        ----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        mldResumePeriodicGenQuery(SessionIndices=string)
-        ------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldResumePeriodicGenQuery', payload=payload, response_object=None)
-
-    def MldSendSpecificQuery(self, *args, **kwargs):
-        """Executes the mldSendSpecificQuery operation on the server.
-
-        Send Specific Query
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        mldSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number)
-        ----------------------------------------------------------------------------------------------------------------------------------------------------
-        - Start_group_address (str): This parameter requires a start_group_address of type kString
-        - Group_count (number): This parameter requires a group_count of type kInteger
-        - Start_source_address (str): This parameter requires a start_source_address of type kString
-        - Source_count (number): This parameter requires a source_count of type kInteger
-        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
-
-        mldSendSpecificQuery(Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number, SessionIndices=list)
-        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - Start_group_address (str): This parameter requires a start_group_address of type kString
-        - Group_count (number): This parameter requires a group_count of type kInteger
-        - Start_source_address (str): This parameter requires a start_source_address of type kString
-        - Source_count (number): This parameter requires a source_count of type kInteger
-        - Source_increment_step (number): This parameter requires a source_increment_step of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        mldSendSpecificQuery(SessionIndices=string, Start_group_address=string, Group_count=number, Start_source_address=string, Source_count=number, Source_increment_step=number)
-        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a start_group_address of type kString
-        - Start_group_address (str): This parameter requires a group_count of type kInteger
-        - Group_count (number): This parameter requires a start_source_address of type kString
-        - Start_source_address (str): This parameter requires a source_count of type kInteger
-        - Source_count (number): This parameter requires a source_increment_step of type kInteger
-        - Source_increment_step (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldSendSpecificQuery', payload=payload, response_object=None)
-
-    def MldStartQuerier(self, *args, **kwargs):
-        """Executes the mldStartQuerier operation on the server.
-
-        Start MLD Querier
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        mldStartQuerier(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        mldStartQuerier(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldStartQuerier', payload=payload, response_object=None)
-
-    def MldStopPeriodicGenQuery(self, *args, **kwargs):
-        """Executes the mldStopPeriodicGenQuery operation on the server.
-
-        Stop Periodic General Query
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        mldStopPeriodicGenQuery(SessionIndices=list)
-        --------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        mldStopPeriodicGenQuery(SessionIndices=string)
-        ----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldStopPeriodicGenQuery', payload=payload, response_object=None)
-
-    def MldStopQuerier(self, *args, **kwargs):
-        """Executes the mldStopQuerier operation on the server.
-
-        Stop MLD Querier
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        mldStopQuerier(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        mldStopQuerier(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('mldStopQuerier', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumePeriodicGenQuery(self, *args, **kwargs):
-        """Executes the resumePeriodicGenQuery operation on the server.
-
-        Resume Sending Periodic General Query
-
-        resumePeriodicGenQuery(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumePeriodicGenQuery', payload=payload, response_object=None)
-
-    def SendSpecificQuery(self, *args, **kwargs):
-        """Executes the sendSpecificQuery operation on the server.
-
-        Send Specific Query
-
-        sendSpecificQuery(Arg2=list, Arg3=string, Arg4=number, Arg5=string, Arg6=number, Arg7=number)list
-        -------------------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str): Start Group Address.
-        - Arg4 (number): Group Count.
-        - Arg5 (str): Start Source Address.
-        - Arg6 (number): Source Count.
-        - Arg7 (number): Source Increment Step.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendSpecificQuery', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def StartMLD(self, *args, **kwargs):
-        """Executes the startMLD operation on the server.
-
-        Start MLD protocol on selected interfaces
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startMLD(SessionIndices=list)
-        -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startMLD(SessionIndices=string)
-        -------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        startMLD(Arg2=string, Arg3=list)
-        --------------------------------
-        - Arg2 (str): ID to associate each async action invocation
-        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startMLD', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopMLD(self, *args, **kwargs):
-        """Executes the stopMLD operation on the server.
-
-        Stop MLD protocol on selected interfaces
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopMLD(SessionIndices=list)
-        ----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopMLD(SessionIndices=string)
-        ------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopMLD(Arg2=string, Arg3=list)
-        -------------------------------
-        - Arg2 (str): ID to associate each async action invocation
-        - Arg3 (list(number)): List of indices into the group range grid An empty list indicates all instances in the plugin.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopMLD', payload=payload, response_object=None)
-
-    def StopPeriodicGenQuery(self, *args, **kwargs):
-        """Executes the stopPeriodicGenQuery operation on the server.
-
-        Stop Sending Periodic General Query
-
-        stopPeriodicGenQuery(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPeriodicGenQuery', payload=payload, response_object=None)

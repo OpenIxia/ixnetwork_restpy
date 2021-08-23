@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23NextGenProtocolFilter(Base):
@@ -41,9 +42,12 @@ class Layer23NextGenProtocolFilter(Base):
         'PortFilterIds': 'portFilterIds',
         'ProtocolFilterIds': 'protocolFilterIds',
     }
+    _SDM_ENUM_MAP = {
+        'aggregationType': ['perPort', 'perSession'],
+    }
 
-    def __init__(self, parent):
-        super(Layer23NextGenProtocolFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23NextGenProtocolFilter, self).__init__(parent, list_op)
 
     @property
     def AdvancedFilter(self):
@@ -57,7 +61,10 @@ class Layer23NextGenProtocolFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.advancedfilter.advancedfilter import AdvancedFilter
-        return AdvancedFilter(self)
+        if self._properties.get('AdvancedFilter', None) is not None:
+            return self._properties.get('AdvancedFilter')
+        else:
+            return AdvancedFilter(self)
 
     @property
     def AvailableAdvancedFilterOptions(self):
@@ -71,10 +78,14 @@ class Layer23NextGenProtocolFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23nextgenprotocolfilter.availableadvancedfilteroptions.availableadvancedfilteroptions import AvailableAdvancedFilterOptions
-        return AvailableAdvancedFilterOptions(self)
+        if self._properties.get('AvailableAdvancedFilterOptions', None) is not None:
+            return self._properties.get('AvailableAdvancedFilterOptions')
+        else:
+            return AvailableAdvancedFilterOptions(self)
 
     @property
     def AdvancedCVFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +94,12 @@ class Layer23NextGenProtocolFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvancedCVFilter'])
     @AdvancedCVFilter.setter
     def AdvancedCVFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvancedCVFilter'], value)
 
     @property
     def AdvancedFilterName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,10 +108,12 @@ class Layer23NextGenProtocolFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvancedFilterName'])
     @AdvancedFilterName.setter
     def AdvancedFilterName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvancedFilterName'], value)
 
     @property
     def AggregationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +122,12 @@ class Layer23NextGenProtocolFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregationType'])
     @AggregationType.setter
     def AggregationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregationType'], value)
 
     @property
     def AllAdvancedFilters(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,6 +137,7 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def MatchingAdvancedFilters(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,6 +147,7 @@ class Layer23NextGenProtocolFilter(Base):
 
     @property
     def PortFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -137,10 +156,12 @@ class Layer23NextGenProtocolFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     @property
     def ProtocolFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -149,9 +170,11 @@ class Layer23NextGenProtocolFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
 
     def update(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (str, str, str, List[str], List[str]) -> Layer23NextGenProtocolFilter
         """Updates layer23NextGenProtocolFilter resource on the server.
 
         Args
@@ -169,6 +192,7 @@ class Layer23NextGenProtocolFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (str, str, str, List[str], List[str]) -> Layer23NextGenProtocolFilter
         """Adds a new layer23NextGenProtocolFilter resource on the server and adds it to the container.
 
         Args
@@ -200,6 +224,7 @@ class Layer23NextGenProtocolFilter(Base):
         self._delete()
 
     def find(self, AdvancedCVFilter=None, AdvancedFilterName=None, AggregationType=None, AllAdvancedFilters=None, MatchingAdvancedFilters=None, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (str, str, str, str, str, List[str], List[str]) -> Layer23NextGenProtocolFilter
         """Finds and retrieves layer23NextGenProtocolFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23NextGenProtocolFilter resources from the server.
@@ -245,13 +270,15 @@ class Layer23NextGenProtocolFilter(Base):
         return self._read(href)
 
     def AddAdvancedFilter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addAdvancedFilter operation on the server.
 
         NOT DEFINED
 
-        addAdvancedFilter(Arg2=href)
-        ----------------------------
+        addAdvancedFilter(Arg2=href, async_operation=bool)
+        --------------------------------------------------
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -264,13 +291,15 @@ class Layer23NextGenProtocolFilter(Base):
         return self._execute('addAdvancedFilter', payload=payload, response_object=None)
 
     def RemoveAdvancedFilter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the removeAdvancedFilter operation on the server.
 
         NOT DEFINED
 
-        removeAdvancedFilter(Arg2=string)
-        ---------------------------------
+        removeAdvancedFilter(Arg2=string, async_operation=bool)
+        -------------------------------------------------------
         - Arg2 (str): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -282,10 +311,15 @@ class Layer23NextGenProtocolFilter(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('removeAdvancedFilter', payload=payload, response_object=None)
 
-    def RemoveAllAdvancedFilters(self):
+    def RemoveAllAdvancedFilters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the removeAllAdvancedFilters operation on the server.
 
         NOT DEFINED
+
+        removeAllAdvancedFilters(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -293,4 +327,6 @@ class Layer23NextGenProtocolFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('removeAllAdvancedFilters', payload=payload, response_object=None)

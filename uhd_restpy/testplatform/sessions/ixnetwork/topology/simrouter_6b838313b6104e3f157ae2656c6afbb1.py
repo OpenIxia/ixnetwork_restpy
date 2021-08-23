@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SimRouter(Base):
@@ -39,9 +40,11 @@ class SimRouter(Base):
         'RouterId': 'routerId',
         'SystemId': 'systemId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SimRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SimRouter, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -55,7 +58,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def IsisL3PseudoRouter(self):
@@ -69,7 +75,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_eb611bec8e6885a729e2fa754f47907e import IsisL3PseudoRouter
-        return IsisL3PseudoRouter(self)
+        if self._properties.get('IsisL3PseudoRouter', None) is not None:
+            return self._properties.get('IsisL3PseudoRouter')
+        else:
+            return IsisL3PseudoRouter(self)
 
     @property
     def LdpPseudoRouter(self):
@@ -83,7 +92,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldppseudorouter_5f6f01cad846224121837f6b8e6bf015 import LdpPseudoRouter
-        return LdpPseudoRouter(self)
+        if self._properties.get('LdpPseudoRouter', None) is not None:
+            return self._properties.get('LdpPseudoRouter')
+        else:
+            return LdpPseudoRouter(self)
 
     @property
     def OspfPseudoRouter(self):
@@ -97,7 +109,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouter_12b3393450e65ec5e296c3ab57a0b3a5 import OspfPseudoRouter
-        return OspfPseudoRouter(self)
+        if self._properties.get('OspfPseudoRouter', None) is not None:
+            return self._properties.get('OspfPseudoRouter')
+        else:
+            return OspfPseudoRouter(self)
 
     @property
     def Ospfv3PseudoRouter(self):
@@ -111,7 +126,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudorouter_2655f161657257079fe67161054bb73b import Ospfv3PseudoRouter
-        return Ospfv3PseudoRouter(self)
+        if self._properties.get('Ospfv3PseudoRouter', None) is not None:
+            return self._properties.get('Ospfv3PseudoRouter')
+        else:
+            return Ospfv3PseudoRouter(self)
 
     @property
     def Tag(self):
@@ -125,10 +143,14 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,6 +160,7 @@ class SimRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,6 +170,7 @@ class SimRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,10 +179,12 @@ class SimRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NodeIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +195,7 @@ class SimRouter(Base):
 
     @property
     def RouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +206,7 @@ class SimRouter(Base):
 
     @property
     def SystemId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -188,6 +216,7 @@ class SimRouter(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SystemId']))
 
     def update(self, Name=None):
+        # type: (str) -> SimRouter
         """Updates simRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -203,7 +232,26 @@ class SimRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> SimRouter
+        """Adds a new simRouter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved simRouter resources using find and the newly added simRouter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> SimRouter
         """Finds and retrieves simRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve simRouter resources from the server.
@@ -244,6 +292,66 @@ class SimRouter(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, NodeIndex=None, RouterId=None, SystemId=None):
         """Base class infrastructure that gets a list of simRouter device ids encapsulated by this object.
 
@@ -265,42 +373,3 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

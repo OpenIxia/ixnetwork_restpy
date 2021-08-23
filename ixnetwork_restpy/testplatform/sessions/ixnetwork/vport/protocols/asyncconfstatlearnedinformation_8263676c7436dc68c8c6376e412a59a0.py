@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AsyncConfStatLearnedInformation(Base):
@@ -48,12 +49,15 @@ class AsyncConfStatLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AsyncConfStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AsyncConfStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +87,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +97,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def FlowRemovedMaskMaster(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def FlowRemovedMaskSlave(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,6 +127,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +137,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,6 +147,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def PacketInMaskMaster(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,6 +157,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def PacketInMaskSlave(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,6 +167,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def PortStatusMaskMaster(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,6 +177,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def PortStatusMaskSlave(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class AsyncConfStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,7 +205,21 @@ class AsyncConfStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
 
+    def add(self):
+        """Adds a new asyncConfStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved asyncConfStatLearnedInformation resources using find and the newly added asyncConfStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, FlowRemovedMaskMaster=None, FlowRemovedMaskSlave=None, Latency=None, LocalIp=None, NegotiatedVersion=None, PacketInMaskMaster=None, PacketInMaskSlave=None, PortStatusMaskMaster=None, PortStatusMaskSlave=None, RemoteIp=None, ReplyState=None):
+        # type: (str, str, str, str, str, str, int, str, str, str, str, str, str, str, str) -> AsyncConfStatLearnedInformation
         """Finds and retrieves asyncConfStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve asyncConfStatLearnedInformation resources from the server.

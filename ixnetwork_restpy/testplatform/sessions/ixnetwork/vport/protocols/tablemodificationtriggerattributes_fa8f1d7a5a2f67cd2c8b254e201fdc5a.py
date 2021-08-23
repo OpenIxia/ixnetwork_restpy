@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TableModificationTriggerAttributes(Base):
@@ -34,12 +35,15 @@ class TableModificationTriggerAttributes(Base):
         'AllTables': 'allTables',
         'Config': 'config',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TableModificationTriggerAttributes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TableModificationTriggerAttributes, self).__init__(parent, list_op)
 
     @property
     def AllTables(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class TableModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllTables'])
     @AllTables.setter
     def AllTables(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllTables'], value)
 
     @property
     def Config(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class TableModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Config'])
     @Config.setter
     def Config(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Config'], value)
 
     def update(self, AllTables=None, Config=None):
+        # type: (bool, int) -> TableModificationTriggerAttributes
         """Updates tableModificationTriggerAttributes resource on the server.
 
         Args

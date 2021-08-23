@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4NodeId(Base):
@@ -33,12 +34,15 @@ class Ipv4NodeId(Base):
     _SDM_ATT_MAP = {
         'Count': 'count',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv4NodeId, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4NodeId, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------

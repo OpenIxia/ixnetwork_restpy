@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LinkMode(Base):
@@ -43,12 +44,15 @@ class LinkMode(Base):
         'Ofppf40GbFd': 'ofppf40GbFd',
         'OfppfOther': 'ofppfOther',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LinkMode, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LinkMode, self).__init__(parent, list_op)
 
     @property
     def Ofppf100GbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -57,10 +61,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf100GbFd'])
     @Ofppf100GbFd.setter
     def Ofppf100GbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf100GbFd'], value)
 
     @property
     def Ofppf100MbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -69,10 +75,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf100MbFd'])
     @Ofppf100MbFd.setter
     def Ofppf100MbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf100MbFd'], value)
 
     @property
     def Ofppf100MbHd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -81,10 +89,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf100MbHd'])
     @Ofppf100MbHd.setter
     def Ofppf100MbHd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf100MbHd'], value)
 
     @property
     def Ofppf10GbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,10 +103,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf10GbFd'])
     @Ofppf10GbFd.setter
     def Ofppf10GbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf10GbFd'], value)
 
     @property
     def Ofppf10MbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +117,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf10MbFd'])
     @Ofppf10MbFd.setter
     def Ofppf10MbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf10MbFd'], value)
 
     @property
     def Ofppf10MbHd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -117,10 +131,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf10MbHd'])
     @Ofppf10MbHd.setter
     def Ofppf10MbHd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf10MbHd'], value)
 
     @property
     def Ofppf1GbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -129,10 +145,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf1GbFd'])
     @Ofppf1GbFd.setter
     def Ofppf1GbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf1GbFd'], value)
 
     @property
     def Ofppf1GbHd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -141,10 +159,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf1GbHd'])
     @Ofppf1GbHd.setter
     def Ofppf1GbHd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf1GbHd'], value)
 
     @property
     def Ofppf1TbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +173,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf1TbFd'])
     @Ofppf1TbFd.setter
     def Ofppf1TbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf1TbFd'], value)
 
     @property
     def Ofppf40GbFd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -165,10 +187,12 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ofppf40GbFd'])
     @Ofppf40GbFd.setter
     def Ofppf40GbFd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ofppf40GbFd'], value)
 
     @property
     def OfppfOther(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -177,9 +201,11 @@ class LinkMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OfppfOther'])
     @OfppfOther.setter
     def OfppfOther(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OfppfOther'], value)
 
     def update(self, Ofppf100GbFd=None, Ofppf100MbFd=None, Ofppf100MbHd=None, Ofppf10GbFd=None, Ofppf10MbFd=None, Ofppf10MbHd=None, Ofppf1GbFd=None, Ofppf1GbHd=None, Ofppf1TbFd=None, Ofppf40GbFd=None, OfppfOther=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LinkMode
         """Updates linkMode resource on the server.
 
         Args

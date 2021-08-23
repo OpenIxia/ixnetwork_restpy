@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DceNodeTopologyRange(Base):
@@ -42,9 +43,11 @@ class DceNodeTopologyRange(Base):
         'TopologyCount': 'topologyCount',
         'TopologyId': 'topologyId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DceNodeTopologyRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DceNodeTopologyRange, self).__init__(parent, list_op)
 
     @property
     def DceNodeInterestedVlanRange(self):
@@ -58,10 +61,14 @@ class DceNodeTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeinterestedvlanrange_b15c6822c508a957290b5d3ed2b3ea4e import DceNodeInterestedVlanRange
-        return DceNodeInterestedVlanRange(self)
+        if self._properties.get('DceNodeInterestedVlanRange', None) is not None:
+            return self._properties.get('DceNodeInterestedVlanRange')
+        else:
+            return DceNodeInterestedVlanRange(self)
 
     @property
     def BroadcastPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,10 +77,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BroadcastPriority'])
     @BroadcastPriority.setter
     def BroadcastPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BroadcastPriority'], value)
 
     @property
     def IncludeL2Topology(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,10 +91,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeL2Topology'])
     @IncludeL2Topology.setter
     def IncludeL2Topology(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeL2Topology'], value)
 
     @property
     def InternodeNicknameIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,10 +105,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InternodeNicknameIncrement'])
     @InternodeNicknameIncrement.setter
     def InternodeNicknameIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InternodeNicknameIncrement'], value)
 
     @property
     def NicknameCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,10 +119,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NicknameCount'])
     @NicknameCount.setter
     def NicknameCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NicknameCount'], value)
 
     @property
     def NoOfTreesToCompute(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,10 +133,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'])
     @NoOfTreesToCompute.setter
     def NoOfTreesToCompute(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'], value)
 
     @property
     def StartNickname(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +147,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartNickname'])
     @StartNickname.setter
     def StartNickname(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartNickname'], value)
 
     @property
     def TopologyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -142,10 +161,12 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopologyCount'])
     @TopologyCount.setter
     def TopologyCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopologyCount'], value)
 
     @property
     def TopologyId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,9 +175,11 @@ class DceNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopologyId'])
     @TopologyId.setter
     def TopologyId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopologyId'], value)
 
     def update(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+        # type: (int, bool, int, int, int, int, int, int) -> DceNodeTopologyRange
         """Updates dceNodeTopologyRange resource on the server.
 
         Args
@@ -177,6 +200,7 @@ class DceNodeTopologyRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+        # type: (int, bool, int, int, int, int, int, int) -> DceNodeTopologyRange
         """Adds a new dceNodeTopologyRange resource on the server and adds it to the container.
 
         Args
@@ -211,6 +235,7 @@ class DceNodeTopologyRange(Base):
         self._delete()
 
     def find(self, BroadcastPriority=None, IncludeL2Topology=None, InternodeNicknameIncrement=None, NicknameCount=None, NoOfTreesToCompute=None, StartNickname=None, TopologyCount=None, TopologyId=None):
+        # type: (int, bool, int, int, int, int, int, int) -> DceNodeTopologyRange
         """Finds and retrieves dceNodeTopologyRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceNodeTopologyRange resources from the server.

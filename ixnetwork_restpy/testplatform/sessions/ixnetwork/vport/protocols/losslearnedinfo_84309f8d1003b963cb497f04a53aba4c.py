@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LossLearnedInfo(Base):
@@ -45,12 +46,15 @@ class LossLearnedInfo(Base):
         'SourceMacAddress': 'sourceMacAddress',
         'SourceMepId': 'sourceMepId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LossLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LossLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def BVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class LossLearnedInfo(Base):
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class LossLearnedInfo(Base):
 
     @property
     def DestinationMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class LossLearnedInfo(Base):
 
     @property
     def FarEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,6 +94,7 @@ class LossLearnedInfo(Base):
 
     @property
     def FarEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +104,7 @@ class LossLearnedInfo(Base):
 
     @property
     def LmrReceived(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,6 +114,7 @@ class LossLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,6 +124,7 @@ class LossLearnedInfo(Base):
 
     @property
     def NearEndLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,6 +134,7 @@ class LossLearnedInfo(Base):
 
     @property
     def NearEndLossRatio(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,6 +144,7 @@ class LossLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,6 +154,7 @@ class LossLearnedInfo(Base):
 
     @property
     def SourceMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +164,7 @@ class LossLearnedInfo(Base):
 
     @property
     def SourceMepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,7 +172,21 @@ class LossLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SourceMepId'])
 
+    def add(self):
+        """Adds a new lossLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved lossLearnedInfo resources using find and the newly added lossLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BVlan=None, CVlan=None, DestinationMacAddress=None, FarEndLoss=None, FarEndLossRatio=None, LmrReceived=None, MdLevel=None, NearEndLoss=None, NearEndLossRatio=None, SVlan=None, SourceMacAddress=None, SourceMepId=None):
+        # type: (str, str, str, int, str, bool, int, int, str, str, str, int) -> LossLearnedInfo
         """Finds and retrieves lossLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lossLearnedInfo resources from the server.

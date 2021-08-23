@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Capture(Base):
@@ -58,9 +59,18 @@ class Capture(Base):
         'SoftwareEnabled': 'softwareEnabled',
         'TriggerPosition': 'triggerPosition',
     }
+    _SDM_ENUM_MAP = {
+        'afterTriggerFilter': ['captureAfterTriggerAll', 'captureAfterTriggerConditionFilter', 'captureAfterTriggerFilter'],
+        'beforeTriggerFilter': ['captureBeforeTriggerAll', 'captureBeforeTriggerFilter', 'captureBeforeTriggerNone'],
+        'captureMode': ['captureContinuousMode', 'captureTriggerMode'],
+        'continuousFilters': ['captureContinuousAll', 'captureContinuousFilter'],
+        'controlBufferBehaviour': ['bufferAfterStopCircular', 'bufferAfterStopNonCircular', 'bufferLiveCircular', 'bufferLiveNonCircular'],
+        'controlCaptureState': ['notReady', 'ready'],
+        'controlInterfaceType': ['anyInterface', 'specificInterface'],
+    }
 
-    def __init__(self, parent):
-        super(Capture, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Capture, self).__init__(parent, list_op)
 
     @property
     def CurrentPacket(self):
@@ -74,7 +84,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.currentpacket import CurrentPacket
-        return CurrentPacket(self)._select()
+        if self._properties.get('CurrentPacket', None) is not None:
+            return self._properties.get('CurrentPacket')
+        else:
+            return CurrentPacket(self)._select()
 
     @property
     def Filter(self):
@@ -88,7 +101,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.capture.filter.filter import Filter
-        return Filter(self)._select()
+        if self._properties.get('Filter', None) is not None:
+            return self._properties.get('Filter')
+        else:
+            return Filter(self)._select()
 
     @property
     def FilterPallette(self):
@@ -102,7 +118,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.capture.filterpallette.filterpallette import FilterPallette
-        return FilterPallette(self)._select()
+        if self._properties.get('FilterPallette', None) is not None:
+            return self._properties.get('FilterPallette')
+        else:
+            return FilterPallette(self)._select()
 
     @property
     def Trigger(self):
@@ -116,10 +135,14 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.capture.trigger.trigger import Trigger
-        return Trigger(self)._select()
+        if self._properties.get('Trigger', None) is not None:
+            return self._properties.get('Trigger')
+        else:
+            return Trigger(self)._select()
 
     @property
     def AfterTriggerFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,10 +151,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AfterTriggerFilter'])
     @AfterTriggerFilter.setter
     def AfterTriggerFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AfterTriggerFilter'], value)
 
     @property
     def BeforeTriggerFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,10 +165,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BeforeTriggerFilter'])
     @BeforeTriggerFilter.setter
     def BeforeTriggerFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BeforeTriggerFilter'], value)
 
     @property
     def CaptureMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,10 +179,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureMode'])
     @CaptureMode.setter
     def CaptureMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureMode'], value)
 
     @property
     def ContinuousFilters(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -164,10 +193,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ContinuousFilters'])
     @ContinuousFilters.setter
     def ContinuousFilters(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ContinuousFilters'], value)
 
     @property
     def ControlActiveCapture(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,10 +207,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlActiveCapture'])
     @ControlActiveCapture.setter
     def ControlActiveCapture(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlActiveCapture'], value)
 
     @property
     def ControlBufferBehaviour(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,10 +221,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlBufferBehaviour'])
     @ControlBufferBehaviour.setter
     def ControlBufferBehaviour(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlBufferBehaviour'], value)
 
     @property
     def ControlBufferSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -200,10 +235,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlBufferSize'])
     @ControlBufferSize.setter
     def ControlBufferSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlBufferSize'], value)
 
     @property
     def ControlCaptureFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -212,10 +249,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlCaptureFilter'])
     @ControlCaptureFilter.setter
     def ControlCaptureFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlCaptureFilter'], value)
 
     @property
     def ControlCaptureState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -225,6 +264,7 @@ class Capture(Base):
 
     @property
     def ControlCaptureTrigger(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -233,10 +273,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlCaptureTrigger'])
     @ControlCaptureTrigger.setter
     def ControlCaptureTrigger(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlCaptureTrigger'], value)
 
     @property
     def ControlCapturedPacketCounter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -246,6 +288,7 @@ class Capture(Base):
 
     @property
     def ControlCaptures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -255,6 +298,7 @@ class Capture(Base):
 
     @property
     def ControlDecodeAsCurrentFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -264,6 +308,7 @@ class Capture(Base):
 
     @property
     def ControlInterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -272,10 +317,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlInterfaceType'])
     @ControlInterfaceType.setter
     def ControlInterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlInterfaceType'], value)
 
     @property
     def ControlPacketCounter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -285,6 +332,7 @@ class Capture(Base):
 
     @property
     def ControlSliceSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -293,10 +341,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlSliceSize'])
     @ControlSliceSize.setter
     def ControlSliceSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlSliceSize'], value)
 
     @property
     def DecodeAsLinkProtocols(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -306,6 +356,7 @@ class Capture(Base):
 
     @property
     def DecodeAsNetworkProtocols(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -315,6 +366,7 @@ class Capture(Base):
 
     @property
     def DecodeAsTransportProtocols(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -324,6 +376,7 @@ class Capture(Base):
 
     @property
     def DisplayFiltersControlCapture(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -332,10 +385,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisplayFiltersControlCapture'])
     @DisplayFiltersControlCapture.setter
     def DisplayFiltersControlCapture(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisplayFiltersControlCapture'], value)
 
     @property
     def HardwareEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -344,10 +399,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HardwareEnabled'])
     @HardwareEnabled.setter
     def HardwareEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['HardwareEnabled'], value)
 
     @property
     def IsCaptureRunning(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -357,6 +414,7 @@ class Capture(Base):
 
     @property
     def IsControlCaptureRunning(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -366,6 +424,7 @@ class Capture(Base):
 
     @property
     def SliceSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -374,10 +433,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SliceSize'])
     @SliceSize.setter
     def SliceSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SliceSize'], value)
 
     @property
     def SoftwareEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -386,10 +447,12 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SoftwareEnabled'])
     @SoftwareEnabled.setter
     def SoftwareEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SoftwareEnabled'], value)
 
     @property
     def TriggerPosition(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -398,9 +461,11 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggerPosition'])
     @TriggerPosition.setter
     def TriggerPosition(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggerPosition'], value)
 
     def update(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureTrigger=None, ControlInterfaceType=None, ControlSliceSize=None, DisplayFiltersControlCapture=None, HardwareEnabled=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, bool, int, bool, int) -> Capture
         """Updates capture resource on the server.
 
         Args
@@ -429,27 +494,30 @@ class Capture(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def DecodeAsApply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the decodeAsApply operation on the server.
 
         The command forces a re-dissection of all packets based on a filter condition. (similar with Decode As from Wireshark)
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        decodeAsApply(Arg2=enum, Arg3=enum, Arg4=number, Arg5=string)
-        -------------------------------------------------------------
+        decodeAsApply(Arg2=enum, Arg3=enum, Arg4=number, Arg5=string, async_operation=bool)
+        -----------------------------------------------------------------------------------
         - Arg2 (str(control | data)): The capture type, could be either control or data.
         - Arg3 (str(link | network | transport)): Specifies the network layer at witch the command should take place.
         - Arg4 (number): Could be the TCP port for Transport layer (either source or destination), IP protocol for Network layer or Ethertype for Link layer.
         - Arg5 (str): The protocol name to re-dissect as.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        decodeAsApply(Arg2=enum, Arg3=enum, Arg4=number, Arg5=enum, Arg6=number, Arg7=string)
-        -------------------------------------------------------------------------------------
+        decodeAsApply(Arg2=enum, Arg3=enum, Arg4=number, Arg5=enum, Arg6=number, Arg7=string, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------
         - Arg2 (str(control | data)): The capture type, could be either control or data.
         - Arg3 (str(transport)): The transport layer.
         - Arg4 (number): The TCP source port.
         - Arg5 (str(transport)): The transport layer.
         - Arg6 (number): The TCP destination port.
         - Arg7 (str): The protocol name to re-dissect as.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -462,13 +530,15 @@ class Capture(Base):
         return self._execute('decodeAsApply', payload=payload, response_object=None)
 
     def DecodeAsClear(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the decodeAsClear operation on the server.
 
         The command clears the dissection filter set by DecodeAsApply command.
 
-        decodeAsClear(Arg2=enum)
-        ------------------------
+        decodeAsClear(Arg2=enum, async_operation=bool)
+        ----------------------------------------------
         - Arg2 (str(control | data)): The capture type, could be either control or data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -481,24 +551,27 @@ class Capture(Base):
         return self._execute('decodeAsClear', payload=payload, response_object=None)
 
     def MergeCapture(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the mergeCapture operation on the server.
 
         The command merges to online captures.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        mergeCapture(Arg2=enum, Arg3=href, Arg4=enum, Arg5=string)
-        ----------------------------------------------------------
+        mergeCapture(Arg2=enum, Arg3=href, Arg4=enum, Arg5=string, async_operation=bool)
+        --------------------------------------------------------------------------------
         - Arg2 (str(control | data)): The capture type, could be either control or data.
-        - Arg3 (str(None | /api/v1/sessions/9/ixnetwork/vport/.../capture)): The capture object of a port.
+        - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The capture object of a port.
         - Arg4 (str(control | data)): The capture type, could be either control or data.
         - Arg5 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        mergeCapture(Arg2=enum, Arg3=string, Arg4=string)
-        -------------------------------------------------
+        mergeCapture(Arg2=enum, Arg3=string, Arg4=string, async_operation=bool)
+        -----------------------------------------------------------------------
         - Arg2 (str(control | data)): The capture type, could be either control or data.
         - Arg3 (str): The full path of the offline capture.
         - Arg4 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -511,15 +584,21 @@ class Capture(Base):
         return self._execute('mergeCapture', payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
-        The command starts the capture porcess for the specified port.
+        This command starts the capture process for a port or group of ports.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start(Arg2=enum)
-        ----------------
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(Arg2=enum, async_operation=bool)
+        --------------------------------------
         - Arg2 (str(allTraffic | controlTraffic | dataTraffic)): The type of the capture that should be started.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -532,15 +611,21 @@ class Capture(Base):
         return self._execute('start', payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
-        The command stops the capture on a port.
+        This command stops captures for the specified capture configuration.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stop(Arg2=enum)
-        ---------------
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(Arg2=enum, async_operation=bool)
+        -------------------------------------
         - Arg2 (str(allTraffic | controlTraffic | dataTraffic)): The capture type.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

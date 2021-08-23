@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EthernetTrafficEndPoint(Base):
@@ -54,12 +55,16 @@ class EthernetTrafficEndPoint(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'pbbEtherType': ['bEtherType8100', 'bEtherType88A8', 'bEtherType88E7', 'bEtherType9100', 'bEtherType9200'],
+    }
 
-    def __init__(self, parent):
-        super(EthernetTrafficEndPoint, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EthernetTrafficEndPoint, self).__init__(parent, list_op)
 
     @property
     def ArpViaInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -68,10 +73,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpViaInterface'])
     @ArpViaInterface.setter
     def ArpViaInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpViaInterface'], value)
 
     @property
     def CustomEtherHeaderLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +87,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomEtherHeaderLength'])
     @CustomEtherHeaderLength.setter
     def CustomEtherHeaderLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomEtherHeaderLength'], value)
 
     @property
     def CustomEtherHeaderValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,10 +101,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomEtherHeaderValue'])
     @CustomEtherHeaderValue.setter
     def CustomEtherHeaderValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomEtherHeaderValue'], value)
 
     @property
     def CustomEtherType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +115,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomEtherType'])
     @CustomEtherType.setter
     def CustomEtherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomEtherType'], value)
 
     @property
     def EnableMacInMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,10 +129,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMacInMac'])
     @EnableMacInMac.setter
     def EnableMacInMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMacInMac'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -128,10 +143,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def GatewayMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,10 +157,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayMac'])
     @GatewayMac.setter
     def GatewayMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayMac'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,10 +171,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -164,10 +185,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PbbDestinamtionMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,10 +199,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbDestinamtionMac'])
     @PbbDestinamtionMac.setter
     def PbbDestinamtionMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbDestinamtionMac'], value)
 
     @property
     def PbbEtherType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,10 +213,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbEtherType'])
     @PbbEtherType.setter
     def PbbEtherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbEtherType'], value)
 
     @property
     def PbbIsId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,10 +227,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbIsId'])
     @PbbIsId.setter
     def PbbIsId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbIsId'], value)
 
     @property
     def PbbSourceMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -212,10 +241,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbSourceMac'])
     @PbbSourceMac.setter
     def PbbSourceMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbSourceMac'], value)
 
     @property
     def PbbVlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,10 +255,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbVlanId'])
     @PbbVlanId.setter
     def PbbVlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbVlanId'], value)
 
     @property
     def PbbVlanPcp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -236,10 +269,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbVlanPcp'])
     @PbbVlanPcp.setter
     def PbbVlanPcp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbVlanPcp'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -248,10 +283,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     @property
     def RangeSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -260,10 +297,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RangeSize'])
     @RangeSize.setter
     def RangeSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RangeSize'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -272,10 +311,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -284,10 +325,12 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -296,9 +339,11 @@ class EthernetTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, int, int, str, str) -> EthernetTrafficEndPoint
         """Updates ethernetTrafficEndPoint resource on the server.
 
         Args
@@ -331,6 +376,7 @@ class EthernetTrafficEndPoint(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, int, int, str, str) -> EthernetTrafficEndPoint
         """Adds a new ethernetTrafficEndPoint resource on the server and adds it to the container.
 
         Args
@@ -377,6 +423,7 @@ class EthernetTrafficEndPoint(Base):
         self._delete()
 
     def find(self, ArpViaInterface=None, CustomEtherHeaderLength=None, CustomEtherHeaderValue=None, CustomEtherType=None, EnableMacInMac=None, EnableVlan=None, GatewayMac=None, MacAddress=None, Name=None, PbbDestinamtionMac=None, PbbEtherType=None, PbbIsId=None, PbbSourceMac=None, PbbVlanId=None, PbbVlanPcp=None, ProtocolInterface=None, RangeSize=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, bool, bool, str, str, str, str, str, str, str, str, str, str, int, int, str, str) -> EthernetTrafficEndPoint
         """Finds and retrieves ethernetTrafficEndPoint resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernetTrafficEndPoint resources from the server.

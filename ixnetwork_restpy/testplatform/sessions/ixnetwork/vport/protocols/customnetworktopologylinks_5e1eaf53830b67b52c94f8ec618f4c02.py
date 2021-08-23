@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomNetworkTopologyLinks(Base):
@@ -37,12 +38,15 @@ class CustomNetworkTopologyLinks(Base):
         'LinkMetric': 'linkMetric',
         'LinkNodeSystemId': 'linkNodeSystemId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomNetworkTopologyLinks, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomNetworkTopologyLinks, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class CustomNetworkTopologyLinks(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class CustomNetworkTopologyLinks(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
     @LinkMetric.setter
     def LinkMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
 
     @property
     def LinkNodeSystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +83,11 @@ class CustomNetworkTopologyLinks(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkNodeSystemId'])
     @LinkNodeSystemId.setter
     def LinkNodeSystemId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkNodeSystemId'], value)
 
     def update(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
+        # type: (bool, int, str) -> CustomNetworkTopologyLinks
         """Updates customNetworkTopologyLinks resource on the server.
 
         Args
@@ -93,6 +103,7 @@ class CustomNetworkTopologyLinks(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
+        # type: (bool, int, str) -> CustomNetworkTopologyLinks
         """Adds a new customNetworkTopologyLinks resource on the server and adds it to the container.
 
         Args
@@ -122,6 +133,7 @@ class CustomNetworkTopologyLinks(Base):
         self._delete()
 
     def find(self, Enabled=None, LinkMetric=None, LinkNodeSystemId=None):
+        # type: (bool, int, str) -> CustomNetworkTopologyLinks
         """Finds and retrieves customNetworkTopologyLinks resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customNetworkTopologyLinks resources from the server.

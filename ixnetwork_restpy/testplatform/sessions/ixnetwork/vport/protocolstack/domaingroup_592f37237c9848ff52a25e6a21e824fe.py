@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DomainGroup(Base):
@@ -43,12 +44,15 @@ class DomainGroup(Base):
         'StartWidth': 'startWidth',
         'TrailingName': 'trailingName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DomainGroup, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DomainGroup, self).__init__(parent, list_op)
 
     @property
     def AutoIncrement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -57,10 +61,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoIncrement'])
     @AutoIncrement.setter
     def AutoIncrement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoIncrement'], value)
 
     @property
     def BaseName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,10 +75,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BaseName'])
     @BaseName.setter
     def BaseName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BaseName'], value)
 
     @property
     def FullName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,10 +89,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FullName'])
     @FullName.setter
     def FullName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FullName'], value)
 
     @property
     def IncrementCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +103,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementCount'])
     @IncrementCount.setter
     def IncrementCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementCount'], value)
 
     @property
     def IncrementRepeat(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,10 +117,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementRepeat'])
     @IncrementRepeat.setter
     def IncrementRepeat(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementRepeat'], value)
 
     @property
     def IpAddresses(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -117,10 +131,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddresses'])
     @IpAddresses.setter
     def IpAddresses(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddresses'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,6 +146,7 @@ class DomainGroup(Base):
 
     @property
     def StartWidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,10 +155,12 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartWidth'])
     @StartWidth.setter
     def StartWidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartWidth'], value)
 
     @property
     def TrailingName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,9 +169,11 @@ class DomainGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrailingName'])
     @TrailingName.setter
     def TrailingName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrailingName'], value)
 
     def update(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, StartWidth=None, TrailingName=None):
+        # type: (bool, str, str, int, int, List[str], str, str) -> DomainGroup
         """Updates domainGroup resource on the server.
 
         Args
@@ -173,6 +194,7 @@ class DomainGroup(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, StartWidth=None, TrailingName=None):
+        # type: (bool, str, str, int, int, List[str], str, str) -> DomainGroup
         """Adds a new domainGroup resource on the server and adds it to the container.
 
         Args
@@ -207,6 +229,7 @@ class DomainGroup(Base):
         self._delete()
 
     def find(self, AutoIncrement=None, BaseName=None, FullName=None, IncrementCount=None, IncrementRepeat=None, IpAddresses=None, ObjectId=None, StartWidth=None, TrailingName=None):
+        # type: (bool, str, str, int, int, List[str], str, str, str) -> DomainGroup
         """Finds and retrieves domainGroup resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve domainGroup resources from the server.
@@ -254,14 +277,16 @@ class DomainGroup(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -274,13 +299,15 @@ class DomainGroup(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -294,13 +321,15 @@ class DomainGroup(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

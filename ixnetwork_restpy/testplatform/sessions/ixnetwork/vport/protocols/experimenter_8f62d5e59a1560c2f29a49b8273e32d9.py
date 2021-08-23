@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Experimenter(Base):
@@ -40,12 +41,15 @@ class Experimenter(Base):
         'ExperimenterId': 'experimenterId',
         'ExperimenterIdMiss': 'experimenterIdMiss',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Experimenter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Experimenter, self).__init__(parent, list_op)
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
     @ExperimenterData.setter
     def ExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
 
     @property
     def ExperimenterDataLengthMiss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'])
     @ExperimenterDataLengthMiss.setter
     def ExperimenterDataLengthMiss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'], value)
 
     @property
     def ExperimenterDataMiss(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'])
     @ExperimenterDataMiss.setter
     def ExperimenterDataMiss(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'], value)
 
     @property
     def ExperimenterField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
     @ExperimenterField.setter
     def ExperimenterField(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
 
     @property
     def ExperimenterFieldMiss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterFieldMiss'])
     @ExperimenterFieldMiss.setter
     def ExperimenterFieldMiss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterFieldMiss'], value)
 
     @property
     def ExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,10 +142,12 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
     @ExperimenterId.setter
     def ExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
 
     @property
     def ExperimenterIdMiss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,9 +156,11 @@ class Experimenter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'])
     @ExperimenterIdMiss.setter
     def ExperimenterIdMiss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'], value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterField=None, ExperimenterFieldMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+        # type: (str, int, int, str, int, int, int, int) -> Experimenter
         """Updates experimenter resource on the server.
 
         Args

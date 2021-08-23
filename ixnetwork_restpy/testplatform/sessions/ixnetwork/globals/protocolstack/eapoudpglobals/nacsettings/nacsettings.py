@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NacSettings(Base):
@@ -33,9 +34,11 @@ class NacSettings(Base):
     _SDM_ATT_MAP = {
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NacSettings, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NacSettings, self).__init__(parent, list_op)
 
     @property
     def NacPosture(self):
@@ -49,7 +52,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacposture.nacposture import NacPosture
-        return NacPosture(self)
+        if self._properties.get('NacPosture', None) is not None:
+            return self._properties.get('NacPosture')
+        else:
+            return NacPosture(self)
 
     @property
     def NacSequence(self):
@@ -63,7 +69,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsequence.nacsequence import NacSequence
-        return NacSequence(self)
+        if self._properties.get('NacSequence', None) is not None:
+            return self._properties.get('NacSequence')
+        else:
+            return NacSequence(self)
 
     @property
     def NacTlv(self):
@@ -77,7 +86,10 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.nactlv import NacTlv
-        return NacTlv(self)
+        if self._properties.get('NacTlv', None) is not None:
+            return self._properties.get('NacTlv')
+        else:
+            return NacTlv(self)
 
     @property
     def NacVendors(self):
@@ -91,10 +103,14 @@ class NacSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nacvendors import NacVendors
-        return NacVendors(self)
+        if self._properties.get('NacVendors', None) is not None:
+            return self._properties.get('NacVendors')
+        else:
+            return NacVendors(self)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------

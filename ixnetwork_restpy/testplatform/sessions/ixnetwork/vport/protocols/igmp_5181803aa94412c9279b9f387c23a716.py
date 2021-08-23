@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Igmp(Base):
@@ -42,9 +43,12 @@ class Igmp(Base):
         'StatsEnabled': 'statsEnabled',
         'TimePeriod': 'timePeriod',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Igmp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Igmp, self).__init__(parent, list_op)
 
     @property
     def Host(self):
@@ -58,7 +62,10 @@ class Igmp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.host_0710de542a7934016dc82d18924d1082 import Host
-        return Host(self)
+        if self._properties.get('Host', None) is not None:
+            return self._properties.get('Host')
+        else:
+            return Host(self)
 
     @property
     def Querier(self):
@@ -72,10 +79,14 @@ class Igmp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.querier_caaf4682cc5c2a511c8c68d13991790f import Querier
-        return Querier(self)
+        if self._properties.get('Querier', None) is not None:
+            return self._properties.get('Querier')
+        else:
+            return Querier(self)
 
     @property
     def EnableUnicastMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +95,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUnicastMode'])
     @EnableUnicastMode.setter
     def EnableUnicastMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUnicastMode'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +109,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def NumberOfGroups(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,10 +123,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfGroups'])
     @NumberOfGroups.setter
     def NumberOfGroups(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfGroups'], value)
 
     @property
     def NumberOfQueries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +137,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfQueries'])
     @NumberOfQueries.setter
     def NumberOfQueries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfQueries'], value)
 
     @property
     def QueryTimePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +151,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueryTimePeriod'])
     @QueryTimePeriod.setter
     def QueryTimePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueryTimePeriod'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,6 +166,7 @@ class Igmp(Base):
 
     @property
     def SendLeaveOnHostDisable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +175,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendLeaveOnHostDisable'])
     @SendLeaveOnHostDisable.setter
     def SendLeaveOnHostDisable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendLeaveOnHostDisable'], value)
 
     @property
     def SendLeaveOnStop(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -165,10 +189,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendLeaveOnStop'])
     @SendLeaveOnStop.setter
     def SendLeaveOnStop(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendLeaveOnStop'], value)
 
     @property
     def StatsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -177,10 +203,12 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StatsEnabled'])
     @StatsEnabled.setter
     def StatsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StatsEnabled'], value)
 
     @property
     def TimePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,9 +217,11 @@ class Igmp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimePeriod'])
     @TimePeriod.setter
     def TimePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimePeriod'], value)
 
     def update(self, EnableUnicastMode=None, Enabled=None, NumberOfGroups=None, NumberOfQueries=None, QueryTimePeriod=None, SendLeaveOnHostDisable=None, SendLeaveOnStop=None, StatsEnabled=None, TimePeriod=None):
+        # type: (bool, bool, int, int, int, bool, bool, bool, int) -> Igmp
         """Updates igmp resource on the server.
 
         Args
@@ -213,14 +243,16 @@ class Igmp(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def Join(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the join operation on the server.
 
         NOT DEFINED
 
-        join(Arg2=string, Arg3=number)
-        ------------------------------
+        join(Arg2=string, Arg3=number, async_operation=bool)
+        ----------------------------------------------------
         - Arg2 (str): NOT DEFINED
         - Arg3 (number): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -233,14 +265,16 @@ class Igmp(Base):
         return self._execute('join', payload=payload, response_object=None)
 
     def Leave(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the leave operation on the server.
 
         NOT DEFINED
 
-        leave(Arg2=string, Arg3=number)
-        -------------------------------
+        leave(Arg2=string, Arg3=number, async_operation=bool)
+        -----------------------------------------------------
         - Arg2 (str): NOT DEFINED
         - Arg3 (number): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -252,28 +286,42 @@ class Igmp(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('leave', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the EIGRP protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the IGMP protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -70,12 +71,20 @@ class TestConfig(Base):
         'TxDelay': 'txDelay',
         'UndersizeFramesizeList': 'undersizeFramesizeList',
     }
+    _SDM_ENUM_MAP = {
+        'binarySearchType': ['linear', 'perFlow', 'perPort'],
+        'frameSizeMode': ['custom', 'increment', 'random'],
+        'loadType': ['binary', 'combo', 'custom', 'fixed', 'increment', 'quickSearch', 'random', 'step', 'unchanged'],
+        'portDelayUnit': ['bytes', 'nanoseconds'],
+        'trafficType': ['burstyLoading', 'constantLoading'],
+    }
 
-    def __init__(self, parent):
-        super(TestConfig, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TestConfig, self).__init__(parent, list_op)
 
     @property
     def BidirectionalOptionEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +93,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BidirectionalOptionEnabled'])
     @BidirectionalOptionEnabled.setter
     def BidirectionalOptionEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BidirectionalOptionEnabled'], value)
 
     @property
     def BinarySearchType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +107,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinarySearchType'])
     @BinarySearchType.setter
     def BinarySearchType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinarySearchType'], value)
 
     @property
     def BurstSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,10 +121,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
     @BurstSize.setter
     def BurstSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
 
     @property
     def CountRandomFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +135,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CountRandomFrameSize'])
     @CountRandomFrameSize.setter
     def CountRandomFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CountRandomFrameSize'], value)
 
     @property
     def DelayAfterTransmit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +149,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'])
     @DelayAfterTransmit.setter
     def DelayAfterTransmit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'], value)
 
     @property
     def Duration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,10 +163,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Duration'])
     @Duration.setter
     def Duration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
 
     @property
     def EnableAlignmentErr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +177,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAlignmentErr'])
     @EnableAlignmentErr.setter
     def EnableAlignmentErr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAlignmentErr'], value)
 
     @property
     def EnableBadCrcErr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +191,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBadCrcErr'])
     @EnableBadCrcErr.setter
     def EnableBadCrcErr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBadCrcErr'], value)
 
     @property
     def EnableDribbleErr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,10 +205,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDribbleErr'])
     @EnableDribbleErr.setter
     def EnableDribbleErr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDribbleErr'], value)
 
     @property
     def EnableFragmentErr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -192,10 +219,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFragmentErr'])
     @EnableFragmentErr.setter
     def EnableFragmentErr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFragmentErr'], value)
 
     @property
     def EnableMinFrameSize(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +233,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
 
     @property
     def EnableOversizeErr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,10 +247,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableOversizeErr'])
     @EnableOversizeErr.setter
     def EnableOversizeErr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableOversizeErr'], value)
 
     @property
     def EnableUndersizeErr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -228,10 +261,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUndersizeErr'])
     @EnableUndersizeErr.setter
     def EnableUndersizeErr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUndersizeErr'], value)
 
     @property
     def EnforceBidirectional(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -240,10 +275,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnforceBidirectional'])
     @EnforceBidirectional.setter
     def EnforceBidirectional(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnforceBidirectional'], value)
 
     @property
     def ForceRegenerate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -252,10 +289,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForceRegenerate'])
     @ForceRegenerate.setter
     def ForceRegenerate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForceRegenerate'], value)
 
     @property
     def FragmentFramesizeList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -264,10 +303,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FragmentFramesizeList'])
     @FragmentFramesizeList.setter
     def FragmentFramesizeList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FragmentFramesizeList'], value)
 
     @property
     def FrameSizeMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -276,10 +317,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FrameSizeMode'])
     @FrameSizeMode.setter
     def FrameSizeMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FrameSizeMode'], value)
 
     @property
     def FramesizeList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -288,10 +331,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FramesizeList'])
     @FramesizeList.setter
     def FramesizeList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['FramesizeList'], value)
 
     @property
     def LoadRatePercent(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,10 +345,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LoadRatePercent'])
     @LoadRatePercent.setter
     def LoadRatePercent(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LoadRatePercent'], value)
 
     @property
     def LoadType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +359,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
     @LoadType.setter
     def LoadType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
 
     @property
     def MapType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -324,10 +373,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MapType'])
     @MapType.setter
     def MapType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MapType'], value)
 
     @property
     def MaxIncrementFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -336,10 +387,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxIncrementFrameSize'])
     @MaxIncrementFrameSize.setter
     def MaxIncrementFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxIncrementFrameSize'], value)
 
     @property
     def MaxRandomFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -348,10 +401,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'])
     @MaxRandomFrameSize.setter
     def MaxRandomFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRandomFrameSize'], value)
 
     @property
     def MinIncrementFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -360,10 +415,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinIncrementFrameSize'])
     @MinIncrementFrameSize.setter
     def MinIncrementFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinIncrementFrameSize'], value)
 
     @property
     def MinRandomFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -372,10 +429,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'])
     @MinRandomFrameSize.setter
     def MinRandomFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRandomFrameSize'], value)
 
     @property
     def Numtrials(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -384,10 +443,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
     @Numtrials.setter
     def Numtrials(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
 
     @property
     def OversizeFramesizeList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -396,10 +457,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OversizeFramesizeList'])
     @OversizeFramesizeList.setter
     def OversizeFramesizeList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OversizeFramesizeList'], value)
 
     @property
     def PassFailNote(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -408,10 +471,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PassFailNote'])
     @PassFailNote.setter
     def PassFailNote(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PassFailNote'], value)
 
     @property
     def PortDelayEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -420,10 +485,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelayEnabled'])
     @PortDelayEnabled.setter
     def PortDelayEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelayEnabled'], value)
 
     @property
     def PortDelayUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -432,10 +499,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelayUnit'])
     @PortDelayUnit.setter
     def PortDelayUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelayUnit'], value)
 
     @property
     def PortDelayValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -444,10 +513,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelayValue'])
     @PortDelayValue.setter
     def PortDelayValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelayValue'], value)
 
     @property
     def ProtocolItem(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -456,10 +527,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
     def ProtocolItem(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
 
     @property
     def SendFullyMeshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -468,10 +541,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendFullyMeshed'])
     @SendFullyMeshed.setter
     def SendFullyMeshed(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendFullyMeshed'], value)
 
     @property
     def StepIncrementFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -480,10 +555,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepIncrementFrameSize'])
     @StepIncrementFrameSize.setter
     def StepIncrementFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepIncrementFrameSize'], value)
 
     @property
     def SupportedTrafficTypes(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -492,10 +569,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'])
     @SupportedTrafficTypes.setter
     def SupportedTrafficTypes(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'], value)
 
     @property
     def TrafficType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -504,10 +583,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
     @TrafficType.setter
     def TrafficType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
 
     @property
     def TxDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -516,10 +597,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
     @TxDelay.setter
     def TxDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
 
     @property
     def UndersizeFramesizeList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -528,9 +611,11 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UndersizeFramesizeList'])
     @UndersizeFramesizeList.setter
     def UndersizeFramesizeList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UndersizeFramesizeList'], value)
 
     def update(self, BidirectionalOptionEnabled=None, BinarySearchType=None, BurstSize=None, CountRandomFrameSize=None, DelayAfterTransmit=None, Duration=None, EnableAlignmentErr=None, EnableBadCrcErr=None, EnableDribbleErr=None, EnableFragmentErr=None, EnableMinFrameSize=None, EnableOversizeErr=None, EnableUndersizeErr=None, EnforceBidirectional=None, ForceRegenerate=None, FragmentFramesizeList=None, FrameSizeMode=None, FramesizeList=None, LoadRatePercent=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, Numtrials=None, OversizeFramesizeList=None, PassFailNote=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, SendFullyMeshed=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TrafficType=None, TxDelay=None, UndersizeFramesizeList=None):
+        # type: (bool, str, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, List[str], int, str, str, int, int, int, int, int, str, str, bool, str, int, List[str], bool, int, str, str, int, str) -> TestConfig
         """Updates testConfig resource on the server.
 
         Args
@@ -580,32 +665,52 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)
 
-    def ApplyAsync(self):
+    def ApplyAsync(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyAsync operation on the server.
 
+        applyAsync(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsync', payload=payload, response_object=None)
 
-    def ApplyAsyncResult(self):
+    def ApplyAsyncResult(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the applyAsyncResult operation on the server.
+
+        applyAsyncResult(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: 
 
         Raises
         ------
@@ -613,44 +718,68 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
 
-    def ApplyITWizardConfiguration(self):
+    def ApplyITWizardConfiguration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyITWizardConfiguration operation on the server.
 
         Applies the specified Quick Test.
 
+        applyITWizardConfiguration(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
 
-    def GenerateReport(self):
+    def GenerateReport(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the generateReport operation on the server.
 
         Generate a PDF report for the last succesfull test run.
 
+        generateReport(async_operation=bool)string
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: This method is asynchronous and has no return value.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('generateReport', payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the run operation on the server.
 
         Starts the specified Quick Test and waits for its execution to finish.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run(InputParameters=string)list
-        -------------------------------
+        run(async_operation=bool)list
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        run(InputParameters=string, async_operation=bool)list
+        -----------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): This method is synchronous and returns the result of the test.
 
         Raises
@@ -664,15 +793,21 @@ class TestConfig(Base):
         return self._execute('run', payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the specified Quick Test.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start(InputParameters=string)
-        -----------------------------
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(InputParameters=string, async_operation=bool)
+        ---------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -684,28 +819,43 @@ class TestConfig(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the currently running Quick Test.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def WaitForTest(self):
+    def WaitForTest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the waitForTest operation on the server.
 
         Waits for the execution of the specified Quick Test to be completed.
 
+        waitForTest(async_operation=bool)list
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('waitForTest', payload=payload, response_object=None)

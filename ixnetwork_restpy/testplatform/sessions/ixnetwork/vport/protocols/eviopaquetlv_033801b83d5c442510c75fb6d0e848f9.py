@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EviOpaqueTlv(Base):
@@ -37,12 +38,15 @@ class EviOpaqueTlv(Base):
         'Type': 'type',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EviOpaqueTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EviOpaqueTlv, self).__init__(parent, list_op)
 
     @property
     def Length(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class EviOpaqueTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Length'])
     @Length.setter
     def Length(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Length'], value)
 
     @property
     def Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class EviOpaqueTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +83,11 @@ class EviOpaqueTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Length=None, Type=None, Value=None):
+        # type: (int, int, str) -> EviOpaqueTlv
         """Updates eviOpaqueTlv resource on the server.
 
         Args
@@ -93,6 +103,7 @@ class EviOpaqueTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Length=None, Type=None, Value=None):
+        # type: (int, int, str) -> EviOpaqueTlv
         """Adds a new eviOpaqueTlv resource on the server and adds it to the container.
 
         Args
@@ -122,6 +133,7 @@ class EviOpaqueTlv(Base):
         self._delete()
 
     def find(self, Length=None, Type=None, Value=None):
+        # type: (int, int, str) -> EviOpaqueTlv
         """Finds and retrieves eviOpaqueTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eviOpaqueTlv resources from the server.

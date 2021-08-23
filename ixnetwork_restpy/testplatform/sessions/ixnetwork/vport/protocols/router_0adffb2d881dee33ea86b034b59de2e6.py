@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -37,12 +38,15 @@ class Router(Base):
         'Interfaces': 'interfaces',
         'VBit': 'vBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def BBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BBit'])
     @BBit.setter
     def BBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
 
     @property
     def EBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,6 +69,7 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EBit'])
     @EBit.setter
     def EBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
 
     @property
@@ -79,6 +86,7 @@ class Router(Base):
 
     @property
     def VBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,6 +95,7 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VBit'])
     @VBit.setter
     def VBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VBit'], value)
 
     def update(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
@@ -104,6 +113,26 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
+        """Adds a new router resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - BBit (bool): 
+        - EBit (bool): 
+        - Interfaces (list(dict(arg1:str,arg2:str,arg3:str[pointToPoint | transit | stub | virtual],arg4:number))): 
+        - VBit (bool): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved router resources using find and the newly added router resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, BBit=None, EBit=None, Interfaces=None, VBit=None):
         """Finds and retrieves router resources from the server.

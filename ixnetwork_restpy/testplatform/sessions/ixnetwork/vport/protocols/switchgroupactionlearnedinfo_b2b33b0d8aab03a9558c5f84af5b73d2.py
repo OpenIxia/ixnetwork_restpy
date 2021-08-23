@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchGroupActionLearnedInfo(Base):
@@ -81,12 +82,15 @@ class SwitchGroupActionLearnedInfo(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchGroupActionLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchGroupActionLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def ActionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +100,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ArpDestinationHwAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +110,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ArpDstIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +120,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ArpOpcode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,6 +130,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ArpSourceHwAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,6 +140,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ArpSrcIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,6 +150,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +160,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,6 +170,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,6 +180,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Experimenter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,6 +190,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -186,6 +200,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def ExperimenterDatalength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,6 +210,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,6 +220,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Icmpv4Code(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -213,6 +230,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Icmpv4Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -222,6 +240,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Icmpv6Code(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -231,6 +250,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Icmpv6Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,6 +260,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -249,6 +270,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def IpEcn(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -258,6 +280,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def IpProto(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -267,6 +290,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -276,6 +300,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -285,6 +310,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -294,6 +320,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6ExtHeader(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -303,6 +330,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -312,6 +340,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6NdSll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -321,6 +350,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6NdTarget(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -330,6 +360,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6NdTll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,6 +370,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def Ipv6Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,6 +380,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def MaxByteLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -357,6 +390,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def MplsBos(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -366,6 +400,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -375,6 +410,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def MplsTc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -384,6 +420,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def MplsTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -393,6 +430,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def NetworkTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -402,6 +440,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def OutputPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -411,6 +450,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def OutputPortType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -420,6 +460,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def PbbIsid(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -429,6 +470,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def QueueId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -438,6 +480,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def SctpDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -447,6 +490,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def SctpSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -456,6 +500,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def TcpDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -465,6 +510,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def TcpSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -474,6 +520,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def TunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -483,6 +530,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def UdpDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -492,6 +540,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def UdpSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -501,6 +550,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -510,6 +560,7 @@ class SwitchGroupActionLearnedInfo(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -517,7 +568,21 @@ class SwitchGroupActionLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
 
+    def add(self):
+        """Adds a new switchGroupActionLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchGroupActionLearnedInfo resources using find and the newly added switchGroupActionLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActionType=None, ArpDestinationHwAddress=None, ArpDstIpv4Address=None, ArpOpcode=None, ArpSourceHwAddress=None, ArpSrcIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProto=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NetworkTtl=None, OutputPort=None, OutputPortType=None, PbbIsid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, str, int, str, str, str, str, str, int, str, int, int, int, int, int, int, str, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, str, int, int, int, int) -> SwitchGroupActionLearnedInfo
         """Finds and retrieves switchGroupActionLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupActionLearnedInfo resources from the server.

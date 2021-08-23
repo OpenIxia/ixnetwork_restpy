@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Template(Base):
@@ -35,9 +36,11 @@ class Template(Base):
     _SDM_ATT_MAP = {
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Template, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Template, self).__init__(parent, list_op)
 
     @property
     def Tlv(self):
@@ -51,10 +54,14 @@ class Template(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlv_485a5849242c96601ea954c1e6fdcfe5 import Tlv
-        return Tlv(self)
+        if self._properties.get('Tlv', None) is not None:
+            return self._properties.get('Tlv')
+        else:
+            return Tlv(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,9 +70,11 @@ class Template(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Template
         """Updates template resource on the server.
 
         Args
@@ -79,6 +88,7 @@ class Template(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> Template
         """Adds a new template resource on the server and adds it to the container.
 
         Args
@@ -106,6 +116,7 @@ class Template(Base):
         self._delete()
 
     def find(self, Name=None):
+        # type: (str) -> Template
         """Finds and retrieves template resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve template resources from the server.

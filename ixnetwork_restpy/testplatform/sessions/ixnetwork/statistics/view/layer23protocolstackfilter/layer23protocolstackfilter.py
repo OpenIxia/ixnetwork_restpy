@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23ProtocolStackFilter(Base):
@@ -39,12 +40,16 @@ class Layer23ProtocolStackFilter(Base):
         'SortAscending': 'sortAscending',
         'SortingStatistic': 'sortingStatistic',
     }
+    _SDM_ENUM_MAP = {
+        'drilldownType': ['perRange', 'perSession'],
+    }
 
-    def __init__(self, parent):
-        super(Layer23ProtocolStackFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23ProtocolStackFilter, self).__init__(parent, list_op)
 
     @property
     def DrilldownType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DrilldownType'])
     @DrilldownType.setter
     def DrilldownType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DrilldownType'], value)
 
     @property
     def NumberOfResults(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def ProtocolStackFilterId(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'])
     @ProtocolStackFilterId.setter
     def ProtocolStackFilterId(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'], value)
 
     @property
     def SortAscending(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +100,12 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortAscending'])
     @SortAscending.setter
     def SortAscending(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortAscending'], value)
 
     @property
     def SortingStatistic(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +114,11 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortingStatistic'])
     @SortingStatistic.setter
     def SortingStatistic(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingStatistic'], value)
 
     def update(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+        # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Updates layer23ProtocolStackFilter resource on the server.
 
         Args
@@ -121,6 +136,7 @@ class Layer23ProtocolStackFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+        # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Adds a new layer23ProtocolStackFilter resource on the server and adds it to the container.
 
         Args
@@ -152,6 +168,7 @@ class Layer23ProtocolStackFilter(Base):
         self._delete()
 
     def find(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+        # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Finds and retrieves layer23ProtocolStackFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23ProtocolStackFilter resources from the server.

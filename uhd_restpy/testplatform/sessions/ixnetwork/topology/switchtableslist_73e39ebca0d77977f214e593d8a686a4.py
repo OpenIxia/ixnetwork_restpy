@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchTablesList(Base):
@@ -65,12 +66,15 @@ class SwitchTablesList(Base):
         'WriteSetFieldMiss': 'writeSetFieldMiss',
         'WriteSetFieldMissMask': 'writeSetFieldMissMask',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchTablesList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchTablesList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -81,6 +85,7 @@ class SwitchTablesList(Base):
 
     @property
     def ApplyActions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -91,6 +96,7 @@ class SwitchTablesList(Base):
 
     @property
     def ApplyActionsMiss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +107,7 @@ class SwitchTablesList(Base):
 
     @property
     def ApplySetField(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -111,6 +118,7 @@ class SwitchTablesList(Base):
 
     @property
     def ApplySetFieldMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +129,7 @@ class SwitchTablesList(Base):
 
     @property
     def ApplySetFieldMiss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +140,7 @@ class SwitchTablesList(Base):
 
     @property
     def ApplySetFieldMissMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +151,7 @@ class SwitchTablesList(Base):
 
     @property
     def AutoConfigNextTable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +162,7 @@ class SwitchTablesList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,6 +172,7 @@ class SwitchTablesList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +182,7 @@ class SwitchTablesList(Base):
 
     @property
     def FeaturesSupported(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +193,7 @@ class SwitchTablesList(Base):
 
     @property
     def Instruction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +204,7 @@ class SwitchTablesList(Base):
 
     @property
     def InstructionMiss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +215,7 @@ class SwitchTablesList(Base):
 
     @property
     def Match(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -209,6 +226,7 @@ class SwitchTablesList(Base):
 
     @property
     def MatchMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +237,7 @@ class SwitchTablesList(Base):
 
     @property
     def MaxTableEntries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +248,7 @@ class SwitchTablesList(Base):
 
     @property
     def MetadataMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +259,7 @@ class SwitchTablesList(Base):
 
     @property
     def MetadataWrite(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +270,7 @@ class SwitchTablesList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -257,10 +279,12 @@ class SwitchTablesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NextTable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -271,6 +295,7 @@ class SwitchTablesList(Base):
 
     @property
     def NextTableMiss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +306,7 @@ class SwitchTablesList(Base):
 
     @property
     def ParentSwitch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -290,6 +316,7 @@ class SwitchTablesList(Base):
 
     @property
     def TableId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +327,7 @@ class SwitchTablesList(Base):
 
     @property
     def TableName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +338,7 @@ class SwitchTablesList(Base):
 
     @property
     def WildcardFeature(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +349,7 @@ class SwitchTablesList(Base):
 
     @property
     def WildcardFeatureMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -330,6 +360,7 @@ class SwitchTablesList(Base):
 
     @property
     def WriteActions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -340,6 +371,7 @@ class SwitchTablesList(Base):
 
     @property
     def WriteActionsMiss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +382,7 @@ class SwitchTablesList(Base):
 
     @property
     def WriteSetField(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +393,7 @@ class SwitchTablesList(Base):
 
     @property
     def WriteSetFieldMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +404,7 @@ class SwitchTablesList(Base):
 
     @property
     def WriteSetFieldMiss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +415,7 @@ class SwitchTablesList(Base):
 
     @property
     def WriteSetFieldMissMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -389,6 +425,7 @@ class SwitchTablesList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMissMask']))
 
     def update(self, Name=None):
+        # type: (str) -> SwitchTablesList
         """Updates switchTablesList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -404,7 +441,26 @@ class SwitchTablesList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> SwitchTablesList
+        """Adds a new switchTablesList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchTablesList resources using find and the newly added switchTablesList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, ParentSwitch=None):
+        # type: (int, str, str, str) -> SwitchTablesList
         """Finds and retrieves switchTablesList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchTablesList resources from the server.

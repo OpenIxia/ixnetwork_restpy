@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Value(Base):
@@ -33,9 +34,11 @@ class Value(Base):
     _SDM_ATT_MAP = {
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Value, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Value, self).__init__(parent, list_op)
 
     @property
     def Object(self):
@@ -49,10 +52,14 @@ class Value(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is not None:
+            return self._properties.get('Object')
+        else:
+            return Object(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,9 +68,11 @@ class Value(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Value
         """Updates value resource on the server.
 
         Args
@@ -76,28 +85,42 @@ class Value(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def GetMVPropertyCandidatesToSharePatternWith(self):
+    def GetMVPropertyCandidatesToSharePatternWith(self, *args, **kwargs):
         """Executes the getMVPropertyCandidatesToSharePatternWith operation on the server.
 
         Returns a list of MVProperties this pattern can be shared with.
 
+        getMVPropertyCandidatesToSharePatternWith(async_operation=bool)list
+        -------------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(list[str[None | /api/v1/sessions/1/ixnetwork//.../*]]): list of MVProperties this pattern can be shared with
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getMVPropertyCandidatesToSharePatternWith', payload=payload, response_object=None)
 
-    def GetSharedPatternCandidates(self):
+    def GetSharedPatternCandidates(self, *args, **kwargs):
         """Executes the getSharedPatternCandidates operation on the server.
 
         Returns a list of shared pattern candidates.
 
+        getSharedPatternCandidates(async_operation=bool)list
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(list[str[None | /api/v1/sessions/1/ixnetwork//.../*]]): list of patterns may be shared
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getSharedPatternCandidates', payload=payload, response_object=None)

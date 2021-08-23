@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IncludeIpFecRange(Base):
@@ -39,12 +40,15 @@ class IncludeIpFecRange(Base):
         'MaskWidth': 'maskWidth',
         'NumberOfNetworks': 'numberOfNetworks',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IncludeIpFecRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IncludeIpFecRange, self).__init__(parent, list_op)
 
     @property
     def EnableExactPrefixMatch(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class IncludeIpFecRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableExactPrefixMatch'])
     @EnableExactPrefixMatch.setter
     def EnableExactPrefixMatch(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableExactPrefixMatch'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class IncludeIpFecRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstNetwork(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class IncludeIpFecRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstNetwork'])
     @FirstNetwork.setter
     def FirstNetwork(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstNetwork'], value)
 
     @property
     def MaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class IncludeIpFecRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
     @MaskWidth.setter
     def MaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
 
     @property
     def NumberOfNetworks(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,9 +113,11 @@ class IncludeIpFecRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfNetworks'])
     @NumberOfNetworks.setter
     def NumberOfNetworks(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfNetworks'], value)
 
     def update(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
+        # type: (bool, bool, str, int, int) -> IncludeIpFecRange
         """Updates includeIpFecRange resource on the server.
 
         Args
@@ -121,6 +135,7 @@ class IncludeIpFecRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
+        # type: (bool, bool, str, int, int) -> IncludeIpFecRange
         """Adds a new includeIpFecRange resource on the server and adds it to the container.
 
         Args
@@ -152,6 +167,7 @@ class IncludeIpFecRange(Base):
         self._delete()
 
     def find(self, EnableExactPrefixMatch=None, Enabled=None, FirstNetwork=None, MaskWidth=None, NumberOfNetworks=None):
+        # type: (bool, bool, str, int, int) -> IncludeIpFecRange
         """Finds and retrieves includeIpFecRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve includeIpFecRange resources from the server.

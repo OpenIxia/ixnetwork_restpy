@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class JoinPrune(Base):
@@ -54,9 +55,13 @@ class JoinPrune(Base):
         'SourceMaskWidth': 'sourceMaskWidth',
         'SptSwitchoverInterval': 'sptSwitchoverInterval',
     }
+    _SDM_ENUM_MAP = {
+        'groupMappingMode': ['fullyMeshed', 'oneToOne'],
+        'groupRange': ['rp', 'g', 'sg', 'sptSwitchOver', 'registerTriggeredSg'],
+    }
 
-    def __init__(self, parent):
-        super(JoinPrune, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(JoinPrune, self).__init__(parent, list_op)
 
     @property
     def LearnedMgrState(self):
@@ -70,10 +75,14 @@ class JoinPrune(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmgrstate_d7919072a223792ffde967c8d24af004 import LearnedMgrState
-        return LearnedMgrState(self)
+        if self._properties.get('LearnedMgrState', None) is not None:
+            return self._properties.get('LearnedMgrState')
+        else:
+            return LearnedMgrState(self)
 
     @property
     def DiscardRegisterStates(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,10 +91,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscardRegisterStates'])
     @DiscardRegisterStates.setter
     def DiscardRegisterStates(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscardRegisterStates'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -94,10 +105,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EnabledDataMdt(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,10 +119,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledDataMdt'])
     @EnabledDataMdt.setter
     def EnabledDataMdt(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledDataMdt'], value)
 
     @property
     def FlapEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -118,10 +133,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlapEnabled'])
     @FlapEnabled.setter
     def FlapEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlapEnabled'], value)
 
     @property
     def FlapInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +147,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlapInterval'])
     @FlapInterval.setter
     def FlapInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlapInterval'], value)
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,10 +161,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupAddress'])
     @GroupAddress.setter
     def GroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupAddress'], value)
 
     @property
     def GroupCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,10 +175,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupCount'])
     @GroupCount.setter
     def GroupCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupCount'], value)
 
     @property
     def GroupMappingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,10 +189,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupMappingMode'])
     @GroupMappingMode.setter
     def GroupMappingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupMappingMode'], value)
 
     @property
     def GroupMaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -178,10 +203,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupMaskWidth'])
     @GroupMaskWidth.setter
     def GroupMaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupMaskWidth'], value)
 
     @property
     def GroupRange(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,10 +217,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupRange'])
     @GroupRange.setter
     def GroupRange(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupRange'], value)
 
     @property
     def NumRegToReceivePerSg(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,10 +231,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRegToReceivePerSg'])
     @NumRegToReceivePerSg.setter
     def NumRegToReceivePerSg(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRegToReceivePerSg'], value)
 
     @property
     def PackGroupsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -214,10 +245,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PackGroupsEnabled'])
     @PackGroupsEnabled.setter
     def PackGroupsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PackGroupsEnabled'], value)
 
     @property
     def PruneSourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,10 +259,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PruneSourceAddress'])
     @PruneSourceAddress.setter
     def PruneSourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PruneSourceAddress'], value)
 
     @property
     def PruneSourceCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -238,10 +273,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PruneSourceCount'])
     @PruneSourceCount.setter
     def PruneSourceCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PruneSourceCount'], value)
 
     @property
     def PruneSourceMaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -250,10 +287,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PruneSourceMaskWidth'])
     @PruneSourceMaskWidth.setter
     def PruneSourceMaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PruneSourceMaskWidth'], value)
 
     @property
     def RpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -262,10 +301,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RpAddress'])
     @RpAddress.setter
     def RpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RpAddress'], value)
 
     @property
     def SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -274,10 +315,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddress'])
     @SourceAddress.setter
     def SourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddress'], value)
 
     @property
     def SourceCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -286,10 +329,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceCount'])
     @SourceCount.setter
     def SourceCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceCount'], value)
 
     @property
     def SourceMaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -298,10 +343,12 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceMaskWidth'])
     @SourceMaskWidth.setter
     def SourceMaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceMaskWidth'], value)
 
     @property
     def SptSwitchoverInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -310,9 +357,11 @@ class JoinPrune(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SptSwitchoverInterval'])
     @SptSwitchoverInterval.setter
     def SptSwitchoverInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SptSwitchoverInterval'], value)
 
     def update(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+        # type: (bool, bool, bool, bool, int, str, int, str, int, str, int, bool, str, int, int, str, str, int, int, int) -> JoinPrune
         """Updates joinPrune resource on the server.
 
         Args
@@ -345,6 +394,7 @@ class JoinPrune(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+        # type: (bool, bool, bool, bool, int, str, int, str, int, str, int, bool, str, int, int, str, str, int, int, int) -> JoinPrune
         """Adds a new joinPrune resource on the server and adds it to the container.
 
         Args
@@ -391,6 +441,7 @@ class JoinPrune(Base):
         self._delete()
 
     def find(self, DiscardRegisterStates=None, Enabled=None, EnabledDataMdt=None, FlapEnabled=None, FlapInterval=None, GroupAddress=None, GroupCount=None, GroupMappingMode=None, GroupMaskWidth=None, GroupRange=None, NumRegToReceivePerSg=None, PackGroupsEnabled=None, PruneSourceAddress=None, PruneSourceCount=None, PruneSourceMaskWidth=None, RpAddress=None, SourceAddress=None, SourceCount=None, SourceMaskWidth=None, SptSwitchoverInterval=None):
+        # type: (bool, bool, bool, bool, int, str, int, str, int, str, int, bool, str, int, int, str, str, int, int, int) -> JoinPrune
         """Finds and retrieves joinPrune resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve joinPrune resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UmhImportTarget(Base):
@@ -33,9 +34,11 @@ class UmhImportTarget(Base):
     _SDM_ATT_MAP = {
         'ImportTargetList': 'importTargetList',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(UmhImportTarget, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UmhImportTarget, self).__init__(parent, list_op)
 
     @property
     def ImportTargetList(self):

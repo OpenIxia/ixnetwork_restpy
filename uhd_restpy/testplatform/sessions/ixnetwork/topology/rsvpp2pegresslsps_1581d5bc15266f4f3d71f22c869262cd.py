@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RsvpP2PEgressLsps(Base):
@@ -53,9 +54,11 @@ class RsvpP2PEgressLsps(Base):
         'State': 'state',
         'TimeoutMultiplier': 'timeoutMultiplier',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RsvpP2PEgressLsps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RsvpP2PEgressLsps, self).__init__(parent, list_op)
 
     @property
     def RsvpRROSubObjectsList(self):
@@ -69,7 +72,10 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist_77057ceebebb20e47d2ca898582fad61 import RsvpRROSubObjectsList
-        return RsvpRROSubObjectsList(self)
+        if self._properties.get('RsvpRROSubObjectsList', None) is not None:
+            return self._properties.get('RsvpRROSubObjectsList')
+        else:
+            return RsvpRROSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -83,10 +89,14 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +107,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +117,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +127,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def EnableFixedLabelForReservations(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +138,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def EnableReplyingLspPing(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +149,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def EndPointIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +160,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def ForwardLspSelfPing(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +171,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def InitialLspSelfPingDropCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +182,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def IpTTLDecrementCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +193,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def LabelValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +204,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -194,6 +214,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def LspSelfPingIPDSCP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -204,6 +225,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -212,10 +234,12 @@ class RsvpP2PEgressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfRroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -224,10 +248,12 @@ class RsvpP2PEgressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'])
     @NumberOfRroSubObjects.setter
     def NumberOfRroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'], value)
 
     @property
     def ReflectRro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +264,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def RefreshInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +275,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def ReservationStyle(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +286,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def RetainLspSelfPingDSCP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +297,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def SendReservationConfirmation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -278,6 +308,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -287,6 +318,7 @@ class RsvpP2PEgressLsps(Base):
 
     @property
     def TimeoutMultiplier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -296,6 +328,7 @@ class RsvpP2PEgressLsps(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier']))
 
     def update(self, Name=None, NumberOfRroSubObjects=None):
+        # type: (str, int) -> RsvpP2PEgressLsps
         """Updates rsvpP2PEgressLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -311,6 +344,82 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the start operation on the server.
+
+        Activate/Enable selected Tunnel Tail Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stop operation on the server.
+
+        Deactivate/Disable selected Tunnel Tail Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, EnableFixedLabelForReservations=None, EnableReplyingLspPing=None, EndPointIpv6=None, ForwardLspSelfPing=None, InitialLspSelfPingDropCount=None, IpTTLDecrementCount=None, LabelValue=None, LspSelfPingIPDSCP=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, RetainLspSelfPingDSCP=None, SendReservationConfirmation=None, TimeoutMultiplier=None):
         """Base class infrastructure that gets a list of rsvpP2PEgressLsps device ids encapsulated by this object.
@@ -345,63 +454,3 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Activate/Enable selected Tunnel Tail Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        start(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Deactivate/Disable selected Tunnel Tail Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stop(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

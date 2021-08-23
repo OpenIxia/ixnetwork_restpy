@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OFSwitchLearnedInfoConfig(Base):
@@ -41,12 +42,18 @@ class OFSwitchLearnedInfoConfig(Base):
         'FlowStatTableIdValue': 'flowStatTableIdValue',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+        'flowStatOutGroupMode': ['oFPGALL', 'oFPGANY', 'outGroupCustom'],
+        'flowStatOutPortMode': ['oFPP_IN_PORT', 'oFPP_NORMAL', 'oFPP_FLOOD', 'oFPP_ALL', 'oFPP_CONTROLLER', 'oFPP_LOCAL', 'oFPP_ANY', 'outPortCustom'],
+        'flowStatTableIdMode': ['tableIdAllTables', 'tableIdCustom'],
+    }
 
-    def __init__(self, parent):
-        super(OFSwitchLearnedInfoConfig, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OFSwitchLearnedInfoConfig, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,6 +63,7 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +73,7 @@ class OFSwitchLearnedInfoConfig(Base):
 
     @property
     def FlowStatOutGroupMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,10 +82,12 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutGroupMode'])
     @FlowStatOutGroupMode.setter
     def FlowStatOutGroupMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutGroupMode'], value)
 
     @property
     def FlowStatOutGroupValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,10 +96,12 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutGroupValue'])
     @FlowStatOutGroupValue.setter
     def FlowStatOutGroupValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutGroupValue'], value)
 
     @property
     def FlowStatOutPortMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,10 +110,12 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPortMode'])
     @FlowStatOutPortMode.setter
     def FlowStatOutPortMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPortMode'], value)
 
     @property
     def FlowStatOutPortValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,10 +124,12 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPortValue'])
     @FlowStatOutPortValue.setter
     def FlowStatOutPortValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPortValue'], value)
 
     @property
     def FlowStatTableIdMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,10 +138,12 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdMode'])
     @FlowStatTableIdMode.setter
     def FlowStatTableIdMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdMode'], value)
 
     @property
     def FlowStatTableIdValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -133,10 +152,12 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdValue'])
     @FlowStatTableIdValue.setter
     def FlowStatTableIdValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdValue'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,9 +166,11 @@ class OFSwitchLearnedInfoConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, FlowStatOutGroupMode=None, FlowStatOutGroupValue=None, FlowStatOutPortMode=None, FlowStatOutPortValue=None, FlowStatTableIdMode=None, FlowStatTableIdValue=None, Name=None):
+        # type: (str, int, str, int, str, int, str) -> OFSwitchLearnedInfoConfig
         """Updates oFSwitchLearnedInfoConfig resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -68,9 +69,13 @@ class Interface(Base):
         'TriggeredHelloDelay': 'triggeredHelloDelay',
         'UpstreamNeighbor': 'upstreamNeighbor',
     }
+    _SDM_ENUM_MAP = {
+        'addressFamily': ['ipv4', 'ipv6'],
+        'generationIdMode': ['incremental', 'random', 'constant'],
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def CrpRange(self):
@@ -84,7 +89,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.crprange_597167656c83f71e3e5a55938cb106a8 import CrpRange
-        return CrpRange(self)
+        if self._properties.get('CrpRange', None) is not None:
+            return self._properties.get('CrpRange')
+        else:
+            return CrpRange(self)
 
     @property
     def DataMdt(self):
@@ -98,7 +106,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.datamdt_79ed433986fc353fbd239fb7999ae1ee import DataMdt
-        return DataMdt(self)
+        if self._properties.get('DataMdt', None) is not None:
+            return self._properties.get('DataMdt')
+        else:
+            return DataMdt(self)
 
     @property
     def JoinPrune(self):
@@ -112,7 +123,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.joinprune_9763e6279a674992cf71e86306c68672 import JoinPrune
-        return JoinPrune(self)
+        if self._properties.get('JoinPrune', None) is not None:
+            return self._properties.get('JoinPrune')
+        else:
+            return JoinPrune(self)
 
     @property
     def LearnedBsrInfo(self):
@@ -126,7 +140,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedbsrinfo_2b92bfaf7519829d075075f5c767de14 import LearnedBsrInfo
-        return LearnedBsrInfo(self)
+        if self._properties.get('LearnedBsrInfo', None) is not None:
+            return self._properties.get('LearnedBsrInfo')
+        else:
+            return LearnedBsrInfo(self)
 
     @property
     def LearnedCrpInfo(self):
@@ -140,7 +157,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedcrpinfo_60dd066e4b0de49ae66860f72856bd39 import LearnedCrpInfo
-        return LearnedCrpInfo(self)
+        if self._properties.get('LearnedCrpInfo', None) is not None:
+            return self._properties.get('LearnedCrpInfo')
+        else:
+            return LearnedCrpInfo(self)
 
     @property
     def LearnedMdtInfo(self):
@@ -154,7 +174,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtinfo_bbc54102507121c33244de8dacb03b19 import LearnedMdtInfo
-        return LearnedMdtInfo(self)
+        if self._properties.get('LearnedMdtInfo', None) is not None:
+            return self._properties.get('LearnedMdtInfo')
+        else:
+            return LearnedMdtInfo(self)
 
     @property
     def Source(self):
@@ -168,10 +191,14 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_f52e88433233160a4b212fd8bab440ba import Source
-        return Source(self)
+        if self._properties.get('Source', None) is not None:
+            return self._properties.get('Source')
+        else:
+            return Source(self)
 
     @property
     def AddressFamily(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +207,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddressFamily'])
     @AddressFamily.setter
     def AddressFamily(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddressFamily'], value)
 
     @property
     def AutoPickUpstreamNeighbor(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -192,10 +221,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoPickUpstreamNeighbor'])
     @AutoPickUpstreamNeighbor.setter
     def AutoPickUpstreamNeighbor(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoPickUpstreamNeighbor'], value)
 
     @property
     def BootstrapEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +235,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BootstrapEnable'])
     @BootstrapEnable.setter
     def BootstrapEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BootstrapEnable'], value)
 
     @property
     def BootstrapHashMaskLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -216,10 +249,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BootstrapHashMaskLen'])
     @BootstrapHashMaskLen.setter
     def BootstrapHashMaskLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BootstrapHashMaskLen'], value)
 
     @property
     def BootstrapInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -228,10 +263,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BootstrapInterval'])
     @BootstrapInterval.setter
     def BootstrapInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BootstrapInterval'], value)
 
     @property
     def BootstrapPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,10 +277,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BootstrapPriority'])
     @BootstrapPriority.setter
     def BootstrapPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BootstrapPriority'], value)
 
     @property
     def BootstrapTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +291,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BootstrapTimeout'])
     @BootstrapTimeout.setter
     def BootstrapTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BootstrapTimeout'], value)
 
     @property
     def DisableTriggeredHello(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -264,10 +305,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisableTriggeredHello'])
     @DisableTriggeredHello.setter
     def DisableTriggeredHello(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisableTriggeredHello'], value)
 
     @property
     def DiscardDataMdtTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -276,10 +319,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscardDataMdtTlv'])
     @DiscardDataMdtTlv.setter
     def DiscardDataMdtTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscardDataMdtTlv'], value)
 
     @property
     def DiscardLearnedRpInfo(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -288,10 +333,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedRpInfo'])
     @DiscardLearnedRpInfo.setter
     def DiscardLearnedRpInfo(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedRpInfo'], value)
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -300,10 +347,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
 
     @property
     def EnableV4MappedV6Address(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -312,10 +361,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableV4MappedV6Address'])
     @EnableV4MappedV6Address.setter
     def EnableV4MappedV6Address(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableV4MappedV6Address'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -324,10 +375,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ForceSemanticFragmentation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -336,10 +389,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForceSemanticFragmentation'])
     @ForceSemanticFragmentation.setter
     def ForceSemanticFragmentation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForceSemanticFragmentation'], value)
 
     @property
     def GenerationIdMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,10 +403,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GenerationIdMode'])
     @GenerationIdMode.setter
     def GenerationIdMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GenerationIdMode'], value)
 
     @property
     def HelloHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -360,10 +417,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloHoldTime'])
     @HelloHoldTime.setter
     def HelloHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloHoldTime'], value)
 
     @property
     def HelloInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -372,10 +431,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
     @HelloInterval.setter
     def HelloInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -384,10 +445,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def InterfaceIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -396,10 +459,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -408,10 +473,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -420,10 +487,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     @property
     def IsRefreshRpSetComplete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -433,6 +502,7 @@ class Interface(Base):
 
     @property
     def LanPruneDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -441,10 +511,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LanPruneDelay'])
     @LanPruneDelay.setter
     def LanPruneDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LanPruneDelay'], value)
 
     @property
     def LanPruneDelayTBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -453,10 +525,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LanPruneDelayTBit'])
     @LanPruneDelayTBit.setter
     def LanPruneDelayTBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LanPruneDelayTBit'], value)
 
     @property
     def LearnSelectedRpSet(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -465,10 +539,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LearnSelectedRpSet'])
     @LearnSelectedRpSet.setter
     def LearnSelectedRpSet(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LearnSelectedRpSet'], value)
 
     @property
     def OverrideInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -477,10 +553,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideInterval'])
     @OverrideInterval.setter
     def OverrideInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideInterval'], value)
 
     @property
     def SendBiDirCapableOption(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -489,10 +567,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendBiDirCapableOption'])
     @SendBiDirCapableOption.setter
     def SendBiDirCapableOption(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendBiDirCapableOption'], value)
 
     @property
     def SendGenIdOption(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -501,10 +581,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendGenIdOption'])
     @SendGenIdOption.setter
     def SendGenIdOption(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendGenIdOption'], value)
 
     @property
     def SendHelloLanPruneDelayOption(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -513,10 +595,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendHelloLanPruneDelayOption'])
     @SendHelloLanPruneDelayOption.setter
     def SendHelloLanPruneDelayOption(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendHelloLanPruneDelayOption'], value)
 
     @property
     def ShowSelectedRpSetOnly(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -525,10 +609,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ShowSelectedRpSetOnly'])
     @ShowSelectedRpSetOnly.setter
     def ShowSelectedRpSetOnly(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ShowSelectedRpSetOnly'], value)
 
     @property
     def SupportUnicastBootstrap(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -537,10 +623,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportUnicastBootstrap'])
     @SupportUnicastBootstrap.setter
     def SupportUnicastBootstrap(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportUnicastBootstrap'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -549,10 +637,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def TriggeredHelloDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -561,10 +651,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggeredHelloDelay'])
     @TriggeredHelloDelay.setter
     def TriggeredHelloDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggeredHelloDelay'], value)
 
     @property
     def UpstreamNeighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -573,9 +665,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamNeighbor'])
     @UpstreamNeighbor.setter
     def UpstreamNeighbor(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamNeighbor'], value)
 
     def update(self, AddressFamily=None, AutoPickUpstreamNeighbor=None, BootstrapEnable=None, BootstrapHashMaskLen=None, BootstrapInterval=None, BootstrapPriority=None, BootstrapTimeout=None, DisableTriggeredHello=None, DiscardDataMdtTlv=None, DiscardLearnedRpInfo=None, EnableBfdRegistration=None, EnableV4MappedV6Address=None, Enabled=None, ForceSemanticFragmentation=None, GenerationIdMode=None, HelloHoldTime=None, HelloInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, LanPruneDelay=None, LanPruneDelayTBit=None, LearnSelectedRpSet=None, OverrideInterval=None, SendBiDirCapableOption=None, SendGenIdOption=None, SendHelloLanPruneDelayOption=None, ShowSelectedRpSetOnly=None, SupportUnicastBootstrap=None, TrafficGroupId=None, TriggeredHelloDelay=None, UpstreamNeighbor=None):
+        # type: (str, bool, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, str, int, int, str, int, str, str, int, bool, bool, int, bool, bool, bool, bool, bool, str, int, str) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -621,6 +715,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AddressFamily=None, AutoPickUpstreamNeighbor=None, BootstrapEnable=None, BootstrapHashMaskLen=None, BootstrapInterval=None, BootstrapPriority=None, BootstrapTimeout=None, DisableTriggeredHello=None, DiscardDataMdtTlv=None, DiscardLearnedRpInfo=None, EnableBfdRegistration=None, EnableV4MappedV6Address=None, Enabled=None, ForceSemanticFragmentation=None, GenerationIdMode=None, HelloHoldTime=None, HelloInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, LanPruneDelay=None, LanPruneDelayTBit=None, LearnSelectedRpSet=None, OverrideInterval=None, SendBiDirCapableOption=None, SendGenIdOption=None, SendHelloLanPruneDelayOption=None, ShowSelectedRpSetOnly=None, SupportUnicastBootstrap=None, TrafficGroupId=None, TriggeredHelloDelay=None, UpstreamNeighbor=None):
+        # type: (str, bool, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, str, int, int, str, int, str, str, int, bool, bool, int, bool, bool, bool, bool, bool, str, int, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -680,6 +775,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, AddressFamily=None, AutoPickUpstreamNeighbor=None, BootstrapEnable=None, BootstrapHashMaskLen=None, BootstrapInterval=None, BootstrapPriority=None, BootstrapTimeout=None, DisableTriggeredHello=None, DiscardDataMdtTlv=None, DiscardLearnedRpInfo=None, EnableBfdRegistration=None, EnableV4MappedV6Address=None, Enabled=None, ForceSemanticFragmentation=None, GenerationIdMode=None, HelloHoldTime=None, HelloInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IsRefreshRpSetComplete=None, LanPruneDelay=None, LanPruneDelayTBit=None, LearnSelectedRpSet=None, OverrideInterval=None, SendBiDirCapableOption=None, SendGenIdOption=None, SendHelloLanPruneDelayOption=None, ShowSelectedRpSetOnly=None, SupportUnicastBootstrap=None, TrafficGroupId=None, TriggeredHelloDelay=None, UpstreamNeighbor=None):
+        # type: (str, bool, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, str, int, int, str, int, str, str, bool, int, bool, bool, int, bool, bool, bool, bool, bool, str, int, str) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
@@ -751,28 +847,44 @@ class Interface(Base):
         """
         return self._read(href)
 
-    def GetInterfaceAccessorIfaceList(self):
+    def GetInterfaceAccessorIfaceList(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
         Gets the interface accesor Iface list.
 
+        getInterfaceAccessorIfaceList(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: Return list of interface.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
 
-    def RefreshCrpBsrLearnedInfo(self):
+    def RefreshCrpBsrLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshCrpBsrLearnedInfo operation on the server.
 
         If true, refreshes the Bsr learned information
 
+        refreshCrpBsrLearnedInfo(async_operation=bool)bool
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: Returns boolean value on success.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshCrpBsrLearnedInfo', payload=payload, response_object=None)

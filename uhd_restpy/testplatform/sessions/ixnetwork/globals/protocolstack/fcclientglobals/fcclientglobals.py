@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcClientGlobals(Base):
@@ -41,12 +42,15 @@ class FcClientGlobals(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcClientGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcClientGlobals, self).__init__(parent, list_op)
 
     @property
     def AcceptPartialConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class FcClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def MaxPacketsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class FcClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def MaxRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class FcClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRetries'])
     @MaxRetries.setter
     def MaxRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRetries'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +102,7 @@ class FcClientGlobals(Base):
 
     @property
     def RetryInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,10 +111,12 @@ class FcClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetryInterval'])
     @RetryInterval.setter
     def RetryInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetryInterval'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,10 +125,12 @@ class FcClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,9 +139,11 @@ class FcClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
+        # type: (bool, int, int, int, int, int) -> FcClientGlobals
         """Updates fcClientGlobals resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class FcClientGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
+        # type: (bool, int, int, int, int, int) -> FcClientGlobals
         """Adds a new fcClientGlobals resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class FcClientGlobals(Base):
         self._delete()
 
     def find(self, AcceptPartialConfig=None, MaxPacketsPerSecond=None, MaxRetries=None, ObjectId=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
+        # type: (bool, int, int, str, int, int, int) -> FcClientGlobals
         """Finds and retrieves fcClientGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcClientGlobals resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Band(Base):
@@ -40,12 +41,16 @@ class Band(Base):
         'Rate': 'rate',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['drop', 'dscpRemark', 'experimenter'],
+    }
 
-    def __init__(self, parent):
-        super(Band, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Band, self).__init__(parent, list_op)
 
     @property
     def BurstSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,10 +59,12 @@ class Band(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
     @BurstSize.setter
     def BurstSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class Band(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Experimenter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class Band(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
     @Experimenter.setter
     def Experimenter(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
 
     @property
     def PrecedenceLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class Band(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrecedenceLevel'])
     @PrecedenceLevel.setter
     def PrecedenceLevel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrecedenceLevel'], value)
 
     @property
     def Rate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,10 +115,12 @@ class Band(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rate'])
     @Rate.setter
     def Rate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,9 +129,11 @@ class Band(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+        # type: (int, str, int, int, int, str) -> Band
         """Updates band resource on the server.
 
         Args
@@ -135,6 +152,7 @@ class Band(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+        # type: (int, str, int, int, int, str) -> Band
         """Adds a new band resource on the server and adds it to the container.
 
         Args
@@ -167,6 +185,7 @@ class Band(Base):
         self._delete()
 
     def find(self, BurstSize=None, Description=None, Experimenter=None, PrecedenceLevel=None, Rate=None, Type=None):
+        # type: (int, str, int, int, int, str) -> Band
         """Finds and retrieves band resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve band resources from the server.

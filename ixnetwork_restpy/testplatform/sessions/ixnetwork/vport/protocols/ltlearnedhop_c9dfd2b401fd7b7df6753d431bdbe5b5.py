@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LtLearnedHop(Base):
@@ -37,12 +38,15 @@ class LtLearnedHop(Base):
         'ReplyTtl': 'replyTtl',
         'Self': 'self',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LtLearnedHop, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LtLearnedHop, self).__init__(parent, list_op)
 
     @property
     def EgressMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,6 +56,7 @@ class LtLearnedHop(Base):
 
     @property
     def IngressMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +66,7 @@ class LtLearnedHop(Base):
 
     @property
     def ReplyTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,6 +76,7 @@ class LtLearnedHop(Base):
 
     @property
     def Self(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,7 +84,21 @@ class LtLearnedHop(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Self'])
 
+    def add(self):
+        """Adds a new ltLearnedHop resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ltLearnedHop resources using find and the newly added ltLearnedHop resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, EgressMac=None, IngressMac=None, ReplyTtl=None, Self=None):
+        # type: (str, str, int, bool) -> LtLearnedHop
         """Finds and retrieves ltLearnedHop resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ltLearnedHop resources from the server.

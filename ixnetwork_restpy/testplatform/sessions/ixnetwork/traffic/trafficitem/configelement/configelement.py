@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ConfigElement(Base):
@@ -40,9 +41,14 @@ class ConfigElement(Base):
         'PreambleCustomSize': 'preambleCustomSize',
         'PreambleFrameSizeMode': 'preambleFrameSizeMode',
     }
+    _SDM_ENUM_MAP = {
+        'crc': ['badCrc', 'goodCrc'],
+        'destinationMacMode': ['arp', 'manual'],
+        'preambleFrameSizeMode': ['auto', 'custom'],
+    }
 
-    def __init__(self, parent):
-        super(ConfigElement, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ConfigElement, self).__init__(parent, list_op)
 
     @property
     def FramePayload(self):
@@ -56,7 +62,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload import FramePayload
-        return FramePayload(self)._select()
+        if self._properties.get('FramePayload', None) is not None:
+            return self._properties.get('FramePayload')
+        else:
+            return FramePayload(self)._select()
 
     @property
     def FrameRate(self):
@@ -70,7 +79,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate import FrameRate
-        return FrameRate(self)._select()
+        if self._properties.get('FrameRate', None) is not None:
+            return self._properties.get('FrameRate')
+        else:
+            return FrameRate(self)._select()
 
     @property
     def FrameRateDistribution(self):
@@ -84,7 +96,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.frameratedistribution.frameratedistribution import FrameRateDistribution
-        return FrameRateDistribution(self)._select()
+        if self._properties.get('FrameRateDistribution', None) is not None:
+            return self._properties.get('FrameRateDistribution')
+        else:
+            return FrameRateDistribution(self)._select()
 
     @property
     def FrameSize(self):
@@ -98,7 +113,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize import FrameSize
-        return FrameSize(self)._select()
+        if self._properties.get('FrameSize', None) is not None:
+            return self._properties.get('FrameSize')
+        else:
+            return FrameSize(self)._select()
 
     @property
     def Stack(self):
@@ -112,7 +130,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
-        return Stack(self)
+        if self._properties.get('Stack', None) is not None:
+            return self._properties.get('Stack')
+        else:
+            return Stack(self)
 
     @property
     def StackLink(self):
@@ -126,7 +147,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink import StackLink
-        return StackLink(self)
+        if self._properties.get('StackLink', None) is not None:
+            return self._properties.get('StackLink')
+        else:
+            return StackLink(self)
 
     @property
     def TransmissionControl(self):
@@ -140,7 +164,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol import TransmissionControl
-        return TransmissionControl(self)._select()
+        if self._properties.get('TransmissionControl', None) is not None:
+            return self._properties.get('TransmissionControl')
+        else:
+            return TransmissionControl(self)._select()
 
     @property
     def TransmissionDistribution(self):
@@ -154,10 +181,14 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution import TransmissionDistribution
-        return TransmissionDistribution(self)
+        if self._properties.get('TransmissionDistribution', None) is not None:
+            return self._properties.get('TransmissionDistribution')
+        else:
+            return TransmissionDistribution(self)
 
     @property
     def Crc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,10 +197,12 @@ class ConfigElement(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Crc'])
     @Crc.setter
     def Crc(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Crc'], value)
 
     @property
     def DestinationMacMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,10 +211,12 @@ class ConfigElement(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationMacMode'])
     @DestinationMacMode.setter
     def DestinationMacMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationMacMode'], value)
 
     @property
     def EnableDisparityError(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,10 +225,12 @@ class ConfigElement(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDisparityError'])
     @EnableDisparityError.setter
     def EnableDisparityError(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDisparityError'], value)
 
     @property
     def EncapsulationName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,6 +240,7 @@ class ConfigElement(Base):
 
     @property
     def EndpointSetId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -212,6 +250,7 @@ class ConfigElement(Base):
 
     @property
     def PreambleCustomSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -220,10 +259,12 @@ class ConfigElement(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreambleCustomSize'])
     @PreambleCustomSize.setter
     def PreambleCustomSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreambleCustomSize'], value)
 
     @property
     def PreambleFrameSizeMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -232,9 +273,11 @@ class ConfigElement(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreambleFrameSizeMode'])
     @PreambleFrameSizeMode.setter
     def PreambleFrameSizeMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreambleFrameSizeMode'], value)
 
     def update(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
+        # type: (str, str, bool, int, str) -> ConfigElement
         """Updates configElement resource on the server.
 
         Args
@@ -251,7 +294,30 @@ class ConfigElement(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
+        # type: (str, str, bool, int, str) -> ConfigElement
+        """Adds a new configElement resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
+        - EnableDisparityError (bool): If true, enables disparity error
+        - PreambleCustomSize (number): Indicates the customized preamble size of the frame.
+        - PreambleFrameSizeMode (str(auto | custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved configElement resources using find and the newly added configElement resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Crc=None, DestinationMacMode=None, EnableDisparityError=None, EncapsulationName=None, EndpointSetId=None, PreambleCustomSize=None, PreambleFrameSizeMode=None):
+        # type: (str, str, bool, str, int, int, str) -> ConfigElement
         """Finds and retrieves configElement resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve configElement resources from the server.
@@ -297,13 +363,15 @@ class ConfigElement(Base):
         return self._read(href)
 
     def GetPacketViewInHex(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getPacketViewInHex operation on the server.
 
         Gets packet in Hex format for selected configElement and for the given packet index
 
-        getPacketViewInHex(Arg2=number)string
-        -------------------------------------
+        getPacketViewInHex(Arg2=number, async_operation=bool)string
+        -----------------------------------------------------------
         - Arg2 (number): Packet Index (0 based)
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Packet in Hex format
 
         Raises

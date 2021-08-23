@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LnsAuthCredentials(Base):
@@ -37,12 +38,15 @@ class LnsAuthCredentials(Base):
         'LacSecret': 'lacSecret',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LnsAuthCredentials, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LnsAuthCredentials, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,6 +56,7 @@ class LnsAuthCredentials(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +66,7 @@ class LnsAuthCredentials(Base):
 
     @property
     def LacHostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class LnsAuthCredentials(Base):
 
     @property
     def LacSecret(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -81,6 +88,7 @@ class LnsAuthCredentials(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,9 +97,11 @@ class LnsAuthCredentials(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> LnsAuthCredentials
         """Updates lnsAuthCredentials resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

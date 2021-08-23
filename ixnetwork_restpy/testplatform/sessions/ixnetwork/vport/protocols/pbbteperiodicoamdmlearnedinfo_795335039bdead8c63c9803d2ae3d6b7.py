@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PbbTePeriodicOamDmLearnedInfo(Base):
@@ -48,12 +49,15 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
         'RecentDelayVariationSec': 'recentDelayVariationSec',
         'SrcMacAddress': 'srcMacAddress',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PbbTePeriodicOamDmLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PbbTePeriodicOamDmLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AverageDelayNanoSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def AverageDelaySec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def AverageDelayVariationNanoSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,6 +87,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def AverageDelayVariationSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,6 +97,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def BVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def DmmCountSent(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def DstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,6 +127,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,6 +137,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def NoReplyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,6 +147,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def OneDmReceivedCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,6 +157,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def RecentDelayNanoSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,6 +167,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def RecentDelaySec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -162,6 +177,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def RecentDelayVariationNanoSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def RecentDelayVariationSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,7 +205,21 @@ class PbbTePeriodicOamDmLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SrcMacAddress'])
 
+    def add(self):
+        """Adds a new pbbTePeriodicOamDmLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pbbTePeriodicOamDmLearnedInfo resources using find and the newly added pbbTePeriodicOamDmLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AverageDelayNanoSec=None, AverageDelaySec=None, AverageDelayVariationNanoSec=None, AverageDelayVariationSec=None, BVlan=None, DmmCountSent=None, DstMacAddress=None, MdLevel=None, NoReplyCount=None, OneDmReceivedCount=None, RecentDelayNanoSec=None, RecentDelaySec=None, RecentDelayVariationNanoSec=None, RecentDelayVariationSec=None, SrcMacAddress=None):
+        # type: (int, int, int, int, str, int, str, int, int, int, int, int, int, int, str) -> PbbTePeriodicOamDmLearnedInfo
         """Finds and retrieves pbbTePeriodicOamDmLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pbbTePeriodicOamDmLearnedInfo resources from the server.

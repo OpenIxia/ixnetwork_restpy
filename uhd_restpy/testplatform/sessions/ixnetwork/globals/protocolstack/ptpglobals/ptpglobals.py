@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PtpGlobals(Base):
@@ -38,12 +39,15 @@ class PtpGlobals(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PtpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PtpGlobals, self).__init__(parent, list_op)
 
     @property
     def MaxOutstanding(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class PtpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +71,7 @@ class PtpGlobals(Base):
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,10 +80,12 @@ class PtpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,9 +94,11 @@ class PtpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int) -> PtpGlobals
         """Updates ptpGlobals resource on the server.
 
         Args
@@ -103,6 +114,7 @@ class PtpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxOutstanding=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int) -> PtpGlobals
         """Adds a new ptpGlobals resource on the server and adds it to the container.
 
         Args
@@ -132,6 +144,7 @@ class PtpGlobals(Base):
         self._delete()
 
     def find(self, MaxOutstanding=None, ObjectId=None, SetupRate=None, TeardownRate=None):
+        # type: (int, str, int, int) -> PtpGlobals
         """Finds and retrieves ptpGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ptpGlobals resources from the server.

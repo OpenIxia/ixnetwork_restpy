@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Egress(Base):
@@ -37,9 +38,11 @@ class Egress(Base):
         'RowCount': 'rowCount',
         'TotalPages': 'totalPages',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Egress, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Egress, self).__init__(parent, list_op)
 
     @property
     def FlowCondition(self):
@@ -53,10 +56,14 @@ class Egress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.data.egress.flowcondition.flowcondition import FlowCondition
-        return FlowCondition(self)
+        if self._properties.get('FlowCondition', None) is not None:
+            return self._properties.get('FlowCondition')
+        else:
+            return FlowCondition(self)
 
     @property
     def CommitEgressPage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CommitEgressPage'])
     @CommitEgressPage.setter
     def CommitEgressPage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CommitEgressPage'], value)
 
     @property
     def CurrentPage(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CurrentPage'])
     @CurrentPage.setter
     def CurrentPage(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CurrentPage'], value)
 
     @property
     def RowCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,6 +101,7 @@ class Egress(Base):
 
     @property
     def TotalPages(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,6 +110,7 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TotalPages'])
 
     def update(self, CommitEgressPage=None, CurrentPage=None):
+        # type: (bool, int) -> Egress
         """Updates egress resource on the server.
 
         Args
@@ -111,7 +124,27 @@ class Egress(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, CommitEgressPage=None, CurrentPage=None):
+        # type: (bool, int) -> Egress
+        """Adds a new egress resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - CommitEgressPage (bool): 
+        - CurrentPage (number): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved egress resources using find and the newly added egress resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CommitEgressPage=None, CurrentPage=None, RowCount=None, TotalPages=None):
+        # type: (bool, int, int, int) -> Egress
         """Finds and retrieves egress resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egress resources from the server.

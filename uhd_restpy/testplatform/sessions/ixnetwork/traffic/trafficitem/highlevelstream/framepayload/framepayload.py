@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FramePayload(Base):
@@ -35,12 +36,16 @@ class FramePayload(Base):
         'CustomRepeat': 'customRepeat',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['CJPAT', 'CRPAT', 'custom', 'decrementByte', 'decrementWord', 'incrementByte', 'incrementWord', 'random'],
+    }
 
-    def __init__(self, parent):
-        super(FramePayload, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FramePayload, self).__init__(parent, list_op)
 
     @property
     def CustomPattern(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,10 +54,12 @@ class FramePayload(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomPattern'])
     @CustomPattern.setter
     def CustomPattern(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomPattern'], value)
 
     @property
     def CustomRepeat(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +68,12 @@ class FramePayload(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomRepeat'])
     @CustomRepeat.setter
     def CustomRepeat(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomRepeat'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,9 +82,11 @@ class FramePayload(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, CustomPattern=None, CustomRepeat=None, Type=None):
+        # type: (str, bool, str) -> FramePayload
         """Updates framePayload resource on the server.
 
         Args

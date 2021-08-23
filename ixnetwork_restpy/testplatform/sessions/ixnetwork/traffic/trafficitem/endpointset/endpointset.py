@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EndpointSet(Base):
@@ -52,12 +53,15 @@ class EndpointSet(Base):
         'SourcesDescription': 'sourcesDescription',
         'TrafficGroups': 'trafficGroups',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EndpointSet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EndpointSet, self).__init__(parent, list_op)
 
     @property
     def AllowEmptyTopologySets(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +70,12 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllowEmptyTopologySets'])
     @AllowEmptyTopologySets.setter
     def AllowEmptyTopologySets(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllowEmptyTopologySets'], value)
 
     @property
     def DestinationFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +84,12 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationFilter'])
     @DestinationFilter.setter
     def DestinationFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationFilter'], value)
 
     @property
     def Destinations(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -90,10 +98,12 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Destinations'])
     @Destinations.setter
     def Destinations(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Destinations'], value)
 
     @property
     def DestinationsDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +113,7 @@ class EndpointSet(Base):
 
     @property
     def Error(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,6 +123,7 @@ class EndpointSet(Base):
 
     @property
     def ErrorString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +133,7 @@ class EndpointSet(Base):
 
     @property
     def FullyMeshedEndpoints(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -129,10 +142,12 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FullyMeshedEndpoints'])
     @FullyMeshedEndpoints.setter
     def FullyMeshedEndpoints(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['FullyMeshedEndpoints'], value)
 
     @property
     def FullyMeshedEndpointsDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,6 +181,7 @@ class EndpointSet(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -174,6 +190,7 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
@@ -214,6 +231,7 @@ class EndpointSet(Base):
 
     @property
     def SourceFilter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -222,10 +240,12 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceFilter'])
     @SourceFilter.setter
     def SourceFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceFilter'], value)
 
     @property
     def Sources(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -234,10 +254,12 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Sources'])
     @Sources.setter
     def Sources(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Sources'], value)
 
     @property
     def SourcesDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -247,6 +269,7 @@ class EndpointSet(Base):
 
     @property
     def TrafficGroups(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -255,6 +278,7 @@ class EndpointSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroups'])
     @TrafficGroups.setter
     def TrafficGroups(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroups'], value)
 
     def update(self, AllowEmptyTopologySets=None, DestinationFilter=None, Destinations=None, FullyMeshedEndpoints=None, MulticastDestinations=None, MulticastReceivers=None, Name=None, NgpfFilters=None, ScalableDestinations=None, ScalableSources=None, SourceFilter=None, Sources=None, TrafficGroups=None):
@@ -378,24 +402,27 @@ class EndpointSet(Base):
         return self._read(href)
 
     def FindMulticastReceiverGroupIndex(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
         """Executes the findMulticastReceiverGroupIndex operation on the server.
 
         This will lookup the multicast receiver group index from the multicast provider using the group id start/step/count which can then be used as the group index argument in the endpointSet multicastReceivers struct.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        findMulticastReceiverGroupIndex(Arg2=href, Arg3=string, Arg4=string, Arg5=number)number
-        ---------------------------------------------------------------------------------------
+        findMulticastReceiverGroupIndex(Arg2=href, Arg3=string, Arg4=string, Arg5=number, async_operation=bool)number
+        -------------------------------------------------------------------------------------------------------------
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): A valid object reference
         - Arg3 (str): The multicast group id start value
         - Arg4 (str): The multicast group id step value
         - Arg5 (number): The multicast group id count value
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns number: The index of the multicast group id.
 
-        findMulticastReceiverGroupIndex(Arg2=href, Arg3=string)number
-        -------------------------------------------------------------
+        findMulticastReceiverGroupIndex(Arg2=href, Arg3=string, async_operation=bool)number
+        -----------------------------------------------------------------------------------
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology)): A valid object reference
         - Arg3 (str): The multicast group id which must be an eight digit hex value separated by colons i.e., 00:00:01:01:00:01:01:00.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns number: The index of the multicast group id.
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MulticastSenderSite(Base):
@@ -58,9 +59,13 @@ class MulticastSenderSite(Base):
         'TuunelType': 'tuunelType',
         'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
     }
+    _SDM_ENUM_MAP = {
+        'addressFamilyType': ['addressFamilyIpv4', 'addressFamilyIpv6'],
+        'sourceGroupMapping': ['fullyMeshed', 'oneToOne'],
+    }
 
-    def __init__(self, parent):
-        super(MulticastSenderSite, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MulticastSenderSite, self).__init__(parent, list_op)
 
     @property
     def OpaqueValueElement(self):
@@ -74,10 +79,14 @@ class MulticastSenderSite(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_4296dd5c4392f88e35ad043bc82d0c44 import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is not None:
+            return self._properties.get('OpaqueValueElement')
+        else:
+            return OpaqueValueElement(self)
 
     @property
     def AddressFamilyType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,10 +95,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AddressFamilyType'])
     @AddressFamilyType.setter
     def AddressFamilyType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AddressFamilyType'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,10 +109,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GroupAddressCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,10 +123,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupAddressCount'])
     @GroupAddressCount.setter
     def GroupAddressCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupAddressCount'], value)
 
     @property
     def GroupMaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +137,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupMaskWidth'])
     @GroupMaskWidth.setter
     def GroupMaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupMaskWidth'], value)
 
     @property
     def IncludeIpv6ExplicitNullLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,10 +151,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeIpv6ExplicitNullLabel'])
     @IncludeIpv6ExplicitNullLabel.setter
     def IncludeIpv6ExplicitNullLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeIpv6ExplicitNullLabel'], value)
 
     @property
     def MplsAssignedUpstreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,10 +165,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamLabel'])
     @MplsAssignedUpstreamLabel.setter
     def MplsAssignedUpstreamLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamLabel'], value)
 
     @property
     def MplsAssignedUpstreamLabelStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,10 +179,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamLabelStep'])
     @MplsAssignedUpstreamLabelStep.setter
     def MplsAssignedUpstreamLabelStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamLabelStep'], value)
 
     @property
     def SPmsiRsvpP2mpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +193,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiRsvpP2mpId'])
     @SPmsiRsvpP2mpId.setter
     def SPmsiRsvpP2mpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiRsvpP2mpId'], value)
 
     @property
     def SPmsiRsvpP2mpIdAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -182,10 +207,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiRsvpP2mpIdAsNumber'])
     @SPmsiRsvpP2mpIdAsNumber.setter
     def SPmsiRsvpP2mpIdAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiRsvpP2mpIdAsNumber'], value)
 
     @property
     def SPmsiRsvpP2mpIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,10 +221,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiRsvpP2mpIdStep'])
     @SPmsiRsvpP2mpIdStep.setter
     def SPmsiRsvpP2mpIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiRsvpP2mpIdStep'], value)
 
     @property
     def SPmsiRsvpTunnelCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -206,10 +235,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiRsvpTunnelCount'])
     @SPmsiRsvpTunnelCount.setter
     def SPmsiRsvpTunnelCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiRsvpTunnelCount'], value)
 
     @property
     def SPmsiRsvpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +249,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiRsvpTunnelId'])
     @SPmsiRsvpTunnelId.setter
     def SPmsiRsvpTunnelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiRsvpTunnelId'], value)
 
     @property
     def SPmsiRsvpTunnelIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,10 +263,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiRsvpTunnelIdStep'])
     @SPmsiRsvpTunnelIdStep.setter
     def SPmsiRsvpTunnelIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiRsvpTunnelIdStep'], value)
 
     @property
     def SPmsiTrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -242,10 +277,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiTrafficGroupId'])
     @SPmsiTrafficGroupId.setter
     def SPmsiTrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiTrafficGroupId'], value)
 
     @property
     def SPmsiTunnelCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -254,10 +291,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPmsiTunnelCount'])
     @SPmsiTunnelCount.setter
     def SPmsiTunnelCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPmsiTunnelCount'], value)
 
     @property
     def SendTriggeredSourceActiveAdRoute(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -266,10 +305,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendTriggeredSourceActiveAdRoute'])
     @SendTriggeredSourceActiveAdRoute.setter
     def SendTriggeredSourceActiveAdRoute(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendTriggeredSourceActiveAdRoute'], value)
 
     @property
     def SetLeafInformationRequiredBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -278,10 +319,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetLeafInformationRequiredBit'])
     @SetLeafInformationRequiredBit.setter
     def SetLeafInformationRequiredBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetLeafInformationRequiredBit'], value)
 
     @property
     def SourceAddressCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -290,10 +333,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddressCount'])
     @SourceAddressCount.setter
     def SourceAddressCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddressCount'], value)
 
     @property
     def SourceGroupMapping(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -302,10 +347,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceGroupMapping'])
     @SourceGroupMapping.setter
     def SourceGroupMapping(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceGroupMapping'], value)
 
     @property
     def SourceMaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -314,10 +361,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceMaskWidth'])
     @SourceMaskWidth.setter
     def SourceMaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceMaskWidth'], value)
 
     @property
     def StartGroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -326,10 +375,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartGroupAddress'])
     @StartGroupAddress.setter
     def StartGroupAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartGroupAddress'], value)
 
     @property
     def StartSourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -338,10 +389,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartSourceAddress'])
     @StartSourceAddress.setter
     def StartSourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartSourceAddress'], value)
 
     @property
     def TuunelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -350,10 +403,12 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TuunelType'])
     @TuunelType.setter
     def TuunelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TuunelType'], value)
 
     @property
     def UseUpstreamAssignedLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -362,9 +417,11 @@ class MulticastSenderSite(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseUpstreamAssignedLabel'])
     @UseUpstreamAssignedLabel.setter
     def UseUpstreamAssignedLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseUpstreamAssignedLabel'], value)
 
     def update(self, AddressFamilyType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, MplsAssignedUpstreamLabel=None, MplsAssignedUpstreamLabelStep=None, SPmsiRsvpP2mpId=None, SPmsiRsvpP2mpIdAsNumber=None, SPmsiRsvpP2mpIdStep=None, SPmsiRsvpTunnelCount=None, SPmsiRsvpTunnelId=None, SPmsiRsvpTunnelIdStep=None, SPmsiTrafficGroupId=None, SPmsiTunnelCount=None, SendTriggeredSourceActiveAdRoute=None, SetLeafInformationRequiredBit=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, TuunelType=None, UseUpstreamAssignedLabel=None):
+        # type: (str, bool, int, int, bool, int, int, str, int, int, int, int, int, str, int, bool, bool, int, str, int, str, str, str, bool) -> MulticastSenderSite
         """Updates multicastSenderSite resource on the server.
 
         Args
@@ -401,6 +458,7 @@ class MulticastSenderSite(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AddressFamilyType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, MplsAssignedUpstreamLabel=None, MplsAssignedUpstreamLabelStep=None, SPmsiRsvpP2mpId=None, SPmsiRsvpP2mpIdAsNumber=None, SPmsiRsvpP2mpIdStep=None, SPmsiRsvpTunnelCount=None, SPmsiRsvpTunnelId=None, SPmsiRsvpTunnelIdStep=None, SPmsiTrafficGroupId=None, SPmsiTunnelCount=None, SendTriggeredSourceActiveAdRoute=None, SetLeafInformationRequiredBit=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, TuunelType=None, UseUpstreamAssignedLabel=None):
+        # type: (str, bool, int, int, bool, int, int, str, int, int, int, int, int, str, int, bool, bool, int, str, int, str, str, str, bool) -> MulticastSenderSite
         """Adds a new multicastSenderSite resource on the server and adds it to the container.
 
         Args
@@ -451,6 +509,7 @@ class MulticastSenderSite(Base):
         self._delete()
 
     def find(self, AddressFamilyType=None, Enabled=None, GroupAddressCount=None, GroupMaskWidth=None, IncludeIpv6ExplicitNullLabel=None, MplsAssignedUpstreamLabel=None, MplsAssignedUpstreamLabelStep=None, SPmsiRsvpP2mpId=None, SPmsiRsvpP2mpIdAsNumber=None, SPmsiRsvpP2mpIdStep=None, SPmsiRsvpTunnelCount=None, SPmsiRsvpTunnelId=None, SPmsiRsvpTunnelIdStep=None, SPmsiTrafficGroupId=None, SPmsiTunnelCount=None, SendTriggeredSourceActiveAdRoute=None, SetLeafInformationRequiredBit=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddress=None, StartSourceAddress=None, TuunelType=None, UseUpstreamAssignedLabel=None):
+        # type: (str, bool, int, int, bool, int, int, str, int, int, int, int, int, str, int, bool, bool, int, str, int, str, str, str, bool) -> MulticastSenderSite
         """Finds and retrieves multicastSenderSite resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve multicastSenderSite resources from the server.
@@ -512,10 +571,15 @@ class MulticastSenderSite(Base):
         """
         return self._read(href)
 
-    def SwitchToSpmsi(self):
+    def SwitchToSpmsi(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the switchToSpmsi operation on the server.
 
         This exec switches the tunnel to sPMSI.
+
+        switchToSpmsi(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -523,4 +587,6 @@ class MulticastSenderSite(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('switchToSpmsi', payload=payload, response_object=None)

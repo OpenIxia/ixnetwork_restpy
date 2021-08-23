@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpQuerier(Base):
@@ -36,12 +37,15 @@ class IgmpQuerier(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IgmpQuerier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpQuerier, self).__init__(parent, list_op)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class IgmpQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +68,7 @@ class IgmpQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Name=None):
+        # type: (str) -> IgmpQuerier
         """Updates igmpQuerier resource on the server.
 
         Args
@@ -75,6 +82,7 @@ class IgmpQuerier(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> IgmpQuerier
         """Adds a new igmpQuerier resource on the server and adds it to the container.
 
         Args
@@ -102,6 +110,7 @@ class IgmpQuerier(Base):
         self._delete()
 
     def find(self, Name=None, ObjectId=None):
+        # type: (str, str) -> IgmpQuerier
         """Finds and retrieves igmpQuerier resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve igmpQuerier resources from the server.
@@ -142,14 +151,16 @@ class IgmpQuerier(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -162,13 +173,15 @@ class IgmpQuerier(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -182,13 +195,15 @@ class IgmpQuerier(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -202,15 +217,21 @@ class IgmpQuerier(Base):
         return self._execute('enableProtocolStack', payload=payload, response_object=None)
 
     def IgmpMldQuerierStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the igmpMldQuerierStart operation on the server.
 
         Start IGMP/MLD Querier on selected plugins
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldQuerierStart(Arg2=enum)
-        ------------------------------
+        igmpMldQuerierStart(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpMldQuerierStart(Arg2=enum, async_operation=bool)
+        ----------------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/ip/igmpQuerier,/vport/protocolStack/atm/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/pppox/igmpQuerier,/vport/protocolStack/atm/pppoxEndpoint/igmpQuerier,/vport/protocolStack/ethernet/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/ip/igmpQuerier,/vport/protocolStack/ethernet/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/pppox/igmpQuerier,/vport/protocolStack/ethernet/pppoxEndpoint/igmpQuerier]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -223,15 +244,21 @@ class IgmpQuerier(Base):
         return self._execute('igmpMldQuerierStart', payload=payload, response_object=None)
 
     def IgmpMldQuerierStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the igmpMldQuerierStop operation on the server.
 
         Stop IGMP/MLD Querier on selected plugins
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldQuerierStop(Arg2=enum)
-        -----------------------------
+        igmpMldQuerierStop(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpMldQuerierStop(Arg2=enum, async_operation=bool)
+        ---------------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/ip/igmpQuerier,/vport/protocolStack/atm/ipEndpoint/igmpQuerier,/vport/protocolStack/atm/pppox/igmpQuerier,/vport/protocolStack/atm/pppoxEndpoint/igmpQuerier,/vport/protocolStack/ethernet/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/dhcpServerEndpoint/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpQuerier,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/ip/igmpQuerier,/vport/protocolStack/ethernet/ipEndpoint/igmpQuerier,/vport/protocolStack/ethernet/pppox/igmpQuerier,/vport/protocolStack/ethernet/pppoxEndpoint/igmpQuerier]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

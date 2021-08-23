@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OpenFlowSwitch(Base):
@@ -106,9 +107,12 @@ class OpenFlowSwitch(Base):
         'TypeOfConnection': 'typeOfConnection',
         'VersionSupported': 'versionSupported',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(OpenFlowSwitch, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OpenFlowSwitch, self).__init__(parent, list_op)
 
     @property
     def OFSwitchChannel(self):
@@ -122,7 +126,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchchannel_73fc107210c8f2c174f0a9ff032ae654 import OFSwitchChannel
-        return OFSwitchChannel(self)
+        if self._properties.get('OFSwitchChannel', None) is not None:
+            return self._properties.get('OFSwitchChannel')
+        else:
+            return OFSwitchChannel(self)
 
     @property
     def LearnedInfo(self):
@@ -136,7 +143,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def OFSwitchLearnedInfoConfig(self):
@@ -150,7 +160,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchlearnedinfoconfig_e82ac94514eca4bb9bcfc04c550a7144 import OFSwitchLearnedInfoConfig
-        return OFSwitchLearnedInfoConfig(self)._select()
+        if self._properties.get('OFSwitchLearnedInfoConfig', None) is not None:
+            return self._properties.get('OFSwitchLearnedInfoConfig')
+        else:
+            return OFSwitchLearnedInfoConfig(self)._select()
 
     @property
     def OfSwitchPorts(self):
@@ -164,7 +177,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofswitchports_f9b16b436eb30e1711de8e369383df29 import OfSwitchPorts
-        return OfSwitchPorts(self)._select()
+        if self._properties.get('OfSwitchPorts', None) is not None:
+            return self._properties.get('OfSwitchPorts')
+        else:
+            return OfSwitchPorts(self)._select()
 
     @property
     def PacketInList(self):
@@ -178,7 +194,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.packetinlist_10d8adb40e4e05f4b37904f2c6428ca9 import PacketInList
-        return PacketInList(self)
+        if self._properties.get('PacketInList', None) is not None:
+            return self._properties.get('PacketInList')
+        else:
+            return PacketInList(self)
 
     @property
     def SwitchGroupsList(self):
@@ -192,7 +211,10 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchgroupslist_8730e37b1ef4012ce871082b246f9630 import SwitchGroupsList
-        return SwitchGroupsList(self)
+        if self._properties.get('SwitchGroupsList', None) is not None:
+            return self._properties.get('SwitchGroupsList')
+        else:
+            return SwitchGroupsList(self)
 
     @property
     def SwitchTablesList(self):
@@ -206,10 +228,14 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.switchtableslist_73e39ebca0d77977f214e593d8a686a4 import SwitchTablesList
-        return SwitchTablesList(self)
+        if self._properties.get('SwitchTablesList', None) is not None:
+            return self._properties.get('SwitchTablesList')
+        else:
+            return SwitchTablesList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -220,6 +246,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def AuxConnTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -230,6 +257,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def AuxNonHelloStartupOption(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +268,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def BadVersionErrorAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +279,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def BandTypes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +290,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def BarrierReplyDelayType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +301,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def BarrierReplyMaxDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +312,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def Capabilities(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +323,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -298,10 +332,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ControllerFlowTxRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -312,6 +348,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -321,6 +358,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def DatapathDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -331,6 +369,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def DatapathId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -341,6 +380,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def DatapathIdHex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -351,6 +391,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -360,6 +401,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def DirectoryName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +412,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def EchoInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +423,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def EchoTimeOut(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -390,6 +434,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def EnableHelloElement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +454,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def FileCaCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -419,6 +465,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def FileCertificate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -429,6 +476,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def FilePrivKey(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -439,6 +487,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def FlowRemovedMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -449,6 +498,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def FlowRemovedMaskSlave(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -459,6 +509,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def GroupCapabilities(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -469,6 +520,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def GroupType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -479,6 +531,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def HardwareDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -489,6 +542,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def InterPacketInBurstGap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -499,6 +553,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def ManufacturerDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -509,6 +564,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def MaxBandPerMeter(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -519,6 +575,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def MaxColorValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -529,6 +586,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def MaxNumberOfBucketsPerGroups(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -539,6 +597,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def MaxPacketInBytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -549,6 +608,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def MeterCapabilities(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -559,6 +619,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -567,10 +628,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -579,10 +642,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumMeter(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -593,6 +658,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def NumberOfBuffers(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -603,6 +669,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def NumberOfChannels(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -611,10 +678,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfChannels'])
     @NumberOfChannels.setter
     def NumberOfChannels(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfChannels'], value)
 
     @property
     def NumberOfHostPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -624,6 +693,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def NumberOfPacketIn(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -632,10 +702,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfPacketIn'])
     @NumberOfPacketIn.setter
     def NumberOfPacketIn(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfPacketIn'], value)
 
     @property
     def NumberOfPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -645,6 +717,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def NumberOfTableRanges(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -653,10 +726,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfTableRanges'])
     @NumberOfTableRanges.setter
     def NumberOfTableRanges(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfTableRanges'], value)
 
     @property
     def NumberOfTopologyPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -666,6 +741,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def NumberOfUnconnectedPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -674,10 +750,12 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfUnconnectedPorts'])
     @NumberOfUnconnectedPorts.setter
     def NumberOfUnconnectedPorts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfUnconnectedPorts'], value)
 
     @property
     def PacketInMaskMaster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -688,6 +766,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PacketInMaskSlave(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -698,6 +777,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PacketInReplyDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -708,6 +788,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PacketInReplyTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -718,6 +799,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PacketInTxBurst(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -728,6 +810,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PacketOutRxRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -738,6 +821,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PeriodicEcho(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -748,6 +832,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PortStatusMaskMaster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -758,6 +843,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def PortStatusMaskSlave(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -768,6 +854,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def SerialNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -778,6 +865,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -787,6 +875,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def SoftwareDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -797,6 +886,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -805,6 +895,7 @@ class OpenFlowSwitch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -818,6 +909,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -827,6 +919,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def StoreFlows(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -837,6 +930,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def SwitchDesc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -847,6 +941,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def SwitchLocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -856,6 +951,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TableMissAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -866,6 +962,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TcpPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -876,6 +973,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TimeoutOption(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -886,6 +984,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TimeoutOptionValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -896,6 +995,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TlsVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -906,6 +1006,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TransactionID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -916,6 +1017,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def TypeOfConnection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -926,6 +1028,7 @@ class OpenFlowSwitch(Base):
 
     @property
     def VersionSupported(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -935,6 +1038,7 @@ class OpenFlowSwitch(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VersionSupported']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfChannels=None, NumberOfPacketIn=None, NumberOfTableRanges=None, NumberOfUnconnectedPorts=None, StackedLayers=None):
+        # type: (List[str], int, str, int, int, int, int, List[str]) -> OpenFlowSwitch
         """Updates openFlowSwitch resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -958,6 +1062,7 @@ class OpenFlowSwitch(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfChannels=None, NumberOfPacketIn=None, NumberOfTableRanges=None, NumberOfUnconnectedPorts=None, StackedLayers=None):
+        # type: (List[str], int, str, int, int, int, int, List[str]) -> OpenFlowSwitch
         """Adds a new openFlowSwitch resource on the server and adds it to the container.
 
         Args
@@ -1047,6 +1152,244 @@ class OpenFlowSwitch(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear OF Channels learnt by this Switch.
+
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetOFChannelLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getOFChannelLearnedInfo operation on the server.
+
+        Gets OF Channels learnt by this switch.
+
+        getOFChannelLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------
+        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getOFChannelLearnedInfo', payload=payload, response_object=None)
+
+    def GetOFSwitchFlowStatLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getOFSwitchFlowStatLearnedInfo operation on the server.
+
+        Gets OF Switch Flows learnt by this switch.
+
+        getOFSwitchFlowStatLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------
+        - Arg2 (list(number)): List of OF Switch Flows into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getOFSwitchFlowStatLearnedInfo', payload=payload, response_object=None)
+
+    def GetOFSwitchGroupLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getOFSwitchGroupLearnedInfo operation on the server.
+
+        Gets OF Switch Groups learnt by this switch.
+
+        getOFSwitchGroupLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of OF Switch Flows into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getOFSwitchGroupLearnedInfo', payload=payload, response_object=None)
+
+    def GetOFSwitchMeterLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getOFSwitchMeterLearnedInfo operation on the server.
+
+        Gets OF Switch Meter learned info for this switch.
+
+        getOFSwitchMeterLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of OF Switch Flows into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getOFSwitchMeterLearnedInfo', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AuxConnTimeout=None, AuxNonHelloStartupOption=None, BadVersionErrorAction=None, BandTypes=None, BarrierReplyDelayType=None, BarrierReplyMaxDelay=None, Capabilities=None, ControllerFlowTxRate=None, DatapathDesc=None, DatapathId=None, DatapathIdHex=None, DirectoryName=None, EchoInterval=None, EchoTimeOut=None, EnableHelloElement=None, FileCaCertificate=None, FileCertificate=None, FilePrivKey=None, FlowRemovedMask=None, FlowRemovedMaskSlave=None, GroupCapabilities=None, GroupType=None, HardwareDesc=None, InterPacketInBurstGap=None, ManufacturerDesc=None, MaxBandPerMeter=None, MaxColorValue=None, MaxNumberOfBucketsPerGroups=None, MaxPacketInBytes=None, MeterCapabilities=None, NumMeter=None, NumberOfBuffers=None, PacketInMaskMaster=None, PacketInMaskSlave=None, PacketInReplyDelay=None, PacketInReplyTimeout=None, PacketInTxBurst=None, PacketOutRxRate=None, PeriodicEcho=None, PortStatusMaskMaster=None, PortStatusMaskSlave=None, SerialNumber=None, SoftwareDesc=None, StoreFlows=None, SwitchDesc=None, TableMissAction=None, TcpPort=None, TimeoutOption=None, TimeoutOptionValue=None, TlsVersion=None, TransactionID=None, TypeOfConnection=None, VersionSupported=None):
         """Base class infrastructure that gets a list of openFlowSwitch device ids encapsulated by this object.
 
@@ -1119,203 +1462,3 @@ class OpenFlowSwitch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear OF Channels learnt by this Switch.
-
-        clearAllLearnedInfo(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetOFChannelLearnedInfo(self, *args, **kwargs):
-        """Executes the getOFChannelLearnedInfo operation on the server.
-
-        Gets OF Channels learnt by this switch.
-
-        getOFChannelLearnedInfo(Arg2=list)list
-        --------------------------------------
-        - Arg2 (list(number)): List of OF Channel into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFChannelLearnedInfo', payload=payload, response_object=None)
-
-    def GetOFSwitchFlowStatLearnedInfo(self, *args, **kwargs):
-        """Executes the getOFSwitchFlowStatLearnedInfo operation on the server.
-
-        Gets OF Switch Flows learnt by this switch.
-
-        getOFSwitchFlowStatLearnedInfo(Arg2=list)list
-        ---------------------------------------------
-        - Arg2 (list(number)): List of OF Switch Flows into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFSwitchFlowStatLearnedInfo', payload=payload, response_object=None)
-
-    def GetOFSwitchGroupLearnedInfo(self, *args, **kwargs):
-        """Executes the getOFSwitchGroupLearnedInfo operation on the server.
-
-        Gets OF Switch Groups learnt by this switch.
-
-        getOFSwitchGroupLearnedInfo(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of OF Switch Flows into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFSwitchGroupLearnedInfo', payload=payload, response_object=None)
-
-    def GetOFSwitchMeterLearnedInfo(self, *args, **kwargs):
-        """Executes the getOFSwitchMeterLearnedInfo operation on the server.
-
-        Gets OF Switch Meter learned info for this switch.
-
-        getOFSwitchMeterLearnedInfo(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of OF Switch Flows into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getOFSwitchMeterLearnedInfo', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Opaque(Base):
@@ -34,9 +35,11 @@ class Opaque(Base):
     _SDM_ATT_MAP = {
         'EnableRouterTlv': 'enableRouterTlv',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Opaque, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Opaque, self).__init__(parent, list_op)
 
     @property
     def LinkTlv(self):
@@ -50,7 +53,10 @@ class Opaque(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktlv_452cab99b16a3494d6169df873b31fc6 import LinkTlv
-        return LinkTlv(self)
+        if self._properties.get('LinkTlv', None) is not None:
+            return self._properties.get('LinkTlv')
+        else:
+            return LinkTlv(self)
 
     @property
     def RouterTlv(self):
@@ -64,10 +70,14 @@ class Opaque(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routertlv_7bd1e801f928228f94fc1e60463de9a3 import RouterTlv
-        return RouterTlv(self)
+        if self._properties.get('RouterTlv', None) is not None:
+            return self._properties.get('RouterTlv')
+        else:
+            return RouterTlv(self)
 
     @property
     def EnableRouterTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,9 +86,11 @@ class Opaque(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRouterTlv'])
     @EnableRouterTlv.setter
     def EnableRouterTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRouterTlv'], value)
 
     def update(self, EnableRouterTlv=None):
+        # type: (bool) -> Opaque
         """Updates opaque resource on the server.
 
         Args
@@ -91,7 +103,26 @@ class Opaque(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EnableRouterTlv=None):
+        # type: (bool) -> Opaque
+        """Adds a new opaque resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableRouterTlv (bool): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved opaque resources using find and the newly added opaque resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, EnableRouterTlv=None):
+        # type: (bool) -> Opaque
         """Finds and retrieves opaque resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve opaque resources from the server.

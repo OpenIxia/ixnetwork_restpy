@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BroadcastDomainV4VxlanVpws(Base):
@@ -58,9 +59,11 @@ class BroadcastDomainV4VxlanVpws(Base):
         'UsebVlan': 'usebVlan',
         'VidNormalization': 'vidNormalization',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BroadcastDomainV4VxlanVpws, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BroadcastDomainV4VxlanVpws, self).__init__(parent, list_op)
 
     @property
     def PnTLVList(self):
@@ -74,10 +77,14 @@ class BroadcastDomainV4VxlanVpws(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import PnTLVList
-        return PnTLVList(self)
+        if self._properties.get('PnTLVList', None) is not None:
+            return self._properties.get('PnTLVList')
+        else:
+            return PnTLVList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def AdRouteLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def BVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def BVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def BVlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,6 +139,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def BackupFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -138,6 +150,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -147,6 +160,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,6 +170,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def EnableVlanAwareService(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +181,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def EthernetTagId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +192,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def FxcType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +203,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def GroupAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +214,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def IncludeVpwsL2AttrExtComm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +225,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def L2Mtu(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +236,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,10 +245,12 @@ class BroadcastDomainV4VxlanVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfMacPools(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -236,10 +259,12 @@ class BroadcastDomainV4VxlanVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfMacPools'])
     @NoOfMacPools.setter
     def NoOfMacPools(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfMacPools'], value)
 
     @property
     def PrimaryPE(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +275,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def RemoteServiceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +286,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def RequireCW(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +297,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def RootAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +308,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def RsvpP2mpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +319,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def RsvpP2mpIdAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +330,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def RsvpTunnelId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +341,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def SenderAddressPRootNodeAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +352,7 @@ class BroadcastDomainV4VxlanVpws(Base):
 
     @property
     def UsebVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -328,10 +361,12 @@ class BroadcastDomainV4VxlanVpws(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UsebVlan'])
     @UsebVlan.setter
     def UsebVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UsebVlan'], value)
 
     @property
     def VidNormalization(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -341,6 +376,7 @@ class BroadcastDomainV4VxlanVpws(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VidNormalization']))
 
     def update(self, Name=None, NoOfMacPools=None, UsebVlan=None):
+        # type: (str, int, bool) -> BroadcastDomainV4VxlanVpws
         """Updates broadcastDomainV4VxlanVpws resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

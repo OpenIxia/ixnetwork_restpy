@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class WebAuthRange(Base):
@@ -41,12 +42,15 @@ class WebAuthRange(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(WebAuthRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(WebAuthRange, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Expect(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Expect'])
     @Expect.setter
     def Expect(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Expect'], value)
 
     @property
     def InputValue1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InputValue1'])
     @InputValue1.setter
     def InputValue1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InputValue1'], value)
 
     @property
     def InputValue2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InputValue2'])
     @InputValue2.setter
     def InputValue2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InputValue2'], value)
 
     @property
     def InputValue3(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +115,12 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InputValue3'])
     @InputValue3.setter
     def InputValue3(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InputValue3'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,10 +129,12 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +143,7 @@ class WebAuthRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Enabled=None, Expect=None, InputValue1=None, InputValue2=None, InputValue3=None, Name=None):
+        # type: (bool, str, str, str, str, str) -> WebAuthRange
         """Updates webAuthRange resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class WebAuthRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Expect=None, InputValue1=None, InputValue2=None, InputValue3=None, Name=None):
+        # type: (bool, str, str, str, str, str) -> WebAuthRange
         """Adds a new webAuthRange resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class WebAuthRange(Base):
         self._delete()
 
     def find(self, Enabled=None, Expect=None, InputValue1=None, InputValue2=None, InputValue3=None, Name=None, ObjectId=None):
+        # type: (bool, str, str, str, str, str, str) -> WebAuthRange
         """Finds and retrieves webAuthRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve webAuthRange resources from the server.
@@ -222,14 +241,16 @@ class WebAuthRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -242,13 +263,15 @@ class WebAuthRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -262,13 +285,15 @@ class WebAuthRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

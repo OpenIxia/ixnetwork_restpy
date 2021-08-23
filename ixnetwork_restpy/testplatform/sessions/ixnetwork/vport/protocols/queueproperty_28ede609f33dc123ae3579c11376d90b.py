@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class QueueProperty(Base):
@@ -34,12 +35,15 @@ class QueueProperty(Base):
         'MinimumDataRateGuaranteed': 'minimumDataRateGuaranteed',
         'IsNone': 'none',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(QueueProperty, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(QueueProperty, self).__init__(parent, list_op)
 
     @property
     def MinimumDataRateGuaranteed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class QueueProperty(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinimumDataRateGuaranteed'])
     @MinimumDataRateGuaranteed.setter
     def MinimumDataRateGuaranteed(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinimumDataRateGuaranteed'], value)
 
     @property
     def IsNone(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class QueueProperty(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsNone'])
     @IsNone.setter
     def IsNone(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsNone'], value)
 
     def update(self, MinimumDataRateGuaranteed=None):
+        # type: (bool) -> QueueProperty
         """Updates queueProperty resource on the server.
 
         Args

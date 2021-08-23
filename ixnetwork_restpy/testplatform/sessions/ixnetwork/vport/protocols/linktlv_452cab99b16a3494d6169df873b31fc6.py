@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LinkTlv(Base):
@@ -52,12 +53,16 @@ class LinkTlv(Base):
         'MaxResBandwidth': 'maxResBandwidth',
         'SubTlvs': 'subTlvs',
     }
+    _SDM_ENUM_MAP = {
+        'linkType': ['pointToPoint', 'multiaccess'],
+    }
 
-    def __init__(self, parent):
-        super(LinkTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LinkTlv, self).__init__(parent, list_op)
 
     @property
     def EnableLinkId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +71,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLinkId'])
     @EnableLinkId.setter
     def EnableLinkId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLinkId'], value)
 
     @property
     def EnableLinkMetric(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,10 +85,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLinkMetric'])
     @EnableLinkMetric.setter
     def EnableLinkMetric(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLinkMetric'], value)
 
     @property
     def EnableLinkResourceClass(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,10 +99,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLinkResourceClass'])
     @EnableLinkResourceClass.setter
     def EnableLinkResourceClass(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLinkResourceClass'], value)
 
     @property
     def EnableLinkType(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,10 +113,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLinkType'])
     @EnableLinkType.setter
     def EnableLinkType(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLinkType'], value)
 
     @property
     def EnableLocalIpAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -114,10 +127,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLocalIpAddress'])
     @EnableLocalIpAddress.setter
     def EnableLocalIpAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLocalIpAddress'], value)
 
     @property
     def EnableMaxBandwidth(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -126,10 +141,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMaxBandwidth'])
     @EnableMaxBandwidth.setter
     def EnableMaxBandwidth(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMaxBandwidth'], value)
 
     @property
     def EnableMaxResBandwidth(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,10 +155,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMaxResBandwidth'])
     @EnableMaxResBandwidth.setter
     def EnableMaxResBandwidth(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMaxResBandwidth'], value)
 
     @property
     def EnableRemoteIpAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -150,10 +169,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRemoteIpAddress'])
     @EnableRemoteIpAddress.setter
     def EnableRemoteIpAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRemoteIpAddress'], value)
 
     @property
     def EnableUnreservedBandwidth(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -162,10 +183,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUnreservedBandwidth'])
     @EnableUnreservedBandwidth.setter
     def EnableUnreservedBandwidth(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUnreservedBandwidth'], value)
 
     @property
     def LinkId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -174,10 +197,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkId'])
     @LinkId.setter
     def LinkId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkId'], value)
 
     @property
     def LinkLocalIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -186,10 +211,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkLocalIpAddress'])
     @LinkLocalIpAddress.setter
     def LinkLocalIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkLocalIpAddress'], value)
 
     @property
     def LinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,10 +225,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMetric'])
     @LinkMetric.setter
     def LinkMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMetric'], value)
 
     @property
     def LinkRemoteIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,10 +239,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkRemoteIpAddress'])
     @LinkRemoteIpAddress.setter
     def LinkRemoteIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkRemoteIpAddress'], value)
 
     @property
     def LinkResourceClass(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -222,10 +253,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkResourceClass'])
     @LinkResourceClass.setter
     def LinkResourceClass(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkResourceClass'], value)
 
     @property
     def LinkType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,10 +267,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
     @LinkType.setter
     def LinkType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
 
     @property
     def LinkUnreservedBandwidth(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -246,10 +281,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkUnreservedBandwidth'])
     @LinkUnreservedBandwidth.setter
     def LinkUnreservedBandwidth(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkUnreservedBandwidth'], value)
 
     @property
     def MaxBandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -258,10 +295,12 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxBandwidth'])
     @MaxBandwidth.setter
     def MaxBandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxBandwidth'], value)
 
     @property
     def MaxResBandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -270,6 +309,7 @@ class LinkTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxResBandwidth'])
     @MaxResBandwidth.setter
     def MaxResBandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxResBandwidth'], value)
 
     @property
@@ -314,6 +354,41 @@ class LinkTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
+        """Adds a new linkTlv resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableLinkId (bool): 
+        - EnableLinkMetric (bool): 
+        - EnableLinkResourceClass (bool): 
+        - EnableLinkType (bool): 
+        - EnableLocalIpAddress (bool): 
+        - EnableMaxBandwidth (bool): 
+        - EnableMaxResBandwidth (bool): 
+        - EnableRemoteIpAddress (bool): 
+        - EnableUnreservedBandwidth (bool): 
+        - LinkId (str): 
+        - LinkLocalIpAddress (str): 
+        - LinkMetric (number): 
+        - LinkRemoteIpAddress (str): 
+        - LinkResourceClass (str): 
+        - LinkType (str(pointToPoint | multiaccess)): 
+        - LinkUnreservedBandwidth (list(number)): 
+        - MaxBandwidth (number): 
+        - MaxResBandwidth (number): 
+        - SubTlvs (list(dict(arg1:str,arg2:number,arg3:number))): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved linkTlv resources using find and the newly added linkTlv resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, EnableLinkId=None, EnableLinkMetric=None, EnableLinkResourceClass=None, EnableLinkType=None, EnableLocalIpAddress=None, EnableMaxBandwidth=None, EnableMaxResBandwidth=None, EnableRemoteIpAddress=None, EnableUnreservedBandwidth=None, LinkId=None, LinkLocalIpAddress=None, LinkMetric=None, LinkRemoteIpAddress=None, LinkResourceClass=None, LinkType=None, LinkUnreservedBandwidth=None, MaxBandwidth=None, MaxResBandwidth=None, SubTlvs=None):
         """Finds and retrieves linkTlv resources from the server.

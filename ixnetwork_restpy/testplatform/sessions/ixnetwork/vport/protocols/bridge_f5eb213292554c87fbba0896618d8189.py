@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bridge(Base):
@@ -66,9 +67,20 @@ class Bridge(Base):
         'VlanRootPathCost': 'vlanRootPathCost',
         'VlanRootPriority': 'vlanRootPriority',
     }
+    _SDM_ENUM_MAP = {
+        'bridgePriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        'bridgeType': ['bridges', 'providerBridges'],
+        'cistRegRootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        'externalRootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        'mode': ['stp', 'rstp', 'mstp', 'pvst', 'rpvst', 'pvstp'],
+        'portPriority': ['0', '16', '32', '48', '64', '80', '96', '112', '128', '144', '160', '176', '192', '208', '224', '240'],
+        'pvstpMode': ['stp', 'rstp'],
+        'rootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+        'vlanRootPriority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+    }
 
-    def __init__(self, parent):
-        super(Bridge, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bridge, self).__init__(parent, list_op)
 
     @property
     def Cist(self):
@@ -82,7 +94,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_7c0c7d81a93f9c4eb25c40a47dfbc2af import Cist
-        return Cist(self)._select()
+        if self._properties.get('Cist', None) is not None:
+            return self._properties.get('Cist')
+        else:
+            return Cist(self)._select()
 
     @property
     def Interface(self):
@@ -96,7 +111,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_11193719861cedc70e27ad6eab53c08a import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def LearnedInfo(self):
@@ -110,7 +128,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0b44805d06507cff11c29ecddf2132ce import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)._select()
 
     @property
     def Msti(self):
@@ -124,7 +145,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msti_de62cae276de4633f89c17f153c2b860 import Msti
-        return Msti(self)
+        if self._properties.get('Msti', None) is not None:
+            return self._properties.get('Msti')
+        else:
+            return Msti(self)
 
     @property
     def Vlan(self):
@@ -138,10 +162,14 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlan_2fd06caa7af8df8e2b057b8fad32a527 import Vlan
-        return Vlan(self)
+        if self._properties.get('Vlan', None) is not None:
+            return self._properties.get('Vlan')
+        else:
+            return Vlan(self)
 
     @property
     def AutoPickBridgeMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -150,10 +178,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoPickBridgeMac'])
     @AutoPickBridgeMac.setter
     def AutoPickBridgeMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoPickBridgeMac'], value)
 
     @property
     def BridgeMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,10 +192,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgeMac'])
     @BridgeMac.setter
     def BridgeMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgeMac'], value)
 
     @property
     def BridgePriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -174,10 +206,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
     @BridgePriority.setter
     def BridgePriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgePriority'], value)
 
     @property
     def BridgeSystemId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -186,10 +220,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgeSystemId'])
     @BridgeSystemId.setter
     def BridgeSystemId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgeSystemId'], value)
 
     @property
     def BridgeType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,10 +234,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgeType'])
     @BridgeType.setter
     def BridgeType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgeType'], value)
 
     @property
     def CistRegRootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,10 +248,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistRegRootCost'])
     @CistRegRootCost.setter
     def CistRegRootCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistRegRootCost'], value)
 
     @property
     def CistRegRootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -222,10 +262,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistRegRootMac'])
     @CistRegRootMac.setter
     def CistRegRootMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistRegRootMac'], value)
 
     @property
     def CistRegRootPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,10 +276,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistRegRootPriority'])
     @CistRegRootPriority.setter
     def CistRegRootPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistRegRootPriority'], value)
 
     @property
     def CistRemainingHop(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -246,10 +290,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistRemainingHop'])
     @CistRemainingHop.setter
     def CistRemainingHop(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistRemainingHop'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -258,10 +304,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExternalRootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -270,10 +318,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExternalRootCost'])
     @ExternalRootCost.setter
     def ExternalRootCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExternalRootCost'], value)
 
     @property
     def ExternalRootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -282,10 +332,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExternalRootMac'])
     @ExternalRootMac.setter
     def ExternalRootMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExternalRootMac'], value)
 
     @property
     def ExternalRootPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -294,10 +346,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExternalRootPriority'])
     @ExternalRootPriority.setter
     def ExternalRootPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExternalRootPriority'], value)
 
     @property
     def ForwardDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -306,10 +360,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForwardDelay'])
     @ForwardDelay.setter
     def ForwardDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForwardDelay'], value)
 
     @property
     def HelloInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -318,10 +374,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
     @HelloInterval.setter
     def HelloInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
 
     @property
     def IsRefreshComplete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -331,6 +389,7 @@ class Bridge(Base):
 
     @property
     def MaxAge(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -339,10 +398,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxAge'])
     @MaxAge.setter
     def MaxAge(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxAge'], value)
 
     @property
     def MessageAge(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -351,10 +412,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MessageAge'])
     @MessageAge.setter
     def MessageAge(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MessageAge'], value)
 
     @property
     def Mode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -363,10 +426,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mode'])
     @Mode.setter
     def Mode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mode'], value)
 
     @property
     def MstcName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -375,10 +440,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MstcName'])
     @MstcName.setter
     def MstcName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MstcName'], value)
 
     @property
     def MstcRevisionNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -387,10 +454,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MstcRevisionNumber'])
     @MstcRevisionNumber.setter
     def MstcRevisionNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MstcRevisionNumber'], value)
 
     @property
     def PortPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -399,10 +468,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortPriority'])
     @PortPriority.setter
     def PortPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortPriority'], value)
 
     @property
     def PvstpMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -411,10 +482,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PvstpMode'])
     @PvstpMode.setter
     def PvstpMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PvstpMode'], value)
 
     @property
     def RootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -423,10 +496,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootCost'])
     @RootCost.setter
     def RootCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootCost'], value)
 
     @property
     def RootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -435,10 +510,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootMac'])
     @RootMac.setter
     def RootMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootMac'], value)
 
     @property
     def RootPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -447,10 +524,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootPriority'])
     @RootPriority.setter
     def RootPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootPriority'], value)
 
     @property
     def RootSystemId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -459,10 +538,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootSystemId'])
     @RootSystemId.setter
     def RootSystemId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootSystemId'], value)
 
     @property
     def UpdateRequired(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -471,10 +552,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
     @UpdateRequired.setter
     def UpdateRequired(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateRequired'], value)
 
     @property
     def VlanPortPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -483,10 +566,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPortPriority'])
     @VlanPortPriority.setter
     def VlanPortPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPortPriority'], value)
 
     @property
     def VlanRootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -495,10 +580,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanRootMac'])
     @VlanRootMac.setter
     def VlanRootMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanRootMac'], value)
 
     @property
     def VlanRootPathCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -507,10 +594,12 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanRootPathCost'])
     @VlanRootPathCost.setter
     def VlanRootPathCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanRootPathCost'], value)
 
     @property
     def VlanRootPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -519,9 +608,11 @@ class Bridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanRootPriority'])
     @VlanRootPriority.setter
     def VlanRootPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanRootPriority'], value)
 
     def update(self, AutoPickBridgeMac=None, BridgeMac=None, BridgePriority=None, BridgeSystemId=None, BridgeType=None, CistRegRootCost=None, CistRegRootMac=None, CistRegRootPriority=None, CistRemainingHop=None, Enabled=None, ExternalRootCost=None, ExternalRootMac=None, ExternalRootPriority=None, ForwardDelay=None, HelloInterval=None, MaxAge=None, MessageAge=None, Mode=None, MstcName=None, MstcRevisionNumber=None, PortPriority=None, PvstpMode=None, RootCost=None, RootMac=None, RootPriority=None, RootSystemId=None, UpdateRequired=None, VlanPortPriority=None, VlanRootMac=None, VlanRootPathCost=None, VlanRootPriority=None):
+        # type: (bool, str, str, int, str, int, str, str, int, bool, int, str, str, int, int, int, int, str, str, int, str, str, int, str, str, int, int, int, str, int, str) -> Bridge
         """Updates bridge resource on the server.
 
         Args
@@ -565,6 +656,7 @@ class Bridge(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoPickBridgeMac=None, BridgeMac=None, BridgePriority=None, BridgeSystemId=None, BridgeType=None, CistRegRootCost=None, CistRegRootMac=None, CistRegRootPriority=None, CistRemainingHop=None, Enabled=None, ExternalRootCost=None, ExternalRootMac=None, ExternalRootPriority=None, ForwardDelay=None, HelloInterval=None, MaxAge=None, MessageAge=None, Mode=None, MstcName=None, MstcRevisionNumber=None, PortPriority=None, PvstpMode=None, RootCost=None, RootMac=None, RootPriority=None, RootSystemId=None, UpdateRequired=None, VlanPortPriority=None, VlanRootMac=None, VlanRootPathCost=None, VlanRootPriority=None):
+        # type: (bool, str, str, int, str, int, str, str, int, bool, int, str, str, int, int, int, int, str, str, int, str, str, int, str, str, int, int, int, str, int, str) -> Bridge
         """Adds a new bridge resource on the server and adds it to the container.
 
         Args
@@ -622,6 +714,7 @@ class Bridge(Base):
         self._delete()
 
     def find(self, AutoPickBridgeMac=None, BridgeMac=None, BridgePriority=None, BridgeSystemId=None, BridgeType=None, CistRegRootCost=None, CistRegRootMac=None, CistRegRootPriority=None, CistRemainingHop=None, Enabled=None, ExternalRootCost=None, ExternalRootMac=None, ExternalRootPriority=None, ForwardDelay=None, HelloInterval=None, IsRefreshComplete=None, MaxAge=None, MessageAge=None, Mode=None, MstcName=None, MstcRevisionNumber=None, PortPriority=None, PvstpMode=None, RootCost=None, RootMac=None, RootPriority=None, RootSystemId=None, UpdateRequired=None, VlanPortPriority=None, VlanRootMac=None, VlanRootPathCost=None, VlanRootPriority=None):
+        # type: (bool, str, str, int, str, int, str, str, int, bool, int, str, str, int, int, bool, int, int, str, str, int, str, str, int, str, str, int, int, int, str, int, str) -> Bridge
         """Finds and retrieves bridge resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bridge resources from the server.
@@ -691,54 +784,86 @@ class Bridge(Base):
         """
         return self._read(href)
 
-    def BridgeTopologyChange(self):
+    def BridgeTopologyChange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the bridgeTopologyChange operation on the server.
 
         This commands checks to see if there has been a topology change in the specified STP bridge.
 
+        bridgeTopologyChange(async_operation=bool)bool
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('bridgeTopologyChange', payload=payload, response_object=None)
 
-    def CistTopologyChange(self):
+    def CistTopologyChange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the cistTopologyChange operation on the server.
 
         This command checks to see if a topology change has occurred on the specified STP bridge CIST.
 
+        cistTopologyChange(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('cistTopologyChange', payload=payload, response_object=None)
 
-    def RefreshLearnedInfo(self):
+    def RefreshLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInfo operation on the server.
 
         This exec refreshes the STP learned information from the DUT.
 
+        refreshLearnedInfo(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)
 
-    def UpdateParameters(self):
+    def UpdateParameters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateParameters operation on the server.
 
         Updates the current STP parameters for the STP bridge.
 
+        updateParameters(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('updateParameters', payload=payload, response_object=None)

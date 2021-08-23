@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NovusTenGigLan(Base):
@@ -49,9 +50,16 @@ class NovusTenGigLan(Base):
         'SpeedAuto': 'speedAuto',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
+    _SDM_ENUM_MAP = {
+        'autoInstrumentation': ['endOfFrame', 'floating'],
+        'loopbackMode': ['internalLoopback', 'lineLoopback', 'none'],
+        'masterSlaveMode': ['master', 'slave'],
+        'media': ['copper', 'fiber', 'sgmii'],
+        'speed': ['speed1000', 'speed100fd', 'speed10g', 'speed2.5g', 'speed5g'],
+    }
 
-    def __init__(self, parent):
-        super(NovusTenGigLan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NovusTenGigLan, self).__init__(parent, list_op)
 
     @property
     def Fcoe(self):
@@ -65,7 +73,10 @@ class NovusTenGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.fcoe.fcoe import Fcoe
-        return Fcoe(self)._select()
+        if self._properties.get('Fcoe', None) is not None:
+            return self._properties.get('Fcoe')
+        else:
+            return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -79,10 +90,14 @@ class NovusTenGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.txlane.txlane import TxLane
-        return TxLane(self)._select()
+        if self._properties.get('TxLane', None) is not None:
+            return self._properties.get('TxLane')
+        else:
+            return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +106,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AutoNegotiate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +120,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoNegotiate'])
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -116,6 +135,7 @@ class NovusTenGigLan(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,6 +145,7 @@ class NovusTenGigLan(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,6 +155,7 @@ class NovusTenGigLan(Base):
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,10 +164,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -154,10 +178,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,10 +192,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +206,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def LoopbackMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,10 +220,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
     def LoopbackMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LoopbackMode'], value)
 
     @property
     def MasterSlaveMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,10 +234,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterSlaveMode'])
     @MasterSlaveMode.setter
     def MasterSlaveMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterSlaveMode'], value)
 
     @property
     def Media(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,10 +248,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Media'])
     @Media.setter
     def Media(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Media'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -226,10 +262,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -238,10 +276,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def Speed(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,10 +290,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def SpeedAuto(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -262,10 +304,12 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpeedAuto'])
     @SpeedAuto.setter
     def SpeedAuto(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpeedAuto'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -274,9 +318,11 @@ class NovusTenGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, bool, bool, bool, str, bool, str, str, str, int, List[str], str, List[str], bool) -> NovusTenGigLan
         """Updates novusTenGigLan resource on the server.
 
         Args

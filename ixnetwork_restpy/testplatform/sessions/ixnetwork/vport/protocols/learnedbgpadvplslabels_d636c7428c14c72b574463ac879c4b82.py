@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedBgpAdVplsLabels(Base):
@@ -44,12 +45,15 @@ class LearnedBgpAdVplsLabels(Base):
         'TargetAii': 'targetAii',
         'VplsId': 'vplsId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedBgpAdVplsLabels, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedBgpAdVplsLabels, self).__init__(parent, list_op)
 
     @property
     def CBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -59,6 +63,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,6 +73,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,6 +83,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def LocalPwSubState(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def PeerAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +113,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def PwState(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,6 +123,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def RemotePwSubState(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,6 +133,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def SourceAii(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,6 +143,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def TargetAii(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -140,6 +153,7 @@ class LearnedBgpAdVplsLabels(Base):
 
     @property
     def VplsId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,7 +161,21 @@ class LearnedBgpAdVplsLabels(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VplsId'])
 
+    def add(self):
+        """Adds a new learnedBgpAdVplsLabels resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedBgpAdVplsLabels resources using find and the newly added learnedBgpAdVplsLabels resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CBit=None, GroupId=None, Label=None, LocalPwSubState=None, Mtu=None, PeerAddress=None, PwState=None, RemotePwSubState=None, SourceAii=None, TargetAii=None, VplsId=None):
+        # type: (bool, int, int, int, int, str, bool, int, int, int, str) -> LearnedBgpAdVplsLabels
         """Finds and retrieves learnedBgpAdVplsLabels resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedBgpAdVplsLabels resources from the server.

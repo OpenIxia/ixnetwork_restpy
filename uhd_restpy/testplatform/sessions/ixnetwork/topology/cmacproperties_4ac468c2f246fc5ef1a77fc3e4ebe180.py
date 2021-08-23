@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CMacProperties(Base):
@@ -109,9 +110,11 @@ class CMacProperties(Base):
         'Srv6SidReserved2': 'srv6SidReserved2',
         'UseSameSequenceNumber': 'useSameSequenceNumber',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CMacProperties, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CMacProperties, self).__init__(parent, list_op)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -125,7 +128,10 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpAsPathSegmentList')
+        else:
+            return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -139,7 +145,10 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is not None:
+            return self._properties.get('BgpClusterIdList')
+        else:
+            return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -153,7 +162,10 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is not None:
+            return self._properties.get('BgpCommunitiesList')
+        else:
+            return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -167,7 +179,10 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpExtendedCommunitiesList')
+        else:
+            return BgpExtendedCommunitiesList(self)
 
     @property
     def CMacProperties(self):
@@ -181,7 +196,10 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is not None:
+            return self._properties.get('CMacProperties')
+        else:
+            return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -195,7 +213,10 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv4PrefixRange')
+        else:
+            return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -209,10 +230,14 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv6PrefixRange')
+        else:
+            return EvpnIPv6PrefixRange(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -223,6 +248,7 @@ class CMacProperties(Base):
 
     @property
     def ActiveTs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -233,6 +259,7 @@ class CMacProperties(Base):
 
     @property
     def AdvSrv6L2SidInIgp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -243,6 +270,7 @@ class CMacProperties(Base):
 
     @property
     def AdvSrv6L3SidInIgp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -253,6 +281,7 @@ class CMacProperties(Base):
 
     @property
     def AdvertiseIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -263,6 +292,7 @@ class CMacProperties(Base):
 
     @property
     def AdvertiseIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -273,6 +303,7 @@ class CMacProperties(Base):
 
     @property
     def AdvertiseSRv6L2SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -283,6 +314,7 @@ class CMacProperties(Base):
 
     @property
     def AdvertiseSRv6L3SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -293,6 +325,7 @@ class CMacProperties(Base):
 
     @property
     def AggregatorAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -303,6 +336,7 @@ class CMacProperties(Base):
 
     @property
     def AggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -313,6 +347,7 @@ class CMacProperties(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -323,6 +358,7 @@ class CMacProperties(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -332,6 +368,7 @@ class CMacProperties(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -341,6 +378,7 @@ class CMacProperties(Base):
 
     @property
     def EnableAggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -351,6 +389,7 @@ class CMacProperties(Base):
 
     @property
     def EnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -361,6 +400,7 @@ class CMacProperties(Base):
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -371,6 +411,7 @@ class CMacProperties(Base):
 
     @property
     def EnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -381,6 +422,7 @@ class CMacProperties(Base):
 
     @property
     def EnableCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -391,6 +433,7 @@ class CMacProperties(Base):
 
     @property
     def EnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -401,6 +444,7 @@ class CMacProperties(Base):
 
     @property
     def EnableLocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -411,6 +455,7 @@ class CMacProperties(Base):
 
     @property
     def EnableMultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -421,6 +466,7 @@ class CMacProperties(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -431,6 +477,7 @@ class CMacProperties(Base):
 
     @property
     def EnableOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -441,6 +488,7 @@ class CMacProperties(Base):
 
     @property
     def EnableOriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -451,6 +499,7 @@ class CMacProperties(Base):
 
     @property
     def EnableSecondLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -461,6 +510,7 @@ class CMacProperties(Base):
 
     @property
     def EnableStickyStaticFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -471,6 +521,7 @@ class CMacProperties(Base):
 
     @property
     def EnableUserDefinedSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -481,6 +532,7 @@ class CMacProperties(Base):
 
     @property
     def EviId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -491,6 +543,7 @@ class CMacProperties(Base):
 
     @property
     def FirstLabelStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -501,6 +554,7 @@ class CMacProperties(Base):
 
     @property
     def IncludeDefaultGatewayExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -511,6 +565,7 @@ class CMacProperties(Base):
 
     @property
     def Ipv4AddressPrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -521,6 +576,7 @@ class CMacProperties(Base):
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -531,6 +587,7 @@ class CMacProperties(Base):
 
     @property
     def Ipv6AddressPrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -541,6 +598,7 @@ class CMacProperties(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -551,6 +609,7 @@ class CMacProperties(Base):
 
     @property
     def LabelMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -561,6 +620,7 @@ class CMacProperties(Base):
 
     @property
     def LabelStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -571,6 +631,7 @@ class CMacProperties(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -581,6 +642,7 @@ class CMacProperties(Base):
 
     @property
     def Mac(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -590,6 +652,7 @@ class CMacProperties(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -600,6 +663,7 @@ class CMacProperties(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -608,10 +672,12 @@ class CMacProperties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -620,10 +686,12 @@ class CMacProperties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
 
     @property
     def NoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -632,10 +700,12 @@ class CMacProperties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
     @NoOfClusters.setter
     def NoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
 
     @property
     def NoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -644,10 +714,12 @@ class CMacProperties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
 
     @property
     def NoOfExtendedCommunity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -656,10 +728,12 @@ class CMacProperties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
     def Origin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -670,6 +744,7 @@ class CMacProperties(Base):
 
     @property
     def OriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -680,6 +755,7 @@ class CMacProperties(Base):
 
     @property
     def OverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -690,6 +766,7 @@ class CMacProperties(Base):
 
     @property
     def PeerAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -700,6 +777,7 @@ class CMacProperties(Base):
 
     @property
     def SecondLabelStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -710,6 +788,7 @@ class CMacProperties(Base):
 
     @property
     def SendSRv6L3SIDOptionalInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -720,6 +799,7 @@ class CMacProperties(Base):
 
     @property
     def SendSRv6SIDOptionalInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -730,6 +810,7 @@ class CMacProperties(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -740,6 +821,7 @@ class CMacProperties(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -750,6 +832,7 @@ class CMacProperties(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -760,6 +843,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6EndpointBehavior(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -770,6 +854,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L2SidFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -780,6 +865,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L2SidLoc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -790,6 +876,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L2SidLocLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -800,6 +887,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L2SidLocMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -810,6 +898,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L2SidReserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -820,6 +909,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L2SidStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -830,6 +920,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3EndpointBehavior(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -840,6 +931,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SIDOptionalInformation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -850,6 +942,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -860,6 +953,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidLoc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -870,6 +964,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidLocLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -880,6 +975,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidLocMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -890,6 +986,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidReserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -900,6 +997,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidReserved1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -910,6 +1008,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidReserved2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -920,6 +1019,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6L3SidStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -930,6 +1030,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6SIDOptionalInformation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -940,6 +1041,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6SidReserved1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -950,6 +1052,7 @@ class CMacProperties(Base):
 
     @property
     def Srv6SidReserved2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -960,6 +1063,7 @@ class CMacProperties(Base):
 
     @property
     def UseSameSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -969,6 +1073,7 @@ class CMacProperties(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber']))
 
     def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        # type: (str, int, int, int, int) -> CMacProperties
         """Updates cMacProperties resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -989,6 +1094,7 @@ class CMacProperties(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        # type: (str, int, int, int, int) -> CMacProperties
         """Adds a new cMacProperties resource on the server and adds it to the container.
 
         Args
@@ -1020,6 +1126,7 @@ class CMacProperties(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Mac=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        # type: (int, str, List[str], str, int, int, int, int) -> CMacProperties
         """Finds and retrieves cMacProperties resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cMacProperties resources from the server.
@@ -1064,6 +1171,128 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ReadvertiseCMac(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the readvertiseCMac operation on the server.
+
+        Readvertise C-MAC
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        readvertiseCMac(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        readvertiseCMac(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        readvertiseCMac(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        readvertiseCMac(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('readvertiseCMac', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, ActiveTs=None, AdvSrv6L2SidInIgp=None, AdvSrv6L3SidInIgp=None, AdvertiseIpv4Address=None, AdvertiseIpv6Address=None, AdvertiseSRv6L2SID=None, AdvertiseSRv6L3SID=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSecondLabel=None, EnableStickyStaticFlag=None, EnableUserDefinedSequenceNumber=None, EviId=None, FirstLabelStart=None, IncludeDefaultGatewayExtendedCommunity=None, Ipv4AddressPrefixLength=None, Ipv4NextHop=None, Ipv6AddressPrefixLength=None, Ipv6NextHop=None, LabelMode=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PeerAddress=None, SecondLabelStart=None, SendSRv6L3SIDOptionalInfo=None, SendSRv6SIDOptionalInfo=None, SequenceNumber=None, SetNextHop=None, SetNextHopIpType=None, Srv6EndpointBehavior=None, Srv6L2SidFlags=None, Srv6L2SidLoc=None, Srv6L2SidLocLen=None, Srv6L2SidLocMetric=None, Srv6L2SidReserved=None, Srv6L2SidStep=None, Srv6L3EndpointBehavior=None, Srv6L3SIDOptionalInformation=None, Srv6L3SidFlags=None, Srv6L3SidLoc=None, Srv6L3SidLocLen=None, Srv6L3SidLocMetric=None, Srv6L3SidReserved=None, Srv6L3SidReserved1=None, Srv6L3SidReserved2=None, Srv6L3SidStep=None, Srv6SIDOptionalInformation=None, Srv6SidReserved1=None, Srv6SidReserved2=None, UseSameSequenceNumber=None):
         """Base class infrastructure that gets a list of cMacProperties device ids encapsulated by this object.
@@ -1150,96 +1379,3 @@ class CMacProperties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ReadvertiseCMac(self, *args, **kwargs):
-        """Executes the readvertiseCMac operation on the server.
-
-        Readvertise C-MAC
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        readvertiseCMac(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        readvertiseCMac(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        readvertiseCMac(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseCMac', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

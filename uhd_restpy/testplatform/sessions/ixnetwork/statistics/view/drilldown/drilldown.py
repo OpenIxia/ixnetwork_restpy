@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DrillDown(Base):
@@ -39,9 +40,11 @@ class DrillDown(Base):
         'TargetRowFilter': 'targetRowFilter',
         'TargetRowIndex': 'targetRowIndex',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DrillDown, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DrillDown, self).__init__(parent, list_op)
 
     @property
     def AvailableTargetRowFilters(self):
@@ -55,10 +58,14 @@ class DrillDown(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.drilldown.availabletargetrowfilters.availabletargetrowfilters import AvailableTargetRowFilters
-        return AvailableTargetRowFilters(self)
+        if self._properties.get('AvailableTargetRowFilters', None) is not None:
+            return self._properties.get('AvailableTargetRowFilters')
+        else:
+            return AvailableTargetRowFilters(self)
 
     @property
     def AvailableDrillDownOptions(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -68,6 +75,7 @@ class DrillDown(Base):
 
     @property
     def TargetDrillDownOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class DrillDown(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetDrillDownOption'])
     @TargetDrillDownOption.setter
     def TargetDrillDownOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetDrillDownOption'], value)
 
     @property
     def TargetRow(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -89,18 +99,21 @@ class DrillDown(Base):
 
     @property
     def TargetRowFilter(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTargetRowFilters): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         """
         return self._get_attribute(self._SDM_ATT_MAP['TargetRowFilter'])
     @TargetRowFilter.setter
     def TargetRowFilter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetRowFilter'], value)
 
     @property
     def TargetRowIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,15 +122,17 @@ class DrillDown(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetRowIndex'])
     @TargetRowIndex.setter
     def TargetRowIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetRowIndex'], value)
 
     def update(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
+        # type: (str, str, int) -> DrillDown
         """Updates drillDown resource on the server.
 
         Args
         ----
         - TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
-        - TargetRowFilter (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - TargetRowFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         - TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
 
         Raises
@@ -127,12 +142,13 @@ class DrillDown(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, TargetDrillDownOption=None, TargetRowFilter=None, TargetRowIndex=None):
+        # type: (str, str, int) -> DrillDown
         """Adds a new drillDown resource on the server and adds it to the container.
 
         Args
         ----
         - TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
-        - TargetRowFilter (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - TargetRowFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         - TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
 
         Returns
@@ -156,6 +172,7 @@ class DrillDown(Base):
         self._delete()
 
     def find(self, AvailableDrillDownOptions=None, TargetDrillDownOption=None, TargetRow=None, TargetRowFilter=None, TargetRowIndex=None):
+        # type: (List[str], str, List[str], str, int) -> DrillDown
         """Finds and retrieves drillDown resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve drillDown resources from the server.
@@ -167,7 +184,7 @@ class DrillDown(Base):
         - AvailableDrillDownOptions (list(str)): Gets the available drill down options for the selected row.
         - TargetDrillDownOption (str): Sets the drill down option attribute to the drilldown object. It is one of the items in the list returned at 2.
         - TargetRow (list(str)): Gets the target row, set previously, at step 1.
-        - TargetRowFilter (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
+        - TargetRowFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTargetRowFilters)): Sets the row (from the view) that will be used to perform the drill-down. This is done by using one of the filters provided by availableTargetRowFilters
         - TargetRowIndex (number): Sets the attribute targetRowIndex to the drill down object. This is the row (from the view) that will be used to perform the drill-down.
 
         Returns
@@ -198,10 +215,15 @@ class DrillDown(Base):
         """
         return self._read(href)
 
-    def DoDrillDown(self):
+    def DoDrillDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the doDrillDown operation on the server.
 
         Perform a drill down.
+
+        doDrillDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -209,4 +231,6 @@ class DrillDown(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('doDrillDown', payload=payload, response_object=None)

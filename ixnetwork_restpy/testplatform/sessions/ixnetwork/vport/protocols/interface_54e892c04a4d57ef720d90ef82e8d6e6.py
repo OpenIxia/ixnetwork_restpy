@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -65,12 +66,18 @@ class Interface(Base):
         'TeResMaxBandwidth': 'teResMaxBandwidth',
         'TeUnreservedBwPriority': 'teUnreservedBwPriority',
     }
+    _SDM_ENUM_MAP = {
+        'circuitAuthType': ['none', 'password', 'md5'],
+        'level': ['level1', 'level2', 'level1Level2'],
+        'networkType': ['pointToPoint', 'broadcast', 'pointToMultipoint'],
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def CircuitAuthType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +86,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CircuitAuthType'])
     @CircuitAuthType.setter
     def CircuitAuthType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CircuitAuthType'], value)
 
     @property
     def CircuitReceivedPasswordList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -91,10 +100,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CircuitReceivedPasswordList'])
     @CircuitReceivedPasswordList.setter
     def CircuitReceivedPasswordList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['CircuitReceivedPasswordList'], value)
 
     @property
     def CircuitTransmitPassword(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +114,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CircuitTransmitPassword'])
     @CircuitTransmitPassword.setter
     def CircuitTransmitPassword(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CircuitTransmitPassword'], value)
 
     @property
     def ConfiguredHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,10 +128,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConfiguredHoldTime'])
     @ConfiguredHoldTime.setter
     def ConfiguredHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConfiguredHoldTime'], value)
 
     @property
     def Enable3WayHandshake(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -127,10 +142,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enable3WayHandshake'])
     @Enable3WayHandshake.setter
     def Enable3WayHandshake(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enable3WayHandshake'], value)
 
     @property
     def EnableAutoAdjustArea(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -139,10 +156,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoAdjustArea'])
     @EnableAutoAdjustArea.setter
     def EnableAutoAdjustArea(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoAdjustArea'], value)
 
     @property
     def EnableAutoAdjustMtu(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -151,10 +170,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoAdjustMtu'])
     @EnableAutoAdjustMtu.setter
     def EnableAutoAdjustMtu(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoAdjustMtu'], value)
 
     @property
     def EnableAutoAdjustProtocolsSupported(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -163,10 +184,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoAdjustProtocolsSupported'])
     @EnableAutoAdjustProtocolsSupported.setter
     def EnableAutoAdjustProtocolsSupported(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoAdjustProtocolsSupported'], value)
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -175,10 +198,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
 
     @property
     def EnableConfiguredHoldTime(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -187,10 +212,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableConfiguredHoldTime'])
     @EnableConfiguredHoldTime.setter
     def EnableConfiguredHoldTime(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableConfiguredHoldTime'], value)
 
     @property
     def EnableConnectedToDut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -199,10 +226,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableConnectedToDut'])
     @EnableConnectedToDut.setter
     def EnableConnectedToDut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableConnectedToDut'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -211,10 +240,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExtendedCircuitId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -223,10 +254,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExtendedCircuitId'])
     @ExtendedCircuitId.setter
     def ExtendedCircuitId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExtendedCircuitId'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -235,10 +268,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def InterfaceIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -247,10 +282,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIp'])
     @InterfaceIp.setter
     def InterfaceIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIp'], value)
 
     @property
     def InterfaceIpMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -259,10 +296,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIpMask'])
     @InterfaceIpMask.setter
     def InterfaceIpMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIpMask'], value)
 
     @property
     def Ipv6MtMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -271,10 +310,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6MtMetric'])
     @Ipv6MtMetric.setter
     def Ipv6MtMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6MtMetric'], value)
 
     @property
     def Level(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -283,10 +324,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Level'])
     @Level.setter
     def Level(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Level'], value)
 
     @property
     def Level1DeadTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -295,10 +338,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Level1DeadTime'])
     @Level1DeadTime.setter
     def Level1DeadTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Level1DeadTime'], value)
 
     @property
     def Level1HelloTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -307,10 +352,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Level1HelloTime'])
     @Level1HelloTime.setter
     def Level1HelloTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Level1HelloTime'], value)
 
     @property
     def Level2DeadTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -319,10 +366,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Level2DeadTime'])
     @Level2DeadTime.setter
     def Level2DeadTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Level2DeadTime'], value)
 
     @property
     def Level2HelloTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -331,10 +380,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Level2HelloTime'])
     @Level2HelloTime.setter
     def Level2HelloTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Level2HelloTime'], value)
 
     @property
     def Metric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -343,10 +394,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metric'])
     @Metric.setter
     def Metric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
 
     @property
     def NetworkType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -355,10 +408,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NetworkType'])
     @NetworkType.setter
     def NetworkType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NetworkType'], value)
 
     @property
     def PriorityLevel1(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -367,10 +422,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityLevel1'])
     @PriorityLevel1.setter
     def PriorityLevel1(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityLevel1'], value)
 
     @property
     def PriorityLevel2(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -379,10 +436,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityLevel2'])
     @PriorityLevel2.setter
     def PriorityLevel2(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityLevel2'], value)
 
     @property
     def TeAdminGroup(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -391,10 +450,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeAdminGroup'])
     @TeAdminGroup.setter
     def TeAdminGroup(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeAdminGroup'], value)
 
     @property
     def TeMaxBandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -403,10 +464,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeMaxBandwidth'])
     @TeMaxBandwidth.setter
     def TeMaxBandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeMaxBandwidth'], value)
 
     @property
     def TeMetricLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -415,10 +478,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeMetricLevel'])
     @TeMetricLevel.setter
     def TeMetricLevel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeMetricLevel'], value)
 
     @property
     def TeResMaxBandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -427,10 +492,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeResMaxBandwidth'])
     @TeResMaxBandwidth.setter
     def TeResMaxBandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeResMaxBandwidth'], value)
 
     @property
     def TeUnreservedBwPriority(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -439,9 +506,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeUnreservedBwPriority'])
     @TeUnreservedBwPriority.setter
     def TeUnreservedBwPriority(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeUnreservedBwPriority'], value)
 
     def update(self, CircuitAuthType=None, CircuitReceivedPasswordList=None, CircuitTransmitPassword=None, ConfiguredHoldTime=None, Enable3WayHandshake=None, EnableAutoAdjustArea=None, EnableAutoAdjustMtu=None, EnableAutoAdjustProtocolsSupported=None, EnableBfdRegistration=None, EnableConfiguredHoldTime=None, EnableConnectedToDut=None, Enabled=None, ExtendedCircuitId=None, InterfaceId=None, InterfaceIp=None, InterfaceIpMask=None, Ipv6MtMetric=None, Level=None, Level1DeadTime=None, Level1HelloTime=None, Level2DeadTime=None, Level2HelloTime=None, Metric=None, NetworkType=None, PriorityLevel1=None, PriorityLevel2=None, TeAdminGroup=None, TeMaxBandwidth=None, TeMetricLevel=None, TeResMaxBandwidth=None, TeUnreservedBwPriority=None):
+        # type: (str, List[str], str, int, bool, bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, str, int, int, int, int, int, str, int, int, str, int, int, int, List[int]) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -485,6 +554,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CircuitAuthType=None, CircuitReceivedPasswordList=None, CircuitTransmitPassword=None, ConfiguredHoldTime=None, Enable3WayHandshake=None, EnableAutoAdjustArea=None, EnableAutoAdjustMtu=None, EnableAutoAdjustProtocolsSupported=None, EnableBfdRegistration=None, EnableConfiguredHoldTime=None, EnableConnectedToDut=None, Enabled=None, ExtendedCircuitId=None, InterfaceId=None, InterfaceIp=None, InterfaceIpMask=None, Ipv6MtMetric=None, Level=None, Level1DeadTime=None, Level1HelloTime=None, Level2DeadTime=None, Level2HelloTime=None, Metric=None, NetworkType=None, PriorityLevel1=None, PriorityLevel2=None, TeAdminGroup=None, TeMaxBandwidth=None, TeMetricLevel=None, TeResMaxBandwidth=None, TeUnreservedBwPriority=None):
+        # type: (str, List[str], str, int, bool, bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, str, int, int, int, int, int, str, int, int, str, int, int, int, List[int]) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -542,6 +612,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, CircuitAuthType=None, CircuitReceivedPasswordList=None, CircuitTransmitPassword=None, ConfiguredHoldTime=None, Enable3WayHandshake=None, EnableAutoAdjustArea=None, EnableAutoAdjustMtu=None, EnableAutoAdjustProtocolsSupported=None, EnableBfdRegistration=None, EnableConfiguredHoldTime=None, EnableConnectedToDut=None, Enabled=None, ExtendedCircuitId=None, InterfaceId=None, InterfaceIp=None, InterfaceIpMask=None, Ipv6MtMetric=None, Level=None, Level1DeadTime=None, Level1HelloTime=None, Level2DeadTime=None, Level2HelloTime=None, Metric=None, NetworkType=None, PriorityLevel1=None, PriorityLevel2=None, TeAdminGroup=None, TeMaxBandwidth=None, TeMetricLevel=None, TeResMaxBandwidth=None, TeUnreservedBwPriority=None):
+        # type: (str, List[str], str, int, bool, bool, bool, bool, bool, bool, bool, bool, int, str, str, str, int, str, int, int, int, int, int, str, int, int, str, int, int, int, List[int]) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.

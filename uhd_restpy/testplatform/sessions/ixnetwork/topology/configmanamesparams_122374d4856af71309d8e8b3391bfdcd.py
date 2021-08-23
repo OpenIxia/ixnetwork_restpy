@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ConfigMANamesParams(Base):
@@ -35,12 +36,16 @@ class ConfigMANamesParams(Base):
         'MaName': 'maName',
         'SmaFormat': 'smaFormat',
     }
+    _SDM_ENUM_MAP = {
+        'smaFormat': ['megIdFormatTypeIccBasedFormat', 'megIdFormatTypePrimaryVid', 'megIdFormatTypeCharStr', 'megIdFormatTypeTwoOctetInt', 'megIdFormatTypeRfc2685VpnId'],
+    }
 
-    def __init__(self, parent):
-        super(ConfigMANamesParams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ConfigMANamesParams, self).__init__(parent, list_op)
 
     @property
     def IncrementMaName(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -49,10 +54,12 @@ class ConfigMANamesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementMaName'])
     @IncrementMaName.setter
     def IncrementMaName(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementMaName'], value)
 
     @property
     def MaName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,10 +68,12 @@ class ConfigMANamesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaName'])
     @MaName.setter
     def MaName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaName'], value)
 
     @property
     def SmaFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,9 +82,11 @@ class ConfigMANamesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SmaFormat'])
     @SmaFormat.setter
     def SmaFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SmaFormat'], value)
 
     def update(self, IncrementMaName=None, MaName=None, SmaFormat=None):
+        # type: (bool, str, str) -> ConfigMANamesParams
         """Updates configMANamesParams resource on the server.
 
         Args
@@ -90,10 +101,15 @@ class ConfigMANamesParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ConfigMANames(self):
+    def ConfigMANames(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the configMANames operation on the server.
 
         Import IPv6 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
+
+        configMANames(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -101,4 +117,6 @@ class ConfigMANamesParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('configMANames', payload=payload, response_object=None)

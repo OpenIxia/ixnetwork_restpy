@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DeviceGroup(Base):
@@ -41,9 +42,12 @@ class DeviceGroup(Base):
         'Name': 'name',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(DeviceGroup, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DeviceGroup, self).__init__(parent, list_op)
 
     @property
     def BfdRouter(self):
@@ -57,7 +61,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdrouter_deb1cea5df395bf5b6957f7f9cde8ef4 import BfdRouter
-        return BfdRouter(self)
+        if self._properties.get('BfdRouter', None) is not None:
+            return self._properties.get('BfdRouter')
+        else:
+            return BfdRouter(self)
 
     @property
     def BridgeData(self):
@@ -71,7 +78,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bridgedata_46f9e50d9befc7b4e2640ba4217a2af2 import BridgeData
-        return BridgeData(self)
+        if self._properties.get('BridgeData', None) is not None:
+            return self._properties.get('BridgeData')
+        else:
+            return BridgeData(self)
 
     @property
     def DeviceGroup(self):
@@ -85,7 +95,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import DeviceGroup
-        return DeviceGroup(self)
+        if self._properties.get('DeviceGroup', None) is not None:
+            return self._properties.get('DeviceGroup')
+        else:
+            return DeviceGroup(self)
 
     @property
     def Ethernet(self):
@@ -99,7 +112,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        return Ethernet(self)
+        if self._properties.get('Ethernet', None) is not None:
+            return self._properties.get('Ethernet')
+        else:
+            return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
@@ -113,7 +129,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        return Ipv4Loopback(self)
+        if self._properties.get('Ipv4Loopback', None) is not None:
+            return self._properties.get('Ipv4Loopback')
+        else:
+            return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
@@ -127,7 +146,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        return Ipv6Loopback(self)
+        if self._properties.get('Ipv6Loopback', None) is not None:
+            return self._properties.get('Ipv6Loopback')
+        else:
+            return Ipv6Loopback(self)
 
     @property
     def IsisFabricPathRouter(self):
@@ -141,7 +163,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpathrouter_3484383ef19d547bbf8b6a3a8701d8ab import IsisFabricPathRouter
-        return IsisFabricPathRouter(self)
+        if self._properties.get('IsisFabricPathRouter', None) is not None:
+            return self._properties.get('IsisFabricPathRouter')
+        else:
+            return IsisFabricPathRouter(self)
 
     @property
     def IsisL3Router(self):
@@ -155,7 +180,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_d361218740d3267022bce12b7b124967 import IsisL3Router
-        return IsisL3Router(self)
+        if self._properties.get('IsisL3Router', None) is not None:
+            return self._properties.get('IsisL3Router')
+        else:
+            return IsisL3Router(self)
 
     @property
     def IsisSpbRouter(self):
@@ -169,7 +197,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbrouter_7f125b55fde121bdcf257dc13c69a82b import IsisSpbRouter
-        return IsisSpbRouter(self)
+        if self._properties.get('IsisSpbRouter', None) is not None:
+            return self._properties.get('IsisSpbRouter')
+        else:
+            return IsisSpbRouter(self)
 
     @property
     def IsisTrillRouter(self):
@@ -183,7 +214,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillrouter_a0dffe09cb3b7d2c96fc3b3507112129 import IsisTrillRouter
-        return IsisTrillRouter(self)
+        if self._properties.get('IsisTrillRouter', None) is not None:
+            return self._properties.get('IsisTrillRouter')
+        else:
+            return IsisTrillRouter(self)
 
     @property
     def LdpBasicRouter(self):
@@ -197,7 +231,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
-        return LdpBasicRouter(self)
+        if self._properties.get('LdpBasicRouter', None) is not None:
+            return self._properties.get('LdpBasicRouter')
+        else:
+            return LdpBasicRouter(self)
 
     @property
     def LdpBasicRouterV6(self):
@@ -211,7 +248,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        return LdpBasicRouterV6(self)
+        if self._properties.get('LdpBasicRouterV6', None) is not None:
+            return self._properties.get('LdpBasicRouterV6')
+        else:
+            return LdpBasicRouterV6(self)
 
     @property
     def LdpLpbInterface(self):
@@ -225,7 +265,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldplpbinterface_a8182405aecaf64e394e960bc0e2f18f import LdpLpbInterface
-        return LdpLpbInterface(self)
+        if self._properties.get('LdpLpbInterface', None) is not None:
+            return self._properties.get('LdpLpbInterface')
+        else:
+            return LdpLpbInterface(self)
 
     @property
     def LdpTargetedRouter(self):
@@ -239,7 +282,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        return LdpTargetedRouter(self)
+        if self._properties.get('LdpTargetedRouter', None) is not None:
+            return self._properties.get('LdpTargetedRouter')
+        else:
+            return LdpTargetedRouter(self)
 
     @property
     def LdpTargetedRouterV6(self):
@@ -253,7 +299,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        return LdpTargetedRouterV6(self)
+        if self._properties.get('LdpTargetedRouterV6', None) is not None:
+            return self._properties.get('LdpTargetedRouterV6')
+        else:
+            return LdpTargetedRouterV6(self)
 
     @property
     def Ldpv6LoopbackInterface(self):
@@ -267,7 +316,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpv6loopbackinterface_1c613e9df4bfa76dac19166ff3ca5017 import Ldpv6LoopbackInterface
-        return Ldpv6LoopbackInterface(self)
+        if self._properties.get('Ldpv6LoopbackInterface', None) is not None:
+            return self._properties.get('Ldpv6LoopbackInterface')
+        else:
+            return Ldpv6LoopbackInterface(self)
 
     @property
     def MplsoamRouter(self):
@@ -281,7 +333,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoamrouter_845700fadfdfffc9273541ede90252e5 import MplsoamRouter
-        return MplsoamRouter(self)
+        if self._properties.get('MplsoamRouter', None) is not None:
+            return self._properties.get('MplsoamRouter')
+        else:
+            return MplsoamRouter(self)
 
     @property
     def NetworkGroup(self):
@@ -295,7 +350,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networkgroup_4a63874e791827c3a0361c2d201dbc0c import NetworkGroup
-        return NetworkGroup(self)
+        if self._properties.get('NetworkGroup', None) is not None:
+            return self._properties.get('NetworkGroup')
+        else:
+            return NetworkGroup(self)
 
     @property
     def NetworkTopology(self):
@@ -309,7 +367,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networktopology_657b9792feb17675a34c183046aa9924 import NetworkTopology
-        return NetworkTopology(self)
+        if self._properties.get('NetworkTopology', None) is not None:
+            return self._properties.get('NetworkTopology')
+        else:
+            return NetworkTopology(self)
 
     @property
     def OfHostData(self):
@@ -323,7 +384,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofhostdata_bd823feb7a8ba9bb9ba77fa35a83dce3 import OfHostData
-        return OfHostData(self)
+        if self._properties.get('OfHostData', None) is not None:
+            return self._properties.get('OfHostData')
+        else:
+            return OfHostData(self)
 
     @property
     def Ospfv2Router(self):
@@ -337,7 +401,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_18cdb9707bffd56b0efa6b810027c1a1 import Ospfv2Router
-        return Ospfv2Router(self)
+        if self._properties.get('Ospfv2Router', None) is not None:
+            return self._properties.get('Ospfv2Router')
+        else:
+            return Ospfv2Router(self)
 
     @property
     def Ospfv3Router(self):
@@ -351,7 +418,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39 import Ospfv3Router
-        return Ospfv3Router(self)
+        if self._properties.get('Ospfv3Router', None) is not None:
+            return self._properties.get('Ospfv3Router')
+        else:
+            return Ospfv3Router(self)
 
     @property
     def PimRouter(self):
@@ -365,7 +435,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimrouter_fdf354c2c4e318a7557c536f097648a7 import PimRouter
-        return PimRouter(self)
+        if self._properties.get('PimRouter', None) is not None:
+            return self._properties.get('PimRouter')
+        else:
+            return PimRouter(self)
 
     @property
     def RouterData(self):
@@ -379,10 +452,14 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.routerdata_48b2bbc3e057b769b893f4a6c10ed927 import RouterData
-        return RouterData(self)
+        if self._properties.get('RouterData', None) is not None:
+            return self._properties.get('RouterData')
+        else:
+            return RouterData(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -392,6 +469,7 @@ class DeviceGroup(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -401,6 +479,7 @@ class DeviceGroup(Base):
 
     @property
     def Enabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -420,6 +499,7 @@ class DeviceGroup(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -428,10 +508,12 @@ class DeviceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -440,10 +522,12 @@ class DeviceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -452,6 +536,7 @@ class DeviceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, Multiplier=None, Name=None):
+        # type: (int, str) -> DeviceGroup
         """Updates deviceGroup resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -469,6 +554,7 @@ class DeviceGroup(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Multiplier=None, Name=None):
+        # type: (int, str) -> DeviceGroup
         """Adds a new deviceGroup resource on the server and adds it to the container.
 
         Args
@@ -540,6 +626,165 @@ class DeviceGroup(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def CopyPaste(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the copyPaste operation on the server.
+
+        Copy this node, paste it behind the destination node and return the newly copied node.
+
+        copyPaste(Arg2=href, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('copyPaste', payload=payload, response_object=None)
+
+    def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the fetchAndUpdateConfigFromCloud operation on the server.
+
+        Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
+
+        fetchAndUpdateConfigFromCloud(Mode=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions in Device Group that are in 'Down' state.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Enabled=None):
         """Base class infrastructure that gets a list of deviceGroup device ids encapsulated by this object.
 
@@ -559,130 +804,3 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def CopyPaste(self, *args, **kwargs):
-        """Executes the copyPaste operation on the server.
-
-        Copy this node, paste it behind the destination node and return the newly copied node.
-
-        copyPaste(Arg2=href)list
-        ------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
-        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('copyPaste', payload=payload, response_object=None)
-
-    def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
-        """Executes the fetchAndUpdateConfigFromCloud operation on the server.
-
-        Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
-
-        fetchAndUpdateConfigFromCloud(Mode=string)
-        ------------------------------------------
-        - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
-
-    def RestartDown(self):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions in Device Group that are in 'Down' state.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgressOnlyTracking(Base):
@@ -41,9 +42,12 @@ class EgressOnlyTracking(Base):
         'SignatureOffset': 'signatureOffset',
         'SignatureValue': 'signatureValue',
     }
+    _SDM_ENUM_MAP = {
+        'signatureLengthType': ['fourByte', 'twelveByte'],
+    }
 
-    def __init__(self, parent):
-        super(EgressOnlyTracking, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgressOnlyTracking, self).__init__(parent, list_op)
 
     @property
     def Egress(self):
@@ -59,6 +63,7 @@ class EgressOnlyTracking(Base):
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +72,12 @@ class EgressOnlyTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Port(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +86,12 @@ class EgressOnlyTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Port'])
     @Port.setter
     def Port(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Port'], value)
 
     @property
     def SignatureLengthType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +100,12 @@ class EgressOnlyTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SignatureLengthType'])
     @SignatureLengthType.setter
     def SignatureLengthType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SignatureLengthType'], value)
 
     @property
     def SignatureMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +114,12 @@ class EgressOnlyTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SignatureMask'])
     @SignatureMask.setter
     def SignatureMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SignatureMask'], value)
 
     @property
     def SignatureOffset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,10 +128,12 @@ class EgressOnlyTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SignatureOffset'])
     @SignatureOffset.setter
     def SignatureOffset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SignatureOffset'], value)
 
     @property
     def SignatureValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +142,7 @@ class EgressOnlyTracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SignatureValue'])
     @SignatureValue.setter
     def SignatureValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SignatureValue'], value)
 
     def update(self, Egress=None, Enabled=None, Port=None, SignatureLengthType=None, SignatureMask=None, SignatureOffset=None, SignatureValue=None):

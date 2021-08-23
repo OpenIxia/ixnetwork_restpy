@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInformation(Base):
@@ -114,9 +115,29 @@ class LearnedInformation(Base):
         'PwStatusFaultLabelTtl': 'pwStatusFaultLabelTtl',
         'PwStatusFaultTransmitInterval': 'pwStatusFaultTransmitInterval',
     }
+    _SDM_ENUM_MAP = {
+        'alarmTrigger': ['clear', 'start'],
+        'alarmType': ['ietf', 'y1731'],
+        'apsTriggerType': ['clear', 'forcedSwitch', 'manualSwitchToProtect', 'manualSwitchToWorking', 'lockout', 'exercise', 'freeze'],
+        'cccvPauseTriggerOption': ['tx', 'rx', 'txRx'],
+        'cccvResumeTriggerOption': ['tx', 'rx', 'txRx'],
+        'counterType': ['32Bit', '64Bit'],
+        'dmMode': ['noResponseExpected', 'responseExpected'],
+        'dmTimeFormat': ['ieee', 'ntp'],
+        'dmType': ['ietf', 'y1731'],
+        'lmMode': ['responseExpected', 'noResponseExpected'],
+        'lmType': ['ietf', 'y1731'],
+        'lspPingEncapsulationType': ['GAch', 'UDP over IP over GAch'],
+        'lspTraceRouteEncapsulationType': ['GAch', 'UDP over IP over GAch'],
+        'minRxInterval': ['10', '100', '1000', '10000', '3.33', '60000', '600000'],
+        'minTxInterval': ['10', '100', '1000', '10000', '3.33', '60000', '600000'],
+        'misconnectivityDefectOption': ['unexpectedMepId', 'unexpectedYourDiscriminator'],
+        'onDemandCvDownstreamAddressType': ['ipv4Numbered', 'ipv4Unnumbered', 'nonIp'],
+        'onDemandCvPadTlvFirstOctet': ['drop', 'copy'],
+    }
 
-    def __init__(self, parent):
-        super(LearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInformation, self).__init__(parent, list_op)
 
     @property
     def DmLearnedInfo(self):
@@ -130,7 +151,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dmlearnedinfo_4f43a9179cbbb274bfab560ae9dfbd66 import DmLearnedInfo
-        return DmLearnedInfo(self)
+        if self._properties.get('DmLearnedInfo', None) is not None:
+            return self._properties.get('DmLearnedInfo')
+        else:
+            return DmLearnedInfo(self)
 
     @property
     def GeneralLearnedInfo(self):
@@ -144,7 +168,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.generallearnedinfo_69b009fa3b0223c18c475044c80e0a8a import GeneralLearnedInfo
-        return GeneralLearnedInfo(self)
+        if self._properties.get('GeneralLearnedInfo', None) is not None:
+            return self._properties.get('GeneralLearnedInfo')
+        else:
+            return GeneralLearnedInfo(self)
 
     @property
     def LmLearnedInfo(self):
@@ -158,7 +185,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lmlearnedinfo_82bda5fc632e654980ce384194a117b8 import LmLearnedInfo
-        return LmLearnedInfo(self)
+        if self._properties.get('LmLearnedInfo', None) is not None:
+            return self._properties.get('LmLearnedInfo')
+        else:
+            return LmLearnedInfo(self)
 
     @property
     def PingLearnedInfo(self):
@@ -172,7 +202,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.pinglearnedinfo_7cfde3bc969579781fc43365d9e4e20c import PingLearnedInfo
-        return PingLearnedInfo(self)
+        if self._properties.get('PingLearnedInfo', None) is not None:
+            return self._properties.get('PingLearnedInfo')
+        else:
+            return PingLearnedInfo(self)
 
     @property
     def TraceRouteLearnedInfo(self):
@@ -186,10 +219,14 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.traceroutelearnedinfo_d3fe51085725a1f70fdb83bc1f0780d7 import TraceRouteLearnedInfo
-        return TraceRouteLearnedInfo(self)
+        if self._properties.get('TraceRouteLearnedInfo', None) is not None:
+            return self._properties.get('TraceRouteLearnedInfo')
+        else:
+            return TraceRouteLearnedInfo(self)
 
     @property
     def AlarmTrigger(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,10 +235,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AlarmTrigger'])
     @AlarmTrigger.setter
     def AlarmTrigger(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AlarmTrigger'], value)
 
     @property
     def AlarmType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,10 +249,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AlarmType'])
     @AlarmType.setter
     def AlarmType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AlarmType'], value)
 
     @property
     def ApsTriggerType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -222,10 +263,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApsTriggerType'])
     @ApsTriggerType.setter
     def ApsTriggerType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApsTriggerType'], value)
 
     @property
     def CccvPauseTriggerOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,10 +277,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CccvPauseTriggerOption'])
     @CccvPauseTriggerOption.setter
     def CccvPauseTriggerOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CccvPauseTriggerOption'], value)
 
     @property
     def CccvResumeTriggerOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -246,10 +291,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CccvResumeTriggerOption'])
     @CccvResumeTriggerOption.setter
     def CccvResumeTriggerOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CccvResumeTriggerOption'], value)
 
     @property
     def ChangeSessionParameters(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -258,10 +305,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChangeSessionParameters'])
     @ChangeSessionParameters.setter
     def ChangeSessionParameters(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChangeSessionParameters'], value)
 
     @property
     def ClearMisconnectivityDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -270,10 +319,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClearMisconnectivityDefect'])
     @ClearMisconnectivityDefect.setter
     def ClearMisconnectivityDefect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClearMisconnectivityDefect'], value)
 
     @property
     def CounterType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -282,10 +333,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CounterType'])
     @CounterType.setter
     def CounterType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CounterType'], value)
 
     @property
     def DmInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -294,10 +347,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmInterval'])
     @DmInterval.setter
     def DmInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmInterval'], value)
 
     @property
     def DmIterations(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -306,10 +361,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmIterations'])
     @DmIterations.setter
     def DmIterations(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmIterations'], value)
 
     @property
     def DmMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -318,10 +375,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmMode'])
     @DmMode.setter
     def DmMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmMode'], value)
 
     @property
     def DmPadLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -330,10 +389,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmPadLen'])
     @DmPadLen.setter
     def DmPadLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmPadLen'], value)
 
     @property
     def DmRequestPaddedReply(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -342,10 +403,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmRequestPaddedReply'])
     @DmRequestPaddedReply.setter
     def DmRequestPaddedReply(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmRequestPaddedReply'], value)
 
     @property
     def DmTimeFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -354,10 +417,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmTimeFormat'])
     @DmTimeFormat.setter
     def DmTimeFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmTimeFormat'], value)
 
     @property
     def DmTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -366,10 +431,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmTrafficClass'])
     @DmTrafficClass.setter
     def DmTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmTrafficClass'], value)
 
     @property
     def DmType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -378,10 +445,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DmType'])
     @DmType.setter
     def DmType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DmType'], value)
 
     @property
     def EnableAlarm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -390,10 +459,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAlarm'])
     @EnableAlarm.setter
     def EnableAlarm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAlarm'], value)
 
     @property
     def EnableAlarmAis(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -402,10 +473,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAlarmAis'])
     @EnableAlarmAis.setter
     def EnableAlarmAis(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAlarmAis'], value)
 
     @property
     def EnableAlarmFastClear(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -414,10 +487,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAlarmFastClear'])
     @EnableAlarmFastClear.setter
     def EnableAlarmFastClear(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAlarmFastClear'], value)
 
     @property
     def EnableAlarmLck(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -426,10 +501,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAlarmLck'])
     @EnableAlarmLck.setter
     def EnableAlarmLck(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAlarmLck'], value)
 
     @property
     def EnableAlarmSetLdi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -438,10 +515,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAlarmSetLdi'])
     @EnableAlarmSetLdi.setter
     def EnableAlarmSetLdi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAlarmSetLdi'], value)
 
     @property
     def EnableApsTrigger(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -450,10 +529,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableApsTrigger'])
     @EnableApsTrigger.setter
     def EnableApsTrigger(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableApsTrigger'], value)
 
     @property
     def EnableCccvPause(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -462,10 +543,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCccvPause'])
     @EnableCccvPause.setter
     def EnableCccvPause(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCccvPause'], value)
 
     @property
     def EnableCccvResume(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -474,10 +557,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCccvResume'])
     @EnableCccvResume.setter
     def EnableCccvResume(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCccvResume'], value)
 
     @property
     def EnableDmTrigger(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -486,10 +571,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDmTrigger'])
     @EnableDmTrigger.setter
     def EnableDmTrigger(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDmTrigger'], value)
 
     @property
     def EnableLmTrigger(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -498,10 +585,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLmTrigger'])
     @EnableLmTrigger.setter
     def EnableLmTrigger(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLmTrigger'], value)
 
     @property
     def EnableLspPing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -510,10 +599,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLspPing'])
     @EnableLspPing.setter
     def EnableLspPing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLspPing'], value)
 
     @property
     def EnableLspPingFecStackValidation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -522,10 +613,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLspPingFecStackValidation'])
     @EnableLspPingFecStackValidation.setter
     def EnableLspPingFecStackValidation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLspPingFecStackValidation'], value)
 
     @property
     def EnableLspPingValidateReversePath(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -534,10 +627,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLspPingValidateReversePath'])
     @EnableLspPingValidateReversePath.setter
     def EnableLspPingValidateReversePath(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLspPingValidateReversePath'], value)
 
     @property
     def EnableLspTraceRoute(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -546,10 +641,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLspTraceRoute'])
     @EnableLspTraceRoute.setter
     def EnableLspTraceRoute(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLspTraceRoute'], value)
 
     @property
     def EnableLspTraceRouteFecStackValidation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -558,10 +655,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLspTraceRouteFecStackValidation'])
     @EnableLspTraceRouteFecStackValidation.setter
     def EnableLspTraceRouteFecStackValidation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLspTraceRouteFecStackValidation'], value)
 
     @property
     def EnablePwStatusClear(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -570,10 +669,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePwStatusClear'])
     @EnablePwStatusClear.setter
     def EnablePwStatusClear(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePwStatusClear'], value)
 
     @property
     def EnablePwStatusFault(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -582,10 +683,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePwStatusFault'])
     @EnablePwStatusFault.setter
     def EnablePwStatusFault(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePwStatusFault'], value)
 
     @property
     def IsDmLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -595,6 +698,7 @@ class LearnedInformation(Base):
 
     @property
     def IsGeneralLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -604,6 +708,7 @@ class LearnedInformation(Base):
 
     @property
     def IsLmLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -613,6 +718,7 @@ class LearnedInformation(Base):
 
     @property
     def IsPingLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -622,6 +728,7 @@ class LearnedInformation(Base):
 
     @property
     def IsTraceRouteLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -631,6 +738,7 @@ class LearnedInformation(Base):
 
     @property
     def LastDmResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -639,10 +747,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LastDmResponseTimeout'])
     @LastDmResponseTimeout.setter
     def LastDmResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LastDmResponseTimeout'], value)
 
     @property
     def LastLmResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -651,10 +761,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LastLmResponseTimeout'])
     @LastLmResponseTimeout.setter
     def LastLmResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LastLmResponseTimeout'], value)
 
     @property
     def LmInitialRxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -663,10 +775,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmInitialRxValue'])
     @LmInitialRxValue.setter
     def LmInitialRxValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmInitialRxValue'], value)
 
     @property
     def LmInitialTxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -675,10 +789,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmInitialTxValue'])
     @LmInitialTxValue.setter
     def LmInitialTxValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmInitialTxValue'], value)
 
     @property
     def LmInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -687,10 +803,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmInterval'])
     @LmInterval.setter
     def LmInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmInterval'], value)
 
     @property
     def LmIterations(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -699,10 +817,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmIterations'])
     @LmIterations.setter
     def LmIterations(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmIterations'], value)
 
     @property
     def LmMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -711,10 +831,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmMode'])
     @LmMode.setter
     def LmMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmMode'], value)
 
     @property
     def LmRxStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -723,10 +845,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmRxStep'])
     @LmRxStep.setter
     def LmRxStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmRxStep'], value)
 
     @property
     def LmTrafficClass(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -735,10 +859,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmTrafficClass'])
     @LmTrafficClass.setter
     def LmTrafficClass(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmTrafficClass'], value)
 
     @property
     def LmTxStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -747,10 +873,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmTxStep'])
     @LmTxStep.setter
     def LmTxStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmTxStep'], value)
 
     @property
     def LmType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -759,10 +887,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LmType'])
     @LmType.setter
     def LmType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LmType'], value)
 
     @property
     def LspPingEncapsulationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -771,10 +901,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspPingEncapsulationType'])
     @LspPingEncapsulationType.setter
     def LspPingEncapsulationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspPingEncapsulationType'], value)
 
     @property
     def LspPingResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -783,10 +915,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspPingResponseTimeout'])
     @LspPingResponseTimeout.setter
     def LspPingResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspPingResponseTimeout'], value)
 
     @property
     def LspPingTtlValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -795,10 +929,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspPingTtlValue'])
     @LspPingTtlValue.setter
     def LspPingTtlValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspPingTtlValue'], value)
 
     @property
     def LspTraceRouteEncapsulationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -807,10 +943,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspTraceRouteEncapsulationType'])
     @LspTraceRouteEncapsulationType.setter
     def LspTraceRouteEncapsulationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspTraceRouteEncapsulationType'], value)
 
     @property
     def LspTraceRouteResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -819,10 +957,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspTraceRouteResponseTimeout'])
     @LspTraceRouteResponseTimeout.setter
     def LspTraceRouteResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspTraceRouteResponseTimeout'], value)
 
     @property
     def LspTraceRouteTtlLimit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -831,10 +971,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspTraceRouteTtlLimit'])
     @LspTraceRouteTtlLimit.setter
     def LspTraceRouteTtlLimit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspTraceRouteTtlLimit'], value)
 
     @property
     def MinRxInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -843,10 +985,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRxInterval'])
     @MinRxInterval.setter
     def MinRxInterval(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRxInterval'], value)
 
     @property
     def MinTxInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -855,10 +999,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinTxInterval'])
     @MinTxInterval.setter
     def MinTxInterval(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinTxInterval'], value)
 
     @property
     def MisconnectivityDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -867,10 +1013,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MisconnectivityDefect'])
     @MisconnectivityDefect.setter
     def MisconnectivityDefect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MisconnectivityDefect'], value)
 
     @property
     def MisconnectivityDefectOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -879,10 +1027,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MisconnectivityDefectOption'])
     @MisconnectivityDefectOption.setter
     def MisconnectivityDefectOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MisconnectivityDefectOption'], value)
 
     @property
     def OnDemandCvDownstreamAddressType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -891,10 +1041,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvDownstreamAddressType'])
     @OnDemandCvDownstreamAddressType.setter
     def OnDemandCvDownstreamAddressType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvDownstreamAddressType'], value)
 
     @property
     def OnDemandCvDownstreamIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -903,10 +1055,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvDownstreamIpAddress'])
     @OnDemandCvDownstreamIpAddress.setter
     def OnDemandCvDownstreamIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvDownstreamIpAddress'], value)
 
     @property
     def OnDemandCvDsIflag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -915,10 +1069,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvDsIflag'])
     @OnDemandCvDsIflag.setter
     def OnDemandCvDsIflag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvDsIflag'], value)
 
     @property
     def OnDemandCvDsNflag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -927,10 +1083,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvDsNflag'])
     @OnDemandCvDsNflag.setter
     def OnDemandCvDsNflag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvDsNflag'], value)
 
     @property
     def OnDemandCvEgressIfNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -939,10 +1097,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvEgressIfNumber'])
     @OnDemandCvEgressIfNumber.setter
     def OnDemandCvEgressIfNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvEgressIfNumber'], value)
 
     @property
     def OnDemandCvIncludeDestinationIdentifierTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -951,10 +1111,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeDestinationIdentifierTlv'])
     @OnDemandCvIncludeDestinationIdentifierTlv.setter
     def OnDemandCvIncludeDestinationIdentifierTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeDestinationIdentifierTlv'], value)
 
     @property
     def OnDemandCvIncludeDetailedDownstreamMappingTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -963,10 +1125,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeDetailedDownstreamMappingTlv'])
     @OnDemandCvIncludeDetailedDownstreamMappingTlv.setter
     def OnDemandCvIncludeDetailedDownstreamMappingTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeDetailedDownstreamMappingTlv'], value)
 
     @property
     def OnDemandCvIncludeDownstreamMappingTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -975,10 +1139,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeDownstreamMappingTlv'])
     @OnDemandCvIncludeDownstreamMappingTlv.setter
     def OnDemandCvIncludeDownstreamMappingTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeDownstreamMappingTlv'], value)
 
     @property
     def OnDemandCvIncludePadTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -987,10 +1153,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIncludePadTlv'])
     @OnDemandCvIncludePadTlv.setter
     def OnDemandCvIncludePadTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIncludePadTlv'], value)
 
     @property
     def OnDemandCvIncludeReplyTosByteTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -999,10 +1167,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeReplyTosByteTlv'])
     @OnDemandCvIncludeReplyTosByteTlv.setter
     def OnDemandCvIncludeReplyTosByteTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeReplyTosByteTlv'], value)
 
     @property
     def OnDemandCvIncludeSourceIdentifierTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1011,10 +1181,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeSourceIdentifierTlv'])
     @OnDemandCvIncludeSourceIdentifierTlv.setter
     def OnDemandCvIncludeSourceIdentifierTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIncludeSourceIdentifierTlv'], value)
 
     @property
     def OnDemandCvIngressIfNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1023,10 +1195,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvIngressIfNumber'])
     @OnDemandCvIngressIfNumber.setter
     def OnDemandCvIngressIfNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvIngressIfNumber'], value)
 
     @property
     def OnDemandCvNumberedDownstreamInterfaceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1035,10 +1209,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvNumberedDownstreamInterfaceAddress'])
     @OnDemandCvNumberedDownstreamInterfaceAddress.setter
     def OnDemandCvNumberedDownstreamInterfaceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvNumberedDownstreamInterfaceAddress'], value)
 
     @property
     def OnDemandCvPadTlvFirstOctet(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1047,10 +1223,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvPadTlvFirstOctet'])
     @OnDemandCvPadTlvFirstOctet.setter
     def OnDemandCvPadTlvFirstOctet(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvPadTlvFirstOctet'], value)
 
     @property
     def OnDemandCvPadTlvLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1059,10 +1237,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvPadTlvLength'])
     @OnDemandCvPadTlvLength.setter
     def OnDemandCvPadTlvLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvPadTlvLength'], value)
 
     @property
     def OnDemandCvTosByte(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1071,10 +1251,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvTosByte'])
     @OnDemandCvTosByte.setter
     def OnDemandCvTosByte(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvTosByte'], value)
 
     @property
     def OnDemandCvUnnumberedDownstreamInterfaceAddress(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1083,10 +1265,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvUnnumberedDownstreamInterfaceAddress'])
     @OnDemandCvUnnumberedDownstreamInterfaceAddress.setter
     def OnDemandCvUnnumberedDownstreamInterfaceAddress(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvUnnumberedDownstreamInterfaceAddress'], value)
 
     @property
     def Periodicity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1095,10 +1279,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Periodicity'])
     @Periodicity.setter
     def Periodicity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Periodicity'], value)
 
     @property
     def PwStatusClearLabelTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1107,10 +1293,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusClearLabelTtl'])
     @PwStatusClearLabelTtl.setter
     def PwStatusClearLabelTtl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusClearLabelTtl'], value)
 
     @property
     def PwStatusClearTransmitInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1119,10 +1307,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusClearTransmitInterval'])
     @PwStatusClearTransmitInterval.setter
     def PwStatusClearTransmitInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusClearTransmitInterval'], value)
 
     @property
     def PwStatusCode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1131,10 +1321,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusCode'])
     @PwStatusCode.setter
     def PwStatusCode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusCode'], value)
 
     @property
     def PwStatusFaultLabelTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1143,10 +1335,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusFaultLabelTtl'])
     @PwStatusFaultLabelTtl.setter
     def PwStatusFaultLabelTtl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusFaultLabelTtl'], value)
 
     @property
     def PwStatusFaultTransmitInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1155,9 +1349,11 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusFaultTransmitInterval'])
     @PwStatusFaultTransmitInterval.setter
     def PwStatusFaultTransmitInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusFaultTransmitInterval'], value)
 
     def update(self, AlarmTrigger=None, AlarmType=None, ApsTriggerType=None, CccvPauseTriggerOption=None, CccvResumeTriggerOption=None, ChangeSessionParameters=None, ClearMisconnectivityDefect=None, CounterType=None, DmInterval=None, DmIterations=None, DmMode=None, DmPadLen=None, DmRequestPaddedReply=None, DmTimeFormat=None, DmTrafficClass=None, DmType=None, EnableAlarm=None, EnableAlarmAis=None, EnableAlarmFastClear=None, EnableAlarmLck=None, EnableAlarmSetLdi=None, EnableApsTrigger=None, EnableCccvPause=None, EnableCccvResume=None, EnableDmTrigger=None, EnableLmTrigger=None, EnableLspPing=None, EnableLspPingFecStackValidation=None, EnableLspPingValidateReversePath=None, EnableLspTraceRoute=None, EnableLspTraceRouteFecStackValidation=None, EnablePwStatusClear=None, EnablePwStatusFault=None, LastDmResponseTimeout=None, LastLmResponseTimeout=None, LmInitialRxValue=None, LmInitialTxValue=None, LmInterval=None, LmIterations=None, LmMode=None, LmRxStep=None, LmTrafficClass=None, LmTxStep=None, LmType=None, LspPingEncapsulationType=None, LspPingResponseTimeout=None, LspPingTtlValue=None, LspTraceRouteEncapsulationType=None, LspTraceRouteResponseTimeout=None, LspTraceRouteTtlLimit=None, MinRxInterval=None, MinTxInterval=None, MisconnectivityDefect=None, MisconnectivityDefectOption=None, OnDemandCvDownstreamAddressType=None, OnDemandCvDownstreamIpAddress=None, OnDemandCvDsIflag=None, OnDemandCvDsNflag=None, OnDemandCvEgressIfNumber=None, OnDemandCvIncludeDestinationIdentifierTlv=None, OnDemandCvIncludeDetailedDownstreamMappingTlv=None, OnDemandCvIncludeDownstreamMappingTlv=None, OnDemandCvIncludePadTlv=None, OnDemandCvIncludeReplyTosByteTlv=None, OnDemandCvIncludeSourceIdentifierTlv=None, OnDemandCvIngressIfNumber=None, OnDemandCvNumberedDownstreamInterfaceAddress=None, OnDemandCvPadTlvFirstOctet=None, OnDemandCvPadTlvLength=None, OnDemandCvTosByte=None, OnDemandCvUnnumberedDownstreamInterfaceAddress=None, Periodicity=None, PwStatusClearLabelTtl=None, PwStatusClearTransmitInterval=None, PwStatusCode=None, PwStatusFaultLabelTtl=None, PwStatusFaultTransmitInterval=None):
+        # type: (str, str, str, str, str, bool, bool, str, int, int, str, int, bool, str, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, int, int, int, str, int, int, int, str, str, int, int, str, int, int, str, str, bool, str, str, str, bool, bool, int, bool, bool, bool, bool, bool, bool, int, str, str, int, int, int, int, int, int, int, int, int) -> LearnedInformation
         """Updates learnedInformation resource on the server.
 
         Args
@@ -1246,41 +1442,65 @@ class LearnedInformation(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ClearRecordsForTrigger(self):
+    def ClearRecordsForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the clearRecordsForTrigger operation on the server.
 
         This option is used to clear the selected learned information using the command addRecordForTrigger
 
+        clearRecordsForTrigger(async_operation=bool)bool
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('clearRecordsForTrigger', payload=payload, response_object=None)
 
-    def RefreshLearnedInformation(self):
+    def RefreshLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInformation operation on the server.
 
         This signifies the refreshing of the learned information of MPLSTP router.
 
+        refreshLearnedInformation(async_operation=bool)bool
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInformation', payload=payload, response_object=None)
 
-    def Trigger(self):
+    def Trigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the trigger operation on the server.
 
         This signifies the learned info trigger settings.
 
+        trigger(async_operation=bool)bool
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('trigger', payload=payload, response_object=None)

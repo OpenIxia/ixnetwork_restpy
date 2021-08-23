@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ApplyActions(Base):
@@ -48,12 +49,15 @@ class ApplyActions(Base):
         'SetNetworkTtl': 'setNetworkTtl',
         'SetQueue': 'setQueue',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ApplyActions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ApplyActions, self).__init__(parent, list_op)
 
     @property
     def CopyTtlIn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +66,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CopyTtlIn'])
     @CopyTtlIn.setter
     def CopyTtlIn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CopyTtlIn'], value)
 
     @property
     def CopyTtlOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +80,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CopyTtlOut'])
     @CopyTtlOut.setter
     def CopyTtlOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CopyTtlOut'], value)
 
     @property
     def DecrementMplsTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,10 +94,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DecrementMplsTtl'])
     @DecrementMplsTtl.setter
     def DecrementMplsTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DecrementMplsTtl'], value)
 
     @property
     def DecrementNetworkTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,10 +108,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DecrementNetworkTtl'])
     @DecrementNetworkTtl.setter
     def DecrementNetworkTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DecrementNetworkTtl'], value)
 
     @property
     def Group(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -110,10 +122,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Group'])
     @Group.setter
     def Group(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Group'], value)
 
     @property
     def Output(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -122,10 +136,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Output'])
     @Output.setter
     def Output(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Output'], value)
 
     @property
     def PopMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,10 +150,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PopMpls'])
     @PopMpls.setter
     def PopMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PopMpls'], value)
 
     @property
     def PopPbb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -146,10 +164,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PopPbb'])
     @PopPbb.setter
     def PopPbb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PopPbb'], value)
 
     @property
     def PopVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -158,10 +178,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PopVlan'])
     @PopVlan.setter
     def PopVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PopVlan'], value)
 
     @property
     def PushMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -170,10 +192,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PushMpls'])
     @PushMpls.setter
     def PushMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PushMpls'], value)
 
     @property
     def PushPbb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,10 +206,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PushPbb'])
     @PushPbb.setter
     def PushPbb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PushPbb'], value)
 
     @property
     def PushVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -194,10 +220,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PushVlan'])
     @PushVlan.setter
     def PushVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PushVlan'], value)
 
     @property
     def SetField(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -206,10 +234,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetField'])
     @SetField.setter
     def SetField(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetField'], value)
 
     @property
     def SetMplsTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -218,10 +248,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetMplsTtl'])
     @SetMplsTtl.setter
     def SetMplsTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetMplsTtl'], value)
 
     @property
     def SetNetworkTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,10 +262,12 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetNetworkTtl'])
     @SetNetworkTtl.setter
     def SetNetworkTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetNetworkTtl'], value)
 
     @property
     def SetQueue(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -242,9 +276,11 @@ class ApplyActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetQueue'])
     @SetQueue.setter
     def SetQueue(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetQueue'], value)
 
     def update(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> ApplyActions
         """Updates applyActions resource on the server.
 
         Args

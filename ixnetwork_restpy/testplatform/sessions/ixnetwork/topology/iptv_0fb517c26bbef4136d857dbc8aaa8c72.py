@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Iptv(Base):
@@ -50,12 +51,15 @@ class Iptv(Base):
         'ZapInterval': 'zapInterval',
         'ZapIntervalType': 'zapIntervalType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Iptv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Iptv, self).__init__(parent, list_op)
 
     @property
     def CombinedLeaveJoin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +70,7 @@ class Iptv(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +80,7 @@ class Iptv(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +90,7 @@ class Iptv(Base):
 
     @property
     def EnableGeneralQueryResponse(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -94,6 +101,7 @@ class Iptv(Base):
 
     @property
     def EnableGroupSpecificQueryResponse(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class Iptv(Base):
 
     @property
     def JoinLatencyThreshold(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +123,7 @@ class Iptv(Base):
 
     @property
     def LeaveLatencyThreshold(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class Iptv(Base):
 
     @property
     def LogAllTimestamps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +145,7 @@ class Iptv(Base):
 
     @property
     def LogFailureTimestamps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +156,7 @@ class Iptv(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,10 +165,12 @@ class Iptv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumChannelChangesBeforeView(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +181,7 @@ class Iptv(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -175,6 +191,7 @@ class Iptv(Base):
 
     @property
     def StbLeaveJoinDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +202,7 @@ class Iptv(Base):
 
     @property
     def ViewDuration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +213,7 @@ class Iptv(Base):
 
     @property
     def ZapBehavior(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +224,7 @@ class Iptv(Base):
 
     @property
     def ZapDirection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +235,7 @@ class Iptv(Base):
 
     @property
     def ZapInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -225,6 +246,7 @@ class Iptv(Base):
 
     @property
     def ZapIntervalType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +256,7 @@ class Iptv(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ZapIntervalType']))
 
     def update(self, Name=None):
+        # type: (str) -> Iptv
         """Updates iptv resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -248,6 +271,104 @@ class Iptv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ImportFailureTimestampFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the importFailureTimestampFile operation on the server.
+
+        Fetch IPTV Failure Timestamp File from PCPU to Client
+
+        importFailureTimestampFile(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('importFailureTimestampFile', payload=payload, response_object=None)
+
+    def StartIptv(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the startIptv operation on the server.
+
+        Start IPTV
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startIptv(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startIptv(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startIptv(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startIptv(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startIptv', payload=payload, response_object=None)
+
+    def StopIptv(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopIptv operation on the server.
+
+        Stop IPTV
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopIptv(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopIptv(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopIptv(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopIptv(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopIptv', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, CombinedLeaveJoin=None, EnableGeneralQueryResponse=None, EnableGroupSpecificQueryResponse=None, JoinLatencyThreshold=None, LeaveLatencyThreshold=None, LogAllTimestamps=None, LogFailureTimestamps=None, NumChannelChangesBeforeView=None, StbLeaveJoinDelay=None, ViewDuration=None, ZapBehavior=None, ZapDirection=None, ZapInterval=None, ZapIntervalType=None):
         """Base class infrastructure that gets a list of iptv device ids encapsulated by this object.
@@ -281,83 +402,3 @@ class Iptv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ImportFailureTimestampFile(self, *args, **kwargs):
-        """Executes the importFailureTimestampFile operation on the server.
-
-        Fetch IPTV Failure Timestamp File from PCPU to Client
-
-        importFailureTimestampFile(Arg2=list)list
-        -----------------------------------------
-        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('importFailureTimestampFile', payload=payload, response_object=None)
-
-    def StartIptv(self, *args, **kwargs):
-        """Executes the startIptv operation on the server.
-
-        Start IPTV
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startIptv(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startIptv(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        startIptv(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startIptv', payload=payload, response_object=None)
-
-    def StopIptv(self, *args, **kwargs):
-        """Executes the stopIptv operation on the server.
-
-        Stop IPTV
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopIptv(SessionIndices=list)
-        -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopIptv(SessionIndices=string)
-        -------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopIptv(Arg2=list)list
-        -----------------------
-        - Arg2 (list(number)): List of indices into the IPTV grid An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopIptv', payload=payload, response_object=None)

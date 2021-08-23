@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Tlv(Base):
@@ -40,9 +41,11 @@ class Tlv(Base):
         'IsEnabled': 'isEnabled',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Tlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Tlv, self).__init__(parent, list_op)
 
     @property
     def Length(self):
@@ -56,7 +59,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.length_0bd681ada144795cbd0b8c30dee1562d import Length
-        return Length(self)._select()
+        if self._properties.get('Length', None) is not None:
+            return self._properties.get('Length')
+        else:
+            return Length(self)._select()
 
     @property
     def Type(self):
@@ -70,7 +76,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.type_b3f7b13bb03ac01972b75a01e4f61712 import Type
-        return Type(self)._select()
+        if self._properties.get('Type', None) is not None:
+            return self._properties.get('Type')
+        else:
+            return Type(self)._select()
 
     @property
     def Value(self):
@@ -84,10 +93,14 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import Value
-        return Value(self)._select()
+        if self._properties.get('Value', None) is not None:
+            return self._properties.get('Value')
+        else:
+            return Value(self)._select()
 
     @property
     def AvailableIncludeInMessages(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -97,6 +110,7 @@ class Tlv(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +119,12 @@ class Tlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def EnablePerSession(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +135,7 @@ class Tlv(Base):
 
     @property
     def IncludeInMessages(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -127,10 +144,12 @@ class Tlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInMessages'])
     @IncludeInMessages.setter
     def IncludeInMessages(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInMessages'], value)
 
     @property
     def IsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -139,10 +158,12 @@ class Tlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
     @IsEnabled.setter
     def IsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,9 +172,11 @@ class Tlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
+        # type: (str, List[str], bool, str) -> Tlv
         """Updates tlv resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -173,6 +196,7 @@ class Tlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
+        # type: (str, List[str], bool, str) -> Tlv
         """Adds a new tlv resource on the server and adds it to the container.
 
         Args
@@ -203,6 +227,7 @@ class Tlv(Base):
         self._delete()
 
     def find(self, AvailableIncludeInMessages=None, Description=None, IncludeInMessages=None, IsEnabled=None, Name=None):
+        # type: (List[str], str, List[str], bool, str) -> Tlv
         """Finds and retrieves tlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tlv resources from the server.

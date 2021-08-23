@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrillMacUnicast(Base):
@@ -39,12 +40,15 @@ class TrillMacUnicast(Base):
         'UnicastMacAddress': 'unicastMacAddress',
         'VlanId': 'vlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TrillMacUnicast, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrillMacUnicast, self).__init__(parent, list_op)
 
     @property
     def Age(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class TrillMacUnicast(Base):
 
     @property
     def HostName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class TrillMacUnicast(Base):
 
     @property
     def LspId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +78,7 @@ class TrillMacUnicast(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,6 +88,7 @@ class TrillMacUnicast(Base):
 
     @property
     def UnicastMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +98,7 @@ class TrillMacUnicast(Base):
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,7 +106,21 @@ class TrillMacUnicast(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
 
+    def add(self):
+        """Adds a new trillMacUnicast resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved trillMacUnicast resources using find and the newly added trillMacUnicast resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Age=None, HostName=None, LspId=None, SequenceNumber=None, UnicastMacAddress=None, VlanId=None):
+        # type: (int, str, str, int, str, int) -> TrillMacUnicast
         """Finds and retrieves trillMacUnicast resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trillMacUnicast resources from the server.

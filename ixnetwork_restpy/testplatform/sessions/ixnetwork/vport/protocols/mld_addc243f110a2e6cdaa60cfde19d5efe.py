@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Mld(Base):
@@ -41,9 +42,13 @@ class Mld(Base):
         'RunningState': 'runningState',
         'TimePeriod': 'timePeriod',
     }
+    _SDM_ENUM_MAP = {
+        'mldv2Report': ['type143', 'type206'],
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Mld, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Mld, self).__init__(parent, list_op)
 
     @property
     def Host(self):
@@ -57,7 +62,10 @@ class Mld(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.host_fa1da007d58124057dd278c45c2d38ab import Host
-        return Host(self)
+        if self._properties.get('Host', None) is not None:
+            return self._properties.get('Host')
+        else:
+            return Host(self)
 
     @property
     def Querier(self):
@@ -71,10 +79,14 @@ class Mld(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.querier_dac8ed773affc99eb47c41c6e99f71c1 import Querier
-        return Querier(self)
+        if self._properties.get('Querier', None) is not None:
+            return self._properties.get('Querier')
+        else:
+            return Querier(self)
 
     @property
     def EnableDoneOnStop(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +95,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDoneOnStop'])
     @EnableDoneOnStop.setter
     def EnableDoneOnStop(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDoneOnStop'], value)
 
     @property
     def EnableUnicastMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +109,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUnicastMode'])
     @EnableUnicastMode.setter
     def EnableUnicastMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUnicastMode'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +123,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Mldv2Report(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,10 +137,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mldv2Report'])
     @Mldv2Report.setter
     def Mldv2Report(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mldv2Report'], value)
 
     @property
     def NumberOfGroups(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +151,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfGroups'])
     @NumberOfGroups.setter
     def NumberOfGroups(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfGroups'], value)
 
     @property
     def NumberOfQueries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +165,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfQueries'])
     @NumberOfQueries.setter
     def NumberOfQueries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfQueries'], value)
 
     @property
     def QueryTimePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +179,12 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueryTimePeriod'])
     @QueryTimePeriod.setter
     def QueryTimePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueryTimePeriod'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,6 +194,7 @@ class Mld(Base):
 
     @property
     def TimePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -176,9 +203,11 @@ class Mld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimePeriod'])
     @TimePeriod.setter
     def TimePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimePeriod'], value)
 
     def update(self, EnableDoneOnStop=None, EnableUnicastMode=None, Enabled=None, Mldv2Report=None, NumberOfGroups=None, NumberOfQueries=None, QueryTimePeriod=None, TimePeriod=None):
+        # type: (bool, bool, bool, str, int, int, int, int) -> Mld
         """Updates mld resource on the server.
 
         Args
@@ -198,28 +227,42 @@ class Mld(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the MLD protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the MLD protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

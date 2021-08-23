@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Topology(Base):
@@ -38,9 +39,15 @@ class Topology(Base):
         'Status': 'status',
         'Vports': 'vports',
     }
+    _SDM_ENUM_MAP = {
+        'applyOnTheFlyState': ['allowed', 'notAllowed', 'nothingToApply'],
+        'ngpfProtocolRateMode': ['basic', 'smooth'],
+        'protocolStackingMode': ['parallel', 'sequential'],
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Topology, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Topology, self).__init__(parent, list_op)
 
     @property
     def BgpIpv4Peer(self):
@@ -54,7 +61,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_439a44dd340bf6fd724df996ab26569d import BgpIpv4Peer
-        return BgpIpv4Peer(self)._select()
+        if self._properties.get('BgpIpv4Peer', None) is not None:
+            return self._properties.get('BgpIpv4Peer')
+        else:
+            return BgpIpv4Peer(self)._select()
 
     @property
     def BgpIpv6Peer(self):
@@ -68,7 +78,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_7e5e36454dedaa483fd7dd20abef422b import BgpIpv6Peer
-        return BgpIpv6Peer(self)._select()
+        if self._properties.get('BgpIpv6Peer', None) is not None:
+            return self._properties.get('BgpIpv6Peer')
+        else:
+            return BgpIpv6Peer(self)._select()
 
     @property
     def Esmc(self):
@@ -82,7 +95,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.esmc.esmc_a6e91ae9ab0a9252a7e1dbcd069fcc86 import Esmc
-        return Esmc(self)._select()
+        if self._properties.get('Esmc', None) is not None:
+            return self._properties.get('Esmc')
+        else:
+            return Esmc(self)._select()
 
     @property
     def Ethernet(self):
@@ -96,7 +112,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.ethernet_ccd3a65106ab16a2364be51d1a412f05 import Ethernet
-        return Ethernet(self)._select()
+        if self._properties.get('Ethernet', None) is not None:
+            return self._properties.get('Ethernet')
+        else:
+            return Ethernet(self)._select()
 
     @property
     def Ipv4(self):
@@ -110,7 +129,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.ipv4_d3982d161b434ec799d31ef7237a4b96 import Ipv4
-        return Ipv4(self)._select()
+        if self._properties.get('Ipv4', None) is not None:
+            return self._properties.get('Ipv4')
+        else:
+            return Ipv4(self)._select()
 
     @property
     def Ipv6(self):
@@ -124,7 +146,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_a9f2dfb33a5d9c10d60b9830b8455095 import Ipv6
-        return Ipv6(self)._select()
+        if self._properties.get('Ipv6', None) is not None:
+            return self._properties.get('Ipv6')
+        else:
+            return Ipv6(self)._select()
 
     @property
     def Ipv6Autoconfiguration(self):
@@ -138,7 +163,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.ipv6autoconfiguration_186fdf3eb8d47323f28ec9e4d4c3e927 import Ipv6Autoconfiguration
-        return Ipv6Autoconfiguration(self)._select()
+        if self._properties.get('Ipv6Autoconfiguration', None) is not None:
+            return self._properties.get('Ipv6Autoconfiguration')
+        else:
+            return Ipv6Autoconfiguration(self)._select()
 
     @property
     def IsisL3Router(self):
@@ -152,7 +180,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.isisl3router_b5c245f4973246022b20f2613546d45a import IsisL3Router
-        return IsisL3Router(self)
+        if self._properties.get('IsisL3Router', None) is not None:
+            return self._properties.get('IsisL3Router')
+        else:
+            return IsisL3Router(self)
 
     @property
     def Lac(self):
@@ -166,7 +197,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.lac.lac_8a6ae7a66f1fba21c9a7af820795ad38 import Lac
-        return Lac(self)._select()
+        if self._properties.get('Lac', None) is not None:
+            return self._properties.get('Lac')
+        else:
+            return Lac(self)._select()
 
     @property
     def Lacp(self):
@@ -180,7 +214,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.lacp.lacp_8a53bc5dca056354ad9594ab602dbf11 import Lacp
-        return Lacp(self)._select()
+        if self._properties.get('Lacp', None) is not None:
+            return self._properties.get('Lacp')
+        else:
+            return Lacp(self)._select()
 
     @property
     def Lagportlacp(self):
@@ -194,7 +231,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.lagportlacp.lagportlacp_7a4a0d1aa284610bc44568a967d49355 import Lagportlacp
-        return Lagportlacp(self)._select()
+        if self._properties.get('Lagportlacp', None) is not None:
+            return self._properties.get('Lagportlacp')
+        else:
+            return Lagportlacp(self)._select()
 
     @property
     def Lagportstaticlag(self):
@@ -208,7 +248,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.lagportstaticlag.lagportstaticlag_e722ffdff0d9b2f5175aa99e8f6c6166 import Lagportstaticlag
-        return Lagportstaticlag(self)._select()
+        if self._properties.get('Lagportstaticlag', None) is not None:
+            return self._properties.get('Lagportstaticlag')
+        else:
+            return Lagportstaticlag(self)._select()
 
     @property
     def Macsec(self):
@@ -222,7 +265,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.macsec.macsec_8998c1b41f29384c2c688534cb45d85d import Macsec
-        return Macsec(self)._select()
+        if self._properties.get('Macsec', None) is not None:
+            return self._properties.get('Macsec')
+        else:
+            return Macsec(self)._select()
 
     @property
     def Mka(self):
@@ -236,7 +282,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.mka.mka_aedde1a3ca5c00a7f6b976a4fce2c20d import Mka
-        return Mka(self)._select()
+        if self._properties.get('Mka', None) is not None:
+            return self._properties.get('Mka')
+        else:
+            return Mka(self)._select()
 
     @property
     def Ospfv2Router(self):
@@ -250,7 +299,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv2router.ospfv2router_74c05cad626e75b691d6431d3166eb2c import Ospfv2Router
-        return Ospfv2Router(self)
+        if self._properties.get('Ospfv2Router', None) is not None:
+            return self._properties.get('Ospfv2Router')
+        else:
+            return Ospfv2Router(self)
 
     @property
     def Ospfv3Router(self):
@@ -264,7 +316,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv3router.ospfv3router_4c45a88f00fdf201bca989331894ee2f import Ospfv3Router
-        return Ospfv3Router(self)._select()
+        if self._properties.get('Ospfv3Router', None) is not None:
+            return self._properties.get('Ospfv3Router')
+        else:
+            return Ospfv3Router(self)._select()
 
     @property
     def Pce(self):
@@ -278,7 +333,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_5defd13c57ea406c73fd4b2cb010a30f import Pce
-        return Pce(self)._select()
+        if self._properties.get('Pce', None) is not None:
+            return self._properties.get('Pce')
+        else:
+            return Pce(self)._select()
 
     @property
     def StaticLag(self):
@@ -292,7 +350,10 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.staticlag.staticlag_bb394020ab7d7a51040dbbf42e2f75d1 import StaticLag
-        return StaticLag(self)._select()
+        if self._properties.get('StaticLag', None) is not None:
+            return self._properties.get('StaticLag')
+        else:
+            return StaticLag(self)._select()
 
     @property
     def StaticMacsec(self):
@@ -306,10 +367,14 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.staticmacsec.staticmacsec_9ab47bdf2b3b33d22965d0aa28f2bb3d import StaticMacsec
-        return StaticMacsec(self)._select()
+        if self._properties.get('StaticMacsec', None) is not None:
+            return self._properties.get('StaticMacsec')
+        else:
+            return StaticMacsec(self)._select()
 
     @property
     def ApplyOnTheFlyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -319,6 +384,7 @@ class Topology(Base):
 
     @property
     def NgpfProtocolRateMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -327,10 +393,12 @@ class Topology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NgpfProtocolRateMode'])
     @NgpfProtocolRateMode.setter
     def NgpfProtocolRateMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NgpfProtocolRateMode'], value)
 
     @property
     def ProtocolActionsInProgress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -340,6 +408,7 @@ class Topology(Base):
 
     @property
     def ProtocolStackingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,10 +417,12 @@ class Topology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolStackingMode'])
     @ProtocolStackingMode.setter
     def ProtocolStackingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolStackingMode'], value)
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -361,14 +432,16 @@ class Topology(Base):
 
     @property
     def Vports(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/vport]): List of virtual ports included in the port level configuration
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport]): List of virtual ports included in the port level configuration
         """
         return self._get_attribute(self._SDM_ATT_MAP['Vports'])
 
     def update(self, NgpfProtocolRateMode=None, ProtocolStackingMode=None):
+        # type: (str, str) -> Topology
         """Updates topology resource on the server.
 
         Args
@@ -382,53 +455,77 @@ class Topology(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def AbortApplyOnTheFly(self):
+    def AbortApplyOnTheFly(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the abortApplyOnTheFly operation on the server.
 
         Aborts any on the fly changes that are outstanding
 
+        abortApplyOnTheFly(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('abortApplyOnTheFly', payload=payload, response_object=None)
 
-    def ApplyOnTheFly(self):
+    def ApplyOnTheFly(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the applyOnTheFly operation on the server.
 
         Apply any outstanding on the fly changes
 
+        applyOnTheFly(async_operation=bool)string
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: Details about the operation's state.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyOnTheFly', payload=payload, response_object=None)
 
-    def ConfigureAll(self):
+    def ConfigureAll(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the configureAll operation on the server.
 
         Configures all protocols in current scenario
 
+        configureAll(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('configureAll', payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the fetchAndUpdateConfigFromCloud operation on the server.
 
         Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
 
-        fetchAndUpdateConfigFromCloud(Mode=string)
-        ------------------------------------------
+        fetchAndUpdateConfigFromCloud(Mode=string, async_operation=bool)
+        ----------------------------------------------------------------
         - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

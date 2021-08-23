@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4vpn(Base):
@@ -49,12 +50,15 @@ class Ipv4vpn(Base):
         'SeqDeliveryEnabled': 'seqDeliveryEnabled',
         'SiteId': 'siteId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv4vpn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4vpn, self).__init__(parent, list_op)
 
     @property
     def AsPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class Ipv4vpn(Base):
 
     @property
     def BlockOffset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +78,7 @@ class Ipv4vpn(Base):
 
     @property
     def BlockSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +88,7 @@ class Ipv4vpn(Base):
 
     @property
     def ControlWordEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class Ipv4vpn(Base):
 
     @property
     def IpPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class Ipv4vpn(Base):
 
     @property
     def LabelBase(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class Ipv4vpn(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class Ipv4vpn(Base):
 
     @property
     def MaxLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +138,7 @@ class Ipv4vpn(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -136,6 +148,7 @@ class Ipv4vpn(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,6 +158,7 @@ class Ipv4vpn(Base):
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,6 +168,7 @@ class Ipv4vpn(Base):
 
     @property
     def OriginType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -163,6 +178,7 @@ class Ipv4vpn(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,6 +188,7 @@ class Ipv4vpn(Base):
 
     @property
     def RouteDistinguisher(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,6 +198,7 @@ class Ipv4vpn(Base):
 
     @property
     def SeqDeliveryEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,6 +208,7 @@ class Ipv4vpn(Base):
 
     @property
     def SiteId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -197,7 +216,21 @@ class Ipv4vpn(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SiteId'])
 
+    def add(self):
+        """Adds a new ipv4vpn resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv4vpn resources using find and the newly added ipv4vpn resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AsPath=None, BlockOffset=None, BlockSize=None, ControlWordEnabled=None, IpPrefix=None, LabelBase=None, LocalPreference=None, MaxLabel=None, MultiExitDiscriminator=None, Neighbor=None, NextHop=None, OriginType=None, PrefixLength=None, RouteDistinguisher=None, SeqDeliveryEnabled=None, SiteId=None):
+        # type: (str, int, int, bool, str, int, int, int, int, str, str, str, int, str, bool, int) -> Ipv4vpn
         """Finds and retrieves ipv4vpn resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4vpn resources from the server.

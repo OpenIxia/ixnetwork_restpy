@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowAggregatedStatMatchCriteria131TriggerAttributes(Base):
@@ -78,9 +79,11 @@ class FlowAggregatedStatMatchCriteria131TriggerAttributes(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowAggregatedStatMatchCriteria131TriggerAttributes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowAggregatedStatMatchCriteria131TriggerAttributes, self).__init__(parent, list_op)
 
     @property
     def ArpDstHwAddr(self):

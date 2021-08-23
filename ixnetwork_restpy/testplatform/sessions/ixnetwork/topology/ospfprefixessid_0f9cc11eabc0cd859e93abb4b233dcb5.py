@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfPrefixesSid(Base):
@@ -46,12 +47,15 @@ class OspfPrefixesSid(Base):
         'SidIndexLabel': 'sidIndexLabel',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfPrefixesSid, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfPrefixesSid, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -62,6 +66,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def AdvertiseFapm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +88,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -110,6 +119,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def FapmMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +130,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +141,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +162,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,10 +171,12 @@ class OspfPrefixesSid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +198,7 @@ class OspfPrefixesSid(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +208,7 @@ class OspfPrefixesSid(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, Name=None):
+        # type: (str) -> OspfPrefixesSid
         """Updates ospfPrefixesSid resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

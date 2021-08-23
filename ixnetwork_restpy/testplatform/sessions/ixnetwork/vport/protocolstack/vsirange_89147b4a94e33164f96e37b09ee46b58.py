@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VsiRange(Base):
@@ -53,9 +54,11 @@ class VsiRange(Base):
         'VsiTypeId': 'vsiTypeId',
         'VsiTypeVersion': 'vsiTypeVersion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VsiRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VsiRange, self).__init__(parent, list_op)
 
     @property
     def VsiFiltersInfo(self):
@@ -69,10 +72,14 @@ class VsiRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsifiltersinfo_aaa9868e9b18d75d2379e981b80d0b96 import VsiFiltersInfo
-        return VsiFiltersInfo(self)
+        if self._properties.get('VsiFiltersInfo', None) is not None:
+            return self._properties.get('VsiFiltersInfo')
+        else:
+            return VsiFiltersInfo(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +88,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,10 +102,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FilterInfoFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +116,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FilterInfoFormat'])
     @FilterInfoFormat.setter
     def FilterInfoFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FilterInfoFormat'], value)
 
     @property
     def GatewayAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,10 +130,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayAddress'])
     @GatewayAddress.setter
     def GatewayAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayAddress'], value)
 
     @property
     def GatewayIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,10 +144,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayIncrement'])
     @GatewayIncrement.setter
     def GatewayIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayIncrement'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,10 +158,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,10 +172,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpIncrementBy'])
     @IpIncrementBy.setter
     def IpIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpIncrementBy'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -165,10 +186,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,6 +201,7 @@ class VsiRange(Base):
 
     @property
     def PreAssociateMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -186,10 +210,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreAssociateMode'])
     @PreAssociateMode.setter
     def PreAssociateMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreAssociateMode'], value)
 
     @property
     def Prefix(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,10 +224,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Prefix'])
     @Prefix.setter
     def Prefix(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Prefix'], value)
 
     @property
     def Suspended(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -210,10 +238,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Suspended'])
     @Suspended.setter
     def Suspended(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Suspended'], value)
 
     @property
     def Uuid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -222,10 +252,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Uuid'])
     @Uuid.setter
     def Uuid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Uuid'], value)
 
     @property
     def UuidIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,10 +266,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UuidIncrementBy'])
     @UuidIncrementBy.setter
     def UuidIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UuidIncrementBy'], value)
 
     @property
     def VsiFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -246,10 +280,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiFormat'])
     @VsiFormat.setter
     def VsiFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiFormat'], value)
 
     @property
     def VsiIdFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -258,10 +294,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiIdFormat'])
     @VsiIdFormat.setter
     def VsiIdFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiIdFormat'], value)
 
     @property
     def VsiManagerId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -270,10 +308,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiManagerId'])
     @VsiManagerId.setter
     def VsiManagerId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiManagerId'], value)
 
     @property
     def VsiTypeId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -282,10 +322,12 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiTypeId'])
     @VsiTypeId.setter
     def VsiTypeId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiTypeId'], value)
 
     @property
     def VsiTypeVersion(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -294,9 +336,11 @@ class VsiRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiTypeVersion'])
     @VsiTypeVersion.setter
     def VsiTypeVersion(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiTypeVersion'], value)
 
     def update(self, Count=None, Enabled=None, FilterInfoFormat=None, GatewayAddress=None, GatewayIncrement=None, IpAddress=None, IpIncrementBy=None, Name=None, PreAssociateMode=None, Prefix=None, Suspended=None, Uuid=None, UuidIncrementBy=None, VsiFormat=None, VsiIdFormat=None, VsiManagerId=None, VsiTypeId=None, VsiTypeVersion=None):
+        # type: (int, bool, str, str, str, str, str, str, str, int, bool, str, str, str, str, str, int, int) -> VsiRange
         """Updates vsiRange resource on the server.
 
         Args
@@ -327,6 +371,7 @@ class VsiRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, Enabled=None, FilterInfoFormat=None, GatewayAddress=None, GatewayIncrement=None, IpAddress=None, IpIncrementBy=None, Name=None, PreAssociateMode=None, Prefix=None, Suspended=None, Uuid=None, UuidIncrementBy=None, VsiFormat=None, VsiIdFormat=None, VsiManagerId=None, VsiTypeId=None, VsiTypeVersion=None):
+        # type: (int, bool, str, str, str, str, str, str, str, int, bool, str, str, str, str, str, int, int) -> VsiRange
         """Adds a new vsiRange resource on the server and adds it to the container.
 
         Args
@@ -371,6 +416,7 @@ class VsiRange(Base):
         self._delete()
 
     def find(self, Count=None, Enabled=None, FilterInfoFormat=None, GatewayAddress=None, GatewayIncrement=None, IpAddress=None, IpIncrementBy=None, Name=None, ObjectId=None, PreAssociateMode=None, Prefix=None, Suspended=None, Uuid=None, UuidIncrementBy=None, VsiFormat=None, VsiIdFormat=None, VsiManagerId=None, VsiTypeId=None, VsiTypeVersion=None):
+        # type: (int, bool, str, str, str, str, str, str, str, str, int, bool, str, str, str, str, str, int, int) -> VsiRange
         """Finds and retrieves vsiRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vsiRange resources from the server.
@@ -428,11 +474,13 @@ class VsiRange(Base):
         return self._read(href)
 
     def ChangeParentRange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the changeParentRange operation on the server.
 
-        changeParentRange(Target=href)
-        ------------------------------
+        changeParentRange(Target=href, async_operation=bool)
+        ----------------------------------------------------
         - Target (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -445,14 +493,16 @@ class VsiRange(Base):
         return self._execute('changeParentRange', payload=payload, response_object=None)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -465,13 +515,15 @@ class VsiRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -485,13 +537,15 @@ class VsiRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

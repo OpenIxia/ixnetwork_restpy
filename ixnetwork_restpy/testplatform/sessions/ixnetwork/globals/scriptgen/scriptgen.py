@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Scriptgen(Base):
@@ -42,9 +43,13 @@ class Scriptgen(Base):
         'ScriptFilename': 'scriptFilename',
         'SerializationType': 'serializationType',
     }
+    _SDM_ENUM_MAP = {
+        'language': ['perl', 'python', 'ruby', 'tcl'],
+        'serializationType': ['base64', 'ixNet'],
+    }
 
-    def __init__(self, parent):
-        super(Scriptgen, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Scriptgen, self).__init__(parent, list_op)
 
     @property
     def Base64CodeOptions(self):
@@ -58,7 +63,10 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions import Base64CodeOptions
-        return Base64CodeOptions(self)._select()
+        if self._properties.get('Base64CodeOptions', None) is not None:
+            return self._properties.get('Base64CodeOptions')
+        else:
+            return Base64CodeOptions(self)._select()
 
     @property
     def IxNetCodeOptions(self):
@@ -72,10 +80,14 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions import IxNetCodeOptions
-        return IxNetCodeOptions(self)._select()
+        if self._properties.get('IxNetCodeOptions', None) is not None:
+            return self._properties.get('IxNetCodeOptions')
+        else:
+            return IxNetCodeOptions(self)._select()
 
     @property
     def ConnectHostname(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +96,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectHostname'])
     @ConnectHostname.setter
     def ConnectHostname(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectHostname'], value)
 
     @property
     def ConnectPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +110,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectPort'])
     @ConnectPort.setter
     def ConnectPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectPort'], value)
 
     @property
     def ConnectVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +124,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectVersion'])
     @ConnectVersion.setter
     def ConnectVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectVersion'], value)
 
     @property
     def IncludeConnect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -120,10 +138,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeConnect'])
     @IncludeConnect.setter
     def IncludeConnect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeConnect'], value)
 
     @property
     def IncludeTestComposer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -132,10 +152,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTestComposer'])
     @IncludeTestComposer.setter
     def IncludeTestComposer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTestComposer'], value)
 
     @property
     def Language(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +166,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Language'])
     @Language.setter
     def Language(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Language'], value)
 
     @property
     def LinePerAttribute(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +180,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinePerAttribute'])
     @LinePerAttribute.setter
     def LinePerAttribute(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinePerAttribute'], value)
 
     @property
     def OverwriteScriptFilename(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +194,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverwriteScriptFilename'])
     @OverwriteScriptFilename.setter
     def OverwriteScriptFilename(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverwriteScriptFilename'], value)
 
     @property
     def ScriptFilename(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +208,12 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ScriptFilename'])
     @ScriptFilename.setter
     def ScriptFilename(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ScriptFilename'], value)
 
     @property
     def SerializationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,9 +222,11 @@ class Scriptgen(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SerializationType'])
     @SerializationType.setter
     def SerializationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SerializationType'], value)
 
     def update(self, ConnectHostname=None, ConnectPort=None, ConnectVersion=None, IncludeConnect=None, IncludeTestComposer=None, Language=None, LinePerAttribute=None, OverwriteScriptFilename=None, ScriptFilename=None, SerializationType=None):
+        # type: (str, int, str, bool, bool, str, bool, bool, str, str) -> Scriptgen
         """Updates scriptgen resource on the server.
 
         Args
@@ -217,15 +249,21 @@ class Scriptgen(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def Generate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the generate operation on the server.
 
         Generate a script of the currently loaded configuration using the options in the /globals/scriptgen hierarchy.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        generate(Arg2=href)
-        -------------------
+        generate(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        generate(Arg2=href, async_operation=bool)
+        -----------------------------------------
         - Arg2 (obj(ixnetwork_restpy.files.Files)): A valid writeTo file handle the script will be written to.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OrganizationSpecificInfoTlv(Base):
@@ -37,12 +38,15 @@ class OrganizationSpecificInfoTlv(Base):
         'Oui': 'oui',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OrganizationSpecificInfoTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OrganizationSpecificInfoTlv, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class OrganizationSpecificInfoTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Oui(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class OrganizationSpecificInfoTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Oui'])
     @Oui.setter
     def Oui(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Oui'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +83,11 @@ class OrganizationSpecificInfoTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Enabled=None, Oui=None, Value=None):
+        # type: (bool, str, str) -> OrganizationSpecificInfoTlv
         """Updates organizationSpecificInfoTlv resource on the server.
 
         Args
@@ -93,6 +103,7 @@ class OrganizationSpecificInfoTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Oui=None, Value=None):
+        # type: (bool, str, str) -> OrganizationSpecificInfoTlv
         """Adds a new organizationSpecificInfoTlv resource on the server and adds it to the container.
 
         Args
@@ -122,6 +133,7 @@ class OrganizationSpecificInfoTlv(Base):
         self._delete()
 
     def find(self, Enabled=None, Oui=None, Value=None):
+        # type: (bool, str, str) -> OrganizationSpecificInfoTlv
         """Finds and retrieves organizationSpecificInfoTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve organizationSpecificInfoTlv resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Parameter(Base):
@@ -41,12 +42,15 @@ class Parameter(Base):
         'MinValue': 'minValue',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Parameter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Parameter, self).__init__(parent, list_op)
 
     @property
     def AvailableChoices(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class Parameter(Base):
 
     @property
     def CurrentValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +69,12 @@ class Parameter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CurrentValue'])
     @CurrentValue.setter
     def CurrentValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CurrentValue'], value)
 
     @property
     def CustomDefaultValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,6 +84,7 @@ class Parameter(Base):
 
     @property
     def DefaultValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,6 +94,7 @@ class Parameter(Base):
 
     @property
     def IsReadOnly(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,6 +104,7 @@ class Parameter(Base):
 
     @property
     def MaxValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +114,7 @@ class Parameter(Base):
 
     @property
     def MinValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,6 +124,7 @@ class Parameter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +133,7 @@ class Parameter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
     def update(self, CurrentValue=None):
+        # type: (str) -> Parameter
         """Updates parameter resource on the server.
 
         Args
@@ -133,7 +146,26 @@ class Parameter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, CurrentValue=None):
+        # type: (str) -> Parameter
+        """Adds a new parameter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - CurrentValue (str): Parameter UI Display Value
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved parameter resources using find and the newly added parameter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AvailableChoices=None, CurrentValue=None, CustomDefaultValue=None, DefaultValue=None, IsReadOnly=None, MaxValue=None, MinValue=None, Name=None):
+        # type: (List[str], str, str, str, bool, str, str, str) -> Parameter
         """Finds and retrieves parameter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve parameter resources from the server.

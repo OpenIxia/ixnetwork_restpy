@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Chassis(Base):
@@ -54,9 +55,16 @@ class Chassis(Base):
         'State': 'state',
         'StateV2': 'stateV2',
     }
+    _SDM_ENUM_MAP = {
+        'chainTopology': ['daisy', 'none', 'star'],
+        'chassisOSType': ['linux', 'unknown', 'windows'],
+        'errorState': ['ConnectError', 'DuplicateChassis', 'IncompatibleIxOS', 'MultipleNics', 'NoCardsFound', 'NoError', 'NoLicenseFound', 'NonAppliance', 'NonLinuxChassis'],
+        'state': ['down', 'down', 'polling', 'polling', 'polling', 'ready'],
+        'stateV2': ['connectError', 'down', 'notConnected', 'polling', 'pollingWait', 'ready'],
+    }
 
-    def __init__(self, parent):
-        super(Chassis, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Chassis, self).__init__(parent, list_op)
 
     @property
     def Card(self):
@@ -70,10 +78,14 @@ class Chassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.card import Card
-        return Card(self)
+        if self._properties.get('Card', None) is not None:
+            return self._properties.get('Card')
+        else:
+            return Card(self)
 
     @property
     def CableLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,10 +94,12 @@ class Chassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CableLength'])
     @CableLength.setter
     def CableLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CableLength'], value)
 
     @property
     def ChainTopology(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,10 +108,12 @@ class Chassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChainTopology'])
     @ChainTopology.setter
     def ChainTopology(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChainTopology'], value)
 
     @property
     def ChassisOSType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,6 +123,7 @@ class Chassis(Base):
 
     @property
     def ChassisType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,6 +133,7 @@ class Chassis(Base):
 
     @property
     def ChassisVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +143,7 @@ class Chassis(Base):
 
     @property
     def ConnectRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,6 +153,7 @@ class Chassis(Base):
 
     @property
     def ErrorDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +163,7 @@ class Chassis(Base):
 
     @property
     def ErrorState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,6 +173,7 @@ class Chassis(Base):
 
     @property
     def Hostname(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -160,10 +182,12 @@ class Chassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Hostname'])
     @Hostname.setter
     def Hostname(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Hostname'], value)
 
     @property
     def Ip(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -173,6 +197,7 @@ class Chassis(Base):
 
     @property
     def IsLicensesRetrieved(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,6 +207,7 @@ class Chassis(Base):
 
     @property
     def IsMaster(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,6 +217,7 @@ class Chassis(Base):
 
     @property
     def IxnBuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,6 +227,7 @@ class Chassis(Base):
 
     @property
     def IxosBuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -209,6 +237,7 @@ class Chassis(Base):
 
     @property
     def LicenseErrors(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -218,6 +247,7 @@ class Chassis(Base):
 
     @property
     def MasterChassis(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,10 +256,12 @@ class Chassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterChassis'])
     @MasterChassis.setter
     def MasterChassis(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterChassis'], value)
 
     @property
     def ProtocolBuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,6 +271,7 @@ class Chassis(Base):
 
     @property
     def SequenceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -247,10 +280,12 @@ class Chassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SequenceId'])
     @SequenceId.setter
     def SequenceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SequenceId'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -260,6 +295,7 @@ class Chassis(Base):
 
     @property
     def StateV2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -268,6 +304,7 @@ class Chassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StateV2'])
 
     def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, SequenceId=None):
+        # type: (int, str, str, str, int) -> Chassis
         """Updates chassis resource on the server.
 
         Args
@@ -285,6 +322,7 @@ class Chassis(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CableLength=None, ChainTopology=None, Hostname=None, MasterChassis=None, SequenceId=None):
+        # type: (int, str, str, str, int) -> Chassis
         """Adds a new chassis resource on the server and adds it to the container.
 
         Args
@@ -316,6 +354,7 @@ class Chassis(Base):
         self._delete()
 
     def find(self, CableLength=None, ChainTopology=None, ChassisOSType=None, ChassisType=None, ChassisVersion=None, ConnectRetries=None, ErrorDescription=None, ErrorState=None, Hostname=None, Ip=None, IsLicensesRetrieved=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterChassis=None, ProtocolBuildNumber=None, SequenceId=None, State=None, StateV2=None):
+        # type: (int, str, str, str, str, int, str, str, str, str, bool, bool, str, str, List[str], str, str, int, str, str) -> Chassis
         """Finds and retrieves chassis resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve chassis resources from the server.
@@ -373,41 +412,62 @@ class Chassis(Base):
         """
         return self._read(href)
 
-    def GetTapSettings(self):
+    def GetTapSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the getTapSettings operation on the server.
 
         Get TAP Settings for the given chassis
 
+        getTapSettings(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getTapSettings', payload=payload, response_object=None)
 
-    def RefreshInfo(self):
+    def RefreshInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the refreshInfo operation on the server.
 
         Refresh the hardware information.
 
+        refreshInfo(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshInfo', payload=payload, response_object=None)
 
-    def SetTapSettings(self):
+    def SetTapSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the setTapSettings operation on the server.
 
         Send TAP Settings to IxServer for the given chassis.
 
+        setTapSettings(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('setTapSettings', payload=payload, response_object=None)

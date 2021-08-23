@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpSgw5S8Range(Base):
@@ -52,12 +53,15 @@ class EgtpSgw5S8Range(Base):
         'RatType': 'ratType',
         'SrcUdpPort': 'srcUdpPort',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpSgw5S8Range, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpSgw5S8Range, self).__init__(parent, list_op)
 
     @property
     def BearerResourceCommandN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +70,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BearerResourceCommandN3'])
     @BearerResourceCommandN3.setter
     def BearerResourceCommandN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BearerResourceCommandN3'], value)
 
     @property
     def BearerResourceCommandT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +84,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BearerResourceCommandT3'])
     @BearerResourceCommandT3.setter
     def BearerResourceCommandT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BearerResourceCommandT3'], value)
 
     @property
     def CreateSessionN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +98,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CreateSessionN3'])
     @CreateSessionN3.setter
     def CreateSessionN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CreateSessionN3'], value)
 
     @property
     def CreateSessiontT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,10 +112,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CreateSessiontT3'])
     @CreateSessiontT3.setter
     def CreateSessiontT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CreateSessiontT3'], value)
 
     @property
     def DeleteBearerCommandN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,10 +126,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeleteBearerCommandN3'])
     @DeleteBearerCommandN3.setter
     def DeleteBearerCommandN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeleteBearerCommandN3'], value)
 
     @property
     def DeleteBearerCommandT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,10 +140,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeleteBearerCommandT3'])
     @DeleteBearerCommandT3.setter
     def DeleteBearerCommandT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeleteBearerCommandT3'], value)
 
     @property
     def DeleteSessionN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,10 +154,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeleteSessionN3'])
     @DeleteSessionN3.setter
     def DeleteSessionN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeleteSessionN3'], value)
 
     @property
     def DeleteSessionT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,10 +168,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeleteSessionT3'])
     @DeleteSessionT3.setter
     def DeleteSessionT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeleteSessionT3'], value)
 
     @property
     def EchoRequestN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -162,10 +182,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoRequestN3'])
     @EchoRequestN3.setter
     def EchoRequestN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoRequestN3'], value)
 
     @property
     def EchoRequestT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -174,10 +196,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoRequestT3'])
     @EchoRequestT3.setter
     def EchoRequestT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoRequestT3'], value)
 
     @property
     def EnableEchoRequest(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -186,10 +210,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEchoRequest'])
     @EnableEchoRequest.setter
     def EnableEchoRequest(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEchoRequest'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -198,10 +224,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ModifyBearerCommandN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,10 +238,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ModifyBearerCommandN3'])
     @ModifyBearerCommandN3.setter
     def ModifyBearerCommandN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ModifyBearerCommandN3'], value)
 
     @property
     def ModifyBearerCommandT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -222,10 +252,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ModifyBearerCommandT3'])
     @ModifyBearerCommandT3.setter
     def ModifyBearerCommandT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ModifyBearerCommandT3'], value)
 
     @property
     def ModifyBearerN3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -234,10 +266,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ModifyBearerN3'])
     @ModifyBearerN3.setter
     def ModifyBearerN3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ModifyBearerN3'], value)
 
     @property
     def ModifyBearerT3(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -246,10 +280,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ModifyBearerT3'])
     @ModifyBearerT3.setter
     def ModifyBearerT3(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ModifyBearerT3'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -258,10 +294,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -271,6 +309,7 @@ class EgtpSgw5S8Range(Base):
 
     @property
     def RatType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -279,10 +318,12 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RatType'])
     @RatType.setter
     def RatType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RatType'], value)
 
     @property
     def SrcUdpPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -291,9 +332,11 @@ class EgtpSgw5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcUdpPort'])
     @SrcUdpPort.setter
     def SrcUdpPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcUdpPort'], value)
 
     def update(self, BearerResourceCommandN3=None, BearerResourceCommandT3=None, CreateSessionN3=None, CreateSessiontT3=None, DeleteBearerCommandN3=None, DeleteBearerCommandT3=None, DeleteSessionN3=None, DeleteSessionT3=None, EchoRequestN3=None, EchoRequestT3=None, EnableEchoRequest=None, Enabled=None, ModifyBearerCommandN3=None, ModifyBearerCommandT3=None, ModifyBearerN3=None, ModifyBearerT3=None, Name=None, RatType=None, SrcUdpPort=None):
+        # type: (int, int, int, int, int, int, int, int, int, int, bool, bool, int, int, int, int, str, str, int) -> EgtpSgw5S8Range
         """Updates egtpSgw5S8Range resource on the server.
 
         Args
@@ -325,14 +368,16 @@ class EgtpSgw5S8Range(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -345,13 +390,15 @@ class EgtpSgw5S8Range(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -365,13 +412,15 @@ class EgtpSgw5S8Range(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

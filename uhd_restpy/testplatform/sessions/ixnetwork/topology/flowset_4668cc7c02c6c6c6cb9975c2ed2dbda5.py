@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowSet(Base):
@@ -47,9 +48,11 @@ class FlowSet(Base):
         'NumberOfFlows': 'numberOfFlows',
         'Priority': 'priority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowSet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowSet, self).__init__(parent, list_op)
 
     @property
     def FlowProfile(self):
@@ -63,10 +66,14 @@ class FlowSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.flowprofile_a1f78cfc247b918e0d8219ac19d05f87 import FlowProfile
-        return FlowProfile(self)._select()
+        if self._properties.get('FlowProfile', None) is not None:
+            return self._properties.get('FlowProfile')
+        else:
+            return FlowProfile(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -77,6 +84,7 @@ class FlowSet(Base):
 
     @property
     def Cookie(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +95,7 @@ class FlowSet(Base):
 
     @property
     def CookieMask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +106,7 @@ class FlowSet(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +116,7 @@ class FlowSet(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class FlowSet(Base):
 
     @property
     def FlowAdvertise(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +135,12 @@ class FlowSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAdvertise'])
     @FlowAdvertise.setter
     def FlowAdvertise(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAdvertise'], value)
 
     @property
     def FlowFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +151,7 @@ class FlowSet(Base):
 
     @property
     def FlowMatchType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +162,7 @@ class FlowSet(Base):
 
     @property
     def FlowSetId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,10 +171,12 @@ class FlowSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowSetId'])
     @FlowSetId.setter
     def FlowSetId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowSetId'], value)
 
     @property
     def HardTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +187,7 @@ class FlowSet(Base):
 
     @property
     def IdleTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +198,7 @@ class FlowSet(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,10 +207,12 @@ class FlowSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfFlows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -199,10 +221,12 @@ class FlowSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfFlows'])
     @NumberOfFlows.setter
     def NumberOfFlows(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfFlows'], value)
 
     @property
     def Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +236,7 @@ class FlowSet(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
 
     def update(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
+        # type: (bool, str, str, int) -> FlowSet
         """Updates flowSet resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -230,7 +255,29 @@ class FlowSet(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
+        # type: (bool, str, str, int) -> FlowSet
+        """Adds a new flowSet resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - FlowAdvertise (bool): If selected, the flows are advertised by the OF Channel.
+        - FlowSetId (str): Specify the controller Flow Set identifier.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFlows (number): The number of flows to be configured for the controller table.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved flowSet resources using find and the newly added flowSet resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, FlowAdvertise=None, FlowSetId=None, Name=None, NumberOfFlows=None):
+        # type: (int, str, bool, str, str, int) -> FlowSet
         """Finds and retrieves flowSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowSet resources from the server.

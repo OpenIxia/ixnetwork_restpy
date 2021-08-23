@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Mpls(Base):
@@ -55,9 +56,14 @@ class Mpls(Base):
         'TxLabelValue': 'txLabelValue',
         'UpperLayer': 'upperLayer',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+        'transportType': ['overMac', 'overTunnel'],
+        'upperLayer': ['nhEthernet', 'nhIp'],
+    }
 
-    def __init__(self, parent):
-        super(Mpls, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Mpls, self).__init__(parent, list_op)
 
     @property
     def BondedGRE(self):
@@ -71,7 +77,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import BondedGRE
-        return BondedGRE(self)
+        if self._properties.get('BondedGRE', None) is not None:
+            return self._properties.get('BondedGRE')
+        else:
+            return BondedGRE(self)
 
     @property
     def CfmBridge(self):
@@ -85,7 +94,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
-        return CfmBridge(self)
+        if self._properties.get('CfmBridge', None) is not None:
+            return self._properties.get('CfmBridge')
+        else:
+            return CfmBridge(self)
 
     @property
     def Connector(self):
@@ -99,7 +111,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def Dhcpv4client(self):
@@ -113,7 +128,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_cfcdda8db5004b679a441f92193405ea import Dhcpv4client
-        return Dhcpv4client(self)
+        if self._properties.get('Dhcpv4client', None) is not None:
+            return self._properties.get('Dhcpv4client')
+        else:
+            return Dhcpv4client(self)
 
     @property
     def Dhcpv6client(self):
@@ -127,7 +145,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
-        return Dhcpv6client(self)
+        if self._properties.get('Dhcpv6client', None) is not None:
+            return self._properties.get('Dhcpv6client')
+        else:
+            return Dhcpv6client(self)
 
     @property
     def ECpriRe(self):
@@ -141,7 +162,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        return ECpriRe(self)
+        if self._properties.get('ECpriRe', None) is not None:
+            return self._properties.get('ECpriRe')
+        else:
+            return ECpriRe(self)
 
     @property
     def ECpriRec(self):
@@ -155,7 +179,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        return ECpriRec(self)
+        if self._properties.get('ECpriRec', None) is not None:
+            return self._properties.get('ECpriRec')
+        else:
+            return ECpriRec(self)
 
     @property
     def Ethernet(self):
@@ -169,7 +196,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        return Ethernet(self)
+        if self._properties.get('Ethernet', None) is not None:
+            return self._properties.get('Ethernet')
+        else:
+            return Ethernet(self)
 
     @property
     def Ipv4(self):
@@ -183,7 +213,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
-        return Ipv4(self)
+        if self._properties.get('Ipv4', None) is not None:
+            return self._properties.get('Ipv4')
+        else:
+            return Ipv4(self)
 
     @property
     def Ipv6(self):
@@ -197,7 +230,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
-        return Ipv6(self)
+        if self._properties.get('Ipv6', None) is not None:
+            return self._properties.get('Ipv6')
+        else:
+            return Ipv6(self)
 
     @property
     def Ipv6Autoconfiguration(self):
@@ -211,7 +247,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import Ipv6Autoconfiguration
-        return Ipv6Autoconfiguration(self)
+        if self._properties.get('Ipv6Autoconfiguration', None) is not None:
+            return self._properties.get('Ipv6Autoconfiguration')
+        else:
+            return Ipv6Autoconfiguration(self)
 
     @property
     def IsisDceSimRouter(self):
@@ -225,7 +264,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import IsisDceSimRouter
-        return IsisDceSimRouter(self)
+        if self._properties.get('IsisDceSimRouter', None) is not None:
+            return self._properties.get('IsisDceSimRouter')
+        else:
+            return IsisDceSimRouter(self)
 
     @property
     def IsisFabricPath(self):
@@ -239,7 +281,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import IsisFabricPath
-        return IsisFabricPath(self)
+        if self._properties.get('IsisFabricPath', None) is not None:
+            return self._properties.get('IsisFabricPath')
+        else:
+            return IsisFabricPath(self)
 
     @property
     def IsisL3(self):
@@ -253,7 +298,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599 import IsisL3
-        return IsisL3(self)
+        if self._properties.get('IsisL3', None) is not None:
+            return self._properties.get('IsisL3')
+        else:
+            return IsisL3(self)
 
     @property
     def IsisSpbBcb(self):
@@ -267,7 +315,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import IsisSpbBcb
-        return IsisSpbBcb(self)
+        if self._properties.get('IsisSpbBcb', None) is not None:
+            return self._properties.get('IsisSpbBcb')
+        else:
+            return IsisSpbBcb(self)
 
     @property
     def IsisSpbBeb(self):
@@ -281,7 +332,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import IsisSpbBeb
-        return IsisSpbBeb(self)
+        if self._properties.get('IsisSpbBeb', None) is not None:
+            return self._properties.get('IsisSpbBeb')
+        else:
+            return IsisSpbBeb(self)
 
     @property
     def IsisSpbSimRouter(self):
@@ -295,7 +349,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import IsisSpbSimRouter
-        return IsisSpbSimRouter(self)
+        if self._properties.get('IsisSpbSimRouter', None) is not None:
+            return self._properties.get('IsisSpbSimRouter')
+        else:
+            return IsisSpbSimRouter(self)
 
     @property
     def IsisTrill(self):
@@ -309,7 +366,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import IsisTrill
-        return IsisTrill(self)
+        if self._properties.get('IsisTrill', None) is not None:
+            return self._properties.get('IsisTrill')
+        else:
+            return IsisTrill(self)
 
     @property
     def IsisTrillSimRouter(self):
@@ -323,7 +383,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import IsisTrillSimRouter
-        return IsisTrillSimRouter(self)
+        if self._properties.get('IsisTrillSimRouter', None) is not None:
+            return self._properties.get('IsisTrillSimRouter')
+        else:
+            return IsisTrillSimRouter(self)
 
     @property
     def Lacp(self):
@@ -337,7 +400,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import Lacp
-        return Lacp(self)
+        if self._properties.get('Lacp', None) is not None:
+            return self._properties.get('Lacp')
+        else:
+            return Lacp(self)
 
     @property
     def Lagportlacp(self):
@@ -351,7 +417,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import Lagportlacp
-        return Lagportlacp(self)
+        if self._properties.get('Lagportlacp', None) is not None:
+            return self._properties.get('Lagportlacp')
+        else:
+            return Lagportlacp(self)
 
     @property
     def Lagportstaticlag(self):
@@ -365,7 +434,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import Lagportstaticlag
-        return Lagportstaticlag(self)
+        if self._properties.get('Lagportstaticlag', None) is not None:
+            return self._properties.get('Lagportstaticlag')
+        else:
+            return Lagportstaticlag(self)
 
     @property
     def Mka(self):
@@ -379,7 +451,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca import Mka
-        return Mka(self)
+        if self._properties.get('Mka', None) is not None:
+            return self._properties.get('Mka')
+        else:
+            return Mka(self)
 
     @property
     def Mpls(self):
@@ -393,7 +468,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import Mpls
-        return Mpls(self)
+        if self._properties.get('Mpls', None) is not None:
+            return self._properties.get('Mpls')
+        else:
+            return Mpls(self)
 
     @property
     def MsrpListener(self):
@@ -407,7 +485,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import MsrpListener
-        return MsrpListener(self)
+        if self._properties.get('MsrpListener', None) is not None:
+            return self._properties.get('MsrpListener')
+        else:
+            return MsrpListener(self)
 
     @property
     def MsrpTalker(self):
@@ -421,7 +502,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import MsrpTalker
-        return MsrpTalker(self)
+        if self._properties.get('MsrpTalker', None) is not None:
+            return self._properties.get('MsrpTalker')
+        else:
+            return MsrpTalker(self)
 
     @property
     def StaticLag(self):
@@ -435,7 +519,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import StaticLag
-        return StaticLag(self)
+        if self._properties.get('StaticLag', None) is not None:
+            return self._properties.get('StaticLag')
+        else:
+            return StaticLag(self)
 
     @property
     def Streams(self):
@@ -449,10 +536,14 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import Streams
-        return Streams(self)
+        if self._properties.get('Streams', None) is not None:
+            return self._properties.get('Streams')
+        else:
+            return Streams(self)
 
     @property
     def Bos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -463,18 +554,21 @@ class Mpls(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Cos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -485,6 +579,7 @@ class Mpls(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -494,6 +589,7 @@ class Mpls(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -503,6 +599,7 @@ class Mpls(Base):
 
     @property
     def DestMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -513,6 +610,7 @@ class Mpls(Base):
 
     @property
     def Enablecw(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -521,6 +619,7 @@ class Mpls(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enablecw'])
     @Enablecw.setter
     def Enablecw(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enablecw'], value)
 
     @property
@@ -528,12 +627,13 @@ class Mpls(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -542,10 +642,12 @@ class Mpls(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -554,10 +656,12 @@ class Mpls(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Overridecos(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -566,10 +670,12 @@ class Mpls(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Overridecos'])
     @Overridecos.setter
     def Overridecos(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Overridecos'], value)
 
     @property
     def RxLabelValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -580,6 +686,7 @@ class Mpls(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -589,6 +696,7 @@ class Mpls(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -598,14 +706,16 @@ class Mpls(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -619,6 +729,7 @@ class Mpls(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -628,6 +739,7 @@ class Mpls(Base):
 
     @property
     def TransportType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -636,10 +748,12 @@ class Mpls(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportType'])
     @TransportType.setter
     def TransportType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportType'], value)
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -650,6 +764,7 @@ class Mpls(Base):
 
     @property
     def TxLabelValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -660,6 +775,7 @@ class Mpls(Base):
 
     @property
     def UpperLayer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -668,9 +784,11 @@ class Mpls(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpperLayer'])
     @UpperLayer.setter
     def UpperLayer(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpperLayer'], value)
 
     def update(self, ConnectedVia=None, Enablecw=None, Multiplier=None, Name=None, Overridecos=None, StackedLayers=None, TransportType=None, UpperLayer=None):
+        # type: (List[str], bool, int, str, bool, List[str], str, str) -> Mpls
         """Updates mpls resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -678,12 +796,12 @@ class Mpls(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Enablecw (bool): Enable Control Word
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Overridecos (bool): Override Cos
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - TransportType (str(overMac | overTunnel)): TransportType
         - UpperLayer (str(nhEthernet | nhIp)): Value to Determine who is upper Layer.
 
@@ -694,16 +812,17 @@ class Mpls(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Enablecw=None, Multiplier=None, Name=None, Overridecos=None, StackedLayers=None, TransportType=None, UpperLayer=None):
+        # type: (List[str], bool, int, str, bool, List[str], str, str) -> Mpls
         """Adds a new mpls resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Enablecw (bool): Enable Control Word
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Overridecos (bool): Override Cos
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - TransportType (str(overMac | overTunnel)): TransportType
         - UpperLayer (str(nhEthernet | nhIp)): Value to Determine who is upper Layer.
 
@@ -736,17 +855,17 @@ class Mpls(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Enablecw (bool): Enable Control Word
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Overridecos (bool): Override Cos
         - SessionInfo (list(str[interfaceCreationFailed | interfaceDeletionFailed | interfaceInternalProblem | none])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - TransportType (str(overMac | overTunnel)): TransportType
@@ -780,6 +899,134 @@ class Mpls(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Bos=None, Cos=None, DestMac=None, RxLabelValue=None, Ttl=None, TxLabelValue=None):
         """Base class infrastructure that gets a list of mpls device ids encapsulated by this object.
 
@@ -804,103 +1051,3 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

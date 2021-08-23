@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VsiFiltersInfo(Base):
@@ -51,12 +52,15 @@ class VsiFiltersInfo(Base):
         'PcpUniqueCount': 'pcpUniqueCount',
         'Ps': 'ps',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VsiFiltersInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VsiFiltersInfo, self).__init__(parent, list_op)
 
     @property
     def CvlanFirstId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +69,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanFirstId'])
     @CvlanFirstId.setter
     def CvlanFirstId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanFirstId'], value)
 
     @property
     def CvlanIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +83,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanIncrement'])
     @CvlanIncrement.setter
     def CvlanIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanIncrement'], value)
 
     @property
     def CvlanIncrementStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +97,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanIncrementStep'])
     @CvlanIncrementStep.setter
     def CvlanIncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanIncrementStep'], value)
 
     @property
     def CvlanUniqueCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,10 +111,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanUniqueCount'])
     @CvlanUniqueCount.setter
     def CvlanUniqueCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanUniqueCount'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +125,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GroupFirstId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +139,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupFirstId'])
     @GroupFirstId.setter
     def GroupFirstId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupFirstId'], value)
 
     @property
     def GroupIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -137,10 +153,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupIncrement'])
     @GroupIncrement.setter
     def GroupIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupIncrement'], value)
 
     @property
     def GroupIncrementStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -149,10 +167,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupIncrementStep'])
     @GroupIncrementStep.setter
     def GroupIncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupIncrementStep'], value)
 
     @property
     def GroupUniqueCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,10 +181,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupUniqueCount'])
     @GroupUniqueCount.setter
     def GroupUniqueCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupUniqueCount'], value)
 
     @property
     def Mac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -173,10 +195,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mac'])
     @Mac.setter
     def Mac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
 
     @property
     def MacIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -185,10 +209,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacIncrementBy'])
     @MacIncrementBy.setter
     def MacIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacIncrementBy'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,6 +224,7 @@ class VsiFiltersInfo(Base):
 
     @property
     def PcpFirstId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +233,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcpFirstId'])
     @PcpFirstId.setter
     def PcpFirstId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcpFirstId'], value)
 
     @property
     def PcpIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -218,10 +247,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcpIncrement'])
     @PcpIncrement.setter
     def PcpIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcpIncrement'], value)
 
     @property
     def PcpIncrementStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,10 +261,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcpIncrementStep'])
     @PcpIncrementStep.setter
     def PcpIncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcpIncrementStep'], value)
 
     @property
     def PcpUniqueCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -242,10 +275,12 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcpUniqueCount'])
     @PcpUniqueCount.setter
     def PcpUniqueCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcpUniqueCount'], value)
 
     @property
     def Ps(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -254,9 +289,11 @@ class VsiFiltersInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ps'])
     @Ps.setter
     def Ps(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ps'], value)
 
     def update(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
+        # type: (int, int, int, int, bool, int, int, int, int, str, str, int, int, int, int, bool) -> VsiFiltersInfo
         """Updates vsiFiltersInfo resource on the server.
 
         Args
@@ -285,6 +322,7 @@ class VsiFiltersInfo(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
+        # type: (int, int, int, int, bool, int, int, int, int, str, str, int, int, int, int, bool) -> VsiFiltersInfo
         """Adds a new vsiFiltersInfo resource on the server and adds it to the container.
 
         Args
@@ -327,6 +365,7 @@ class VsiFiltersInfo(Base):
         self._delete()
 
     def find(self, CvlanFirstId=None, CvlanIncrement=None, CvlanIncrementStep=None, CvlanUniqueCount=None, Enabled=None, GroupFirstId=None, GroupIncrement=None, GroupIncrementStep=None, GroupUniqueCount=None, Mac=None, MacIncrementBy=None, ObjectId=None, PcpFirstId=None, PcpIncrement=None, PcpIncrementStep=None, PcpUniqueCount=None, Ps=None):
+        # type: (int, int, int, int, bool, int, int, int, int, str, str, str, int, int, int, int, bool) -> VsiFiltersInfo
         """Finds and retrieves vsiFiltersInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vsiFiltersInfo resources from the server.
@@ -382,14 +421,16 @@ class VsiFiltersInfo(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -402,13 +443,15 @@ class VsiFiltersInfo(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -422,13 +465,15 @@ class VsiFiltersInfo(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GroupDescriptionStatLearnedInformation(Base):
@@ -45,9 +46,11 @@ class GroupDescriptionStatLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GroupDescriptionStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GroupDescriptionStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def GroupBucketDescStatLearnedInformation(self):
@@ -61,10 +64,14 @@ class GroupDescriptionStatLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupbucketdescstatlearnedinformation_c5c1fdcf0cd8750ead47c9919177d367 import GroupBucketDescStatLearnedInformation
-        return GroupBucketDescStatLearnedInformation(self)
+        if self._properties.get('GroupBucketDescStatLearnedInformation', None) is not None:
+            return self._properties.get('GroupBucketDescStatLearnedInformation')
+        else:
+            return GroupBucketDescStatLearnedInformation(self)
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +81,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +91,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def GroupType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +131,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,6 +141,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,6 +151,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,6 +161,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def NumberOfBucketStats(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,6 +171,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -164,6 +181,7 @@ class GroupDescriptionStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,7 +189,21 @@ class GroupDescriptionStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
 
+    def add(self):
+        """Adds a new groupDescriptionStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved groupDescriptionStatLearnedInformation resources using find and the newly added groupDescriptionStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, GroupId=None, GroupType=None, Latency=None, LocalIp=None, NegotiatedVersion=None, NumberOfBucketStats=None, RemoteIp=None, ReplyState=None):
+        # type: (str, str, str, str, int, str, int, str, str, str, str, str) -> GroupDescriptionStatLearnedInformation
         """Finds and retrieves groupDescriptionStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupDescriptionStatLearnedInformation resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ethernet(Base):
@@ -48,9 +49,15 @@ class Ethernet(Base):
         'Speed': 'speed',
         'SpeedAuto': 'speedAuto',
     }
+    _SDM_ENUM_MAP = {
+        'autoInstrumentation': ['endOfFrame', 'floating'],
+        'masterSlaveMode': ['master', 'slave'],
+        'media': ['copper', 'fiber', 'sgmii'],
+        'speed': ['auto', 'speed1000', 'speed100fd', 'speed100hd', 'speed10fd', 'speed10hd'],
+    }
 
-    def __init__(self, parent):
-        super(Ethernet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ethernet, self).__init__(parent, list_op)
 
     @property
     def Fcoe(self):
@@ -64,7 +71,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.fcoe.fcoe import Fcoe
-        return Fcoe(self)._select()
+        if self._properties.get('Fcoe', None) is not None:
+            return self._properties.get('Fcoe')
+        else:
+            return Fcoe(self)._select()
 
     @property
     def Oam(self):
@@ -78,7 +88,10 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.oam.oam import Oam
-        return Oam(self)._select()
+        if self._properties.get('Oam', None) is not None:
+            return self._properties.get('Oam')
+        else:
+            return Oam(self)._select()
 
     @property
     def TxLane(self):
@@ -92,10 +105,14 @@ class Ethernet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernet.txlane.txlane import TxLane
-        return TxLane(self)._select()
+        if self._properties.get('TxLane', None) is not None:
+            return self._properties.get('TxLane')
+        else:
+            return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +121,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AutoNegotiate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,10 +135,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoNegotiate'])
     @AutoNegotiate.setter
     def AutoNegotiate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoNegotiate'], value)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -129,6 +150,7 @@ class Ethernet(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,6 +160,7 @@ class Ethernet(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,6 +170,7 @@ class Ethernet(Base):
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +179,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -167,10 +193,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,10 +207,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,10 +221,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def MasterSlaveMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,10 +235,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterSlaveMode'])
     @MasterSlaveMode.setter
     def MasterSlaveMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterSlaveMode'], value)
 
     @property
     def Media(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -215,10 +249,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Media'])
     @Media.setter
     def Media(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Media'], value)
 
     @property
     def NegotiateMasterSlave(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -227,10 +263,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'])
     @NegotiateMasterSlave.setter
     def NegotiateMasterSlave(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -239,10 +277,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -251,10 +291,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def Speed(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -263,10 +305,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def SpeedAuto(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -275,9 +319,11 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpeedAuto'])
     @SpeedAuto.setter
     def SpeedAuto(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpeedAuto'], value)
 
     def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None):
+        # type: (str, bool, bool, bool, str, bool, str, str, bool, int, List[str], str, List[str]) -> Ethernet
         """Updates ethernet resource on the server.
 
         Args

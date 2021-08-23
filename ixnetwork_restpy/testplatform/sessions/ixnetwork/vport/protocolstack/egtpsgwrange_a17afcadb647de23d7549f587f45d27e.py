@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpSgwRange(Base):
@@ -60,9 +61,11 @@ class EgtpSgwRange(Base):
         'UserPlaneIpv4Address': 'userPlaneIpv4Address',
         'UserPlaneIpv6Address': 'userPlaneIpv6Address',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpSgwRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpSgwRange, self).__init__(parent, list_op)
 
     @property
     def DedicatedBearer(self):
@@ -76,7 +79,10 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_8e58d0228e67f81e78a4fba859329bd4 import DedicatedBearer
-        return DedicatedBearer(self)
+        if self._properties.get('DedicatedBearer', None) is not None:
+            return self._properties.get('DedicatedBearer')
+        else:
+            return DedicatedBearer(self)
 
     @property
     def TrafficProfileProxiesSgw(self):
@@ -90,10 +96,14 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_2ba50e3f68406543d68c8adab06c0e1b import TrafficProfileProxiesSgw
-        return TrafficProfileProxiesSgw(self)
+        if self._properties.get('TrafficProfileProxiesSgw', None) is not None:
+            return self._properties.get('TrafficProfileProxiesSgw')
+        else:
+            return TrafficProfileProxiesSgw(self)
 
     @property
     def Apn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +112,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Apn'])
     @Apn.setter
     def Apn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Apn'], value)
 
     @property
     def ApnAmbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,10 +126,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApnAmbrd'])
     @ApnAmbrd.setter
     def ApnAmbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApnAmbrd'], value)
 
     @property
     def ApnAmbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,10 +140,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApnAmbru'])
     @ApnAmbru.setter
     def ApnAmbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApnAmbru'], value)
 
     @property
     def DbMbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,10 +154,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DbMbrd'])
     @DbMbrd.setter
     def DbMbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DbMbrd'], value)
 
     @property
     def DbMbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,10 +168,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DbMbru'])
     @DbMbru.setter
     def DbMbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DbMbru'], value)
 
     @property
     def DbPci(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -162,10 +182,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DbPci'])
     @DbPci.setter
     def DbPci(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DbPci'], value)
 
     @property
     def DbPl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -174,10 +196,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DbPl'])
     @DbPl.setter
     def DbPl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DbPl'], value)
 
     @property
     def DbPvi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -186,10 +210,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DbPvi'])
     @DbPvi.setter
     def DbPvi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DbPvi'], value)
 
     @property
     def DbQci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,10 +224,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DbQci'])
     @DbQci.setter
     def DbQci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DbQci'], value)
 
     @property
     def DefaultBearerLifetimeTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,10 +238,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultBearerLifetimeTimer'])
     @DefaultBearerLifetimeTimer.setter
     def DefaultBearerLifetimeTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultBearerLifetimeTimer'], value)
 
     @property
     def EnableDefaultBearerLifetime(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -222,10 +252,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDefaultBearerLifetime'])
     @EnableDefaultBearerLifetime.setter
     def EnableDefaultBearerLifetime(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDefaultBearerLifetime'], value)
 
     @property
     def EnableNidbCreationDelay(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -234,10 +266,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNidbCreationDelay'])
     @EnableNidbCreationDelay.setter
     def EnableNidbCreationDelay(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNidbCreationDelay'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -246,10 +280,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Ims_apn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -258,10 +294,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ims_apn'])
     @Ims_apn.setter
     def Ims_apn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ims_apn'], value)
 
     @property
     def Imsi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -270,10 +308,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Imsi'])
     @Imsi.setter
     def Imsi(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Imsi'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -282,10 +322,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -294,10 +336,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NidbCreationDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -306,10 +350,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NidbCreationDelay'])
     @NidbCreationDelay.setter
     def NidbCreationDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NidbCreationDelay'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -319,6 +365,7 @@ class EgtpSgwRange(Base):
 
     @property
     def PoolSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -327,10 +374,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolSize'])
     @PoolSize.setter
     def PoolSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolSize'], value)
 
     @property
     def PoolStartIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,10 +388,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolStartIp'])
     @PoolStartIp.setter
     def PoolStartIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolStartIp'], value)
 
     @property
     def PoolStartIpv4(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -351,10 +402,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolStartIpv4'])
     @PoolStartIpv4.setter
     def PoolStartIpv4(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolStartIpv4'], value)
 
     @property
     def PoolStartIpv6(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -363,10 +416,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolStartIpv6'])
     @PoolStartIpv6.setter
     def PoolStartIpv6(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolStartIpv6'], value)
 
     @property
     def TotalCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -375,10 +430,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TotalCount'])
     @TotalCount.setter
     def TotalCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TotalCount'], value)
 
     @property
     def UserPlaneIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -387,10 +444,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpAddress'])
     @UserPlaneIpAddress.setter
     def UserPlaneIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpAddress'], value)
 
     @property
     def UserPlaneIpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -399,10 +458,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpCount'])
     @UserPlaneIpCount.setter
     def UserPlaneIpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpCount'], value)
 
     @property
     def UserPlaneIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -411,10 +472,12 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpv4Address'])
     @UserPlaneIpv4Address.setter
     def UserPlaneIpv4Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpv4Address'], value)
 
     @property
     def UserPlaneIpv6Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -423,9 +486,11 @@ class EgtpSgwRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpv6Address'])
     @UserPlaneIpv6Address.setter
     def UserPlaneIpv6Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpv6Address'], value)
 
     def update(self, Apn=None, ApnAmbrd=None, ApnAmbru=None, DbMbrd=None, DbMbru=None, DbPci=None, DbPl=None, DbPvi=None, DbQci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNidbCreationDelay=None, Enabled=None, Ims_apn=None, Imsi=None, IpType=None, Name=None, NidbCreationDelay=None, PoolSize=None, PoolStartIp=None, PoolStartIpv4=None, PoolStartIpv6=None, TotalCount=None, UserPlaneIpAddress=None, UserPlaneIpCount=None, UserPlaneIpv4Address=None, UserPlaneIpv6Address=None):
+        # type: (str, int, int, int, int, bool, int, bool, int, int, bool, bool, bool, bool, str, str, str, int, int, str, str, str, int, str, int, str, str) -> EgtpSgwRange
         """Updates egtpSgwRange resource on the server.
 
         Args
@@ -465,14 +530,16 @@ class EgtpSgwRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -485,13 +552,15 @@ class EgtpSgwRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -505,13 +574,15 @@ class EgtpSgwRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

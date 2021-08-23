@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GeneralLearnedInfo(Base):
@@ -66,12 +67,15 @@ class GeneralLearnedInfo(Base):
         'TunnelEndpointType': 'tunnelEndpointType',
         'TunnelType': 'tunnelType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GeneralLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GeneralLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AverageRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +85,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def BfdSessionMyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +95,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def BfdSessionPeerState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +105,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def CcInUse(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,6 +115,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def CvInUse(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,6 +125,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def Fec(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +135,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def IncomingLabelStack(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,6 +145,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def IncomingLspLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,6 +155,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def IncomingPwLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,6 +165,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def LspPingReachability(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,6 +175,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def MaxRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,6 +185,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def MinRtt(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,6 +195,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def MyDiscriminator(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,6 +205,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def MyIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,6 +215,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def OutgoingLabelStack(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -207,6 +225,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def OutgoingLspLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,6 +235,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def OutgoingPwLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -225,6 +245,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PeerDiscriminator(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -234,6 +255,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PeerIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,6 +265,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PingAttempts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,6 +275,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PingFailures(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -261,6 +285,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PingReplyTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -270,6 +295,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PingRequestRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -279,6 +305,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def PingSuccess(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,6 +315,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ReceivedMinRxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -297,6 +325,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ReceivedMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -306,6 +335,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ReceivedPeerFlags(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -315,6 +345,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ReceivedTxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -324,6 +355,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ReturnCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -333,6 +365,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ReturnSubcode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -342,6 +375,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def SignalingProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -351,6 +385,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def TunnelEndpointType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -360,6 +395,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def TunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -367,7 +403,21 @@ class GeneralLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TunnelType'])
 
+    def add(self):
+        """Adds a new generalLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved generalLearnedInfo resources using find and the newly added generalLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AverageRtt=None, BfdSessionMyState=None, BfdSessionPeerState=None, CcInUse=None, CvInUse=None, Fec=None, IncomingLabelStack=None, IncomingLspLabel=None, IncomingPwLabel=None, LspPingReachability=None, MaxRtt=None, MinRtt=None, MyDiscriminator=None, MyIpAddress=None, OutgoingLabelStack=None, OutgoingLspLabel=None, OutgoingPwLabel=None, PeerDiscriminator=None, PeerIpAddress=None, PingAttempts=None, PingFailures=None, PingReplyTx=None, PingRequestRx=None, PingSuccess=None, ReceivedMinRxInterval=None, ReceivedMultiplier=None, ReceivedPeerFlags=None, ReceivedTxInterval=None, ReturnCode=None, ReturnSubcode=None, SignalingProtocol=None, TunnelEndpointType=None, TunnelType=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, int, str, int, int, int, int, int, int, int, str, int, str, int, str, str, str) -> GeneralLearnedInfo
         """Finds and retrieves generalLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve generalLearnedInfo resources from the server.
@@ -438,10 +488,16 @@ class GeneralLearnedInfo(Base):
         """
         return self._read(href)
 
-    def AddRecordForTrigger(self):
+    def AddRecordForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the addRecordForTrigger operation on the server.
 
         This signifies the record added for trigger settings.
+
+        addRecordForTrigger(async_operation=bool)bool
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -449,4 +505,6 @@ class GeneralLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addRecordForTrigger', payload=payload, response_object=None)

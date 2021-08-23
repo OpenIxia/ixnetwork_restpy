@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfPseudoTrafficEngineeringProfileList(Base):
@@ -51,12 +52,15 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
         'MetricLevel': 'metricLevel',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfPseudoTrafficEngineeringProfileList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfPseudoTrafficEngineeringProfileList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -67,6 +71,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -77,6 +82,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def AdvertiseExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +93,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority0(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +104,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +115,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +126,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority3(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +148,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +159,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +170,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority7(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -167,6 +181,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -176,6 +191,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -185,6 +201,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def ExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +212,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def ExtAdminGroupLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +223,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def MaxBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +234,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def MaxReservableBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -225,6 +245,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -235,6 +256,7 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,9 +265,11 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> OspfPseudoTrafficEngineeringProfileList
         """Updates ospfPseudoTrafficEngineeringProfileList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -260,6 +284,66 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdministratorGroup=None, AdvertiseExtAdminGroup=None, BandwidthPriority0=None, BandwidthPriority1=None, BandwidthPriority2=None, BandwidthPriority3=None, BandwidthPriority4=None, BandwidthPriority5=None, BandwidthPriority6=None, BandwidthPriority7=None, ExtAdminGroup=None, ExtAdminGroupLength=None, MaxBandwidth=None, MaxReservableBandwidth=None, MetricLevel=None):
         """Base class infrastructure that gets a list of ospfPseudoTrafficEngineeringProfileList device ids encapsulated by this object.
@@ -295,42 +379,3 @@ class OspfPseudoTrafficEngineeringProfileList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

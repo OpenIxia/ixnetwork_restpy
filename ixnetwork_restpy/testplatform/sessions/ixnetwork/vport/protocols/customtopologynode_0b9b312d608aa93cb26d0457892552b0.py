@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomTopologyNode(Base):
@@ -40,9 +41,11 @@ class CustomTopologyNode(Base):
         'Priority': 'priority',
         'SpSrcId': 'spSrcId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomTopologyNode, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomTopologyNode, self).__init__(parent, list_op)
 
     @property
     def CustomNetworkTopologyLinks(self):
@@ -56,10 +59,14 @@ class CustomTopologyNode(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customnetworktopologylinks_5e1eaf53830b67b52c94f8ec618f4c02 import CustomNetworkTopologyLinks
-        return CustomNetworkTopologyLinks(self)
+        if self._properties.get('CustomNetworkTopologyLinks', None) is not None:
+            return self._properties.get('CustomNetworkTopologyLinks')
+        else:
+            return CustomNetworkTopologyLinks(self)
 
     @property
     def BridgePriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +75,12 @@ class CustomTopologyNode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BridgePriority'])
     @BridgePriority.setter
     def BridgePriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BridgePriority'], value)
 
     @property
     def EdgeBridge(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,10 +89,12 @@ class CustomTopologyNode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EdgeBridge'])
     @EdgeBridge.setter
     def EdgeBridge(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EdgeBridge'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +103,12 @@ class CustomTopologyNode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Nickname(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,10 +117,12 @@ class CustomTopologyNode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Nickname'])
     @Nickname.setter
     def Nickname(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Nickname'], value)
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,10 +131,12 @@ class CustomTopologyNode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def SpSrcId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,9 +145,11 @@ class CustomTopologyNode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpSrcId'])
     @SpSrcId.setter
     def SpSrcId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpSrcId'], value)
 
     def update(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
+        # type: (int, bool, bool, int, int, int) -> CustomTopologyNode
         """Updates customTopologyNode resource on the server.
 
         Args
@@ -149,6 +168,7 @@ class CustomTopologyNode(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
+        # type: (int, bool, bool, int, int, int) -> CustomTopologyNode
         """Adds a new customTopologyNode resource on the server and adds it to the container.
 
         Args
@@ -181,6 +201,7 @@ class CustomTopologyNode(Base):
         self._delete()
 
     def find(self, BridgePriority=None, EdgeBridge=None, Enabled=None, Nickname=None, Priority=None, SpSrcId=None):
+        # type: (int, bool, bool, int, int, int) -> CustomTopologyNode
         """Finds and retrieves customTopologyNode resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologyNode resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfPseudoRouter(Base):
@@ -53,9 +54,11 @@ class OspfPseudoRouter(Base):
         'SrlbRangeCount': 'srlbRangeCount',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfPseudoRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfPseudoRouter, self).__init__(parent, list_op)
 
     @property
     def OspfPseudoRouterStubNetworks(self):
@@ -69,7 +72,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks_529623b7b4a99bce259e7e9cc31d4740 import OspfPseudoRouterStubNetworks
-        return OspfPseudoRouterStubNetworks(self)
+        if self._properties.get('OspfPseudoRouterStubNetworks', None) is not None:
+            return self._properties.get('OspfPseudoRouterStubNetworks')
+        else:
+            return OspfPseudoRouterStubNetworks(self)
 
     @property
     def OspfPseudoRouterStubRoutes(self):
@@ -83,7 +89,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes_412e064d08a94b4fcc40c44dd11c5318 import OspfPseudoRouterStubRoutes
-        return OspfPseudoRouterStubRoutes(self)
+        if self._properties.get('OspfPseudoRouterStubRoutes', None) is not None:
+            return self._properties.get('OspfPseudoRouterStubRoutes')
+        else:
+            return OspfPseudoRouterStubRoutes(self)
 
     @property
     def OspfPseudoRouterSummaryRoutes(self):
@@ -97,7 +106,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes_5e51c97c0564d672f57ec5fd0f34b1cb import OspfPseudoRouterSummaryRoutes
-        return OspfPseudoRouterSummaryRoutes(self)
+        if self._properties.get('OspfPseudoRouterSummaryRoutes', None) is not None:
+            return self._properties.get('OspfPseudoRouterSummaryRoutes')
+        else:
+            return OspfPseudoRouterSummaryRoutes(self)
 
     @property
     def OspfPseudoRouterType1ExtRoutes(self):
@@ -111,7 +123,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes_8af6c2f32014611d60e64f734921e6df import OspfPseudoRouterType1ExtRoutes
-        return OspfPseudoRouterType1ExtRoutes(self)
+        if self._properties.get('OspfPseudoRouterType1ExtRoutes', None) is not None:
+            return self._properties.get('OspfPseudoRouterType1ExtRoutes')
+        else:
+            return OspfPseudoRouterType1ExtRoutes(self)
 
     @property
     def OspfPseudoRouterType2ExtRoutes(self):
@@ -125,7 +140,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes_1eb6898acd2430328b24bfa765a4dc59 import OspfPseudoRouterType2ExtRoutes
-        return OspfPseudoRouterType2ExtRoutes(self)
+        if self._properties.get('OspfPseudoRouterType2ExtRoutes', None) is not None:
+            return self._properties.get('OspfPseudoRouterType2ExtRoutes')
+        else:
+            return OspfPseudoRouterType2ExtRoutes(self)
 
     @property
     def OspfSRAlgorithmList(self):
@@ -139,7 +157,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import OspfSRAlgorithmList
-        return OspfSRAlgorithmList(self)
+        if self._properties.get('OspfSRAlgorithmList', None) is not None:
+            return self._properties.get('OspfSRAlgorithmList')
+        else:
+            return OspfSRAlgorithmList(self)
 
     @property
     def OspfSRGBRangeSubObjectsList(self):
@@ -153,7 +174,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import OspfSRGBRangeSubObjectsList
-        return OspfSRGBRangeSubObjectsList(self)
+        if self._properties.get('OspfSRGBRangeSubObjectsList', None) is not None:
+            return self._properties.get('OspfSRGBRangeSubObjectsList')
+        else:
+            return OspfSRGBRangeSubObjectsList(self)
 
     @property
     def OspfSRLBRangeSubObjectsList(self):
@@ -167,10 +191,14 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import OspfSRLBRangeSubObjectsList
-        return OspfSRLBRangeSubObjectsList(self)
+        if self._properties.get('OspfSRLBRangeSubObjectsList', None) is not None:
+            return self._properties.get('OspfSRLBRangeSubObjectsList')
+        else:
+            return OspfSRLBRangeSubObjectsList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +209,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def AdvertiseRouterIdAsStubNetwork(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -191,6 +220,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +231,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def BBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +242,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +253,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,6 +263,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,6 +273,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def EBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +284,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +295,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def EnableSegmentRouting(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -267,10 +304,12 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'])
     @EnableSegmentRouting.setter
     def EnableSegmentRouting(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSegmentRouting'], value)
 
     @property
     def EnableSrlb(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -279,10 +318,12 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSrlb'])
     @EnableSrlb.setter
     def EnableSrlb(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSrlb'], value)
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -293,6 +334,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -303,6 +345,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -311,10 +354,12 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -325,6 +370,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def SRAlgorithmCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -333,10 +379,12 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'])
     @SRAlgorithmCount.setter
     def SRAlgorithmCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'], value)
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +395,7 @@ class OspfPseudoRouter(Base):
 
     @property
     def SrgbRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -355,10 +404,12 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrgbRangeCount'])
     @SrgbRangeCount.setter
     def SrgbRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrgbRangeCount'], value)
 
     @property
     def SrlbRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -367,10 +418,12 @@ class OspfPseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrlbRangeCount'])
     @SrlbRangeCount.setter
     def SrlbRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrlbRangeCount'], value)
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +433,7 @@ class OspfPseudoRouter(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, EnableSegmentRouting=None, EnableSrlb=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        # type: (bool, bool, str, int, int, int) -> OspfPseudoRouter
         """Updates ospfPseudoRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -400,7 +454,31 @@ class OspfPseudoRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EnableSegmentRouting=None, EnableSrlb=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        # type: (bool, bool, str, int, int, int) -> OspfPseudoRouter
+        """Adds a new ospfPseudoRouter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableSegmentRouting (bool): Enable Segment Routing
+        - EnableSrlb (bool): Enable SRLB
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SrgbRangeCount (number): SRGB Range Count
+        - SrlbRangeCount (number): SRLB Range Count
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ospfPseudoRouter resources using find and the newly added ospfPseudoRouter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, EnableSegmentRouting=None, EnableSrlb=None, Name=None, SRAlgorithmCount=None, SrgbRangeCount=None, SrlbRangeCount=None):
+        # type: (int, str, bool, bool, str, int, int, int) -> OspfPseudoRouter
         """Finds and retrieves ospfPseudoRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfPseudoRouter resources from the server.
@@ -446,6 +524,90 @@ class OspfPseudoRouter(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AdvertiseRouterIdAsStubNetwork=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, EBit=None, EFlag=None, LFlag=None, MFlag=None, NpFlag=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfPseudoRouter device ids encapsulated by this object.
 
@@ -476,66 +638,3 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start Pseudo Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop Pseudo Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

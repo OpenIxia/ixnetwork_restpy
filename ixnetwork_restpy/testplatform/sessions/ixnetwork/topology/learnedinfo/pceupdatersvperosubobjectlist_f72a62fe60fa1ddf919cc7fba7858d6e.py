@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceUpdateRsvpEroSubObjectList(Base):
@@ -40,12 +41,15 @@ class PceUpdateRsvpEroSubObjectList(Base):
         'PrefixLength': 'prefixLength',
         'SubObjectType': 'subObjectType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceUpdateRsvpEroSubObjectList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceUpdateRsvpEroSubObjectList, self).__init__(parent, list_op)
 
     @property
     def ActiveThisEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def AsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def Ipv4Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def Ipv6Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def LooseHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -96,6 +104,7 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class PceUpdateRsvpEroSubObjectList(Base):
 
     @property
     def SubObjectType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +123,19 @@ class PceUpdateRsvpEroSubObjectList(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubObjectType']))
+
+    def add(self):
+        """Adds a new pceUpdateRsvpEroSubObjectList resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pceUpdateRsvpEroSubObjectList resources using find and the newly added pceUpdateRsvpEroSubObjectList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves pceUpdateRsvpEroSubObjectList resources from the server.

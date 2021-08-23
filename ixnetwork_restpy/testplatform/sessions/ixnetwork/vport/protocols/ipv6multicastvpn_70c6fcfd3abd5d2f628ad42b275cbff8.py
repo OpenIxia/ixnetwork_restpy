@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6MulticastVpn(Base):
@@ -55,12 +56,15 @@ class Ipv6MulticastVpn(Base):
         'TunnelType': 'tunnelType',
         'UpstreamLabel': 'upstreamLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv6MulticastVpn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6MulticastVpn, self).__init__(parent, list_op)
 
     @property
     def CMcastRouteType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +74,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +84,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +94,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def OriginatingRouter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,6 +104,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteDistinguisher(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +114,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyGroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +124,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyOriginatingRouter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyRouteDistinguisher(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +144,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyRsvpP2mpExtendedTunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,6 +154,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyRsvpP2mpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -151,6 +164,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyRsvpP2mpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,6 +174,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeySourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +184,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyTunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,6 +194,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteKeyUpstreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -187,6 +204,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RouteType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,6 +214,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RsvpP2mpExtendedTunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -205,6 +224,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RsvpP2mpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,6 +234,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def RsvpP2mpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -223,6 +244,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -232,6 +254,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def SourceAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -241,6 +264,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def TunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,6 +274,7 @@ class Ipv6MulticastVpn(Base):
 
     @property
     def UpstreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -257,7 +282,21 @@ class Ipv6MulticastVpn(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamLabel'])
 
+    def add(self):
+        """Adds a new ipv6MulticastVpn resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv6MulticastVpn resources using find and the newly added ipv6MulticastVpn resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CMcastRouteType=None, GroupAddress=None, Neighbor=None, OriginatingRouter=None, RouteDistinguisher=None, RouteKeyGroupAddress=None, RouteKeyOriginatingRouter=None, RouteKeyRouteDistinguisher=None, RouteKeyRsvpP2mpExtendedTunnelId=None, RouteKeyRsvpP2mpId=None, RouteKeyRsvpP2mpTunnelId=None, RouteKeySourceAddress=None, RouteKeyTunnelType=None, RouteKeyUpstreamLabel=None, RouteType=None, RsvpP2mpExtendedTunnelId=None, RsvpP2mpId=None, RsvpP2mpTunnelId=None, SourceAddress=None, SourceAs=None, TunnelType=None, UpstreamLabel=None):
+        # type: (str, str, str, str, str, str, str, str, str, int, int, str, str, int, str, str, int, int, str, int, str, int) -> Ipv6MulticastVpn
         """Finds and retrieves ipv6MulticastVpn resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6MulticastVpn resources from the server.

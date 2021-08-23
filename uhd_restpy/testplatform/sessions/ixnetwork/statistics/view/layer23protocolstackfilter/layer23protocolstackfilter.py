@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23ProtocolStackFilter(Base):
@@ -39,12 +40,16 @@ class Layer23ProtocolStackFilter(Base):
         'SortAscending': 'sortAscending',
         'SortingStatistic': 'sortingStatistic',
     }
+    _SDM_ENUM_MAP = {
+        'drilldownType': ['perRange', 'perSession'],
+    }
 
-    def __init__(self, parent):
-        super(Layer23ProtocolStackFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23ProtocolStackFilter, self).__init__(parent, list_op)
 
     @property
     def DrilldownType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DrilldownType'])
     @DrilldownType.setter
     def DrilldownType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DrilldownType'], value)
 
     @property
     def NumberOfResults(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,22 +72,26 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfResults'])
     @NumberOfResults.setter
     def NumberOfResults(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfResults'], value)
 
     @property
     def ProtocolStackFilterId(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter]): Selected protocol stack filters from the availableProtocolStackFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'])
     @ProtocolStackFilterId.setter
     def ProtocolStackFilterId(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolStackFilterId'], value)
 
     @property
     def SortAscending(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,30 +100,34 @@ class Layer23ProtocolStackFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortAscending'])
     @SortAscending.setter
     def SortAscending(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortAscending'], value)
 
     @property
     def SortingStatistic(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic): The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SortingStatistic'])
     @SortingStatistic.setter
     def SortingStatistic(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingStatistic'], value)
 
     def update(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+        # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Updates layer23ProtocolStackFilter resource on the server.
 
         Args
         ----
         - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
         - SortAscending (bool): Sets the display order of the view.
-        - SortingStatistic (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
+        - SortingStatistic (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
         Raises
         ------
@@ -121,15 +136,16 @@ class Layer23ProtocolStackFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+        # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Adds a new layer23ProtocolStackFilter resource on the server and adds it to the container.
 
         Args
         ----
         - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
         - SortAscending (bool): Sets the display order of the view.
-        - SortingStatistic (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
+        - SortingStatistic (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
         Returns
         -------
@@ -152,6 +168,7 @@ class Layer23ProtocolStackFilter(Base):
         self._delete()
 
     def find(self, DrilldownType=None, NumberOfResults=None, ProtocolStackFilterId=None, SortAscending=None, SortingStatistic=None):
+        # type: (str, int, List[str], bool, str) -> Layer23ProtocolStackFilter
         """Finds and retrieves layer23ProtocolStackFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23ProtocolStackFilter resources from the server.
@@ -162,9 +179,9 @@ class Layer23ProtocolStackFilter(Base):
         ----
         - DrilldownType (str(perRange | perSession)): Emulates perRange or perSession view based on the option seleted.
         - NumberOfResults (number): Number of traffic flows to be displayed.
-        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
+        - ProtocolStackFilterId (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolStackFilter])): Selected protocol stack filters from the availableProtocolStackFilter list.
         - SortAscending (bool): Sets the display order of the view.
-        - SortingStatistic (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
+        - SortingStatistic (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../statistic)): The reference statistic by which the data will be sorted in created SV.
 
         Returns
         -------

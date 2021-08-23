@@ -19,7 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
-from uhd_restpy.base import Base
+from ixnetwork_restpy.base import Base
 
 
 class Steps(Base):
@@ -33,8 +33,8 @@ class Steps(Base):
         'Description': 'description'
     }
 
-    def __init__(self, parent):
-        super(Steps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Steps, self).__init__(parent, list_op)
 
     @property
     def Description(self):

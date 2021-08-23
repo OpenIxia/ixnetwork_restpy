@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Group(Base):
@@ -40,9 +41,12 @@ class Group(Base):
         'Type': 'type',
         'UpdateGroupModStatus': 'updateGroupModStatus',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['all', 'select', 'indirect', 'fastFailover'],
+    }
 
-    def __init__(self, parent):
-        super(Group, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Group, self).__init__(parent, list_op)
 
     @property
     def Bucket(self):
@@ -56,10 +60,14 @@ class Group(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucket_70fad76e12d52147154e1637a004a478 import Bucket
-        return Bucket(self)
+        if self._properties.get('Bucket', None) is not None:
+            return self._properties.get('Bucket')
+        else:
+            return Bucket(self)
 
     @property
     def Id__(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +76,12 @@ class Group(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Id__'])
     @Id__.setter
     def Id__(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +90,12 @@ class Group(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +104,12 @@ class Group(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GroupAdvertise(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -104,10 +118,12 @@ class Group(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupAdvertise'])
     @GroupAdvertise.setter
     def GroupAdvertise(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupAdvertise'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +132,12 @@ class Group(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def UpdateGroupModStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,6 +146,7 @@ class Group(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateGroupModStatus'])
 
     def update(self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None):
+        # type: (int, str, bool, bool, str) -> Group
         """Updates group resource on the server.
 
         Args
@@ -145,6 +164,7 @@ class Group(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None):
+        # type: (int, str, bool, bool, str) -> Group
         """Adds a new group resource on the server and adds it to the container.
 
         Args
@@ -176,6 +196,7 @@ class Group(Base):
         self._delete()
 
     def find(self, Id__=None, Description=None, Enabled=None, GroupAdvertise=None, Type=None, UpdateGroupModStatus=None):
+        # type: (int, str, bool, bool, str, str) -> Group
         """Finds and retrieves group resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve group resources from the server.
@@ -220,13 +241,15 @@ class Group(Base):
         return self._read(href)
 
     def UpdateGroupMod(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateGroupMod operation on the server.
 
         NOT DEFINED
 
-        updateGroupMod(Arg2=enum)bool
-        -----------------------------
+        updateGroupMod(Arg2=enum, async_operation=bool)bool
+        ---------------------------------------------------
         - Arg2 (str(sendGroupAdd | sendGroupModify | sendGroupRemove)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
         Raises

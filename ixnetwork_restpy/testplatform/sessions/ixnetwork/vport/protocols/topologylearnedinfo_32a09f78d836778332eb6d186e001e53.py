@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TopologyLearnedInfo(Base):
@@ -45,12 +46,15 @@ class TopologyLearnedInfo(Base):
         'OutPortName': 'outPortName',
         'OutPortNumber': 'outPortNumber',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TopologyLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TopologyLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def InDataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def InDataPathIdAshex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def InIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def InPortEthernetAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +94,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def InPortName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +104,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def InPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,6 +114,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def OutDataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +124,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def OutDataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,6 +134,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def OutIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,6 +144,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def OutPortEthernetAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,6 +154,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def OutPortName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +164,7 @@ class TopologyLearnedInfo(Base):
 
     @property
     def OutPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,7 +172,21 @@ class TopologyLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['OutPortNumber'])
 
+    def add(self):
+        """Adds a new topologyLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved topologyLearnedInfo resources using find and the newly added topologyLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, InDataPathId=None, InDataPathIdAshex=None, InIp=None, InPortEthernetAddress=None, InPortName=None, InPortNumber=None, OutDataPathId=None, OutDataPathIdAsHex=None, OutIp=None, OutPortEthernetAddress=None, OutPortName=None, OutPortNumber=None):
+        # type: (str, str, str, str, str, int, str, str, str, str, str, int) -> TopologyLearnedInfo
         """Finds and retrieves topologyLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve topologyLearnedInfo resources from the server.

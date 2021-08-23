@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpV6Properties(Base):
@@ -38,12 +39,16 @@ class DhcpV6Properties(Base):
         'RequestRate': 'requestRate',
         'Tlvs': 'tlvs',
     }
+    _SDM_ENUM_MAP = {
+        'iaType': ['permanent', 'temporary', 'prefixDelegation'],
+    }
 
-    def __init__(self, parent):
-        super(DhcpV6Properties, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpV6Properties, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +57,12 @@ class DhcpV6Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IaId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class DhcpV6Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IaId'])
     @IaId.setter
     def IaId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IaId'], value)
 
     @property
     def IaType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class DhcpV6Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IaType'])
     @IaType.setter
     def IaType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IaType'], value)
 
     @property
     def RenewTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,10 +99,12 @@ class DhcpV6Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RenewTimer'])
     @RenewTimer.setter
     def RenewTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RenewTimer'], value)
 
     @property
     def RequestRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +113,7 @@ class DhcpV6Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestRate'])
     @RequestRate.setter
     def RequestRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestRate'], value)
 
     @property

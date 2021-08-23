@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisSRLBDescriptorList(Base):
@@ -38,12 +39,15 @@ class IsisSRLBDescriptorList(Base):
         'SIDCount': 'sIDCount',
         'StartSIDLabel': 'startSIDLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisSRLBDescriptorList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisSRLBDescriptorList, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class IsisSRLBDescriptorList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class IsisSRLBDescriptorList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,10 +76,12 @@ class IsisSRLBDescriptorList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SIDCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +92,7 @@ class IsisSRLBDescriptorList(Base):
 
     @property
     def StartSIDLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +102,7 @@ class IsisSRLBDescriptorList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSIDLabel']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisSRLBDescriptorList
         """Updates isisSRLBDescriptorList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -108,7 +118,26 @@ class IsisSRLBDescriptorList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> IsisSRLBDescriptorList
+        """Adds a new isisSRLBDescriptorList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisSRLBDescriptorList resources using find and the newly added isisSRLBDescriptorList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> IsisSRLBDescriptorList
         """Finds and retrieves isisSRLBDescriptorList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisSRLBDescriptorList resources from the server.

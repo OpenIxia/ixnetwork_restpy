@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpEpePeerList(Base):
@@ -56,9 +57,11 @@ class BgpEpePeerList(Base):
         'VBit': 'vBit',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpEpePeerList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpEpePeerList, self).__init__(parent, list_op)
 
     @property
     def BgpEpePeerLinkList(self):
@@ -72,7 +75,10 @@ class BgpEpePeerList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlinklist_64989e297b3e27479937928bcec9cd7f import BgpEpePeerLinkList
-        return BgpEpePeerLinkList(self)._select()
+        if self._properties.get('BgpEpePeerLinkList', None) is not None:
+            return self._properties.get('BgpEpePeerLinkList')
+        else:
+            return BgpEpePeerLinkList(self)._select()
 
     @property
     def BgpEpePeerSetList(self):
@@ -86,10 +92,14 @@ class BgpEpePeerList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeersetlist_ece8f83471c092e69963d1f732d4f4fb import BgpEpePeerSetList
-        return BgpEpePeerSetList(self)
+        if self._properties.get('BgpEpePeerSetList', None) is not None:
+            return self._properties.get('BgpEpePeerSetList')
+        else:
+            return BgpEpePeerSetList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +110,7 @@ class BgpEpePeerList(Base):
 
     @property
     def BBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class BgpEpePeerList(Base):
 
     @property
     def BgpLocalRouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +132,7 @@ class BgpEpePeerList(Base):
 
     @property
     def BgpRemoteRouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +143,7 @@ class BgpEpePeerList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,6 +153,7 @@ class BgpEpePeerList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,6 +163,7 @@ class BgpEpePeerList(Base):
 
     @property
     def EnablePeerNodeSid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +174,7 @@ class BgpEpePeerList(Base):
 
     @property
     def LBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -168,6 +185,7 @@ class BgpEpePeerList(Base):
 
     @property
     def LocalAsn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -178,6 +196,7 @@ class BgpEpePeerList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -186,10 +205,12 @@ class BgpEpePeerList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfPeerSet(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,10 +219,12 @@ class BgpEpePeerList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfPeerSet'])
     @NoOfPeerSet.setter
     def NoOfPeerSet(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfPeerSet'], value)
 
     @property
     def NoOflinks(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,10 +233,12 @@ class BgpEpePeerList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOflinks'])
     @NoOflinks.setter
     def NoOflinks(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOflinks'], value)
 
     @property
     def PBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -224,6 +249,7 @@ class BgpEpePeerList(Base):
 
     @property
     def PeerName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +260,7 @@ class BgpEpePeerList(Base):
 
     @property
     def PeerSetGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -244,6 +271,7 @@ class BgpEpePeerList(Base):
 
     @property
     def RemoteAsn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -254,6 +282,7 @@ class BgpEpePeerList(Base):
 
     @property
     def Reserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -264,6 +293,7 @@ class BgpEpePeerList(Base):
 
     @property
     def RsvdBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -274,6 +304,7 @@ class BgpEpePeerList(Base):
 
     @property
     def SidIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -284,6 +315,7 @@ class BgpEpePeerList(Base):
 
     @property
     def SidIndexValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -294,6 +326,7 @@ class BgpEpePeerList(Base):
 
     @property
     def UseLocalConfedId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -304,6 +337,7 @@ class BgpEpePeerList(Base):
 
     @property
     def UseRemoteConfedId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -314,6 +348,7 @@ class BgpEpePeerList(Base):
 
     @property
     def VBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -324,6 +359,7 @@ class BgpEpePeerList(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -333,6 +369,7 @@ class BgpEpePeerList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Name=None, NoOfPeerSet=None, NoOflinks=None):
+        # type: (str, int, int) -> BgpEpePeerList
         """Updates bgpEpePeerList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EidToRlocMapCacheInfo(Base):
@@ -47,9 +48,11 @@ class EidToRlocMapCacheInfo(Base):
         'RlocProbeReplyRx': 'rlocProbeReplyRx',
         'RlocProbeRequestTx': 'rlocProbeRequestTx',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EidToRlocMapCacheInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EidToRlocMapCacheInfo, self).__init__(parent, list_op)
 
     @property
     def RemoteLocators(self):
@@ -63,10 +66,14 @@ class EidToRlocMapCacheInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_69a782e2029768935eb54ff9c03fbc3d import RemoteLocators
-        return RemoteLocators(self)
+        if self._properties.get('RemoteLocators', None) is not None:
+            return self._properties.get('RemoteLocators')
+        else:
+            return RemoteLocators(self)
 
     @property
     def Action(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +83,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def ExpiresAfter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +93,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def InstanceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +103,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def MapReplyRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,6 +113,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def MapRequestTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,6 +123,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def MapVersionNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,6 +133,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def NegativeMapReplyRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +143,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def RemoteEidMappingStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,6 +153,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def RemoteEidPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,6 +163,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def RemoteEidPrefixAfi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,6 +173,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def RemoteEidPrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,6 +183,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def ResponderIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -175,6 +193,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def RlocProbeReplyRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -184,6 +203,7 @@ class EidToRlocMapCacheInfo(Base):
 
     @property
     def RlocProbeRequestTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -191,7 +211,21 @@ class EidToRlocMapCacheInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RlocProbeRequestTx'])
 
+    def add(self):
+        """Adds a new eidToRlocMapCacheInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved eidToRlocMapCacheInfo resources using find and the newly added eidToRlocMapCacheInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Action=None, ExpiresAfter=None, InstanceId=None, MapReplyRx=None, MapRequestTx=None, MapVersionNumber=None, NegativeMapReplyRx=None, RemoteEidMappingStatus=None, RemoteEidPrefix=None, RemoteEidPrefixAfi=None, RemoteEidPrefixLength=None, ResponderIp=None, RlocProbeReplyRx=None, RlocProbeRequestTx=None):
+        # type: (str, str, int, int, int, int, int, str, str, str, int, str, int, int) -> EidToRlocMapCacheInfo
         """Finds and retrieves eidToRlocMapCacheInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eidToRlocMapCacheInfo resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -45,12 +46,15 @@ class Router(Base):
         'VBit': 'vBit',
         'WBit': 'wBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def BBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -59,10 +63,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BBit'])
     @BBit.setter
     def BBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BBit'], value)
 
     @property
     def EBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EBit'])
     @EBit.setter
     def EBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EBit'], value)
 
     @property
@@ -87,6 +94,7 @@ class Router(Base):
 
     @property
     def OptBitDc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +103,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitDc'])
     @OptBitDc.setter
     def OptBitDc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitDc'], value)
 
     @property
     def OptBitE(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +117,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitE'])
     @OptBitE.setter
     def OptBitE(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitE'], value)
 
     @property
     def OptBitMc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +131,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitMc'])
     @OptBitMc.setter
     def OptBitMc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitMc'], value)
 
     @property
     def OptBitN(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -131,10 +145,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitN'])
     @OptBitN.setter
     def OptBitN(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitN'], value)
 
     @property
     def OptBitR(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -143,10 +159,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitR'])
     @OptBitR.setter
     def OptBitR(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitR'], value)
 
     @property
     def OptBitV6(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +173,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitV6'])
     @OptBitV6.setter
     def OptBitV6(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitV6'], value)
 
     @property
     def Option(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,10 +187,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Option'])
     @Option.setter
     def Option(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Option'], value)
 
     @property
     def VBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -179,10 +201,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VBit'])
     @VBit.setter
     def VBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VBit'], value)
 
     @property
     def WBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,6 +215,7 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WBit'])
     @WBit.setter
     def WBit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WBit'], value)
 
     def update(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
@@ -216,6 +241,34 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
+        """Adds a new router resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - BBit (bool): 
+        - EBit (bool): 
+        - Interfaces (list(dict(arg1:number,arg2:number,arg3:str,arg4:str[transit | pointToPoint | virtual],arg5:number))): 
+        - OptBitDc (bool): 
+        - OptBitE (bool): 
+        - OptBitMc (bool): 
+        - OptBitN (bool): 
+        - OptBitR (bool): 
+        - OptBitV6 (bool): 
+        - Option (number): 
+        - VBit (bool): 
+        - WBit (bool): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved router resources using find and the newly added router resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, BBit=None, EBit=None, Interfaces=None, OptBitDc=None, OptBitE=None, OptBitMc=None, OptBitN=None, OptBitR=None, OptBitV6=None, Option=None, VBit=None, WBit=None):
         """Finds and retrieves router resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AvailableTrafficItemFilter(Base):
@@ -35,12 +36,15 @@ class AvailableTrafficItemFilter(Base):
         'Constraints': 'constraints',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AvailableTrafficItemFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AvailableTrafficItemFilter, self).__init__(parent, list_op)
 
     @property
     def Constraints(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -50,6 +54,7 @@ class AvailableTrafficItemFilter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,7 +62,21 @@ class AvailableTrafficItemFilter(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
+    def add(self):
+        """Adds a new availableTrafficItemFilter resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved availableTrafficItemFilter resources using find and the newly added availableTrafficItemFilter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Constraints=None, Name=None):
+        # type: (List[str], str) -> AvailableTrafficItemFilter
         """Finds and retrieves availableTrafficItemFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableTrafficItemFilter resources from the server.

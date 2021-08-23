@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Device(Base):
@@ -43,9 +44,13 @@ class Device(Base):
         'PrivateFile': 'privateFile',
         'Version': 'version',
     }
+    _SDM_ENUM_MAP = {
+        'deviceRole': ['controller', 'switch'],
+        'version': ['1.0.0'],
+    }
 
-    def __init__(self, parent):
-        super(Device, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Device, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
@@ -59,10 +64,14 @@ class Device(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_dfb69d588f2b15dfce9b51a039348724 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def CaCertificateFile(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +81,7 @@ class Device(Base):
 
     @property
     def CertificateFile(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +91,7 @@ class Device(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +100,12 @@ class Device(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def DeviceRole(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +114,12 @@ class Device(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeviceRole'])
     @DeviceRole.setter
     def DeviceRole(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeviceRole'], value)
 
     @property
     def EnableVersion100(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +128,12 @@ class Device(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVersion100'])
     @EnableVersion100.setter
     def EnableVersion100(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVersion100'], value)
 
     @property
     def EnableVersion131(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,10 +142,12 @@ class Device(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVersion131'])
     @EnableVersion131.setter
     def EnableVersion131(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVersion131'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -137,10 +156,12 @@ class Device(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def PrivateFile(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -150,6 +171,7 @@ class Device(Base):
 
     @property
     def Version(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -158,9 +180,11 @@ class Device(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Version'])
     @Version.setter
     def Version(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Version'], value)
 
     def update(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
+        # type: (str, str, bool, bool, bool, str) -> Device
         """Updates device resource on the server.
 
         Args
@@ -179,6 +203,7 @@ class Device(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, Version=None):
+        # type: (str, str, bool, bool, bool, str) -> Device
         """Adds a new device resource on the server and adds it to the container.
 
         Args
@@ -211,6 +236,7 @@ class Device(Base):
         self._delete()
 
     def find(self, CaCertificateFile=None, CertificateFile=None, Description=None, DeviceRole=None, EnableVersion100=None, EnableVersion131=None, Enabled=None, PrivateFile=None, Version=None):
+        # type: (str, str, str, str, bool, bool, bool, str, str) -> Device
         """Finds and retrieves device resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve device resources from the server.
@@ -258,15 +284,17 @@ class Device(Base):
         return self._read(href)
 
     def AddTlsCertificates(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
         """Executes the addTlsCertificates operation on the server.
 
         Exec to add TLS certificates.
 
-        addTlsCertificates(Arg2=href, Arg3=href, Arg4=href)number
-        ---------------------------------------------------------
+        addTlsCertificates(Arg2=href, Arg3=href, Arg4=href, async_operation=bool)number
+        -------------------------------------------------------------------------------
         - Arg2 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
         - Arg3 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
         - Arg4 (obj(ixnetwork_restpy.files.Files)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns number: NOT DEFINED
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisPseudoTraffEngProfile(Base):
@@ -110,12 +111,15 @@ class IsisPseudoTraffEngProfile(Base):
         'UserDefAppBm': 'userDefAppBm',
         'UserDefAppBmLen': 'userDefAppBmLen',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisPseudoTraffEngProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisPseudoTraffEngProfile, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +130,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def ActiveTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +141,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,6 +152,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdministratorGroupTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -156,6 +163,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvAppSpecificTraffic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +174,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvMinMaxUniDiLinkDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +185,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvMinMaxUniDiLinkDelayTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +196,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirAvailableBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +207,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirAvailableBwTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +218,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirDelayVariation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +229,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirDelayVariationTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +240,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirLinkLoss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +251,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirLinkLossTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +262,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirResidualBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +273,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirResidualBwTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +284,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirUtilizedBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -276,6 +295,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvUniDirUtilizedBwTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -286,6 +306,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvertiseExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -296,6 +317,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvertiseExtAdminGroupTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +328,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvertiseUniDiLinkDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +339,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def AdvertiseUniDiLinkDelayTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +350,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority0_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +361,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority0_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -346,6 +372,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority1_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -356,6 +383,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority1_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -366,6 +394,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority2_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -376,6 +405,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority2_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -386,6 +416,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority3_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -396,6 +427,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority3_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +438,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority4_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +449,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority4_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +460,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority5_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +471,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority5_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +482,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority6_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +493,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority6_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +504,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority7_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -476,6 +515,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def BandwidthPriority7_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -486,6 +526,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -495,6 +536,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -504,6 +546,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def ExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -514,6 +557,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def ExtAdminGroupLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -524,6 +568,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def ExtAdminGroupLengthTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -534,6 +579,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def ExtAdminGroupTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -544,6 +590,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -554,6 +601,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MaxBandwidth_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -564,6 +612,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MaxBandwidth_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -574,6 +623,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MaxReservableBandwidth_Bps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -584,6 +634,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MaxReservableBandwidth_BpsTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -594,6 +645,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -604,6 +656,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MetricLevelTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -614,6 +667,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MinMaxUniDirLinkDelayABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -624,6 +678,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MinMaxUniDirLinkDelayABitTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -634,6 +689,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MtApplicabilityForIPv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -644,6 +700,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def MtIdTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -654,6 +711,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -662,10 +720,12 @@ class IsisPseudoTraffEngProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def StdAppType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -676,6 +736,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirAvailableBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -686,6 +747,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirAvailableBwTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -696,6 +758,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -706,6 +769,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkDelayABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -716,6 +780,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkDelayABitTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -726,6 +791,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkDelayTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -736,6 +802,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkDelayVariation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -746,6 +813,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkDelayVariationTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -756,6 +824,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkLoss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -766,6 +835,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkLossABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -776,6 +846,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkLossABitTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -786,6 +857,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkLossTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -796,6 +868,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkMaxDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -806,6 +879,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkMaxDelayTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -816,6 +890,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkMinDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -826,6 +901,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirLinkMinDelayTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -836,6 +912,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirResidualBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -846,6 +923,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirResidualBwTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -856,6 +934,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirUtilizedBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -866,6 +945,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UniDirUtilizedBwTo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -876,6 +956,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UserDefAppBm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -886,6 +967,7 @@ class IsisPseudoTraffEngProfile(Base):
 
     @property
     def UserDefAppBmLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -895,6 +977,7 @@ class IsisPseudoTraffEngProfile(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefAppBmLen']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisPseudoTraffEngProfile
         """Updates isisPseudoTraffEngProfile resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -909,6 +992,66 @@ class IsisPseudoTraffEngProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, ActiveTo=None, AdministratorGroup=None, AdministratorGroupTo=None, AdvAppSpecificTraffic=None, AdvMinMaxUniDiLinkDelay=None, AdvMinMaxUniDiLinkDelayTo=None, AdvUniDirAvailableBw=None, AdvUniDirAvailableBwTo=None, AdvUniDirDelayVariation=None, AdvUniDirDelayVariationTo=None, AdvUniDirLinkLoss=None, AdvUniDirLinkLossTo=None, AdvUniDirResidualBw=None, AdvUniDirResidualBwTo=None, AdvUniDirUtilizedBw=None, AdvUniDirUtilizedBwTo=None, AdvertiseExtAdminGroup=None, AdvertiseExtAdminGroupTo=None, AdvertiseUniDiLinkDelay=None, AdvertiseUniDiLinkDelayTo=None, BandwidthPriority0_Bps=None, BandwidthPriority0_BpsTo=None, BandwidthPriority1_Bps=None, BandwidthPriority1_BpsTo=None, BandwidthPriority2_Bps=None, BandwidthPriority2_BpsTo=None, BandwidthPriority3_Bps=None, BandwidthPriority3_BpsTo=None, BandwidthPriority4_Bps=None, BandwidthPriority4_BpsTo=None, BandwidthPriority5_Bps=None, BandwidthPriority5_BpsTo=None, BandwidthPriority6_Bps=None, BandwidthPriority6_BpsTo=None, BandwidthPriority7_Bps=None, BandwidthPriority7_BpsTo=None, ExtAdminGroup=None, ExtAdminGroupLength=None, ExtAdminGroupLengthTo=None, ExtAdminGroupTo=None, LFlag=None, MaxBandwidth_Bps=None, MaxBandwidth_BpsTo=None, MaxReservableBandwidth_Bps=None, MaxReservableBandwidth_BpsTo=None, MetricLevel=None, MetricLevelTo=None, MinMaxUniDirLinkDelayABit=None, MinMaxUniDirLinkDelayABitTo=None, MtApplicabilityForIPv6=None, MtIdTo=None, StdAppType=None, UniDirAvailableBw=None, UniDirAvailableBwTo=None, UniDirLinkDelay=None, UniDirLinkDelayABit=None, UniDirLinkDelayABitTo=None, UniDirLinkDelayTo=None, UniDirLinkDelayVariation=None, UniDirLinkDelayVariationTo=None, UniDirLinkLoss=None, UniDirLinkLossABit=None, UniDirLinkLossABitTo=None, UniDirLinkLossTo=None, UniDirLinkMaxDelay=None, UniDirLinkMaxDelayTo=None, UniDirLinkMinDelay=None, UniDirLinkMinDelayTo=None, UniDirResidualBw=None, UniDirResidualBwTo=None, UniDirUtilizedBw=None, UniDirUtilizedBwTo=None, UserDefAppBm=None, UserDefAppBmLen=None):
         """Base class infrastructure that gets a list of isisPseudoTraffEngProfile device ids encapsulated by this object.
@@ -1003,42 +1146,3 @@ class IsisPseudoTraffEngProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

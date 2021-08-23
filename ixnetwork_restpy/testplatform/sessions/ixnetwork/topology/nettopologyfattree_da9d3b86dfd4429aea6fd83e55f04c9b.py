@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetTopologyFatTree(Base):
@@ -37,9 +38,11 @@ class NetTopologyFatTree(Base):
         'LevelCount': 'levelCount',
         'LinkMultiplier': 'linkMultiplier',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetTopologyFatTree, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetTopologyFatTree, self).__init__(parent, list_op)
 
     @property
     def Level(self):
@@ -53,10 +56,14 @@ class NetTopologyFatTree(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.level_2d6a41b0a919905f176ad907ea4fdab6 import Level
-        return Level(self)
+        if self._properties.get('Level', None) is not None:
+            return self._properties.get('Level')
+        else:
+            return Level(self)
 
     @property
     def IncludeEntryPoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class NetTopologyFatTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
 
     @property
     def LevelCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class NetTopologyFatTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LevelCount'])
     @LevelCount.setter
     def LevelCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LevelCount'], value)
 
     @property
     def LinkMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,9 +100,11 @@ class NetTopologyFatTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
 
     def update(self, IncludeEntryPoint=None, LevelCount=None, LinkMultiplier=None):
+        # type: (bool, int, int) -> NetTopologyFatTree
         """Updates netTopologyFatTree resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class NetTopologyFatTree(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, IncludeEntryPoint=None, LevelCount=None, LinkMultiplier=None):
+        # type: (bool, int, int) -> NetTopologyFatTree
         """Adds a new netTopologyFatTree resource on the server and adds it to the container.
 
         Args
@@ -136,6 +150,7 @@ class NetTopologyFatTree(Base):
         self._delete()
 
     def find(self, IncludeEntryPoint=None, LevelCount=None, LinkMultiplier=None):
+        # type: (bool, int, int) -> NetTopologyFatTree
         """Finds and retrieves netTopologyFatTree resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyFatTree resources from the server.

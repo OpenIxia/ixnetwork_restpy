@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpMld(Base):
@@ -37,12 +38,15 @@ class IgmpMld(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IgmpMld, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpMld, self).__init__(parent, list_op)
 
     @property
     def IsStandAlone(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class IgmpMld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsStandAlone'])
     @IsStandAlone.setter
     def IsStandAlone(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsStandAlone'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class IgmpMld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +83,7 @@ class IgmpMld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, IsStandAlone=None, Name=None):
+        # type: (bool, str) -> IgmpMld
         """Updates igmpMld resource on the server.
 
         Args
@@ -89,6 +98,7 @@ class IgmpMld(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, IsStandAlone=None, Name=None):
+        # type: (bool, str) -> IgmpMld
         """Adds a new igmpMld resource on the server and adds it to the container.
 
         Args
@@ -117,6 +127,7 @@ class IgmpMld(Base):
         self._delete()
 
     def find(self, IsStandAlone=None, Name=None, ObjectId=None):
+        # type: (bool, str, str) -> IgmpMld
         """Finds and retrieves igmpMld resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve igmpMld resources from the server.
@@ -158,14 +169,16 @@ class IgmpMld(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -178,13 +191,15 @@ class IgmpMld(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -198,13 +213,15 @@ class IgmpMld(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -218,15 +235,21 @@ class IgmpMld(Base):
         return self._execute('enableProtocolStack', payload=payload, response_object=None)
 
     def IgmpMldJoin(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the igmpMldJoin operation on the server.
 
         Join IGMP/MLD multicast group ranges on the fly
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldJoin(Arg2=enum)
-        ----------------------
+        igmpMldJoin(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpMldJoin(Arg2=enum, async_operation=bool)
+        --------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/igmpMld,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/igmpMld,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ipEndpoint/igmpMld,/vport/protocolStack/atm/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/igmpMld,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/range/igmpMldRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -239,15 +262,21 @@ class IgmpMld(Base):
         return self._execute('igmpMldJoin', payload=payload, response_object=None)
 
     def IgmpMldLeave(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the igmpMldLeave operation on the server.
 
         Leave IGMP/MLD multicast group ranges on the fly
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldLeave(Arg2=enum)
-        -----------------------
+        igmpMldLeave(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpMldLeave(Arg2=enum, async_operation=bool)
+        ---------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/igmpMld,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/igmpMld,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ipEndpoint/igmpMld,/vport/protocolStack/atm/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/igmpMld,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/range/igmpMldRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -260,15 +289,21 @@ class IgmpMld(Base):
         return self._execute('igmpMldLeave', payload=payload, response_object=None)
 
     def IgmpMldStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the igmpMldStart operation on the server.
 
         Start IGMP/MLD on selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldStart(Arg2=enum)
-        -----------------------
+        igmpMldStart(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpMldStart(Arg2=enum, async_operation=bool)
+        ---------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/igmpMld,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/igmpMld,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ipEndpoint/igmpMld,/vport/protocolStack/atm/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/igmpMld,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/range/igmpMldRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -281,15 +316,21 @@ class IgmpMld(Base):
         return self._execute('igmpMldStart', payload=payload, response_object=None)
 
     def IgmpMldStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the igmpMldStop operation on the server.
 
         Stop IGMP/MLD on selected plugins and ranges
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        igmpMldStop(Arg2=enum)
-        ----------------------
+        igmpMldStop(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpMldStop(Arg2=enum, async_operation=bool)
+        --------------------------------------------
         - Arg2 (str(async | sync)): kArray[kObjref=/vport/protocolStack/atm/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/igmpMld,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/atm/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/igmpMld,/vport/protocolStack/atm/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/atm/ipEndpoint/igmpMld,/vport/protocolStack/atm/ipEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/atm/pppox/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/igmpMld,/vport/protocolStack/atm/pppoxEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/dhcpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/emulatedRouter/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpPcrfS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpSgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/egtpUeS5S8SgwEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/igmpMld,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLacEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tp/dhcpoLnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/l2tpEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ip/smDnsEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/ipEndpoint/igmpMld,/vport/protocolStack/ethernet/ipEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppClientEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/dhcpoPppServerEndpoint/range/igmpMldRange,/vport/protocolStack/ethernet/pppox/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/igmpMld,/vport/protocolStack/ethernet/pppoxEndpoint/range/igmpMldRange]
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

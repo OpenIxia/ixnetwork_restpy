@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PimV6JoinPruneList(Base):
@@ -55,9 +56,11 @@ class PimV6JoinPruneList(Base):
         'Status': 'status',
         'SwitchOverInterval': 'switchOverInterval',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PimV6JoinPruneList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PimV6JoinPruneList, self).__init__(parent, list_op)
 
     @property
     def Tag(self):
@@ -71,10 +74,14 @@ class PimV6JoinPruneList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +102,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +112,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def EnableFlapInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +123,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def EnablePack(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +134,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def FlapInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -133,6 +145,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def GroupAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -143,6 +156,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def GroupV6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -153,6 +167,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def GroupV6MaskWidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +178,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def LocalRouterId(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -172,6 +188,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +197,12 @@ class PimV6JoinPruneList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PruneSourceAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -194,6 +213,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def PruneSourceV6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -204,6 +224,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def PruneSourceV6MaskWidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -214,6 +235,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def RangeType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -224,6 +246,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def RegisterStopTriggerCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +257,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def RpV6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -244,6 +268,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def SourceAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -254,6 +279,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def SourceGroupMappingType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -264,6 +290,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def SourceV6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -274,6 +301,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def SourceV6MaskWidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -284,6 +312,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def Status(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -293,6 +322,7 @@ class PimV6JoinPruneList(Base):
 
     @property
     def SwitchOverInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -302,6 +332,7 @@ class PimV6JoinPruneList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SwitchOverInterval']))
 
     def update(self, Name=None):
+        # type: (str) -> PimV6JoinPruneList
         """Updates pimV6JoinPruneList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -316,6 +347,158 @@ class PimV6JoinPruneList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Join(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the join operation on the server.
+
+        Join
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        join(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        join(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        join(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        join(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('join', payload=payload, response_object=None)
+
+    def Leave(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the leave operation on the server.
+
+        Leave
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        leave(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        leave(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        leave(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        leave(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('leave', payload=payload, response_object=None)
+
+    def ResumePeriodicJoin(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumePeriodicJoin operation on the server.
+
+        Resume Periodic Join
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumePeriodicJoin(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumePeriodicJoin(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumePeriodicJoin(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumePeriodicJoin(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumePeriodicJoin', payload=payload, response_object=None)
+
+    def StopPeriodicJoin(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopPeriodicJoin operation on the server.
+
+        Stop Periodic Join
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopPeriodicJoin(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopPeriodicJoin(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopPeriodicJoin(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopPeriodicJoin(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopPeriodicJoin', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, EnableFlapInfo=None, EnablePack=None, FlapInterval=None, GroupAddressCount=None, GroupV6Address=None, GroupV6MaskWidth=None, PruneSourceAddressCount=None, PruneSourceV6Address=None, PruneSourceV6MaskWidth=None, RangeType=None, RegisterStopTriggerCount=None, RpV6Address=None, SourceAddressCount=None, SourceGroupMappingType=None, SourceV6Address=None, SourceV6MaskWidth=None, SwitchOverInterval=None):
         """Base class infrastructure that gets a list of pimV6JoinPruneList device ids encapsulated by this object.
@@ -353,123 +536,3 @@ class PimV6JoinPruneList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Join(self, *args, **kwargs):
-        """Executes the join operation on the server.
-
-        Join
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        join(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        join(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        join(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('join', payload=payload, response_object=None)
-
-    def Leave(self, *args, **kwargs):
-        """Executes the leave operation on the server.
-
-        Leave
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        leave(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        leave(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        leave(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('leave', payload=payload, response_object=None)
-
-    def ResumePeriodicJoin(self, *args, **kwargs):
-        """Executes the resumePeriodicJoin operation on the server.
-
-        Resume Periodic Join
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumePeriodicJoin(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumePeriodicJoin(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        resumePeriodicJoin(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumePeriodicJoin', payload=payload, response_object=None)
-
-    def StopPeriodicJoin(self, *args, **kwargs):
-        """Executes the stopPeriodicJoin operation on the server.
-
-        Stop Periodic Join
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopPeriodicJoin(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopPeriodicJoin(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopPeriodicJoin(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopPeriodicJoin', payload=payload, response_object=None)

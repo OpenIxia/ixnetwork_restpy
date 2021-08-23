@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Atm(Base):
@@ -35,12 +36,16 @@ class Atm(Base):
         'Vci': 'vci',
         'Vpi': 'vpi',
     }
+    _SDM_ENUM_MAP = {
+        'encapsulation': ['vcMuxIpv4', 'vcMuxIpv6', 'vcMuxBridgeFcs', 'vcMuxBridgeNoFcs', 'llcClip', 'llcBridgeFcs', 'llcBridgeNoFcs'],
+    }
 
-    def __init__(self, parent):
-        super(Atm, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Atm, self).__init__(parent, list_op)
 
     @property
     def Encapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,10 +54,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def Vci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -61,10 +68,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vci'])
     @Vci.setter
     def Vci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vci'], value)
 
     @property
     def Vpi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,9 +82,11 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vpi'])
     @Vpi.setter
     def Vpi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vpi'], value)
 
     def update(self, Encapsulation=None, Vci=None, Vpi=None):
+        # type: (str, int, int) -> Atm
         """Updates atm resource on the server.
 
         Args

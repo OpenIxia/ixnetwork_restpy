@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrillNodeMacRanges(Base):
@@ -41,12 +42,15 @@ class TrillNodeMacRanges(Base):
         'UnicastMacStep': 'unicastMacStep',
         'VlanId': 'vlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TrillNodeMacRanges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrillNodeMacRanges, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class TrillNodeMacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EnableMacRanges(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class TrillNodeMacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMacRanges'])
     @EnableMacRanges.setter
     def EnableMacRanges(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMacRanges'], value)
 
     @property
     def InterNodeMacStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class TrillNodeMacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterNodeMacStep'])
     @InterNodeMacStep.setter
     def InterNodeMacStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterNodeMacStep'], value)
 
     @property
     def StartUnicastMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class TrillNodeMacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartUnicastMac'])
     @StartUnicastMac.setter
     def StartUnicastMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartUnicastMac'], value)
 
     @property
     def TopologyId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,6 +116,7 @@ class TrillNodeMacRanges(Base):
 
     @property
     def UnicastMacStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,10 +125,12 @@ class TrillNodeMacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UnicastMacStep'])
     @UnicastMacStep.setter
     def UnicastMacStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UnicastMacStep'], value)
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,9 +139,11 @@ class TrillNodeMacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     def update(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, UnicastMacStep=None, VlanId=None):
+        # type: (int, bool, str, str, str, int) -> TrillNodeMacRanges
         """Updates trillNodeMacRanges resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class TrillNodeMacRanges(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, UnicastMacStep=None, VlanId=None):
+        # type: (int, bool, str, str, str, int) -> TrillNodeMacRanges
         """Adds a new trillNodeMacRanges resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class TrillNodeMacRanges(Base):
         self._delete()
 
     def find(self, Count=None, EnableMacRanges=None, InterNodeMacStep=None, StartUnicastMac=None, TopologyId=None, UnicastMacStep=None, VlanId=None):
+        # type: (int, bool, str, str, int, str, int) -> TrillNodeMacRanges
         """Finds and retrieves trillNodeMacRanges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trillNodeMacRanges resources from the server.

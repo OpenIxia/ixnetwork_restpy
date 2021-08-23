@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchLearnedInformation(Base):
@@ -55,9 +56,13 @@ class SwitchLearnedInformation(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'outPortInputMode': ['ofppMax', 'ofppInPort', 'ofppTable', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal', 'ofppNone', 'outPortCustom'],
+        'tableIdInputMode': ['allTables', 'emergency', 'tableIdCustom'],
+    }
 
-    def __init__(self, parent):
-        super(SwitchLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def OfChannelSwitchLearnedInfo(self):
@@ -71,7 +76,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelswitchlearnedinfo_b388ce0c4d70741ca769d564a7b8e654 import OfChannelSwitchLearnedInfo
-        return OfChannelSwitchLearnedInfo(self)
+        if self._properties.get('OfChannelSwitchLearnedInfo', None) is not None:
+            return self._properties.get('OfChannelSwitchLearnedInfo')
+        else:
+            return OfChannelSwitchLearnedInfo(self)
 
     @property
     def SwitchFlow131TriggerAttributes(self):
@@ -85,7 +93,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflow131triggerattributes_e48e6a22f9f9bbf78e2684330b75a32e import SwitchFlow131TriggerAttributes
-        return SwitchFlow131TriggerAttributes(self)._select()
+        if self._properties.get('SwitchFlow131TriggerAttributes', None) is not None:
+            return self._properties.get('SwitchFlow131TriggerAttributes')
+        else:
+            return SwitchFlow131TriggerAttributes(self)._select()
 
     @property
     def SwitchFlowLearnedInfo(self):
@@ -99,7 +110,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowlearnedinfo_5f61b81a749e83192f2f0aba3723f328 import SwitchFlowLearnedInfo
-        return SwitchFlowLearnedInfo(self)
+        if self._properties.get('SwitchFlowLearnedInfo', None) is not None:
+            return self._properties.get('SwitchFlowLearnedInfo')
+        else:
+            return SwitchFlowLearnedInfo(self)
 
     @property
     def SwitchFlowMatchCriteria131TriggerAttributes(self):
@@ -113,7 +127,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowmatchcriteria131triggerattributes_bfd68967531928dd87f9224a41a38633 import SwitchFlowMatchCriteria131TriggerAttributes
-        return SwitchFlowMatchCriteria131TriggerAttributes(self)._select()
+        if self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes', None) is not None:
+            return self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes')
+        else:
+            return SwitchFlowMatchCriteria131TriggerAttributes(self)._select()
 
     @property
     def SwitchGroupLearnedInfo(self):
@@ -127,7 +144,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgrouplearnedinfo_1b0e7ca2c5c5bf68353402fcf910385f import SwitchGroupLearnedInfo
-        return SwitchGroupLearnedInfo(self)
+        if self._properties.get('SwitchGroupLearnedInfo', None) is not None:
+            return self._properties.get('SwitchGroupLearnedInfo')
+        else:
+            return SwitchGroupLearnedInfo(self)
 
     @property
     def SwitchMeterLearnedInfo(self):
@@ -141,7 +161,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterlearnedinfo_912ee9c10af14a4526668258ad5851db import SwitchMeterLearnedInfo
-        return SwitchMeterLearnedInfo(self)
+        if self._properties.get('SwitchMeterLearnedInfo', None) is not None:
+            return self._properties.get('SwitchMeterLearnedInfo')
+        else:
+            return SwitchMeterLearnedInfo(self)
 
     @property
     def SwitchTableFeaturesStatLearnedInfo(self):
@@ -155,10 +178,14 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtablefeaturesstatlearnedinfo_1ae04328da2a331275401279fecdcbc9 import SwitchTableFeaturesStatLearnedInfo
-        return SwitchTableFeaturesStatLearnedInfo(self)
+        if self._properties.get('SwitchTableFeaturesStatLearnedInfo', None) is not None:
+            return self._properties.get('SwitchTableFeaturesStatLearnedInfo')
+        else:
+            return SwitchTableFeaturesStatLearnedInfo(self)
 
     @property
     def EnableVendorExperimenterMessage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -167,10 +194,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVendorExperimenterMessage'])
     @EnableVendorExperimenterMessage.setter
     def EnableVendorExperimenterMessage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVendorExperimenterMessage'], value)
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,10 +208,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
     @EthernetDestination.setter
     def EthernetDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,10 +222,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
     @EthernetSource.setter
     def EthernetSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,10 +236,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
     @EthernetType.setter
     def EthernetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
 
     @property
     def InPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -215,10 +250,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InPort'])
     @InPort.setter
     def InPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -227,10 +264,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
     @IpDscp.setter
     def IpDscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,10 +278,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -251,10 +292,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
     @Ipv4Source.setter
     def Ipv4Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
 
     @property
     def Ipv4destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -263,10 +306,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4destination'])
     @Ipv4destination.setter
     def Ipv4destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4destination'], value)
 
     @property
     def IsOfChannelLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -276,6 +321,7 @@ class SwitchLearnedInformation(Base):
 
     @property
     def IsOfFlowsLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -285,6 +331,7 @@ class SwitchLearnedInformation(Base):
 
     @property
     def OutPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -293,10 +340,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutPort'])
     @OutPort.setter
     def OutPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutPort'], value)
 
     @property
     def OutPortInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -305,10 +354,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutPortInputMode'])
     @OutPortInputMode.setter
     def OutPortInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutPortInputMode'], value)
 
     @property
     def TableId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -317,10 +368,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableId'])
     @TableId.setter
     def TableId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
 
     @property
     def TableIdInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -329,10 +382,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableIdInputMode'])
     @TableIdInputMode.setter
     def TableIdInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableIdInputMode'], value)
 
     @property
     def TansportSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -341,10 +396,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TansportSource'])
     @TansportSource.setter
     def TansportSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TansportSource'], value)
 
     @property
     def TransportDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -353,10 +410,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportDestination'])
     @TransportDestination.setter
     def TransportDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportDestination'], value)
 
     @property
     def VendorExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -365,10 +424,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorExperimenterId'])
     @VendorExperimenterId.setter
     def VendorExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorExperimenterId'], value)
 
     @property
     def VendorExperimenterType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -377,10 +438,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorExperimenterType'])
     @VendorExperimenterType.setter
     def VendorExperimenterType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorExperimenterType'], value)
 
     @property
     def VendorMessage(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -389,10 +452,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorMessage'])
     @VendorMessage.setter
     def VendorMessage(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorMessage'], value)
 
     @property
     def VendorMessageLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -401,10 +466,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorMessageLength'])
     @VendorMessageLength.setter
     def VendorMessageLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorMessageLength'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -413,10 +480,12 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -425,9 +494,11 @@ class SwitchLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, EnableVendorExperimenterMessage=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Source=None, Ipv4destination=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None, TansportSource=None, TransportDestination=None, VendorExperimenterId=None, VendorExperimenterType=None, VendorMessage=None, VendorMessageLength=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, str, str, str, str, str, str, str, int, str, int, str, str, str, int, int, str, int, str, str) -> SwitchLearnedInformation
         """Updates switchLearnedInformation resource on the server.
 
         Args
@@ -460,93 +531,149 @@ class SwitchLearnedInformation(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ClearRecordsForTrigger(self):
+    def ClearRecordsForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the clearRecordsForTrigger operation on the server.
 
         API to clear records for any trigger.
 
+        clearRecordsForTrigger(async_operation=bool)bool
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('clearRecordsForTrigger', payload=payload, response_object=None)
 
-    def RefreshFlows(self):
+    def RefreshFlows(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshFlows operation on the server.
 
         This describes that the flows learned information is refreshed.
 
+        refreshFlows(async_operation=bool)bool
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshFlows', payload=payload, response_object=None)
 
-    def RefreshGroupLearnedInformation(self):
+    def RefreshGroupLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshGroupLearnedInformation operation on the server.
 
         NOT DEFINED
 
+        refreshGroupLearnedInformation(async_operation=bool)bool
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshGroupLearnedInformation', payload=payload, response_object=None)
 
-    def RefreshMeterLearnedInformation(self):
+    def RefreshMeterLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshMeterLearnedInformation operation on the server.
 
         NOT DEFINED
 
+        refreshMeterLearnedInformation(async_operation=bool)bool
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshMeterLearnedInformation', payload=payload, response_object=None)
 
-    def RefreshOfChannelLearnedInformation(self):
+    def RefreshOfChannelLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshOfChannelLearnedInformation operation on the server.
 
         This describes that the ofChannellearned information is refreshed.
 
+        refreshOfChannelLearnedInformation(async_operation=bool)bool
+        ------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshOfChannelLearnedInformation', payload=payload, response_object=None)
 
-    def RefreshTableFeature(self):
+    def RefreshTableFeature(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshTableFeature operation on the server.
 
         NOT DEFINED
 
+        refreshTableFeature(async_operation=bool)bool
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshTableFeature', payload=payload, response_object=None)
 
-    def Trigger(self):
+    def Trigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
         """Executes the trigger operation on the server.
 
         API to send Trigger.
 
+        trigger(async_operation=bool)number
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('trigger', payload=payload, response_object=None)

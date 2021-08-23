@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DcbxGlobals(Base):
@@ -38,12 +39,15 @@ class DcbxGlobals(Base):
         'FlapLinkOnStart': 'flapLinkOnStart',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DcbxGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DcbxGlobals, self).__init__(parent, list_op)
 
     @property
     def AllowMultipleSessions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class DcbxGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllowMultipleSessions'])
     @AllowMultipleSessions.setter
     def AllowMultipleSessions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllowMultipleSessions'], value)
 
     @property
     def FailOnMismatch(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class DcbxGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FailOnMismatch'])
     @FailOnMismatch.setter
     def FailOnMismatch(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FailOnMismatch'], value)
 
     @property
     def FlapLinkOnStart(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class DcbxGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlapLinkOnStart'])
     @FlapLinkOnStart.setter
     def FlapLinkOnStart(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlapLinkOnStart'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +98,7 @@ class DcbxGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
+        # type: (bool, bool, bool) -> DcbxGlobals
         """Updates dcbxGlobals resource on the server.
 
         Args
@@ -103,6 +114,7 @@ class DcbxGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None):
+        # type: (bool, bool, bool) -> DcbxGlobals
         """Adds a new dcbxGlobals resource on the server and adds it to the container.
 
         Args
@@ -132,6 +144,7 @@ class DcbxGlobals(Base):
         self._delete()
 
     def find(self, AllowMultipleSessions=None, FailOnMismatch=None, FlapLinkOnStart=None, ObjectId=None):
+        # type: (bool, bool, bool, str) -> DcbxGlobals
         """Finds and retrieves dcbxGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxGlobals resources from the server.

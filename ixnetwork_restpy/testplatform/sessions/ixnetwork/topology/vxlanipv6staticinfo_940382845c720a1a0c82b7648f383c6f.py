@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VxlanIPv6StaticInfo(Base):
@@ -42,12 +43,15 @@ class VxlanIPv6StaticInfo(Base):
         'RemoteVtepUnicastIpv6': 'remoteVtepUnicastIpv6',
         'SuppressArp': 'suppressArp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VxlanIPv6StaticInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VxlanIPv6StaticInfo, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def EnableManualRemoteVMMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def LocalVNI(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +112,12 @@ class VxlanIPv6StaticInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RemoteVMIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def RemoteVMMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def RemoteVtepUnicastIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +150,7 @@ class VxlanIPv6StaticInfo(Base):
 
     @property
     def SuppressArp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,6 +160,7 @@ class VxlanIPv6StaticInfo(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SuppressArp']))
 
     def update(self, Name=None):
+        # type: (str) -> VxlanIPv6StaticInfo
         """Updates vxlanIPv6StaticInfo resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

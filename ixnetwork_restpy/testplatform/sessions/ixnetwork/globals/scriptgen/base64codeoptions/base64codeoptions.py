@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Base64CodeOptions(Base):
@@ -34,12 +35,15 @@ class Base64CodeOptions(Base):
         'IncludeSampleCode': 'includeSampleCode',
         'SampleObjectReferences': 'sampleObjectReferences',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Base64CodeOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Base64CodeOptions, self).__init__(parent, list_op)
 
     @property
     def IncludeSampleCode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class Base64CodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeSampleCode'])
     @IncludeSampleCode.setter
     def IncludeSampleCode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeSampleCode'], value)
 
     @property
     def SampleObjectReferences(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class Base64CodeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SampleObjectReferences'])
     @SampleObjectReferences.setter
     def SampleObjectReferences(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SampleObjectReferences'], value)
 
     def update(self, IncludeSampleCode=None, SampleObjectReferences=None):
+        # type: (bool, List[str]) -> Base64CodeOptions
         """Updates base64CodeOptions resource on the server.
 
         Args

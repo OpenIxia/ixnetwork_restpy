@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpIpv6AdL2Vpn(Base):
@@ -64,12 +65,16 @@ class BgpIpv6AdL2Vpn(Base):
         'TypeVplsRt': 'typeVplsRt',
         'TypeVsiId': 'typeVsiId',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(BgpIpv6AdL2Vpn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpIpv6AdL2Vpn, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +85,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def AsNumberVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -90,6 +96,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def AsNumberVplsRd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +107,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def AsNumberVplsRt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -110,6 +118,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def AssignedNumberVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +129,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def AssignedNumberVplsRd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +140,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def AssignedNumberVplsRt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +151,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -148,10 +160,12 @@ class BgpIpv6AdL2Vpn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -161,6 +175,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,6 +185,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def DutIpv6(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -188,6 +204,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def ImportRDAsRT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -198,6 +215,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def ImportVplsIdAsRd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -208,6 +226,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def IpAddressVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -218,6 +237,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def IpAddressVplsRd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +248,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def IpAddressVplsRt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +259,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def LocalIpv6(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -247,6 +269,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -256,6 +279,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -264,10 +288,12 @@ class BgpIpv6AdL2Vpn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -276,10 +302,12 @@ class BgpIpv6AdL2Vpn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberVsiId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +318,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -299,6 +328,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -307,6 +337,7 @@ class BgpIpv6AdL2Vpn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -320,6 +351,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -329,6 +361,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def TypeVplsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -339,6 +372,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def TypeVplsRd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -349,6 +383,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def TypeVplsRt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -359,6 +394,7 @@ class BgpIpv6AdL2Vpn(Base):
 
     @property
     def TypeVsiId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -368,6 +404,7 @@ class BgpIpv6AdL2Vpn(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TypeVsiId']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> BgpIpv6AdL2Vpn
         """Updates bgpIpv6AdL2Vpn resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -387,6 +424,7 @@ class BgpIpv6AdL2Vpn(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> BgpIpv6AdL2Vpn
         """Adds a new bgpIpv6AdL2Vpn resource on the server and adds it to the container.
 
         Args
@@ -467,6 +505,242 @@ class BgpIpv6AdL2Vpn(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ReadvertiseADVPLSRoute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the readvertiseADVPLSRoute operation on the server.
+
+        Re-advertise Aged out BGP Routes in a Route Range
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        readvertiseADVPLSRoute(async_operation=bool)
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        readvertiseADVPLSRoute(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        readvertiseADVPLSRoute(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('readvertiseADVPLSRoute', payload=payload, response_object=None)
+
+    def Readvertiseadvplsroute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the readvertiseadvplsroute operation on the server.
+
+        Readvertise only the aged-out routes contained in this route range.
+
+        readvertiseadvplsroute(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('readvertiseadvplsroute', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def WithdrawADVPLSRoute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the withdrawADVPLSRoute operation on the server.
+
+        Age out percentage of BGP Routes in a Route Range
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        withdrawADVPLSRoute(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdrawADVPLSRoute(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdrawADVPLSRoute(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawADVPLSRoute', payload=payload, response_object=None)
+
+    def Withdrawadvplsroute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the withdrawadvplsroute operation on the server.
+
+        Completely/Partially age out routes contained in this route range.
+
+        withdrawadvplsroute(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawadvplsroute', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AsNumberVplsId=None, AsNumberVplsRd=None, AsNumberVplsRt=None, AssignedNumberVplsId=None, AssignedNumberVplsRd=None, AssignedNumberVplsRt=None, ImportRDAsRT=None, ImportVplsIdAsRd=None, IpAddressVplsId=None, IpAddressVplsRd=None, IpAddressVplsRt=None, NumberVsiId=None, TypeVplsId=None, TypeVplsRd=None, TypeVplsRt=None, TypeVsiId=None):
         """Base class infrastructure that gets a list of bgpIpv6AdL2Vpn device ids encapsulated by this object.
 
@@ -502,193 +776,3 @@ class BgpIpv6AdL2Vpn(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ReadvertiseADVPLSRoute(self, *args, **kwargs):
-        """Executes the readvertiseADVPLSRoute operation on the server.
-
-        Re-advertise Aged out BGP Routes in a Route Range
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        readvertiseADVPLSRoute(SessionIndices=list)
-        -------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        readvertiseADVPLSRoute(SessionIndices=string)
-        ---------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseADVPLSRoute', payload=payload, response_object=None)
-
-    def Readvertiseadvplsroute(self, *args, **kwargs):
-        """Executes the readvertiseadvplsroute operation on the server.
-
-        Readvertise only the aged-out routes contained in this route range.
-
-        readvertiseadvplsroute(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('readvertiseadvplsroute', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def WithdrawADVPLSRoute(self, *args, **kwargs):
-        """Executes the withdrawADVPLSRoute operation on the server.
-
-        Age out percentage of BGP Routes in a Route Range
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        withdrawADVPLSRoute(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        withdrawADVPLSRoute(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawADVPLSRoute', payload=payload, response_object=None)
-
-    def Withdrawadvplsroute(self, *args, **kwargs):
-        """Executes the withdrawadvplsroute operation on the server.
-
-        Completely/Partially age out routes contained in this route range.
-
-        withdrawadvplsroute(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawadvplsroute', payload=payload, response_object=None)

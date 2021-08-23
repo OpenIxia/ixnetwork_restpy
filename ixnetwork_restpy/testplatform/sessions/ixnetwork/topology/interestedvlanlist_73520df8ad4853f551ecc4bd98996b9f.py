@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class InterestedVlanList(Base):
@@ -45,12 +46,15 @@ class InterestedVlanList(Base):
         'VlanCount': 'vlanCount',
         'VlanIdIncr': 'vlanIdIncr',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(InterestedVlanList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(InterestedVlanList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -61,6 +65,7 @@ class InterestedVlanList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class InterestedVlanList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class InterestedVlanList(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class InterestedVlanList(Base):
 
     @property
     def M4BitEnabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class InterestedVlanList(Base):
 
     @property
     def M6BitEnabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class InterestedVlanList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +126,12 @@ class InterestedVlanList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Nickname(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class InterestedVlanList(Base):
 
     @property
     def NoOfSpanningTreeRoots(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +153,7 @@ class InterestedVlanList(Base):
 
     @property
     def StartSpanningTreeRootBridgeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +164,7 @@ class InterestedVlanList(Base):
 
     @property
     def StartVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +175,7 @@ class InterestedVlanList(Base):
 
     @property
     def VlanCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +186,7 @@ class InterestedVlanList(Base):
 
     @property
     def VlanIdIncr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class InterestedVlanList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanIdIncr']))
 
     def update(self, Name=None):
+        # type: (str) -> InterestedVlanList
         """Updates interestedVlanList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

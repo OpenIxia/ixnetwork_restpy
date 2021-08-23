@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MacRanges(Base):
@@ -39,12 +40,15 @@ class MacRanges(Base):
         'Step': 'step',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MacRanges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MacRanges, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Step(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Step'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,9 +113,11 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+        # type: (int, bool, str, str, str) -> MacRanges
         """Updates macRanges resource on the server.
 
         Args
@@ -121,6 +135,7 @@ class MacRanges(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+        # type: (int, bool, str, str, str) -> MacRanges
         """Adds a new macRanges resource on the server and adds it to the container.
 
         Args
@@ -152,6 +167,7 @@ class MacRanges(Base):
         self._delete()
 
     def find(self, Count=None, Enabled=None, MacAddress=None, Step=None, TrafficGroupId=None):
+        # type: (int, bool, str, str, str) -> MacRanges
         """Finds and retrieves macRanges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macRanges resources from the server.

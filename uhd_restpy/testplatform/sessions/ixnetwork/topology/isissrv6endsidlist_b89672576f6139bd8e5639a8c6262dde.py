@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisSRv6EndSIDList(Base):
@@ -48,12 +49,15 @@ class IsisSRv6EndSIDList(Base):
         'Sid': 'sid',
         'SidName': 'sidName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisSRv6EndSIDList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisSRv6EndSIDList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def AdvertiseCustomSubTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +79,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def ArgumentLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +90,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +100,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def CustomSubTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +111,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +121,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def EndPointFunction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -122,6 +132,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def Flags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,6 +143,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def FunctionLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +154,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def IncludeSRv6SIDStructureSubSubTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +165,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def LocatorBlockLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +176,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def LocatorName(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -171,6 +186,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def LocatorNodeLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +197,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,10 +206,12 @@ class IsisSRv6EndSIDList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Sid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -203,6 +222,7 @@ class IsisSRv6EndSIDList(Base):
 
     @property
     def SidName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +232,7 @@ class IsisSRv6EndSIDList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SidName']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisSRv6EndSIDList
         """Updates isisSRv6EndSIDList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

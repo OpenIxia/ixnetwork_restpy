@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UserDefinedAfiSafi(Base):
@@ -36,9 +37,11 @@ class UserDefinedAfiSafi(Base):
         'Afi': 'afi',
         'Safi': 'safi',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(UserDefinedAfiSafi, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UserDefinedAfiSafi, self).__init__(parent, list_op)
 
     @property
     def UserDefinedAfiSafiRoutes(self):
@@ -52,10 +55,14 @@ class UserDefinedAfiSafi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userdefinedafisafiroutes_e29273deea974c8bb208222a3d127a0e import UserDefinedAfiSafiRoutes
-        return UserDefinedAfiSafiRoutes(self)
+        if self._properties.get('UserDefinedAfiSafiRoutes', None) is not None:
+            return self._properties.get('UserDefinedAfiSafiRoutes')
+        else:
+            return UserDefinedAfiSafiRoutes(self)
 
     @property
     def Afi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class UserDefinedAfiSafi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Afi'])
     @Afi.setter
     def Afi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Afi'], value)
 
     @property
     def Safi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,9 +85,11 @@ class UserDefinedAfiSafi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Safi'])
     @Safi.setter
     def Safi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Safi'], value)
 
     def update(self, Afi=None, Safi=None):
+        # type: (int, int) -> UserDefinedAfiSafi
         """Updates userDefinedAfiSafi resource on the server.
 
         Args
@@ -93,6 +104,7 @@ class UserDefinedAfiSafi(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Afi=None, Safi=None):
+        # type: (int, int) -> UserDefinedAfiSafi
         """Adds a new userDefinedAfiSafi resource on the server and adds it to the container.
 
         Args
@@ -121,6 +133,7 @@ class UserDefinedAfiSafi(Base):
         self._delete()
 
     def find(self, Afi=None, Safi=None):
+        # type: (int, int) -> UserDefinedAfiSafi
         """Finds and retrieves userDefinedAfiSafi resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userDefinedAfiSafi resources from the server.

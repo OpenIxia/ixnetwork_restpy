@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DceTopologyRange(Base):
@@ -42,9 +43,11 @@ class DceTopologyRange(Base):
         'TopologyId': 'topologyId',
         'TopologyIdStep': 'topologyIdStep',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DceTopologyRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DceTopologyRange, self).__init__(parent, list_op)
 
     @property
     def DceInterestedVlanRange(self):
@@ -58,10 +61,14 @@ class DceTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceinterestedvlanrange_dbbecc283e17e29acaafa47502d26300 import DceInterestedVlanRange
-        return DceInterestedVlanRange(self)
+        if self._properties.get('DceInterestedVlanRange', None) is not None:
+            return self._properties.get('DceInterestedVlanRange')
+        else:
+            return DceInterestedVlanRange(self)
 
     @property
     def EnableFtag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -70,10 +77,12 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFtag'])
     @EnableFtag.setter
     def EnableFtag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFtag'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,6 +91,7 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
@@ -98,6 +108,7 @@ class DceTopologyRange(Base):
 
     @property
     def NoOfTreesToCompute(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,10 +117,12 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'])
     @NoOfTreesToCompute.setter
     def NoOfTreesToCompute(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfTreesToCompute'], value)
 
     @property
     def StartFtagValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,10 +131,12 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartFtagValue'])
     @StartFtagValue.setter
     def StartFtagValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartFtagValue'], value)
 
     @property
     def TopologyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +145,12 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopologyCount'])
     @TopologyCount.setter
     def TopologyCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopologyCount'], value)
 
     @property
     def TopologyId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -142,10 +159,12 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopologyId'])
     @TopologyId.setter
     def TopologyId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopologyId'], value)
 
     @property
     def TopologyIdStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,6 +173,7 @@ class DceTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopologyIdStep'])
     @TopologyIdStep.setter
     def TopologyIdStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopologyIdStep'], value)
 
     def update(self, EnableFtag=None, Enabled=None, NicknameList=None, NoOfTreesToCompute=None, StartFtagValue=None, TopologyCount=None, TopologyId=None, TopologyIdStep=None):

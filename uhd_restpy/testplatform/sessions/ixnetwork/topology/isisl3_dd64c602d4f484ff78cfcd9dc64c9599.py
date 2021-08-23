@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3(Base):
@@ -110,9 +111,12 @@ class IsisL3(Base):
         'VFlag': 'vFlag',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(IsisL3, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -126,7 +130,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def IsisAppSpecSrlgList(self):
@@ -140,7 +147,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisappspecsrlglist_c86dcbcff988ad5c54aecdd16dd33b6f import IsisAppSpecSrlgList
-        return IsisAppSpecSrlgList(self)._select()
+        if self._properties.get('IsisAppSpecSrlgList', None) is not None:
+            return self._properties.get('IsisAppSpecSrlgList')
+        else:
+            return IsisAppSpecSrlgList(self)._select()
 
     @property
     def IsisSRv6AdjSIDList(self):
@@ -154,7 +164,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissrv6adjsidlist_16299dd6f98290fd7ee533e18848a8f5 import IsisSRv6AdjSIDList
-        return IsisSRv6AdjSIDList(self)._select()
+        if self._properties.get('IsisSRv6AdjSIDList', None) is not None:
+            return self._properties.get('IsisSRv6AdjSIDList')
+        else:
+            return IsisSRv6AdjSIDList(self)._select()
 
     @property
     def IsisTrafficEngineering(self):
@@ -168,7 +181,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineering_6032af9b157866ba1321273f0c47a612 import IsisTrafficEngineering
-        return IsisTrafficEngineering(self)._select()
+        if self._properties.get('IsisTrafficEngineering', None) is not None:
+            return self._properties.get('IsisTrafficEngineering')
+        else:
+            return IsisTrafficEngineering(self)._select()
 
     @property
     def IsisTrafficEngineeringProfileList(self):
@@ -182,7 +198,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineeringprofilelist_c47e6899658130ebf14e5ea5147ac23a import IsisTrafficEngineeringProfileList
-        return IsisTrafficEngineeringProfileList(self)._select()
+        if self._properties.get('IsisTrafficEngineeringProfileList', None) is not None:
+            return self._properties.get('IsisTrafficEngineeringProfileList')
+        else:
+            return IsisTrafficEngineeringProfileList(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -196,7 +215,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def SrlgValueList(self):
@@ -210,10 +232,14 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
-        return SrlgValueList(self)
+        if self._properties.get('SrlgValueList', None) is not None:
+            return self._properties.get('SrlgValueList')
+        else:
+            return SrlgValueList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -224,6 +250,7 @@ class IsisL3(Base):
 
     @property
     def AdjSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +261,7 @@ class IsisL3(Base):
 
     @property
     def AdjSidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -242,10 +270,12 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdjSidCount'])
     @AdjSidCount.setter
     def AdjSidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdjSidCount'], value)
 
     @property
     def AdvertiseLinkMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +286,7 @@ class IsisL3(Base):
 
     @property
     def AuthType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +297,7 @@ class IsisL3(Base):
 
     @property
     def AutoAdjustArea(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -276,6 +308,7 @@ class IsisL3(Base):
 
     @property
     def AutoAdjustMTU(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -286,6 +319,7 @@ class IsisL3(Base):
 
     @property
     def AutoAdjustSupportedProtocols(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -296,6 +330,7 @@ class IsisL3(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +341,7 @@ class IsisL3(Base):
 
     @property
     def CircuitTranmitPasswordOrMD5Key(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +352,7 @@ class IsisL3(Base):
 
     @property
     def ConfiguredHoldTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,18 +363,21 @@ class IsisL3(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,6 +387,7 @@ class IsisL3(Base):
 
     @property
     def DedicatedOnePlusOne(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +398,7 @@ class IsisL3(Base):
 
     @property
     def DedicatedOneToOne(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +409,7 @@ class IsisL3(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -376,6 +419,7 @@ class IsisL3(Base):
 
     @property
     def Enable3WayHandshake(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -386,6 +430,7 @@ class IsisL3(Base):
 
     @property
     def EnableAdjSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -396,6 +441,7 @@ class IsisL3(Base):
 
     @property
     def EnableAppSpecSrlg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +452,7 @@ class IsisL3(Base):
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +463,7 @@ class IsisL3(Base):
 
     @property
     def EnableConfiguredHoldTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +474,7 @@ class IsisL3(Base):
 
     @property
     def EnableIPv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +485,7 @@ class IsisL3(Base):
 
     @property
     def EnableLinkProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +496,7 @@ class IsisL3(Base):
 
     @property
     def EnableMT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +507,7 @@ class IsisL3(Base):
 
     @property
     def EnableSRLG(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +518,7 @@ class IsisL3(Base):
 
     @property
     def Enhanced(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -479,12 +532,13 @@ class IsisL3(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def ExtendedLocalCircuitId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -495,6 +549,7 @@ class IsisL3(Base):
 
     @property
     def ExtraTraffic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -505,6 +560,7 @@ class IsisL3(Base):
 
     @property
     def FFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -515,6 +571,7 @@ class IsisL3(Base):
 
     @property
     def Funcflags(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -525,6 +582,7 @@ class IsisL3(Base):
 
     @property
     def Function(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -535,6 +593,7 @@ class IsisL3(Base):
 
     @property
     def IncludeMaxSlMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -545,6 +604,7 @@ class IsisL3(Base):
 
     @property
     def IncludeMaximumEndDMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -555,6 +615,7 @@ class IsisL3(Base):
 
     @property
     def IncludeMaximumEndPopMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -565,6 +626,7 @@ class IsisL3(Base):
 
     @property
     def IncludeMaximumTEncapMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -575,6 +637,7 @@ class IsisL3(Base):
 
     @property
     def IncludeMaximumTInsertMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -585,6 +648,7 @@ class IsisL3(Base):
 
     @property
     def InterfaceMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -595,6 +659,7 @@ class IsisL3(Base):
 
     @property
     def Ipv6MTMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -605,6 +670,7 @@ class IsisL3(Base):
 
     @property
     def Ipv6SidValue(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -615,6 +681,7 @@ class IsisL3(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -625,6 +692,7 @@ class IsisL3(Base):
 
     @property
     def Level1DeadInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -635,6 +703,7 @@ class IsisL3(Base):
 
     @property
     def Level1HelloInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -645,6 +714,7 @@ class IsisL3(Base):
 
     @property
     def Level1Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -655,6 +725,7 @@ class IsisL3(Base):
 
     @property
     def Level2DeadInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -665,6 +736,7 @@ class IsisL3(Base):
 
     @property
     def Level2HelloInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -675,6 +747,7 @@ class IsisL3(Base):
 
     @property
     def Level2Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -685,6 +758,7 @@ class IsisL3(Base):
 
     @property
     def LevelType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -695,6 +769,7 @@ class IsisL3(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -704,6 +779,7 @@ class IsisL3(Base):
 
     @property
     def MaxEndDMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -714,6 +790,7 @@ class IsisL3(Base):
 
     @property
     def MaxEndPopMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -724,6 +801,7 @@ class IsisL3(Base):
 
     @property
     def MaxSlMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -734,6 +812,7 @@ class IsisL3(Base):
 
     @property
     def MaxTEncap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -744,6 +823,7 @@ class IsisL3(Base):
 
     @property
     def MaxTInsertMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -754,6 +834,7 @@ class IsisL3(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -762,10 +843,12 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -774,10 +857,12 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -788,6 +873,7 @@ class IsisL3(Base):
 
     @property
     def NoOfAppSpecSrlg(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -796,10 +882,12 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'])
     @NoOfAppSpecSrlg.setter
     def NoOfAppSpecSrlg(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfAppSpecSrlg'], value)
 
     @property
     def NoOfTeProfile(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -808,10 +896,12 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfTeProfile'])
     @NoOfTeProfile.setter
     def NoOfTeProfile(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfTeProfile'], value)
 
     @property
     def OverrideFFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -822,6 +912,7 @@ class IsisL3(Base):
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -832,6 +923,7 @@ class IsisL3(Base):
 
     @property
     def Reserved0x40(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -842,6 +934,7 @@ class IsisL3(Base):
 
     @property
     def Reserved0x80(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -852,6 +945,7 @@ class IsisL3(Base):
 
     @property
     def SFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -862,6 +956,7 @@ class IsisL3(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -871,6 +966,7 @@ class IsisL3(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -880,6 +976,7 @@ class IsisL3(Base):
 
     @property
     def Shared(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -890,6 +987,7 @@ class IsisL3(Base):
 
     @property
     def SrlgCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -898,10 +996,12 @@ class IsisL3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrlgCount'])
     @SrlgCount.setter
     def SrlgCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrlgCount'], value)
 
     @property
     def Srv6SidFlags(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -912,14 +1012,16 @@ class IsisL3(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -933,6 +1035,7 @@ class IsisL3(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -942,6 +1045,7 @@ class IsisL3(Base):
 
     @property
     def SuppressHello(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -952,6 +1056,7 @@ class IsisL3(Base):
 
     @property
     def Unprotected(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -962,6 +1067,7 @@ class IsisL3(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -972,6 +1078,7 @@ class IsisL3(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -981,6 +1088,7 @@ class IsisL3(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, AdjSidCount=None, ConnectedVia=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+        # type: (int, List[str], int, str, int, int, int, List[str]) -> IsisL3
         """Updates isisL3 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -989,13 +1097,13 @@ class IsisL3(Base):
         Args
         ----
         - AdjSidCount (number): Adj SID Count
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfAppSpecSrlg (number): This field value shows how many SRLG Value columns would be there in the GUI.
         - NoOfTeProfile (number): Number of TE Profile
         - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -1004,18 +1112,19 @@ class IsisL3(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdjSidCount=None, ConnectedVia=None, Multiplier=None, Name=None, NoOfAppSpecSrlg=None, NoOfTeProfile=None, SrlgCount=None, StackedLayers=None):
+        # type: (int, List[str], int, str, int, int, int, List[str]) -> IsisL3
         """Adds a new isisL3 resource on the server and adds it to the container.
 
         Args
         ----
         - AdjSidCount (number): Adj SID Count
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfAppSpecSrlg (number): This field value shows how many SRLG Value columns would be there in the GUI.
         - NoOfTeProfile (number): Number of TE Profile
         - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -1047,10 +1156,10 @@ class IsisL3(Base):
         Args
         ----
         - AdjSidCount (number): Adj SID Count
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - LocalSystemID (list(str)): System ID
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -1059,7 +1168,7 @@ class IsisL3(Base):
         - SessionInfo (list(str[ifaceSessInfoFsmNotStarted | ifaceSessInfoNotAllNbrInFull | iPAddressNotRcvd | none])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -1090,6 +1199,398 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfoInClient operation on the server.
+
+        Clear ALL the LSPs and Topologies learnt by this ISIS Router.
+
+        clearAllLearnedInfoInClient(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+
+    def GetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLearnedInfo operation on the server.
+
+        Get Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLearnedInfo(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLearnedInfo', payload=payload, response_object=None)
+
+    def IsisStartInterface(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the isisStartInterface operation on the server.
+
+        Start ISIS Interface
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        isisStartInterface(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStartInterface(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStartInterface(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('isisStartInterface', payload=payload, response_object=None)
+
+    def IsisStopInterface(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the isisStopInterface operation on the server.
+
+        Stop ISIS Interface
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        isisStopInterface(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStopInterface(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStopInterface(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('isisStopInterface', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumeHello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the resumeHello operation on the server.
+
+        Resume sending ISIS Hellos
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeHello(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeHello(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeHello(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeHello', payload=payload, response_object=None)
+
+    def Resumehello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumehello operation on the server.
+
+        Starts the protocol state machine for the given protocol session instances.
+
+        resumehello(Arg2=list, async_operation=bool)list
+        ------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumehello', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopHello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopHello operation on the server.
+
+        Stop sending ISIS Hellos
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopHello(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopHello(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopHello(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopHello', payload=payload, response_object=None)
+
+    def Stophello(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stophello operation on the server.
+
+        Stops the protocol state machine for the given protocol session instances.
+
+        stophello(Arg2=list, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stophello', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdjSID=None, AdvertiseLinkMsd=None, AuthType=None, AutoAdjustArea=None, AutoAdjustMTU=None, AutoAdjustSupportedProtocols=None, BFlag=None, CircuitTranmitPasswordOrMD5Key=None, ConfiguredHoldTime=None, DedicatedOnePlusOne=None, DedicatedOneToOne=None, Enable3WayHandshake=None, EnableAdjSID=None, EnableAppSpecSrlg=None, EnableBfdRegistration=None, EnableConfiguredHoldTime=None, EnableIPv6SID=None, EnableLinkProtection=None, EnableMT=None, EnableSRLG=None, Enhanced=None, ExtendedLocalCircuitId=None, ExtraTraffic=None, FFlag=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndPopMsd=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTInsertMsd=None, InterfaceMetric=None, Ipv6MTMetric=None, Ipv6SidValue=None, LFlag=None, Level1DeadInterval=None, Level1HelloInterval=None, Level1Priority=None, Level2DeadInterval=None, Level2HelloInterval=None, Level2Priority=None, LevelType=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxSlMsd=None, MaxTEncap=None, MaxTInsertMsd=None, NetworkType=None, OverrideFFlag=None, PFlag=None, Reserved0x40=None, Reserved0x80=None, SFlag=None, Shared=None, Srv6SidFlags=None, SuppressHello=None, Unprotected=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of isisL3 device ids encapsulated by this object.
@@ -1169,318 +1670,3 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearAllLearnedInfo(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearAllLearnedInfo(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfoInClient operation on the server.
-
-        Clear ALL the LSPs and Topologies learnt by this ISIS Router.
-
-        clearAllLearnedInfoInClient(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
-
-    def GetLearnedInfo(self, *args, **kwargs):
-        """Executes the getLearnedInfo operation on the server.
-
-        Get Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLearnedInfo(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLearnedInfo(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getLearnedInfo(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLearnedInfo', payload=payload, response_object=None)
-
-    def IsisStartInterface(self, *args, **kwargs):
-        """Executes the isisStartInterface operation on the server.
-
-        Start ISIS Interface
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        isisStartInterface(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        isisStartInterface(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStartInterface', payload=payload, response_object=None)
-
-    def IsisStopInterface(self, *args, **kwargs):
-        """Executes the isisStopInterface operation on the server.
-
-        Stop ISIS Interface
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        isisStopInterface(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        isisStopInterface(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStopInterface', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumeHello(self, *args, **kwargs):
-        """Executes the resumeHello operation on the server.
-
-        Resume sending ISIS Hellos
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeHello(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeHello(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeHello', payload=payload, response_object=None)
-
-    def Resumehello(self, *args, **kwargs):
-        """Executes the resumehello operation on the server.
-
-        Starts the protocol state machine for the given protocol session instances.
-
-        resumehello(Arg2=list)list
-        --------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumehello', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopHello(self, *args, **kwargs):
-        """Executes the stopHello operation on the server.
-
-        Stop sending ISIS Hellos
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopHello(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopHello(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopHello', payload=payload, response_object=None)
-
-    def Stophello(self, *args, **kwargs):
-        """Executes the stophello operation on the server.
-
-        Stops the protocol state machine for the given protocol session instances.
-
-        stophello(Arg2=list)list
-        ------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stophello', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AuxiliaryConnection(Base):
@@ -38,12 +39,16 @@ class AuxiliaryConnection(Base):
         'Enable': 'enable',
         'UdpSourcePortNumber': 'udpSourcePortNumber',
     }
+    _SDM_ENUM_MAP = {
+        'connectionType': ['tcp', 'tls', 'udp'],
+    }
 
-    def __init__(self, parent):
-        super(AuxiliaryConnection, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AuxiliaryConnection, self).__init__(parent, list_op)
 
     @property
     def AuxiliaryId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,10 +57,12 @@ class AuxiliaryConnection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryId'])
     @AuxiliaryId.setter
     def AuxiliaryId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuxiliaryId'], value)
 
     @property
     def ConnectionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class AuxiliaryConnection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectionType'])
     @ConnectionType.setter
     def ConnectionType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectionType'], value)
 
     @property
     def Enable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class AuxiliaryConnection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enable'])
     @Enable.setter
     def Enable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
 
     @property
     def UdpSourcePortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,9 +99,11 @@ class AuxiliaryConnection(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSourcePortNumber'])
     @UdpSourcePortNumber.setter
     def UdpSourcePortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSourcePortNumber'], value)
 
     def update(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+        # type: (int, str, bool, int) -> AuxiliaryConnection
         """Updates auxiliaryConnection resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class AuxiliaryConnection(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+        # type: (int, str, bool, int) -> AuxiliaryConnection
         """Adds a new auxiliaryConnection resource on the server and adds it to the container.
 
         Args
@@ -137,6 +151,7 @@ class AuxiliaryConnection(Base):
         self._delete()
 
     def find(self, AuxiliaryId=None, ConnectionType=None, Enable=None, UdpSourcePortNumber=None):
+        # type: (int, str, bool, int) -> AuxiliaryConnection
         """Finds and retrieves auxiliaryConnection resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve auxiliaryConnection resources from the server.

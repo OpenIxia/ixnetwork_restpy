@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EthernetImpairment(Base):
@@ -38,12 +39,15 @@ class EthernetImpairment(Base):
         'Ppm': 'ppm',
         'SelectedSpeeds': 'selectedSpeeds',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EthernetImpairment, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EthernetImpairment, self).__init__(parent, list_op)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class EthernetImpairment(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class EthernetImpairment(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class EthernetImpairment(Base):
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,10 +86,12 @@ class EthernetImpairment(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,10 +100,12 @@ class EthernetImpairment(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -103,9 +114,11 @@ class EthernetImpairment(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     def update(self, EnablePPM=None, Ppm=None, SelectedSpeeds=None):
+        # type: (bool, int, List[str]) -> EthernetImpairment
         """Updates ethernetImpairment resource on the server.
 
         Args

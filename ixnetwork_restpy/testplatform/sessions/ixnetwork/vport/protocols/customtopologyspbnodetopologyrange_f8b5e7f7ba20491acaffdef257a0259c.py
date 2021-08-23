@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomTopologySpbNodeTopologyRange(Base):
@@ -39,9 +40,11 @@ class CustomTopologySpbNodeTopologyRange(Base):
         'NoOfPorts': 'noOfPorts',
         'PortIdentifier': 'portIdentifier',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomTopologySpbNodeTopologyRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomTopologySpbNodeTopologyRange, self).__init__(parent, list_op)
 
     @property
     def CustomTopologySpbNodeBaseVidRange(self):
@@ -55,10 +58,14 @@ class CustomTopologySpbNodeTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopologyspbnodebasevidrange_de0058a944364add436467ad4dd6ff34 import CustomTopologySpbNodeBaseVidRange
-        return CustomTopologySpbNodeBaseVidRange(self)
+        if self._properties.get('CustomTopologySpbNodeBaseVidRange', None) is not None:
+            return self._properties.get('CustomTopologySpbNodeBaseVidRange')
+        else:
+            return CustomTopologySpbNodeBaseVidRange(self)
 
     @property
     def CistExternalRootCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +74,12 @@ class CustomTopologySpbNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistExternalRootCost'])
     @CistExternalRootCost.setter
     def CistExternalRootCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistExternalRootCost'], value)
 
     @property
     def CistRootIdentifier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +88,12 @@ class CustomTopologySpbNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CistRootIdentifier'])
     @CistRootIdentifier.setter
     def CistRootIdentifier(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CistRootIdentifier'], value)
 
     @property
     def EnableVbit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -91,10 +102,12 @@ class CustomTopologySpbNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVbit'])
     @EnableVbit.setter
     def EnableVbit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVbit'], value)
 
     @property
     def NoOfPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,10 +116,12 @@ class CustomTopologySpbNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfPorts'])
     @NoOfPorts.setter
     def NoOfPorts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfPorts'], value)
 
     @property
     def PortIdentifier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,9 +130,11 @@ class CustomTopologySpbNodeTopologyRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortIdentifier'])
     @PortIdentifier.setter
     def PortIdentifier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortIdentifier'], value)
 
     def update(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
+        # type: (int, str, bool, int, int) -> CustomTopologySpbNodeTopologyRange
         """Updates customTopologySpbNodeTopologyRange resource on the server.
 
         Args
@@ -135,6 +152,7 @@ class CustomTopologySpbNodeTopologyRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
+        # type: (int, str, bool, int, int) -> CustomTopologySpbNodeTopologyRange
         """Adds a new customTopologySpbNodeTopologyRange resource on the server and adds it to the container.
 
         Args
@@ -166,6 +184,7 @@ class CustomTopologySpbNodeTopologyRange(Base):
         self._delete()
 
     def find(self, CistExternalRootCost=None, CistRootIdentifier=None, EnableVbit=None, NoOfPorts=None, PortIdentifier=None):
+        # type: (int, str, bool, int, int) -> CustomTopologySpbNodeTopologyRange
         """Finds and retrieves customTopologySpbNodeTopologyRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTopologySpbNodeTopologyRange resources from the server.

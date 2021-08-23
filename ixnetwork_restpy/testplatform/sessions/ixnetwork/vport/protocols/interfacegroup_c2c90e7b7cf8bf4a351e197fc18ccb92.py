@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class InterfaceGroup(Base):
@@ -40,9 +41,13 @@ class InterfaceGroup(Base):
         'Ip': 'ip',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+        'atmEncapsulation': ['vcMuxIpv4Routed', 'vcMuxIpv6Routed', 'vcMuxBridgedEth802p3WithFcs', 'vcMuxBridgedEth802p3WithOutFcs', 'llcRoutedAal5Snap', 'llcBridgedEthernetWithFcs', 'llcBridgedEthernetWithoutFcs'],
+        'ip': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(InterfaceGroup, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(InterfaceGroup, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
@@ -56,10 +61,14 @@ class InterfaceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_37df5f42aa73fde04b7d1b8fd94eb580 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def AtmEncapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,10 +77,12 @@ class InterfaceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AtmEncapsulation'])
     @AtmEncapsulation.setter
     def AtmEncapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AtmEncapsulation'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +91,12 @@ class InterfaceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +105,12 @@ class InterfaceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -104,10 +119,12 @@ class InterfaceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Ip(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +133,12 @@ class InterfaceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ip'])
     @Ip.setter
     def Ip(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ip'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,9 +147,11 @@ class InterfaceGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+        # type: (str, str, bool, bool, str, str) -> InterfaceGroup
         """Updates interfaceGroup resource on the server.
 
         Args
@@ -149,6 +170,7 @@ class InterfaceGroup(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+        # type: (str, str, bool, bool, str, str) -> InterfaceGroup
         """Adds a new interfaceGroup resource on the server and adds it to the container.
 
         Args
@@ -181,6 +203,7 @@ class InterfaceGroup(Base):
         self._delete()
 
     def find(self, AtmEncapsulation=None, Description=None, EnableVlan=None, Enabled=None, Ip=None, TrafficGroupId=None):
+        # type: (str, str, bool, bool, str, str) -> InterfaceGroup
         """Finds and retrieves interfaceGroup resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interfaceGroup resources from the server.

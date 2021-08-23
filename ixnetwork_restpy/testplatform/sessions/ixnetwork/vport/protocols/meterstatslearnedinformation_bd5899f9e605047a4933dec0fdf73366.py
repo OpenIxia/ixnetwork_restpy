@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MeterStatsLearnedInformation(Base):
@@ -51,9 +52,11 @@ class MeterStatsLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'ReplyState': 'replyState',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MeterStatsLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MeterStatsLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def MeterStatsBandLearnedInformation(self):
@@ -67,10 +70,14 @@ class MeterStatsLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatsbandlearnedinformation_3262a471f223f3c4c65196c8f2de73a7 import MeterStatsBandLearnedInformation
-        return MeterStatsBandLearnedInformation(self)
+        if self._properties.get('MeterStatsBandLearnedInformation', None) is not None:
+            return self._properties.get('MeterStatsBandLearnedInformation')
+        else:
+            return MeterStatsBandLearnedInformation(self)
 
     @property
     def ByteInCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +97,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +107,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def DurationNSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,6 +117,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def DurationSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,6 +127,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +137,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,6 +147,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def FlowCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,6 +157,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def LastErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,6 +167,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def LastErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -161,6 +177,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,6 +187,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,6 +197,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -188,6 +207,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,6 +217,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def NumberOfBandStats(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,6 +227,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def PacketInCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -215,6 +237,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,6 +247,7 @@ class MeterStatsLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,7 +255,21 @@ class MeterStatsLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReplyState'])
 
+    def add(self):
+        """Adds a new meterStatsLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved meterStatsLearnedInformation resources using find and the newly added meterStatsLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ByteInCount=None, DataPathId=None, DataPathIdAsHex=None, DurationNSec=None, DurationSec=None, ErrorCode=None, ErrorType=None, FlowCount=None, LastErrorCode=None, LastErrorType=None, Latency=None, LocalIp=None, MeterId=None, NegotiatedVersion=None, NumberOfBandStats=None, PacketInCount=None, RemoteIp=None, ReplyState=None):
+        # type: (int, int, str, int, int, str, str, int, str, str, int, str, int, str, int, int, str, str) -> MeterStatsLearnedInformation
         """Finds and retrieves meterStatsLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meterStatsLearnedInformation resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RateControlParameters(Base):
@@ -39,12 +40,15 @@ class RateControlParameters(Base):
         'SendInBursts': 'sendInBursts',
         'SendRequestsAsFastAsPossible': 'sendRequestsAsFastAsPossible',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RateControlParameters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RateControlParameters, self).__init__(parent, list_op)
 
     @property
     def ArpRefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'])
     @ArpRefreshInterval.setter
     def ArpRefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpRefreshInterval'], value)
 
     @property
     def MaxRequestsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRequestsPerBurst'])
     @MaxRequestsPerBurst.setter
     def MaxRequestsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRequestsPerBurst'], value)
 
     @property
     def MaxRequestsPerSec(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRequestsPerSec'])
     @MaxRequestsPerSec.setter
     def MaxRequestsPerSec(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRequestsPerSec'], value)
 
     @property
     def MinRetryInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRetryInterval'])
     @MinRetryInterval.setter
     def MinRetryInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRetryInterval'], value)
 
     @property
     def RetryCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetryCount'])
     @RetryCount.setter
     def RetryCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetryCount'], value)
 
     @property
     def SendInBursts(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendInBursts'])
     @SendInBursts.setter
     def SendInBursts(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendInBursts'], value)
 
     @property
     def SendRequestsAsFastAsPossible(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -125,9 +141,11 @@ class RateControlParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendRequestsAsFastAsPossible'])
     @SendRequestsAsFastAsPossible.setter
     def SendRequestsAsFastAsPossible(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendRequestsAsFastAsPossible'], value)
 
     def update(self, ArpRefreshInterval=None, MaxRequestsPerBurst=None, MaxRequestsPerSec=None, MinRetryInterval=None, RetryCount=None, SendInBursts=None, SendRequestsAsFastAsPossible=None):
+        # type: (int, int, int, int, int, bool, bool) -> RateControlParameters
         """Updates rateControlParameters resource on the server.
 
         Args

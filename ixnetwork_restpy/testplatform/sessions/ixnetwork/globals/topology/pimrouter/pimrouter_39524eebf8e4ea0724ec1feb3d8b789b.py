@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PimRouter(Base):
@@ -45,12 +46,15 @@ class PimRouter(Base):
         'RegisterStopMessagePerInterval': 'registerStopMessagePerInterval',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PimRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PimRouter, self).__init__(parent, list_op)
 
     @property
     def BootstrapMessagePerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -61,6 +65,7 @@ class PimRouter(Base):
 
     @property
     def CRpAdvertiseMessagePerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -71,6 +76,7 @@ class PimRouter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +86,7 @@ class PimRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class PimRouter(Base):
 
     @property
     def DiscardJoinPruneProcessing(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class PimRouter(Base):
 
     @property
     def EnableRateControl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class PimRouter(Base):
 
     @property
     def HelloMessagePerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +129,7 @@ class PimRouter(Base):
 
     @property
     def Interval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +140,7 @@ class PimRouter(Base):
 
     @property
     def JoinPruneMessagePerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class PimRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,10 +160,12 @@ class PimRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RegisterMessagePerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +176,7 @@ class PimRouter(Base):
 
     @property
     def RegisterStopMessagePerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class PimRouter(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class PimRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> PimRouter
         """Updates pimRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

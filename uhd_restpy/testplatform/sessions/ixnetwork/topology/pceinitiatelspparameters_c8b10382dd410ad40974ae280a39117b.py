@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceInitiateLSPParameters(Base):
@@ -81,9 +82,11 @@ class PceInitiateLSPParameters(Base):
         'Tc': 'tc',
         'Ttl': 'ttl',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceInitiateLSPParameters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceInitiateLSPParameters, self).__init__(parent, list_op)
 
     @property
     def PceInitiateXROobject(self):
@@ -97,7 +100,10 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatexroobject_4394b1635bed370ec02e722a5dab40b6 import PceInitiateXROobject
-        return PceInitiateXROobject(self)
+        if self._properties.get('PceInitiateXROobject', None) is not None:
+            return self._properties.get('PceInitiateXROobject')
+        else:
+            return PceInitiateXROobject(self)
 
     @property
     def PcepEroSubObjectsList(self):
@@ -111,7 +117,10 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
-        return PcepEroSubObjectsList(self)
+        if self._properties.get('PcepEroSubObjectsList', None) is not None:
+            return self._properties.get('PcepEroSubObjectsList')
+        else:
+            return PcepEroSubObjectsList(self)
 
     @property
     def PcepMetricSubObjectsList(self):
@@ -125,10 +134,14 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
-        return PcepMetricSubObjectsList(self)
+        if self._properties.get('PcepMetricSubObjectsList', None) is not None:
+            return self._properties.get('PcepMetricSubObjectsList')
+        else:
+            return PcepMetricSubObjectsList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +152,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def AssociationId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +163,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Bandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +174,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def BindingType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +185,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Bos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -188,6 +206,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,6 +216,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def DestEndPointIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -207,6 +227,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def DestEndPointIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +238,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def EnableXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -227,6 +249,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def ExcludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +260,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def FailBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,6 +271,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def HoldingPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +282,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeAll(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -267,6 +293,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -277,6 +304,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeAssociation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -287,6 +315,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -297,6 +326,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeConfiguredERO(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -307,6 +337,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeEndPoints(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -317,6 +348,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +359,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +370,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeLspa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +381,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +392,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeSrp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +403,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeSymbolicPathNameTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +414,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IncludeTEPathBindingTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -387,6 +425,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def IpVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -397,6 +436,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def LocalProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -407,6 +447,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -417,6 +458,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -425,10 +467,12 @@ class PceInitiateLSPParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfEroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -437,10 +481,12 @@ class PceInitiateLSPParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
 
     @property
     def NumberOfMetricSubObject(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -449,10 +495,12 @@ class PceInitiateLSPParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'])
     @NumberOfMetricSubObject.setter
     def NumberOfMetricSubObject(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'], value)
 
     @property
     def NumberOfXroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -461,10 +509,12 @@ class PceInitiateLSPParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'])
     @NumberOfXroSubObjects.setter
     def NumberOfXroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'], value)
 
     @property
     def OverridePlspId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -473,10 +523,12 @@ class PceInitiateLSPParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverridePlspId'])
     @OverridePlspId.setter
     def OverridePlspId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverridePlspId'], value)
 
     @property
     def OverrideSrpIdNumber(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -485,10 +537,12 @@ class PceInitiateLSPParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideSrpIdNumber'])
     @OverrideSrpIdNumber.setter
     def OverrideSrpIdNumber(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideSrpIdNumber'], value)
 
     @property
     def PathSetupType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -499,6 +553,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def PlspId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -509,6 +564,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def ProtectionLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -519,6 +575,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SendEmptyTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -529,6 +586,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -538,6 +596,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SetupPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -548,6 +607,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SrcEndPointIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -558,6 +618,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SrcEndPointIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -568,6 +629,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SrpIdNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -578,6 +640,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Srv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -588,6 +651,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def StandbyMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -598,6 +662,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def SymbolicPathName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -608,6 +673,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Tc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -618,6 +684,7 @@ class PceInitiateLSPParameters(Base):
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -627,6 +694,7 @@ class PceInitiateLSPParameters(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
 
     def update(self, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, NumberOfXroSubObjects=None, OverridePlspId=None, OverrideSrpIdNumber=None):
+        # type: (str, int, int, int, bool, bool) -> PceInitiateLSPParameters
         """Updates pceInitiateLSPParameters resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -646,6 +714,82 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ReturnDelegation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the returnDelegation operation on the server.
+
+        Return Delegation of PCE-Initiated LSPs
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        returnDelegation(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        returnDelegation(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        returnDelegation(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        returnDelegation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): Return Delegation.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('returnDelegation', payload=payload, response_object=None)
+
+    def TakeControl(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the takeControl operation on the server.
+
+        Take Control of PCE-Initiated LSPs
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        takeControl(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        takeControl(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        takeControl(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        takeControl(Arg2=list, async_operation=bool)list
+        ------------------------------------------------
+        - Arg2 (list(number)): Take Control.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('takeControl', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AssociationId=None, Bandwidth=None, BindingType=None, Bos=None, DestEndPointIpv4=None, DestEndPointIpv6=None, EnableXro=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeAssociation=None, IncludeBandwidth=None, IncludeConfiguredERO=None, IncludeEndPoints=None, IncludeEro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeSrp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, IpVersion=None, LocalProtection=None, MplsLabel=None, PathSetupType=None, PlspId=None, ProtectionLsp=None, SendEmptyTLV=None, SetupPriority=None, SrcEndPointIpv4=None, SrcEndPointIpv6=None, SrpIdNumber=None, Srv6SID=None, StandbyMode=None, SymbolicPathName=None, Tc=None, Ttl=None):
         """Base class infrastructure that gets a list of pceInitiateLSPParameters device ids encapsulated by this object.
@@ -705,63 +849,3 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ReturnDelegation(self, *args, **kwargs):
-        """Executes the returnDelegation operation on the server.
-
-        Return Delegation of PCE-Initiated LSPs
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        returnDelegation(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        returnDelegation(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        returnDelegation(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): Return Delegation.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('returnDelegation', payload=payload, response_object=None)
-
-    def TakeControl(self, *args, **kwargs):
-        """Executes the takeControl operation on the server.
-
-        Take Control of PCE-Initiated LSPs
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        takeControl(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        takeControl(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        takeControl(Arg2=list)list
-        --------------------------
-        - Arg2 (list(number)): Take Control.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('takeControl', payload=payload, response_object=None)

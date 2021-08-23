@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LabelBlockList(Base):
@@ -40,12 +41,15 @@ class LabelBlockList(Base):
         'OffsetLabelBlock': 'offsetLabelBlock',
         'StartLabel': 'startLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LabelBlockList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LabelBlockList, self).__init__(parent, list_op)
 
     @property
     def AdvLblBlock(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class LabelBlockList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class LabelBlockList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class LabelBlockList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,10 +89,12 @@ class LabelBlockList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumLabels(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -96,6 +105,7 @@ class LabelBlockList(Base):
 
     @property
     def OffsetLabelBlock(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -106,6 +116,7 @@ class LabelBlockList(Base):
 
     @property
     def StartLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class LabelBlockList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartLabel']))
 
     def update(self, Name=None):
+        # type: (str) -> LabelBlockList
         """Updates labelBlockList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -130,7 +142,26 @@ class LabelBlockList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> LabelBlockList
+        """Adds a new labelBlockList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved labelBlockList resources using find and the newly added labelBlockList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> LabelBlockList
         """Finds and retrieves labelBlockList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve labelBlockList resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TlvSettings(Base):
@@ -33,9 +34,11 @@ class TlvSettings(Base):
     _SDM_ATT_MAP = {
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TlvSettings, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TlvSettings, self).__init__(parent, list_op)
 
     @property
     def LldpTlvCiscoNivCapable(self):
@@ -49,7 +52,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvcisconivcapable_ac09c6a52c14632b690eaa0d1b5e73a8 import LldpTlvCiscoNivCapable
-        return LldpTlvCiscoNivCapable(self)._select()
+        if self._properties.get('LldpTlvCiscoNivCapable', None) is not None:
+            return self._properties.get('LldpTlvCiscoNivCapable')
+        else:
+            return LldpTlvCiscoNivCapable(self)._select()
 
     @property
     def LldpTlvMa(self):
@@ -63,7 +69,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvma_b51f62f119f8071d61fd9079b984e5b1 import LldpTlvMa
-        return LldpTlvMa(self)._select()
+        if self._properties.get('LldpTlvMa', None) is not None:
+            return self._properties.get('LldpTlvMa')
+        else:
+            return LldpTlvMa(self)._select()
 
     @property
     def LldpTlvOui(self):
@@ -77,7 +86,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvoui_4e354d831fb96e884fb961bdc998300c import LldpTlvOui
-        return LldpTlvOui(self)._select()
+        if self._properties.get('LldpTlvOui', None) is not None:
+            return self._properties.get('LldpTlvOui')
+        else:
+            return LldpTlvOui(self)._select()
 
     @property
     def LldpTlvPd(self):
@@ -91,7 +103,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvpd_4171f170fecfc786a3d45c6e849068fe import LldpTlvPd
-        return LldpTlvPd(self)._select()
+        if self._properties.get('LldpTlvPd', None) is not None:
+            return self._properties.get('LldpTlvPd')
+        else:
+            return LldpTlvPd(self)._select()
 
     @property
     def LldpTlvSd(self):
@@ -105,7 +120,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsd_3b1eb228dea2a2d31a85fe1519124060 import LldpTlvSd
-        return LldpTlvSd(self)._select()
+        if self._properties.get('LldpTlvSd', None) is not None:
+            return self._properties.get('LldpTlvSd')
+        else:
+            return LldpTlvSd(self)._select()
 
     @property
     def LldpTlvSn(self):
@@ -119,10 +137,14 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsn_24bf0d2844544a93d5fbf4a91d165bc2 import LldpTlvSn
-        return LldpTlvSn(self)._select()
+        if self._properties.get('LldpTlvSn', None) is not None:
+            return self._properties.get('LldpTlvSn')
+        else:
+            return LldpTlvSn(self)._select()
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,14 +153,16 @@ class TlvSettings(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -151,13 +175,15 @@ class TlvSettings(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -171,13 +197,15 @@ class TlvSettings(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AppTypeRef(Base):
@@ -35,9 +36,11 @@ class AppTypeRef(Base):
         'ObjectId': 'objectId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AppTypeRef, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AppTypeRef, self).__init__(parent, list_op)
 
     @property
     def NacApps(self):
@@ -51,10 +54,14 @@ class AppTypeRef(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.nacapps.nacapps import NacApps
-        return NacApps(self)
+        if self._properties.get('NacApps', None) is not None:
+            return self._properties.get('NacApps')
+        else:
+            return NacApps(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class AppTypeRef(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +85,7 @@ class AppTypeRef(Base):
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,9 +94,11 @@ class AppTypeRef(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
+        # type: (str, int) -> AppTypeRef
         """Updates appTypeRef resource on the server.
 
         Args

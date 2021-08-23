@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfBierSubDomainList(Base):
@@ -42,9 +43,11 @@ class OspfBierSubDomainList(Base):
         'NumberOfBSLen': 'numberOfBSLen',
         'SubDomainId': 'subDomainId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfBierSubDomainList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfBierSubDomainList, self).__init__(parent, list_op)
 
     @property
     def OspfBierBSObjectList(self):
@@ -58,10 +61,14 @@ class OspfBierSubDomainList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfbierbsobjectlist_d963618a7e3bb458722a4ffc379ac86a import OspfBierBSObjectList
-        return OspfBierBSObjectList(self)
+        if self._properties.get('OspfBierBSObjectList', None) is not None:
+            return self._properties.get('OspfBierBSObjectList')
+        else:
+            return OspfBierBSObjectList(self)
 
     @property
     def BFRId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -72,6 +79,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def Bar(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def Ipa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +132,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +143,7 @@ class OspfBierSubDomainList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,10 +152,12 @@ class OspfBierSubDomainList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfBSLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,10 +166,12 @@ class OspfBierSubDomainList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfBSLen'])
     @NumberOfBSLen.setter
     def NumberOfBSLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfBSLen'], value)
 
     @property
     def SubDomainId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +181,7 @@ class OspfBierSubDomainList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubDomainId']))
 
     def update(self, Name=None, NumberOfBSLen=None):
+        # type: (str, int) -> OspfBierSubDomainList
         """Updates ospfBierSubDomainList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

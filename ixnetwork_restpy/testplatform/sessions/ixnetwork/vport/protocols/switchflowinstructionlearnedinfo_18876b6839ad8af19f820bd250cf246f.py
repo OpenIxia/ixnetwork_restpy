@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchFlowInstructionLearnedInfo(Base):
@@ -41,9 +42,11 @@ class SwitchFlowInstructionLearnedInfo(Base):
         'MeterId': 'meterId',
         'TableId': 'tableId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchFlowInstructionLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchFlowInstructionLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def SwitchActionV131LearnedInfo(self):
@@ -57,10 +60,14 @@ class SwitchFlowInstructionLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_86007ee49ffb3db3e01e332902e297a7 import SwitchActionV131LearnedInfo
-        return SwitchActionV131LearnedInfo(self)
+        if self._properties.get('SwitchActionV131LearnedInfo', None) is not None:
+            return self._properties.get('SwitchActionV131LearnedInfo')
+        else:
+            return SwitchActionV131LearnedInfo(self)
 
     @property
     def Experimenter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,6 +77,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +87,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,6 +97,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def InstructionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,6 +107,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def Metadata(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +117,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def MetadataMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +127,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,6 +137,7 @@ class SwitchFlowInstructionLearnedInfo(Base):
 
     @property
     def TableId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,7 +145,21 @@ class SwitchFlowInstructionLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TableId'])
 
+    def add(self):
+        """Adds a new switchFlowInstructionLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchFlowInstructionLearnedInfo resources using find and the newly added switchFlowInstructionLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataMask=None, MeterId=None, TableId=None):
+        # type: (int, str, int, str, str, str, int, int) -> SwitchFlowInstructionLearnedInfo
         """Finds and retrieves switchFlowInstructionLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchFlowInstructionLearnedInfo resources from the server.

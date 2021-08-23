@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TriggeredTracerouteLearnedInfo(Base):
@@ -40,9 +41,11 @@ class TriggeredTracerouteLearnedInfo(Base):
         'Reachability': 'reachability',
         'SenderHandle': 'senderHandle',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TriggeredTracerouteLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TriggeredTracerouteLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def Hops(self):
@@ -56,10 +59,14 @@ class TriggeredTracerouteLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_a3016dbca8bb23ae95d92f74f704c574 import Hops
-        return Hops(self)
+        if self._properties.get('Hops', None) is not None:
+            return self._properties.get('Hops')
+        else:
+            return Hops(self)
 
     @property
     def Fec(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +76,7 @@ class TriggeredTracerouteLearnedInfo(Base):
 
     @property
     def Hops(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +86,7 @@ class TriggeredTracerouteLearnedInfo(Base):
 
     @property
     def IncomingLabelStack(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +96,7 @@ class TriggeredTracerouteLearnedInfo(Base):
 
     @property
     def NumberOfReplyingHops(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,6 +106,7 @@ class TriggeredTracerouteLearnedInfo(Base):
 
     @property
     def OutgoingLabelStack(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +116,7 @@ class TriggeredTracerouteLearnedInfo(Base):
 
     @property
     def Reachability(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +126,7 @@ class TriggeredTracerouteLearnedInfo(Base):
 
     @property
     def SenderHandle(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,7 +134,21 @@ class TriggeredTracerouteLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SenderHandle'])
 
+    def add(self):
+        """Adds a new triggeredTracerouteLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved triggeredTracerouteLearnedInfo resources using find and the newly added triggeredTracerouteLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Fec=None, Hops=None, IncomingLabelStack=None, NumberOfReplyingHops=None, OutgoingLabelStack=None, Reachability=None, SenderHandle=None):
+        # type: (str, str, str, int, str, str, int) -> TriggeredTracerouteLearnedInfo
         """Finds and retrieves triggeredTracerouteLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve triggeredTracerouteLearnedInfo resources from the server.

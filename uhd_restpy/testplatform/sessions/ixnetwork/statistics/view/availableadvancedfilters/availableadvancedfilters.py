@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AvailableAdvancedFilters(Base):
@@ -35,12 +36,15 @@ class AvailableAdvancedFilters(Base):
         'Expression': 'expression',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AvailableAdvancedFilters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AvailableAdvancedFilters, self).__init__(parent, list_op)
 
     @property
     def Expression(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,6 +54,7 @@ class AvailableAdvancedFilters(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,7 +62,21 @@ class AvailableAdvancedFilters(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
+    def add(self):
+        """Adds a new availableAdvancedFilters resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved availableAdvancedFilters resources using find and the newly added availableAdvancedFilters resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Expression=None, Name=None):
+        # type: (str, str) -> AvailableAdvancedFilters
         """Finds and retrieves availableAdvancedFilters resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableAdvancedFilters resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DcbxTlv(Base):
@@ -44,9 +45,11 @@ class DcbxTlv(Base):
         'SubType': 'subType',
         'Willing': 'willing',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DcbxTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DcbxTlv, self).__init__(parent, list_op)
 
     @property
     def TlvSettings(self):
@@ -60,10 +63,14 @@ class DcbxTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.tlvsettings_9ee7f0bbd6252892487709b1e2bd344a import TlvSettings
-        return TlvSettings(self)._select()
+        if self._properties.get('TlvSettings', None) is not None:
+            return self._properties.get('TlvSettings')
+        else:
+            return TlvSettings(self)._select()
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,10 +79,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Error(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +93,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Error'])
     @Error.setter
     def Error(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Error'], value)
 
     @property
     def ErrorOverride(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +107,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ErrorOverride'])
     @ErrorOverride.setter
     def ErrorOverride(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ErrorOverride'], value)
 
     @property
     def FeatureEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +121,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FeatureEnable'])
     @FeatureEnable.setter
     def FeatureEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FeatureEnable'], value)
 
     @property
     def FeatureType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +135,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FeatureType'])
     @FeatureType.setter
     def FeatureType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FeatureType'], value)
 
     @property
     def MaxVersion(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +149,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxVersion'])
     @MaxVersion.setter
     def MaxVersion(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxVersion'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +163,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,6 +178,7 @@ class DcbxTlv(Base):
 
     @property
     def SubType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -165,10 +187,12 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SubType'])
     @SubType.setter
     def SubType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SubType'], value)
 
     @property
     def Willing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -177,9 +201,11 @@ class DcbxTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Willing'])
     @Willing.setter
     def Willing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Willing'], value)
 
     def update(self, Enabled=None, Error=None, ErrorOverride=None, FeatureEnable=None, FeatureType=None, MaxVersion=None, Name=None, SubType=None, Willing=None):
+        # type: (bool, bool, bool, bool, int, int, str, int, bool) -> DcbxTlv
         """Updates dcbxTlv resource on the server.
 
         Args
@@ -201,6 +227,7 @@ class DcbxTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Error=None, ErrorOverride=None, FeatureEnable=None, FeatureType=None, MaxVersion=None, Name=None, SubType=None, Willing=None):
+        # type: (bool, bool, bool, bool, int, int, str, int, bool) -> DcbxTlv
         """Adds a new dcbxTlv resource on the server and adds it to the container.
 
         Args
@@ -236,6 +263,7 @@ class DcbxTlv(Base):
         self._delete()
 
     def find(self, Enabled=None, Error=None, ErrorOverride=None, FeatureEnable=None, FeatureType=None, MaxVersion=None, Name=None, ObjectId=None, SubType=None, Willing=None):
+        # type: (bool, bool, bool, bool, int, int, str, str, int, bool) -> DcbxTlv
         """Finds and retrieves dcbxTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxTlv resources from the server.
@@ -284,14 +312,16 @@ class DcbxTlv(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -304,13 +334,15 @@ class DcbxTlv(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -324,13 +356,15 @@ class DcbxTlv(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

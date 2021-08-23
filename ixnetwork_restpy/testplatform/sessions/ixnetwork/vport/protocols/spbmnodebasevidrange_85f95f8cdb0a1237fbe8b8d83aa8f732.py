@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbmNodeBaseVidRange(Base):
@@ -39,9 +40,11 @@ class SpbmNodeBaseVidRange(Base):
         'EctAlgorithm': 'ectAlgorithm',
         'UseFlag': 'useFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbmNodeBaseVidRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbmNodeBaseVidRange, self).__init__(parent, list_op)
 
     @property
     def SpbmNodeIsIdRange(self):
@@ -55,10 +58,14 @@ class SpbmNodeBaseVidRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodeisidrange_ce5aa3fd54769fa53d910c12b9b3cddb import SpbmNodeIsIdRange
-        return SpbmNodeIsIdRange(self)
+        if self._properties.get('SpbmNodeIsIdRange', None) is not None:
+            return self._properties.get('SpbmNodeIsIdRange')
+        else:
+            return SpbmNodeIsIdRange(self)
 
     @property
     def BVlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +74,12 @@ class SpbmNodeBaseVidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanPriority'])
     @BVlanPriority.setter
     def BVlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanPriority'], value)
 
     @property
     def BVlanTpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,10 +88,12 @@ class SpbmNodeBaseVidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BVlanTpId'])
     @BVlanTpId.setter
     def BVlanTpId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BVlanTpId'], value)
 
     @property
     def BaseVid(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,10 +102,12 @@ class SpbmNodeBaseVidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BaseVid'])
     @BaseVid.setter
     def BaseVid(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BaseVid'], value)
 
     @property
     def EctAlgorithm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,10 +116,12 @@ class SpbmNodeBaseVidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EctAlgorithm'])
     @EctAlgorithm.setter
     def EctAlgorithm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EctAlgorithm'], value)
 
     @property
     def UseFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -115,9 +130,11 @@ class SpbmNodeBaseVidRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseFlag'])
     @UseFlag.setter
     def UseFlag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseFlag'], value)
 
     def update(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+        # type: (int, int, int, int, bool) -> SpbmNodeBaseVidRange
         """Updates spbmNodeBaseVidRange resource on the server.
 
         Args
@@ -135,6 +152,7 @@ class SpbmNodeBaseVidRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+        # type: (int, int, int, int, bool) -> SpbmNodeBaseVidRange
         """Adds a new spbmNodeBaseVidRange resource on the server and adds it to the container.
 
         Args
@@ -166,6 +184,7 @@ class SpbmNodeBaseVidRange(Base):
         self._delete()
 
     def find(self, BVlanPriority=None, BVlanTpId=None, BaseVid=None, EctAlgorithm=None, UseFlag=None):
+        # type: (int, int, int, int, bool) -> SpbmNodeBaseVidRange
         """Finds and retrieves spbmNodeBaseVidRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbmNodeBaseVidRange resources from the server.

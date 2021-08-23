@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisSRv6AdjSIDList(Base):
@@ -52,12 +53,15 @@ class IsisSRv6AdjSIDList(Base):
         'SFlag': 'sFlag',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisSRv6AdjSIDList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisSRv6AdjSIDList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -68,6 +72,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def AdvertiseCustomSubTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -78,6 +83,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +94,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def ArgumentLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +105,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +116,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def CFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -118,6 +127,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def CustomSubTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +148,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,6 +158,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def EndPointFunction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -156,6 +169,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def FunctionLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +180,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def IncludeSRv6SIDStructureSubSubTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +191,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def Ipv6AdjSid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +202,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def LocatorBlockLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +213,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def LocatorNodeLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +224,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,10 +233,12 @@ class IsisSRv6AdjSIDList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +249,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def Reserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +260,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def SFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +271,7 @@ class IsisSRv6AdjSIDList(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +281,7 @@ class IsisSRv6AdjSIDList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisSRv6AdjSIDList
         """Updates isisSRv6AdjSIDList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

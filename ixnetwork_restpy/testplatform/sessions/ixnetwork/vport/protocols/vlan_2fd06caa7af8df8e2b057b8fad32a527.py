@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Vlan(Base):
@@ -41,9 +42,12 @@ class Vlan(Base):
         'UpdateRequired': 'updateRequired',
         'VlanId': 'vlanId',
     }
+    _SDM_ENUM_MAP = {
+        'priority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+    }
 
-    def __init__(self, parent):
-        super(Vlan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Vlan, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -57,7 +61,10 @@ class Vlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_91d909247e15cc11a36d2ce682a6cad8 import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
@@ -71,10 +78,14 @@ class Vlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_12063376c05c1de5b307a327a1cf75d8 import LearnedInterface
-        return LearnedInterface(self)
+        if self._properties.get('LearnedInterface', None) is not None:
+            return self._properties.get('LearnedInterface')
+        else:
+            return LearnedInterface(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +94,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InternalRootPathCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +108,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InternalRootPathCost'])
     @InternalRootPathCost.setter
     def InternalRootPathCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InternalRootPathCost'], value)
 
     @property
     def Mac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +122,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mac'])
     @Mac.setter
     def Mac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
 
     @property
     def PortPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +136,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortPriority'])
     @PortPriority.setter
     def PortPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortPriority'], value)
 
     @property
     def Priority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +150,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def UpdateRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -143,10 +164,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
     @UpdateRequired.setter
     def UpdateRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateRequired'], value)
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,9 +178,11 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+        # type: (bool, int, str, int, str, bool, int) -> Vlan
         """Updates vlan resource on the server.
 
         Args
@@ -177,6 +202,7 @@ class Vlan(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+        # type: (bool, int, str, int, str, bool, int) -> Vlan
         """Adds a new vlan resource on the server and adds it to the container.
 
         Args
@@ -210,6 +236,7 @@ class Vlan(Base):
         self._delete()
 
     def find(self, Enabled=None, InternalRootPathCost=None, Mac=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanId=None):
+        # type: (bool, int, str, int, str, bool, int) -> Vlan
         """Finds and retrieves vlan resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vlan resources from the server.
@@ -254,28 +281,44 @@ class Vlan(Base):
         """
         return self._read(href)
 
-    def TopologyChange(self):
+    def TopologyChange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the topologyChange operation on the server.
 
         This commands checks to see if there has been a topology change for the specified STP VLAN.
 
+        topologyChange(async_operation=bool)bool
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('topologyChange', payload=payload, response_object=None)
 
-    def UpdateParameters(self):
+    def UpdateParameters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateParameters operation on the server.
 
         Updates the current STP VLAN parameters.
 
+        updateParameters(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('updateParameters', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FixedClassifier(Base):
@@ -34,9 +35,11 @@ class FixedClassifier(Base):
     _SDM_NAME = 'fixedClassifier'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FixedClassifier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FixedClassifier, self).__init__(parent, list_op)
 
     @property
     def Pattern(self):
@@ -50,7 +53,10 @@ class FixedClassifier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.fixedclassifier.pattern.pattern import Pattern
-        return Pattern(self)
+        if self._properties.get('Pattern', None) is not None:
+            return self._properties.get('Pattern')
+        else:
+            return Pattern(self)
 
     def add(self):
         """Adds a new fixedClassifier resource on the server and adds it to the container.

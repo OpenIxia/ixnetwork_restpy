@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv4client(Base):
@@ -45,9 +46,11 @@ class Dhcpv4client(Base):
         'RowNames': 'rowNames',
         'SkipReleaseOnStop': 'skipReleaseOnStop',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv4client, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv4client, self).__init__(parent, list_op)
 
     @property
     def SessionLifetime(self):
@@ -61,7 +64,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import SessionLifetime
-        return SessionLifetime(self)._select()
+        if self._properties.get('SessionLifetime', None) is not None:
+            return self._properties.get('SessionLifetime')
+        else:
+            return SessionLifetime(self)._select()
 
     @property
     def StartRate(self):
@@ -75,7 +81,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -89,7 +98,10 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def TlvEditor(self):
@@ -103,10 +115,14 @@ class Dhcpv4client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        return TlvEditor(self)
+        if self._properties.get('TlvEditor', None) is not None:
+            return self._properties.get('TlvEditor')
+        else:
+            return TlvEditor(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,6 +132,7 @@ class Dhcpv4client(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +142,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4ArpGw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +153,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4ClientPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +164,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4MaxDiscoverTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +175,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4NumRetry(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +186,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4ResponseTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +197,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4ResponseTimeoutFactor(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +208,7 @@ class Dhcpv4client(Base):
 
     @property
     def Dhcp4ServerPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +219,7 @@ class Dhcpv4client(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,10 +228,12 @@ class Dhcpv4client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RenewOnLinkUp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +244,7 @@ class Dhcpv4client(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -226,6 +254,7 @@ class Dhcpv4client(Base):
 
     @property
     def SkipReleaseOnStop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -235,6 +264,7 @@ class Dhcpv4client(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SkipReleaseOnStop']))
 
     def update(self, Name=None):
+        # type: (str) -> Dhcpv4client
         """Updates dhcpv4client resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

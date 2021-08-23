@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AvailablePortFilter(Base):
@@ -34,12 +35,15 @@ class AvailablePortFilter(Base):
     _SDM_ATT_MAP = {
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AvailablePortFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AvailablePortFilter, self).__init__(parent, list_op)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -47,7 +51,21 @@ class AvailablePortFilter(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
+    def add(self):
+        """Adds a new availablePortFilter resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved availablePortFilter resources using find and the newly added availablePortFilter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Name=None):
+        # type: (str) -> AvailablePortFilter
         """Finds and retrieves availablePortFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availablePortFilter resources from the server.

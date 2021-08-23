@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PtpNegBehaveList(Base):
@@ -45,12 +46,15 @@ class PtpNegBehaveList(Base):
         'PtpValueDisPattern': 'ptpValueDisPattern',
         'PtpValueDisPattern1': 'ptpValueDisPattern1',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PtpNegBehaveList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PtpNegBehaveList, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvActive(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvFieldValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvFieldValue1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvMsgAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +129,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvPtpMsgField(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +140,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def MvPtpMsgField1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,10 +160,12 @@ class PtpNegBehaveList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PtpMsgType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +176,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def PtpValueDisPattern(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class PtpNegBehaveList(Base):
 
     @property
     def PtpValueDisPattern1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +197,7 @@ class PtpNegBehaveList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PtpValueDisPattern1']))
 
     def update(self, Name=None):
+        # type: (str) -> PtpNegBehaveList
         """Updates ptpNegBehaveList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

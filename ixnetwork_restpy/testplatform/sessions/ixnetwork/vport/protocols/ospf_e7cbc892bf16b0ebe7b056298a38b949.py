@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ospf(Base):
@@ -37,9 +38,12 @@ class Ospf(Base):
         'RateControlInterval': 'rateControlInterval',
         'RunningState': 'runningState',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Ospf, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ospf, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -53,10 +57,14 @@ class Ospf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_c3aa6e3585f79ff16c2e8ca6eaa4194c import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def EnableDrOrBdr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +73,12 @@ class Ospf(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDrOrBdr'])
     @EnableDrOrBdr.setter
     def EnableDrOrBdr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDrOrBdr'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +87,12 @@ class Ospf(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FloodLinkStateUpdatesPerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +101,12 @@ class Ospf(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FloodLinkStateUpdatesPerInterval'])
     @FloodLinkStateUpdatesPerInterval.setter
     def FloodLinkStateUpdatesPerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FloodLinkStateUpdatesPerInterval'], value)
 
     @property
     def RateControlInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,10 +115,12 @@ class Ospf(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RateControlInterval'])
     @RateControlInterval.setter
     def RateControlInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RateControlInterval'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,6 +129,7 @@ class Ospf(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
 
     def update(self, EnableDrOrBdr=None, Enabled=None, FloodLinkStateUpdatesPerInterval=None, RateControlInterval=None):
+        # type: (bool, bool, int, int) -> Ospf
         """Updates ospf resource on the server.
 
         Args
@@ -128,28 +145,42 @@ class Ospf(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the OSPF protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the MLD protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TxLane(Base):
@@ -42,12 +43,16 @@ class TxLane(Base):
         'SkewValues': 'skewValues',
         'SynchronizedSkewVal': 'synchronizedSkewVal',
     }
+    _SDM_ENUM_MAP = {
+        'laneMappingType': ['custom', 'decrement', 'default', 'increment', 'random'],
+    }
 
-    def __init__(self, parent):
-        super(TxLane, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TxLane, self).__init__(parent, list_op)
 
     @property
     def IsSkewSynchronized(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -56,10 +61,12 @@ class TxLane(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsSkewSynchronized'])
     @IsSkewSynchronized.setter
     def IsSkewSynchronized(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsSkewSynchronized'], value)
 
     @property
     def LaneMappingType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,10 +75,12 @@ class TxLane(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LaneMappingType'])
     @LaneMappingType.setter
     def LaneMappingType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LaneMappingType'], value)
 
     @property
     def MaxSkewVal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,6 +90,7 @@ class TxLane(Base):
 
     @property
     def MinSkewVal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,6 +100,7 @@ class TxLane(Base):
 
     @property
     def NoOfLanes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,6 +110,7 @@ class TxLane(Base):
 
     @property
     def PcsLane(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class TxLane(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcsLane'])
     @PcsLane.setter
     def PcsLane(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcsLane'], value)
 
     @property
     def PhysicalLanes(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -120,6 +134,7 @@ class TxLane(Base):
 
     @property
     def Resolution(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,6 +144,7 @@ class TxLane(Base):
 
     @property
     def SkewValues(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -137,10 +153,12 @@ class TxLane(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkewValues'])
     @SkewValues.setter
     def SkewValues(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkewValues'], value)
 
     @property
     def SynchronizedSkewVal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -149,9 +167,11 @@ class TxLane(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SynchronizedSkewVal'])
     @SynchronizedSkewVal.setter
     def SynchronizedSkewVal(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SynchronizedSkewVal'], value)
 
     def update(self, IsSkewSynchronized=None, LaneMappingType=None, PcsLane=None, SkewValues=None, SynchronizedSkewVal=None):
+        # type: (bool, str, List[int], List[int], int) -> TxLane
         """Updates txLane resource on the server.
 
         Args

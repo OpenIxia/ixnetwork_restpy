@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Tag(Base):
@@ -38,12 +39,15 @@ class Tag(Base):
         'Enabled': 'enabled',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Tag, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Tag, self).__init__(parent, list_op)
 
     @property
     def Id__(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class Tag(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class Tag(Base):
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +77,12 @@ class Tag(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,9 +91,11 @@ class Tag(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Enabled=None, Name=None):
+        # type: (bool, str) -> Tag
         """Updates tag resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -103,6 +113,7 @@ class Tag(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, Name=None):
+        # type: (bool, str) -> Tag
         """Adds a new tag resource on the server and adds it to the container.
 
         Args
@@ -131,6 +142,7 @@ class Tag(Base):
         self._delete()
 
     def find(self, Count=None, Enabled=None, Name=None):
+        # type: (int, bool, str) -> Tag
         """Finds and retrieves tag resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tag resources from the server.

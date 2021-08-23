@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -38,9 +39,11 @@ class Router(Base):
         'RouterId': 'routerId',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
@@ -54,7 +57,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_cc9587abf10a77d16f418600bffb7a30 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def LearnedInfo(self):
@@ -68,10 +74,14 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_c7c2adf9c0d5fe3f39cb3276aa5bf749 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,10 +90,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IsLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,6 +105,7 @@ class Router(Base):
 
     @property
     def RouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +114,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
     @RouterId.setter
     def RouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,9 +128,11 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, Enabled=None, RouterId=None, TrafficGroupId=None):
+        # type: (bool, str, str) -> Router
         """Updates router resource on the server.
 
         Args
@@ -131,6 +148,7 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, RouterId=None, TrafficGroupId=None):
+        # type: (bool, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
         Args
@@ -160,6 +178,7 @@ class Router(Base):
         self._delete()
 
     def find(self, Enabled=None, IsLearnedInfoRefreshed=None, RouterId=None, TrafficGroupId=None):
+        # type: (bool, bool, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
@@ -201,10 +220,16 @@ class Router(Base):
         """
         return self._read(href)
 
-    def RefreshLearnedInfo(self):
+    def RefreshLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInfo operation on the server.
 
         This command refreshes the learned information for the BFD router.
+
+        refreshLearnedInfo(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -212,4 +237,6 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)

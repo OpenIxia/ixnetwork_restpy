@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CsvSnapshot(Base):
@@ -45,12 +46,17 @@ class CsvSnapshot(Base):
         'SnapshotViewCsvGenerationMode': 'snapshotViewCsvGenerationMode',
         'Views': 'views',
     }
+    _SDM_ENUM_MAP = {
+        'snapshotViewContents': ['allPages', 'currentPage'],
+        'snapshotViewCsvGenerationMode': ['appendCSVFile', 'newCSVFile', 'overwriteCSVFile'],
+    }
 
-    def __init__(self, parent):
-        super(CsvSnapshot, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CsvSnapshot, self).__init__(parent, list_op)
 
     @property
     def CsvDecimalPrecision(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -59,10 +65,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvDecimalPrecision'])
     @CsvDecimalPrecision.setter
     def CsvDecimalPrecision(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvDecimalPrecision'], value)
 
     @property
     def CsvDumpTxPortLabelMap(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +79,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvDumpTxPortLabelMap'])
     @CsvDumpTxPortLabelMap.setter
     def CsvDumpTxPortLabelMap(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvDumpTxPortLabelMap'], value)
 
     @property
     def CsvFormatTimestamp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +93,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvFormatTimestamp'])
     @CsvFormatTimestamp.setter
     def CsvFormatTimestamp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvFormatTimestamp'], value)
 
     @property
     def CsvLocation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,10 +107,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvLocation'])
     @CsvLocation.setter
     def CsvLocation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvLocation'], value)
 
     @property
     def CsvName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +121,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvName'])
     @CsvName.setter
     def CsvName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvName'], value)
 
     @property
     def CsvStringQuotes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +135,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvStringQuotes'])
     @CsvStringQuotes.setter
     def CsvStringQuotes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvStringQuotes'], value)
 
     @property
     def CsvSupportsCSVSorting(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -131,10 +149,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CsvSupportsCSVSorting'])
     @CsvSupportsCSVSorting.setter
     def CsvSupportsCSVSorting(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CsvSupportsCSVSorting'], value)
 
     @property
     def NextGenRefreshBeforeSnapshot(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -143,10 +163,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextGenRefreshBeforeSnapshot'])
     @NextGenRefreshBeforeSnapshot.setter
     def NextGenRefreshBeforeSnapshot(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextGenRefreshBeforeSnapshot'], value)
 
     @property
     def OpenViewer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +177,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OpenViewer'])
     @OpenViewer.setter
     def OpenViewer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OpenViewer'], value)
 
     @property
     def SnapshotSettingsName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,6 +192,7 @@ class CsvSnapshot(Base):
 
     @property
     def SnapshotViewContents(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,10 +201,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SnapshotViewContents'])
     @SnapshotViewContents.setter
     def SnapshotViewContents(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SnapshotViewContents'], value)
 
     @property
     def SnapshotViewCsvGenerationMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,10 +215,12 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SnapshotViewCsvGenerationMode'])
     @SnapshotViewCsvGenerationMode.setter
     def SnapshotViewCsvGenerationMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SnapshotViewCsvGenerationMode'], value)
 
     @property
     def Views(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -200,9 +229,11 @@ class CsvSnapshot(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Views'])
     @Views.setter
     def Views(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Views'], value)
 
     def update(self, CsvDecimalPrecision=None, CsvDumpTxPortLabelMap=None, CsvFormatTimestamp=None, CsvLocation=None, CsvName=None, CsvStringQuotes=None, CsvSupportsCSVSorting=None, NextGenRefreshBeforeSnapshot=None, OpenViewer=None, SnapshotViewContents=None, SnapshotViewCsvGenerationMode=None, Views=None):
+        # type: (int, bool, bool, str, str, bool, bool, bool, bool, str, str, List[str]) -> CsvSnapshot
         """Updates csvSnapshot resource on the server.
 
         Args
@@ -226,28 +257,42 @@ class CsvSnapshot(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ResetToDefaults(self):
+    def ResetToDefaults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the resetToDefaults operation on the server.
 
         NOT DEFINED
 
+        resetToDefaults(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('resetToDefaults', payload=payload, response_object=None)
 
-    def TakeCsvSnapshot(self):
+    def TakeCsvSnapshot(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the takeCsvSnapshot operation on the server.
 
         Takes CSV Snapshot. The views and other settings must be set before the call using the /statistics/csvSnapshot attributes.
 
+        takeCsvSnapshot(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('takeCsvSnapshot', payload=payload, response_object=None)

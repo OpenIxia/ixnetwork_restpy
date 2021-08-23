@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GroupTypes(Base):
@@ -36,12 +37,15 @@ class GroupTypes(Base):
         'Indirect': 'indirect',
         'Select': 'select',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GroupTypes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GroupTypes, self).__init__(parent, list_op)
 
     @property
     def All(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class GroupTypes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['All'])
     @All.setter
     def All(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['All'], value)
 
     @property
     def FastFailover(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class GroupTypes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastFailover'])
     @FastFailover.setter
     def FastFailover(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastFailover'], value)
 
     @property
     def Indirect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class GroupTypes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Indirect'])
     @Indirect.setter
     def Indirect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Indirect'], value)
 
     @property
     def Select(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class GroupTypes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Select'])
     @Select.setter
     def Select(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Select'], value)
 
     def update(self, All=None, FastFailover=None, Indirect=None, Select=None):
+        # type: (bool, bool, bool, bool) -> GroupTypes
         """Updates groupTypes resource on the server.
 
         Args

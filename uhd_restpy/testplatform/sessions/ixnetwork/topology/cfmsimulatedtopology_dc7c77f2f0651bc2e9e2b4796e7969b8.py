@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CfmSimulatedTopology(Base):
@@ -37,9 +38,11 @@ class CfmSimulatedTopology(Base):
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CfmSimulatedTopology, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CfmSimulatedTopology, self).__init__(parent, list_op)
 
     @property
     def ConfigMANamesParams(self):
@@ -53,7 +56,10 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.configmanamesparams_122374d4856af71309d8e8b3391bfdcd import ConfigMANamesParams
-        return ConfigMANamesParams(self)._select()
+        if self._properties.get('ConfigMANamesParams', None) is not None:
+            return self._properties.get('ConfigMANamesParams')
+        else:
+            return ConfigMANamesParams(self)._select()
 
     @property
     def ConfigMDLevelsParams(self):
@@ -67,7 +73,10 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.configmdlevelsparams_1bf3d8514855f50e409c0aef7ac6bf1e import ConfigMDLevelsParams
-        return ConfigMDLevelsParams(self)._select()
+        if self._properties.get('ConfigMDLevelsParams', None) is not None:
+            return self._properties.get('ConfigMDLevelsParams')
+        else:
+            return ConfigMDLevelsParams(self)._select()
 
     @property
     def ConfigVLANParams(self):
@@ -81,10 +90,14 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.configvlanparams_ab1a6e3f956da910a4175820dceb06bd import ConfigVLANParams
-        return ConfigVLANParams(self)._select()
+        if self._properties.get('ConfigVLANParams', None) is not None:
+            return self._properties.get('ConfigVLANParams')
+        else:
+            return ConfigVLANParams(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +108,7 @@ class CfmSimulatedTopology(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,6 +118,7 @@ class CfmSimulatedTopology(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,6 +128,7 @@ class CfmSimulatedTopology(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,9 +137,11 @@ class CfmSimulatedTopology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> CfmSimulatedTopology
         """Updates cfmSimulatedTopology resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -139,7 +157,26 @@ class CfmSimulatedTopology(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> CfmSimulatedTopology
+        """Adds a new cfmSimulatedTopology resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved cfmSimulatedTopology resources using find and the newly added cfmSimulatedTopology resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> CfmSimulatedTopology
         """Finds and retrieves cfmSimulatedTopology resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cfmSimulatedTopology resources from the server.
@@ -180,30 +217,15 @@ class CfmSimulatedTopology(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, Active=None):
-        """Base class infrastructure that gets a list of cfmSimulatedTopology device ids encapsulated by this object.
-
-        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
-
-        Args
-        ----
-        - PortNames (str): optional regex of port names
-        - Active (str): optional regex of active
-
-        Returns
-        -------
-        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the abort operation on the server.
 
         Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -211,18 +233,22 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('abort', payload=payload, response_object=None)
 
     def ConfigMANames(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the configMANames operation on the server.
 
         Import IPv6 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
 
-        DEPRECATED configMANames(Arg2=enum, Arg3=string, Arg4=bool)list
-        ---------------------------------------------------------------
+        DEPRECATED configMANames(Arg2=enum, Arg3=string, Arg4=bool, async_operation=bool)list
+        -------------------------------------------------------------------------------------
         - Arg2 (str(megIdFormatTypeIccBasedFormat | megIdFormatTypePrimaryVid | megIdFormatTypeCharStr | megIdFormatTypeTwoOctetInt | megIdFormatTypeRfc2685VpnId)): Import only the best routes (provided route file has this information).
         - Arg3 (str): Import only the best routes (provided route file has this information).
         - Arg4 (bool): Import only the best routes (provided route file has this information).
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each asynchronous action invocation.
 
         Raises
@@ -236,12 +262,13 @@ class CfmSimulatedTopology(Base):
         return self._execute('configMANames', payload=payload, response_object=None)
 
     def ConfigMDLevels(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the configMDLevels operation on the server.
 
         Import IPv6 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
 
-        DEPRECATED configMDLevels(Arg2=number, Arg3=number, Arg4=enum, Arg5=string, Arg6=number, Arg7=enum, Arg8=string, Arg9=number, Arg10=enum, Arg11=string, Arg12=number, Arg13=enum, Arg14=string, Arg15=number, Arg16=enum, Arg17=string, Arg18=number, Arg19=enum, Arg20=string, Arg21=number, Arg22=enum, Arg23=string, Arg24=number, Arg25=enum, Arg26=string)list
-        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        DEPRECATED configMDLevels(Arg2=number, Arg3=number, Arg4=enum, Arg5=string, Arg6=number, Arg7=enum, Arg8=string, Arg9=number, Arg10=enum, Arg11=string, Arg12=number, Arg13=enum, Arg14=string, Arg15=number, Arg16=enum, Arg17=string, Arg18=number, Arg19=enum, Arg20=string, Arg21=number, Arg22=enum, Arg23=string, Arg24=number, Arg25=enum, Arg26=string, async_operation=bool)list
+        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         - Arg2 (number): Import only the best routes (provided route file has this information).
         - Arg3 (number): Text
         - Arg4 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
@@ -267,6 +294,7 @@ class CfmSimulatedTopology(Base):
         - Arg24 (number): Text
         - Arg25 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
         - Arg26 (str): Network Address Step Value.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each asynchronous action invocation.
 
         Raises
@@ -280,12 +308,13 @@ class CfmSimulatedTopology(Base):
         return self._execute('configMDLevels', payload=payload, response_object=None)
 
     def ConfigVLAN(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the configVLAN operation on the server.
 
         Import IPv6 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
 
-        DEPRECATED configVLAN(Arg2=bool, Arg3=enum, Arg4=number, Arg5=number, Arg6=number, Arg7=enum, Arg8=number, Arg9=number, Arg10=number, Arg11=enum, Arg12=number, Arg13=number, Arg14=number, Arg15=enum)list
-        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        DEPRECATED configVLAN(Arg2=bool, Arg3=enum, Arg4=number, Arg5=number, Arg6=number, Arg7=enum, Arg8=number, Arg9=number, Arg10=number, Arg11=enum, Arg12=number, Arg13=number, Arg14=number, Arg15=enum, async_operation=bool)list
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         - Arg2 (bool): Import only the best routes (provided route file has this information).
         - Arg3 (str(vlanStackingTypeSingleVlan | vlanStackingTypeStackedVlan)): Import only the best routes (provided route file has this information).
         - Arg4 (number): Import only the best routes (provided route file has this information).
@@ -300,6 +329,7 @@ class CfmSimulatedTopology(Base):
         - Arg13 (number): Import only the best routes (provided route file has this information).
         - Arg14 (number): Import only the best routes (provided route file has this information).
         - Arg15 (str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200)): Import only the best routes (provided route file has this information).
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each asynchronous action invocation.
 
         Raises
@@ -312,28 +342,62 @@ class CfmSimulatedTopology(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('configVLAN', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Start CPF control plane (equals to promote to negotiated state).
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
+
+    def get_device_ids(self, PortNames=None, Active=None):
+        """Base class infrastructure that gets a list of cfmSimulatedTopology device ids encapsulated by this object.
+
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - Active (str): optional regex of active
+
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

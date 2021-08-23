@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Impairment(Base):
@@ -35,9 +36,12 @@ class Impairment(Base):
         'State': 'state',
         'Warnings': 'warnings',
     }
+    _SDM_ENUM_MAP = {
+        'state': ['applyingChanges', 'changesPending', 'errorOccurred', 'ready'],
+    }
 
-    def __init__(self, parent):
-        super(Impairment, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Impairment, self).__init__(parent, list_op)
 
     @property
     def DefaultProfile(self):
@@ -51,7 +55,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile import DefaultProfile
-        return DefaultProfile(self)._select()
+        if self._properties.get('DefaultProfile', None) is not None:
+            return self._properties.get('DefaultProfile')
+        else:
+            return DefaultProfile(self)._select()
 
     @property
     def Link(self):
@@ -65,7 +72,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.link import Link
-        return Link(self)
+        if self._properties.get('Link', None) is not None:
+            return self._properties.get('Link')
+        else:
+            return Link(self)
 
     @property
     def Profile(self):
@@ -79,10 +89,14 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile import Profile
-        return Profile(self)
+        if self._properties.get('Profile', None) is not None:
+            return self._properties.get('Profile')
+        else:
+            return Profile(self)
 
     @property
     def Errors(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -92,6 +106,7 @@ class Impairment(Base):
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +116,7 @@ class Impairment(Base):
 
     @property
     def Warnings(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -108,10 +124,15 @@ class Impairment(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Applies traffic impairments defined by user.
+
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -119,4 +140,6 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)

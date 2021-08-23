@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LosLof(Base):
@@ -37,12 +38,18 @@ class LosLof(Base):
         'Type': 'type',
         'Units': 'units',
     }
+    _SDM_ENUM_MAP = {
+        'state': ['started', 'stopped'],
+        'type': ['lof', 'los'],
+        'units': ['kMicroseconds', 'kMilliseconds', 'kSeconds', 'microseconds', 'milliseconds', 'seconds'],
+    }
 
-    def __init__(self, parent):
-        super(LosLof, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LosLof, self).__init__(parent, list_op)
 
     @property
     def Duration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,10 +58,12 @@ class LosLof(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Duration'])
     @Duration.setter
     def Duration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
 
     @property
     def IsBurst(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +72,12 @@ class LosLof(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsBurst'])
     @IsBurst.setter
     def IsBurst(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsBurst'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +87,7 @@ class LosLof(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +96,12 @@ class LosLof(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Units(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,9 +110,11 @@ class LosLof(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Units'])
     @Units.setter
     def Units(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Units'], value)
 
     def update(self, Duration=None, IsBurst=None, Type=None, Units=None):
+        # type: (int, bool, str, str) -> LosLof
         """Updates losLof resource on the server.
 
         Args
@@ -114,28 +130,42 @@ class LosLof(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the impairments defined by user (traffic will be impaired).
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the impairments defined by user (traffic will pass unimpaired).
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisTrillSimulatedTopologyConfig(Base):
@@ -40,9 +41,11 @@ class IsisTrillSimulatedTopologyConfig(Base):
         'Name': 'name',
         'TrillNodeTopologyCount': 'trillNodeTopologyCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisTrillSimulatedTopologyConfig, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisTrillSimulatedTopologyConfig, self).__init__(parent, list_op)
 
     @property
     def TrillNodeTopologyList(self):
@@ -56,10 +59,14 @@ class IsisTrillSimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.trillnodetopologylist_4077d4c2167806db82745c07dd5d7357 import TrillNodeTopologyList
-        return TrillNodeTopologyList(self)._select()
+        if self._properties.get('TrillNodeTopologyList', None) is not None:
+            return self._properties.get('TrillNodeTopologyList')
+        else:
+            return TrillNodeTopologyList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -70,6 +77,7 @@ class IsisTrillSimulatedTopologyConfig(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,6 +87,7 @@ class IsisTrillSimulatedTopologyConfig(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +97,7 @@ class IsisTrillSimulatedTopologyConfig(Base):
 
     @property
     def EnableHostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +108,7 @@ class IsisTrillSimulatedTopologyConfig(Base):
 
     @property
     def HostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +119,7 @@ class IsisTrillSimulatedTopologyConfig(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +128,12 @@ class IsisTrillSimulatedTopologyConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TrillNodeTopologyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,9 +142,11 @@ class IsisTrillSimulatedTopologyConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrillNodeTopologyCount'])
     @TrillNodeTopologyCount.setter
     def TrillNodeTopologyCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrillNodeTopologyCount'], value)
 
     def update(self, Name=None, TrillNodeTopologyCount=None):
+        # type: (str, int) -> IsisTrillSimulatedTopologyConfig
         """Updates isisTrillSimulatedTopologyConfig resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -147,7 +163,27 @@ class IsisTrillSimulatedTopologyConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None, TrillNodeTopologyCount=None):
+        # type: (str, int) -> IsisTrillSimulatedTopologyConfig
+        """Adds a new isisTrillSimulatedTopologyConfig resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - TrillNodeTopologyCount (number): Node Topology Count(multiplier)
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisTrillSimulatedTopologyConfig resources using find and the newly added isisTrillSimulatedTopologyConfig resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, TrillNodeTopologyCount=None):
+        # type: (int, str, str, int) -> IsisTrillSimulatedTopologyConfig
         """Finds and retrieves isisTrillSimulatedTopologyConfig resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillSimulatedTopologyConfig resources from the server.
@@ -189,6 +225,90 @@ class IsisTrillSimulatedTopologyConfig(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, EnableHostName=None, HostName=None):
         """Base class infrastructure that gets a list of isisTrillSimulatedTopologyConfig device ids encapsulated by this object.
 
@@ -210,66 +330,3 @@ class IsisTrillSimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start Isis Simulated Topology
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop Isis Simulated Topology
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

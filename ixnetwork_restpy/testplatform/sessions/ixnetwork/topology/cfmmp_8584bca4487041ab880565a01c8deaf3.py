@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CfmMp(Base):
@@ -154,9 +155,11 @@ class CfmMp(Base):
         'VlanStacking': 'vlanStacking',
         'VlanTpid': 'vlanTpid',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CfmMp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CfmMp, self).__init__(parent, list_op)
 
     @property
     def CfmCustomTLVList(self):
@@ -170,7 +173,10 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import CfmCustomTLVList
-        return CfmCustomTLVList(self)
+        if self._properties.get('CfmCustomTLVList', None) is not None:
+            return self._properties.get('CfmCustomTLVList')
+        else:
+            return CfmCustomTLVList(self)
 
     @property
     def CfmSlm(self):
@@ -184,7 +190,10 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f import CfmSlm
-        return CfmSlm(self)._select()
+        if self._properties.get('CfmSlm', None) is not None:
+            return self._properties.get('CfmSlm')
+        else:
+            return CfmSlm(self)._select()
 
     @property
     def StartCcmEmulatedMpParams(self):
@@ -198,7 +207,10 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.startccmemulatedmpparams_62b1a2be6189ae1e1aa5f0cee8254081 import StartCcmEmulatedMpParams
-        return StartCcmEmulatedMpParams(self)._select()
+        if self._properties.get('StartCcmEmulatedMpParams', None) is not None:
+            return self._properties.get('StartCcmEmulatedMpParams')
+        else:
+            return StartCcmEmulatedMpParams(self)._select()
 
     @property
     def StopCcmEmulatedMpParams(self):
@@ -212,10 +224,14 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopccmemulatedmpparams_a24dfdb02ad9d3f95459876f02f9eff0 import StopCcmEmulatedMpParams
-        return StopCcmEmulatedMpParams(self)._select()
+        if self._properties.get('StopCcmEmulatedMpParams', None) is not None:
+            return self._properties.get('StopCcmEmulatedMpParams')
+        else:
+            return StopCcmEmulatedMpParams(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +242,7 @@ class CfmMp(Base):
 
     @property
     def AisEnableUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +253,7 @@ class CfmMp(Base):
 
     @property
     def AisInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +264,7 @@ class CfmMp(Base):
 
     @property
     def AisMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +275,7 @@ class CfmMp(Base):
 
     @property
     def AisPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +286,7 @@ class CfmMp(Base):
 
     @property
     def AisUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -276,6 +297,7 @@ class CfmMp(Base):
 
     @property
     def AutoDmTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -286,6 +308,7 @@ class CfmMp(Base):
 
     @property
     def AutoDmTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -296,6 +319,7 @@ class CfmMp(Base):
 
     @property
     def AutoLbIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +330,7 @@ class CfmMp(Base):
 
     @property
     def AutoLbTimeoutInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +341,7 @@ class CfmMp(Base):
 
     @property
     def AutoLbTimerInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -326,6 +352,7 @@ class CfmMp(Base):
 
     @property
     def AutoLmIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -336,6 +363,7 @@ class CfmMp(Base):
 
     @property
     def AutoLmTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -346,6 +374,7 @@ class CfmMp(Base):
 
     @property
     def AutoLmTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -356,6 +385,7 @@ class CfmMp(Base):
 
     @property
     def AutoLtIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -366,6 +396,7 @@ class CfmMp(Base):
 
     @property
     def AutoLtTimeoutInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -376,6 +407,7 @@ class CfmMp(Base):
 
     @property
     def AutoLtTimerInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -386,6 +418,7 @@ class CfmMp(Base):
 
     @property
     def AutoLtTtl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -396,6 +429,7 @@ class CfmMp(Base):
 
     @property
     def AutodmIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +440,7 @@ class CfmMp(Base):
 
     @property
     def CVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +451,7 @@ class CfmMp(Base):
 
     @property
     def CVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +462,7 @@ class CfmMp(Base):
 
     @property
     def CVlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +473,7 @@ class CfmMp(Base):
 
     @property
     def CciInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +484,7 @@ class CfmMp(Base):
 
     @property
     def CcmLmmTxFcf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +495,7 @@ class CfmMp(Base):
 
     @property
     def CcmLmmTxFcfStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +506,7 @@ class CfmMp(Base):
 
     @property
     def CcmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -476,6 +517,7 @@ class CfmMp(Base):
 
     @property
     def CcmRxFcb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -486,6 +528,7 @@ class CfmMp(Base):
 
     @property
     def CcmRxFcbStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -496,6 +539,7 @@ class CfmMp(Base):
 
     @property
     def ChassisId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -506,6 +550,7 @@ class CfmMp(Base):
 
     @property
     def ChassisIdLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -516,6 +561,7 @@ class CfmMp(Base):
 
     @property
     def ChassisIdSubType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -526,6 +572,7 @@ class CfmMp(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -535,6 +582,7 @@ class CfmMp(Base):
 
     @property
     def DataTlvLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -545,6 +593,7 @@ class CfmMp(Base):
 
     @property
     def DataTlvValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -555,6 +604,7 @@ class CfmMp(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -564,6 +614,7 @@ class CfmMp(Base):
 
     @property
     def DmAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -574,6 +625,7 @@ class CfmMp(Base):
 
     @property
     def DmDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -584,6 +636,7 @@ class CfmMp(Base):
 
     @property
     def DmMethod(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -594,6 +647,7 @@ class CfmMp(Base):
 
     @property
     def DmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -604,6 +658,7 @@ class CfmMp(Base):
 
     @property
     def Enable1slRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -614,6 +669,7 @@ class CfmMp(Base):
 
     @property
     def EnableAisRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -624,6 +680,7 @@ class CfmMp(Base):
 
     @property
     def EnableAutoDm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -634,6 +691,7 @@ class CfmMp(Base):
 
     @property
     def EnableAutoLb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -644,6 +702,7 @@ class CfmMp(Base):
 
     @property
     def EnableAutoLm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -654,6 +713,7 @@ class CfmMp(Base):
 
     @property
     def EnableAutoLt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -664,6 +724,7 @@ class CfmMp(Base):
 
     @property
     def EnableDataTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -674,6 +735,7 @@ class CfmMp(Base):
 
     @property
     def EnableInterfaceStatusTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -684,6 +746,7 @@ class CfmMp(Base):
 
     @property
     def EnableLckRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -694,6 +757,7 @@ class CfmMp(Base):
 
     @property
     def EnableLmCounterUpdate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -704,6 +768,7 @@ class CfmMp(Base):
 
     @property
     def EnableOrganizationSpecificTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -714,6 +779,7 @@ class CfmMp(Base):
 
     @property
     def EnablePortStatusTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -724,6 +790,7 @@ class CfmMp(Base):
 
     @property
     def EnableSenderIdTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -734,6 +801,7 @@ class CfmMp(Base):
 
     @property
     def EnableSlmRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -744,6 +812,7 @@ class CfmMp(Base):
 
     @property
     def EnableTstRx(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -754,6 +823,7 @@ class CfmMp(Base):
 
     @property
     def EnableVlan(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -764,6 +834,7 @@ class CfmMp(Base):
 
     @property
     def InterRemoteMepRxIncrementStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -774,6 +845,7 @@ class CfmMp(Base):
 
     @property
     def InterRemoteMepTxIncrementStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -784,6 +856,7 @@ class CfmMp(Base):
 
     @property
     def LbAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -794,6 +867,7 @@ class CfmMp(Base):
 
     @property
     def LbDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -804,6 +878,7 @@ class CfmMp(Base):
 
     @property
     def LbmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -814,6 +889,7 @@ class CfmMp(Base):
 
     @property
     def LckEnableUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -824,6 +900,7 @@ class CfmMp(Base):
 
     @property
     def LckInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -834,6 +911,7 @@ class CfmMp(Base):
 
     @property
     def LckMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -844,6 +922,7 @@ class CfmMp(Base):
 
     @property
     def LckPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -854,6 +933,7 @@ class CfmMp(Base):
 
     @property
     def LckSupportAisGeneration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -864,6 +944,7 @@ class CfmMp(Base):
 
     @property
     def LckUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -874,6 +955,7 @@ class CfmMp(Base):
 
     @property
     def LmAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -884,6 +966,7 @@ class CfmMp(Base):
 
     @property
     def LmDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -894,6 +977,7 @@ class CfmMp(Base):
 
     @property
     def LmMethodType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -904,6 +988,7 @@ class CfmMp(Base):
 
     @property
     def LmmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -914,6 +999,7 @@ class CfmMp(Base):
 
     @property
     def LmrPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -924,6 +1010,7 @@ class CfmMp(Base):
 
     @property
     def LmrRxFcf(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -934,6 +1021,7 @@ class CfmMp(Base):
 
     @property
     def LmrRxFcfStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -944,6 +1032,7 @@ class CfmMp(Base):
 
     @property
     def LmrTxFcb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -954,6 +1043,7 @@ class CfmMp(Base):
 
     @property
     def LmrTxFcbStepPer100mSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -964,6 +1054,7 @@ class CfmMp(Base):
 
     @property
     def LtAllRemoteMeps(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -974,6 +1065,7 @@ class CfmMp(Base):
 
     @property
     def LtDestinationMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -984,6 +1076,7 @@ class CfmMp(Base):
 
     @property
     def LtmPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -994,6 +1087,7 @@ class CfmMp(Base):
 
     @property
     def MacAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1003,6 +1097,7 @@ class CfmMp(Base):
 
     @property
     def ManagementAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1013,6 +1108,7 @@ class CfmMp(Base):
 
     @property
     def ManagementAddressDomain(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1023,6 +1119,7 @@ class CfmMp(Base):
 
     @property
     def ManagementAddressDomainLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1033,6 +1130,7 @@ class CfmMp(Base):
 
     @property
     def ManagementAddressLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1043,6 +1141,7 @@ class CfmMp(Base):
 
     @property
     def MdMegLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1053,6 +1152,7 @@ class CfmMp(Base):
 
     @property
     def MdName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1063,6 +1163,7 @@ class CfmMp(Base):
 
     @property
     def MdNameFormat(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1073,6 +1174,7 @@ class CfmMp(Base):
 
     @property
     def MegId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1083,6 +1185,7 @@ class CfmMp(Base):
 
     @property
     def MegIdFormat(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1093,6 +1196,7 @@ class CfmMp(Base):
 
     @property
     def MepId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1103,6 +1207,7 @@ class CfmMp(Base):
 
     @property
     def MpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1113,6 +1218,7 @@ class CfmMp(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1121,10 +1227,12 @@ class CfmMp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfCustomTLVs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1133,10 +1241,12 @@ class CfmMp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'])
     @NumberOfCustomTLVs.setter
     def NumberOfCustomTLVs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfCustomTLVs'], value)
 
     @property
     def NumberOfSlm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1145,10 +1255,12 @@ class CfmMp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSlm'])
     @NumberOfSlm.setter
     def NumberOfSlm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfSlm'], value)
 
     @property
     def OrganizationSpecificTlvLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1159,6 +1271,7 @@ class CfmMp(Base):
 
     @property
     def OrganizationSpecificTlvValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1169,6 +1282,7 @@ class CfmMp(Base):
 
     @property
     def OverrideVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1179,6 +1293,7 @@ class CfmMp(Base):
 
     @property
     def Rdi(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1189,6 +1304,7 @@ class CfmMp(Base):
 
     @property
     def SVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1199,6 +1315,7 @@ class CfmMp(Base):
 
     @property
     def SVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1209,6 +1326,7 @@ class CfmMp(Base):
 
     @property
     def SVlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1219,6 +1337,7 @@ class CfmMp(Base):
 
     @property
     def ShortMaName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1229,6 +1348,7 @@ class CfmMp(Base):
 
     @property
     def ShortMaNameFormat(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1239,6 +1359,7 @@ class CfmMp(Base):
 
     @property
     def SlmInitialTxfcb(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1249,6 +1370,7 @@ class CfmMp(Base):
 
     @property
     def SlmSimulatedLossInRxPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1259,6 +1381,7 @@ class CfmMp(Base):
 
     @property
     def SlmTxfcbStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1269,6 +1392,7 @@ class CfmMp(Base):
 
     @property
     def TstEnableUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1279,6 +1403,7 @@ class CfmMp(Base):
 
     @property
     def TstIncrementPacketLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1289,6 +1414,7 @@ class CfmMp(Base):
 
     @property
     def TstInitialPatternValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1299,6 +1425,7 @@ class CfmMp(Base):
 
     @property
     def TstInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1309,6 +1436,7 @@ class CfmMp(Base):
 
     @property
     def TstMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1319,6 +1447,7 @@ class CfmMp(Base):
 
     @property
     def TstOverwriteSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1329,6 +1458,7 @@ class CfmMp(Base):
 
     @property
     def TstPacketLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1339,6 +1469,7 @@ class CfmMp(Base):
 
     @property
     def TstPacketLengthStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1349,6 +1480,7 @@ class CfmMp(Base):
 
     @property
     def TstPatternType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1359,6 +1491,7 @@ class CfmMp(Base):
 
     @property
     def TstPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1369,6 +1502,7 @@ class CfmMp(Base):
 
     @property
     def TstSequenceNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1379,6 +1513,7 @@ class CfmMp(Base):
 
     @property
     def TstTestType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1389,6 +1524,7 @@ class CfmMp(Base):
 
     @property
     def TstUnicastMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1399,6 +1535,7 @@ class CfmMp(Base):
 
     @property
     def VlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1409,6 +1546,7 @@ class CfmMp(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1419,6 +1557,7 @@ class CfmMp(Base):
 
     @property
     def VlanStacking(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1429,6 +1568,7 @@ class CfmMp(Base):
 
     @property
     def VlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1438,6 +1578,7 @@ class CfmMp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanTpid']))
 
     def update(self, Name=None, NumberOfCustomTLVs=None, NumberOfSlm=None):
+        # type: (str, int, int) -> CfmMp
         """Updates cfmMp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1454,6 +1595,464 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ActivateMpEmulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the activateMpEmulated operation on the server.
+
+        Activate Emulated MP
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        activateMpEmulated(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateMpEmulated(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        activateMpEmulated(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('activateMpEmulated', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clears All Learned Info for the selected Root MP.
+
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def DeactivateMpEmulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the deactivateMpEmulated operation on the server.
+
+        Deactivate Emulated MP
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        deactivateMpEmulated(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateMpEmulated(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        deactivateMpEmulated(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('deactivateMpEmulated', payload=payload, response_object=None)
+
+    def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmAISDbLearnedInformation operation on the server.
+
+        Get Learned AIS Information
+
+        getCfmAISDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmCcmLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmCcmLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmCcmLearnedInformation(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmDMDbLearnedInformation operation on the server.
+
+        Get Learned DM Information
+
+        getCfmDMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLCKDbLearnedInformation operation on the server.
+
+        Get Learned LCK Information
+
+        getCfmLCKDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmLinkTraceDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLMDbLearnedInformation operation on the server.
+
+        Get Learned LM Information
+
+        getCfmLMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLoopbackDbLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmLoopbackDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmTSTDbLearnedInformation operation on the server.
+
+        Get Learned TST Information
+
+        getCfmTSTDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicDMLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicDMLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLBLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLBLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLMLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLMLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLTLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLTLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
+
+    def StartCcmEmulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startCcmEmulated operation on the server.
+
+        Start CCM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startCcmEmulated(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startCcmEmulated(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startCcmEmulated(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startCcmEmulated', payload=payload, response_object=None)
+
+    def StartCcmEmulatedMp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the startCcmEmulatedMp operation on the server.
+
+        Start CCM PDU Transmission.
+
+        DEPRECATED startCcmEmulatedMp(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startCcmEmulatedMp', payload=payload, response_object=None)
+
+    def StopCcmEmulated(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopCcmEmulated operation on the server.
+
+        Stop CCM
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopCcmEmulated(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopCcmEmulated(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopCcmEmulated(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopCcmEmulated', payload=payload, response_object=None)
+
+    def StopCcmEmulatedMp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopCcmEmulatedMp operation on the server.
+
+        Stop CCM PDU Transmission.
+
+        DEPRECATED stopCcmEmulatedMp(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopCcmEmulatedMp', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AisEnableUnicastMac=None, AisInterval=None, AisMode=None, AisPriority=None, AisUnicastMac=None, AutoDmTimeout=None, AutoDmTimer=None, AutoLbIteration=None, AutoLbTimeoutInSec=None, AutoLbTimerInSec=None, AutoLmIteration=None, AutoLmTimeout=None, AutoLmTimer=None, AutoLtIteration=None, AutoLtTimeoutInSec=None, AutoLtTimerInSec=None, AutoLtTtl=None, AutodmIteration=None, CVlanId=None, CVlanPriority=None, CVlanTpid=None, CciInterval=None, CcmLmmTxFcf=None, CcmLmmTxFcfStepPer100mSec=None, CcmPriority=None, CcmRxFcb=None, CcmRxFcbStepPer100mSec=None, ChassisId=None, ChassisIdLength=None, ChassisIdSubType=None, DataTlvLength=None, DataTlvValue=None, DmAllRemoteMeps=None, DmDestinationMacAddress=None, DmMethod=None, DmPriority=None, Enable1slRx=None, EnableAisRx=None, EnableAutoDm=None, EnableAutoLb=None, EnableAutoLm=None, EnableAutoLt=None, EnableDataTlv=None, EnableInterfaceStatusTlv=None, EnableLckRx=None, EnableLmCounterUpdate=None, EnableOrganizationSpecificTlv=None, EnablePortStatusTlv=None, EnableSenderIdTlv=None, EnableSlmRx=None, EnableTstRx=None, EnableVlan=None, InterRemoteMepRxIncrementStep=None, InterRemoteMepTxIncrementStep=None, LbAllRemoteMeps=None, LbDestinationMacAddress=None, LbmPriority=None, LckEnableUnicastMac=None, LckInterval=None, LckMode=None, LckPriority=None, LckSupportAisGeneration=None, LckUnicastMac=None, LmAllRemoteMeps=None, LmDestinationMacAddress=None, LmMethodType=None, LmmPriority=None, LmrPriority=None, LmrRxFcf=None, LmrRxFcfStepPer100mSec=None, LmrTxFcb=None, LmrTxFcbStepPer100mSec=None, LtAllRemoteMeps=None, LtDestinationMacAddress=None, LtmPriority=None, ManagementAddress=None, ManagementAddressDomain=None, ManagementAddressDomainLength=None, ManagementAddressLength=None, MdMegLevel=None, MdName=None, MdNameFormat=None, MegId=None, MegIdFormat=None, MepId=None, MpType=None, OrganizationSpecificTlvLength=None, OrganizationSpecificTlvValue=None, OverrideVlanPriority=None, Rdi=None, SVlanId=None, SVlanPriority=None, SVlanTpid=None, ShortMaName=None, ShortMaNameFormat=None, SlmInitialTxfcb=None, SlmSimulatedLossInRxPath=None, SlmTxfcbStep=None, TstEnableUnicastMac=None, TstIncrementPacketLength=None, TstInitialPatternValue=None, TstInterval=None, TstMode=None, TstOverwriteSequenceNumber=None, TstPacketLength=None, TstPacketLengthStep=None, TstPatternType=None, TstPriority=None, TstSequenceNumber=None, TstTestType=None, TstUnicastMac=None, VlanId=None, VlanPriority=None, VlanStacking=None, VlanTpid=None):
         """Base class infrastructure that gets a list of cfmMp device ids encapsulated by this object.
@@ -1589,403 +2188,3 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ActivateMpEmulated(self, *args, **kwargs):
-        """Executes the activateMpEmulated operation on the server.
-
-        Activate Emulated MP
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        activateMpEmulated(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        activateMpEmulated(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('activateMpEmulated', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clears All Learned Info for the selected Root MP.
-
-        clearAllLearnedInfo(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def DeactivateMpEmulated(self, *args, **kwargs):
-        """Executes the deactivateMpEmulated operation on the server.
-
-        Deactivate Emulated MP
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        deactivateMpEmulated(SessionIndices=list)
-        -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        deactivateMpEmulated(SessionIndices=string)
-        -------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('deactivateMpEmulated', payload=payload, response_object=None)
-
-    def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmAISDbLearnedInformation operation on the server.
-
-        Get Learned AIS Information
-
-        getCfmAISDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmCcmLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmCcmLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmCcmLearnedInformation(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmDMDbLearnedInformation operation on the server.
-
-        Get Learned DM Information
-
-        getCfmDMDbLearnedInformation(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLCKDbLearnedInformation operation on the server.
-
-        Get Learned LCK Information
-
-        getCfmLCKDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmLinkTraceDbLearnedInformation(Arg2=list)list
-        --------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLMDbLearnedInformation operation on the server.
-
-        Get Learned LM Information
-
-        getCfmLMDbLearnedInformation(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLoopbackDbLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmLoopbackDbLearnedInformation(Arg2=list)list
-        -------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmTSTDbLearnedInformation operation on the server.
-
-        Get Learned TST Information
-
-        getCfmTSTDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicDMLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicDMLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLBLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLBLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLMLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLMLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLTLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLTLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
-
-    def StartCcmEmulated(self, *args, **kwargs):
-        """Executes the startCcmEmulated operation on the server.
-
-        Start CCM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startCcmEmulated(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startCcmEmulated(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCcmEmulated', payload=payload, response_object=None)
-
-    def StartCcmEmulatedMp(self, *args, **kwargs):
-        """Executes the startCcmEmulatedMp operation on the server.
-
-        Start CCM PDU Transmission.
-
-        DEPRECATED startCcmEmulatedMp(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startCcmEmulatedMp', payload=payload, response_object=None)
-
-    def StopCcmEmulated(self, *args, **kwargs):
-        """Executes the stopCcmEmulated operation on the server.
-
-        Stop CCM
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopCcmEmulated(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopCcmEmulated(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCcmEmulated', payload=payload, response_object=None)
-
-    def StopCcmEmulatedMp(self, *args, **kwargs):
-        """Executes the stopCcmEmulatedMp operation on the server.
-
-        Stop CCM PDU Transmission.
-
-        DEPRECATED stopCcmEmulatedMp(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopCcmEmulatedMp', payload=payload, response_object=None)

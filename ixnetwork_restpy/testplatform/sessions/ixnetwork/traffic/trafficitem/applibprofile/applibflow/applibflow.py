@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AppLibFlow(Base):
@@ -41,9 +42,11 @@ class AppLibFlow(Base):
         'Parameters': 'parameters',
         'Percentage': 'percentage',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AppLibFlow, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AppLibFlow, self).__init__(parent, list_op)
 
     @property
     def Connection(self):
@@ -57,7 +60,10 @@ class AppLibFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.connection.connection import Connection
-        return Connection(self)
+        if self._properties.get('Connection', None) is not None:
+            return self._properties.get('Connection')
+        else:
+            return Connection(self)
 
     @property
     def Parameter(self):
@@ -71,10 +77,14 @@ class AppLibFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.parameter import Parameter
-        return Parameter(self)
+        if self._properties.get('Parameter', None) is not None:
+            return self._properties.get('Parameter')
+        else:
+            return Parameter(self)
 
     @property
     def ConfigId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +94,7 @@ class AppLibFlow(Base):
 
     @property
     def ConnectionCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +104,7 @@ class AppLibFlow(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +114,7 @@ class AppLibFlow(Base):
 
     @property
     def FlowId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,6 +124,7 @@ class AppLibFlow(Base):
 
     @property
     def FlowSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,6 +134,7 @@ class AppLibFlow(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,6 +144,7 @@ class AppLibFlow(Base):
 
     @property
     def Parameters(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -138,6 +154,7 @@ class AppLibFlow(Base):
 
     @property
     def Percentage(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,9 +163,11 @@ class AppLibFlow(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
     @Percentage.setter
     def Percentage(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
 
     def update(self, Percentage=None):
+        # type: (int) -> AppLibFlow
         """Updates appLibFlow resource on the server.
 
         Args
@@ -161,7 +180,26 @@ class AppLibFlow(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Percentage=None):
+        # type: (int) -> AppLibFlow
+        """Adds a new appLibFlow resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Percentage (number): The amount of traffic generated for this flows.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved appLibFlow resources using find and the newly added appLibFlow resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ConfigId=None, ConnectionCount=None, Description=None, FlowId=None, FlowSize=None, Name=None, Parameters=None, Percentage=None):
+        # type: (int, int, str, str, int, str, List[str], int) -> AppLibFlow
         """Finds and retrieves appLibFlow resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve appLibFlow resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpS5S8SgwGlobals(Base):
@@ -48,9 +49,11 @@ class EgtpS5S8SgwGlobals(Base):
         'TsSpec': 'tsSpec',
         'UseMaxRatesForDcp': 'useMaxRatesForDcp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpS5S8SgwGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpS5S8SgwGlobals, self).__init__(parent, list_op)
 
     @property
     def GlobalEgtpApnS5S8(self):
@@ -64,7 +67,10 @@ class EgtpS5S8SgwGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8sgwglobals.globalegtpapns5s8.globalegtpapns5s8 import GlobalEgtpApnS5S8
-        return GlobalEgtpApnS5S8(self)
+        if self._properties.get('GlobalEgtpApnS5S8', None) is not None:
+            return self._properties.get('GlobalEgtpApnS5S8')
+        else:
+            return GlobalEgtpApnS5S8(self)
 
     @property
     def GlobalTrafficProfileS5S8(self):
@@ -78,10 +84,14 @@ class EgtpS5S8SgwGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.egtps5s8sgwglobals.globaltrafficprofiles5s8.globaltrafficprofiles5s8 import GlobalTrafficProfileS5S8
-        return GlobalTrafficProfileS5S8(self)
+        if self._properties.get('GlobalTrafficProfileS5S8', None) is not None:
+            return self._properties.get('GlobalTrafficProfileS5S8')
+        else:
+            return GlobalTrafficProfileS5S8(self)
 
     @property
     def EnableDynamicQosCtrl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicQosCtrl'])
     @EnableDynamicQosCtrl.setter
     def EnableDynamicQosCtrl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDynamicQosCtrl'], value)
 
     @property
     def EnableGatewayArp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGatewayArp'])
     @EnableGatewayArp.setter
     def EnableGatewayArp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGatewayArp'], value)
 
     @property
     def EnablePartialNegotiation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePartialNegotiation'])
     @EnablePartialNegotiation.setter
     def EnablePartialNegotiation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePartialNegotiation'], value)
 
     @property
     def GatewayArpRequestRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,10 +142,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
 
     @property
     def MaxMbrUAndD(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -138,10 +156,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxMbrUAndD'])
     @MaxMbrUAndD.setter
     def MaxMbrUAndD(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxMbrUAndD'], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,10 +170,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
 
     @property
     def MaxOutstandingReleases(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -162,10 +184,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -174,10 +198,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,6 +213,7 @@ class EgtpS5S8SgwGlobals(Base):
 
     @property
     def SendOneArpFromEachInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -195,10 +222,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'])
     @SendOneArpFromEachInterface.setter
     def SendOneArpFromEachInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'], value)
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,10 +236,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def TeardownRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,10 +250,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     @property
     def TsSpec(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,10 +264,12 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TsSpec'])
     @TsSpec.setter
     def TsSpec(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TsSpec'], value)
 
     @property
     def UseMaxRatesForDcp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -243,9 +278,11 @@ class EgtpS5S8SgwGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseMaxRatesForDcp'])
     @UseMaxRatesForDcp.setter
     def UseMaxRatesForDcp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseMaxRatesForDcp'], value)
 
     def update(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
+        # type: (bool, bool, bool, int, int, int, int, int, bool, int, int, str, bool) -> EgtpS5S8SgwGlobals
         """Updates egtpS5S8SgwGlobals resource on the server.
 
         Args
@@ -271,6 +308,7 @@ class EgtpS5S8SgwGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
+        # type: (bool, bool, bool, int, int, int, int, int, bool, int, int, str, bool) -> EgtpS5S8SgwGlobals
         """Adds a new egtpS5S8SgwGlobals resource on the server and adds it to the container.
 
         Args
@@ -310,6 +348,7 @@ class EgtpS5S8SgwGlobals(Base):
         self._delete()
 
     def find(self, EnableDynamicQosCtrl=None, EnableGatewayArp=None, EnablePartialNegotiation=None, GatewayArpRequestRate=None, MaxMbrUAndD=None, MaxOutstandingGatewayArpRequests=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, SendOneArpFromEachInterface=None, SetupRateInitial=None, TeardownRateInitial=None, TsSpec=None, UseMaxRatesForDcp=None):
+        # type: (bool, bool, bool, int, int, int, int, int, str, bool, int, int, str, bool) -> EgtpS5S8SgwGlobals
         """Finds and retrieves egtpS5S8SgwGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpS5S8SgwGlobals resources from the server.

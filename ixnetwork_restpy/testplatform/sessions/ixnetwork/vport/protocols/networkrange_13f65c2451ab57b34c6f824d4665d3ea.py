@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetworkRange(Base):
@@ -52,9 +53,12 @@ class NetworkRange(Base):
         'TePaths': 'tePaths',
         'UseWideMetric': 'useWideMetric',
     }
+    _SDM_ENUM_MAP = {
+        'linkType': ['pointToPoint', 'broadcast'],
+    }
 
-    def __init__(self, parent):
-        super(NetworkRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetworkRange, self).__init__(parent, list_op)
 
     @property
     def EntryTe(self):
@@ -68,7 +72,10 @@ class NetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_f91a7acd3933b98f6f3aecf039325b41 import EntryTe
-        return EntryTe(self)._select()
+        if self._properties.get('EntryTe', None) is not None:
+            return self._properties.get('EntryTe')
+        else:
+            return EntryTe(self)._select()
 
     @property
     def RangeTe(self):
@@ -82,10 +89,14 @@ class NetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_4dac5090bdeb7392da854c328353c856 import RangeTe
-        return RangeTe(self)._select()
+        if self._properties.get('RangeTe', None) is not None:
+            return self._properties.get('RangeTe')
+        else:
+            return RangeTe(self)._select()
 
     @property
     def EnableHostName(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -94,10 +105,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
     @EnableHostName.setter
     def EnableHostName(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,10 +119,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EntryCol(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,10 +133,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryCol'])
     @EntryCol.setter
     def EntryCol(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryCol'], value)
 
     @property
     def EntryRow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +147,7 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
     @EntryRow.setter
     def EntryRow(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
 
     @property
@@ -170,6 +188,7 @@ class NetworkRange(Base):
 
     @property
     def HostNamePrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,6 +197,7 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostNamePrefix'])
     @HostNamePrefix.setter
     def HostNamePrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostNamePrefix'], value)
 
     @property
@@ -194,6 +214,7 @@ class NetworkRange(Base):
 
     @property
     def InterfaceMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,10 +223,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
 
     @property
     def Ipv6MtMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,10 +237,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6MtMetric'])
     @Ipv6MtMetric.setter
     def Ipv6MtMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6MtMetric'], value)
 
     @property
     def LinkType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,10 +251,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
     @LinkType.setter
     def LinkType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
 
     @property
     def NoOfCols(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -238,10 +265,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCols'])
     @NoOfCols.setter
     def NoOfCols(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCols'], value)
 
     @property
     def NoOfRows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -250,10 +279,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfRows'])
     @NoOfRows.setter
     def NoOfRows(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfRows'], value)
 
     @property
     def RouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -262,10 +293,12 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
     @RouterId.setter
     def RouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
 
     @property
     def RouterIdIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -274,6 +307,7 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterIdIncrement'])
     @RouterIdIncrement.setter
     def RouterIdIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterIdIncrement'], value)
 
     @property
@@ -290,6 +324,7 @@ class NetworkRange(Base):
 
     @property
     def UseWideMetric(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -298,6 +333,7 @@ class NetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseWideMetric'])
     @UseWideMetric.setter
     def UseWideMetric(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseWideMetric'], value)
 
     def update(self, EnableHostName=None, Enabled=None, EntryCol=None, EntryRow=None, GridNodeRoutes=None, GridOutsideExLinks=None, GridOutsideLinks=None, HostNamePrefix=None, InterfaceIps=None, InterfaceMetric=None, Ipv6MtMetric=None, LinkType=None, NoOfCols=None, NoOfRows=None, RouterId=None, RouterIdIncrement=None, TePaths=None, UseWideMetric=None):

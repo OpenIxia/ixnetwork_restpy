@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ErroredFrameTlv(Base):
@@ -36,12 +37,15 @@ class ErroredFrameTlv(Base):
         'Threshold': 'threshold',
         'Window': 'window',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ErroredFrameTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ErroredFrameTlv, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class ErroredFrameTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Frames(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class ErroredFrameTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Frames'])
     @Frames.setter
     def Frames(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Frames'], value)
 
     @property
     def Threshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class ErroredFrameTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Threshold'])
     @Threshold.setter
     def Threshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Threshold'], value)
 
     @property
     def Window(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class ErroredFrameTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Window'])
     @Window.setter
     def Window(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Window'], value)
 
     def update(self, Enabled=None, Frames=None, Threshold=None, Window=None):
+        # type: (bool, int, int, int) -> ErroredFrameTlv
         """Updates erroredFrameTlv resource on the server.
 
         Args

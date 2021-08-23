@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RepeatableContainer(Base):
@@ -35,9 +36,11 @@ class RepeatableContainer(Base):
         'IsEnabled': 'isEnabled',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RepeatableContainer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RepeatableContainer, self).__init__(parent, list_op)
 
     @property
     def Object(self):
@@ -51,10 +54,14 @@ class RepeatableContainer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
-        return Object(self)
+        if self._properties.get('Object', None) is not None:
+            return self._properties.get('Object')
+        else:
+            return Object(self)
 
     @property
     def IsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class RepeatableContainer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
     @IsEnabled.setter
     def IsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +84,11 @@ class RepeatableContainer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, IsEnabled=None, Name=None):
+        # type: (bool, str) -> RepeatableContainer
         """Updates repeatableContainer resource on the server.
 
         Args
@@ -91,7 +102,27 @@ class RepeatableContainer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, IsEnabled=None, Name=None):
+        # type: (bool, str) -> RepeatableContainer
+        """Adds a new repeatableContainer resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - IsEnabled (bool): Enables/disables this field
+        - Name (str): Name of the tlv
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved repeatableContainer resources using find and the newly added repeatableContainer resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, IsEnabled=None, Name=None):
+        # type: (bool, str) -> RepeatableContainer
         """Finds and retrieves repeatableContainer resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve repeatableContainer resources from the server.
@@ -132,13 +163,15 @@ class RepeatableContainer(Base):
         return self._read(href)
 
     def UpdateObjectsCount(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the updateObjectsCount operation on the server.
 
         Update the count in repeatable field
 
-        updateObjectsCount(Arg2=number)
-        -------------------------------
+        updateObjectsCount(Arg2=number, async_operation=bool)
+        -----------------------------------------------------
         - Arg2 (number): The new value of child objects count in repeatable field
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

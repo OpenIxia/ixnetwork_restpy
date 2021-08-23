@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -43,9 +44,12 @@ class Router(Base):
         'RpDiscoveryMode': 'rpDiscoveryMode',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+        'rpDiscoveryMode': ['manual', 'auto'],
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
@@ -59,10 +63,14 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_b3ccde9a43957c4e73c3cf0310a7cf18 import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def DataMdtInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,10 +79,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataMdtInterval'])
     @DataMdtInterval.setter
     def DataMdtInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataMdtInterval'], value)
 
     @property
     def DataMdtTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,10 +93,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataMdtTimeOut'])
     @DataMdtTimeOut.setter
     def DataMdtTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataMdtTimeOut'], value)
 
     @property
     def DrPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +107,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DrPriority'])
     @DrPriority.setter
     def DrPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DrPriority'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +121,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def JoinPruneHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +135,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JoinPruneHoldTime'])
     @JoinPruneHoldTime.setter
     def JoinPruneHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JoinPruneHoldTime'], value)
 
     @property
     def JoinPruneInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +149,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JoinPruneInterval'])
     @JoinPruneInterval.setter
     def JoinPruneInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JoinPruneInterval'], value)
 
     @property
     def RouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,10 +163,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
     @RouterId.setter
     def RouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
 
     @property
     def RpDiscoveryMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,10 +177,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RpDiscoveryMode'])
     @RpDiscoveryMode.setter
     def RpDiscoveryMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RpDiscoveryMode'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,9 +191,11 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, DataMdtInterval=None, DataMdtTimeOut=None, DrPriority=None, Enabled=None, JoinPruneHoldTime=None, JoinPruneInterval=None, RouterId=None, RpDiscoveryMode=None, TrafficGroupId=None):
+        # type: (int, int, int, bool, int, int, str, str, str) -> Router
         """Updates router resource on the server.
 
         Args
@@ -191,6 +217,7 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DataMdtInterval=None, DataMdtTimeOut=None, DrPriority=None, Enabled=None, JoinPruneHoldTime=None, JoinPruneInterval=None, RouterId=None, RpDiscoveryMode=None, TrafficGroupId=None):
+        # type: (int, int, int, bool, int, int, str, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
         Args
@@ -226,6 +253,7 @@ class Router(Base):
         self._delete()
 
     def find(self, DataMdtInterval=None, DataMdtTimeOut=None, DrPriority=None, Enabled=None, JoinPruneHoldTime=None, JoinPruneInterval=None, RouterId=None, RpDiscoveryMode=None, TrafficGroupId=None):
+        # type: (int, int, int, bool, int, int, str, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.

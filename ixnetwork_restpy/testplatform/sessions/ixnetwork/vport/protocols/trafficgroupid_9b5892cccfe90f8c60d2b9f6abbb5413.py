@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrafficGroupId(Base):
@@ -35,12 +36,15 @@ class TrafficGroupId(Base):
     _SDM_ATT_MAP = {
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TrafficGroupId, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrafficGroupId, self).__init__(parent, list_op)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,9 +53,11 @@ class TrafficGroupId(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, TrafficGroupId=None):
+        # type: (str) -> TrafficGroupId
         """Updates trafficGroupId resource on the server.
 
         Args
@@ -65,6 +71,7 @@ class TrafficGroupId(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, TrafficGroupId=None):
+        # type: (str) -> TrafficGroupId
         """Adds a new trafficGroupId resource on the server and adds it to the container.
 
         Args
@@ -92,6 +99,7 @@ class TrafficGroupId(Base):
         self._delete()
 
     def find(self, TrafficGroupId=None):
+        # type: (str) -> TrafficGroupId
         """Finds and retrieves trafficGroupId resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trafficGroupId resources from the server.

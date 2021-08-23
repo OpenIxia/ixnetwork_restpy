@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetworkGroup(Base):
@@ -40,9 +41,11 @@ class NetworkGroup(Base):
         'Multiplier': 'multiplier',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetworkGroup, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetworkGroup, self).__init__(parent, list_op)
 
     @property
     def BgpIPRouteProperty(self):
@@ -56,7 +59,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_ffd9071ae88c6283e9f54ec948882405 import BgpIPRouteProperty
-        return BgpIPRouteProperty(self)
+        if self._properties.get('BgpIPRouteProperty', None) is not None:
+            return self._properties.get('BgpIPRouteProperty')
+        else:
+            return BgpIPRouteProperty(self)
 
     @property
     def BgpL3VpnRouteProperty(self):
@@ -70,7 +76,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty_3b5e18e475abdb9b6f2bf410d51d886a import BgpL3VpnRouteProperty
-        return BgpL3VpnRouteProperty(self)
+        if self._properties.get('BgpL3VpnRouteProperty', None) is not None:
+            return self._properties.get('BgpL3VpnRouteProperty')
+        else:
+            return BgpL3VpnRouteProperty(self)
 
     @property
     def BgpMVpnReceiverSitesIpv4(self):
@@ -84,7 +93,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv4_279b1194a64614140f00d08a876cb61b import BgpMVpnReceiverSitesIpv4
-        return BgpMVpnReceiverSitesIpv4(self)
+        if self._properties.get('BgpMVpnReceiverSitesIpv4', None) is not None:
+            return self._properties.get('BgpMVpnReceiverSitesIpv4')
+        else:
+            return BgpMVpnReceiverSitesIpv4(self)
 
     @property
     def BgpMVpnReceiverSitesIpv6(self):
@@ -98,7 +110,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv6_49c886be42acc1f3fc70df1023ccb0bd import BgpMVpnReceiverSitesIpv6
-        return BgpMVpnReceiverSitesIpv6(self)
+        if self._properties.get('BgpMVpnReceiverSitesIpv6', None) is not None:
+            return self._properties.get('BgpMVpnReceiverSitesIpv6')
+        else:
+            return BgpMVpnReceiverSitesIpv6(self)
 
     @property
     def BgpMVpnSenderSitesIpv4(self):
@@ -112,7 +127,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv4_4fb28863ad3595e11a7fecc4fbb6ec9d import BgpMVpnSenderSitesIpv4
-        return BgpMVpnSenderSitesIpv4(self)
+        if self._properties.get('BgpMVpnSenderSitesIpv4', None) is not None:
+            return self._properties.get('BgpMVpnSenderSitesIpv4')
+        else:
+            return BgpMVpnSenderSitesIpv4(self)
 
     @property
     def BgpMVpnSenderSitesIpv6(self):
@@ -126,7 +144,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv6_3217a8473cfbb135fc2545010c09ffb6 import BgpMVpnSenderSitesIpv6
-        return BgpMVpnSenderSitesIpv6(self)
+        if self._properties.get('BgpMVpnSenderSitesIpv6', None) is not None:
+            return self._properties.get('BgpMVpnSenderSitesIpv6')
+        else:
+            return BgpMVpnSenderSitesIpv6(self)
 
     @property
     def BgpV6IPRouteProperty(self):
@@ -140,7 +161,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_3bc5aff598784532c6b5ff0b601d2985 import BgpV6IPRouteProperty
-        return BgpV6IPRouteProperty(self)
+        if self._properties.get('BgpV6IPRouteProperty', None) is not None:
+            return self._properties.get('BgpV6IPRouteProperty')
+        else:
+            return BgpV6IPRouteProperty(self)
 
     @property
     def BgpV6L3VpnRouteProperty(self):
@@ -154,7 +178,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_15999adbfe8d61825751768ad5e0ddda import BgpV6L3VpnRouteProperty
-        return BgpV6L3VpnRouteProperty(self)
+        if self._properties.get('BgpV6L3VpnRouteProperty', None) is not None:
+            return self._properties.get('BgpV6L3VpnRouteProperty')
+        else:
+            return BgpV6L3VpnRouteProperty(self)
 
     @property
     def CMacProperties(self):
@@ -168,7 +195,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is not None:
+            return self._properties.get('CMacProperties')
+        else:
+            return CMacProperties(self)
 
     @property
     def DeviceGroup(self):
@@ -182,7 +212,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import DeviceGroup
-        return DeviceGroup(self)
+        if self._properties.get('DeviceGroup', None) is not None:
+            return self._properties.get('DeviceGroup')
+        else:
+            return DeviceGroup(self)
 
     @property
     def DslPools(self):
@@ -196,7 +229,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dslpools_d9b929e10c822a015fb7026b5bad393a import DslPools
-        return DslPools(self)
+        if self._properties.get('DslPools', None) is not None:
+            return self._properties.get('DslPools')
+        else:
+            return DslPools(self)
 
     @property
     def ECpriReRadioChannelsOrUsers(self):
@@ -210,7 +246,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers_d1f6861b47ba784e3298939a333f12b9 import ECpriReRadioChannelsOrUsers
-        return ECpriReRadioChannelsOrUsers(self)
+        if self._properties.get('ECpriReRadioChannelsOrUsers', None) is not None:
+            return self._properties.get('ECpriReRadioChannelsOrUsers')
+        else:
+            return ECpriReRadioChannelsOrUsers(self)
 
     @property
     def ECpriRecRadioChannelsOrUsers(self):
@@ -224,7 +263,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers_5814e34000b9bdc960142e49f7af3c67 import ECpriRecRadioChannelsOrUsers
-        return ECpriRecRadioChannelsOrUsers(self)
+        if self._properties.get('ECpriRecRadioChannelsOrUsers', None) is not None:
+            return self._properties.get('ECpriRecRadioChannelsOrUsers')
+        else:
+            return ECpriRecRadioChannelsOrUsers(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -238,7 +280,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv4PrefixRange')
+        else:
+            return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -252,7 +297,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv6PrefixRange')
+        else:
+            return EvpnIPv6PrefixRange(self)
 
     @property
     def Ipv4PrefixPools(self):
@@ -266,7 +314,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools_2d6f2aedde61c058965d4e1b21741352 import Ipv4PrefixPools
-        return Ipv4PrefixPools(self)
+        if self._properties.get('Ipv4PrefixPools', None) is not None:
+            return self._properties.get('Ipv4PrefixPools')
+        else:
+            return Ipv4PrefixPools(self)
 
     @property
     def Ipv6PrefixPools(self):
@@ -280,7 +331,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools_f83aba85ff769655b348dc60ddcb30f2 import Ipv6PrefixPools
-        return Ipv6PrefixPools(self)
+        if self._properties.get('Ipv6PrefixPools', None) is not None:
+            return self._properties.get('Ipv6PrefixPools')
+        else:
+            return Ipv6PrefixPools(self)
 
     @property
     def IsisL3RouteProperty(self):
@@ -294,7 +348,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty_b92337ebc659bd40bd9c30fab98749e7 import IsisL3RouteProperty
-        return IsisL3RouteProperty(self)
+        if self._properties.get('IsisL3RouteProperty', None) is not None:
+            return self._properties.get('IsisL3RouteProperty')
+        else:
+            return IsisL3RouteProperty(self)
 
     @property
     def IsisSpbMacCloudConfig(self):
@@ -308,7 +365,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig_791b0bf61c8f6877cabfa2621478ab8a import IsisSpbMacCloudConfig
-        return IsisSpbMacCloudConfig(self)
+        if self._properties.get('IsisSpbMacCloudConfig', None) is not None:
+            return self._properties.get('IsisSpbMacCloudConfig')
+        else:
+            return IsisSpbMacCloudConfig(self)
 
     @property
     def IsisTrillUCastMacConfig(self):
@@ -322,7 +382,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig_a91c5b3e28b2bee04ff08d2e22fad1e2 import IsisTrillUCastMacConfig
-        return IsisTrillUCastMacConfig(self)
+        if self._properties.get('IsisTrillUCastMacConfig', None) is not None:
+            return self._properties.get('IsisTrillUCastMacConfig')
+        else:
+            return IsisTrillUCastMacConfig(self)
 
     @property
     def LdpFECProperty(self):
@@ -336,7 +399,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpfecproperty_9d07999903dc2acadf9a2f44f8a94399 import LdpFECProperty
-        return LdpFECProperty(self)
+        if self._properties.get('LdpFECProperty', None) is not None:
+            return self._properties.get('LdpFECProperty')
+        else:
+            return LdpFECProperty(self)
 
     @property
     def LdpIpv6FECProperty(self):
@@ -350,7 +416,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpipv6fecproperty_408cfe80a37623da202d7739fba9b830 import LdpIpv6FECProperty
-        return LdpIpv6FECProperty(self)
+        if self._properties.get('LdpIpv6FECProperty', None) is not None:
+            return self._properties.get('LdpIpv6FECProperty')
+        else:
+            return LdpIpv6FECProperty(self)
 
     @property
     def MacPools(self):
@@ -364,7 +433,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macpools_414597218f17eaa9c882bf703e2d0bdd import MacPools
-        return MacPools(self)
+        if self._properties.get('MacPools', None) is not None:
+            return self._properties.get('MacPools')
+        else:
+            return MacPools(self)
 
     @property
     def NetworkGroup(self):
@@ -378,7 +450,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networkgroup_4a63874e791827c3a0361c2d201dbc0c import NetworkGroup
-        return NetworkGroup(self)
+        if self._properties.get('NetworkGroup', None) is not None:
+            return self._properties.get('NetworkGroup')
+        else:
+            return NetworkGroup(self)
 
     @property
     def NetworkRangeInfo(self):
@@ -392,7 +467,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networkrangeinfo_cbb1e7fa358c353ee8fd62246a36a824 import NetworkRangeInfo
-        return NetworkRangeInfo(self)
+        if self._properties.get('NetworkRangeInfo', None) is not None:
+            return self._properties.get('NetworkRangeInfo')
+        else:
+            return NetworkRangeInfo(self)
 
     @property
     def NetworkTopology(self):
@@ -406,7 +484,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networktopology_657b9792feb17675a34c183046aa9924 import NetworkTopology
-        return NetworkTopology(self)
+        if self._properties.get('NetworkTopology', None) is not None:
+            return self._properties.get('NetworkTopology')
+        else:
+            return NetworkTopology(self)
 
     @property
     def OspfRouteProperty(self):
@@ -420,7 +501,10 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouteproperty_d69371739e1874a63feb0c8493c3f052 import OspfRouteProperty
-        return OspfRouteProperty(self)
+        if self._properties.get('OspfRouteProperty', None) is not None:
+            return self._properties.get('OspfRouteProperty')
+        else:
+            return OspfRouteProperty(self)
 
     @property
     def Ospfv3RouteProperty(self):
@@ -434,10 +518,14 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3routeproperty_daf6d024b6ece255d2d043618b13bae5 import Ospfv3RouteProperty
-        return Ospfv3RouteProperty(self)
+        if self._properties.get('Ospfv3RouteProperty', None) is not None:
+            return self._properties.get('Ospfv3RouteProperty')
+        else:
+            return Ospfv3RouteProperty(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -447,6 +535,7 @@ class NetworkGroup(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -456,6 +545,7 @@ class NetworkGroup(Base):
 
     @property
     def Enabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +556,7 @@ class NetworkGroup(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -474,10 +565,12 @@ class NetworkGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -486,9 +579,11 @@ class NetworkGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Multiplier=None, Name=None):
+        # type: (int, str) -> NetworkGroup
         """Updates networkGroup resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -506,6 +601,7 @@ class NetworkGroup(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Multiplier=None, Name=None):
+        # type: (int, str) -> NetworkGroup
         """Adds a new networkGroup resource on the server and adds it to the container.
 
         Args
@@ -534,6 +630,7 @@ class NetworkGroup(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Multiplier=None, Name=None):
+        # type: (int, str, int, str) -> NetworkGroup
         """Finds and retrieves networkGroup resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkGroup resources from the server.
@@ -575,6 +672,66 @@ class NetworkGroup(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Enabled=None):
         """Base class infrastructure that gets a list of networkGroup device ids encapsulated by this object.
 
@@ -594,42 +751,3 @@ class NetworkGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

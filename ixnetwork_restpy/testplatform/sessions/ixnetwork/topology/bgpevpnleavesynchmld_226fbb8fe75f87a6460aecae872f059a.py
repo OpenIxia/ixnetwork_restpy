@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpEvpnLeaveSynchMld(Base):
@@ -47,12 +48,15 @@ class BgpEvpnLeaveSynchMld(Base):
         'StartGroupAddressLeaveSynch': 'startGroupAddressLeaveSynch',
         'StartSourceAddressLeaveSynch': 'startSourceAddressLeaveSynch',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpEvpnLeaveSynchMld, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpEvpnLeaveSynchMld, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -63,6 +67,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,6 +77,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +87,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def EnableAutoWithdrawOfLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def GroupAddressCountLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +109,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def GroupType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -111,6 +120,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def MaximumResponseTimeLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +131,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def MldVersionV1LeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +142,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def MldVersionV2LeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +153,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def Mode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +164,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +173,12 @@ class BgpEvpnLeaveSynchMld(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SourceAddressCountLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +189,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def SourceGroupMappingLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -183,6 +200,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def StartGroupAddressLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -193,6 +211,7 @@ class BgpEvpnLeaveSynchMld(Base):
 
     @property
     def StartSourceAddressLeaveSynch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +221,7 @@ class BgpEvpnLeaveSynchMld(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartSourceAddressLeaveSynch']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpEvpnLeaveSynchMld
         """Updates bgpEvpnLeaveSynchMld resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

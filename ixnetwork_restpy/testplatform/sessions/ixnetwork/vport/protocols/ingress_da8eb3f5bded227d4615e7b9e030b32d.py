@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ingress(Base):
@@ -41,9 +42,12 @@ class Ingress(Base):
         'TunnelIdsCount': 'tunnelIdsCount',
         'TunnelIdsStart': 'tunnelIdsStart',
     }
+    _SDM_ENUM_MAP = {
+        'prependDutToEro': ['none', 'prependLoose', 'prependStrict'],
+    }
 
-    def __init__(self, parent):
-        super(Ingress, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ingress, self).__init__(parent, list_op)
 
     @property
     def SenderRange(self):
@@ -57,10 +61,14 @@ class Ingress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.senderrange_5f32a5353c2a36df08769d2b836cbf75 import SenderRange
-        return SenderRange(self)
+        if self._properties.get('SenderRange', None) is not None:
+            return self._properties.get('SenderRange')
+        else:
+            return SenderRange(self)
 
     @property
     def EnableEro(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -69,6 +77,7 @@ class Ingress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEro'])
     @EnableEro.setter
     def EnableEro(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEro'], value)
 
     @property
@@ -85,6 +94,7 @@ class Ingress(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +103,12 @@ class Ingress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrefixLength'])
     @PrefixLength.setter
     def PrefixLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrefixLength'], value)
 
     @property
     def PrependDutToEro(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +117,7 @@ class Ingress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PrependDutToEro'])
     @PrependDutToEro.setter
     def PrependDutToEro(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PrependDutToEro'], value)
 
     @property
@@ -133,6 +146,7 @@ class Ingress(Base):
 
     @property
     def SendRro(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -141,10 +155,12 @@ class Ingress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendRro'])
     @SendRro.setter
     def SendRro(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendRro'], value)
 
     @property
     def TunnelIdsCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,10 +169,12 @@ class Ingress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelIdsCount'])
     @TunnelIdsCount.setter
     def TunnelIdsCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelIdsCount'], value)
 
     @property
     def TunnelIdsStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -165,6 +183,7 @@ class Ingress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelIdsStart'])
     @TunnelIdsStart.setter
     def TunnelIdsStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelIdsStart'], value)
 
     def update(self, EnableEro=None, Ero=None, PrefixLength=None, PrependDutToEro=None, ReservationErrorTlv=None, Rro=None, SendRro=None, TunnelIdsCount=None, TunnelIdsStart=None):

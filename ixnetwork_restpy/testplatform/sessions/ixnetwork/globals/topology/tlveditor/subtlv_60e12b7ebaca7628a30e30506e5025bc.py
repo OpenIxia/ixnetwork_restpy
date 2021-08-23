@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SubTlv(Base):
@@ -39,9 +40,11 @@ class SubTlv(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SubTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SubTlv, self).__init__(parent, list_op)
 
     @property
     def Length(self):
@@ -55,7 +58,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length_828f03942c0c7f1066634a834f100b60 import Length
-        return Length(self)._select()
+        if self._properties.get('Length', None) is not None:
+            return self._properties.get('Length')
+        else:
+            return Length(self)._select()
 
     @property
     def Type(self):
@@ -69,7 +75,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type_fb01e405e39d16957d5b5665edb1f0b0 import Type
-        return Type(self)._select()
+        if self._properties.get('Type', None) is not None:
+            return self._properties.get('Type')
+        else:
+            return Type(self)._select()
 
     @property
     def Value(self):
@@ -83,10 +92,14 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value_407e2b8dcab743cb358f96d452da3721 import Value
-        return Value(self)._select()
+        if self._properties.get('Value', None) is not None:
+            return self._properties.get('Value')
+        else:
+            return Value(self)._select()
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,10 +108,12 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +122,12 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRepeatable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +136,12 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
     @IsRepeatable.setter
     def IsRepeatable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -131,10 +150,12 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,9 +164,11 @@ class SubTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> SubTlv
         """Updates subTlv resource on the server.
 
         Args
@@ -163,6 +186,7 @@ class SubTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> SubTlv
         """Adds a new subTlv resource on the server and adds it to the container.
 
         Args
@@ -194,6 +218,7 @@ class SubTlv(Base):
         self._delete()
 
     def find(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> SubTlv
         """Finds and retrieves subTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve subTlv resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ancp(Base):
@@ -36,9 +37,11 @@ class Ancp(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ancp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ancp, self).__init__(parent, list_op)
 
     @property
     def PortDownRate(self):
@@ -52,7 +55,10 @@ class Ancp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ancp.portdownrate.portdownrate_7de39725bde98905f7abd313303c41a2 import PortDownRate
-        return PortDownRate(self)._select()
+        if self._properties.get('PortDownRate', None) is not None:
+            return self._properties.get('PortDownRate')
+        else:
+            return PortDownRate(self)._select()
 
     @property
     def PortUpRate(self):
@@ -66,7 +72,10 @@ class Ancp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ancp.portuprate.portuprate_3482e61dacd57d1abe5e244f6822146d import PortUpRate
-        return PortUpRate(self)._select()
+        if self._properties.get('PortUpRate', None) is not None:
+            return self._properties.get('PortUpRate')
+        else:
+            return PortUpRate(self)._select()
 
     @property
     def StartRate(self):
@@ -80,7 +89,10 @@ class Ancp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -94,7 +106,10 @@ class Ancp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def TlvEditor(self):
@@ -108,10 +123,14 @@ class Ancp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        return TlvEditor(self)
+        if self._properties.get('TlvEditor', None) is not None:
+            return self._properties.get('TlvEditor')
+        else:
+            return TlvEditor(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,6 +140,7 @@ class Ancp(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,6 +150,7 @@ class Ancp(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,10 +159,12 @@ class Ancp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -150,6 +173,7 @@ class Ancp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> Ancp
         """Updates ancp resource on the server.
 
         Args

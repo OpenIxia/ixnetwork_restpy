@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MeterCapabilities(Base):
@@ -36,12 +37,15 @@ class MeterCapabilities(Base):
         'KiloBitPerSecond': 'kiloBitPerSecond',
         'PacketPerSecond': 'packetPerSecond',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MeterCapabilities, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MeterCapabilities, self).__init__(parent, list_op)
 
     @property
     def CollectStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class MeterCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CollectStatistics'])
     @CollectStatistics.setter
     def CollectStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CollectStatistics'], value)
 
     @property
     def DoBurstSize(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class MeterCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DoBurstSize'])
     @DoBurstSize.setter
     def DoBurstSize(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DoBurstSize'], value)
 
     @property
     def KiloBitPerSecond(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class MeterCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KiloBitPerSecond'])
     @KiloBitPerSecond.setter
     def KiloBitPerSecond(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['KiloBitPerSecond'], value)
 
     @property
     def PacketPerSecond(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class MeterCapabilities(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketPerSecond'])
     @PacketPerSecond.setter
     def PacketPerSecond(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketPerSecond'], value)
 
     def update(self, CollectStatistics=None, DoBurstSize=None, KiloBitPerSecond=None, PacketPerSecond=None):
+        # type: (bool, bool, bool, bool) -> MeterCapabilities
         """Updates meterCapabilities resource on the server.
 
         Args

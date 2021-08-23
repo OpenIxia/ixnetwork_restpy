@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CcmLearnedInfo(Base):
@@ -58,12 +59,15 @@ class CcmLearnedInfo(Base):
         'ShortMaNameFormat': 'shortMaNameFormat',
         'SomeRmepDefect': 'someRmepDefect',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CcmLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CcmLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AllRmepDead(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,6 +77,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +87,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def CciInterval(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +97,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ErrCcmDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -100,6 +107,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ErrCcmDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +117,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def IfaceTlvDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +127,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def MdName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +147,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def MdNameFormat(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,6 +157,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def MepId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,6 +167,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def MepMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -163,6 +177,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def OutOfSequenceCcmCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,6 +187,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def PortTlvDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,6 +197,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def RdiRxCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -190,6 +207,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def RdiRxState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -199,6 +217,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ReceivedAis(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -208,6 +227,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ReceivedIfaceTlvDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -217,6 +237,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ReceivedPortTlvDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -226,6 +247,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ReceivedRdi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -235,6 +257,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def RemoteMepDefectCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -244,6 +267,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def RmepCcmDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -253,6 +277,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -262,6 +287,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ShortMaName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -271,6 +297,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def ShortMaNameFormat(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -280,6 +307,7 @@ class CcmLearnedInfo(Base):
 
     @property
     def SomeRmepDefect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -287,7 +315,21 @@ class CcmLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SomeRmepDefect'])
 
+    def add(self):
+        """Adds a new ccmLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ccmLearnedInfo resources using find and the newly added ccmLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AllRmepDead=None, CVlan=None, CciInterval=None, ErrCcmDefect=None, ErrCcmDefectCount=None, IfaceTlvDefectCount=None, MdLevel=None, MdName=None, MdNameFormat=None, MepId=None, MepMacAddress=None, OutOfSequenceCcmCount=None, PortTlvDefectCount=None, RdiRxCount=None, RdiRxState=None, ReceivedAis=None, ReceivedIfaceTlvDefect=None, ReceivedPortTlvDefect=None, ReceivedRdi=None, RemoteMepDefectCount=None, RmepCcmDefect=None, SVlan=None, ShortMaName=None, ShortMaNameFormat=None, SomeRmepDefect=None):
+        # type: (bool, str, str, bool, int, int, int, str, int, int, str, int, int, int, str, bool, bool, bool, bool, int, bool, str, str, int, bool) -> CcmLearnedInfo
         """Finds and retrieves ccmLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ccmLearnedInfo resources from the server.

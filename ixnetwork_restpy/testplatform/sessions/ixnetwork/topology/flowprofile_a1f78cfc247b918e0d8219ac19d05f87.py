@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowProfile(Base):
@@ -35,9 +36,11 @@ class FlowProfile(Base):
         'DescriptiveName': 'descriptiveName',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowProfile, self).__init__(parent, list_op)
 
     @property
     def MatchAction(self):
@@ -51,10 +54,14 @@ class FlowProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.matchaction_374907a1c7c7401f92b5c005c8ea16f6 import MatchAction
-        return MatchAction(self)
+        if self._properties.get('MatchAction', None) is not None:
+            return self._properties.get('MatchAction')
+        else:
+            return MatchAction(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +71,7 @@ class FlowProfile(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +81,7 @@ class FlowProfile(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,9 +90,11 @@ class FlowProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> FlowProfile
         """Updates flowProfile resource on the server.
 
         Args
@@ -97,13 +108,15 @@ class FlowProfile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def AddFromTemplate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addFromTemplate operation on the server.
 
         Creates a Match Action prototype supported by the template.
 
-        addFromTemplate(Arg2=href)
-        --------------------------
+        addFromTemplate(Arg2=href, async_operation=bool)
+        ------------------------------------------------
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

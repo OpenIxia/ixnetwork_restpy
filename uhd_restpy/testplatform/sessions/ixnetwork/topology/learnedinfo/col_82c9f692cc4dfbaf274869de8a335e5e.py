@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Col(Base):
@@ -34,9 +35,11 @@ class Col(Base):
     _SDM_ATT_MAP = {
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Col, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Col, self).__init__(parent, list_op)
 
     @property
     def CellTable(self):
@@ -50,7 +53,10 @@ class Col(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.celltable_bef6632b895c626cc7174eb89a76162c import CellTable
-        return CellTable(self)
+        if self._properties.get('CellTable', None) is not None:
+            return self._properties.get('CellTable')
+        else:
+            return CellTable(self)
 
     @property
     def Row(self):
@@ -64,10 +70,14 @@ class Col(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.row_dbafc34e8c4bf46a4ac7b647400c39d3 import Row
-        return Row(self)
+        if self._properties.get('Row', None) is not None:
+            return self._properties.get('Row')
+        else:
+            return Row(self)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,7 +85,21 @@ class Col(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
 
+    def add(self):
+        """Adds a new col resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved col resources using find and the newly added col resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Value=None):
+        # type: (str) -> Col
         """Finds and retrieves col resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve col resources from the server.

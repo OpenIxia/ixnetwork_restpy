@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -37,9 +38,11 @@ class Interface(Base):
         'Enabled': 'enabled',
         'Interfaces': 'interfaces',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def LspPwRange(self):
@@ -53,10 +56,14 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lsppwrange_a99d978c87681e8fd80d5560169a1dcf import LspPwRange
-        return LspPwRange(self)
+        if self._properties.get('LspPwRange', None) is not None:
+            return self._properties.get('LspPwRange')
+        else:
+            return LspPwRange(self)
 
     @property
     def DutMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DutMacAddress'])
     @DutMacAddress.setter
     def DutMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DutMacAddress'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,9 +100,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     def update(self, DutMacAddress=None, Enabled=None, Interfaces=None):
+        # type: (str, bool, str) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DutMacAddress=None, Enabled=None, Interfaces=None):
+        # type: (str, bool, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -136,6 +150,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, DutMacAddress=None, Enabled=None, Interfaces=None):
+        # type: (str, bool, str) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RequestedLsps(Base):
@@ -87,9 +88,11 @@ class RequestedLsps(Base):
         'SourceIpv6Address': 'sourceIpv6Address',
         'SymbolicPathName': 'symbolicPathName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RequestedLsps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RequestedLsps, self).__init__(parent, list_op)
 
     @property
     def PccRequestedMetricSubObjectsList(self):
@@ -103,7 +106,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccrequestedmetricsubobjectslist_c24616543d14c4003121b08785bb4446 import PccRequestedMetricSubObjectsList
-        return PccRequestedMetricSubObjectsList(self)
+        if self._properties.get('PccRequestedMetricSubObjectsList', None) is not None:
+            return self._properties.get('PccRequestedMetricSubObjectsList')
+        else:
+            return PccRequestedMetricSubObjectsList(self)
 
     @property
     def PcepIroSubObjectsList(self):
@@ -117,7 +123,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepirosubobjectslist_9817af6d0e89111784eda2c3b9333ff5 import PcepIroSubObjectsList
-        return PcepIroSubObjectsList(self)
+        if self._properties.get('PcepIroSubObjectsList', None) is not None:
+            return self._properties.get('PcepIroSubObjectsList')
+        else:
+            return PcepIroSubObjectsList(self)
 
     @property
     def PcepXroSubObjectsList(self):
@@ -131,7 +140,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxrosubobjectslist_a61cc0ded9b5e7cc900bb16a43234a56 import PcepXroSubObjectsList
-        return PcepXroSubObjectsList(self)
+        if self._properties.get('PcepXroSubObjectsList', None) is not None:
+            return self._properties.get('PcepXroSubObjectsList')
+        else:
+            return PcepXroSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -145,10 +157,14 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +175,7 @@ class RequestedLsps(Base):
 
     @property
     def ActiveDataTrafficEndPoints(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +186,7 @@ class RequestedLsps(Base):
 
     @property
     def Bandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +197,7 @@ class RequestedLsps(Base):
 
     @property
     def BiDirectional(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +208,7 @@ class RequestedLsps(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,6 +218,7 @@ class RequestedLsps(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -207,6 +228,7 @@ class RequestedLsps(Base):
 
     @property
     def DestinationIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +239,7 @@ class RequestedLsps(Base):
 
     @property
     def DestinationIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -227,6 +250,7 @@ class RequestedLsps(Base):
 
     @property
     def ExcludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +261,7 @@ class RequestedLsps(Base):
 
     @property
     def FailBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,6 +272,7 @@ class RequestedLsps(Base):
 
     @property
     def HoldingPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +283,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeAll(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -267,6 +294,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -277,6 +305,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -287,6 +316,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeEndPoints(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -297,6 +327,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeIro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -307,6 +338,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -317,6 +349,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeLspa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +360,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +371,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeRp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +382,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeSymbolicPathNameTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +393,7 @@ class RequestedLsps(Base):
 
     @property
     def IncludeXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +404,7 @@ class RequestedLsps(Base):
 
     @property
     def InitialDelegation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +415,7 @@ class RequestedLsps(Base):
 
     @property
     def InsertIpv6ExplicitNull(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -385,10 +424,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'])
     @InsertIpv6ExplicitNull.setter
     def InsertIpv6ExplicitNull(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['InsertIpv6ExplicitNull'], value)
 
     @property
     def IpVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -399,6 +440,7 @@ class RequestedLsps(Base):
 
     @property
     def LocalProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +451,7 @@ class RequestedLsps(Base):
 
     @property
     def Loose(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -419,6 +462,7 @@ class RequestedLsps(Base):
 
     @property
     def LspDelegationState(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -428,6 +472,7 @@ class RequestedLsps(Base):
 
     @property
     def MaxExpectedSegmentCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -436,10 +481,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxExpectedSegmentCount'])
     @MaxExpectedSegmentCount.setter
     def MaxExpectedSegmentCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxExpectedSegmentCount'], value)
 
     @property
     def MaxNoOfIroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -448,10 +495,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNoOfIroSubObjects'])
     @MaxNoOfIroSubObjects.setter
     def MaxNoOfIroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNoOfIroSubObjects'], value)
 
     @property
     def MaxNoOfXroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -460,10 +509,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNoOfXroSubObjects'])
     @MaxNoOfXroSubObjects.setter
     def MaxNoOfXroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNoOfXroSubObjects'], value)
 
     @property
     def MaxNumberOfMetrics(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -472,10 +523,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfMetrics'])
     @MaxNumberOfMetrics.setter
     def MaxNumberOfMetrics(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfMetrics'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -484,10 +537,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OverridePlspId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -496,10 +551,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverridePlspId'])
     @OverridePlspId.setter
     def OverridePlspId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverridePlspId'], value)
 
     @property
     def OverrideRequestId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -508,10 +565,12 @@ class RequestedLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideRequestId'])
     @OverrideRequestId.setter
     def OverrideRequestId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideRequestId'], value)
 
     @property
     def OverrideSourceAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -522,6 +581,7 @@ class RequestedLsps(Base):
 
     @property
     def PFlagBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -532,6 +592,7 @@ class RequestedLsps(Base):
 
     @property
     def PFlagIro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -542,6 +603,7 @@ class RequestedLsps(Base):
 
     @property
     def PFlagLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -552,6 +614,7 @@ class RequestedLsps(Base):
 
     @property
     def PFlagLspa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -562,6 +625,7 @@ class RequestedLsps(Base):
 
     @property
     def PFlagRp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -572,6 +636,7 @@ class RequestedLsps(Base):
 
     @property
     def PFlagXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -582,6 +647,7 @@ class RequestedLsps(Base):
 
     @property
     def PflagEndpoints(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -592,6 +658,7 @@ class RequestedLsps(Base):
 
     @property
     def PlspId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -602,6 +669,7 @@ class RequestedLsps(Base):
 
     @property
     def Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -612,6 +680,7 @@ class RequestedLsps(Base):
 
     @property
     def ReDelegationTimerStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -621,6 +690,7 @@ class RequestedLsps(Base):
 
     @property
     def ReOptimization(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -631,6 +701,7 @@ class RequestedLsps(Base):
 
     @property
     def RedelegationTimeoutInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -641,6 +712,7 @@ class RequestedLsps(Base):
 
     @property
     def RequestId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -651,6 +723,7 @@ class RequestedLsps(Base):
 
     @property
     def SetupPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -661,6 +734,7 @@ class RequestedLsps(Base):
 
     @property
     def SourceEndPointIPv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -671,6 +745,7 @@ class RequestedLsps(Base):
 
     @property
     def SourceEndPointIPv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -681,6 +756,7 @@ class RequestedLsps(Base):
 
     @property
     def SourceIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -691,6 +767,7 @@ class RequestedLsps(Base):
 
     @property
     def SourceIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -701,6 +778,7 @@ class RequestedLsps(Base):
 
     @property
     def SymbolicPathName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -710,6 +788,7 @@ class RequestedLsps(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SymbolicPathName']))
 
     def update(self, InsertIpv6ExplicitNull=None, MaxExpectedSegmentCount=None, MaxNoOfIroSubObjects=None, MaxNoOfXroSubObjects=None, MaxNumberOfMetrics=None, Name=None, OverridePlspId=None, OverrideRequestId=None):
+        # type: (bool, int, int, int, int, str, bool, bool) -> RequestedLsps
         """Updates requestedLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -731,6 +810,50 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Delegate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the delegate operation on the server.
+
+        Delegate
+
+        delegate(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('delegate', payload=payload, response_object=None)
+
+    def RevokeDelegation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the revokeDelegation operation on the server.
+
+        Revoke Delegation
+
+        revokeDelegation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('revokeDelegation', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, ActiveDataTrafficEndPoints=None, Bandwidth=None, BiDirectional=None, DestinationIpv4Address=None, DestinationIpv6Address=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeEndPoints=None, IncludeIro=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, IncludeXro=None, InitialDelegation=None, IpVersion=None, LocalProtection=None, Loose=None, OverrideSourceAddress=None, PFlagBandwidth=None, PFlagIro=None, PFlagLsp=None, PFlagLspa=None, PFlagRp=None, PFlagXro=None, PflagEndpoints=None, PlspId=None, Priority=None, ReOptimization=None, RedelegationTimeoutInterval=None, RequestId=None, SetupPriority=None, SourceEndPointIPv4=None, SourceEndPointIPv6=None, SourceIpv4Address=None, SourceIpv6Address=None, SymbolicPathName=None):
         """Base class infrastructure that gets a list of requestedLsps device ids encapsulated by this object.
@@ -793,43 +916,3 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Delegate(self, *args, **kwargs):
-        """Executes the delegate operation on the server.
-
-        Delegate
-
-        delegate(Arg2=list)list
-        -----------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('delegate', payload=payload, response_object=None)
-
-    def RevokeDelegation(self, *args, **kwargs):
-        """Executes the revokeDelegation operation on the server.
-
-        Revoke Delegation
-
-        revokeDelegation(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('revokeDelegation', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Fc(Base):
@@ -50,12 +51,18 @@ class Fc(Base):
         'TxIgnoreAvailableCredits': 'txIgnoreAvailableCredits',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
+    _SDM_ENUM_MAP = {
+        'forceErrors': ['noErrors', 'noRRDY', 'noRRDYEvery'],
+        'rrdyResponseDelays': ['creditStarvation', 'fixedDelay', 'noDelay', 'randomDelay'],
+        'speed': ['speed2000', 'speed4000', 'speed8000'],
+    }
 
-    def __init__(self, parent):
-        super(Fc, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Fc, self).__init__(parent, list_op)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -65,6 +72,7 @@ class Fc(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,6 +82,7 @@ class Fc(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,6 +92,7 @@ class Fc(Base):
 
     @property
     def CreditStarvationValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CreditStarvationValue'])
     @CreditStarvationValue.setter
     def CreditStarvationValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CreditStarvationValue'], value)
 
     @property
     def EnableEmissionLoweringProtocol(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +115,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEmissionLoweringProtocol'])
     @EnableEmissionLoweringProtocol.setter
     def EnableEmissionLoweringProtocol(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEmissionLoweringProtocol'], value)
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -115,10 +129,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def FixedDelayValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,10 +143,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FixedDelayValue'])
     @FixedDelayValue.setter
     def FixedDelayValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FixedDelayValue'], value)
 
     @property
     def ForceErrors(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,10 +157,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForceErrors'])
     @ForceErrors.setter
     def ForceErrors(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForceErrors'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -151,10 +171,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def MaxDelayForRandomValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -163,10 +185,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxDelayForRandomValue'])
     @MaxDelayForRandomValue.setter
     def MaxDelayForRandomValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxDelayForRandomValue'], value)
 
     @property
     def MinDelayForRandomValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -175,10 +199,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinDelayForRandomValue'])
     @MinDelayForRandomValue.setter
     def MinDelayForRandomValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinDelayForRandomValue'], value)
 
     @property
     def NoRRDYAfter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -187,10 +213,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoRRDYAfter'])
     @NoRRDYAfter.setter
     def NoRRDYAfter(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoRRDYAfter'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -199,10 +227,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def RrdyResponseDelays(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -211,10 +241,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RrdyResponseDelays'])
     @RrdyResponseDelays.setter
     def RrdyResponseDelays(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RrdyResponseDelays'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -223,10 +255,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def Speed(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -235,10 +269,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     @property
     def TxIgnoreAvailableCredits(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -247,10 +283,12 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreAvailableCredits'])
     @TxIgnoreAvailableCredits.setter
     def TxIgnoreAvailableCredits(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreAvailableCredits'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -259,9 +297,11 @@ class Fc(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, SelectedSpeeds=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
+        # type: (int, bool, bool, int, str, bool, int, int, int, int, str, List[str], str, bool, bool) -> Fc
         """Updates fc resource on the server.
 
         Args

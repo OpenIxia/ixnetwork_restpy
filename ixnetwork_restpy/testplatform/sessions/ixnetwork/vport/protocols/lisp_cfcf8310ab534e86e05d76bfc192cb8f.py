@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Lisp(Base):
@@ -41,9 +42,12 @@ class Lisp(Base):
         'Ipv6SmrPacketsPerBurst': 'ipv6SmrPacketsPerBurst',
         'ProtocolState': 'protocolState',
     }
+    _SDM_ENUM_MAP = {
+        'protocolState': ['stopped', 'unknown', 'stopping', 'started', 'starting'],
+    }
 
-    def __init__(self, parent):
-        super(Lisp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Lisp, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -57,7 +61,10 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_357d2cf668d2b194253f1fce270d5f0d import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def SiteEidRange(self):
@@ -71,10 +78,14 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_bcf447bff5a7aca1758c0baa17c72645 import SiteEidRange
-        return SiteEidRange(self)
+        if self._properties.get('SiteEidRange', None) is not None:
+            return self._properties.get('SiteEidRange')
+        else:
+            return SiteEidRange(self)
 
     @property
     def BurstIntervalInMs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,10 +94,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstIntervalInMs'])
     @BurstIntervalInMs.setter
     def BurstIntervalInMs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstIntervalInMs'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +108,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Ipv4MapRegisterPacketsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +122,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapRegisterPacketsPerBurst'])
     @Ipv4MapRegisterPacketsPerBurst.setter
     def Ipv4MapRegisterPacketsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4MapRegisterPacketsPerBurst'], value)
 
     @property
     def Ipv4MapRequestPacketsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +136,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4MapRequestPacketsPerBurst'])
     @Ipv4MapRequestPacketsPerBurst.setter
     def Ipv4MapRequestPacketsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4MapRequestPacketsPerBurst'], value)
 
     @property
     def Ipv4SmrPacketsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +150,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4SmrPacketsPerBurst'])
     @Ipv4SmrPacketsPerBurst.setter
     def Ipv4SmrPacketsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4SmrPacketsPerBurst'], value)
 
     @property
     def Ipv6MapRegisterPacketsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +164,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapRegisterPacketsPerBurst'])
     @Ipv6MapRegisterPacketsPerBurst.setter
     def Ipv6MapRegisterPacketsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6MapRegisterPacketsPerBurst'], value)
 
     @property
     def Ipv6MapRequestPacketsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +178,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6MapRequestPacketsPerBurst'])
     @Ipv6MapRequestPacketsPerBurst.setter
     def Ipv6MapRequestPacketsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6MapRequestPacketsPerBurst'], value)
 
     @property
     def Ipv6SmrPacketsPerBurst(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,10 +192,12 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6SmrPacketsPerBurst'])
     @Ipv6SmrPacketsPerBurst.setter
     def Ipv6SmrPacketsPerBurst(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6SmrPacketsPerBurst'], value)
 
     @property
     def ProtocolState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,6 +206,7 @@ class Lisp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolState'])
 
     def update(self, BurstIntervalInMs=None, Enabled=None, Ipv4MapRegisterPacketsPerBurst=None, Ipv4MapRequestPacketsPerBurst=None, Ipv4SmrPacketsPerBurst=None, Ipv6MapRegisterPacketsPerBurst=None, Ipv6MapRequestPacketsPerBurst=None, Ipv6SmrPacketsPerBurst=None):
+        # type: (int, bool, int, int, int, int, int, int) -> Lisp
         """Updates lisp resource on the server.
 
         Args
@@ -198,28 +226,42 @@ class Lisp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         NOT DEFINED
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         NOT DEFINED
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

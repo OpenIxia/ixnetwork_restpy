@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ActionTemplate(Base):
@@ -38,9 +39,11 @@ class ActionTemplate(Base):
         'Name': 'name',
         'SavedInVersion': 'savedInVersion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ActionTemplate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ActionTemplate, self).__init__(parent, list_op)
 
     @property
     def Action(self):
@@ -54,10 +57,14 @@ class ActionTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action_fca3673b74732220701dbad581b63119 import Action
-        return Action(self)
+        if self._properties.get('Action', None) is not None:
+            return self._properties.get('Action')
+        else:
+            return Action(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +74,7 @@ class ActionTemplate(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +84,7 @@ class ActionTemplate(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +93,12 @@ class ActionTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SavedInVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,9 +107,11 @@ class ActionTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SavedInVersion'])
     @SavedInVersion.setter
     def SavedInVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SavedInVersion'], value)
 
     def update(self, Name=None, SavedInVersion=None):
+        # type: (str, str) -> ActionTemplate
         """Updates actionTemplate resource on the server.
 
         Args
@@ -113,6 +126,7 @@ class ActionTemplate(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, SavedInVersion=None):
+        # type: (str, str) -> ActionTemplate
         """Adds a new actionTemplate resource on the server and adds it to the container.
 
         Args
@@ -141,6 +155,7 @@ class ActionTemplate(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None, SavedInVersion=None):
+        # type: (int, str, str, str) -> ActionTemplate
         """Finds and retrieves actionTemplate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve actionTemplate resources from the server.

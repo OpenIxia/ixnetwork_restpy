@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VpnParameter(Base):
@@ -37,12 +38,15 @@ class VpnParameter(Base):
         'SiteId': 'siteId',
         'UseVpnParameters': 'useVpnParameters',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VpnParameter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VpnParameter, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,6 +56,7 @@ class VpnParameter(Base):
 
     @property
     def SiteId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class VpnParameter(Base):
 
     @property
     def UseVpnParameters(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -70,9 +76,11 @@ class VpnParameter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseVpnParameters'])
     @UseVpnParameters.setter
     def UseVpnParameters(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseVpnParameters'], value)
 
     def update(self, UseVpnParameters=None):
+        # type: (bool) -> VpnParameter
         """Updates vpnParameter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -89,6 +97,7 @@ class VpnParameter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, UseVpnParameters=None):
+        # type: (bool) -> VpnParameter
         """Adds a new vpnParameter resource on the server and adds it to the container.
 
         Args
@@ -116,6 +125,7 @@ class VpnParameter(Base):
         self._delete()
 
     def find(self, Count=None, UseVpnParameters=None):
+        # type: (int, bool) -> VpnParameter
         """Finds and retrieves vpnParameter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vpnParameter resources from the server.

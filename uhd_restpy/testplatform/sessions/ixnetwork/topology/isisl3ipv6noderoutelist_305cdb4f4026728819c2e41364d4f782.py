@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3ipv6NodeRouteList(Base):
@@ -44,12 +45,15 @@ class IsisL3ipv6NodeRouteList(Base):
         'RouteOrigin': 'routeOrigin',
         'RouteStep': 'routeStep',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3ipv6NodeRouteList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3ipv6NodeRouteList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def FirstIpv6Route(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def MaskWidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def Metric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +126,12 @@ class IsisL3ipv6NodeRouteList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfRoutes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def NodeStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +153,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def Redistribution(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +164,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def RouteOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +175,7 @@ class IsisL3ipv6NodeRouteList(Base):
 
     @property
     def RouteStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +185,7 @@ class IsisL3ipv6NodeRouteList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['RouteStep']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisL3ipv6NodeRouteList
         """Updates isisL3ipv6NodeRouteList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

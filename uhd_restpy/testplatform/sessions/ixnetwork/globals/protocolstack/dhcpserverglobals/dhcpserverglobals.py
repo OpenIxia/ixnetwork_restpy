@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpServerGlobals(Base):
@@ -40,12 +41,15 @@ class DhcpServerGlobals(Base):
         'PingTimeout': 'pingTimeout',
         'SharedNetwork': 'sharedNetwork',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DhcpServerGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpServerGlobals, self).__init__(parent, list_op)
 
     @property
     def DefaultLeaseTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class DhcpServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'])
     @DefaultLeaseTime.setter
     def DefaultLeaseTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'], value)
 
     @property
     def MaxLeaseTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class DhcpServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxLeaseTime'])
     @MaxLeaseTime.setter
     def MaxLeaseTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxLeaseTime'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +87,7 @@ class DhcpServerGlobals(Base):
 
     @property
     def PingCheck(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class DhcpServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PingCheck'])
     @PingCheck.setter
     def PingCheck(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PingCheck'], value)
 
     @property
     def PingTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class DhcpServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PingTimeout'])
     @PingTimeout.setter
     def PingTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PingTimeout'], value)
 
     @property
     def SharedNetwork(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class DhcpServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SharedNetwork'])
     @SharedNetwork.setter
     def SharedNetwork(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SharedNetwork'], value)
 
     def update(self, DefaultLeaseTime=None, MaxLeaseTime=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
+        # type: (int, int, bool, int, bool) -> DhcpServerGlobals
         """Updates dhcpServerGlobals resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class DhcpServerGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DefaultLeaseTime=None, MaxLeaseTime=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
+        # type: (int, int, bool, int, bool) -> DhcpServerGlobals
         """Adds a new dhcpServerGlobals resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class DhcpServerGlobals(Base):
         self._delete()
 
     def find(self, DefaultLeaseTime=None, MaxLeaseTime=None, ObjectId=None, PingCheck=None, PingTimeout=None, SharedNetwork=None):
+        # type: (int, int, str, bool, int, bool) -> DhcpServerGlobals
         """Finds and retrieves dhcpServerGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpServerGlobals resources from the server.

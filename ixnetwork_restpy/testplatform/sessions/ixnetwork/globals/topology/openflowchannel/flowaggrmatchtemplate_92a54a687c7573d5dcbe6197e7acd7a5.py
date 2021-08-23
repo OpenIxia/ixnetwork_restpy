@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowAggrMatchTemplate(Base):
@@ -32,9 +33,11 @@ class FlowAggrMatchTemplate(Base):
     _SDM_NAME = 'flowAggrMatchTemplate'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowAggrMatchTemplate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowAggrMatchTemplate, self).__init__(parent, list_op)
 
     @property
     def MatchTemplate(self):
@@ -48,7 +51,10 @@ class FlowAggrMatchTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchtemplate_ee15bafabf192236a3dca22667501f96 import MatchTemplate
-        return MatchTemplate(self)
+        if self._properties.get('MatchTemplate', None) is not None:
+            return self._properties.get('MatchTemplate')
+        else:
+            return MatchTemplate(self)
 
     @property
     def Predefined(self):
@@ -62,4 +68,7 @@ class FlowAggrMatchTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.predefined_948d5a993970b6a0e72926850bcf371e import Predefined
-        return Predefined(self)
+        if self._properties.get('Predefined', None) is not None:
+            return self._properties.get('Predefined')
+        else:
+            return Predefined(self)

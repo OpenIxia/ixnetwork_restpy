@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bgp4VpnBgpAdVplsRange(Base):
@@ -61,12 +62,19 @@ class Bgp4VpnBgpAdVplsRange(Base):
         'VsiId': 'vsiId',
         'VsiIdAssignedNumber': 'vsiIdAssignedNumber',
     }
+    _SDM_ENUM_MAP = {
+        'routeDistinguisherType': ['asNumber', 'ipAddress'],
+        'routeTargetType': ['asNumber', 'ipAddress'],
+        'vplsIdType': ['asNumber', 'ipAddress'],
+        'vsiId': ['concatenatePeAddress', 'concatenateAssignedNumber'],
+    }
 
-    def __init__(self, parent):
-        super(Bgp4VpnBgpAdVplsRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bgp4VpnBgpAdVplsRange, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +83,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def RouteDistinguisherAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherAsNumber'])
     @RouteDistinguisherAsNumber.setter
     def RouteDistinguisherAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherAsNumber'], value)
 
     @property
     def RouteDistinguisherAsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +111,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherAsNumberStep'])
     @RouteDistinguisherAsNumberStep.setter
     def RouteDistinguisherAsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherAsNumberStep'], value)
 
     @property
     def RouteDistinguisherAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,10 +125,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherAssignedNumber'])
     @RouteDistinguisherAssignedNumber.setter
     def RouteDistinguisherAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherAssignedNumber'], value)
 
     @property
     def RouteDistinguisherAssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +139,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherAssignedNumberStep'])
     @RouteDistinguisherAssignedNumberStep.setter
     def RouteDistinguisherAssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherAssignedNumberStep'], value)
 
     @property
     def RouteDistinguisherIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,10 +153,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherIpAddress'])
     @RouteDistinguisherIpAddress.setter
     def RouteDistinguisherIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherIpAddress'], value)
 
     @property
     def RouteDistinguisherIpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,10 +167,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherIpAddressStep'])
     @RouteDistinguisherIpAddressStep.setter
     def RouteDistinguisherIpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherIpAddressStep'], value)
 
     @property
     def RouteDistinguisherType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +181,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherType'])
     @RouteDistinguisherType.setter
     def RouteDistinguisherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherType'], value)
 
     @property
     def RouteTargetAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,10 +195,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetAsNumber'])
     @RouteTargetAsNumber.setter
     def RouteTargetAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetAsNumber'], value)
 
     @property
     def RouteTargetAsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +209,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetAsNumberStep'])
     @RouteTargetAsNumberStep.setter
     def RouteTargetAsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetAsNumberStep'], value)
 
     @property
     def RouteTargetAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +223,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetAssignedNumber'])
     @RouteTargetAssignedNumber.setter
     def RouteTargetAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetAssignedNumber'], value)
 
     @property
     def RouteTargetAssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,10 +237,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetAssignedNumberStep'])
     @RouteTargetAssignedNumberStep.setter
     def RouteTargetAssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetAssignedNumberStep'], value)
 
     @property
     def RouteTargetIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -219,10 +251,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetIpAddress'])
     @RouteTargetIpAddress.setter
     def RouteTargetIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetIpAddress'], value)
 
     @property
     def RouteTargetIpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -231,10 +265,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetIpAddressStep'])
     @RouteTargetIpAddressStep.setter
     def RouteTargetIpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetIpAddressStep'], value)
 
     @property
     def RouteTargetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,10 +279,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetType'])
     @RouteTargetType.setter
     def RouteTargetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetType'], value)
 
     @property
     def UseRouteDistinguisherAsRouteTarget(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -255,10 +293,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseRouteDistinguisherAsRouteTarget'])
     @UseRouteDistinguisherAsRouteTarget.setter
     def UseRouteDistinguisherAsRouteTarget(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseRouteDistinguisherAsRouteTarget'], value)
 
     @property
     def UseVplsIdAsRouteDistinguisher(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -267,10 +307,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseVplsIdAsRouteDistinguisher'])
     @UseVplsIdAsRouteDistinguisher.setter
     def UseVplsIdAsRouteDistinguisher(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseVplsIdAsRouteDistinguisher'], value)
 
     @property
     def VplsCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -279,10 +321,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsCount'])
     @VplsCount.setter
     def VplsCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsCount'], value)
 
     @property
     def VplsIdAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -291,10 +335,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdAsNumber'])
     @VplsIdAsNumber.setter
     def VplsIdAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdAsNumber'], value)
 
     @property
     def VplsIdAsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -303,10 +349,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdAsNumberStep'])
     @VplsIdAsNumberStep.setter
     def VplsIdAsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdAsNumberStep'], value)
 
     @property
     def VplsIdAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -315,10 +363,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumber'])
     @VplsIdAssignedNumber.setter
     def VplsIdAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumber'], value)
 
     @property
     def VplsIdAssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -327,10 +377,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumberStep'])
     @VplsIdAssignedNumberStep.setter
     def VplsIdAssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdAssignedNumberStep'], value)
 
     @property
     def VplsIdIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,10 +391,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdIpAddress'])
     @VplsIdIpAddress.setter
     def VplsIdIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdIpAddress'], value)
 
     @property
     def VplsIdIpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -351,10 +405,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdIpAddressStep'])
     @VplsIdIpAddressStep.setter
     def VplsIdIpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdIpAddressStep'], value)
 
     @property
     def VplsIdType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -363,10 +419,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VplsIdType'])
     @VplsIdType.setter
     def VplsIdType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VplsIdType'], value)
 
     @property
     def VsiId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -375,10 +433,12 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiId'])
     @VsiId.setter
     def VsiId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiId'], value)
 
     @property
     def VsiIdAssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -387,9 +447,11 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VsiIdAssignedNumber'])
     @VsiIdAssignedNumber.setter
     def VsiIdAssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VsiIdAssignedNumber'], value)
 
     def update(self, Enabled=None, RouteDistinguisherAsNumber=None, RouteDistinguisherAsNumberStep=None, RouteDistinguisherAssignedNumber=None, RouteDistinguisherAssignedNumberStep=None, RouteDistinguisherIpAddress=None, RouteDistinguisherIpAddressStep=None, RouteDistinguisherType=None, RouteTargetAsNumber=None, RouteTargetAsNumberStep=None, RouteTargetAssignedNumber=None, RouteTargetAssignedNumberStep=None, RouteTargetIpAddress=None, RouteTargetIpAddressStep=None, RouteTargetType=None, UseRouteDistinguisherAsRouteTarget=None, UseVplsIdAsRouteDistinguisher=None, VplsCount=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None, VsiId=None, VsiIdAssignedNumber=None):
+        # type: (bool, int, int, int, int, str, str, str, int, int, int, int, str, str, str, bool, bool, int, int, int, int, int, str, str, str, str, int) -> Bgp4VpnBgpAdVplsRange
         """Updates bgp4VpnBgpAdVplsRange resource on the server.
 
         Args
@@ -429,6 +491,7 @@ class Bgp4VpnBgpAdVplsRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, RouteDistinguisherAsNumber=None, RouteDistinguisherAsNumberStep=None, RouteDistinguisherAssignedNumber=None, RouteDistinguisherAssignedNumberStep=None, RouteDistinguisherIpAddress=None, RouteDistinguisherIpAddressStep=None, RouteDistinguisherType=None, RouteTargetAsNumber=None, RouteTargetAsNumberStep=None, RouteTargetAssignedNumber=None, RouteTargetAssignedNumberStep=None, RouteTargetIpAddress=None, RouteTargetIpAddressStep=None, RouteTargetType=None, UseRouteDistinguisherAsRouteTarget=None, UseVplsIdAsRouteDistinguisher=None, VplsCount=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None, VsiId=None, VsiIdAssignedNumber=None):
+        # type: (bool, int, int, int, int, str, str, str, int, int, int, int, str, str, str, bool, bool, int, int, int, int, int, str, str, str, str, int) -> Bgp4VpnBgpAdVplsRange
         """Adds a new bgp4VpnBgpAdVplsRange resource on the server and adds it to the container.
 
         Args
@@ -482,6 +545,7 @@ class Bgp4VpnBgpAdVplsRange(Base):
         self._delete()
 
     def find(self, Enabled=None, RouteDistinguisherAsNumber=None, RouteDistinguisherAsNumberStep=None, RouteDistinguisherAssignedNumber=None, RouteDistinguisherAssignedNumberStep=None, RouteDistinguisherIpAddress=None, RouteDistinguisherIpAddressStep=None, RouteDistinguisherType=None, RouteTargetAsNumber=None, RouteTargetAsNumberStep=None, RouteTargetAssignedNumber=None, RouteTargetAssignedNumberStep=None, RouteTargetIpAddress=None, RouteTargetIpAddressStep=None, RouteTargetType=None, UseRouteDistinguisherAsRouteTarget=None, UseVplsIdAsRouteDistinguisher=None, VplsCount=None, VplsIdAsNumber=None, VplsIdAsNumberStep=None, VplsIdAssignedNumber=None, VplsIdAssignedNumberStep=None, VplsIdIpAddress=None, VplsIdIpAddressStep=None, VplsIdType=None, VsiId=None, VsiIdAssignedNumber=None):
+        # type: (bool, int, int, int, int, str, str, str, int, int, int, int, str, str, str, bool, bool, int, int, int, int, int, str, str, str, str, int) -> Bgp4VpnBgpAdVplsRange
         """Finds and retrieves bgp4VpnBgpAdVplsRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgp4VpnBgpAdVplsRange resources from the server.

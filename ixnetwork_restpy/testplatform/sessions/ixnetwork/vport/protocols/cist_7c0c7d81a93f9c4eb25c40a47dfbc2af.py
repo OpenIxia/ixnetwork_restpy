@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Cist(Base):
@@ -32,9 +33,11 @@ class Cist(Base):
     _SDM_NAME = 'cist'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Cist, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Cist, self).__init__(parent, list_op)
 
     @property
     def CistLearnedInfo(self):
@@ -48,7 +51,10 @@ class Cist(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cistlearnedinfo_ab0130170187b84c756a225eddf532d7 import CistLearnedInfo
-        return CistLearnedInfo(self)._select()
+        if self._properties.get('CistLearnedInfo', None) is not None:
+            return self._properties.get('CistLearnedInfo')
+        else:
+            return CistLearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
@@ -62,4 +68,7 @@ class Cist(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_624758fed3751b10c746ab8fdb7d7f56 import LearnedInterface
-        return LearnedInterface(self)
+        if self._properties.get('LearnedInterface', None) is not None:
+            return self._properties.get('LearnedInterface')
+        else:
+            return LearnedInterface(self)

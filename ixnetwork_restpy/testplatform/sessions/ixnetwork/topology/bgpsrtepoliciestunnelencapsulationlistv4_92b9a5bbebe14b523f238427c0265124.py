@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
@@ -65,9 +66,11 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         'TunnelType': 'tunnelType',
         'UseAsMPLSLabel': 'useAsMPLSLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpSRTEPoliciesTunnelEncapsulationListV4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpSRTEPoliciesTunnelEncapsulationListV4, self).__init__(parent, list_op)
 
     @property
     def BgpSRTEPoliciesSegmentListV4(self):
@@ -81,10 +84,14 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentlistv4_20f07dda61e493fe2f4aacf4ca7e10d5 import BgpSRTEPoliciesSegmentListV4
-        return BgpSRTEPoliciesSegmentListV4(self)._select()
+        if self._properties.get('BgpSRTEPoliciesSegmentListV4', None) is not None:
+            return self._properties.get('BgpSRTEPoliciesSegmentListV4')
+        else:
+            return BgpSRTEPoliciesSegmentListV4(self)._select()
 
     @property
     def ENLPValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +102,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def IPv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +113,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def SID4Octet(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +124,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +135,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def AddressFamily(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +146,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def As4Number(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +157,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def BindingSIDType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +168,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def ColorCOBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +179,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def ColorReservedBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +190,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def ColorValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +201,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,6 +211,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,6 +221,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnBindingTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -213,6 +232,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnColorTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -223,6 +243,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnENLPTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -233,6 +254,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnPolicyNameTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -243,6 +265,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnPolicyPrioritySubTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -253,6 +276,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnPrefTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -263,6 +287,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def EnRemoteEndPointTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -273,6 +298,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def Iflag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -283,6 +309,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -291,10 +318,12 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfActiveSegmentList(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -305,6 +334,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def NumberOfSegmentListV4(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -313,10 +343,12 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSegmentListV4'])
     @NumberOfSegmentListV4.setter
     def NumberOfSegmentListV4(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfSegmentListV4'], value)
 
     @property
     def PolicyName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +359,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def PrefValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +370,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +381,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def RemainingBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +392,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def RemoteEndpointIPv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +403,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def RemoteEndpointIPv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +414,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def Sflag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -387,6 +425,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def SrtepolicyName(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -396,6 +435,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def TunnelType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +446,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
 
     @property
     def UseAsMPLSLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -415,6 +456,7 @@ class BgpSRTEPoliciesTunnelEncapsulationListV4(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseAsMPLSLabel']))
 
     def update(self, Name=None, NumberOfSegmentListV4=None):
+        # type: (str, int) -> BgpSRTEPoliciesTunnelEncapsulationListV4
         """Updates bgpSRTEPoliciesTunnelEncapsulationListV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

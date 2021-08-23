@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomTlvs(Base):
@@ -45,12 +46,15 @@ class CustomTlvs(Base):
         'Type': 'type',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomTlvs, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomTlvs, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -59,10 +63,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IncludeInCcm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +77,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInCcm'])
     @IncludeInCcm.setter
     def IncludeInCcm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInCcm'], value)
 
     @property
     def IncludeInLbm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +91,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInLbm'])
     @IncludeInLbm.setter
     def IncludeInLbm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInLbm'], value)
 
     @property
     def IncludeInLbr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInLbr'])
     @IncludeInLbr.setter
     def IncludeInLbr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInLbr'], value)
 
     @property
     def IncludeInLmm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInLmm'])
     @IncludeInLmm.setter
     def IncludeInLmm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInLmm'], value)
 
     @property
     def IncludeInLmr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +133,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInLmr'])
     @IncludeInLmr.setter
     def IncludeInLmr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInLmr'], value)
 
     @property
     def IncludeInLtm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -131,10 +147,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInLtm'])
     @IncludeInLtm.setter
     def IncludeInLtm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInLtm'], value)
 
     @property
     def IncludeInLtr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -143,10 +161,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeInLtr'])
     @IncludeInLtr.setter
     def IncludeInLtr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeInLtr'], value)
 
     @property
     def Length(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +175,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Length'])
     @Length.setter
     def Length(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Length'], value)
 
     @property
     def Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,10 +189,12 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,9 +203,11 @@ class CustomTlvs(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, int, int, str) -> CustomTlvs
         """Updates customTlvs resource on the server.
 
         Args
@@ -205,6 +231,7 @@ class CustomTlvs(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, int, int, str) -> CustomTlvs
         """Adds a new customTlvs resource on the server and adds it to the container.
 
         Args
@@ -242,6 +269,7 @@ class CustomTlvs(Base):
         self._delete()
 
     def find(self, Enabled=None, IncludeInCcm=None, IncludeInLbm=None, IncludeInLbr=None, IncludeInLmm=None, IncludeInLmr=None, IncludeInLtm=None, IncludeInLtr=None, Length=None, Type=None, Value=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, int, int, str) -> CustomTlvs
         """Finds and retrieves customTlvs resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customTlvs resources from the server.

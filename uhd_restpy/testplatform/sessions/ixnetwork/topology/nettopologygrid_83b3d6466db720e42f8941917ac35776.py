@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetTopologyGrid(Base):
@@ -38,12 +39,15 @@ class NetTopologyGrid(Base):
         'LinkMultiplier': 'linkMultiplier',
         'Rows': 'rows',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetTopologyGrid, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetTopologyGrid, self).__init__(parent, list_op)
 
     @property
     def Columns(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class NetTopologyGrid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Columns'])
     @Columns.setter
     def Columns(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Columns'], value)
 
     @property
     def IncludeEntryPoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class NetTopologyGrid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
 
     @property
     def LinkMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class NetTopologyGrid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
 
     @property
     def Rows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,9 +98,11 @@ class NetTopologyGrid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rows'])
     @Rows.setter
     def Rows(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rows'], value)
 
     def update(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
+        # type: (int, bool, int, int) -> NetTopologyGrid
         """Updates netTopologyGrid resource on the server.
 
         Args
@@ -107,6 +119,7 @@ class NetTopologyGrid(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
+        # type: (int, bool, int, int) -> NetTopologyGrid
         """Adds a new netTopologyGrid resource on the server and adds it to the container.
 
         Args
@@ -137,6 +150,7 @@ class NetTopologyGrid(Base):
         self._delete()
 
     def find(self, Columns=None, IncludeEntryPoint=None, LinkMultiplier=None, Rows=None):
+        # type: (int, bool, int, int) -> NetTopologyGrid
         """Finds and retrieves netTopologyGrid resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyGrid resources from the server.

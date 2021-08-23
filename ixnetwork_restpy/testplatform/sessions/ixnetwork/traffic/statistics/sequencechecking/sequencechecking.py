@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SequenceChecking(Base):
@@ -35,12 +36,16 @@ class SequenceChecking(Base):
         'Enabled': 'enabled',
         'SequenceMode': 'sequenceMode',
     }
+    _SDM_ENUM_MAP = {
+        'sequenceMode': ['advanced', 'rxPacketArrival', 'rxSwitchedPath', 'rxThreshold'],
+    }
 
-    def __init__(self, parent):
-        super(SequenceChecking, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SequenceChecking, self).__init__(parent, list_op)
 
     @property
     def AdvancedSequenceThreshold(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -49,10 +54,12 @@ class SequenceChecking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'])
     @AdvancedSequenceThreshold.setter
     def AdvancedSequenceThreshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvancedSequenceThreshold'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +68,12 @@ class SequenceChecking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def SequenceMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,9 +82,11 @@ class SequenceChecking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SequenceMode'])
     @SequenceMode.setter
     def SequenceMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SequenceMode'], value)
 
     def update(self, AdvancedSequenceThreshold=None, Enabled=None, SequenceMode=None):
+        # type: (int, bool, str) -> SequenceChecking
         """Updates sequenceChecking resource on the server.
 
         Args

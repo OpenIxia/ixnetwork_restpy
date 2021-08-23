@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInformation(Base):
@@ -173,9 +174,22 @@ class LearnedInformation(Base):
         'VendorMessageLength': 'vendorMessageLength',
         'VendorStateResponseTimeOut': 'vendorStateResponseTimeOut',
     }
+    _SDM_ENUM_MAP = {
+        'flowAggregatedStatOutPortInputMode': ['ofppInPort', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal', 'ofppNone', 'custom'],
+        'flowAggregatedStatTableIdInputMode': ['allTables', 'emergency', 'custom'],
+        'flowStatOutPortInputMode': ['ofppInPort', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal', 'ofppNone', 'custom'],
+        'flowStatTableIdInputMode': ['allTables', 'emergency', 'custom'],
+        'groupIdType': ['ofpgAll', 'ofpgAny', 'manual'],
+        'packetOutBufferIdInputMode': ['opfNoBuffer', 'manual'],
+        'packetOutInPortInputMode': ['ofppController', 'ofppLocal', 'manual'],
+        'portNumberInputMode': ['ofppNone', 'custom'],
+        'queueIdInputMode': ['ofpqAll', 'custom'],
+        'queueStatPortNumberInputMode': ['ofppAll', 'custom'],
+        'roleRequestType': ['equal', 'master', 'slave', 'noChange'],
+    }
 
-    def __init__(self, parent):
-        super(LearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInformation, self).__init__(parent, list_op)
 
     @property
     def AsyncConfStatLearnedInformation(self):
@@ -189,7 +203,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asyncconfstatlearnedinformation_8263676c7436dc68c8c6376e412a59a0 import AsyncConfStatLearnedInformation
-        return AsyncConfStatLearnedInformation(self)
+        if self._properties.get('AsyncConfStatLearnedInformation', None) is not None:
+            return self._properties.get('AsyncConfStatLearnedInformation')
+        else:
+            return AsyncConfStatLearnedInformation(self)
 
     @property
     def Controller131TriggerAttributes(self):
@@ -203,7 +220,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controller131triggerattributes_6cab58785fde2d113c2ae0cad7498273 import Controller131TriggerAttributes
-        return Controller131TriggerAttributes(self)._select()
+        if self._properties.get('Controller131TriggerAttributes', None) is not None:
+            return self._properties.get('Controller131TriggerAttributes')
+        else:
+            return Controller131TriggerAttributes(self)._select()
 
     @property
     def DescriptionStatLearnedInformation(self):
@@ -217,7 +237,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.descriptionstatlearnedinformation_a359e482aaae60d1717b225a494fa484 import DescriptionStatLearnedInformation
-        return DescriptionStatLearnedInformation(self)
+        if self._properties.get('DescriptionStatLearnedInformation', None) is not None:
+            return self._properties.get('DescriptionStatLearnedInformation')
+        else:
+            return DescriptionStatLearnedInformation(self)
 
     @property
     def FlowAggregatedStatLearnedInformation(self):
@@ -231,7 +254,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowaggregatedstatlearnedinformation_46c4230f1b3c053b903df6ed8cf276f3 import FlowAggregatedStatLearnedInformation
-        return FlowAggregatedStatLearnedInformation(self)
+        if self._properties.get('FlowAggregatedStatLearnedInformation', None) is not None:
+            return self._properties.get('FlowAggregatedStatLearnedInformation')
+        else:
+            return FlowAggregatedStatLearnedInformation(self)
 
     @property
     def FlowAggregatedStatMatchCriteria131TriggerAttributes(self):
@@ -245,7 +271,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowaggregatedstatmatchcriteria131triggerattributes_315a5f3f92d4de91dc57b878df643d23 import FlowAggregatedStatMatchCriteria131TriggerAttributes
-        return FlowAggregatedStatMatchCriteria131TriggerAttributes(self)._select()
+        if self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes', None) is not None:
+            return self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes')
+        else:
+            return FlowAggregatedStatMatchCriteria131TriggerAttributes(self)._select()
 
     @property
     def FlowStatLearnedInformation(self):
@@ -259,7 +288,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowstatlearnedinformation_30004ff541577c4d728de71d4d15d766 import FlowStatLearnedInformation
-        return FlowStatLearnedInformation(self)
+        if self._properties.get('FlowStatLearnedInformation', None) is not None:
+            return self._properties.get('FlowStatLearnedInformation')
+        else:
+            return FlowStatLearnedInformation(self)
 
     @property
     def FlowStatMatchCriteria131TriggerAttributes(self):
@@ -273,7 +305,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowstatmatchcriteria131triggerattributes_332604ca4d52c2eba1dfeb1164ec44dd import FlowStatMatchCriteria131TriggerAttributes
-        return FlowStatMatchCriteria131TriggerAttributes(self)._select()
+        if self._properties.get('FlowStatMatchCriteria131TriggerAttributes', None) is not None:
+            return self._properties.get('FlowStatMatchCriteria131TriggerAttributes')
+        else:
+            return FlowStatMatchCriteria131TriggerAttributes(self)._select()
 
     @property
     def GroupDescriptionStatLearnedInformation(self):
@@ -287,7 +322,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupdescriptionstatlearnedinformation_8b9e5ac842eadde534391442ad6b9af1 import GroupDescriptionStatLearnedInformation
-        return GroupDescriptionStatLearnedInformation(self)
+        if self._properties.get('GroupDescriptionStatLearnedInformation', None) is not None:
+            return self._properties.get('GroupDescriptionStatLearnedInformation')
+        else:
+            return GroupDescriptionStatLearnedInformation(self)
 
     @property
     def GroupFeatureStatLearnedInformation(self):
@@ -301,7 +339,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupfeaturestatlearnedinformation_a36a2e649d69b292cdb4a21ca980e647 import GroupFeatureStatLearnedInformation
-        return GroupFeatureStatLearnedInformation(self)
+        if self._properties.get('GroupFeatureStatLearnedInformation', None) is not None:
+            return self._properties.get('GroupFeatureStatLearnedInformation')
+        else:
+            return GroupFeatureStatLearnedInformation(self)
 
     @property
     def GroupStatLearnedInformation(self):
@@ -315,7 +356,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatlearnedinformation_100495e05f6e7b1b1650ad63b2ee4161 import GroupStatLearnedInformation
-        return GroupStatLearnedInformation(self)
+        if self._properties.get('GroupStatLearnedInformation', None) is not None:
+            return self._properties.get('GroupStatLearnedInformation')
+        else:
+            return GroupStatLearnedInformation(self)
 
     @property
     def MeterConfigStatsLearnedInformation(self):
@@ -329,7 +373,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterconfigstatslearnedinformation_ee133b5ab250ce978ccd6e7000f18e28 import MeterConfigStatsLearnedInformation
-        return MeterConfigStatsLearnedInformation(self)
+        if self._properties.get('MeterConfigStatsLearnedInformation', None) is not None:
+            return self._properties.get('MeterConfigStatsLearnedInformation')
+        else:
+            return MeterConfigStatsLearnedInformation(self)
 
     @property
     def MeterFeatureStatsLearnedInformation(self):
@@ -343,7 +390,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterfeaturestatslearnedinformation_ab32f8b3a8c2aa48d53fedc3e2df59dd import MeterFeatureStatsLearnedInformation
-        return MeterFeatureStatsLearnedInformation(self)
+        if self._properties.get('MeterFeatureStatsLearnedInformation', None) is not None:
+            return self._properties.get('MeterFeatureStatsLearnedInformation')
+        else:
+            return MeterFeatureStatsLearnedInformation(self)
 
     @property
     def MeterStatsLearnedInformation(self):
@@ -357,7 +407,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatslearnedinformation_bd5899f9e605047a4933dec0fdf73366 import MeterStatsLearnedInformation
-        return MeterStatsLearnedInformation(self)
+        if self._properties.get('MeterStatsLearnedInformation', None) is not None:
+            return self._properties.get('MeterStatsLearnedInformation')
+        else:
+            return MeterStatsLearnedInformation(self)
 
     @property
     def OfChannelLearnedInformation(self):
@@ -371,7 +424,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannellearnedinformation_2c0d9c826a237f044b4b6368ca250839 import OfChannelLearnedInformation
-        return OfChannelLearnedInformation(self)
+        if self._properties.get('OfChannelLearnedInformation', None) is not None:
+            return self._properties.get('OfChannelLearnedInformation')
+        else:
+            return OfChannelLearnedInformation(self)
 
     @property
     def PacketOutTriggerActions(self):
@@ -385,7 +441,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetouttriggeractions_ec5821e9272e2ea2c05e3910edf98056 import PacketOutTriggerActions
-        return PacketOutTriggerActions(self)
+        if self._properties.get('PacketOutTriggerActions', None) is not None:
+            return self._properties.get('PacketOutTriggerActions')
+        else:
+            return PacketOutTriggerActions(self)
 
     @property
     def PortFeaturesLearnedInformation(self):
@@ -399,7 +458,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portfeatureslearnedinformation_d0dbd87b574c9a18016cdef98678e453 import PortFeaturesLearnedInformation
-        return PortFeaturesLearnedInformation(self)
+        if self._properties.get('PortFeaturesLearnedInformation', None) is not None:
+            return self._properties.get('PortFeaturesLearnedInformation')
+        else:
+            return PortFeaturesLearnedInformation(self)
 
     @property
     def PortModificationTriggerAttributes(self):
@@ -413,7 +475,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portmodificationtriggerattributes_5bc5835d31569d2613fda0b3721ad681 import PortModificationTriggerAttributes
-        return PortModificationTriggerAttributes(self)._select()
+        if self._properties.get('PortModificationTriggerAttributes', None) is not None:
+            return self._properties.get('PortModificationTriggerAttributes')
+        else:
+            return PortModificationTriggerAttributes(self)._select()
 
     @property
     def PortStatLearnedInformation(self):
@@ -427,7 +492,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portstatlearnedinformation_31c26a5bcbe87f62ff543b7a7ffb3432 import PortStatLearnedInformation
-        return PortStatLearnedInformation(self)
+        if self._properties.get('PortStatLearnedInformation', None) is not None:
+            return self._properties.get('PortStatLearnedInformation')
+        else:
+            return PortStatLearnedInformation(self)
 
     @property
     def QueueConfigLearnedInformation(self):
@@ -441,7 +509,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueconfiglearnedinformation_10211d0e530099c486d9e89481f764c8 import QueueConfigLearnedInformation
-        return QueueConfigLearnedInformation(self)
+        if self._properties.get('QueueConfigLearnedInformation', None) is not None:
+            return self._properties.get('QueueConfigLearnedInformation')
+        else:
+            return QueueConfigLearnedInformation(self)
 
     @property
     def QueueStatLearnedInformation(self):
@@ -455,7 +526,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queuestatlearnedinformation_7fd65340d3c1f24a9ea2dfe8160d524a import QueueStatLearnedInformation
-        return QueueStatLearnedInformation(self)
+        if self._properties.get('QueueStatLearnedInformation', None) is not None:
+            return self._properties.get('QueueStatLearnedInformation')
+        else:
+            return QueueStatLearnedInformation(self)
 
     @property
     def SwitchConfigLearnedInformation(self):
@@ -469,7 +543,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchconfiglearnedinformation_0ea07dc2417e7dcbb9cea0bd70f007ec import SwitchConfigLearnedInformation
-        return SwitchConfigLearnedInformation(self)
+        if self._properties.get('SwitchConfigLearnedInformation', None) is not None:
+            return self._properties.get('SwitchConfigLearnedInformation')
+        else:
+            return SwitchConfigLearnedInformation(self)
 
     @property
     def TableFeaturePropertiesTrigger(self):
@@ -483,7 +560,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablefeaturepropertiestrigger_159cbb76bc90f1cb0a06dd89e98757fa import TableFeaturePropertiesTrigger
-        return TableFeaturePropertiesTrigger(self)
+        if self._properties.get('TableFeaturePropertiesTrigger', None) is not None:
+            return self._properties.get('TableFeaturePropertiesTrigger')
+        else:
+            return TableFeaturePropertiesTrigger(self)
 
     @property
     def TableFeaturesLearnedInformation(self):
@@ -497,7 +577,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablefeatureslearnedinformation_25618c8be71a4cf85be5f34e995db75e import TableFeaturesLearnedInformation
-        return TableFeaturesLearnedInformation(self)
+        if self._properties.get('TableFeaturesLearnedInformation', None) is not None:
+            return self._properties.get('TableFeaturesLearnedInformation')
+        else:
+            return TableFeaturesLearnedInformation(self)
 
     @property
     def TableStatLearnedInformation(self):
@@ -511,7 +594,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablestatlearnedinformation_80bff3610dd3cd2ada6c7aca20b53b76 import TableStatLearnedInformation
-        return TableStatLearnedInformation(self)
+        if self._properties.get('TableStatLearnedInformation', None) is not None:
+            return self._properties.get('TableStatLearnedInformation')
+        else:
+            return TableStatLearnedInformation(self)
 
     @property
     def VendorStatLearnedInformation(self):
@@ -525,10 +611,14 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vendorstatlearnedinformation_80b9796ada805b38f41bbaf9e9ecb473 import VendorStatLearnedInformation
-        return VendorStatLearnedInformation(self)
+        if self._properties.get('VendorStatLearnedInformation', None) is not None:
+            return self._properties.get('VendorStatLearnedInformation')
+        else:
+            return VendorStatLearnedInformation(self)
 
     @property
     def AsyncConfStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -537,10 +627,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AsyncConfStatResponseTimeOut'])
     @AsyncConfStatResponseTimeOut.setter
     def AsyncConfStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AsyncConfStatResponseTimeOut'], value)
 
     @property
     def DescriptionStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -549,10 +641,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DescriptionStatResponseTimeOut'])
     @DescriptionStatResponseTimeOut.setter
     def DescriptionStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DescriptionStatResponseTimeOut'], value)
 
     @property
     def EnableAsyncConfMasterFlowRemovedFlowDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -561,10 +655,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedFlowDelete'])
     @EnableAsyncConfMasterFlowRemovedFlowDelete.setter
     def EnableAsyncConfMasterFlowRemovedFlowDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedFlowDelete'], value)
 
     @property
     def EnableAsyncConfMasterFlowRemovedGroupDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -573,10 +669,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedGroupDelete'])
     @EnableAsyncConfMasterFlowRemovedGroupDelete.setter
     def EnableAsyncConfMasterFlowRemovedGroupDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedGroupDelete'], value)
 
     @property
     def EnableAsyncConfMasterFlowRemovedHardTimeOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -585,10 +683,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedHardTimeOut'])
     @EnableAsyncConfMasterFlowRemovedHardTimeOut.setter
     def EnableAsyncConfMasterFlowRemovedHardTimeOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedHardTimeOut'], value)
 
     @property
     def EnableAsyncConfMasterFlowRemovedIdleTimeOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -597,10 +697,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedIdleTimeOut'])
     @EnableAsyncConfMasterFlowRemovedIdleTimeOut.setter
     def EnableAsyncConfMasterFlowRemovedIdleTimeOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterFlowRemovedIdleTimeOut'], value)
 
     @property
     def EnableAsyncConfMasterPacketInActionOutputToController(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -609,10 +711,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPacketInActionOutputToController'])
     @EnableAsyncConfMasterPacketInActionOutputToController.setter
     def EnableAsyncConfMasterPacketInActionOutputToController(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPacketInActionOutputToController'], value)
 
     @property
     def EnableAsyncConfMasterPacketInInvalidTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -621,10 +725,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPacketInInvalidTtl'])
     @EnableAsyncConfMasterPacketInInvalidTtl.setter
     def EnableAsyncConfMasterPacketInInvalidTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPacketInInvalidTtl'], value)
 
     @property
     def EnableAsyncConfMasterPacketInNoMatching(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -633,10 +739,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPacketInNoMatching'])
     @EnableAsyncConfMasterPacketInNoMatching.setter
     def EnableAsyncConfMasterPacketInNoMatching(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPacketInNoMatching'], value)
 
     @property
     def EnableAsyncConfMasterPortStatusAdd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -645,10 +753,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPortStatusAdd'])
     @EnableAsyncConfMasterPortStatusAdd.setter
     def EnableAsyncConfMasterPortStatusAdd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPortStatusAdd'], value)
 
     @property
     def EnableAsyncConfMasterPortStatusDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -657,10 +767,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPortStatusDelete'])
     @EnableAsyncConfMasterPortStatusDelete.setter
     def EnableAsyncConfMasterPortStatusDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPortStatusDelete'], value)
 
     @property
     def EnableAsyncConfMasterPortStatusModify(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -669,10 +781,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPortStatusModify'])
     @EnableAsyncConfMasterPortStatusModify.setter
     def EnableAsyncConfMasterPortStatusModify(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfMasterPortStatusModify'], value)
 
     @property
     def EnableAsyncConfSlaveFlowRemovedFlowDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -681,10 +795,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedFlowDelete'])
     @EnableAsyncConfSlaveFlowRemovedFlowDelete.setter
     def EnableAsyncConfSlaveFlowRemovedFlowDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedFlowDelete'], value)
 
     @property
     def EnableAsyncConfSlaveFlowRemovedGroupDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -693,10 +809,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedGroupDelete'])
     @EnableAsyncConfSlaveFlowRemovedGroupDelete.setter
     def EnableAsyncConfSlaveFlowRemovedGroupDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedGroupDelete'], value)
 
     @property
     def EnableAsyncConfSlaveFlowRemovedHardTimeOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -705,10 +823,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedHardTimeOut'])
     @EnableAsyncConfSlaveFlowRemovedHardTimeOut.setter
     def EnableAsyncConfSlaveFlowRemovedHardTimeOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedHardTimeOut'], value)
 
     @property
     def EnableAsyncConfSlaveFlowRemovedIdleTimeOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -717,10 +837,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedIdleTimeOut'])
     @EnableAsyncConfSlaveFlowRemovedIdleTimeOut.setter
     def EnableAsyncConfSlaveFlowRemovedIdleTimeOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlaveFlowRemovedIdleTimeOut'], value)
 
     @property
     def EnableAsyncConfSlavePacketInActionOutputToController(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -729,10 +851,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePacketInActionOutputToController'])
     @EnableAsyncConfSlavePacketInActionOutputToController.setter
     def EnableAsyncConfSlavePacketInActionOutputToController(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePacketInActionOutputToController'], value)
 
     @property
     def EnableAsyncConfSlavePacketInInvalidTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -741,10 +865,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePacketInInvalidTtl'])
     @EnableAsyncConfSlavePacketInInvalidTtl.setter
     def EnableAsyncConfSlavePacketInInvalidTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePacketInInvalidTtl'], value)
 
     @property
     def EnableAsyncConfSlavePacketInNoMatching(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -753,10 +879,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePacketInNoMatching'])
     @EnableAsyncConfSlavePacketInNoMatching.setter
     def EnableAsyncConfSlavePacketInNoMatching(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePacketInNoMatching'], value)
 
     @property
     def EnableAsyncConfSlavePortStatusAdd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -765,10 +893,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePortStatusAdd'])
     @EnableAsyncConfSlavePortStatusAdd.setter
     def EnableAsyncConfSlavePortStatusAdd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePortStatusAdd'], value)
 
     @property
     def EnableAsyncConfSlavePortStatusDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -777,10 +907,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePortStatusDelete'])
     @EnableAsyncConfSlavePortStatusDelete.setter
     def EnableAsyncConfSlavePortStatusDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePortStatusDelete'], value)
 
     @property
     def EnableAsyncConfSlavePortStatusModify(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -789,10 +921,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePortStatusModify'])
     @EnableAsyncConfSlavePortStatusModify.setter
     def EnableAsyncConfSlavePortStatusModify(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAsyncConfSlavePortStatusModify'], value)
 
     @property
     def EnableFlowAggregatedStatMatchCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -801,10 +935,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFlowAggregatedStatMatchCapability'])
     @EnableFlowAggregatedStatMatchCapability.setter
     def EnableFlowAggregatedStatMatchCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFlowAggregatedStatMatchCapability'], value)
 
     @property
     def EnableFlowStatMatchCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -813,10 +949,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFlowStatMatchCapability'])
     @EnableFlowStatMatchCapability.setter
     def EnableFlowStatMatchCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFlowStatMatchCapability'], value)
 
     @property
     def EnableGroupStatMatchCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -825,10 +963,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGroupStatMatchCapability'])
     @EnableGroupStatMatchCapability.setter
     def EnableGroupStatMatchCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGroupStatMatchCapability'], value)
 
     @property
     def EnablePortStatMatchCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -837,10 +977,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePortStatMatchCapability'])
     @EnablePortStatMatchCapability.setter
     def EnablePortStatMatchCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePortStatMatchCapability'], value)
 
     @property
     def EnableQueueStatMatchCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -849,10 +991,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableQueueStatMatchCapability'])
     @EnableQueueStatMatchCapability.setter
     def EnableQueueStatMatchCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableQueueStatMatchCapability'], value)
 
     @property
     def EnableSendTableFeaturesTrigger(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -861,10 +1005,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTableFeaturesTrigger'])
     @EnableSendTableFeaturesTrigger.setter
     def EnableSendTableFeaturesTrigger(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTableFeaturesTrigger'], value)
 
     @property
     def EnableSendTriggerPortFeaturesLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -873,10 +1019,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggerPortFeaturesLearnedInformation'])
     @EnableSendTriggerPortFeaturesLearnedInformation.setter
     def EnableSendTriggerPortFeaturesLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggerPortFeaturesLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredAsyncConfStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -885,10 +1033,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredAsyncConfStatLearnedInformation'])
     @EnableSendTriggeredAsyncConfStatLearnedInformation.setter
     def EnableSendTriggeredAsyncConfStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredAsyncConfStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredBarrierRequestMessage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -897,10 +1047,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredBarrierRequestMessage'])
     @EnableSendTriggeredBarrierRequestMessage.setter
     def EnableSendTriggeredBarrierRequestMessage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredBarrierRequestMessage'], value)
 
     @property
     def EnableSendTriggeredDescriptionStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -909,10 +1061,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredDescriptionStatLearnedInformation'])
     @EnableSendTriggeredDescriptionStatLearnedInformation.setter
     def EnableSendTriggeredDescriptionStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredDescriptionStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredFlowAggregatedStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -921,10 +1075,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredFlowAggregatedStatLearnedInformation'])
     @EnableSendTriggeredFlowAggregatedStatLearnedInformation.setter
     def EnableSendTriggeredFlowAggregatedStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredFlowAggregatedStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredFlowStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -933,10 +1089,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredFlowStatLearnedInformation'])
     @EnableSendTriggeredFlowStatLearnedInformation.setter
     def EnableSendTriggeredFlowStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredFlowStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredGroupDescriptionStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -945,10 +1103,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredGroupDescriptionStatLearnedInformation'])
     @EnableSendTriggeredGroupDescriptionStatLearnedInformation.setter
     def EnableSendTriggeredGroupDescriptionStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredGroupDescriptionStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredGroupFeatureStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -957,10 +1117,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredGroupFeatureStatLearnedInformation'])
     @EnableSendTriggeredGroupFeatureStatLearnedInformation.setter
     def EnableSendTriggeredGroupFeatureStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredGroupFeatureStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredGroupStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -969,10 +1131,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredGroupStatLearnedInformation'])
     @EnableSendTriggeredGroupStatLearnedInformation.setter
     def EnableSendTriggeredGroupStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredGroupStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredPacketOutMessage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -981,10 +1145,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredPacketOutMessage'])
     @EnableSendTriggeredPacketOutMessage.setter
     def EnableSendTriggeredPacketOutMessage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredPacketOutMessage'], value)
 
     @property
     def EnableSendTriggeredPortModificationMessage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -993,10 +1159,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredPortModificationMessage'])
     @EnableSendTriggeredPortModificationMessage.setter
     def EnableSendTriggeredPortModificationMessage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredPortModificationMessage'], value)
 
     @property
     def EnableSendTriggeredPortStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1005,10 +1173,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredPortStatLearnedInformation'])
     @EnableSendTriggeredPortStatLearnedInformation.setter
     def EnableSendTriggeredPortStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredPortStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredQueueConfigLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1017,10 +1187,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredQueueConfigLearnedInformation'])
     @EnableSendTriggeredQueueConfigLearnedInformation.setter
     def EnableSendTriggeredQueueConfigLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredQueueConfigLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredQueueStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1029,10 +1201,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredQueueStatLearnedInformation'])
     @EnableSendTriggeredQueueStatLearnedInformation.setter
     def EnableSendTriggeredQueueStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredQueueStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredRoleRequestMessage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1041,10 +1215,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredRoleRequestMessage'])
     @EnableSendTriggeredRoleRequestMessage.setter
     def EnableSendTriggeredRoleRequestMessage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredRoleRequestMessage'], value)
 
     @property
     def EnableSendTriggeredSwitchConfigLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1053,10 +1229,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredSwitchConfigLearnedInformation'])
     @EnableSendTriggeredSwitchConfigLearnedInformation.setter
     def EnableSendTriggeredSwitchConfigLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredSwitchConfigLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredTableStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1065,10 +1243,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredTableStatLearnedInformation'])
     @EnableSendTriggeredTableStatLearnedInformation.setter
     def EnableSendTriggeredTableStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredTableStatLearnedInformation'], value)
 
     @property
     def EnableSendTriggeredVendorStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1077,10 +1257,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggeredVendorStatLearnedInformation'])
     @EnableSendTriggeredVendorStatLearnedInformation.setter
     def EnableSendTriggeredVendorStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggeredVendorStatLearnedInformation'], value)
 
     @property
     def EnableSetAsyncConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1089,10 +1271,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSetAsyncConfig'])
     @EnableSetAsyncConfig.setter
     def EnableSetAsyncConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSetAsyncConfig'], value)
 
     @property
     def EnableSetSwitchConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1101,10 +1285,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSetSwitchConfig'])
     @EnableSetSwitchConfig.setter
     def EnableSetSwitchConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSetSwitchConfig'], value)
 
     @property
     def EnableSetTableFeatures(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1113,10 +1299,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSetTableFeatures'])
     @EnableSetTableFeatures.setter
     def EnableSetTableFeatures(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSetTableFeatures'], value)
 
     @property
     def EnableTableStatMatchCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1125,10 +1313,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableTableStatMatchCapability'])
     @EnableTableStatMatchCapability.setter
     def EnableTableStatMatchCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableTableStatMatchCapability'], value)
 
     @property
     def EnableTriggeredVendorMessage(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1137,10 +1327,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableTriggeredVendorMessage'])
     @EnableTriggeredVendorMessage.setter
     def EnableTriggeredVendorMessage(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableTriggeredVendorMessage'], value)
 
     @property
     def FlowAggregatedStatEthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1149,10 +1341,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatEthernetDestination'])
     @FlowAggregatedStatEthernetDestination.setter
     def FlowAggregatedStatEthernetDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatEthernetDestination'], value)
 
     @property
     def FlowAggregatedStatEthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1161,10 +1355,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatEthernetSource'])
     @FlowAggregatedStatEthernetSource.setter
     def FlowAggregatedStatEthernetSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatEthernetSource'], value)
 
     @property
     def FlowAggregatedStatEthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1173,10 +1369,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatEthernetType'])
     @FlowAggregatedStatEthernetType.setter
     def FlowAggregatedStatEthernetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatEthernetType'], value)
 
     @property
     def FlowAggregatedStatInPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1185,10 +1383,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatInPort'])
     @FlowAggregatedStatInPort.setter
     def FlowAggregatedStatInPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatInPort'], value)
 
     @property
     def FlowAggregatedStatIpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1197,10 +1397,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpDscp'])
     @FlowAggregatedStatIpDscp.setter
     def FlowAggregatedStatIpDscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpDscp'], value)
 
     @property
     def FlowAggregatedStatIpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1209,10 +1411,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpProtocol'])
     @FlowAggregatedStatIpProtocol.setter
     def FlowAggregatedStatIpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpProtocol'], value)
 
     @property
     def FlowAggregatedStatIpv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1221,10 +1425,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpv4Destination'])
     @FlowAggregatedStatIpv4Destination.setter
     def FlowAggregatedStatIpv4Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpv4Destination'], value)
 
     @property
     def FlowAggregatedStatIpv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1233,10 +1439,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpv4Source'])
     @FlowAggregatedStatIpv4Source.setter
     def FlowAggregatedStatIpv4Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatIpv4Source'], value)
 
     @property
     def FlowAggregatedStatOutPortInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1245,10 +1453,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatOutPortInputMode'])
     @FlowAggregatedStatOutPortInputMode.setter
     def FlowAggregatedStatOutPortInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatOutPortInputMode'], value)
 
     @property
     def FlowAggregatedStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1257,10 +1467,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatResponseTimeOut'])
     @FlowAggregatedStatResponseTimeOut.setter
     def FlowAggregatedStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatResponseTimeOut'], value)
 
     @property
     def FlowAggregatedStatTableIdInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1269,10 +1481,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTableIdInputMode'])
     @FlowAggregatedStatTableIdInputMode.setter
     def FlowAggregatedStatTableIdInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTableIdInputMode'], value)
 
     @property
     def FlowAggregatedStatTableIdInputModeNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1281,10 +1495,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTableIdInputModeNumber'])
     @FlowAggregatedStatTableIdInputModeNumber.setter
     def FlowAggregatedStatTableIdInputModeNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTableIdInputModeNumber'], value)
 
     @property
     def FlowAggregatedStatTransportDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1293,10 +1509,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTransportDestination'])
     @FlowAggregatedStatTransportDestination.setter
     def FlowAggregatedStatTransportDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTransportDestination'], value)
 
     @property
     def FlowAggregatedStatTransportSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1305,10 +1523,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTransportSource'])
     @FlowAggregatedStatTransportSource.setter
     def FlowAggregatedStatTransportSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatTransportSource'], value)
 
     @property
     def FlowAggregatedStatVlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1317,10 +1537,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatVlanId'])
     @FlowAggregatedStatVlanId.setter
     def FlowAggregatedStatVlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatVlanId'], value)
 
     @property
     def FlowAggregatedStatVlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1329,10 +1551,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAggregatedStatVlanPriority'])
     @FlowAggregatedStatVlanPriority.setter
     def FlowAggregatedStatVlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAggregatedStatVlanPriority'], value)
 
     @property
     def FlowStatEthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1341,10 +1565,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatEthernetDestination'])
     @FlowStatEthernetDestination.setter
     def FlowStatEthernetDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatEthernetDestination'], value)
 
     @property
     def FlowStatEthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1353,10 +1579,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatEthernetSource'])
     @FlowStatEthernetSource.setter
     def FlowStatEthernetSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatEthernetSource'], value)
 
     @property
     def FlowStatEthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1365,10 +1593,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatEthernetType'])
     @FlowStatEthernetType.setter
     def FlowStatEthernetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatEthernetType'], value)
 
     @property
     def FlowStatInPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1377,10 +1607,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatInPort'])
     @FlowStatInPort.setter
     def FlowStatInPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatInPort'], value)
 
     @property
     def FlowStatIpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1389,10 +1621,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatIpDscp'])
     @FlowStatIpDscp.setter
     def FlowStatIpDscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatIpDscp'], value)
 
     @property
     def FlowStatIpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1401,10 +1635,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatIpProtocol'])
     @FlowStatIpProtocol.setter
     def FlowStatIpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatIpProtocol'], value)
 
     @property
     def FlowStatIpv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1413,10 +1649,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatIpv4Destination'])
     @FlowStatIpv4Destination.setter
     def FlowStatIpv4Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatIpv4Destination'], value)
 
     @property
     def FlowStatIpv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1425,10 +1663,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatIpv4Source'])
     @FlowStatIpv4Source.setter
     def FlowStatIpv4Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatIpv4Source'], value)
 
     @property
     def FlowStatOutPortInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1437,10 +1677,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPortInputMode'])
     @FlowStatOutPortInputMode.setter
     def FlowStatOutPortInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPortInputMode'], value)
 
     @property
     def FlowStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1449,10 +1691,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatResponseTimeOut'])
     @FlowStatResponseTimeOut.setter
     def FlowStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatResponseTimeOut'], value)
 
     @property
     def FlowStatTableIdInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1461,10 +1705,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdInputMode'])
     @FlowStatTableIdInputMode.setter
     def FlowStatTableIdInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdInputMode'], value)
 
     @property
     def FlowStatTableIdInputModeNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1473,10 +1719,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdInputModeNumber'])
     @FlowStatTableIdInputModeNumber.setter
     def FlowStatTableIdInputModeNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdInputModeNumber'], value)
 
     @property
     def FlowStatTransportDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1485,10 +1733,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTransportDestination'])
     @FlowStatTransportDestination.setter
     def FlowStatTransportDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTransportDestination'], value)
 
     @property
     def FlowStatTransportSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1497,10 +1747,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTransportSource'])
     @FlowStatTransportSource.setter
     def FlowStatTransportSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTransportSource'], value)
 
     @property
     def FlowStatVlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1509,10 +1761,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatVlanId'])
     @FlowStatVlanId.setter
     def FlowStatVlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatVlanId'], value)
 
     @property
     def FlowStatVlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1521,10 +1775,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatVlanPriority'])
     @FlowStatVlanPriority.setter
     def FlowStatVlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatVlanPriority'], value)
 
     @property
     def GroupDescriptionStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1533,10 +1789,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupDescriptionStatResponseTimeOut'])
     @GroupDescriptionStatResponseTimeOut.setter
     def GroupDescriptionStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupDescriptionStatResponseTimeOut'], value)
 
     @property
     def GroupFeatureStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1545,10 +1803,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupFeatureStatResponseTimeOut'])
     @GroupFeatureStatResponseTimeOut.setter
     def GroupFeatureStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupFeatureStatResponseTimeOut'], value)
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1557,10 +1817,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
     @GroupId.setter
     def GroupId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupId'], value)
 
     @property
     def GroupIdType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1569,10 +1831,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupIdType'])
     @GroupIdType.setter
     def GroupIdType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupIdType'], value)
 
     @property
     def GroupStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1581,10 +1845,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupStatResponseTimeOut'])
     @GroupStatResponseTimeOut.setter
     def GroupStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupStatResponseTimeOut'], value)
 
     @property
     def IsAsyncConfStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1594,6 +1860,7 @@ class LearnedInformation(Base):
 
     @property
     def IsDescriptionStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1603,6 +1870,7 @@ class LearnedInformation(Base):
 
     @property
     def IsFlowAggregatedStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1612,6 +1880,7 @@ class LearnedInformation(Base):
 
     @property
     def IsFlowStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1621,6 +1890,7 @@ class LearnedInformation(Base):
 
     @property
     def IsGroupDescriptionStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1630,6 +1900,7 @@ class LearnedInformation(Base):
 
     @property
     def IsGroupFeatureStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1639,6 +1910,7 @@ class LearnedInformation(Base):
 
     @property
     def IsGroupStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1648,6 +1920,7 @@ class LearnedInformation(Base):
 
     @property
     def IsOfChannelLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1657,6 +1930,7 @@ class LearnedInformation(Base):
 
     @property
     def IsPortFeaturesLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1666,6 +1940,7 @@ class LearnedInformation(Base):
 
     @property
     def IsPortStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1675,6 +1950,7 @@ class LearnedInformation(Base):
 
     @property
     def IsQueueConfigLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1684,6 +1960,7 @@ class LearnedInformation(Base):
 
     @property
     def IsQueueStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1693,6 +1970,7 @@ class LearnedInformation(Base):
 
     @property
     def IsTableStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1702,6 +1980,7 @@ class LearnedInformation(Base):
 
     @property
     def IsVendorStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1711,6 +1990,7 @@ class LearnedInformation(Base):
 
     @property
     def PacketOutAuxiliaryId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1719,10 +1999,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutAuxiliaryId'])
     @PacketOutAuxiliaryId.setter
     def PacketOutAuxiliaryId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutAuxiliaryId'], value)
 
     @property
     def PacketOutBufferId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1731,10 +2013,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutBufferId'])
     @PacketOutBufferId.setter
     def PacketOutBufferId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutBufferId'], value)
 
     @property
     def PacketOutBufferIdInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1743,10 +2027,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutBufferIdInputMode'])
     @PacketOutBufferIdInputMode.setter
     def PacketOutBufferIdInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutBufferIdInputMode'], value)
 
     @property
     def PacketOutData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1755,10 +2041,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutData'])
     @PacketOutData.setter
     def PacketOutData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutData'], value)
 
     @property
     def PacketOutDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1767,10 +2055,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutDataLength'])
     @PacketOutDataLength.setter
     def PacketOutDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutDataLength'], value)
 
     @property
     def PacketOutInPortInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1779,10 +2069,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutInPortInputMode'])
     @PacketOutInPortInputMode.setter
     def PacketOutInPortInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutInPortInputMode'], value)
 
     @property
     def PacketOutInPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1791,10 +2083,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketOutInPortNumber'])
     @PacketOutInPortNumber.setter
     def PacketOutInPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketOutInPortNumber'], value)
 
     @property
     def PortFeaturesResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1803,10 +2097,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortFeaturesResponseTimeOut'])
     @PortFeaturesResponseTimeOut.setter
     def PortFeaturesResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortFeaturesResponseTimeOut'], value)
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1815,10 +2111,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
     @PortNumber.setter
     def PortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortNumber'], value)
 
     @property
     def PortNumberInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1827,10 +2125,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortNumberInputMode'])
     @PortNumberInputMode.setter
     def PortNumberInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortNumberInputMode'], value)
 
     @property
     def PortStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1839,10 +2139,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortStatResponseTimeOut'])
     @PortStatResponseTimeOut.setter
     def PortStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortStatResponseTimeOut'], value)
 
     @property
     def QueueConfigPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1851,10 +2153,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueConfigPortNumber'])
     @QueueConfigPortNumber.setter
     def QueueConfigPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueConfigPortNumber'], value)
 
     @property
     def QueueConfigResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1863,10 +2167,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueConfigResponseTimeOut'])
     @QueueConfigResponseTimeOut.setter
     def QueueConfigResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueConfigResponseTimeOut'], value)
 
     @property
     def QueueId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1875,10 +2181,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
     @QueueId.setter
     def QueueId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueId'], value)
 
     @property
     def QueueIdInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1887,10 +2195,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueIdInputMode'])
     @QueueIdInputMode.setter
     def QueueIdInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueIdInputMode'], value)
 
     @property
     def QueueStatPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1899,10 +2209,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueStatPortNumber'])
     @QueueStatPortNumber.setter
     def QueueStatPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueStatPortNumber'], value)
 
     @property
     def QueueStatPortNumberInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1911,10 +2223,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueStatPortNumberInputMode'])
     @QueueStatPortNumberInputMode.setter
     def QueueStatPortNumberInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueStatPortNumberInputMode'], value)
 
     @property
     def QueueStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1923,10 +2237,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueStatResponseTimeOut'])
     @QueueStatResponseTimeOut.setter
     def QueueStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueStatResponseTimeOut'], value)
 
     @property
     def RoleRequestGenerationId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1935,10 +2251,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RoleRequestGenerationId'])
     @RoleRequestGenerationId.setter
     def RoleRequestGenerationId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RoleRequestGenerationId'], value)
 
     @property
     def RoleRequestType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1947,10 +2265,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RoleRequestType'])
     @RoleRequestType.setter
     def RoleRequestType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RoleRequestType'], value)
 
     @property
     def SwitchConfigDropFragments(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1959,10 +2279,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchConfigDropFragments'])
     @SwitchConfigDropFragments.setter
     def SwitchConfigDropFragments(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchConfigDropFragments'], value)
 
     @property
     def SwitchConfigMissSendLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1971,10 +2293,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchConfigMissSendLength'])
     @SwitchConfigMissSendLength.setter
     def SwitchConfigMissSendLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchConfigMissSendLength'], value)
 
     @property
     def SwitchConfigReassembleFragments(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1983,10 +2307,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchConfigReassembleFragments'])
     @SwitchConfigReassembleFragments.setter
     def SwitchConfigReassembleFragments(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchConfigReassembleFragments'], value)
 
     @property
     def SwitchConfigResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1995,10 +2321,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchConfigResponseTimeOut'])
     @SwitchConfigResponseTimeOut.setter
     def SwitchConfigResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchConfigResponseTimeOut'], value)
 
     @property
     def TableFeatureConfig(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2007,10 +2335,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureConfig'])
     @TableFeatureConfig.setter
     def TableFeatureConfig(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureConfig'], value)
 
     @property
     def TableFeatureMaxEntries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2019,10 +2349,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureMaxEntries'])
     @TableFeatureMaxEntries.setter
     def TableFeatureMaxEntries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureMaxEntries'], value)
 
     @property
     def TableFeatureMetadataMatch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -2031,10 +2363,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureMetadataMatch'])
     @TableFeatureMetadataMatch.setter
     def TableFeatureMetadataMatch(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureMetadataMatch'], value)
 
     @property
     def TableFeatureMetadataWrite(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -2043,10 +2377,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureMetadataWrite'])
     @TableFeatureMetadataWrite.setter
     def TableFeatureMetadataWrite(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureMetadataWrite'], value)
 
     @property
     def TableFeatureName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -2055,10 +2391,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureName'])
     @TableFeatureName.setter
     def TableFeatureName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureName'], value)
 
     @property
     def TableFeatureResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2067,10 +2405,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureResponseTimeOut'])
     @TableFeatureResponseTimeOut.setter
     def TableFeatureResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureResponseTimeOut'], value)
 
     @property
     def TableFeatureTableId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2079,10 +2419,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableFeatureTableId'])
     @TableFeatureTableId.setter
     def TableFeatureTableId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableFeatureTableId'], value)
 
     @property
     def TableStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2091,10 +2433,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableStatResponseTimeOut'])
     @TableStatResponseTimeOut.setter
     def TableStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableStatResponseTimeOut'], value)
 
     @property
     def TriggeredVendorMessage(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -2103,10 +2447,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggeredVendorMessage'])
     @TriggeredVendorMessage.setter
     def TriggeredVendorMessage(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggeredVendorMessage'], value)
 
     @property
     def TriggeredVendorMessageId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2115,10 +2461,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggeredVendorMessageId'])
     @TriggeredVendorMessageId.setter
     def TriggeredVendorMessageId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggeredVendorMessageId'], value)
 
     @property
     def TriggeredVendorMessageLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2127,10 +2475,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TriggeredVendorMessageLength'])
     @TriggeredVendorMessageLength.setter
     def TriggeredVendorMessageLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TriggeredVendorMessageLength'], value)
 
     @property
     def VendorId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2139,10 +2489,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
     @VendorId.setter
     def VendorId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorId'], value)
 
     @property
     def VendorMessage(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -2151,10 +2503,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorMessage'])
     @VendorMessage.setter
     def VendorMessage(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorMessage'], value)
 
     @property
     def VendorMessageLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2163,10 +2517,12 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorMessageLength'])
     @VendorMessageLength.setter
     def VendorMessageLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorMessageLength'], value)
 
     @property
     def VendorStateResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -2175,9 +2531,11 @@ class LearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorStateResponseTimeOut'])
     @VendorStateResponseTimeOut.setter
     def VendorStateResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorStateResponseTimeOut'], value)
 
     def update(self, AsyncConfStatResponseTimeOut=None, DescriptionStatResponseTimeOut=None, EnableAsyncConfMasterFlowRemovedFlowDelete=None, EnableAsyncConfMasterFlowRemovedGroupDelete=None, EnableAsyncConfMasterFlowRemovedHardTimeOut=None, EnableAsyncConfMasterFlowRemovedIdleTimeOut=None, EnableAsyncConfMasterPacketInActionOutputToController=None, EnableAsyncConfMasterPacketInInvalidTtl=None, EnableAsyncConfMasterPacketInNoMatching=None, EnableAsyncConfMasterPortStatusAdd=None, EnableAsyncConfMasterPortStatusDelete=None, EnableAsyncConfMasterPortStatusModify=None, EnableAsyncConfSlaveFlowRemovedFlowDelete=None, EnableAsyncConfSlaveFlowRemovedGroupDelete=None, EnableAsyncConfSlaveFlowRemovedHardTimeOut=None, EnableAsyncConfSlaveFlowRemovedIdleTimeOut=None, EnableAsyncConfSlavePacketInActionOutputToController=None, EnableAsyncConfSlavePacketInInvalidTtl=None, EnableAsyncConfSlavePacketInNoMatching=None, EnableAsyncConfSlavePortStatusAdd=None, EnableAsyncConfSlavePortStatusDelete=None, EnableAsyncConfSlavePortStatusModify=None, EnableFlowAggregatedStatMatchCapability=None, EnableFlowStatMatchCapability=None, EnableGroupStatMatchCapability=None, EnablePortStatMatchCapability=None, EnableQueueStatMatchCapability=None, EnableSendTableFeaturesTrigger=None, EnableSendTriggerPortFeaturesLearnedInformation=None, EnableSendTriggeredAsyncConfStatLearnedInformation=None, EnableSendTriggeredBarrierRequestMessage=None, EnableSendTriggeredDescriptionStatLearnedInformation=None, EnableSendTriggeredFlowAggregatedStatLearnedInformation=None, EnableSendTriggeredFlowStatLearnedInformation=None, EnableSendTriggeredGroupDescriptionStatLearnedInformation=None, EnableSendTriggeredGroupFeatureStatLearnedInformation=None, EnableSendTriggeredGroupStatLearnedInformation=None, EnableSendTriggeredPacketOutMessage=None, EnableSendTriggeredPortModificationMessage=None, EnableSendTriggeredPortStatLearnedInformation=None, EnableSendTriggeredQueueConfigLearnedInformation=None, EnableSendTriggeredQueueStatLearnedInformation=None, EnableSendTriggeredRoleRequestMessage=None, EnableSendTriggeredSwitchConfigLearnedInformation=None, EnableSendTriggeredTableStatLearnedInformation=None, EnableSendTriggeredVendorStatLearnedInformation=None, EnableSetAsyncConfig=None, EnableSetSwitchConfig=None, EnableSetTableFeatures=None, EnableTableStatMatchCapability=None, EnableTriggeredVendorMessage=None, FlowAggregatedStatEthernetDestination=None, FlowAggregatedStatEthernetSource=None, FlowAggregatedStatEthernetType=None, FlowAggregatedStatInPort=None, FlowAggregatedStatIpDscp=None, FlowAggregatedStatIpProtocol=None, FlowAggregatedStatIpv4Destination=None, FlowAggregatedStatIpv4Source=None, FlowAggregatedStatOutPortInputMode=None, FlowAggregatedStatResponseTimeOut=None, FlowAggregatedStatTableIdInputMode=None, FlowAggregatedStatTableIdInputModeNumber=None, FlowAggregatedStatTransportDestination=None, FlowAggregatedStatTransportSource=None, FlowAggregatedStatVlanId=None, FlowAggregatedStatVlanPriority=None, FlowStatEthernetDestination=None, FlowStatEthernetSource=None, FlowStatEthernetType=None, FlowStatInPort=None, FlowStatIpDscp=None, FlowStatIpProtocol=None, FlowStatIpv4Destination=None, FlowStatIpv4Source=None, FlowStatOutPortInputMode=None, FlowStatResponseTimeOut=None, FlowStatTableIdInputMode=None, FlowStatTableIdInputModeNumber=None, FlowStatTransportDestination=None, FlowStatTransportSource=None, FlowStatVlanId=None, FlowStatVlanPriority=None, GroupDescriptionStatResponseTimeOut=None, GroupFeatureStatResponseTimeOut=None, GroupId=None, GroupIdType=None, GroupStatResponseTimeOut=None, PacketOutAuxiliaryId=None, PacketOutBufferId=None, PacketOutBufferIdInputMode=None, PacketOutData=None, PacketOutDataLength=None, PacketOutInPortInputMode=None, PacketOutInPortNumber=None, PortFeaturesResponseTimeOut=None, PortNumber=None, PortNumberInputMode=None, PortStatResponseTimeOut=None, QueueConfigPortNumber=None, QueueConfigResponseTimeOut=None, QueueId=None, QueueIdInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, QueueStatResponseTimeOut=None, RoleRequestGenerationId=None, RoleRequestType=None, SwitchConfigDropFragments=None, SwitchConfigMissSendLength=None, SwitchConfigReassembleFragments=None, SwitchConfigResponseTimeOut=None, TableFeatureConfig=None, TableFeatureMaxEntries=None, TableFeatureMetadataMatch=None, TableFeatureMetadataWrite=None, TableFeatureName=None, TableFeatureResponseTimeOut=None, TableFeatureTableId=None, TableStatResponseTimeOut=None, TriggeredVendorMessage=None, TriggeredVendorMessageId=None, TriggeredVendorMessageLength=None, VendorId=None, VendorMessage=None, VendorMessageLength=None, VendorStateResponseTimeOut=None):
+        # type: (int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str, str, str, int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, int, str, str, str, str, int, int, int, str, int, int, int, str, str, int, str, int, int, int, str, int, int, int, int, str, int, str, int, str, str, bool, int, bool, int, int, int, str, str, str, int, int, int, str, int, int, int, str, int, int) -> LearnedInformation
         """Updates learnedInformation resource on the server.
 
         Args
@@ -2316,41 +2674,65 @@ class LearnedInformation(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ClearRecordsForTrigger(self):
+    def ClearRecordsForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the clearRecordsForTrigger operation on the server.
 
         This describes the record cleared for trigger settings.
 
+        clearRecordsForTrigger(async_operation=bool)bool
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('clearRecordsForTrigger', payload=payload, response_object=None)
 
-    def RefreshLearnedInformation(self):
+    def RefreshLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInformation operation on the server.
 
         This describes the learned information is refreshed.
 
+        refreshLearnedInformation(async_operation=bool)bool
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInformation', payload=payload, response_object=None)
 
-    def Trigger(self):
+    def Trigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
         """Executes the trigger operation on the server.
 
         This describes the learned info trigger settings.
 
+        trigger(async_operation=bool)number
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('trigger', payload=payload, response_object=None)

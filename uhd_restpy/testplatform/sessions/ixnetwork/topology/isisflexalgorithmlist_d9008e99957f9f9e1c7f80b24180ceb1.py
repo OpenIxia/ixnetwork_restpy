@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisFlexAlgorithmList(Base):
@@ -57,12 +58,15 @@ class IsisFlexAlgorithmList(Base):
         'Priority': 'priority',
         'ReservedBits': 'reservedBits',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisFlexAlgorithmList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisFlexAlgorithmList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +77,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def AdvTwiceExcludeAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +88,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def AdvTwiceIncludeAllAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +99,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def AdvTwiceIncludeAnyAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +110,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def CalcType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +121,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,6 +131,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,6 +141,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def DontAdvInSrAlgo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +152,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def EnableExcludeAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +163,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def EnableFadfTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +174,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def EnableIncludeAllAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +185,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def EnableIncludeAnyAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +196,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def ExcludeAgExtAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -191,6 +207,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def ExcludeAgExtAgLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +218,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def FadfLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +229,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def FlexAlgo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +240,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def IncludeAllAgExtAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +251,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def IncludeAllAgExtAgLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +262,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def IncludeAnyAgExtAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +273,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def IncludeAnyAgExtAgLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -261,6 +284,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -271,6 +295,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def MetricType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +306,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -289,10 +315,12 @@ class IsisFlexAlgorithmList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -303,6 +331,7 @@ class IsisFlexAlgorithmList(Base):
 
     @property
     def ReservedBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -312,6 +341,7 @@ class IsisFlexAlgorithmList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedBits']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisFlexAlgorithmList
         """Updates isisFlexAlgorithmList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

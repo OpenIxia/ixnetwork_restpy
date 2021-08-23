@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FrameRateDistribution(Base):
@@ -34,12 +35,17 @@ class FrameRateDistribution(Base):
         'PortDistribution': 'portDistribution',
         'StreamDistribution': 'streamDistribution',
     }
+    _SDM_ENUM_MAP = {
+        'portDistribution': ['applyRateToAll', 'splitRateEvenly'],
+        'streamDistribution': ['applyRateToAll', 'splitRateEvenly'],
+    }
 
-    def __init__(self, parent):
-        super(FrameRateDistribution, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FrameRateDistribution, self).__init__(parent, list_op)
 
     @property
     def PortDistribution(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -48,10 +54,12 @@ class FrameRateDistribution(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDistribution'])
     @PortDistribution.setter
     def PortDistribution(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDistribution'], value)
 
     @property
     def StreamDistribution(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,9 +68,11 @@ class FrameRateDistribution(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StreamDistribution'])
     @StreamDistribution.setter
     def StreamDistribution(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StreamDistribution'], value)
 
     def update(self, PortDistribution=None, StreamDistribution=None):
+        # type: (str, str) -> FrameRateDistribution
         """Updates frameRateDistribution resource on the server.
 
         Args

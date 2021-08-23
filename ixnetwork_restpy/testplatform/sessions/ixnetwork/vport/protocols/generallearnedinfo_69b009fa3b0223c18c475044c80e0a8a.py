@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GeneralLearnedInfo(Base):
@@ -61,12 +62,23 @@ class GeneralLearnedInfo(Base):
         'TimeSinceLastAlarm': 'timeSinceLastAlarm',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'apsLocalDataPath': ['working', 'protect', 'na'],
+        'apsLocalFaultPath': ['working', 'protect', 'both', 'none', 'na'],
+        'apsLocalState': ['na', 'apsNoRequest', 'apsLockoutOfProtection', 'apsSignalFailOnWorking', 'apsManualSwitch', 'apsWaitToRestore', 'apsDoNotRevert', 'apsExercise', 'apsReverseRequest', 'pscNormal', 'pscUnavailable', 'pscProtectingAdmin', 'pscProtectingFailure', 'pscWaitToRevert', 'pscDoNotRevert', 'apsSignalFailOnProtection', 'apsForceSwitch'],
+        'apsRemoteDataPath': ['protect', 'na', 'working'],
+        'apsRemoteFaultPath': ['na', 'working', 'protect', 'both', 'none'],
+        'apsRemoteRequestState': ['na', 'apsNoRequest', 'apsLockoutOfProtection', 'apsSignalFailOnWorking', 'apsManualSwitch', 'apsWaitToRestore', 'apsDoNotRevert', 'apsExercise', 'apsReverseRequest', 'pscNormal', 'pscUnavailable', 'pscProtectingAdmin', 'pscProtectingFailure', 'pscWaitToRevert', 'pscDoNotRevert', 'apsSignalFailOnProtection', 'apsForceSwitch'],
+        'continuityCheckLocalState': ['na', 'bfdDown', 'bfdInit', 'bfdUp', 'y1731Down', 'y1731Init', 'y1731Up'],
+        'continuityCheckRemoteState': ['na', 'bfdDown', 'bfdInit', 'bfdUp', 'y1731Down', 'y1731Init', 'y1731Up'],
+    }
 
-    def __init__(self, parent):
-        super(GeneralLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GeneralLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def AisRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +88,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def AisState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +98,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def AisTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +108,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def AlarmTypeAis(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +118,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def AlarmTypeLck(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +128,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ApsLocalDataPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,6 +138,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ApsLocalFaultPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,6 +148,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ApsLocalState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,6 +158,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ApsRemoteDataPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,6 +168,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ApsRemoteFaultPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,6 +178,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ApsRemoteRequestState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,6 +188,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ContinuityCheckLocalState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -175,6 +198,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ContinuityCheckRemoteState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,6 +208,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ContinuityCheckRxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -193,6 +218,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def ContinuityCheckTxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,6 +228,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def IncomingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -211,6 +238,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def LastAlarmDuration(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -220,6 +248,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def LckRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -229,6 +258,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def LckState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -238,6 +268,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def LckTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -247,6 +278,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def Ldi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -256,6 +288,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def LocalPwStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -265,6 +298,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def OutgoingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -274,6 +308,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def RemoteDefectIndication(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -283,6 +318,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def RemotePwStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -292,6 +328,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def Role(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -301,6 +338,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def TimeSinceLastAlarm(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -310,6 +348,7 @@ class GeneralLearnedInfo(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -317,7 +356,21 @@ class GeneralLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new generalLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved generalLearnedInfo resources using find and the newly added generalLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AisRx=None, AisState=None, AisTx=None, AlarmTypeAis=None, AlarmTypeLck=None, ApsLocalDataPath=None, ApsLocalFaultPath=None, ApsLocalState=None, ApsRemoteDataPath=None, ApsRemoteFaultPath=None, ApsRemoteRequestState=None, ContinuityCheckLocalState=None, ContinuityCheckRemoteState=None, ContinuityCheckRxInterval=None, ContinuityCheckTxInterval=None, IncomingLabelOuterInner=None, LastAlarmDuration=None, LckRx=None, LckState=None, LckTx=None, Ldi=None, LocalPwStatus=None, OutgoingLabelOuterInner=None, RemoteDefectIndication=None, RemotePwStatus=None, Role=None, TimeSinceLastAlarm=None, Type=None):
+        # type: (int, str, int, str, str, str, str, str, str, str, str, str, str, int, int, str, str, int, str, int, str, str, str, str, str, str, str, str) -> GeneralLearnedInfo
         """Finds and retrieves generalLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve generalLearnedInfo resources from the server.
@@ -383,10 +436,16 @@ class GeneralLearnedInfo(Base):
         """
         return self._read(href)
 
-    def AddRecordForTrigger(self):
+    def AddRecordForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the addRecordForTrigger operation on the server.
 
         This signifies the record added for trigger settings.
+
+        addRecordForTrigger(async_operation=bool)bool
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -394,4 +453,6 @@ class GeneralLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addRecordForTrigger', payload=payload, response_object=None)

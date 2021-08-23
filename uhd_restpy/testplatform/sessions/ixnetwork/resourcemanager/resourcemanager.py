@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ResourceManager(Base):
@@ -32,20 +33,24 @@ class ResourceManager(Base):
     _SDM_NAME = 'resourceManager'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ResourceManager, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ResourceManager, self).__init__(parent, list_op)
 
     def ExportConfig(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the exportConfig operation on the server.
 
         Export the entire configuration or fragments of it in a text based format
 
-        exportConfig(Arg2=list, Arg3=bool, Arg4=enum)string
-        ---------------------------------------------------
+        exportConfig(Arg2=list, Arg3=bool, Arg4=enum, async_operation=bool)string
+        -------------------------------------------------------------------------
         - Arg2 (list(str)): A list of xpaths each of which is a starting point in the configuration. The only supported xpath notation is by index or descendant-or-self:*. To export the entire configuration specify /descendant-or-self:*
         - Arg3 (bool): True to include attributes that are equal to the default in the export, false to exclude them
         - Arg4 (str(json)): The format of the exported configuration
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: JSON configuration as a string
 
         Raises
@@ -59,16 +64,18 @@ class ResourceManager(Base):
         return self._execute('exportConfig', payload=payload, response_object=None)
 
     def ExportConfigFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the exportConfigFile operation on the server.
 
         Export the entire configuration or fragments of it in a text based format
 
-        exportConfigFile(Arg2=list, Arg3=bool, Arg4=enum, Arg5=href)
-        ------------------------------------------------------------
+        exportConfigFile(Arg2=list, Arg3=bool, Arg4=enum, Arg5=href, async_operation=bool)
+        ----------------------------------------------------------------------------------
         - Arg2 (list(str)): A list of xpaths each of which is a starting point in the configuration. The only supported xpath notation is by index or descendant-or-self:*. To export the entire configuration specify /descendant-or-self:*
         - Arg3 (bool): True to include attributes that are equal to the default in the export, false to exclude them
         - Arg4 (str(json)): The format of the exported configuration
         - Arg5 (obj(uhd_restpy.files.Files)): The file object to write the configuration to
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -81,25 +88,28 @@ class ResourceManager(Base):
         return self._execute('exportConfigFile', payload=payload, response_object=None)
 
     def ImportConfig(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the importConfig operation on the server.
 
         Create or update the test tool configuration
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        importConfig(Arg2=string, Arg3=bool, Arg4=enum, Arg5=bool)string
-        ----------------------------------------------------------------
+        importConfig(Arg2=string, Arg3=bool, async_operation=bool)list
+        --------------------------------------------------------------
+        - Arg2 (str): The configuration as a string
+        - Arg3 (bool): True to create a new configuration, false to update the current configuration
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): A list of errors that occurred during import
+
+        importConfig(Arg2=string, Arg3=bool, Arg4=enum, Arg5=bool, async_operation=bool)string
+        --------------------------------------------------------------------------------------
         - Arg2 (str): 
         - Arg3 (bool): 
         - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
         - Arg5 (bool): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: A list of errata that occurred during the import
-
-        importConfig(Arg2=string, Arg3=bool)list
-        ----------------------------------------
-        - Arg2 (str): The configuration as a string
-        - Arg3 (bool): True to create a new configuration, false to update the current configuration
-        - Returns list(str): A list of errors that occurred during import
 
         Raises
         ------
@@ -112,25 +122,28 @@ class ResourceManager(Base):
         return self._execute('importConfig', payload=payload, response_object=None)
 
     def ImportConfigFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the importConfigFile operation on the server.
 
         Create or update the test tool configuration
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        importConfigFile(Arg2=href, Arg3=bool, Arg4=enum, Arg5=bool)string
-        ------------------------------------------------------------------
+        importConfigFile(Arg2=href, Arg3=bool, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (obj(uhd_restpy.files.Files)): 
+        - Arg3 (bool): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): A list of errata that occurred during the import
+
+        importConfigFile(Arg2=href, Arg3=bool, Arg4=enum, Arg5=bool, async_operation=bool)string
+        ----------------------------------------------------------------------------------------
         - Arg2 (obj(uhd_restpy.files.Files)): 
         - Arg3 (bool): 
         - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
         - Arg5 (bool): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: A list of errata that occurred during the import
-
-        importConfigFile(Arg2=href, Arg3=bool)list
-        ------------------------------------------
-        - Arg2 (obj(uhd_restpy.files.Files)): 
-        - Arg3 (bool): 
-        - Returns list(str): A list of errata that occurred during the import
 
         Raises
         ------

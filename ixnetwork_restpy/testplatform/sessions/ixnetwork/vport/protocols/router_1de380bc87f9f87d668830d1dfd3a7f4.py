@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -44,9 +45,14 @@ class Router(Base):
         'UpdateInterval': 'updateInterval',
         'UpdateIntervalOffset': 'updateIntervalOffset',
     }
+    _SDM_ENUM_MAP = {
+        'receiveType': ['receiveVersion1', 'receiveVersion2', 'receiveVersion1And2'],
+        'responseMode': ['default', 'splitHorizon', 'poisonReverse', 'splitHorizonSpaceSaver', 'silent'],
+        'sendType': ['multicast', 'broadcastV1', 'broadcastV2'],
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def RouteRange(self):
@@ -60,10 +66,14 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_536464004201b67c5b149913eba12804 import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is not None:
+            return self._properties.get('RouteRange')
+        else:
+            return RouteRange(self)
 
     @property
     def AuthorizationPassword(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,10 +82,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthorizationPassword'])
     @AuthorizationPassword.setter
     def AuthorizationPassword(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthorizationPassword'], value)
 
     @property
     def EnableAuthorization(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +96,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAuthorization'])
     @EnableAuthorization.setter
     def EnableAuthorization(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAuthorization'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +110,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +124,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def ReceiveType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,10 +138,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReceiveType'])
     @ReceiveType.setter
     def ReceiveType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReceiveType'], value)
 
     @property
     def ResponseMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,10 +152,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResponseMode'])
     @ResponseMode.setter
     def ResponseMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResponseMode'], value)
 
     @property
     def SendType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +166,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendType'])
     @SendType.setter
     def SendType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendType'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,10 +180,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def UpdateInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -168,10 +194,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateInterval'])
     @UpdateInterval.setter
     def UpdateInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateInterval'], value)
 
     @property
     def UpdateIntervalOffset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,9 +208,11 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateIntervalOffset'])
     @UpdateIntervalOffset.setter
     def UpdateIntervalOffset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateIntervalOffset'], value)
 
     def update(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+        # type: (str, bool, bool, str, str, str, str, str, int, int) -> Router
         """Updates router resource on the server.
 
         Args
@@ -205,6 +235,7 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+        # type: (str, bool, bool, str, str, str, str, str, int, int) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
         Args
@@ -241,6 +272,7 @@ class Router(Base):
         self._delete()
 
     def find(self, AuthorizationPassword=None, EnableAuthorization=None, Enabled=None, InterfaceId=None, ReceiveType=None, ResponseMode=None, SendType=None, TrafficGroupId=None, UpdateInterval=None, UpdateIntervalOffset=None):
+        # type: (str, bool, bool, str, str, str, str, str, int, int) -> Router
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.

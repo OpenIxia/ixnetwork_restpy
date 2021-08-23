@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ethernetvm(Base):
@@ -43,12 +44,17 @@ class Ethernetvm(Base):
         'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
     }
+    _SDM_ENUM_MAP = {
+        'autoInstrumentation': ['endOfFrame', 'floating'],
+        'speed': ['speed100', 'speed1000', 'speed100g', 'speed10g', 'speed2000', 'speed200g', 'speed20g', 'speed25g', 'speed3000', 'speed30g', 'speed4000', 'speed400g', 'speed40g', 'speed5000', 'speed50g', 'speed6000', 'speed60g', 'speed7000', 'speed70g', 'speed8000', 'speed80g', 'speed9000', 'speed90g'],
+    }
 
-    def __init__(self, parent):
-        super(Ethernetvm, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ethernetvm, self).__init__(parent, list_op)
 
     @property
     def AutoInstrumentation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,10 +63,12 @@ class Ethernetvm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -70,6 +78,7 @@ class Ethernetvm(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,6 +88,7 @@ class Ethernetvm(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,6 +98,7 @@ class Ethernetvm(Base):
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -97,6 +108,7 @@ class Ethernetvm(Base):
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +117,12 @@ class Ethernetvm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,10 +131,12 @@ class Ethernetvm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +146,7 @@ class Ethernetvm(Base):
 
     @property
     def PromiscuousMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,10 +155,12 @@ class Ethernetvm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PromiscuousMode'])
     @PromiscuousMode.setter
     def PromiscuousMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PromiscuousMode'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -150,10 +169,12 @@ class Ethernetvm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def Speed(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,9 +183,11 @@ class Ethernetvm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Speed'])
     @Speed.setter
     def Speed(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
     def update(self, AutoInstrumentation=None, Loopback=None, Mtu=None, PromiscuousMode=None, SelectedSpeeds=None, Speed=None):
+        # type: (str, bool, int, bool, List[str], str) -> Ethernetvm
         """Updates ethernetvm resource on the server.
 
         Args

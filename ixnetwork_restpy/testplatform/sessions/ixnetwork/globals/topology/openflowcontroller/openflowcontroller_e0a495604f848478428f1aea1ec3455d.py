@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OpenFlowController(Base):
@@ -36,9 +37,11 @@ class OpenFlowController(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OpenFlowController, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OpenFlowController, self).__init__(parent, list_op)
 
     @property
     def ActionsTemplate(self):
@@ -52,7 +55,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_3506879509654c1d0d77f933edb1922c import ActionsTemplate
-        return ActionsTemplate(self)._select()
+        if self._properties.get('ActionsTemplate', None) is not None:
+            return self._properties.get('ActionsTemplate')
+        else:
+            return ActionsTemplate(self)._select()
 
     @property
     def FlowSetTemplate(self):
@@ -66,10 +72,14 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1b79b45150c48e9f752113654ba90a51 import FlowSetTemplate
-        return FlowSetTemplate(self)._select()
+        if self._properties.get('FlowSetTemplate', None) is not None:
+            return self._properties.get('FlowSetTemplate')
+        else:
+            return FlowSetTemplate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,6 +89,7 @@ class OpenFlowController(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +99,7 @@ class OpenFlowController(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +108,12 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -108,6 +122,7 @@ class OpenFlowController(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> OpenFlowController
         """Updates openFlowController resource on the server.
 
         Args

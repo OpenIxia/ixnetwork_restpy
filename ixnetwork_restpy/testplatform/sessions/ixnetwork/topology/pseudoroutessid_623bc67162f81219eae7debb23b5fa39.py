@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PseudoRoutesSid(Base):
@@ -49,12 +50,15 @@ class PseudoRoutesSid(Base):
         'NetworkAddress': 'networkAddress',
         'SIDIndexLabel': 'sIDIndexLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PseudoRoutesSid, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PseudoRoutesSid, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -65,6 +69,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -75,6 +80,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +91,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +101,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +111,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def EnableFapm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +122,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def FapmMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +133,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Ipv4EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -133,6 +144,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Ipv4LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -143,6 +155,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Ipv4NFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -153,6 +166,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Ipv4PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +177,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Ipv4RFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +188,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Ipv4VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -183,6 +199,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -192,6 +209,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,10 +218,12 @@ class PseudoRoutesSid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -213,6 +233,7 @@ class PseudoRoutesSid(Base):
 
     @property
     def SIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -222,6 +243,7 @@ class PseudoRoutesSid(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SIDIndexLabel']))
 
     def update(self, Name=None):
+        # type: (str) -> PseudoRoutesSid
         """Updates pseudoRoutesSid resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

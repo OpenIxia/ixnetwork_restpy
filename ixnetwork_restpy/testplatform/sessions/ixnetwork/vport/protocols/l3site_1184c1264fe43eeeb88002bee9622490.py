@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class L3Site(Base):
@@ -48,9 +49,12 @@ class L3Site(Base):
         'UseUpstreamAssignedLabel': 'useUpstreamAssignedLabel',
         'VrfCount': 'vrfCount',
     }
+    _SDM_ENUM_MAP = {
+        'tunnelType': ['tunnelTypePimGreRosenDraft', 'tunnelTypeRsvpP2mp', 'tunnelTypeMldpP2mp'],
+    }
 
-    def __init__(self, parent):
-        super(L3Site, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(L3Site, self).__init__(parent, list_op)
 
     @property
     def ImportTarget(self):
@@ -64,7 +68,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.importtarget_5de62449ab162506e7d4343bed6cdae9 import ImportTarget
-        return ImportTarget(self)._select()
+        if self._properties.get('ImportTarget', None) is not None:
+            return self._properties.get('ImportTarget')
+        else:
+            return ImportTarget(self)._select()
 
     @property
     def LearnedRoute(self):
@@ -78,7 +85,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_bf92411e6ec4c496c037ba0073ceb01c import LearnedRoute
-        return LearnedRoute(self)
+        if self._properties.get('LearnedRoute', None) is not None:
+            return self._properties.get('LearnedRoute')
+        else:
+            return LearnedRoute(self)
 
     @property
     def LearnedRouteIpv6(self):
@@ -92,7 +102,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedrouteipv6_e146efad7b2709c72b7ef3489e6a153e import LearnedRouteIpv6
-        return LearnedRouteIpv6(self)
+        if self._properties.get('LearnedRouteIpv6', None) is not None:
+            return self._properties.get('LearnedRouteIpv6')
+        else:
+            return LearnedRouteIpv6(self)
 
     @property
     def Multicast(self):
@@ -106,7 +119,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicast_753c518b5f1dc0635a787650b6627859 import Multicast
-        return Multicast(self)._select()
+        if self._properties.get('Multicast', None) is not None:
+            return self._properties.get('Multicast')
+        else:
+            return Multicast(self)._select()
 
     @property
     def MulticastReceiverSite(self):
@@ -120,7 +136,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastreceiversite_cac2a5b53ffba8f61d029919a79e1343 import MulticastReceiverSite
-        return MulticastReceiverSite(self)
+        if self._properties.get('MulticastReceiverSite', None) is not None:
+            return self._properties.get('MulticastReceiverSite')
+        else:
+            return MulticastReceiverSite(self)
 
     @property
     def MulticastSenderSite(self):
@@ -134,7 +153,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastsendersite_83f523e9811617a00cbff1d57dcf5a27 import MulticastSenderSite
-        return MulticastSenderSite(self)
+        if self._properties.get('MulticastSenderSite', None) is not None:
+            return self._properties.get('MulticastSenderSite')
+        else:
+            return MulticastSenderSite(self)
 
     @property
     def OpaqueValueElement(self):
@@ -148,7 +170,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_09e1c3fa84ec75f297eac04830ce7156 import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is not None:
+            return self._properties.get('OpaqueValueElement')
+        else:
+            return OpaqueValueElement(self)
 
     @property
     def Target(self):
@@ -162,7 +187,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.target_c6cbdddc7771a9b67858085e8d346456 import Target
-        return Target(self)._select()
+        if self._properties.get('Target', None) is not None:
+            return self._properties.get('Target')
+        else:
+            return Target(self)._select()
 
     @property
     def UmhImportTarget(self):
@@ -176,7 +204,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.umhimporttarget_6c3dc34540c306cc15b2ab9bf4d49565 import UmhImportTarget
-        return UmhImportTarget(self)._select()
+        if self._properties.get('UmhImportTarget', None) is not None:
+            return self._properties.get('UmhImportTarget')
+        else:
+            return UmhImportTarget(self)._select()
 
     @property
     def UmhSelectionRouteRange(self):
@@ -190,7 +221,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.umhselectionrouterange_b1fb332d421ad602bbe1bf5ee8bdc230 import UmhSelectionRouteRange
-        return UmhSelectionRouteRange(self)
+        if self._properties.get('UmhSelectionRouteRange', None) is not None:
+            return self._properties.get('UmhSelectionRouteRange')
+        else:
+            return UmhSelectionRouteRange(self)
 
     @property
     def UmhTarget(self):
@@ -204,7 +238,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.umhtarget_7fd706c876de38f4f7aea952e9a68a18 import UmhTarget
-        return UmhTarget(self)._select()
+        if self._properties.get('UmhTarget', None) is not None:
+            return self._properties.get('UmhTarget')
+        else:
+            return UmhTarget(self)._select()
 
     @property
     def VpnRouteRange(self):
@@ -218,10 +255,14 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpnrouterange_63f34e6d80ef976eee3f8513cd149760 import VpnRouteRange
-        return VpnRouteRange(self)
+        if self._properties.get('VpnRouteRange', None) is not None:
+            return self._properties.get('VpnRouteRange')
+        else:
+            return VpnRouteRange(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,10 +271,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExposeEachVrfAsTrafficEndpoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -242,10 +285,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExposeEachVrfAsTrafficEndpoint'])
     @ExposeEachVrfAsTrafficEndpoint.setter
     def ExposeEachVrfAsTrafficEndpoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExposeEachVrfAsTrafficEndpoint'], value)
 
     @property
     def IncludePmsiTunnelAttribute(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -254,10 +299,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute'])
     @IncludePmsiTunnelAttribute.setter
     def IncludePmsiTunnelAttribute(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute'], value)
 
     @property
     def IsLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -267,6 +314,7 @@ class L3Site(Base):
 
     @property
     def MplsAssignedUpstreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -275,10 +323,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamLabel'])
     @MplsAssignedUpstreamLabel.setter
     def MplsAssignedUpstreamLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamLabel'], value)
 
     @property
     def MulticastGroupAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,10 +337,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MulticastGroupAddressStep'])
     @MulticastGroupAddressStep.setter
     def MulticastGroupAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MulticastGroupAddressStep'], value)
 
     @property
     def RsvpP2mpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +351,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpId'])
     @RsvpP2mpId.setter
     def RsvpP2mpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsvpP2mpId'], value)
 
     @property
     def RsvpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -311,10 +365,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RsvpTunnelId'])
     @RsvpTunnelId.setter
     def RsvpTunnelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsvpTunnelId'], value)
 
     @property
     def SameRtAsL3SiteRt(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -323,10 +379,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SameRtAsL3SiteRt'])
     @SameRtAsL3SiteRt.setter
     def SameRtAsL3SiteRt(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SameRtAsL3SiteRt'], value)
 
     @property
     def SameTargetListAsL3SiteTargetList(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -335,10 +393,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SameTargetListAsL3SiteTargetList'])
     @SameTargetListAsL3SiteTargetList.setter
     def SameTargetListAsL3SiteTargetList(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SameTargetListAsL3SiteTargetList'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -347,10 +407,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def TunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -359,10 +421,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelType'])
     @TunnelType.setter
     def TunnelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelType'], value)
 
     @property
     def UseUpstreamAssignedLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -371,10 +435,12 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseUpstreamAssignedLabel'])
     @UseUpstreamAssignedLabel.setter
     def UseUpstreamAssignedLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseUpstreamAssignedLabel'], value)
 
     @property
     def VrfCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -383,9 +449,11 @@ class L3Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VrfCount'])
     @VrfCount.setter
     def VrfCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VrfCount'], value)
 
     def update(self, Enabled=None, ExposeEachVrfAsTrafficEndpoint=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamLabel=None, MulticastGroupAddressStep=None, RsvpP2mpId=None, RsvpTunnelId=None, SameRtAsL3SiteRt=None, SameTargetListAsL3SiteTargetList=None, TrafficGroupId=None, TunnelType=None, UseUpstreamAssignedLabel=None, VrfCount=None):
+        # type: (bool, bool, bool, int, str, str, int, bool, bool, str, str, bool, int) -> L3Site
         """Updates l3Site resource on the server.
 
         Args
@@ -411,6 +479,7 @@ class L3Site(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, ExposeEachVrfAsTrafficEndpoint=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamLabel=None, MulticastGroupAddressStep=None, RsvpP2mpId=None, RsvpTunnelId=None, SameRtAsL3SiteRt=None, SameTargetListAsL3SiteTargetList=None, TrafficGroupId=None, TunnelType=None, UseUpstreamAssignedLabel=None, VrfCount=None):
+        # type: (bool, bool, bool, int, str, str, int, bool, bool, str, str, bool, int) -> L3Site
         """Adds a new l3Site resource on the server and adds it to the container.
 
         Args
@@ -450,6 +519,7 @@ class L3Site(Base):
         self._delete()
 
     def find(self, Enabled=None, ExposeEachVrfAsTrafficEndpoint=None, IncludePmsiTunnelAttribute=None, IsLearnedInfoRefreshed=None, MplsAssignedUpstreamLabel=None, MulticastGroupAddressStep=None, RsvpP2mpId=None, RsvpTunnelId=None, SameRtAsL3SiteRt=None, SameTargetListAsL3SiteTargetList=None, TrafficGroupId=None, TunnelType=None, UseUpstreamAssignedLabel=None, VrfCount=None):
+        # type: (bool, bool, bool, bool, int, str, str, int, bool, bool, str, str, bool, int) -> L3Site
         """Finds and retrieves l3Site resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l3Site resources from the server.
@@ -501,10 +571,16 @@ class L3Site(Base):
         """
         return self._read(href)
 
-    def RefreshLearnedInfo(self):
+    def RefreshLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInfo operation on the server.
 
         This function allows to refresh the BGP learned information from the DUT.
+
+        refreshLearnedInfo(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -512,4 +588,6 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)

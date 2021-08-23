@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interfaces(Base):
@@ -36,12 +37,15 @@ class Interfaces(Base):
         'SendSingleArpPerGateway': 'sendSingleArpPerGateway',
         'SendSingleNsPerGateway': 'sendSingleNsPerGateway',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Interfaces, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interfaces, self).__init__(parent, list_op)
 
     @property
     def ArpOnLinkup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class Interfaces(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpOnLinkup'])
     @ArpOnLinkup.setter
     def ArpOnLinkup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpOnLinkup'], value)
 
     @property
     def NsOnLinkup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class Interfaces(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NsOnLinkup'])
     @NsOnLinkup.setter
     def NsOnLinkup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NsOnLinkup'], value)
 
     @property
     def SendSingleArpPerGateway(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class Interfaces(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendSingleArpPerGateway'])
     @SendSingleArpPerGateway.setter
     def SendSingleArpPerGateway(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendSingleArpPerGateway'], value)
 
     @property
     def SendSingleNsPerGateway(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class Interfaces(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendSingleNsPerGateway'])
     @SendSingleNsPerGateway.setter
     def SendSingleNsPerGateway(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendSingleNsPerGateway'], value)
 
     def update(self, ArpOnLinkup=None, NsOnLinkup=None, SendSingleArpPerGateway=None, SendSingleNsPerGateway=None):
+        # type: (bool, bool, bool, bool) -> Interfaces
         """Updates interfaces resource on the server.
 
         Args

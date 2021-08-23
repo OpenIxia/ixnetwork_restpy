@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BwProfile(Base):
@@ -54,12 +55,15 @@ class BwProfile(Base):
         'UserPriorityBits110': 'userPriorityBits110',
         'UserPriorityBits111': 'userPriorityBits111',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BwProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BwProfile, self).__init__(parent, list_op)
 
     @property
     def CbsMagnitude(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +72,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CbsMagnitude'])
     @CbsMagnitude.setter
     def CbsMagnitude(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CbsMagnitude'], value)
 
     @property
     def CbsMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +86,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CbsMultiplier'])
     @CbsMultiplier.setter
     def CbsMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CbsMultiplier'], value)
 
     @property
     def Cf(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +100,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Cf'])
     @Cf.setter
     def Cf(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Cf'], value)
 
     @property
     def CirMagnitude(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,10 +114,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CirMagnitude'])
     @CirMagnitude.setter
     def CirMagnitude(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CirMagnitude'], value)
 
     @property
     def CirMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,10 +128,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CirMultiplier'])
     @CirMultiplier.setter
     def CirMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CirMultiplier'], value)
 
     @property
     def Cm(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -128,10 +142,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Cm'])
     @Cm.setter
     def Cm(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Cm'], value)
 
     @property
     def EbsMagnitude(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -140,10 +156,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EbsMagnitude'])
     @EbsMagnitude.setter
     def EbsMagnitude(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EbsMagnitude'], value)
 
     @property
     def EbsMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -152,10 +170,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EbsMultiplier'])
     @EbsMultiplier.setter
     def EbsMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EbsMultiplier'], value)
 
     @property
     def EirMagnitude(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -164,10 +184,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EirMagnitude'])
     @EirMagnitude.setter
     def EirMagnitude(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EirMagnitude'], value)
 
     @property
     def EirMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -176,10 +198,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EirMultiplier'])
     @EirMultiplier.setter
     def EirMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EirMultiplier'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -188,10 +212,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def PerCos(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -200,10 +226,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PerCos'])
     @PerCos.setter
     def PerCos(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PerCos'], value)
 
     @property
     def UserPriorityBits000(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -212,10 +240,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits000'])
     @UserPriorityBits000.setter
     def UserPriorityBits000(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits000'], value)
 
     @property
     def UserPriorityBits001(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -224,10 +254,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits001'])
     @UserPriorityBits001.setter
     def UserPriorityBits001(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits001'], value)
 
     @property
     def UserPriorityBits010(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -236,10 +268,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits010'])
     @UserPriorityBits010.setter
     def UserPriorityBits010(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits010'], value)
 
     @property
     def UserPriorityBits011(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -248,10 +282,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits011'])
     @UserPriorityBits011.setter
     def UserPriorityBits011(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits011'], value)
 
     @property
     def UserPriorityBits100(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -260,10 +296,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits100'])
     @UserPriorityBits100.setter
     def UserPriorityBits100(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits100'], value)
 
     @property
     def UserPriorityBits101(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -272,10 +310,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits101'])
     @UserPriorityBits101.setter
     def UserPriorityBits101(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits101'], value)
 
     @property
     def UserPriorityBits110(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -284,10 +324,12 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits110'])
     @UserPriorityBits110.setter
     def UserPriorityBits110(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits110'], value)
 
     @property
     def UserPriorityBits111(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -296,9 +338,11 @@ class BwProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPriorityBits111'])
     @UserPriorityBits111.setter
     def UserPriorityBits111(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPriorityBits111'], value)
 
     def update(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+        # type: (int, int, bool, int, int, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BwProfile
         """Updates bwProfile resource on the server.
 
         Args
@@ -331,6 +375,7 @@ class BwProfile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+        # type: (int, int, bool, int, int, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BwProfile
         """Adds a new bwProfile resource on the server and adds it to the container.
 
         Args
@@ -377,6 +422,7 @@ class BwProfile(Base):
         self._delete()
 
     def find(self, CbsMagnitude=None, CbsMultiplier=None, Cf=None, CirMagnitude=None, CirMultiplier=None, Cm=None, EbsMagnitude=None, EbsMultiplier=None, EirMagnitude=None, EirMultiplier=None, Enabled=None, PerCos=None, UserPriorityBits000=None, UserPriorityBits001=None, UserPriorityBits010=None, UserPriorityBits011=None, UserPriorityBits100=None, UserPriorityBits101=None, UserPriorityBits110=None, UserPriorityBits111=None):
+        # type: (int, int, bool, int, int, bool, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> BwProfile
         """Finds and retrieves bwProfile resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bwProfile resources from the server.

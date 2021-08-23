@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Locations(Base):
@@ -51,9 +52,15 @@ class Locations(Base):
         'SequenceId': 'sequenceId',
         'State': 'state',
     }
+    _SDM_ENUM_MAP = {
+        'chainTopology': ['daisy', 'none', 'star'],
+        'errorState': ['ConnectError', 'DuplicateChassis', 'IncompatibleIxOS', 'MultipleNics', 'NoCardsFound', 'NoError', 'NoLicenseFound', 'NonAppliance', 'NonLinuxChassis'],
+        'osType': ['linux', 'unknown', 'windows'],
+        'state': ['down', 'down', 'polling', 'polling', 'polling', 'ready'],
+    }
 
-    def __init__(self, parent):
-        super(Locations, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Locations, self).__init__(parent, list_op)
 
     @property
     def Ports(self):
@@ -67,7 +74,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.ports.ports import Ports
-        return Ports(self)
+        if self._properties.get('Ports', None) is not None:
+            return self._properties.get('Ports')
+        else:
+            return Ports(self)
 
     @property
     def ResourceGroups(self):
@@ -81,10 +91,14 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.resourcegroups.resourcegroups import ResourceGroups
-        return ResourceGroups(self)
+        if self._properties.get('ResourceGroups', None) is not None:
+            return self._properties.get('ResourceGroups')
+        else:
+            return ResourceGroups(self)
 
     @property
     def CableLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +107,12 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CableLength'])
     @CableLength.setter
     def CableLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CableLength'], value)
 
     @property
     def ChainTopology(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +121,12 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChainTopology'])
     @ChainTopology.setter
     def ChainTopology(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChainTopology'], value)
 
     @property
     def ConnectRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +136,7 @@ class Locations(Base):
 
     @property
     def DeviceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +146,7 @@ class Locations(Base):
 
     @property
     def ErrorDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +156,7 @@ class Locations(Base):
 
     @property
     def ErrorState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,6 +166,7 @@ class Locations(Base):
 
     @property
     def Hostname(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,10 +175,12 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Hostname'])
     @Hostname.setter
     def Hostname(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Hostname'], value)
 
     @property
     def Ip(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -166,6 +190,7 @@ class Locations(Base):
 
     @property
     def IsMaster(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -175,6 +200,7 @@ class Locations(Base):
 
     @property
     def IxnBuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,6 +210,7 @@ class Locations(Base):
 
     @property
     def IxosBuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -193,6 +220,7 @@ class Locations(Base):
 
     @property
     def LicenseErrors(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -202,6 +230,7 @@ class Locations(Base):
 
     @property
     def MasterDevice(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,10 +239,12 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MasterDevice'])
     @MasterDevice.setter
     def MasterDevice(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MasterDevice'], value)
 
     @property
     def OsType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,6 +254,7 @@ class Locations(Base):
 
     @property
     def ProtocolBuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -232,6 +264,7 @@ class Locations(Base):
 
     @property
     def SequenceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,10 +273,12 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SequenceId'])
     @SequenceId.setter
     def SequenceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SequenceId'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -252,6 +287,7 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterDevice=None, SequenceId=None):
+        # type: (int, str, str, str, int) -> Locations
         """Updates locations resource on the server.
 
         Args
@@ -269,6 +305,7 @@ class Locations(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CableLength=None, ChainTopology=None, Hostname=None, MasterDevice=None, SequenceId=None):
+        # type: (int, str, str, str, int) -> Locations
         """Adds a new locations resource on the server and adds it to the container.
 
         Args
@@ -300,6 +337,7 @@ class Locations(Base):
         self._delete()
 
     def find(self, CableLength=None, ChainTopology=None, ConnectRetries=None, DeviceType=None, ErrorDescription=None, ErrorState=None, Hostname=None, Ip=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterDevice=None, OsType=None, ProtocolBuildNumber=None, SequenceId=None, State=None):
+        # type: (int, str, int, str, str, str, str, str, bool, str, str, List[str], str, str, str, int, str) -> Locations
         """Finds and retrieves locations resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve locations resources from the server.

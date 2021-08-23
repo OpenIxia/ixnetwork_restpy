@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TunnelLeafRange(Base):
@@ -38,12 +39,15 @@ class TunnelLeafRange(Base):
         'IpStart': 'ipStart',
         'SubLspDown': 'subLspDown',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TunnelLeafRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TunnelLeafRange, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class TunnelLeafRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class TunnelLeafRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
     @IpCount.setter
     def IpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
 
     @property
     def IpStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class TunnelLeafRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
     @IpStart.setter
     def IpStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
 
     @property
     def SubLspDown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,9 +98,11 @@ class TunnelLeafRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SubLspDown'])
     @SubLspDown.setter
     def SubLspDown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SubLspDown'], value)
 
     def update(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
+        # type: (bool, int, str, bool) -> TunnelLeafRange
         """Updates tunnelLeafRange resource on the server.
 
         Args
@@ -107,6 +119,7 @@ class TunnelLeafRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
+        # type: (bool, int, str, bool) -> TunnelLeafRange
         """Adds a new tunnelLeafRange resource on the server and adds it to the container.
 
         Args
@@ -137,6 +150,7 @@ class TunnelLeafRange(Base):
         self._delete()
 
     def find(self, Enabled=None, IpCount=None, IpStart=None, SubLspDown=None):
+        # type: (bool, int, str, bool) -> TunnelLeafRange
         """Finds and retrieves tunnelLeafRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tunnelLeafRange resources from the server.

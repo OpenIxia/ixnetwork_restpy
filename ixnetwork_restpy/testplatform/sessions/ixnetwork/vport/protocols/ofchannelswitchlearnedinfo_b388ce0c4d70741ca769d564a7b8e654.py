@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfChannelSwitchLearnedInfo(Base):
@@ -56,9 +57,11 @@ class OfChannelSwitchLearnedInfo(Base):
         'RemotePortNumber': 'remotePortNumber',
         'SessionType': 'sessionType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfChannelSwitchLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfChannelSwitchLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def OfChannelPortsSwitchLearnedInfo(self):
@@ -72,7 +75,10 @@ class OfChannelSwitchLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelportsswitchlearnedinfo_aec9a10c2a9e74373f5bedf440b84b76 import OfChannelPortsSwitchLearnedInfo
-        return OfChannelPortsSwitchLearnedInfo(self)
+        if self._properties.get('OfChannelPortsSwitchLearnedInfo', None) is not None:
+            return self._properties.get('OfChannelPortsSwitchLearnedInfo')
+        else:
+            return OfChannelPortsSwitchLearnedInfo(self)
 
     @property
     def OfChannelSessionPeersLearnedInformation(self):
@@ -86,10 +92,14 @@ class OfChannelSwitchLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelsessionpeerslearnedinformation_3c21f6b29ee2df9053553af0d37734af import OfChannelSessionPeersLearnedInformation
-        return OfChannelSessionPeersLearnedInformation(self)
+        if self._properties.get('OfChannelSessionPeersLearnedInformation', None) is not None:
+            return self._properties.get('OfChannelSessionPeersLearnedInformation')
+        else:
+            return OfChannelSessionPeersLearnedInformation(self)
 
     @property
     def ActionsSupported(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +109,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def AveragePacketInReplyDelay(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -107,10 +118,12 @@ class OfChannelSwitchLearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AveragePacketInReplyDelay'])
     @AveragePacketInReplyDelay.setter
     def AveragePacketInReplyDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AveragePacketInReplyDelay'], value)
 
     @property
     def Capabilities(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,6 +133,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def ConfigFlags(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,6 +143,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def ConfiguredPacketInReplyCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -137,10 +152,12 @@ class OfChannelSwitchLearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConfiguredPacketInReplyCount'])
     @ConfiguredPacketInReplyCount.setter
     def ConfiguredPacketInReplyCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConfiguredPacketInReplyCount'], value)
 
     @property
     def ConfiguredPacketInSentCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -149,10 +166,12 @@ class OfChannelSwitchLearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConfiguredPacketInSentCount'])
     @ConfiguredPacketInSentCount.setter
     def ConfiguredPacketInSentCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConfiguredPacketInSentCount'], value)
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,6 +181,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,6 +191,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def FlowRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,6 +201,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def GenerationId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,6 +211,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def LastErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,6 +221,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def LastErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -207,6 +231,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,6 +241,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def MaxBufferSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -225,6 +251,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def MaxPacketInBytes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -234,6 +261,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -243,6 +271,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def NumberOfAuxiliaryConnection(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -251,10 +280,12 @@ class OfChannelSwitchLearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfAuxiliaryConnection'])
     @NumberOfAuxiliaryConnection.setter
     def NumberOfAuxiliaryConnection(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfAuxiliaryConnection'], value)
 
     @property
     def NumberOfErrorsSent(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -264,6 +295,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def NumberOfPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -273,6 +305,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def NumberofTable(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -282,6 +315,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -291,6 +325,7 @@ class OfChannelSwitchLearnedInfo(Base):
 
     @property
     def RemotePortNumber(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -299,10 +334,12 @@ class OfChannelSwitchLearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RemotePortNumber'])
     @RemotePortNumber.setter
     def RemotePortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RemotePortNumber'], value)
 
     @property
     def SessionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -311,6 +348,7 @@ class OfChannelSwitchLearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionType'])
 
     def update(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, NumberOfAuxiliaryConnection=None, RemotePortNumber=None):
+        # type: (int, int, int, int, int) -> OfChannelSwitchLearnedInfo
         """Updates ofChannelSwitchLearnedInfo resource on the server.
 
         Args
@@ -327,7 +365,30 @@ class OfChannelSwitchLearnedInfo(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, NumberOfAuxiliaryConnection=None, RemotePortNumber=None):
+        # type: (int, int, int, int, int) -> OfChannelSwitchLearnedInfo
+        """Adds a new ofChannelSwitchLearnedInfo resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - AveragePacketInReplyDelay (number): This describes the average delay between Packet-In sent from Switch and reply received from Controller.
+        - ConfiguredPacketInReplyCount (number): This describes the Packet-In sent from Switch from configured Packet-In Ranges.
+        - ConfiguredPacketInSentCount (number): This describes the Packet-In reply received from Controller for Packet-In sent.
+        - NumberOfAuxiliaryConnection (number): This describes the number of auxiliary connections.
+        - RemotePortNumber (number): This describes the TCP port number of the remote end of the OF Channel.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ofChannelSwitchLearnedInfo resources using find and the newly added ofChannelSwitchLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActionsSupported=None, AveragePacketInReplyDelay=None, Capabilities=None, ConfigFlags=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, DataPathId=None, DataPathIdAsHex=None, FlowRate=None, GenerationId=None, LastErrorCode=None, LastErrorType=None, LocalIp=None, MaxBufferSize=None, MaxPacketInBytes=None, NegotiatedVersion=None, NumberOfAuxiliaryConnection=None, NumberOfErrorsSent=None, NumberOfPorts=None, NumberofTable=None, RemoteIp=None, RemotePortNumber=None, SessionType=None):
+        # type: (str, int, str, str, int, int, str, str, int, int, str, str, str, int, int, int, int, int, int, int, str, int, str) -> OfChannelSwitchLearnedInfo
         """Finds and retrieves ofChannelSwitchLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofChannelSwitchLearnedInfo resources from the server.
@@ -388,10 +449,16 @@ class OfChannelSwitchLearnedInfo(Base):
         """
         return self._read(href)
 
-    def AddRecordForTrigger(self):
+    def AddRecordForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the addRecordForTrigger operation on the server.
 
         API to add record for trigger to be sent.
+
+        addRecordForTrigger(async_operation=bool)bool
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -399,4 +466,6 @@ class OfChannelSwitchLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addRecordForTrigger', payload=payload, response_object=None)

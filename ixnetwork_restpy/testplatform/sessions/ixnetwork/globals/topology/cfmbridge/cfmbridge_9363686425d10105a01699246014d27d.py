@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CfmBridge(Base):
@@ -40,9 +41,11 @@ class CfmBridge(Base):
         'RowNames': 'rowNames',
         'SendCcm': 'sendCcm',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CfmBridge, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CfmBridge, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -56,7 +59,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -70,10 +76,14 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,6 +93,7 @@ class CfmBridge(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +103,7 @@ class CfmBridge(Base):
 
     @property
     def DmVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -102,6 +114,7 @@ class CfmBridge(Base):
 
     @property
     def EnableOptionalTlvValidation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -112,6 +125,7 @@ class CfmBridge(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ReceiveCcm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +150,7 @@ class CfmBridge(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -143,6 +160,7 @@ class CfmBridge(Base):
 
     @property
     def SendCcm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +170,7 @@ class CfmBridge(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendCcm']))
 
     def update(self, Name=None):
+        # type: (str) -> CfmBridge
         """Updates cfmBridge resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

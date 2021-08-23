@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PortStatusMaskMaster(Base):
@@ -35,12 +36,15 @@ class PortStatusMaskMaster(Base):
         'PortDelete': 'portDelete',
         'PortModify': 'portModify',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PortStatusMaskMaster, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PortStatusMaskMaster, self).__init__(parent, list_op)
 
     @property
     def PortAdd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class PortStatusMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortAdd'])
     @PortAdd.setter
     def PortAdd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortAdd'], value)
 
     @property
     def PortDelete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +67,12 @@ class PortStatusMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelete'])
     @PortDelete.setter
     def PortDelete(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelete'], value)
 
     @property
     def PortModify(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,9 +81,11 @@ class PortStatusMaskMaster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortModify'])
     @PortModify.setter
     def PortModify(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortModify'], value)
 
     def update(self, PortAdd=None, PortDelete=None, PortModify=None):
+        # type: (bool, bool, bool) -> PortStatusMaskMaster
         """Updates portStatusMaskMaster resource on the server.
 
         Args

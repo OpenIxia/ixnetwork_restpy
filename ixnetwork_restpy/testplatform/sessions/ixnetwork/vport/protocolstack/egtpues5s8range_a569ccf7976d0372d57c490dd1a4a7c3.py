@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpUeS5S8Range(Base):
@@ -56,9 +57,11 @@ class EgtpUeS5S8Range(Base):
         'UpdateAmbrIterations': 'updateAmbrIterations',
         'UpdateAmbrTimeout': 'updateAmbrTimeout',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpUeS5S8Range, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpUeS5S8Range, self).__init__(parent, list_op)
 
     @property
     def MobilePathEntriesS5S8Sgw(self):
@@ -72,7 +75,10 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentriess5s8sgw_294a5a10bf19642e7689820d854c6b14 import MobilePathEntriesS5S8Sgw
-        return MobilePathEntriesS5S8Sgw(self)
+        if self._properties.get('MobilePathEntriesS5S8Sgw', None) is not None:
+            return self._properties.get('MobilePathEntriesS5S8Sgw')
+        else:
+            return MobilePathEntriesS5S8Sgw(self)
 
     @property
     def TrafficProfileProxiesS5S8Sgw(self):
@@ -86,10 +92,14 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8sgw_5c238c72aef9828614d256e8f1c16fdd import TrafficProfileProxiesS5S8Sgw
-        return TrafficProfileProxiesS5S8Sgw(self)
+        if self._properties.get('TrafficProfileProxiesS5S8Sgw', None) is not None:
+            return self._properties.get('TrafficProfileProxiesS5S8Sgw')
+        else:
+            return TrafficProfileProxiesS5S8Sgw(self)
 
     @property
     def APNRestriction(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,10 +108,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['APNRestriction'])
     @APNRestriction.setter
     def APNRestriction(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['APNRestriction'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,10 +122,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EnableLifetime(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -122,10 +136,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLifetime'])
     @EnableLifetime.setter
     def EnableLifetime(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLifetime'], value)
 
     @property
     def EnableMobility(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,10 +150,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMobility'])
     @EnableMobility.setter
     def EnableMobility(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMobility'], value)
 
     @property
     def EnableSV(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -146,10 +164,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSV'])
     @EnableSV.setter
     def EnableSV(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSV'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -158,10 +178,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IMSI(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +192,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IMSI'])
     @IMSI.setter
     def IMSI(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IMSI'], value)
 
     @property
     def IncrementBy(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -182,10 +206,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementBy'])
     @IncrementBy.setter
     def IncrementBy(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementBy'], value)
 
     @property
     def Lifetime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -194,10 +220,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Lifetime'])
     @Lifetime.setter
     def Lifetime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Lifetime'], value)
 
     @property
     def MEI(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -206,10 +234,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MEI'])
     @MEI.setter
     def MEI(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MEI'], value)
 
     @property
     def MSISDN(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -218,10 +248,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MSISDN'])
     @MSISDN.setter
     def MSISDN(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MSISDN'], value)
 
     @property
     def MaxDelayVariation(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,10 +262,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxDelayVariation'])
     @MaxDelayVariation.setter
     def MaxDelayVariation(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxDelayVariation'], value)
 
     @property
     def MaxIntervalVariation(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -242,10 +276,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxIntervalVariation'])
     @MaxIntervalVariation.setter
     def MaxIntervalVariation(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxIntervalVariation'], value)
 
     @property
     def MobilityInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -254,10 +290,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MobilityInterval'])
     @MobilityInterval.setter
     def MobilityInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MobilityInterval'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -266,10 +304,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -279,6 +319,7 @@ class EgtpUeS5S8Range(Base):
 
     @property
     def ParentRange(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,10 +328,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ParentRange'])
     @ParentRange.setter
     def ParentRange(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ParentRange'], value)
 
     @property
     def SV(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +342,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SV'])
     @SV.setter
     def SV(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SV'], value)
 
     @property
     def SelectionMode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -311,10 +356,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectionMode'])
     @SelectionMode.setter
     def SelectionMode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectionMode'], value)
 
     @property
     def StartDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -323,10 +370,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartDelay'])
     @StartDelay.setter
     def StartDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartDelay'], value)
 
     @property
     def UpdateAmbrEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -335,10 +384,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrEnable'])
     @UpdateAmbrEnable.setter
     def UpdateAmbrEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrEnable'], value)
 
     @property
     def UpdateAmbrIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,10 +398,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrIncrement'])
     @UpdateAmbrIncrement.setter
     def UpdateAmbrIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrIncrement'], value)
 
     @property
     def UpdateAmbrIterations(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -359,10 +412,12 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrIterations'])
     @UpdateAmbrIterations.setter
     def UpdateAmbrIterations(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrIterations'], value)
 
     @property
     def UpdateAmbrTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -371,9 +426,11 @@ class EgtpUeS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateAmbrTimeout'])
     @UpdateAmbrTimeout.setter
     def UpdateAmbrTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateAmbrTimeout'], value)
 
     def update(self, APNRestriction=None, Count=None, EnableLifetime=None, EnableMobility=None, EnableSV=None, Enabled=None, IMSI=None, IncrementBy=None, Lifetime=None, MEI=None, MSISDN=None, MaxDelayVariation=None, MaxIntervalVariation=None, MobilityInterval=None, Name=None, ParentRange=None, SV=None, SelectionMode=None, StartDelay=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None):
+        # type: (int, int, bool, bool, bool, bool, str, int, int, str, str, int, int, int, str, str, str, int, int, bool, int, int, int) -> EgtpUeS5S8Range
         """Updates egtpUeS5S8Range resource on the server.
 
         Args
@@ -409,14 +466,16 @@ class EgtpUeS5S8Range(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -429,13 +488,15 @@ class EgtpUeS5S8Range(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -449,13 +510,15 @@ class EgtpUeS5S8Range(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

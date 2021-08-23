@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23TrafficItemFilter(Base):
@@ -35,12 +36,15 @@ class Layer23TrafficItemFilter(Base):
     _SDM_ATT_MAP = {
         'TrafficItemFilterIds': 'trafficItemFilterIds',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Layer23TrafficItemFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23TrafficItemFilter, self).__init__(parent, list_op)
 
     @property
     def TrafficItemFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -49,9 +53,11 @@ class Layer23TrafficItemFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'])
     @TrafficItemFilterIds.setter
     def TrafficItemFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficItemFilterIds'], value)
 
     def update(self, TrafficItemFilterIds=None):
+        # type: (List[str]) -> Layer23TrafficItemFilter
         """Updates layer23TrafficItemFilter resource on the server.
 
         Args
@@ -65,6 +71,7 @@ class Layer23TrafficItemFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, TrafficItemFilterIds=None):
+        # type: (List[str]) -> Layer23TrafficItemFilter
         """Adds a new layer23TrafficItemFilter resource on the server and adds it to the container.
 
         Args
@@ -92,6 +99,7 @@ class Layer23TrafficItemFilter(Base):
         self._delete()
 
     def find(self, TrafficItemFilterIds=None):
+        # type: (List[str]) -> Layer23TrafficItemFilter
         """Finds and retrieves layer23TrafficItemFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23TrafficItemFilter resources from the server.

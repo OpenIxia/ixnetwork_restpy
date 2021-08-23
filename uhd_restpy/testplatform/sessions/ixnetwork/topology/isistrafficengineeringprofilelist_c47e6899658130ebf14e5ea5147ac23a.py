@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisTrafficEngineeringProfileList(Base):
@@ -76,12 +77,15 @@ class IsisTrafficEngineeringProfileList(Base):
         'UserDefAppBm': 'userDefAppBm',
         'UserDefAppBmLen': 'userDefAppBmLen',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisTrafficEngineeringProfileList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisTrafficEngineeringProfileList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +96,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -102,6 +107,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvAppSpecificTraffic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -112,6 +118,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvMinMaxUniDiLinkDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -122,6 +129,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvUniDirAvailableBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,6 +140,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvUniDirDelayVariation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +151,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvUniDirLinkLoss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +162,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvUniDirResidualBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +173,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvUniDirUtilizedBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -172,6 +184,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvertiseExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +195,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def AdvertiseUniDiLinkDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +206,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority0(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +217,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +228,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -222,6 +239,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority3(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -232,6 +250,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -242,6 +261,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -252,6 +272,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -262,6 +283,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority7(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -272,6 +294,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -281,6 +304,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -290,6 +314,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def ExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +325,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def ExtAdminGroupLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +336,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +347,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def MaxBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -330,6 +358,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def MaxReservableBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -340,6 +369,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +380,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def MinMaxUniDirLinkDelayABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +391,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def MtApplicabilityForIPv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +402,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +413,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -388,10 +422,12 @@ class IsisTrafficEngineeringProfileList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def StdAppType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -402,6 +438,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirAvailableBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -412,6 +449,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -422,6 +460,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkDelayABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -432,6 +471,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkDelayVariation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -442,6 +482,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkLoss(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -452,6 +493,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkLossABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -462,6 +504,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkMaxDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -472,6 +515,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirLinkMinDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -482,6 +526,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirResidualBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -492,6 +537,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UniDirUtilizedBw(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -502,6 +548,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UserDefAppBm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -512,6 +559,7 @@ class IsisTrafficEngineeringProfileList(Base):
 
     @property
     def UserDefAppBmLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -521,6 +569,7 @@ class IsisTrafficEngineeringProfileList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefAppBmLen']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisTrafficEngineeringProfileList
         """Updates isisTrafficEngineeringProfileList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

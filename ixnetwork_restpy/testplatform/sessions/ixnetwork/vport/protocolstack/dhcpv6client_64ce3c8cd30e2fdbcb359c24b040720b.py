@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6Client(Base):
@@ -37,12 +38,15 @@ class Dhcpv6Client(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6Client, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6Client, self).__init__(parent, list_op)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Dhcpv6Client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +69,7 @@ class Dhcpv6Client(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Name=None):
+        # type: (str) -> Dhcpv6Client
         """Updates dhcpv6Client resource on the server.
 
         Args
@@ -76,6 +83,7 @@ class Dhcpv6Client(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> Dhcpv6Client
         """Adds a new dhcpv6Client resource on the server and adds it to the container.
 
         Args
@@ -103,6 +111,7 @@ class Dhcpv6Client(Base):
         self._delete()
 
     def find(self, Name=None, ObjectId=None):
+        # type: (str, str) -> Dhcpv6Client
         """Finds and retrieves dhcpv6Client resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6Client resources from the server.
@@ -143,14 +152,16 @@ class Dhcpv6Client(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -162,40 +173,56 @@ class Dhcpv6Client(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
-    def Dhcpv6PdClientRebind(self):
+    def Dhcpv6PdClientRebind(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the dhcpv6PdClientRebind operation on the server.
 
         Rebind all DHCPv6PD leases for selected plugins and ranges
 
+        dhcpv6PdClientRebind(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('dhcpv6PdClientRebind', payload=payload, response_object=None)
 
-    def Dhcpv6PdClientRenew(self):
+    def Dhcpv6PdClientRenew(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the dhcpv6PdClientRenew operation on the server.
 
         Renew all DHCPv6PD leases for selected plugins and ranges
 
+        dhcpv6PdClientRenew(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('dhcpv6PdClientRenew', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -209,13 +236,15 @@ class Dhcpv6Client(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

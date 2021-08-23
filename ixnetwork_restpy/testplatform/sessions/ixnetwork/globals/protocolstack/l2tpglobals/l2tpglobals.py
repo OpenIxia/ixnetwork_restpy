@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class L2tpGlobals(Base):
@@ -40,12 +41,15 @@ class L2tpGlobals(Base):
         'SetupRateInitial': 'setupRateInitial',
         'TeardownRateInitial': 'teardownRateInitial',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(L2tpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(L2tpGlobals, self).__init__(parent, list_op)
 
     @property
     def EnforcePerPortRates(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class L2tpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnforcePerPortRates'])
     @EnforcePerPortRates.setter
     def EnforcePerPortRates(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnforcePerPortRates'], value)
 
     @property
     def MaxOutstandingReleases(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class L2tpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class L2tpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class L2tpGlobals(Base):
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class L2tpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def TeardownRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class L2tpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     def update(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
+        # type: (bool, int, int, int, int) -> L2tpGlobals
         """Updates l2tpGlobals resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class L2tpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, SetupRateInitial=None, TeardownRateInitial=None):
+        # type: (bool, int, int, int, int) -> L2tpGlobals
         """Adds a new l2tpGlobals resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class L2tpGlobals(Base):
         self._delete()
 
     def find(self, EnforcePerPortRates=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, SetupRateInitial=None, TeardownRateInitial=None):
+        # type: (bool, int, int, str, int, int) -> L2tpGlobals
         """Finds and retrieves l2tpGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l2tpGlobals resources from the server.

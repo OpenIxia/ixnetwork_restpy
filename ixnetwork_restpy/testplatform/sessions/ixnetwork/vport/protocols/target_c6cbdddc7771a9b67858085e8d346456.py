@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Target(Base):
@@ -34,9 +35,11 @@ class Target(Base):
         'TargetList': 'targetList',
         'TargetListEx': 'targetListEx',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Target, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Target, self).__init__(parent, list_op)
 
     @property
     def TargetList(self):

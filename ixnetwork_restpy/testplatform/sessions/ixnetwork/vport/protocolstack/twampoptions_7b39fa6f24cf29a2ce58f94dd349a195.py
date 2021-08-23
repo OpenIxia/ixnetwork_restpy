@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TwampOptions(Base):
@@ -42,12 +43,15 @@ class TwampOptions(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TwampOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TwampOptions, self).__init__(parent, list_op)
 
     @property
     def ErrorEstimateMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,10 +60,12 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ErrorEstimateMultiplier'])
     @ErrorEstimateMultiplier.setter
     def ErrorEstimateMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ErrorEstimateMultiplier'], value)
 
     @property
     def ErrorEstimateScale(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +74,12 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ErrorEstimateScale'])
     @ErrorEstimateScale.setter
     def ErrorEstimateScale(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ErrorEstimateScale'], value)
 
     @property
     def MaxOutstanding(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +88,12 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,6 +103,7 @@ class TwampOptions(Base):
 
     @property
     def OverrideGlobalRateOptions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +112,12 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'])
     @OverrideGlobalRateOptions.setter
     def OverrideGlobalRateOptions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'], value)
 
     @property
     def SessionTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -113,10 +126,12 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionTimeout'])
     @SessionTimeout.setter
     def SessionTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionTimeout'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +140,12 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -137,9 +154,11 @@ class TwampOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int, bool, int, int, int) -> TwampOptions
         """Updates twampOptions resource on the server.
 
         Args
@@ -159,6 +178,7 @@ class TwampOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int, bool, int, int, int) -> TwampOptions
         """Adds a new twampOptions resource on the server and adds it to the container.
 
         Args
@@ -192,6 +212,7 @@ class TwampOptions(Base):
         self._delete()
 
     def find(self, ErrorEstimateMultiplier=None, ErrorEstimateScale=None, MaxOutstanding=None, ObjectId=None, OverrideGlobalRateOptions=None, SessionTimeout=None, SetupRate=None, TeardownRate=None):
+        # type: (int, int, int, str, bool, int, int, int) -> TwampOptions
         """Finds and retrieves twampOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve twampOptions resources from the server.
@@ -238,14 +259,16 @@ class TwampOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -258,13 +281,15 @@ class TwampOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -278,13 +303,15 @@ class TwampOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

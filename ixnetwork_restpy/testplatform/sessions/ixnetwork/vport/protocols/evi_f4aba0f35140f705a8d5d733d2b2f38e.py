@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Evi(Base):
@@ -50,9 +51,12 @@ class Evi(Base):
         'UseUpstreamOrDownStreamAssignedLabel': 'useUpstreamOrDownStreamAssignedLabel',
         'UseV4MappedV6Address': 'useV4MappedV6Address',
     }
+    _SDM_ENUM_MAP = {
+        'multicastTunnelType': ['rsvpTeP2mp', 'mldpP2mp', 'ingressReplication'],
+    }
 
-    def __init__(self, parent):
-        super(Evi, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Evi, self).__init__(parent, list_op)
 
     @property
     def AdInclusiveMulticastRouteAttributes(self):
@@ -66,7 +70,10 @@ class Evi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.adinclusivemulticastrouteattributes_cbb2286b138e4134a4fd675abdd1b50f import AdInclusiveMulticastRouteAttributes
-        return AdInclusiveMulticastRouteAttributes(self)._select()
+        if self._properties.get('AdInclusiveMulticastRouteAttributes', None) is not None:
+            return self._properties.get('AdInclusiveMulticastRouteAttributes')
+        else:
+            return AdInclusiveMulticastRouteAttributes(self)._select()
 
     @property
     def BroadcastDomains(self):
@@ -80,7 +87,10 @@ class Evi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.broadcastdomains_e0e4233dfafdf70a0eed2ffe3c495b2d import BroadcastDomains
-        return BroadcastDomains(self)
+        if self._properties.get('BroadcastDomains', None) is not None:
+            return self._properties.get('BroadcastDomains')
+        else:
+            return BroadcastDomains(self)
 
     @property
     def EviOpaqueTlv(self):
@@ -94,10 +104,14 @@ class Evi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eviopaquetlv_033801b83d5c442510c75fb6d0e848f9 import EviOpaqueTlv
-        return EviOpaqueTlv(self)
+        if self._properties.get('EviOpaqueTlv', None) is not None:
+            return self._properties.get('EviOpaqueTlv')
+        else:
+            return EviOpaqueTlv(self)
 
     @property
     def AdRouteLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,10 +120,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdRouteLabel'])
     @AdRouteLabel.setter
     def AdRouteLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdRouteLabel'], value)
 
     @property
     def AutoConfigureRdEvi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -118,10 +134,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoConfigureRdEvi'])
     @AutoConfigureRdEvi.setter
     def AutoConfigureRdEvi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoConfigureRdEvi'], value)
 
     @property
     def AutoConfigureRdIpAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -130,10 +148,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoConfigureRdIpAddress'])
     @AutoConfigureRdIpAddress.setter
     def AutoConfigureRdIpAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoConfigureRdIpAddress'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,6 +162,7 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
@@ -170,6 +191,7 @@ class Evi(Base):
 
     @property
     def IncludePmsiTunnelAttribute(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +200,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute'])
     @IncludePmsiTunnelAttribute.setter
     def IncludePmsiTunnelAttribute(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludePmsiTunnelAttribute'], value)
 
     @property
     def MplsAssignedUpstreamOrDownStreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -190,10 +214,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamOrDownStreamLabel'])
     @MplsAssignedUpstreamOrDownStreamLabel.setter
     def MplsAssignedUpstreamOrDownStreamLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsAssignedUpstreamOrDownStreamLabel'], value)
 
     @property
     def MulticastTunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,10 +228,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MulticastTunnelType'])
     @MulticastTunnelType.setter
     def MulticastTunnelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MulticastTunnelType'], value)
 
     @property
     def RdEvi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,10 +242,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RdEvi'])
     @RdEvi.setter
     def RdEvi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RdEvi'], value)
 
     @property
     def RdIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,10 +256,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RdIpAddress'])
     @RdIpAddress.setter
     def RdIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RdIpAddress'], value)
 
     @property
     def RsvpP2mpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -238,10 +270,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpId'])
     @RsvpP2mpId.setter
     def RsvpP2mpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsvpP2mpId'], value)
 
     @property
     def RsvpP2mpIdAsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -250,10 +284,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RsvpP2mpIdAsNumber'])
     @RsvpP2mpIdAsNumber.setter
     def RsvpP2mpIdAsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsvpP2mpIdAsNumber'], value)
 
     @property
     def RsvpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -262,10 +298,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RsvpTunnelId'])
     @RsvpTunnelId.setter
     def RsvpTunnelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsvpTunnelId'], value)
 
     @property
     def UseUpstreamOrDownStreamAssignedLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -274,10 +312,12 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseUpstreamOrDownStreamAssignedLabel'])
     @UseUpstreamOrDownStreamAssignedLabel.setter
     def UseUpstreamOrDownStreamAssignedLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseUpstreamOrDownStreamAssignedLabel'], value)
 
     @property
     def UseV4MappedV6Address(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -286,6 +326,7 @@ class Evi(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseV4MappedV6Address'])
     @UseV4MappedV6Address.setter
     def UseV4MappedV6Address(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseV4MappedV6Address'], value)
 
     def update(self, AdRouteLabel=None, AutoConfigureRdEvi=None, AutoConfigureRdIpAddress=None, Enabled=None, ExportTargetList=None, ImportTargetList=None, IncludePmsiTunnelAttribute=None, MplsAssignedUpstreamOrDownStreamLabel=None, MulticastTunnelType=None, RdEvi=None, RdIpAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, UseUpstreamOrDownStreamAssignedLabel=None, UseV4MappedV6Address=None):
@@ -412,28 +453,44 @@ class Evi(Base):
         """
         return self._read(href)
 
-    def AdvertiseAliasing(self):
+    def AdvertiseAliasing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the advertiseAliasing operation on the server.
 
         NOT DEFINED
 
+        advertiseAliasing(async_operation=bool)string
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('advertiseAliasing', payload=payload, response_object=None)
 
-    def WithdrawAliasing(self):
+    def WithdrawAliasing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the withdrawAliasing operation on the server.
 
         NOT DEFINED
 
+        withdrawAliasing(async_operation=bool)string
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('withdrawAliasing', payload=payload, response_object=None)

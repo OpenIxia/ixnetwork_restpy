@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class L2MacVlanRange(Base):
@@ -46,12 +47,17 @@ class L2MacVlanRange(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'incrementVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        'incremetVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+    }
 
-    def __init__(self, parent):
-        super(L2MacVlanRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(L2MacVlanRange, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,10 +66,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EnableRepeatMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,10 +80,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRepeatMac'])
     @EnableRepeatMac.setter
     def EnableRepeatMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRepeatMac'], value)
 
     @property
     def EnableSameVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +94,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSameVlan'])
     @EnableSameVlan.setter
     def EnableSameVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSameVlan'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +108,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +122,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +136,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstVlanId'])
     @FirstVlanId.setter
     def FirstVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstVlanId'], value)
 
     @property
     def IncrementVlanMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,10 +150,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementVlanMode'])
     @IncrementVlanMode.setter
     def IncrementVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementVlanMode'], value)
 
     @property
     def IncremetVlanMode(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -144,10 +164,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncremetVlanMode'])
     @IncremetVlanMode.setter
     def IncremetVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncremetVlanMode'], value)
 
     @property
     def SkipVlanIdZero(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +178,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'])
     @SkipVlanIdZero.setter
     def SkipVlanIdZero(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'], value)
 
     @property
     def StartMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +192,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartMac'])
     @StartMac.setter
     def StartMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartMac'], value)
 
     @property
     def Tpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +206,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
     @Tpid.setter
     def Tpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +220,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +234,12 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,9 +248,11 @@ class L2MacVlanRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, Count=None, EnableRepeatMac=None, EnableSameVlan=None, EnableVlan=None, Enabled=None, FirstVlanId=None, IncrementVlanMode=None, IncremetVlanMode=None, SkipVlanIdZero=None, StartMac=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (int, bool, bool, bool, bool, int, str, str, bool, str, str, int, str, str) -> L2MacVlanRange
         """Updates l2MacVlanRange resource on the server.
 
         Args

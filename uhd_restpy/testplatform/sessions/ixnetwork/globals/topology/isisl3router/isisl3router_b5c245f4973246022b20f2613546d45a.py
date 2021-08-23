@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3Router(Base):
@@ -65,9 +66,11 @@ class IsisL3Router(Base):
         'Srv6NodeSIDTlvType': 'srv6NodeSIDTlvType',
         'Srv6SidLocatorTlvType': 'srv6SidLocatorTlvType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3Router, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -81,7 +84,10 @@ class IsisL3Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -95,10 +101,14 @@ class IsisL3Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def BIERInfoSubTLVType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +119,7 @@ class IsisL3Router(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +129,7 @@ class IsisL3Router(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class IsisL3Router(Base):
 
     @property
     def FaAppSpecfLinkAttrSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +150,7 @@ class IsisL3Router(Base):
 
     @property
     def FaEagSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +161,7 @@ class IsisL3Router(Base):
 
     @property
     def FadSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +172,7 @@ class IsisL3Router(Base):
 
     @property
     def FadfSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -167,6 +183,7 @@ class IsisL3Router(Base):
 
     @property
     def FaiAllAgSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -177,6 +194,7 @@ class IsisL3Router(Base):
 
     @property
     def FaiAnyAgSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +205,7 @@ class IsisL3Router(Base):
 
     @property
     def LinkMsdSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -197,6 +216,7 @@ class IsisL3Router(Base):
 
     @property
     def MaxEndDMsdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -207,6 +227,7 @@ class IsisL3Router(Base):
 
     @property
     def MaxEndPopMsdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +238,7 @@ class IsisL3Router(Base):
 
     @property
     def MaxSegmentsLeftMsdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -227,6 +249,7 @@ class IsisL3Router(Base):
 
     @property
     def MaxTEncapMsdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +260,7 @@ class IsisL3Router(Base):
 
     @property
     def MaxTInsertMsdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,6 +271,7 @@ class IsisL3Router(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -255,10 +280,12 @@ class IsisL3Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfLSPsOrMgroupPDUsPerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -269,6 +296,7 @@ class IsisL3Router(Base):
 
     @property
     def NodeMsdSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +307,7 @@ class IsisL3Router(Base):
 
     @property
     def RateControlInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +318,7 @@ class IsisL3Router(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -298,6 +328,7 @@ class IsisL3Router(Base):
 
     @property
     def SendP2PHellosToUnicastMAC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +339,7 @@ class IsisL3Router(Base):
 
     @property
     def SrDraftExtension(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +350,7 @@ class IsisL3Router(Base):
 
     @property
     def SrlbSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -328,6 +361,7 @@ class IsisL3Router(Base):
 
     @property
     def SrmsPreferenceSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +372,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6AdjSIDSubTlvType(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -348,6 +383,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6CapabilitiesSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -358,6 +394,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6EndSidSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -368,6 +405,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6EndXSidSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -378,6 +416,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6LANAdjSIDSubTlvType(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -388,6 +427,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6LanEndXSidSubTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -398,6 +438,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6NodeSIDTlvType(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -408,6 +449,7 @@ class IsisL3Router(Base):
 
     @property
     def Srv6SidLocatorTlvType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -417,6 +459,7 @@ class IsisL3Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidLocatorTlvType']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisL3Router
         """Updates isisL3Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -432,7 +475,26 @@ class IsisL3Router(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> IsisL3Router
+        """Adds a new isisL3Router resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisL3Router resources using find and the newly added isisL3Router resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
+        # type: (int, str, str, List[str]) -> IsisL3Router
         """Finds and retrieves isisL3Router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3Router resources from the server.

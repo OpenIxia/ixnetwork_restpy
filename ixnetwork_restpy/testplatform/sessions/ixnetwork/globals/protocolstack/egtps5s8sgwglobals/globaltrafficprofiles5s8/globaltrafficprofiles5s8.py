@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GlobalTrafficProfileS5S8(Base):
@@ -55,12 +56,15 @@ class GlobalTrafficProfileS5S8(Base):
         'UsePredefinedQCI': 'usePredefinedQCI',
         'UsePredefinedTFT': 'usePredefinedTFT',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GlobalTrafficProfileS5S8, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GlobalTrafficProfileS5S8, self).__init__(parent, list_op)
 
     @property
     def Apn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,10 +73,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Apn'])
     @Apn.setter
     def Apn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Apn'], value)
 
     @property
     def Arp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +87,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Arp'])
     @Arp.setter
     def Arp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Arp'], value)
 
     @property
     def DefaultBearerFallback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,10 +101,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultBearerFallback'])
     @DefaultBearerFallback.setter
     def DefaultBearerFallback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultBearerFallback'], value)
 
     @property
     def EnableSessionTimeout(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +115,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSessionTimeout'])
     @EnableSessionTimeout.setter
     def EnableSessionTimeout(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSessionTimeout'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -117,10 +129,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Gbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,10 +143,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Gbrd'])
     @Gbrd.setter
     def Gbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Gbrd'], value)
 
     @property
     def Gbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +157,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Gbru'])
     @Gbru.setter
     def Gbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Gbru'], value)
 
     @property
     def IsMsInitiated(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +171,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsMsInitiated'])
     @IsMsInitiated.setter
     def IsMsInitiated(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsMsInitiated'], value)
 
     @property
     def Mbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -165,10 +185,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mbrd'])
     @Mbrd.setter
     def Mbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mbrd'], value)
 
     @property
     def Mbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,10 +199,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mbru'])
     @Mbru.setter
     def Mbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mbru'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,10 +213,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,6 +228,7 @@ class GlobalTrafficProfileS5S8(Base):
 
     @property
     def Qci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,10 +237,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Qci'])
     @Qci.setter
     def Qci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Qci'], value)
 
     @property
     def RunOnDefaultBearer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -222,10 +251,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RunOnDefaultBearer'])
     @RunOnDefaultBearer.setter
     def RunOnDefaultBearer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RunOnDefaultBearer'], value)
 
     @property
     def SPCO_Container(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,10 +265,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPCO_Container'])
     @SPCO_Container.setter
     def SPCO_Container(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPCO_Container'], value)
 
     @property
     def SPCO_Protocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -246,10 +279,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SPCO_Protocol'])
     @SPCO_Protocol.setter
     def SPCO_Protocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SPCO_Protocol'], value)
 
     @property
     def STFTFiltersCustom(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -258,10 +293,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['STFTFiltersCustom'])
     @STFTFiltersCustom.setter
     def STFTFiltersCustom(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['STFTFiltersCustom'], value)
 
     @property
     def SessionTimeoutValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -270,10 +307,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionTimeoutValue'])
     @SessionTimeoutValue.setter
     def SessionTimeoutValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionTimeoutValue'], value)
 
     @property
     def TearDownIndicator(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -282,10 +321,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TearDownIndicator'])
     @TearDownIndicator.setter
     def TearDownIndicator(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TearDownIndicator'], value)
 
     @property
     def UsePredefinedQCI(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -294,10 +335,12 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UsePredefinedQCI'])
     @UsePredefinedQCI.setter
     def UsePredefinedQCI(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UsePredefinedQCI'], value)
 
     @property
     def UsePredefinedTFT(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -306,9 +349,11 @@ class GlobalTrafficProfileS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UsePredefinedTFT'])
     @UsePredefinedTFT.setter
     def UsePredefinedTFT(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UsePredefinedTFT'], value)
 
     def update(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, Qci=None, RunOnDefaultBearer=None, SPCO_Container=None, SPCO_Protocol=None, STFTFiltersCustom=None, SessionTimeoutValue=None, TearDownIndicator=None, UsePredefinedQCI=None, UsePredefinedTFT=None):
+        # type: (str, int, bool, bool, bool, int, int, bool, int, int, str, int, bool, str, str, str, int, bool, bool, bool) -> GlobalTrafficProfileS5S8
         """Updates globalTrafficProfileS5S8 resource on the server.
 
         Args
@@ -341,6 +386,7 @@ class GlobalTrafficProfileS5S8(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, Qci=None, RunOnDefaultBearer=None, SPCO_Container=None, SPCO_Protocol=None, STFTFiltersCustom=None, SessionTimeoutValue=None, TearDownIndicator=None, UsePredefinedQCI=None, UsePredefinedTFT=None):
+        # type: (str, int, bool, bool, bool, int, int, bool, int, int, str, int, bool, str, str, str, int, bool, bool, bool) -> GlobalTrafficProfileS5S8
         """Adds a new globalTrafficProfileS5S8 resource on the server and adds it to the container.
 
         Args
@@ -387,6 +433,7 @@ class GlobalTrafficProfileS5S8(Base):
         self._delete()
 
     def find(self, Apn=None, Arp=None, DefaultBearerFallback=None, EnableSessionTimeout=None, Enabled=None, Gbrd=None, Gbru=None, IsMsInitiated=None, Mbrd=None, Mbru=None, Name=None, ObjectId=None, Qci=None, RunOnDefaultBearer=None, SPCO_Container=None, SPCO_Protocol=None, STFTFiltersCustom=None, SessionTimeoutValue=None, TearDownIndicator=None, UsePredefinedQCI=None, UsePredefinedTFT=None):
+        # type: (str, int, bool, bool, bool, int, int, bool, int, int, str, str, int, bool, str, str, str, int, bool, bool, bool) -> GlobalTrafficProfileS5S8
         """Finds and retrieves globalTrafficProfileS5S8 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globalTrafficProfileS5S8 resources from the server.

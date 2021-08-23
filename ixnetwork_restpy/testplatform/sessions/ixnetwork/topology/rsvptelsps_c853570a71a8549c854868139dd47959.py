@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RsvpteLsps(Base):
@@ -51,9 +52,12 @@ class RsvpteLsps(Base):
         'StateCounts': 'stateCounts',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(RsvpteLsps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RsvpteLsps, self).__init__(parent, list_op)
 
     @property
     def RsvpP2PEgressLsps(self):
@@ -67,7 +71,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_1581d5bc15266f4f3d71f22c869262cd import RsvpP2PEgressLsps
-        return RsvpP2PEgressLsps(self)._select()
+        if self._properties.get('RsvpP2PEgressLsps', None) is not None:
+            return self._properties.get('RsvpP2PEgressLsps')
+        else:
+            return RsvpP2PEgressLsps(self)._select()
 
     @property
     def RsvpP2PIngressLsps(self):
@@ -81,7 +88,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_ff5672c34fa5c89aea939131eeaa4b98 import RsvpP2PIngressLsps
-        return RsvpP2PIngressLsps(self)._select()
+        if self._properties.get('RsvpP2PIngressLsps', None) is not None:
+            return self._properties.get('RsvpP2PIngressLsps')
+        else:
+            return RsvpP2PIngressLsps(self)._select()
 
     @property
     def RsvpP2mpEgressLsps(self):
@@ -95,7 +105,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps_a7be6d237185c970a66235441605770c import RsvpP2mpEgressLsps
-        return RsvpP2mpEgressLsps(self)._select()
+        if self._properties.get('RsvpP2mpEgressLsps', None) is not None:
+            return self._properties.get('RsvpP2mpEgressLsps')
+        else:
+            return RsvpP2mpEgressLsps(self)._select()
 
     @property
     def RsvpP2mpIngressLsps(self):
@@ -109,7 +122,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps_7b38fc09ccf52081a0ef372f9492b887 import RsvpP2mpIngressLsps
-        return RsvpP2mpIngressLsps(self)._select()
+        if self._properties.get('RsvpP2mpIngressLsps', None) is not None:
+            return self._properties.get('RsvpP2mpIngressLsps')
+        else:
+            return RsvpP2mpIngressLsps(self)._select()
 
     @property
     def RsvpPcepExpectedInitiatedLsps(self):
@@ -123,10 +139,14 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps_64b47067effbb8886f7ee1d4dd6e8560 import RsvpPcepExpectedInitiatedLsps
-        return RsvpPcepExpectedInitiatedLsps(self)._select()
+        if self._properties.get('RsvpPcepExpectedInitiatedLsps', None) is not None:
+            return self._properties.get('RsvpPcepExpectedInitiatedLsps')
+        else:
+            return RsvpPcepExpectedInitiatedLsps(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +157,7 @@ class RsvpteLsps(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -145,10 +166,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,6 +181,7 @@ class RsvpteLsps(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,6 +191,7 @@ class RsvpteLsps(Base):
 
     @property
     def EnableP2PEgress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -175,6 +200,7 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableP2PEgress'])
     @EnableP2PEgress.setter
     def EnableP2PEgress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableP2PEgress'], value)
 
     @property
@@ -188,6 +214,7 @@ class RsvpteLsps(Base):
 
     @property
     def ExpectedPceInitiatedLspsCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -196,10 +223,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExpectedPceInitiatedLspsCount'])
     @ExpectedPceInitiatedLspsCount.setter
     def ExpectedPceInitiatedLspsCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExpectedPceInitiatedLspsCount'], value)
 
     @property
     def IngressP2PLsps(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -208,10 +237,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IngressP2PLsps'])
     @IngressP2PLsps.setter
     def IngressP2PLsps(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IngressP2PLsps'], value)
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -221,6 +252,7 @@ class RsvpteLsps(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -229,10 +261,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -241,10 +275,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def P2mpEgressTunnelCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -253,10 +289,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['P2mpEgressTunnelCount'])
     @P2mpEgressTunnelCount.setter
     def P2mpEgressTunnelCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['P2mpEgressTunnelCount'], value)
 
     @property
     def P2mpIngressLspCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -265,10 +303,12 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['P2mpIngressLspCount'])
     @P2mpIngressLspCount.setter
     def P2mpIngressLspCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['P2mpIngressLspCount'], value)
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -278,6 +318,7 @@ class RsvpteLsps(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -286,6 +327,7 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -299,6 +341,7 @@ class RsvpteLsps(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -307,6 +350,7 @@ class RsvpteLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
+        # type: (List[str], bool, int, int, int, str, int, int, List[str]) -> RsvpteLsps
         """Updates rsvpteLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -331,6 +375,7 @@ class RsvpteLsps(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, EnableP2PEgress=None, ExpectedPceInitiatedLspsCount=None, IngressP2PLsps=None, Multiplier=None, Name=None, P2mpEgressTunnelCount=None, P2mpIngressLspCount=None, StackedLayers=None):
+        # type: (List[str], bool, int, int, int, str, int, int, List[str]) -> RsvpteLsps
         """Adds a new rsvpteLsps resource on the server and adds it to the container.
 
         Args
@@ -419,6 +464,134 @@ class RsvpteLsps(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None):
         """Base class infrastructure that gets a list of rsvpteLsps device ids encapsulated by this object.
 
@@ -438,103 +611,3 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

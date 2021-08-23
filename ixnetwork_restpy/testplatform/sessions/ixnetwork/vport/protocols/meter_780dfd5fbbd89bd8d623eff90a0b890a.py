@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Meter(Base):
@@ -39,9 +40,11 @@ class Meter(Base):
         'MeterAdvertise': 'meterAdvertise',
         'UpdateMeterModStatus': 'updateMeterModStatus',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Meter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Meter, self).__init__(parent, list_op)
 
     @property
     def Band(self):
@@ -55,7 +58,10 @@ class Meter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.band_c5b39b825ad40e5d5771ea1cb0ce8304 import Band
-        return Band(self)
+        if self._properties.get('Band', None) is not None:
+            return self._properties.get('Band')
+        else:
+            return Band(self)
 
     @property
     def Flags(self):
@@ -69,10 +75,14 @@ class Meter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flags_18e546bb4511a17ab3e126f260698036 import Flags
-        return Flags(self)._select()
+        if self._properties.get('Flags', None) is not None:
+            return self._properties.get('Flags')
+        else:
+            return Flags(self)._select()
 
     @property
     def Id__(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +91,12 @@ class Meter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Id__'])
     @Id__.setter
     def Id__(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +105,12 @@ class Meter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +119,12 @@ class Meter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def MeterAdvertise(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -117,10 +133,12 @@ class Meter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterAdvertise'])
     @MeterAdvertise.setter
     def MeterAdvertise(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterAdvertise'], value)
 
     @property
     def UpdateMeterModStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,6 +147,7 @@ class Meter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateMeterModStatus'])
 
     def update(self, Id__=None, Description=None, Enabled=None, MeterAdvertise=None):
+        # type: (int, str, bool, bool) -> Meter
         """Updates meter resource on the server.
 
         Args
@@ -145,6 +164,7 @@ class Meter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Id__=None, Description=None, Enabled=None, MeterAdvertise=None):
+        # type: (int, str, bool, bool) -> Meter
         """Adds a new meter resource on the server and adds it to the container.
 
         Args
@@ -175,6 +195,7 @@ class Meter(Base):
         self._delete()
 
     def find(self, Id__=None, Description=None, Enabled=None, MeterAdvertise=None, UpdateMeterModStatus=None):
+        # type: (int, str, bool, bool, str) -> Meter
         """Finds and retrieves meter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meter resources from the server.
@@ -218,13 +239,15 @@ class Meter(Base):
         return self._read(href)
 
     def UpdateMeterMod(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateMeterMod operation on the server.
 
         NOT DEFINED
 
-        updateMeterMod(Arg2=enum)bool
-        -----------------------------
+        updateMeterMod(Arg2=enum, async_operation=bool)bool
+        ---------------------------------------------------
         - Arg2 (str(sendMeterAdd | sendMeterModify | sendMeterRemove)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
         Raises

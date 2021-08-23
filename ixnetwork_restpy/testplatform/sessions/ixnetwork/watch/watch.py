@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Watch(Base):
@@ -33,9 +34,11 @@ class Watch(Base):
     _SDM_ATT_MAP = {
         'Topics': 'topics',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Watch, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Watch, self).__init__(parent, list_op)
 
     @property
     def AttributeWatch(self):
@@ -49,7 +52,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.attributewatch.attributewatch import AttributeWatch
-        return AttributeWatch(self)
+        if self._properties.get('AttributeWatch', None) is not None:
+            return self._properties.get('AttributeWatch')
+        else:
+            return AttributeWatch(self)
 
     @property
     def ExecWatch(self):
@@ -63,7 +69,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.execwatch.execwatch import ExecWatch
-        return ExecWatch(self)
+        if self._properties.get('ExecWatch', None) is not None:
+            return self._properties.get('ExecWatch')
+        else:
+            return ExecWatch(self)
 
     @property
     def ListWatch(self):
@@ -77,7 +86,10 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.listwatch.listwatch import ListWatch
-        return ListWatch(self)
+        if self._properties.get('ListWatch', None) is not None:
+            return self._properties.get('ListWatch')
+        else:
+            return ListWatch(self)
 
     @property
     def SelectWatch(self):
@@ -91,10 +103,14 @@ class Watch(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.selectwatch.selectwatch import SelectWatch
-        return SelectWatch(self)
+        if self._properties.get('SelectWatch', None) is not None:
+            return self._properties.get('SelectWatch')
+        else:
+            return SelectWatch(self)
 
     @property
     def Topics(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -105,11 +121,12 @@ class Watch(Base):
     def AddAttributeWatch(self, *args, **kwargs):
         """Executes the addAttributeWatch operation on the server.
 
-        addAttributeWatch(Arg2=href, Arg3=list, Arg4=string)object
-        ----------------------------------------------------------
+        addAttributeWatch(Arg2=href, Arg3=list, Arg4=string, async_operation=bool)object
+        --------------------------------------------------------------------------------
         - Arg2 (str(None)): 
         - Arg3 (list(str)): 
         - Arg4 (str): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:number): 
 
         Raises
@@ -125,10 +142,11 @@ class Watch(Base):
     def AddExecWatch(self, *args, **kwargs):
         """Executes the addExecWatch operation on the server.
 
-        addExecWatch(Arg2=string, Arg3=string)object
-        --------------------------------------------
+        addExecWatch(Arg2=string, Arg3=string, async_operation=bool)object
+        ------------------------------------------------------------------
         - Arg2 (str): 
         - Arg3 (str): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:number): 
 
         Raises
@@ -144,11 +162,12 @@ class Watch(Base):
     def AddListWatch(self, *args, **kwargs):
         """Executes the addListWatch operation on the server.
 
-        addListWatch(Arg2=href, Arg3=list, Arg4=string)object
-        -----------------------------------------------------
+        addListWatch(Arg2=href, Arg3=list, Arg4=string, async_operation=bool)object
+        ---------------------------------------------------------------------------
         - Arg2 (str(None)): 
         - Arg3 (list(str)): 
         - Arg4 (str): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:number): 
 
         Raises
@@ -164,10 +183,11 @@ class Watch(Base):
     def AddSelectWatch(self, *args, **kwargs):
         """Executes the addSelectWatch operation on the server.
 
-        addSelectWatch(Selects=list, WatchTopic=string)object
-        -----------------------------------------------------
+        addSelectWatch(Selects=list, WatchTopic=string, async_operation=bool)object
+        ---------------------------------------------------------------------------
         - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): 
         - WatchTopic (str): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:number): 
 
         Raises
@@ -181,11 +201,13 @@ class Watch(Base):
         return self._execute('addSelectWatch', payload=payload, response_object=None)
 
     def RemoveWatches(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the removeWatches operation on the server.
 
-        removeWatches(WatchIds=list)
-        ----------------------------
+        removeWatches(WatchIds=list, async_operation=bool)
+        --------------------------------------------------
         - WatchIds (list(number)): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

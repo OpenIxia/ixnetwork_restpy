@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpIpv4Peer(Base):
@@ -176,9 +177,13 @@ class BgpIpv4Peer(Base):
         'VplsEnableNextHop': 'vplsEnableNextHop',
         'VplsNextHop': 'vplsNextHop',
     }
+    _SDM_ENUM_MAP = {
+        'ipVrfToIpVrfType': ['interfaceLess', 'interfacefullWithCorefacingIRB', 'interfacefullWithUnnumberedCorefacingIRB'],
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(BgpIpv4Peer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpIpv4Peer, self).__init__(parent, list_op)
 
     @property
     def BgpCustomAfiSafiv4(self):
@@ -192,7 +197,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcustomafisafiv4_3755a44fa17f2a2c8666f79d7f4bbce7 import BgpCustomAfiSafiv4
-        return BgpCustomAfiSafiv4(self)._select()
+        if self._properties.get('BgpCustomAfiSafiv4', None) is not None:
+            return self._properties.get('BgpCustomAfiSafiv4')
+        else:
+            return BgpCustomAfiSafiv4(self)._select()
 
     @property
     def BgpEpePeerList(self):
@@ -206,7 +214,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepepeerlist_8e1fc47aa0221fde5418b0e01514b909 import BgpEpePeerList
-        return BgpEpePeerList(self)._select()
+        if self._properties.get('BgpEpePeerList', None) is not None:
+            return self._properties.get('BgpEpePeerList')
+        else:
+            return BgpEpePeerList(self)._select()
 
     @property
     def BgpEthernetSegmentV4(self):
@@ -220,7 +231,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_1cb5c56a2c9d4d061f97207a53f3a691 import BgpEthernetSegmentV4
-        return BgpEthernetSegmentV4(self)._select()
+        if self._properties.get('BgpEthernetSegmentV4', None) is not None:
+            return self._properties.get('BgpEthernetSegmentV4')
+        else:
+            return BgpEthernetSegmentV4(self)._select()
 
     @property
     def BgpFlowSpecRangesList(self):
@@ -234,7 +248,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslist_789c16d44699974803aa7a2ecfa2c575 import BgpFlowSpecRangesList
-        return BgpFlowSpecRangesList(self)._select()
+        if self._properties.get('BgpFlowSpecRangesList', None) is not None:
+            return self._properties.get('BgpFlowSpecRangesList')
+        else:
+            return BgpFlowSpecRangesList(self)._select()
 
     @property
     def BgpFlowSpecRangesListV4(self):
@@ -248,7 +265,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv4_ab0c3185b027eff54394da27736dcb9a import BgpFlowSpecRangesListV4
-        return BgpFlowSpecRangesListV4(self)._select()
+        if self._properties.get('BgpFlowSpecRangesListV4', None) is not None:
+            return self._properties.get('BgpFlowSpecRangesListV4')
+        else:
+            return BgpFlowSpecRangesListV4(self)._select()
 
     @property
     def BgpFlowSpecRangesListV6(self):
@@ -262,7 +282,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv6_305d65dd8b0f124660b13211ca670c20 import BgpFlowSpecRangesListV6
-        return BgpFlowSpecRangesListV6(self)._select()
+        if self._properties.get('BgpFlowSpecRangesListV6', None) is not None:
+            return self._properties.get('BgpFlowSpecRangesListV6')
+        else:
+            return BgpFlowSpecRangesListV6(self)._select()
 
     @property
     def BgpIPv4EvpnEvi(self):
@@ -276,7 +299,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnevi_05f1ea70759fa1436b3981f124b83276 import BgpIPv4EvpnEvi
-        return BgpIPv4EvpnEvi(self)
+        if self._properties.get('BgpIPv4EvpnEvi', None) is not None:
+            return self._properties.get('BgpIPv4EvpnEvi')
+        else:
+            return BgpIPv4EvpnEvi(self)
 
     @property
     def BgpIPv4EvpnPbb(self):
@@ -290,7 +316,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnpbb_f1db536c355bf8211909601b21790955 import BgpIPv4EvpnPbb
-        return BgpIPv4EvpnPbb(self)
+        if self._properties.get('BgpIPv4EvpnPbb', None) is not None:
+            return self._properties.get('BgpIPv4EvpnPbb')
+        else:
+            return BgpIPv4EvpnPbb(self)
 
     @property
     def BgpIPv4EvpnVXLAN(self):
@@ -304,7 +333,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_022c0979cbf2439b68dd6a9ced73e283 import BgpIPv4EvpnVXLAN
-        return BgpIPv4EvpnVXLAN(self)
+        if self._properties.get('BgpIPv4EvpnVXLAN', None) is not None:
+            return self._properties.get('BgpIPv4EvpnVXLAN')
+        else:
+            return BgpIPv4EvpnVXLAN(self)
 
     @property
     def BgpIPv4EvpnVXLANVpws(self):
@@ -318,7 +350,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_790165459e0b33ceec2d2943df076aa5 import BgpIPv4EvpnVXLANVpws
-        return BgpIPv4EvpnVXLANVpws(self)
+        if self._properties.get('BgpIPv4EvpnVXLANVpws', None) is not None:
+            return self._properties.get('BgpIPv4EvpnVXLANVpws')
+        else:
+            return BgpIPv4EvpnVXLANVpws(self)
 
     @property
     def BgpIPv4EvpnVpws(self):
@@ -332,7 +367,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvpws_e8af65dd80ab4466e956b1bd0656c202 import BgpIPv4EvpnVpws
-        return BgpIPv4EvpnVpws(self)
+        if self._properties.get('BgpIPv4EvpnVpws', None) is not None:
+            return self._properties.get('BgpIPv4EvpnVpws')
+        else:
+            return BgpIPv4EvpnVpws(self)
 
     @property
     def BgpIpv4AdL2Vpn(self):
@@ -346,7 +384,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4adl2vpn_08c7fedfc475cb9798d64a65caa67e97 import BgpIpv4AdL2Vpn
-        return BgpIpv4AdL2Vpn(self)
+        if self._properties.get('BgpIpv4AdL2Vpn', None) is not None:
+            return self._properties.get('BgpIpv4AdL2Vpn')
+        else:
+            return BgpIpv4AdL2Vpn(self)
 
     @property
     def BgpIpv4L2Site(self):
@@ -360,7 +401,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4l2site_3fc887aa9816db034ba10b85d4b057ee import BgpIpv4L2Site
-        return BgpIpv4L2Site(self)
+        if self._properties.get('BgpIpv4L2Site', None) is not None:
+            return self._properties.get('BgpIpv4L2Site')
+        else:
+            return BgpIpv4L2Site(self)
 
     @property
     def BgpIpv4MVrf(self):
@@ -374,7 +418,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4mvrf_253aa0a56ce69a84778d3b149caa1ca4 import BgpIpv4MVrf
-        return BgpIpv4MVrf(self)
+        if self._properties.get('BgpIpv4MVrf', None) is not None:
+            return self._properties.get('BgpIpv4MVrf')
+        else:
+            return BgpIpv4MVrf(self)
 
     @property
     def BgpLsAsPathSegmentList(self):
@@ -388,7 +435,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsaspathsegmentlist_fed4f671dbff6ccda8e8824fbe375856 import BgpLsAsPathSegmentList
-        return BgpLsAsPathSegmentList(self)
+        if self._properties.get('BgpLsAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpLsAsPathSegmentList')
+        else:
+            return BgpLsAsPathSegmentList(self)
 
     @property
     def BgpLsClusterIdList(self):
@@ -402,7 +452,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsclusteridlist_7b4bcec76ea98c69afbc1dcb2556f669 import BgpLsClusterIdList
-        return BgpLsClusterIdList(self)
+        if self._properties.get('BgpLsClusterIdList', None) is not None:
+            return self._properties.get('BgpLsClusterIdList')
+        else:
+            return BgpLsClusterIdList(self)
 
     @property
     def BgpLsCommunitiesList(self):
@@ -416,7 +469,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplscommunitieslist_fdb216f1d4195f82ad738e19cb2b5d32 import BgpLsCommunitiesList
-        return BgpLsCommunitiesList(self)
+        if self._properties.get('BgpLsCommunitiesList', None) is not None:
+            return self._properties.get('BgpLsCommunitiesList')
+        else:
+            return BgpLsCommunitiesList(self)
 
     @property
     def BgpLsExtendedCommunitiesList(self):
@@ -430,7 +486,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_835ffabe7ce10fa0b2a04b0ca4ed54d9 import BgpLsExtendedCommunitiesList
-        return BgpLsExtendedCommunitiesList(self)
+        if self._properties.get('BgpLsExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpLsExtendedCommunitiesList')
+        else:
+            return BgpLsExtendedCommunitiesList(self)
 
     @property
     def BgpSRGBRangeSubObjectsList(self):
@@ -444,7 +503,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrgbrangesubobjectslist_6e28159e439bbeffe19ca2de4c7f7879 import BgpSRGBRangeSubObjectsList
-        return BgpSRGBRangeSubObjectsList(self)
+        if self._properties.get('BgpSRGBRangeSubObjectsList', None) is not None:
+            return self._properties.get('BgpSRGBRangeSubObjectsList')
+        else:
+            return BgpSRGBRangeSubObjectsList(self)
 
     @property
     def BgpSRTEPoliciesListV4(self):
@@ -458,7 +520,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_f2d756189af5037098439a3ddb4c82c5 import BgpSRTEPoliciesListV4
-        return BgpSRTEPoliciesListV4(self)._select()
+        if self._properties.get('BgpSRTEPoliciesListV4', None) is not None:
+            return self._properties.get('BgpSRTEPoliciesListV4')
+        else:
+            return BgpSRTEPoliciesListV4(self)._select()
 
     @property
     def BgpVrf(self):
@@ -472,7 +537,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpvrf_9f195e8f3bc351ab198c6c7de926b04d import BgpVrf
-        return BgpVrf(self)
+        if self._properties.get('BgpVrf', None) is not None:
+            return self._properties.get('BgpVrf')
+        else:
+            return BgpVrf(self)
 
     @property
     def Connector(self):
@@ -486,7 +554,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def FlexAlgoColorMappingTemplate(self):
@@ -500,7 +571,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flexalgocolormappingtemplate_8e0816b88fc7b32d81aaa2e2335895f1 import FlexAlgoColorMappingTemplate
-        return FlexAlgoColorMappingTemplate(self)._select()
+        if self._properties.get('FlexAlgoColorMappingTemplate', None) is not None:
+            return self._properties.get('FlexAlgoColorMappingTemplate')
+        else:
+            return FlexAlgoColorMappingTemplate(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -514,7 +588,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def TlvProfile(self):
@@ -528,10 +605,14 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is not None:
+            return self._properties.get('TlvProfile')
+        else:
+            return TlvProfile(self)
 
     @property
     def ActAsRestarted(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -542,6 +623,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -552,6 +634,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def AdvertiseEndOfRib(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -562,6 +645,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def AdvertiseEvpnRoutesForOtherVtep(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -570,10 +654,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvertiseEvpnRoutesForOtherVtep'])
     @AdvertiseEvpnRoutesForOtherVtep.setter
     def AdvertiseEvpnRoutesForOtherVtep(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvertiseEvpnRoutesForOtherVtep'], value)
 
     @property
     def AdvertiseTunnelEncapsulationExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -584,6 +670,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def AlwaysIncludeTunnelEncExtCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -594,6 +681,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -604,6 +692,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Authentication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -614,6 +703,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpFsmState(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -623,6 +713,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -633,6 +724,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpLsAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -643,6 +735,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpLsEnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -653,6 +746,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpLsEnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -663,6 +757,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpLsEnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -673,6 +768,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpLsNoOfASPathSegments(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -681,10 +777,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BgpLsNoOfASPathSegments'])
     @BgpLsNoOfASPathSegments.setter
     def BgpLsNoOfASPathSegments(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BgpLsNoOfASPathSegments'], value)
 
     @property
     def BgpLsNoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -693,10 +791,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BgpLsNoOfClusters'])
     @BgpLsNoOfClusters.setter
     def BgpLsNoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BgpLsNoOfClusters'], value)
 
     @property
     def BgpLsNoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -705,10 +805,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BgpLsNoOfCommunities'])
     @BgpLsNoOfCommunities.setter
     def BgpLsNoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BgpLsNoOfCommunities'], value)
 
     @property
     def BgpLsOverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -719,6 +821,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV4Mdt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -729,6 +832,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV4Mpls(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -739,6 +843,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV4MplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -749,6 +854,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV4Multicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -759,6 +865,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV4MulticastVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -769,6 +876,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV4Unicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -779,6 +887,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV6Mpls(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -789,6 +898,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV6MplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -799,6 +909,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV6Multicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -809,6 +920,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV6MulticastVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -819,6 +931,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpV6Unicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -829,6 +942,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpv4MplsAddPath(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -837,10 +951,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CapabilityIpv4MplsAddPath'])
     @CapabilityIpv4MplsAddPath.setter
     def CapabilityIpv4MplsAddPath(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CapabilityIpv4MplsAddPath'], value)
 
     @property
     def CapabilityIpv4MplsVPNAddPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -851,6 +967,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpv4UnicastAddPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -861,6 +978,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpv6MplsAddPath(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -869,10 +987,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CapabilityIpv6MplsAddPath'])
     @CapabilityIpv6MplsAddPath.setter
     def CapabilityIpv6MplsAddPath(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CapabilityIpv6MplsAddPath'], value)
 
     @property
     def CapabilityIpv6MplsVPNAddPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -883,6 +1003,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityIpv6UnicastAddPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -893,6 +1014,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityLinkStateNonVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -903,6 +1025,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityLinkStateVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -913,6 +1036,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityRouteConstraint(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -923,6 +1047,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityRouteRefresh(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -933,6 +1058,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilitySRTEPoliciesV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -943,6 +1069,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilitySRTEPoliciesV6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -953,6 +1080,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CapabilityVpls(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -963,6 +1091,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Capabilityipv4UnicastFlowSpec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -973,6 +1102,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Capabilityipv6UnicastFlowSpec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -983,6 +1113,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def ConfigureKeepaliveTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -993,6 +1124,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -1001,10 +1133,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1014,6 +1148,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def CustomSidType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1024,6 +1159,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1033,6 +1169,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def DiscardIxiaGeneratedRoutes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1043,6 +1180,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def DowntimeInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1053,6 +1191,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def DutIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1063,6 +1202,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Enable4ByteAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1073,6 +1213,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1083,6 +1224,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableBgpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1093,6 +1235,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableBgpIdSameasRouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1103,6 +1246,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableBgpLsCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1113,6 +1257,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableEpeTraffic(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1121,10 +1266,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEpeTraffic'])
     @EnableEpeTraffic.setter
     def EnableEpeTraffic(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEpeTraffic'], value)
 
     @property
     def EnableGracefulRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1135,6 +1282,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableLlgr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1154,6 +1302,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EthernetSegmentsCountV4(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1162,10 +1311,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSegmentsCountV4'])
     @EthernetSegmentsCountV4.setter
     def EthernetSegmentsCountV4(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSegmentsCountV4'], value)
 
     @property
     def Evpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1176,6 +1327,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterEvpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1186,6 +1338,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV4Mpls(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1196,6 +1349,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV4MplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1206,6 +1360,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV4Multicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1216,6 +1371,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV4MulticastVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1226,6 +1382,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV4Unicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1236,6 +1393,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV6Mpls(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1246,6 +1404,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV6MplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1256,6 +1415,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV6Multicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1266,6 +1426,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV6MulticastVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1276,6 +1437,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpV6Unicast(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1286,6 +1448,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpv4MulticastBgpMplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1296,6 +1459,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpv4UnicastFlowSpec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1306,6 +1470,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpv6MulticastBgpMplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1316,6 +1481,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterIpv6UnicastFlowSpec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1326,6 +1492,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterLinkState(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1336,6 +1503,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterLinkStateVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1346,6 +1514,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterSRTEPoliciesV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1356,6 +1525,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterSRTEPoliciesV6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1366,6 +1536,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def FilterVpls(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1376,6 +1547,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Flap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1386,6 +1558,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def HoldTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1396,6 +1569,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def IpVrfToIpVrfType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1404,10 +1578,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpVrfToIpVrfType'])
     @IpVrfToIpVrfType.setter
     def IpVrfToIpVrfType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpVrfToIpVrfType'], value)
 
     @property
     def Ipv4MplsAddPathMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1418,6 +1594,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv4MplsCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1426,10 +1603,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4MplsCapability'])
     @Ipv4MplsCapability.setter
     def Ipv4MplsCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4MplsCapability'], value)
 
     @property
     def Ipv4MplsVPNAddPathMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1440,6 +1619,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv4MulticastBgpMplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1450,6 +1630,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv4MultipleMplsLabelsCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1458,10 +1639,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4MultipleMplsLabelsCapability'])
     @Ipv4MultipleMplsLabelsCapability.setter
     def Ipv4MultipleMplsLabelsCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4MultipleMplsLabelsCapability'], value)
 
     @property
     def Ipv4UnicastAddPathMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1472,6 +1655,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6MplsAddPathMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1482,6 +1666,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6MplsCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1490,10 +1675,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6MplsCapability'])
     @Ipv6MplsCapability.setter
     def Ipv6MplsCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6MplsCapability'], value)
 
     @property
     def Ipv6MplsVPNAddPathMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1504,6 +1691,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6MulticastBgpMplsVpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1514,6 +1702,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6MultipleMplsLabelsCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1522,10 +1711,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6MultipleMplsLabelsCapability'])
     @Ipv6MultipleMplsLabelsCapability.setter
     def Ipv6MultipleMplsLabelsCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6MultipleMplsLabelsCapability'], value)
 
     @property
     def Ipv6UnicastAddPathMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1536,6 +1727,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def IrbInterfaceLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1546,6 +1738,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def IrbIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1556,6 +1749,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def KeepaliveTimer(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1566,6 +1760,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def L3VPNEncapsulationType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1576,6 +1771,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def LocalAs2Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1586,6 +1782,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def LocalAs4Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1596,6 +1793,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def LocalIpv4Ver2(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1605,6 +1803,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1614,6 +1813,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Md5Key(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1624,6 +1824,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def ModeOfBfdOperations(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1634,6 +1835,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def MplsLabelsCountForIpv4MplsRoute(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1642,10 +1844,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabelsCountForIpv4MplsRoute'])
     @MplsLabelsCountForIpv4MplsRoute.setter
     def MplsLabelsCountForIpv4MplsRoute(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabelsCountForIpv4MplsRoute'], value)
 
     @property
     def MplsLabelsCountForIpv6MplsRoute(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1654,10 +1858,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabelsCountForIpv6MplsRoute'])
     @MplsLabelsCountForIpv6MplsRoute.setter
     def MplsLabelsCountForIpv6MplsRoute(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabelsCountForIpv6MplsRoute'], value)
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1666,10 +1872,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1678,10 +1886,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfEpePeers(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1690,10 +1900,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfEpePeers'])
     @NoOfEpePeers.setter
     def NoOfEpePeers(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfEpePeers'], value)
 
     @property
     def NoOfExtendedCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1702,10 +1914,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunities'])
     @NoOfExtendedCommunities.setter
     def NoOfExtendedCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunities'], value)
 
     @property
     def NoOfUserDefinedAfiSafi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1714,10 +1928,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfUserDefinedAfiSafi'])
     @NoOfUserDefinedAfiSafi.setter
     def NoOfUserDefinedAfiSafi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfUserDefinedAfiSafi'], value)
 
     @property
     def NumBgpLsId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1728,6 +1944,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def NumBgpLsInstanceIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1738,6 +1955,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def NumBgpUpdatesGeneratedPerIteration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1748,6 +1966,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def NumberColorFlexAlgoMapping(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1756,10 +1975,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberColorFlexAlgoMapping'])
     @NumberColorFlexAlgoMapping.setter
     def NumberColorFlexAlgoMapping(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberColorFlexAlgoMapping'], value)
 
     @property
     def NumberFlowSpecRangeV4(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1768,10 +1989,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberFlowSpecRangeV4'])
     @NumberFlowSpecRangeV4.setter
     def NumberFlowSpecRangeV4(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberFlowSpecRangeV4'], value)
 
     @property
     def NumberFlowSpecRangeV6(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1780,10 +2003,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberFlowSpecRangeV6'])
     @NumberFlowSpecRangeV6.setter
     def NumberFlowSpecRangeV6(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberFlowSpecRangeV6'], value)
 
     @property
     def NumberSRTEPolicies(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1792,10 +2017,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberSRTEPolicies'])
     @NumberSRTEPolicies.setter
     def NumberSRTEPolicies(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberSRTEPolicies'], value)
 
     @property
     def OperationalModel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1806,6 +2033,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def RestartTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1816,6 +2044,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def RoutersMacOrIrbMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1826,6 +2055,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SRGBRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1834,10 +2064,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SRGBRangeCount'])
     @SRGBRangeCount.setter
     def SRGBRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SRGBRangeCount'], value)
 
     @property
     def SendIxiaSignatureWithRoutes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1848,6 +2080,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1857,6 +2090,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1866,6 +2100,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1874,10 +2109,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
     def StaleTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1897,6 +2134,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1906,6 +2144,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def TcpWindowSizeInBytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1916,6 +2155,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1926,6 +2166,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Type(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1936,6 +2177,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def UdpPortEndValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1944,10 +2186,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpPortEndValue'])
     @UdpPortEndValue.setter
     def UdpPortEndValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpPortEndValue'], value)
 
     @property
     def UdpPortStartValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1956,10 +2200,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpPortStartValue'])
     @UdpPortStartValue.setter
     def UdpPortStartValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpPortStartValue'], value)
 
     @property
     def UpdateInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1970,6 +2216,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def UptimeInSec(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1980,6 +2227,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def VplsEnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1990,6 +2238,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def VplsNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1999,6 +2248,7 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VplsNextHop']))
 
     def update(self, AdvertiseEvpnRoutesForOtherVtep=None, BgpLsNoOfASPathSegments=None, BgpLsNoOfClusters=None, BgpLsNoOfCommunities=None, CapabilityIpv4MplsAddPath=None, CapabilityIpv6MplsAddPath=None, ConnectedVia=None, EnableEpeTraffic=None, EthernetSegmentsCountV4=None, IpVrfToIpVrfType=None, Ipv4MplsCapability=None, Ipv4MultipleMplsLabelsCapability=None, Ipv6MplsCapability=None, Ipv6MultipleMplsLabelsCapability=None, MplsLabelsCountForIpv4MplsRoute=None, MplsLabelsCountForIpv6MplsRoute=None, Multiplier=None, Name=None, NoOfEpePeers=None, NoOfExtendedCommunities=None, NoOfUserDefinedAfiSafi=None, NumberColorFlexAlgoMapping=None, NumberFlowSpecRangeV4=None, NumberFlowSpecRangeV6=None, NumberSRTEPolicies=None, SRGBRangeCount=None, StackedLayers=None, UdpPortEndValue=None, UdpPortStartValue=None):
+        # type: (bool, int, int, int, bool, bool, List[str], bool, int, str, bool, bool, bool, bool, int, int, int, str, int, int, int, int, int, int, int, int, List[str], int, int) -> BgpIpv4Peer
         """Updates bgpIpv4Peer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -2043,6 +2293,7 @@ class BgpIpv4Peer(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvertiseEvpnRoutesForOtherVtep=None, BgpLsNoOfASPathSegments=None, BgpLsNoOfClusters=None, BgpLsNoOfCommunities=None, CapabilityIpv4MplsAddPath=None, CapabilityIpv6MplsAddPath=None, ConnectedVia=None, EnableEpeTraffic=None, EthernetSegmentsCountV4=None, IpVrfToIpVrfType=None, Ipv4MplsCapability=None, Ipv4MultipleMplsLabelsCapability=None, Ipv6MplsCapability=None, Ipv6MultipleMplsLabelsCapability=None, MplsLabelsCountForIpv4MplsRoute=None, MplsLabelsCountForIpv6MplsRoute=None, Multiplier=None, Name=None, NoOfEpePeers=None, NoOfExtendedCommunities=None, NoOfUserDefinedAfiSafi=None, NumberColorFlexAlgoMapping=None, NumberFlowSpecRangeV4=None, NumberFlowSpecRangeV6=None, NumberSRTEPolicies=None, SRGBRangeCount=None, StackedLayers=None, UdpPortEndValue=None, UdpPortStartValue=None):
+        # type: (bool, int, int, int, bool, bool, List[str], bool, int, str, bool, bool, bool, bool, int, int, int, str, int, int, int, int, int, int, int, int, List[str], int, int) -> BgpIpv4Peer
         """Adds a new bgpIpv4Peer resource on the server and adds it to the container.
 
         Args
@@ -2174,6 +2425,1114 @@ class BgpIpv4Peer(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def BgpIPv4FlowSpecLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the bgpIPv4FlowSpecLearnedInfo operation on the server.
+
+        Get IPv4 FlowSpec Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        bgpIPv4FlowSpecLearnedInfo(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        bgpIPv4FlowSpecLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        bgpIPv4FlowSpecLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('bgpIPv4FlowSpecLearnedInfo', payload=payload, response_object=None)
+
+    def BgpIPv6FlowSpecLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the bgpIPv6FlowSpecLearnedInfo operation on the server.
+
+        Get IPv6 FlowSpec Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        bgpIPv6FlowSpecLearnedInfo(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        bgpIPv6FlowSpecLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        bgpIPv6FlowSpecLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('bgpIPv6FlowSpecLearnedInfo', payload=payload, response_object=None)
+
+    def BreakTCPSession(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the breakTCPSession operation on the server.
+
+        Break TCP Session
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        breakTCPSession(Notification_code=number, Notification_sub_code=number, async_operation=bool)
+        ---------------------------------------------------------------------------------------------
+        - Notification_code (number): This parameter requires a notification_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        breakTCPSession(Notification_code=number, Notification_sub_code=number, SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------------------------------------------
+        - Notification_code (number): This parameter requires a notification_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        breakTCPSession(SessionIndices=string, Notification_code=number, Notification_sub_code=number, async_operation=bool)
+        --------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a notification_code of type kInteger
+        - Notification_code (number): This parameter requires a notification_sub_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('breakTCPSession', payload=payload, response_object=None)
+
+    def Breaktcpsession(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the breaktcpsession operation on the server.
+
+        Break BGP Peer Range TCP Session.
+
+        breaktcpsession(Arg2=list, Arg3=number, Arg4=number, async_operation=bool)list
+        ------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (number): Notification Code
+        - Arg4 (number): Notification Sub Code
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('breaktcpsession', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfoInClient operation on the server.
+
+        Clears ALL routes from GUI grid for the selected BGP Peers.
+
+        clearAllLearnedInfoInClient(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
+
+    def GetADVPLSLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getADVPLSLearnedInfo operation on the server.
+
+        Get ADVPLS Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getADVPLSLearnedInfo(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getADVPLSLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getADVPLSLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getADVPLSLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getADVPLSLearnedInfo', payload=payload, response_object=None)
+
+    def GetAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getAllLearnedInfo operation on the server.
+
+        Get All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getAllLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetbgpIpv4FlowSpecLearnedInfoLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getbgpIpv4FlowSpecLearnedInfoLearnedInfo operation on the server.
+
+        getbgpIpv4FlowSpecLearnedInfoLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getbgpIpv4FlowSpecLearnedInfoLearnedInfo', payload=payload, response_object=None)
+
+    def GetbgpIpv6FlowSpecLearnedInfoLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getbgpIpv6FlowSpecLearnedInfoLearnedInfo operation on the server.
+
+        getbgpIpv6FlowSpecLearnedInfoLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getbgpIpv6FlowSpecLearnedInfoLearnedInfo', payload=payload, response_object=None)
+
+    def GetbgpSrTeLearnedInfoLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getbgpSrTeLearnedInfoLearnedInfo operation on the server.
+
+        getbgpSrTeLearnedInfoLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getbgpSrTeLearnedInfoLearnedInfo', payload=payload, response_object=None)
+
+    def GetEVPNLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getEVPNLearnedInfo operation on the server.
+
+        Get EVPN Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getEVPNLearnedInfo(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getEVPNLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getEVPNLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getEVPNLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getEVPNLearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv4LearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv4LearnedInfo operation on the server.
+
+        Get IPv4 Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getIPv4LearnedInfo(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4LearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4LearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4LearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv4LearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv4MplsLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv4MplsLearnedInfo operation on the server.
+
+        Fetches IPv4 MPLS routes learnt by this BGP peer.
+
+        getIPv4MplsLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv4MplsLearnedInfo', payload=payload, response_object=None)
+
+    def GetIpv4MvpnLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIpv4MvpnLearnedInfo operation on the server.
+
+        Fetches MVPN MAC IP routes learnt by this BGP peer.
+
+        getIpv4MvpnLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIpv4MvpnLearnedInfo', payload=payload, response_object=None)
+
+    def GetIpv4UmhRoutesLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIpv4UmhRoutesLearnedInfo operation on the server.
+
+        Fetches Umh Routes learned by this BGP peer.
+
+        getIpv4UmhRoutesLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIpv4UmhRoutesLearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv4VpnLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv4VpnLearnedInfo operation on the server.
+
+        Get IPv4 Vpn Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getIPv4VpnLearnedInfo(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4VpnLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4VpnLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv4VpnLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv4VpnLearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv6LearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv6LearnedInfo operation on the server.
+
+        Get IPv6 Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getIPv6LearnedInfo(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6LearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6LearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6LearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv6LearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv6MplsLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv6MplsLearnedInfo operation on the server.
+
+        Gets IPv6 Mpls routes learnt by this BGP peer.
+
+        getIPv6MplsLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv6MplsLearnedInfo', payload=payload, response_object=None)
+
+    def GetIpv6MvpnLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIpv6MvpnLearnedInfo operation on the server.
+
+        Fetches MVPN MAC IP routes learnt by this BGP peer.
+
+        getIpv6MvpnLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIpv6MvpnLearnedInfo', payload=payload, response_object=None)
+
+    def GetIpv6UmhRoutesLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIpv6UmhRoutesLearnedInfo operation on the server.
+
+        Fetches Umh Route learned by this BGP peer.
+
+        getIpv6UmhRoutesLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIpv6UmhRoutesLearnedInfo', payload=payload, response_object=None)
+
+    def GetIPv6VpnLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv6VpnLearnedInfo operation on the server.
+
+        Get IPv6 Vpn Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getIPv6VpnLearnedInfo(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6VpnLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6VpnLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getIPv6VpnLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv6VpnLearnedInfo', payload=payload, response_object=None)
+
+    def GetLinkStateLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLinkStateLearnedInfo operation on the server.
+
+        Get Link State Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLinkStateLearnedInfo(async_operation=bool)
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkStateLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkStateLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkStateLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLinkStateLearnedInfo', payload=payload, response_object=None)
+
+    def GetLinkStateVPNLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLinkStateVPNLearnedInfo operation on the server.
+
+        Get Link State VPN Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLinkStateVPNLearnedInfo(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkStateVPNLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkStateVPNLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkStateVPNLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLinkStateVPNLearnedInfo', payload=payload, response_object=None)
+
+    def GetVPLSLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getVPLSLearnedInfo operation on the server.
+
+        Get VPLS Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getVPLSLearnedInfo(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getVPLSLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getVPLSLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getVPLSLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getVPLSLearnedInfo', payload=payload, response_object=None)
+
+    def GracefulRestart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the gracefulRestart operation on the server.
+
+        Graceful restart Peers on selected Peer Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        gracefulRestart(Restart_time=number, async_operation=bool)
+        ----------------------------------------------------------
+        - Restart_time (number): This parameter requires a restart_time of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        gracefulRestart(Restart_time=number, SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------------
+        - Restart_time (number): This parameter requires a restart_time of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        gracefulRestart(SessionIndices=string, Restart_time=number, async_operation=bool)
+        ---------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a restart_time of type kInteger
+        - Restart_time (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('gracefulRestart', payload=payload, response_object=None)
+
+    def Gracefulrestart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the gracefulrestart operation on the server.
+
+        Graceful restart Peers on selected Peer Ranges.
+
+        gracefulrestart(Arg2=list, Arg3=number, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - Arg3 (number): Restart After Time(in secs).
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('gracefulrestart', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumeKeepAlive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the resumeKeepAlive operation on the server.
+
+        Resume sending KeepAlive
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeKeepAlive(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeKeepAlive(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeKeepAlive(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeKeepAlive', payload=payload, response_object=None)
+
+    def Resumekeepalive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumekeepalive operation on the server.
+
+        Start Sending Keep Alive Messages.
+
+        resumekeepalive(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumekeepalive', payload=payload, response_object=None)
+
+    def ResumeTCPSession(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the resumeTCPSession operation on the server.
+
+        Resume TCP Session
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeTCPSession(Notification_code=number, Notification_sub_code=number, async_operation=bool)
+        ----------------------------------------------------------------------------------------------
+        - Notification_code (number): This parameter requires a notification_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeTCPSession(Notification_code=number, Notification_sub_code=number, SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------------------------------------------------
+        - Notification_code (number): This parameter requires a notification_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeTCPSession(SessionIndices=string, Notification_code=number, Notification_sub_code=number, async_operation=bool)
+        ---------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a notification_code of type kInteger
+        - Notification_code (number): This parameter requires a notification_sub_code of type kInteger
+        - Notification_sub_code (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeTCPSession', payload=payload, response_object=None)
+
+    def Resumetcpsession(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumetcpsession operation on the server.
+
+        Resume BGP Peer Range TCP Session.
+
+        resumetcpsession(Arg2=list, Arg3=number, Arg4=number, async_operation=bool)list
+        -------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (number): Notification Code
+        - Arg4 (number): Notification Sub Code
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumetcpsession', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopKeepAlive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopKeepAlive operation on the server.
+
+        Stop sending KeepAlive
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopKeepAlive(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopKeepAlive(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopKeepAlive(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopKeepAlive', payload=payload, response_object=None)
+
+    def Stopkeepalive(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopkeepalive operation on the server.
+
+        Stop Sending Keep Alive Messages.
+
+        stopkeepalive(Arg2=list, async_operation=bool)list
+        --------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopkeepalive', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ActAsRestarted=None, Active=None, AdvertiseEndOfRib=None, AdvertiseTunnelEncapsulationExtendedCommunity=None, AlwaysIncludeTunnelEncExtCommunity=None, AsSetMode=None, Authentication=None, BgpId=None, BgpLsAsSetMode=None, BgpLsEnableAsPathSegments=None, BgpLsEnableCluster=None, BgpLsEnableExtendedCommunity=None, BgpLsOverridePeerAsSetMode=None, CapabilityIpV4Mdt=None, CapabilityIpV4Mpls=None, CapabilityIpV4MplsVpn=None, CapabilityIpV4Multicast=None, CapabilityIpV4MulticastVpn=None, CapabilityIpV4Unicast=None, CapabilityIpV6Mpls=None, CapabilityIpV6MplsVpn=None, CapabilityIpV6Multicast=None, CapabilityIpV6MulticastVpn=None, CapabilityIpV6Unicast=None, CapabilityIpv4MplsVPNAddPath=None, CapabilityIpv4UnicastAddPath=None, CapabilityIpv6MplsVPNAddPath=None, CapabilityIpv6UnicastAddPath=None, CapabilityLinkStateNonVpn=None, CapabilityLinkStateVpn=None, CapabilityRouteConstraint=None, CapabilityRouteRefresh=None, CapabilitySRTEPoliciesV4=None, CapabilitySRTEPoliciesV6=None, CapabilityVpls=None, Capabilityipv4UnicastFlowSpec=None, Capabilityipv6UnicastFlowSpec=None, ConfigureKeepaliveTimer=None, CustomSidType=None, DiscardIxiaGeneratedRoutes=None, DowntimeInSec=None, DutIp=None, Enable4ByteAs=None, EnableBfdRegistration=None, EnableBgpId=None, EnableBgpIdSameasRouterId=None, EnableBgpLsCommunity=None, EnableGracefulRestart=None, EnableLlgr=None, Evpn=None, FilterEvpn=None, FilterIpV4Mpls=None, FilterIpV4MplsVpn=None, FilterIpV4Multicast=None, FilterIpV4MulticastVpn=None, FilterIpV4Unicast=None, FilterIpV6Mpls=None, FilterIpV6MplsVpn=None, FilterIpV6Multicast=None, FilterIpV6MulticastVpn=None, FilterIpV6Unicast=None, FilterIpv4MulticastBgpMplsVpn=None, FilterIpv4UnicastFlowSpec=None, FilterIpv6MulticastBgpMplsVpn=None, FilterIpv6UnicastFlowSpec=None, FilterLinkState=None, FilterLinkStateVpn=None, FilterSRTEPoliciesV4=None, FilterSRTEPoliciesV6=None, FilterVpls=None, Flap=None, HoldTimer=None, Ipv4MplsAddPathMode=None, Ipv4MplsVPNAddPathMode=None, Ipv4MulticastBgpMplsVpn=None, Ipv4UnicastAddPathMode=None, Ipv6MplsAddPathMode=None, Ipv6MplsVPNAddPathMode=None, Ipv6MulticastBgpMplsVpn=None, Ipv6UnicastAddPathMode=None, IrbInterfaceLabel=None, IrbIpv4Address=None, KeepaliveTimer=None, L3VPNEncapsulationType=None, LocalAs2Bytes=None, LocalAs4Bytes=None, Md5Key=None, ModeOfBfdOperations=None, NumBgpLsId=None, NumBgpLsInstanceIdentifier=None, NumBgpUpdatesGeneratedPerIteration=None, OperationalModel=None, RestartTime=None, RoutersMacOrIrbMacAddress=None, SendIxiaSignatureWithRoutes=None, StaleTime=None, TcpWindowSizeInBytes=None, Ttl=None, Type=None, UpdateInterval=None, UptimeInSec=None, VplsEnableNextHop=None, VplsNextHop=None):
         """Base class infrastructure that gets a list of bgpIpv4Peer device ids encapsulated by this object.
 
@@ -2295,926 +3654,3 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def BgpIPv4FlowSpecLearnedInfo(self, *args, **kwargs):
-        """Executes the bgpIPv4FlowSpecLearnedInfo operation on the server.
-
-        Get IPv4 FlowSpec Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        bgpIPv4FlowSpecLearnedInfo(SessionIndices=list)
-        -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        bgpIPv4FlowSpecLearnedInfo(SessionIndices=string)
-        -------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('bgpIPv4FlowSpecLearnedInfo', payload=payload, response_object=None)
-
-    def BgpIPv6FlowSpecLearnedInfo(self, *args, **kwargs):
-        """Executes the bgpIPv6FlowSpecLearnedInfo operation on the server.
-
-        Get IPv6 FlowSpec Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        bgpIPv6FlowSpecLearnedInfo(SessionIndices=list)
-        -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        bgpIPv6FlowSpecLearnedInfo(SessionIndices=string)
-        -------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('bgpIPv6FlowSpecLearnedInfo', payload=payload, response_object=None)
-
-    def BreakTCPSession(self, *args, **kwargs):
-        """Executes the breakTCPSession operation on the server.
-
-        Break TCP Session
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        breakTCPSession(Notification_code=number, Notification_sub_code=number)
-        -----------------------------------------------------------------------
-        - Notification_code (number): This parameter requires a notification_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
-
-        breakTCPSession(Notification_code=number, Notification_sub_code=number, SessionIndices=list)
-        --------------------------------------------------------------------------------------------
-        - Notification_code (number): This parameter requires a notification_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        breakTCPSession(SessionIndices=string, Notification_code=number, Notification_sub_code=number)
-        ----------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a notification_code of type kInteger
-        - Notification_code (number): This parameter requires a notification_sub_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('breakTCPSession', payload=payload, response_object=None)
-
-    def Breaktcpsession(self, *args, **kwargs):
-        """Executes the breaktcpsession operation on the server.
-
-        Break BGP Peer Range TCP Session.
-
-        breaktcpsession(Arg2=list, Arg3=number, Arg4=number)list
-        --------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (number): Notification Code
-        - Arg4 (number): Notification Sub Code
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('breaktcpsession', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearAllLearnedInfo(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearAllLearnedInfo(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfoInClient(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfoInClient operation on the server.
-
-        Clears ALL routes from GUI grid for the selected BGP Peers.
-
-        clearAllLearnedInfoInClient(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfoInClient', payload=payload, response_object=None)
-
-    def GetADVPLSLearnedInfo(self, *args, **kwargs):
-        """Executes the getADVPLSLearnedInfo operation on the server.
-
-        Get ADVPLS Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getADVPLSLearnedInfo(SessionIndices=list)
-        -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getADVPLSLearnedInfo(SessionIndices=string)
-        -------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getADVPLSLearnedInfo(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getADVPLSLearnedInfo', payload=payload, response_object=None)
-
-    def GetAllLearnedInfo(self, *args, **kwargs):
-        """Executes the getAllLearnedInfo operation on the server.
-
-        Get All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getAllLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getAllLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getAllLearnedInfo(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetbgpIpv4FlowSpecLearnedInfoLearnedInfo(self, *args, **kwargs):
-        """Executes the getbgpIpv4FlowSpecLearnedInfoLearnedInfo operation on the server.
-
-        getbgpIpv4FlowSpecLearnedInfoLearnedInfo(Arg2=list)list
-        -------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getbgpIpv4FlowSpecLearnedInfoLearnedInfo', payload=payload, response_object=None)
-
-    def GetbgpIpv6FlowSpecLearnedInfoLearnedInfo(self, *args, **kwargs):
-        """Executes the getbgpIpv6FlowSpecLearnedInfoLearnedInfo operation on the server.
-
-        getbgpIpv6FlowSpecLearnedInfoLearnedInfo(Arg2=list)list
-        -------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getbgpIpv6FlowSpecLearnedInfoLearnedInfo', payload=payload, response_object=None)
-
-    def GetbgpSrTeLearnedInfoLearnedInfo(self, *args, **kwargs):
-        """Executes the getbgpSrTeLearnedInfoLearnedInfo operation on the server.
-
-        getbgpSrTeLearnedInfoLearnedInfo(Arg2=list)list
-        -----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getbgpSrTeLearnedInfoLearnedInfo', payload=payload, response_object=None)
-
-    def GetEVPNLearnedInfo(self, *args, **kwargs):
-        """Executes the getEVPNLearnedInfo operation on the server.
-
-        Get EVPN Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getEVPNLearnedInfo(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getEVPNLearnedInfo(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getEVPNLearnedInfo(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getEVPNLearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv4LearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv4LearnedInfo operation on the server.
-
-        Get IPv4 Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getIPv4LearnedInfo(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getIPv4LearnedInfo(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getIPv4LearnedInfo(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv4LearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv4MplsLearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv4MplsLearnedInfo operation on the server.
-
-        Fetches IPv4 MPLS routes learnt by this BGP peer.
-
-        getIPv4MplsLearnedInfo(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv4MplsLearnedInfo', payload=payload, response_object=None)
-
-    def GetIpv4MvpnLearnedInfo(self, *args, **kwargs):
-        """Executes the getIpv4MvpnLearnedInfo operation on the server.
-
-        Fetches MVPN MAC IP routes learnt by this BGP peer.
-
-        getIpv4MvpnLearnedInfo(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIpv4MvpnLearnedInfo', payload=payload, response_object=None)
-
-    def GetIpv4UmhRoutesLearnedInfo(self, *args, **kwargs):
-        """Executes the getIpv4UmhRoutesLearnedInfo operation on the server.
-
-        Fetches Umh Routes learned by this BGP peer.
-
-        getIpv4UmhRoutesLearnedInfo(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIpv4UmhRoutesLearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv4VpnLearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv4VpnLearnedInfo operation on the server.
-
-        Get IPv4 Vpn Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getIPv4VpnLearnedInfo(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getIPv4VpnLearnedInfo(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getIPv4VpnLearnedInfo(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv4VpnLearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv6LearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv6LearnedInfo operation on the server.
-
-        Get IPv6 Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getIPv6LearnedInfo(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getIPv6LearnedInfo(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getIPv6LearnedInfo(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv6LearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv6MplsLearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv6MplsLearnedInfo operation on the server.
-
-        Gets IPv6 Mpls routes learnt by this BGP peer.
-
-        getIPv6MplsLearnedInfo(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv6MplsLearnedInfo', payload=payload, response_object=None)
-
-    def GetIpv6MvpnLearnedInfo(self, *args, **kwargs):
-        """Executes the getIpv6MvpnLearnedInfo operation on the server.
-
-        Fetches MVPN MAC IP routes learnt by this BGP peer.
-
-        getIpv6MvpnLearnedInfo(Arg2=list)list
-        -------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIpv6MvpnLearnedInfo', payload=payload, response_object=None)
-
-    def GetIpv6UmhRoutesLearnedInfo(self, *args, **kwargs):
-        """Executes the getIpv6UmhRoutesLearnedInfo operation on the server.
-
-        Fetches Umh Route learned by this BGP peer.
-
-        getIpv6UmhRoutesLearnedInfo(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIpv6UmhRoutesLearnedInfo', payload=payload, response_object=None)
-
-    def GetIPv6VpnLearnedInfo(self, *args, **kwargs):
-        """Executes the getIPv6VpnLearnedInfo operation on the server.
-
-        Get IPv6 Vpn Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getIPv6VpnLearnedInfo(SessionIndices=list)
-        ------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getIPv6VpnLearnedInfo(SessionIndices=string)
-        --------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getIPv6VpnLearnedInfo(Arg2=list)list
-        ------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getIPv6VpnLearnedInfo', payload=payload, response_object=None)
-
-    def GetLinkStateLearnedInfo(self, *args, **kwargs):
-        """Executes the getLinkStateLearnedInfo operation on the server.
-
-        Get Link State Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLinkStateLearnedInfo(SessionIndices=list)
-        --------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLinkStateLearnedInfo(SessionIndices=string)
-        ----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getLinkStateLearnedInfo(Arg2=list)list
-        --------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLinkStateLearnedInfo', payload=payload, response_object=None)
-
-    def GetLinkStateVPNLearnedInfo(self, *args, **kwargs):
-        """Executes the getLinkStateVPNLearnedInfo operation on the server.
-
-        Get Link State VPN Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLinkStateVPNLearnedInfo(SessionIndices=list)
-        -----------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLinkStateVPNLearnedInfo(SessionIndices=string)
-        -------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getLinkStateVPNLearnedInfo(Arg2=list)list
-        -----------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLinkStateVPNLearnedInfo', payload=payload, response_object=None)
-
-    def GetVPLSLearnedInfo(self, *args, **kwargs):
-        """Executes the getVPLSLearnedInfo operation on the server.
-
-        Get VPLS Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getVPLSLearnedInfo(SessionIndices=list)
-        ---------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getVPLSLearnedInfo(SessionIndices=string)
-        -----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getVPLSLearnedInfo(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getVPLSLearnedInfo', payload=payload, response_object=None)
-
-    def GracefulRestart(self, *args, **kwargs):
-        """Executes the gracefulRestart operation on the server.
-
-        Graceful restart Peers on selected Peer Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        gracefulRestart(Restart_time=number)
-        ------------------------------------
-        - Restart_time (number): This parameter requires a restart_time of type kInteger
-
-        gracefulRestart(Restart_time=number, SessionIndices=list)
-        ---------------------------------------------------------
-        - Restart_time (number): This parameter requires a restart_time of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        gracefulRestart(SessionIndices=string, Restart_time=number)
-        -----------------------------------------------------------
-        - SessionIndices (str): This parameter requires a restart_time of type kInteger
-        - Restart_time (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('gracefulRestart', payload=payload, response_object=None)
-
-    def Gracefulrestart(self, *args, **kwargs):
-        """Executes the gracefulrestart operation on the server.
-
-        Graceful restart Peers on selected Peer Ranges.
-
-        gracefulrestart(Arg2=list, Arg3=number)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Arg3 (number): Restart After Time(in secs).
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('gracefulrestart', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumeKeepAlive(self, *args, **kwargs):
-        """Executes the resumeKeepAlive operation on the server.
-
-        Resume sending KeepAlive
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeKeepAlive(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeKeepAlive(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeKeepAlive', payload=payload, response_object=None)
-
-    def Resumekeepalive(self, *args, **kwargs):
-        """Executes the resumekeepalive operation on the server.
-
-        Start Sending Keep Alive Messages.
-
-        resumekeepalive(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumekeepalive', payload=payload, response_object=None)
-
-    def ResumeTCPSession(self, *args, **kwargs):
-        """Executes the resumeTCPSession operation on the server.
-
-        Resume TCP Session
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeTCPSession(Notification_code=number, Notification_sub_code=number)
-        ------------------------------------------------------------------------
-        - Notification_code (number): This parameter requires a notification_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
-
-        resumeTCPSession(Notification_code=number, Notification_sub_code=number, SessionIndices=list)
-        ---------------------------------------------------------------------------------------------
-        - Notification_code (number): This parameter requires a notification_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a notification_sub_code of type kInteger
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeTCPSession(SessionIndices=string, Notification_code=number, Notification_sub_code=number)
-        -----------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a notification_code of type kInteger
-        - Notification_code (number): This parameter requires a notification_sub_code of type kInteger
-        - Notification_sub_code (number): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeTCPSession', payload=payload, response_object=None)
-
-    def Resumetcpsession(self, *args, **kwargs):
-        """Executes the resumetcpsession operation on the server.
-
-        Resume BGP Peer Range TCP Session.
-
-        resumetcpsession(Arg2=list, Arg3=number, Arg4=number)list
-        ---------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (number): Notification Code
-        - Arg4 (number): Notification Sub Code
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumetcpsession', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopKeepAlive(self, *args, **kwargs):
-        """Executes the stopKeepAlive operation on the server.
-
-        Stop sending KeepAlive
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopKeepAlive(SessionIndices=list)
-        ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopKeepAlive(SessionIndices=string)
-        ------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopKeepAlive', payload=payload, response_object=None)
-
-    def Stopkeepalive(self, *args, **kwargs):
-        """Executes the stopkeepalive operation on the server.
-
-        Stop Sending Keep Alive Messages.
-
-        stopkeepalive(Arg2=list)list
-        ----------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopkeepalive', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Topology(Base):
@@ -44,9 +45,12 @@ class Topology(Base):
         'Status': 'status',
         'Vports': 'vports',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Topology, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Topology, self).__init__(parent, list_op)
 
     @property
     def DeviceGroup(self):
@@ -60,10 +64,14 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import DeviceGroup
-        return DeviceGroup(self)
+        if self._properties.get('DeviceGroup', None) is not None:
+            return self._properties.get('DeviceGroup')
+        else:
+            return DeviceGroup(self)
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class Topology(Base):
 
     @property
     def LagCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,6 +100,7 @@ class Topology(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +109,12 @@ class Topology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Note(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +123,12 @@ class Topology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Note'])
     @Note.setter
     def Note(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Note'], value)
 
     @property
     def PortCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,6 +138,7 @@ class Topology(Base):
 
     @property
     def Ports(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -132,6 +147,7 @@ class Topology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ports'])
     @Ports.setter
     def Ports(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ports'], value)
 
     @property
@@ -145,6 +161,7 @@ class Topology(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,6 +171,7 @@ class Topology(Base):
 
     @property
     def Vports(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -162,9 +180,11 @@ class Topology(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vports'])
     @Vports.setter
     def Vports(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vports'], value)
 
     def update(self, Name=None, Note=None, Ports=None, Vports=None):
+        # type: (str, str, List[str], List[str]) -> Topology
         """Updates topology resource on the server.
 
         Args
@@ -181,6 +201,7 @@ class Topology(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, Note=None, Ports=None, Vports=None):
+        # type: (str, str, List[str], List[str]) -> Topology
         """Adds a new topology resource on the server and adds it to the container.
 
         Args
@@ -258,10 +279,15 @@ class Topology(Base):
         """
         return self._read(href)
 
-    def Abort(self):
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the abort operation on the server.
 
         Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -269,16 +295,20 @@ class Topology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('abort', payload=payload, response_object=None)
 
     def AdjustPortCount(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the adjustPortCount operation on the server.
 
         Adjusts the number of /vport objects in the -vports attribute by creating or deleting /vport objects and modifying the -vports attribute
 
-        adjustPortCount(Arg2=number)
-        ----------------------------
+        adjustPortCount(Arg2=number, async_operation=bool)
+        --------------------------------------------------
         - Arg2 (number): The target number of /vport objects references in the /topology -vports attribute
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -291,13 +321,15 @@ class Topology(Base):
         return self._execute('adjustPortCount', payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the fetchAndUpdateConfigFromCloud operation on the server.
 
         Learn MAC / IP address for a topology running on VM ports, deployed in AWS.
 
-        fetchAndUpdateConfigFromCloud(Mode=string)
-        ------------------------------------------
+        fetchAndUpdateConfigFromCloud(Mode=string, async_operation=bool)
+        ----------------------------------------------------------------
         - Mode (str): Mode. Options are: cmdrefreshall, cmdrefreshmac, cmdrefreshipv4
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -309,41 +341,62 @@ class Topology(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
 
-    def RestartDown(self):
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the restartDown operation on the server.
 
         Stop and start interfaces and sessions in Topology that are in 'Down' state.
 
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('restartDown', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Start CPF control plane (equals to promote to negotiated state).
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -61,12 +62,20 @@ class Interface(Base):
         'TxInterval': 'txInterval',
         'VendorEnterpriseNumber': 'vendorEnterpriseNumber',
     }
+    _SDM_ENUM_MAP = {
+        'bfdCvType': ['bfdCvTypeIpUdp', 'bfdCvTypePwAch'],
+        'controlChannel': ['controlChannelRouterAlert', 'controlChannelPwAch'],
+        'downStreamAddressType': ['ipv4Numbered', 'ipv4UnNumbered', 'ipv6Numbered', 'ipv6UnNumbered'],
+        'padTlvFirstOctet': ['dropPadTlvFromReply', 'copyPadTlvToReply'],
+        'replyMode': ['doNotReply', 'replyViaIpv4Ipv6UdpPacket', 'replyViaIpv4Ipv6UdpPacketWithRouterAlert', 'replyViaApplicationLevelControlChannel'],
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def BfdCvType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,10 +84,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BfdCvType'])
     @BfdCvType.setter
     def BfdCvType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BfdCvType'], value)
 
     @property
     def BfdDiscriminatorEnd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +98,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BfdDiscriminatorEnd'])
     @BfdDiscriminatorEnd.setter
     def BfdDiscriminatorEnd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BfdDiscriminatorEnd'], value)
 
     @property
     def BfdDiscriminatorStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +112,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BfdDiscriminatorStart'])
     @BfdDiscriminatorStart.setter
     def BfdDiscriminatorStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BfdDiscriminatorStart'], value)
 
     @property
     def ControlChannel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +126,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ControlChannel'])
     @ControlChannel.setter
     def ControlChannel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ControlChannel'], value)
 
     @property
     def DestinationAddressIpv4(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +140,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationAddressIpv4'])
     @DestinationAddressIpv4.setter
     def DestinationAddressIpv4(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationAddressIpv4'], value)
 
     @property
     def DownStreamAddressType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,10 +154,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownStreamAddressType'])
     @DownStreamAddressType.setter
     def DownStreamAddressType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownStreamAddressType'], value)
 
     @property
     def DownStreamInterfaceAddress(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -147,10 +168,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownStreamInterfaceAddress'])
     @DownStreamInterfaceAddress.setter
     def DownStreamInterfaceAddress(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownStreamInterfaceAddress'], value)
 
     @property
     def DownStreamIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +182,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownStreamIpAddress'])
     @DownStreamIpAddress.setter
     def DownStreamIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownStreamIpAddress'], value)
 
     @property
     def EchoRequestInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,10 +196,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoRequestInterval'])
     @EchoRequestInterval.setter
     def EchoRequestInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoRequestInterval'], value)
 
     @property
     def EchoResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +210,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoResponseTimeout'])
     @EchoResponseTimeout.setter
     def EchoResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoResponseTimeout'], value)
 
     @property
     def EnableDownStreamMappingTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -195,10 +224,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDownStreamMappingTlv'])
     @EnableDownStreamMappingTlv.setter
     def EnableDownStreamMappingTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDownStreamMappingTlv'], value)
 
     @property
     def EnableDsIflag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -207,10 +238,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDsIflag'])
     @EnableDsIflag.setter
     def EnableDsIflag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDsIflag'], value)
 
     @property
     def EnableDsNflag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -219,10 +252,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDsNflag'])
     @EnableDsNflag.setter
     def EnableDsNflag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDsNflag'], value)
 
     @property
     def EnableFecValidation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -231,10 +266,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFecValidation'])
     @EnableFecValidation.setter
     def EnableFecValidation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFecValidation'], value)
 
     @property
     def EnablePeriodicPing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -243,10 +280,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicPing'])
     @EnablePeriodicPing.setter
     def EnablePeriodicPing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicPing'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -255,10 +294,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FlapTxIntervals(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -267,10 +308,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlapTxIntervals'])
     @FlapTxIntervals.setter
     def FlapTxIntervals(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlapTxIntervals'], value)
 
     @property
     def IncludePadTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -279,10 +322,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludePadTlv'])
     @IncludePadTlv.setter
     def IncludePadTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludePadTlv'], value)
 
     @property
     def IncludeVendorEnterpriseNumberTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -291,10 +336,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeVendorEnterpriseNumberTlv'])
     @IncludeVendorEnterpriseNumberTlv.setter
     def IncludeVendorEnterpriseNumberTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeVendorEnterpriseNumberTlv'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -303,10 +350,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     @property
     def MinRxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -315,10 +364,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinRxInterval'])
     @MinRxInterval.setter
     def MinRxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinRxInterval'], value)
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -327,10 +378,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def PadTlvFirstOctet(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,10 +392,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PadTlvFirstOctet'])
     @PadTlvFirstOctet.setter
     def PadTlvFirstOctet(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PadTlvFirstOctet'], value)
 
     @property
     def PadTlvLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -351,10 +406,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PadTlvLength'])
     @PadTlvLength.setter
     def PadTlvLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PadTlvLength'], value)
 
     @property
     def ReplyMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -363,10 +420,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplyMode'])
     @ReplyMode.setter
     def ReplyMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplyMode'], value)
 
     @property
     def TxInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -375,10 +434,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxInterval'])
     @TxInterval.setter
     def TxInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxInterval'], value)
 
     @property
     def VendorEnterpriseNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -387,9 +448,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorEnterpriseNumber'])
     @VendorEnterpriseNumber.setter
     def VendorEnterpriseNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorEnterpriseNumber'], value)
 
     def update(self, BfdCvType=None, BfdDiscriminatorEnd=None, BfdDiscriminatorStart=None, ControlChannel=None, DestinationAddressIpv4=None, DownStreamAddressType=None, DownStreamInterfaceAddress=None, DownStreamIpAddress=None, EchoRequestInterval=None, EchoResponseTimeout=None, EnableDownStreamMappingTlv=None, EnableDsIflag=None, EnableDsNflag=None, EnableFecValidation=None, EnablePeriodicPing=None, Enabled=None, FlapTxIntervals=None, IncludePadTlv=None, IncludeVendorEnterpriseNumberTlv=None, Interfaces=None, MinRxInterval=None, Multiplier=None, PadTlvFirstOctet=None, PadTlvLength=None, ReplyMode=None, TxInterval=None, VendorEnterpriseNumber=None):
+        # type: (str, int, int, str, str, str, int, str, int, int, bool, bool, bool, bool, bool, bool, int, bool, bool, str, int, int, str, int, str, int, int) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -429,6 +492,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, BfdCvType=None, BfdDiscriminatorEnd=None, BfdDiscriminatorStart=None, ControlChannel=None, DestinationAddressIpv4=None, DownStreamAddressType=None, DownStreamInterfaceAddress=None, DownStreamIpAddress=None, EchoRequestInterval=None, EchoResponseTimeout=None, EnableDownStreamMappingTlv=None, EnableDsIflag=None, EnableDsNflag=None, EnableFecValidation=None, EnablePeriodicPing=None, Enabled=None, FlapTxIntervals=None, IncludePadTlv=None, IncludeVendorEnterpriseNumberTlv=None, Interfaces=None, MinRxInterval=None, Multiplier=None, PadTlvFirstOctet=None, PadTlvLength=None, ReplyMode=None, TxInterval=None, VendorEnterpriseNumber=None):
+        # type: (str, int, int, str, str, str, int, str, int, int, bool, bool, bool, bool, bool, bool, int, bool, bool, str, int, int, str, int, str, int, int) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -482,6 +546,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, BfdCvType=None, BfdDiscriminatorEnd=None, BfdDiscriminatorStart=None, ControlChannel=None, DestinationAddressIpv4=None, DownStreamAddressType=None, DownStreamInterfaceAddress=None, DownStreamIpAddress=None, EchoRequestInterval=None, EchoResponseTimeout=None, EnableDownStreamMappingTlv=None, EnableDsIflag=None, EnableDsNflag=None, EnableFecValidation=None, EnablePeriodicPing=None, Enabled=None, FlapTxIntervals=None, IncludePadTlv=None, IncludeVendorEnterpriseNumberTlv=None, Interfaces=None, MinRxInterval=None, Multiplier=None, PadTlvFirstOctet=None, PadTlvLength=None, ReplyMode=None, TxInterval=None, VendorEnterpriseNumber=None):
+        # type: (str, int, int, str, str, str, int, str, int, int, bool, bool, bool, bool, bool, bool, int, bool, bool, str, int, int, str, int, str, int, int) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.

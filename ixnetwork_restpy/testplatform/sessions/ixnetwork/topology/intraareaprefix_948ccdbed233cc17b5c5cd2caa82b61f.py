@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IntraAreaPrefix(Base):
@@ -62,12 +63,15 @@ class IntraAreaPrefix(Base):
         'UnusedBit7': 'unusedBit7',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IntraAreaPrefix, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IntraAreaPrefix, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -78,6 +82,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +93,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +104,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,6 +114,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,6 +124,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +135,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def LABit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +146,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,6 +157,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def LinkStateId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -156,6 +168,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def LinkStateIdStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +179,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def MCBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +190,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +201,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def Metric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +212,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def NUBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +223,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,10 +232,12 @@ class IntraAreaPrefix(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +248,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +259,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def PBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +270,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +281,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def RangeSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +292,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def RefLSType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -278,6 +303,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def ReferencedLinkStateId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -288,6 +314,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def ReferencedRouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -298,6 +325,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +336,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def UnusedBit4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +347,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def UnusedBit5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -328,6 +358,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def UnusedBit6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +369,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def UnusedBit7(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -348,6 +380,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +390,7 @@ class IntraAreaPrefix(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, Name=None):
+        # type: (str) -> IntraAreaPrefix
         """Updates intraAreaPrefix resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -372,7 +406,26 @@ class IntraAreaPrefix(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> IntraAreaPrefix
+        """Adds a new intraAreaPrefix resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved intraAreaPrefix resources using find and the newly added intraAreaPrefix resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> IntraAreaPrefix
         """Finds and retrieves intraAreaPrefix resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve intraAreaPrefix resources from the server.
@@ -412,6 +465,130 @@ class IntraAreaPrefix(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Advertise(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the advertise operation on the server.
+
+        Advertise selected routes
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        advertise(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        advertise(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        advertise(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertise', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def Withdraw(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the withdraw operation on the server.
+
+        Withdraw selected routes
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        withdraw(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdraw(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdraw(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdraw', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, ConfigureSIDIndexLabel=None, EFlag=None, LABit=None, LFlag=None, LinkStateId=None, LinkStateIdStep=None, MCBit=None, MFlag=None, Metric=None, NUBit=None, NetworkAddress=None, NpFlag=None, PBit=None, Prefix=None, RangeSize=None, RefLSType=None, ReferencedLinkStateId=None, ReferencedRouterId=None, SidIndexLabel=None, UnusedBit4=None, UnusedBit5=None, UnusedBit6=None, UnusedBit7=None, VFlag=None):
         """Base class infrastructure that gets a list of intraAreaPrefix device ids encapsulated by this object.
@@ -457,92 +634,3 @@ class IntraAreaPrefix(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Advertise(self, *args, **kwargs):
-        """Executes the advertise operation on the server.
-
-        Advertise selected routes
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        advertise(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        advertise(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertise', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def Withdraw(self, *args, **kwargs):
-        """Executes the withdraw operation on the server.
-
-        Withdraw selected routes
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        withdraw(SessionIndices=list)
-        -----------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        withdraw(SessionIndices=string)
-        -------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdraw', payload=payload, response_object=None)

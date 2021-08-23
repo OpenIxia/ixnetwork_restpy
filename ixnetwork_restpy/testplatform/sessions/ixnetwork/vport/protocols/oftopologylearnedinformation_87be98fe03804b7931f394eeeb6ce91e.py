@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfTopologyLearnedInformation(Base):
@@ -37,9 +38,11 @@ class OfTopologyLearnedInformation(Base):
         'LldpDestinationMac': 'lldpDestinationMac',
         'LldpResponseTimeOut': 'lldpResponseTimeOut',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfTopologyLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfTopologyLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def TopologyLearnedInfo(self):
@@ -53,10 +56,14 @@ class OfTopologyLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.topologylearnedinfo_32a09f78d836778332eb6d186e001e53 import TopologyLearnedInfo
-        return TopologyLearnedInfo(self)
+        if self._properties.get('TopologyLearnedInfo', None) is not None:
+            return self._properties.get('TopologyLearnedInfo')
+        else:
+            return TopologyLearnedInfo(self)
 
     @property
     def EnableInstallLldpFlow(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class OfTopologyLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableInstallLldpFlow'])
     @EnableInstallLldpFlow.setter
     def EnableInstallLldpFlow(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableInstallLldpFlow'], value)
 
     @property
     def EnableRefreshLldpLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class OfTopologyLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRefreshLldpLearnedInformation'])
     @EnableRefreshLldpLearnedInformation.setter
     def EnableRefreshLldpLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRefreshLldpLearnedInformation'], value)
 
     @property
     def IsOfTopologyLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,6 +101,7 @@ class OfTopologyLearnedInformation(Base):
 
     @property
     def LldpDestinationMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,10 +110,12 @@ class OfTopologyLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LldpDestinationMac'])
     @LldpDestinationMac.setter
     def LldpDestinationMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LldpDestinationMac'], value)
 
     @property
     def LldpResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,9 +124,11 @@ class OfTopologyLearnedInformation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LldpResponseTimeOut'])
     @LldpResponseTimeOut.setter
     def LldpResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LldpResponseTimeOut'], value)
 
     def update(self, EnableInstallLldpFlow=None, EnableRefreshLldpLearnedInformation=None, LldpDestinationMac=None, LldpResponseTimeOut=None):
+        # type: (bool, bool, str, int) -> OfTopologyLearnedInformation
         """Updates ofTopologyLearnedInformation resource on the server.
 
         Args
@@ -128,10 +144,16 @@ class OfTopologyLearnedInformation(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def RefreshOfTopology(self):
+    def RefreshOfTopology(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
         """Executes the refreshOfTopology operation on the server.
 
         Exec to refresh ofChannel topology.
+
+        refreshOfTopology(async_operation=bool)number
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number: NOT DEFINED
 
         Raises
         ------
@@ -139,4 +161,6 @@ class OfTopologyLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshOfTopology', payload=payload, response_object=None)

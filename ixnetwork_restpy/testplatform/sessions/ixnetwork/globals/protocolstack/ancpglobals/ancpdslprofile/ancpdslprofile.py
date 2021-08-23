@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AncpDslProfile(Base):
@@ -36,9 +37,11 @@ class AncpDslProfile(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AncpDslProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AncpDslProfile, self).__init__(parent, list_op)
 
     @property
     def AncpDslTlv(self):
@@ -52,10 +55,14 @@ class AncpDslProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslprofile.ancpdsltlv.ancpdsltlv import AncpDslTlv
-        return AncpDslTlv(self)
+        if self._properties.get('AncpDslTlv', None) is not None:
+            return self._properties.get('AncpDslTlv')
+        else:
+            return AncpDslTlv(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class AncpDslProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +85,7 @@ class AncpDslProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Name=None):
+        # type: (str) -> AncpDslProfile
         """Updates ancpDslProfile resource on the server.
 
         Args
@@ -89,6 +99,7 @@ class AncpDslProfile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> AncpDslProfile
         """Adds a new ancpDslProfile resource on the server and adds it to the container.
 
         Args
@@ -116,6 +127,7 @@ class AncpDslProfile(Base):
         self._delete()
 
     def find(self, Name=None, ObjectId=None):
+        # type: (str, str) -> AncpDslProfile
         """Finds and retrieves ancpDslProfile resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpDslProfile resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DynamicRate(Base):
@@ -42,12 +43,18 @@ class DynamicRate(Base):
         'TrafficItemName': 'trafficItemName',
         'TxPort': 'txPort',
     }
+    _SDM_ENUM_MAP = {
+        'bitRateUnitsType': ['bitsPerSec', 'bytesPerSec', 'kbitsPerSec', 'kbytesPerSec', 'mbitsPerSec', 'mbytesPerSec'],
+        'interPacketGapUnitsType': ['bytes', 'nanoseconds'],
+        'rateType': ['bitsPerSecond', 'framesPerSecond', 'interPacketGap', 'percentLineRate'],
+    }
 
-    def __init__(self, parent):
-        super(DynamicRate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DynamicRate, self).__init__(parent, list_op)
 
     @property
     def BitRateUnitsType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,10 +63,12 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BitRateUnitsType'])
     @BitRateUnitsType.setter
     def BitRateUnitsType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BitRateUnitsType'], value)
 
     @property
     def EnforceMinimumInterPacketGap(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +77,12 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'])
     @EnforceMinimumInterPacketGap.setter
     def EnforceMinimumInterPacketGap(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'], value)
 
     @property
     def HighLevelStreamName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +92,7 @@ class DynamicRate(Base):
 
     @property
     def InterPacketGapUnitsType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +101,12 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
     @InterPacketGapUnitsType.setter
     def InterPacketGapUnitsType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'], value)
 
     @property
     def OverSubscribed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,6 +116,7 @@ class DynamicRate(Base):
 
     @property
     def Rate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,10 +125,12 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rate'])
     @Rate.setter
     def Rate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
 
     @property
     def RateType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,10 +139,12 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RateType'])
     @RateType.setter
     def RateType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RateType'], value)
 
     @property
     def TrafficItemName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,6 +154,7 @@ class DynamicRate(Base):
 
     @property
     def TxPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,6 +163,7 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxPort'])
 
     def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, RateType=None):
+        # type: (str, int, str, int, str) -> DynamicRate
         """Updates dynamicRate resource on the server.
 
         Args
@@ -159,7 +180,30 @@ class DynamicRate(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, RateType=None):
+        # type: (str, int, str, int, str) -> DynamicRate
+        """Adds a new dynamicRate resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
+        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only.
+        - InterPacketGapUnitsType (str(bytes | nanoseconds)): The inter-packet gap expressed in units.
+        - Rate (number): The rate at which packet is transmitted.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved dynamicRate resources using find and the newly added dynamicRate resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, HighLevelStreamName=None, InterPacketGapUnitsType=None, OverSubscribed=None, Rate=None, RateType=None, TrafficItemName=None, TxPort=None):
+        # type: (str, int, str, str, bool, int, str, str, int) -> DynamicRate
         """Finds and retrieves dynamicRate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dynamicRate resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcoeClientGlobals(Base):
@@ -58,9 +59,11 @@ class FcoeClientGlobals(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcoeClientGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcoeClientGlobals, self).__init__(parent, list_op)
 
     @property
     def FcoeClientOptionSet(self):
@@ -74,10 +77,14 @@ class FcoeClientGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptionset import FcoeClientOptionSet
-        return FcoeClientOptionSet(self)
+        if self._properties.get('FcoeClientOptionSet', None) is not None:
+            return self._properties.get('FcoeClientOptionSet')
+        else:
+            return FcoeClientOptionSet(self)
 
     @property
     def AcceptPartialConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,10 +93,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'])
     @AcceptPartialConfig.setter
     def AcceptPartialConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcceptPartialConfig'], value)
 
     @property
     def B2bRxSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,10 +107,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
     @B2bRxSize.setter
     def B2bRxSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
 
     @property
     def DcbxTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,10 +121,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DcbxTimeout'])
     @DcbxTimeout.setter
     def DcbxTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DcbxTimeout'], value)
 
     @property
     def FipAdvertisementPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +135,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipAdvertisementPeriod'])
     @FipAdvertisementPeriod.setter
     def FipAdvertisementPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipAdvertisementPeriod'], value)
 
     @property
     def FipFcfMacListCollection(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,10 +149,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipFcfMacListCollection'])
     @FipFcfMacListCollection.setter
     def FipFcfMacListCollection(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipFcfMacListCollection'], value)
 
     @property
     def FipFcfMacListCollectionInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,10 +163,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipFcfMacListCollectionInterval'])
     @FipFcfMacListCollectionInterval.setter
     def FipFcfMacListCollectionInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipFcfMacListCollectionInterval'], value)
 
     @property
     def FipOverrideAdvertisementPeriod(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -158,10 +177,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipOverrideAdvertisementPeriod'])
     @FipOverrideAdvertisementPeriod.setter
     def FipOverrideAdvertisementPeriod(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipOverrideAdvertisementPeriod'], value)
 
     @property
     def FipOverrideVnportKeepAlivePeriod(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -170,10 +191,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipOverrideVnportKeepAlivePeriod'])
     @FipOverrideVnportKeepAlivePeriod.setter
     def FipOverrideVnportKeepAlivePeriod(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipOverrideVnportKeepAlivePeriod'], value)
 
     @property
     def FipProposeMacInFpma(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,10 +205,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipProposeMacInFpma'])
     @FipProposeMacInFpma.setter
     def FipProposeMacInFpma(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipProposeMacInFpma'], value)
 
     @property
     def FipResetDiscovery(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -194,10 +219,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipResetDiscovery'])
     @FipResetDiscovery.setter
     def FipResetDiscovery(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipResetDiscovery'], value)
 
     @property
     def FipResetNumRetry(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +233,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipResetNumRetry'])
     @FipResetNumRetry.setter
     def FipResetNumRetry(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipResetNumRetry'], value)
 
     @property
     def FipRestartOnSessionDown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -218,10 +247,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipRestartOnSessionDown'])
     @FipRestartOnSessionDown.setter
     def FipRestartOnSessionDown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipRestartOnSessionDown'], value)
 
     @property
     def FipSendKeepAlives(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,10 +261,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipSendKeepAlives'])
     @FipSendKeepAlives.setter
     def FipSendKeepAlives(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipSendKeepAlives'], value)
 
     @property
     def FipVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -242,10 +275,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipVersion'])
     @FipVersion.setter
     def FipVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipVersion'], value)
 
     @property
     def FipVlanDiscWithNameId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -254,10 +289,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipVlanDiscWithNameId'])
     @FipVlanDiscWithNameId.setter
     def FipVlanDiscWithNameId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipVlanDiscWithNameId'], value)
 
     @property
     def FipVnportKeepAlivePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -266,10 +303,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FipVnportKeepAlivePeriod'])
     @FipVnportKeepAlivePeriod.setter
     def FipVnportKeepAlivePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FipVnportKeepAlivePeriod'], value)
 
     @property
     def IgnoreDuplicateMacDescriptors(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -278,10 +317,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IgnoreDuplicateMacDescriptors'])
     @IgnoreDuplicateMacDescriptors.setter
     def IgnoreDuplicateMacDescriptors(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IgnoreDuplicateMacDescriptors'], value)
 
     @property
     def MaxFcoeSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -290,10 +331,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxFcoeSize'])
     @MaxFcoeSize.setter
     def MaxFcoeSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxFcoeSize'], value)
 
     @property
     def MaxPacketsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -302,10 +345,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def MaxRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -314,10 +359,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxRetries'])
     @MaxRetries.setter
     def MaxRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxRetries'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -327,6 +374,7 @@ class FcoeClientGlobals(Base):
 
     @property
     def RetryInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -335,10 +383,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetryInterval'])
     @RetryInterval.setter
     def RetryInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetryInterval'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,10 +397,12 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -359,9 +411,11 @@ class FcoeClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
+        # type: (bool, int, int, int, bool, int, bool, bool, bool, bool, int, bool, bool, str, bool, int, bool, int, int, int, int, int, int) -> FcoeClientGlobals
         """Updates fcoeClientGlobals resource on the server.
 
         Args
@@ -397,6 +451,7 @@ class FcoeClientGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
+        # type: (bool, int, int, int, bool, int, bool, bool, bool, bool, int, bool, bool, str, bool, int, bool, int, int, int, int, int, int) -> FcoeClientGlobals
         """Adds a new fcoeClientGlobals resource on the server and adds it to the container.
 
         Args
@@ -446,6 +501,7 @@ class FcoeClientGlobals(Base):
         self._delete()
 
     def find(self, AcceptPartialConfig=None, B2bRxSize=None, DcbxTimeout=None, FipAdvertisementPeriod=None, FipFcfMacListCollection=None, FipFcfMacListCollectionInterval=None, FipOverrideAdvertisementPeriod=None, FipOverrideVnportKeepAlivePeriod=None, FipProposeMacInFpma=None, FipResetDiscovery=None, FipResetNumRetry=None, FipRestartOnSessionDown=None, FipSendKeepAlives=None, FipVersion=None, FipVlanDiscWithNameId=None, FipVnportKeepAlivePeriod=None, IgnoreDuplicateMacDescriptors=None, MaxFcoeSize=None, MaxPacketsPerSecond=None, MaxRetries=None, ObjectId=None, RetryInterval=None, SetupRate=None, TeardownRate=None):
+        # type: (bool, int, int, int, bool, int, bool, bool, bool, bool, int, bool, bool, str, bool, int, bool, int, int, int, str, int, int, int) -> FcoeClientGlobals
         """Finds and retrieves fcoeClientGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeClientGlobals resources from the server.

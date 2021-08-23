@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ApplySetField(Base):
@@ -32,9 +33,11 @@ class ApplySetField(Base):
     _SDM_NAME = 'applySetField'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ApplySetField, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ApplySetField, self).__init__(parent, list_op)
 
     @property
     def Fields(self):
@@ -48,7 +51,10 @@ class ApplySetField(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fields_82c6ee107b12ee013dcfe1404de190d2 import Fields
-        return Fields(self)._select()
+        if self._properties.get('Fields', None) is not None:
+            return self._properties.get('Fields')
+        else:
+            return Fields(self)._select()
 
     @property
     def MissFields(self):
@@ -62,4 +68,7 @@ class ApplySetField(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.missfields_731e6a490626a72d2ce6360754e838fe import MissFields
-        return MissFields(self)._select()
+        if self._properties.get('MissFields', None) is not None:
+            return self._properties.get('MissFields')
+        else:
+            return MissFields(self)._select()

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcoeClientOptionSet(Base):
@@ -37,9 +38,11 @@ class FcoeClientOptionSet(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcoeClientOptionSet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcoeClientOptionSet, self).__init__(parent, list_op)
 
     @property
     def FcoeClientOptionTlv(self):
@@ -53,10 +56,14 @@ class FcoeClientOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.fcoeclientglobals.fcoeclientoptionset.fcoeclientoptiontlv.fcoeclientoptiontlv import FcoeClientOptionTlv
-        return FcoeClientOptionTlv(self)
+        if self._properties.get('FcoeClientOptionTlv', None) is not None:
+            return self._properties.get('FcoeClientOptionTlv')
+        else:
+            return FcoeClientOptionTlv(self)
 
     @property
     def Defaultp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class FcoeClientOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
     @Defaultp.setter
     def Defaultp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class FcoeClientOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +100,7 @@ class FcoeClientOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Defaultp=None, Name=None):
+        # type: (bool, str) -> FcoeClientOptionSet
         """Updates fcoeClientOptionSet resource on the server.
 
         Args
@@ -103,6 +115,7 @@ class FcoeClientOptionSet(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Defaultp=None, Name=None):
+        # type: (bool, str) -> FcoeClientOptionSet
         """Adds a new fcoeClientOptionSet resource on the server and adds it to the container.
 
         Args
@@ -131,6 +144,7 @@ class FcoeClientOptionSet(Base):
         self._delete()
 
     def find(self, Defaultp=None, Name=None, ObjectId=None):
+        # type: (bool, str, str) -> FcoeClientOptionSet
         """Finds and retrieves fcoeClientOptionSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeClientOptionSet resources from the server.

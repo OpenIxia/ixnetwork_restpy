@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ActionSet(Base):
@@ -40,9 +41,11 @@ class ActionSet(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ActionSet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ActionSet, self).__init__(parent, list_op)
 
     @property
     def Action(self):
@@ -56,10 +59,14 @@ class ActionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.action_fca3673b74732220701dbad581b63119 import Action
-        return Action(self)
+        if self._properties.get('Action', None) is not None:
+            return self._properties.get('Action')
+        else:
+            return Action(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,6 +76,7 @@ class ActionSet(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class ActionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class ActionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRepeatable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -101,10 +113,12 @@ class ActionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
     @IsRepeatable.setter
     def IsRepeatable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -113,10 +127,12 @@ class ActionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,9 +141,11 @@ class ActionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> ActionSet
         """Updates actionSet resource on the server.
 
         Args
@@ -145,6 +163,7 @@ class ActionSet(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> ActionSet
         """Adds a new actionSet resource on the server and adds it to the container.
 
         Args
@@ -176,6 +195,7 @@ class ActionSet(Base):
         self._delete()
 
     def find(self, Count=None, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (int, str, bool, bool, bool, str) -> ActionSet
         """Finds and retrieves actionSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve actionSet resources from the server.

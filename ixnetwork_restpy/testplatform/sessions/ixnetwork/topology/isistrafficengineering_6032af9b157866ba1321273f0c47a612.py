@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisTrafficEngineering(Base):
@@ -47,12 +48,15 @@ class IsisTrafficEngineering(Base):
         'MetricLevel': 'metricLevel',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisTrafficEngineering, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisTrafficEngineering, self).__init__(parent, list_op)
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -63,6 +67,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority0(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -73,6 +78,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority1(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -83,6 +89,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority2(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -93,6 +100,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority3(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -103,6 +111,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority4(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -113,6 +122,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority5(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -123,6 +133,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority6(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -133,6 +144,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def BandwidthPriority7(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -143,6 +155,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -152,6 +165,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -161,6 +175,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def MaxBandwidth(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -171,6 +186,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def MaxReservableBandwidth(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -181,6 +197,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -191,6 +208,7 @@ class IsisTrafficEngineering(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -199,9 +217,11 @@ class IsisTrafficEngineering(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> IsisTrafficEngineering
         """Updates isisTrafficEngineering resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

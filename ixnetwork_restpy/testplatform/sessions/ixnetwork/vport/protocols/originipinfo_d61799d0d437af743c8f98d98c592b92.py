@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OriginIpInfo(Base):
@@ -34,9 +35,11 @@ class OriginIpInfo(Base):
     _SDM_ATT_MAP = {
         'OriginIp': 'originIp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OriginIpInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OriginIpInfo, self).__init__(parent, list_op)
 
     @property
     def RdInfo(self):
@@ -50,10 +53,14 @@ class OriginIpInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rdinfo_5d0e7b1db6cf0b7daa15e78fa449470c import RdInfo
-        return RdInfo(self)
+        if self._properties.get('RdInfo', None) is not None:
+            return self._properties.get('RdInfo')
+        else:
+            return RdInfo(self)
 
     @property
     def OriginIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,7 +68,21 @@ class OriginIpInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['OriginIp'])
 
+    def add(self):
+        """Adds a new originIpInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved originIpInfo resources using find and the newly added originIpInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, OriginIp=None):
+        # type: (str) -> OriginIpInfo
         """Finds and retrieves originIpInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve originIpInfo resources from the server.

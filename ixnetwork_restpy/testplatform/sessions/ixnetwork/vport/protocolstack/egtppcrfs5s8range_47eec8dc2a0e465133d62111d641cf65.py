@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpPcrfS5S8Range(Base):
@@ -64,9 +65,11 @@ class EgtpPcrfS5S8Range(Base):
         'UserPlaneIpAddress': 'userPlaneIpAddress',
         'UserPlaneIpCount': 'userPlaneIpCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpPcrfS5S8Range, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpPcrfS5S8Range, self).__init__(parent, list_op)
 
     @property
     def DedicatedBearersS5S8Pgw(self):
@@ -80,7 +83,10 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearerss5s8pgw_5b6e9922b532dbc7fb4073e8b42f3ff7 import DedicatedBearersS5S8Pgw
-        return DedicatedBearersS5S8Pgw(self)
+        if self._properties.get('DedicatedBearersS5S8Pgw', None) is not None:
+            return self._properties.get('DedicatedBearersS5S8Pgw')
+        else:
+            return DedicatedBearersS5S8Pgw(self)
 
     @property
     def TrafficProfileProxiesS5S8Pgw(self):
@@ -94,10 +100,14 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8pgw_47d0afd20663ef6a4faa05f791965f38 import TrafficProfileProxiesS5S8Pgw
-        return TrafficProfileProxiesS5S8Pgw(self)
+        if self._properties.get('TrafficProfileProxiesS5S8Pgw', None) is not None:
+            return self._properties.get('TrafficProfileProxiesS5S8Pgw')
+        else:
+            return TrafficProfileProxiesS5S8Pgw(self)
 
     @property
     def Apn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,10 +116,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Apn'])
     @Apn.setter
     def Apn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Apn'], value)
 
     @property
     def Apn_AMBRD(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,10 +130,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Apn_AMBRD'])
     @Apn_AMBRD.setter
     def Apn_AMBRD(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Apn_AMBRD'], value)
 
     @property
     def Apn_AMBRU(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +144,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Apn_AMBRU'])
     @Apn_AMBRU.setter
     def Apn_AMBRU(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Apn_AMBRU'], value)
 
     @property
     def Db_gbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -142,10 +158,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_gbrd'])
     @Db_gbrd.setter
     def Db_gbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_gbrd'], value)
 
     @property
     def Db_gbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,10 +172,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_gbru'])
     @Db_gbru.setter
     def Db_gbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_gbru'], value)
 
     @property
     def Db_mbrd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,10 +186,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_mbrd'])
     @Db_mbrd.setter
     def Db_mbrd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_mbrd'], value)
 
     @property
     def Db_mbru(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -178,10 +200,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_mbru'])
     @Db_mbru.setter
     def Db_mbru(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_mbru'], value)
 
     @property
     def Db_pci(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,10 +214,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_pci'])
     @Db_pci.setter
     def Db_pci(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_pci'], value)
 
     @property
     def Db_pl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,10 +228,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_pl'])
     @Db_pl.setter
     def Db_pl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_pl'], value)
 
     @property
     def Db_pvi(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -214,10 +242,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_pvi'])
     @Db_pvi.setter
     def Db_pvi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_pvi'], value)
 
     @property
     def Db_qci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -226,10 +256,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Db_qci'])
     @Db_qci.setter
     def Db_qci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Db_qci'], value)
 
     @property
     def DefaultBearerLifetimeTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -238,10 +270,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultBearerLifetimeTimer'])
     @DefaultBearerLifetimeTimer.setter
     def DefaultBearerLifetimeTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultBearerLifetimeTimer'], value)
 
     @property
     def EnableDefaultBearerLifetime(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -250,10 +284,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDefaultBearerLifetime'])
     @EnableDefaultBearerLifetime.setter
     def EnableDefaultBearerLifetime(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDefaultBearerLifetime'], value)
 
     @property
     def EnableNIDBCreationDelay(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -262,10 +298,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNIDBCreationDelay'])
     @EnableNIDBCreationDelay.setter
     def EnableNIDBCreationDelay(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNIDBCreationDelay'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -274,10 +312,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IMSI(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -286,10 +326,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IMSI'])
     @IMSI.setter
     def IMSI(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IMSI'], value)
 
     @property
     def Ims_apn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -298,10 +340,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ims_apn'])
     @Ims_apn.setter
     def Ims_apn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ims_apn'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -310,10 +354,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -322,10 +368,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NidbCreationDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -334,10 +382,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NidbCreationDelay'])
     @NidbCreationDelay.setter
     def NidbCreationDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NidbCreationDelay'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -347,6 +397,7 @@ class EgtpPcrfS5S8Range(Base):
 
     @property
     def ParentPgw(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -355,10 +406,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ParentPgw'])
     @ParentPgw.setter
     def ParentPgw(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ParentPgw'], value)
 
     @property
     def PoolSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -367,10 +420,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolSize'])
     @PoolSize.setter
     def PoolSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolSize'], value)
 
     @property
     def PoolStartIPv4(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -379,10 +434,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolStartIPv4'])
     @PoolStartIPv4.setter
     def PoolStartIPv4(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolStartIPv4'], value)
 
     @property
     def PoolStartIPv6(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -391,10 +448,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolStartIPv6'])
     @PoolStartIPv6.setter
     def PoolStartIPv6(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolStartIPv6'], value)
 
     @property
     def PoolStartIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -403,10 +462,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PoolStartIp'])
     @PoolStartIp.setter
     def PoolStartIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PoolStartIp'], value)
 
     @property
     def RoundRobinDistribution(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -415,10 +476,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RoundRobinDistribution'])
     @RoundRobinDistribution.setter
     def RoundRobinDistribution(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RoundRobinDistribution'], value)
 
     @property
     def TotalCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -427,10 +490,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TotalCount'])
     @TotalCount.setter
     def TotalCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TotalCount'], value)
 
     @property
     def UserPlaneIPv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -439,10 +504,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIPv4Address'])
     @UserPlaneIPv4Address.setter
     def UserPlaneIPv4Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIPv4Address'], value)
 
     @property
     def UserPlaneIPv6Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -451,10 +518,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIPv6Address'])
     @UserPlaneIPv6Address.setter
     def UserPlaneIPv6Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIPv6Address'], value)
 
     @property
     def UserPlaneIpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -463,10 +532,12 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpAddress'])
     @UserPlaneIpAddress.setter
     def UserPlaneIpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpAddress'], value)
 
     @property
     def UserPlaneIpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -475,9 +546,11 @@ class EgtpPcrfS5S8Range(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UserPlaneIpCount'])
     @UserPlaneIpCount.setter
     def UserPlaneIpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UserPlaneIpCount'], value)
 
     def update(self, Apn=None, Apn_AMBRD=None, Apn_AMBRU=None, Db_gbrd=None, Db_gbru=None, Db_mbrd=None, Db_mbru=None, Db_pci=None, Db_pl=None, Db_pvi=None, Db_qci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNIDBCreationDelay=None, Enabled=None, IMSI=None, Ims_apn=None, IpType=None, Name=None, NidbCreationDelay=None, ParentPgw=None, PoolSize=None, PoolStartIPv4=None, PoolStartIPv6=None, PoolStartIp=None, RoundRobinDistribution=None, TotalCount=None, UserPlaneIPv4Address=None, UserPlaneIPv6Address=None, UserPlaneIpAddress=None, UserPlaneIpCount=None):
+        # type: (str, int, int, int, int, int, int, bool, int, bool, int, int, bool, bool, bool, str, bool, str, str, int, str, int, str, str, str, bool, int, str, str, str, int) -> EgtpPcrfS5S8Range
         """Updates egtpPcrfS5S8Range resource on the server.
 
         Args
@@ -521,14 +594,16 @@ class EgtpPcrfS5S8Range(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -541,13 +616,15 @@ class EgtpPcrfS5S8Range(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -561,13 +638,15 @@ class EgtpPcrfS5S8Range(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

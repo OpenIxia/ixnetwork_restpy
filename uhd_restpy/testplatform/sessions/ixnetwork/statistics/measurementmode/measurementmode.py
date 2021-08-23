@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MeasurementMode(Base):
@@ -33,12 +34,16 @@ class MeasurementMode(Base):
     _SDM_ATT_MAP = {
         'MeasurementMode': 'measurementMode',
     }
+    _SDM_ENUM_MAP = {
+        'measurementMode': ['cumulativeMode', 'instantaneousMode', 'mixedMode'],
+    }
 
-    def __init__(self, parent):
-        super(MeasurementMode, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MeasurementMode, self).__init__(parent, list_op)
 
     @property
     def MeasurementMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -47,9 +52,11 @@ class MeasurementMode(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeasurementMode'])
     @MeasurementMode.setter
     def MeasurementMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeasurementMode'], value)
 
     def update(self, MeasurementMode=None):
+        # type: (str) -> MeasurementMode
         """Updates measurementMode resource on the server.
 
         Args

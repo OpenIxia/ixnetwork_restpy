@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AdvancedFilter(Base):
@@ -38,12 +39,15 @@ class AdvancedFilter(Base):
         'SortingStats': 'sortingStats',
         'TrackingFilterId': 'trackingFilterId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AdvancedFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AdvancedFilter, self).__init__(parent, list_op)
 
     @property
     def Expression(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class AdvancedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Expression'])
     @Expression.setter
     def Expression(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Expression'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +70,12 @@ class AdvancedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SortingStats(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +84,12 @@ class AdvancedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SortingStats'])
     @SortingStats.setter
     def SortingStats(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SortingStats'], value)
 
     @property
     def TrackingFilterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,9 +98,11 @@ class AdvancedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     def update(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
+        # type: (str, str, str, str) -> AdvancedFilter
         """Updates advancedFilter resource on the server.
 
         Args
@@ -107,6 +119,7 @@ class AdvancedFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
+        # type: (str, str, str, str) -> AdvancedFilter
         """Adds a new advancedFilter resource on the server and adds it to the container.
 
         Args
@@ -137,6 +150,7 @@ class AdvancedFilter(Base):
         self._delete()
 
     def find(self, Expression=None, Name=None, SortingStats=None, TrackingFilterId=None):
+        # type: (str, str, str, str) -> AdvancedFilter
         """Finds and retrieves advancedFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve advancedFilter resources from the server.

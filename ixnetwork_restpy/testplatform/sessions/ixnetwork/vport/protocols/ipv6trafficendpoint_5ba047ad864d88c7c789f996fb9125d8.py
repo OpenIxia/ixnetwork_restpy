@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6TrafficEndPoint(Base):
@@ -57,12 +58,16 @@ class Ipv6TrafficEndPoint(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'ipv6NextHeader': ['custom', 'tcp', 'udp'],
+    }
 
-    def __init__(self, parent):
-        super(Ipv6TrafficEndPoint, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6TrafficEndPoint, self).__init__(parent, list_op)
 
     @property
     def ArpViaInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +76,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpViaInterface'])
     @ArpViaInterface.setter
     def ArpViaInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpViaInterface'], value)
 
     @property
     def DestinationPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +90,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationPort'])
     @DestinationPort.setter
     def DestinationPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationPort'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +104,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def GatewayMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +118,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayMac'])
     @GatewayMac.setter
     def GatewayMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayMac'], value)
 
     @property
     def Ipv6Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,10 +132,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Address'])
     @Ipv6Address.setter
     def Ipv6Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Address'], value)
 
     @property
     def Ipv6AddressMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +146,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressMask'])
     @Ipv6AddressMask.setter
     def Ipv6AddressMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6AddressMask'], value)
 
     @property
     def Ipv6CustomHeaderLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +160,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderLength'])
     @Ipv6CustomHeaderLength.setter
     def Ipv6CustomHeaderLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderLength'], value)
 
     @property
     def Ipv6CustomHeaderValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,10 +174,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderValue'])
     @Ipv6CustomHeaderValue.setter
     def Ipv6CustomHeaderValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6CustomHeaderValue'], value)
 
     @property
     def Ipv6CustomNextHeader(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,10 +188,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6CustomNextHeader'])
     @Ipv6CustomNextHeader.setter
     def Ipv6CustomNextHeader(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6CustomNextHeader'], value)
 
     @property
     def Ipv6Dscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,10 +202,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Dscp'])
     @Ipv6Dscp.setter
     def Ipv6Dscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Dscp'], value)
 
     @property
     def Ipv6Ecn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -191,10 +216,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Ecn'])
     @Ipv6Ecn.setter
     def Ipv6Ecn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Ecn'], value)
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -203,10 +230,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
 
     @property
     def Ipv6NextHeader(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -215,10 +244,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NextHeader'])
     @Ipv6NextHeader.setter
     def Ipv6NextHeader(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NextHeader'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -227,10 +258,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,10 +272,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -251,10 +286,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     @property
     def RangeSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -263,10 +300,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RangeSize'])
     @RangeSize.setter
     def RangeSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RangeSize'], value)
 
     @property
     def SourcePort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -275,10 +314,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourcePort'])
     @SourcePort.setter
     def SourcePort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourcePort'], value)
 
     @property
     def UdpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,10 +328,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
     @UdpDestination.setter
     def UdpDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
 
     @property
     def UdpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +342,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
     @UdpSource.setter
     def UdpSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -311,10 +356,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -323,10 +370,12 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -335,9 +384,11 @@ class Ipv6TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, ArpViaInterface=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, bool, str, str, int, int, str, str, str, str, str, str, str, str, str, int, str, str, str, int, str, str) -> Ipv6TrafficEndPoint
         """Updates ipv6TrafficEndPoint resource on the server.
 
         Args
@@ -373,6 +424,7 @@ class Ipv6TrafficEndPoint(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ArpViaInterface=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, bool, str, str, int, int, str, str, str, str, str, str, str, str, str, int, str, str, str, int, str, str) -> Ipv6TrafficEndPoint
         """Adds a new ipv6TrafficEndPoint resource on the server and adds it to the container.
 
         Args
@@ -422,6 +474,7 @@ class Ipv6TrafficEndPoint(Base):
         self._delete()
 
     def find(self, ArpViaInterface=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, Ipv6Address=None, Ipv6AddressMask=None, Ipv6CustomHeaderLength=None, Ipv6CustomHeaderValue=None, Ipv6CustomNextHeader=None, Ipv6Dscp=None, Ipv6Ecn=None, Ipv6FlowLabel=None, Ipv6NextHeader=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, bool, str, str, int, int, str, str, str, str, str, str, str, str, str, int, str, str, str, int, str, str) -> Ipv6TrafficEndPoint
         """Finds and retrieves ipv6TrafficEndPoint resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv6TrafficEndPoint resources from the server.

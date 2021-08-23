@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInfo(Base):
@@ -41,12 +42,15 @@ class LearnedInfo(Base):
         'RootMac': 'rootMac',
         'RootPriority': 'rootPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInfo, self).__init__(parent, list_op)
 
     @property
     def DesignatedCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class LearnedInfo(Base):
 
     @property
     def DesignatedMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class LearnedInfo(Base):
 
     @property
     def DesignatedPortId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class LearnedInfo(Base):
 
     @property
     def DesignatedPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class LearnedInfo(Base):
 
     @property
     def InterfaceDesc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +100,7 @@ class LearnedInfo(Base):
 
     @property
     def InterfaceRole(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class LearnedInfo(Base):
 
     @property
     def InterfaceState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class LearnedInfo(Base):
 
     @property
     def RootMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +130,7 @@ class LearnedInfo(Base):
 
     @property
     def RootPriority(self):
+        # type: () -> int
         """
         Returns
         -------

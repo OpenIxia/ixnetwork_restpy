@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DslPools(Base):
@@ -62,9 +63,11 @@ class DslPools(Base):
         'TechType': 'techType',
         'VlanAllocationModel': 'vlanAllocationModel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DslPools, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DslPools, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -78,7 +81,10 @@ class DslPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def TlvProfile(self):
@@ -92,10 +98,14 @@ class DslPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is not None:
+            return self._properties.get('TlvProfile')
+        else:
+            return TlvProfile(self)
 
     @property
     def ActualBandwidthDownstream(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class DslPools(Base):
 
     @property
     def ActualBandwidthUpstream(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -114,6 +125,7 @@ class DslPools(Base):
 
     @property
     def ActualNetDataRateDownstream(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +136,7 @@ class DslPools(Base):
 
     @property
     def ActualNetDataRateDownstreamTolerance(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +147,7 @@ class DslPools(Base):
 
     @property
     def ActualNetDataRateUpstream(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +158,7 @@ class DslPools(Base):
 
     @property
     def ActualNetDataRateUpstreamTolerance(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -154,6 +169,7 @@ class DslPools(Base):
 
     @property
     def CircuitId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -164,6 +180,7 @@ class DslPools(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -173,6 +190,7 @@ class DslPools(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,6 +200,7 @@ class DslPools(Base):
 
     @property
     def DslLineState(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -191,6 +210,7 @@ class DslPools(Base):
 
     @property
     def DslType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +221,7 @@ class DslPools(Base):
 
     @property
     def EnableActualNetDataRateDownstream(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +232,7 @@ class DslPools(Base):
 
     @property
     def EnableActualNetDataRateUpstream(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +243,7 @@ class DslPools(Base):
 
     @property
     def EnableDslType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +254,7 @@ class DslPools(Base):
 
     @property
     def EnablePonType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +265,7 @@ class DslPools(Base):
 
     @property
     def EnableRemoteId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +276,7 @@ class DslPools(Base):
 
     @property
     def FlappingMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -261,6 +287,7 @@ class DslPools(Base):
 
     @property
     def InnerVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -271,6 +298,7 @@ class DslPools(Base):
 
     @property
     def LineDownInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +309,7 @@ class DslPools(Base):
 
     @property
     def LineUpInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -291,6 +320,7 @@ class DslPools(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -299,10 +329,12 @@ class DslPools(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OuterVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -313,6 +345,7 @@ class DslPools(Base):
 
     @property
     def PonType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -323,6 +356,7 @@ class DslPools(Base):
 
     @property
     def PortDownSent(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -332,6 +366,7 @@ class DslPools(Base):
 
     @property
     def PortUpSent(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -341,6 +376,7 @@ class DslPools(Base):
 
     @property
     def RemoteId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -351,6 +387,7 @@ class DslPools(Base):
 
     @property
     def TechType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -361,6 +398,7 @@ class DslPools(Base):
 
     @property
     def VlanAllocationModel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +408,7 @@ class DslPools(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VlanAllocationModel']))
 
     def update(self, Name=None):
+        # type: (str) -> DslPools
         """Updates dslPools resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -386,6 +425,7 @@ class DslPools(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
+        # type: (str) -> DslPools
         """Adds a new dslPools resource on the server and adds it to the container.
 
         Args
@@ -413,6 +453,7 @@ class DslPools(Base):
         self._delete()
 
     def find(self, ActualBandwidthDownstream=None, ActualBandwidthUpstream=None, Count=None, DescriptiveName=None, DslLineState=None, Name=None, PortDownSent=None, PortUpSent=None):
+        # type: (List[int], List[int], int, str, List[str], str, List[int], List[int]) -> DslPools
         """Finds and retrieves dslPools resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dslPools resources from the server.
@@ -458,6 +499,130 @@ class DslPools(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def SendPortDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the sendPortDown operation on the server.
+
+        Send Port Down event from selected Access Loop items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPortDown(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortDown(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortDown(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPortDown', payload=payload, response_object=None)
+
+    def SendPortUp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the sendPortUp operation on the server.
+
+        Send Port Up event from selected Access Loop items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPortUp(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortUp(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendPortUp(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPortUp', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ActualNetDataRateDownstream=None, ActualNetDataRateDownstreamTolerance=None, ActualNetDataRateUpstream=None, ActualNetDataRateUpstreamTolerance=None, CircuitId=None, DslType=None, EnableActualNetDataRateDownstream=None, EnableActualNetDataRateUpstream=None, EnableDslType=None, EnablePonType=None, EnableRemoteId=None, FlappingMode=None, InnerVlanId=None, LineDownInterval=None, LineUpInterval=None, OuterVlanId=None, PonType=None, RemoteId=None, TechType=None, VlanAllocationModel=None):
         """Base class infrastructure that gets a list of dslPools device ids encapsulated by this object.
 
@@ -496,92 +661,3 @@ class DslPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def SendPortDown(self, *args, **kwargs):
-        """Executes the sendPortDown operation on the server.
-
-        Send Port Down event from selected Access Loop items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPortDown(SessionIndices=list)
-        ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendPortDown(SessionIndices=string)
-        -----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortDown', payload=payload, response_object=None)
-
-    def SendPortUp(self, *args, **kwargs):
-        """Executes the sendPortUp operation on the server.
-
-        Send Port Up event from selected Access Loop items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPortUp(SessionIndices=list)
-        -------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendPortUp(SessionIndices=string)
-        ---------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPortUp', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

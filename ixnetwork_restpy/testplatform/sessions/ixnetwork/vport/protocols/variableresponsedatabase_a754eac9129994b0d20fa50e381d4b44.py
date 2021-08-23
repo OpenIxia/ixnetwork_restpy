@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VariableResponseDatabase(Base):
@@ -40,12 +41,15 @@ class VariableResponseDatabase(Base):
         'VariableValue': 'variableValue',
         'VariableWidth': 'variableWidth',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VariableResponseDatabase, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VariableResponseDatabase, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class VariableResponseDatabase(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def VariableBranch(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class VariableResponseDatabase(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VariableBranch'])
     @VariableBranch.setter
     def VariableBranch(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VariableBranch'], value)
 
     @property
     def VariableIndication(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class VariableResponseDatabase(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VariableIndication'])
     @VariableIndication.setter
     def VariableIndication(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VariableIndication'], value)
 
     @property
     def VariableLeaf(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class VariableResponseDatabase(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VariableLeaf'])
     @VariableLeaf.setter
     def VariableLeaf(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VariableLeaf'], value)
 
     @property
     def VariableValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class VariableResponseDatabase(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VariableValue'])
     @VariableValue.setter
     def VariableValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VariableValue'], value)
 
     @property
     def VariableWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,9 +128,11 @@ class VariableResponseDatabase(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VariableWidth'])
     @VariableWidth.setter
     def VariableWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VariableWidth'], value)
 
     def update(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+        # type: (bool, int, bool, int, str, int) -> VariableResponseDatabase
         """Updates variableResponseDatabase resource on the server.
 
         Args
@@ -135,6 +151,7 @@ class VariableResponseDatabase(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+        # type: (bool, int, bool, int, str, int) -> VariableResponseDatabase
         """Adds a new variableResponseDatabase resource on the server and adds it to the container.
 
         Args
@@ -167,6 +184,7 @@ class VariableResponseDatabase(Base):
         self._delete()
 
     def find(self, Enabled=None, VariableBranch=None, VariableIndication=None, VariableLeaf=None, VariableValue=None, VariableWidth=None):
+        # type: (bool, int, bool, int, str, int) -> VariableResponseDatabase
         """Finds and retrieves variableResponseDatabase resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve variableResponseDatabase resources from the server.

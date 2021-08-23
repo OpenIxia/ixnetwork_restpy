@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ExperimenterMissLearnedInfo(Base):
@@ -40,12 +41,15 @@ class ExperimenterMissLearnedInfo(Base):
         'Property': 'property',
         'SupportedField': 'supportedField',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ExperimenterMissLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ExperimenterMissLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class ExperimenterMissLearnedInfo(Base):
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class ExperimenterMissLearnedInfo(Base):
 
     @property
     def ExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class ExperimenterMissLearnedInfo(Base):
 
     @property
     def NextTableIds(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class ExperimenterMissLearnedInfo(Base):
 
     @property
     def Property(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class ExperimenterMissLearnedInfo(Base):
 
     @property
     def SupportedField(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,6 +131,7 @@ class ExperimenterMissLearnedInfo(Base):
         self._delete()
 
     def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, NextTableIds=None, Property=None, SupportedField=None):
+        # type: (str, int, int, str, str, str) -> ExperimenterMissLearnedInfo
         """Finds and retrieves experimenterMissLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve experimenterMissLearnedInfo resources from the server.

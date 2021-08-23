@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3PseudoRouter(Base):
@@ -112,9 +113,11 @@ class IsisL3PseudoRouter(Base):
         'TERouterId': 'tERouterId',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3PseudoRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3PseudoRouter, self).__init__(parent, list_op)
 
     @property
     def IPv4PseudoNodeRoutes(self):
@@ -128,7 +131,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4pseudonoderoutes_7cd9e3747243dcf6c295ddd7cc532731 import IPv4PseudoNodeRoutes
-        return IPv4PseudoNodeRoutes(self)
+        if self._properties.get('IPv4PseudoNodeRoutes', None) is not None:
+            return self._properties.get('IPv4PseudoNodeRoutes')
+        else:
+            return IPv4PseudoNodeRoutes(self)
 
     @property
     def IPv6PseudoNodeRoutes(self):
@@ -142,7 +148,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6pseudonoderoutes_e49889067cd5030685c5c28101e243d5 import IPv6PseudoNodeRoutes
-        return IPv6PseudoNodeRoutes(self)
+        if self._properties.get('IPv6PseudoNodeRoutes', None) is not None:
+            return self._properties.get('IPv6PseudoNodeRoutes')
+        else:
+            return IPv6PseudoNodeRoutes(self)
 
     @property
     def IsisPseudoMultiTopologyValuesList(self):
@@ -156,7 +165,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist_611d6ab2b1a502e3b27f153266aa7670 import IsisPseudoMultiTopologyValuesList
-        return IsisPseudoMultiTopologyValuesList(self)
+        if self._properties.get('IsisPseudoMultiTopologyValuesList', None) is not None:
+            return self._properties.get('IsisPseudoMultiTopologyValuesList')
+        else:
+            return IsisPseudoMultiTopologyValuesList(self)
 
     @property
     def IsisPseudoFlexAlgorithm(self):
@@ -170,7 +182,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudoflexalgorithm_da21ce814ae20d74de8689303f8c2e83 import IsisPseudoFlexAlgorithm
-        return IsisPseudoFlexAlgorithm(self)._select()
+        if self._properties.get('IsisPseudoFlexAlgorithm', None) is not None:
+            return self._properties.get('IsisPseudoFlexAlgorithm')
+        else:
+            return IsisPseudoFlexAlgorithm(self)._select()
 
     @property
     def IsisPseudoSRv6LocatorEntryList(self):
@@ -184,7 +199,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6locatorentrylist_41e56680c4c88d313d713433ca07cac5 import IsisPseudoSRv6LocatorEntryList
-        return IsisPseudoSRv6LocatorEntryList(self)._select()
+        if self._properties.get('IsisPseudoSRv6LocatorEntryList', None) is not None:
+            return self._properties.get('IsisPseudoSRv6LocatorEntryList')
+        else:
+            return IsisPseudoSRv6LocatorEntryList(self)._select()
 
     @property
     def IsisSRAlgorithmList(self):
@@ -198,7 +216,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissralgorithmlist_a50f1cd4168a3642597a66e7f63343e6 import IsisSRAlgorithmList
-        return IsisSRAlgorithmList(self)
+        if self._properties.get('IsisSRAlgorithmList', None) is not None:
+            return self._properties.get('IsisSRAlgorithmList')
+        else:
+            return IsisSRAlgorithmList(self)
 
     @property
     def IsisSRGBRangeSubObjectsList(self):
@@ -212,7 +233,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissrgbrangesubobjectslist_6180dd47f637b6f4581c2dcaa7a1a071 import IsisSRGBRangeSubObjectsList
-        return IsisSRGBRangeSubObjectsList(self)
+        if self._properties.get('IsisSRGBRangeSubObjectsList', None) is not None:
+            return self._properties.get('IsisSRGBRangeSubObjectsList')
+        else:
+            return IsisSRGBRangeSubObjectsList(self)
 
     @property
     def IsisSRLBDescriptorList(self):
@@ -226,10 +250,14 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissrlbdescriptorlist_1eec075b53920dfd5040006478718f6a import IsisSRLBDescriptorList
-        return IsisSRLBDescriptorList(self)
+        if self._properties.get('IsisSRLBDescriptorList', None) is not None:
+            return self._properties.get('IsisSRLBDescriptorList')
+        else:
+            return IsisSRLBDescriptorList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +268,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def AdvertiseNodeMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +279,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def AdvertiseSRLB(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +290,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def AdvertiseSidAsLocator(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -270,6 +301,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -280,6 +312,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +323,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -299,6 +333,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def DBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +344,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def DBitForSRv6Cap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +355,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def DBitInsideSRv6SidTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -329,6 +366,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -338,6 +376,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -348,6 +387,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def EFlagOfSRv6CapTlv(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -358,6 +398,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Enable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -368,6 +409,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def EnableIpV6TE(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -378,6 +420,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def EnableMTIPv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -388,6 +431,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def EnableSR(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -396,10 +440,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSR'])
     @EnableSR.setter
     def EnableSR(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSR'], value)
 
     @property
     def EnableWMforTEinNetworkGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -410,6 +456,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def EnableWideMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -420,6 +467,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def FlexAlgoCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -428,10 +476,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlexAlgoCount'])
     @FlexAlgoCount.setter
     def FlexAlgoCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlexAlgoCount'], value)
 
     @property
     def Funcflags(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -442,6 +492,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Function(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -452,6 +503,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaxSlMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -462,6 +514,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumEndDMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -472,6 +525,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumEndDSrhTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -482,6 +536,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumEndPopMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -492,6 +547,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumEndPopSrhTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -502,6 +558,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumSLTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -512,6 +569,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumTEncapMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -522,6 +580,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumTEncapSrhTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -532,6 +591,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumTInsertMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -542,6 +602,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IncludeMaximumTInsertSrhTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -552,6 +613,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def IpV6TERouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -562,6 +624,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Ipv4Flag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -572,6 +635,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Ipv6Flag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -582,6 +646,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Ipv6MTMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -592,6 +657,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Ipv6NodePrefix(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -602,6 +668,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Ipv6Srh(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -612,6 +679,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -622,6 +690,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def LocatorCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -630,10 +699,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocatorCount'])
     @LocatorCount.setter
     def LocatorCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocatorCount'], value)
 
     @property
     def LocatorPrefixLength(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -644,6 +715,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Mask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -654,6 +726,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxEndD(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -664,6 +737,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxEndDMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -674,6 +748,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxEndPopMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -684,6 +759,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxEndPopSrh(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -694,6 +770,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxSL(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -704,6 +781,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxSlMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -714,6 +792,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxTEncap(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -724,6 +803,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxTEncapMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -734,6 +814,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxTInsert(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -744,6 +825,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MaxTInsertMsd(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -754,6 +836,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def MtCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -762,10 +845,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MtCount'])
     @MtCount.setter
     def MtCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MtCount'], value)
 
     @property
     def NFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -776,6 +861,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -784,10 +870,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NodePrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -798,6 +886,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def OFlagOfSRv6Cap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -808,6 +897,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -818,6 +908,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -828,6 +919,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def RFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -838,6 +930,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def Redistribution(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -848,6 +941,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def RedistributionForSRv6(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -858,6 +952,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def ReservedInsideFlagsOfSRv6SidTLV(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -868,6 +963,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def ReservedInsideSRv6CapFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -878,6 +974,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def RouteMetric(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -888,6 +985,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def RouteOrigin(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -898,6 +996,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def RtrcapId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -908,6 +1007,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def RtrcapIdForSrv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -918,6 +1018,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def SBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -928,6 +1029,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def SBitForSRv6Cap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -938,6 +1040,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def SIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -948,6 +1051,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def SRAlgorithmCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -956,10 +1060,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'])
     @SRAlgorithmCount.setter
     def SRAlgorithmCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SRAlgorithmCount'], value)
 
     @property
     def SRGBRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -968,10 +1074,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SRGBRangeCount'])
     @SRGBRangeCount.setter
     def SRGBRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SRGBRangeCount'], value)
 
     @property
     def SRv6NodePrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -982,6 +1090,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def SRv6NodePrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -992,6 +1101,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def SrlbDescriptorCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1000,10 +1110,12 @@ class IsisL3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrlbDescriptorCount'])
     @SrlbDescriptorCount.setter
     def SrlbDescriptorCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrlbDescriptorCount'], value)
 
     @property
     def SrlbFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1014,6 +1126,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def TERouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1024,6 +1137,7 @@ class IsisL3PseudoRouter(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1033,6 +1147,7 @@ class IsisL3PseudoRouter(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, EnableSR=None, FlexAlgoCount=None, LocatorCount=None, MtCount=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+        # type: (bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
         """Updates isisL3PseudoRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1055,7 +1170,33 @@ class IsisL3PseudoRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EnableSR=None, FlexAlgoCount=None, LocatorCount=None, MtCount=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+        # type: (bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
+        """Adds a new isisL3PseudoRouter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableSR (bool): This enables SR MPLS on all the simulated ISIS router(s)
+        - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear. Default is 0. Range is 0-128.
+        - LocatorCount (number): Locator Count
+        - MtCount (number): MT Count
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SRAlgorithmCount (number): SR Algorithm Count
+        - SRGBRangeCount (number): SRGB Range Count
+        - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisL3PseudoRouter resources using find and the newly added isisL3PseudoRouter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, EnableSR=None, FlexAlgoCount=None, LocatorCount=None, MtCount=None, Name=None, SRAlgorithmCount=None, SRGBRangeCount=None, SrlbDescriptorCount=None):
+        # type: (int, str, bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
         """Finds and retrieves isisL3PseudoRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3PseudoRouter resources from the server.
@@ -1102,6 +1243,90 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdvertiseNodeMsd=None, AdvertiseSRLB=None, AdvertiseSidAsLocator=None, Algorithm=None, ConfigureSIDIndexLabel=None, DBit=None, DBitForSRv6Cap=None, DBitInsideSRv6SidTLV=None, EFlag=None, EFlagOfSRv6CapTlv=None, Enable=None, EnableIpV6TE=None, EnableMTIPv6=None, EnableWMforTEinNetworkGroup=None, EnableWideMetric=None, Funcflags=None, Function=None, IncludeMaxSlMsd=None, IncludeMaximumEndDMsd=None, IncludeMaximumEndDSrhTLV=None, IncludeMaximumEndPopMsd=None, IncludeMaximumEndPopSrhTLV=None, IncludeMaximumSLTLV=None, IncludeMaximumTEncapMsd=None, IncludeMaximumTEncapSrhTLV=None, IncludeMaximumTInsertMsd=None, IncludeMaximumTInsertSrhTLV=None, IpV6TERouterId=None, Ipv4Flag=None, Ipv6Flag=None, Ipv6MTMetric=None, Ipv6NodePrefix=None, Ipv6Srh=None, LFlag=None, LocatorPrefixLength=None, Mask=None, MaxEndD=None, MaxEndDMsd=None, MaxEndPopMsd=None, MaxEndPopSrh=None, MaxSL=None, MaxSlMsd=None, MaxTEncap=None, MaxTEncapMsd=None, MaxTInsert=None, MaxTInsertMsd=None, NFlag=None, NodePrefix=None, OFlagOfSRv6Cap=None, PFlag=None, PrefixLength=None, RFlag=None, Redistribution=None, RedistributionForSRv6=None, ReservedInsideFlagsOfSRv6SidTLV=None, ReservedInsideSRv6CapFlag=None, RouteMetric=None, RouteOrigin=None, RtrcapId=None, RtrcapIdForSrv6=None, SBit=None, SBitForSRv6Cap=None, SIDIndexLabel=None, SRv6NodePrefix=None, SRv6NodePrefixLength=None, SrlbFlags=None, TERouterId=None, VFlag=None):
         """Base class infrastructure that gets a list of isisL3PseudoRouter device ids encapsulated by this object.
@@ -1190,66 +1415,3 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start Pseudo Node
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop Pseudo Node
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

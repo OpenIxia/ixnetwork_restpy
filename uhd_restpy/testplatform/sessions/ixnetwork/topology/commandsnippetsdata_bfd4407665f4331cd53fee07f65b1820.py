@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CommandSnippetsData(Base):
@@ -41,12 +42,15 @@ class CommandSnippetsData(Base):
         'TransmissionBehaviour': 'transmissionBehaviour',
         'TransmissionCount': 'transmissionCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CommandSnippetsData, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CommandSnippetsData, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class CommandSnippetsData(Base):
 
     @property
     def CommandSnippetDirectory(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class CommandSnippetsData(Base):
 
     @property
     def CommandSnippetFile(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -77,6 +83,7 @@ class CommandSnippetsData(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class CommandSnippetsData(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class CommandSnippetsData(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +112,12 @@ class CommandSnippetsData(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PeriodicTransmissionInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class CommandSnippetsData(Base):
 
     @property
     def TransmissionBehaviour(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class CommandSnippetsData(Base):
 
     @property
     def TransmissionCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +149,7 @@ class CommandSnippetsData(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionCount']))
 
     def update(self, Name=None):
+        # type: (str) -> CommandSnippetsData
         """Updates commandSnippetsData resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -150,6 +164,44 @@ class CommandSnippetsData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ExecuteCommand(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the executeCommand operation on the server.
+
+        Send the selected command snippet if the Netconf session is established with the Netconf Server
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        executeCommand(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        executeCommand(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        executeCommand(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        executeCommand(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('executeCommand', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, CommandSnippetDirectory=None, CommandSnippetFile=None, PeriodicTransmissionInterval=None, TransmissionBehaviour=None, TransmissionCount=None):
         """Base class infrastructure that gets a list of commandSnippetsData device ids encapsulated by this object.
@@ -175,33 +227,3 @@ class CommandSnippetsData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ExecuteCommand(self, *args, **kwargs):
-        """Executes the executeCommand operation on the server.
-
-        Send the selected command snippet if the Netconf session is established with the Netconf Server
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        executeCommand(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        executeCommand(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        executeCommand(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('executeCommand', payload=payload, response_object=None)

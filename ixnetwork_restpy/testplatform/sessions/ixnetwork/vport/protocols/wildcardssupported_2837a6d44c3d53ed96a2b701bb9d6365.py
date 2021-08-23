@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class WildcardsSupported(Base):
@@ -44,12 +45,15 @@ class WildcardsSupported(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(WildcardsSupported, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(WildcardsSupported, self).__init__(parent, list_op)
 
     @property
     def EthernetDestinationAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -58,10 +62,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestinationAddress'])
     @EthernetDestinationAddress.setter
     def EthernetDestinationAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestinationAddress'], value)
 
     @property
     def EthernetFrameType(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -70,10 +76,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetFrameType'])
     @EthernetFrameType.setter
     def EthernetFrameType(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetFrameType'], value)
 
     @property
     def EthernetSourceAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,10 +90,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSourceAddress'])
     @EthernetSourceAddress.setter
     def EthernetSourceAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSourceAddress'], value)
 
     @property
     def IpDestinationAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -94,10 +104,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDestinationAddress'])
     @IpDestinationAddress.setter
     def IpDestinationAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDestinationAddress'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,10 +118,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def IpSourceAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -118,10 +132,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpSourceAddress'])
     @IpSourceAddress.setter
     def IpSourceAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpSourceAddress'], value)
 
     @property
     def IpTos(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -130,10 +146,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpTos'])
     @IpTos.setter
     def IpTos(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpTos'], value)
 
     @property
     def SwitchInputPort(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,10 +160,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchInputPort'])
     @SwitchInputPort.setter
     def SwitchInputPort(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchInputPort'], value)
 
     @property
     def TcpUdpDestinationPort(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -154,10 +174,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpUdpDestinationPort'])
     @TcpUdpDestinationPort.setter
     def TcpUdpDestinationPort(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpUdpDestinationPort'], value)
 
     @property
     def TcpUdpSourcePort(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -166,10 +188,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpUdpSourcePort'])
     @TcpUdpSourcePort.setter
     def TcpUdpSourcePort(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpUdpSourcePort'], value)
 
     @property
     def VlanId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +202,12 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,9 +216,11 @@ class WildcardsSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, EthernetDestinationAddress=None, EthernetFrameType=None, EthernetSourceAddress=None, IpDestinationAddress=None, IpProtocol=None, IpSourceAddress=None, IpTos=None, SwitchInputPort=None, TcpUdpDestinationPort=None, TcpUdpSourcePort=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> WildcardsSupported
         """Updates wildcardsSupported resource on the server.
 
         Args

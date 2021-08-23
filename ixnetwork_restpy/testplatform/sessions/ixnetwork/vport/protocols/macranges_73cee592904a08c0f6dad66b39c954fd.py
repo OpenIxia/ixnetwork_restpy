@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MacRanges(Base):
@@ -49,12 +50,16 @@ class MacRanges(Base):
         'TrafficGroupId': 'trafficGroupId',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['singleVlan', 'stackedVlan'],
+    }
 
-    def __init__(self, parent):
-        super(MacRanges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MacRanges, self).__init__(parent, list_op)
 
     @property
     def CVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +68,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CVlanId'])
     @CVlanId.setter
     def CVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CVlanId'], value)
 
     @property
     def CVlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,10 +82,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CVlanPriority'])
     @CVlanPriority.setter
     def CVlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CVlanPriority'], value)
 
     @property
     def CVlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CVlanTpId'])
     @CVlanTpId.setter
     def CVlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CVlanTpId'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,10 +124,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +138,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ITagethernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +153,7 @@ class MacRanges(Base):
 
     @property
     def ITagiSid(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,10 +162,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ITagiSid'])
     @ITagiSid.setter
     def ITagiSid(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ITagiSid'], value)
 
     @property
     def SVlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -156,10 +176,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SVlanId'])
     @SVlanId.setter
     def SVlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SVlanId'], value)
 
     @property
     def SVlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -168,10 +190,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SVlanPriority'])
     @SVlanPriority.setter
     def SVlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SVlanPriority'], value)
 
     @property
     def SVlanTpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +204,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SVlanTpId'])
     @SVlanTpId.setter
     def SVlanTpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SVlanTpId'], value)
 
     @property
     def StartMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,10 +218,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartMacAddress'])
     @StartMacAddress.setter
     def StartMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartMacAddress'], value)
 
     @property
     def Step(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +232,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Step'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +246,12 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -228,9 +260,11 @@ class MacRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+        # type: (int, int, str, int, bool, bool, int, int, int, str, str, str, str, str) -> MacRanges
         """Updates macRanges resource on the server.
 
         Args
@@ -257,6 +291,7 @@ class MacRanges(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+        # type: (int, int, str, int, bool, bool, int, int, int, str, str, str, str, str) -> MacRanges
         """Adds a new macRanges resource on the server and adds it to the container.
 
         Args
@@ -297,6 +332,7 @@ class MacRanges(Base):
         self._delete()
 
     def find(self, CVlanId=None, CVlanPriority=None, CVlanTpId=None, Count=None, EnableVlan=None, Enabled=None, ITagethernetType=None, ITagiSid=None, SVlanId=None, SVlanPriority=None, SVlanTpId=None, StartMacAddress=None, Step=None, TrafficGroupId=None, Type=None):
+        # type: (int, int, str, int, bool, bool, str, int, int, int, str, str, str, str, str) -> MacRanges
         """Finds and retrieves macRanges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macRanges resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RxRateLimit(Base):
@@ -38,12 +39,17 @@ class RxRateLimit(Base):
         'Units': 'units',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'bufferSizeUnits': ['kilobytes', 'kKilobytes', 'kMegabytes', 'megabytes'],
+        'units': ['kilobitsPerSecond', 'kKilobitsPerSecond', 'kMegabitsPerSecond', 'megabitsPerSecond'],
+    }
 
-    def __init__(self, parent):
-        super(RxRateLimit, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RxRateLimit, self).__init__(parent, list_op)
 
     @property
     def BufferSizeEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +58,12 @@ class RxRateLimit(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BufferSizeEnabled'])
     @BufferSizeEnabled.setter
     def BufferSizeEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BufferSizeEnabled'], value)
 
     @property
     def BufferSizeUnits(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +72,12 @@ class RxRateLimit(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BufferSizeUnits'])
     @BufferSizeUnits.setter
     def BufferSizeUnits(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BufferSizeUnits'], value)
 
     @property
     def BufferSizeValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +86,12 @@ class RxRateLimit(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BufferSizeValue'])
     @BufferSizeValue.setter
     def BufferSizeValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BufferSizeValue'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,10 +100,12 @@ class RxRateLimit(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Units(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,10 +114,12 @@ class RxRateLimit(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Units'])
     @Units.setter
     def Units(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Units'], value)
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,9 +128,11 @@ class RxRateLimit(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, BufferSizeEnabled=None, BufferSizeUnits=None, BufferSizeValue=None, Enabled=None, Units=None, Value=None):
+        # type: (bool, str, int, bool, str, int) -> RxRateLimit
         """Updates rxRateLimit resource on the server.
 
         Args

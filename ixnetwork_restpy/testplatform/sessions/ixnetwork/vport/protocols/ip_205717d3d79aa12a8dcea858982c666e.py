@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ip(Base):
@@ -42,12 +43,16 @@ class Ip(Base):
         'Step': 'step',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+        'ipType': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(Ip, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ip, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,10 +61,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -68,10 +75,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +89,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
     @IpStart.setter
     def IpStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,10 +103,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Mask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,10 +117,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +131,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     @property
     def Step(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,10 +145,12 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Step'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,9 +159,11 @@ class Ip(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+        # type: (int, bool, str, str, int, str, int, str) -> Ip
         """Updates ip resource on the server.
 
         Args
@@ -163,6 +184,7 @@ class Ip(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+        # type: (int, bool, str, str, int, str, int, str) -> Ip
         """Adds a new ip resource on the server and adds it to the container.
 
         Args
@@ -197,6 +219,7 @@ class Ip(Base):
         self._delete()
 
     def find(self, Count=None, Enabled=None, IpStart=None, IpType=None, Mask=None, ProtocolInterface=None, Step=None, TrafficGroupId=None):
+        # type: (int, bool, str, str, int, str, int, str) -> Ip
         """Finds and retrieves ip resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ip resources from the server.

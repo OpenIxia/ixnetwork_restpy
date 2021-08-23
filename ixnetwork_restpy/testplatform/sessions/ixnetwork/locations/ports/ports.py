@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ports(Base):
@@ -40,12 +41,16 @@ class Ports(Base):
         'Owner': 'owner',
         'ResourceMode': 'resourceMode',
     }
+    _SDM_ENUM_MAP = {
+        'resourceMode': ['normal', 'tenGig', 'fortyGig', 'singleMode', 'dualMode', 'hundredGigNonFanOut', 'fortyGigFanOut', 'threeByTenGigFanOut', 'eightByTenGigFanOut', 'fourByTwentyFiveGigNonFanOut', 'twoByTwentyFiveGigNonFanOut', 'oneByFiftyGigNonFanOut', 'fortyGigNonFanOut', 'oneByTenGigFanOut', 'fourByTenGigFanOut', 'incompatibleMode', 'hundredGigCapturePlayback', 'fortyGigCapturePlayback', 'novusHundredGigNonFanOut', 'novusFourByTwentyFiveGigNonFanOut', 'novusTwoByFiftyGigNonFanOut', 'novusOneByFortyGigNonFanOut', 'novusFourByTenGigNonFanOut', 'krakenOneByFourHundredGigNonFanOut', 'krakenOneByTwoHundredGigNonFanOut', 'krakenTwoByOneHundredGigFanOut', 'krakenFourByFiftyGigFanOut', 'aresOneOneByFourHundredGigNonFanOut', 'aresOneTwoByTwoHundredGigFanOut', 'aresOneFourByOneHundredGigFanOut', 'aresOneFourByOneHundredGigMacSecFanOut', 'aresOneEightByFiftyGigFanOut', 'uhdOneHundredEightByHundredGigNonFanOut', 'uhdOneHundredEightByFortyGigNonFanOut', 'uhdOneHundredSixteenByFiftyGigFanOut', 'uhdOneHundredThirtyTwoByTwentyFiveGigFanOut', 'uhdOneHundredThirtyTwoByTenGigFanOut', 'notApplicable'],
+    }
 
-    def __init__(self, parent):
-        super(Ports, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ports, self).__init__(parent, list_op)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,6 +60,7 @@ class Ports(Base):
 
     @property
     def IsAvailable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,6 +70,7 @@ class Ports(Base):
 
     @property
     def IsBusy(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class Ports(Base):
 
     @property
     def IsLinkUp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class Ports(Base):
 
     @property
     def Location(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +100,7 @@ class Ports(Base):
 
     @property
     def Owner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +110,7 @@ class Ports(Base):
 
     @property
     def ResourceMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,7 +118,21 @@ class Ports(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ResourceMode'])
 
+    def add(self):
+        """Adds a new ports resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ports resources using find and the newly added ports resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Description=None, IsAvailable=None, IsBusy=None, IsLinkUp=None, Location=None, Owner=None, ResourceMode=None):
+        # type: (str, bool, bool, bool, str, str, str) -> Ports
         """Finds and retrieves ports resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ports resources from the server.
@@ -152,10 +177,15 @@ class Ports(Base):
         """
         return self._read(href)
 
-    def ClearOwnership(self):
+    def ClearOwnership(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the clearOwnership operation on the server.
 
         Clears ownership on a list of location ports.
+
+        clearOwnership(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -163,4 +193,6 @@ class Ports(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('clearOwnership', payload=payload, response_object=None)

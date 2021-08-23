@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PppoxRange(Base):
@@ -120,9 +121,11 @@ class PppoxRange(Base):
         'UnlimitedRedialAttempts': 'unlimitedRedialAttempts',
         'UseMagic': 'useMagic',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PppoxRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PppoxRange, self).__init__(parent, list_op)
 
     @property
     def AcMac(self):
@@ -136,7 +139,10 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acmac_0d42b19631c076c1f85ba68c7c3a929c import AcMac
-        return AcMac(self)
+        if self._properties.get('AcMac', None) is not None:
+            return self._properties.get('AcMac')
+        else:
+            return AcMac(self)
 
     @property
     def AcName(self):
@@ -150,7 +156,10 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acname_3a8e01734093193dda3ed571f59b74ab import AcName
-        return AcName(self)
+        if self._properties.get('AcName', None) is not None:
+            return self._properties.get('AcName')
+        else:
+            return AcName(self)
 
     @property
     def DomainGroup(self):
@@ -164,10 +173,14 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_497e5f99c9c81e00bebc05512ef50263 import DomainGroup
-        return DomainGroup(self)
+        if self._properties.get('DomainGroup', None) is not None:
+            return self._properties.get('DomainGroup')
+        else:
+            return DomainGroup(self)
 
     @property
     def AcName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,10 +189,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcName'])
     @AcName.setter
     def AcName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcName'], value)
 
     @property
     def AcOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,10 +203,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcOptions'])
     @AcOptions.setter
     def AcOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcOptions'], value)
 
     @property
     def ActualRateDownstream(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -200,10 +217,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActualRateDownstream'])
     @ActualRateDownstream.setter
     def ActualRateDownstream(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActualRateDownstream'], value)
 
     @property
     def ActualRateUpstream(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -212,10 +231,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActualRateUpstream'])
     @ActualRateUpstream.setter
     def ActualRateUpstream(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActualRateUpstream'], value)
 
     @property
     def AgentCircuitId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,10 +245,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AgentCircuitId'])
     @AgentCircuitId.setter
     def AgentCircuitId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AgentCircuitId'], value)
 
     @property
     def AgentRemoteId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -236,10 +259,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AgentRemoteId'])
     @AgentRemoteId.setter
     def AgentRemoteId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AgentRemoteId'], value)
 
     @property
     def AuthOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -248,10 +273,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthOptions'])
     @AuthOptions.setter
     def AuthOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthOptions'], value)
 
     @property
     def AuthRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -260,10 +287,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthRetries'])
     @AuthRetries.setter
     def AuthRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthRetries'], value)
 
     @property
     def AuthTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -272,10 +301,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthTimeout'])
     @AuthTimeout.setter
     def AuthTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthTimeout'], value)
 
     @property
     def AuthType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -284,10 +315,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthType'])
     @AuthType.setter
     def AuthType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthType'], value)
 
     @property
     def ChapName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -296,10 +329,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChapName'])
     @ChapName.setter
     def ChapName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChapName'], value)
 
     @property
     def ChapSecret(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -308,10 +343,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ChapSecret'])
     @ChapSecret.setter
     def ChapSecret(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ChapSecret'], value)
 
     @property
     def ClientBaseIid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -320,10 +357,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientBaseIid'])
     @ClientBaseIid.setter
     def ClientBaseIid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientBaseIid'], value)
 
     @property
     def ClientBaseIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -332,10 +371,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientBaseIp'])
     @ClientBaseIp.setter
     def ClientBaseIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientBaseIp'], value)
 
     @property
     def ClientDnsOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -344,10 +385,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientDnsOptions'])
     @ClientDnsOptions.setter
     def ClientDnsOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientDnsOptions'], value)
 
     @property
     def ClientIidIncr(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -356,10 +399,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientIidIncr'])
     @ClientIidIncr.setter
     def ClientIidIncr(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientIidIncr'], value)
 
     @property
     def ClientIpIncr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -368,10 +413,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientIpIncr'])
     @ClientIpIncr.setter
     def ClientIpIncr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientIpIncr'], value)
 
     @property
     def ClientNetmask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -380,10 +427,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientNetmask'])
     @ClientNetmask.setter
     def ClientNetmask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientNetmask'], value)
 
     @property
     def ClientNetmaskOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -392,10 +441,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientNetmaskOptions'])
     @ClientNetmaskOptions.setter
     def ClientNetmaskOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientNetmaskOptions'], value)
 
     @property
     def ClientPrimaryDnsAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -404,10 +455,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientPrimaryDnsAddress'])
     @ClientPrimaryDnsAddress.setter
     def ClientPrimaryDnsAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientPrimaryDnsAddress'], value)
 
     @property
     def ClientSecondaryDnsAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -416,10 +469,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientSecondaryDnsAddress'])
     @ClientSecondaryDnsAddress.setter
     def ClientSecondaryDnsAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientSecondaryDnsAddress'], value)
 
     @property
     def ClientSignalIwf(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -428,10 +483,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientSignalIwf'])
     @ClientSignalIwf.setter
     def ClientSignalIwf(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientSignalIwf'], value)
 
     @property
     def ClientSignalLoopChar(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -440,10 +497,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientSignalLoopChar'])
     @ClientSignalLoopChar.setter
     def ClientSignalLoopChar(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientSignalLoopChar'], value)
 
     @property
     def ClientSignalLoopEncapsulation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -452,10 +511,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientSignalLoopEncapsulation'])
     @ClientSignalLoopEncapsulation.setter
     def ClientSignalLoopEncapsulation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientSignalLoopEncapsulation'], value)
 
     @property
     def ClientSignalLoopId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -464,10 +525,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientSignalLoopId'])
     @ClientSignalLoopId.setter
     def ClientSignalLoopId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientSignalLoopId'], value)
 
     @property
     def DataLink(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -476,10 +539,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataLink'])
     @DataLink.setter
     def DataLink(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataLink'], value)
 
     @property
     def DnsServerList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -488,10 +553,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DnsServerList'])
     @DnsServerList.setter
     def DnsServerList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DnsServerList'], value)
 
     @property
     def DomainList(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -500,10 +567,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DomainList'])
     @DomainList.setter
     def DomainList(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DomainList'], value)
 
     @property
     def EchoReqInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -512,10 +581,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoReqInterval'])
     @EchoReqInterval.setter
     def EchoReqInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoReqInterval'], value)
 
     @property
     def EnableDnsRa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -524,10 +595,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDnsRa'])
     @EnableDnsRa.setter
     def EnableDnsRa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDnsRa'], value)
 
     @property
     def EnableDomainGroups(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -536,10 +609,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDomainGroups'])
     @EnableDomainGroups.setter
     def EnableDomainGroups(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDomainGroups'], value)
 
     @property
     def EnableEchoReq(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -548,10 +623,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEchoReq'])
     @EnableEchoReq.setter
     def EnableEchoReq(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEchoReq'], value)
 
     @property
     def EnableEchoRsp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -560,10 +637,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEchoRsp'])
     @EnableEchoRsp.setter
     def EnableEchoRsp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEchoRsp'], value)
 
     @property
     def EnableIncludeTagInPadi(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -572,10 +651,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPadi'])
     @EnableIncludeTagInPadi.setter
     def EnableIncludeTagInPadi(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPadi'], value)
 
     @property
     def EnableIncludeTagInPado(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -584,10 +665,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPado'])
     @EnableIncludeTagInPado.setter
     def EnableIncludeTagInPado(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPado'], value)
 
     @property
     def EnableIncludeTagInPadr(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -596,10 +679,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPadr'])
     @EnableIncludeTagInPadr.setter
     def EnableIncludeTagInPadr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPadr'], value)
 
     @property
     def EnableIncludeTagInPads(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -608,10 +693,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPads'])
     @EnableIncludeTagInPads.setter
     def EnableIncludeTagInPads(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncludeTagInPads'], value)
 
     @property
     def EnableIntermediateAgentTags(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -620,10 +707,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIntermediateAgentTags'])
     @EnableIntermediateAgentTags.setter
     def EnableIntermediateAgentTags(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIntermediateAgentTags'], value)
 
     @property
     def EnableMaxPayload(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -632,10 +721,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMaxPayload'])
     @EnableMaxPayload.setter
     def EnableMaxPayload(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMaxPayload'], value)
 
     @property
     def EnableMru(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -644,10 +735,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMru'])
     @EnableMru.setter
     def EnableMru(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMru'], value)
 
     @property
     def EnableMruNegotiation(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -656,10 +749,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMruNegotiation'])
     @EnableMruNegotiation.setter
     def EnableMruNegotiation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMruNegotiation'], value)
 
     @property
     def EnablePasswordCheck(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -668,10 +763,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePasswordCheck'])
     @EnablePasswordCheck.setter
     def EnablePasswordCheck(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePasswordCheck'], value)
 
     @property
     def EnableRedial(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -680,10 +777,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRedial'])
     @EnableRedial.setter
     def EnableRedial(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRedial'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -692,10 +791,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Encaps1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -704,10 +805,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encaps1'])
     @Encaps1.setter
     def Encaps1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encaps1'], value)
 
     @property
     def Encaps2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -716,10 +819,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encaps2'])
     @Encaps2.setter
     def Encaps2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encaps2'], value)
 
     @property
     def Ipv6AddrPrefixLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -728,10 +833,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddrPrefixLen'])
     @Ipv6AddrPrefixLen.setter
     def Ipv6AddrPrefixLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6AddrPrefixLen'], value)
 
     @property
     def Ipv6PoolPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -740,10 +847,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefix'])
     @Ipv6PoolPrefix.setter
     def Ipv6PoolPrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefix'], value)
 
     @property
     def Ipv6PoolPrefixLen(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -752,10 +861,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefixLen'])
     @Ipv6PoolPrefixLen.setter
     def Ipv6PoolPrefixLen(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6PoolPrefixLen'], value)
 
     @property
     def LcpOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -764,10 +875,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LcpOptions'])
     @LcpOptions.setter
     def LcpOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LcpOptions'], value)
 
     @property
     def LcpRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -776,10 +889,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LcpRetries'])
     @LcpRetries.setter
     def LcpRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LcpRetries'], value)
 
     @property
     def LcpTermRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -788,10 +903,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LcpTermRetries'])
     @LcpTermRetries.setter
     def LcpTermRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LcpTermRetries'], value)
 
     @property
     def LcpTermTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -800,10 +917,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LcpTermTimeout'])
     @LcpTermTimeout.setter
     def LcpTermTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LcpTermTimeout'], value)
 
     @property
     def LcpTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -812,10 +931,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LcpTimeout'])
     @LcpTimeout.setter
     def LcpTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LcpTimeout'], value)
 
     @property
     def MaxPayload(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -824,10 +945,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxPayload'])
     @MaxPayload.setter
     def MaxPayload(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxPayload'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -836,10 +959,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -848,10 +973,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NcpRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -860,10 +987,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NcpRetries'])
     @NcpRetries.setter
     def NcpRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NcpRetries'], value)
 
     @property
     def NcpTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -872,10 +1001,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NcpTimeout'])
     @NcpTimeout.setter
     def NcpTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NcpTimeout'], value)
 
     @property
     def NcpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -884,10 +1015,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NcpType'])
     @NcpType.setter
     def NcpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NcpType'], value)
 
     @property
     def NumSessions(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -896,10 +1029,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumSessions'])
     @NumSessions.setter
     def NumSessions(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumSessions'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -909,6 +1044,7 @@ class PppoxRange(Base):
 
     @property
     def PadiRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -917,10 +1053,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PadiRetries'])
     @PadiRetries.setter
     def PadiRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PadiRetries'], value)
 
     @property
     def PadiTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -929,10 +1067,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PadiTimeout'])
     @PadiTimeout.setter
     def PadiTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PadiTimeout'], value)
 
     @property
     def PadrRetries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -941,10 +1081,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PadrRetries'])
     @PadrRetries.setter
     def PadrRetries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PadrRetries'], value)
 
     @property
     def PadrTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -953,10 +1095,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PadrTimeout'])
     @PadrTimeout.setter
     def PadrTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PadrTimeout'], value)
 
     @property
     def PapPassword(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -965,10 +1109,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PapPassword'])
     @PapPassword.setter
     def PapPassword(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PapPassword'], value)
 
     @property
     def PapUser(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -977,10 +1123,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PapUser'])
     @PapUser.setter
     def PapUser(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PapUser'], value)
 
     @property
     def PppoeOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -989,10 +1137,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PppoeOptions'])
     @PppoeOptions.setter
     def PppoeOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PppoeOptions'], value)
 
     @property
     def RedialMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1001,10 +1151,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RedialMax'])
     @RedialMax.setter
     def RedialMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RedialMax'], value)
 
     @property
     def RedialTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1013,10 +1165,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RedialTimeout'])
     @RedialTimeout.setter
     def RedialTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RedialTimeout'], value)
 
     @property
     def ServerBaseIid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1025,10 +1179,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerBaseIid'])
     @ServerBaseIid.setter
     def ServerBaseIid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerBaseIid'], value)
 
     @property
     def ServerBaseIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1037,10 +1193,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerBaseIp'])
     @ServerBaseIp.setter
     def ServerBaseIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerBaseIp'], value)
 
     @property
     def ServerDnsOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1049,10 +1207,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerDnsOptions'])
     @ServerDnsOptions.setter
     def ServerDnsOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerDnsOptions'], value)
 
     @property
     def ServerIidIncr(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1061,10 +1221,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerIidIncr'])
     @ServerIidIncr.setter
     def ServerIidIncr(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerIidIncr'], value)
 
     @property
     def ServerIpIncr(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -1073,10 +1235,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerIpIncr'])
     @ServerIpIncr.setter
     def ServerIpIncr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerIpIncr'], value)
 
     @property
     def ServerNetmask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1085,10 +1249,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerNetmask'])
     @ServerNetmask.setter
     def ServerNetmask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerNetmask'], value)
 
     @property
     def ServerNetmaskOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1097,10 +1263,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerNetmaskOptions'])
     @ServerNetmaskOptions.setter
     def ServerNetmaskOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerNetmaskOptions'], value)
 
     @property
     def ServerPrimaryDnsAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1109,10 +1277,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerPrimaryDnsAddress'])
     @ServerPrimaryDnsAddress.setter
     def ServerPrimaryDnsAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerPrimaryDnsAddress'], value)
 
     @property
     def ServerSecondaryDnsAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1121,10 +1291,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerSecondaryDnsAddress'])
     @ServerSecondaryDnsAddress.setter
     def ServerSecondaryDnsAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerSecondaryDnsAddress'], value)
 
     @property
     def ServerSignalIwf(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1133,10 +1305,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerSignalIwf'])
     @ServerSignalIwf.setter
     def ServerSignalIwf(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerSignalIwf'], value)
 
     @property
     def ServerSignalLoopChar(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1145,10 +1319,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerSignalLoopChar'])
     @ServerSignalLoopChar.setter
     def ServerSignalLoopChar(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerSignalLoopChar'], value)
 
     @property
     def ServerSignalLoopEncapsulation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1157,10 +1333,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerSignalLoopEncapsulation'])
     @ServerSignalLoopEncapsulation.setter
     def ServerSignalLoopEncapsulation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerSignalLoopEncapsulation'], value)
 
     @property
     def ServerSignalLoopId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1169,10 +1347,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerSignalLoopId'])
     @ServerSignalLoopId.setter
     def ServerSignalLoopId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerSignalLoopId'], value)
 
     @property
     def ServiceName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1181,10 +1361,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServiceName'])
     @ServiceName.setter
     def ServiceName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServiceName'], value)
 
     @property
     def ServiceOptions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1193,10 +1375,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServiceOptions'])
     @ServiceOptions.setter
     def ServiceOptions(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServiceOptions'], value)
 
     @property
     def UnlimitedRedialAttempts(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1205,10 +1389,12 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UnlimitedRedialAttempts'])
     @UnlimitedRedialAttempts.setter
     def UnlimitedRedialAttempts(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UnlimitedRedialAttempts'], value)
 
     @property
     def UseMagic(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1217,9 +1403,11 @@ class PppoxRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseMagic'])
     @UseMagic.setter
     def UseMagic(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseMagic'], value)
 
     def update(self, AcName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentCircuitId=None, AgentRemoteId=None, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIwf=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, DataLink=None, DnsServerList=None, DomainList=None, EchoReqInterval=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableIncludeTagInPadi=None, EnableIncludeTagInPado=None, EnableIncludeTagInPadr=None, EnableIncludeTagInPads=None, EnableIntermediateAgentTags=None, EnableMaxPayload=None, EnableMru=None, EnableMruNegotiation=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, Encaps1=None, Encaps2=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, MaxPayload=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NumSessions=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PppoeOptions=None, RedialMax=None, RedialTimeout=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, ServerSignalIwf=None, ServerSignalLoopChar=None, ServerSignalLoopEncapsulation=None, ServerSignalLoopId=None, ServiceName=None, ServiceOptions=None, UnlimitedRedialAttempts=None, UseMagic=None):
+        # type: (str, str, int, int, str, str, str, int, int, str, str, str, str, str, str, int, str, str, str, str, str, bool, bool, bool, bool, str, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, str, int, str, int, int, int, int, int, int, str, int, int, str, int, int, int, int, int, str, str, str, int, int, str, str, str, int, str, str, str, str, str, bool, bool, bool, bool, str, str, bool, bool) -> PppoxRange
         """Updates pppoxRange resource on the server.
 
         Args
@@ -1319,14 +1507,16 @@ class PppoxRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1339,13 +1529,15 @@ class PppoxRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -1359,13 +1551,15 @@ class PppoxRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

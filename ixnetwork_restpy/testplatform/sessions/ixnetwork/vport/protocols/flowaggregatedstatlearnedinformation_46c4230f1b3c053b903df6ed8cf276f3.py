@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowAggregatedStatLearnedInformation(Base):
@@ -109,12 +110,15 @@ class FlowAggregatedStatLearnedInformation(Base):
         'VlanMask': 'vlanMask',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowAggregatedStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowAggregatedStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def ArpDstHwAddr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,6 +128,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpDstHwAddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +138,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpDstIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,6 +148,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpDstIpv4AddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,6 +158,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpOpcode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -160,6 +168,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpSrcHwAddr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +178,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpSrcHwAddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,6 +188,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpSrcIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,6 +198,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ArpSrcIpv4AddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,6 +208,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def BytesCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -205,6 +218,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Cookie(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,6 +228,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def CookieMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,6 +238,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -232,6 +248,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -241,6 +258,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,6 +268,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -259,6 +278,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -268,6 +288,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def EthernetDestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -277,6 +298,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -286,6 +308,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def EthernetSourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -295,6 +318,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -304,6 +328,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -313,6 +338,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -322,6 +348,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ExperimenterField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -331,6 +358,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ExperimenterHashmask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -340,6 +368,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ExperimenterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -349,6 +378,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def FlowsCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -358,6 +388,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Icmpv6Code(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -367,6 +398,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Icmpv6Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -376,6 +408,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def InPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -385,6 +418,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -394,6 +428,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def IpEcn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -403,6 +438,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -412,6 +448,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -421,6 +458,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -430,6 +468,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -439,6 +478,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6DestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -448,6 +488,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6ExtHeader(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -457,6 +498,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6ExtHeaderMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -466,6 +508,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -475,6 +518,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6FlowLabelMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -484,6 +528,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6NdDll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -493,6 +538,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6NdSll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -502,6 +548,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6NdTarget(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -511,6 +558,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -520,6 +568,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Ipv6SourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -529,6 +578,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -538,6 +588,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -547,6 +598,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def Metadata(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -556,6 +608,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def MetadataMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -565,6 +618,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def MplsBos(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -574,6 +628,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -583,6 +638,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def MplsTc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -592,6 +648,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -601,6 +658,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def OutGroup(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -610,6 +668,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def OutPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -619,6 +678,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def PacketsCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -628,6 +688,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def PbbISid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -637,6 +698,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def PbbISidMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -646,6 +708,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def PhysicalInPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -655,6 +718,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -664,6 +728,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -673,6 +738,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def SctpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -682,6 +748,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def SctpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -691,6 +758,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TableId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -700,6 +768,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TcpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -709,6 +778,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TcpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -718,6 +788,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TransportDestinationIcmpCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -727,6 +798,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TransportSourceIcmpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -736,6 +808,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -745,6 +818,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def TunnelIdMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -754,6 +828,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def UdpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -763,6 +838,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def UdpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -772,6 +848,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -781,6 +858,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def VlanMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -790,6 +868,7 @@ class FlowAggregatedStatLearnedInformation(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -797,7 +876,21 @@ class FlowAggregatedStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
 
+    def add(self):
+        """Adds a new flowAggregatedStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved flowAggregatedStatLearnedInformation resources using find and the newly added flowAggregatedStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ArpDstHwAddr=None, ArpDstHwAddressMask=None, ArpDstIpv4Address=None, ArpDstIpv4AddressMask=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcHwAddressMask=None, ArpSrcIpv4Address=None, ArpSrcIpv4AddressMask=None, BytesCount=None, Cookie=None, CookieMask=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, FlowsCount=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, Latency=None, LocalIp=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NegotiatedVersion=None, OutGroup=None, OutPort=None, PacketsCount=None, PbbISid=None, PbbISidMask=None, PhysicalInPort=None, RemoteIp=None, ReplyState=None, SctpDestination=None, SctpSource=None, TableId=None, TcpDestination=None, TcpSource=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanMask=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, bool, str, int, str, str, str, str, str, str, str, str, str, str, int, int, str, str, str, str, str, str, str, int, str, str, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, str) -> FlowAggregatedStatLearnedInformation
         """Finds and retrieves flowAggregatedStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowAggregatedStatLearnedInformation resources from the server.

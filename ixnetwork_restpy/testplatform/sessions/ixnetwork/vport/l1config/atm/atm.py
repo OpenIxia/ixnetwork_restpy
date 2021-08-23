@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Atm(Base):
@@ -50,12 +51,20 @@ class Atm(Base):
         'SelectedSpeeds': 'selectedSpeeds',
         'TransmitClocking': 'transmitClocking',
     }
+    _SDM_ENUM_MAP = {
+        'cellHeader': ['nni', 'uni'],
+        'crcSize': ['crc16', 'crc32'],
+        'fillerCell': ['idle', 'unassigned'],
+        'interfaceType': ['oc12', 'oc3', 'stm1', 'stm4'],
+        'transmitClocking': ['external', 'internal', 'recovered'],
+    }
 
-    def __init__(self, parent):
-        super(Atm, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Atm, self).__init__(parent, list_op)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -65,6 +74,7 @@ class Atm(Base):
 
     @property
     def C2Expected(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,10 +83,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['C2Expected'])
     @C2Expected.setter
     def C2Expected(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['C2Expected'], value)
 
     @property
     def C2Tx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,10 +97,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['C2Tx'])
     @C2Tx.setter
     def C2Tx(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['C2Tx'], value)
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,6 +112,7 @@ class Atm(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,6 +122,7 @@ class Atm(Base):
 
     @property
     def CellHeader(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,10 +131,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CellHeader'])
     @CellHeader.setter
     def CellHeader(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CellHeader'], value)
 
     @property
     def CosetActive(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -127,10 +145,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CosetActive'])
     @CosetActive.setter
     def CosetActive(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CosetActive'], value)
 
     @property
     def CrcSize(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,10 +159,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CrcSize'])
     @CrcSize.setter
     def CrcSize(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CrcSize'], value)
 
     @property
     def DataScrambling(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -151,10 +173,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataScrambling'])
     @DataScrambling.setter
     def DataScrambling(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataScrambling'], value)
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -163,10 +187,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def FillerCell(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -175,10 +201,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FillerCell'])
     @FillerCell.setter
     def FillerCell(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FillerCell'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,10 +215,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -199,10 +229,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def PatternMatching(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -211,10 +243,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PatternMatching'])
     @PatternMatching.setter
     def PatternMatching(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PatternMatching'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -223,10 +257,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def ReassemblyTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -235,10 +271,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReassemblyTimeout'])
     @ReassemblyTimeout.setter
     def ReassemblyTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReassemblyTimeout'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -247,10 +285,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def TransmitClocking(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -259,9 +299,11 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     def update(self, C2Expected=None, C2Tx=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, SelectedSpeeds=None, TransmitClocking=None):
+        # type: (int, int, str, bool, str, bool, bool, str, str, bool, bool, int, int, List[str], str) -> Atm
         """Updates atm resource on the server.
 
         Args

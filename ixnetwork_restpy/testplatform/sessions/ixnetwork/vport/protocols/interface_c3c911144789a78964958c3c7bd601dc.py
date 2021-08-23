@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -49,12 +50,15 @@ class Interface(Base):
         'Reliability': 'reliability',
         'SplitHorizon': 'splitHorizon',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def Bandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +67,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
     @Bandwidth.setter
     def Bandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
 
     @property
     def Delay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,10 +81,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Delay'])
     @Delay.setter
     def Delay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Delay'], value)
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +95,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,10 +109,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def HelloInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,10 +123,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
     @HelloInterval.setter
     def HelloInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
 
     @property
     def HoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +137,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HoldTime'])
     @HoldTime.setter
     def HoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HoldTime'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -135,10 +151,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def InterfaceIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -147,10 +165,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +179,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +193,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     @property
     def Load(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +207,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Load'])
     @Load.setter
     def Load(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Load'], value)
 
     @property
     def MaxTlvPerPacket(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +221,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxTlvPerPacket'])
     @MaxTlvPerPacket.setter
     def MaxTlvPerPacket(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxTlvPerPacket'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -207,10 +235,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def Reliability(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,10 +249,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Reliability'])
     @Reliability.setter
     def Reliability(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Reliability'], value)
 
     @property
     def SplitHorizon(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -231,9 +263,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SplitHorizon'])
     @SplitHorizon.setter
     def SplitHorizon(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SplitHorizon'], value)
 
     def update(self, Bandwidth=None, Delay=None, EnableBfdRegistration=None, Enabled=None, HelloInterval=None, HoldTime=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, Load=None, MaxTlvPerPacket=None, Mtu=None, Reliability=None, SplitHorizon=None):
+        # type: (int, int, bool, bool, int, int, str, int, str, str, int, int, int, int, bool) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -261,6 +295,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Bandwidth=None, Delay=None, EnableBfdRegistration=None, Enabled=None, HelloInterval=None, HoldTime=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, Load=None, MaxTlvPerPacket=None, Mtu=None, Reliability=None, SplitHorizon=None):
+        # type: (int, int, bool, bool, int, int, str, int, str, str, int, int, int, int, bool) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -302,6 +337,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, Bandwidth=None, Delay=None, EnableBfdRegistration=None, Enabled=None, HelloInterval=None, HoldTime=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, Load=None, MaxTlvPerPacket=None, Mtu=None, Reliability=None, SplitHorizon=None):
+        # type: (int, int, bool, bool, int, int, str, int, str, str, int, int, int, int, bool) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
@@ -354,10 +390,16 @@ class Interface(Base):
         """
         return self._read(href)
 
-    def GetInterfaceAccessorIfaceList(self):
+    def GetInterfaceAccessorIfaceList(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
         Gets the interface accesor Iface list.
+
+        getInterfaceAccessorIfaceList(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -365,4 +407,6 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Instructions(Base):
@@ -43,9 +44,12 @@ class Instructions(Base):
         'MeterId': 'meterId',
         'TableId': 'tableId',
     }
+    _SDM_ENUM_MAP = {
+        'instructionType': ['meter', 'applyActions', 'clearActions', 'experimenter', 'goToTable', 'writeActions', 'writeMetadata'],
+    }
 
-    def __init__(self, parent):
-        super(Instructions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Instructions, self).__init__(parent, list_op)
 
     @property
     def InstructionActions(self):
@@ -59,10 +63,14 @@ class Instructions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_9a3510fc7a5ebd848e6c88855a210c3c import InstructionActions
-        return InstructionActions(self)
+        if self._properties.get('InstructionActions', None) is not None:
+            return self._properties.get('InstructionActions')
+        else:
+            return InstructionActions(self)
 
     @property
     def Experimenter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -71,10 +79,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
     @Experimenter.setter
     def Experimenter(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +93,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
     @ExperimenterData.setter
     def ExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +107,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
 
     @property
     def InstructionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,10 +121,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionType'])
     @InstructionType.setter
     def InstructionType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionType'], value)
 
     @property
     def Metadata(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,10 +135,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metadata'])
     @Metadata.setter
     def Metadata(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metadata'], value)
 
     @property
     def MetadataInHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +149,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MetadataInHex'])
     @MetadataInHex.setter
     def MetadataInHex(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MetadataInHex'], value)
 
     @property
     def MetadataMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,10 +163,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MetadataMask'])
     @MetadataMask.setter
     def MetadataMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MetadataMask'], value)
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +177,12 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterId'])
     @MeterId.setter
     def MeterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterId'], value)
 
     @property
     def TableId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,9 +191,11 @@ class Instructions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableId'])
     @TableId.setter
     def TableId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
 
     def update(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+        # type: (int, str, int, str, str, str, str, int, int) -> Instructions
         """Updates instructions resource on the server.
 
         Args
@@ -191,6 +217,7 @@ class Instructions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+        # type: (int, str, int, str, str, str, str, int, int) -> Instructions
         """Adds a new instructions resource on the server and adds it to the container.
 
         Args
@@ -226,6 +253,7 @@ class Instructions(Base):
         self._delete()
 
     def find(self, Experimenter=None, ExperimenterData=None, ExperimenterDataLength=None, InstructionType=None, Metadata=None, MetadataInHex=None, MetadataMask=None, MeterId=None, TableId=None):
+        # type: (int, str, int, str, str, str, str, int, int) -> Instructions
         """Finds and retrieves instructions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve instructions resources from the server.

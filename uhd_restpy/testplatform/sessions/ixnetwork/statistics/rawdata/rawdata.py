@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RawData(Base):
@@ -35,9 +36,11 @@ class RawData(Base):
         'LastRawDataFolder': 'lastRawDataFolder',
         'Path': 'path',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RawData, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RawData, self).__init__(parent, list_op)
 
     @property
     def Statistic(self):
@@ -51,10 +54,14 @@ class RawData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.statistic.statistic import Statistic
-        return Statistic(self)
+        if self._properties.get('Statistic', None) is not None:
+            return self._properties.get('Statistic')
+        else:
+            return Statistic(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class RawData(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LastRawDataFolder(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +85,7 @@ class RawData(Base):
 
     @property
     def Path(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,9 +94,11 @@ class RawData(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Path'])
     @Path.setter
     def Path(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Path'], value)
 
     def update(self, Enabled=None, Path=None):
+        # type: (bool, str) -> RawData
         """Updates rawData resource on the server.
 
         Args
@@ -100,10 +112,15 @@ class RawData(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def StopCollection(self):
+    def StopCollection(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopCollection operation on the server.
 
         NOT DEFINED
+
+        stopCollection(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -111,4 +128,6 @@ class RawData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopCollection', payload=payload, response_object=None)

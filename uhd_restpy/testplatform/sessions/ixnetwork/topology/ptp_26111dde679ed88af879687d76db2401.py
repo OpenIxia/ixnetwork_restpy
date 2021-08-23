@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ptp(Base):
@@ -187,9 +188,14 @@ class Ptp(Base):
         'TxTwoStepCalibration': 'txTwoStepCalibration',
         'UpdateTime': 'updateTime',
     }
+    _SDM_ENUM_MAP = {
+        'avnuMode': ['aVNU_NA', 'aVNU_GPTP'],
+        'logCleanUpOption': ['notClean', 'clean'],
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ptp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ptp, self).__init__(parent, list_op)
 
     @property
     def AtoiTLVList(self):
@@ -203,7 +209,10 @@ class Ptp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.atoitlvlist_5c4e305687043a6232999175d09f7f65 import AtoiTLVList
-        return AtoiTLVList(self)._select()
+        if self._properties.get('AtoiTLVList', None) is not None:
+            return self._properties.get('AtoiTLVList')
+        else:
+            return AtoiTLVList(self)._select()
 
     @property
     def PtpNegBehaveList(self):
@@ -217,10 +226,14 @@ class Ptp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ptpnegbehavelist_95420ff08c49e28cbca41e3d66ac6215 import PtpNegBehaveList
-        return PtpNegBehaveList(self)._select()
+        if self._properties.get('PtpNegBehaveList', None) is not None:
+            return self._properties.get('PtpNegBehaveList')
+        else:
+            return PtpNegBehaveList(self)._select()
 
     @property
     def AllowedFaults(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +244,7 @@ class Ptp(Base):
 
     @property
     def AllowedLostResponse(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +255,7 @@ class Ptp(Base):
 
     @property
     def AlternateMasterFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +266,7 @@ class Ptp(Base):
 
     @property
     def AnnounceCurrentUtcOffsetValid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -261,6 +277,7 @@ class Ptp(Base):
 
     @property
     def AnnounceDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -271,6 +288,7 @@ class Ptp(Base):
 
     @property
     def AnnounceFrequencyTraceable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +299,7 @@ class Ptp(Base):
 
     @property
     def AnnounceLeap59(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -291,6 +310,7 @@ class Ptp(Base):
 
     @property
     def AnnounceLeap61(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -301,6 +321,7 @@ class Ptp(Base):
 
     @property
     def AnnouncePtpTimescale(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -311,6 +332,7 @@ class Ptp(Base):
 
     @property
     def AnnounceReceiptTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -321,6 +343,7 @@ class Ptp(Base):
 
     @property
     def AnnounceTimeTraceable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -331,6 +354,7 @@ class Ptp(Base):
 
     @property
     def AtoiTlvCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -339,10 +363,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AtoiTlvCount'])
     @AtoiTlvCount.setter
     def AtoiTlvCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AtoiTlvCount'], value)
 
     @property
     def AvnuMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -351,10 +377,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AvnuMode'])
     @AvnuMode.setter
     def AvnuMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AvnuMode'], value)
 
     @property
     def Bmca(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -365,6 +393,7 @@ class Ptp(Base):
 
     @property
     def ClockAccuracy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -375,6 +404,7 @@ class Ptp(Base):
 
     @property
     def ClockClass(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -385,6 +415,7 @@ class Ptp(Base):
 
     @property
     def ClockIdentity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -395,6 +426,7 @@ class Ptp(Base):
 
     @property
     def CommunicationMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -405,18 +437,21 @@ class Ptp(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -426,6 +461,7 @@ class Ptp(Base):
 
     @property
     def CumulativeScaledRateOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +472,7 @@ class Ptp(Base):
 
     @property
     def CurrentLocalOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -446,6 +483,7 @@ class Ptp(Base):
 
     @property
     def CurrentUtcOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -456,6 +494,7 @@ class Ptp(Base):
 
     @property
     def CustomClockId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -466,6 +505,7 @@ class Ptp(Base):
 
     @property
     def DaylightSaving(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -476,6 +516,7 @@ class Ptp(Base):
 
     @property
     def DefaultSystemFrameRateDenominator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -486,6 +527,7 @@ class Ptp(Base):
 
     @property
     def DefaultSystemFrameRateNumerator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -496,6 +538,7 @@ class Ptp(Base):
 
     @property
     def DelayAsymmetry(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -506,6 +549,7 @@ class Ptp(Base):
 
     @property
     def DelayMechanism(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -516,6 +560,7 @@ class Ptp(Base):
 
     @property
     def DelayReqDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -526,6 +571,7 @@ class Ptp(Base):
 
     @property
     def DelayReqOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -536,6 +582,7 @@ class Ptp(Base):
 
     @property
     def DelayReqResidenceTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -546,6 +593,7 @@ class Ptp(Base):
 
     @property
     def DelayReqSpread(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -556,6 +604,7 @@ class Ptp(Base):
 
     @property
     def DelayRespDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -566,6 +615,7 @@ class Ptp(Base):
 
     @property
     def DelayRespReceiptTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -576,6 +626,7 @@ class Ptp(Base):
 
     @property
     def DelayRespResidenceTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -586,6 +637,7 @@ class Ptp(Base):
 
     @property
     def DelayResponseDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -596,6 +648,7 @@ class Ptp(Base):
 
     @property
     def DelayResponseDelayInsertionRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -606,6 +659,7 @@ class Ptp(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -615,6 +669,7 @@ class Ptp(Base):
 
     @property
     def Domain(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -625,6 +680,7 @@ class Ptp(Base):
 
     @property
     def DropMalformed(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -635,6 +691,7 @@ class Ptp(Base):
 
     @property
     def DropSignalReqAnnounce(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -645,6 +702,7 @@ class Ptp(Base):
 
     @property
     def DropSignalReqDelayResp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -655,6 +713,7 @@ class Ptp(Base):
 
     @property
     def DropSignalReqSync(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -665,6 +724,7 @@ class Ptp(Base):
 
     @property
     def EnableATOITlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -673,10 +733,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableATOITlv'])
     @EnableATOITlv.setter
     def EnableATOITlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableATOITlv'], value)
 
     @property
     def EnableCmlds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -685,10 +747,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCmlds'])
     @EnableCmlds.setter
     def EnableCmlds(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCmlds'], value)
 
     @property
     def EnableNegativeTesting(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -697,6 +761,7 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNegativeTesting'])
     @EnableNegativeTesting.setter
     def EnableNegativeTesting(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNegativeTesting'], value)
 
     @property
@@ -704,12 +769,13 @@ class Ptp(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def FolderPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -720,6 +786,7 @@ class Ptp(Base):
 
     @property
     def FollowUpBadCrcRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -730,6 +797,7 @@ class Ptp(Base):
 
     @property
     def FollowUpDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -740,6 +808,7 @@ class Ptp(Base):
 
     @property
     def FollowUpDelayInsertionRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -750,6 +819,7 @@ class Ptp(Base):
 
     @property
     def FollowUpDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -760,6 +830,7 @@ class Ptp(Base):
 
     @property
     def FollowUpResidenceTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -770,6 +841,7 @@ class Ptp(Base):
 
     @property
     def Frequency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -778,10 +850,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Frequency'])
     @Frequency.setter
     def Frequency(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Frequency'], value)
 
     @property
     def GPTPCapableReceiptTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -792,6 +866,7 @@ class Ptp(Base):
 
     @property
     def GmTimeBaseIndicator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -802,6 +877,7 @@ class Ptp(Base):
 
     @property
     def GrandmasterID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -812,6 +888,7 @@ class Ptp(Base):
 
     @property
     def GrandmasterIdentity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -822,6 +899,7 @@ class Ptp(Base):
 
     @property
     def GrantDelayRespDurationInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -832,6 +910,7 @@ class Ptp(Base):
 
     @property
     def GrantSyncDurationInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -842,6 +921,7 @@ class Ptp(Base):
 
     @property
     def GrantUnicastDurationInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -852,6 +932,7 @@ class Ptp(Base):
 
     @property
     def HandleAnnounceTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -862,6 +943,7 @@ class Ptp(Base):
 
     @property
     def HandleCancelTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -872,6 +954,7 @@ class Ptp(Base):
 
     @property
     def JumpSeconds(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -882,6 +965,7 @@ class Ptp(Base):
 
     @property
     def LastGmPhaseChange(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -892,6 +976,7 @@ class Ptp(Base):
 
     @property
     def LeapSecondJump(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -902,6 +987,7 @@ class Ptp(Base):
 
     @property
     def LearnPortId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -912,6 +998,7 @@ class Ptp(Base):
 
     @property
     def LogAnnounceInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -922,6 +1009,7 @@ class Ptp(Base):
 
     @property
     def LogCleanUpOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -930,10 +1018,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogCleanUpOption'])
     @LogCleanUpOption.setter
     def LogCleanUpOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogCleanUpOption'], value)
 
     @property
     def LogDelayReqInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -944,6 +1034,7 @@ class Ptp(Base):
 
     @property
     def LogFileAge(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -952,10 +1043,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogFileAge'])
     @LogFileAge.setter
     def LogFileAge(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogFileAge'], value)
 
     @property
     def LogFuturePacketInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -966,6 +1059,7 @@ class Ptp(Base):
 
     @property
     def LogManagementMsgInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -976,6 +1070,7 @@ class Ptp(Base):
 
     @property
     def LogSignallingInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -986,6 +1081,7 @@ class Ptp(Base):
 
     @property
     def LogSyncInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -996,6 +1092,7 @@ class Ptp(Base):
 
     @property
     def MasterClockId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1006,6 +1103,7 @@ class Ptp(Base):
 
     @property
     def MasterCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1016,6 +1114,7 @@ class Ptp(Base):
 
     @property
     def MasterIpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1026,6 +1125,7 @@ class Ptp(Base):
 
     @property
     def MasterIpIncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1036,6 +1136,7 @@ class Ptp(Base):
 
     @property
     def MasterIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1046,6 +1147,7 @@ class Ptp(Base):
 
     @property
     def MasterIpv6IncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1056,6 +1158,7 @@ class Ptp(Base):
 
     @property
     def MasterLockingStatus(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1066,6 +1169,7 @@ class Ptp(Base):
 
     @property
     def MasterMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1076,6 +1180,7 @@ class Ptp(Base):
 
     @property
     def MasterMacIncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1086,6 +1191,7 @@ class Ptp(Base):
 
     @property
     def MeanLinkDelayThreshold(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1096,6 +1202,7 @@ class Ptp(Base):
 
     @property
     def MulticastAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1106,6 +1213,7 @@ class Ptp(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1114,10 +1222,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1126,10 +1236,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NanosecondsPerSecond(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1140,6 +1252,7 @@ class Ptp(Base):
 
     @property
     def NotSlave(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1150,6 +1263,7 @@ class Ptp(Base):
 
     @property
     def NumRecords(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1160,6 +1274,7 @@ class Ptp(Base):
 
     @property
     def NumberOFMsgs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1168,10 +1283,12 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOFMsgs'])
     @NumberOFMsgs.setter
     def NumberOFMsgs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOFMsgs'], value)
 
     @property
     def OffsetBaseddebuggabilityEnabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1182,6 +1299,7 @@ class Ptp(Base):
 
     @property
     def OffsetLimit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1192,6 +1310,7 @@ class Ptp(Base):
 
     @property
     def OffsetScaledLogVariance(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1202,6 +1321,7 @@ class Ptp(Base):
 
     @property
     def OneWay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1212,6 +1332,7 @@ class Ptp(Base):
 
     @property
     def PDelayFollowUpDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1222,6 +1343,7 @@ class Ptp(Base):
 
     @property
     def PDelayFollowUpDelayInsertionRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1232,6 +1354,7 @@ class Ptp(Base):
 
     @property
     def PDelayFollowUpDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1242,6 +1365,7 @@ class Ptp(Base):
 
     @property
     def PDelayFollowUpResidenceTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1252,6 +1376,7 @@ class Ptp(Base):
 
     @property
     def PathTraceTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1262,6 +1387,7 @@ class Ptp(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1272,6 +1398,7 @@ class Ptp(Base):
 
     @property
     def PreviousJamLocalOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1282,6 +1409,7 @@ class Ptp(Base):
 
     @property
     def Priority1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1292,6 +1420,7 @@ class Ptp(Base):
 
     @property
     def Priority2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1302,6 +1431,7 @@ class Ptp(Base):
 
     @property
     def Profile(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1321,6 +1451,7 @@ class Ptp(Base):
 
     @property
     def RenewalInvited(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1331,6 +1462,7 @@ class Ptp(Base):
 
     @property
     def RequestAttempts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1341,6 +1473,7 @@ class Ptp(Base):
 
     @property
     def RequestHolddown(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1351,6 +1484,7 @@ class Ptp(Base):
 
     @property
     def RequestInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1361,6 +1495,7 @@ class Ptp(Base):
 
     @property
     def Reserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1371,6 +1506,7 @@ class Ptp(Base):
 
     @property
     def ReverseSync(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1381,6 +1517,7 @@ class Ptp(Base):
 
     @property
     def ReverseSyncIntervalPercent(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1391,6 +1528,7 @@ class Ptp(Base):
 
     @property
     def Role(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1401,6 +1539,7 @@ class Ptp(Base):
 
     @property
     def RxCalibration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1411,6 +1550,7 @@ class Ptp(Base):
 
     @property
     def ScaledLastGmFreqChange(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1421,6 +1561,7 @@ class Ptp(Base):
 
     @property
     def SendMulticastAnnounce(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1431,6 +1572,7 @@ class Ptp(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1440,6 +1582,7 @@ class Ptp(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1449,6 +1592,7 @@ class Ptp(Base):
 
     @property
     def SignalInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1459,6 +1603,7 @@ class Ptp(Base):
 
     @property
     def SignalUnicastHandling(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1469,6 +1614,7 @@ class Ptp(Base):
 
     @property
     def SignallingDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1479,6 +1625,7 @@ class Ptp(Base):
 
     @property
     def SimulateBoundary(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1489,6 +1636,7 @@ class Ptp(Base):
 
     @property
     def SimulateTransparent(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1499,6 +1647,7 @@ class Ptp(Base):
 
     @property
     def SlaveCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1509,6 +1658,7 @@ class Ptp(Base):
 
     @property
     def SlaveIpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1519,6 +1669,7 @@ class Ptp(Base):
 
     @property
     def SlaveIpIncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1529,6 +1680,7 @@ class Ptp(Base):
 
     @property
     def SlaveIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1539,6 +1691,7 @@ class Ptp(Base):
 
     @property
     def SlaveIpv6IncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1549,6 +1702,7 @@ class Ptp(Base):
 
     @property
     def SlaveMacAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1559,6 +1713,7 @@ class Ptp(Base):
 
     @property
     def SlaveMacIncrementBy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1569,14 +1724,16 @@ class Ptp(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -1590,6 +1747,7 @@ class Ptp(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1599,6 +1757,7 @@ class Ptp(Base):
 
     @property
     def StepMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1609,6 +1768,7 @@ class Ptp(Base):
 
     @property
     def StepsRemoved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1619,6 +1779,7 @@ class Ptp(Base):
 
     @property
     def StrictGrant(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1629,6 +1790,7 @@ class Ptp(Base):
 
     @property
     def SyncDropRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1639,6 +1801,7 @@ class Ptp(Base):
 
     @property
     def SyncReceiptTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1649,6 +1812,7 @@ class Ptp(Base):
 
     @property
     def SyncReceiptTimeoutgPTP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1659,6 +1823,7 @@ class Ptp(Base):
 
     @property
     def SyncResidenceTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1669,6 +1834,7 @@ class Ptp(Base):
 
     @property
     def TimeAddressFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1679,6 +1845,7 @@ class Ptp(Base):
 
     @property
     def TimeOfNextJam(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1689,6 +1856,7 @@ class Ptp(Base):
 
     @property
     def TimeOfNextJump(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1699,6 +1867,7 @@ class Ptp(Base):
 
     @property
     def TimeOfPreviousJam(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1709,6 +1878,7 @@ class Ptp(Base):
 
     @property
     def TimeSource(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1719,6 +1889,7 @@ class Ptp(Base):
 
     @property
     def TimestampOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1729,6 +1900,7 @@ class Ptp(Base):
 
     @property
     def TotalTimeInaccuracy(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1739,6 +1911,7 @@ class Ptp(Base):
 
     @property
     def TxCalibration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1749,6 +1922,7 @@ class Ptp(Base):
 
     @property
     def TxTwoStepCalibration(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1759,6 +1933,7 @@ class Ptp(Base):
 
     @property
     def UpdateTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1768,6 +1943,7 @@ class Ptp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UpdateTime']))
 
     def update(self, AtoiTlvCount=None, AvnuMode=None, ConnectedVia=None, EnableATOITlv=None, EnableCmlds=None, EnableNegativeTesting=None, Frequency=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
+        # type: (int, str, List[str], bool, bool, bool, int, str, int, int, str, int, List[str]) -> Ptp
         """Updates ptp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1777,7 +1953,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
@@ -1787,7 +1963,7 @@ class Ptp(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOFMsgs (number): Messages Count
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -1796,13 +1972,14 @@ class Ptp(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AtoiTlvCount=None, AvnuMode=None, ConnectedVia=None, EnableATOITlv=None, EnableCmlds=None, EnableNegativeTesting=None, Frequency=None, LogCleanUpOption=None, LogFileAge=None, Multiplier=None, Name=None, NumberOFMsgs=None, StackedLayers=None):
+        # type: (int, str, List[str], bool, bool, bool, int, str, int, int, str, int, List[str]) -> Ptp
         """Adds a new ptp resource on the server and adds it to the container.
 
         Args
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
@@ -1812,7 +1989,7 @@ class Ptp(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOFMsgs (number): Messages Count
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -1845,13 +2022,13 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Frequency (number): Frequency(N)
         - LogCleanUpOption (str(notClean | clean)): Debug Log Clean Up
         - LogFileAge (number): This field determines how old logs to be deleted.
@@ -1861,7 +2038,7 @@ class Ptp(Base):
         - PtpState (list(str[disabled | faulty | grandmaster | initializing | listening | master | passive | preMaster | slave | transparentGrandmaster | transparentMaster | uncalibrated])): Displays the current PTP State
         - SessionInfo (list(str[announceReceiptTimeout | aSCapable | delayRespReceiptTimeout | g82651Layer | g82751ClockAccuracy | g82751ClockClass | g82751Domain | g82751Layer | g82751LogVariance | g82751Priority1 | g82751Rates | g82751VLANs | gPTPCapable | gPTPLayer | handleAnnounceTlvUnckecked | multipleP2PResponses | noAnnounce | none | p2PMixedMode | pathTraceDropAnnounce | signalAnnounceTimeout | signalDelayRespTimeout | signalIntervalGrantDelayRespDuration | signalIntervalGrantDuration | signalIntervalGrantSyncDuration | signalSyncTimeout | sMPTELayer | syncReceiptTimeout | syncReceiptTimeoutgPTP])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -1892,6 +2069,267 @@ class Ptp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def GPtpSendSignaling(self, *args, **kwargs):
+        """Executes the gPtpSendSignaling operation on the server.
+
+        Send Signaling messages for the selected PTP IEEE 802.1AS items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        gPtpSendSignaling(LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool, async_operation=bool)list
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - LinkDelayInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a linkDelayInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - TimeSyncInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a timeSyncInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborRateRatio of type kBool
+        - ComputeNeighborPropDelay (bool): This parameter requires a computeNeighborPropDelay of type kBool
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        gPtpSendSignaling(LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool, SessionIndices=list, async_operation=bool)list
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - LinkDelayInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a linkDelayInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - TimeSyncInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a timeSyncInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborRateRatio of type kBool
+        - ComputeNeighborPropDelay (bool): This parameter requires a computeNeighborPropDelay of type kBool
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        gPtpSendSignaling(SessionIndices=string, LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool, async_operation=bool)list
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a linkDelayInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - LinkDelayInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a timeSyncInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - TimeSyncInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
+        - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a computeNeighborRateRatio of type kBool
+        - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborPropDelay of type kBool
+        - ComputeNeighborPropDelay (bool): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('gPtpSendSignaling', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendgPtpRevSignaling(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendgPtpRevSignaling operation on the server.
+
+        Send Signaling messages for the selected PTP IEEE 802.1AS Rev sessions.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendgPtpRevSignaling(Arg2=list, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=enum, Arg7=enum, Arg8=bool, Arg9=bool, Arg10=bool, async_operation=bool)list
+        --------------------------------------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group for the corresponding deviceinstances whose PTP sessions are used as the source of the signaling messages.
+        - Arg3 (str(message_Interval_Request_Tlv | gPTP_Capable_Message_Interval_Request_Tlv | both)): Desired Type Of Signaling Message Tlv
+        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
+        - Arg5 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
+        - Arg6 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
+        - Arg7 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired gPTP Capable Message Interval
+        - Arg8 (bool): computeNeighborRateRatio flag
+        - Arg9 (bool): computeNeighborPropDelay flag
+        - Arg10 (bool): oneStepReceiveCapable flag
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        sendgPtpRevSignaling(Arg2=enum, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=enum, Arg7=bool, Arg8=bool, Arg9=bool, async_operation=bool)list
+        --------------------------------------------------------------------------------------------------------------------------------------
+        - Arg2 (str(message_Interval_Request_Tlv | gPTP_Capable_Message_Interval_Request_Tlv | both)): Desired Type Of Signaling Message Tlv
+        - Arg3 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
+        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
+        - Arg5 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
+        - Arg6 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired gPTP Capable Message Interval
+        - Arg7 (bool): computeNeighborRateRatio flag
+        - Arg8 (bool): computeNeighborPropDelay flag
+        - Arg9 (bool): oneStepReceiveCapable flag
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendgPtpRevSignaling', payload=payload, response_object=None)
+
+    def SendgPtpSignaling(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendgPtpSignaling operation on the server.
+
+        Send Signaling messages for the selected PTP IEEE 802.1AS sessions.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendgPtpSignaling(Arg2=list, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=bool, Arg7=bool, async_operation=bool)list
+        -------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose PTP sessions are used as the source of the signaling messages.
+        - Arg3 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
+        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
+        - Arg5 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
+        - Arg6 (bool): computeNeighborRateRatio flag
+        - Arg7 (bool): computeNeighborPropDelay flag
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        sendgPtpSignaling(Arg2=enum, Arg3=enum, Arg4=enum, Arg5=bool, Arg6=bool, async_operation=bool)list
+        --------------------------------------------------------------------------------------------------
+        - Arg2 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
+        - Arg3 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
+        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
+        - Arg5 (bool): computeNeighborRateRatio flag
+        - Arg6 (bool): computeNeighborPropDelay flag
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendgPtpSignaling', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AllowedFaults=None, AllowedLostResponse=None, AlternateMasterFlag=None, AnnounceCurrentUtcOffsetValid=None, AnnounceDropRate=None, AnnounceFrequencyTraceable=None, AnnounceLeap59=None, AnnounceLeap61=None, AnnouncePtpTimescale=None, AnnounceReceiptTimeout=None, AnnounceTimeTraceable=None, Bmca=None, ClockAccuracy=None, ClockClass=None, ClockIdentity=None, CommunicationMode=None, CumulativeScaledRateOffset=None, CurrentLocalOffset=None, CurrentUtcOffset=None, CustomClockId=None, DaylightSaving=None, DefaultSystemFrameRateDenominator=None, DefaultSystemFrameRateNumerator=None, DelayAsymmetry=None, DelayMechanism=None, DelayReqDropRate=None, DelayReqOffset=None, DelayReqResidenceTime=None, DelayReqSpread=None, DelayRespDropRate=None, DelayRespReceiptTimeout=None, DelayRespResidenceTime=None, DelayResponseDelay=None, DelayResponseDelayInsertionRate=None, Domain=None, DropMalformed=None, DropSignalReqAnnounce=None, DropSignalReqDelayResp=None, DropSignalReqSync=None, FolderPath=None, FollowUpBadCrcRate=None, FollowUpDelay=None, FollowUpDelayInsertionRate=None, FollowUpDropRate=None, FollowUpResidenceTime=None, GPTPCapableReceiptTimeout=None, GmTimeBaseIndicator=None, GrandmasterID=None, GrandmasterIdentity=None, GrantDelayRespDurationInterval=None, GrantSyncDurationInterval=None, GrantUnicastDurationInterval=None, HandleAnnounceTlv=None, HandleCancelTlv=None, JumpSeconds=None, LastGmPhaseChange=None, LeapSecondJump=None, LearnPortId=None, LogAnnounceInterval=None, LogDelayReqInterval=None, LogFuturePacketInfo=None, LogManagementMsgInterval=None, LogSignallingInterval=None, LogSyncInterval=None, MasterClockId=None, MasterCount=None, MasterIpAddress=None, MasterIpIncrementBy=None, MasterIpv6Address=None, MasterIpv6IncrementBy=None, MasterLockingStatus=None, MasterMacAddress=None, MasterMacIncrementBy=None, MeanLinkDelayThreshold=None, MulticastAddress=None, NanosecondsPerSecond=None, NotSlave=None, NumRecords=None, OffsetBaseddebuggabilityEnabled=None, OffsetLimit=None, OffsetScaledLogVariance=None, OneWay=None, PDelayFollowUpDelay=None, PDelayFollowUpDelayInsertionRate=None, PDelayFollowUpDropRate=None, PDelayFollowUpResidenceTime=None, PathTraceTLV=None, PortNumber=None, PreviousJamLocalOffset=None, Priority1=None, Priority2=None, Profile=None, RenewalInvited=None, RequestAttempts=None, RequestHolddown=None, RequestInterval=None, Reserved=None, ReverseSync=None, ReverseSyncIntervalPercent=None, Role=None, RxCalibration=None, ScaledLastGmFreqChange=None, SendMulticastAnnounce=None, SignalInterval=None, SignalUnicastHandling=None, SignallingDropRate=None, SimulateBoundary=None, SimulateTransparent=None, SlaveCount=None, SlaveIpAddress=None, SlaveIpIncrementBy=None, SlaveIpv6Address=None, SlaveIpv6IncrementBy=None, SlaveMacAddress=None, SlaveMacIncrementBy=None, StepMode=None, StepsRemoved=None, StrictGrant=None, SyncDropRate=None, SyncReceiptTimeout=None, SyncReceiptTimeoutgPTP=None, SyncResidenceTime=None, TimeAddressFlags=None, TimeOfNextJam=None, TimeOfNextJump=None, TimeOfPreviousJam=None, TimeSource=None, TimestampOffset=None, TotalTimeInaccuracy=None, TxCalibration=None, TxTwoStepCalibration=None, UpdateTime=None):
         """Base class infrastructure that gets a list of ptp device ids encapsulated by this object.
@@ -2043,227 +2481,3 @@ class Ptp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def GPtpSendSignaling(self, *args, **kwargs):
-        """Executes the gPtpSendSignaling operation on the server.
-
-        Send Signaling messages for the selected PTP IEEE 802.1AS items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        gPtpSendSignaling(LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool, SessionIndices=list)list
-        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - LinkDelayInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a linkDelayInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - TimeSyncInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a timeSyncInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborRateRatio of type kBool
-        - ComputeNeighborPropDelay (bool): This parameter requires a computeNeighborPropDelay of type kBool
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        gPtpSendSignaling(LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool)list
-        ---------------------------------------------------------------------------------------------------------------------------------------------------------
-        - LinkDelayInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a linkDelayInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - TimeSyncInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a timeSyncInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborRateRatio of type kBool
-        - ComputeNeighborPropDelay (bool): This parameter requires a computeNeighborPropDelay of type kBool
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        gPtpSendSignaling(SessionIndices=string, LinkDelayInterval=enum, TimeSyncInterval=enum, AnnounceInterval=enum, ComputeNeighborRateRatio=bool, ComputeNeighborPropDelay=bool)list
-        --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a linkDelayInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - LinkDelayInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a timeSyncInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - TimeSyncInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a announceInterval of type kEnumValue=enumOpt-DoNotChange,enumOpt-Initial,enumOpt-Stop,enumOpt-V0_1_per_second_,enumOpt-V1_1_per_2_seconds_,enumOpt-V2_1_per_4_seconds_,enumOpt-V3_1_per_8_seconds_,enumOpt-V4_1_per_16_seconds_,enumOpt-V5_1_per_32_seconds_,enumOpt-V6_1_per_64_seconds_,enumOpt-V7_1_per_128_seconds_,enumOpt-V8_1_per_256_seconds_,enumOpt-V9_1_per_512_seconds_,enumOpt-Vneg1_2_per_second_,enumOpt-Vneg2_4_per_second_,enumOpt-Vneg3_8_per_second_,enumOpt-Vneg4_16_per_second_,enumOpt-Vneg5_32_per_second_,enumOpt-Vneg6_64_per_second_,enumOpt-Vneg7_128_per_second_,enumOpt-Vneg8_256_per_second_,enumOpt-Vneg9_512_per_second_
-        - AnnounceInterval (str(enumOpt-DoNotChange | enumOpt-Initial | enumOpt-Stop | enumOpt-V0_1_per_second_ | enumOpt-V1_1_per_2_seconds_ | enumOpt-V2_1_per_4_seconds_ | enumOpt-V3_1_per_8_seconds_ | enumOpt-V4_1_per_16_seconds_ | enumOpt-V5_1_per_32_seconds_ | enumOpt-V6_1_per_64_seconds_ | enumOpt-V7_1_per_128_seconds_ | enumOpt-V8_1_per_256_seconds_ | enumOpt-V9_1_per_512_seconds_ | enumOpt-Vneg1_2_per_second_ | enumOpt-Vneg2_4_per_second_ | enumOpt-Vneg3_8_per_second_ | enumOpt-Vneg4_16_per_second_ | enumOpt-Vneg5_32_per_second_ | enumOpt-Vneg6_64_per_second_ | enumOpt-Vneg7_128_per_second_ | enumOpt-Vneg8_256_per_second_ | enumOpt-Vneg9_512_per_second_)): This parameter requires a computeNeighborRateRatio of type kBool
-        - ComputeNeighborRateRatio (bool): This parameter requires a computeNeighborPropDelay of type kBool
-        - ComputeNeighborPropDelay (bool): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('gPtpSendSignaling', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def SendgPtpRevSignaling(self, *args, **kwargs):
-        """Executes the sendgPtpRevSignaling operation on the server.
-
-        Send Signaling messages for the selected PTP IEEE 802.1AS Rev sessions.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendgPtpRevSignaling(Arg2=list, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=enum, Arg7=enum, Arg8=bool, Arg9=bool, Arg10=bool)list
-        ----------------------------------------------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group for the corresponding deviceinstances whose PTP sessions are used as the source of the signaling messages.
-        - Arg3 (str(message_Interval_Request_Tlv | gPTP_Capable_Message_Interval_Request_Tlv | both)): Desired Type Of Signaling Message Tlv
-        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
-        - Arg5 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
-        - Arg6 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
-        - Arg7 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired gPTP Capable Message Interval
-        - Arg8 (bool): computeNeighborRateRatio flag
-        - Arg9 (bool): computeNeighborPropDelay flag
-        - Arg10 (bool): oneStepReceiveCapable flag
-        - Returns list(str): ID to associate each async action invocation
-
-        sendgPtpRevSignaling(Arg2=enum, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=enum, Arg7=bool, Arg8=bool, Arg9=bool)list
-        ----------------------------------------------------------------------------------------------------------------
-        - Arg2 (str(message_Interval_Request_Tlv | gPTP_Capable_Message_Interval_Request_Tlv | both)): Desired Type Of Signaling Message Tlv
-        - Arg3 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
-        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
-        - Arg5 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
-        - Arg6 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired gPTP Capable Message Interval
-        - Arg7 (bool): computeNeighborRateRatio flag
-        - Arg8 (bool): computeNeighborPropDelay flag
-        - Arg9 (bool): oneStepReceiveCapable flag
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendgPtpRevSignaling', payload=payload, response_object=None)
-
-    def SendgPtpSignaling(self, *args, **kwargs):
-        """Executes the sendgPtpSignaling operation on the server.
-
-        Send Signaling messages for the selected PTP IEEE 802.1AS sessions.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendgPtpSignaling(Arg2=list, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=bool, Arg7=bool)list
-        ---------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose PTP sessions are used as the source of the signaling messages.
-        - Arg3 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
-        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
-        - Arg5 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
-        - Arg6 (bool): computeNeighborRateRatio flag
-        - Arg7 (bool): computeNeighborPropDelay flag
-        - Returns list(str): ID to associate each async action invocation
-
-        sendgPtpSignaling(Arg2=enum, Arg3=enum, Arg4=enum, Arg5=bool, Arg6=bool)list
-        ----------------------------------------------------------------------------
-        - Arg2 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired linkDelayInterval
-        - Arg3 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired timeSyncInterval
-        - Arg4 (str(v0_1_per_second_ | v1_1_per_2_seconds_ | v2_1_per_4_seconds_ | v3_1_per_8_seconds_ | v4_1_per_16_seconds_ | v5_1_per_32_seconds_ | v6_1_per_64_seconds_ | v7_1_per_128_seconds_ | v8_1_per_256_seconds_ | v9_1_per_512_seconds_ | initial | stop | doNotChange | vneg9_512_per_second_ | vneg8_256_per_second_ | vneg7_128_per_second_ | vneg6_64_per_second_ | vneg5_32_per_second_ | vneg4_16_per_second_ | vneg3_8_per_second_ | vneg2_4_per_second_ | vneg1_2_per_second_)): Desired announceInterval
-        - Arg5 (bool): computeNeighborRateRatio flag
-        - Arg6 (bool): computeNeighborPropDelay flag
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendgPtpSignaling', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

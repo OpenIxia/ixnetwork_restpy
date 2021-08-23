@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisSRTunnelList(Base):
@@ -41,9 +42,11 @@ class IsisSRTunnelList(Base):
         'TunnelDescription': 'tunnelDescription',
         'UsingHeadEndNodePrefix': 'usingHeadEndNodePrefix',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisSRTunnelList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisSRTunnelList, self).__init__(parent, list_op)
 
     @property
     def IsisSegmentList(self):
@@ -57,7 +60,10 @@ class IsisSRTunnelList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissegmentlist_28066a67f7cf6594d73c8fed733b33f6 import IsisSegmentList
-        return IsisSegmentList(self)
+        if self._properties.get('IsisSegmentList', None) is not None:
+            return self._properties.get('IsisSegmentList')
+        else:
+            return IsisSegmentList(self)
 
     @property
     def Tag(self):
@@ -71,10 +77,14 @@ class IsisSRTunnelList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -85,6 +95,7 @@ class IsisSRTunnelList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +105,7 @@ class IsisSRTunnelList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +115,7 @@ class IsisSRTunnelList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +124,12 @@ class IsisSRTunnelList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfSegments(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +138,12 @@ class IsisSRTunnelList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfSegments'])
     @NumberOfSegments.setter
     def NumberOfSegments(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfSegments'], value)
 
     @property
     def SourceIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +154,7 @@ class IsisSRTunnelList(Base):
 
     @property
     def SourceIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +165,7 @@ class IsisSRTunnelList(Base):
 
     @property
     def TunnelDescription(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +176,7 @@ class IsisSRTunnelList(Base):
 
     @property
     def UsingHeadEndNodePrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +186,7 @@ class IsisSRTunnelList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UsingHeadEndNodePrefix']))
 
     def update(self, Name=None, NumberOfSegments=None):
+        # type: (str, int) -> IsisSRTunnelList
         """Updates isisSRTunnelList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

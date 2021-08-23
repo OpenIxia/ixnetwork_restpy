@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpMcastIPv4GroupList(Base):
@@ -42,9 +43,11 @@ class IgmpMcastIPv4GroupList(Base):
         'StartMcastAddr': 'startMcastAddr',
         'State': 'state',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IgmpMcastIPv4GroupList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpMcastIPv4GroupList, self).__init__(parent, list_op)
 
     @property
     def IgmpUcastIPv4SourceList(self):
@@ -58,7 +61,10 @@ class IgmpMcastIPv4GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.igmpucastipv4sourcelist_f050f3572b51b1edb51a7f959ebf249f import IgmpUcastIPv4SourceList
-        return IgmpUcastIPv4SourceList(self)._select()
+        if self._properties.get('IgmpUcastIPv4SourceList', None) is not None:
+            return self._properties.get('IgmpUcastIPv4SourceList')
+        else:
+            return IgmpUcastIPv4SourceList(self)._select()
 
     @property
     def Tag(self):
@@ -72,10 +78,14 @@ class IgmpMcastIPv4GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +96,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +106,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +116,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def McastAddrCnt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +127,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def McastAddrIncr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +138,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,10 +147,12 @@ class IgmpMcastIPv4GroupList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfSrcRanges(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,10 +161,12 @@ class IgmpMcastIPv4GroupList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfSrcRanges'])
     @NoOfSrcRanges.setter
     def NoOfSrcRanges(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfSrcRanges'], value)
 
     @property
     def SourceMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +177,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def StartMcastAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -168,6 +188,7 @@ class IgmpMcastIPv4GroupList(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -176,6 +197,7 @@ class IgmpMcastIPv4GroupList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['State'])
 
     def update(self, Name=None, NoOfSrcRanges=None):
+        # type: (str, int) -> IgmpMcastIPv4GroupList
         """Updates igmpMcastIPv4GroupList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -191,6 +213,114 @@ class IgmpMcastIPv4GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def IgmpJoinGroup(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpJoinGroup operation on the server.
+
+        Join Group
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpJoinGroup(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpJoinGroup(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpJoinGroup(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpJoinGroup', payload=payload, response_object=None)
+
+    def IgmpLeaveGroup(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the igmpLeaveGroup operation on the server.
+
+        Leave Group
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        igmpLeaveGroup(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpLeaveGroup(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        igmpLeaveGroup(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('igmpLeaveGroup', payload=payload, response_object=None)
+
+    def Join(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the join operation on the server.
+
+        Sends a Join on selected Group Ranges
+
+        join(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the group range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('join', payload=payload, response_object=None)
+
+    def Leave(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the leave operation on the server.
+
+        Sends a Leave on selected Group Ranges
+
+        leave(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the group range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('leave', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, McastAddrCnt=None, McastAddrIncr=None, SourceMode=None, StartMcastAddr=None):
         """Base class infrastructure that gets a list of igmpMcastIPv4GroupList device ids encapsulated by this object.
@@ -215,93 +345,3 @@ class IgmpMcastIPv4GroupList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def IgmpJoinGroup(self, *args, **kwargs):
-        """Executes the igmpJoinGroup operation on the server.
-
-        Join Group
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpJoinGroup(SessionIndices=list)
-        ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpJoinGroup(SessionIndices=string)
-        ------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpJoinGroup', payload=payload, response_object=None)
-
-    def IgmpLeaveGroup(self, *args, **kwargs):
-        """Executes the igmpLeaveGroup operation on the server.
-
-        Leave Group
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        igmpLeaveGroup(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        igmpLeaveGroup(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('igmpLeaveGroup', payload=payload, response_object=None)
-
-    def Join(self, *args, **kwargs):
-        """Executes the join operation on the server.
-
-        Sends a Join on selected Group Ranges
-
-        join(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the group range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('join', payload=payload, response_object=None)
-
-    def Leave(self, *args, **kwargs):
-        """Executes the leave operation on the server.
-
-        Sends a Leave on selected Group Ranges
-
-        leave(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the group range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('leave', payload=payload, response_object=None)

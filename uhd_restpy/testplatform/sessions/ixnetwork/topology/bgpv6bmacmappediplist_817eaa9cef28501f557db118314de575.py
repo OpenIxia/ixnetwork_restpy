@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bgpv6BMacMappedIpList(Base):
@@ -39,12 +40,15 @@ class Bgpv6BMacMappedIpList(Base):
         'Ipv6Address': 'ipv6Address',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Bgpv6BMacMappedIpList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bgpv6BMacMappedIpList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class Bgpv6BMacMappedIpList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class Bgpv6BMacMappedIpList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class Bgpv6BMacMappedIpList(Base):
 
     @property
     def IpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class Bgpv6BMacMappedIpList(Base):
 
     @property
     def IpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class Bgpv6BMacMappedIpList(Base):
 
     @property
     def Ipv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +112,7 @@ class Bgpv6BMacMappedIpList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,9 +121,11 @@ class Bgpv6BMacMappedIpList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Bgpv6BMacMappedIpList
         """Updates bgpv6BMacMappedIpList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

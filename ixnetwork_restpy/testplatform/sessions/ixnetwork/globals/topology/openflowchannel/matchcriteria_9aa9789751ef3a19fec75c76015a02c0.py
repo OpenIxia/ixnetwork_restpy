@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MatchCriteria(Base):
@@ -40,9 +41,11 @@ class MatchCriteria(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MatchCriteria, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MatchCriteria, self).__init__(parent, list_op)
 
     @property
     def Field(self):
@@ -56,7 +59,10 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.field_a57f6ca37b8410c0547a8012c918e128 import Field
-        return Field(self)
+        if self._properties.get('Field', None) is not None:
+            return self._properties.get('Field')
+        else:
+            return Field(self)
 
     @property
     def MatchCriteria(self):
@@ -70,10 +76,14 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.matchcriteria_9aa9789751ef3a19fec75c76015a02c0 import MatchCriteria
-        return MatchCriteria(self)
+        if self._properties.get('MatchCriteria', None) is not None:
+            return self._properties.get('MatchCriteria')
+        else:
+            return MatchCriteria(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -83,6 +93,7 @@ class MatchCriteria(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +102,12 @@ class MatchCriteria(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +116,12 @@ class MatchCriteria(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsRepeatable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -115,10 +130,12 @@ class MatchCriteria(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRepeatable'])
     @IsRepeatable.setter
     def IsRepeatable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRepeatable'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -127,10 +144,12 @@ class MatchCriteria(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,9 +158,11 @@ class MatchCriteria(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> MatchCriteria
         """Updates matchCriteria resource on the server.
 
         Args
@@ -159,6 +180,7 @@ class MatchCriteria(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> MatchCriteria
         """Adds a new matchCriteria resource on the server and adds it to the container.
 
         Args
@@ -190,6 +212,7 @@ class MatchCriteria(Base):
         self._delete()
 
     def find(self, Count=None, Description=None, IsEditable=None, IsRepeatable=None, IsRequired=None, Name=None):
+        # type: (int, str, bool, bool, bool, str) -> MatchCriteria
         """Finds and retrieves matchCriteria resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve matchCriteria resources from the server.

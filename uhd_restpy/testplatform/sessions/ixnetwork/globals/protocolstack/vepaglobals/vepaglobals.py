@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VepaGlobals(Base):
@@ -47,12 +48,15 @@ class VepaGlobals(Base):
         'TagDefaultEr': 'tagDefaultEr',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VepaGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VepaGlobals, self).__init__(parent, list_op)
 
     @property
     def AllowCvlan0InFilter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +65,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllowCvlan0InFilter'])
     @AllowCvlan0InFilter.setter
     def AllowCvlan0InFilter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllowCvlan0InFilter'], value)
 
     @property
     def CdcpSubtype(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,10 +79,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CdcpSubtype'])
     @CdcpSubtype.setter
     def CdcpSubtype(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CdcpSubtype'], value)
 
     @property
     def EvbSubtype(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,10 +93,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvbSubtype'])
     @EvbSubtype.setter
     def EvbSubtype(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvbSubtype'], value)
 
     @property
     def GroupVdpTlvs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -97,10 +107,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupVdpTlvs'])
     @GroupVdpTlvs.setter
     def GroupVdpTlvs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupVdpTlvs'], value)
 
     @property
     def MaxVdpCommands(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,10 +121,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxVdpCommands'])
     @MaxVdpCommands.setter
     def MaxVdpCommands(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxVdpCommands'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,6 +136,7 @@ class VepaGlobals(Base):
 
     @property
     def Oui(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,10 +145,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Oui'])
     @Oui.setter
     def Oui(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Oui'], value)
 
     @property
     def RetryFailedSessions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -142,10 +159,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetryFailedSessions'])
     @RetryFailedSessions.setter
     def RetryFailedSessions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetryFailedSessions'], value)
 
     @property
     def RetryFailedSessionsInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,10 +173,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RetryFailedSessionsInterval'])
     @RetryFailedSessionsInterval.setter
     def RetryFailedSessionsInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RetryFailedSessionsInterval'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,10 +187,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def SuppressEvbTlv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +201,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SuppressEvbTlv'])
     @SuppressEvbTlv.setter
     def SuppressEvbTlv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SuppressEvbTlv'], value)
 
     @property
     def TagDefaultEr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -190,10 +215,12 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TagDefaultEr'])
     @TagDefaultEr.setter
     def TagDefaultEr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TagDefaultEr'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,9 +229,11 @@ class VepaGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, AllowCvlan0InFilter=None, CdcpSubtype=None, EvbSubtype=None, GroupVdpTlvs=None, MaxVdpCommands=None, Oui=None, RetryFailedSessions=None, RetryFailedSessionsInterval=None, SetupRate=None, SuppressEvbTlv=None, TagDefaultEr=None, TeardownRate=None):
+        # type: (bool, str, str, bool, int, str, bool, int, int, bool, bool, int) -> VepaGlobals
         """Updates vepaGlobals resource on the server.
 
         Args
@@ -229,6 +258,7 @@ class VepaGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AllowCvlan0InFilter=None, CdcpSubtype=None, EvbSubtype=None, GroupVdpTlvs=None, MaxVdpCommands=None, Oui=None, RetryFailedSessions=None, RetryFailedSessionsInterval=None, SetupRate=None, SuppressEvbTlv=None, TagDefaultEr=None, TeardownRate=None):
+        # type: (bool, str, str, bool, int, str, bool, int, int, bool, bool, int) -> VepaGlobals
         """Adds a new vepaGlobals resource on the server and adds it to the container.
 
         Args
@@ -267,6 +297,7 @@ class VepaGlobals(Base):
         self._delete()
 
     def find(self, AllowCvlan0InFilter=None, CdcpSubtype=None, EvbSubtype=None, GroupVdpTlvs=None, MaxVdpCommands=None, ObjectId=None, Oui=None, RetryFailedSessions=None, RetryFailedSessionsInterval=None, SetupRate=None, SuppressEvbTlv=None, TagDefaultEr=None, TeardownRate=None):
+        # type: (bool, str, str, bool, int, str, str, bool, int, int, bool, bool, int) -> VepaGlobals
         """Finds and retrieves vepaGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vepaGlobals resources from the server.

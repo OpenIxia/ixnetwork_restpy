@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class StopCcmEmulatedMpParams(Base):
@@ -32,14 +33,21 @@ class StopCcmEmulatedMpParams(Base):
     _SDM_NAME = 'stopCcmEmulatedMpParams'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(StopCcmEmulatedMpParams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(StopCcmEmulatedMpParams, self).__init__(parent, list_op)
 
-    def StopCcmEmulatedMp(self):
+    def StopCcmEmulatedMp(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopCcmEmulatedMp operation on the server.
 
         Stop CCM PDU Transmission
+
+        stopCcmEmulatedMp(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -47,4 +55,6 @@ class StopCcmEmulatedMpParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopCcmEmulatedMp', payload=payload, response_object=None)

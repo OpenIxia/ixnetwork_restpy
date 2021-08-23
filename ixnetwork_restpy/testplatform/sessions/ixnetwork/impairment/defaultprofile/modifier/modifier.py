@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Modifier(Base):
@@ -58,12 +59,22 @@ class Modifier(Base):
         'ReplaceRangeFirst': 'replaceRangeFirst',
         'ReplaceRangeStep': 'replaceRangeStep',
     }
+    _SDM_ENUM_MAP = {
+        'l3MatchMode': ['matchAny', 'matchBottomMplsLabel', 'matchEtherType'],
+        'l4MatchEncapsulation': ['matchIpv4', 'matchIpv4OrIpv6', 'matchIpv6'],
+        'l4MatchMode': ['matchAny', 'matchProtocolNumber'],
+        'l5MatchEncapsulation': ['matchTcp', 'matchUdp'],
+        'l5MatchMode': ['matchAny', 'matchDestinationPort', 'matchSourceOrDestinationPort', 'matchSourcePort'],
+        'offsetStart': ['l2Offset', 'l3Offset', 'l4Offset', 'l5Offset'],
+        'replaceMode': ['fixedValue', 'range'],
+    }
 
-    def __init__(self, parent):
-        super(Modifier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Modifier, self).__init__(parent, list_op)
 
     @property
     def ClusterSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,10 +83,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClusterSize'])
     @ClusterSize.setter
     def ClusterSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClusterSize'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +97,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def L3MatchEtherType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +111,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L3MatchEtherType'])
     @L3MatchEtherType.setter
     def L3MatchEtherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['L3MatchEtherType'], value)
 
     @property
     def L3MatchMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +125,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L3MatchMode'])
     @L3MatchMode.setter
     def L3MatchMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['L3MatchMode'], value)
 
     @property
     def L3MatchMplsLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +139,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L3MatchMplsLabel'])
     @L3MatchMplsLabel.setter
     def L3MatchMplsLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['L3MatchMplsLabel'], value)
 
     @property
     def L4MatchEncapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,10 +153,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L4MatchEncapsulation'])
     @L4MatchEncapsulation.setter
     def L4MatchEncapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['L4MatchEncapsulation'], value)
 
     @property
     def L4MatchMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +167,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L4MatchMode'])
     @L4MatchMode.setter
     def L4MatchMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['L4MatchMode'], value)
 
     @property
     def L4MatchProtocolNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -156,10 +181,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L4MatchProtocolNumber'])
     @L4MatchProtocolNumber.setter
     def L4MatchProtocolNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['L4MatchProtocolNumber'], value)
 
     @property
     def L5MatchEncapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +195,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L5MatchEncapsulation'])
     @L5MatchEncapsulation.setter
     def L5MatchEncapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['L5MatchEncapsulation'], value)
 
     @property
     def L5MatchMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +209,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L5MatchMode'])
     @L5MatchMode.setter
     def L5MatchMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['L5MatchMode'], value)
 
     @property
     def L5MatchPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +223,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['L5MatchPortNumber'])
     @L5MatchPortNumber.setter
     def L5MatchPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['L5MatchPortNumber'], value)
 
     @property
     def Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +237,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def MatchValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +251,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchValue'])
     @MatchValue.setter
     def MatchValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchValue'], value)
 
     @property
     def MatchValueEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -228,10 +265,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchValueEnabled'])
     @MatchValueEnabled.setter
     def MatchValueEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchValueEnabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -240,10 +279,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Offset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +293,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def OffsetStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -264,10 +307,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OffsetStart'])
     @OffsetStart.setter
     def OffsetStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OffsetStart'], value)
 
     @property
     def PercentRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +321,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PercentRate'])
     @PercentRate.setter
     def PercentRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PercentRate'], value)
 
     @property
     def ReplaceFixedValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -288,10 +335,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplaceFixedValue'])
     @ReplaceFixedValue.setter
     def ReplaceFixedValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplaceFixedValue'], value)
 
     @property
     def ReplaceMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -300,10 +349,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplaceMode'])
     @ReplaceMode.setter
     def ReplaceMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplaceMode'], value)
 
     @property
     def ReplaceRangeCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +363,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplaceRangeCount'])
     @ReplaceRangeCount.setter
     def ReplaceRangeCount(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplaceRangeCount'], value)
 
     @property
     def ReplaceRangeDecrement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -324,10 +377,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplaceRangeDecrement'])
     @ReplaceRangeDecrement.setter
     def ReplaceRangeDecrement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplaceRangeDecrement'], value)
 
     @property
     def ReplaceRangeFirst(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -336,10 +391,12 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplaceRangeFirst'])
     @ReplaceRangeFirst.setter
     def ReplaceRangeFirst(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplaceRangeFirst'], value)
 
     @property
     def ReplaceRangeStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,9 +405,11 @@ class Modifier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReplaceRangeStep'])
     @ReplaceRangeStep.setter
     def ReplaceRangeStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReplaceRangeStep'], value)
 
     def update(self, ClusterSize=None, Enabled=None, L3MatchEtherType=None, L3MatchMode=None, L3MatchMplsLabel=None, L4MatchEncapsulation=None, L4MatchMode=None, L4MatchProtocolNumber=None, L5MatchEncapsulation=None, L5MatchMode=None, L5MatchPortNumber=None, Mask=None, MatchValue=None, MatchValueEnabled=None, Name=None, Offset=None, OffsetStart=None, PercentRate=None, ReplaceFixedValue=None, ReplaceMode=None, ReplaceRangeCount=None, ReplaceRangeDecrement=None, ReplaceRangeFirst=None, ReplaceRangeStep=None):
+        # type: (int, bool, str, str, int, str, str, int, str, str, int, str, str, bool, str, int, str, int, str, str, str, bool, str, str) -> Modifier
         """Updates modifier resource on the server.
 
         Args
@@ -387,6 +446,7 @@ class Modifier(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ClusterSize=None, Enabled=None, L3MatchEtherType=None, L3MatchMode=None, L3MatchMplsLabel=None, L4MatchEncapsulation=None, L4MatchMode=None, L4MatchProtocolNumber=None, L5MatchEncapsulation=None, L5MatchMode=None, L5MatchPortNumber=None, Mask=None, MatchValue=None, MatchValueEnabled=None, Name=None, Offset=None, OffsetStart=None, PercentRate=None, ReplaceFixedValue=None, ReplaceMode=None, ReplaceRangeCount=None, ReplaceRangeDecrement=None, ReplaceRangeFirst=None, ReplaceRangeStep=None):
+        # type: (int, bool, str, str, int, str, str, int, str, str, int, str, str, bool, str, int, str, int, str, str, str, bool, str, str) -> Modifier
         """Adds a new modifier resource on the server and adds it to the container.
 
         Args
@@ -437,6 +497,7 @@ class Modifier(Base):
         self._delete()
 
     def find(self, ClusterSize=None, Enabled=None, L3MatchEtherType=None, L3MatchMode=None, L3MatchMplsLabel=None, L4MatchEncapsulation=None, L4MatchMode=None, L4MatchProtocolNumber=None, L5MatchEncapsulation=None, L5MatchMode=None, L5MatchPortNumber=None, Mask=None, MatchValue=None, MatchValueEnabled=None, Name=None, Offset=None, OffsetStart=None, PercentRate=None, ReplaceFixedValue=None, ReplaceMode=None, ReplaceRangeCount=None, ReplaceRangeDecrement=None, ReplaceRangeFirst=None, ReplaceRangeStep=None):
+        # type: (int, bool, str, str, int, str, str, int, str, str, int, str, str, bool, str, int, str, int, str, str, str, bool, str, str) -> Modifier
         """Finds and retrieves modifier resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve modifier resources from the server.

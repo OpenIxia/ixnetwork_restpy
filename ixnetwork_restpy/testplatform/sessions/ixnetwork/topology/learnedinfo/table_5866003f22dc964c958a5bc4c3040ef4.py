@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Table(Base):
@@ -38,9 +39,11 @@ class Table(Base):
         'Type': 'type',
         'Values': 'values',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Table, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Table, self).__init__(parent, list_op)
 
     @property
     def Col(self):
@@ -54,10 +57,14 @@ class Table(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import Col
-        return Col(self)
+        if self._properties.get('Col', None) is not None:
+            return self._properties.get('Col')
+        else:
+            return Col(self)
 
     @property
     def Actions(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -67,6 +74,7 @@ class Table(Base):
 
     @property
     def Columns(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -76,6 +84,7 @@ class Table(Base):
 
     @property
     def RowCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,6 +94,7 @@ class Table(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +110,19 @@ class Table(Base):
         - list(list[str]): A list of rows of learned information values
         """
         return self._get_attribute(self._SDM_ATT_MAP['Values'])
+
+    def add(self):
+        """Adds a new table resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved table resources using find and the newly added table resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Actions=None, Columns=None, RowCount=None, Type=None, Values=None):
         """Finds and retrieves table resources from the server.

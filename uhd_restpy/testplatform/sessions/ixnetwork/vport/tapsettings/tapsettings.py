@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TapSettings(Base):
@@ -33,9 +34,11 @@ class TapSettings(Base):
     _SDM_NAME = 'tapSettings'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TapSettings, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TapSettings, self).__init__(parent, list_op)
 
     @property
     def Parameter(self):
@@ -49,7 +52,23 @@ class TapSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.parameter.parameter import Parameter
-        return Parameter(self)
+        if self._properties.get('Parameter', None) is not None:
+            return self._properties.get('Parameter')
+        else:
+            return Parameter(self)
+
+    def add(self):
+        """Adds a new tapSettings resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tapSettings resources using find and the newly added tapSettings resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves tapSettings resources from the server.

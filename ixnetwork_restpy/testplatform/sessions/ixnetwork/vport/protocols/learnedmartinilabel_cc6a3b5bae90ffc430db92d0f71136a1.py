@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedMartiniLabel(Base):
@@ -58,12 +59,19 @@ class LearnedMartiniLabel(Base):
         'VcId': 'vcId',
         'VcType': 'vcType',
     }
+    _SDM_ENUM_MAP = {
+        'cas': ['e1Trunk', 't1EsfTrunk', 't1SfTrunk'],
+        'sp': ['hexVal1', 'hexVal2', 'hexVal3', 'hexVal4'],
+        'timestampMode': ['absolute', 'differential'],
+        'vcType': ['frameRelay', 'atmaal5', 'atmxCell', 'vlan', 'ethernet', 'hdlc', 'ppp', 'cem', 'atmvcc', 'atmvpc', 'ip', 'satopE1', 'satopT1', 'satopE3', 'satopT3', 'cesoPsnBasic', 'cesoPsnCas', 'frameRelayRfc4619'],
+    }
 
-    def __init__(self, parent):
-        super(LearnedMartiniLabel, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedMartiniLabel, self).__init__(parent, list_op)
 
     @property
     def CBit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,6 +81,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Cas(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +91,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def CemOption(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def CemPayloadBytes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +111,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,6 +121,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def DisCeAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,6 +131,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Frequency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,6 +141,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -136,6 +151,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def IncludeRtpHeader(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -145,6 +161,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,6 +171,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def LabelSpaceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -163,6 +181,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def LocalPwSubStatus(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,6 +191,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def MaxAtmCell(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,6 +201,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -190,6 +211,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def PayloadSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -199,6 +221,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def PayloadType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -208,6 +231,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Peer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -217,6 +241,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def PeerPwSubStatus(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -226,6 +251,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def PwState(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -235,6 +261,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Sp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -244,6 +271,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def Ssrc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -253,6 +281,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def TdmBitrate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -262,6 +291,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def TimestampMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -271,6 +301,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def VcId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -280,6 +311,7 @@ class LearnedMartiniLabel(Base):
 
     @property
     def VcType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,7 +319,21 @@ class LearnedMartiniLabel(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VcType'])
 
+    def add(self):
+        """Adds a new learnedMartiniLabel resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedMartiniLabel resources using find and the newly added learnedMartiniLabel resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CBit=None, Cas=None, CemOption=None, CemPayloadBytes=None, Description=None, DisCeAddress=None, Frequency=None, GroupId=None, IncludeRtpHeader=None, Label=None, LabelSpaceId=None, LocalPwSubStatus=None, MaxAtmCell=None, Mtu=None, PayloadSize=None, PayloadType=None, Peer=None, PeerPwSubStatus=None, PwState=None, Sp=None, Ssrc=None, TdmBitrate=None, TimestampMode=None, VcId=None, VcType=None):
+        # type: (bool, str, int, int, str, str, int, int, bool, int, int, int, int, int, int, int, str, int, bool, str, int, int, str, int, str) -> LearnedMartiniLabel
         """Finds and retrieves learnedMartiniLabel resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedMartiniLabel resources from the server.

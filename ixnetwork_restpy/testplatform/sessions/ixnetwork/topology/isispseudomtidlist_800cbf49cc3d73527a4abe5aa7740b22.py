@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisPseudoMTIDList(Base):
@@ -39,12 +40,15 @@ class IsisPseudoMTIDList(Base):
         'Name': 'name',
         'ToNodeLinkMetric': 'toNodeLinkMetric',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisPseudoMTIDList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisPseudoMTIDList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class IsisPseudoMTIDList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class IsisPseudoMTIDList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class IsisPseudoMTIDList(Base):
 
     @property
     def FromNodeLinkMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class IsisPseudoMTIDList(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class IsisPseudoMTIDList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +110,12 @@ class IsisPseudoMTIDList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ToNodeLinkMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +125,7 @@ class IsisPseudoMTIDList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ToNodeLinkMetric']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisPseudoMTIDList
         """Updates isisPseudoMTIDList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

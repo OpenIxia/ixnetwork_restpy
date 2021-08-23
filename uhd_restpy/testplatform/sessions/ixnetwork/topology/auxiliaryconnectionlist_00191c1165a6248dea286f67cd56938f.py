@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AuxiliaryConnectionList(Base):
@@ -41,12 +42,15 @@ class AuxiliaryConnectionList(Base):
         'Name': 'name',
         'UDPSrcPortNum': 'uDPSrcPortNum',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AuxiliaryConnectionList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AuxiliaryConnectionList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def AuxId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def ChannelName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def ConnectionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +103,7 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +113,7 @@ class AuxiliaryConnectionList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,10 +122,12 @@ class AuxiliaryConnectionList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def UDPSrcPortNum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +137,7 @@ class AuxiliaryConnectionList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UDPSrcPortNum']))
 
     def update(self, Name=None):
+        # type: (str) -> AuxiliaryConnectionList
         """Updates auxiliaryConnectionList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -140,7 +153,26 @@ class AuxiliaryConnectionList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> AuxiliaryConnectionList
+        """Adds a new auxiliaryConnectionList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved auxiliaryConnectionList resources using find and the newly added auxiliaryConnectionList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ChannelName=None, Count=None, DescriptiveName=None, Name=None):
+        # type: (str, int, str, str) -> AuxiliaryConnectionList
         """Finds and retrieves auxiliaryConnectionList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve auxiliaryConnectionList resources from the server.

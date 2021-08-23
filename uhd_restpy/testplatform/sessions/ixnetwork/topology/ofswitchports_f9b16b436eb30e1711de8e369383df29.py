@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfSwitchPorts(Base):
@@ -59,9 +60,11 @@ class OfSwitchPorts(Base):
         'SwitchIndex': 'switchIndex',
         'TransmissionDelay': 'transmissionDelay',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfSwitchPorts, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfSwitchPorts, self).__init__(parent, list_op)
 
     @property
     def OfSwitchQueues(self):
@@ -75,10 +78,14 @@ class OfSwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ofswitchqueues_9037a6161291f813628ddfbefe3df8ed import OfSwitchQueues
-        return OfSwitchQueues(self)._select()
+        if self._properties.get('OfSwitchQueues', None) is not None:
+            return self._properties.get('OfSwitchQueues')
+        else:
+            return OfSwitchQueues(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class OfSwitchPorts(Base):
 
     @property
     def AdvertisedFeatures(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class OfSwitchPorts(Base):
 
     @property
     def Config(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class OfSwitchPorts(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class OfSwitchPorts(Base):
 
     @property
     def CurrentConnectionType(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -127,6 +138,7 @@ class OfSwitchPorts(Base):
 
     @property
     def CurrentFeatures(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +149,7 @@ class OfSwitchPorts(Base):
 
     @property
     def CurrentSpeed(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +160,7 @@ class OfSwitchPorts(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,6 +170,7 @@ class OfSwitchPorts(Base):
 
     @property
     def EtherAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +181,7 @@ class OfSwitchPorts(Base):
 
     @property
     def ForcedConnectionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +192,7 @@ class OfSwitchPorts(Base):
 
     @property
     def MaxSpeed(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +203,7 @@ class OfSwitchPorts(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,10 +212,12 @@ class OfSwitchPorts(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumQueueRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +226,12 @@ class OfSwitchPorts(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumQueueRange'])
     @NumQueueRange.setter
     def NumQueueRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumQueueRange'], value)
 
     @property
     def ParentSwitch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -219,6 +241,7 @@ class OfSwitchPorts(Base):
 
     @property
     def PeerAdvertisedFeatures(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +252,7 @@ class OfSwitchPorts(Base):
 
     @property
     def PortIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +263,7 @@ class OfSwitchPorts(Base):
 
     @property
     def PortLivenessSupport(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +274,7 @@ class OfSwitchPorts(Base):
 
     @property
     def PortName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +285,7 @@ class OfSwitchPorts(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -269,6 +296,7 @@ class OfSwitchPorts(Base):
 
     @property
     def RemotePortIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +307,7 @@ class OfSwitchPorts(Base):
 
     @property
     def RemoteSwitch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +318,7 @@ class OfSwitchPorts(Base):
 
     @property
     def RemoteSwitchIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -299,6 +329,7 @@ class OfSwitchPorts(Base):
 
     @property
     def RemoteSwitchPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +340,7 @@ class OfSwitchPorts(Base):
 
     @property
     def State(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +351,7 @@ class OfSwitchPorts(Base):
 
     @property
     def SupportedFeatures(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +362,7 @@ class OfSwitchPorts(Base):
 
     @property
     def SwitchIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -339,6 +373,7 @@ class OfSwitchPorts(Base):
 
     @property
     def TransmissionDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -348,6 +383,7 @@ class OfSwitchPorts(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TransmissionDelay']))
 
     def update(self, Name=None, NumQueueRange=None):
+        # type: (str, int) -> OfSwitchPorts
         """Updates ofSwitchPorts resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -363,6 +399,28 @@ class OfSwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def SimulatePortUpDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the simulatePortUpDown operation on the server.
+
+        Method to Simulate Port Up Down.
+
+        simulatePortUpDown(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('simulatePortUpDown', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, EtherAddr=None, ForcedConnectionType=None, MaxSpeed=None, PeerAdvertisedFeatures=None, PortIndex=None, PortLivenessSupport=None, PortName=None, PortNumber=None, RemotePortIndex=None, RemoteSwitch=None, RemoteSwitchIndex=None, RemoteSwitchPort=None, State=None, SupportedFeatures=None, SwitchIndex=None, TransmissionDelay=None):
         """Base class infrastructure that gets a list of ofSwitchPorts device ids encapsulated by this object.
@@ -403,23 +461,3 @@ class OfSwitchPorts(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def SimulatePortUpDown(self, *args, **kwargs):
-        """Executes the simulatePortUpDown operation on the server.
-
-        Method to Simulate Port Up Down.
-
-        simulatePortUpDown(Arg2=list)list
-        ---------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('simulatePortUpDown', payload=payload, response_object=None)

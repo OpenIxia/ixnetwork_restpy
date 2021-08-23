@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PacketOutTriggerActions(Base):
@@ -82,12 +83,17 @@ class PacketOutTriggerActions(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'actionType': ['drop', 'output', 'setEthernetSource', 'setEthernetDestination', 'setEthernetType', 'setVlanId', 'setVlanPriority', 'setIpDscp', 'setIpEcn', 'setIpProtocol', 'setIpv4Source', 'setIpv4Destination', 'setTcpSource', 'setTcpDestination', 'setUdpSource', 'setUdpDestination', 'setSctpSource', 'setSctpDestination', 'setIcmpv4Type', 'setIcmpv4Code', 'setArpOpcode', 'setArpSourceHwAddress', 'setArpTargetHwAddress', 'setArpSourceIpv4Address', 'setArpTargetIpv4Address', 'setIpv6Source', 'setIpv6Destination', 'setIpv6FlowLabel', 'setIcmpv6Type', 'setIcmpv6Code', 'setIpv6NdTarget', 'setIpv6NdSll', 'setIpv6NdTll', 'setMplsLabel', 'setMplsTc', 'setMplsBos', 'setPbbIsid', 'setTunnelId', 'setIpv6ExtHeader', 'copyTtlOut', 'copyTtlIn', 'setMplsTtl', 'decrementMplsTtl', 'pushVlan', 'popVlan', 'pushMpls', 'popMpls', 'setQueue', 'group', 'setNetworkTtl', 'decrementNetworkTtl', 'pushPbb', 'popPbb', 'experimenter'],
+        'outputPortType': ['ofppInPort', 'manual', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal', 'ofppTable'],
+    }
 
-    def __init__(self, parent):
-        super(PacketOutTriggerActions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PacketOutTriggerActions, self).__init__(parent, list_op)
 
     @property
     def ActionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +102,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActionType'])
     @ActionType.setter
     def ActionType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActionType'], value)
 
     @property
     def ArpDstHwAddr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +116,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'])
     @ArpDstHwAddr.setter
     def ArpDstHwAddr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'], value)
 
     @property
     def ArpDstIpv4Addr(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +130,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'])
     @ArpDstIpv4Addr.setter
     def ArpDstIpv4Addr(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'], value)
 
     @property
     def ArpOpcode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +144,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
     @ArpOpcode.setter
     def ArpOpcode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpOpcode'], value)
 
     @property
     def ArpSrcHwAddr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +158,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'])
     @ArpSrcHwAddr.setter
     def ArpSrcHwAddr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'], value)
 
     @property
     def ArpSrcIpv4Addr(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -156,10 +172,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'])
     @ArpSrcIpv4Addr.setter
     def ArpSrcIpv4Addr(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'], value)
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +186,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
     @EthernetDestination.setter
     def EthernetDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +200,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
     @EthernetSource.setter
     def EthernetSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
 
     @property
     def EthernetType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +214,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
     @EthernetType.setter
     def EthernetType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
 
     @property
     def Experimenter(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,10 +228,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Experimenter'])
     @Experimenter.setter
     def Experimenter(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Experimenter'], value)
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +242,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
     @ExperimenterData.setter
     def ExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
 
     @property
     def ExperimenterDatalength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -228,10 +256,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'])
     @ExperimenterDatalength.setter
     def ExperimenterDatalength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'], value)
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,10 +270,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupId'])
     @GroupId.setter
     def GroupId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupId'], value)
 
     @property
     def Icmpv4Code(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +284,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
     @Icmpv4Code.setter
     def Icmpv4Code(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv4Code'], value)
 
     @property
     def Icmpv4Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -264,10 +298,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
     @Icmpv4Type.setter
     def Icmpv4Type(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv4Type'], value)
 
     @property
     def Icmpv6Code(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +312,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
     @Icmpv6Code.setter
     def Icmpv6Code(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv6Code'], value)
 
     @property
     def Icmpv6Type(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,10 +326,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
     @Icmpv6Type.setter
     def Icmpv6Type(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv6Type'], value)
 
     @property
     def IpDscp(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,10 +340,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
     @IpDscp.setter
     def IpDscp(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
 
     @property
     def IpEcn(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -312,10 +354,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
     @IpEcn.setter
     def IpEcn(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpEcn'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -324,10 +368,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -336,10 +382,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,10 +396,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
     @Ipv4Source.setter
     def Ipv4Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
 
     @property
     def Ipv6Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -360,10 +410,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
     @Ipv6Destination.setter
     def Ipv6Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Destination'], value)
 
     @property
     def Ipv6ExtHeader(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -372,10 +424,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
     @Ipv6ExtHeader.setter
     def Ipv6ExtHeader(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'], value)
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -384,10 +438,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
 
     @property
     def Ipv6NdSll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -396,10 +452,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
     @Ipv6NdSll.setter
     def Ipv6NdSll(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NdSll'], value)
 
     @property
     def Ipv6NdTll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -408,10 +466,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTll'])
     @Ipv6NdTll.setter
     def Ipv6NdTll(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTll'], value)
 
     @property
     def Ipv6Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -420,10 +480,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
     @Ipv6Source.setter
     def Ipv6Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Source'], value)
 
     @property
     def Ipv6ndTarget(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -432,10 +494,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6ndTarget'])
     @Ipv6ndTarget.setter
     def Ipv6ndTarget(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6ndTarget'], value)
 
     @property
     def MaxByteLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -444,10 +508,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxByteLength'])
     @MaxByteLength.setter
     def MaxByteLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxByteLength'], value)
 
     @property
     def MplsBos(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -456,10 +522,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
     @MplsBos.setter
     def MplsBos(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsBos'], value)
 
     @property
     def MplsLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -468,10 +536,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
     @MplsLabel.setter
     def MplsLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
 
     @property
     def MplsTc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -480,10 +550,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
     @MplsTc.setter
     def MplsTc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsTc'], value)
 
     @property
     def MplsTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -492,10 +564,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsTtl'])
     @MplsTtl.setter
     def MplsTtl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsTtl'], value)
 
     @property
     def NwTtl(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -504,10 +578,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NwTtl'])
     @NwTtl.setter
     def NwTtl(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NwTtl'], value)
 
     @property
     def OutputPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -516,10 +592,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutputPort'])
     @OutputPort.setter
     def OutputPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutputPort'], value)
 
     @property
     def OutputPortType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -528,10 +606,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutputPortType'])
     @OutputPortType.setter
     def OutputPortType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutputPortType'], value)
 
     @property
     def PbbISid(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -540,10 +620,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbISid'])
     @PbbISid.setter
     def PbbISid(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbISid'], value)
 
     @property
     def QueueId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -552,10 +634,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueId'])
     @QueueId.setter
     def QueueId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueId'], value)
 
     @property
     def SctpDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -564,10 +648,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
     @SctpDestination.setter
     def SctpDestination(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SctpDestination'], value)
 
     @property
     def SctpSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -576,10 +662,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
     @SctpSource.setter
     def SctpSource(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SctpSource'], value)
 
     @property
     def TcpDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -588,10 +676,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
     @TcpDestination.setter
     def TcpDestination(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpDestination'], value)
 
     @property
     def TcpSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -600,10 +690,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
     @TcpSource.setter
     def TcpSource(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpSource'], value)
 
     @property
     def TunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -612,10 +704,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
     @TunnelId.setter
     def TunnelId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelId'], value)
 
     @property
     def UdpDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -624,10 +718,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
     @UdpDestination.setter
     def UdpDestination(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
 
     @property
     def UdpSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -636,10 +732,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
     @UdpSource.setter
     def UdpSource(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -648,10 +746,12 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -660,9 +760,11 @@ class PacketOutTriggerActions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbISid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, int, int, str, int, str, str, int, int, str, int, int, int, int, int, int, int, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, int, int, int, int, int) -> PacketOutTriggerActions
         """Updates packetOutTriggerActions resource on the server.
 
         Args
@@ -723,6 +825,7 @@ class PacketOutTriggerActions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbISid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, int, int, str, int, str, str, int, int, str, int, int, int, int, int, int, int, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, int, int, int, int, int) -> PacketOutTriggerActions
         """Adds a new packetOutTriggerActions resource on the server and adds it to the container.
 
         Args
@@ -797,6 +900,7 @@ class PacketOutTriggerActions(Base):
         self._delete()
 
     def find(self, ActionType=None, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, ExperimenterData=None, ExperimenterDatalength=None, GroupId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTll=None, Ipv6Source=None, Ipv6ndTarget=None, MaxByteLength=None, MplsBos=None, MplsLabel=None, MplsTc=None, MplsTtl=None, NwTtl=None, OutputPort=None, OutputPortType=None, PbbISid=None, QueueId=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, int, int, str, int, str, str, int, int, str, int, int, int, int, int, int, int, int, int, str, str, str, int, int, str, str, str, str, int, int, int, int, int, int, int, str, int, int, int, int, int, int, int, int, int, int, int) -> PacketOutTriggerActions
         """Finds and retrieves packetOutTriggerActions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve packetOutTriggerActions resources from the server.

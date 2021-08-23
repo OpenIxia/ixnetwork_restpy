@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6ServerGlobals(Base):
@@ -37,12 +38,15 @@ class Dhcpv6ServerGlobals(Base):
         'MaxLeaseTime': 'maxLeaseTime',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6ServerGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6ServerGlobals, self).__init__(parent, list_op)
 
     @property
     def DefaultLeaseTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Dhcpv6ServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'])
     @DefaultLeaseTime.setter
     def DefaultLeaseTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DefaultLeaseTime'], value)
 
     @property
     def MaxLeaseTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class Dhcpv6ServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxLeaseTime'])
     @MaxLeaseTime.setter
     def MaxLeaseTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxLeaseTime'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +83,7 @@ class Dhcpv6ServerGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, DefaultLeaseTime=None, MaxLeaseTime=None):
+        # type: (int, int) -> Dhcpv6ServerGlobals
         """Updates dhcpv6ServerGlobals resource on the server.
 
         Args
@@ -89,6 +98,7 @@ class Dhcpv6ServerGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DefaultLeaseTime=None, MaxLeaseTime=None):
+        # type: (int, int) -> Dhcpv6ServerGlobals
         """Adds a new dhcpv6ServerGlobals resource on the server and adds it to the container.
 
         Args
@@ -117,6 +127,7 @@ class Dhcpv6ServerGlobals(Base):
         self._delete()
 
     def find(self, DefaultLeaseTime=None, MaxLeaseTime=None, ObjectId=None):
+        # type: (int, int, str) -> Dhcpv6ServerGlobals
         """Finds and retrieves dhcpv6ServerGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ServerGlobals resources from the server.

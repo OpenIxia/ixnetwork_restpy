@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Buckets(Base):
@@ -43,9 +44,11 @@ class Buckets(Base):
         'WatchPort': 'watchPort',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Buckets, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Buckets, self).__init__(parent, list_op)
 
     @property
     def ActionsProfile(self):
@@ -59,10 +62,14 @@ class Buckets(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.actionsprofile_c65384e18e20517e184ef23474b0b960 import ActionsProfile
-        return ActionsProfile(self)._select()
+        if self._properties.get('ActionsProfile', None) is not None:
+            return self._properties.get('ActionsProfile')
+        else:
+            return ActionsProfile(self)._select()
 
     @property
     def BucketDescription(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class Buckets(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class Buckets(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +100,7 @@ class Buckets(Base):
 
     @property
     def GroupIndex(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -100,6 +110,7 @@ class Buckets(Base):
 
     @property
     def GroupName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,6 +120,7 @@ class Buckets(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,10 +129,12 @@ class Buckets(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,10 +143,12 @@ class Buckets(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def WatchGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -143,6 +159,7 @@ class Buckets(Base):
 
     @property
     def WatchPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -153,6 +170,7 @@ class Buckets(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +180,7 @@ class Buckets(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Multiplier=None, Name=None):
+        # type: (int, str) -> Buckets
         """Updates buckets resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -178,7 +197,27 @@ class Buckets(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Multiplier=None, Name=None):
+        # type: (int, str) -> Buckets
+        """Adds a new buckets resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Multiplier (number): Number of instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved buckets resources using find and the newly added buckets resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, GroupIndex=None, GroupName=None, Multiplier=None, Name=None):
+        # type: (int, str, List[str], str, int, str) -> Buckets
         """Finds and retrieves buckets resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve buckets resources from the server.

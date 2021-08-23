@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Reporter(Base):
@@ -34,9 +35,12 @@ options, commands and wizards.
     _SDM_ATT_MAP = {
         'State': 'state',
     }
+    _SDM_ENUM_MAP = {
+        'state': ['none', 'started', 'stopped'],
+    }
 
-    def __init__(self, parent):
-        super(Reporter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Reporter, self).__init__(parent, list_op)
 
     @property
     def Generate(self):
@@ -50,7 +54,10 @@ options, commands and wizards.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.generate.generate import Generate
-        return Generate(self)._select()
+        if self._properties.get('Generate', None) is not None:
+            return self._properties.get('Generate')
+        else:
+            return Generate(self)._select()
 
     @property
     def SaveResults(self):
@@ -64,7 +71,10 @@ options, commands and wizards.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.saveresults.saveresults import SaveResults
-        return SaveResults(self)._select()
+        if self._properties.get('SaveResults', None) is not None:
+            return self._properties.get('SaveResults')
+        else:
+            return SaveResults(self)._select()
 
     @property
     def TestParameters(self):
@@ -78,10 +88,14 @@ options, commands and wizards.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.testparameters.testparameters import TestParameters
-        return TestParameters(self)._select()
+        if self._properties.get('TestParameters', None) is not None:
+            return self._properties.get('TestParameters')
+        else:
+            return TestParameters(self)._select()
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------

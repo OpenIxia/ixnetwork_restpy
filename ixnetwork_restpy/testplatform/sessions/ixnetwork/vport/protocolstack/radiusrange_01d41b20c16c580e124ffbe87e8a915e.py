@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RadiusRange(Base):
@@ -46,12 +47,15 @@ class RadiusRange(Base):
         'Timeout': 'timeout',
         'TunnelAttributeSet': 'tunnelAttributeSet',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RadiusRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RadiusRange, self).__init__(parent, list_op)
 
     @property
     def AccountingPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,10 +64,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AccountingPort'])
     @AccountingPort.setter
     def AccountingPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AccountingPort'], value)
 
     @property
     def AccountingServer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,10 +78,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AccountingServer'])
     @AccountingServer.setter
     def AccountingServer(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AccountingServer'], value)
 
     @property
     def AuthenticationPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,10 +92,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthenticationPort'])
     @AuthenticationPort.setter
     def AuthenticationPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthenticationPort'], value)
 
     @property
     def AuthenticationServer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +106,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthenticationServer'])
     @AuthenticationServer.setter
     def AuthenticationServer(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthenticationServer'], value)
 
     @property
     def EnableAccounting(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +120,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAccounting'])
     @EnableAccounting.setter
     def EnableAccounting(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAccounting'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -132,10 +148,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,6 +163,7 @@ class RadiusRange(Base):
 
     @property
     def Retries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,10 +172,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Retries'])
     @Retries.setter
     def Retries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Retries'], value)
 
     @property
     def Secret(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -165,10 +186,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Secret'])
     @Secret.setter
     def Secret(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Secret'], value)
 
     @property
     def Timeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,10 +200,12 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Timeout'])
     @Timeout.setter
     def Timeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Timeout'], value)
 
     @property
     def TunnelAttributeSet(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,9 +214,11 @@ class RadiusRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelAttributeSet'])
     @TunnelAttributeSet.setter
     def TunnelAttributeSet(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelAttributeSet'], value)
 
     def update(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
+        # type: (int, str, int, str, bool, bool, str, int, str, int, str) -> RadiusRange
         """Updates radiusRange resource on the server.
 
         Args
@@ -215,6 +242,7 @@ class RadiusRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
+        # type: (int, str, int, str, bool, bool, str, int, str, int, str) -> RadiusRange
         """Adds a new radiusRange resource on the server and adds it to the container.
 
         Args
@@ -252,6 +280,7 @@ class RadiusRange(Base):
         self._delete()
 
     def find(self, AccountingPort=None, AccountingServer=None, AuthenticationPort=None, AuthenticationServer=None, EnableAccounting=None, Enabled=None, Name=None, ObjectId=None, Retries=None, Secret=None, Timeout=None, TunnelAttributeSet=None):
+        # type: (int, str, int, str, bool, bool, str, str, int, str, int, str) -> RadiusRange
         """Finds and retrieves radiusRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve radiusRange resources from the server.
@@ -302,14 +331,16 @@ class RadiusRange(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -322,13 +353,15 @@ class RadiusRange(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -342,13 +375,15 @@ class RadiusRange(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

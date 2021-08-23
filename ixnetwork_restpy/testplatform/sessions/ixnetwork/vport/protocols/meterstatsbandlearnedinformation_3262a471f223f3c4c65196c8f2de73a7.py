@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MeterStatsBandLearnedInformation(Base):
@@ -40,12 +41,15 @@ class MeterStatsBandLearnedInformation(Base):
         'MeterId': 'meterId',
         'RemoteIp': 'remoteIp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MeterStatsBandLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MeterStatsBandLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def DataPathId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class MeterStatsBandLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class MeterStatsBandLearnedInformation(Base):
 
     @property
     def InBandByteCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class MeterStatsBandLearnedInformation(Base):
 
     @property
     def InBandPacketCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class MeterStatsBandLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class MeterStatsBandLearnedInformation(Base):
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,6 +109,7 @@ class MeterStatsBandLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,7 +117,21 @@ class MeterStatsBandLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
 
+    def add(self):
+        """Adds a new meterStatsBandLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved meterStatsBandLearnedInformation resources using find and the newly added meterStatsBandLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DataPathId=None, DataPathIdAsHex=None, InBandByteCount=None, InBandPacketCount=None, LocalIp=None, MeterId=None, RemoteIp=None):
+        # type: (int, str, int, int, str, int, str) -> MeterStatsBandLearnedInformation
         """Finds and retrieves meterStatsBandLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meterStatsBandLearnedInformation resources from the server.

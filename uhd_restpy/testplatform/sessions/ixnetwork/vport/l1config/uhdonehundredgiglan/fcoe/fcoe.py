@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Fcoe(Base):
@@ -38,12 +39,17 @@ class Fcoe(Base):
         'PriorityGroupSize': 'priorityGroupSize',
         'SupportDataCenterMode': 'supportDataCenterMode',
     }
+    _SDM_ENUM_MAP = {
+        'flowControlType': ['ieee802.1Qbb', 'ieee802.3x'],
+        'priorityGroupSize': ['priorityGroupSize-4', 'priorityGroupSize-8'],
+    }
 
-    def __init__(self, parent):
-        super(Fcoe, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Fcoe, self).__init__(parent, list_op)
 
     @property
     def EnablePFCPauseDelay(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +58,12 @@ class Fcoe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePFCPauseDelay'])
     @EnablePFCPauseDelay.setter
     def EnablePFCPauseDelay(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePFCPauseDelay'], value)
 
     @property
     def FlowControlType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +72,12 @@ class Fcoe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlType'])
     @FlowControlType.setter
     def FlowControlType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowControlType'], value)
 
     @property
     def PfcPauseDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +86,12 @@ class Fcoe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PfcPauseDelay'])
     @PfcPauseDelay.setter
     def PfcPauseDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PfcPauseDelay'], value)
 
     @property
     def PfcPriorityGroups(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -88,10 +100,12 @@ class Fcoe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PfcPriorityGroups'])
     @PfcPriorityGroups.setter
     def PfcPriorityGroups(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PfcPriorityGroups'], value)
 
     @property
     def PriorityGroupSize(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,10 +114,12 @@ class Fcoe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PriorityGroupSize'])
     @PriorityGroupSize.setter
     def PriorityGroupSize(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PriorityGroupSize'], value)
 
     @property
     def SupportDataCenterMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,9 +128,11 @@ class Fcoe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportDataCenterMode'])
     @SupportDataCenterMode.setter
     def SupportDataCenterMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportDataCenterMode'], value)
 
     def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+        # type: (bool, str, int, List[str], str, bool) -> Fcoe
         """Updates fcoe resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ospfv3PseudoRouter(Base):
@@ -51,9 +52,11 @@ class Ospfv3PseudoRouter(Base):
         'SrgbRangeCount': 'srgbRangeCount',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ospfv3PseudoRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ospfv3PseudoRouter, self).__init__(parent, list_op)
 
     @property
     def ExternalRoutes(self):
@@ -67,7 +70,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.externalroutes_1ced449f46e284c113ae2194af2ffb97 import ExternalRoutes
-        return ExternalRoutes(self)
+        if self._properties.get('ExternalRoutes', None) is not None:
+            return self._properties.get('ExternalRoutes')
+        else:
+            return ExternalRoutes(self)
 
     @property
     def InterAreaPrefix(self):
@@ -81,7 +87,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interareaprefix_d5c1af5dfb80980a591c026bbf1a1217 import InterAreaPrefix
-        return InterAreaPrefix(self)
+        if self._properties.get('InterAreaPrefix', None) is not None:
+            return self._properties.get('InterAreaPrefix')
+        else:
+            return InterAreaPrefix(self)
 
     @property
     def InterAreaRouter(self):
@@ -95,7 +104,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interarearouter_e3708b9636f21a071f8de5213e1653fb import InterAreaRouter
-        return InterAreaRouter(self)
+        if self._properties.get('InterAreaRouter', None) is not None:
+            return self._properties.get('InterAreaRouter')
+        else:
+            return InterAreaRouter(self)
 
     @property
     def IntraAreaPrefix(self):
@@ -109,7 +121,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.intraareaprefix_948ccdbed233cc17b5c5cd2caa82b61f import IntraAreaPrefix
-        return IntraAreaPrefix(self)
+        if self._properties.get('IntraAreaPrefix', None) is not None:
+            return self._properties.get('IntraAreaPrefix')
+        else:
+            return IntraAreaPrefix(self)
 
     @property
     def LinkLsaRoutes(self):
@@ -123,7 +138,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linklsaroutes_a80c9071154775869e327a02125984ee import LinkLsaRoutes
-        return LinkLsaRoutes(self)
+        if self._properties.get('LinkLsaRoutes', None) is not None:
+            return self._properties.get('LinkLsaRoutes')
+        else:
+            return LinkLsaRoutes(self)
 
     @property
     def NssaRoutes(self):
@@ -137,7 +155,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nssaroutes_ff8ecb21072a534ab3d887c03c4e1cc2 import NssaRoutes
-        return NssaRoutes(self)
+        if self._properties.get('NssaRoutes', None) is not None:
+            return self._properties.get('NssaRoutes')
+        else:
+            return NssaRoutes(self)
 
     @property
     def Ospfv3SRGBRangeSubObjectsList(self):
@@ -151,10 +172,14 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srgbrangesubobjectslist_be527e153c8e6d4e5c3f4321aa8409c4 import Ospfv3SRGBRangeSubObjectsList
-        return Ospfv3SRGBRangeSubObjectsList(self)
+        if self._properties.get('Ospfv3SRGBRangeSubObjectsList', None) is not None:
+            return self._properties.get('Ospfv3SRGBRangeSubObjectsList')
+        else:
+            return Ospfv3SRGBRangeSubObjectsList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +190,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +201,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def BBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +212,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +223,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,6 +233,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -213,6 +243,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def EBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -223,6 +254,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -233,6 +265,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def EnableSrMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -241,10 +274,12 @@ class Ospfv3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSrMpls'])
     @EnableSrMpls.setter
     def EnableSrMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSrMpls'], value)
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -255,6 +290,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def LoopbackAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -265,6 +301,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def MFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -275,6 +312,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -283,10 +321,12 @@ class Ospfv3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NpFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -297,6 +337,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def PrefixOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -307,6 +348,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -317,6 +359,7 @@ class Ospfv3PseudoRouter(Base):
 
     @property
     def SrgbRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -325,10 +368,12 @@ class Ospfv3PseudoRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrgbRangeCount'])
     @SrgbRangeCount.setter
     def SrgbRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrgbRangeCount'], value)
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +383,7 @@ class Ospfv3PseudoRouter(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+        # type: (bool, str, int) -> Ospfv3PseudoRouter
         """Updates ospfv3PseudoRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -355,7 +401,28 @@ class Ospfv3PseudoRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+        # type: (bool, str, int) -> Ospfv3PseudoRouter
+        """Adds a new ospfv3PseudoRouter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableSrMpls (bool): Makes the Segment Routing configuration enabled
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SrgbRangeCount (number): count of the configurable list of SRGB
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ospfv3PseudoRouter resources using find and the newly added ospfv3PseudoRouter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, EnableSrMpls=None, Name=None, SrgbRangeCount=None):
+        # type: (int, str, bool, str, int) -> Ospfv3PseudoRouter
         """Finds and retrieves ospfv3PseudoRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfv3PseudoRouter resources from the server.
@@ -398,6 +465,142 @@ class Ospfv3PseudoRouter(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def StartSimulatedRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the startSimulatedRouter operation on the server.
+
+        Start Pseudo Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        startSimulatedRouter(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSimulatedRouter(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSimulatedRouter(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startSimulatedRouter(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startSimulatedRouter', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopSimulatedRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopSimulatedRouter operation on the server.
+
+        Stop Pseudo Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopSimulatedRouter(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSimulatedRouter(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSimulatedRouter(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopSimulatedRouter(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the network info.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopSimulatedRouter', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, Algorithm=None, BBit=None, ConfigureSIDIndexLabel=None, EBit=None, EFlag=None, LFlag=None, LoopbackAddress=None, MFlag=None, NpFlag=None, PrefixOptions=None, SidIndexLabel=None, VFlag=None):
         """Base class infrastructure that gets a list of ospfv3PseudoRouter device ids encapsulated by this object.
 
@@ -429,102 +632,3 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def StartSimulatedRouter(self, *args, **kwargs):
-        """Executes the startSimulatedRouter operation on the server.
-
-        Start Pseudo Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        startSimulatedRouter(SessionIndices=list)
-        -----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        startSimulatedRouter(SessionIndices=string)
-        -------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        startSimulatedRouter(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the node specific data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('startSimulatedRouter', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopSimulatedRouter(self, *args, **kwargs):
-        """Executes the stopSimulatedRouter operation on the server.
-
-        Stop Pseudo Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopSimulatedRouter(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopSimulatedRouter(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopSimulatedRouter(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the network info. An empty list indicates all instances in the network info.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopSimulatedRouter', payload=payload, response_object=None)

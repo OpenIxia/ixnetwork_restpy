@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisTrillRouter(Base):
@@ -43,9 +44,11 @@ class IsisTrillRouter(Base):
         'RowNames': 'rowNames',
         'SendP2PHellosToUnicastMAC': 'sendP2PHellosToUnicastMAC',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisTrillRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisTrillRouter, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -59,7 +62,10 @@ class IsisTrillRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -73,10 +79,14 @@ class IsisTrillRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def AllL1RBridgesMAC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +97,7 @@ class IsisTrillRouter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,6 +107,7 @@ class IsisTrillRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +117,7 @@ class IsisTrillRouter(Base):
 
     @property
     def HelloMulticastMAC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +128,7 @@ class IsisTrillRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +137,12 @@ class IsisTrillRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NlpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +153,7 @@ class IsisTrillRouter(Base):
 
     @property
     def NoOfLSPsOrMgroupPDUsPerInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +164,7 @@ class IsisTrillRouter(Base):
 
     @property
     def RateControlInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +175,7 @@ class IsisTrillRouter(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -166,6 +185,7 @@ class IsisTrillRouter(Base):
 
     @property
     def SendP2PHellosToUnicastMAC(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +195,7 @@ class IsisTrillRouter(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SendP2PHellosToUnicastMAC']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisTrillRouter
         """Updates isisTrillRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -190,7 +211,26 @@ class IsisTrillRouter(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> IsisTrillRouter
+        """Adds a new isisTrillRouter resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved isisTrillRouter resources using find and the newly added isisTrillRouter resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
+        # type: (int, str, str, List[str]) -> IsisTrillRouter
         """Finds and retrieves isisTrillRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillRouter resources from the server.

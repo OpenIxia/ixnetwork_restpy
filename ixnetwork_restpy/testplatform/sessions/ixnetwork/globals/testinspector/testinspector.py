@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TestInspector(Base):
@@ -34,9 +35,11 @@ class TestInspector(Base):
         'EnableTestInspector': 'enableTestInspector',
         'PollingInterval': 'pollingInterval',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TestInspector, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TestInspector, self).__init__(parent, list_op)
 
     @property
     def Statistic(self):
@@ -50,10 +53,14 @@ class TestInspector(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import Statistic
-        return Statistic(self)
+        if self._properties.get('Statistic', None) is not None:
+            return self._properties.get('Statistic')
+        else:
+            return Statistic(self)
 
     @property
     def EnableTestInspector(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -62,10 +69,12 @@ class TestInspector(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableTestInspector'])
     @EnableTestInspector.setter
     def EnableTestInspector(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableTestInspector'], value)
 
     @property
     def PollingInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,9 +83,11 @@ class TestInspector(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollingInterval'])
     @PollingInterval.setter
     def PollingInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollingInterval'], value)
 
     def update(self, EnableTestInspector=None, PollingInterval=None):
+        # type: (bool, int) -> TestInspector
         """Updates testInspector resource on the server.
 
         Args

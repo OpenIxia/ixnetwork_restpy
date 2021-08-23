@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ExecWatch(Base):
@@ -43,12 +44,15 @@ class ExecWatch(Base):
         'Token': 'token',
         'Topic': 'topic',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ExecWatch, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ExecWatch, self).__init__(parent, list_op)
 
     @property
     def AverageExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class ExecWatch(Base):
 
     @property
     def ExecToWatch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +71,12 @@ class ExecWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExecToWatch'])
     @ExecToWatch.setter
     def ExecToWatch(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExecToWatch'], value)
 
     @property
     def IsDisabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,6 +86,7 @@ class ExecWatch(Base):
 
     @property
     def LastExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,6 +96,7 @@ class ExecWatch(Base):
 
     @property
     def LastNotification(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,6 +106,7 @@ class ExecWatch(Base):
 
     @property
     def MaxExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,10 +115,12 @@ class ExecWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def PollInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,10 +129,12 @@ class ExecWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
     def Token(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +144,7 @@ class ExecWatch(Base):
 
     @property
     def Topic(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,9 +153,11 @@ class ExecWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
+        # type: (str, int, int, str) -> ExecWatch
         """Updates execWatch resource on the server.
 
         Args
@@ -157,6 +174,7 @@ class ExecWatch(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ExecToWatch=None, MaxExecutionTime=None, PollInterval=None, Topic=None):
+        # type: (str, int, int, str) -> ExecWatch
         """Adds a new execWatch resource on the server and adds it to the container.
 
         Args
@@ -187,6 +205,7 @@ class ExecWatch(Base):
         self._delete()
 
     def find(self, AverageExecutionTime=None, ExecToWatch=None, IsDisabled=None, LastExecutionTime=None, LastNotification=None, MaxExecutionTime=None, PollInterval=None, Token=None, Topic=None):
+        # type: (int, str, bool, int, str, int, int, int, str) -> ExecWatch
         """Finds and retrieves execWatch resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve execWatch resources from the server.

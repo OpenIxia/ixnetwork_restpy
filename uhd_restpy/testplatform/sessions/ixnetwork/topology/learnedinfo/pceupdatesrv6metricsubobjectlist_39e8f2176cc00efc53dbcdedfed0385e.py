@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceUpdateSrv6MetricSubObjectList(Base):
@@ -37,12 +38,15 @@ class PceUpdateSrv6MetricSubObjectList(Base):
         'MetricType': 'metricType',
         'MetricValue': 'metricValue',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceUpdateSrv6MetricSubObjectList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceUpdateSrv6MetricSubObjectList, self).__init__(parent, list_op)
 
     @property
     def ActiveThisMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class PceUpdateSrv6MetricSubObjectList(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class PceUpdateSrv6MetricSubObjectList(Base):
 
     @property
     def MetricType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class PceUpdateSrv6MetricSubObjectList(Base):
 
     @property
     def MetricValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +87,19 @@ class PceUpdateSrv6MetricSubObjectList(Base):
         """
         from uhd_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MetricValue']))
+
+    def add(self):
+        """Adds a new pceUpdateSrv6MetricSubObjectList resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pceUpdateSrv6MetricSubObjectList resources using find and the newly added pceUpdateSrv6MetricSubObjectList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves pceUpdateSrv6MetricSubObjectList resources from the server.

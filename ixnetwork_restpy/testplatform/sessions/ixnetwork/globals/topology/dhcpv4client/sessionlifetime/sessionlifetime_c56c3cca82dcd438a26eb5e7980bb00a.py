@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SessionLifetime(Base):
@@ -41,12 +42,16 @@ class SessionLifetime(Base):
         'ScaleMode': 'scaleMode',
         'UnlimitedRestarts': 'unlimitedRestarts',
     }
+    _SDM_ENUM_MAP = {
+        'scaleMode': ['port', 'deviceGroup'],
+    }
 
-    def __init__(self, parent):
-        super(SessionLifetime, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SessionLifetime, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,6 +61,7 @@ class SessionLifetime(Base):
 
     @property
     def EnableLifetime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +72,7 @@ class SessionLifetime(Base):
 
     @property
     def EnableRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -76,6 +83,7 @@ class SessionLifetime(Base):
 
     @property
     def MaxLifetime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +94,7 @@ class SessionLifetime(Base):
 
     @property
     def MaxRestarts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -96,6 +105,7 @@ class SessionLifetime(Base):
 
     @property
     def MinLifetime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -106,6 +116,7 @@ class SessionLifetime(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class SessionLifetime(Base):
 
     @property
     def ScaleMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -123,10 +135,12 @@ class SessionLifetime(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ScaleMode'])
     @ScaleMode.setter
     def ScaleMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ScaleMode'], value)
 
     @property
     def UnlimitedRestarts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +150,7 @@ class SessionLifetime(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnlimitedRestarts']))
 
     def update(self, ScaleMode=None):
+        # type: (str) -> SessionLifetime
         """Updates sessionLifetime resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

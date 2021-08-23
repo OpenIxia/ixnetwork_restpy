@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Vxlanv6(Base):
@@ -39,9 +40,11 @@ class Vxlanv6(Base):
         'RowNames': 'rowNames',
         'Udp_dest': 'udp_dest',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Vxlanv6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Vxlanv6, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -55,7 +58,10 @@ class Vxlanv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -69,10 +75,14 @@ class Vxlanv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,6 +92,7 @@ class Vxlanv6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +102,7 @@ class Vxlanv6(Base):
 
     @property
     def InnerFrameMinimumSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +113,7 @@ class Vxlanv6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -109,10 +122,12 @@ class Vxlanv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OuterIpDestMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +138,7 @@ class Vxlanv6(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -132,6 +148,7 @@ class Vxlanv6(Base):
 
     @property
     def Udp_dest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +158,7 @@ class Vxlanv6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Udp_dest']))
 
     def update(self, Name=None):
+        # type: (str) -> Vxlanv6
         """Updates vxlanv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

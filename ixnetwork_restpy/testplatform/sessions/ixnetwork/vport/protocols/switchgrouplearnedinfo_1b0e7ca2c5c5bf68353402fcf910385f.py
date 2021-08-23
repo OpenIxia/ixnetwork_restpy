@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchGroupLearnedInfo(Base):
@@ -45,9 +46,11 @@ class SwitchGroupLearnedInfo(Base):
         'PacketCount': 'packetCount',
         'ReferenceCount': 'referenceCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchGroupLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchGroupLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def SwitchGroupBucketLearnedInfo(self):
@@ -61,10 +64,14 @@ class SwitchGroupLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupbucketlearnedinfo_9a65c5052010d8a7d3ba2272e133999d import SwitchGroupBucketLearnedInfo
-        return SwitchGroupBucketLearnedInfo(self)
+        if self._properties.get('SwitchGroupBucketLearnedInfo', None) is not None:
+            return self._properties.get('SwitchGroupBucketLearnedInfo')
+        else:
+            return SwitchGroupBucketLearnedInfo(self)
 
     @property
     def ByteCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,6 +81,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def DatapathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +91,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def DatapathIdInHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def Duration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,6 +111,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def DurationInNs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def GroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,6 +131,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def GroupType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,6 +141,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,6 +151,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,6 +161,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def NumOfBuckets(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,6 +171,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def PacketCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -164,6 +181,7 @@ class SwitchGroupLearnedInfo(Base):
 
     @property
     def ReferenceCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,7 +189,21 @@ class SwitchGroupLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['ReferenceCount'])
 
+    def add(self):
+        """Adds a new switchGroupLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchGroupLearnedInfo resources using find and the newly added switchGroupLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ByteCount=None, DatapathId=None, DatapathIdInHex=None, Duration=None, DurationInNs=None, GroupId=None, GroupType=None, LocalIp=None, NegotiatedVersion=None, NumOfBuckets=None, PacketCount=None, ReferenceCount=None):
+        # type: (int, str, str, int, int, int, str, str, str, int, int, int) -> SwitchGroupLearnedInfo
         """Finds and retrieves switchGroupLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchGroupLearnedInfo resources from the server.

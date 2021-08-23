@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Instruction(Base):
@@ -38,9 +39,11 @@ class Instruction(Base):
         'ExperimenterId': 'experimenterId',
         'ExperimenterIdMiss': 'experimenterIdMiss',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Instruction, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Instruction, self).__init__(parent, list_op)
 
     @property
     def InstructionType(self):
@@ -54,7 +57,10 @@ class Instruction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontype_48ecf22c686ab3b403480ead04a36305 import InstructionType
-        return InstructionType(self)._select()
+        if self._properties.get('InstructionType', None) is not None:
+            return self._properties.get('InstructionType')
+        else:
+            return InstructionType(self)._select()
 
     @property
     def InstructionTypeMiss(self):
@@ -68,10 +74,14 @@ class Instruction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructiontypemiss_253739e9542d1a3617b510285726bcd8 import InstructionTypeMiss
-        return InstructionTypeMiss(self)._select()
+        if self._properties.get('InstructionTypeMiss', None) is not None:
+            return self._properties.get('InstructionTypeMiss')
+        else:
+            return InstructionTypeMiss(self)._select()
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +90,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
     @ExperimenterData.setter
     def ExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -92,10 +104,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
 
     @property
     def ExperimenterDataLengthMiss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,10 +118,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'])
     @ExperimenterDataLengthMiss.setter
     def ExperimenterDataLengthMiss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLengthMiss'], value)
 
     @property
     def ExperimenterDataMiss(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +132,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'])
     @ExperimenterDataMiss.setter
     def ExperimenterDataMiss(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataMiss'], value)
 
     @property
     def ExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,10 +146,12 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
     @ExperimenterId.setter
     def ExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
 
     @property
     def ExperimenterIdMiss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -140,9 +160,11 @@ class Instruction(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'])
     @ExperimenterIdMiss.setter
     def ExperimenterIdMiss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterIdMiss'], value)
 
     def update(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+        # type: (str, int, int, str, int, int) -> Instruction
         """Updates instruction resource on the server.
 
         Args

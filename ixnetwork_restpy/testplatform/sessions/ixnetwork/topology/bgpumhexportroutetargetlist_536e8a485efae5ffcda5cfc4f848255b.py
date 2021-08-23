@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpUmhExportRouteTargetList(Base):
@@ -41,12 +42,15 @@ class BgpUmhExportRouteTargetList(Base):
         'TargetIpAddress': 'targetIpAddress',
         'TargetType': 'targetType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpUmhExportRouteTargetList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpUmhExportRouteTargetList, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,10 +79,12 @@ class BgpUmhExportRouteTargetList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TargetAs4Number(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +95,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     @property
     def TargetAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +106,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     @property
     def TargetAssignedNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +117,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     @property
     def TargetIpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class BgpUmhExportRouteTargetList(Base):
 
     @property
     def TargetType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +138,7 @@ class BgpUmhExportRouteTargetList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TargetType']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpUmhExportRouteTargetList
         """Updates bgpUmhExportRouteTargetList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -141,7 +154,26 @@ class BgpUmhExportRouteTargetList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> BgpUmhExportRouteTargetList
+        """Adds a new bgpUmhExportRouteTargetList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpUmhExportRouteTargetList resources using find and the newly added bgpUmhExportRouteTargetList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> BgpUmhExportRouteTargetList
         """Finds and retrieves bgpUmhExportRouteTargetList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpUmhExportRouteTargetList resources from the server.

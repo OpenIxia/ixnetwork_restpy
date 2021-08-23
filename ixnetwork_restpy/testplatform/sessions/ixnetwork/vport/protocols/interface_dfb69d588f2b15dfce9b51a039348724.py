@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -58,9 +59,17 @@ class Interface(Base):
         'TimeOutOption': 'timeOutOption',
         'TypeOfConnection': 'typeOfConnection',
     }
+    _SDM_ENUM_MAP = {
+        'auxiliaryConnectionTimeout': ['auxReSendFeatureRequest', 'auxFeatureRequestTerminateConnection'],
+        'badVersionErrorAction': ['auxReSendHello', 'auxTerminateConnection'],
+        'modeOfConnection': ['passive', 'active', 'mixed'],
+        'nonHelloMessageStartupAction': ['auxAcceptConnection', 'auxSendError'],
+        'timeOutOption': ['multiplier', 'timeOutValue'],
+        'typeOfConnection': ['tcp', 'tls'],
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def OfChannel(self):
@@ -74,7 +83,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannel_6438927b294940eb069f5082e5b0256a import OfChannel
-        return OfChannel(self)
+        if self._properties.get('OfChannel', None) is not None:
+            return self._properties.get('OfChannel')
+        else:
+            return OfChannel(self)
 
     @property
     def Switch(self):
@@ -88,10 +100,14 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switch_01307b98e565f217f4916d54fbbe93ce import Switch
-        return Switch(self)
+        if self._properties.get('Switch', None) is not None:
+            return self._properties.get('Switch')
+        else:
+            return Switch(self)
 
     @property
     def AcceptUnconfiguredChannel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -100,10 +116,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcceptUnconfiguredChannel'])
     @AcceptUnconfiguredChannel.setter
     def AcceptUnconfiguredChannel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcceptUnconfiguredChannel'], value)
 
     @property
     def AllFlowsDelOnStart(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -112,10 +130,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllFlowsDelOnStart'])
     @AllFlowsDelOnStart.setter
     def AllFlowsDelOnStart(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllFlowsDelOnStart'], value)
 
     @property
     def AuxiliaryConnectionTimeout(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,10 +144,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionTimeout'])
     @AuxiliaryConnectionTimeout.setter
     def AuxiliaryConnectionTimeout(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuxiliaryConnectionTimeout'], value)
 
     @property
     def BadVersionErrorAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,10 +158,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BadVersionErrorAction'])
     @BadVersionErrorAction.setter
     def BadVersionErrorAction(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BadVersionErrorAction'], value)
 
     @property
     def EchoInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -148,10 +172,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoInterval'])
     @EchoInterval.setter
     def EchoInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoInterval'], value)
 
     @property
     def EchoMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,10 +186,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoMultiplier'])
     @EchoMultiplier.setter
     def EchoMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoMultiplier'], value)
 
     @property
     def EchoTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -172,10 +200,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EchoTimeout'])
     @EchoTimeout.setter
     def EchoTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EchoTimeout'], value)
 
     @property
     def EnableEchoTimeOut(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -184,10 +214,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEchoTimeOut'])
     @EnableEchoTimeOut.setter
     def EnableEchoTimeOut(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEchoTimeOut'], value)
 
     @property
     def EnableMultipleLogicalSwitch(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -196,10 +228,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMultipleLogicalSwitch'])
     @EnableMultipleLogicalSwitch.setter
     def EnableMultipleLogicalSwitch(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMultipleLogicalSwitch'], value)
 
     @property
     def EnablePeriodicEcho(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -208,10 +242,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicEcho'])
     @EnablePeriodicEcho.setter
     def EnablePeriodicEcho(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicEcho'], value)
 
     @property
     def EnablePeriodicLldp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -220,10 +256,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicLldp'])
     @EnablePeriodicLldp.setter
     def EnablePeriodicLldp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicLldp'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -232,10 +270,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FeatureRequestTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -244,10 +284,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FeatureRequestTimeout'])
     @FeatureRequestTimeout.setter
     def FeatureRequestTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FeatureRequestTimeout'], value)
 
     @property
     def FeatureRequestTimeoutAction(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -256,10 +298,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FeatureRequestTimeoutAction'])
     @FeatureRequestTimeoutAction.setter
     def FeatureRequestTimeoutAction(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FeatureRequestTimeoutAction'], value)
 
     @property
     def InstallFlowForLldp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -268,10 +312,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstallFlowForLldp'])
     @InstallFlowForLldp.setter
     def InstallFlowForLldp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstallFlowForLldp'], value)
 
     @property
     def LldpDestinationMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -280,10 +326,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LldpDestinationMacAddress'])
     @LldpDestinationMacAddress.setter
     def LldpDestinationMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LldpDestinationMacAddress'], value)
 
     @property
     def ModeOfConnection(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -292,10 +340,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ModeOfConnection'])
     @ModeOfConnection.setter
     def ModeOfConnection(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ModeOfConnection'], value)
 
     @property
     def NonHelloMessageStartupAction(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -304,10 +354,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NonHelloMessageStartupAction'])
     @NonHelloMessageStartupAction.setter
     def NonHelloMessageStartupAction(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NonHelloMessageStartupAction'], value)
 
     @property
     def PeriodicLldpInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -316,10 +368,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicLldpInterval'])
     @PeriodicLldpInterval.setter
     def PeriodicLldpInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicLldpInterval'], value)
 
     @property
     def ProtocolInterfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -328,10 +382,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'])
     @ProtocolInterfaces.setter
     def ProtocolInterfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'], value)
 
     @property
     def SendPortFeatureAtStartup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -340,10 +396,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendPortFeatureAtStartup'])
     @SendPortFeatureAtStartup.setter
     def SendPortFeatureAtStartup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendPortFeatureAtStartup'], value)
 
     @property
     def TcpPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -352,10 +410,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpPort'])
     @TcpPort.setter
     def TcpPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpPort'], value)
 
     @property
     def TimeOutOption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -364,10 +424,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeOutOption'])
     @TimeOutOption.setter
     def TimeOutOption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeOutOption'], value)
 
     @property
     def TypeOfConnection(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -376,9 +438,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TypeOfConnection'])
     @TypeOfConnection.setter
     def TypeOfConnection(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TypeOfConnection'], value)
 
     def update(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+        # type: (bool, bool, str, str, int, int, int, bool, bool, bool, bool, bool, int, int, bool, str, str, str, int, str, bool, int, str, str) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -415,6 +479,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+        # type: (bool, bool, str, str, int, int, int, bool, bool, bool, bool, bool, int, int, bool, str, str, str, int, str, bool, int, str, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -465,6 +530,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, AcceptUnconfiguredChannel=None, AllFlowsDelOnStart=None, AuxiliaryConnectionTimeout=None, BadVersionErrorAction=None, EchoInterval=None, EchoMultiplier=None, EchoTimeout=None, EnableEchoTimeOut=None, EnableMultipleLogicalSwitch=None, EnablePeriodicEcho=None, EnablePeriodicLldp=None, Enabled=None, FeatureRequestTimeout=None, FeatureRequestTimeoutAction=None, InstallFlowForLldp=None, LldpDestinationMacAddress=None, ModeOfConnection=None, NonHelloMessageStartupAction=None, PeriodicLldpInterval=None, ProtocolInterfaces=None, SendPortFeatureAtStartup=None, TcpPort=None, TimeOutOption=None, TypeOfConnection=None):
+        # type: (bool, bool, str, str, int, int, int, bool, bool, bool, bool, bool, int, int, bool, str, str, str, int, str, bool, int, str, str) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.

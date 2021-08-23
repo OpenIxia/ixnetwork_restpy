@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcp6LearnedInfo(Base):
@@ -39,12 +40,15 @@ class Dhcp6LearnedInfo(Base):
         'TabbedDiscoveredPrefix': 'tabbedDiscoveredPrefix',
         'TabbedDiscoveredPrefixLength': 'tabbedDiscoveredPrefixLength',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcp6LearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcp6LearnedInfo, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,10 +77,12 @@ class Dhcp6LearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TabbedDiscoveredAddresses(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -84,6 +92,7 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def TabbedDiscoveredGateways(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -93,6 +102,7 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def TabbedDiscoveredPrefix(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -102,6 +112,7 @@ class Dhcp6LearnedInfo(Base):
 
     @property
     def TabbedDiscoveredPrefixLength(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -110,6 +121,7 @@ class Dhcp6LearnedInfo(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TabbedDiscoveredPrefixLength'])
 
     def update(self, Name=None):
+        # type: (str) -> Dhcp6LearnedInfo
         """Updates dhcp6LearnedInfo resource on the server.
 
         Args

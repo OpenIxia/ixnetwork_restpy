@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceUpdateSrEroSubObjectList(Base):
@@ -54,12 +55,15 @@ class PceUpdateSrEroSubObjectList(Base):
         'Tc': 'tc',
         'Ttl': 'ttl',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceUpdateSrEroSubObjectList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceUpdateSrEroSubObjectList, self).__init__(parent, list_op)
 
     @property
     def ActiveThisEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -70,6 +74,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def Bos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +85,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def FBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -90,6 +96,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def Ipv4NodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -100,6 +107,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def Ipv6NodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -110,6 +118,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def LocalInterfaceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +129,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def LocalIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +140,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def LocalIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +151,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def LocalNodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +162,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def LooseHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +173,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +184,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def MplsLabel32(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -180,6 +195,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def NaiType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -190,6 +206,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def RemoteInterfaceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -200,6 +217,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def RemoteIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -210,6 +228,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def RemoteIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -220,6 +239,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def RemoteNodeId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -230,6 +250,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def Sid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -240,6 +261,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def SidType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -250,6 +272,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def Tc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -260,6 +283,7 @@ class PceUpdateSrEroSubObjectList(Base):
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -267,6 +291,19 @@ class PceUpdateSrEroSubObjectList(Base):
         """
         from uhd_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
+
+    def add(self):
+        """Adds a new pceUpdateSrEroSubObjectList resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pceUpdateSrEroSubObjectList resources using find and the newly added pceUpdateSrEroSubObjectList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves pceUpdateSrEroSubObjectList resources from the server.

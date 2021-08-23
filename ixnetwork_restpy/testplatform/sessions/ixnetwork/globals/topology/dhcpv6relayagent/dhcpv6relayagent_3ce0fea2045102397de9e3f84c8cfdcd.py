@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6relayAgent(Base):
@@ -36,9 +37,11 @@ class Dhcpv6relayAgent(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6relayAgent, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6relayAgent, self).__init__(parent, list_op)
 
     @property
     def TlvEditor(self):
@@ -52,10 +55,14 @@ class Dhcpv6relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        return TlvEditor(self)
+        if self._properties.get('TlvEditor', None) is not None:
+            return self._properties.get('TlvEditor')
+        else:
+            return TlvEditor(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,6 +72,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +82,7 @@ class Dhcpv6relayAgent(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,10 +91,12 @@ class Dhcpv6relayAgent(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -94,6 +105,7 @@ class Dhcpv6relayAgent(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> Dhcpv6relayAgent
         """Updates dhcpv6relayAgent resource on the server.
 
         Args

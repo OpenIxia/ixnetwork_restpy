@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IxVmCard(Base):
@@ -39,9 +40,12 @@ class IxVmCard(Base):
         'KeepAliveTimeout': 'keepAliveTimeout',
         'ManagementIp': 'managementIp',
     }
+    _SDM_ENUM_MAP = {
+        'cardState': ['cardDisconnected', 'cardIpInUse', 'cardOK', 'cardRemoved', 'cardUnableToConnect', 'cardUnitialized', 'cardUnknownError', 'cardUnsynchronized', 'cardVersionMismatch'],
+    }
 
-    def __init__(self, parent):
-        super(IxVmCard, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IxVmCard, self).__init__(parent, list_op)
 
     @property
     def IxVmPort(self):
@@ -55,10 +59,14 @@ class IxVmCard(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmport.ixvmport import IxVmPort
-        return IxVmPort(self)
+        if self._properties.get('IxVmPort', None) is not None:
+            return self._properties.get('IxVmPort')
+        else:
+            return IxVmPort(self)
 
     @property
     def CardId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,10 +75,12 @@ class IxVmCard(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CardId'])
     @CardId.setter
     def CardId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CardId'], value)
 
     @property
     def CardName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +89,12 @@ class IxVmCard(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CardName'])
     @CardName.setter
     def CardName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CardName'], value)
 
     @property
     def CardState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,6 +104,7 @@ class IxVmCard(Base):
 
     @property
     def KeepAliveTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -100,10 +113,12 @@ class IxVmCard(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KeepAliveTimeout'])
     @KeepAliveTimeout.setter
     def KeepAliveTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['KeepAliveTimeout'], value)
 
     @property
     def ManagementIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,9 +127,11 @@ class IxVmCard(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ManagementIp'])
     @ManagementIp.setter
     def ManagementIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ManagementIp'], value)
 
     def update(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
+        # type: (str, str, int, str) -> IxVmCard
         """Updates ixVmCard resource on the server.
 
         Args
@@ -131,6 +148,7 @@ class IxVmCard(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CardId=None, CardName=None, KeepAliveTimeout=None, ManagementIp=None):
+        # type: (str, str, int, str) -> IxVmCard
         """Adds a new ixVmCard resource on the server and adds it to the container.
 
         Args
@@ -161,6 +179,7 @@ class IxVmCard(Base):
         self._delete()
 
     def find(self, CardId=None, CardName=None, CardState=None, KeepAliveTimeout=None, ManagementIp=None):
+        # type: (str, str, str, int, str) -> IxVmCard
         """Finds and retrieves ixVmCard resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ixVmCard resources from the server.

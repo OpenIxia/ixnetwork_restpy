@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VirtualChassis(Base):
@@ -37,9 +38,11 @@ class VirtualChassis(Base):
         'NtpServer': 'ntpServer',
         'StartTxDelay': 'startTxDelay',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VirtualChassis, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VirtualChassis, self).__init__(parent, list_op)
 
     @property
     def DiscoveredAppliance(self):
@@ -53,7 +56,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance import DiscoveredAppliance
-        return DiscoveredAppliance(self)
+        if self._properties.get('DiscoveredAppliance', None) is not None:
+            return self._properties.get('DiscoveredAppliance')
+        else:
+            return DiscoveredAppliance(self)
 
     @property
     def Hypervisor(self):
@@ -67,7 +73,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor import Hypervisor
-        return Hypervisor(self)
+        if self._properties.get('Hypervisor', None) is not None:
+            return self._properties.get('Hypervisor')
+        else:
+            return Hypervisor(self)
 
     @property
     def IxVmCard(self):
@@ -81,10 +90,14 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard import IxVmCard
-        return IxVmCard(self)
+        if self._properties.get('IxVmCard', None) is not None:
+            return self._properties.get('IxVmCard')
+        else:
+            return IxVmCard(self)
 
     @property
     def EnableLicenseCheck(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,10 +106,12 @@ class VirtualChassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLicenseCheck'])
     @EnableLicenseCheck.setter
     def EnableLicenseCheck(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLicenseCheck'], value)
 
     @property
     def Hostname(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +121,7 @@ class VirtualChassis(Base):
 
     @property
     def LicenseServer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,10 +130,12 @@ class VirtualChassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LicenseServer'])
     @LicenseServer.setter
     def LicenseServer(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LicenseServer'], value)
 
     @property
     def NtpServer(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,10 +144,12 @@ class VirtualChassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NtpServer'])
     @NtpServer.setter
     def NtpServer(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NtpServer'], value)
 
     @property
     def StartTxDelay(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,9 +158,11 @@ class VirtualChassis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartTxDelay'])
     @StartTxDelay.setter
     def StartTxDelay(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartTxDelay'], value)
 
     def update(self, EnableLicenseCheck=None, LicenseServer=None, NtpServer=None, StartTxDelay=None):
+        # type: (bool, str, str, str) -> VirtualChassis
         """Updates virtualChassis resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AvailableHardware(Base):
@@ -35,9 +36,11 @@ class AvailableHardware(Base):
         'IsOffChassis': 'isOffChassis',
         'OffChassisHwM': 'offChassisHwM',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AvailableHardware, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AvailableHardware, self).__init__(parent, list_op)
 
     @property
     def Chassis(self):
@@ -51,7 +54,10 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis import Chassis
-        return Chassis(self)
+        if self._properties.get('Chassis', None) is not None:
+            return self._properties.get('Chassis')
+        else:
+            return Chassis(self)
 
     @property
     def VirtualChassis(self):
@@ -65,10 +71,14 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import VirtualChassis
-        return VirtualChassis(self)._select()
+        if self._properties.get('VirtualChassis', None) is not None:
+            return self._properties.get('VirtualChassis')
+        else:
+            return VirtualChassis(self)._select()
 
     @property
     def IsLocked(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,6 +88,7 @@ class AvailableHardware(Base):
 
     @property
     def IsOffChassis(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -86,10 +97,12 @@ class AvailableHardware(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsOffChassis'])
     @IsOffChassis.setter
     def IsOffChassis(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsOffChassis'], value)
 
     @property
     def OffChassisHwM(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -98,9 +111,11 @@ class AvailableHardware(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OffChassisHwM'])
     @OffChassisHwM.setter
     def OffChassisHwM(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OffChassisHwM'], value)
 
     def update(self, IsOffChassis=None, OffChassisHwM=None):
+        # type: (bool, str) -> AvailableHardware
         """Updates availableHardware resource on the server.
 
         Args

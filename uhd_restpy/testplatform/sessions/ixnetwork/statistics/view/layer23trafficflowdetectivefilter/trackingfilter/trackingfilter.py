@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrackingFilter(Base):
@@ -37,12 +38,16 @@ class TrackingFilter(Base):
         'TrackingFilterId': 'trackingFilterId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'operator': ['isAnyOf', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isInAnyRange', 'isNoneOf', 'isSmaller'],
+    }
 
-    def __init__(self, parent):
-        super(TrackingFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrackingFilter, self).__init__(parent, list_op)
 
     @property
     def Operator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,22 +56,26 @@ class TrackingFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def TrackingFilterId(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrackingFilterId'])
     @TrackingFilterId.setter
     def TrackingFilterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrackingFilterId'], value)
 
     @property
     def Value(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -75,15 +84,17 @@ class TrackingFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Operator=None, TrackingFilterId=None, Value=None):
+        # type: (str, str, List[str]) -> TrackingFilter
         """Updates trackingFilter resource on the server.
 
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Value (list(str)): Value of the object
 
         Raises
@@ -93,12 +104,13 @@ class TrackingFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Operator=None, TrackingFilterId=None, Value=None):
+        # type: (str, str, List[str]) -> TrackingFilter
         """Adds a new trackingFilter resource on the server and adds it to the container.
 
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Value (list(str)): Value of the object
 
         Returns
@@ -122,6 +134,7 @@ class TrackingFilter(Base):
         self._delete()
 
     def find(self, Operator=None, TrackingFilterId=None, Value=None):
+        # type: (str, str, List[str]) -> TrackingFilter
         """Finds and retrieves trackingFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trackingFilter resources from the server.
@@ -131,7 +144,7 @@ class TrackingFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
-        - TrackingFilterId (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Value (list(str)): Value of the object
 
         Returns

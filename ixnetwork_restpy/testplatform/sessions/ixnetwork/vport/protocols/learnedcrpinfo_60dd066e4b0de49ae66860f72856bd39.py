@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedCrpInfo(Base):
@@ -38,12 +39,15 @@ class LearnedCrpInfo(Base):
         'GroupMaskWidth': 'groupMaskWidth',
         'Priority': 'priority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedCrpInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedCrpInfo, self).__init__(parent, list_op)
 
     @property
     def CrpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class LearnedCrpInfo(Base):
 
     @property
     def ExpiryTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class LearnedCrpInfo(Base):
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class LearnedCrpInfo(Base):
 
     @property
     def GroupMaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class LearnedCrpInfo(Base):
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,7 +95,21 @@ class LearnedCrpInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
 
+    def add(self):
+        """Adds a new learnedCrpInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedCrpInfo resources using find and the newly added learnedCrpInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CrpAddress=None, ExpiryTimer=None, GroupAddress=None, GroupMaskWidth=None, Priority=None):
+        # type: (str, int, str, int, int) -> LearnedCrpInfo
         """Finds and retrieves learnedCrpInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedCrpInfo resources from the server.

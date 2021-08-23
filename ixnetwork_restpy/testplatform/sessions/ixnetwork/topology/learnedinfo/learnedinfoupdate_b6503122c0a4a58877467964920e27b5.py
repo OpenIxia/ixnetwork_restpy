@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInfoUpdate(Base):
@@ -33,9 +34,11 @@ class LearnedInfoUpdate(Base):
     _SDM_NAME = 'learnedInfoUpdate'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedInfoUpdate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInfoUpdate, self).__init__(parent, list_op)
 
     @property
     def PceBasicRsvpSyncLspUpdateParams(self):
@@ -49,7 +52,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicrsvpsynclspupdateparams_8eebf36e958239643e818ec82c070a9d import PceBasicRsvpSyncLspUpdateParams
-        return PceBasicRsvpSyncLspUpdateParams(self)
+        if self._properties.get('PceBasicRsvpSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceBasicRsvpSyncLspUpdateParams')
+        else:
+            return PceBasicRsvpSyncLspUpdateParams(self)
 
     @property
     def PceBasicSrSyncLspUpdateParams(self):
@@ -63,7 +69,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrsynclspupdateparams_e224da984d79f6f4694b7fe51cfdca2e import PceBasicSrSyncLspUpdateParams
-        return PceBasicSrSyncLspUpdateParams(self)
+        if self._properties.get('PceBasicSrSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceBasicSrSyncLspUpdateParams')
+        else:
+            return PceBasicSrSyncLspUpdateParams(self)
 
     @property
     def PceBasicSrv6SyncLspUpdateParams(self):
@@ -77,7 +86,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcebasicsrv6synclspupdateparams_f8b23c23c5f697c906745f450fa4928e import PceBasicSrv6SyncLspUpdateParams
-        return PceBasicSrv6SyncLspUpdateParams(self)
+        if self._properties.get('PceBasicSrv6SyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceBasicSrv6SyncLspUpdateParams')
+        else:
+            return PceBasicSrv6SyncLspUpdateParams(self)
 
     @property
     def PceDetailedRsvpSyncLspUpdateParams(self):
@@ -91,7 +103,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedrsvpsynclspupdateparams_e9ce5c06b7306f8f1557d3a9a0d44c61 import PceDetailedRsvpSyncLspUpdateParams
-        return PceDetailedRsvpSyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedRsvpSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceDetailedRsvpSyncLspUpdateParams')
+        else:
+            return PceDetailedRsvpSyncLspUpdateParams(self)
 
     @property
     def PceDetailedSrSyncLspUpdateParams(self):
@@ -105,7 +120,10 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrsynclspupdateparams_48855195a8f4f4b7a77d8bd5ab97cf25 import PceDetailedSrSyncLspUpdateParams
-        return PceDetailedSrSyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedSrSyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceDetailedSrSyncLspUpdateParams')
+        else:
+            return PceDetailedSrSyncLspUpdateParams(self)
 
     @property
     def PceDetailedSrv6SyncLspUpdateParams(self):
@@ -119,7 +137,23 @@ class LearnedInfoUpdate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pcedetailedsrv6synclspupdateparams_e418ef8ea23a19f0617af42b48dee0f9 import PceDetailedSrv6SyncLspUpdateParams
-        return PceDetailedSrv6SyncLspUpdateParams(self)
+        if self._properties.get('PceDetailedSrv6SyncLspUpdateParams', None) is not None:
+            return self._properties.get('PceDetailedSrv6SyncLspUpdateParams')
+        else:
+            return PceDetailedSrv6SyncLspUpdateParams(self)
+
+    def add(self):
+        """Adds a new learnedInfoUpdate resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedInfoUpdate resources using find and the newly added learnedInfoUpdate resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves learnedInfoUpdate resources from the server.

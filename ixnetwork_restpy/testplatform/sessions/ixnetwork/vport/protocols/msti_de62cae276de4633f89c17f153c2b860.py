@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Msti(Base):
@@ -45,9 +46,13 @@ class Msti(Base):
         'VlanStart': 'vlanStart',
         'VlanStop': 'vlanStop',
     }
+    _SDM_ENUM_MAP = {
+        'portPriority': ['0', '16', '32', '48', '64', '80', '96', '112', '128', '144', '160', '176', '192', '208', '224', '240'],
+        'priority': ['0', '4096', '8192', '12288', '16384', '20480', '24576', '28672', '32768', '36864', '40960', '45056', '49152', '53248', '57344', '61440'],
+    }
 
-    def __init__(self, parent):
-        super(Msti, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Msti, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -61,7 +66,10 @@ class Msti(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_273e29468afb43ab6030d9ae638525ff import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
@@ -75,10 +83,14 @@ class Msti(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_6425a34ec2fefebf89af1ee19da2cb62 import LearnedInterface
-        return LearnedInterface(self)
+        if self._properties.get('LearnedInterface', None) is not None:
+            return self._properties.get('LearnedInterface')
+        else:
+            return LearnedInterface(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +99,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InternalRootPathCost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +113,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InternalRootPathCost'])
     @InternalRootPathCost.setter
     def InternalRootPathCost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InternalRootPathCost'], value)
 
     @property
     def Mac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,10 +127,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mac'])
     @Mac.setter
     def Mac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
 
     @property
     def MstiHops(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,10 +141,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MstiHops'])
     @MstiHops.setter
     def MstiHops(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MstiHops'], value)
 
     @property
     def MstiId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,10 +155,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MstiId'])
     @MstiId.setter
     def MstiId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MstiId'], value)
 
     @property
     def MstiName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,10 +169,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MstiName'])
     @MstiName.setter
     def MstiName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MstiName'], value)
 
     @property
     def PortPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,10 +183,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortPriority'])
     @PortPriority.setter
     def PortPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortPriority'], value)
 
     @property
     def Priority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +197,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def UpdateRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -183,10 +211,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
     @UpdateRequired.setter
     def UpdateRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpdateRequired'], value)
 
     @property
     def VlanStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +225,12 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanStart'])
     @VlanStart.setter
     def VlanStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanStart'], value)
 
     @property
     def VlanStop(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,9 +239,11 @@ class Msti(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanStop'])
     @VlanStop.setter
     def VlanStop(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanStop'], value)
 
     def update(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+        # type: (bool, int, str, int, int, str, str, str, bool, int, int) -> Msti
         """Updates msti resource on the server.
 
         Args
@@ -233,6 +267,7 @@ class Msti(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+        # type: (bool, int, str, int, int, str, str, str, bool, int, int) -> Msti
         """Adds a new msti resource on the server and adds it to the container.
 
         Args
@@ -270,6 +305,7 @@ class Msti(Base):
         self._delete()
 
     def find(self, Enabled=None, InternalRootPathCost=None, Mac=None, MstiHops=None, MstiId=None, MstiName=None, PortPriority=None, Priority=None, UpdateRequired=None, VlanStart=None, VlanStop=None):
+        # type: (bool, int, str, int, int, str, str, str, bool, int, int) -> Msti
         """Finds and retrieves msti resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve msti resources from the server.
@@ -318,28 +354,44 @@ class Msti(Base):
         """
         return self._read(href)
 
-    def TopologyChange(self):
+    def TopologyChange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the topologyChange operation on the server.
 
         This command checks to see if a topology change has occurred on the specified STP bridge MSTI.
 
+        topologyChange(async_operation=bool)bool
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('topologyChange', payload=payload, response_object=None)
 
-    def UpdateParameters(self):
+    def UpdateParameters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateParameters operation on the server.
 
         Updates the current STP parameters on the specified bridge MSTI.
 
+        updateParameters(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('updateParameters', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Lacp(Base):
@@ -36,9 +37,12 @@ class Lacp(Base):
         'IsLacpPortLearnedInfoRefreshed': 'isLacpPortLearnedInfoRefreshed',
         'RunningState': 'runningState',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Lacp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Lacp, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -52,7 +56,10 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_4e6b30ede278e0f1f44ceef59a7cc716 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def Link(self):
@@ -66,10 +73,14 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_05cc0903dd20fb640a82079159eed6bc import Link
-        return Link(self)
+        if self._properties.get('Link', None) is not None:
+            return self._properties.get('Link')
+        else:
+            return Link(self)
 
     @property
     def EnablePreservePartnerInfo(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,10 +89,12 @@ class Lacp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePreservePartnerInfo'])
     @EnablePreservePartnerInfo.setter
     def EnablePreservePartnerInfo(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePreservePartnerInfo'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,10 +103,12 @@ class Lacp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IsLacpPortLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,6 +118,7 @@ class Lacp(Base):
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -111,6 +127,7 @@ class Lacp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
 
     def update(self, EnablePreservePartnerInfo=None, Enabled=None):
+        # type: (bool, bool) -> Lacp
         """Updates lacp resource on the server.
 
         Args
@@ -124,93 +141,142 @@ class Lacp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def RefreshLacpPortLearnedInfo(self):
+    def RefreshLacpPortLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the refreshLacpPortLearnedInfo operation on the server.
 
         This exec refreshes the LACP port learned information.
 
+        refreshLacpPortLearnedInfo(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLacpPortLearnedInfo', payload=payload, response_object=None)
 
-    def SendMarkerRequest(self):
+    def SendMarkerRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the sendMarkerRequest operation on the server.
 
         This sends a marker request. The contents of the marker PDU contain the current view of partner (which can be defaulted if no partner is present). The marker will be sent regardless of which state the link is in.
 
+        sendMarkerRequest(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendMarkerRequest', payload=payload, response_object=None)
 
-    def SendUpdate(self):
+    def SendUpdate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the sendUpdate operation on the server.
 
         This exec sends an update to the actor's partners after a change has been made to the link's parameters.
 
+        sendUpdate(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendUpdate', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         This exec starts the LACP protocol.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def StartPdu(self):
+    def StartPdu(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startPdu operation on the server.
 
         This exec starts PDUs related to LACP (for example, LACPDU, Marker Request PDU, Marker Response PDU) while the protocol is running on the port.
 
+        startPdu(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startPdu', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         This exec stops the LACP protocol.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def StopPdu(self):
+    def StopPdu(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopPdu operation on the server.
 
         This exec stops PDUs related to LACP (for example, LACPDU, Marker Request PDU, Marker Response PDU) while the protocol is running on the port.
 
+        stopPdu(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopPdu', payload=payload, response_object=None)

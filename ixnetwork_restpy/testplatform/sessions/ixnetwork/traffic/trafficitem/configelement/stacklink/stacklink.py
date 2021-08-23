@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class StackLink(Base):
@@ -34,12 +35,15 @@ class StackLink(Base):
     _SDM_ATT_MAP = {
         'LinkedTo': 'linkedTo',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(StackLink, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(StackLink, self).__init__(parent, list_op)
 
     @property
     def LinkedTo(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -48,9 +52,11 @@ class StackLink(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkedTo'])
     @LinkedTo.setter
     def LinkedTo(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkedTo'], value)
 
     def update(self, LinkedTo=None):
+        # type: (str) -> StackLink
         """Updates stackLink resource on the server.
 
         Args
@@ -63,7 +69,26 @@ class StackLink(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, LinkedTo=None):
+        # type: (str) -> StackLink
+        """Adds a new stackLink resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - LinkedTo (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stackLink)): Indicates which stack item this is linked to.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved stackLink resources using find and the newly added stackLink resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, LinkedTo=None):
+        # type: (str) -> StackLink
         """Finds and retrieves stackLink resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stackLink resources from the server.

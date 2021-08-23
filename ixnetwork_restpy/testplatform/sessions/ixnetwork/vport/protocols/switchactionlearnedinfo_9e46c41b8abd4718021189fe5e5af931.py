@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchActionLearnedInfo(Base):
@@ -46,12 +47,15 @@ class SwitchActionLearnedInfo(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchActionLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchActionLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def ActionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +65,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def MaxByteLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,6 +125,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def OutputPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -124,6 +135,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def QueueId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -133,6 +145,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def TransportDestination(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -142,6 +155,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def TransportSource(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -151,6 +165,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,6 +175,7 @@ class SwitchActionLearnedInfo(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,7 +183,21 @@ class SwitchActionLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
 
+    def add(self):
+        """Adds a new switchActionLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchActionLearnedInfo resources using find and the newly added switchActionLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActionType=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, MaxByteLength=None, OutputPort=None, QueueId=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, int, int, int, int, int, int, int) -> SwitchActionLearnedInfo
         """Finds and retrieves switchActionLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchActionLearnedInfo resources from the server.

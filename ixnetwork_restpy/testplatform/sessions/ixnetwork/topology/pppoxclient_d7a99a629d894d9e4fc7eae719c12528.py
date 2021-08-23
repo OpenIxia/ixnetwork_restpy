@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Pppoxclient(Base):
@@ -141,9 +142,12 @@ class Pppoxclient(Base):
         'UserDefinedDslType': 'userDefinedDslType',
         'UserDefinedPonType': 'userDefinedPonType',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Pppoxclient, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Pppoxclient, self).__init__(parent, list_op)
 
     @property
     def Bfdv4Interface(self):
@@ -157,7 +161,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
-        return Bfdv4Interface(self)
+        if self._properties.get('Bfdv4Interface', None) is not None:
+            return self._properties.get('Bfdv4Interface')
+        else:
+            return Bfdv4Interface(self)
 
     @property
     def Bfdv6Interface(self):
@@ -171,7 +178,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        return Bfdv6Interface(self)
+        if self._properties.get('Bfdv6Interface', None) is not None:
+            return self._properties.get('Bfdv6Interface')
+        else:
+            return Bfdv6Interface(self)
 
     @property
     def BgpIpv4Peer(self):
@@ -185,7 +195,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import BgpIpv4Peer
-        return BgpIpv4Peer(self)
+        if self._properties.get('BgpIpv4Peer', None) is not None:
+            return self._properties.get('BgpIpv4Peer')
+        else:
+            return BgpIpv4Peer(self)
 
     @property
     def BgpIpv6Peer(self):
@@ -199,7 +212,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d74e5f921869bbf01d4b631d028968a4 import BgpIpv6Peer
-        return BgpIpv6Peer(self)
+        if self._properties.get('BgpIpv6Peer', None) is not None:
+            return self._properties.get('BgpIpv6Peer')
+        else:
+            return BgpIpv6Peer(self)
 
     @property
     def Connector(self):
@@ -213,7 +229,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def Dhcpv6client(self):
@@ -227,7 +246,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
-        return Dhcpv6client(self)
+        if self._properties.get('Dhcpv6client', None) is not None:
+            return self._properties.get('Dhcpv6client')
+        else:
+            return Dhcpv6client(self)
 
     @property
     def ECpriRe(self):
@@ -241,7 +263,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        return ECpriRe(self)
+        if self._properties.get('ECpriRe', None) is not None:
+            return self._properties.get('ECpriRe')
+        else:
+            return ECpriRe(self)
 
     @property
     def ECpriRec(self):
@@ -255,7 +280,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        return ECpriRec(self)
+        if self._properties.get('ECpriRec', None) is not None:
+            return self._properties.get('ECpriRec')
+        else:
+            return ECpriRec(self)
 
     @property
     def Geneve(self):
@@ -269,7 +297,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import Geneve
-        return Geneve(self)
+        if self._properties.get('Geneve', None) is not None:
+            return self._properties.get('Geneve')
+        else:
+            return Geneve(self)
 
     @property
     def IgmpHost(self):
@@ -283,7 +314,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import IgmpHost
-        return IgmpHost(self)
+        if self._properties.get('IgmpHost', None) is not None:
+            return self._properties.get('IgmpHost')
+        else:
+            return IgmpHost(self)
 
     @property
     def IgmpQuerier(self):
@@ -297,7 +331,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import IgmpQuerier
-        return IgmpQuerier(self)
+        if self._properties.get('IgmpQuerier', None) is not None:
+            return self._properties.get('IgmpQuerier')
+        else:
+            return IgmpQuerier(self)
 
     @property
     def MldHost(self):
@@ -311,7 +348,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        return MldHost(self)
+        if self._properties.get('MldHost', None) is not None:
+            return self._properties.get('MldHost')
+        else:
+            return MldHost(self)
 
     @property
     def MldQuerier(self):
@@ -325,7 +365,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        return MldQuerier(self)
+        if self._properties.get('MldQuerier', None) is not None:
+            return self._properties.get('MldQuerier')
+        else:
+            return MldQuerier(self)
 
     @property
     def MplsOam(self):
@@ -339,7 +382,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import MplsOam
-        return MplsOam(self)
+        if self._properties.get('MplsOam', None) is not None:
+            return self._properties.get('MplsOam')
+        else:
+            return MplsOam(self)
 
     @property
     def NetconfClient(self):
@@ -353,7 +399,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import NetconfClient
-        return NetconfClient(self)
+        if self._properties.get('NetconfClient', None) is not None:
+            return self._properties.get('NetconfClient')
+        else:
+            return NetconfClient(self)
 
     @property
     def NetconfServer(self):
@@ -367,7 +416,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_127e77a6a13ccfa768d079b1f0b3dbbc import NetconfServer
-        return NetconfServer(self)
+        if self._properties.get('NetconfServer', None) is not None:
+            return self._properties.get('NetconfServer')
+        else:
+            return NetconfServer(self)
 
     @property
     def Ospfv2(self):
@@ -381,7 +433,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import Ospfv2
-        return Ospfv2(self)
+        if self._properties.get('Ospfv2', None) is not None:
+            return self._properties.get('Ospfv2')
+        else:
+            return Ospfv2(self)
 
     @property
     def Ospfv3(self):
@@ -395,7 +450,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751 import Ospfv3
-        return Ospfv3(self)
+        if self._properties.get('Ospfv3', None) is not None:
+            return self._properties.get('Ospfv3')
+        else:
+            return Ospfv3(self)
 
     @property
     def Pcc(self):
@@ -409,7 +467,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import Pcc
-        return Pcc(self)
+        if self._properties.get('Pcc', None) is not None:
+            return self._properties.get('Pcc')
+        else:
+            return Pcc(self)
 
     @property
     def Pce(self):
@@ -423,7 +484,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import Pce
-        return Pce(self)
+        if self._properties.get('Pce', None) is not None:
+            return self._properties.get('Pce')
+        else:
+            return Pce(self)
 
     @property
     def PimV4Interface(self):
@@ -437,7 +501,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import PimV4Interface
-        return PimV4Interface(self)
+        if self._properties.get('PimV4Interface', None) is not None:
+            return self._properties.get('PimV4Interface')
+        else:
+            return PimV4Interface(self)
 
     @property
     def PimV6Interface(self):
@@ -451,7 +518,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        return PimV6Interface(self)
+        if self._properties.get('PimV6Interface', None) is not None:
+            return self._properties.get('PimV6Interface')
+        else:
+            return PimV6Interface(self)
 
     @property
     def Tag(self):
@@ -465,7 +535,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def TlvProfile(self):
@@ -479,7 +552,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is not None:
+            return self._properties.get('TlvProfile')
+        else:
+            return TlvProfile(self)
 
     @property
     def Vxlan(self):
@@ -493,7 +569,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import Vxlan
-        return Vxlan(self)
+        if self._properties.get('Vxlan', None) is not None:
+            return self._properties.get('Vxlan')
+        else:
+            return Vxlan(self)
 
     @property
     def Vxlanv6(self):
@@ -507,10 +586,14 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        return Vxlanv6(self)
+        if self._properties.get('Vxlanv6', None) is not None:
+            return self._properties.get('Vxlanv6')
+        else:
+            return Vxlanv6(self)
 
     @property
     def AcMatchMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -521,6 +604,7 @@ class Pppoxclient(Base):
 
     @property
     def AcMatchName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -531,6 +615,7 @@ class Pppoxclient(Base):
 
     @property
     def AcOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -541,6 +626,7 @@ class Pppoxclient(Base):
 
     @property
     def ActualRateDownstream(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -551,6 +637,7 @@ class Pppoxclient(Base):
 
     @property
     def ActualRateUpstream(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -561,6 +648,7 @@ class Pppoxclient(Base):
 
     @property
     def AgentAccessAggregationCircuitId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -571,6 +659,7 @@ class Pppoxclient(Base):
 
     @property
     def AgentCircuitId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -581,6 +670,7 @@ class Pppoxclient(Base):
 
     @property
     def AgentRemoteId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -591,6 +681,7 @@ class Pppoxclient(Base):
 
     @property
     def AuthRetries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -601,6 +692,7 @@ class Pppoxclient(Base):
 
     @property
     def AuthTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -611,6 +703,7 @@ class Pppoxclient(Base):
 
     @property
     def AuthType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -621,6 +714,7 @@ class Pppoxclient(Base):
 
     @property
     def CalledNum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -631,6 +725,7 @@ class Pppoxclient(Base):
 
     @property
     def CallingNum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -641,6 +736,7 @@ class Pppoxclient(Base):
 
     @property
     def ChapName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -651,6 +747,7 @@ class Pppoxclient(Base):
 
     @property
     def ChapSecret(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -661,6 +758,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientDnsOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -671,6 +769,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientLocalIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -681,6 +780,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientLocalIpv6Iid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -691,6 +791,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientNcpOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -701,6 +802,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientNetmask(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -711,6 +813,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientNetmaskOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -721,6 +824,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientPrimaryDnsAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -731,6 +835,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientSecondaryDnsAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -741,6 +846,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientSignalIWF(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -751,6 +857,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientSignalLoopChar(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -761,6 +868,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientSignalLoopEncapsulation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -771,6 +879,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientSignalLoopId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -781,6 +890,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientV6NcpOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -791,6 +901,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientWinsOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -801,6 +912,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientWinsPrimaryAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -811,6 +923,7 @@ class Pppoxclient(Base):
 
     @property
     def ClientWinsSecondaryAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -821,6 +934,7 @@ class Pppoxclient(Base):
 
     @property
     def ConnectSpeedUpdateEnable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -831,6 +945,7 @@ class Pppoxclient(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -839,10 +954,12 @@ class Pppoxclient(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -852,6 +969,7 @@ class Pppoxclient(Base):
 
     @property
     def DataLink(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -862,6 +980,7 @@ class Pppoxclient(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -871,6 +990,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredIpv4Addresses(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -880,6 +1000,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredIpv6Addresses(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -889,6 +1010,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredMacs(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -898,6 +1020,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredRemoteSessionIds(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -907,6 +1030,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredRemoteTunnelIds(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -916,6 +1040,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredSessionIds(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -925,6 +1050,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredTunnelIPs(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -934,6 +1060,7 @@ class Pppoxclient(Base):
 
     @property
     def DiscoveredTunnelIds(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -943,6 +1070,7 @@ class Pppoxclient(Base):
 
     @property
     def DomainList(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -953,6 +1081,7 @@ class Pppoxclient(Base):
 
     @property
     def DslTypeTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -963,6 +1092,7 @@ class Pppoxclient(Base):
 
     @property
     def EchoReqInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -973,6 +1103,7 @@ class Pppoxclient(Base):
 
     @property
     def EnableDomainGroups(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -983,6 +1114,7 @@ class Pppoxclient(Base):
 
     @property
     def EnableEchoReq(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -993,6 +1125,7 @@ class Pppoxclient(Base):
 
     @property
     def EnableEchoRsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1003,6 +1136,7 @@ class Pppoxclient(Base):
 
     @property
     def EnableHostUniq(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1013,6 +1147,7 @@ class Pppoxclient(Base):
 
     @property
     def EnableMaxPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1023,6 +1158,7 @@ class Pppoxclient(Base):
 
     @property
     def EnableRedial(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1033,6 +1169,7 @@ class Pppoxclient(Base):
 
     @property
     def Encaps1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1043,6 +1180,7 @@ class Pppoxclient(Base):
 
     @property
     def Encaps2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1053,6 +1191,7 @@ class Pppoxclient(Base):
 
     @property
     def EndpointDiscNegotiation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1063,6 +1202,7 @@ class Pppoxclient(Base):
 
     @property
     def EndpointDiscriminatorClass(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1082,6 +1222,7 @@ class Pppoxclient(Base):
 
     @property
     def HostUniq(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1092,6 +1233,7 @@ class Pppoxclient(Base):
 
     @property
     def HostUniqLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1102,6 +1244,7 @@ class Pppoxclient(Base):
 
     @property
     def LastRxLcpReq(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1112,6 +1255,7 @@ class Pppoxclient(Base):
 
     @property
     def LastSentLcpReq(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1122,6 +1266,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpAccm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1132,6 +1277,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpEnableAccm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1142,6 +1288,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpMaxFailure(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1152,6 +1299,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpRetries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1162,6 +1310,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpStartDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1172,6 +1321,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpTermRetries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1182,6 +1332,7 @@ class Pppoxclient(Base):
 
     @property
     def LcpTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1192,6 +1343,7 @@ class Pppoxclient(Base):
 
     @property
     def MaxPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1202,6 +1354,7 @@ class Pppoxclient(Base):
 
     @property
     def MlpppIPAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1212,6 +1365,7 @@ class Pppoxclient(Base):
 
     @property
     def MlpppMACAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1222,6 +1376,7 @@ class Pppoxclient(Base):
 
     @property
     def Mrru(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1232,6 +1387,7 @@ class Pppoxclient(Base):
 
     @property
     def MrruNegotiation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1242,6 +1398,7 @@ class Pppoxclient(Base):
 
     @property
     def MruNegotiation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1252,6 +1409,7 @@ class Pppoxclient(Base):
 
     @property
     def Mtu(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1262,6 +1420,7 @@ class Pppoxclient(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1270,10 +1429,12 @@ class Pppoxclient(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1282,10 +1443,12 @@ class Pppoxclient(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NcpRetries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1296,6 +1459,7 @@ class Pppoxclient(Base):
 
     @property
     def NcpTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1306,6 +1470,7 @@ class Pppoxclient(Base):
 
     @property
     def NcpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1316,6 +1481,7 @@ class Pppoxclient(Base):
 
     @property
     def PadiRetries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1326,6 +1492,7 @@ class Pppoxclient(Base):
 
     @property
     def PadiTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1336,6 +1503,7 @@ class Pppoxclient(Base):
 
     @property
     def PadrRetries(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1346,6 +1514,7 @@ class Pppoxclient(Base):
 
     @property
     def PadrTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1356,6 +1525,7 @@ class Pppoxclient(Base):
 
     @property
     def PapPassword(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1366,6 +1536,7 @@ class Pppoxclient(Base):
 
     @property
     def PapUser(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1376,6 +1547,7 @@ class Pppoxclient(Base):
 
     @property
     def PonTypeTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1386,6 +1558,7 @@ class Pppoxclient(Base):
 
     @property
     def ProxyAuthChal(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1396,6 +1569,7 @@ class Pppoxclient(Base):
 
     @property
     def ProxyAuthId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1406,6 +1580,7 @@ class Pppoxclient(Base):
 
     @property
     def ProxyAuthName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1416,6 +1591,7 @@ class Pppoxclient(Base):
 
     @property
     def ProxyAuthRes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1426,6 +1602,7 @@ class Pppoxclient(Base):
 
     @property
     def ProxyAuthType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1436,6 +1613,7 @@ class Pppoxclient(Base):
 
     @property
     def RedialMax(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1446,6 +1624,7 @@ class Pppoxclient(Base):
 
     @property
     def RedialTimeout(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1456,6 +1635,7 @@ class Pppoxclient(Base):
 
     @property
     def RxConnectSpeed(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1466,6 +1646,7 @@ class Pppoxclient(Base):
 
     @property
     def ServiceName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1476,6 +1657,7 @@ class Pppoxclient(Base):
 
     @property
     def ServiceOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1486,6 +1668,7 @@ class Pppoxclient(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1495,6 +1678,7 @@ class Pppoxclient(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1504,6 +1688,7 @@ class Pppoxclient(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -1512,6 +1697,7 @@ class Pppoxclient(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -1525,6 +1711,7 @@ class Pppoxclient(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1534,6 +1721,7 @@ class Pppoxclient(Base):
 
     @property
     def TxConnectSpeed(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1544,6 +1732,7 @@ class Pppoxclient(Base):
 
     @property
     def UnlimitedRedialAttempts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1554,6 +1743,7 @@ class Pppoxclient(Base):
 
     @property
     def UserDefinedDslType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1564,6 +1754,7 @@ class Pppoxclient(Base):
 
     @property
     def UserDefinedPonType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -1573,6 +1764,7 @@ class Pppoxclient(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefinedPonType']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Pppoxclient
         """Updates pppoxclient resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1592,6 +1784,7 @@ class Pppoxclient(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Pppoxclient
         """Adds a new pppoxclient resource on the server and adds it to the container.
 
         Args
@@ -1677,6 +1870,344 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def CloseIpcp(self, *args, **kwargs):
+        """Executes the closeIpcp operation on the server.
+
+        Close IPCP for selected PPPoX items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        closeIpcp(async_operation=bool)list
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        closeIpcp(SessionIndices=list, async_operation=bool)list
+        --------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        closeIpcp(SessionIndices=string, async_operation=bool)list
+        ----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('closeIpcp', payload=payload, response_object=None)
+
+    def CloseIpv6cp(self, *args, **kwargs):
+        """Executes the closeIpv6cp operation on the server.
+
+        Close IPv6CP for selected PPPoX items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        closeIpv6cp(async_operation=bool)list
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        closeIpv6cp(SessionIndices=list, async_operation=bool)list
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        closeIpv6cp(SessionIndices=string, async_operation=bool)list
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('closeIpv6cp', payload=payload, response_object=None)
+
+    def OpenIpcp(self, *args, **kwargs):
+        """Executes the openIpcp operation on the server.
+
+        Open IPCP for selected PPPoX items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        openIpcp(async_operation=bool)list
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        openIpcp(SessionIndices=list, async_operation=bool)list
+        -------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        openIpcp(SessionIndices=string, async_operation=bool)list
+        ---------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('openIpcp', payload=payload, response_object=None)
+
+    def OpenIpv6cp(self, *args, **kwargs):
+        """Executes the openIpv6cp operation on the server.
+
+        Open IPv6CP for selected PPPoX items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        openIpv6cp(async_operation=bool)list
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        openIpv6cp(SessionIndices=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        openIpv6cp(SessionIndices=string, async_operation=bool)list
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('openIpv6cp', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendPing(self, *args, **kwargs):
+        """Executes the sendPing operation on the server.
+
+        Send Ping IPv4 for selected PPPoX items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPing(DestIp=string, async_operation=bool)list
+        -------------------------------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing(DestIp=string, SessionIndices=list, async_operation=bool)list
+        ----------------------------------------------------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing(SessionIndices=string, DestIp=string, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIp of type kString
+        - DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPing', payload=payload, response_object=None)
+
+    def SendPing6(self, *args, **kwargs):
+        """Executes the sendPing6 operation on the server.
+
+        Send Ping IPv6 for selected PPPoX items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPing6(DestIp=string, async_operation=bool)list
+        --------------------------------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing6(DestIp=string, SessionIndices=list, async_operation=bool)list
+        -----------------------------------------------------------------------
+        - DestIp (str): This parameter requires a destIp of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing6(SessionIndices=string, DestIp=string, async_operation=bool)list
+        -------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIp of type kString
+        - DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPing6', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AcMatchMac=None, AcMatchName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentAccessAggregationCircuitId=None, AgentCircuitId=None, AgentRemoteId=None, AuthRetries=None, AuthTimeout=None, AuthType=None, CalledNum=None, CallingNum=None, ChapName=None, ChapSecret=None, ClientDnsOptions=None, ClientLocalIp=None, ClientLocalIpv6Iid=None, ClientNcpOptions=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIWF=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, ClientV6NcpOptions=None, ClientWinsOptions=None, ClientWinsPrimaryAddress=None, ClientWinsSecondaryAddress=None, ConnectSpeedUpdateEnable=None, DataLink=None, DomainList=None, DslTypeTlv=None, EchoReqInterval=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHostUniq=None, EnableMaxPayload=None, EnableRedial=None, Encaps1=None, Encaps2=None, EndpointDiscNegotiation=None, EndpointDiscriminatorClass=None, HostUniq=None, HostUniqLength=None, LastRxLcpReq=None, LastSentLcpReq=None, LcpAccm=None, LcpEnableAccm=None, LcpMaxFailure=None, LcpRetries=None, LcpStartDelay=None, LcpTermRetries=None, LcpTimeout=None, MaxPayload=None, MlpppIPAddress=None, MlpppMACAddress=None, Mrru=None, MrruNegotiation=None, MruNegotiation=None, Mtu=None, NcpRetries=None, NcpTimeout=None, NcpType=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PonTypeTlv=None, ProxyAuthChal=None, ProxyAuthId=None, ProxyAuthName=None, ProxyAuthRes=None, ProxyAuthType=None, RedialMax=None, RedialTimeout=None, RxConnectSpeed=None, ServiceName=None, ServiceOptions=None, TxConnectSpeed=None, UnlimitedRedialAttempts=None, UserDefinedDslType=None, UserDefinedPonType=None):
         """Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
@@ -1784,279 +2315,3 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def CloseIpcp(self, *args, **kwargs):
-        """Executes the closeIpcp operation on the server.
-
-        Close IPCP for selected PPPoX items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        closeIpcp(SessionIndices=list)list
-        ----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        closeIpcp(SessionIndices=string)list
-        ------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('closeIpcp', payload=payload, response_object=None)
-
-    def CloseIpv6cp(self, *args, **kwargs):
-        """Executes the closeIpv6cp operation on the server.
-
-        Close IPv6CP for selected PPPoX items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        closeIpv6cp(SessionIndices=list)list
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        closeIpv6cp(SessionIndices=string)list
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('closeIpv6cp', payload=payload, response_object=None)
-
-    def OpenIpcp(self, *args, **kwargs):
-        """Executes the openIpcp operation on the server.
-
-        Open IPCP for selected PPPoX items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        openIpcp(SessionIndices=list)list
-        ---------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        openIpcp(SessionIndices=string)list
-        -----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('openIpcp', payload=payload, response_object=None)
-
-    def OpenIpv6cp(self, *args, **kwargs):
-        """Executes the openIpv6cp operation on the server.
-
-        Open IPv6CP for selected PPPoX items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        openIpv6cp(SessionIndices=list)list
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        openIpv6cp(SessionIndices=string)list
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('openIpv6cp', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def SendPing(self, *args, **kwargs):
-        """Executes the sendPing operation on the server.
-
-        Send Ping IPv4 for selected PPPoX items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPing(DestIp=string)list
-        ---------------------------
-        - DestIp (str): This parameter requires a destIp of type kString
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(DestIp=string, SessionIndices=list)list
-        ------------------------------------------------
-        - DestIp (str): This parameter requires a destIp of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(SessionIndices=string, DestIp=string)list
-        --------------------------------------------------
-        - SessionIndices (str): This parameter requires a destIp of type kString
-        - DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
-
-    def SendPing6(self, *args, **kwargs):
-        """Executes the sendPing6 operation on the server.
-
-        Send Ping IPv6 for selected PPPoX items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPing6(DestIp=string)list
-        ----------------------------
-        - DestIp (str): This parameter requires a destIp of type kString
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing6(DestIp=string, SessionIndices=list)list
-        -------------------------------------------------
-        - DestIp (str): This parameter requires a destIp of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing6(SessionIndices=string, DestIp=string)list
-        ---------------------------------------------------
-        - SessionIndices (str): This parameter requires a destIp of type kString
-        - DestIp (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing6', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

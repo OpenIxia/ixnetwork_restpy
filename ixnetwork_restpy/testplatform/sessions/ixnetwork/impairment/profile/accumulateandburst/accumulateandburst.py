@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AccumulateAndBurst(Base):
@@ -44,12 +45,19 @@ class AccumulateAndBurst(Base):
         'QueueAutoSizeEnabled': 'queueAutoSizeEnabled',
         'QueueSize': 'queueSize',
     }
+    _SDM_ENUM_MAP = {
+        'burstSizeUnit': ['kilobytes', 'kKilobytes', 'kMegabytes', 'megabytes'],
+        'burstTimeoutUnit': ['kMilliseconds', 'kSeconds', 'kTimeFormat', 'milliseconds', 'seconds', 'timeFormat'],
+        'interBurstGap': ['headToHead', 'kHeadToHead', 'kTailToHead', 'tailToHead'],
+        'interBurstGapValueUnit': ['kMilliseconds', 'kSeconds', 'milliseconds', 'seconds'],
+    }
 
-    def __init__(self, parent):
-        super(AccumulateAndBurst, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AccumulateAndBurst, self).__init__(parent, list_op)
 
     @property
     def BurstSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,10 +66,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
     @BurstSize.setter
     def BurstSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
 
     @property
     def BurstSizeUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,10 +80,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstSizeUnit'])
     @BurstSizeUnit.setter
     def BurstSizeUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstSizeUnit'], value)
 
     @property
     def BurstTimeout(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,10 +94,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstTimeout'])
     @BurstTimeout.setter
     def BurstTimeout(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstTimeout'], value)
 
     @property
     def BurstTimeoutUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,10 +108,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstTimeoutUnit'])
     @BurstTimeoutUnit.setter
     def BurstTimeoutUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstTimeoutUnit'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,10 +122,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InterBurstGap(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,10 +136,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterBurstGap'])
     @InterBurstGap.setter
     def InterBurstGap(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterBurstGap'], value)
 
     @property
     def InterBurstGapValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,10 +150,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterBurstGapValue'])
     @InterBurstGapValue.setter
     def InterBurstGapValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterBurstGapValue'], value)
 
     @property
     def InterBurstGapValueUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,10 +164,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterBurstGapValueUnit'])
     @InterBurstGapValueUnit.setter
     def InterBurstGapValueUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterBurstGapValueUnit'], value)
 
     @property
     def PacketCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -154,10 +178,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketCount'])
     @PacketCount.setter
     def PacketCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketCount'], value)
 
     @property
     def QueueAutoSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,6 +193,7 @@ class AccumulateAndBurst(Base):
 
     @property
     def QueueAutoSizeEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -175,10 +202,12 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueAutoSizeEnabled'])
     @QueueAutoSizeEnabled.setter
     def QueueAutoSizeEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueAutoSizeEnabled'], value)
 
     @property
     def QueueSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -187,9 +216,11 @@ class AccumulateAndBurst(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueSize'])
     @QueueSize.setter
     def QueueSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueSize'], value)
 
     def update(self, BurstSize=None, BurstSizeUnit=None, BurstTimeout=None, BurstTimeoutUnit=None, Enabled=None, InterBurstGap=None, InterBurstGapValue=None, InterBurstGapValueUnit=None, PacketCount=None, QueueAutoSizeEnabled=None, QueueSize=None):
+        # type: (int, str, str, str, bool, str, int, str, int, bool, int) -> AccumulateAndBurst
         """Updates accumulateAndBurst resource on the server.
 
         Args

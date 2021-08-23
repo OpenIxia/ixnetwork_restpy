@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpFlowSpecRangesList(Base):
@@ -101,9 +102,11 @@ class BgpFlowSpecRangesList(Base):
         'TrafficDscp': 'trafficDscp',
         'TrafficRate': 'trafficRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpFlowSpecRangesList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpFlowSpecRangesList, self).__init__(parent, list_op)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -117,7 +120,10 @@ class BgpFlowSpecRangesList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpAsPathSegmentList')
+        else:
+            return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -131,7 +137,10 @@ class BgpFlowSpecRangesList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is not None:
+            return self._properties.get('BgpClusterIdList')
+        else:
+            return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -145,7 +154,10 @@ class BgpFlowSpecRangesList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is not None:
+            return self._properties.get('BgpCommunitiesList')
+        else:
+            return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -159,7 +171,10 @@ class BgpFlowSpecRangesList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpExtendedCommunitiesList')
+        else:
+            return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpLargeCommunitiesList(self):
@@ -173,10 +188,14 @@ class BgpFlowSpecRangesList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist_4e8b7e63fdd826da6c354669eb5e3ed0 import BgpLargeCommunitiesList
-        return BgpLargeCommunitiesList(self)
+        if self._properties.get('BgpLargeCommunitiesList', None) is not None:
+            return self._properties.get('BgpLargeCommunitiesList')
+        else:
+            return BgpLargeCommunitiesList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +206,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AggregatorAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -197,6 +217,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -207,6 +228,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AsNumber2Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +239,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AsNumber4Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -227,6 +250,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +261,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AssignedNumber2Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,6 +272,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def AssignedNumber4Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +283,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -266,6 +293,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -275,6 +303,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def DestPortMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -285,6 +314,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def DestPrefixLengthV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -295,6 +325,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def DestPrefixV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -305,6 +336,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def DscpMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -315,6 +347,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableAggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -325,6 +358,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -335,6 +369,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -345,6 +380,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -355,6 +391,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -365,6 +402,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableDestPrefixV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -375,6 +413,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -385,6 +424,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableLargeCommunities(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -395,6 +435,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableLocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -405,6 +446,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableMultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -415,6 +457,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -425,6 +468,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -435,6 +479,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableOriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -445,6 +490,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableRedirect(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -455,6 +501,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableSourcePrefixV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -465,6 +512,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableTrafficAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -475,6 +523,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableTrafficMarketing(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -485,6 +534,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableTrafficMarking(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -495,6 +545,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def EnableTrafficRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -505,6 +556,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def FlowSpecName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -515,6 +567,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def FragmentMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -525,6 +578,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def IcmpCodeMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -535,6 +589,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def IcmpTypeMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -545,6 +600,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Ip(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -555,6 +611,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def IpPacketLenMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -565,6 +622,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def IpProto(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -575,6 +633,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def IpV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -585,6 +644,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -595,6 +655,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -605,6 +666,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -615,6 +677,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -625,6 +688,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -633,10 +697,12 @@ class BgpFlowSpecRangesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -645,10 +711,12 @@ class BgpFlowSpecRangesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
 
     @property
     def NoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -657,10 +725,12 @@ class BgpFlowSpecRangesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
     @NoOfClusters.setter
     def NoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
 
     @property
     def NoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -669,10 +739,12 @@ class BgpFlowSpecRangesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
 
     @property
     def NoOfExtendedCommunity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -681,10 +753,12 @@ class BgpFlowSpecRangesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
     def NoOfLargeCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -693,10 +767,12 @@ class BgpFlowSpecRangesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfLargeCommunities'])
     @NoOfLargeCommunities.setter
     def NoOfLargeCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfLargeCommunities'], value)
 
     @property
     def NumberOfFlows(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -707,6 +783,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Origin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -717,6 +794,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def OriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -727,6 +805,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def OverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -737,6 +816,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def PortMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -747,6 +827,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def RedirectCBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -757,6 +838,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def RedirectExtCommunityType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -767,6 +849,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def Redirectnexthop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -777,6 +860,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -787,6 +871,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -797,6 +882,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def SourcePortMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -807,6 +893,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def SourcePrefixLengthV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -817,6 +904,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def SourcePrefixV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -827,6 +915,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def TcpFlagsMatch(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -837,6 +926,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def TerminalAction(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -847,6 +937,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def TrafficActionSample(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -857,6 +948,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def TrafficDscp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -867,6 +959,7 @@ class BgpFlowSpecRangesList(Base):
 
     @property
     def TrafficRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -876,6 +969,7 @@ class BgpFlowSpecRangesList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TrafficRate']))
 
     def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfLargeCommunities=None):
+        # type: (str, int, int, int, int, int) -> BgpFlowSpecRangesList
         """Updates bgpFlowSpecRangesList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

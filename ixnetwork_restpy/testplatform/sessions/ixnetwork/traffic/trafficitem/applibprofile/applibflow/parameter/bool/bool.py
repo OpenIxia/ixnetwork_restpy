@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bool(Base):
@@ -35,12 +36,15 @@ class Bool(Base):
         'Default': 'default',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Bool, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bool, self).__init__(parent, list_op)
 
     @property
     def Default(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,6 +54,7 @@ class Bool(Base):
 
     @property
     def Value(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -58,9 +63,11 @@ class Bool(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Value=None):
+        # type: (bool) -> Bool
         """Updates bool resource on the server.
 
         Args
@@ -73,7 +80,26 @@ class Bool(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Value=None):
+        # type: (bool) -> Bool
+        """Adds a new bool resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Value (bool): Parameter bool value.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved bool resources using find and the newly added bool resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Default=None, Value=None):
+        # type: (bool, bool) -> Bool
         """Finds and retrieves bool resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bool resources from the server.

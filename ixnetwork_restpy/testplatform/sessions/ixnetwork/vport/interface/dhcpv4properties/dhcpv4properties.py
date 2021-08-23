@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpV4Properties(Base):
@@ -39,12 +40,15 @@ class DhcpV4Properties(Base):
         'Tlvs': 'tlvs',
         'VendorId': 'vendorId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DhcpV4Properties, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpV4Properties, self).__init__(parent, list_op)
 
     @property
     def ClientId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class DhcpV4Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientId'])
     @ClientId.setter
     def ClientId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientId'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class DhcpV4Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def RenewTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class DhcpV4Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RenewTimer'])
     @RenewTimer.setter
     def RenewTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RenewTimer'], value)
 
     @property
     def RequestRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +99,12 @@ class DhcpV4Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RequestRate'])
     @RequestRate.setter
     def RequestRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RequestRate'], value)
 
     @property
     def ServerId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +113,7 @@ class DhcpV4Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ServerId'])
     @ServerId.setter
     def ServerId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ServerId'], value)
 
     @property
@@ -117,6 +130,7 @@ class DhcpV4Properties(Base):
 
     @property
     def VendorId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +139,7 @@ class DhcpV4Properties(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
     @VendorId.setter
     def VendorId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorId'], value)
 
     def update(self, ClientId=None, Enabled=None, RenewTimer=None, RequestRate=None, ServerId=None, Tlvs=None, VendorId=None):

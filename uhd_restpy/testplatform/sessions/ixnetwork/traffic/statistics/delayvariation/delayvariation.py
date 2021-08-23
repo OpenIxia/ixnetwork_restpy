@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DelayVariation(Base):
@@ -36,12 +37,17 @@ class DelayVariation(Base):
         'LatencyMode': 'latencyMode',
         'StatisticsMode': 'statisticsMode',
     }
+    _SDM_ENUM_MAP = {
+        'latencyMode': ['cutThrough', 'forwardingDelay', 'mef', 'storeForward'],
+        'statisticsMode': ['rxDelayVariationAverage', 'rxDelayVariationErrorsAndRate', 'rxDelayVariationMinMaxAndRate'],
+    }
 
-    def __init__(self, parent):
-        super(DelayVariation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DelayVariation, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -50,10 +56,12 @@ class DelayVariation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def LargeSequenceNumberErrorThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,10 +70,12 @@ class DelayVariation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LargeSequenceNumberErrorThreshold'])
     @LargeSequenceNumberErrorThreshold.setter
     def LargeSequenceNumberErrorThreshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LargeSequenceNumberErrorThreshold'], value)
 
     @property
     def LatencyMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,10 +84,12 @@ class DelayVariation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatencyMode'])
     @LatencyMode.setter
     def LatencyMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatencyMode'], value)
 
     @property
     def StatisticsMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,9 +98,11 @@ class DelayVariation(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StatisticsMode'])
     @StatisticsMode.setter
     def StatisticsMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StatisticsMode'], value)
 
     def update(self, Enabled=None, LargeSequenceNumberErrorThreshold=None, LatencyMode=None, StatisticsMode=None):
+        # type: (bool, int, str, str) -> DelayVariation
         """Updates delayVariation resource on the server.
 
         Args

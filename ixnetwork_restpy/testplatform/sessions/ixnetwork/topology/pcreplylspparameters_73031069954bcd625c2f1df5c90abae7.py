@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PcReplyLspParameters(Base):
@@ -81,9 +82,11 @@ class PcReplyLspParameters(Base):
         'Tc': 'tc',
         'Ttl': 'ttl',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PcReplyLspParameters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PcReplyLspParameters, self).__init__(parent, list_op)
 
     @property
     def PceXroSubObjectsList(self):
@@ -97,7 +100,10 @@ class PcReplyLspParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcexrosubobjectslist_497bc286ebfb51b8813947a23cd5817a import PceXroSubObjectsList
-        return PceXroSubObjectsList(self)
+        if self._properties.get('PceXroSubObjectsList', None) is not None:
+            return self._properties.get('PceXroSubObjectsList')
+        else:
+            return PceXroSubObjectsList(self)
 
     @property
     def PcepEroSubObjectsList(self):
@@ -111,7 +117,10 @@ class PcReplyLspParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
-        return PcepEroSubObjectsList(self)
+        if self._properties.get('PcepEroSubObjectsList', None) is not None:
+            return self._properties.get('PcepEroSubObjectsList')
+        else:
+            return PcepEroSubObjectsList(self)
 
     @property
     def PcepMetricSubObjectsList(self):
@@ -125,10 +134,14 @@ class PcReplyLspParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
-        return PcepMetricSubObjectsList(self)
+        if self._properties.get('PcepMetricSubObjectsList', None) is not None:
+            return self._properties.get('PcepMetricSubObjectsList')
+        else:
+            return PcepMetricSubObjectsList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +152,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Bandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +163,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def BiDirectional(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +174,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def BindingType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +185,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Bos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -188,6 +206,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,6 +216,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def EnableCFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -207,6 +227,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def EnableEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -217,6 +238,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def EnableLoose(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -227,6 +249,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def EnableXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +260,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ExcludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -247,6 +271,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def FailBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +282,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def HoldingPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -267,6 +293,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeAll(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -277,6 +304,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -287,6 +315,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -297,6 +326,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeConfiguredERO(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -307,6 +337,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -317,6 +348,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeLspa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +359,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +370,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeRp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +381,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeSymbolicPathNameTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +392,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def IncludeTEPathBindingTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +403,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def LocalProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +414,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -387,6 +425,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -395,10 +434,12 @@ class PcReplyLspParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NatureOfIssue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +450,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def NumberOfEroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -417,10 +459,12 @@ class PcReplyLspParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
 
     @property
     def NumberOfMetricSubObject(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -429,10 +473,12 @@ class PcReplyLspParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'])
     @NumberOfMetricSubObject.setter
     def NumberOfMetricSubObject(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObject'], value)
 
     @property
     def NumberOfXroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -441,10 +487,12 @@ class PcReplyLspParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'])
     @NumberOfXroSubObjects.setter
     def NumberOfXroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'], value)
 
     @property
     def PlspId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -455,6 +503,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def PriorityValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -465,6 +514,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ProcessType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -475,6 +525,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ReceivedPLSPID(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -484,6 +535,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ReceivedSymbolicPath(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -493,6 +545,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ReflectLSP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -503,6 +556,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ReflectRP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -513,6 +567,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ReflectedObjectNoPath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -523,6 +578,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def RequestId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -533,6 +589,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ResponseOptions(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -543,6 +600,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def ResponsePathType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -553,6 +611,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def SendEmptyTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -563,6 +622,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -572,6 +632,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def SetupPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -582,6 +643,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Srv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -592,6 +654,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def SymbolicPathName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -602,6 +665,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Tc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -612,6 +676,7 @@ class PcReplyLspParameters(Base):
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -621,6 +686,7 @@ class PcReplyLspParameters(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ttl']))
 
     def update(self, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, NumberOfXroSubObjects=None):
+        # type: (str, int, int, int) -> PcReplyLspParameters
         """Updates pcReplyLspParameters resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -638,6 +704,44 @@ class PcReplyLspParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def ReturnDelegation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the returnDelegation operation on the server.
+
+        Return Delegation of PCE-Replied LSPs
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        returnDelegation(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        returnDelegation(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        returnDelegation(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        returnDelegation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): Return Delegation.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('returnDelegation', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, Bandwidth=None, BiDirectional=None, BindingType=None, Bos=None, EnableCFlag=None, EnableEro=None, EnableLoose=None, EnableXro=None, ExcludeAny=None, FailBit=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeBandwidth=None, IncludeConfiguredERO=None, IncludeLsp=None, IncludeLspa=None, IncludeMetric=None, IncludeRp=None, IncludeSymbolicPathNameTlv=None, IncludeTEPathBindingTLV=None, LocalProtection=None, MplsLabel=None, NatureOfIssue=None, PlspId=None, PriorityValue=None, ProcessType=None, ReflectLSP=None, ReflectRP=None, ReflectedObjectNoPath=None, RequestId=None, ResponseOptions=None, ResponsePathType=None, SendEmptyTLV=None, SetupPriority=None, Srv6SID=None, SymbolicPathName=None, Tc=None, Ttl=None):
         """Base class infrastructure that gets a list of pcReplyLspParameters device ids encapsulated by this object.
@@ -697,33 +801,3 @@ class PcReplyLspParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def ReturnDelegation(self, *args, **kwargs):
-        """Executes the returnDelegation operation on the server.
-
-        Return Delegation of PCE-Replied LSPs
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        returnDelegation(SessionIndices=list)
-        -------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        returnDelegation(SessionIndices=string)
-        ---------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        returnDelegation(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): Return Delegation.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('returnDelegation', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Link(Base):
@@ -58,12 +59,19 @@ class Link(Base):
         'SyncFlag': 'syncFlag',
         'UpdateRequired': 'updateRequired',
     }
+    _SDM_ENUM_MAP = {
+        'aggregationFlagState': ['disable', 'auto'],
+        'lacpActivity': ['active', 'passive'],
+        'markerRequestMode': ['fixed', 'random'],
+        'syncFlag': ['disable', 'auto'],
+    }
 
-    def __init__(self, parent):
-        super(Link, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Link, self).__init__(parent, list_op)
 
     @property
     def ActorKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,10 +80,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActorKey'])
     @ActorKey.setter
     def ActorKey(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActorKey'], value)
 
     @property
     def ActorPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,10 +94,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActorPortNumber'])
     @ActorPortNumber.setter
     def ActorPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActorPortNumber'], value)
 
     @property
     def ActorPortPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +108,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActorPortPriority'])
     @ActorPortPriority.setter
     def ActorPortPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActorPortPriority'], value)
 
     @property
     def ActorSystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +122,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActorSystemId'])
     @ActorSystemId.setter
     def ActorSystemId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActorSystemId'], value)
 
     @property
     def ActorSystemPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +136,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActorSystemPriority'])
     @ActorSystemPriority.setter
     def ActorSystemPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActorSystemPriority'], value)
 
     @property
     def AdministrativeKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +150,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdministrativeKey'])
     @AdministrativeKey.setter
     def AdministrativeKey(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdministrativeKey'], value)
 
     @property
     def AggregationFlagState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +164,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregationFlagState'])
     @AggregationFlagState.setter
     def AggregationFlagState(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregationFlagState'], value)
 
     @property
     def AutoPickPortMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +178,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoPickPortMac'])
     @AutoPickPortMac.setter
     def AutoPickPortMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoPickPortMac'], value)
 
     @property
     def CollectingFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +192,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CollectingFlag'])
     @CollectingFlag.setter
     def CollectingFlag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CollectingFlag'], value)
 
     @property
     def CollectorMaxDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,10 +206,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CollectorMaxDelay'])
     @CollectorMaxDelay.setter
     def CollectorMaxDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CollectorMaxDelay'], value)
 
     @property
     def DistributingFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -192,10 +220,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistributingFlag'])
     @DistributingFlag.setter
     def DistributingFlag(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistributingFlag'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +234,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InterMarkerPduDelay(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +248,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterMarkerPduDelay'])
     @InterMarkerPduDelay.setter
     def InterMarkerPduDelay(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterMarkerPduDelay'], value)
 
     @property
     def LacpActivity(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -228,10 +262,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LacpActivity'])
     @LacpActivity.setter
     def LacpActivity(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LacpActivity'], value)
 
     @property
     def LacpTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -240,10 +276,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LacpTimeout'])
     @LacpTimeout.setter
     def LacpTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LacpTimeout'], value)
 
     @property
     def LacpduPeriodicTimeInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +290,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LacpduPeriodicTimeInterval'])
     @LacpduPeriodicTimeInterval.setter
     def LacpduPeriodicTimeInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LacpduPeriodicTimeInterval'], value)
 
     @property
     def MarkerRequestMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -264,10 +304,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MarkerRequestMode'])
     @MarkerRequestMode.setter
     def MarkerRequestMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MarkerRequestMode'], value)
 
     @property
     def MarkerResponseWaitTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +318,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MarkerResponseWaitTime'])
     @MarkerResponseWaitTime.setter
     def MarkerResponseWaitTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MarkerResponseWaitTime'], value)
 
     @property
     def PortMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -288,10 +332,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortMac'])
     @PortMac.setter
     def PortMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortMac'], value)
 
     @property
     def SendMarkerRequestOnLagChange(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -300,10 +346,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendMarkerRequestOnLagChange'])
     @SendMarkerRequestOnLagChange.setter
     def SendMarkerRequestOnLagChange(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendMarkerRequestOnLagChange'], value)
 
     @property
     def SendPeriodicMarkerRequest(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -312,10 +360,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendPeriodicMarkerRequest'])
     @SendPeriodicMarkerRequest.setter
     def SendPeriodicMarkerRequest(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendPeriodicMarkerRequest'], value)
 
     @property
     def SupportRespondingToMarker(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -324,10 +374,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportRespondingToMarker'])
     @SupportRespondingToMarker.setter
     def SupportRespondingToMarker(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportRespondingToMarker'], value)
 
     @property
     def SyncFlag(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -336,10 +388,12 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SyncFlag'])
     @SyncFlag.setter
     def SyncFlag(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SyncFlag'], value)
 
     @property
     def UpdateRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -348,6 +402,7 @@ class Link(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpdateRequired'])
 
     def update(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None):
+        # type: (int, int, int, str, int, int, str, bool, bool, int, bool, bool, str, str, int, int, str, int, str, bool, bool, bool, str) -> Link
         """Updates link resource on the server.
 
         Args
@@ -383,6 +438,7 @@ class Link(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None):
+        # type: (int, int, int, str, int, int, str, bool, bool, int, bool, bool, str, str, int, int, str, int, str, bool, bool, bool, str) -> Link
         """Adds a new link resource on the server and adds it to the container.
 
         Args
@@ -432,6 +488,7 @@ class Link(Base):
         self._delete()
 
     def find(self, ActorKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, AggregationFlagState=None, AutoPickPortMac=None, CollectingFlag=None, CollectorMaxDelay=None, DistributingFlag=None, Enabled=None, InterMarkerPduDelay=None, LacpActivity=None, LacpTimeout=None, LacpduPeriodicTimeInterval=None, MarkerRequestMode=None, MarkerResponseWaitTime=None, PortMac=None, SendMarkerRequestOnLagChange=None, SendPeriodicMarkerRequest=None, SupportRespondingToMarker=None, SyncFlag=None, UpdateRequired=None):
+        # type: (int, int, int, str, int, int, str, bool, bool, int, bool, bool, str, str, int, int, str, int, str, bool, bool, bool, str, bool) -> Link
         """Finds and retrieves link resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve link resources from the server.

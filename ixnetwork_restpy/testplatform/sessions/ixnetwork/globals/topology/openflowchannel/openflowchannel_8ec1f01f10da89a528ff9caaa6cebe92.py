@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OpenFlowChannel(Base):
@@ -36,9 +37,11 @@ class OpenFlowChannel(Base):
         'Name': 'name',
         'RowNames': 'rowNames',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OpenFlowChannel, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OpenFlowChannel, self).__init__(parent, list_op)
 
     @property
     def FlowAggrMatchTemplate(self):
@@ -52,7 +55,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_92a54a687c7573d5dcbe6197e7acd7a5 import FlowAggrMatchTemplate
-        return FlowAggrMatchTemplate(self)._select()
+        if self._properties.get('FlowAggrMatchTemplate', None) is not None:
+            return self._properties.get('FlowAggrMatchTemplate')
+        else:
+            return FlowAggrMatchTemplate(self)._select()
 
     @property
     def FlowStatMatchTemplate(self):
@@ -66,7 +72,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_9d0efda6a234c80e8ec5d25dbc49e75b import FlowStatMatchTemplate
-        return FlowStatMatchTemplate(self)._select()
+        if self._properties.get('FlowStatMatchTemplate', None) is not None:
+            return self._properties.get('FlowStatMatchTemplate')
+        else:
+            return FlowStatMatchTemplate(self)._select()
 
     @property
     def PacketOutActionTemplate(self):
@@ -80,10 +89,14 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_655055ae6e6b8535ff5754b84cd6d7dd import PacketOutActionTemplate
-        return PacketOutActionTemplate(self)._select()
+        if self._properties.get('PacketOutActionTemplate', None) is not None:
+            return self._properties.get('PacketOutActionTemplate')
+        else:
+            return PacketOutActionTemplate(self)._select()
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +106,7 @@ class OpenFlowChannel(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +116,7 @@ class OpenFlowChannel(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,10 +125,12 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -122,6 +139,7 @@ class OpenFlowChannel(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RowNames'])
 
     def update(self, Name=None):
+        # type: (str) -> OpenFlowChannel
         """Updates openFlowChannel resource on the server.
 
         Args

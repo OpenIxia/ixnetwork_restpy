@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Port(Base):
@@ -40,9 +41,11 @@ class Port(Base):
         'Owner': 'owner',
         'PortId': 'portId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Port, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Port, self).__init__(parent, list_op)
 
     @property
     def TapSettings(self):
@@ -56,10 +59,14 @@ class Port(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.tapsettings.tapsettings import TapSettings
-        return TapSettings(self)
+        if self._properties.get('TapSettings', None) is not None:
+            return self._properties.get('TapSettings')
+        else:
+            return TapSettings(self)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +76,7 @@ class Port(Base):
 
     @property
     def IsAvailable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,6 +86,7 @@ class Port(Base):
 
     @property
     def IsBusy(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,6 +96,7 @@ class Port(Base):
 
     @property
     def IsLinkUp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,6 +106,7 @@ class Port(Base):
 
     @property
     def IsUsable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,6 +116,7 @@ class Port(Base):
 
     @property
     def Owner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +126,7 @@ class Port(Base):
 
     @property
     def PortId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,7 +134,21 @@ class Port(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['PortId'])
 
+    def add(self):
+        """Adds a new port resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved port resources using find and the newly added port resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Description=None, IsAvailable=None, IsBusy=None, IsLinkUp=None, IsUsable=None, Owner=None, PortId=None):
+        # type: (str, bool, bool, bool, bool, str, int) -> Port
         """Finds and retrieves port resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve port resources from the server.
@@ -166,10 +193,15 @@ class Port(Base):
         """
         return self._read(href)
 
-    def ClearOwnership(self):
+    def ClearOwnership(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the clearOwnership operation on the server.
 
         Clears ownership on a list of hardware ports.
+
+        clearOwnership(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -177,16 +209,20 @@ class Port(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('clearOwnership', payload=payload, response_object=None)
 
     def CopyTapSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the copyTapSettings operation on the server.
 
         It will copy the values from a port to the given ports.
 
-        copyTapSettings(Arg2=list)
-        --------------------------
+        copyTapSettings(Arg2=list, async_operation=bool)
+        ------------------------------------------------
         - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -198,80 +234,122 @@ class Port(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('copyTapSettings', payload=payload, response_object=None)
 
-    def DeleteCustomDefaults(self):
+    def DeleteCustomDefaults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the deleteCustomDefaults operation on the server.
 
         It will delete custom defaults for the given ports.
 
+        deleteCustomDefaults(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('deleteCustomDefaults', payload=payload, response_object=None)
 
-    def GetTapSettings(self):
+    def GetTapSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the getTapSettings operation on the server.
 
         Get TAP Settings for the given ports.
 
+        getTapSettings(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getTapSettings', payload=payload, response_object=None)
 
-    def RestoreCustomDefaults(self):
+    def RestoreCustomDefaults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the restoreCustomDefaults operation on the server.
 
         It will restore custom defaults for the given ports.
 
+        restoreCustomDefaults(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('restoreCustomDefaults', payload=payload, response_object=None)
 
-    def RestoreDefaults(self):
+    def RestoreDefaults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the restoreDefaults operation on the server.
 
         Restore de default values for the given ports.
 
+        restoreDefaults(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('restoreDefaults', payload=payload, response_object=None)
 
-    def SaveCustomDefaults(self):
+    def SaveCustomDefaults(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the saveCustomDefaults operation on the server.
 
         It will save custom defaults for the given ports.
 
+        saveCustomDefaults(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('saveCustomDefaults', payload=payload, response_object=None)
 
-    def SetTapSettings(self):
+    def SetTapSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the setTapSettings operation on the server.
 
         Send TAP Settings to IxServer for the given ports.
 
+        setTapSettings(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('setTapSettings', payload=payload, response_object=None)

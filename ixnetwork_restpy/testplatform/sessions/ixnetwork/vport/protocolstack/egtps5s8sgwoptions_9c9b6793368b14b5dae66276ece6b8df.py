@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpS5S8SgwOptions(Base):
@@ -44,12 +45,15 @@ class EgtpS5S8SgwOptions(Base):
         'SetupRateInitial': 'setupRateInitial',
         'TeardownRateInitial': 'teardownRateInitial',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpS5S8SgwOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpS5S8SgwOptions, self).__init__(parent, list_op)
 
     @property
     def AlwaysIncludeRecoveryIE(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -58,10 +62,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AlwaysIncludeRecoveryIE'])
     @AlwaysIncludeRecoveryIE.setter
     def AlwaysIncludeRecoveryIE(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AlwaysIncludeRecoveryIE'], value)
 
     @property
     def Associates(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -70,10 +76,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Associates'])
     @Associates.setter
     def Associates(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
 
     @property
     def DeleteIdleBearers(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -82,10 +90,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeleteIdleBearers'])
     @DeleteIdleBearers.setter
     def DeleteIdleBearers(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeleteIdleBearers'], value)
 
     @property
     def MaxOutstandingReleases(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,10 +104,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'])
     @MaxOutstandingReleases.setter
     def MaxOutstandingReleases(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingReleases'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,10 +118,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +133,7 @@ class EgtpS5S8SgwOptions(Base):
 
     @property
     def OverrideGlobalRateControls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -127,10 +142,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'])
     @OverrideGlobalRateControls.setter
     def OverrideGlobalRateControls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateControls'], value)
 
     @property
     def PcpuLogLevel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,10 +156,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcpuLogLevel'])
     @PcpuLogLevel.setter
     def PcpuLogLevel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcpuLogLevel'], value)
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -151,10 +170,12 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def TeardownRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -163,9 +184,11 @@ class EgtpS5S8SgwOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRateInitial'])
     @TeardownRateInitial.setter
     def TeardownRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRateInitial'], value)
 
     def update(self, AlwaysIncludeRecoveryIE=None, Associates=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
+        # type: (bool, List[str], bool, int, int, bool, str, int, int) -> EgtpS5S8SgwOptions
         """Updates egtpS5S8SgwOptions resource on the server.
 
         Args
@@ -187,6 +210,7 @@ class EgtpS5S8SgwOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AlwaysIncludeRecoveryIE=None, Associates=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
+        # type: (bool, List[str], bool, int, int, bool, str, int, int) -> EgtpS5S8SgwOptions
         """Adds a new egtpS5S8SgwOptions resource on the server and adds it to the container.
 
         Args
@@ -222,6 +246,7 @@ class EgtpS5S8SgwOptions(Base):
         self._delete()
 
     def find(self, AlwaysIncludeRecoveryIE=None, Associates=None, DeleteIdleBearers=None, MaxOutstandingReleases=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalRateControls=None, PcpuLogLevel=None, SetupRateInitial=None, TeardownRateInitial=None):
+        # type: (bool, List[str], bool, int, int, str, bool, str, int, int) -> EgtpS5S8SgwOptions
         """Finds and retrieves egtpS5S8SgwOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpS5S8SgwOptions resources from the server.
@@ -270,14 +295,16 @@ class EgtpS5S8SgwOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -290,13 +317,15 @@ class EgtpS5S8SgwOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -310,13 +339,15 @@ class EgtpS5S8SgwOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PacketInMaskSlave(Base):
@@ -35,12 +36,15 @@ class PacketInMaskSlave(Base):
         'InvalidTtl': 'invalidTtl',
         'NoMatch': 'noMatch',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PacketInMaskSlave, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PacketInMaskSlave, self).__init__(parent, list_op)
 
     @property
     def Action(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class PacketInMaskSlave(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Action'])
     @Action.setter
     def Action(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Action'], value)
 
     @property
     def InvalidTtl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -61,10 +67,12 @@ class PacketInMaskSlave(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InvalidTtl'])
     @InvalidTtl.setter
     def InvalidTtl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['InvalidTtl'], value)
 
     @property
     def NoMatch(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,9 +81,11 @@ class PacketInMaskSlave(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoMatch'])
     @NoMatch.setter
     def NoMatch(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoMatch'], value)
 
     def update(self, Action=None, InvalidTtl=None, NoMatch=None):
+        # type: (bool, bool, bool) -> PacketInMaskSlave
         """Updates packetInMaskSlave resource on the server.
 
         Args

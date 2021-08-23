@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetTopologyTree(Base):
@@ -40,12 +41,15 @@ class NetTopologyTree(Base):
         'TreeDepth': 'treeDepth',
         'UseTreeDepth': 'useTreeDepth',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NetTopologyTree, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetTopologyTree, self).__init__(parent, list_op)
 
     @property
     def IncludeEntryPoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class NetTopologyTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'])
     @IncludeEntryPoint.setter
     def IncludeEntryPoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeEntryPoint'], value)
 
     @property
     def LinkMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class NetTopologyTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkMultiplier'])
     @LinkMultiplier.setter
     def LinkMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkMultiplier'], value)
 
     @property
     def MaxChildPerNode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class NetTopologyTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxChildPerNode'])
     @MaxChildPerNode.setter
     def MaxChildPerNode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxChildPerNode'], value)
 
     @property
     def Nodes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class NetTopologyTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Nodes'])
     @Nodes.setter
     def Nodes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Nodes'], value)
 
     @property
     def TreeDepth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class NetTopologyTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TreeDepth'])
     @TreeDepth.setter
     def TreeDepth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TreeDepth'], value)
 
     @property
     def UseTreeDepth(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -114,9 +128,11 @@ class NetTopologyTree(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseTreeDepth'])
     @UseTreeDepth.setter
     def UseTreeDepth(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseTreeDepth'], value)
 
     def update(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+        # type: (bool, int, int, int, int, bool) -> NetTopologyTree
         """Updates netTopologyTree resource on the server.
 
         Args
@@ -135,6 +151,7 @@ class NetTopologyTree(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+        # type: (bool, int, int, int, int, bool) -> NetTopologyTree
         """Adds a new netTopologyTree resource on the server and adds it to the container.
 
         Args
@@ -167,6 +184,7 @@ class NetTopologyTree(Base):
         self._delete()
 
     def find(self, IncludeEntryPoint=None, LinkMultiplier=None, MaxChildPerNode=None, Nodes=None, TreeDepth=None, UseTreeDepth=None):
+        # type: (bool, int, int, int, int, bool) -> NetTopologyTree
         """Finds and retrieves netTopologyTree resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netTopologyTree resources from the server.

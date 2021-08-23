@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcClientOptions(Base):
@@ -46,12 +47,15 @@ class FcClientOptions(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcClientOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcClientOptions, self).__init__(parent, list_op)
 
     @property
     def Associates(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -60,10 +64,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Associates'])
     @Associates.setter
     def Associates(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Associates'], value)
 
     @property
     def B2bCredit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,10 +78,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bCredit'])
     @B2bCredit.setter
     def B2bCredit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bCredit'], value)
 
     @property
     def B2bRxSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,10 +92,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
     @B2bRxSize.setter
     def B2bRxSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
 
     @property
     def EdTov(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +106,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EdTov'])
     @EdTov.setter
     def EdTov(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EdTov'], value)
 
     @property
     def EdTovMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +120,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EdTovMode'])
     @EdTovMode.setter
     def EdTovMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EdTovMode'], value)
 
     @property
     def MaxPacketsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +149,7 @@ class FcClientOptions(Base):
 
     @property
     def OverrideGlobalRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -141,10 +158,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'])
     @OverrideGlobalRate.setter
     def OverrideGlobalRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'], value)
 
     @property
     def RtTov(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,10 +172,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RtTov'])
     @RtTov.setter
     def RtTov(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RtTov'], value)
 
     @property
     def RtTovMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -165,10 +186,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RtTovMode'])
     @RtTovMode.setter
     def RtTovMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RtTovMode'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,10 +200,12 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,9 +214,11 @@ class FcClientOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, Associates=None, B2bCredit=None, B2bRxSize=None, EdTov=None, EdTovMode=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None, RtTovMode=None, SetupRate=None, TeardownRate=None):
+        # type: (List[str], int, int, int, str, int, bool, int, str, int, int) -> FcClientOptions
         """Updates fcClientOptions resource on the server.
 
         Args
@@ -215,6 +242,7 @@ class FcClientOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Associates=None, B2bCredit=None, B2bRxSize=None, EdTov=None, EdTovMode=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None, RtTovMode=None, SetupRate=None, TeardownRate=None):
+        # type: (List[str], int, int, int, str, int, bool, int, str, int, int) -> FcClientOptions
         """Adds a new fcClientOptions resource on the server and adds it to the container.
 
         Args
@@ -252,6 +280,7 @@ class FcClientOptions(Base):
         self._delete()
 
     def find(self, Associates=None, B2bCredit=None, B2bRxSize=None, EdTov=None, EdTovMode=None, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, RtTov=None, RtTovMode=None, SetupRate=None, TeardownRate=None):
+        # type: (List[str], int, int, int, str, int, str, bool, int, str, int, int) -> FcClientOptions
         """Finds and retrieves fcClientOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcClientOptions resources from the server.
@@ -302,14 +331,16 @@ class FcClientOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -322,13 +353,15 @@ class FcClientOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -342,13 +375,15 @@ class FcClientOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

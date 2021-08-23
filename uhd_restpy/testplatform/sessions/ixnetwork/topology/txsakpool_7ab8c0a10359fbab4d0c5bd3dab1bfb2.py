@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TxSakPool(Base):
@@ -41,12 +42,15 @@ class TxSakPool(Base):
         'TxSalt': 'txSalt',
         'TxSsci': 'txSsci',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TxSakPool, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TxSakPool, self).__init__(parent, list_op)
 
     @property
     def ActiveSak(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class TxSakPool(Base):
 
     @property
     def AnInUse(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class TxSakPool(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class TxSakPool(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class TxSakPool(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +101,12 @@ class TxSakPool(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TxSak128(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +117,7 @@ class TxSakPool(Base):
 
     @property
     def TxSak256(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class TxSakPool(Base):
 
     @property
     def TxSalt(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class TxSakPool(Base):
 
     @property
     def TxSsci(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +149,7 @@ class TxSakPool(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSsci']))
 
     def update(self, Name=None):
+        # type: (str) -> TxSakPool
         """Updates txSakPool resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

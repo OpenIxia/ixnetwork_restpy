@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -140,12 +141,36 @@ class TestConfig(Base):
         'UpstreamStopTestOnHighLoss': 'upstreamStopTestOnHighLoss',
         'UpstreamUsePercentOffsets': 'upstreamUsePercentOffsets',
     }
+    _SDM_ENUM_MAP = {
+        'downstreamBinaryFrameLossUnit': ['%', 'frames'],
+        'downstreamBinaryLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
+        'downstreamImixDistribution': ['bwpercentage', 'weight'],
+        'downstreamImixTemplates': ['cisco', 'imix', 'ipsec', 'ipv6', 'none', 'quadmodal', 'standard', 'tcp', 'tolly', 'trimodal'],
+        'downstreamStepFrameLossUnit': ['%', 'frames'],
+        'downstreamStepLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
+        'latencyType': ['cutThrough', 'storeForward'],
+        'loadType': ['binary', 'combo', 'custom', 'fixed', 'increment', 'quickSearch', 'random', 'step', 'unchanged'],
+        'portDelayUnit': ['bytes', 'nanoseconds'],
+        'reportTputRateUnit': ['gbps', 'gBps', 'kbps', 'kBps', 'mbps', 'mBps'],
+        'testType': ['downstreamOnly', 'upstreamDownstream', 'upstreamOnly'],
+        'testTypeTemp': ['downstreamOnly', 'upstreamDownstream', 'upstreamOnly'],
+        'testTypeTemp2': ['downstreamOnly', 'upstreamDownstream', 'upstreamOnly'],
+        'trafficType': ['burstyLoading', 'constantLoading'],
+        'upstreamBinaryFrameLossUnit': ['%', 'frames'],
+        'upstreamBinaryLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
+        'upstreamImixDistribution': ['bwpercentage', 'weight'],
+        'upstreamImixTemplates': ['cisco', 'imix', 'ipsec', 'ipv6', 'none', 'quadmodal', 'standard', 'tcp', 'tolly', 'trimodal'],
+        'upstreamLoadType': ['binary'],
+        'upstreamStepFrameLossUnit': ['%', 'frames'],
+        'upstreamStepLoadUnit': ['bpsRate', 'fpsRate', 'gbpsRate', 'gBpsRate', 'kbpsRate', 'kBpsRate', 'mbpsRate', 'mBpsRate', 'percentMaxRate'],
+    }
 
-    def __init__(self, parent):
-        super(TestConfig, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TestConfig, self).__init__(parent, list_op)
 
     @property
     def AggregateByDirection(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -154,10 +179,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregateByDirection'])
     @AggregateByDirection.setter
     def AggregateByDirection(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregateByDirection'], value)
 
     @property
     def AggregateByFlowgroup(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -166,10 +193,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregateByFlowgroup'])
     @AggregateByFlowgroup.setter
     def AggregateByFlowgroup(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregateByFlowgroup'], value)
 
     @property
     def AggregateByPort(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -178,10 +207,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregateByPort'])
     @AggregateByPort.setter
     def AggregateByPort(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregateByPort'], value)
 
     @property
     def BackoffIteration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -190,10 +221,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BackoffIteration'])
     @BackoffIteration.setter
     def BackoffIteration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BackoffIteration'], value)
 
     @property
     def BinaryAcceptableFrameLossLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,10 +235,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryAcceptableFrameLossLabel'])
     @BinaryAcceptableFrameLossLabel.setter
     def BinaryAcceptableFrameLossLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryAcceptableFrameLossLabel'], value)
 
     @property
     def BinaryBackoffLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,10 +249,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryBackoffLabel'])
     @BinaryBackoffLabel.setter
     def BinaryBackoffLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryBackoffLabel'], value)
 
     @property
     def BinaryInitialRateLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,10 +263,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryInitialRateLabel'])
     @BinaryInitialRateLabel.setter
     def BinaryInitialRateLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryInitialRateLabel'], value)
 
     @property
     def BinaryLoadUnitLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -238,10 +277,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryLoadUnitLabel'])
     @BinaryLoadUnitLabel.setter
     def BinaryLoadUnitLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryLoadUnitLabel'], value)
 
     @property
     def BinaryMaxRateLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,10 +291,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryMaxRateLabel'])
     @BinaryMaxRateLabel.setter
     def BinaryMaxRateLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryMaxRateLabel'], value)
 
     @property
     def BinaryMinRateLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -262,10 +305,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryMinRateLabel'])
     @BinaryMinRateLabel.setter
     def BinaryMinRateLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryMinRateLabel'], value)
 
     @property
     def BinaryResolutionLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -274,10 +319,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BinaryResolutionLabel'])
     @BinaryResolutionLabel.setter
     def BinaryResolutionLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BinaryResolutionLabel'], value)
 
     @property
     def BurstSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -286,10 +333,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BurstSize'])
     @BurstSize.setter
     def BurstSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BurstSize'], value)
 
     @property
     def CalculateJitter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -298,10 +347,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CalculateJitter'])
     @CalculateJitter.setter
     def CalculateJitter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CalculateJitter'], value)
 
     @property
     def CalculateLatency(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -310,10 +361,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CalculateLatency'])
     @CalculateLatency.setter
     def CalculateLatency(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CalculateLatency'], value)
 
     @property
     def DelayAfterTransmit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -322,10 +375,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'])
     @DelayAfterTransmit.setter
     def DelayAfterTransmit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayAfterTransmit'], value)
 
     @property
     def DownstreamBinaryBackoff(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -334,10 +389,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamBinaryBackoff'])
     @DownstreamBinaryBackoff.setter
     def DownstreamBinaryBackoff(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamBinaryBackoff'], value)
 
     @property
     def DownstreamBinaryFrameLossUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -346,10 +403,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamBinaryFrameLossUnit'])
     @DownstreamBinaryFrameLossUnit.setter
     def DownstreamBinaryFrameLossUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamBinaryFrameLossUnit'], value)
 
     @property
     def DownstreamBinaryLoadUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -358,10 +417,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamBinaryLoadUnit'])
     @DownstreamBinaryLoadUnit.setter
     def DownstreamBinaryLoadUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamBinaryLoadUnit'], value)
 
     @property
     def DownstreamBinaryResolution(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -370,10 +431,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamBinaryResolution'])
     @DownstreamBinaryResolution.setter
     def DownstreamBinaryResolution(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamBinaryResolution'], value)
 
     @property
     def DownstreamBinarySearchType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -382,10 +445,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamBinarySearchType'])
     @DownstreamBinarySearchType.setter
     def DownstreamBinarySearchType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamBinarySearchType'], value)
 
     @property
     def DownstreamBinaryTolerance(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -394,10 +459,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamBinaryTolerance'])
     @DownstreamBinaryTolerance.setter
     def DownstreamBinaryTolerance(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamBinaryTolerance'], value)
 
     @property
     def DownstreamImixAdd(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -406,10 +473,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixAdd'])
     @DownstreamImixAdd.setter
     def DownstreamImixAdd(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixAdd'], value)
 
     @property
     def DownstreamImixData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -418,10 +487,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixData'])
     @DownstreamImixData.setter
     def DownstreamImixData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixData'], value)
 
     @property
     def DownstreamImixDataQoS(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -430,10 +501,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixDataQoS'])
     @DownstreamImixDataQoS.setter
     def DownstreamImixDataQoS(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixDataQoS'], value)
 
     @property
     def DownstreamImixDelete(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -442,10 +515,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixDelete'])
     @DownstreamImixDelete.setter
     def DownstreamImixDelete(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixDelete'], value)
 
     @property
     def DownstreamImixDistribution(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -454,10 +529,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixDistribution'])
     @DownstreamImixDistribution.setter
     def DownstreamImixDistribution(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixDistribution'], value)
 
     @property
     def DownstreamImixEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -466,10 +543,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixEnabled'])
     @DownstreamImixEnabled.setter
     def DownstreamImixEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixEnabled'], value)
 
     @property
     def DownstreamImixTemplates(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -478,10 +557,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamImixTemplates'])
     @DownstreamImixTemplates.setter
     def DownstreamImixTemplates(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamImixTemplates'], value)
 
     @property
     def DownstreamInitialBinaryLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -490,10 +571,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamInitialBinaryLoadRate'])
     @DownstreamInitialBinaryLoadRate.setter
     def DownstreamInitialBinaryLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamInitialBinaryLoadRate'], value)
 
     @property
     def DownstreamInitialStepLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -502,10 +585,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamInitialStepLoadRate'])
     @DownstreamInitialStepLoadRate.setter
     def DownstreamInitialStepLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamInitialStepLoadRate'], value)
 
     @property
     def DownstreamLoadType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -514,10 +599,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamLoadType'])
     @DownstreamLoadType.setter
     def DownstreamLoadType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamLoadType'], value)
 
     @property
     def DownstreamMaxBinaryLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -526,10 +613,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamMaxBinaryLoadRate'])
     @DownstreamMaxBinaryLoadRate.setter
     def DownstreamMaxBinaryLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamMaxBinaryLoadRate'], value)
 
     @property
     def DownstreamMaxStepLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -538,10 +627,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamMaxStepLoadRate'])
     @DownstreamMaxStepLoadRate.setter
     def DownstreamMaxStepLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamMaxStepLoadRate'], value)
 
     @property
     def DownstreamMinBinaryLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -550,10 +641,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamMinBinaryLoadRate'])
     @DownstreamMinBinaryLoadRate.setter
     def DownstreamMinBinaryLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamMinBinaryLoadRate'], value)
 
     @property
     def DownstreamStepFrameLossUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -562,10 +655,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepFrameLossUnit'])
     @DownstreamStepFrameLossUnit.setter
     def DownstreamStepFrameLossUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamStepFrameLossUnit'], value)
 
     @property
     def DownstreamStepLoadUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -574,10 +669,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepLoadUnit'])
     @DownstreamStepLoadUnit.setter
     def DownstreamStepLoadUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamStepLoadUnit'], value)
 
     @property
     def DownstreamStepStepLoadRate(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -586,10 +683,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepStepLoadRate'])
     @DownstreamStepStepLoadRate.setter
     def DownstreamStepStepLoadRate(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamStepStepLoadRate'], value)
 
     @property
     def DownstreamStepTolerance(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -598,10 +697,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamStepTolerance'])
     @DownstreamStepTolerance.setter
     def DownstreamStepTolerance(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamStepTolerance'], value)
 
     @property
     def DownstreamStopTestOnHighLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -610,10 +711,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DownstreamStopTestOnHighLoss'])
     @DownstreamStopTestOnHighLoss.setter
     def DownstreamStopTestOnHighLoss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DownstreamStopTestOnHighLoss'], value)
 
     @property
     def Duration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -622,10 +725,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Duration'])
     @Duration.setter
     def Duration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Duration'], value)
 
     @property
     def EnableBackoffIteration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -634,10 +739,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBackoffIteration'])
     @EnableBackoffIteration.setter
     def EnableBackoffIteration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBackoffIteration'], value)
 
     @property
     def EnableDataIntegrity(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -646,10 +753,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'])
     @EnableDataIntegrity.setter
     def EnableDataIntegrity(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrity'], value)
 
     @property
     def EnableFastConvergence(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -658,10 +767,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFastConvergence'])
     @EnableFastConvergence.setter
     def EnableFastConvergence(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFastConvergence'], value)
 
     @property
     def EnableLayer1Rate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -670,10 +781,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'])
     @EnableLayer1Rate.setter
     def EnableLayer1Rate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLayer1Rate'], value)
 
     @property
     def EnableMinFrameSize(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -682,10 +795,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
 
     @property
     def EnableSaturationIteration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -694,10 +809,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSaturationIteration'])
     @EnableSaturationIteration.setter
     def EnableSaturationIteration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSaturationIteration'], value)
 
     @property
     def EnableStopTestOnHighLoss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -706,10 +823,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStopTestOnHighLoss'])
     @EnableStopTestOnHighLoss.setter
     def EnableStopTestOnHighLoss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStopTestOnHighLoss'], value)
 
     @property
     def FastConvergenceDuration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -718,10 +837,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastConvergenceDuration'])
     @FastConvergenceDuration.setter
     def FastConvergenceDuration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastConvergenceDuration'], value)
 
     @property
     def FastConvergenceThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -730,10 +851,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastConvergenceThreshold'])
     @FastConvergenceThreshold.setter
     def FastConvergenceThreshold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastConvergenceThreshold'], value)
 
     @property
     def ForceRegenerate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -742,10 +865,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ForceRegenerate'])
     @ForceRegenerate.setter
     def ForceRegenerate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ForceRegenerate'], value)
 
     @property
     def FramesPerBurstGap(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -754,10 +879,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FramesPerBurstGap'])
     @FramesPerBurstGap.setter
     def FramesPerBurstGap(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FramesPerBurstGap'], value)
 
     @property
     def Gap(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -766,10 +893,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Gap'])
     @Gap.setter
     def Gap(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Gap'], value)
 
     @property
     def GenerateTrackingOptionAggregationFiles(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -778,10 +907,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'])
     @GenerateTrackingOptionAggregationFiles.setter
     def GenerateTrackingOptionAggregationFiles(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['GenerateTrackingOptionAggregationFiles'], value)
 
     @property
     def ImixTrafficType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -790,10 +921,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ImixTrafficType'])
     @ImixTrafficType.setter
     def ImixTrafficType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ImixTrafficType'], value)
 
     @property
     def IterationParameters(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -802,10 +935,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IterationParameters'])
     @IterationParameters.setter
     def IterationParameters(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IterationParameters'], value)
 
     @property
     def LatencyBins(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -814,10 +949,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatencyBins'])
     @LatencyBins.setter
     def LatencyBins(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatencyBins'], value)
 
     @property
     def LatencyBinsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -826,10 +963,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'])
     @LatencyBinsEnabled.setter
     def LatencyBinsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatencyBinsEnabled'], value)
 
     @property
     def LatencyType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -838,10 +977,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatencyType'])
     @LatencyType.setter
     def LatencyType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatencyType'], value)
 
     @property
     def LoadType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -850,10 +991,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LoadType'])
     @LoadType.setter
     def LoadType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LoadType'], value)
 
     @property
     def MapType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -862,10 +1005,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MapType'])
     @MapType.setter
     def MapType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MapType'], value)
 
     @property
     def Numtrials(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -874,10 +1019,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Numtrials'])
     @Numtrials.setter
     def Numtrials(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Numtrials'], value)
 
     @property
     def PortDelayEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -886,10 +1033,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelayEnabled'])
     @PortDelayEnabled.setter
     def PortDelayEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelayEnabled'], value)
 
     @property
     def PortDelayUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -898,10 +1047,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelayUnit'])
     @PortDelayUnit.setter
     def PortDelayUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelayUnit'], value)
 
     @property
     def PortDelayValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -910,10 +1061,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortDelayValue'])
     @PortDelayValue.setter
     def PortDelayValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortDelayValue'], value)
 
     @property
     def ProtocolItem(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -922,10 +1075,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolItem'])
     @ProtocolItem.setter
     def ProtocolItem(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolItem'], value)
 
     @property
     def ReportSequenceError(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -934,10 +1089,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReportSequenceError'])
     @ReportSequenceError.setter
     def ReportSequenceError(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReportSequenceError'], value)
 
     @property
     def ReportTputRateUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -946,10 +1103,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'])
     @ReportTputRateUnit.setter
     def ReportTputRateUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReportTputRateUnit'], value)
 
     @property
     def SaturationIteration(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -958,10 +1117,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SaturationIteration'])
     @SaturationIteration.setter
     def SaturationIteration(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SaturationIteration'], value)
 
     @property
     def StaggeredStart(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -970,10 +1131,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StaggeredStart'])
     @StaggeredStart.setter
     def StaggeredStart(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StaggeredStart'], value)
 
     @property
     def StepAcceptableFrameLossLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -982,10 +1145,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepAcceptableFrameLossLabel'])
     @StepAcceptableFrameLossLabel.setter
     def StepAcceptableFrameLossLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepAcceptableFrameLossLabel'], value)
 
     @property
     def StepEndRateLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -994,10 +1159,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepEndRateLabel'])
     @StepEndRateLabel.setter
     def StepEndRateLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepEndRateLabel'], value)
 
     @property
     def StepInitialRateLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1006,10 +1173,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepInitialRateLabel'])
     @StepInitialRateLabel.setter
     def StepInitialRateLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepInitialRateLabel'], value)
 
     @property
     def StepLoadUnitLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1018,10 +1187,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepLoadUnitLabel'])
     @StepLoadUnitLabel.setter
     def StepLoadUnitLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepLoadUnitLabel'], value)
 
     @property
     def StepStepRateLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1030,10 +1201,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StepStepRateLabel'])
     @StepStepRateLabel.setter
     def StepStepRateLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StepStepRateLabel'], value)
 
     @property
     def SupportedTrafficTypes(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1042,10 +1215,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'])
     @SupportedTrafficTypes.setter
     def SupportedTrafficTypes(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportedTrafficTypes'], value)
 
     @property
     def TestType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1054,10 +1229,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestType'])
     @TestType.setter
     def TestType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestType'], value)
 
     @property
     def TestTypeTemp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1066,10 +1243,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestTypeTemp'])
     @TestTypeTemp.setter
     def TestTypeTemp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestTypeTemp'], value)
 
     @property
     def TestTypeTemp2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1078,10 +1257,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestTypeTemp2'])
     @TestTypeTemp2.setter
     def TestTypeTemp2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestTypeTemp2'], value)
 
     @property
     def Tolerance(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1090,10 +1271,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tolerance'])
     @Tolerance.setter
     def Tolerance(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tolerance'], value)
 
     @property
     def TrafficType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1102,10 +1285,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
     @TrafficType.setter
     def TrafficType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
 
     @property
     def TxDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1114,10 +1299,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxDelay'])
     @TxDelay.setter
     def TxDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxDelay'], value)
 
     @property
     def UpstreamBinaryBackoff(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1126,10 +1313,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamBinaryBackoff'])
     @UpstreamBinaryBackoff.setter
     def UpstreamBinaryBackoff(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamBinaryBackoff'], value)
 
     @property
     def UpstreamBinaryFrameLossUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1138,10 +1327,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamBinaryFrameLossUnit'])
     @UpstreamBinaryFrameLossUnit.setter
     def UpstreamBinaryFrameLossUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamBinaryFrameLossUnit'], value)
 
     @property
     def UpstreamBinaryLoadUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1150,10 +1341,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamBinaryLoadUnit'])
     @UpstreamBinaryLoadUnit.setter
     def UpstreamBinaryLoadUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamBinaryLoadUnit'], value)
 
     @property
     def UpstreamBinaryResolution(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1162,10 +1355,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamBinaryResolution'])
     @UpstreamBinaryResolution.setter
     def UpstreamBinaryResolution(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamBinaryResolution'], value)
 
     @property
     def UpstreamBinarySearchType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1174,10 +1369,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamBinarySearchType'])
     @UpstreamBinarySearchType.setter
     def UpstreamBinarySearchType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamBinarySearchType'], value)
 
     @property
     def UpstreamBinaryTolerance(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1186,10 +1383,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamBinaryTolerance'])
     @UpstreamBinaryTolerance.setter
     def UpstreamBinaryTolerance(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamBinaryTolerance'], value)
 
     @property
     def UpstreamEnableExtraIterations(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1198,10 +1397,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamEnableExtraIterations'])
     @UpstreamEnableExtraIterations.setter
     def UpstreamEnableExtraIterations(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamEnableExtraIterations'], value)
 
     @property
     def UpstreamExtraIterationOffsets(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1210,10 +1411,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamExtraIterationOffsets'])
     @UpstreamExtraIterationOffsets.setter
     def UpstreamExtraIterationOffsets(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamExtraIterationOffsets'], value)
 
     @property
     def UpstreamImixAdd(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1222,10 +1425,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixAdd'])
     @UpstreamImixAdd.setter
     def UpstreamImixAdd(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixAdd'], value)
 
     @property
     def UpstreamImixData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1234,10 +1439,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixData'])
     @UpstreamImixData.setter
     def UpstreamImixData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixData'], value)
 
     @property
     def UpstreamImixDataQoS(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1246,10 +1453,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixDataQoS'])
     @UpstreamImixDataQoS.setter
     def UpstreamImixDataQoS(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixDataQoS'], value)
 
     @property
     def UpstreamImixDelete(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1258,10 +1467,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixDelete'])
     @UpstreamImixDelete.setter
     def UpstreamImixDelete(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixDelete'], value)
 
     @property
     def UpstreamImixDistribution(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1270,10 +1481,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixDistribution'])
     @UpstreamImixDistribution.setter
     def UpstreamImixDistribution(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixDistribution'], value)
 
     @property
     def UpstreamImixEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -1282,10 +1495,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixEnabled'])
     @UpstreamImixEnabled.setter
     def UpstreamImixEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixEnabled'], value)
 
     @property
     def UpstreamImixTemplates(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1294,10 +1509,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamImixTemplates'])
     @UpstreamImixTemplates.setter
     def UpstreamImixTemplates(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamImixTemplates'], value)
 
     @property
     def UpstreamInitialBinaryLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1306,10 +1523,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamInitialBinaryLoadRate'])
     @UpstreamInitialBinaryLoadRate.setter
     def UpstreamInitialBinaryLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamInitialBinaryLoadRate'], value)
 
     @property
     def UpstreamInitialStepLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1318,10 +1537,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamInitialStepLoadRate'])
     @UpstreamInitialStepLoadRate.setter
     def UpstreamInitialStepLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamInitialStepLoadRate'], value)
 
     @property
     def UpstreamLoadType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1330,10 +1551,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamLoadType'])
     @UpstreamLoadType.setter
     def UpstreamLoadType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamLoadType'], value)
 
     @property
     def UpstreamMaxBinaryLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1342,10 +1565,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamMaxBinaryLoadRate'])
     @UpstreamMaxBinaryLoadRate.setter
     def UpstreamMaxBinaryLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamMaxBinaryLoadRate'], value)
 
     @property
     def UpstreamMaxStepLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1354,10 +1579,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamMaxStepLoadRate'])
     @UpstreamMaxStepLoadRate.setter
     def UpstreamMaxStepLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamMaxStepLoadRate'], value)
 
     @property
     def UpstreamMinBinaryLoadRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1366,10 +1593,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamMinBinaryLoadRate'])
     @UpstreamMinBinaryLoadRate.setter
     def UpstreamMinBinaryLoadRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamMinBinaryLoadRate'], value)
 
     @property
     def UpstreamStepFrameLossUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1378,10 +1607,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepFrameLossUnit'])
     @UpstreamStepFrameLossUnit.setter
     def UpstreamStepFrameLossUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamStepFrameLossUnit'], value)
 
     @property
     def UpstreamStepLoadUnit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1390,10 +1621,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepLoadUnit'])
     @UpstreamStepLoadUnit.setter
     def UpstreamStepLoadUnit(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamStepLoadUnit'], value)
 
     @property
     def UpstreamStepStepLoadRate(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1402,10 +1635,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepStepLoadRate'])
     @UpstreamStepStepLoadRate.setter
     def UpstreamStepStepLoadRate(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamStepStepLoadRate'], value)
 
     @property
     def UpstreamStepTolerance(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1414,10 +1649,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamStepTolerance'])
     @UpstreamStepTolerance.setter
     def UpstreamStepTolerance(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamStepTolerance'], value)
 
     @property
     def UpstreamStopTestOnHighLoss(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -1426,10 +1663,12 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamStopTestOnHighLoss'])
     @UpstreamStopTestOnHighLoss.setter
     def UpstreamStopTestOnHighLoss(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamStopTestOnHighLoss'], value)
 
     @property
     def UpstreamUsePercentOffsets(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1438,9 +1677,11 @@ class TestConfig(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamUsePercentOffsets'])
     @UpstreamUsePercentOffsets.setter
     def UpstreamUsePercentOffsets(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UpstreamUsePercentOffsets'], value)
 
     def update(self, AggregateByDirection=None, AggregateByFlowgroup=None, AggregateByPort=None, BackoffIteration=None, BinaryAcceptableFrameLossLabel=None, BinaryBackoffLabel=None, BinaryInitialRateLabel=None, BinaryLoadUnitLabel=None, BinaryMaxRateLabel=None, BinaryMinRateLabel=None, BinaryResolutionLabel=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, DelayAfterTransmit=None, DownstreamBinaryBackoff=None, DownstreamBinaryFrameLossUnit=None, DownstreamBinaryLoadUnit=None, DownstreamBinaryResolution=None, DownstreamBinarySearchType=None, DownstreamBinaryTolerance=None, DownstreamImixAdd=None, DownstreamImixData=None, DownstreamImixDataQoS=None, DownstreamImixDelete=None, DownstreamImixDistribution=None, DownstreamImixEnabled=None, DownstreamImixTemplates=None, DownstreamInitialBinaryLoadRate=None, DownstreamInitialStepLoadRate=None, DownstreamLoadType=None, DownstreamMaxBinaryLoadRate=None, DownstreamMaxStepLoadRate=None, DownstreamMinBinaryLoadRate=None, DownstreamStepFrameLossUnit=None, DownstreamStepLoadUnit=None, DownstreamStepStepLoadRate=None, DownstreamStepTolerance=None, DownstreamStopTestOnHighLoss=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, ForceRegenerate=None, FramesPerBurstGap=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixTrafficType=None, IterationParameters=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadType=None, MapType=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, SaturationIteration=None, StaggeredStart=None, StepAcceptableFrameLossLabel=None, StepEndRateLabel=None, StepInitialRateLabel=None, StepLoadUnitLabel=None, StepStepRateLabel=None, SupportedTrafficTypes=None, TestType=None, TestTypeTemp=None, TestTypeTemp2=None, Tolerance=None, TrafficType=None, TxDelay=None, UpstreamBinaryBackoff=None, UpstreamBinaryFrameLossUnit=None, UpstreamBinaryLoadUnit=None, UpstreamBinaryResolution=None, UpstreamBinarySearchType=None, UpstreamBinaryTolerance=None, UpstreamEnableExtraIterations=None, UpstreamExtraIterationOffsets=None, UpstreamImixAdd=None, UpstreamImixData=None, UpstreamImixDataQoS=None, UpstreamImixDelete=None, UpstreamImixDistribution=None, UpstreamImixEnabled=None, UpstreamImixTemplates=None, UpstreamInitialBinaryLoadRate=None, UpstreamInitialStepLoadRate=None, UpstreamLoadType=None, UpstreamMaxBinaryLoadRate=None, UpstreamMaxStepLoadRate=None, UpstreamMinBinaryLoadRate=None, UpstreamStepFrameLossUnit=None, UpstreamStepLoadUnit=None, UpstreamStepStepLoadRate=None, UpstreamStepTolerance=None, UpstreamStopTestOnHighLoss=None, UpstreamUsePercentOffsets=None):
+        # type: (bool, bool, bool, int, str, str, str, str, str, str, str, int, bool, bool, int, int, str, str, int, str, int, str, str, bool, str, str, bool, str, int, int, str, int, int, int, str, str, str, int, int, int, bool, bool, bool, bool, bool, bool, bool, int, int, bool, int, int, bool, str, str, str, bool, str, str, str, int, bool, str, int, List[str], bool, str, int, bool, str, str, str, str, str, str, str, str, str, int, str, int, int, str, str, int, str, int, bool, str, str, str, bool, str, str, bool, str, int, int, str, int, int, int, str, str, str, int, int, str) -> TestConfig
         """Updates testConfig resource on the server.
 
         Args
@@ -1560,32 +1801,52 @@ class TestConfig(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Applies the specified Quick Test.
 
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)
 
-    def ApplyAsync(self):
+    def ApplyAsync(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyAsync operation on the server.
 
+        applyAsync(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsync', payload=payload, response_object=None)
 
-    def ApplyAsyncResult(self):
+    def ApplyAsyncResult(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the applyAsyncResult operation on the server.
+
+        applyAsyncResult(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: 
 
         Raises
         ------
@@ -1593,44 +1854,68 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyAsyncResult', payload=payload, response_object=None)
 
-    def ApplyITWizardConfiguration(self):
+    def ApplyITWizardConfiguration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyITWizardConfiguration operation on the server.
 
         Applies the specified Quick Test.
 
+        applyITWizardConfiguration(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyITWizardConfiguration', payload=payload, response_object=None)
 
-    def GenerateReport(self):
+    def GenerateReport(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the generateReport operation on the server.
 
         Generate a PDF report for the last succesfull test run.
 
+        generateReport(async_operation=bool)string
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: This method is asynchronous and has no return value.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('generateReport', payload=payload, response_object=None)
 
     def Run(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the run operation on the server.
 
         Starts the specified Quick Test and waits for its execution to finish.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        run(InputParameters=string)list
-        -------------------------------
+        run(async_operation=bool)list
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        run(InputParameters=string, async_operation=bool)list
+        -----------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): This method is synchronous and returns the result of the test.
 
         Raises
@@ -1644,15 +1929,21 @@ class TestConfig(Base):
         return self._execute('run', payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the specified Quick Test.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        start(InputParameters=string)
-        -----------------------------
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(InputParameters=string, async_operation=bool)
+        ---------------------------------------------------
         - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -1664,28 +1955,43 @@ class TestConfig(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the currently running Quick Test.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def WaitForTest(self):
+    def WaitForTest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the waitForTest operation on the server.
 
         Waits for the execution of the specified Quick Test to be completed.
 
+        waitForTest(async_operation=bool)list
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('waitForTest', payload=payload, response_object=None)

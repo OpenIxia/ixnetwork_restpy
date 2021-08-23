@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Isis(Base):
@@ -44,9 +45,13 @@ class Isis(Base):
         'SpbHelloMulticastMac': 'spbHelloMulticastMac',
         'SpbNlpId': 'spbNlpId',
     }
+    _SDM_ENUM_MAP = {
+        'emulationType': ['isisL3Routing', 'dceIsis', 'spbIsis', 'trillIsis'],
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Isis, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Isis, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -60,10 +65,14 @@ class Isis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_320e1c5c099823f4ba100b7eaf8bb8d9 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def AllL1RbridgesMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,10 +81,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllL1RbridgesMac'])
     @AllL1RbridgesMac.setter
     def AllL1RbridgesMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllL1RbridgesMac'], value)
 
     @property
     def EmulationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +95,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EmulationType'])
     @EmulationType.setter
     def EmulationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EmulationType'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +109,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def HelloMulticastMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +123,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloMulticastMac'])
     @HelloMulticastMac.setter
     def HelloMulticastMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloMulticastMac'], value)
 
     @property
     def LspMgroupPdusPerInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +137,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspMgroupPdusPerInterval'])
     @LspMgroupPdusPerInterval.setter
     def LspMgroupPdusPerInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspMgroupPdusPerInterval'], value)
 
     @property
     def NlpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +151,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NlpId'])
     @NlpId.setter
     def NlpId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NlpId'], value)
 
     @property
     def RateControlInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,10 +165,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RateControlInterval'])
     @RateControlInterval.setter
     def RateControlInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RateControlInterval'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,6 +180,7 @@ class Isis(Base):
 
     @property
     def SendP2PHellosToUnicastMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -165,10 +189,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendP2PHellosToUnicastMac'])
     @SendP2PHellosToUnicastMac.setter
     def SendP2PHellosToUnicastMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendP2PHellosToUnicastMac'], value)
 
     @property
     def SpbAllL1BridgesMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,10 +203,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpbAllL1BridgesMac'])
     @SpbAllL1BridgesMac.setter
     def SpbAllL1BridgesMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpbAllL1BridgesMac'], value)
 
     @property
     def SpbHelloMulticastMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -189,10 +217,12 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpbHelloMulticastMac'])
     @SpbHelloMulticastMac.setter
     def SpbHelloMulticastMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpbHelloMulticastMac'], value)
 
     @property
     def SpbNlpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -201,9 +231,11 @@ class Isis(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpbNlpId'])
     @SpbNlpId.setter
     def SpbNlpId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpbNlpId'], value)
 
     def update(self, AllL1RbridgesMac=None, EmulationType=None, Enabled=None, HelloMulticastMac=None, LspMgroupPdusPerInterval=None, NlpId=None, RateControlInterval=None, SendP2PHellosToUnicastMac=None, SpbAllL1BridgesMac=None, SpbHelloMulticastMac=None, SpbNlpId=None):
+        # type: (str, str, bool, str, int, int, int, bool, str, str, int) -> Isis
         """Updates isis resource on the server.
 
         Args
@@ -226,28 +258,42 @@ class Isis(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the ISIS protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the ISIS protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

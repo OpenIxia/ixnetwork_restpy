@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MapServerResolver(Base):
@@ -42,12 +43,19 @@ class MapServerResolver(Base):
         'MsmrLocation': 'msmrLocation',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'authenticationAlgorithm': ['sha-1-96', 'sha-128-256'],
+        'family': ['ipv4', 'ipv6'],
+        'msmrLocation': ['internal', 'external'],
+        'type': ['ms', 'mr', 'msmr'],
+    }
 
-    def __init__(self, parent):
-        super(MapServerResolver, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MapServerResolver, self).__init__(parent, list_op)
 
     @property
     def AuthenticationAlgorithm(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,10 +64,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm'])
     @AuthenticationAlgorithm.setter
     def AuthenticationAlgorithm(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthenticationAlgorithm'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -68,10 +78,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExternalMsmrAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +92,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExternalMsmrAddress'])
     @ExternalMsmrAddress.setter
     def ExternalMsmrAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExternalMsmrAddress'], value)
 
     @property
     def Family(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,10 +106,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Family'])
     @Family.setter
     def Family(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Family'], value)
 
     @property
     def InternalIxiaMsmrRouter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +120,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InternalIxiaMsmrRouter'])
     @InternalIxiaMsmrRouter.setter
     def InternalIxiaMsmrRouter(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InternalIxiaMsmrRouter'], value)
 
     @property
     def Key(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +134,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Key'])
     @Key.setter
     def Key(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Key'], value)
 
     @property
     def MsmrLocation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,10 +148,12 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MsmrLocation'])
     @MsmrLocation.setter
     def MsmrLocation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MsmrLocation'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,9 +162,11 @@ class MapServerResolver(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+        # type: (str, bool, str, str, str, str, str, str) -> MapServerResolver
         """Updates mapServerResolver resource on the server.
 
         Args
@@ -163,6 +187,7 @@ class MapServerResolver(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+        # type: (str, bool, str, str, str, str, str, str) -> MapServerResolver
         """Adds a new mapServerResolver resource on the server and adds it to the container.
 
         Args
@@ -197,6 +222,7 @@ class MapServerResolver(Base):
         self._delete()
 
     def find(self, AuthenticationAlgorithm=None, Enabled=None, ExternalMsmrAddress=None, Family=None, InternalIxiaMsmrRouter=None, Key=None, MsmrLocation=None, Type=None):
+        # type: (str, bool, str, str, str, str, str, str) -> MapServerResolver
         """Finds and retrieves mapServerResolver resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mapServerResolver resources from the server.

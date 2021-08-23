@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedGroupInfo(Base):
@@ -40,12 +41,17 @@ class LearnedGroupInfo(Base):
         'SourceAddress': 'sourceAddress',
         'SourceTimer': 'sourceTimer',
     }
+    _SDM_ENUM_MAP = {
+        'compatibilityMode': ['mldv1', 'mldv2'],
+        'filterMode': ['include', 'exclude'],
+    }
 
-    def __init__(self, parent):
-        super(LearnedGroupInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedGroupInfo, self).__init__(parent, list_op)
 
     @property
     def CompatibilityMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,6 +61,7 @@ class LearnedGroupInfo(Base):
 
     @property
     def CompatibilityTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +71,7 @@ class LearnedGroupInfo(Base):
 
     @property
     def FilterMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +81,7 @@ class LearnedGroupInfo(Base):
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +91,7 @@ class LearnedGroupInfo(Base):
 
     @property
     def GroupTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class LearnedGroupInfo(Base):
 
     @property
     def SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +111,7 @@ class LearnedGroupInfo(Base):
 
     @property
     def SourceTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,7 +119,21 @@ class LearnedGroupInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SourceTimer'])
 
+    def add(self):
+        """Adds a new learnedGroupInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedGroupInfo resources using find and the newly added learnedGroupInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CompatibilityMode=None, CompatibilityTimer=None, FilterMode=None, GroupAddress=None, GroupTimer=None, SourceAddress=None, SourceTimer=None):
+        # type: (str, int, str, str, int, str, int) -> LearnedGroupInfo
         """Finds and retrieves learnedGroupInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedGroupInfo resources from the server.

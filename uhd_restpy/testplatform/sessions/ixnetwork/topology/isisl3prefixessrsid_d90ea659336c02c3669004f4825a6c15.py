@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisL3PrefixesSrSid(Base):
@@ -50,12 +51,15 @@ class IsisL3PrefixesSrSid(Base):
         'SidIndexLabel': 'sidIndexLabel',
         'VFlag': 'vFlag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisL3PrefixesSrSid, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisL3PrefixesSrSid, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +70,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -76,6 +81,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def ConfigureSIDIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +92,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +102,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def EFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +123,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def EnableFapm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def FapmMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +145,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +156,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -153,6 +166,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def NFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +177,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +186,12 @@ class IsisL3PrefixesSrSid(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetworkAddress(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -184,6 +201,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def NetworkAddressIpv6(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -193,6 +211,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -203,6 +222,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def RFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -213,6 +233,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def SidIndexLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -223,6 +244,7 @@ class IsisL3PrefixesSrSid(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -232,6 +254,7 @@ class IsisL3PrefixesSrSid(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VFlag']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisL3PrefixesSrSid
         """Updates isisL3PrefixesSrSid resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

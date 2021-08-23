@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AncpDslTlv(Base):
@@ -41,12 +42,16 @@ class AncpDslTlv(Base):
         'Type': 'type',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['bytes3', 'bytes4', 'bytes8', 'string'],
+    }
 
-    def __init__(self, parent):
-        super(AncpDslTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AncpDslTlv, self).__init__(parent, list_op)
 
     @property
     def Code(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,10 +60,12 @@ class AncpDslTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Code'])
     @Code.setter
     def Code(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Code'], value)
 
     @property
     def MaxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,10 +74,12 @@ class AncpDslTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxValue'])
     @MaxValue.setter
     def MaxValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxValue'], value)
 
     @property
     def MinValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,10 +88,12 @@ class AncpDslTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinValue'])
     @MinValue.setter
     def MinValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinValue'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +102,12 @@ class AncpDslTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +117,7 @@ class AncpDslTlv(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,10 +126,12 @@ class AncpDslTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,9 +140,11 @@ class AncpDslTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Code=None, MaxValue=None, MinValue=None, Name=None, Type=None, Value=None):
+        # type: (int, int, int, str, str, str) -> AncpDslTlv
         """Updates ancpDslTlv resource on the server.
 
         Args
@@ -145,6 +163,7 @@ class AncpDslTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Code=None, MaxValue=None, MinValue=None, Name=None, Type=None, Value=None):
+        # type: (int, int, int, str, str, str) -> AncpDslTlv
         """Adds a new ancpDslTlv resource on the server and adds it to the container.
 
         Args
@@ -177,6 +196,7 @@ class AncpDslTlv(Base):
         self._delete()
 
     def find(self, Code=None, MaxValue=None, MinValue=None, Name=None, ObjectId=None, Type=None, Value=None):
+        # type: (int, int, int, str, str, str, str) -> AncpDslTlv
         """Finds and retrieves ancpDslTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpDslTlv resources from the server.

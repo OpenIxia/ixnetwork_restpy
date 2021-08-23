@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23ProtocolPortFilter(Base):
@@ -35,12 +36,15 @@ class Layer23ProtocolPortFilter(Base):
     _SDM_ATT_MAP = {
         'PortFilterIds': 'portFilterIds',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Layer23ProtocolPortFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23ProtocolPortFilter, self).__init__(parent, list_op)
 
     @property
     def PortFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -49,9 +53,11 @@ class Layer23ProtocolPortFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     def update(self, PortFilterIds=None):
+        # type: (List[str]) -> Layer23ProtocolPortFilter
         """Updates layer23ProtocolPortFilter resource on the server.
 
         Args
@@ -65,6 +71,7 @@ class Layer23ProtocolPortFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortFilterIds=None):
+        # type: (List[str]) -> Layer23ProtocolPortFilter
         """Adds a new layer23ProtocolPortFilter resource on the server and adds it to the container.
 
         Args
@@ -92,6 +99,7 @@ class Layer23ProtocolPortFilter(Base):
         self._delete()
 
     def find(self, PortFilterIds=None):
+        # type: (List[str]) -> Layer23ProtocolPortFilter
         """Finds and retrieves layer23ProtocolPortFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23ProtocolPortFilter resources from the server.

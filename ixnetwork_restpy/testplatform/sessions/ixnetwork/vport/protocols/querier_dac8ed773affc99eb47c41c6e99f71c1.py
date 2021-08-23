@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Querier(Base):
@@ -55,9 +56,12 @@ class Querier(Base):
         'SupportOlderVersionQuerier': 'supportOlderVersionQuerier',
         'Version': 'version',
     }
+    _SDM_ENUM_MAP = {
+        'version': ['version1', 'version2'],
+    }
 
-    def __init__(self, parent):
-        super(Querier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Querier, self).__init__(parent, list_op)
 
     @property
     def LearnedGroupInfo(self):
@@ -71,10 +75,14 @@ class Querier(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedgroupinfo_916ee893c3d44f4bdc91e55725b14830 import LearnedGroupInfo
-        return LearnedGroupInfo(self)
+        if self._properties.get('LearnedGroupInfo', None) is not None:
+            return self._properties.get('LearnedGroupInfo')
+        else:
+            return LearnedGroupInfo(self)
 
     @property
     def DiscardLearnedInfo(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +91,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedInfo'])
     @DiscardLearnedInfo.setter
     def DiscardLearnedInfo(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedInfo'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GeneralQueryInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GeneralQueryInterval'])
     @GeneralQueryInterval.setter
     def GeneralQueryInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GeneralQueryInterval'], value)
 
     @property
     def GqResponseInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +133,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GqResponseInterval'])
     @GqResponseInterval.setter
     def GqResponseInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GqResponseInterval'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -131,10 +147,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def InterfaceIndex(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +161,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceIndex'])
     @InterfaceIndex.setter
     def InterfaceIndex(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceIndex'], value)
 
     @property
     def InterfaceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,10 +175,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
     def InterfaceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceType'], value)
 
     @property
     def Interfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,10 +189,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Interfaces'])
     @Interfaces.setter
     def Interfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Interfaces'], value)
 
     @property
     def IsQuerier(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,6 +204,7 @@ class Querier(Base):
 
     @property
     def IsRefreshComplete(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -189,6 +214,7 @@ class Querier(Base):
 
     @property
     def QuerierAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -198,6 +224,7 @@ class Querier(Base):
 
     @property
     def QuerierWorkingVersion(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,6 +234,7 @@ class Querier(Base):
 
     @property
     def RobustnessVariable(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -215,10 +243,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RobustnessVariable'])
     @RobustnessVariable.setter
     def RobustnessVariable(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RobustnessVariable'], value)
 
     @property
     def RouterAlert(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -227,10 +257,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterAlert'])
     @RouterAlert.setter
     def RouterAlert(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterAlert'], value)
 
     @property
     def SqResponseInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -239,10 +271,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SqResponseInterval'])
     @SqResponseInterval.setter
     def SqResponseInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SqResponseInterval'], value)
 
     @property
     def SqTransmissionCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -251,10 +285,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SqTransmissionCount'])
     @SqTransmissionCount.setter
     def SqTransmissionCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SqTransmissionCount'], value)
 
     @property
     def StartupQueryCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -263,10 +299,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartupQueryCount'])
     @StartupQueryCount.setter
     def StartupQueryCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartupQueryCount'], value)
 
     @property
     def SupportElection(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -275,10 +313,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportElection'])
     @SupportElection.setter
     def SupportElection(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportElection'], value)
 
     @property
     def SupportOlderVersionHost(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -287,10 +327,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportOlderVersionHost'])
     @SupportOlderVersionHost.setter
     def SupportOlderVersionHost(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportOlderVersionHost'], value)
 
     @property
     def SupportOlderVersionQuerier(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -299,10 +341,12 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportOlderVersionQuerier'])
     @SupportOlderVersionQuerier.setter
     def SupportOlderVersionQuerier(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportOlderVersionQuerier'], value)
 
     @property
     def Version(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -311,9 +355,11 @@ class Querier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Version'])
     @Version.setter
     def Version(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Version'], value)
 
     def update(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+        # type: (bool, bool, int, int, str, int, str, str, int, bool, int, int, int, bool, bool, bool, str) -> Querier
         """Updates querier resource on the server.
 
         Args
@@ -343,6 +389,7 @@ class Querier(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+        # type: (bool, bool, int, int, str, int, str, str, int, bool, int, int, int, bool, bool, bool, str) -> Querier
         """Adds a new querier resource on the server and adds it to the container.
 
         Args
@@ -386,6 +433,7 @@ class Querier(Base):
         self._delete()
 
     def find(self, DiscardLearnedInfo=None, Enabled=None, GeneralQueryInterval=None, GqResponseInterval=None, InterfaceId=None, InterfaceIndex=None, InterfaceType=None, Interfaces=None, IsQuerier=None, IsRefreshComplete=None, QuerierAddress=None, QuerierWorkingVersion=None, RobustnessVariable=None, RouterAlert=None, SqResponseInterval=None, SqTransmissionCount=None, StartupQueryCount=None, SupportElection=None, SupportOlderVersionHost=None, SupportOlderVersionQuerier=None, Version=None):
+        # type: (bool, bool, int, int, str, int, str, str, bool, bool, str, int, int, bool, int, int, int, bool, bool, bool, str) -> Querier
         """Finds and retrieves querier resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve querier resources from the server.
@@ -444,28 +492,44 @@ class Querier(Base):
         """
         return self._read(href)
 
-    def GetInterfaceAccessorIfaceList(self):
+    def GetInterfaceAccessorIfaceList(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the getInterfaceAccessorIfaceList operation on the server.
 
         Gets the interface accesor Iface list.
 
+        getInterfaceAccessorIfaceList(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getInterfaceAccessorIfaceList', payload=payload, response_object=None)
 
-    def RefreshLearnedInfo(self):
+    def RefreshLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInfo operation on the server.
 
         If enabled, it refreshes the learned info.
 
+        refreshLearnedInfo(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)

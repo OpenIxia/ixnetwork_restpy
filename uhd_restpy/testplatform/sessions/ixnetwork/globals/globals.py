@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Globals(Base):
@@ -41,9 +42,11 @@ class Globals(Base):
         'RpfPort': 'rpfPort',
         'Username': 'username',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Globals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Globals, self).__init__(parent, list_op)
 
     @property
     def AppErrors(self):
@@ -57,7 +60,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.apperrors.apperrors import AppErrors
-        return AppErrors(self)
+        if self._properties.get('AppErrors', None) is not None:
+            return self._properties.get('AppErrors')
+        else:
+            return AppErrors(self)
 
     @property
     def Diagnostics(self):
@@ -71,7 +77,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.diagnostics.diagnostics import Diagnostics
-        return Diagnostics(self)._select()
+        if self._properties.get('Diagnostics', None) is not None:
+            return self._properties.get('Diagnostics')
+        else:
+            return Diagnostics(self)._select()
 
     @property
     def Interfaces(self):
@@ -85,7 +94,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.interfaces.interfaces import Interfaces
-        return Interfaces(self)._select()
+        if self._properties.get('Interfaces', None) is not None:
+            return self._properties.get('Interfaces')
+        else:
+            return Interfaces(self)._select()
 
     @property
     def Licensing(self):
@@ -99,7 +111,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.licensing.licensing import Licensing
-        return Licensing(self)._select()
+        if self._properties.get('Licensing', None) is not None:
+            return self._properties.get('Licensing')
+        else:
+            return Licensing(self)._select()
 
     @property
     def PortTestOptions(self):
@@ -113,7 +128,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.porttestoptions.porttestoptions import PortTestOptions
-        return PortTestOptions(self)._select()
+        if self._properties.get('PortTestOptions', None) is not None:
+            return self._properties.get('PortTestOptions')
+        else:
+            return PortTestOptions(self)._select()
 
     @property
     def Preferences(self):
@@ -127,7 +145,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.preferences.preferences import Preferences
-        return Preferences(self)._select()
+        if self._properties.get('Preferences', None) is not None:
+            return self._properties.get('Preferences')
+        else:
+            return Preferences(self)._select()
 
     @property
     def ProgressDialog(self):
@@ -141,7 +162,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.progressdialog.progressdialog import ProgressDialog
-        return ProgressDialog(self)._select()
+        if self._properties.get('ProgressDialog', None) is not None:
+            return self._properties.get('ProgressDialog')
+        else:
+            return ProgressDialog(self)._select()
 
     @property
     def ProtocolStack(self):
@@ -155,7 +179,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.protocolstack import ProtocolStack
-        return ProtocolStack(self)._select()
+        if self._properties.get('ProtocolStack', None) is not None:
+            return self._properties.get('ProtocolStack')
+        else:
+            return ProtocolStack(self)._select()
 
     @property
     def Testworkflow(self):
@@ -169,7 +196,10 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.testworkflow.testworkflow import Testworkflow
-        return Testworkflow(self)._select()
+        if self._properties.get('Testworkflow', None) is not None:
+            return self._properties.get('Testworkflow')
+        else:
+            return Testworkflow(self)._select()
 
     @property
     def Topology(self):
@@ -183,10 +213,14 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.topology_678a8dc80c9b4b2b5c741072eab4305d import Topology
-        return Topology(self)._select()
+        if self._properties.get('Topology', None) is not None:
+            return self._properties.get('Topology')
+        else:
+            return Topology(self)._select()
 
     @property
     def ApplicationName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -196,6 +230,7 @@ class Globals(Base):
 
     @property
     def BuildNumber(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -205,6 +240,7 @@ class Globals(Base):
 
     @property
     def ConfigFileName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,6 +259,7 @@ class Globals(Base):
 
     @property
     def IsConfigDifferent(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -232,6 +269,7 @@ class Globals(Base):
 
     @property
     def PersistencePath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -241,6 +279,7 @@ class Globals(Base):
 
     @property
     def ProductVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -250,6 +289,7 @@ class Globals(Base):
 
     @property
     def RpfPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -259,6 +299,7 @@ class Globals(Base):
 
     @property
     def Username(self):
+        # type: () -> str
         """
         Returns
         -------

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Traffic(Base):
@@ -82,9 +83,17 @@ class Traffic(Base):
         'UseTxRxSync': 'useTxRxSync',
         'WaitTime': 'waitTime',
     }
+    _SDM_ENUM_MAP = {
+        'cycleOffsetUnitForScheduledStart': ['microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
+        'cycleTimeUnitForScheduledStart': ['microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
+        'dataPlaneJitterWindow': ['0', '10485760', '1310720', '167772160', '20971520', '2621440', '335544320', '41943040', '5242880', '671088640', '83886080'],
+        'frameOrderingMode': ['flowGroupSetup', 'none', 'peakLoading', 'RFC2889'],
+        'globalStreamControl': ['continuous', 'iterations'],
+        'state': ['error', 'locked', 'started', 'startedWaitingForStats', 'startedWaitingForStreams', 'stopped', 'stoppedWaitingForStats', 'txStopWatchExpected', 'unapplied'],
+    }
 
-    def __init__(self, parent):
-        super(Traffic, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Traffic, self).__init__(parent, list_op)
 
     @property
     def DynamicFrameSize(self):
@@ -98,7 +107,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicframesize.dynamicframesize import DynamicFrameSize
-        return DynamicFrameSize(self)
+        if self._properties.get('DynamicFrameSize', None) is not None:
+            return self._properties.get('DynamicFrameSize')
+        else:
+            return DynamicFrameSize(self)
 
     @property
     def DynamicRate(self):
@@ -112,7 +124,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.dynamicrate.dynamicrate import DynamicRate
-        return DynamicRate(self)
+        if self._properties.get('DynamicRate', None) is not None:
+            return self._properties.get('DynamicRate')
+        else:
+            return DynamicRate(self)
 
     @property
     def EgressOnlyTracking(self):
@@ -126,7 +141,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.egressonlytracking.egressonlytracking import EgressOnlyTracking
-        return EgressOnlyTracking(self)
+        if self._properties.get('EgressOnlyTracking', None) is not None:
+            return self._properties.get('EgressOnlyTracking')
+        else:
+            return EgressOnlyTracking(self)
 
     @property
     def ProtocolTemplate(self):
@@ -140,7 +158,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.protocoltemplate import ProtocolTemplate
-        return ProtocolTemplate(self)
+        if self._properties.get('ProtocolTemplate', None) is not None:
+            return self._properties.get('ProtocolTemplate')
+        else:
+            return ProtocolTemplate(self)
 
     @property
     def Statistics(self):
@@ -154,7 +175,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.statistics.statistics import Statistics
-        return Statistics(self)._select()
+        if self._properties.get('Statistics', None) is not None:
+            return self._properties.get('Statistics')
+        else:
+            return Statistics(self)._select()
 
     @property
     def TrafficGroup(self):
@@ -168,7 +192,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficgroup.trafficgroup import TrafficGroup
-        return TrafficGroup(self)
+        if self._properties.get('TrafficGroup', None) is not None:
+            return self._properties.get('TrafficGroup')
+        else:
+            return TrafficGroup(self)
 
     @property
     def TrafficItem(self):
@@ -182,10 +209,14 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.trafficitem import TrafficItem
-        return TrafficItem(self)
+        if self._properties.get('TrafficItem', None) is not None:
+            return self._properties.get('TrafficItem')
+        else:
+            return TrafficItem(self)
 
     @property
     def AutoCorrectL4HeaderChecksums(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -194,10 +225,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoCorrectL4HeaderChecksums'])
     @AutoCorrectL4HeaderChecksums.setter
     def AutoCorrectL4HeaderChecksums(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoCorrectL4HeaderChecksums'], value)
 
     @property
     def CycleOffsetForScheduledStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,10 +239,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CycleOffsetForScheduledStart'])
     @CycleOffsetForScheduledStart.setter
     def CycleOffsetForScheduledStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CycleOffsetForScheduledStart'], value)
 
     @property
     def CycleOffsetUnitForScheduledStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -218,10 +253,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CycleOffsetUnitForScheduledStart'])
     @CycleOffsetUnitForScheduledStart.setter
     def CycleOffsetUnitForScheduledStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CycleOffsetUnitForScheduledStart'], value)
 
     @property
     def CycleTimeForScheduledStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -230,10 +267,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CycleTimeForScheduledStart'])
     @CycleTimeForScheduledStart.setter
     def CycleTimeForScheduledStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CycleTimeForScheduledStart'], value)
 
     @property
     def CycleTimeUnitForScheduledStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -242,10 +281,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CycleTimeUnitForScheduledStart'])
     @CycleTimeUnitForScheduledStart.setter
     def CycleTimeUnitForScheduledStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CycleTimeUnitForScheduledStart'], value)
 
     @property
     def DataPlaneJitterWindow(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -254,10 +295,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'])
     @DataPlaneJitterWindow.setter
     def DataPlaneJitterWindow(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DataPlaneJitterWindow'], value)
 
     @property
     def DelayTimeForScheduledStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -266,10 +309,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayTimeForScheduledStart'])
     @DelayTimeForScheduledStart.setter
     def DelayTimeForScheduledStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayTimeForScheduledStart'], value)
 
     @property
     def DestMacRetryCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -278,10 +323,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestMacRetryCount'])
     @DestMacRetryCount.setter
     def DestMacRetryCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestMacRetryCount'], value)
 
     @property
     def DestMacRetryDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -290,10 +337,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestMacRetryDelay'])
     @DestMacRetryDelay.setter
     def DestMacRetryDelay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestMacRetryDelay'], value)
 
     @property
     def DetectMisdirectedOnAllPorts(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -302,10 +351,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DetectMisdirectedOnAllPorts'])
     @DetectMisdirectedOnAllPorts.setter
     def DetectMisdirectedOnAllPorts(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DetectMisdirectedOnAllPorts'], value)
 
     @property
     def DisablePortLevelMisdirected(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -314,10 +365,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisablePortLevelMisdirected'])
     @DisablePortLevelMisdirected.setter
     def DisablePortLevelMisdirected(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisablePortLevelMisdirected'], value)
 
     @property
     def DisplayMplsCurrentLabelValue(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -326,10 +379,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisplayMplsCurrentLabelValue'])
     @DisplayMplsCurrentLabelValue.setter
     def DisplayMplsCurrentLabelValue(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisplayMplsCurrentLabelValue'], value)
 
     @property
     def EgressOnlyTrafficItemName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -338,10 +393,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EgressOnlyTrafficItemName'])
     @EgressOnlyTrafficItemName.setter
     def EgressOnlyTrafficItemName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EgressOnlyTrafficItemName'], value)
 
     @property
     def ElapsedTransmitTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -351,6 +408,7 @@ class Traffic(Base):
 
     @property
     def EnableDataIntegrityCheck(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -359,10 +417,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDataIntegrityCheck'])
     @EnableDataIntegrityCheck.setter
     def EnableDataIntegrityCheck(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDataIntegrityCheck'], value)
 
     @property
     def EnableDestMacRetry(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -371,10 +431,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDestMacRetry'])
     @EnableDestMacRetry.setter
     def EnableDestMacRetry(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDestMacRetry'], value)
 
     @property
     def EnableEgressOnlyTracking(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -383,10 +445,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTracking'])
     @EnableEgressOnlyTracking.setter
     def EnableEgressOnlyTracking(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTracking'], value)
 
     @property
     def EnableEgressOnlyTxStats(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -395,10 +459,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTxStats'])
     @EnableEgressOnlyTxStats.setter
     def EnableEgressOnlyTxStats(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEgressOnlyTxStats'], value)
 
     @property
     def EnableInstantaneousStatsSupport(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -407,10 +473,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableInstantaneousStatsSupport'])
     @EnableInstantaneousStatsSupport.setter
     def EnableInstantaneousStatsSupport(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableInstantaneousStatsSupport'], value)
 
     @property
     def EnableLagAutoRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -419,10 +487,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLagAutoRate'])
     @EnableLagAutoRate.setter
     def EnableLagAutoRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLagAutoRate'], value)
 
     @property
     def EnableLagFlowBalancing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -431,10 +501,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLagFlowBalancing'])
     @EnableLagFlowBalancing.setter
     def EnableLagFlowBalancing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLagFlowBalancing'], value)
 
     @property
     def EnableLagFlowFailoverMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -443,10 +515,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLagFlowFailoverMode'])
     @EnableLagFlowFailoverMode.setter
     def EnableLagFlowFailoverMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLagFlowFailoverMode'], value)
 
     @property
     def EnableLagRebalanceOnPortUp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -455,10 +529,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLagRebalanceOnPortUp'])
     @EnableLagRebalanceOnPortUp.setter
     def EnableLagRebalanceOnPortUp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLagRebalanceOnPortUp'], value)
 
     @property
     def EnableMinFrameSize(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -467,10 +543,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'])
     @EnableMinFrameSize.setter
     def EnableMinFrameSize(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMinFrameSize'], value)
 
     @property
     def EnableMulticastScalingFactor(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -479,10 +557,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMulticastScalingFactor'])
     @EnableMulticastScalingFactor.setter
     def EnableMulticastScalingFactor(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMulticastScalingFactor'], value)
 
     @property
     def EnableSequenceChecking(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -491,10 +571,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSequenceChecking'])
     @EnableSequenceChecking.setter
     def EnableSequenceChecking(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSequenceChecking'], value)
 
     @property
     def EnableStaggeredStartDelay(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -503,10 +585,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStaggeredStartDelay'])
     @EnableStaggeredStartDelay.setter
     def EnableStaggeredStartDelay(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStaggeredStartDelay'], value)
 
     @property
     def EnableStaggeredTransmit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -515,10 +599,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStaggeredTransmit'])
     @EnableStaggeredTransmit.setter
     def EnableStaggeredTransmit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStaggeredTransmit'], value)
 
     @property
     def EnableStreamOrdering(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -527,10 +613,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStreamOrdering'])
     @EnableStreamOrdering.setter
     def EnableStreamOrdering(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStreamOrdering'], value)
 
     @property
     def FrameOrderingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -539,10 +627,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FrameOrderingMode'])
     @FrameOrderingMode.setter
     def FrameOrderingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FrameOrderingMode'], value)
 
     @property
     def GlobalStreamControl(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -551,10 +641,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GlobalStreamControl'])
     @GlobalStreamControl.setter
     def GlobalStreamControl(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GlobalStreamControl'], value)
 
     @property
     def GlobalStreamControlIterations(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -563,10 +655,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GlobalStreamControlIterations'])
     @GlobalStreamControlIterations.setter
     def GlobalStreamControlIterations(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GlobalStreamControlIterations'], value)
 
     @property
     def IsApplicationTrafficRunning(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -576,6 +670,7 @@ class Traffic(Base):
 
     @property
     def IsApplyOnTheFlyRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -585,6 +680,7 @@ class Traffic(Base):
 
     @property
     def IsTrafficRunning(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -594,6 +690,7 @@ class Traffic(Base):
 
     @property
     def LargeErrorThreshhold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -602,10 +699,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LargeErrorThreshhold'])
     @LargeErrorThreshhold.setter
     def LargeErrorThreshhold(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LargeErrorThreshhold'], value)
 
     @property
     def LearningFrameSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -614,10 +713,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LearningFrameSize'])
     @LearningFrameSize.setter
     def LearningFrameSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LearningFrameSize'], value)
 
     @property
     def LearningFramesCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -626,10 +727,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LearningFramesCount'])
     @LearningFramesCount.setter
     def LearningFramesCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LearningFramesCount'], value)
 
     @property
     def LearningFramesRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -638,10 +741,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LearningFramesRate'])
     @LearningFramesRate.setter
     def LearningFramesRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LearningFramesRate'], value)
 
     @property
     def MacChangeOnFly(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -650,10 +755,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacChangeOnFly'])
     @MacChangeOnFly.setter
     def MacChangeOnFly(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacChangeOnFly'], value)
 
     @property
     def MaxTrafficGenerationQueries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -662,10 +769,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxTrafficGenerationQueries'])
     @MaxTrafficGenerationQueries.setter
     def MaxTrafficGenerationQueries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxTrafficGenerationQueries'], value)
 
     @property
     def MplsLabelLearningTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -674,10 +783,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabelLearningTimeout'])
     @MplsLabelLearningTimeout.setter
     def MplsLabelLearningTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabelLearningTimeout'], value)
 
     @property
     def PeakLoadingReplicationCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -686,10 +797,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeakLoadingReplicationCount'])
     @PeakLoadingReplicationCount.setter
     def PeakLoadingReplicationCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeakLoadingReplicationCount'], value)
 
     @property
     def PreventDataPlaneToCpu(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -698,10 +811,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PreventDataPlaneToCpu'])
     @PreventDataPlaneToCpu.setter
     def PreventDataPlaneToCpu(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PreventDataPlaneToCpu'], value)
 
     @property
     def RefreshLearnedInfoBeforeApply(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -710,10 +825,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefreshLearnedInfoBeforeApply'])
     @RefreshLearnedInfoBeforeApply.setter
     def RefreshLearnedInfoBeforeApply(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefreshLearnedInfoBeforeApply'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -723,6 +840,7 @@ class Traffic(Base):
 
     @property
     def UseRfc5952(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -731,10 +849,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseRfc5952'])
     @UseRfc5952.setter
     def UseRfc5952(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseRfc5952'], value)
 
     @property
     def UseScheduledStartTransmit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -743,10 +863,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseScheduledStartTransmit'])
     @UseScheduledStartTransmit.setter
     def UseScheduledStartTransmit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseScheduledStartTransmit'], value)
 
     @property
     def UseTxRxSync(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -755,10 +877,12 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseTxRxSync'])
     @UseTxRxSync.setter
     def UseTxRxSync(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseTxRxSync'], value)
 
     @property
     def WaitTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -767,9 +891,11 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitTime'])
     @WaitTime.setter
     def WaitTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitTime'], value)
 
     def update(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EgressOnlyTrafficItemName=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableEgressOnlyTxStats=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
+        # type: (bool, int, str, int, str, str, int, int, int, bool, bool, bool, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, int, int, int, int, bool, int, int, int, bool, bool, bool, bool, bool, int) -> Traffic
         """Updates traffic resource on the server.
 
         Args
@@ -826,66 +952,96 @@ class Traffic(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Apply(self):
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the apply operation on the server.
 
         Apply the traffic configuration.
 
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('apply', payload=payload, response_object=None)
 
-    def ApplyApplicationTraffic(self):
+    def ApplyApplicationTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyApplicationTraffic operation on the server.
 
         Apply the stateful traffic configuration.
 
+        DEPRECATED applyApplicationTraffic(async_operation=bool)
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyApplicationTraffic', payload=payload, response_object=None)
 
-    def ApplyOnTheFlyTrafficChanges(self):
+    def ApplyOnTheFlyTrafficChanges(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyOnTheFlyTrafficChanges operation on the server.
 
         Apply on the fly traffic changes.
 
+        applyOnTheFlyTrafficChanges(async_operation=bool)
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyOnTheFlyTrafficChanges', payload=payload, response_object=None)
 
-    def ApplyStatefulTraffic(self):
+    def ApplyStatefulTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the applyStatefulTraffic operation on the server.
 
         Apply the traffic configuration for stateful traffic items only.
 
+        applyStatefulTraffic(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyStatefulTraffic', payload=payload, response_object=None)
 
     def GetFrameCountForDuration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[int], None]
         """Executes the getFrameCountForDuration operation on the server.
 
         Get the frame count for a specific duration.
 
-        getFrameCountForDuration(Arg2=list)list
-        ---------------------------------------
+        getFrameCountForDuration(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------
         - Arg2 (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(number): An array of frame counts.
 
         Raises
@@ -898,10 +1054,15 @@ class Traffic(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getFrameCountForDuration', payload=payload, response_object=None)
 
-    def MakeStatelessTrafficUnapplied(self):
+    def MakeStatelessTrafficUnapplied(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the makeStatelessTrafficUnapplied operation on the server.
 
         Move stateless traffic to unapplied state.
+
+        makeStatelessTrafficUnapplied(async_operation=bool)
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -909,16 +1070,20 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('makeStatelessTrafficUnapplied', payload=payload, response_object=None)
 
     def PauseStatelessTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the pauseStatelessTraffic operation on the server.
 
         Pause or Resume stateless traffic.
 
-        pauseStatelessTraffic(Arg2=bool)
-        --------------------------------
+        pauseStatelessTraffic(Arg2=bool, async_operation=bool)
+        ------------------------------------------------------
         - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -930,145 +1095,222 @@ class Traffic(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
 
-    def SendL2L3Learning(self):
+    def SendL2L3Learning(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the sendL2L3Learning operation on the server.
 
         Send L2 and L3 learning frames.
 
+        sendL2L3Learning(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendL2L3Learning', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Start the traffic configuration.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def StartApplicationTraffic(self):
+    def StartApplicationTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startApplicationTraffic operation on the server.
 
         Start the stateful traffic configuration.
 
+        DEPRECATED startApplicationTraffic(async_operation=bool)
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startApplicationTraffic', payload=payload, response_object=None)
 
-    def StartStatefulTraffic(self):
+    def StartStatefulTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startStatefulTraffic operation on the server.
 
         Start stateful traffic items only.
 
+        startStatefulTraffic(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startStatefulTraffic', payload=payload, response_object=None)
 
-    def StartStatelessTraffic(self):
+    def StartStatelessTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startStatelessTraffic operation on the server.
 
         Start the traffic configuration for stateless traffic items only.
 
+        startStatelessTraffic(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startStatelessTraffic', payload=payload, response_object=None)
 
-    def StartStatelessTrafficBlocking(self):
+    def StartStatelessTrafficBlocking(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startStatelessTrafficBlocking operation on the server.
 
         Start the traffic configuration for stateless traffic items only. This will block until traffic is fully started.
 
+        startStatelessTrafficBlocking(async_operation=bool)
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stop the traffic configuration.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def StopApplicationTraffic(self):
+    def StopApplicationTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopApplicationTraffic operation on the server.
 
         Stop the stateful traffic configuration.
 
+        DEPRECATED stopApplicationTraffic(async_operation=bool)
+        -------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopApplicationTraffic', payload=payload, response_object=None)
 
-    def StopStatefulTraffic(self):
+    def StopStatefulTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopStatefulTraffic operation on the server.
 
         Stop stateful traffic items only.
 
+        stopStatefulTraffic(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopStatefulTraffic', payload=payload, response_object=None)
 
-    def StopStatelessTraffic(self):
+    def StopStatelessTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopStatelessTraffic operation on the server.
 
         Stop the stateless traffic items.
 
+        stopStatelessTraffic(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
 
-    def StopStatelessTrafficBlocking(self):
+    def StopStatelessTrafficBlocking(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopStatelessTrafficBlocking operation on the server.
 
         Stop the traffic configuration for stateless traffic items only. This will block until traffic is fully stopped.
 
+        stopStatelessTrafficBlocking(async_operation=bool)
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)

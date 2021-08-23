@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Predefined(Base):
@@ -34,9 +35,11 @@ class Predefined(Base):
     _SDM_NAME = 'predefined'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Predefined, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Predefined, self).__init__(parent, list_op)
 
     @property
     def ActionTemplate(self):
@@ -50,7 +53,10 @@ class Predefined(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.actiontemplate_fa40ad00e03788c7e139f3ecbe0f7842 import ActionTemplate
-        return ActionTemplate(self)
+        if self._properties.get('ActionTemplate', None) is not None:
+            return self._properties.get('ActionTemplate')
+        else:
+            return ActionTemplate(self)
 
     def add(self):
         """Adds a new predefined resource on the server and adds it to the container.

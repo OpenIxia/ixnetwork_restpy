@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NacTlv(Base):
@@ -42,9 +43,11 @@ class NacTlv(Base):
         'Value': 'value',
         'VendorId': 'vendorId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NacTlv, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NacTlv, self).__init__(parent, list_op)
 
     @property
     def AppCodeRef(self):
@@ -58,7 +61,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.appcoderef.appcoderef import AppCodeRef
-        return AppCodeRef(self)._select()
+        if self._properties.get('AppCodeRef', None) is not None:
+            return self._properties.get('AppCodeRef')
+        else:
+            return AppCodeRef(self)._select()
 
     @property
     def AppTypeRef(self):
@@ -72,7 +78,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.apptyperef import AppTypeRef
-        return AppTypeRef(self)._select()
+        if self._properties.get('AppTypeRef', None) is not None:
+            return self._properties.get('AppTypeRef')
+        else:
+            return AppTypeRef(self)._select()
 
     @property
     def VendorRef(self):
@@ -86,10 +95,14 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.vendorref import VendorRef
-        return VendorRef(self)._select()
+        if self._properties.get('VendorRef', None) is not None:
+            return self._properties.get('VendorRef')
+        else:
+            return VendorRef(self)._select()
 
     @property
     def AppCode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,10 +111,12 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AppCode'])
     @AppCode.setter
     def AppCode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AppCode'], value)
 
     @property
     def AppType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,10 +125,12 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AppType'])
     @AppType.setter
     def AppType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AppType'], value)
 
     @property
     def AvpType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +139,12 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AvpType'])
     @AvpType.setter
     def AvpType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AvpType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,10 +153,12 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -147,6 +168,7 @@ class NacTlv(Base):
 
     @property
     def Selected(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -155,10 +177,12 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Selected'])
     @Selected.setter
     def Selected(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Selected'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,10 +191,12 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     @property
     def VendorId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -179,9 +205,11 @@ class NacTlv(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorId'])
     @VendorId.setter
     def VendorId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorId'], value)
 
     def update(self, AppCode=None, AppType=None, AvpType=None, Name=None, Selected=None, Value=None, VendorId=None):
+        # type: (int, int, int, str, bool, str, int) -> NacTlv
         """Updates nacTlv resource on the server.
 
         Args
@@ -201,6 +229,7 @@ class NacTlv(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AppCode=None, AppType=None, AvpType=None, Name=None, Selected=None, Value=None, VendorId=None):
+        # type: (int, int, int, str, bool, str, int) -> NacTlv
         """Adds a new nacTlv resource on the server and adds it to the container.
 
         Args
@@ -234,6 +263,7 @@ class NacTlv(Base):
         self._delete()
 
     def find(self, AppCode=None, AppType=None, AvpType=None, Name=None, ObjectId=None, Selected=None, Value=None, VendorId=None):
+        # type: (int, int, int, str, str, bool, str, int) -> NacTlv
         """Finds and retrieves nacTlv resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacTlv resources from the server.

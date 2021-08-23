@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IgmpQuerier(Base):
@@ -40,12 +41,15 @@ class IgmpQuerier(Base):
         'TimePeriod': 'timePeriod',
         'UnicastMode': 'unicastMode',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IgmpQuerier, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IgmpQuerier, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class IgmpQuerier(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class IgmpQuerier(Base):
 
     @property
     def Enabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class IgmpQuerier(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,10 +89,12 @@ class IgmpQuerier(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfQueriesPerUnitTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -96,6 +105,7 @@ class IgmpQuerier(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class IgmpQuerier(Base):
 
     @property
     def TimePeriod(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -115,6 +126,7 @@ class IgmpQuerier(Base):
 
     @property
     def UnicastMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +136,7 @@ class IgmpQuerier(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UnicastMode']))
 
     def update(self, Name=None):
+        # type: (str) -> IgmpQuerier
         """Updates igmpQuerier resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

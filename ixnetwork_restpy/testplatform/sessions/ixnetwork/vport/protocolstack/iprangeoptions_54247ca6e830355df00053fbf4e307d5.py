@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IpRangeOptions(Base):
@@ -41,12 +42,15 @@ class IpRangeOptions(Base):
         'MaxOutstandingGatewayArpRequests': 'maxOutstandingGatewayArpRequests',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IpRangeOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IpRangeOptions, self).__init__(parent, list_op)
 
     @property
     def GatewayArpRequestRate(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -55,10 +59,12 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
 
     @property
     def Icmpv6DiscardRouterAdvertisements(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv6DiscardRouterAdvertisements'])
     @Icmpv6DiscardRouterAdvertisements.setter
     def Icmpv6DiscardRouterAdvertisements(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv6DiscardRouterAdvertisements'], value)
 
     @property
     def Ipv6AddressMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6AddressMode'])
     @Ipv6AddressMode.setter
     def Ipv6AddressMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6AddressMode'], value)
 
     @property
     def Ipv6ConfigRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6ConfigRate'])
     @Ipv6ConfigRate.setter
     def Ipv6ConfigRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6ConfigRate'], value)
 
     @property
     def Ipv6ConfigRateEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +115,12 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6ConfigRateEnable'])
     @Ipv6ConfigRateEnable.setter
     def Ipv6ConfigRateEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6ConfigRateEnable'], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -115,10 +129,12 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +143,7 @@ class IpRangeOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None):
+        # type: (int, bool, str, int, bool, int) -> IpRangeOptions
         """Updates ipRangeOptions resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class IpRangeOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None):
+        # type: (int, bool, str, int, bool, int) -> IpRangeOptions
         """Adds a new ipRangeOptions resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class IpRangeOptions(Base):
         self._delete()
 
     def find(self, GatewayArpRequestRate=None, Icmpv6DiscardRouterAdvertisements=None, Ipv6AddressMode=None, Ipv6ConfigRate=None, Ipv6ConfigRateEnable=None, MaxOutstandingGatewayArpRequests=None, ObjectId=None):
+        # type: (int, bool, str, int, bool, int, str) -> IpRangeOptions
         """Finds and retrieves ipRangeOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipRangeOptions resources from the server.
@@ -222,14 +241,16 @@ class IpRangeOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -242,13 +263,15 @@ class IpRangeOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -262,13 +285,15 @@ class IpRangeOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class WriteSetFieldMissLearnedInfo(Base):
@@ -36,12 +37,15 @@ class WriteSetFieldMissLearnedInfo(Base):
         'Property': 'property',
         'SupportedField': 'supportedField',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(WriteSetFieldMissLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(WriteSetFieldMissLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def NextTableIds(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,6 +55,7 @@ class WriteSetFieldMissLearnedInfo(Base):
 
     @property
     def Property(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,6 +65,7 @@ class WriteSetFieldMissLearnedInfo(Base):
 
     @property
     def SupportedField(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,7 +73,21 @@ class WriteSetFieldMissLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SupportedField'])
 
+    def add(self):
+        """Adds a new writeSetFieldMissLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved writeSetFieldMissLearnedInfo resources using find and the newly added writeSetFieldMissLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, NextTableIds=None, Property=None, SupportedField=None):
+        # type: (str, str, str) -> WriteSetFieldMissLearnedInfo
         """Finds and retrieves writeSetFieldMissLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve writeSetFieldMissLearnedInfo resources from the server.

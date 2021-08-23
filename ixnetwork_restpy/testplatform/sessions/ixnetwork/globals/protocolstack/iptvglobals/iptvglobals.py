@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IptvGlobals(Base):
@@ -35,9 +36,11 @@ class IptvGlobals(Base):
     _SDM_ATT_MAP = {
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IptvGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IptvGlobals, self).__init__(parent, list_op)
 
     @property
     def GlobalChannelList(self):
@@ -51,7 +54,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.globalchannellist.globalchannellist import GlobalChannelList
-        return GlobalChannelList(self)
+        if self._properties.get('GlobalChannelList', None) is not None:
+            return self._properties.get('GlobalChannelList')
+        else:
+            return GlobalChannelList(self)
 
     @property
     def IgmpGroupRange(self):
@@ -65,7 +71,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
-        return IgmpGroupRange(self)
+        if self._properties.get('IgmpGroupRange', None) is not None:
+            return self._properties.get('IgmpGroupRange')
+        else:
+            return IgmpGroupRange(self)
 
     @property
     def IptvProfile(self):
@@ -79,10 +88,14 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvprofile.iptvprofile import IptvProfile
-        return IptvProfile(self)
+        if self._properties.get('IptvProfile', None) is not None:
+            return self._properties.get('IptvProfile')
+        else:
+            return IptvProfile(self)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +127,7 @@ class IptvGlobals(Base):
         self._delete()
 
     def find(self, ObjectId=None):
+        # type: (str) -> IptvGlobals
         """Finds and retrieves iptvGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve iptvGlobals resources from the server.

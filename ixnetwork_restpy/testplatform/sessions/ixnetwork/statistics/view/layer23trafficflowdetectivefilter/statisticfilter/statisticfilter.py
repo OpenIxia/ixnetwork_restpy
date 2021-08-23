@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class StatisticFilter(Base):
@@ -37,12 +38,16 @@ class StatisticFilter(Base):
         'StatisticFilterId': 'statisticFilterId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+        'operator': ['isAnyOf', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isLike', 'isNotLike', 'isSmaller'],
+    }
 
-    def __init__(self, parent):
-        super(StatisticFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(StatisticFilter, self).__init__(parent, list_op)
 
     @property
     def Operator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +56,12 @@ class StatisticFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def StatisticFilterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class StatisticFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StatisticFilterId'])
     @StatisticFilterId.setter
     def StatisticFilterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StatisticFilterId'], value)
 
     @property
     def Value(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +84,11 @@ class StatisticFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Operator=None, StatisticFilterId=None, Value=None):
+        # type: (str, str, str) -> StatisticFilter
         """Updates statisticFilter resource on the server.
 
         Args
@@ -93,6 +104,7 @@ class StatisticFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Operator=None, StatisticFilterId=None, Value=None):
+        # type: (str, str, str) -> StatisticFilter
         """Adds a new statisticFilter resource on the server and adds it to the container.
 
         Args
@@ -122,6 +134,7 @@ class StatisticFilter(Base):
         self._delete()
 
     def find(self, Operator=None, StatisticFilterId=None, Value=None):
+        # type: (str, str, str) -> StatisticFilter
         """Finds and retrieves statisticFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statisticFilter resources from the server.

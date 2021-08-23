@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RouteRange(Base):
@@ -42,12 +43,15 @@ class RouteRange(Base):
         'RouteTag': 'routeTag',
         'Step': 'step',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RouteRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RouteRange, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -56,10 +60,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstRoute(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,10 +74,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
     @FirstRoute.setter
     def FirstRoute(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
 
     @property
     def MaskWidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +88,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaskWidth'])
     @MaskWidth.setter
     def MaskWidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaskWidth'], value)
 
     @property
     def Metric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -92,10 +102,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metric'])
     @Metric.setter
     def Metric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +116,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
     @NextHop.setter
     def NextHop(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
 
     @property
     def NumberOfRoute(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -116,10 +130,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoute'])
     @NumberOfRoute.setter
     def NumberOfRoute(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRoute'], value)
 
     @property
     def RouteTag(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,10 +144,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTag'])
     @RouteTag.setter
     def RouteTag(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTag'], value)
 
     @property
     def Step(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -140,9 +158,11 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Step'])
     @Step.setter
     def Step(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Step'], value)
 
     def update(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+        # type: (bool, str, int, int, str, int, int, int) -> RouteRange
         """Updates routeRange resource on the server.
 
         Args
@@ -163,6 +183,7 @@ class RouteRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+        # type: (bool, str, int, int, str, int, int, int) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
         Args
@@ -197,6 +218,7 @@ class RouteRange(Base):
         self._delete()
 
     def find(self, Enabled=None, FirstRoute=None, MaskWidth=None, Metric=None, NextHop=None, NumberOfRoute=None, RouteTag=None, Step=None):
+        # type: (bool, str, int, int, str, int, int, int) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve routeRange resources from the server.

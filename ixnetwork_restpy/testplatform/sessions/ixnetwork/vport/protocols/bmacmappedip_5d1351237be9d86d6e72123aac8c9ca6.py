@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BMacMappedIp(Base):
@@ -37,12 +38,16 @@ class BMacMappedIp(Base):
         'IpAddress': 'ipAddress',
         'IpType': 'ipType',
     }
+    _SDM_ENUM_MAP = {
+        'ipType': ['ipV4', 'ipV6'],
+    }
 
-    def __init__(self, parent):
-        super(BMacMappedIp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BMacMappedIp, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +56,12 @@ class BMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class BMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +84,11 @@ class BMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     def update(self, Enabled=None, IpAddress=None, IpType=None):
+        # type: (bool, str, str) -> BMacMappedIp
         """Updates bMacMappedIp resource on the server.
 
         Args
@@ -93,6 +104,7 @@ class BMacMappedIp(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, IpAddress=None, IpType=None):
+        # type: (bool, str, str) -> BMacMappedIp
         """Adds a new bMacMappedIp resource on the server and adds it to the container.
 
         Args
@@ -122,6 +134,7 @@ class BMacMappedIp(Base):
         self._delete()
 
     def find(self, Enabled=None, IpAddress=None, IpType=None):
+        # type: (bool, str, str) -> BMacMappedIp
         """Finds and retrieves bMacMappedIp resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bMacMappedIp resources from the server.

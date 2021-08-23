@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfChannelSessionPeersLearnedInformation(Base):
@@ -49,9 +50,11 @@ class OfChannelSessionPeersLearnedInformation(Base):
         'SlavePacketInMask': 'slavePacketInMask',
         'SlavePortStatusMask': 'slavePortStatusMask',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfChannelSessionPeersLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfChannelSessionPeersLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def SwitchAuxiliaryConnectionLearnedInfo(self):
@@ -65,10 +68,14 @@ class OfChannelSessionPeersLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchauxiliaryconnectionlearnedinfo_f79c51c709a70b2062dfab3a58ebde80 import SwitchAuxiliaryConnectionLearnedInfo
-        return SwitchAuxiliaryConnectionLearnedInfo(self)
+        if self._properties.get('SwitchAuxiliaryConnectionLearnedInfo', None) is not None:
+            return self._properties.get('SwitchAuxiliaryConnectionLearnedInfo')
+        else:
+            return SwitchAuxiliaryConnectionLearnedInfo(self)
 
     @property
     def AveragePacketInReplyDelay(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +85,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def ConfiguredPacketInReplyCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +95,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def ConfiguredPacketInSentCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +105,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def LocalPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def MasterFlowRemovedMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,6 +125,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def MasterPacketInMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -123,6 +135,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def MasterPortStatusMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,6 +145,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def PacketInTxRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,6 +155,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def PacketOutRxRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,6 +165,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -159,6 +175,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def RemotePortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -168,6 +185,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,6 +195,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def Role(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -186,6 +205,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def SlaveFlowRemovedMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,6 +215,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def SlavePacketInMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,6 +225,7 @@ class OfChannelSessionPeersLearnedInformation(Base):
 
     @property
     def SlavePortStatusMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -211,7 +233,21 @@ class OfChannelSessionPeersLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SlavePortStatusMask'])
 
+    def add(self):
+        """Adds a new ofChannelSessionPeersLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ofChannelSessionPeersLearnedInformation resources using find and the newly added ofChannelSessionPeersLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AveragePacketInReplyDelay=None, ConfiguredPacketInReplyCount=None, ConfiguredPacketInSentCount=None, LocalPortNumber=None, MasterFlowRemovedMask=None, MasterPacketInMask=None, MasterPortStatusMask=None, PacketInTxRate=None, PacketOutRxRate=None, RemoteIp=None, RemotePortNumber=None, ReplyState=None, Role=None, SlaveFlowRemovedMask=None, SlavePacketInMask=None, SlavePortStatusMask=None):
+        # type: (str, str, str, int, int, int, int, int, int, str, int, str, str, int, int, int) -> OfChannelSessionPeersLearnedInformation
         """Finds and retrieves ofChannelSessionPeersLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofChannelSessionPeersLearnedInformation resources from the server.

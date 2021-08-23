@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Network(Base):
@@ -35,12 +36,15 @@ class Network(Base):
         'NeighborRouterIds': 'neighborRouterIds',
         'NetworkMask': 'networkMask',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Network, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Network, self).__init__(parent, list_op)
 
     @property
     def NeighborRouterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class Network(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NeighborRouterIds'])
     @NeighborRouterIds.setter
     def NeighborRouterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['NeighborRouterIds'], value)
 
     @property
     def NetworkMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,9 +67,11 @@ class Network(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NetworkMask'])
     @NetworkMask.setter
     def NetworkMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NetworkMask'], value)
 
     def update(self, NeighborRouterIds=None, NetworkMask=None):
+        # type: (List[str], str) -> Network
         """Updates network resource on the server.
 
         Args
@@ -77,7 +85,27 @@ class Network(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, NeighborRouterIds=None, NetworkMask=None):
+        # type: (List[str], str) -> Network
+        """Adds a new network resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - NeighborRouterIds (list(str)): 
+        - NetworkMask (str): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved network resources using find and the newly added network resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, NeighborRouterIds=None, NetworkMask=None):
+        # type: (List[str], str) -> Network
         """Finds and retrieves network resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve network resources from the server.

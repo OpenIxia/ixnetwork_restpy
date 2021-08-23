@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TableFeaturePropertiesTrigger(Base):
@@ -49,9 +50,11 @@ class TableFeaturePropertiesTrigger(Base):
         'EnableWriteSetField': 'enableWriteSetField',
         'EnableWriteSetFieldMiss': 'enableWriteSetFieldMiss',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TableFeaturePropertiesTrigger, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TableFeaturePropertiesTrigger, self).__init__(parent, list_op)
 
     @property
     def ApplyAction(self):
@@ -65,7 +68,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyaction_a25d2515972205bfadb3c4eee9b345a8 import ApplyAction
-        return ApplyAction(self)._select()
+        if self._properties.get('ApplyAction', None) is not None:
+            return self._properties.get('ApplyAction')
+        else:
+            return ApplyAction(self)._select()
 
     @property
     def ApplySetField(self):
@@ -79,7 +85,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_6b54e7b16ba9baf0b2a20fe04e8667fc import ApplySetField
-        return ApplySetField(self)._select()
+        if self._properties.get('ApplySetField', None) is not None:
+            return self._properties.get('ApplySetField')
+        else:
+            return ApplySetField(self)._select()
 
     @property
     def Experimenter(self):
@@ -93,7 +102,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.experimenter_8f62d5e59a1560c2f29a49b8273e32d9 import Experimenter
-        return Experimenter(self)._select()
+        if self._properties.get('Experimenter', None) is not None:
+            return self._properties.get('Experimenter')
+        else:
+            return Experimenter(self)._select()
 
     @property
     def Instruction(self):
@@ -107,7 +119,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_0379cfa9d0d64cb1c14d9f8a669dcb24 import Instruction
-        return Instruction(self)._select()
+        if self._properties.get('Instruction', None) is not None:
+            return self._properties.get('Instruction')
+        else:
+            return Instruction(self)._select()
 
     @property
     def Match(self):
@@ -121,7 +136,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_b032b60f8e92f6e0f66fded1be692b8f import Match
-        return Match(self)._select()
+        if self._properties.get('Match', None) is not None:
+            return self._properties.get('Match')
+        else:
+            return Match(self)._select()
 
     @property
     def NextTable(self):
@@ -135,7 +153,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttable_b55e2ecee6a23216ce0f8a34c42b425a import NextTable
-        return NextTable(self)._select()
+        if self._properties.get('NextTable', None) is not None:
+            return self._properties.get('NextTable')
+        else:
+            return NextTable(self)._select()
 
     @property
     def Wildcards(self):
@@ -149,7 +170,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_97e68e3bd4a38aea6a66dc14629576e3 import Wildcards
-        return Wildcards(self)._select()
+        if self._properties.get('Wildcards', None) is not None:
+            return self._properties.get('Wildcards')
+        else:
+            return Wildcards(self)._select()
 
     @property
     def WriteAction(self):
@@ -163,7 +187,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeaction_5ed4bf989119006d5d77872c8c5bf503 import WriteAction
-        return WriteAction(self)._select()
+        if self._properties.get('WriteAction', None) is not None:
+            return self._properties.get('WriteAction')
+        else:
+            return WriteAction(self)._select()
 
     @property
     def WriteSetField(self):
@@ -177,10 +204,14 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_dfdf63f4b03a4c586826f4e2a45d55f1 import WriteSetField
-        return WriteSetField(self)._select()
+        if self._properties.get('WriteSetField', None) is not None:
+            return self._properties.get('WriteSetField')
+        else:
+            return WriteSetField(self)._select()
 
     @property
     def EnableApplyAction(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -189,10 +220,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableApplyAction'])
     @EnableApplyAction.setter
     def EnableApplyAction(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableApplyAction'], value)
 
     @property
     def EnableApplyActionMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -201,10 +234,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableApplyActionMiss'])
     @EnableApplyActionMiss.setter
     def EnableApplyActionMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableApplyActionMiss'], value)
 
     @property
     def EnableApplySetField(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -213,10 +248,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableApplySetField'])
     @EnableApplySetField.setter
     def EnableApplySetField(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableApplySetField'], value)
 
     @property
     def EnableApplySetFieldMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -225,10 +262,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableApplySetFieldMiss'])
     @EnableApplySetFieldMiss.setter
     def EnableApplySetFieldMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableApplySetFieldMiss'], value)
 
     @property
     def EnableExperimenter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -237,10 +276,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableExperimenter'])
     @EnableExperimenter.setter
     def EnableExperimenter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableExperimenter'], value)
 
     @property
     def EnableExperimenterMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -249,10 +290,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableExperimenterMiss'])
     @EnableExperimenterMiss.setter
     def EnableExperimenterMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableExperimenterMiss'], value)
 
     @property
     def EnableInstruction(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -261,10 +304,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableInstruction'])
     @EnableInstruction.setter
     def EnableInstruction(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableInstruction'], value)
 
     @property
     def EnableInstructionMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -273,10 +318,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableInstructionMiss'])
     @EnableInstructionMiss.setter
     def EnableInstructionMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableInstructionMiss'], value)
 
     @property
     def EnableMatch(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -285,10 +332,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMatch'])
     @EnableMatch.setter
     def EnableMatch(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMatch'], value)
 
     @property
     def EnableNextTable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -297,10 +346,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNextTable'])
     @EnableNextTable.setter
     def EnableNextTable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNextTable'], value)
 
     @property
     def EnableNextTableMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -309,10 +360,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableNextTableMiss'])
     @EnableNextTableMiss.setter
     def EnableNextTableMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableNextTableMiss'], value)
 
     @property
     def EnableWildCard(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -321,10 +374,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWildCard'])
     @EnableWildCard.setter
     def EnableWildCard(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWildCard'], value)
 
     @property
     def EnableWriteAction(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -333,10 +388,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWriteAction'])
     @EnableWriteAction.setter
     def EnableWriteAction(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWriteAction'], value)
 
     @property
     def EnableWriteActionMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -345,10 +402,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWriteActionMiss'])
     @EnableWriteActionMiss.setter
     def EnableWriteActionMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWriteActionMiss'], value)
 
     @property
     def EnableWriteSetField(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -357,10 +416,12 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWriteSetField'])
     @EnableWriteSetField.setter
     def EnableWriteSetField(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWriteSetField'], value)
 
     @property
     def EnableWriteSetFieldMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -369,9 +430,11 @@ class TableFeaturePropertiesTrigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableWriteSetFieldMiss'])
     @EnableWriteSetFieldMiss.setter
     def EnableWriteSetFieldMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableWriteSetFieldMiss'], value)
 
     def update(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> TableFeaturePropertiesTrigger
         """Updates tableFeaturePropertiesTrigger resource on the server.
 
         Args
@@ -399,7 +462,41 @@ class TableFeaturePropertiesTrigger(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> TableFeaturePropertiesTrigger
+        """Adds a new tableFeaturePropertiesTrigger resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - EnableApplyAction (bool): NOT DEFINED
+        - EnableApplyActionMiss (bool): NOT DEFINED
+        - EnableApplySetField (bool): NOT DEFINED
+        - EnableApplySetFieldMiss (bool): NOT DEFINED
+        - EnableExperimenter (bool): NOT DEFINED
+        - EnableExperimenterMiss (bool): NOT DEFINED
+        - EnableInstruction (bool): NOT DEFINED
+        - EnableInstructionMiss (bool): NOT DEFINED
+        - EnableMatch (bool): NOT DEFINED
+        - EnableNextTable (bool): NOT DEFINED
+        - EnableNextTableMiss (bool): NOT DEFINED
+        - EnableWildCard (bool): NOT DEFINED
+        - EnableWriteAction (bool): NOT DEFINED
+        - EnableWriteActionMiss (bool): NOT DEFINED
+        - EnableWriteSetField (bool): NOT DEFINED
+        - EnableWriteSetFieldMiss (bool): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tableFeaturePropertiesTrigger resources using find and the newly added tableFeaturePropertiesTrigger resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, EnableApplyAction=None, EnableApplyActionMiss=None, EnableApplySetField=None, EnableApplySetFieldMiss=None, EnableExperimenter=None, EnableExperimenterMiss=None, EnableInstruction=None, EnableInstructionMiss=None, EnableMatch=None, EnableNextTable=None, EnableNextTableMiss=None, EnableWildCard=None, EnableWriteAction=None, EnableWriteActionMiss=None, EnableWriteSetField=None, EnableWriteSetFieldMiss=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> TableFeaturePropertiesTrigger
         """Finds and retrieves tableFeaturePropertiesTrigger resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tableFeaturePropertiesTrigger resources from the server.

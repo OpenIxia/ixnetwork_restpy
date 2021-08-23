@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AppLibProfile(Base):
@@ -41,9 +42,14 @@ class AppLibProfile(Base):
         'ObjectiveValue': 'objectiveValue',
         'TrafficState': 'trafficState',
     }
+    _SDM_ENUM_MAP = {
+        'objectiveDistribution': ['applyFullObjectiveToEachPort', 'splitObjectiveEvenlyAmongPorts'],
+        'objectiveType': ['simulatedUsers', 'throughputGbps', 'throughputKbps', 'throughputMbps'],
+        'trafficState': ['Configured', 'Interim', 'Running', 'Unconfigured'],
+    }
 
-    def __init__(self, parent):
-        super(AppLibProfile, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AppLibProfile, self).__init__(parent, list_op)
 
     @property
     def AppLibFlow(self):
@@ -57,10 +63,14 @@ class AppLibProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.applibflow import AppLibFlow
-        return AppLibFlow(self)
+        if self._properties.get('AppLibFlow', None) is not None:
+            return self._properties.get('AppLibFlow')
+        else:
+            return AppLibFlow(self)
 
     @property
     def AvailableFlows(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -70,6 +80,7 @@ class AppLibProfile(Base):
 
     @property
     def ConfiguredFlows(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -78,10 +89,12 @@ class AppLibProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConfiguredFlows'])
     @ConfiguredFlows.setter
     def ConfiguredFlows(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConfiguredFlows'], value)
 
     @property
     def EnablePerIPStats(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -90,10 +103,12 @@ class AppLibProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePerIPStats'])
     @EnablePerIPStats.setter
     def EnablePerIPStats(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePerIPStats'], value)
 
     @property
     def ObjectiveDistribution(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +117,12 @@ class AppLibProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectiveDistribution'])
     @ObjectiveDistribution.setter
     def ObjectiveDistribution(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ObjectiveDistribution'], value)
 
     @property
     def ObjectiveType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,10 +131,12 @@ class AppLibProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectiveType'])
     @ObjectiveType.setter
     def ObjectiveType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ObjectiveType'], value)
 
     @property
     def ObjectiveValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -126,10 +145,12 @@ class AppLibProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectiveValue'])
     @ObjectiveValue.setter
     def ObjectiveValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ObjectiveValue'], value)
 
     @property
     def TrafficState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,6 +159,7 @@ class AppLibProfile(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficState'])
 
     def update(self, ConfiguredFlows=None, EnablePerIPStats=None, ObjectiveDistribution=None, ObjectiveType=None, ObjectiveValue=None):
+        # type: (List[str], bool, str, str, int) -> AppLibProfile
         """Updates appLibProfile resource on the server.
 
         Args
@@ -155,6 +177,7 @@ class AppLibProfile(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConfiguredFlows=None, EnablePerIPStats=None, ObjectiveDistribution=None, ObjectiveType=None, ObjectiveValue=None):
+        # type: (List[str], bool, str, str, int) -> AppLibProfile
         """Adds a new appLibProfile resource on the server and adds it to the container.
 
         Args
@@ -186,6 +209,7 @@ class AppLibProfile(Base):
         self._delete()
 
     def find(self, AvailableFlows=None, ConfiguredFlows=None, EnablePerIPStats=None, ObjectiveDistribution=None, ObjectiveType=None, ObjectiveValue=None, TrafficState=None):
+        # type: (List[str], List[str], bool, str, str, int, str) -> AppLibProfile
         """Finds and retrieves appLibProfile resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve appLibProfile resources from the server.
@@ -231,13 +255,15 @@ class AppLibProfile(Base):
         return self._read(href)
 
     def AddAppLibraryFlow(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addAppLibraryFlow operation on the server.
 
         This exec adds a flow to an application traffic profile.
 
-        addAppLibraryFlow(Arg2=list)
-        ----------------------------
+        addAppLibraryFlow(Arg2=list, async_operation=bool)
+        --------------------------------------------------
         - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be added.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -250,13 +276,15 @@ class AppLibProfile(Base):
         return self._execute('addAppLibraryFlow', payload=payload, response_object=None)
 
     def AddAppLibraryFlowEx(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addAppLibraryFlowEx operation on the server.
 
         This exec adds a flow to an application traffic profile.
 
-        addAppLibraryFlowEx(Arg2=list)
-        ------------------------------
+        addAppLibraryFlowEx(Arg2=list, async_operation=bool)
+        ----------------------------------------------------
         - Arg2 (list(str)): This object specifies an array of the flow names to be added.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -268,10 +296,15 @@ class AppLibProfile(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addAppLibraryFlowEx', payload=payload, response_object=None)
 
-    def DistributeFlowsEvenly(self):
+    def DistributeFlowsEvenly(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the distributeFlowsEvenly operation on the server.
 
         This exec distributes the percentage for each flow evenly.
+
+        distributeFlowsEvenly(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -279,16 +312,20 @@ class AppLibProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('distributeFlowsEvenly', payload=payload, response_object=None)
 
     def RemoveAppLibraryFlow(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the removeAppLibraryFlow operation on the server.
 
         This exec removes a flow from an application traffic profile.
 
-        removeAppLibraryFlow(Arg2=list)
-        -------------------------------
+        removeAppLibraryFlow(Arg2=list, async_operation=bool)
+        -----------------------------------------------------
         - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be removed.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -300,28 +337,42 @@ class AppLibProfile(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('removeAppLibraryFlow', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         This exec starts running the configured application traffic.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         This exec stops the configured application traffic from running.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

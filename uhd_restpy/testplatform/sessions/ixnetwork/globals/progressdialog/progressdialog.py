@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ProgressDialog(Base):
@@ -39,12 +40,15 @@ class ProgressDialog(Base):
         'TaskName': 'taskName',
         'Title': 'title',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ProgressDialog, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ProgressDialog, self).__init__(parent, list_op)
 
     @property
     def ElapsedDuration(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class ProgressDialog(Base):
 
     @property
     def EstimatedDuration(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class ProgressDialog(Base):
 
     @property
     def IsOpen(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,6 +78,7 @@ class ProgressDialog(Base):
 
     @property
     def Progress(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,6 +88,7 @@ class ProgressDialog(Base):
 
     @property
     def RemainingDuration(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +98,7 @@ class ProgressDialog(Base):
 
     @property
     def TaskName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +108,7 @@ class ProgressDialog(Base):
 
     @property
     def Title(self):
+        # type: () -> str
         """
         Returns
         -------

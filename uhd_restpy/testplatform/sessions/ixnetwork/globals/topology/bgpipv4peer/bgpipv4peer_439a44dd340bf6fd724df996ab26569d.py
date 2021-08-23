@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpIpv4Peer(Base):
@@ -83,9 +84,12 @@ class BgpIpv4Peer(Base):
         'VrfRouteImportExtendedCommunitySubType': 'vrfRouteImportExtendedCommunitySubType',
         'WeightType': 'weightType',
     }
+    _SDM_ENUM_MAP = {
+        'srv6DraftNum': ['version04', 'version_ietf_01'],
+    }
 
-    def __init__(self, parent):
-        super(BgpIpv4Peer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpIpv4Peer, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -99,7 +103,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        return StartRate(self)._select()
+        if self._properties.get('StartRate', None) is not None:
+            return self._properties.get('StartRate')
+        else:
+            return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -113,7 +120,10 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        return StopRate(self)._select()
+        if self._properties.get('StopRate', None) is not None:
+            return self._properties.get('StopRate')
+        else:
+            return StopRate(self)._select()
 
     @property
     def TlvEditor(self):
@@ -127,10 +137,14 @@ class BgpIpv4Peer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        return TlvEditor(self)
+        if self._properties.get('TlvEditor', None) is not None:
+            return self._properties.get('TlvEditor')
+        else:
+            return TlvEditor(self)
 
     @property
     def BIERTunnelType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +155,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def LLGRCapabilityCode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +166,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpConfMemType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +177,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BgpRouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +188,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def BindingType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +199,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def ColorType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -191,6 +210,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -200,6 +220,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -209,6 +230,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def DisableReceivedUpdateValidation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +241,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def ENLPType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +252,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EVPNSIDType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +263,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnLenthForPolicyNLRI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -249,6 +274,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def EnableAdVplsPrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -259,6 +285,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def IBgpTester4BytesAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -269,6 +296,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def IBgpTesterAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -279,6 +307,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def InitiateEbgpActiveConnection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +318,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def InitiateIbgpActiveConnection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -299,6 +329,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv4AddrIndexType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +340,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv4LocRemoteAddrType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +351,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv4NodeAddrType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -329,6 +362,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6AddrIndexType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -339,6 +373,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6LocRemoteAddrType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -349,6 +384,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6NodeAddrType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -359,6 +395,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Ipv6SIDType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -369,6 +406,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def LenthForPolicyNLRI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -379,6 +417,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def MldpP2mpFecType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -389,6 +428,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def MplsSIDType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -399,6 +439,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -407,10 +448,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PeerAdjSidType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -421,6 +464,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def PeerNodeSidType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -431,6 +475,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def PeerSetSidType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -441,6 +486,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def PolicyNameType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -451,6 +497,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def PolicyPriorityType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -461,6 +508,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def PreferenceType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -471,6 +519,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def PrefixSIDAttrType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -481,6 +530,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def ProtoclIdType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -491,6 +541,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def RemoteEndpointType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -501,6 +552,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def RequestVpnLabelExchangeOverLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -511,6 +563,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -520,6 +573,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SRv6VPNSIDTLVType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -530,6 +584,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SegmentListType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -540,6 +595,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SrtePolicyAttrType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -550,6 +606,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SrtePolicySAFI(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -560,6 +617,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def SrtePolicyType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -570,6 +628,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def Srv6DraftNum(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -578,10 +637,12 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Srv6DraftNum'])
     @Srv6DraftNum.setter
     def Srv6DraftNum(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Srv6DraftNum'], value)
 
     @property
     def TriggerVplsPwInitiation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -592,6 +653,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def UdpDestinationPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -602,6 +664,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def UseUnicastDestMacForBierTraffic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -612,6 +675,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def VPNSIDType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -622,6 +686,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def VrfRouteImportExtendedCommunitySubType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -632,6 +697,7 @@ class BgpIpv4Peer(Base):
 
     @property
     def WeightType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -641,6 +707,7 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['WeightType']))
 
     def update(self, Name=None, Srv6DraftNum=None):
+        # type: (str, str) -> BgpIpv4Peer
         """Updates bgpIpv4Peer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

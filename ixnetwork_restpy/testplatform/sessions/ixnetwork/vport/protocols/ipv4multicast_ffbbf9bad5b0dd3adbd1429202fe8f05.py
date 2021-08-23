@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4Multicast(Base):
@@ -39,9 +40,11 @@ class Ipv4Multicast(Base):
         'SequenceNumber': 'sequenceNumber',
         'VlanId': 'vlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv4Multicast, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4Multicast, self).__init__(parent, list_op)
 
     @property
     def Ipv4UnicastItem(self):
@@ -55,10 +58,14 @@ class Ipv4Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4unicastitem_5f0b74a061e30b5124f6f498185800c9 import Ipv4UnicastItem
-        return Ipv4UnicastItem(self)
+        if self._properties.get('Ipv4UnicastItem', None) is not None:
+            return self._properties.get('Ipv4UnicastItem')
+        else:
+            return Ipv4UnicastItem(self)
 
     @property
     def Age(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,6 +75,7 @@ class Ipv4Multicast(Base):
 
     @property
     def HostName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,6 +85,7 @@ class Ipv4Multicast(Base):
 
     @property
     def Ipv4MulticastGroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,6 +95,7 @@ class Ipv4Multicast(Base):
 
     @property
     def LspId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -95,6 +105,7 @@ class Ipv4Multicast(Base):
 
     @property
     def SequenceNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -104,6 +115,7 @@ class Ipv4Multicast(Base):
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,7 +123,21 @@ class Ipv4Multicast(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
 
+    def add(self):
+        """Adds a new ipv4Multicast resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv4Multicast resources using find and the newly added ipv4Multicast resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Age=None, HostName=None, Ipv4MulticastGroupAddress=None, LspId=None, SequenceNumber=None, VlanId=None):
+        # type: (int, str, str, str, int, int) -> Ipv4Multicast
         """Finds and retrieves ipv4Multicast resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4Multicast resources from the server.

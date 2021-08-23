@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MacAddressRange(Base):
@@ -49,12 +50,17 @@ class MacAddressRange(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'incrementVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        'incremetVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+    }
 
-    def __init__(self, parent):
-        super(MacAddressRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MacAddressRange, self).__init__(parent, list_op)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +83,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IncrementVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementVlan'])
     @IncrementVlan.setter
     def IncrementVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementVlan'], value)
 
     @property
     def IncrementVlanMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +111,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementVlanMode'])
     @IncrementVlanMode.setter
     def IncrementVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementVlanMode'], value)
 
     @property
     def IncremetVlanMode(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -111,10 +125,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncremetVlanMode'])
     @IncremetVlanMode.setter
     def IncremetVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncremetVlanMode'], value)
 
     @property
     def MacCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -123,10 +139,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacCount'])
     @MacCount.setter
     def MacCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacCount'], value)
 
     @property
     def MacCountPerL2Site(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,10 +153,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacCountPerL2Site'])
     @MacCountPerL2Site.setter
     def MacCountPerL2Site(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacCountPerL2Site'], value)
 
     @property
     def MacIncrement(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,10 +167,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacIncrement'])
     @MacIncrement.setter
     def MacIncrement(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacIncrement'], value)
 
     @property
     def SkipVlanIdZero(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -159,10 +181,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'])
     @SkipVlanIdZero.setter
     def SkipVlanIdZero(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'], value)
 
     @property
     def StartMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -171,10 +195,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartMacAddress'])
     @StartMacAddress.setter
     def StartMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartMacAddress'], value)
 
     @property
     def TotalMacCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -184,6 +210,7 @@ class MacAddressRange(Base):
 
     @property
     def Tpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,10 +219,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
     @Tpid.setter
     def Tpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,10 +233,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +247,12 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -228,9 +261,11 @@ class MacAddressRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, str, str, int, int, bool, bool, str, str, int, str, str) -> MacAddressRange
         """Updates macAddressRange resource on the server.
 
         Args
@@ -257,6 +292,7 @@ class MacAddressRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, str, str, int, int, bool, bool, str, str, int, str, str) -> MacAddressRange
         """Adds a new macAddressRange resource on the server and adds it to the container.
 
         Args
@@ -297,6 +333,7 @@ class MacAddressRange(Base):
         self._delete()
 
     def find(self, EnableVlan=None, Enabled=None, IncrementVlan=None, IncrementVlanMode=None, IncremetVlanMode=None, MacCount=None, MacCountPerL2Site=None, MacIncrement=None, SkipVlanIdZero=None, StartMacAddress=None, TotalMacCount=None, Tpid=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, str, str, int, int, bool, bool, str, int, str, int, str, str) -> MacAddressRange
         """Finds and retrieves macAddressRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macAddressRange resources from the server.

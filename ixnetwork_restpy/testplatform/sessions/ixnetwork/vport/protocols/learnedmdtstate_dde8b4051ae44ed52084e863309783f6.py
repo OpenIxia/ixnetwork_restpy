@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedMdtState(Base):
@@ -34,12 +35,15 @@ class LearnedMdtState(Base):
     _SDM_ATT_MAP = {
         'Group': 'group',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LearnedMdtState, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedMdtState, self).__init__(parent, list_op)
 
     @property
     def Group(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -47,7 +51,21 @@ class LearnedMdtState(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Group'])
 
+    def add(self):
+        """Adds a new learnedMdtState resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedMdtState resources using find and the newly added learnedMdtState resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Group=None):
+        # type: (str) -> LearnedMdtState
         """Finds and retrieves learnedMdtState resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedMdtState resources from the server.

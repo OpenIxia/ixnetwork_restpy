@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchFlowLearnedInfo(Base):
@@ -114,9 +115,11 @@ class SwitchFlowLearnedInfo(Base):
         'VlanMask': 'vlanMask',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchFlowLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchFlowLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def SwitchActionLearnedInfo(self):
@@ -130,7 +133,10 @@ class SwitchFlowLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionlearnedinfo_9e46c41b8abd4718021189fe5e5af931 import SwitchActionLearnedInfo
-        return SwitchActionLearnedInfo(self)
+        if self._properties.get('SwitchActionLearnedInfo', None) is not None:
+            return self._properties.get('SwitchActionLearnedInfo')
+        else:
+            return SwitchActionLearnedInfo(self)
 
     @property
     def SwitchFlowInstructionLearnedInfo(self):
@@ -144,10 +150,14 @@ class SwitchFlowLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowinstructionlearnedinfo_18876b6839ad8af19f820bd250cf246f import SwitchFlowInstructionLearnedInfo
-        return SwitchFlowInstructionLearnedInfo(self)
+        if self._properties.get('SwitchFlowInstructionLearnedInfo', None) is not None:
+            return self._properties.get('SwitchFlowInstructionLearnedInfo')
+        else:
+            return SwitchFlowInstructionLearnedInfo(self)
 
     @property
     def ActiveNanoSeconds(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,6 +167,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ActiveSeconds(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,6 +177,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpDstHwAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -175,6 +187,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpDstHwAddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -184,6 +197,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpDstIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -193,6 +207,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpDstIpv4AddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,6 +217,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpOpcode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -211,6 +227,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpSrcHwAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -220,6 +237,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpSrcHwAddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -229,6 +247,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpSrcIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -238,6 +257,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ArpSrcIpv4AddressMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -247,6 +267,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def BytesCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -256,6 +277,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Cookie(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -265,6 +287,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def CookieMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -274,6 +297,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -283,6 +307,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -292,6 +317,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -301,6 +327,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def EthernetDestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -310,6 +337,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -319,6 +347,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def EthernetSourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -328,6 +357,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -337,6 +367,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -346,6 +377,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -355,6 +387,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ExperimenterField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -364,6 +397,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ExperimenterHashMask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -373,6 +407,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def ExperimenterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -382,6 +417,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Flags(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -391,6 +427,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def HardTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -400,6 +437,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Icmpv4Code(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -409,6 +447,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Icmpv4Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -418,6 +457,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Icmpv6Code(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -427,6 +467,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Icmpv6Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -436,6 +477,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def IdleTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -445,6 +487,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def InPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -454,6 +497,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -463,6 +507,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def IpEcn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -472,6 +517,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -481,6 +527,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -490,6 +537,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -499,6 +547,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -508,6 +557,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6DestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -517,6 +567,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6ExtHeader(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -526,6 +577,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6ExtHeaderMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -535,6 +587,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -544,6 +597,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6FlowLabelMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -553,6 +607,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6NdDll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -562,6 +617,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6NdSll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -571,6 +627,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6NdTarget(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -580,6 +637,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -589,6 +647,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Ipv6SourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -598,6 +657,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -607,6 +667,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Metadata(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -616,6 +677,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def MetadataMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -625,6 +687,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def MplsBos(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -634,6 +697,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -643,6 +707,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def MplsTc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -652,6 +717,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -661,6 +727,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def NumberOfInstructions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -670,6 +737,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def NumberofActions(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -679,6 +747,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def OutGroup(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -688,6 +757,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def OutPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -697,6 +767,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def PacketsCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -706,6 +777,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def PbbIsid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -715,6 +787,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def PbbIsidMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -724,6 +797,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def PhysicalInPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -733,6 +807,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -742,6 +817,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -751,6 +827,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def SctpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -760,6 +837,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def SctpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -769,6 +847,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TableId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -778,6 +857,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TcpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -787,6 +867,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TcpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -796,6 +877,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TransportDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -805,6 +887,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TransportSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -814,6 +897,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -823,6 +907,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def TunnelIdMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -832,6 +917,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def UdpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -841,6 +927,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def UdpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -850,6 +937,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -859,6 +947,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def VlanMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -868,6 +957,7 @@ class SwitchFlowLearnedInfo(Base):
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -875,7 +965,21 @@ class SwitchFlowLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
 
+    def add(self):
+        """Adds a new switchFlowLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchFlowLearnedInfo resources using find and the newly added switchFlowLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActiveNanoSeconds=None, ActiveSeconds=None, ArpDstHwAddress=None, ArpDstHwAddressMask=None, ArpDstIpv4Address=None, ArpDstIpv4AddressMask=None, ArpOpcode=None, ArpSrcHwAddress=None, ArpSrcHwAddressMask=None, ArpSrcIpv4Address=None, ArpSrcIpv4AddressMask=None, BytesCount=None, Cookie=None, CookieMask=None, DataPathId=None, DataPathIdAsHex=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashMask=None, ExperimenterId=None, Flags=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, LocalIp=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NegotiatedVersion=None, NumberOfInstructions=None, NumberofActions=None, OutGroup=None, OutPort=None, PacketsCount=None, PbbIsid=None, PbbIsidMask=None, PhysicalInPort=None, Priority=None, RemoteIp=None, SctpDestination=None, SctpSource=None, TableId=None, TcpDestination=None, TcpSource=None, TransportDestination=None, TransportSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanMask=None, VlanPriority=None):
+        # type: (int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, bool, str, int, int, str, str, str, str, int, str, str, str, str, str, str, str, str, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int, int, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, int, str) -> SwitchFlowLearnedInfo
         """Finds and retrieves switchFlowLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchFlowLearnedInfo resources from the server.

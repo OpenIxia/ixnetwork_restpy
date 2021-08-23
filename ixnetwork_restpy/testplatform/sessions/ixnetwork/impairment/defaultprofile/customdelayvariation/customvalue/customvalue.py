@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CustomValue(Base):
@@ -36,12 +37,15 @@ class CustomValue(Base):
         'Percentage': 'percentage',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(CustomValue, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CustomValue, self).__init__(parent, list_op)
 
     @property
     def Percentage(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class CustomValue(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
     @Percentage.setter
     def Percentage(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,9 +68,11 @@ class CustomValue(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Percentage=None, Value=None):
+        # type: (int, int) -> CustomValue
         """Updates customValue resource on the server.
 
         Args
@@ -79,6 +87,7 @@ class CustomValue(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Percentage=None, Value=None):
+        # type: (int, int) -> CustomValue
         """Adds a new customValue resource on the server and adds it to the container.
 
         Args
@@ -107,6 +116,7 @@ class CustomValue(Base):
         self._delete()
 
     def find(self, Percentage=None, Value=None):
+        # type: (int, int) -> CustomValue
         """Finds and retrieves customValue resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve customValue resources from the server.

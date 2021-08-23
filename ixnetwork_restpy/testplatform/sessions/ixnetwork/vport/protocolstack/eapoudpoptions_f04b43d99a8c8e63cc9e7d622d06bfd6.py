@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EapoUdpOptions(Base):
@@ -40,12 +41,15 @@ class EapoUdpOptions(Base):
         'ObjectId': 'objectId',
         'OverrideGlobalSetupRate': 'overrideGlobalSetupRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EapoUdpOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EapoUdpOptions, self).__init__(parent, list_op)
 
     @property
     def DutMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class EapoUdpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DutMac'])
     @DutMac.setter
     def DutMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DutMac'], value)
 
     @property
     def IcmpTriggerTargetAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class EapoUdpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IcmpTriggerTargetAddress'])
     @IcmpTriggerTargetAddress.setter
     def IcmpTriggerTargetAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IcmpTriggerTargetAddress'], value)
 
     @property
     def MaxClientsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class EapoUdpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class EapoUdpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,6 +115,7 @@ class EapoUdpOptions(Base):
 
     @property
     def OverrideGlobalSetupRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class EapoUdpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'])
     @OverrideGlobalSetupRate.setter
     def OverrideGlobalSetupRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalSetupRate'], value)
 
     def update(self, DutMac=None, IcmpTriggerTargetAddress=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None):
+        # type: (str, str, int, int, bool) -> EapoUdpOptions
         """Updates eapoUdpOptions resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class EapoUdpOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DutMac=None, IcmpTriggerTargetAddress=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, OverrideGlobalSetupRate=None):
+        # type: (str, str, int, int, bool) -> EapoUdpOptions
         """Adds a new eapoUdpOptions resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class EapoUdpOptions(Base):
         self._delete()
 
     def find(self, DutMac=None, IcmpTriggerTargetAddress=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, ObjectId=None, OverrideGlobalSetupRate=None):
+        # type: (str, str, int, int, str, bool) -> EapoUdpOptions
         """Finds and retrieves eapoUdpOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eapoUdpOptions resources from the server.
@@ -206,14 +223,16 @@ class EapoUdpOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -226,13 +245,15 @@ class EapoUdpOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -246,13 +267,15 @@ class EapoUdpOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

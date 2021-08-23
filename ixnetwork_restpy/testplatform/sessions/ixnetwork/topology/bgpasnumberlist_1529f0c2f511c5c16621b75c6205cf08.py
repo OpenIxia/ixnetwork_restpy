@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpAsNumberList(Base):
@@ -38,12 +39,15 @@ class BgpAsNumberList(Base):
         'EnableASNumber': 'enableASNumber',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpAsNumberList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpAsNumberList, self).__init__(parent, list_op)
 
     @property
     def AsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -54,6 +58,7 @@ class BgpAsNumberList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,6 +68,7 @@ class BgpAsNumberList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +78,7 @@ class BgpAsNumberList(Base):
 
     @property
     def EnableASNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class BgpAsNumberList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,9 +98,11 @@ class BgpAsNumberList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> BgpAsNumberList
         """Updates bgpAsNumberList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -108,7 +118,26 @@ class BgpAsNumberList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> BgpAsNumberList
+        """Adds a new bgpAsNumberList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpAsNumberList resources using find and the newly added bgpAsNumberList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> BgpAsNumberList
         """Finds and retrieves bgpAsNumberList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpAsNumberList resources from the server.

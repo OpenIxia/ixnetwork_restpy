@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrillUnicastMacRange(Base):
@@ -40,12 +41,15 @@ class TrillUnicastMacRange(Base):
         'UnicastMacStep': 'unicastMacStep',
         'VlanId': 'vlanId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TrillUnicastMacRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrillUnicastMacRange, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class TrillUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def StartUnicastMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class TrillUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartUnicastMac'])
     @StartUnicastMac.setter
     def StartUnicastMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartUnicastMac'], value)
 
     @property
     def Topology(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -79,6 +87,7 @@ class TrillUnicastMacRange(Base):
 
     @property
     def UnicastMacCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class TrillUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UnicastMacCount'])
     @UnicastMacCount.setter
     def UnicastMacCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UnicastMacCount'], value)
 
     @property
     def UnicastMacStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class TrillUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UnicastMacStep'])
     @UnicastMacStep.setter
     def UnicastMacStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UnicastMacStep'], value)
 
     @property
     def VlanId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class TrillUnicastMacRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     def update(self, Enabled=None, StartUnicastMac=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
+        # type: (bool, str, int, str, int) -> TrillUnicastMacRange
         """Updates trillUnicastMacRange resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class TrillUnicastMacRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, StartUnicastMac=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
+        # type: (bool, str, int, str, int) -> TrillUnicastMacRange
         """Adds a new trillUnicastMacRange resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class TrillUnicastMacRange(Base):
         self._delete()
 
     def find(self, Enabled=None, StartUnicastMac=None, Topology=None, UnicastMacCount=None, UnicastMacStep=None, VlanId=None):
+        # type: (bool, str, int, int, str, int) -> TrillUnicastMacRange
         """Finds and retrieves trillUnicastMacRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve trillUnicastMacRange resources from the server.

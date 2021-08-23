@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TxChannels(Base):
@@ -39,12 +40,15 @@ class TxChannels(Base):
         'StartingMessageNumber': 'startingMessageNumber',
         'SystemId': 'systemId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TxChannels, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TxChannels, self).__init__(parent, list_op)
 
     @property
     def ActiveTxChannel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class TxChannels(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class TxChannels(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class TxChannels(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,10 +88,12 @@ class TxChannels(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PortId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -95,6 +104,7 @@ class TxChannels(Base):
 
     @property
     def StartingMessageNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class TxChannels(Base):
 
     @property
     def SystemId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +125,7 @@ class TxChannels(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SystemId']))
 
     def update(self, Name=None):
+        # type: (str) -> TxChannels
         """Updates txChannels resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

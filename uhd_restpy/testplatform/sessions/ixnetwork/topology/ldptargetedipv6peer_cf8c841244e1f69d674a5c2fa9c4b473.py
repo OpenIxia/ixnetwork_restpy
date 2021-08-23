@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LdpTargetedIpv6Peer(Base):
@@ -43,12 +44,15 @@ class LdpTargetedIpv6Peer(Base):
         'TargetedHelloInterval': 'targetedHelloInterval',
         'TargetedHoldTime': 'targetedHoldTime',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LdpTargetedIpv6Peer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LdpTargetedIpv6Peer, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -59,6 +63,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def Authentication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +94,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def IPAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def InitiateTargetedHello(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +116,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -116,6 +126,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def MD5Key(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +137,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,10 +146,12 @@ class LdpTargetedIpv6Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TargetedHelloInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -148,6 +162,7 @@ class LdpTargetedIpv6Peer(Base):
 
     @property
     def TargetedHoldTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +172,7 @@ class LdpTargetedIpv6Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TargetedHoldTime']))
 
     def update(self, Name=None):
+        # type: (str) -> LdpTargetedIpv6Peer
         """Updates ldpTargetedIpv6Peer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class InterfaceLearnedInfo(Base):
@@ -37,12 +38,16 @@ interface.
         'OwnIp': 'ownIp',
         'PrefixLength': 'prefixLength',
     }
+    _SDM_ENUM_MAP = {
+        'ipType': ['kIpv4', 'kIpv6'],
+    }
 
-    def __init__(self, parent):
-        super(InterfaceLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(InterfaceLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def GatewayIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,6 +57,7 @@ interface.
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +67,7 @@ interface.
 
     @property
     def OwnIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +77,7 @@ interface.
 
     @property
     def PrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------

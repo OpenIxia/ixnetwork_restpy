@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UserLsa(Base):
@@ -47,9 +48,12 @@ class UserLsa(Base):
         'OptBitTypeOfService': 'optBitTypeOfService',
         'Option': 'option',
     }
+    _SDM_ENUM_MAP = {
+        'lsaType': ['router', 'network', 'areaSummary', 'externalSummary', 'external', 'nssa', 'opaqueLocalScope', 'opaqueAreaScope', 'opaqueAsScope'],
+    }
 
-    def __init__(self, parent):
-        super(UserLsa, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UserLsa, self).__init__(parent, list_op)
 
     @property
     def External(self):
@@ -63,7 +67,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.external_5f713e4ff5ec2297a9ee77f4fc87e67f import External
-        return External(self)
+        if self._properties.get('External', None) is not None:
+            return self._properties.get('External')
+        else:
+            return External(self)
 
     @property
     def Network(self):
@@ -77,7 +84,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_ab7cacc5147193bf15144d9976e31e5e import Network
-        return Network(self)
+        if self._properties.get('Network', None) is not None:
+            return self._properties.get('Network')
+        else:
+            return Network(self)
 
     @property
     def Nssa(self):
@@ -91,7 +101,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nssa_926f7a4ce5a139e05060d94a97af7411 import Nssa
-        return Nssa(self)
+        if self._properties.get('Nssa', None) is not None:
+            return self._properties.get('Nssa')
+        else:
+            return Nssa(self)
 
     @property
     def Opaque(self):
@@ -105,7 +118,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaque_f86f4a4822065deb46f8e3927f1f473f import Opaque
-        return Opaque(self)
+        if self._properties.get('Opaque', None) is not None:
+            return self._properties.get('Opaque')
+        else:
+            return Opaque(self)
 
     @property
     def Router(self):
@@ -119,7 +135,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_0adffb2d881dee33ea86b034b59de2e6 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def SummaryIp(self):
@@ -133,10 +152,14 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.summaryip_d35397f1c35713560a222df362b20a8a import SummaryIp
-        return SummaryIp(self)
+        if self._properties.get('SummaryIp', None) is not None:
+            return self._properties.get('SummaryIp')
+        else:
+            return SummaryIp(self)
 
     @property
     def AdvertisingRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,10 +168,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvertisingRouterId'])
     @AdvertisingRouterId.setter
     def AdvertisingRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvertisingRouterId'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -157,10 +182,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExpandIntoLinksOrAttachedRouters(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -169,10 +196,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExpandIntoLinksOrAttachedRouters'])
     @ExpandIntoLinksOrAttachedRouters.setter
     def ExpandIntoLinksOrAttachedRouters(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExpandIntoLinksOrAttachedRouters'], value)
 
     @property
     def LinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,10 +210,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkStateId'])
     @LinkStateId.setter
     def LinkStateId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkStateId'], value)
 
     @property
     def LsaType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -193,10 +224,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LsaType'])
     @LsaType.setter
     def LsaType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LsaType'], value)
 
     @property
     def OptBitDemandCircuit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -205,10 +238,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitDemandCircuit'])
     @OptBitDemandCircuit.setter
     def OptBitDemandCircuit(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitDemandCircuit'], value)
 
     @property
     def OptBitExternalAttributes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -217,10 +252,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitExternalAttributes'])
     @OptBitExternalAttributes.setter
     def OptBitExternalAttributes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitExternalAttributes'], value)
 
     @property
     def OptBitExternalRouting(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -229,10 +266,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitExternalRouting'])
     @OptBitExternalRouting.setter
     def OptBitExternalRouting(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitExternalRouting'], value)
 
     @property
     def OptBitLsaNoForward(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -241,10 +280,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitLsaNoForward'])
     @OptBitLsaNoForward.setter
     def OptBitLsaNoForward(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitLsaNoForward'], value)
 
     @property
     def OptBitMulticast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -253,10 +294,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitMulticast'])
     @OptBitMulticast.setter
     def OptBitMulticast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitMulticast'], value)
 
     @property
     def OptBitNssaCapability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -265,10 +308,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitNssaCapability'])
     @OptBitNssaCapability.setter
     def OptBitNssaCapability(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitNssaCapability'], value)
 
     @property
     def OptBitTypeOfService(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -277,10 +322,12 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OptBitTypeOfService'])
     @OptBitTypeOfService.setter
     def OptBitTypeOfService(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OptBitTypeOfService'], value)
 
     @property
     def Option(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -289,9 +336,11 @@ class UserLsa(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Option'])
     @Option.setter
     def Option(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Option'], value)
 
     def update(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
+        # type: (str, bool, bool, str, str, bool, bool, bool, bool, bool, bool, bool, int) -> UserLsa
         """Updates userLsa resource on the server.
 
         Args
@@ -317,6 +366,7 @@ class UserLsa(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
+        # type: (str, bool, bool, str, str, bool, bool, bool, bool, bool, bool, bool, int) -> UserLsa
         """Adds a new userLsa resource on the server and adds it to the container.
 
         Args
@@ -356,6 +406,7 @@ class UserLsa(Base):
         self._delete()
 
     def find(self, AdvertisingRouterId=None, Enabled=None, ExpandIntoLinksOrAttachedRouters=None, LinkStateId=None, LsaType=None, OptBitDemandCircuit=None, OptBitExternalAttributes=None, OptBitExternalRouting=None, OptBitLsaNoForward=None, OptBitMulticast=None, OptBitNssaCapability=None, OptBitTypeOfService=None, Option=None):
+        # type: (str, bool, bool, str, str, bool, bool, bool, bool, bool, bool, bool, int) -> UserLsa
         """Finds and retrieves userLsa resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve userLsa resources from the server.

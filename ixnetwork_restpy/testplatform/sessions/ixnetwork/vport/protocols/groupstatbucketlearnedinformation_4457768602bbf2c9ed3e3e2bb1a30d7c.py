@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GroupStatBucketLearnedInformation(Base):
@@ -40,12 +41,15 @@ class GroupStatBucketLearnedInformation(Base):
         'PacketCount': 'packetCount',
         'RemoteIp': 'remoteIp',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(GroupStatBucketLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GroupStatBucketLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def ByteCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class GroupStatBucketLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class GroupStatBucketLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +79,7 @@ class GroupStatBucketLearnedInformation(Base):
 
     @property
     def GroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +89,7 @@ class GroupStatBucketLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class GroupStatBucketLearnedInformation(Base):
 
     @property
     def PacketCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +109,7 @@ class GroupStatBucketLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,7 +117,21 @@ class GroupStatBucketLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemoteIp'])
 
+    def add(self):
+        """Adds a new groupStatBucketLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved groupStatBucketLearnedInformation resources using find and the newly added groupStatBucketLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ByteCount=None, DataPathId=None, DataPathIdAsHex=None, GroupId=None, LocalIp=None, PacketCount=None, RemoteIp=None):
+        # type: (str, str, str, str, str, str, str) -> GroupStatBucketLearnedInformation
         """Finds and retrieves groupStatBucketLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupStatBucketLearnedInformation resources from the server.

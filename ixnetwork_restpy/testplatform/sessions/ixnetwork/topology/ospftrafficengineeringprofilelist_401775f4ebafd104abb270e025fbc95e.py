@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfTrafficEngineeringProfileList(Base):
@@ -51,12 +52,15 @@ class OspfTrafficEngineeringProfileList(Base):
         'MetricLevel': 'metricLevel',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfTrafficEngineeringProfileList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfTrafficEngineeringProfileList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -67,6 +71,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -77,6 +82,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def AdvertiseExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +93,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority0(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +104,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +115,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +126,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority3(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +137,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +148,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -147,6 +159,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -157,6 +170,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def BandwidthPriority7(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -167,6 +181,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -176,6 +191,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -185,6 +201,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def ExtAdminGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +212,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def ExtAdminGroupLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +223,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def MaxBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +234,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def MaxReservableBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -225,6 +245,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -235,6 +256,7 @@ class OspfTrafficEngineeringProfileList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -243,9 +265,11 @@ class OspfTrafficEngineeringProfileList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> OspfTrafficEngineeringProfileList
         """Updates ospfTrafficEngineeringProfileList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

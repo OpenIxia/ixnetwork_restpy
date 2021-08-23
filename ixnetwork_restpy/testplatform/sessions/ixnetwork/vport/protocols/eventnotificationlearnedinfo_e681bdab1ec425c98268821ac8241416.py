@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EventNotificationLearnedInfo(Base):
@@ -61,12 +62,15 @@ class EventNotificationLearnedInfo(Base):
         'RemoteSymbolPeriodThreshold': 'remoteSymbolPeriodThreshold',
         'RemoteSymbolPeriodWindow': 'remoteSymbolPeriodWindow',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EventNotificationLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EventNotificationLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def LocalFrameErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +80,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalFrameEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,6 +90,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalFramePeriodErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -94,6 +100,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalFramePeriodEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,6 +110,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalFrameSecSumErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,6 +120,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalFrameSecSumEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,6 +130,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalSymbolPeriodErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +140,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def LocalSymbolPeriodEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -139,6 +150,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameError(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -148,6 +160,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,6 +170,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,6 +180,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFramePeriodError(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -175,6 +190,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFramePeriodErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -184,6 +200,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFramePeriodEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -193,6 +210,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFramePeriodThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -202,6 +220,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFramePeriodWindow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -211,6 +230,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameSecSumError(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -220,6 +240,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameSecSumErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -229,6 +250,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameSecSumEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -238,6 +260,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameSecSumThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -247,6 +270,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameSecSumWindow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -256,6 +280,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -265,6 +290,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteFrameWindow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -274,6 +300,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteSymbolPeriodErrorRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -283,6 +310,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteSymbolPeriodErrors(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -292,6 +320,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteSymbolPeriodEventRunningTotal(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -301,6 +330,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteSymbolPeriodThreshold(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -310,6 +340,7 @@ class EventNotificationLearnedInfo(Base):
 
     @property
     def RemoteSymbolPeriodWindow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -317,7 +348,21 @@ class EventNotificationLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['RemoteSymbolPeriodWindow'])
 
+    def add(self):
+        """Adds a new eventNotificationLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved eventNotificationLearnedInfo resources using find and the newly added eventNotificationLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, LocalFrameErrorRunningTotal=None, LocalFrameEventRunningTotal=None, LocalFramePeriodErrorRunningTotal=None, LocalFramePeriodEventRunningTotal=None, LocalFrameSecSumErrorRunningTotal=None, LocalFrameSecSumEventRunningTotal=None, LocalSymbolPeriodErrorRunningTotal=None, LocalSymbolPeriodEventRunningTotal=None, RemoteFrameError=None, RemoteFrameErrorRunningTotal=None, RemoteFrameEventRunningTotal=None, RemoteFramePeriodError=None, RemoteFramePeriodErrorRunningTotal=None, RemoteFramePeriodEventRunningTotal=None, RemoteFramePeriodThreshold=None, RemoteFramePeriodWindow=None, RemoteFrameSecSumError=None, RemoteFrameSecSumErrorRunningTotal=None, RemoteFrameSecSumEventRunningTotal=None, RemoteFrameSecSumThreshold=None, RemoteFrameSecSumWindow=None, RemoteFrameThreshold=None, RemoteFrameWindow=None, RemoteSymbolPeriodErrorRunningTotal=None, RemoteSymbolPeriodErrors=None, RemoteSymbolPeriodEventRunningTotal=None, RemoteSymbolPeriodThreshold=None, RemoteSymbolPeriodWindow=None):
+        # type: (int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int) -> EventNotificationLearnedInfo
         """Finds and retrieves eventNotificationLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve eventNotificationLearnedInfo resources from the server.

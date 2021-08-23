@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PortModificationTriggerAttributes(Base):
@@ -46,9 +47,11 @@ class PortModificationTriggerAttributes(Base):
         'PortConfigMask': 'portConfigMask',
         'PortNumber': 'portNumber',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PortModificationTriggerAttributes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PortModificationTriggerAttributes, self).__init__(parent, list_op)
 
     @property
     def LinkFeature(self):
@@ -62,7 +65,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkfeature_2218f0edff079bfefabc46ff517244ed import LinkFeature
-        return LinkFeature(self)._select()
+        if self._properties.get('LinkFeature', None) is not None:
+            return self._properties.get('LinkFeature')
+        else:
+            return LinkFeature(self)._select()
 
     @property
     def LinkMode(self):
@@ -76,7 +82,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkmode_74aa7aa60a1fac72da4cb79ff35dbccc import LinkMode
-        return LinkMode(self)._select()
+        if self._properties.get('LinkMode', None) is not None:
+            return self._properties.get('LinkMode')
+        else:
+            return LinkMode(self)._select()
 
     @property
     def LinkType(self):
@@ -90,10 +99,14 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktype_f1c0f4e35dd4b90849930768604d1618 import LinkType
-        return LinkType(self)._select()
+        if self._properties.get('LinkType', None) is not None:
+            return self._properties.get('LinkType')
+        else:
+            return LinkType(self)._select()
 
     @property
     def AdvertisedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +115,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvertisedFeatures'])
     @AdvertisedFeatures.setter
     def AdvertisedFeatures(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvertisedFeatures'], value)
 
     @property
     def DoNotSendPacketIn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -114,10 +129,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DoNotSendPacketIn'])
     @DoNotSendPacketIn.setter
     def DoNotSendPacketIn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DoNotSendPacketIn'], value)
 
     @property
     def DropAllPackets(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -126,10 +143,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DropAllPackets'])
     @DropAllPackets.setter
     def DropAllPackets(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DropAllPackets'], value)
 
     @property
     def DropForwardedPackets(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,10 +157,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DropForwardedPackets'])
     @DropForwardedPackets.setter
     def DropForwardedPackets(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DropForwardedPackets'], value)
 
     @property
     def EnableAdvertiseFeature(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -150,10 +171,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAdvertiseFeature'])
     @EnableAdvertiseFeature.setter
     def EnableAdvertiseFeature(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAdvertiseFeature'], value)
 
     @property
     def EnableEthernetAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -162,10 +185,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableEthernetAddress'])
     @EnableEthernetAddress.setter
     def EnableEthernetAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableEthernetAddress'], value)
 
     @property
     def EnablePortConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -174,10 +199,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePortConfig'])
     @EnablePortConfig.setter
     def EnablePortConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePortConfig'], value)
 
     @property
     def EnablePortModPortFeatures(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -186,10 +213,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePortModPortFeatures'])
     @EnablePortModPortFeatures.setter
     def EnablePortModPortFeatures(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePortModPortFeatures'], value)
 
     @property
     def EnablePortNumber(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -198,10 +227,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePortNumber'])
     @EnablePortNumber.setter
     def EnablePortNumber(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePortNumber'], value)
 
     @property
     def EthernetAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,10 +241,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetAddress'])
     @EthernetAddress.setter
     def EthernetAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetAddress'], value)
 
     @property
     def PortAdministrativelyDown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -222,10 +255,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortAdministrativelyDown'])
     @PortAdministrativelyDown.setter
     def PortAdministrativelyDown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortAdministrativelyDown'], value)
 
     @property
     def PortConfig(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,10 +269,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortConfig'])
     @PortConfig.setter
     def PortConfig(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortConfig'], value)
 
     @property
     def PortConfigMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -246,10 +283,12 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortConfigMask'])
     @PortConfigMask.setter
     def PortConfigMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortConfigMask'], value)
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -258,9 +297,11 @@ class PortModificationTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortNumber'])
     @PortNumber.setter
     def PortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortNumber'], value)
 
     def update(self, AdvertisedFeatures=None, DoNotSendPacketIn=None, DropAllPackets=None, DropForwardedPackets=None, EnableAdvertiseFeature=None, EnableEthernetAddress=None, EnablePortConfig=None, EnablePortModPortFeatures=None, EnablePortNumber=None, EthernetAddress=None, PortAdministrativelyDown=None, PortConfig=None, PortConfigMask=None, PortNumber=None):
+        # type: (str, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, str, str, int) -> PortModificationTriggerAttributes
         """Updates portModificationTriggerAttributes resource on the server.
 
         Args

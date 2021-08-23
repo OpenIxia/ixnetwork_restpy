@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FilterPalette(Base):
@@ -48,12 +49,17 @@ class FilterPalette(Base):
         'SourceAddress2': 'sourceAddress2',
         'SourceAddress2Mask': 'sourceAddress2Mask',
     }
+    _SDM_ENUM_MAP = {
+        'pattern1OffsetType': ['fromStartOfFrame', 'fromStartOfIp', 'fromStartOfProtocol', 'fromStartOfSonet'],
+        'pattern2OffsetType': ['fromStartOfFrame', 'fromStartOfIp', 'fromStartOfProtocol', 'fromStartOfSonet'],
+    }
 
-    def __init__(self, parent):
-        super(FilterPalette, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FilterPalette, self).__init__(parent, list_op)
 
     @property
     def DestinationAddress1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,10 +68,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationAddress1'])
     @DestinationAddress1.setter
     def DestinationAddress1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationAddress1'], value)
 
     @property
     def DestinationAddress1Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,10 +82,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationAddress1Mask'])
     @DestinationAddress1Mask.setter
     def DestinationAddress1Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationAddress1Mask'], value)
 
     @property
     def DestinationAddress2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,10 +96,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationAddress2'])
     @DestinationAddress2.setter
     def DestinationAddress2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationAddress2'], value)
 
     @property
     def DestinationAddress2Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,10 +110,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationAddress2Mask'])
     @DestinationAddress2Mask.setter
     def DestinationAddress2Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationAddress2Mask'], value)
 
     @property
     def Pattern1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,10 +124,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern1'])
     @Pattern1.setter
     def Pattern1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern1'], value)
 
     @property
     def Pattern1Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,10 +138,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern1Mask'])
     @Pattern1Mask.setter
     def Pattern1Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern1Mask'], value)
 
     @property
     def Pattern1Offset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,10 +152,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern1Offset'])
     @Pattern1Offset.setter
     def Pattern1Offset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern1Offset'], value)
 
     @property
     def Pattern1OffsetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,10 +166,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern1OffsetType'])
     @Pattern1OffsetType.setter
     def Pattern1OffsetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern1OffsetType'], value)
 
     @property
     def Pattern2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,10 +180,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern2'])
     @Pattern2.setter
     def Pattern2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern2'], value)
 
     @property
     def Pattern2Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +194,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern2Mask'])
     @Pattern2Mask.setter
     def Pattern2Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern2Mask'], value)
 
     @property
     def Pattern2Offset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -182,10 +208,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern2Offset'])
     @Pattern2Offset.setter
     def Pattern2Offset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern2Offset'], value)
 
     @property
     def Pattern2OffsetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,10 +222,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pattern2OffsetType'])
     @Pattern2OffsetType.setter
     def Pattern2OffsetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pattern2OffsetType'], value)
 
     @property
     def SourceAddress1(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -206,10 +236,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddress1'])
     @SourceAddress1.setter
     def SourceAddress1(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddress1'], value)
 
     @property
     def SourceAddress1Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -218,10 +250,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddress1Mask'])
     @SourceAddress1Mask.setter
     def SourceAddress1Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddress1Mask'], value)
 
     @property
     def SourceAddress2(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -230,10 +264,12 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddress2'])
     @SourceAddress2.setter
     def SourceAddress2(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddress2'], value)
 
     @property
     def SourceAddress2Mask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -242,9 +278,11 @@ class FilterPalette(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceAddress2Mask'])
     @SourceAddress2Mask.setter
     def SourceAddress2Mask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceAddress2Mask'], value)
 
     def update(self, DestinationAddress1=None, DestinationAddress1Mask=None, DestinationAddress2=None, DestinationAddress2Mask=None, Pattern1=None, Pattern1Mask=None, Pattern1Offset=None, Pattern1OffsetType=None, Pattern2=None, Pattern2Mask=None, Pattern2Offset=None, Pattern2OffsetType=None, SourceAddress1=None, SourceAddress1Mask=None, SourceAddress2=None, SourceAddress2Mask=None):
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, str, str) -> FilterPalette
         """Updates filterPalette resource on the server.
 
         Args

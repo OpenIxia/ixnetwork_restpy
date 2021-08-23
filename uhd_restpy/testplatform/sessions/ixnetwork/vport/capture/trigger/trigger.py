@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Trigger(Base):
@@ -41,12 +42,19 @@ class Trigger(Base):
         'CaptureTriggerPattern': 'captureTriggerPattern',
         'CaptureTriggerSA': 'captureTriggerSA',
     }
+    _SDM_ENUM_MAP = {
+        'captureTriggerDA': ['addr1', 'addr2', 'anyAddr', 'notAddr1', 'notAddr2'],
+        'captureTriggerError': ['errAnyFrame', 'errAnyIpTcpUdpChecksumError', 'errAnySequencekError', 'errBadCRC', 'errBadFrame', 'errBigSequenceError', 'errDataIntegrityError', 'errGoodFrame', 'errInvalidFcoeFrame', 'errReverseSequenceError', 'errSmallSequenceError'],
+        'captureTriggerPattern': ['anyPattern', 'notPattern1', 'notPattern2', 'pattern1', 'pattern1AndPattern2', 'pattern2'],
+        'captureTriggerSA': ['addr1', 'addr2', 'anyAddr', 'notAddr1', 'notAddr2'],
+    }
 
-    def __init__(self, parent):
-        super(Trigger, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Trigger, self).__init__(parent, list_op)
 
     @property
     def CaptureTriggerDA(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,10 +63,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerDA'])
     @CaptureTriggerDA.setter
     def CaptureTriggerDA(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerDA'], value)
 
     @property
     def CaptureTriggerEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +77,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerEnable'])
     @CaptureTriggerEnable.setter
     def CaptureTriggerEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerEnable'], value)
 
     @property
     def CaptureTriggerError(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +91,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerError'])
     @CaptureTriggerError.setter
     def CaptureTriggerError(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerError'], value)
 
     @property
     def CaptureTriggerExpressionString(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +105,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerExpressionString'])
     @CaptureTriggerExpressionString.setter
     def CaptureTriggerExpressionString(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerExpressionString'], value)
 
     @property
     def CaptureTriggerFrameSizeEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -103,10 +119,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeEnable'])
     @CaptureTriggerFrameSizeEnable.setter
     def CaptureTriggerFrameSizeEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeEnable'], value)
 
     @property
     def CaptureTriggerFrameSizeFrom(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -115,10 +133,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeFrom'])
     @CaptureTriggerFrameSizeFrom.setter
     def CaptureTriggerFrameSizeFrom(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeFrom'], value)
 
     @property
     def CaptureTriggerFrameSizeTo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,10 +147,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeTo'])
     @CaptureTriggerFrameSizeTo.setter
     def CaptureTriggerFrameSizeTo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerFrameSizeTo'], value)
 
     @property
     def CaptureTriggerPattern(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -139,10 +161,12 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerPattern'])
     @CaptureTriggerPattern.setter
     def CaptureTriggerPattern(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerPattern'], value)
 
     @property
     def CaptureTriggerSA(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,9 +175,11 @@ class Trigger(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CaptureTriggerSA'])
     @CaptureTriggerSA.setter
     def CaptureTriggerSA(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CaptureTriggerSA'], value)
 
     def update(self, CaptureTriggerDA=None, CaptureTriggerEnable=None, CaptureTriggerError=None, CaptureTriggerExpressionString=None, CaptureTriggerFrameSizeEnable=None, CaptureTriggerFrameSizeFrom=None, CaptureTriggerFrameSizeTo=None, CaptureTriggerPattern=None, CaptureTriggerSA=None):
+        # type: (str, bool, str, str, bool, int, int, str, str) -> Trigger
         """Updates trigger resource on the server.
 
         Args

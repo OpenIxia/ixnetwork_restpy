@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4TrafficEndPoint(Base):
@@ -56,12 +57,16 @@ class Ipv4TrafficEndPoint(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'ipProtocol': ['custom', 'tcp', 'udp'],
+    }
 
-    def __init__(self, parent):
-        super(Ipv4TrafficEndPoint, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4TrafficEndPoint, self).__init__(parent, list_op)
 
     @property
     def ArpViaInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -70,10 +75,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpViaInterface'])
     @ArpViaInterface.setter
     def ArpViaInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpViaInterface'], value)
 
     @property
     def CustomIpHeaderLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -82,10 +89,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomIpHeaderLength'])
     @CustomIpHeaderLength.setter
     def CustomIpHeaderLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomIpHeaderLength'], value)
 
     @property
     def CustomIpHeaderValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,10 +103,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomIpHeaderValue'])
     @CustomIpHeaderValue.setter
     def CustomIpHeaderValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomIpHeaderValue'], value)
 
     @property
     def CustomIpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -106,10 +117,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomIpProtocol'])
     @CustomIpProtocol.setter
     def CustomIpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomIpProtocol'], value)
 
     @property
     def DestinationPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,10 +131,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationPort'])
     @DestinationPort.setter
     def DestinationPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationPort'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -130,10 +145,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def GatewayMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,10 +159,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayMac'])
     @GatewayMac.setter
     def GatewayMac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayMac'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,10 +173,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -166,10 +187,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpMask'])
     @IpMask.setter
     def IpMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpMask'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,10 +201,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def Ipv4Dscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,10 +215,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Dscp'])
     @Ipv4Dscp.setter
     def Ipv4Dscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Dscp'], value)
 
     @property
     def Ipv4Ecn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -202,10 +229,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Ecn'])
     @Ipv4Ecn.setter
     def Ipv4Ecn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Ecn'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -214,10 +243,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -226,10 +257,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -238,10 +271,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     @property
     def RangeSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -250,10 +285,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RangeSize'])
     @RangeSize.setter
     def RangeSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RangeSize'], value)
 
     @property
     def SourcePort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -262,10 +299,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourcePort'])
     @SourcePort.setter
     def SourcePort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourcePort'], value)
 
     @property
     def UdpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -274,10 +313,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
     @UdpDestination.setter
     def UdpDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
 
     @property
     def UdpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -286,10 +327,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
     @UdpSource.setter
     def UdpSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -298,10 +341,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -310,10 +355,12 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -322,9 +369,11 @@ class Ipv4TrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, str, bool, str, str, int, str, str, str, str, str, str, int, str, str, str, int, str, str) -> Ipv4TrafficEndPoint
         """Updates ipv4TrafficEndPoint resource on the server.
 
         Args
@@ -359,6 +408,7 @@ class Ipv4TrafficEndPoint(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, str, bool, str, str, int, str, str, str, str, str, str, int, str, str, str, int, str, str) -> Ipv4TrafficEndPoint
         """Adds a new ipv4TrafficEndPoint resource on the server and adds it to the container.
 
         Args
@@ -407,6 +457,7 @@ class Ipv4TrafficEndPoint(Base):
         self._delete()
 
     def find(self, ArpViaInterface=None, CustomIpHeaderLength=None, CustomIpHeaderValue=None, CustomIpProtocol=None, DestinationPort=None, EnableVlan=None, GatewayMac=None, IpAddress=None, IpMask=None, IpProtocol=None, Ipv4Dscp=None, Ipv4Ecn=None, MacAddress=None, Name=None, ProtocolInterface=None, RangeSize=None, SourcePort=None, UdpDestination=None, UdpSource=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (bool, int, str, str, str, bool, str, str, int, str, str, str, str, str, str, int, str, str, str, int, str, str) -> Ipv4TrafficEndPoint
         """Finds and retrieves ipv4TrafficEndPoint resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4TrafficEndPoint resources from the server.

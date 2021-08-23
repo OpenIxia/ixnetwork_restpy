@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RouteDistinguisher(Base):
@@ -39,12 +40,16 @@ class RouteDistinguisher(Base):
         'IpAddressStep': 'ipAddressStep',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'type': ['as', 'ip', 'asNumber2'],
+    }
 
-    def __init__(self, parent):
-        super(RouteDistinguisher, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RouteDistinguisher, self).__init__(parent, list_op)
 
     @property
     def AsNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AsNumber'])
     @AsNumber.setter
     def AsNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AsNumber'], value)
 
     @property
     def AsNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AsNumberStep'])
     @AsNumberStep.setter
     def AsNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AsNumberStep'], value)
 
     @property
     def AssignedNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +86,12 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AssignedNumber'])
     @AssignedNumber.setter
     def AssignedNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AssignedNumber'], value)
 
     @property
     def AssignedNumberStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,10 +100,12 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AssignedNumberStep'])
     @AssignedNumberStep.setter
     def AssignedNumberStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AssignedNumberStep'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +114,12 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,10 +128,12 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddressStep'])
     @IpAddressStep.setter
     def IpAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddressStep'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,9 +142,11 @@ class RouteDistinguisher(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, AsNumber=None, AsNumberStep=None, AssignedNumber=None, AssignedNumberStep=None, IpAddress=None, IpAddressStep=None, Type=None):
+        # type: (int, int, int, int, str, str, str) -> RouteDistinguisher
         """Updates routeDistinguisher resource on the server.
 
         Args

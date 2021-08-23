@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfV3(Base):
@@ -35,9 +36,12 @@ class OspfV3(Base):
         'Enabled': 'enabled',
         'RunningState': 'runningState',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(OspfV3, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfV3, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -51,10 +55,14 @@ class OspfV3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_47de08a5e549c3a3ba83f5006b81e108 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def EnableDrOrBdr(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +71,12 @@ class OspfV3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDrOrBdr'])
     @EnableDrOrBdr.setter
     def EnableDrOrBdr(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDrOrBdr'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +85,12 @@ class OspfV3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +99,7 @@ class OspfV3(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RunningState'])
 
     def update(self, EnableDrOrBdr=None, Enabled=None):
+        # type: (bool, bool) -> OspfV3
         """Updates ospfV3 resource on the server.
 
         Args
@@ -101,23 +114,26 @@ class OspfV3(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def GracefulRouterRestart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the gracefulRouterRestart operation on the server.
 
         NOT DEFINED
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        gracefulRouterRestart(Arg2=list)string
-        --------------------------------------
+        gracefulRouterRestart(Arg2=list, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: NOT DEFINED
 
-        gracefulRouterRestart(Arg2=list, Arg3=number, Arg4=enum, Arg5=number)string
-        ---------------------------------------------------------------------------
+        gracefulRouterRestart(Arg2=list, Arg3=number, Arg4=enum, Arg5=number, async_operation=bool)string
+        -------------------------------------------------------------------------------------------------
         - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
         - Arg3 (number): NOT DEFINED
         - Arg4 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): NOT DEFINED
         - Arg5 (number): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: NOT DEFINED
 
         Raises
@@ -130,28 +146,42 @@ class OspfV3(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('gracefulRouterRestart', payload=payload, response_object=None)
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the OSPFv3 protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the OSPFv3 protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

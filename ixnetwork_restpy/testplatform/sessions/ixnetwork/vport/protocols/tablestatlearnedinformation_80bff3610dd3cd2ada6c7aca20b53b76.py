@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TableStatLearnedInformation(Base):
@@ -49,12 +50,15 @@ class TableStatLearnedInformation(Base):
         'TableName': 'tableName',
         'Wildcards': 'wildcards',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TableStatLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TableStatLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def ActiveCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -73,6 +78,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -82,6 +88,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +98,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,6 +108,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def LookupCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +138,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def MatchedCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,6 +148,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def MaxEntries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,6 +158,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -154,6 +168,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -163,6 +178,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -172,6 +188,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def TableId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -181,6 +198,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def TableName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -190,6 +208,7 @@ class TableStatLearnedInformation(Base):
 
     @property
     def Wildcards(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,7 +216,21 @@ class TableStatLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Wildcards'])
 
+    def add(self):
+        """Adds a new tableStatLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tableStatLearnedInformation resources using find and the newly added tableStatLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActiveCount=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, Latency=None, LocalIp=None, LookupCount=None, MatchedCount=None, MaxEntries=None, NegotiatedVersion=None, RemoteIp=None, ReplyState=None, TableId=None, TableName=None, Wildcards=None):
+        # type: (int, str, str, str, str, int, str, str, str, int, str, str, str, str, str, str) -> TableStatLearnedInformation
         """Finds and retrieves tableStatLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tableStatLearnedInformation resources from the server.

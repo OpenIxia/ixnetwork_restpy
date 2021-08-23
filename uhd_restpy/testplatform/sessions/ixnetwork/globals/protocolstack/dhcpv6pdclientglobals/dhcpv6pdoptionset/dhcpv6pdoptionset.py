@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6PdOptionSet(Base):
@@ -38,9 +39,11 @@ class Dhcpv6PdOptionSet(Base):
         'Name': 'name',
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6PdOptionSet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6PdOptionSet, self).__init__(parent, list_op)
 
     @property
     def Dhcpv6PdOptionTlv(self):
@@ -54,10 +57,14 @@ class Dhcpv6PdOptionSet(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dhcpv6pdclientglobals.dhcpv6pdoptionset.dhcpv6pdoptiontlv.dhcpv6pdoptiontlv import Dhcpv6PdOptionTlv
-        return Dhcpv6PdOptionTlv(self)
+        if self._properties.get('Dhcpv6PdOptionTlv', None) is not None:
+            return self._properties.get('Dhcpv6PdOptionTlv')
+        else:
+            return Dhcpv6PdOptionTlv(self)
 
     @property
     def Defaultp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class Dhcpv6PdOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Defaultp'])
     @Defaultp.setter
     def Defaultp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Defaultp'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class Dhcpv6PdOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class Dhcpv6PdOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +115,7 @@ class Dhcpv6PdOptionSet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
 
     def update(self, Defaultp=None, IpType=None, Name=None):
+        # type: (bool, str, str) -> Dhcpv6PdOptionSet
         """Updates dhcpv6PdOptionSet resource on the server.
 
         Args
@@ -117,6 +131,7 @@ class Dhcpv6PdOptionSet(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Defaultp=None, IpType=None, Name=None):
+        # type: (bool, str, str) -> Dhcpv6PdOptionSet
         """Adds a new dhcpv6PdOptionSet resource on the server and adds it to the container.
 
         Args
@@ -146,6 +161,7 @@ class Dhcpv6PdOptionSet(Base):
         self._delete()
 
     def find(self, Defaultp=None, IpType=None, Name=None, ObjectId=None):
+        # type: (bool, str, str, str) -> Dhcpv6PdOptionSet
         """Finds and retrieves dhcpv6PdOptionSet resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6PdOptionSet resources from the server.

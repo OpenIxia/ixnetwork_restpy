@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LdpRootRangeV4(Base):
@@ -48,9 +49,11 @@ class LdpRootRangeV4(Base):
         'StartGroupAddressV4': 'startGroupAddressV4',
         'StartGroupAddressV6': 'startGroupAddressV6',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LdpRootRangeV4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LdpRootRangeV4, self).__init__(parent, list_op)
 
     @property
     def LdpTLVList(self):
@@ -64,7 +67,10 @@ class LdpRootRangeV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldptlvlist_30bf84fe9b838fe1c5800e633f13cff2 import LdpTLVList
-        return LdpTLVList(self)
+        if self._properties.get('LdpTLVList', None) is not None:
+            return self._properties.get('LdpTLVList')
+        else:
+            return LdpTLVList(self)
 
     @property
     def Tag(self):
@@ -78,10 +84,14 @@ class LdpRootRangeV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def ContinuousIncrementOVAcrossRoot(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -92,6 +102,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,6 +112,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +122,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def FilterOnGroupAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +133,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def GroupCountPerLSP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -130,6 +144,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def LspCountPerRoot(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -140,6 +155,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -148,10 +164,12 @@ class LdpRootRangeV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfTLVs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,10 +178,12 @@ class LdpRootRangeV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfTLVs'])
     @NumberOfTLVs.setter
     def NumberOfTLVs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfTLVs'], value)
 
     @property
     def RootAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -174,6 +194,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def RootAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -184,6 +205,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def RootAddressStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -194,6 +216,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def SourceAddressV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -204,6 +227,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def SourceAddressV6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -214,6 +238,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def SourceCountPerLSP(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -224,6 +249,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def StartGroupAddressV4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +260,7 @@ class LdpRootRangeV4(Base):
 
     @property
     def StartGroupAddressV6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -243,6 +270,7 @@ class LdpRootRangeV4(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['StartGroupAddressV6']))
 
     def update(self, Name=None, NumberOfTLVs=None):
+        # type: (str, int) -> LdpRootRangeV4
         """Updates ldpRootRangeV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

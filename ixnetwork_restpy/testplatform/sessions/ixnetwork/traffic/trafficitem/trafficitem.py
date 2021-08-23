@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TrafficItem(Base):
@@ -73,9 +74,24 @@ class TrafficItem(Base):
         'UseControlPlaneRate': 'useControlPlaneRate',
         'Warnings': 'warnings',
     }
+    _SDM_ENUM_MAP = {
+        'bgpEpeSidType': ['adjSID', 'nodeSID', 'setSID'],
+        'interAsBgpPreference': ['one', 'two'],
+        'interAsLdpPreference': ['one', 'two'],
+        'multicastForwardingMode': ['loadBalancing', 'replication'],
+        'originatorType': ['endUser', 'quickTest'],
+        'rawTrafficRxPortsBehavior': ['loadBalanced', 'replicated'],
+        'routeMesh': ['fullMesh', 'oneToOne'],
+        'srcDestMesh': ['fullMesh', 'manyToMany', 'none', 'oneToOne'],
+        'trafficItemType': ['application', 'applicationLibrary', 'l2L3', 'quick'],
+        'trafficType': ['atm', 'avb1722', 'avbRaw', 'ethernetVlan', 'fc', 'fcoe', 'frameRelay', 'hdlc', 'ipv4', 'ipv4ApplicationTraffic', 'ipv6', 'ipv6ApplicationTraffic', 'ppp', 'raw'],
+        'transmitMode': ['interleaved', 'sequential'],
+        'transportLdpPreference': ['one', 'two'],
+        'transportRsvpTePreference': ['one', 'two'],
+    }
 
-    def __init__(self, parent):
-        super(TrafficItem, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TrafficItem, self).__init__(parent, list_op)
 
     @property
     def AppLibProfile(self):
@@ -89,7 +105,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile import AppLibProfile
-        return AppLibProfile(self)
+        if self._properties.get('AppLibProfile', None) is not None:
+            return self._properties.get('AppLibProfile')
+        else:
+            return AppLibProfile(self)
 
     @property
     def ConfigElement(self):
@@ -103,7 +122,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import ConfigElement
-        return ConfigElement(self)
+        if self._properties.get('ConfigElement', None) is not None:
+            return self._properties.get('ConfigElement')
+        else:
+            return ConfigElement(self)
 
     @property
     def DynamicUpdate(self):
@@ -117,7 +139,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate import DynamicUpdate
-        return DynamicUpdate(self)
+        if self._properties.get('DynamicUpdate', None) is not None:
+            return self._properties.get('DynamicUpdate')
+        else:
+            return DynamicUpdate(self)
 
     @property
     def EgressTracking(self):
@@ -131,7 +156,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
-        return EgressTracking(self)
+        if self._properties.get('EgressTracking', None) is not None:
+            return self._properties.get('EgressTracking')
+        else:
+            return EgressTracking(self)
 
     @property
     def EndpointSet(self):
@@ -145,7 +173,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import EndpointSet
-        return EndpointSet(self)
+        if self._properties.get('EndpointSet', None) is not None:
+            return self._properties.get('EndpointSet')
+        else:
+            return EndpointSet(self)
 
     @property
     def HighLevelStream(self):
@@ -159,7 +190,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import HighLevelStream
-        return HighLevelStream(self)
+        if self._properties.get('HighLevelStream', None) is not None:
+            return self._properties.get('HighLevelStream')
+        else:
+            return HighLevelStream(self)
 
     @property
     def Tracking(self):
@@ -173,7 +207,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import Tracking
-        return Tracking(self)
+        if self._properties.get('Tracking', None) is not None:
+            return self._properties.get('Tracking')
+        else:
+            return Tracking(self)
 
     @property
     def TransmissionDistribution(self):
@@ -187,10 +224,14 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
-        return TransmissionDistribution(self)
+        if self._properties.get('TransmissionDistribution', None) is not None:
+            return self._properties.get('TransmissionDistribution')
+        else:
+            return TransmissionDistribution(self)
 
     @property
     def AllowSelfDestined(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -199,10 +240,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllowSelfDestined'])
     @AllowSelfDestined.setter
     def AllowSelfDestined(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllowSelfDestined'], value)
 
     @property
     def BgpEpeOrdinalValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -211,10 +254,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BgpEpeOrdinalValue'])
     @BgpEpeOrdinalValue.setter
     def BgpEpeOrdinalValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BgpEpeOrdinalValue'], value)
 
     @property
     def BgpEpeSidType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,10 +268,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BgpEpeSidType'])
     @BgpEpeSidType.setter
     def BgpEpeSidType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BgpEpeSidType'], value)
 
     @property
     def BiDirectional(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -235,10 +282,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BiDirectional'])
     @BiDirectional.setter
     def BiDirectional(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BiDirectional'], value)
 
     @property
     def EgressEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -247,10 +296,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EgressEnabled'])
     @EgressEnabled.setter
     def EgressEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EgressEnabled'], value)
 
     @property
     def EnableDynamicMplsLabelValues(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -259,10 +310,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'])
     @EnableDynamicMplsLabelValues.setter
     def EnableDynamicMplsLabelValues(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDynamicMplsLabelValues'], value)
 
     @property
     def EnableMacsecEgressOnlyAutoConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -271,10 +324,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMacsecEgressOnlyAutoConfig'])
     @EnableMacsecEgressOnlyAutoConfig.setter
     def EnableMacsecEgressOnlyAutoConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMacsecEgressOnlyAutoConfig'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -283,10 +338,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Errors(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -296,6 +353,7 @@ class TrafficItem(Base):
 
     @property
     def EvpnNextHopOrdinalValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -304,10 +362,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EvpnNextHopOrdinalValue'])
     @EvpnNextHopOrdinalValue.setter
     def EvpnNextHopOrdinalValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EvpnNextHopOrdinalValue'], value)
 
     @property
     def FlowGroupCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -317,6 +377,7 @@ class TrafficItem(Base):
 
     @property
     def FrerDuplicateElimination(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -325,10 +386,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FrerDuplicateElimination'])
     @FrerDuplicateElimination.setter
     def FrerDuplicateElimination(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FrerDuplicateElimination'], value)
 
     @property
     def HasOpenFlow(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -337,10 +400,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HasOpenFlow'])
     @HasOpenFlow.setter
     def HasOpenFlow(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['HasOpenFlow'], value)
 
     @property
     def HostsPerNetwork(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -349,10 +414,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostsPerNetwork'])
     @HostsPerNetwork.setter
     def HostsPerNetwork(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostsPerNetwork'], value)
 
     @property
     def InterAsBgpPreference(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -361,10 +428,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'])
     @InterAsBgpPreference.setter
     def InterAsBgpPreference(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterAsBgpPreference'], value)
 
     @property
     def InterAsLdpPreference(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -373,6 +442,7 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'])
     @InterAsLdpPreference.setter
     def InterAsLdpPreference(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterAsLdpPreference'], value)
 
     @property
@@ -389,6 +459,7 @@ class TrafficItem(Base):
 
     @property
     def MaxNumberOfVpnLabelStack(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -397,10 +468,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNumberOfVpnLabelStack'])
     @MaxNumberOfVpnLabelStack.setter
     def MaxNumberOfVpnLabelStack(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNumberOfVpnLabelStack'], value)
 
     @property
     def MergeDestinations(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -409,10 +482,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MergeDestinations'])
     @MergeDestinations.setter
     def MergeDestinations(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MergeDestinations'], value)
 
     @property
     def MulticastForwardingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -421,10 +496,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MulticastForwardingMode'])
     @MulticastForwardingMode.setter
     def MulticastForwardingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MulticastForwardingMode'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -433,10 +510,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumVlansForMulticastReplication(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -445,10 +524,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumVlansForMulticastReplication'])
     @NumVlansForMulticastReplication.setter
     def NumVlansForMulticastReplication(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumVlansForMulticastReplication'], value)
 
     @property
     def OrdinalNo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -457,10 +538,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OrdinalNo'])
     @OrdinalNo.setter
     def OrdinalNo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OrdinalNo'], value)
 
     @property
     def OriginatorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -469,10 +552,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OriginatorType'])
     @OriginatorType.setter
     def OriginatorType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OriginatorType'], value)
 
     @property
     def RawTrafficRxPortsBehavior(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -481,10 +566,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RawTrafficRxPortsBehavior'])
     @RawTrafficRxPortsBehavior.setter
     def RawTrafficRxPortsBehavior(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RawTrafficRxPortsBehavior'], value)
 
     @property
     def RegenerateCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -494,6 +581,7 @@ class TrafficItem(Base):
 
     @property
     def RoundRobinPacketOrdering(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -502,10 +590,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RoundRobinPacketOrdering'])
     @RoundRobinPacketOrdering.setter
     def RoundRobinPacketOrdering(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RoundRobinPacketOrdering'], value)
 
     @property
     def RouteMesh(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -514,10 +604,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteMesh'])
     @RouteMesh.setter
     def RouteMesh(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteMesh'], value)
 
     @property
     def SrcDestMesh(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -526,10 +618,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrcDestMesh'])
     @SrcDestMesh.setter
     def SrcDestMesh(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrcDestMesh'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -539,6 +633,7 @@ class TrafficItem(Base):
 
     @property
     def Suspend(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -547,10 +642,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Suspend'])
     @Suspend.setter
     def Suspend(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Suspend'], value)
 
     @property
     def TrafficItemType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -559,10 +656,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficItemType'])
     @TrafficItemType.setter
     def TrafficItemType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficItemType'], value)
 
     @property
     def TrafficType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -571,10 +670,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficType'])
     @TrafficType.setter
     def TrafficType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficType'], value)
 
     @property
     def TransmitMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -583,10 +684,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransmitMode'])
     @TransmitMode.setter
     def TransmitMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
 
     @property
     def TransportLdpPreference(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -595,10 +698,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportLdpPreference'])
     @TransportLdpPreference.setter
     def TransportLdpPreference(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportLdpPreference'], value)
 
     @property
     def TransportRsvpTePreference(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -607,10 +712,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'])
     @TransportRsvpTePreference.setter
     def TransportRsvpTePreference(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportRsvpTePreference'], value)
 
     @property
     def UseControlPlaneFrameSize(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -619,10 +726,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseControlPlaneFrameSize'])
     @UseControlPlaneFrameSize.setter
     def UseControlPlaneFrameSize(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseControlPlaneFrameSize'], value)
 
     @property
     def UseControlPlaneRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -631,10 +740,12 @@ class TrafficItem(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseControlPlaneRate'])
     @UseControlPlaneRate.setter
     def UseControlPlaneRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseControlPlaneRate'], value)
 
     @property
     def Warnings(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -825,10 +936,15 @@ class TrafficItem(Base):
         """
         return self._read(href)
 
-    def ConvertToRaw(self):
+    def ConvertToRaw(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the convertToRaw operation on the server.
 
         Converts a non-raw traffic item to a raw traffic item.
+
+        convertToRaw(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -836,16 +952,20 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('convertToRaw', payload=payload, response_object=None)
 
     def Duplicate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the duplicate operation on the server.
 
         Duplicates a specific traffic item.
 
-        duplicate(Arg2=number)
-        ----------------------
+        duplicate(Arg2=number, async_operation=bool)
+        --------------------------------------------
         - Arg2 (number): The number of times to duplicate the traffic item.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -857,10 +977,15 @@ class TrafficItem(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('duplicate', payload=payload, response_object=None)
 
-    def DuplicateItems(self):
+    def DuplicateItems(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the duplicateItems operation on the server.
 
         Duplicates a list of traffic items.
+
+        duplicateItems(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -868,31 +993,47 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('duplicateItems', payload=payload, response_object=None)
 
-    def Generate(self):
+    def Generate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the generate operation on the server.
 
         Generate traffic for specific traffic items.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
+        generate(async_operation=bool)
+        ------------------------------
+        This function signature is used when there is a list of trafficItems
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        generate(async_operation=bool)
+        ------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('generate', payload=payload, response_object=None)
 
     def PauseStatelessTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the pauseStatelessTraffic operation on the server.
 
         Pause or Resume stateless traffic.
 
-        pauseStatelessTraffic(Arg2=bool)
-        --------------------------------
+        pauseStatelessTraffic(Arg2=bool, async_operation=bool)
+        ------------------------------------------------------
         - Arg2 (bool): If true, it will pause running traffic. If false, it will resume previously paused traffic.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -904,10 +1045,16 @@ class TrafficItem(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('pauseStatelessTraffic', payload=payload, response_object=None)
 
-    def ResolveAptixiaEndpoints(self):
+    def ResolveAptixiaEndpoints(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the resolveAptixiaEndpoints operation on the server.
 
         Resolves /vport/protocolStack/. endpoints being used by a specific traffic item.
+
+        resolveAptixiaEndpoints(async_operation=bool)string
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: This exec returns a string containing the resolved endpoints.
 
         Raises
         ------
@@ -915,47 +1062,64 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('resolveAptixiaEndpoints', payload=payload, response_object=None)
 
-    def StartDefaultLearning(self):
+    def StartDefaultLearning(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startDefaultLearning operation on the server.
 
         Starts default learning for a list of traffic items.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
+        startDefaultLearning(async_operation=bool)
+        ------------------------------------------
+        This function signature is used when there is a list of trafficItems
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        startDefaultLearning(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startDefaultLearning', payload=payload, response_object=None)
 
     def StartLearning(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startLearning operation on the server.
 
         Sends learning frames.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        startLearning(Arg2=number, Arg3=number, Arg4=number)
-        ----------------------------------------------------
+        startLearning(Arg2=number, Arg3=number, Arg4=number, async_operation=bool)
+        --------------------------------------------------------------------------
         - Arg2 (number): The framesize of the learning frame.
         - Arg3 (number): The framecount of the learning frames.
         - Arg4 (number): The frames per second of the learning frames.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool)
-        -------------------------------------------------------------------------------------
+        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool, async_operation=bool)
+        -----------------------------------------------------------------------------------------------------------
         - Arg2 (number): The framesize of the learning frame.
         - Arg3 (number): The framecount of the learning frames.
         - Arg4 (number): The frames per second of the learning frames.
         - Arg5 (bool): Send gratuitous ARP frames.
         - Arg6 (bool): Send MAC frames.
         - Arg7 (bool): Send Fast Path frames.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool, Arg8=bool)
-        ------------------------------------------------------------------------------------------------
+        startLearning(Arg2=number, Arg3=number, Arg4=number, Arg5=bool, Arg6=bool, Arg7=bool, Arg8=bool, async_operation=bool)
+        ----------------------------------------------------------------------------------------------------------------------
         - Arg2 (number): The framesize of the learning frame.
         - Arg3 (number): The framecount of the learning frames.
         - Arg4 (number): The frames per second of the learning frames.
@@ -963,6 +1127,7 @@ class TrafficItem(Base):
         - Arg6 (bool): Send MAC frames.
         - Arg7 (bool): Send Fast Path frames.
         - Arg8 (bool): Send full mesh.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -974,54 +1139,82 @@ class TrafficItem(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startLearning', payload=payload, response_object=None)
 
-    def StartStatelessTraffic(self):
+    def StartStatelessTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startStatelessTraffic operation on the server.
 
         Start the traffic configuration for stateless traffic items only.
 
+        startStatelessTraffic(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startStatelessTraffic', payload=payload, response_object=None)
 
-    def StartStatelessTrafficBlocking(self):
+    def StartStatelessTrafficBlocking(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startStatelessTrafficBlocking operation on the server.
 
         Start the traffic configuration for stateless traffic items only. This will block until traffic is fully started.
 
+        startStatelessTrafficBlocking(async_operation=bool)
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startStatelessTrafficBlocking', payload=payload, response_object=None)
 
-    def StopStatelessTraffic(self):
+    def StopStatelessTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopStatelessTraffic operation on the server.
 
         Stop the stateless traffic items.
 
+        stopStatelessTraffic(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopStatelessTraffic', payload=payload, response_object=None)
 
-    def StopStatelessTrafficBlocking(self):
+    def StopStatelessTrafficBlocking(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopStatelessTrafficBlocking operation on the server.
 
         Stop the traffic configuration for stateless traffic items only. This will block until traffic is fully stopped.
 
+        stopStatelessTrafficBlocking(async_operation=bool)
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopStatelessTrafficBlocking', payload=payload, response_object=None)

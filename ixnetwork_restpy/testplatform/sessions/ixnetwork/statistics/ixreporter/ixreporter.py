@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ixreporter(Base):
@@ -32,9 +33,11 @@ class Ixreporter(Base):
     _SDM_NAME = 'ixreporter'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ixreporter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ixreporter, self).__init__(parent, list_op)
 
     @property
     def DataCollection(self):
@@ -48,7 +51,10 @@ class Ixreporter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.datacollection.datacollection import DataCollection
-        return DataCollection(self)._select()
+        if self._properties.get('DataCollection', None) is not None:
+            return self._properties.get('DataCollection')
+        else:
+            return DataCollection(self)._select()
 
     @property
     def ReportGeneration(self):
@@ -62,4 +68,7 @@ class Ixreporter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.reportgeneration.reportgeneration import ReportGeneration
-        return ReportGeneration(self)._select()
+        if self._properties.get('ReportGeneration', None) is not None:
+            return self._properties.get('ReportGeneration')
+        else:
+            return ReportGeneration(self)._select()

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer23ProtocolAuthAccessFilter(Base):
@@ -36,41 +37,48 @@ class Layer23ProtocolAuthAccessFilter(Base):
         'PortFilterIds': 'portFilterIds',
         'ProtocolFilterIds': 'protocolFilterIds',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Layer23ProtocolAuthAccessFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer23ProtocolAuthAccessFilter, self).__init__(parent, list_op)
 
     @property
     def PortFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availablePortFilter]): Ports that have been filtered.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Ports that have been filtered.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PortFilterIds'])
     @PortFilterIds.setter
     def PortFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortFilterIds'], value)
 
     @property
     def ProtocolFilterIds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolFilter]): Protocols that have been filtered.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Protocols that have been filtered.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'])
     @ProtocolFilterIds.setter
     def ProtocolFilterIds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolFilterIds'], value)
 
     def update(self, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (List[str], List[str]) -> Layer23ProtocolAuthAccessFilter
         """Updates layer23ProtocolAuthAccessFilter resource on the server.
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
 
         Raises
         ------
@@ -79,12 +87,13 @@ class Layer23ProtocolAuthAccessFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (List[str], List[str]) -> Layer23ProtocolAuthAccessFilter
         """Adds a new layer23ProtocolAuthAccessFilter resource on the server and adds it to the container.
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
 
         Returns
         -------
@@ -107,6 +116,7 @@ class Layer23ProtocolAuthAccessFilter(Base):
         self._delete()
 
     def find(self, PortFilterIds=None, ProtocolFilterIds=None):
+        # type: (List[str], List[str]) -> Layer23ProtocolAuthAccessFilter
         """Finds and retrieves layer23ProtocolAuthAccessFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23ProtocolAuthAccessFilter resources from the server.
@@ -115,8 +125,8 @@ class Layer23ProtocolAuthAccessFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/9/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
 
         Returns
         -------

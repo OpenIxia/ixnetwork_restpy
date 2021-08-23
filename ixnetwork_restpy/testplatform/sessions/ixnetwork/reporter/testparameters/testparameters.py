@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TestParameters(Base):
@@ -39,12 +40,15 @@ class TestParameters(Base):
         'TestObjectives': 'testObjectives',
         'TesterName': 'testerName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(TestParameters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TestParameters, self).__init__(parent, list_op)
 
     @property
     def TestCategory(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class TestParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestCategory'])
     @TestCategory.setter
     def TestCategory(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestCategory'], value)
 
     @property
     def TestDUTName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class TestParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestDUTName'])
     @TestDUTName.setter
     def TestDUTName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestDUTName'], value)
 
     @property
     def TestHighlights(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class TestParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestHighlights'])
     @TestHighlights.setter
     def TestHighlights(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestHighlights'], value)
 
     @property
     def TestId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -90,6 +100,7 @@ class TestParameters(Base):
 
     @property
     def TestName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,10 +109,12 @@ class TestParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestName'])
     @TestName.setter
     def TestName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestName'], value)
 
     @property
     def TestObjectives(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,10 +123,12 @@ class TestParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TestObjectives'])
     @TestObjectives.setter
     def TestObjectives(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TestObjectives'], value)
 
     @property
     def TesterName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,9 +137,11 @@ class TestParameters(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TesterName'])
     @TesterName.setter
     def TesterName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TesterName'], value)
 
     def update(self, TestCategory=None, TestDUTName=None, TestHighlights=None, TestName=None, TestObjectives=None, TesterName=None):
+        # type: (str, str, str, str, str, str) -> TestParameters
         """Updates testParameters resource on the server.
 
         Args

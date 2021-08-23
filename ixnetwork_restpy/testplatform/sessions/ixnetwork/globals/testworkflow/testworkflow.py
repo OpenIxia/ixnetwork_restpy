@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Testworkflow(Base):
@@ -34,12 +35,16 @@ class Testworkflow(Base):
         'CurrentDescription': 'currentDescription',
         'CurrentState': 'currentState',
     }
+    _SDM_ENUM_MAP = {
+        'currentState': ['kApplyTraffic', 'kConnectPorts', 'kError', 'kGenerateTraffic', 'kIdle', 'kReleaseCrashedPorts', 'kStartLAG', 'kStartProtocols', 'kStartTopology', 'kStartTraffic', 'kStopLAG', 'kStopProtocols', 'kStopTraffic', 'kWaitForChassisUp', 'kWaitForLicenseBroadcast', 'kWaitForPortsUp', 'kWaitForProtocolsUp'],
+    }
 
-    def __init__(self, parent):
-        super(Testworkflow, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Testworkflow, self).__init__(parent, list_op)
 
     @property
     def CurrentDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,6 +54,7 @@ class Testworkflow(Base):
 
     @property
     def CurrentState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,13 +63,15 @@ class Testworkflow(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CurrentState'])
 
     def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         connect ports, start protocols and generate/apply/start traffic
 
-        start(Arg2=bool)
-        ----------------
+        start(Arg2=bool, async_operation=bool)
+        --------------------------------------
         - Arg2 (bool): a boolean indicating if ownership should be taken forcefully
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -76,13 +84,15 @@ class Testworkflow(Base):
         return self._execute('start', payload=payload, response_object=None)
 
     def Startlag(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startlag operation on the server.
 
         connect ports and start LAG
 
-        startlag(Arg2=bool)
-        -------------------
+        startlag(Arg2=bool, async_operation=bool)
+        -----------------------------------------
         - Arg2 (bool): a boolean indicating if ownership should be taken forcefully
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -95,13 +105,15 @@ class Testworkflow(Base):
         return self._execute('startlag', payload=payload, response_object=None)
 
     def Startprotocols(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startprotocols operation on the server.
 
         connect ports and start protocols
 
-        startprotocols(Arg2=bool)
-        -------------------------
+        startprotocols(Arg2=bool, async_operation=bool)
+        -----------------------------------------------
         - Arg2 (bool): a boolean indicating if ownership should be taken forcefully
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -114,14 +126,16 @@ class Testworkflow(Base):
         return self._execute('startprotocols', payload=payload, response_object=None)
 
     def Startselected(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the startselected operation on the server.
 
         connect ports and start the selected item
 
-        startselected(Arg2=href, Arg3=bool)
-        -----------------------------------
+        startselected(Arg2=href, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup)): objref to /topology or device group
         - Arg3 (bool): a boolean indicating if ownership should be taken forcefully
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -133,67 +147,102 @@ class Testworkflow(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('startselected', payload=payload, response_object=None)
 
-    def Starttraffic(self):
+    def Starttraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the starttraffic operation on the server.
 
         generates (if required), applies and starts traffic
 
+        starttraffic(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('starttraffic', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         stop protocols and traffic
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)
 
-    def Stoplag(self):
+    def Stoplag(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stoplag operation on the server.
 
         stop LAG
 
+        stoplag(async_operation=bool)
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stoplag', payload=payload, response_object=None)
 
-    def Stopprotocols(self):
+    def Stopprotocols(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stopprotocols operation on the server.
 
         stop protocols
 
+        stopprotocols(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stopprotocols', payload=payload, response_object=None)
 
-    def Stoptraffic(self):
+    def Stoptraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stoptraffic operation on the server.
 
         stop protocols and traffic
 
+        stoptraffic(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stoptraffic', payload=payload, response_object=None)

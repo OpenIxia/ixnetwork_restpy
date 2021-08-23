@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcp4ServerSessions(Base):
@@ -45,12 +46,15 @@ class Dhcp4ServerSessions(Base):
         'PoolSize': 'poolSize',
         'SessionInfo': 'sessionInfo',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcp4ServerSessions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcp4ServerSessions, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def DefaultLeaseTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +85,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def EchoRelayInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def IpAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -99,6 +107,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def IpAddressIncrement(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +118,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def IpDns1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +129,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def IpDns2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +140,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def IpGateway(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +151,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def IpPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +162,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,10 +171,12 @@ class Dhcp4ServerSessions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PoolSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +187,7 @@ class Dhcp4ServerSessions(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class Dhcp4ServerSessions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionInfo'])
 
     def update(self, Name=None):
+        # type: (str) -> Dhcp4ServerSessions
         """Updates dhcp4ServerSessions resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

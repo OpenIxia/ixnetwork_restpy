@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NextTable(Base):
@@ -34,12 +35,15 @@ class NextTable(Base):
         'TableId': 'tableId',
         'TableIdMiss': 'tableIdMiss',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NextTable, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NextTable, self).__init__(parent, list_op)
 
     @property
     def TableId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class NextTable(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableId'])
     @TableId.setter
     def TableId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
 
     @property
     def TableIdMiss(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class NextTable(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableIdMiss'])
     @TableIdMiss.setter
     def TableIdMiss(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableIdMiss'], value)
 
     def update(self, TableId=None, TableIdMiss=None):
+        # type: (str, str) -> NextTable
         """Updates nextTable resource on the server.
 
         Args

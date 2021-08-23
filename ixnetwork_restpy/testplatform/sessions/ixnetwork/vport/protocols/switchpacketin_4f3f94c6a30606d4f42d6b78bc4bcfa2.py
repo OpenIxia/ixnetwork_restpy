@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchPacketIn(Base):
@@ -40,9 +41,11 @@ class SwitchPacketIn(Base):
         'PacketInName': 'packetInName',
         'SendPacketIn': 'sendPacketIn',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchPacketIn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchPacketIn, self).__init__(parent, list_op)
 
     @property
     def PacketInHeaders(self):
@@ -56,10 +59,14 @@ class SwitchPacketIn(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinheaders_049c490437f5daa721b6e6c0d3b91b8e import PacketInHeaders
-        return PacketInHeaders(self)._select()
+        if self._properties.get('PacketInHeaders', None) is not None:
+            return self._properties.get('PacketInHeaders')
+        else:
+            return PacketInHeaders(self)._select()
 
     @property
     def ConsultFlowTable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -68,10 +75,12 @@ class SwitchPacketIn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConsultFlowTable'])
     @ConsultFlowTable.setter
     def ConsultFlowTable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConsultFlowTable'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,10 +89,12 @@ class SwitchPacketIn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -92,10 +103,12 @@ class SwitchPacketIn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InPort'])
     @InPort.setter
     def InPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
 
     @property
     def PacketIn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,10 +117,12 @@ class SwitchPacketIn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketIn'])
     @PacketIn.setter
     def PacketIn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketIn'], value)
 
     @property
     def PacketInName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +131,12 @@ class SwitchPacketIn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketInName'])
     @PacketInName.setter
     def PacketInName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketInName'], value)
 
     @property
     def SendPacketIn(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -128,9 +145,11 @@ class SwitchPacketIn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendPacketIn'])
     @SendPacketIn.setter
     def SendPacketIn(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendPacketIn'], value)
 
     def update(self, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, SendPacketIn=None):
+        # type: (bool, bool, str, str, str, bool) -> SwitchPacketIn
         """Updates switchPacketIn resource on the server.
 
         Args
@@ -149,6 +168,7 @@ class SwitchPacketIn(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, SendPacketIn=None):
+        # type: (bool, bool, str, str, str, bool) -> SwitchPacketIn
         """Adds a new switchPacketIn resource on the server and adds it to the container.
 
         Args
@@ -181,6 +201,7 @@ class SwitchPacketIn(Base):
         self._delete()
 
     def find(self, ConsultFlowTable=None, Enabled=None, InPort=None, PacketIn=None, PacketInName=None, SendPacketIn=None):
+        # type: (bool, bool, str, str, str, bool) -> SwitchPacketIn
         """Finds and retrieves switchPacketIn resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchPacketIn resources from the server.
@@ -225,13 +246,15 @@ class SwitchPacketIn(Base):
         return self._read(href)
 
     def SendSwitchPacketInOption(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the sendSwitchPacketInOption operation on the server.
 
         NOT DEFINED
 
-        sendSwitchPacketInOption(Arg2=enum)bool
-        ---------------------------------------
+        sendSwitchPacketInOption(Arg2=enum, async_operation=bool)bool
+        -------------------------------------------------------------
         - Arg2 (str(sendPause | sendStart | sendStop)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
         Raises

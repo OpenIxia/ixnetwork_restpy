@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -46,9 +47,16 @@ class Interface(Base):
         'Md5Key': 'md5Key',
         'ProtocolInterface': 'protocolInterface',
     }
+    _SDM_ENUM_MAP = {
+        'advertisingMode': ['unsolicited', 'onDemand'],
+        'atmVcDirection': ['unidirectional', 'bidirectional'],
+        'authentication': ['null', 'md5'],
+        'bfdOperationMode': ['singleHop', 'multiHop'],
+        'discoveryMode': ['basic', 'extended', 'extendedMartini'],
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def AtmLabelRange(self):
@@ -62,7 +70,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atmlabelrange_ebe9434fea7d160a4f5a4fca69d81dcf import AtmLabelRange
-        return AtmLabelRange(self)
+        if self._properties.get('AtmLabelRange', None) is not None:
+            return self._properties.get('AtmLabelRange')
+        else:
+            return AtmLabelRange(self)
 
     @property
     def LearnedFilter(self):
@@ -76,7 +87,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df33d6e2936a15d8a0c3082383d4e700 import LearnedFilter
-        return LearnedFilter(self)._select()
+        if self._properties.get('LearnedFilter', None) is not None:
+            return self._properties.get('LearnedFilter')
+        else:
+            return LearnedFilter(self)._select()
 
     @property
     def LearnedIpv4Label(self):
@@ -90,7 +104,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4label_fd641bf6fc1fc77c6a919b5699bdcbe0 import LearnedIpv4Label
-        return LearnedIpv4Label(self)
+        if self._properties.get('LearnedIpv4Label', None) is not None:
+            return self._properties.get('LearnedIpv4Label')
+        else:
+            return LearnedIpv4Label(self)
 
     @property
     def LearnedIpv4P2mpLables(self):
@@ -104,7 +121,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4p2mplables_7da643070755e8b965ca7f53c9a8250a import LearnedIpv4P2mpLables
-        return LearnedIpv4P2mpLables(self)
+        if self._properties.get('LearnedIpv4P2mpLables', None) is not None:
+            return self._properties.get('LearnedIpv4P2mpLables')
+        else:
+            return LearnedIpv4P2mpLables(self)
 
     @property
     def LearnedMartiniLabel(self):
@@ -118,7 +138,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmartinilabel_cc6a3b5bae90ffc430db92d0f71136a1 import LearnedMartiniLabel
-        return LearnedMartiniLabel(self)
+        if self._properties.get('LearnedMartiniLabel', None) is not None:
+            return self._properties.get('LearnedMartiniLabel')
+        else:
+            return LearnedMartiniLabel(self)
 
     @property
     def TargetPeer(self):
@@ -132,10 +155,14 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.targetpeer_d7cc221539f0f14696e2588a1ed5bda7 import TargetPeer
-        return TargetPeer(self)
+        if self._properties.get('TargetPeer', None) is not None:
+            return self._properties.get('TargetPeer')
+        else:
+            return TargetPeer(self)
 
     @property
     def AdvertisingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +171,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvertisingMode'])
     @AdvertisingMode.setter
     def AdvertisingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvertisingMode'], value)
 
     @property
     def AtmVcDirection(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,10 +185,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AtmVcDirection'])
     @AtmVcDirection.setter
     def AtmVcDirection(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AtmVcDirection'], value)
 
     @property
     def Authentication(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,10 +199,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Authentication'])
     @Authentication.setter
     def Authentication(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Authentication'], value)
 
     @property
     def BfdOperationMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,10 +213,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BfdOperationMode'])
     @BfdOperationMode.setter
     def BfdOperationMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BfdOperationMode'], value)
 
     @property
     def DiscoveryMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,10 +227,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscoveryMode'])
     @DiscoveryMode.setter
     def DiscoveryMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscoveryMode'], value)
 
     @property
     def EnableAtmSession(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +241,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAtmSession'])
     @EnableAtmSession.setter
     def EnableAtmSession(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAtmSession'], value)
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,10 +255,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -228,10 +269,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IsLdpLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -241,6 +284,7 @@ class Interface(Base):
 
     @property
     def LabelSpaceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -249,10 +293,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceId'])
     @LabelSpaceId.setter
     def LabelSpaceId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelSpaceId'], value)
 
     @property
     def Md5Key(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -261,10 +307,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Md5Key'])
     @Md5Key.setter
     def Md5Key(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Md5Key'], value)
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -273,9 +321,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterface'])
     @ProtocolInterface.setter
     def ProtocolInterface(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterface'], value)
 
     def update(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+        # type: (str, str, str, str, str, bool, bool, bool, int, str, str) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -299,6 +349,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+        # type: (str, str, str, str, str, bool, bool, bool, int, str, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -336,6 +387,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, AdvertisingMode=None, AtmVcDirection=None, Authentication=None, BfdOperationMode=None, DiscoveryMode=None, EnableAtmSession=None, EnableBfdRegistration=None, Enabled=None, IsLdpLearnedInfoRefreshed=None, LabelSpaceId=None, Md5Key=None, ProtocolInterface=None):
+        # type: (str, str, str, str, str, bool, bool, bool, bool, int, str, str) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
@@ -385,10 +437,16 @@ class Interface(Base):
         """
         return self._read(href)
 
-    def RefreshLearnedInfo(self):
+    def RefreshLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInfo operation on the server.
 
         This exec refreshes the LDP learned information from the DUT.
+
+        refreshLearnedInfo(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -396,4 +454,6 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)

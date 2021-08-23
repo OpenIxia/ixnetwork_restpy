@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpIpv6L2Site(Base):
@@ -65,9 +66,12 @@ class BgpIpv6L2Site(Base):
         'TypeTarget': 'typeTarget',
         'VpnName': 'vpnName',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(BgpIpv6L2Site, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpIpv6L2Site, self).__init__(parent, list_op)
 
     @property
     def ClusterList(self):
@@ -81,7 +85,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.clusterlist_6e3b9385a37769c7040d46a28feaa819 import ClusterList
-        return ClusterList(self)
+        if self._properties.get('ClusterList', None) is not None:
+            return self._properties.get('ClusterList')
+        else:
+            return ClusterList(self)
 
     @property
     def Connector(self):
@@ -95,7 +102,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def LabelBlockList(self):
@@ -109,7 +119,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.labelblocklist_7243cf48ef4a1cf284a8988d7ce69917 import LabelBlockList
-        return LabelBlockList(self)
+        if self._properties.get('LabelBlockList', None) is not None:
+            return self._properties.get('LabelBlockList')
+        else:
+            return LabelBlockList(self)
 
     @property
     def Tag(self):
@@ -123,10 +136,14 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +154,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -145,10 +163,12 @@ class BgpIpv6L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,6 +178,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -167,6 +188,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def DistinguishAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -177,6 +199,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def DistinguishAssignedNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +210,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def DistinguishIpAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -197,6 +221,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def DutIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -206,6 +231,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def EnCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +242,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def EnControlWord(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +253,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def EnSeqDelivery(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -245,6 +273,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -254,6 +283,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def LocalRouterID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -263,6 +293,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def MtuL2Site(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -273,6 +304,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -281,10 +313,12 @@ class BgpIpv6L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -293,10 +327,12 @@ class BgpIpv6L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumClusterPerL2Site(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -305,10 +341,12 @@ class BgpIpv6L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumClusterPerL2Site'])
     @NumClusterPerL2Site.setter
     def NumClusterPerL2Site(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumClusterPerL2Site'], value)
 
     @property
     def NumL2Sites(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +357,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def NumLabelBlocksPerL2Site(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -327,10 +366,12 @@ class BgpIpv6L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumLabelBlocksPerL2Site'])
     @NumLabelBlocksPerL2Site.setter
     def NumLabelBlocksPerL2Site(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumLabelBlocksPerL2Site'], value)
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -340,6 +381,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def SiteId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +392,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -358,6 +401,7 @@ class BgpIpv6L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -371,6 +415,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -380,6 +425,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def TargetAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -390,6 +436,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def TargetAssignedNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -400,6 +447,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def TargetIpAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -410,6 +458,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def TypeDistinguish(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -420,6 +469,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def TypeTarget(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -430,6 +480,7 @@ class BgpIpv6L2Site(Base):
 
     @property
     def VpnName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -439,6 +490,7 @@ class BgpIpv6L2Site(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['VpnName']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumClusterPerL2Site=None, NumLabelBlocksPerL2Site=None, StackedLayers=None):
+        # type: (List[str], int, str, int, int, List[str]) -> BgpIpv6L2Site
         """Updates bgpIpv6L2Site resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -460,6 +512,7 @@ class BgpIpv6L2Site(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumClusterPerL2Site=None, NumLabelBlocksPerL2Site=None, StackedLayers=None):
+        # type: (List[str], int, str, int, int, List[str]) -> BgpIpv6L2Site
         """Adds a new bgpIpv6L2Site resource on the server and adds it to the container.
 
         Args
@@ -544,6 +597,134 @@ class BgpIpv6L2Site(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, DistinguishAsNumber=None, DistinguishAssignedNumber=None, DistinguishIpAddr=None, EnCluster=None, EnControlWord=None, EnSeqDelivery=None, MtuL2Site=None, NumL2Sites=None, SiteId=None, TargetAsNumber=None, TargetAssignedNumber=None, TargetIpAddr=None, TypeDistinguish=None, TypeTarget=None, VpnName=None):
         """Base class infrastructure that gets a list of bgpIpv6L2Site device ids encapsulated by this object.
 
@@ -578,103 +759,3 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

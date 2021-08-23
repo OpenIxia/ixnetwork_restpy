@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IpGlobals(Base):
@@ -39,12 +40,15 @@ class IpGlobals(Base):
         'ObjectId': 'objectId',
         'SendOneArpFromEachInterface': 'sendOneArpFromEachInterface',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IpGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IpGlobals, self).__init__(parent, list_op)
 
     @property
     def EnableGatewayArp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -53,10 +57,12 @@ class IpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGatewayArp'])
     @EnableGatewayArp.setter
     def EnableGatewayArp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGatewayArp'], value)
 
     @property
     def GatewayArpRequestRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -65,10 +71,12 @@ class IpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'])
     @GatewayArpRequestRate.setter
     def GatewayArpRequestRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GatewayArpRequestRate'], value)
 
     @property
     def MaxOutstandingGatewayArpRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class IpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'])
     @MaxOutstandingGatewayArpRequests.setter
     def MaxOutstandingGatewayArpRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingGatewayArpRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +100,7 @@ class IpGlobals(Base):
 
     @property
     def SendOneArpFromEachInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,9 +109,11 @@ class IpGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'])
     @SendOneArpFromEachInterface.setter
     def SendOneArpFromEachInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendOneArpFromEachInterface'], value)
 
     def update(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, SendOneArpFromEachInterface=None):
+        # type: (bool, int, int, bool) -> IpGlobals
         """Updates ipGlobals resource on the server.
 
         Args
@@ -117,6 +130,7 @@ class IpGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, SendOneArpFromEachInterface=None):
+        # type: (bool, int, int, bool) -> IpGlobals
         """Adds a new ipGlobals resource on the server and adds it to the container.
 
         Args
@@ -147,6 +161,7 @@ class IpGlobals(Base):
         self._delete()
 
     def find(self, EnableGatewayArp=None, GatewayArpRequestRate=None, MaxOutstandingGatewayArpRequests=None, ObjectId=None, SendOneArpFromEachInterface=None):
+        # type: (bool, int, int, str, bool) -> IpGlobals
         """Finds and retrieves ipGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipGlobals resources from the server.

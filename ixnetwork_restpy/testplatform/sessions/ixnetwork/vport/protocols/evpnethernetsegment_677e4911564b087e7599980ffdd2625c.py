@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EvpnEthernetSegment(Base):
@@ -35,9 +36,11 @@ class EvpnEthernetSegment(Base):
         'Esi': 'esi',
         'Neighbor': 'neighbor',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EvpnEthernetSegment, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EvpnEthernetSegment, self).__init__(parent, list_op)
 
     @property
     def OriginIpInfo(self):
@@ -51,10 +54,14 @@ class EvpnEthernetSegment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_d61799d0d437af743c8f98d98c592b92 import OriginIpInfo
-        return OriginIpInfo(self)
+        if self._properties.get('OriginIpInfo', None) is not None:
+            return self._properties.get('OriginIpInfo')
+        else:
+            return OriginIpInfo(self)
 
     @property
     def Esi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +71,7 @@ class EvpnEthernetSegment(Base):
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,7 +79,21 @@ class EvpnEthernetSegment(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Neighbor'])
 
+    def add(self):
+        """Adds a new evpnEthernetSegment resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved evpnEthernetSegment resources using find and the newly added evpnEthernetSegment resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Esi=None, Neighbor=None):
+        # type: (str, str) -> EvpnEthernetSegment
         """Finds and retrieves evpnEthernetSegment resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evpnEthernetSegment resources from the server.

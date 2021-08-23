@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedInfo(Base):
@@ -64,12 +65,23 @@ class LearnedInfo(Base):
         'PartnerSystemId': 'partnerSystemId',
         'PartnerSystemPriority': 'partnerSystemPriority',
     }
+    _SDM_ENUM_MAP = {
+        'actorLacpActivity': ['passive', 'active'],
+        'actorLacpTimeout': ['long', 'short'],
+        'actorLinkAggregationStatus': ['individual', 'aggregatable'],
+        'actorSyncFlag': ['inSync', 'outOfSync'],
+        'partnerLacpActivity': ['passive', 'active'],
+        'partnerLacpTimeout': ['long', 'short'],
+        'partnerLinkAggregationStatus': ['individual', 'aggregatable'],
+        'partnerSyncFlag': ['inSync', 'outOfSync'],
+    }
 
-    def __init__(self, parent):
-        super(LearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedInfo, self).__init__(parent, list_op)
 
     @property
     def ActorCollectingFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,6 +91,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorDefaultedFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -88,6 +101,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorDistributingFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -97,6 +111,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorExpiredFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -106,6 +121,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorLacpActivity(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +131,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorLacpTimeout(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,6 +141,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorLinkAggregationStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,6 +151,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorOperationalKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -142,6 +161,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -151,6 +171,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorPortPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,6 +181,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorSyncFlag(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +191,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorSystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -178,6 +201,7 @@ class LearnedInfo(Base):
 
     @property
     def ActorSystemPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -187,6 +211,7 @@ class LearnedInfo(Base):
 
     @property
     def AdministrativeKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -196,6 +221,7 @@ class LearnedInfo(Base):
 
     @property
     def EnabledAggregation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -205,6 +231,7 @@ class LearnedInfo(Base):
 
     @property
     def OtherLagMemberCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,6 +241,7 @@ class LearnedInfo(Base):
 
     @property
     def OtherLagMemberDetails(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,6 +251,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerCollectingFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -232,6 +261,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerCollectorMaxDelay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -241,6 +271,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerDefaultedFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -250,6 +281,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerDistributingFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -259,6 +291,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerExpiredFlag(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -268,6 +301,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerLacpActivity(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -277,6 +311,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerLacpTimeout(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -286,6 +321,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerLinkAggregationStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -295,6 +331,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerOperationalKey(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -304,6 +341,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -313,6 +351,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerPortPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -322,6 +361,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerSyncFlag(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -331,6 +371,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerSystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -340,6 +381,7 @@ class LearnedInfo(Base):
 
     @property
     def PartnerSystemPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -347,7 +389,21 @@ class LearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['PartnerSystemPriority'])
 
+    def add(self):
+        """Adds a new learnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved learnedInfo resources using find and the newly added learnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ActorCollectingFlag=None, ActorDefaultedFlag=None, ActorDistributingFlag=None, ActorExpiredFlag=None, ActorLacpActivity=None, ActorLacpTimeout=None, ActorLinkAggregationStatus=None, ActorOperationalKey=None, ActorPortNumber=None, ActorPortPriority=None, ActorSyncFlag=None, ActorSystemId=None, ActorSystemPriority=None, AdministrativeKey=None, EnabledAggregation=None, OtherLagMemberCount=None, OtherLagMemberDetails=None, PartnerCollectingFlag=None, PartnerCollectorMaxDelay=None, PartnerDefaultedFlag=None, PartnerDistributingFlag=None, PartnerExpiredFlag=None, PartnerLacpActivity=None, PartnerLacpTimeout=None, PartnerLinkAggregationStatus=None, PartnerOperationalKey=None, PartnerPortNumber=None, PartnerPortPriority=None, PartnerSyncFlag=None, PartnerSystemId=None, PartnerSystemPriority=None):
+        # type: (bool, bool, bool, bool, str, str, str, int, int, int, str, str, int, int, bool, int, str, bool, int, bool, bool, bool, str, str, str, int, int, int, str, str, int) -> LearnedInfo
         """Finds and retrieves learnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedInfo resources from the server.

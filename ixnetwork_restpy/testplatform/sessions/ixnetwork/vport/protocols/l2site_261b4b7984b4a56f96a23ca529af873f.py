@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class L2Site(Base):
@@ -61,9 +62,13 @@ class L2Site(Base):
         'TargetIpIncrement': 'targetIpIncrement',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+        'routeDistinguisherType': ['twoOctetAs', 'ip', 'fourOctetAs'],
+        'routeTargetType': ['as', 'ip'],
+    }
 
-    def __init__(self, parent):
-        super(L2Site, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(L2Site, self).__init__(parent, list_op)
 
     @property
     def Cluster(self):
@@ -77,7 +82,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_044b5666a07dd04f7fe6493072b12207 import Cluster
-        return Cluster(self)._select()
+        if self._properties.get('Cluster', None) is not None:
+            return self._properties.get('Cluster')
+        else:
+            return Cluster(self)._select()
 
     @property
     def LabelBlock(self):
@@ -91,7 +99,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelblock_9dc039523bf8ddf644ba0b304bd91db9 import LabelBlock
-        return LabelBlock(self)
+        if self._properties.get('LabelBlock', None) is not None:
+            return self._properties.get('LabelBlock')
+        else:
+            return LabelBlock(self)
 
     @property
     def LearnedRoute(self):
@@ -105,7 +116,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_fcc7cef4c15bb872fcc8499e708cc164 import LearnedRoute
-        return LearnedRoute(self)
+        if self._properties.get('LearnedRoute', None) is not None:
+            return self._properties.get('LearnedRoute')
+        else:
+            return LearnedRoute(self)
 
     @property
     def MacAddressRange(self):
@@ -119,10 +133,14 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macaddressrange_cb64b65b0ce814edd651d27ccd0840b2 import MacAddressRange
-        return MacAddressRange(self)
+        if self._properties.get('MacAddressRange', None) is not None:
+            return self._properties.get('MacAddressRange')
+        else:
+            return MacAddressRange(self)
 
     @property
     def DistinguishAssignedIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +149,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguishAssignedIncrement'])
     @DistinguishAssignedIncrement.setter
     def DistinguishAssignedIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguishAssignedIncrement'], value)
 
     @property
     def DistinguishIpIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,10 +163,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguishIpIncrement'])
     @DistinguishIpIncrement.setter
     def DistinguishIpIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguishIpIncrement'], value)
 
     @property
     def DistinguishNumberIncrementAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -155,10 +177,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistinguishNumberIncrementAs'])
     @DistinguishNumberIncrementAs.setter
     def DistinguishNumberIncrementAs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistinguishNumberIncrementAs'], value)
 
     @property
     def EnableBfdVccv(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -167,10 +191,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdVccv'])
     @EnableBfdVccv.setter
     def EnableBfdVccv(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdVccv'], value)
 
     @property
     def EnableCluster(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -179,10 +205,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCluster'])
     @EnableCluster.setter
     def EnableCluster(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCluster'], value)
 
     @property
     def EnableControlWord(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,10 +219,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableControlWord'])
     @EnableControlWord.setter
     def EnableControlWord(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableControlWord'], value)
 
     @property
     def EnableL2SiteAsTrafficEndpoint(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -203,10 +233,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableL2SiteAsTrafficEndpoint'])
     @EnableL2SiteAsTrafficEndpoint.setter
     def EnableL2SiteAsTrafficEndpoint(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableL2SiteAsTrafficEndpoint'], value)
 
     @property
     def EnableSequenceDelivery(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -215,10 +247,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSequenceDelivery'])
     @EnableSequenceDelivery.setter
     def EnableSequenceDelivery(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSequenceDelivery'], value)
 
     @property
     def EnableVccvPing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -227,10 +261,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVccvPing'])
     @EnableVccvPing.setter
     def EnableVccvPing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVccvPing'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -239,10 +275,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IsLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -252,6 +290,7 @@ class L2Site(Base):
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -260,10 +299,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def NoOfL2Site(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -272,10 +313,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfL2Site'])
     @NoOfL2Site.setter
     def NoOfL2Site(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfL2Site'], value)
 
     @property
     def RouteDistinguisherAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -284,10 +327,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherAs'])
     @RouteDistinguisherAs.setter
     def RouteDistinguisherAs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherAs'], value)
 
     @property
     def RouteDistinguisherAssignedNum(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -296,10 +341,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherAssignedNum'])
     @RouteDistinguisherAssignedNum.setter
     def RouteDistinguisherAssignedNum(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherAssignedNum'], value)
 
     @property
     def RouteDistinguisherIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -308,10 +355,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherIp'])
     @RouteDistinguisherIp.setter
     def RouteDistinguisherIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherIp'], value)
 
     @property
     def RouteDistinguisherType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -320,10 +369,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistinguisherType'])
     @RouteDistinguisherType.setter
     def RouteDistinguisherType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistinguisherType'], value)
 
     @property
     def RouteTargetAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -332,10 +383,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetAs'])
     @RouteTargetAs.setter
     def RouteTargetAs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetAs'], value)
 
     @property
     def RouteTargetAssignedNum(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -344,10 +397,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetAssignedNum'])
     @RouteTargetAssignedNum.setter
     def RouteTargetAssignedNum(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetAssignedNum'], value)
 
     @property
     def RouteTargetIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -356,10 +411,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetIp'])
     @RouteTargetIp.setter
     def RouteTargetIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetIp'], value)
 
     @property
     def RouteTargetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -368,10 +425,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTargetType'])
     @RouteTargetType.setter
     def RouteTargetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTargetType'], value)
 
     @property
     def SiteId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -380,10 +439,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SiteId'])
     @SiteId.setter
     def SiteId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SiteId'], value)
 
     @property
     def SiteIdIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -392,10 +453,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SiteIdIncrement'])
     @SiteIdIncrement.setter
     def SiteIdIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SiteIdIncrement'], value)
 
     @property
     def TargetAssignedNumberIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -404,10 +467,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetAssignedNumberIncrement'])
     @TargetAssignedNumberIncrement.setter
     def TargetAssignedNumberIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetAssignedNumberIncrement'], value)
 
     @property
     def TargetIncrementAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -416,10 +481,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetIncrementAs'])
     @TargetIncrementAs.setter
     def TargetIncrementAs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetIncrementAs'], value)
 
     @property
     def TargetIpIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -428,10 +495,12 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetIpIncrement'])
     @TargetIpIncrement.setter
     def TargetIpIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetIpIncrement'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -440,9 +509,11 @@ class L2Site(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, DistinguishAssignedIncrement=None, DistinguishIpIncrement=None, DistinguishNumberIncrementAs=None, EnableBfdVccv=None, EnableCluster=None, EnableControlWord=None, EnableL2SiteAsTrafficEndpoint=None, EnableSequenceDelivery=None, EnableVccvPing=None, Enabled=None, Mtu=None, NoOfL2Site=None, RouteDistinguisherAs=None, RouteDistinguisherAssignedNum=None, RouteDistinguisherIp=None, RouteDistinguisherType=None, RouteTargetAs=None, RouteTargetAssignedNum=None, RouteTargetIp=None, RouteTargetType=None, SiteId=None, SiteIdIncrement=None, TargetAssignedNumberIncrement=None, TargetIncrementAs=None, TargetIpIncrement=None, TrafficGroupId=None):
+        # type: (int, str, int, bool, bool, bool, bool, bool, bool, bool, int, int, int, int, str, str, int, int, str, str, int, int, int, int, str, str) -> L2Site
         """Updates l2Site resource on the server.
 
         Args
@@ -481,6 +552,7 @@ class L2Site(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DistinguishAssignedIncrement=None, DistinguishIpIncrement=None, DistinguishNumberIncrementAs=None, EnableBfdVccv=None, EnableCluster=None, EnableControlWord=None, EnableL2SiteAsTrafficEndpoint=None, EnableSequenceDelivery=None, EnableVccvPing=None, Enabled=None, Mtu=None, NoOfL2Site=None, RouteDistinguisherAs=None, RouteDistinguisherAssignedNum=None, RouteDistinguisherIp=None, RouteDistinguisherType=None, RouteTargetAs=None, RouteTargetAssignedNum=None, RouteTargetIp=None, RouteTargetType=None, SiteId=None, SiteIdIncrement=None, TargetAssignedNumberIncrement=None, TargetIncrementAs=None, TargetIpIncrement=None, TrafficGroupId=None):
+        # type: (int, str, int, bool, bool, bool, bool, bool, bool, bool, int, int, int, int, str, str, int, int, str, str, int, int, int, int, str, str) -> L2Site
         """Adds a new l2Site resource on the server and adds it to the container.
 
         Args
@@ -533,6 +605,7 @@ class L2Site(Base):
         self._delete()
 
     def find(self, DistinguishAssignedIncrement=None, DistinguishIpIncrement=None, DistinguishNumberIncrementAs=None, EnableBfdVccv=None, EnableCluster=None, EnableControlWord=None, EnableL2SiteAsTrafficEndpoint=None, EnableSequenceDelivery=None, EnableVccvPing=None, Enabled=None, IsLearnedInfoRefreshed=None, Mtu=None, NoOfL2Site=None, RouteDistinguisherAs=None, RouteDistinguisherAssignedNum=None, RouteDistinguisherIp=None, RouteDistinguisherType=None, RouteTargetAs=None, RouteTargetAssignedNum=None, RouteTargetIp=None, RouteTargetType=None, SiteId=None, SiteIdIncrement=None, TargetAssignedNumberIncrement=None, TargetIncrementAs=None, TargetIpIncrement=None, TrafficGroupId=None):
+        # type: (int, str, int, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, int, str, str, int, int, str, str, int, int, int, int, str, str) -> L2Site
         """Finds and retrieves l2Site resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l2Site resources from the server.
@@ -597,10 +670,16 @@ class L2Site(Base):
         """
         return self._read(href)
 
-    def RefreshLearnedInfo(self):
+    def RefreshLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedInfo operation on the server.
 
         This function argument allows to refreshe the BGP learned information from the DUT.
+
+        refreshLearnedInfo(async_operation=bool)bool
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -608,4 +687,6 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedInfo', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LinkTable(Base):
@@ -34,12 +35,15 @@ class LinkTable(Base):
         'FromNodeIndex': 'fromNodeIndex',
         'ToNodeIndex': 'toNodeIndex',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LinkTable, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LinkTable, self).__init__(parent, list_op)
 
     @property
     def FromNodeIndex(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -48,10 +52,12 @@ class LinkTable(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FromNodeIndex'])
     @FromNodeIndex.setter
     def FromNodeIndex(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['FromNodeIndex'], value)
 
     @property
     def ToNodeIndex(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -60,9 +66,11 @@ class LinkTable(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ToNodeIndex'])
     @ToNodeIndex.setter
     def ToNodeIndex(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ToNodeIndex'], value)
 
     def update(self, FromNodeIndex=None, ToNodeIndex=None):
+        # type: (List[str], List[str]) -> LinkTable
         """Updates linkTable resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bands(Base):
@@ -44,12 +45,15 @@ class Bands(Base):
         'PrecedenceLevel': 'precedenceLevel',
         'Rate': 'rate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Bands, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bands, self).__init__(parent, list_op)
 
     @property
     def BandDescription(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class Bands(Base):
 
     @property
     def BandType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -70,6 +75,7 @@ class Bands(Base):
 
     @property
     def BurstSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -80,6 +86,7 @@ class Bands(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +96,7 @@ class Bands(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class Bands(Base):
 
     @property
     def Experimenter(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class Bands(Base):
 
     @property
     def MeterIndex(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -117,6 +127,7 @@ class Bands(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +136,12 @@ class Bands(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,10 +150,12 @@ class Bands(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PrecedenceLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +166,7 @@ class Bands(Base):
 
     @property
     def Rate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +176,7 @@ class Bands(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Rate']))
 
     def update(self, Multiplier=None, Name=None):
+        # type: (int, str) -> Bands
         """Updates bands resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -176,7 +193,27 @@ class Bands(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Multiplier=None, Name=None):
+        # type: (int, str) -> Bands
+        """Adds a new bands resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Multiplier (number): Number of instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved bands resources using find and the newly added bands resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, MeterIndex=None, Multiplier=None, Name=None):
+        # type: (int, str, List[str], int, str) -> Bands
         """Finds and retrieves bands resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bands resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PccRequestedMetricSubObjectsList(Base):
@@ -42,12 +43,15 @@ class PccRequestedMetricSubObjectsList(Base):
         'Name': 'name',
         'PFlagMetric': 'pFlagMetric',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PccRequestedMetricSubObjectsList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PccRequestedMetricSubObjectsList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def EnableBflag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +93,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def EnableCflag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -96,6 +104,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def MetricType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def MetricValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -116,6 +126,7 @@ class PccRequestedMetricSubObjectsList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,10 +135,12 @@ class PccRequestedMetricSubObjectsList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PFlagMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +150,7 @@ class PccRequestedMetricSubObjectsList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PFlagMetric']))
 
     def update(self, Name=None):
+        # type: (str) -> PccRequestedMetricSubObjectsList
         """Updates pccRequestedMetricSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -152,7 +166,26 @@ class PccRequestedMetricSubObjectsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> PccRequestedMetricSubObjectsList
+        """Adds a new pccRequestedMetricSubObjectsList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pccRequestedMetricSubObjectsList resources using find and the newly added pccRequestedMetricSubObjectsList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> PccRequestedMetricSubObjectsList
         """Finds and retrieves pccRequestedMetricSubObjectsList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pccRequestedMetricSubObjectsList resources from the server.

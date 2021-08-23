@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RangeTe(Base):
@@ -40,12 +41,15 @@ class RangeTe(Base):
         'TeRouterIdIncrement': 'teRouterIdIncrement',
         'TeUnreservedBandWidth': 'teUnreservedBandWidth',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RangeTe, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RangeTe, self).__init__(parent, list_op)
 
     @property
     def EnableRangeTe(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRangeTe'])
     @EnableRangeTe.setter
     def EnableRangeTe(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRangeTe'], value)
 
     @property
     def TeAdmGroup(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeAdmGroup'])
     @TeAdmGroup.setter
     def TeAdmGroup(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeAdmGroup'], value)
 
     @property
     def TeLinkMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeLinkMetric'])
     @TeLinkMetric.setter
     def TeLinkMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeLinkMetric'], value)
 
     @property
     def TeMaxBandWidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +100,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeMaxBandWidth'])
     @TeMaxBandWidth.setter
     def TeMaxBandWidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeMaxBandWidth'], value)
 
     @property
     def TeMaxReserveBandWidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,10 +114,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeMaxReserveBandWidth'])
     @TeMaxReserveBandWidth.setter
     def TeMaxReserveBandWidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeMaxReserveBandWidth'], value)
 
     @property
     def TeRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,10 +128,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeRouterId'])
     @TeRouterId.setter
     def TeRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeRouterId'], value)
 
     @property
     def TeRouterIdIncrement(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,10 +142,12 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeRouterIdIncrement'])
     @TeRouterIdIncrement.setter
     def TeRouterIdIncrement(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeRouterIdIncrement'], value)
 
     @property
     def TeUnreservedBandWidth(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -138,9 +156,11 @@ class RangeTe(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeUnreservedBandWidth'])
     @TeUnreservedBandWidth.setter
     def TeUnreservedBandWidth(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeUnreservedBandWidth'], value)
 
     def update(self, EnableRangeTe=None, TeAdmGroup=None, TeLinkMetric=None, TeMaxBandWidth=None, TeMaxReserveBandWidth=None, TeRouterId=None, TeRouterIdIncrement=None, TeUnreservedBandWidth=None):
+        # type: (bool, str, int, str, str, str, str, List[str]) -> RangeTe
         """Updates rangeTe resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Router(Base):
@@ -51,9 +52,11 @@ class Router(Base):
         'RouterId': 'routerId',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Router, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Router, self).__init__(parent, list_op)
 
     @property
     def Interface(self):
@@ -67,7 +70,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_05b544e75dae141da1eeb5726765435f import Interface
-        return Interface(self)
+        if self._properties.get('Interface', None) is not None:
+            return self._properties.get('Interface')
+        else:
+            return Interface(self)
 
     @property
     def LearnedLsa(self):
@@ -81,7 +87,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedlsa_5a5a3bb7d08624879255d8188cb002d8 import LearnedLsa
-        return LearnedLsa(self)
+        if self._properties.get('LearnedLsa', None) is not None:
+            return self._properties.get('LearnedLsa')
+        else:
+            return LearnedLsa(self)
 
     @property
     def NetworkRange(self):
@@ -95,7 +104,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_5d63b4cd2c8ae562232173bdbadc81d3 import NetworkRange
-        return NetworkRange(self)
+        if self._properties.get('NetworkRange', None) is not None:
+            return self._properties.get('NetworkRange')
+        else:
+            return NetworkRange(self)
 
     @property
     def RouteRange(self):
@@ -109,7 +121,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_2723793fa0b18ac84ab4fdc31f738a00 import RouteRange
-        return RouteRange(self)
+        if self._properties.get('RouteRange', None) is not None:
+            return self._properties.get('RouteRange')
+        else:
+            return RouteRange(self)
 
     @property
     def UserLsaGroup(self):
@@ -123,10 +138,14 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsagroup_1240248adae59823c47663d14e20498e import UserLsaGroup
-        return UserLsaGroup(self)
+        if self._properties.get('UserLsaGroup', None) is not None:
+            return self._properties.get('UserLsaGroup')
+        else:
+            return UserLsaGroup(self)
 
     @property
     def DisableAutoGenerateLinkLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -135,10 +154,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisableAutoGenerateLinkLsa'])
     @DisableAutoGenerateLinkLsa.setter
     def DisableAutoGenerateLinkLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisableAutoGenerateLinkLsa'], value)
 
     @property
     def DisableAutoGenerateRouterLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -147,10 +168,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisableAutoGenerateRouterLsa'])
     @DisableAutoGenerateRouterLsa.setter
     def DisableAutoGenerateRouterLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisableAutoGenerateRouterLsa'], value)
 
     @property
     def DiscardLearnedLsa(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -159,10 +182,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DiscardLearnedLsa'])
     @DiscardLearnedLsa.setter
     def DiscardLearnedLsa(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DiscardLearnedLsa'], value)
 
     @property
     def EnableGracefulRestartHelperMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -171,10 +196,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestartHelperMode'])
     @EnableGracefulRestartHelperMode.setter
     def EnableGracefulRestartHelperMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGracefulRestartHelperMode'], value)
 
     @property
     def EnableStrictLsaChecking(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -183,10 +210,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStrictLsaChecking'])
     @EnableStrictLsaChecking.setter
     def EnableStrictLsaChecking(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStrictLsaChecking'], value)
 
     @property
     def EnableSupportReasonSwReloadOrUpgrade(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -195,10 +224,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSupportReasonSwReloadOrUpgrade'])
     @EnableSupportReasonSwReloadOrUpgrade.setter
     def EnableSupportReasonSwReloadOrUpgrade(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSupportReasonSwReloadOrUpgrade'], value)
 
     @property
     def EnableSupportReasonSwRestart(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -207,10 +238,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSupportReasonSwRestart'])
     @EnableSupportReasonSwRestart.setter
     def EnableSupportReasonSwRestart(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSupportReasonSwRestart'], value)
 
     @property
     def EnableSupportReasonSwitchToRedundantControlProcessor(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -219,10 +252,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSupportReasonSwitchToRedundantControlProcessor'])
     @EnableSupportReasonSwitchToRedundantControlProcessor.setter
     def EnableSupportReasonSwitchToRedundantControlProcessor(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSupportReasonSwitchToRedundantControlProcessor'], value)
 
     @property
     def EnableSupportReasonUnknown(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -231,10 +266,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSupportReasonUnknown'])
     @EnableSupportReasonUnknown.setter
     def EnableSupportReasonUnknown(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSupportReasonUnknown'], value)
 
     @property
     def EnableSupportRfc5838(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -243,10 +280,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSupportRfc5838'])
     @EnableSupportRfc5838.setter
     def EnableSupportRfc5838(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSupportRfc5838'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -255,10 +294,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IsLearnedLsaRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -268,6 +309,7 @@ class Router(Base):
 
     @property
     def LsaRefreshTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +318,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LsaRefreshTime'])
     @LsaRefreshTime.setter
     def LsaRefreshTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LsaRefreshTime'], value)
 
     @property
     def LsaRetransmitTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,10 +332,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LsaRetransmitTime'])
     @LsaRetransmitTime.setter
     def LsaRetransmitTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LsaRetransmitTime'], value)
 
     @property
     def MaxNumLsaPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,10 +346,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxNumLsaPerSecond'])
     @MaxNumLsaPerSecond.setter
     def MaxNumLsaPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxNumLsaPerSecond'], value)
 
     @property
     def RouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +360,12 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouterId'])
     @RouterId.setter
     def RouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouterId'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -324,9 +374,11 @@ class Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadOrUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, EnableSupportRfc5838=None, Enabled=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxNumLsaPerSecond=None, RouterId=None, TrafficGroupId=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str) -> Router
         """Updates router resource on the server.
 
         Args
@@ -355,6 +407,7 @@ class Router(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadOrUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, EnableSupportRfc5838=None, Enabled=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxNumLsaPerSecond=None, RouterId=None, TrafficGroupId=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str) -> Router
         """Adds a new router resource on the server and adds it to the container.
 
         Args
@@ -397,6 +450,7 @@ class Router(Base):
         self._delete()
 
     def find(self, DisableAutoGenerateLinkLsa=None, DisableAutoGenerateRouterLsa=None, DiscardLearnedLsa=None, EnableGracefulRestartHelperMode=None, EnableStrictLsaChecking=None, EnableSupportReasonSwReloadOrUpgrade=None, EnableSupportReasonSwRestart=None, EnableSupportReasonSwitchToRedundantControlProcessor=None, EnableSupportReasonUnknown=None, EnableSupportRfc5838=None, Enabled=None, IsLearnedLsaRefreshed=None, LsaRefreshTime=None, LsaRetransmitTime=None, MaxNumLsaPerSecond=None, RouterId=None, TrafficGroupId=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, str) -> Router
         """Finds and retrieves router resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve router resources from the server.
@@ -452,17 +506,24 @@ class Router(Base):
         return self._read(href)
 
     def GracefulRouterRestart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the gracefulRouterRestart operation on the server.
 
         NOT DEFINED
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        gracefulRouterRestart(Arg2=number, Arg3=enum, Arg4=number)string
-        ----------------------------------------------------------------
+        gracefulRouterRestart(async_operation=bool)string
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
+
+        gracefulRouterRestart(Arg2=number, Arg3=enum, Arg4=number, async_operation=bool)string
+        --------------------------------------------------------------------------------------
         - Arg2 (number): NOT DEFINED
         - Arg3 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): NOT DEFINED
         - Arg4 (number): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: NOT DEFINED
 
         Raises
@@ -475,10 +536,16 @@ class Router(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('gracefulRouterRestart', payload=payload, response_object=None)
 
-    def RefreshLearnedLsa(self):
+    def RefreshLearnedLsa(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshLearnedLsa operation on the server.
 
         This exec refreshes the learned OSPFv3 LSA from the DUT.
+
+        refreshLearnedLsa(async_operation=bool)bool
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -486,4 +553,6 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshLearnedLsa', payload=payload, response_object=None)

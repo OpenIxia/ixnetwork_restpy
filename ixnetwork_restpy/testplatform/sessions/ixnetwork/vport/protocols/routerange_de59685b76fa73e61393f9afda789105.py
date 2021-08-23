@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RouteRange(Base):
@@ -55,12 +56,18 @@ class RouteRange(Base):
         'Source': 'source',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'flag': ['externalRoute', 'candidateDefault'],
+        'protocolId': ['igrp', 'enhancedIgrp', 'static', 'rip', 'hello', 'ospf', 'isis', 'egp', 'bgp', 'idrp', 'connected'],
+        'type': ['external', 'internal'],
+    }
 
-    def __init__(self, parent):
-        super(RouteRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RouteRange, self).__init__(parent, list_op)
 
     @property
     def Bandwidth(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,10 +76,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
     @Bandwidth.setter
     def Bandwidth(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
 
     @property
     def Delay(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +90,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Delay'])
     @Delay.setter
     def Delay(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Delay'], value)
 
     @property
     def DestCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +104,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestCount'])
     @DestCount.setter
     def DestCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestCount'], value)
 
     @property
     def EnablePacking(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +118,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePacking'])
     @EnablePacking.setter
     def EnablePacking(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePacking'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -117,10 +132,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstRoute(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,10 +146,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstRoute'])
     @FirstRoute.setter
     def FirstRoute(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstRoute'], value)
 
     @property
     def Flag(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,10 +160,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Flag'])
     @Flag.setter
     def Flag(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Flag'], value)
 
     @property
     def HopCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,10 +174,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HopCount'])
     @HopCount.setter
     def HopCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HopCount'], value)
 
     @property
     def Load(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -165,10 +188,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Load'])
     @Load.setter
     def Load(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Load'], value)
 
     @property
     def Mask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -177,10 +202,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mask'])
     @Mask.setter
     def Mask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mask'], value)
 
     @property
     def Metric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,10 +216,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metric'])
     @Metric.setter
     def Metric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metric'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -201,10 +230,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -213,10 +244,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
     @NextHop.setter
     def NextHop(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
 
     @property
     def NomberOfRoutes(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -225,10 +258,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NomberOfRoutes'])
     @NomberOfRoutes.setter
     def NomberOfRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NomberOfRoutes'], value)
 
     @property
     def NumberOfRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -237,10 +272,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
 
     @property
     def OriginatingAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -249,10 +286,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OriginatingAs'])
     @OriginatingAs.setter
     def OriginatingAs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['OriginatingAs'], value)
 
     @property
     def ProtocolId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -261,10 +300,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolId'])
     @ProtocolId.setter
     def ProtocolId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolId'], value)
 
     @property
     def Reliability(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -273,10 +314,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Reliability'])
     @Reliability.setter
     def Reliability(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Reliability'], value)
 
     @property
     def RouteTag(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -285,10 +328,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteTag'])
     @RouteTag.setter
     def RouteTag(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteTag'], value)
 
     @property
     def Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -297,10 +342,12 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Source'])
     @Source.setter
     def Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Source'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -309,9 +356,11 @@ class RouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+        # type: (int, int, int, bool, bool, str, str, int, int, int, int, int, str, int, int, int, str, int, int, str, str) -> RouteRange
         """Updates routeRange resource on the server.
 
         Args
@@ -345,6 +394,7 @@ class RouteRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+        # type: (int, int, int, bool, bool, str, str, int, int, int, int, int, str, int, int, int, str, int, int, str, str) -> RouteRange
         """Adds a new routeRange resource on the server and adds it to the container.
 
         Args
@@ -392,6 +442,7 @@ class RouteRange(Base):
         self._delete()
 
     def find(self, Bandwidth=None, Delay=None, DestCount=None, EnablePacking=None, Enabled=None, FirstRoute=None, Flag=None, HopCount=None, Load=None, Mask=None, Metric=None, Mtu=None, NextHop=None, NomberOfRoutes=None, NumberOfRoutes=None, OriginatingAs=None, ProtocolId=None, Reliability=None, RouteTag=None, Source=None, Type=None):
+        # type: (int, int, int, bool, bool, str, str, int, int, int, int, int, str, int, int, int, str, int, int, str, str) -> RouteRange
         """Finds and retrieves routeRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve routeRange resources from the server.

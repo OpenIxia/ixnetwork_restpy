@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Tracking(Base):
@@ -42,12 +43,16 @@ class Tracking(Base):
         'TrackBy': 'trackBy',
         'Values': 'values',
     }
+    _SDM_ENUM_MAP = {
+        'fieldWidth': ['eightBits', 'sixteenBits', 'thirtyTwoBits', 'twentyFourBits'],
+    }
 
-    def __init__(self, parent):
-        super(Tracking, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Tracking, self).__init__(parent, list_op)
 
     @property
     def AvailableProtocolOffsets(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -57,6 +62,7 @@ class Tracking(Base):
 
     @property
     def AvailableTrackBy(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -75,6 +81,7 @@ class Tracking(Base):
 
     @property
     def FieldWidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +90,12 @@ class Tracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FieldWidth'])
     @FieldWidth.setter
     def FieldWidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FieldWidth'], value)
 
     @property
     def Offset(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +104,12 @@ class Tracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     @property
     def OneToOneMesh(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +118,12 @@ class Tracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OneToOneMesh'])
     @OneToOneMesh.setter
     def OneToOneMesh(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OneToOneMesh'], value)
 
     @property
     def ProtocolOffset(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,10 +132,12 @@ class Tracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolOffset'])
     @ProtocolOffset.setter
     def ProtocolOffset(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolOffset'], value)
 
     @property
     def TrackBy(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -131,10 +146,12 @@ class Tracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrackBy'])
     @TrackBy.setter
     def TrackBy(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrackBy'], value)
 
     @property
     def Values(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -143,9 +160,11 @@ class Tracking(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
+        # type: (str, int, bool, str, List[str], List[str]) -> Tracking
         """Updates tracking resource on the server.
 
         Args
@@ -162,6 +181,29 @@ class Tracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
+        # type: (str, int, bool, str, List[str], List[str]) -> Tracking
+        """Adds a new tracking resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - FieldWidth (str(eightBits | sixteenBits | thirtyTwoBits | twentyFourBits)): Specifies the Field Width when the flows of a Traffic Item are tracked by Custom Override.
+        - Offset (number): Specifies the Offset when the Flows of a Traffic Item are tracked by Custom Override.
+        - OneToOneMesh (bool): If true, one-one mesh is enabled when flows of a traffic item are tracked by Custom Override.
+        - ProtocolOffset (str): Specifies the Protocol Offset when flows of a Traffic Item are tracked by Custom Override.
+        - TrackBy (list(str)): Specifies the tracking option by which the Flows of a Traffic Item are tracked.
+        - Values (list(str)): Specifies the Values when the Flows of a Traffic Item are tracked by Custom Override.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tracking resources using find and the newly added tracking resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, AvailableProtocolOffsets=None, AvailableTrackBy=None, AvailableTrackByInfos=None, FieldWidth=None, Offset=None, OneToOneMesh=None, ProtocolOffset=None, TrackBy=None, Values=None):
         """Finds and retrieves tracking resources from the server.

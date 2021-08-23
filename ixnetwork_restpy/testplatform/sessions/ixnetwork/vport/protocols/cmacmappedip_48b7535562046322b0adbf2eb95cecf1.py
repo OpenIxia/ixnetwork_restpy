@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CMacMappedIp(Base):
@@ -38,12 +39,16 @@ class CMacMappedIp(Base):
         'IpStep': 'ipStep',
         'IpType': 'ipType',
     }
+    _SDM_ENUM_MAP = {
+        'ipType': ['ipv4', 'ipv6'],
+    }
 
-    def __init__(self, parent):
-        super(CMacMappedIp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CMacMappedIp, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,10 +57,12 @@ class CMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,10 +71,12 @@ class CMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddress'])
     @IpAddress.setter
     def IpAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddress'], value)
 
     @property
     def IpStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class CMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpStep'])
     @IpStep.setter
     def IpStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpStep'], value)
 
     @property
     def IpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,9 +99,11 @@ class CMacMappedIp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpType'])
     @IpType.setter
     def IpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpType'], value)
 
     def update(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
+        # type: (bool, str, int, str) -> CMacMappedIp
         """Updates cMacMappedIp resource on the server.
 
         Args
@@ -107,6 +120,7 @@ class CMacMappedIp(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
+        # type: (bool, str, int, str) -> CMacMappedIp
         """Adds a new cMacMappedIp resource on the server and adds it to the container.
 
         Args
@@ -137,6 +151,7 @@ class CMacMappedIp(Base):
         self._delete()
 
     def find(self, Enabled=None, IpAddress=None, IpStep=None, IpType=None):
+        # type: (bool, str, int, str) -> CMacMappedIp
         """Finds and retrieves cMacMappedIp resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cMacMappedIp resources from the server.

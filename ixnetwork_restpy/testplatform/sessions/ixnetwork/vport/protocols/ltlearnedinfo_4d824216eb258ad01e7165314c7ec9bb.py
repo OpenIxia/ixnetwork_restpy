@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LtLearnedInfo(Base):
@@ -42,9 +43,11 @@ class LtLearnedInfo(Base):
         'SrcMacAddress': 'srcMacAddress',
         'TransactionId': 'transactionId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LtLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LtLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def LtLearnedHop(self):
@@ -58,10 +61,14 @@ class LtLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_48a0b09aae21f8233100d05d7dae419e import LtLearnedHop
-        return LtLearnedHop(self)
+        if self._properties.get('LtLearnedHop', None) is not None:
+            return self._properties.get('LtLearnedHop')
+        else:
+            return LtLearnedHop(self)
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -71,6 +78,7 @@ class LtLearnedInfo(Base):
 
     @property
     def DstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,6 +88,7 @@ class LtLearnedInfo(Base):
 
     @property
     def HopCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +98,7 @@ class LtLearnedInfo(Base):
 
     @property
     def Hops(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,6 +108,7 @@ class LtLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,6 +118,7 @@ class LtLearnedInfo(Base):
 
     @property
     def ReplyStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,6 +128,7 @@ class LtLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +138,7 @@ class LtLearnedInfo(Base):
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,6 +148,7 @@ class LtLearnedInfo(Base):
 
     @property
     def TransactionId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,7 +156,21 @@ class LtLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
 
+    def add(self):
+        """Adds a new ltLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ltLearnedInfo resources using find and the newly added ltLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CVlan=None, DstMacAddress=None, HopCount=None, Hops=None, MdLevel=None, ReplyStatus=None, SVlan=None, SrcMacAddress=None, TransactionId=None):
+        # type: (str, str, int, str, int, str, str, str, int) -> LtLearnedInfo
         """Finds and retrieves ltLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ltLearnedInfo resources from the server.

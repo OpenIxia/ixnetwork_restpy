@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -45,9 +46,12 @@ class Interface(Base):
         'PortNo': 'portNo',
         'Pvid': 'pvid',
     }
+    _SDM_ENUM_MAP = {
+        'linkType': ['pointToPoint', 'shared'],
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -61,10 +65,14 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_565f2a84b28ad9f6bdf139bde78d79ea import LearnedInfo
-        return LearnedInfo(self)._select()
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)._select()
 
     @property
     def AutoPick(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,10 +81,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoPick'])
     @AutoPick.setter
     def AutoPick(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoPick'], value)
 
     @property
     def BdpuGap(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,10 +95,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BdpuGap'])
     @BdpuGap.setter
     def BdpuGap(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BdpuGap'], value)
 
     @property
     def Cost(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,10 +109,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Cost'])
     @Cost.setter
     def Cost(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Cost'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -109,10 +123,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def InterfaceId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,10 +137,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceId'])
     @InterfaceId.setter
     def InterfaceId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceId'], value)
 
     @property
     def JitterEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -133,10 +151,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JitterEnabled'])
     @JitterEnabled.setter
     def JitterEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['JitterEnabled'], value)
 
     @property
     def JitterPercentage(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -145,10 +165,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['JitterPercentage'])
     @JitterPercentage.setter
     def JitterPercentage(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['JitterPercentage'], value)
 
     @property
     def LinkType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,10 +179,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkType'])
     @LinkType.setter
     def LinkType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkType'], value)
 
     @property
     def MstiOrVlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,10 +193,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MstiOrVlanId'])
     @MstiOrVlanId.setter
     def MstiOrVlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MstiOrVlanId'], value)
 
     @property
     def PortNo(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,10 +207,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortNo'])
     @PortNo.setter
     def PortNo(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortNo'], value)
 
     @property
     def Pvid(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -193,9 +221,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Pvid'])
     @Pvid.setter
     def Pvid(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Pvid'], value)
 
     def update(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+        # type: (bool, int, int, bool, str, bool, int, str, str, int, int) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -219,6 +249,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+        # type: (bool, int, int, bool, str, bool, int, str, str, int, int) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -256,6 +287,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, AutoPick=None, BdpuGap=None, Cost=None, Enabled=None, InterfaceId=None, JitterEnabled=None, JitterPercentage=None, LinkType=None, MstiOrVlanId=None, PortNo=None, Pvid=None):
+        # type: (bool, int, int, bool, str, bool, int, str, str, int, int) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.
@@ -304,10 +336,16 @@ class Interface(Base):
         """
         return self._read(href)
 
-    def UpdateParameters(self):
+    def UpdateParameters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateParameters operation on the server.
 
         Updates the current STP bridge interface parameters.
+
+        updateParameters(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -315,4 +353,6 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('updateParameters', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ldp(Base):
@@ -47,9 +48,12 @@ class Ldp(Base):
         'TargetedHoldTime': 'targetedHoldTime',
         'UseTransportLabelsForMplsOam': 'useTransportLabelsForMplsOam',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Ldp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ldp, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -63,10 +67,14 @@ class Ldp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_94a4088a967c8e82566ebb7145e052d9 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def EnableDiscardSelfAdvFecs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +83,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDiscardSelfAdvFecs'])
     @EnableDiscardSelfAdvFecs.setter
     def EnableDiscardSelfAdvFecs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDiscardSelfAdvFecs'], value)
 
     @property
     def EnableHelloJitter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHelloJitter'])
     @EnableHelloJitter.setter
     def EnableHelloJitter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHelloJitter'], value)
 
     @property
     def EnableLabelExchangeOverLsp(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -99,10 +111,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLabelExchangeOverLsp'])
     @EnableLabelExchangeOverLsp.setter
     def EnableLabelExchangeOverLsp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLabelExchangeOverLsp'], value)
 
     @property
     def EnableVpnLabelExchangeOverLsp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,10 +125,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'])
     @EnableVpnLabelExchangeOverLsp.setter
     def EnableVpnLabelExchangeOverLsp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVpnLabelExchangeOverLsp'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +139,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def HelloHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,10 +153,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloHoldTime'])
     @HelloHoldTime.setter
     def HelloHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloHoldTime'], value)
 
     @property
     def HelloInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -147,10 +167,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
     @HelloInterval.setter
     def HelloInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
 
     @property
     def KeepAliveHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -159,10 +181,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KeepAliveHoldTime'])
     @KeepAliveHoldTime.setter
     def KeepAliveHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['KeepAliveHoldTime'], value)
 
     @property
     def KeepAliveInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,10 +195,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['KeepAliveInterval'])
     @KeepAliveInterval.setter
     def KeepAliveInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['KeepAliveInterval'], value)
 
     @property
     def P2mpCapabilityParam(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -183,10 +209,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['P2mpCapabilityParam'])
     @P2mpCapabilityParam.setter
     def P2mpCapabilityParam(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['P2mpCapabilityParam'], value)
 
     @property
     def P2mpFecType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -195,10 +223,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['P2mpFecType'])
     @P2mpFecType.setter
     def P2mpFecType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['P2mpFecType'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -208,6 +238,7 @@ class Ldp(Base):
 
     @property
     def TargetedHelloInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -216,10 +247,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetedHelloInterval'])
     @TargetedHelloInterval.setter
     def TargetedHelloInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetedHelloInterval'], value)
 
     @property
     def TargetedHoldTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -228,10 +261,12 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TargetedHoldTime'])
     @TargetedHoldTime.setter
     def TargetedHoldTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TargetedHoldTime'], value)
 
     @property
     def UseTransportLabelsForMplsOam(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -240,9 +275,11 @@ class Ldp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseTransportLabelsForMplsOam'])
     @UseTransportLabelsForMplsOam.setter
     def UseTransportLabelsForMplsOam(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseTransportLabelsForMplsOam'], value)
 
     def update(self, EnableDiscardSelfAdvFecs=None, EnableHelloJitter=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, HelloHoldTime=None, HelloInterval=None, KeepAliveHoldTime=None, KeepAliveInterval=None, P2mpCapabilityParam=None, P2mpFecType=None, TargetedHelloInterval=None, TargetedHoldTime=None, UseTransportLabelsForMplsOam=None):
+        # type: (bool, bool, bool, bool, bool, int, int, int, int, int, int, int, int, bool) -> Ldp
         """Updates ldp resource on the server.
 
         Args
@@ -268,28 +305,42 @@ class Ldp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the LDP protocol on a port or group of ports.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the LDP protocol on a port of group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

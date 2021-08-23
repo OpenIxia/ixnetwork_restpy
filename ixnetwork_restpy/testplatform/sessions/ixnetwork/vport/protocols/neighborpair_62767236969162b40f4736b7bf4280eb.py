@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NeighborPair(Base):
@@ -58,9 +59,11 @@ class NeighborPair(Base):
         'SummaryRefreshInterval': 'summaryRefreshInterval',
         'TrafficGroupId': 'trafficGroupId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NeighborPair, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NeighborPair, self).__init__(parent, list_op)
 
     @property
     def AssignedLabel(self):
@@ -74,7 +77,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assignedlabel_1ca73f384f23326da21a0d9e6590f861 import AssignedLabel
-        return AssignedLabel(self)
+        if self._properties.get('AssignedLabel', None) is not None:
+            return self._properties.get('AssignedLabel')
+        else:
+            return AssignedLabel(self)
 
     @property
     def DestinationRange(self):
@@ -88,7 +94,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.destinationrange_9b313479dda95958405e4134c28a030e import DestinationRange
-        return DestinationRange(self)
+        if self._properties.get('DestinationRange', None) is not None:
+            return self._properties.get('DestinationRange')
+        else:
+            return DestinationRange(self)
 
     @property
     def ReceivedLabel(self):
@@ -102,10 +111,14 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.receivedlabel_66d892ad12fd2388f95e64d763d34ee0 import ReceivedLabel
-        return ReceivedLabel(self)
+        if self._properties.get('ReceivedLabel', None) is not None:
+            return self._properties.get('ReceivedLabel')
+        else:
+            return ReceivedLabel(self)
 
     @property
     def ActualRestartTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -114,10 +127,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ActualRestartTime'])
     @ActualRestartTime.setter
     def ActualRestartTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ActualRestartTime'], value)
 
     @property
     def DutIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,10 +141,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DutIp'])
     @DutIp.setter
     def DutIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DutIp'], value)
 
     @property
     def EnableBfdRegistration(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,10 +155,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'])
     @EnableBfdRegistration.setter
     def EnableBfdRegistration(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdRegistration'], value)
 
     @property
     def EnableBundleMessageSending(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -150,10 +169,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBundleMessageSending'])
     @EnableBundleMessageSending.setter
     def EnableBundleMessageSending(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBundleMessageSending'], value)
 
     @property
     def EnableGracefulRestartHelperMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -162,10 +183,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestartHelperMode'])
     @EnableGracefulRestartHelperMode.setter
     def EnableGracefulRestartHelperMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGracefulRestartHelperMode'], value)
 
     @property
     def EnableGracefulRestartingMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -174,10 +197,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableGracefulRestartingMode'])
     @EnableGracefulRestartingMode.setter
     def EnableGracefulRestartingMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableGracefulRestartingMode'], value)
 
     @property
     def EnableHello(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -186,10 +211,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHello'])
     @EnableHello.setter
     def EnableHello(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHello'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -198,10 +225,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GracefulRestartStartTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -210,10 +239,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GracefulRestartStartTime'])
     @GracefulRestartStartTime.setter
     def GracefulRestartStartTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GracefulRestartStartTime'], value)
 
     @property
     def GracefulRestartUpTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -222,10 +253,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GracefulRestartUpTime'])
     @GracefulRestartUpTime.setter
     def GracefulRestartUpTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GracefulRestartUpTime'], value)
 
     @property
     def HelloInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -234,10 +267,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloInterval'])
     @HelloInterval.setter
     def HelloInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloInterval'], value)
 
     @property
     def HelloTimeoutMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -246,6 +281,7 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HelloTimeoutMultiplier'])
     @HelloTimeoutMultiplier.setter
     def HelloTimeoutMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HelloTimeoutMultiplier'], value)
 
     @property
@@ -262,6 +298,7 @@ class NeighborPair(Base):
 
     @property
     def IsAssignedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -271,6 +308,7 @@ class NeighborPair(Base):
 
     @property
     def IsLearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -280,6 +318,7 @@ class NeighborPair(Base):
 
     @property
     def LabelSpaceEnd(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -288,10 +327,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceEnd'])
     @LabelSpaceEnd.setter
     def LabelSpaceEnd(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelSpaceEnd'], value)
 
     @property
     def LabelSpaceStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -300,10 +341,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelSpaceStart'])
     @LabelSpaceStart.setter
     def LabelSpaceStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelSpaceStart'], value)
 
     @property
     def NumberOfGracefulRestarts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -312,10 +355,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfGracefulRestarts'])
     @NumberOfGracefulRestarts.setter
     def NumberOfGracefulRestarts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfGracefulRestarts'], value)
 
     @property
     def OurIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -324,10 +369,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OurIp'])
     @OurIp.setter
     def OurIp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OurIp'], value)
 
     @property
     def RecoveryTimeInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -336,10 +383,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RecoveryTimeInterval'])
     @RecoveryTimeInterval.setter
     def RecoveryTimeInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RecoveryTimeInterval'], value)
 
     @property
     def RefreshReduction(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -348,10 +397,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefreshReduction'])
     @RefreshReduction.setter
     def RefreshReduction(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefreshReduction'], value)
 
     @property
     def RestartTimeInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -360,10 +411,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RestartTimeInterval'])
     @RestartTimeInterval.setter
     def RestartTimeInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RestartTimeInterval'], value)
 
     @property
     def SummaryRefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -372,10 +425,12 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SummaryRefreshInterval'])
     @SummaryRefreshInterval.setter
     def SummaryRefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SummaryRefreshInterval'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -384,6 +439,7 @@ class NeighborPair(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     def update(self, ActualRestartTime=None, DutIp=None, EnableBfdRegistration=None, EnableBundleMessageSending=None, EnableGracefulRestartHelperMode=None, EnableGracefulRestartingMode=None, EnableHello=None, Enabled=None, GracefulRestartStartTime=None, GracefulRestartUpTime=None, HelloInterval=None, HelloTimeoutMultiplier=None, HelloTlvs=None, LabelSpaceEnd=None, LabelSpaceStart=None, NumberOfGracefulRestarts=None, OurIp=None, RecoveryTimeInterval=None, RefreshReduction=None, RestartTimeInterval=None, SummaryRefreshInterval=None, TrafficGroupId=None):
@@ -530,41 +586,65 @@ class NeighborPair(Base):
         """
         return self._read(href)
 
-    def RefreshAssignedLabelInfo(self):
+    def RefreshAssignedLabelInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshAssignedLabelInfo operation on the server.
 
         This exec refreshes the RSVP assigned label information from the DUT.
 
+        refreshAssignedLabelInfo(async_operation=bool)bool
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshAssignedLabelInfo', payload=payload, response_object=None)
 
-    def RefreshReceivedLabelInfo(self):
+    def RefreshReceivedLabelInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the refreshReceivedLabelInfo operation on the server.
 
         This exec refreshes the RSVP received label information from the DUT.
 
+        refreshReceivedLabelInfo(async_operation=bool)bool
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshReceivedLabelInfo', payload=payload, response_object=None)
 
-    def RestartNeighbor(self):
+    def RestartNeighbor(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the restartNeighbor operation on the server.
 
         This command restarts the specifed RSVP neighbor.
 
+        restartNeighbor(async_operation=bool)bool
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('restartNeighbor', payload=payload, response_object=None)

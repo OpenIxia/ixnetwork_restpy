@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LmLearnedInfo(Base):
@@ -42,12 +43,15 @@ class LmLearnedInfo(Base):
         'OutgoingLabelOuterInner': 'outgoingLabelOuterInner',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LmLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LmLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def IncomingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,6 +61,7 @@ class LmLearnedInfo(Base):
 
     @property
     def LastLmResponseDutRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,6 +71,7 @@ class LmLearnedInfo(Base):
 
     @property
     def LastLmResponseDutTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -75,6 +81,7 @@ class LmLearnedInfo(Base):
 
     @property
     def LastLmResponseMyTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,6 +91,7 @@ class LmLearnedInfo(Base):
 
     @property
     def LmQueriesSent(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +101,7 @@ class LmLearnedInfo(Base):
 
     @property
     def LmRemoteUsing64Bit(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,6 +111,7 @@ class LmLearnedInfo(Base):
 
     @property
     def LmResponsesReceived(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +121,7 @@ class LmLearnedInfo(Base):
 
     @property
     def OutgoingLabelOuterInner(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,6 +131,7 @@ class LmLearnedInfo(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,7 +139,21 @@ class LmLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new lmLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved lmLearnedInfo resources using find and the newly added lmLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, IncomingLabelOuterInner=None, LastLmResponseDutRx=None, LastLmResponseDutTx=None, LastLmResponseMyTx=None, LmQueriesSent=None, LmRemoteUsing64Bit=None, LmResponsesReceived=None, OutgoingLabelOuterInner=None, Type=None):
+        # type: (str, int, int, int, int, bool, int, str, str) -> LmLearnedInfo
         """Finds and retrieves lmLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lmLearnedInfo resources from the server.

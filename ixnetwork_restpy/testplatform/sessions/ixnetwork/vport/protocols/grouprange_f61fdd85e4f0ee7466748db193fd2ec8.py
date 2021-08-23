@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class GroupRange(Base):
@@ -43,9 +44,12 @@ class GroupRange(Base):
         'SourceMode': 'sourceMode',
         'SourcesPerRecord': 'sourcesPerRecord',
     }
+    _SDM_ENUM_MAP = {
+        'sourceMode': ['include', 'exclude'],
+    }
 
-    def __init__(self, parent):
-        super(GroupRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(GroupRange, self).__init__(parent, list_op)
 
     @property
     def SourceRange(self):
@@ -59,10 +63,14 @@ class GroupRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.sourcerange_bfb4946333e992c2007f92349bd0076c import SourceRange
-        return SourceRange(self)
+        if self._properties.get('SourceRange', None) is not None:
+            return self._properties.get('SourceRange')
+        else:
+            return SourceRange(self)
 
     @property
     def EnablePacking(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +79,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePacking'])
     @EnablePacking.setter
     def EnablePacking(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePacking'], value)
 
     @property
     def EnableUpdateRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,10 +93,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableUpdateRequired'])
     @EnableUpdateRequired.setter
     def EnableUpdateRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableUpdateRequired'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -95,10 +107,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def GroupCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +121,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupCount'])
     @GroupCount.setter
     def GroupCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupCount'], value)
 
     @property
     def GroupIpFrom(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,10 +135,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['GroupIpFrom'])
     @GroupIpFrom.setter
     def GroupIpFrom(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['GroupIpFrom'], value)
 
     @property
     def IncrementStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,10 +149,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
     @IncrementStep.setter
     def IncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
 
     @property
     def RecordsPerFrame(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -143,10 +163,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RecordsPerFrame'])
     @RecordsPerFrame.setter
     def RecordsPerFrame(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RecordsPerFrame'], value)
 
     @property
     def SourceMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -155,10 +177,12 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceMode'])
     @SourceMode.setter
     def SourceMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceMode'], value)
 
     @property
     def SourcesPerRecord(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,9 +191,11 @@ class GroupRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourcesPerRecord'])
     @SourcesPerRecord.setter
     def SourcesPerRecord(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourcesPerRecord'], value)
 
     def update(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
+        # type: (bool, bool, bool, int, str, int, int, str, int) -> GroupRange
         """Updates groupRange resource on the server.
 
         Args
@@ -191,6 +217,7 @@ class GroupRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
+        # type: (bool, bool, bool, int, str, int, int, str, int) -> GroupRange
         """Adds a new groupRange resource on the server and adds it to the container.
 
         Args
@@ -226,6 +253,7 @@ class GroupRange(Base):
         self._delete()
 
     def find(self, EnablePacking=None, EnableUpdateRequired=None, Enabled=None, GroupCount=None, GroupIpFrom=None, IncrementStep=None, RecordsPerFrame=None, SourceMode=None, SourcesPerRecord=None):
+        # type: (bool, bool, bool, int, str, int, int, str, int) -> GroupRange
         """Finds and retrieves groupRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groupRange resources from the server.
@@ -272,10 +300,16 @@ class GroupRange(Base):
         """
         return self._read(href)
 
-    def UpdateSource(self):
+    def UpdateSource(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateSource operation on the server.
 
         Updates the source information for the group host for MLD.
+
+        updateSource(async_operation=bool)bool
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -283,4 +317,6 @@ class GroupRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('updateSource', payload=payload, response_object=None)

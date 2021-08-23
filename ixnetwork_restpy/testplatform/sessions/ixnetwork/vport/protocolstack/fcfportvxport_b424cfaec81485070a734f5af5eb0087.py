@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcFportVxPort(Base):
@@ -45,12 +46,15 @@ class FcFportVxPort(Base):
         'PlogiRejectInterval': 'plogiRejectInterval',
         'SwitchName': 'switchName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcFportVxPort, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcFportVxPort, self).__init__(parent, list_op)
 
     @property
     def B2bRxSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -59,10 +63,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bRxSize'])
     @B2bRxSize.setter
     def B2bRxSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bRxSize'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -71,10 +77,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FabricName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,10 +91,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FabricName'])
     @FabricName.setter
     def FabricName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FabricName'], value)
 
     @property
     def FdiscRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,10 +105,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FdiscRejectInterval'])
     @FdiscRejectInterval.setter
     def FdiscRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FdiscRejectInterval'], value)
 
     @property
     def FlogiRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -107,10 +119,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlogiRejectInterval'])
     @FlogiRejectInterval.setter
     def FlogiRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlogiRejectInterval'], value)
 
     @property
     def LogoRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -119,10 +133,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogoRejectInterval'])
     @LogoRejectInterval.setter
     def LogoRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogoRejectInterval'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,10 +147,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NameServer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -143,10 +161,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NameServer'])
     @NameServer.setter
     def NameServer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NameServer'], value)
 
     @property
     def NameServerCommands(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -155,10 +175,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NameServerCommands'])
     @NameServerCommands.setter
     def NameServerCommands(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['NameServerCommands'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -168,6 +190,7 @@ class FcFportVxPort(Base):
 
     @property
     def OperatingMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,10 +199,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OperatingMode'])
     @OperatingMode.setter
     def OperatingMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OperatingMode'], value)
 
     @property
     def PlogiRejectInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -188,10 +213,12 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PlogiRejectInterval'])
     @PlogiRejectInterval.setter
     def PlogiRejectInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PlogiRejectInterval'], value)
 
     @property
     def SwitchName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,9 +227,11 @@ class FcFportVxPort(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SwitchName'])
     @SwitchName.setter
     def SwitchName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SwitchName'], value)
 
     def update(self, B2bRxSize=None, Enabled=None, FabricName=None, FdiscRejectInterval=None, FlogiRejectInterval=None, LogoRejectInterval=None, Name=None, NameServer=None, NameServerCommands=None, OperatingMode=None, PlogiRejectInterval=None, SwitchName=None):
+        # type: (int, bool, str, int, int, int, str, bool, List[int], str, int, str) -> FcFportVxPort
         """Updates fcFportVxPort resource on the server.
 
         Args
@@ -227,14 +256,16 @@ class FcFportVxPort(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -247,13 +278,15 @@ class FcFportVxPort(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -267,13 +300,15 @@ class FcFportVxPort(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

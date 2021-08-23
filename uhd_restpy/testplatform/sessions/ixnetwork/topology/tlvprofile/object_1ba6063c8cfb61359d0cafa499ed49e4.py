@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Object(Base):
@@ -34,9 +35,11 @@ class Object(Base):
     _SDM_ATT_MAP = {
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Object, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Object, self).__init__(parent, list_op)
 
     @property
     def Container(self):
@@ -50,7 +53,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.container_ad14fff79850a810bf70af3c662f313a import Container
-        return Container(self)
+        if self._properties.get('Container', None) is not None:
+            return self._properties.get('Container')
+        else:
+            return Container(self)
 
     @property
     def Field(self):
@@ -64,7 +70,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.field_e196f9febcf3a6c28484d9f1e36ac377 import Field
-        return Field(self)
+        if self._properties.get('Field', None) is not None:
+            return self._properties.get('Field')
+        else:
+            return Field(self)
 
     @property
     def RepeatableContainer(self):
@@ -78,7 +87,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.repeatablecontainer_a17d3ce6bb8123640f8dd7d1e6a6435c import RepeatableContainer
-        return RepeatableContainer(self)
+        if self._properties.get('RepeatableContainer', None) is not None:
+            return self._properties.get('RepeatableContainer')
+        else:
+            return RepeatableContainer(self)
 
     @property
     def SubTlv(self):
@@ -92,10 +104,14 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.subtlv_7c94061598b794f7b720de3bb85f6cdb import SubTlv
-        return SubTlv(self)
+        if self._properties.get('SubTlv', None) is not None:
+            return self._properties.get('SubTlv')
+        else:
+            return SubTlv(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,9 +120,11 @@ class Object(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> Object
         """Updates object resource on the server.
 
         Args
@@ -119,7 +137,26 @@ class Object(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> Object
+        """Adds a new object resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): The name of the object
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved object resources using find and the newly added object resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Name=None):
+        # type: (str) -> Object
         """Finds and retrieves object resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve object resources from the server.

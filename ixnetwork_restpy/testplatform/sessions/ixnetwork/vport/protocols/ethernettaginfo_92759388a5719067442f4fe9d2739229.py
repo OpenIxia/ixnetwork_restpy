@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EthernetTagInfo(Base):
@@ -36,12 +37,15 @@ class EthernetTagInfo(Base):
         'IpList': 'ipList',
         'Labels': 'labels',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EthernetTagInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EthernetTagInfo, self).__init__(parent, list_op)
 
     @property
     def EthernetTag(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,12 +64,26 @@ class EthernetTagInfo(Base):
 
     @property
     def Labels(self):
+        # type: () -> str
         """
         Returns
         -------
         - str: (Read Only) Labels learned for the C-MAC/B-MAC.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Labels'])
+
+    def add(self):
+        """Adds a new ethernetTagInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ethernetTagInfo resources using find and the newly added ethernetTagInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, EthernetTag=None, IpList=None, Labels=None):
         """Finds and retrieves ethernetTagInfo resources from the server.

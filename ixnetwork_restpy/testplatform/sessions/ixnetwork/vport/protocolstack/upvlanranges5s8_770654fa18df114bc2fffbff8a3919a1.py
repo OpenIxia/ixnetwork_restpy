@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class UpVlanRangeS5S8(Base):
@@ -49,9 +50,11 @@ class UpVlanRangeS5S8(Base):
         'Tpid': 'tpid',
         'UniqueCount': 'uniqueCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(UpVlanRangeS5S8, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(UpVlanRangeS5S8, self).__init__(parent, list_op)
 
     @property
     def VlanIdInfo(self):
@@ -65,10 +68,14 @@ class UpVlanRangeS5S8(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_7c40339b808e6208557eaa5d656d20b4 import VlanIdInfo
-        return VlanIdInfo(self)
+        if self._properties.get('VlanIdInfo', None) is not None:
+            return self._properties.get('VlanIdInfo')
+        else:
+            return VlanIdInfo(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -77,10 +84,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FirstId(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -89,10 +98,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstId'])
     @FirstId.setter
     def FirstId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstId'], value)
 
     @property
     def IdIncrMode(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -101,10 +112,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IdIncrMode'])
     @IdIncrMode.setter
     def IdIncrMode(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IdIncrMode'], value)
 
     @property
     def Increment(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -113,10 +126,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Increment'])
     @Increment.setter
     def Increment(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Increment'], value)
 
     @property
     def IncrementStep(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -125,10 +140,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementStep'])
     @IncrementStep.setter
     def IncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementStep'], value)
 
     @property
     def InnerEnable(self):
+        # type: () -> bool
         """DEPRECATED 
         Returns
         -------
@@ -137,10 +154,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerEnable'])
     @InnerEnable.setter
     def InnerEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerEnable'], value)
 
     @property
     def InnerFirstId(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -149,10 +168,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerFirstId'])
     @InnerFirstId.setter
     def InnerFirstId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerFirstId'], value)
 
     @property
     def InnerIncrement(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -161,10 +182,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerIncrement'])
     @InnerIncrement.setter
     def InnerIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerIncrement'], value)
 
     @property
     def InnerIncrementStep(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -173,10 +196,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerIncrementStep'])
     @InnerIncrementStep.setter
     def InnerIncrementStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerIncrementStep'], value)
 
     @property
     def InnerPriority(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -185,10 +210,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerPriority'])
     @InnerPriority.setter
     def InnerPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerPriority'], value)
 
     @property
     def InnerTpid(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -197,10 +224,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerTpid'])
     @InnerTpid.setter
     def InnerTpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerTpid'], value)
 
     @property
     def InnerUniqueCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -209,10 +238,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InnerUniqueCount'])
     @InnerUniqueCount.setter
     def InnerUniqueCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InnerUniqueCount'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -221,10 +252,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -234,6 +267,7 @@ class UpVlanRangeS5S8(Base):
 
     @property
     def Priority(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -242,10 +276,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def Tpid(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -254,10 +290,12 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
     @Tpid.setter
     def Tpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
 
     @property
     def UniqueCount(self):
+        # type: () -> int
         """DEPRECATED 
         Returns
         -------
@@ -266,9 +304,11 @@ class UpVlanRangeS5S8(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UniqueCount'])
     @UniqueCount.setter
     def UniqueCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['UniqueCount'], value)
 
     def update(self, Enabled=None, FirstId=None, IdIncrMode=None, Increment=None, IncrementStep=None, InnerEnable=None, InnerFirstId=None, InnerIncrement=None, InnerIncrementStep=None, InnerPriority=None, InnerTpid=None, InnerUniqueCount=None, Name=None, Priority=None, Tpid=None, UniqueCount=None):
+        # type: (bool, int, int, int, int, bool, int, int, int, int, str, int, str, int, str, int) -> UpVlanRangeS5S8
         """Updates upVlanRangeS5S8 resource on the server.
 
         Args
@@ -297,14 +337,16 @@ class UpVlanRangeS5S8(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -317,13 +359,15 @@ class UpVlanRangeS5S8(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -337,13 +381,15 @@ class UpVlanRangeS5S8(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

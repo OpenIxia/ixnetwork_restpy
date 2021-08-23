@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfSRAlgorithmList(Base):
@@ -37,12 +38,15 @@ class OspfSRAlgorithmList(Base):
         'Name': 'name',
         'OspfSrAlgorithm': 'ospfSrAlgorithm',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfSRAlgorithmList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfSRAlgorithmList, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -52,6 +56,7 @@ class OspfSRAlgorithmList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -61,6 +66,7 @@ class OspfSRAlgorithmList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,10 +75,12 @@ class OspfSRAlgorithmList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OspfSrAlgorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -82,6 +90,7 @@ class OspfSRAlgorithmList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OspfSrAlgorithm']))
 
     def update(self, Name=None):
+        # type: (str) -> OspfSRAlgorithmList
         """Updates ospfSRAlgorithmList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -97,7 +106,26 @@ class OspfSRAlgorithmList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> OspfSRAlgorithmList
+        """Adds a new ospfSRAlgorithmList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ospfSRAlgorithmList resources using find and the newly added ospfSRAlgorithmList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> OspfSRAlgorithmList
         """Finds and retrieves ospfSRAlgorithmList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfSRAlgorithmList resources from the server.

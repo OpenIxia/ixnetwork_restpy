@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NacTypes(Base):
@@ -37,9 +38,11 @@ class NacTypes(Base):
         'ObjectId': 'objectId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NacTypes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NacTypes, self).__init__(parent, list_op)
 
     @property
     def NacApps(self):
@@ -53,10 +56,14 @@ class NacTypes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.vendorref.nactypes.nacapps.nacapps import NacApps
-        return NacApps(self)
+        if self._properties.get('NacApps', None) is not None:
+            return self._properties.get('NacApps')
+        else:
+            return NacApps(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class NacTypes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +87,7 @@ class NacTypes(Base):
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -86,9 +96,11 @@ class NacTypes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
+        # type: (str, int) -> NacTypes
         """Updates nacTypes resource on the server.
 
         Args
@@ -103,6 +115,7 @@ class NacTypes(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, Value=None):
+        # type: (str, int) -> NacTypes
         """Adds a new nacTypes resource on the server and adds it to the container.
 
         Args
@@ -131,6 +144,7 @@ class NacTypes(Base):
         self._delete()
 
     def find(self, Name=None, ObjectId=None, Value=None):
+        # type: (str, str, int) -> NacTypes
         """Finds and retrieves nacTypes resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacTypes resources from the server.

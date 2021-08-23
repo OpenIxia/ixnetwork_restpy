@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ControllerTables(Base):
@@ -79,9 +80,11 @@ class ControllerTables(Base):
         'WriteActionMissExperimenterDataLength': 'writeActionMissExperimenterDataLength',
         'WriteActionMissExperimenterId': 'writeActionMissExperimenterId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(ControllerTables, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ControllerTables, self).__init__(parent, list_op)
 
     @property
     def ApplyActions(self):
@@ -95,7 +98,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactions_f3190fab64661538563653e07df155a5 import ApplyActions
-        return ApplyActions(self)._select()
+        if self._properties.get('ApplyActions', None) is not None:
+            return self._properties.get('ApplyActions')
+        else:
+            return ApplyActions(self)._select()
 
     @property
     def ApplyActionsMiss(self):
@@ -109,7 +115,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmiss_c6e26bae5086b5561d3714cc015046b0 import ApplyActionsMiss
-        return ApplyActionsMiss(self)._select()
+        if self._properties.get('ApplyActionsMiss', None) is not None:
+            return self._properties.get('ApplyActionsMiss')
+        else:
+            return ApplyActionsMiss(self)._select()
 
     @property
     def ApplySetField(self):
@@ -123,7 +132,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_253c9a5a708bdb2312cf5d52ad1f87ad import ApplySetField
-        return ApplySetField(self)._select()
+        if self._properties.get('ApplySetField', None) is not None:
+            return self._properties.get('ApplySetField')
+        else:
+            return ApplySetField(self)._select()
 
     @property
     def ApplySetFieldMiss(self):
@@ -137,7 +149,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmiss_cecf6f2fc7109bdd9f0f43cfdcab4a67 import ApplySetFieldMiss
-        return ApplySetFieldMiss(self)._select()
+        if self._properties.get('ApplySetFieldMiss', None) is not None:
+            return self._properties.get('ApplySetFieldMiss')
+        else:
+            return ApplySetFieldMiss(self)._select()
 
     @property
     def ControllerTableFlowRanges(self):
@@ -151,7 +166,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertableflowranges_e75acbbcda7835d3ccf85f0dda576bbc import ControllerTableFlowRanges
-        return ControllerTableFlowRanges(self)
+        if self._properties.get('ControllerTableFlowRanges', None) is not None:
+            return self._properties.get('ControllerTableFlowRanges')
+        else:
+            return ControllerTableFlowRanges(self)
 
     @property
     def FeaturesSupported(self):
@@ -165,7 +183,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.featuressupported_54813e4d9341e0be8768b74817aeac3d import FeaturesSupported
-        return FeaturesSupported(self)._select()
+        if self._properties.get('FeaturesSupported', None) is not None:
+            return self._properties.get('FeaturesSupported')
+        else:
+            return FeaturesSupported(self)._select()
 
     @property
     def Instruction(self):
@@ -179,7 +200,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_da8215ede02e2b1110439290731db450 import Instruction
-        return Instruction(self)._select()
+        if self._properties.get('Instruction', None) is not None:
+            return self._properties.get('Instruction')
+        else:
+            return Instruction(self)._select()
 
     @property
     def InstructionMiss(self):
@@ -193,7 +217,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmiss_2ad1cd6bc93242f96042d2e2049a9732 import InstructionMiss
-        return InstructionMiss(self)._select()
+        if self._properties.get('InstructionMiss', None) is not None:
+            return self._properties.get('InstructionMiss')
+        else:
+            return InstructionMiss(self)._select()
 
     @property
     def Match(self):
@@ -207,7 +234,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_090b898f6d78ba3c4bdf0995a399336f import Match
-        return Match(self)._select()
+        if self._properties.get('Match', None) is not None:
+            return self._properties.get('Match')
+        else:
+            return Match(self)._select()
 
     @property
     def TableModificationTriggerAttributes(self):
@@ -221,7 +251,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablemodificationtriggerattributes_fa8f1d7a5a2f67cd2c8b254e201fdc5a import TableModificationTriggerAttributes
-        return TableModificationTriggerAttributes(self)._select()
+        if self._properties.get('TableModificationTriggerAttributes', None) is not None:
+            return self._properties.get('TableModificationTriggerAttributes')
+        else:
+            return TableModificationTriggerAttributes(self)._select()
 
     @property
     def Wildcards(self):
@@ -235,7 +268,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_82e961cfac4b8a1d597719e0a8012db9 import Wildcards
-        return Wildcards(self)._select()
+        if self._properties.get('Wildcards', None) is not None:
+            return self._properties.get('Wildcards')
+        else:
+            return Wildcards(self)._select()
 
     @property
     def WriteActions(self):
@@ -249,7 +285,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactions_53b6fc380cbeecaf17b7c6a2c7a64909 import WriteActions
-        return WriteActions(self)._select()
+        if self._properties.get('WriteActions', None) is not None:
+            return self._properties.get('WriteActions')
+        else:
+            return WriteActions(self)._select()
 
     @property
     def WriteActionsMiss(self):
@@ -263,7 +302,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmiss_d80c3286af9e5d78bc736e7aeda2cd71 import WriteActionsMiss
-        return WriteActionsMiss(self)._select()
+        if self._properties.get('WriteActionsMiss', None) is not None:
+            return self._properties.get('WriteActionsMiss')
+        else:
+            return WriteActionsMiss(self)._select()
 
     @property
     def WriteSetField(self):
@@ -277,7 +319,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_fbe5072e08f345f2a2c8d7c98b09a8a5 import WriteSetField
-        return WriteSetField(self)._select()
+        if self._properties.get('WriteSetField', None) is not None:
+            return self._properties.get('WriteSetField')
+        else:
+            return WriteSetField(self)._select()
 
     @property
     def WriteSetFieldMiss(self):
@@ -291,10 +336,14 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmiss_499a12e92955cf043867d8a88984286f import WriteSetFieldMiss
-        return WriteSetFieldMiss(self)._select()
+        if self._properties.get('WriteSetFieldMiss', None) is not None:
+            return self._properties.get('WriteSetFieldMiss')
+        else:
+            return WriteSetFieldMiss(self)._select()
 
     @property
     def ApplyActionExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -303,10 +352,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionExperimenterData'])
     @ApplyActionExperimenterData.setter
     def ApplyActionExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionExperimenterData'], value)
 
     @property
     def ApplyActionExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -315,10 +366,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionExperimenterDataLength'])
     @ApplyActionExperimenterDataLength.setter
     def ApplyActionExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionExperimenterDataLength'], value)
 
     @property
     def ApplyActionExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -327,10 +380,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionExperimenterId'])
     @ApplyActionExperimenterId.setter
     def ApplyActionExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionExperimenterId'], value)
 
     @property
     def ApplyActionMissExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,10 +394,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionMissExperimenterData'])
     @ApplyActionMissExperimenterData.setter
     def ApplyActionMissExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionMissExperimenterData'], value)
 
     @property
     def ApplyActionMissExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -351,10 +408,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionMissExperimenterDataLength'])
     @ApplyActionMissExperimenterDataLength.setter
     def ApplyActionMissExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionMissExperimenterDataLength'], value)
 
     @property
     def ApplyActionMissExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -363,10 +422,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionMissExperimenterId'])
     @ApplyActionMissExperimenterId.setter
     def ApplyActionMissExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionMissExperimenterId'], value)
 
     @property
     def Config(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -375,10 +436,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Config'])
     @Config.setter
     def Config(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Config'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -387,10 +450,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -399,10 +464,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
     @ExperimenterData.setter
     def ExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
 
     @property
     def ExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -411,10 +478,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'])
     @ExperimenterDataLength.setter
     def ExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDataLength'], value)
 
     @property
     def ExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -423,10 +492,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
     @ExperimenterId.setter
     def ExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
 
     @property
     def ExperimenterMissData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -435,10 +506,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterMissData'])
     @ExperimenterMissData.setter
     def ExperimenterMissData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterMissData'], value)
 
     @property
     def ExperimenterMissDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -447,10 +520,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterMissDataLength'])
     @ExperimenterMissDataLength.setter
     def ExperimenterMissDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterMissDataLength'], value)
 
     @property
     def ExperimenterMissId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -459,10 +534,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterMissId'])
     @ExperimenterMissId.setter
     def ExperimenterMissId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterMissId'], value)
 
     @property
     def ExperimenterMissType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -471,10 +548,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterMissType'])
     @ExperimenterMissType.setter
     def ExperimenterMissType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterMissType'], value)
 
     @property
     def ExperimenterType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -483,10 +562,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterType'])
     @ExperimenterType.setter
     def ExperimenterType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterType'], value)
 
     @property
     def InstructionExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -495,10 +576,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionExperimenterData'])
     @InstructionExperimenterData.setter
     def InstructionExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionExperimenterData'], value)
 
     @property
     def InstructionExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -507,10 +590,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionExperimenterDataLength'])
     @InstructionExperimenterDataLength.setter
     def InstructionExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionExperimenterDataLength'], value)
 
     @property
     def InstructionExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -519,10 +604,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionExperimenterId'])
     @InstructionExperimenterId.setter
     def InstructionExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionExperimenterId'], value)
 
     @property
     def InstructionMissExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -531,10 +618,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionMissExperimenterData'])
     @InstructionMissExperimenterData.setter
     def InstructionMissExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionMissExperimenterData'], value)
 
     @property
     def InstructionMissExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -543,10 +632,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionMissExperimenterDataLength'])
     @InstructionMissExperimenterDataLength.setter
     def InstructionMissExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionMissExperimenterDataLength'], value)
 
     @property
     def InstructionMissExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -555,10 +646,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionMissExperimenterId'])
     @InstructionMissExperimenterId.setter
     def InstructionMissExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionMissExperimenterId'], value)
 
     @property
     def MatchExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -567,10 +660,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchExperimenterData'])
     @MatchExperimenterData.setter
     def MatchExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchExperimenterData'], value)
 
     @property
     def MatchExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -579,10 +674,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchExperimenterDataLength'])
     @MatchExperimenterDataLength.setter
     def MatchExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchExperimenterDataLength'], value)
 
     @property
     def MatchExperimenterField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -591,10 +688,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchExperimenterField'])
     @MatchExperimenterField.setter
     def MatchExperimenterField(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchExperimenterField'], value)
 
     @property
     def MatchExperimenterHasMask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -603,10 +702,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchExperimenterHasMask'])
     @MatchExperimenterHasMask.setter
     def MatchExperimenterHasMask(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchExperimenterHasMask'], value)
 
     @property
     def MatchExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -615,10 +716,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchExperimenterId'])
     @MatchExperimenterId.setter
     def MatchExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchExperimenterId'], value)
 
     @property
     def MaxEntries(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -627,10 +730,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxEntries'])
     @MaxEntries.setter
     def MaxEntries(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxEntries'], value)
 
     @property
     def MetadataMatch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -639,10 +744,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MetadataMatch'])
     @MetadataMatch.setter
     def MetadataMatch(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MetadataMatch'], value)
 
     @property
     def MetadataWrite(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -651,10 +758,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MetadataWrite'])
     @MetadataWrite.setter
     def MetadataWrite(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MetadataWrite'], value)
 
     @property
     def NextTable(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -663,10 +772,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextTable'])
     @NextTable.setter
     def NextTable(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextTable'], value)
 
     @property
     def NextTableMiss(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -675,10 +786,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextTableMiss'])
     @NextTableMiss.setter
     def NextTableMiss(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextTableMiss'], value)
 
     @property
     def TableId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -687,10 +800,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableId'])
     @TableId.setter
     def TableId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
 
     @property
     def TableName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -699,10 +814,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableName'])
     @TableName.setter
     def TableName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableName'], value)
 
     @property
     def WildcardExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -711,10 +828,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WildcardExperimenterData'])
     @WildcardExperimenterData.setter
     def WildcardExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['WildcardExperimenterData'], value)
 
     @property
     def WildcardExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -723,10 +842,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WildcardExperimenterDataLength'])
     @WildcardExperimenterDataLength.setter
     def WildcardExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WildcardExperimenterDataLength'], value)
 
     @property
     def WildcardExperimenterField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -735,10 +856,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WildcardExperimenterField'])
     @WildcardExperimenterField.setter
     def WildcardExperimenterField(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WildcardExperimenterField'], value)
 
     @property
     def WildcardExperimenterHasMask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -747,10 +870,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WildcardExperimenterHasMask'])
     @WildcardExperimenterHasMask.setter
     def WildcardExperimenterHasMask(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WildcardExperimenterHasMask'], value)
 
     @property
     def WildcardExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -759,10 +884,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WildcardExperimenterId'])
     @WildcardExperimenterId.setter
     def WildcardExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WildcardExperimenterId'], value)
 
     @property
     def WriteActionExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -771,10 +898,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionExperimenterData'])
     @WriteActionExperimenterData.setter
     def WriteActionExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionExperimenterData'], value)
 
     @property
     def WriteActionExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -783,10 +912,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionExperimenterDataLength'])
     @WriteActionExperimenterDataLength.setter
     def WriteActionExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionExperimenterDataLength'], value)
 
     @property
     def WriteActionExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -795,10 +926,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionExperimenterId'])
     @WriteActionExperimenterId.setter
     def WriteActionExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionExperimenterId'], value)
 
     @property
     def WriteActionMissExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -807,10 +940,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionMissExperimenterData'])
     @WriteActionMissExperimenterData.setter
     def WriteActionMissExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionMissExperimenterData'], value)
 
     @property
     def WriteActionMissExperimenterDataLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -819,10 +954,12 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionMissExperimenterDataLength'])
     @WriteActionMissExperimenterDataLength.setter
     def WriteActionMissExperimenterDataLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionMissExperimenterDataLength'], value)
 
     @property
     def WriteActionMissExperimenterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -831,9 +968,11 @@ class ControllerTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionMissExperimenterId'])
     @WriteActionMissExperimenterId.setter
     def WriteActionMissExperimenterId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionMissExperimenterId'], value)
 
     def update(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
+        # type: (str, int, int, str, int, int, int, bool, str, int, int, str, int, int, int, int, str, int, int, str, int, int, str, int, int, bool, int, int, str, str, str, str, int, str, str, int, int, bool, int, str, int, int, str, int, int) -> ControllerTables
         """Updates controllerTables resource on the server.
 
         Args
@@ -891,6 +1030,7 @@ class ControllerTables(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
+        # type: (str, int, int, str, int, int, int, bool, str, int, int, str, int, int, int, int, str, int, int, str, int, int, str, int, int, bool, int, int, str, str, str, str, int, str, str, int, int, bool, int, str, int, int, str, int, int) -> ControllerTables
         """Adds a new controllerTables resource on the server and adds it to the container.
 
         Args
@@ -962,6 +1102,7 @@ class ControllerTables(Base):
         self._delete()
 
     def find(self, ApplyActionExperimenterData=None, ApplyActionExperimenterDataLength=None, ApplyActionExperimenterId=None, ApplyActionMissExperimenterData=None, ApplyActionMissExperimenterDataLength=None, ApplyActionMissExperimenterId=None, Config=None, Enabled=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterId=None, ExperimenterMissData=None, ExperimenterMissDataLength=None, ExperimenterMissId=None, ExperimenterMissType=None, ExperimenterType=None, InstructionExperimenterData=None, InstructionExperimenterDataLength=None, InstructionExperimenterId=None, InstructionMissExperimenterData=None, InstructionMissExperimenterDataLength=None, InstructionMissExperimenterId=None, MatchExperimenterData=None, MatchExperimenterDataLength=None, MatchExperimenterField=None, MatchExperimenterHasMask=None, MatchExperimenterId=None, MaxEntries=None, MetadataMatch=None, MetadataWrite=None, NextTable=None, NextTableMiss=None, TableId=None, TableName=None, WildcardExperimenterData=None, WildcardExperimenterDataLength=None, WildcardExperimenterField=None, WildcardExperimenterHasMask=None, WildcardExperimenterId=None, WriteActionExperimenterData=None, WriteActionExperimenterDataLength=None, WriteActionExperimenterId=None, WriteActionMissExperimenterData=None, WriteActionMissExperimenterDataLength=None, WriteActionMissExperimenterId=None):
+        # type: (str, int, int, str, int, int, int, bool, str, int, int, str, int, int, int, int, str, int, int, str, int, int, str, int, int, bool, int, int, str, str, str, str, int, str, str, int, int, bool, int, str, int, int, str, int, int) -> ControllerTables
         """Finds and retrieves controllerTables resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve controllerTables resources from the server.
@@ -1044,10 +1185,16 @@ class ControllerTables(Base):
         """
         return self._read(href)
 
-    def TableModificationTrigger(self):
+    def TableModificationTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the tableModificationTrigger operation on the server.
 
         NOT DEFINED
+
+        tableModificationTrigger(async_operation=bool)bool
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -1055,4 +1202,6 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('tableModificationTrigger', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Statistic(Base):
@@ -39,12 +40,16 @@ class Statistic(Base):
         'ScaleFactor': 'scaleFactor',
         'SourceTypes': 'sourceTypes',
     }
+    _SDM_ENUM_MAP = {
+        'aggregationType': ['average', 'averageRate', 'ax', 'axRate', 'intervalAverage', 'min', 'minRate', 'none', 'rate', 'runStateAgg', 'runStateAggIgnoreRamp', 'sum', 'vectorMax', 'vectorMin', 'weightedAverage'],
+    }
 
-    def __init__(self, parent):
-        super(Statistic, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Statistic, self).__init__(parent, list_op)
 
     @property
     def AggregationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregationType'])
     @AggregationType.setter
     def AggregationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregationType'], value)
 
     @property
     def Caption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,10 +72,12 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def DefaultCaption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +87,7 @@ class Statistic(Base):
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,10 +96,12 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ScaleFactor(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,10 +110,12 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ScaleFactor'])
     @ScaleFactor.setter
     def ScaleFactor(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ScaleFactor'], value)
 
     @property
     def SourceTypes(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -110,6 +124,7 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceTypes'])
 
     def update(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
+        # type: (str, str, bool, int) -> Statistic
         """Updates statistic resource on the server.
 
         Args
@@ -125,7 +140,29 @@ class Statistic(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, AggregationType=None, Caption=None, Enabled=None, ScaleFactor=None):
+        # type: (str, str, bool, int) -> Statistic
+        """Adds a new statistic resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)): 
+        - Caption (str): 
+        - Enabled (bool): 
+        - ScaleFactor (number): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved statistic resources using find and the newly added statistic resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AggregationType=None, Caption=None, DefaultCaption=None, Enabled=None, ScaleFactor=None, SourceTypes=None):
+        # type: (str, str, str, bool, int, List[str]) -> Statistic
         """Finds and retrieves statistic resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistic resources from the server.

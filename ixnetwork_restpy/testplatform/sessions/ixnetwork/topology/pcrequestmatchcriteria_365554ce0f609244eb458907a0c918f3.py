@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PcRequestMatchCriteria(Base):
@@ -43,12 +44,15 @@ class PcRequestMatchCriteria(Base):
         'SrcIpv4Address': 'srcIpv4Address',
         'SrcIpv6Address': 'srcIpv6Address',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PcRequestMatchCriteria, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PcRequestMatchCriteria, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -59,6 +63,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,6 +73,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,6 +83,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def DestIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +94,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def DestIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def IpVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -107,6 +116,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def IroType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +127,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def MatchEndPoints(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +138,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,10 +147,12 @@ class PcRequestMatchCriteria(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SrcIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +163,7 @@ class PcRequestMatchCriteria(Base):
 
     @property
     def SrcIpv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -158,6 +173,7 @@ class PcRequestMatchCriteria(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SrcIpv6Address']))
 
     def update(self, Name=None):
+        # type: (str) -> PcRequestMatchCriteria
         """Updates pcRequestMatchCriteria resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

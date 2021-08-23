@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PbbTeLtLearnedInfo(Base):
@@ -41,9 +42,11 @@ class PbbTeLtLearnedInfo(Base):
         'SrcMacAddress': 'srcMacAddress',
         'TransactionId': 'transactionId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PbbTeLtLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PbbTeLtLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def LtLearnedHop(self):
@@ -57,10 +60,14 @@ class PbbTeLtLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_ec35fa3d1715c9c0cad316ab904f4886 import LtLearnedHop
-        return LtLearnedHop(self)
+        if self._properties.get('LtLearnedHop', None) is not None:
+            return self._properties.get('LtLearnedHop')
+        else:
+            return LtLearnedHop(self)
 
     @property
     def BVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -70,6 +77,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def DstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,6 +87,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def HopCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -88,6 +97,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def Hops(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -97,6 +107,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +117,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def ReplyStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +127,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -124,6 +137,7 @@ class PbbTeLtLearnedInfo(Base):
 
     @property
     def TransactionId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -131,7 +145,21 @@ class PbbTeLtLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
 
+    def add(self):
+        """Adds a new pbbTeLtLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pbbTeLtLearnedInfo resources using find and the newly added pbbTeLtLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BVlan=None, DstMacAddress=None, HopCount=None, Hops=None, MdLevel=None, ReplyStatus=None, SrcMacAddress=None, TransactionId=None):
+        # type: (str, str, int, str, int, str, str, int) -> PbbTeLtLearnedInfo
         """Finds and retrieves pbbTeLtLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pbbTeLtLearnedInfo resources from the server.

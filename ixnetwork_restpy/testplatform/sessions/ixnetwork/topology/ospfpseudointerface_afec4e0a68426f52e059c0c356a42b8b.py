@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfPseudoInterface(Base):
@@ -70,9 +71,11 @@ class OspfPseudoInterface(Base):
         'VFlag': 'vFlag',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfPseudoInterface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfPseudoInterface, self).__init__(parent, list_op)
 
     @property
     def OspfPseudoTrafficEngineeringProfileList(self):
@@ -86,7 +89,10 @@ class OspfPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudotrafficengineeringprofilelist_dae93dd208f24b471a9b49420d25dd50 import OspfPseudoTrafficEngineeringProfileList
-        return OspfPseudoTrafficEngineeringProfileList(self)._select()
+        if self._properties.get('OspfPseudoTrafficEngineeringProfileList', None) is not None:
+            return self._properties.get('OspfPseudoTrafficEngineeringProfileList')
+        else:
+            return OspfPseudoTrafficEngineeringProfileList(self)._select()
 
     @property
     def SrlgValueList(self):
@@ -100,10 +106,14 @@ class OspfPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
-        return SrlgValueList(self)
+        if self._properties.get('SrlgValueList', None) is not None:
+            return self._properties.get('SrlgValueList')
+        else:
+            return SrlgValueList(self)
 
     @property
     def AdjSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +124,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -124,6 +135,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +146,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority0(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -144,6 +157,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority1(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -154,6 +168,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority2(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -164,6 +179,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority3(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -174,6 +190,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority4(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -184,6 +201,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority5(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -194,6 +212,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority6(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -204,6 +223,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def BandwidthPriority7(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -214,6 +234,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -223,6 +244,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Dedicated1Plus1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -233,6 +255,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Dedicated1To1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -243,6 +266,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -252,6 +276,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def EnLinkProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -262,6 +287,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Enable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -272,6 +298,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def EnableAdjSID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -282,6 +309,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def EnableSRLG(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -292,6 +320,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Enhanced(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -302,6 +331,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def ExtraTraffic(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -312,6 +342,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -322,6 +353,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def MaxBandwidth(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -332,6 +364,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def MaxReservableBandwidth(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -342,6 +375,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Metric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -352,6 +386,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -362,6 +397,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -370,10 +406,12 @@ class OspfPseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfTeProfile(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -382,10 +420,12 @@ class OspfPseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfTeProfile'])
     @NoOfTeProfile.setter
     def NoOfTeProfile(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfTeProfile'], value)
 
     @property
     def PFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -396,6 +436,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Reserved40(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -406,6 +447,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Reserved80(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -416,6 +458,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def SFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -426,6 +469,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Shared(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -436,6 +480,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def SrlgCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -444,10 +489,12 @@ class OspfPseudoInterface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SrlgCount'])
     @SrlgCount.setter
     def SrlgCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SrlgCount'], value)
 
     @property
     def Unprotected(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -458,6 +505,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def VFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -468,6 +516,7 @@ class OspfPseudoInterface(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -477,6 +526,7 @@ class OspfPseudoInterface(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Name=None, NoOfTeProfile=None, SrlgCount=None):
+        # type: (str, int, int) -> OspfPseudoInterface
         """Updates ospfPseudoInterface resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -494,7 +544,28 @@ class OspfPseudoInterface(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None, NoOfTeProfile=None, SrlgCount=None):
+        # type: (str, int, int) -> OspfPseudoInterface
+        """Adds a new ospfPseudoInterface resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfTeProfile (number): Number of TE Profile
+        - SrlgCount (number): This field value shows how many SRLG Value columns would be there in the GUI.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ospfPseudoInterface resources using find and the newly added ospfPseudoInterface resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None, NoOfTeProfile=None, SrlgCount=None):
+        # type: (int, str, str, int, int) -> OspfPseudoInterface
         """Finds and retrieves ospfPseudoInterface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfPseudoInterface resources from the server.
@@ -536,6 +607,130 @@ class OspfPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Disconnect(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the disconnect operation on the server.
+
+        Disconnect Simulated Interface
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        disconnect(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        disconnect(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        disconnect(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('disconnect', payload=payload, response_object=None)
+
+    def Reconnect(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the reconnect operation on the server.
+
+        Reconnect Simulated Interface
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        reconnect(async_operation=bool)
+        -------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        reconnect(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        reconnect(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('reconnect', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, AdjSID=None, AdministratorGroup=None, BFlag=None, BandwidthPriority0=None, BandwidthPriority1=None, BandwidthPriority2=None, BandwidthPriority3=None, BandwidthPriority4=None, BandwidthPriority5=None, BandwidthPriority6=None, BandwidthPriority7=None, Dedicated1Plus1=None, Dedicated1To1=None, EnLinkProtection=None, Enable=None, EnableAdjSID=None, EnableSRLG=None, Enhanced=None, ExtraTraffic=None, LFlag=None, MaxBandwidth=None, MaxReservableBandwidth=None, Metric=None, MetricLevel=None, PFlag=None, Reserved40=None, Reserved80=None, SFlag=None, Shared=None, Unprotected=None, VFlag=None, Weight=None):
         """Base class infrastructure that gets a list of ospfPseudoInterface device ids encapsulated by this object.
@@ -587,92 +782,3 @@ class OspfPseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Disconnect(self, *args, **kwargs):
-        """Executes the disconnect operation on the server.
-
-        Disconnect Simulated Interface
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        disconnect(SessionIndices=list)
-        -------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        disconnect(SessionIndices=string)
-        ---------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('disconnect', payload=payload, response_object=None)
-
-    def Reconnect(self, *args, **kwargs):
-        """Executes the reconnect operation on the server.
-
-        Reconnect Simulated Interface
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        reconnect(SessionIndices=list)
-        ------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        reconnect(SessionIndices=string)
-        --------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('reconnect', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

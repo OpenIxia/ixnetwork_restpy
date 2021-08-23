@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IntraAreaPrefix(Base):
@@ -39,12 +40,16 @@ class IntraAreaPrefix(Base):
         'RefRouterId': 'refRouterId',
         'ReferenceType': 'referenceType',
     }
+    _SDM_ENUM_MAP = {
+        'referenceType': ['routerLsa', 'networkLsa'],
+    }
 
-    def __init__(self, parent):
-        super(IntraAreaPrefix, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IntraAreaPrefix, self).__init__(parent, list_op)
 
     @property
     def CountLsa(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,10 +58,12 @@ class IntraAreaPrefix(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CountLsa'])
     @CountLsa.setter
     def CountLsa(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CountLsa'], value)
 
     @property
     def IncrLinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +72,7 @@ class IntraAreaPrefix(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrLinkStateId'])
     @IncrLinkStateId.setter
     def IncrLinkStateId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrLinkStateId'], value)
 
     @property
@@ -81,6 +89,7 @@ class IntraAreaPrefix(Base):
 
     @property
     def RefLinkStateId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,10 +98,12 @@ class IntraAreaPrefix(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefLinkStateId'])
     @RefLinkStateId.setter
     def RefLinkStateId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefLinkStateId'], value)
 
     @property
     def RefRouterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,10 +112,12 @@ class IntraAreaPrefix(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefRouterId'])
     @RefRouterId.setter
     def RefRouterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefRouterId'], value)
 
     @property
     def ReferenceType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,6 +126,7 @@ class IntraAreaPrefix(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReferenceType'])
     @ReferenceType.setter
     def ReferenceType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReferenceType'], value)
 
     def update(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
@@ -132,6 +146,28 @@ class IntraAreaPrefix(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
+        """Adds a new intraAreaPrefix resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - CountLsa (number): 
+        - IncrLinkStateId (str): 
+        - Prefixes (list(dict(arg1:str,arg2:number,arg3:number,arg4:number,arg5:number))): 
+        - RefLinkStateId (str): 
+        - RefRouterId (str): 
+        - ReferenceType (str(routerLsa | networkLsa)): 
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved intraAreaPrefix resources using find and the newly added intraAreaPrefix resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, CountLsa=None, IncrLinkStateId=None, Prefixes=None, RefLinkStateId=None, RefRouterId=None, ReferenceType=None):
         """Finds and retrieves intraAreaPrefix resources from the server.

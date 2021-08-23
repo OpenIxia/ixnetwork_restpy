@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LbLearnedInfo(Base):
@@ -41,12 +42,15 @@ class LbLearnedInfo(Base):
         'SrcMacAddress': 'srcMacAddress',
         'TransactionId': 'transactionId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(LbLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LbLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def CVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -56,6 +60,7 @@ class LbLearnedInfo(Base):
 
     @property
     def DstMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +70,7 @@ class LbLearnedInfo(Base):
 
     @property
     def MdLevel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,6 +80,7 @@ class LbLearnedInfo(Base):
 
     @property
     def Reachability(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -83,6 +90,7 @@ class LbLearnedInfo(Base):
 
     @property
     def Rtt(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -92,6 +100,7 @@ class LbLearnedInfo(Base):
 
     @property
     def SVlan(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class LbLearnedInfo(Base):
 
     @property
     def SrcMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class LbLearnedInfo(Base):
 
     @property
     def TransactionId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -117,7 +128,21 @@ class LbLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransactionId'])
 
+    def add(self):
+        """Adds a new lbLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved lbLearnedInfo resources using find and the newly added lbLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, CVlan=None, DstMacAddress=None, MdLevel=None, Reachability=None, Rtt=None, SVlan=None, SrcMacAddress=None, TransactionId=None):
+        # type: (str, str, int, bool, int, str, str, int) -> LbLearnedInfo
         """Finds and retrieves lbLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lbLearnedInfo resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OAM(Base):
@@ -43,12 +44,15 @@ class OAM(Base):
         'TlvValue': 'tlvValue',
         'VendorSpecificInformation': 'vendorSpecificInformation',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OAM, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OAM, self).__init__(parent, list_op)
 
     @property
     def EnableTlvOption(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -57,10 +61,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableTlvOption'])
     @EnableTlvOption.setter
     def EnableTlvOption(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableTlvOption'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -69,10 +75,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IdleTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +89,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IdleTimer'])
     @IdleTimer.setter
     def IdleTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IdleTimer'], value)
 
     @property
     def LinkEvents(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,10 +103,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LinkEvents'])
     @LinkEvents.setter
     def LinkEvents(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LinkEvents'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -105,10 +117,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,10 +131,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def MaxOAMPDUSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -129,10 +145,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOAMPDUSize'])
     @MaxOAMPDUSize.setter
     def MaxOAMPDUSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOAMPDUSize'], value)
 
     @property
     def OrganizationUniqueIdentifier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -141,10 +159,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OrganizationUniqueIdentifier'])
     @OrganizationUniqueIdentifier.setter
     def OrganizationUniqueIdentifier(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OrganizationUniqueIdentifier'], value)
 
     @property
     def TlvType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -153,10 +173,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TlvType'])
     @TlvType.setter
     def TlvType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TlvType'], value)
 
     @property
     def TlvValue(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -165,10 +187,12 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TlvValue'])
     @TlvValue.setter
     def TlvValue(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TlvValue'], value)
 
     @property
     def VendorSpecificInformation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -177,9 +201,11 @@ class OAM(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorSpecificInformation'])
     @VendorSpecificInformation.setter
     def VendorSpecificInformation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorSpecificInformation'], value)
 
     def update(self, EnableTlvOption=None, Enabled=None, IdleTimer=None, LinkEvents=None, Loopback=None, MacAddress=None, MaxOAMPDUSize=None, OrganizationUniqueIdentifier=None, TlvType=None, TlvValue=None, VendorSpecificInformation=None):
+        # type: (bool, bool, int, bool, bool, str, int, str, str, str, str) -> OAM
         """Updates OAM resource on the server.
 
         Args

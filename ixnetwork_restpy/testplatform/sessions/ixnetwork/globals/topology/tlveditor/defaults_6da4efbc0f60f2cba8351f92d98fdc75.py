@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Defaults(Base):
@@ -33,9 +34,11 @@ class Defaults(Base):
     _SDM_NAME = 'defaults'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Defaults, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Defaults, self).__init__(parent, list_op)
 
     @property
     def Template(self):
@@ -49,7 +52,23 @@ class Defaults(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template_251f4228c795442db61593bcbbdf8694 import Template
-        return Template(self)
+        if self._properties.get('Template', None) is not None:
+            return self._properties.get('Template')
+        else:
+            return Template(self)
+
+    def add(self):
+        """Adds a new defaults resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved defaults resources using find and the newly added defaults resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self):
         """Finds and retrieves defaults resources from the server.

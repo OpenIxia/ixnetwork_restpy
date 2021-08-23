@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class CfmBridge(Base):
@@ -51,9 +52,12 @@ class CfmBridge(Base):
         'StateCounts': 'stateCounts',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(CfmBridge, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(CfmBridge, self).__init__(parent, list_op)
 
     @property
     def AdvancedLearnedInfoOptions(self):
@@ -67,7 +71,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions_b2029cff9a0e1b9db1c05c032a4f003c import AdvancedLearnedInfoOptions
-        return AdvancedLearnedInfoOptions(self)._select()
+        if self._properties.get('AdvancedLearnedInfoOptions', None) is not None:
+            return self._properties.get('AdvancedLearnedInfoOptions')
+        else:
+            return AdvancedLearnedInfoOptions(self)._select()
 
     @property
     def CfmMp(self):
@@ -81,7 +88,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_8584bca4487041ab880565a01c8deaf3 import CfmMp
-        return CfmMp(self)._select()
+        if self._properties.get('CfmMp', None) is not None:
+            return self._properties.get('CfmMp')
+        else:
+            return CfmMp(self)._select()
 
     @property
     def Connector(self):
@@ -95,7 +105,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def CustomTLV(self):
@@ -109,7 +122,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.customtlv_9dedbdbc1a4a245cbe35b21b51fa3a57 import CustomTLV
-        return CustomTLV(self)._select()
+        if self._properties.get('CustomTLV', None) is not None:
+            return self._properties.get('CustomTLV')
+        else:
+            return CustomTLV(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -123,7 +139,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        return LearnedInfo(self)
+        if self._properties.get('LearnedInfo', None) is not None:
+            return self._properties.get('LearnedInfo')
+        else:
+            return LearnedInfo(self)
 
     @property
     def Link(self):
@@ -137,7 +156,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.link_3c4eb8730b5826d36118e54600a5188b import Link
-        return Link(self)._select()
+        if self._properties.get('Link', None) is not None:
+            return self._properties.get('Link')
+        else:
+            return Link(self)._select()
 
     @property
     def MdLevels(self):
@@ -151,10 +173,14 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mdlevels_139c757bfb085e85b81902e33a549b1f import MdLevels
-        return MdLevels(self)._select()
+        if self._properties.get('MdLevels', None) is not None:
+            return self._properties.get('MdLevels')
+        else:
+            return MdLevels(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +191,7 @@ class CfmBridge(Base):
 
     @property
     def AllowCfmMaidFormatsinY1731(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +202,7 @@ class CfmBridge(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -183,10 +211,12 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -196,6 +226,7 @@ class CfmBridge(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -205,6 +236,7 @@ class CfmBridge(Base):
 
     @property
     def EnableOutOfSequenceCcmDetection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +247,7 @@ class CfmBridge(Base):
 
     @property
     def EncapsulationType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +267,7 @@ class CfmBridge(Base):
 
     @property
     def EtherType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -244,6 +278,7 @@ class CfmBridge(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -252,10 +287,12 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -264,10 +301,12 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfMPs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +315,12 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfMPs'])
     @NumberOfMPs.setter
     def NumberOfMPs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfMPs'], value)
 
     @property
     def OperationMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +331,7 @@ class CfmBridge(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -299,6 +341,7 @@ class CfmBridge(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -307,6 +350,7 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -320,6 +364,7 @@ class CfmBridge(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -328,6 +373,7 @@ class CfmBridge(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfMPs=None, StackedLayers=None):
+        # type: (List[str], int, str, int, List[str]) -> CfmBridge
         """Updates cfmBridge resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -348,6 +394,7 @@ class CfmBridge(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfMPs=None, StackedLayers=None):
+        # type: (List[str], int, str, int, List[str]) -> CfmBridge
         """Adds a new cfmBridge resource on the server and adds it to the container.
 
         Args
@@ -427,6 +474,912 @@ class CfmBridge(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def ClearAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the clearAllLearnedInfo operation on the server.
+
+        Clear All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetAISLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getAISLearnedInfo operation on the server.
+
+        Get AIS Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getAISLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAISLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAISLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getAISLearnedInfo', payload=payload, response_object=None)
+
+    def GetAllLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getAllLearnedInfo operation on the server.
+
+        Get All Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getAllLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getAllLearnedInfo(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
+
+    def GetCCMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getCCMLearnedInformation operation on the server.
+
+        Get CCM Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getCCMLearnedInformation(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getCCMLearnedInformation(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getCCMLearnedInformation(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCCMLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmAISDbLearnedInformation operation on the server.
+
+        Get Learned AIS Information
+
+        getCfmAISDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmCcmLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmCcmLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmCcmLearnedInformation(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmDMDbLearnedInformation operation on the server.
+
+        Get Learned DM Information
+
+        getCfmDMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLCKDbLearnedInformation operation on the server.
+
+        Get Learned LCK Information
+
+        getCfmLCKDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmLinkTraceDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLMDbLearnedInformation operation on the server.
+
+        Get Learned LM Information
+
+        getCfmLMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmLoopbackDbLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getCfmLoopbackDbLearnedInformation(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmSLMDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmSLMDbLearnedInformation operation on the server.
+
+        Get Learned SLM Information
+
+        getCfmSLMDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmSLMDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getCfmTSTDbLearnedInformation operation on the server.
+
+        Get Learned TST Information
+
+        getCfmTSTDbLearnedInformation(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetDelayMeasurementLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getDelayMeasurementLearnedInfo operation on the server.
+
+        Get Delay Measurement Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getDelayMeasurementLearnedInfo(async_operation=bool)
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getDelayMeasurementLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getDelayMeasurementLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getDelayMeasurementLearnedInfo', payload=payload, response_object=None)
+
+    def GetLCKLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getLCKLearnedInfo operation on the server.
+
+        Get LCK Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLCKLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLCKLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLCKLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLCKLearnedInfo', payload=payload, response_object=None)
+
+    def GetLinkTraceDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getLinkTraceDbLearnedInformation operation on the server.
+
+        Get LinkTrace Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLinkTraceDbLearnedInformation(async_operation=bool)
+        ------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkTraceDbLearnedInformation(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLinkTraceDbLearnedInformation(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLinkTraceDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetLoopbackDbLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getLoopbackDbLearnedInformation operation on the server.
+
+        Get LoopBack Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLoopbackDbLearnedInformation(async_operation=bool)
+        -----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLoopbackDbLearnedInformation(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLoopbackDbLearnedInformation(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLoopbackDbLearnedInformation', payload=payload, response_object=None)
+
+    def GetLossMeasurementLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getLossMeasurementLearnedInfo operation on the server.
+
+        Get Loss Measurement Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getLossMeasurementLearnedInfo(async_operation=bool)
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLossMeasurementLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getLossMeasurementLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLossMeasurementLearnedInfo', payload=payload, response_object=None)
+
+    def GetPeriodicDelayMeasurementLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getPeriodicDelayMeasurementLearnedInfo operation on the server.
+
+        Get Periodic Delay Measurement Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPeriodicDelayMeasurementLearnedInfo(async_operation=bool)
+        ------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicDelayMeasurementLearnedInfo(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicDelayMeasurementLearnedInfo(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicDelayMeasurementLearnedInfo', payload=payload, response_object=None)
+
+    def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicDMLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicDMLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLBLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLBLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLinkTraceLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getPeriodicLinkTraceLearnedInfo operation on the server.
+
+        Get Periodic LinkTrace Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPeriodicLinkTraceLearnedInfo(async_operation=bool)
+        -----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicLinkTraceLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicLinkTraceLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLinkTraceLearnedInfo', payload=payload, response_object=None)
+
+    def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLMLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLMLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
+
+    def GetPeriodicLoopBackLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getPeriodicLoopBackLearnedInfo operation on the server.
+
+        Get Periodic LoopBack Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPeriodicLoopBackLearnedInfo(async_operation=bool)
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicLoopBackLearnedInfo(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicLoopBackLearnedInfo(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLoopBackLearnedInfo', payload=payload, response_object=None)
+
+    def GetPeriodicLossMeasurementLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getPeriodicLossMeasurementLearnedInfo operation on the server.
+
+        Get Periodic Loss Measurement Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getPeriodicLossMeasurementLearnedInfo(async_operation=bool)
+        -----------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicLossMeasurementLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getPeriodicLossMeasurementLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLossMeasurementLearnedInfo', payload=payload, response_object=None)
+
+    def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getPeriodicLTLearnedInformation operation on the server.
+
+        Please provide a proper help text here.
+
+        getPeriodicLTLearnedInformation(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): Please provide a proper description here.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
+
+    def GetSLMLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getSLMLearnedInfo operation on the server.
+
+        Get SLM Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getSLMLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getSLMLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getSLMLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getSLMLearnedInfo', payload=payload, response_object=None)
+
+    def GetTSTLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the getTSTLearnedInfo operation on the server.
+
+        Get TST Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getTSTLearnedInfo(async_operation=bool)
+        ---------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getTSTLearnedInfo(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getTSTLearnedInfo(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getTSTLearnedInfo', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AllowCfmMaidFormatsinY1731=None, EnableOutOfSequenceCcmDetection=None, EncapsulationType=None, EtherType=None, OperationMode=None):
         """Base class infrastructure that gets a list of cfmBridge device ids encapsulated by this object.
 
@@ -451,748 +1404,3 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def ClearAllLearnedInfo(self, *args, **kwargs):
-        """Executes the clearAllLearnedInfo operation on the server.
-
-        Clear All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        clearAllLearnedInfo(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        clearAllLearnedInfo(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        clearAllLearnedInfo(Arg2=list)list
-        ----------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('clearAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetAISLearnedInfo(self, *args, **kwargs):
-        """Executes the getAISLearnedInfo operation on the server.
-
-        Get AIS Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getAISLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getAISLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAISLearnedInfo', payload=payload, response_object=None)
-
-    def GetAllLearnedInfo(self, *args, **kwargs):
-        """Executes the getAllLearnedInfo operation on the server.
-
-        Get All Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getAllLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getAllLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        getAllLearnedInfo(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getAllLearnedInfo', payload=payload, response_object=None)
-
-    def GetCCMLearnedInformation(self, *args, **kwargs):
-        """Executes the getCCMLearnedInformation operation on the server.
-
-        Get CCM Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getCCMLearnedInformation(SessionIndices=list)
-        ---------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getCCMLearnedInformation(SessionIndices=string)
-        -----------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCCMLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmAISDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmAISDbLearnedInformation operation on the server.
-
-        Get Learned AIS Information
-
-        getCfmAISDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmAISDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmCcmLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmCcmLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmCcmLearnedInformation(Arg2=list)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmCcmLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmDMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmDMDbLearnedInformation operation on the server.
-
-        Get Learned DM Information
-
-        getCfmDMDbLearnedInformation(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmDMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLCKDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLCKDbLearnedInformation operation on the server.
-
-        Get Learned LCK Information
-
-        getCfmLCKDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLCKDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLinkTraceDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLinkTraceDbLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmLinkTraceDbLearnedInformation(Arg2=list)list
-        --------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLinkTraceDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLMDbLearnedInformation operation on the server.
-
-        Get Learned LM Information
-
-        getCfmLMDbLearnedInformation(Arg2=list)list
-        -------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmLoopbackDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmLoopbackDbLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getCfmLoopbackDbLearnedInformation(Arg2=list)list
-        -------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmLoopbackDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmSLMDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmSLMDbLearnedInformation operation on the server.
-
-        Get Learned SLM Information
-
-        getCfmSLMDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmSLMDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetCfmTSTDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getCfmTSTDbLearnedInformation operation on the server.
-
-        Get Learned TST Information
-
-        getCfmTSTDbLearnedInformation(Arg2=list)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getCfmTSTDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetDelayMeasurementLearnedInfo(self, *args, **kwargs):
-        """Executes the getDelayMeasurementLearnedInfo operation on the server.
-
-        Get Delay Measurement Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getDelayMeasurementLearnedInfo(SessionIndices=list)
-        ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getDelayMeasurementLearnedInfo(SessionIndices=string)
-        -----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getDelayMeasurementLearnedInfo', payload=payload, response_object=None)
-
-    def GetLCKLearnedInfo(self, *args, **kwargs):
-        """Executes the getLCKLearnedInfo operation on the server.
-
-        Get LCK Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLCKLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLCKLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLCKLearnedInfo', payload=payload, response_object=None)
-
-    def GetLinkTraceDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getLinkTraceDbLearnedInformation operation on the server.
-
-        Get LinkTrace Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLinkTraceDbLearnedInformation(SessionIndices=list)
-        -----------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLinkTraceDbLearnedInformation(SessionIndices=string)
-        -------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLinkTraceDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetLoopbackDbLearnedInformation(self, *args, **kwargs):
-        """Executes the getLoopbackDbLearnedInformation operation on the server.
-
-        Get LoopBack Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLoopbackDbLearnedInformation(SessionIndices=list)
-        ----------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLoopbackDbLearnedInformation(SessionIndices=string)
-        ------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLoopbackDbLearnedInformation', payload=payload, response_object=None)
-
-    def GetLossMeasurementLearnedInfo(self, *args, **kwargs):
-        """Executes the getLossMeasurementLearnedInfo operation on the server.
-
-        Get Loss Measurement Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getLossMeasurementLearnedInfo(SessionIndices=list)
-        --------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getLossMeasurementLearnedInfo(SessionIndices=string)
-        ----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getLossMeasurementLearnedInfo', payload=payload, response_object=None)
-
-    def GetPeriodicDelayMeasurementLearnedInfo(self, *args, **kwargs):
-        """Executes the getPeriodicDelayMeasurementLearnedInfo operation on the server.
-
-        Get Periodic Delay Measurement Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPeriodicDelayMeasurementLearnedInfo(SessionIndices=list)
-        -----------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPeriodicDelayMeasurementLearnedInfo(SessionIndices=string)
-        -------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDelayMeasurementLearnedInfo', payload=payload, response_object=None)
-
-    def GetPeriodicDMLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicDMLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicDMLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicDMLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLBLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLBLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLBLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLBLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLinkTraceLearnedInfo(self, *args, **kwargs):
-        """Executes the getPeriodicLinkTraceLearnedInfo operation on the server.
-
-        Get Periodic LinkTrace Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPeriodicLinkTraceLearnedInfo(SessionIndices=list)
-        ----------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPeriodicLinkTraceLearnedInfo(SessionIndices=string)
-        ------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLinkTraceLearnedInfo', payload=payload, response_object=None)
-
-    def GetPeriodicLMLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLMLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLMLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLMLearnedInformation', payload=payload, response_object=None)
-
-    def GetPeriodicLoopBackLearnedInfo(self, *args, **kwargs):
-        """Executes the getPeriodicLoopBackLearnedInfo operation on the server.
-
-        Get Periodic LoopBack Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPeriodicLoopBackLearnedInfo(SessionIndices=list)
-        ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPeriodicLoopBackLearnedInfo(SessionIndices=string)
-        -----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLoopBackLearnedInfo', payload=payload, response_object=None)
-
-    def GetPeriodicLossMeasurementLearnedInfo(self, *args, **kwargs):
-        """Executes the getPeriodicLossMeasurementLearnedInfo operation on the server.
-
-        Get Periodic Loss Measurement Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getPeriodicLossMeasurementLearnedInfo(SessionIndices=list)
-        ----------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getPeriodicLossMeasurementLearnedInfo(SessionIndices=string)
-        ------------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLossMeasurementLearnedInfo', payload=payload, response_object=None)
-
-    def GetPeriodicLTLearnedInformation(self, *args, **kwargs):
-        """Executes the getPeriodicLTLearnedInformation operation on the server.
-
-        Please provide a proper help text here.
-
-        getPeriodicLTLearnedInformation(Arg2=list)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
-        - Returns list(str): Please provide a proper description here.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getPeriodicLTLearnedInformation', payload=payload, response_object=None)
-
-    def GetSLMLearnedInfo(self, *args, **kwargs):
-        """Executes the getSLMLearnedInfo operation on the server.
-
-        Get SLM Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getSLMLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getSLMLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getSLMLearnedInfo', payload=payload, response_object=None)
-
-    def GetTSTLearnedInfo(self, *args, **kwargs):
-        """Executes the getTSTLearnedInfo operation on the server.
-
-        Get TST Learned Info
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        getTSTLearnedInfo(SessionIndices=list)
-        --------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        getTSTLearnedInfo(SessionIndices=string)
-        ----------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getTSTLearnedInfo', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

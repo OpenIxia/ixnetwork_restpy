@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpLsExtendedCommunitiesList(Base):
@@ -48,12 +49,15 @@ class BgpLsExtendedCommunitiesList(Base):
         'SubType': 'subType',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpLsExtendedCommunitiesList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpLsExtendedCommunitiesList, self).__init__(parent, list_op)
 
     @property
     def AsNumber2Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def AsNumber4Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +79,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def AssignedNumber2Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +90,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def AssignedNumber4Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -94,6 +101,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def ColorCOBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def ColorReservedBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +123,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def ColorValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -133,6 +144,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -142,6 +154,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def Ip(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -152,6 +165,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def LinkBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +176,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +185,12 @@ class BgpLsExtendedCommunitiesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OpaqueData(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -184,6 +201,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def SubType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -194,6 +212,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
     @property
     def Type(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -203,6 +222,7 @@ class BgpLsExtendedCommunitiesList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Type']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpLsExtendedCommunitiesList
         """Updates bgpLsExtendedCommunitiesList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -218,7 +238,26 @@ class BgpLsExtendedCommunitiesList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> BgpLsExtendedCommunitiesList
+        """Adds a new bgpLsExtendedCommunitiesList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved bgpLsExtendedCommunitiesList resources using find and the newly added bgpLsExtendedCommunitiesList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> BgpLsExtendedCommunitiesList
         """Finds and retrieves bgpLsExtendedCommunitiesList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpLsExtendedCommunitiesList resources from the server.

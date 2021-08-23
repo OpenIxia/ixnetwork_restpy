@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NacApps(Base):
@@ -37,12 +38,15 @@ class NacApps(Base):
         'ObjectId': 'objectId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NacApps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NacApps, self).__init__(parent, list_op)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class NacApps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +70,7 @@ class NacApps(Base):
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,9 +79,11 @@ class NacApps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
+        # type: (str, int) -> NacApps
         """Updates nacApps resource on the server.
 
         Args
@@ -89,6 +98,7 @@ class NacApps(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, Value=None):
+        # type: (str, int) -> NacApps
         """Adds a new nacApps resource on the server and adds it to the container.
 
         Args
@@ -117,6 +127,7 @@ class NacApps(Base):
         self._delete()
 
     def find(self, Name=None, ObjectId=None, Value=None):
+        # type: (str, str, int) -> NacApps
         """Finds and retrieves nacApps resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacApps resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FeaturesSupported(Base):
@@ -46,12 +47,15 @@ class FeaturesSupported(Base):
         'WriteSetField': 'writeSetField',
         'WriteSetFieldMiss': 'writeSetFieldMiss',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FeaturesSupported, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FeaturesSupported, self).__init__(parent, list_op)
 
     @property
     def ApplyActions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -60,10 +64,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActions'])
     @ApplyActions.setter
     def ApplyActions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActions'], value)
 
     @property
     def ApplyActionsMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,10 +78,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplyActionsMiss'])
     @ApplyActionsMiss.setter
     def ApplyActionsMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplyActionsMiss'], value)
 
     @property
     def ApplySetField(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -84,10 +92,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplySetField'])
     @ApplySetField.setter
     def ApplySetField(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplySetField'], value)
 
     @property
     def ApplySetFieldMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -96,10 +106,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApplySetFieldMiss'])
     @ApplySetFieldMiss.setter
     def ApplySetFieldMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApplySetFieldMiss'], value)
 
     @property
     def Instruction(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +120,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Instruction'])
     @Instruction.setter
     def Instruction(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Instruction'], value)
 
     @property
     def InstructionMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -120,10 +134,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InstructionMiss'])
     @InstructionMiss.setter
     def InstructionMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['InstructionMiss'], value)
 
     @property
     def Match(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -132,10 +148,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Match'])
     @Match.setter
     def Match(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Match'], value)
 
     @property
     def NextTable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -144,10 +162,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextTable'])
     @NextTable.setter
     def NextTable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextTable'], value)
 
     @property
     def NextTableMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +176,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextTableMiss'])
     @NextTableMiss.setter
     def NextTableMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextTableMiss'], value)
 
     @property
     def Wildcards(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +190,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Wildcards'])
     @Wildcards.setter
     def Wildcards(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Wildcards'], value)
 
     @property
     def WriteActions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,10 +204,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActions'])
     @WriteActions.setter
     def WriteActions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActions'], value)
 
     @property
     def WriteActionsMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -192,10 +218,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteActionsMiss'])
     @WriteActionsMiss.setter
     def WriteActionsMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteActionsMiss'], value)
 
     @property
     def WriteSetField(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -204,10 +232,12 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteSetField'])
     @WriteSetField.setter
     def WriteSetField(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteSetField'], value)
 
     @property
     def WriteSetFieldMiss(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -216,9 +246,11 @@ class FeaturesSupported(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WriteSetFieldMiss'])
     @WriteSetFieldMiss.setter
     def WriteSetFieldMiss(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WriteSetFieldMiss'], value)
 
     def update(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> FeaturesSupported
         """Updates featuresSupported resource on the server.
 
         Args

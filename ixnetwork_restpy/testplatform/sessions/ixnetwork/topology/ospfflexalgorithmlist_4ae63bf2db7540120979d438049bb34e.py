@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfFlexAlgorithmList(Base):
@@ -52,12 +53,15 @@ class OspfFlexAlgorithmList(Base):
         'Name': 'name',
         'Priority': 'priority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfFlexAlgorithmList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfFlexAlgorithmList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -68,6 +72,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def CalcType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -78,6 +83,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,6 +93,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +103,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def EnableExcludeAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -106,6 +114,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def EnableFadfTlv(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -116,6 +125,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def EnableIncludeAllAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -126,6 +136,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def EnableIncludeAnyAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -136,6 +147,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def ExcludeAgExtAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -146,6 +158,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def ExcludeAgExtAgLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -156,6 +169,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def FadFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +180,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def FadfLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +191,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def FlexAlgo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +202,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def IncludeAllAgExtAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +213,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def IncludeAllAgExtAgLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +224,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def IncludeAnyAgExtAg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +235,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def IncludeAnyAgExtAgLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +246,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def MetricType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +257,7 @@ class OspfFlexAlgorithmList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -244,10 +266,12 @@ class OspfFlexAlgorithmList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Priority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -257,6 +281,7 @@ class OspfFlexAlgorithmList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Priority']))
 
     def update(self, Name=None):
+        # type: (str) -> OspfFlexAlgorithmList
         """Updates ospfFlexAlgorithmList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

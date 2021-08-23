@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class AcName(Base):
@@ -38,12 +39,15 @@ class AcName(Base):
         'Percentage': 'percentage',
         'Select': 'select',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(AcName, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(AcName, self).__init__(parent, list_op)
 
     @property
     def AcName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -52,10 +56,12 @@ class AcName(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AcName'])
     @AcName.setter
     def AcName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AcName'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -65,6 +71,7 @@ class AcName(Base):
 
     @property
     def Percentage(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -73,10 +80,12 @@ class AcName(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Percentage'])
     @Percentage.setter
     def Percentage(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Percentage'], value)
 
     @property
     def Select(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -85,9 +94,11 @@ class AcName(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Select'])
     @Select.setter
     def Select(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Select'], value)
 
     def update(self, AcName=None, Percentage=None, Select=None):
+        # type: (str, int, bool) -> AcName
         """Updates acName resource on the server.
 
         Args
@@ -103,6 +114,7 @@ class AcName(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AcName=None, Percentage=None, Select=None):
+        # type: (str, int, bool) -> AcName
         """Adds a new acName resource on the server and adds it to the container.
 
         Args
@@ -132,6 +144,7 @@ class AcName(Base):
         self._delete()
 
     def find(self, AcName=None, ObjectId=None, Percentage=None, Select=None):
+        # type: (str, str, int, bool) -> AcName
         """Finds and retrieves acName resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve acName resources from the server.
@@ -174,14 +187,16 @@ class AcName(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -194,13 +209,15 @@ class AcName(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -214,13 +231,15 @@ class AcName(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

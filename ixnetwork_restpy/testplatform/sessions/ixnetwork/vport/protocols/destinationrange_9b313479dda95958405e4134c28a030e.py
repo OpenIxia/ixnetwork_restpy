@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DestinationRange(Base):
@@ -46,9 +47,13 @@ class DestinationRange(Base):
         'IsSendingAsSrro': 'isSendingAsSrro',
         'P2mpId': 'p2mpId',
     }
+    _SDM_ENUM_MAP = {
+        'behavior': ['ingress', 'egress'],
+        'emulationType': ['reserved', 'rsvpTe', 'rsvpTeP2mP'],
+    }
 
-    def __init__(self, parent):
-        super(DestinationRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DestinationRange, self).__init__(parent, list_op)
 
     @property
     def Egress(self):
@@ -62,7 +67,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.egress_eafa79ad778e0a6c6cd87e7f67bde5ec import Egress
-        return Egress(self)._select()
+        if self._properties.get('Egress', None) is not None:
+            return self._properties.get('Egress')
+        else:
+            return Egress(self)._select()
 
     @property
     def Ingress(self):
@@ -76,7 +84,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ingress_da8eb3f5bded227d4615e7b9e030b32d import Ingress
-        return Ingress(self)._select()
+        if self._properties.get('Ingress', None) is not None:
+            return self._properties.get('Ingress')
+        else:
+            return Ingress(self)._select()
 
     @property
     def TunnelLeafRange(self):
@@ -90,7 +101,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelleafrange_66cac69e2e026fc7d2fdc68b1e28e7ca import TunnelLeafRange
-        return TunnelLeafRange(self)
+        if self._properties.get('TunnelLeafRange', None) is not None:
+            return self._properties.get('TunnelLeafRange')
+        else:
+            return TunnelLeafRange(self)
 
     @property
     def TunnelTailTrafficEndPoint(self):
@@ -104,10 +118,14 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunneltailtrafficendpoint_284f93fd059aad011661455f3f6293cb import TunnelTailTrafficEndPoint
-        return TunnelTailTrafficEndPoint(self)
+        if self._properties.get('TunnelTailTrafficEndPoint', None) is not None:
+            return self._properties.get('TunnelTailTrafficEndPoint')
+        else:
+            return TunnelTailTrafficEndPoint(self)
 
     @property
     def Behavior(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +134,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Behavior'])
     @Behavior.setter
     def Behavior(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Behavior'], value)
 
     @property
     def EmulationType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -128,10 +148,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EmulationType'])
     @EmulationType.setter
     def EmulationType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EmulationType'], value)
 
     @property
     def EnableReplyingLspPing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -140,10 +162,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableReplyingLspPing'])
     @EnableReplyingLspPing.setter
     def EnableReplyingLspPing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableReplyingLspPing'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -152,10 +176,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IpAddressFrom(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -164,10 +190,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpAddressFrom'])
     @IpAddressFrom.setter
     def IpAddressFrom(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpAddressFrom'], value)
 
     @property
     def IpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -176,10 +204,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
     @IpCount.setter
     def IpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
 
     @property
     def IsConnectedIpAppended(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -188,10 +218,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsConnectedIpAppended'])
     @IsConnectedIpAppended.setter
     def IsConnectedIpAppended(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsConnectedIpAppended'], value)
 
     @property
     def IsHeadIpPrepended(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -200,10 +232,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsHeadIpPrepended'])
     @IsHeadIpPrepended.setter
     def IsHeadIpPrepended(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsHeadIpPrepended'], value)
 
     @property
     def IsLeafIpPrepended(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -212,10 +246,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsLeafIpPrepended'])
     @IsLeafIpPrepended.setter
     def IsLeafIpPrepended(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsLeafIpPrepended'], value)
 
     @property
     def IsSendingAsRro(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -224,10 +260,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsSendingAsRro'])
     @IsSendingAsRro.setter
     def IsSendingAsRro(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsSendingAsRro'], value)
 
     @property
     def IsSendingAsSrro(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -236,10 +274,12 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsSendingAsSrro'])
     @IsSendingAsSrro.setter
     def IsSendingAsSrro(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsSendingAsSrro'], value)
 
     @property
     def P2mpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -248,9 +288,11 @@ class DestinationRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['P2mpId'])
     @P2mpId.setter
     def P2mpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['P2mpId'], value)
 
     def update(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
+        # type: (str, str, bool, bool, str, int, bool, bool, bool, bool, bool, str) -> DestinationRange
         """Updates destinationRange resource on the server.
 
         Args
@@ -275,6 +317,7 @@ class DestinationRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
+        # type: (str, str, bool, bool, str, int, bool, bool, bool, bool, bool, str) -> DestinationRange
         """Adds a new destinationRange resource on the server and adds it to the container.
 
         Args
@@ -313,6 +356,7 @@ class DestinationRange(Base):
         self._delete()
 
     def find(self, Behavior=None, EmulationType=None, EnableReplyingLspPing=None, Enabled=None, IpAddressFrom=None, IpCount=None, IsConnectedIpAppended=None, IsHeadIpPrepended=None, IsLeafIpPrepended=None, IsSendingAsRro=None, IsSendingAsSrro=None, P2mpId=None):
+        # type: (str, str, bool, bool, str, int, bool, bool, bool, bool, bool, str) -> DestinationRange
         """Finds and retrieves destinationRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve destinationRange resources from the server.

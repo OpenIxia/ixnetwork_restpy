@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Atm(Base):
@@ -43,12 +44,16 @@ class Atm(Base):
         'Vci': 'vci',
         'Vpi': 'vpi',
     }
+    _SDM_ENUM_MAP = {
+        'atmEncapsulation': ['llcRoutedSnap', 'llcBridged802p3WithFcs', 'llcBridged802p3WithOutFcs', 'ppp', 'vcMultiplexedPpp', 'vcMultiRouted', 'vcMultiBridged802p3WithFcs', 'vcMultiBridged802p3WithOutFcs'],
+    }
 
-    def __init__(self, parent):
-        super(Atm, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Atm, self).__init__(parent, list_op)
 
     @property
     def AtmEncapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,10 +62,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AtmEncapsulation'])
     @AtmEncapsulation.setter
     def AtmEncapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AtmEncapsulation'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,10 +76,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -81,10 +90,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def IncrementVci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +104,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementVci'])
     @IncrementVci.setter
     def IncrementVci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementVci'], value)
 
     @property
     def IncrementVpi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,10 +118,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementVpi'])
     @IncrementVpi.setter
     def IncrementVpi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementVpi'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,10 +132,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,10 +146,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def Vci(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +160,12 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vci'])
     @Vci.setter
     def Vci(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vci'], value)
 
     @property
     def Vpi(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,9 +174,11 @@ class Atm(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vpi'])
     @Vpi.setter
     def Vpi(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Vpi'], value)
 
     def update(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+        # type: (str, int, bool, int, int, str, str, int, int) -> Atm
         """Updates atm resource on the server.
 
         Args
@@ -177,6 +200,7 @@ class Atm(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+        # type: (str, int, bool, int, int, str, str, int, int) -> Atm
         """Adds a new atm resource on the server and adds it to the container.
 
         Args
@@ -212,6 +236,7 @@ class Atm(Base):
         self._delete()
 
     def find(self, AtmEncapsulation=None, Count=None, Enabled=None, IncrementVci=None, IncrementVpi=None, Name=None, TrafficGroupId=None, Vci=None, Vpi=None):
+        # type: (str, int, bool, int, int, str, str, int, int) -> Atm
         """Finds and retrieves atm resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve atm resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SpbNetworkRange(Base):
@@ -44,9 +45,11 @@ class SpbNetworkRange(Base):
         'StartSystemId': 'startSystemId',
         'SystemIdIncrementBy': 'systemIdIncrementBy',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SpbNetworkRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SpbNetworkRange, self).__init__(parent, list_op)
 
     @property
     def SpbOutsideLinks(self):
@@ -60,7 +63,10 @@ class SpbNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_086c6473238ca3788e998d3e79d13474 import SpbOutsideLinks
-        return SpbOutsideLinks(self)
+        if self._properties.get('SpbOutsideLinks', None) is not None:
+            return self._properties.get('SpbOutsideLinks')
+        else:
+            return SpbOutsideLinks(self)
 
     @property
     def SpbmNodeTopologyRange(self):
@@ -74,10 +80,14 @@ class SpbNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_ae48ad426b9c732f083b1ad513ed2710 import SpbmNodeTopologyRange
-        return SpbmNodeTopologyRange(self)
+        if self._properties.get('SpbmNodeTopologyRange', None) is not None:
+            return self._properties.get('SpbmNodeTopologyRange')
+        else:
+            return SpbmNodeTopologyRange(self)
 
     @property
     def EnableAdvertiseNetworkRange(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,10 +96,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'])
     @EnableAdvertiseNetworkRange.setter
     def EnableAdvertiseNetworkRange(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAdvertiseNetworkRange'], value)
 
     @property
     def EnableHostName(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,10 +110,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHostName'])
     @EnableHostName.setter
     def EnableHostName(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHostName'], value)
 
     @property
     def EntryColumn(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,10 +124,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryColumn'])
     @EntryColumn.setter
     def EntryColumn(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryColumn'], value)
 
     @property
     def EntryRow(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +138,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EntryRow'])
     @EntryRow.setter
     def EntryRow(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EntryRow'], value)
 
     @property
     def HostNamePrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,10 +152,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostNamePrefix'])
     @HostNamePrefix.setter
     def HostNamePrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostNamePrefix'], value)
 
     @property
     def InterfaceMetric(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,10 +166,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceMetric'])
     @InterfaceMetric.setter
     def InterfaceMetric(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterfaceMetric'], value)
 
     @property
     def NoOfColumns(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -158,10 +180,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfColumns'])
     @NoOfColumns.setter
     def NoOfColumns(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfColumns'], value)
 
     @property
     def NoOfRows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -170,10 +194,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfRows'])
     @NoOfRows.setter
     def NoOfRows(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfRows'], value)
 
     @property
     def StartSystemId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,10 +208,12 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartSystemId'])
     @StartSystemId.setter
     def StartSystemId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartSystemId'], value)
 
     @property
     def SystemIdIncrementBy(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,9 +222,11 @@ class SpbNetworkRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SystemIdIncrementBy'])
     @SystemIdIncrementBy.setter
     def SystemIdIncrementBy(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SystemIdIncrementBy'], value)
 
     def update(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+        # type: (bool, bool, int, int, str, int, int, int, str, str) -> SpbNetworkRange
         """Updates spbNetworkRange resource on the server.
 
         Args
@@ -219,6 +249,7 @@ class SpbNetworkRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+        # type: (bool, bool, int, int, str, int, int, int, str, str) -> SpbNetworkRange
         """Adds a new spbNetworkRange resource on the server and adds it to the container.
 
         Args
@@ -255,6 +286,7 @@ class SpbNetworkRange(Base):
         self._delete()
 
     def find(self, EnableAdvertiseNetworkRange=None, EnableHostName=None, EntryColumn=None, EntryRow=None, HostNamePrefix=None, InterfaceMetric=None, NoOfColumns=None, NoOfRows=None, StartSystemId=None, SystemIdIncrementBy=None):
+        # type: (bool, bool, int, int, str, int, int, int, str, str) -> SpbNetworkRange
         """Finds and retrieves spbNetworkRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve spbNetworkRange resources from the server.

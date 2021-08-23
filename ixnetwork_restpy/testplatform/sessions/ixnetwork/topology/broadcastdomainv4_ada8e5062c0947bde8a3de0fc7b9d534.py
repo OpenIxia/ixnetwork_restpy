@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BroadcastDomainV4(Base):
@@ -68,9 +69,11 @@ class BroadcastDomainV4(Base):
         'SenderAddressPRootNodeAddress': 'senderAddressPRootNodeAddress',
         'UsebVlan': 'usebVlan',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BroadcastDomainV4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BroadcastDomainV4, self).__init__(parent, list_op)
 
     @property
     def BgpEvpnJoinSynchIgmp(self):
@@ -84,7 +87,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchigmp_f89f38fca85b1442229391afe5b95e76 import BgpEvpnJoinSynchIgmp
-        return BgpEvpnJoinSynchIgmp(self)._select()
+        if self._properties.get('BgpEvpnJoinSynchIgmp', None) is not None:
+            return self._properties.get('BgpEvpnJoinSynchIgmp')
+        else:
+            return BgpEvpnJoinSynchIgmp(self)._select()
 
     @property
     def BgpEvpnJoinSynchMld(self):
@@ -98,7 +104,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchmld_4f5a831aa8e923cbdbff69a4f078837d import BgpEvpnJoinSynchMld
-        return BgpEvpnJoinSynchMld(self)._select()
+        if self._properties.get('BgpEvpnJoinSynchMld', None) is not None:
+            return self._properties.get('BgpEvpnJoinSynchMld')
+        else:
+            return BgpEvpnJoinSynchMld(self)._select()
 
     @property
     def BgpEvpnLeaveSynchIgmp(self):
@@ -112,7 +121,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchigmp_411f258090ec14c0d716cabc5159977e import BgpEvpnLeaveSynchIgmp
-        return BgpEvpnLeaveSynchIgmp(self)._select()
+        if self._properties.get('BgpEvpnLeaveSynchIgmp', None) is not None:
+            return self._properties.get('BgpEvpnLeaveSynchIgmp')
+        else:
+            return BgpEvpnLeaveSynchIgmp(self)._select()
 
     @property
     def BgpEvpnLeaveSynchMld(self):
@@ -126,7 +138,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchmld_226fbb8fe75f87a6460aecae872f059a import BgpEvpnLeaveSynchMld
-        return BgpEvpnLeaveSynchMld(self)._select()
+        if self._properties.get('BgpEvpnLeaveSynchMld', None) is not None:
+            return self._properties.get('BgpEvpnLeaveSynchMld')
+        else:
+            return BgpEvpnLeaveSynchMld(self)._select()
 
     @property
     def BgpEvpnSmetIgmp(self):
@@ -140,7 +155,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetigmp_68fa5fa63ce581945025c1253038bccb import BgpEvpnSmetIgmp
-        return BgpEvpnSmetIgmp(self)._select()
+        if self._properties.get('BgpEvpnSmetIgmp', None) is not None:
+            return self._properties.get('BgpEvpnSmetIgmp')
+        else:
+            return BgpEvpnSmetIgmp(self)._select()
 
     @property
     def BgpEvpnSmetMld(self):
@@ -154,7 +172,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetmld_8d81cf97f583ad4547c03c6110c5168a import BgpEvpnSmetMld
-        return BgpEvpnSmetMld(self)._select()
+        if self._properties.get('BgpEvpnSmetMld', None) is not None:
+            return self._properties.get('BgpEvpnSmetMld')
+        else:
+            return BgpEvpnSmetMld(self)._select()
 
     @property
     def PnTLVList(self):
@@ -168,10 +189,14 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import PnTLVList
-        return PnTLVList(self)
+        if self._properties.get('PnTLVList', None) is not None:
+            return self._properties.get('PnTLVList')
+        else:
+            return PnTLVList(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +207,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def AdRouteLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +218,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def AsNumber2Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +229,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def AsNumber4Bytes(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +240,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def BVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -222,6 +251,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def BVlanPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -232,6 +262,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def BVlanTpid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -242,6 +273,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -251,6 +283,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -260,6 +293,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def EnableVlanAwareService(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +304,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def EthernetTagId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -280,6 +315,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ExportEviRTAssignedNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -290,6 +326,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ExportRTIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -300,6 +337,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ExportRTSubType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -310,6 +348,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ExportRTType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -320,6 +359,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ExportRTValueSameAsExportRT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -330,6 +370,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def GroupAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -340,6 +381,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ImportEviRTAssignedNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +392,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ImportRTIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +403,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ImportRTSubType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +414,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ImportRTType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +425,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def ImportRTValueSameAsExportEVIRT(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -390,6 +436,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -398,10 +445,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfMacPools(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -410,10 +459,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfMacPools'])
     @NoOfMacPools.setter
     def NoOfMacPools(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfMacPools'], value)
 
     @property
     def NumJoinSynchIgmpRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -422,10 +473,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumJoinSynchIgmpRoutes'])
     @NumJoinSynchIgmpRoutes.setter
     def NumJoinSynchIgmpRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumJoinSynchIgmpRoutes'], value)
 
     @property
     def NumJoinSynchMldRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -434,10 +487,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumJoinSynchMldRoutes'])
     @NumJoinSynchMldRoutes.setter
     def NumJoinSynchMldRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumJoinSynchMldRoutes'], value)
 
     @property
     def NumLeaveSynchIgmpRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -446,10 +501,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumLeaveSynchIgmpRoutes'])
     @NumLeaveSynchIgmpRoutes.setter
     def NumLeaveSynchIgmpRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumLeaveSynchIgmpRoutes'], value)
 
     @property
     def NumLeaveSynchMldRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -458,10 +515,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumLeaveSynchMldRoutes'])
     @NumLeaveSynchMldRoutes.setter
     def NumLeaveSynchMldRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumLeaveSynchMldRoutes'], value)
 
     @property
     def NumSmetIgmpRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -470,10 +529,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumSmetIgmpRoutes'])
     @NumSmetIgmpRoutes.setter
     def NumSmetIgmpRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumSmetIgmpRoutes'], value)
 
     @property
     def NumSmetMldRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -482,10 +543,12 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumSmetMldRoutes'])
     @NumSmetMldRoutes.setter
     def NumSmetMldRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumSmetMldRoutes'], value)
 
     @property
     def RootAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -496,6 +559,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def RsvpP2mpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -506,6 +570,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def RsvpP2mpIdAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -516,6 +581,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def RsvpTunnelId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -526,6 +592,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def SenderAddressPRootNodeAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -536,6 +603,7 @@ class BroadcastDomainV4(Base):
 
     @property
     def UsebVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -544,9 +612,11 @@ class BroadcastDomainV4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UsebVlan'])
     @UsebVlan.setter
     def UsebVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UsebVlan'], value)
 
     def update(self, Name=None, NoOfMacPools=None, NumJoinSynchIgmpRoutes=None, NumJoinSynchMldRoutes=None, NumLeaveSynchIgmpRoutes=None, NumLeaveSynchMldRoutes=None, NumSmetIgmpRoutes=None, NumSmetMldRoutes=None, UsebVlan=None):
+        # type: (str, int, int, int, int, int, int, int, bool) -> BroadcastDomainV4
         """Updates broadcastDomainV4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -569,6 +639,114 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def AdvertiseAliasing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the advertiseAliasing operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain.
+
+        advertiseAliasing(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertiseAliasing', payload=payload, response_object=None)
+
+    def AdvertiseAliasingPerBroadcastDomain(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the advertiseAliasingPerBroadcastDomain operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        advertiseAliasingPerBroadcastDomain(async_operation=bool)
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        advertiseAliasingPerBroadcastDomain(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        advertiseAliasingPerBroadcastDomain(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('advertiseAliasingPerBroadcastDomain', payload=payload, response_object=None)
+
+    def WithdrawAliasing(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the withdrawAliasing operation on the server.
+
+        Withdraw Aliasing Per Broadcast Domain.
+
+        withdrawAliasing(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawAliasing', payload=payload, response_object=None)
+
+    def WithdrawAliasingPerBroadcastDomain(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the withdrawAliasingPerBroadcastDomain operation on the server.
+
+        Advertise Aliasing Per Broadcast Domain
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        withdrawAliasingPerBroadcastDomain(async_operation=bool)
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdrawAliasingPerBroadcastDomain(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdrawAliasingPerBroadcastDomain(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('withdrawAliasingPerBroadcastDomain', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdRouteLabel=None, AsNumber2Bytes=None, AsNumber4Bytes=None, BVlanId=None, BVlanPriority=None, BVlanTpid=None, EnableVlanAwareService=None, EthernetTagId=None, ExportEviRTAssignedNumber=None, ExportRTIpv4Address=None, ExportRTSubType=None, ExportRTType=None, ExportRTValueSameAsExportRT=None, GroupAddress=None, ImportEviRTAssignedNumber=None, ImportRTIpv4Address=None, ImportRTSubType=None, ImportRTType=None, ImportRTValueSameAsExportEVIRT=None, RootAddress=None, RsvpP2mpId=None, RsvpP2mpIdAsNumber=None, RsvpTunnelId=None, SenderAddressPRootNodeAddress=None):
         """Base class infrastructure that gets a list of broadcastDomainV4 device ids encapsulated by this object.
@@ -613,93 +791,3 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def AdvertiseAliasing(self, *args, **kwargs):
-        """Executes the advertiseAliasing operation on the server.
-
-        Advertise Aliasing Per Broadcast Domain.
-
-        advertiseAliasing(Arg2=list)list
-        --------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAliasing', payload=payload, response_object=None)
-
-    def AdvertiseAliasingPerBroadcastDomain(self, *args, **kwargs):
-        """Executes the advertiseAliasingPerBroadcastDomain operation on the server.
-
-        Advertise Aliasing Per Broadcast Domain
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        advertiseAliasingPerBroadcastDomain(SessionIndices=list)
-        --------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        advertiseAliasingPerBroadcastDomain(SessionIndices=string)
-        ----------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('advertiseAliasingPerBroadcastDomain', payload=payload, response_object=None)
-
-    def WithdrawAliasing(self, *args, **kwargs):
-        """Executes the withdrawAliasing operation on the server.
-
-        Withdraw Aliasing Per Broadcast Domain.
-
-        withdrawAliasing(Arg2=list)list
-        -------------------------------
-        - Arg2 (list(number)): List of indices into the group. An empty list indicates all instances in the group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAliasing', payload=payload, response_object=None)
-
-    def WithdrawAliasingPerBroadcastDomain(self, *args, **kwargs):
-        """Executes the withdrawAliasingPerBroadcastDomain operation on the server.
-
-        Advertise Aliasing Per Broadcast Domain
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        withdrawAliasingPerBroadcastDomain(SessionIndices=list)
-        -------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        withdrawAliasingPerBroadcastDomain(SessionIndices=string)
-        ---------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('withdrawAliasingPerBroadcastDomain', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgtpServerOptions(Base):
@@ -40,12 +41,15 @@ class EgtpServerOptions(Base):
         'PcpuLogLevel': 'pcpuLogLevel',
         'PublishStatistics': 'publishStatistics',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EgtpServerOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgtpServerOptions, self).__init__(parent, list_op)
 
     @property
     def DistributeUserPlaneIps(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class EgtpServerOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DistributeUserPlaneIps'])
     @DistributeUserPlaneIps.setter
     def DistributeUserPlaneIps(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DistributeUserPlaneIps'], value)
 
     @property
     def EnableCreateBearerTFTHack(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class EgtpServerOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCreateBearerTFTHack'])
     @EnableCreateBearerTFTHack.setter
     def EnableCreateBearerTFTHack(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCreateBearerTFTHack'], value)
 
     @property
     def EnableDynamicAllocation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class EgtpServerOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableDynamicAllocation'])
     @EnableDynamicAllocation.setter
     def EnableDynamicAllocation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableDynamicAllocation'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class EgtpServerOptions(Base):
 
     @property
     def PcpuLogLevel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class EgtpServerOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PcpuLogLevel'])
     @PcpuLogLevel.setter
     def PcpuLogLevel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PcpuLogLevel'], value)
 
     @property
     def PublishStatistics(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class EgtpServerOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PublishStatistics'])
     @PublishStatistics.setter
     def PublishStatistics(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PublishStatistics'], value)
 
     def update(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, PcpuLogLevel=None, PublishStatistics=None):
+        # type: (bool, bool, bool, str, bool) -> EgtpServerOptions
         """Updates egtpServerOptions resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class EgtpServerOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, PcpuLogLevel=None, PublishStatistics=None):
+        # type: (bool, bool, bool, str, bool) -> EgtpServerOptions
         """Adds a new egtpServerOptions resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class EgtpServerOptions(Base):
         self._delete()
 
     def find(self, DistributeUserPlaneIps=None, EnableCreateBearerTFTHack=None, EnableDynamicAllocation=None, ObjectId=None, PcpuLogLevel=None, PublishStatistics=None):
+        # type: (bool, bool, bool, str, str, bool) -> EgtpServerOptions
         """Finds and retrieves egtpServerOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpServerOptions resources from the server.
@@ -206,14 +223,16 @@ class EgtpServerOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -226,13 +245,15 @@ class EgtpServerOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -246,13 +267,15 @@ class EgtpServerOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

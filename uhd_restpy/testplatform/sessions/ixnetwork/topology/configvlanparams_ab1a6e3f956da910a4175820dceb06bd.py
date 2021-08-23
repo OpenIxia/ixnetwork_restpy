@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ConfigVLANParams(Base):
@@ -46,12 +47,19 @@ class ConfigVLANParams(Base):
         'VlanTpid': 'vlanTpid',
         'VlanType': 'vlanType',
     }
+    _SDM_ENUM_MAP = {
+        'cvlanTpid': ['vlanTpId8100', 'vlanTpId88a8', 'vlanTpId9100', 'vlanTpId9200'],
+        'svlanTpid': ['vlanTpId8100', 'vlanTpId88a8', 'vlanTpId9100', 'vlanTpId9200'],
+        'vlanTpid': ['vlanTpId8100', 'vlanTpId88a8', 'vlanTpId9100', 'vlanTpId9200'],
+        'vlanType': ['vlanStackingTypeSingleVlan', 'vlanStackingTypeStackedVlan'],
+    }
 
-    def __init__(self, parent):
-        super(ConfigVLANParams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ConfigVLANParams, self).__init__(parent, list_op)
 
     @property
     def CvlanID(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -60,10 +68,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanID'])
     @CvlanID.setter
     def CvlanID(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanID'], value)
 
     @property
     def CvlanIDStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -72,10 +82,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanIDStep'])
     @CvlanIDStep.setter
     def CvlanIDStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanIDStep'], value)
 
     @property
     def CvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,10 +96,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanPriority'])
     @CvlanPriority.setter
     def CvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanPriority'], value)
 
     @property
     def CvlanTpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +110,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CvlanTpid'])
     @CvlanTpid.setter
     def CvlanTpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CvlanTpid'], value)
 
     @property
     def EnableVLAN(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -108,10 +124,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVLAN'])
     @EnableVLAN.setter
     def EnableVLAN(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVLAN'], value)
 
     @property
     def SvlanID(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -120,10 +138,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanID'])
     @SvlanID.setter
     def SvlanID(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanID'], value)
 
     @property
     def SvlanIDStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -132,10 +152,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanIDStep'])
     @SvlanIDStep.setter
     def SvlanIDStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanIDStep'], value)
 
     @property
     def SvlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,10 +166,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanPriority'])
     @SvlanPriority.setter
     def SvlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanPriority'], value)
 
     @property
     def SvlanTpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,10 +180,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SvlanTpid'])
     @SvlanTpid.setter
     def SvlanTpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SvlanTpid'], value)
 
     @property
     def VlanID(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -168,10 +194,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanID'])
     @VlanID.setter
     def VlanID(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanID'], value)
 
     @property
     def VlanIDStep(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,10 +208,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanIDStep'])
     @VlanIDStep.setter
     def VlanIDStep(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanIDStep'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +222,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     @property
     def VlanTpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +236,12 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanTpid'])
     @VlanTpid.setter
     def VlanTpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanTpid'], value)
 
     @property
     def VlanType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,9 +250,11 @@ class ConfigVLANParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanType'])
     @VlanType.setter
     def VlanType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanType'], value)
 
     def update(self, CvlanID=None, CvlanIDStep=None, CvlanPriority=None, CvlanTpid=None, EnableVLAN=None, SvlanID=None, SvlanIDStep=None, SvlanPriority=None, SvlanTpid=None, VlanID=None, VlanIDStep=None, VlanPriority=None, VlanTpid=None, VlanType=None):
+        # type: (int, int, int, str, bool, int, int, int, str, int, int, int, str, str) -> ConfigVLANParams
         """Updates configVLANParams resource on the server.
 
         Args
@@ -244,10 +280,15 @@ class ConfigVLANParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ConfigVLAN(self):
+    def ConfigVLAN(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the configVLAN operation on the server.
 
         Import IPv6 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
+
+        configVLAN(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -255,4 +296,6 @@ class ConfigVLANParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('configVLAN', payload=payload, response_object=None)

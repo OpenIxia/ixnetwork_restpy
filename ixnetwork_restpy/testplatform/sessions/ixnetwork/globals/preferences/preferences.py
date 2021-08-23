@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Preferences(Base):
@@ -55,12 +56,20 @@ class Preferences(Base):
         'SyslogPort': 'syslogPort',
         'TransmitMode': 'transmitMode',
     }
+    _SDM_ENUM_MAP = {
+        'clientTraceLevel': ['debug', 'error', 'fatal', 'info', 'warn'],
+        'configurationAtIxNetworkStartup': ['useEmptyConfiguration', 'useLastSavedConfiguration'],
+        'phyMode': ['copper', 'fiber'],
+        'receiveMode': ['capturePackets', 'measureTrafficFlow'],
+        'transmitMode': ['interleavedStreams', 'sequentialStreams'],
+    }
 
-    def __init__(self, parent):
-        super(Preferences, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Preferences, self).__init__(parent, list_op)
 
     @property
     def AllowProtocolSessionStateLog(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -69,10 +78,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AllowProtocolSessionStateLog'])
     @AllowProtocolSessionStateLog.setter
     def AllowProtocolSessionStateLog(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AllowProtocolSessionStateLog'], value)
 
     @property
     def AutoSaveIntervalMin(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -81,10 +92,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoSaveIntervalMin'])
     @AutoSaveIntervalMin.setter
     def AutoSaveIntervalMin(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoSaveIntervalMin'], value)
 
     @property
     def AutoSaveLocation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -93,10 +106,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoSaveLocation'])
     @AutoSaveLocation.setter
     def AutoSaveLocation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoSaveLocation'], value)
 
     @property
     def ClientTraceLevel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,10 +120,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ClientTraceLevel'])
     @ClientTraceLevel.setter
     def ClientTraceLevel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ClientTraceLevel'], value)
 
     @property
     def ConfigurationAtIxNetworkStartup(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,10 +134,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConfigurationAtIxNetworkStartup'])
     @ConfigurationAtIxNetworkStartup.setter
     def ConfigurationAtIxNetworkStartup(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConfigurationAtIxNetworkStartup'], value)
 
     @property
     def ConnectPortsOnLoadConfig(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -129,10 +148,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectPortsOnLoadConfig'])
     @ConnectPortsOnLoadConfig.setter
     def ConnectPortsOnLoadConfig(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectPortsOnLoadConfig'], value)
 
     @property
     def DeleteDumpFilesOlderThan(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -141,10 +162,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DeleteDumpFilesOlderThan'])
     @DeleteDumpFilesOlderThan.setter
     def DeleteDumpFilesOlderThan(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DeleteDumpFilesOlderThan'], value)
 
     @property
     def EnableAutoSave(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -153,10 +176,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableAutoSave'])
     @EnableAutoSave.setter
     def EnableAutoSave(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableAutoSave'], value)
 
     @property
     def EnableCloudTools(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -165,10 +190,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableCloudTools'])
     @EnableCloudTools.setter
     def EnableCloudTools(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableCloudTools'], value)
 
     @property
     def IncludeTroubleshootingComments(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -177,10 +204,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeTroubleshootingComments'])
     @IncludeTroubleshootingComments.setter
     def IncludeTroubleshootingComments(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeTroubleshootingComments'], value)
 
     @property
     def LatestConfigInDiagEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -189,10 +218,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LatestConfigInDiagEnabled'])
     @LatestConfigInDiagEnabled.setter
     def LatestConfigInDiagEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LatestConfigInDiagEnabled'], value)
 
     @property
     def PhyMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -201,10 +232,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PhyMode'])
     @PhyMode.setter
     def PhyMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PhyMode'], value)
 
     @property
     def PingChassisOnConnect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -213,10 +246,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PingChassisOnConnect'])
     @PingChassisOnConnect.setter
     def PingChassisOnConnect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['PingChassisOnConnect'], value)
 
     @property
     def RebootPortsOnConnect(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -225,10 +260,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RebootPortsOnConnect'])
     @RebootPortsOnConnect.setter
     def RebootPortsOnConnect(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RebootPortsOnConnect'], value)
 
     @property
     def ReceiveMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -237,10 +274,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReceiveMode'])
     @ReceiveMode.setter
     def ReceiveMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReceiveMode'], value)
 
     @property
     def RecentChassisList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -249,10 +288,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RecentChassisList'])
     @RecentChassisList.setter
     def RecentChassisList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['RecentChassisList'], value)
 
     @property
     def RecentFiles(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -262,6 +303,7 @@ class Preferences(Base):
 
     @property
     def ResourceManagerLocation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -270,10 +312,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResourceManagerLocation'])
     @ResourceManagerLocation.setter
     def ResourceManagerLocation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResourceManagerLocation'], value)
 
     @property
     def ScriptgenTextEditorPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -282,10 +326,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ScriptgenTextEditorPath'])
     @ScriptgenTextEditorPath.setter
     def ScriptgenTextEditorPath(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ScriptgenTextEditorPath'], value)
 
     @property
     def StreamLogsToSyslogServer(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -294,10 +340,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StreamLogsToSyslogServer'])
     @StreamLogsToSyslogServer.setter
     def StreamLogsToSyslogServer(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['StreamLogsToSyslogServer'], value)
 
     @property
     def SyslogHost(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -306,10 +354,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SyslogHost'])
     @SyslogHost.setter
     def SyslogHost(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SyslogHost'], value)
 
     @property
     def SyslogPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -318,10 +368,12 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SyslogPort'])
     @SyslogPort.setter
     def SyslogPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SyslogPort'], value)
 
     @property
     def TransmitMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -330,9 +382,11 @@ class Preferences(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransmitMode'])
     @TransmitMode.setter
     def TransmitMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransmitMode'], value)
 
     def update(self, AllowProtocolSessionStateLog=None, AutoSaveIntervalMin=None, AutoSaveLocation=None, ClientTraceLevel=None, ConfigurationAtIxNetworkStartup=None, ConnectPortsOnLoadConfig=None, DeleteDumpFilesOlderThan=None, EnableAutoSave=None, EnableCloudTools=None, IncludeTroubleshootingComments=None, LatestConfigInDiagEnabled=None, PhyMode=None, PingChassisOnConnect=None, RebootPortsOnConnect=None, ReceiveMode=None, RecentChassisList=None, ResourceManagerLocation=None, ScriptgenTextEditorPath=None, StreamLogsToSyslogServer=None, SyslogHost=None, SyslogPort=None, TransmitMode=None):
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, str, bool, bool, str, List[str], str, str, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
         Args

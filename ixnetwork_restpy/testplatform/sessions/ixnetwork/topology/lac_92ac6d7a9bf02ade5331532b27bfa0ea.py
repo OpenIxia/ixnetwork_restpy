@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Lac(Base):
@@ -73,9 +74,12 @@ class Lac(Base):
         'UseOffsetBitInPayload': 'useOffsetBitInPayload',
         'UseSequenceNoInPayload': 'useSequenceNoInPayload',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Lac, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Lac, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -89,7 +93,10 @@ class Lac(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def Tag(self):
@@ -103,10 +110,14 @@ class Lac(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def BaseLnsIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class Lac(Base):
 
     @property
     def BearerCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -127,6 +139,7 @@ class Lac(Base):
 
     @property
     def BearerType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -137,6 +150,7 @@ class Lac(Base):
 
     @property
     def Callingnum(self):
+        # type: () -> 'Multivalue'
         """DEPRECATED 
         Returns
         -------
@@ -147,6 +161,7 @@ class Lac(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -155,10 +170,12 @@ class Lac(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def ControlMsgsRetryCounter(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +186,7 @@ class Lac(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -178,6 +196,7 @@ class Lac(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -187,6 +206,7 @@ class Lac(Base):
 
     @property
     def EnableControlChecksum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -197,6 +217,7 @@ class Lac(Base):
 
     @property
     def EnableDataChecksum(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -207,6 +228,7 @@ class Lac(Base):
 
     @property
     def EnableExcludeHdlc(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -215,10 +237,12 @@ class Lac(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'])
     @EnableExcludeHdlc.setter
     def EnableExcludeHdlc(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableExcludeHdlc'], value)
 
     @property
     def EnableHelloRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +253,7 @@ class Lac(Base):
 
     @property
     def EnableRedial(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +273,7 @@ class Lac(Base):
 
     @property
     def FramingCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +284,7 @@ class Lac(Base):
 
     @property
     def HelloRequestInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +295,7 @@ class Lac(Base):
 
     @property
     def InitRetransmitInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -278,6 +306,7 @@ class Lac(Base):
 
     @property
     def LacHostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -288,6 +317,7 @@ class Lac(Base):
 
     @property
     def LacSecret(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -298,6 +328,7 @@ class Lac(Base):
 
     @property
     def MaxRedialAttempts(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +339,7 @@ class Lac(Base):
 
     @property
     def MaxRetransmitInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +350,7 @@ class Lac(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -326,10 +359,12 @@ class Lac(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -338,10 +373,12 @@ class Lac(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OffsetByte(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -352,6 +389,7 @@ class Lac(Base):
 
     @property
     def OffsetLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -362,6 +400,7 @@ class Lac(Base):
 
     @property
     def ReceiveWindowSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -372,6 +411,7 @@ class Lac(Base):
 
     @property
     def RedialInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -382,6 +422,7 @@ class Lac(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -391,6 +432,7 @@ class Lac(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -399,6 +441,7 @@ class Lac(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -412,6 +455,7 @@ class Lac(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -421,6 +465,7 @@ class Lac(Base):
 
     @property
     def TunnelAuthentication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -431,6 +476,7 @@ class Lac(Base):
 
     @property
     def TunnelsPerInterfaceMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -439,10 +485,12 @@ class Lac(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelsPerInterfaceMultiplier'])
     @TunnelsPerInterfaceMultiplier.setter
     def TunnelsPerInterfaceMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelsPerInterfaceMultiplier'], value)
 
     @property
     def UdpDestinationPort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -453,6 +501,7 @@ class Lac(Base):
 
     @property
     def UdpSourcePort(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -463,6 +512,7 @@ class Lac(Base):
 
     @property
     def UseHiddenAVPs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -473,6 +523,7 @@ class Lac(Base):
 
     @property
     def UseLengthBitInPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -483,6 +534,7 @@ class Lac(Base):
 
     @property
     def UseOffsetBitInPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -493,6 +545,7 @@ class Lac(Base):
 
     @property
     def UseSequenceNoInPayload(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -502,6 +555,7 @@ class Lac(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UseSequenceNoInPayload']))
 
     def update(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
+        # type: (List[str], bool, int, str, List[str], int) -> Lac
         """Updates lac resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -523,6 +577,7 @@ class Lac(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, EnableExcludeHdlc=None, Multiplier=None, Name=None, StackedLayers=None, TunnelsPerInterfaceMultiplier=None):
+        # type: (List[str], bool, int, str, List[str], int) -> Lac
         """Adds a new lac resource on the server and adds it to the container.
 
         Args
@@ -604,6 +659,134 @@ class Lac(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, BaseLnsIp=None, BearerCapability=None, BearerType=None, Callingnum=None, ControlMsgsRetryCounter=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableHelloRequest=None, EnableRedial=None, FramingCapability=None, HelloRequestInterval=None, InitRetransmitInterval=None, LacHostName=None, LacSecret=None, MaxRedialAttempts=None, MaxRetransmitInterval=None, OffsetByte=None, OffsetLength=None, ReceiveWindowSize=None, RedialInterval=None, TunnelAuthentication=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAVPs=None, UseLengthBitInPayload=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
         """Base class infrastructure that gets a list of lac device ids encapsulated by this object.
 
@@ -649,103 +832,3 @@ class Lac(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

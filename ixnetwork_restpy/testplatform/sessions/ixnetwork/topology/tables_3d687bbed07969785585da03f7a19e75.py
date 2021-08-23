@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Tables(Base):
@@ -42,9 +43,11 @@ class Tables(Base):
         'TableId': 'tableId',
         'TableName': 'tableName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Tables, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Tables, self).__init__(parent, list_op)
 
     @property
     def FlowSet(self):
@@ -58,10 +61,14 @@ class Tables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flowset_4668cc7c02c6c6c6cb9975c2ed2dbda5 import FlowSet
-        return FlowSet(self)
+        if self._properties.get('FlowSet', None) is not None:
+            return self._properties.get('FlowSet')
+        else:
+            return FlowSet(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -72,6 +79,7 @@ class Tables(Base):
 
     @property
     def ChannelIndex(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -81,6 +89,7 @@ class Tables(Base):
 
     @property
     def ChannelRemoteIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -90,6 +99,7 @@ class Tables(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,6 +109,7 @@ class Tables(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,6 +119,7 @@ class Tables(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,10 +128,12 @@ class Tables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfFlowSet(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -128,10 +142,12 @@ class Tables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfFlowSet'])
     @NumberOfFlowSet.setter
     def NumberOfFlowSet(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfFlowSet'], value)
 
     @property
     def TableId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +158,7 @@ class Tables(Base):
 
     @property
     def TableName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +168,7 @@ class Tables(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TableName']))
 
     def update(self, Name=None, NumberOfFlowSet=None):
+        # type: (str, int) -> Tables
         """Updates tables resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -167,7 +185,27 @@ class Tables(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None, NumberOfFlowSet=None):
+        # type: (str, int) -> Tables
+        """Adds a new tables resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfFlowSet (number): Specify the number of Flow Set for this controller configuration.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved tables resources using find and the newly added tables resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ChannelIndex=None, ChannelRemoteIp=None, Count=None, DescriptiveName=None, Name=None, NumberOfFlowSet=None):
+        # type: (List[str], List[str], int, str, str, int) -> Tables
         """Finds and retrieves tables resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tables resources from the server.

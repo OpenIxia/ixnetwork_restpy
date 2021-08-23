@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Vlan(Base):
@@ -37,12 +38,15 @@ class Vlan(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Vlan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Vlan, self).__init__(parent, list_op)
 
     @property
     def Tpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
     @Tpid.setter
     def Tpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanEnable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +83,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanEnable'])
     @VlanEnable.setter
     def VlanEnable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanEnable'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,10 +97,12 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,9 +111,11 @@ class Vlan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, Tpid=None, VlanCount=None, VlanEnable=None, VlanId=None, VlanPriority=None):
+        # type: (str, int, bool, str, str) -> Vlan
         """Updates vlan resource on the server.
 
         Args

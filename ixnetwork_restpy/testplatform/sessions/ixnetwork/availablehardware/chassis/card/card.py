@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Card(Base):
@@ -38,9 +39,12 @@ class Card(Base):
         'CardId': 'cardId',
         'Description': 'description',
     }
+    _SDM_ENUM_MAP = {
+        'aggregationMode': ['notSupported', 'mixed', 'normal', 'tenGigAggregation', 'fortyGigAggregation', 'singleMode', 'dualMode', 'hundredGigNonFanOut', 'fortyGigFanOut', 'threeByTenGigFanOut', 'eightByTenGigFanOut', 'fourByTwentyFiveGigNonFanOut', 'twoByTwentyFiveGigNonFanOut', 'oneByFiftyGigNonFanOut', 'fortyGigNonFanOut', 'oneByTenGigFanOut', 'fourByTenGigFanOut', 'incompatibleMode', 'hundredGigCapturePlayback', 'fortyGigCapturePlayback', 'novusHundredGigNonFanOut', 'novusFourByTwentyFiveGigNonFanOut', 'novusTwoByFiftyGigNonFanOut', 'novusOneByFortyGigNonFanOut', 'novusFourByTenGigNonFanOut', 'krakenOneByFourHundredGigNonFanOut', 'krakenOneByTwoHundredGigNonFanOut', 'krakenTwoByOneHundredGigFanOut', 'krakenFourByFiftyGigFanOut', 'aresOneOneByFourHundredGigNonFanOut', 'aresOneTwoByTwoHundredGigFanOut', 'aresOneFourByOneHundredGigFanOut', 'aresOneFourByOneHundredGigMacSecFanOut', 'aresOneEightByFiftyGigFanOut', 'uhdOneHundredEightByHundredGigNonFanOut', 'uhdOneHundredEightByFortyGigNonFanOut', 'uhdOneHundredSixteenByFiftyGigFanOut', 'uhdOneHundredThirtyTwoByTwentyFiveGigFanOut', 'uhdOneHundredThirtyTwoByTenGigFanOut'],
+    }
 
-    def __init__(self, parent):
-        super(Card, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Card, self).__init__(parent, list_op)
 
     @property
     def Aggregation(self):
@@ -54,7 +58,10 @@ class Card(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.aggregation.aggregation import Aggregation
-        return Aggregation(self)
+        if self._properties.get('Aggregation', None) is not None:
+            return self._properties.get('Aggregation')
+        else:
+            return Aggregation(self)
 
     @property
     def Port(self):
@@ -68,10 +75,14 @@ class Card(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.port import Port
-        return Port(self)
+        if self._properties.get('Port', None) is not None:
+            return self._properties.get('Port')
+        else:
+            return Port(self)
 
     @property
     def AggregationMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -80,10 +91,12 @@ class Card(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AggregationMode'])
     @AggregationMode.setter
     def AggregationMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AggregationMode'], value)
 
     @property
     def AggregationSupported(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -93,6 +106,7 @@ class Card(Base):
 
     @property
     def AvailableModes(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -102,6 +116,7 @@ class Card(Base):
 
     @property
     def CardId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,6 +126,7 @@ class Card(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -119,6 +135,7 @@ class Card(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
 
     def update(self, AggregationMode=None):
+        # type: (str) -> Card
         """Updates card resource on the server.
 
         Args
@@ -131,7 +148,26 @@ class Card(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, AggregationMode=None):
+        # type: (str) -> Card
+        """Adds a new card resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - AggregationMode (str(notSupported | mixed | normal | tenGigAggregation | fortyGigAggregation | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut)): Gets or sets the aggregation mode.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved card resources using find and the newly added card resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AggregationMode=None, AggregationSupported=None, AvailableModes=None, CardId=None, Description=None):
+        # type: (str, bool, List[str], int, str) -> Card
         """Finds and retrieves card resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve card resources from the server.
@@ -174,10 +210,15 @@ class Card(Base):
         """
         return self._read(href)
 
-    def RefreshInfo(self):
+    def RefreshInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the refreshInfo operation on the server.
 
         Refresh the hardware information.
+
+        refreshInfo(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -185,4 +226,6 @@ class Card(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('refreshInfo', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EvpnIPv4PrefixRange(Base):
@@ -82,9 +83,11 @@ class EvpnIPv4PrefixRange(Base):
         'Srv6SidReserved2': 'srv6SidReserved2',
         'Srv6SidStep': 'srv6SidStep',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(EvpnIPv4PrefixRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EvpnIPv4PrefixRange, self).__init__(parent, list_op)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -98,7 +101,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        return BgpAsPathSegmentList(self)
+        if self._properties.get('BgpAsPathSegmentList', None) is not None:
+            return self._properties.get('BgpAsPathSegmentList')
+        else:
+            return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -112,7 +118,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        return BgpClusterIdList(self)
+        if self._properties.get('BgpClusterIdList', None) is not None:
+            return self._properties.get('BgpClusterIdList')
+        else:
+            return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -126,7 +135,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        return BgpCommunitiesList(self)
+        if self._properties.get('BgpCommunitiesList', None) is not None:
+            return self._properties.get('BgpCommunitiesList')
+        else:
+            return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -140,7 +152,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        return BgpExtendedCommunitiesList(self)
+        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+            return self._properties.get('BgpExtendedCommunitiesList')
+        else:
+            return BgpExtendedCommunitiesList(self)
 
     @property
     def CMacProperties(self):
@@ -154,7 +169,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is not None:
+            return self._properties.get('CMacProperties')
+        else:
+            return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -168,7 +186,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv4PrefixRange')
+        else:
+            return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -182,10 +203,14 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv6PrefixRange')
+        else:
+            return EvpnIPv6PrefixRange(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +221,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def AdvSrv6SidInIgp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +232,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def AdvertiseSRv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +243,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def AggregatorAs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -226,6 +254,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def AggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -236,6 +265,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def AsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -246,6 +276,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -255,6 +286,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -264,6 +296,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableAggregatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -274,6 +307,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableAsPathSegments(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -284,6 +318,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableAtomicAggregate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -294,6 +329,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableCluster(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -304,6 +340,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -314,6 +351,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableExtendedCommunity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -324,6 +362,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableLocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -334,6 +373,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableMultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -344,6 +384,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -354,6 +395,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -364,6 +406,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def EnableOriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -374,6 +417,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Ipv4Address(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -383,6 +427,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -393,6 +438,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -403,6 +449,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def LabelMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -413,6 +460,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def LabelStart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -423,6 +471,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def LabelStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -433,6 +482,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def LocalPreference(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -443,6 +493,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def MultiExitDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -453,6 +504,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -461,10 +513,12 @@ class EvpnIPv4PrefixRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NoOfASPathSegmentsPerRouteRange(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -473,10 +527,12 @@ class EvpnIPv4PrefixRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'])
     @NoOfASPathSegmentsPerRouteRange.setter
     def NoOfASPathSegmentsPerRouteRange(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfASPathSegmentsPerRouteRange'], value)
 
     @property
     def NoOfClusters(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -485,10 +541,12 @@ class EvpnIPv4PrefixRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfClusters'])
     @NoOfClusters.setter
     def NoOfClusters(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfClusters'], value)
 
     @property
     def NoOfCommunities(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -497,10 +555,12 @@ class EvpnIPv4PrefixRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfCommunities'])
     @NoOfCommunities.setter
     def NoOfCommunities(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfCommunities'], value)
 
     @property
     def NoOfExtendedCommunity(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -509,10 +569,12 @@ class EvpnIPv4PrefixRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'])
     @NoOfExtendedCommunity.setter
     def NoOfExtendedCommunity(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoOfExtendedCommunity'], value)
 
     @property
     def Origin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -523,6 +585,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def OriginatorId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -533,6 +596,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def OverridePeerAsSetMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -543,6 +607,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def SendSRv6SIDOptionalInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -553,6 +618,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -563,6 +629,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -573,6 +640,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6EndpointBehavior(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -583,6 +651,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SIDOptionalInformation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -593,6 +662,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -603,6 +673,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidLoc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -613,6 +684,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidLocLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -623,6 +695,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidLocMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -633,6 +706,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidReserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -643,6 +717,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidReserved1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -653,6 +728,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidReserved2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -663,6 +739,7 @@ class EvpnIPv4PrefixRange(Base):
 
     @property
     def Srv6SidStep(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -672,6 +749,7 @@ class EvpnIPv4PrefixRange(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Srv6SidStep']))
 
     def update(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        # type: (str, int, int, int, int) -> EvpnIPv4PrefixRange
         """Updates evpnIPv4PrefixRange resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -692,6 +770,7 @@ class EvpnIPv4PrefixRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        # type: (str, int, int, int, int) -> EvpnIPv4PrefixRange
         """Adds a new evpnIPv4PrefixRange resource on the server and adds it to the container.
 
         Args
@@ -723,6 +802,7 @@ class EvpnIPv4PrefixRange(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Ipv4Address=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None):
+        # type: (int, str, List[str], str, int, int, int, int) -> EvpnIPv4PrefixRange
         """Finds and retrieves evpnIPv4PrefixRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evpnIPv4PrefixRange resources from the server.
@@ -767,6 +847,90 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AdvSrv6SidInIgp=None, AdvertiseSRv6SID=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, Ipv4NextHop=None, Ipv6NextHop=None, LabelMode=None, LabelStart=None, LabelStep=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, SendSRv6SIDOptionalInfo=None, SetNextHop=None, SetNextHopIpType=None, Srv6EndpointBehavior=None, Srv6SIDOptionalInformation=None, Srv6SidFlags=None, Srv6SidLoc=None, Srv6SidLocLen=None, Srv6SidLocMetric=None, Srv6SidReserved=None, Srv6SidReserved1=None, Srv6SidReserved2=None, Srv6SidStep=None):
         """Base class infrastructure that gets a list of evpnIPv4PrefixRange device ids encapsulated by this object.
@@ -826,66 +990,3 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

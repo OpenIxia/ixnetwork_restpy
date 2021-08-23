@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SenderRange(Base):
@@ -80,9 +81,11 @@ class SenderRange(Base):
         'TokenBucketRate': 'tokenBucketRate',
         'TokenBucketSize': 'tokenBucketSize',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SenderRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SenderRange, self).__init__(parent, list_op)
 
     @property
     def TunnelHeadToLeaf(self):
@@ -96,7 +99,10 @@ class SenderRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtoleaf_590a82cb1a4f074669740053fac87499 import TunnelHeadToLeaf
-        return TunnelHeadToLeaf(self)
+        if self._properties.get('TunnelHeadToLeaf', None) is not None:
+            return self._properties.get('TunnelHeadToLeaf')
+        else:
+            return TunnelHeadToLeaf(self)
 
     @property
     def TunnelHeadTrafficEndPoint(self):
@@ -110,10 +116,14 @@ class SenderRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelheadtrafficendpoint_ab7d1610c6278d8cc717b77fc4c80da2 import TunnelHeadTrafficEndPoint
-        return TunnelHeadTrafficEndPoint(self)
+        if self._properties.get('TunnelHeadTrafficEndPoint', None) is not None:
+            return self._properties.get('TunnelHeadTrafficEndPoint')
+        else:
+            return TunnelHeadTrafficEndPoint(self)
 
     @property
     def AutoGenerateSessionName(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -122,10 +132,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoGenerateSessionName'])
     @AutoGenerateSessionName.setter
     def AutoGenerateSessionName(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoGenerateSessionName'], value)
 
     @property
     def BackupLspIdPoolStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,10 +146,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BackupLspIdPoolStart'])
     @BackupLspIdPoolStart.setter
     def BackupLspIdPoolStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BackupLspIdPoolStart'], value)
 
     @property
     def Bandwidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,10 +160,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Bandwidth'])
     @Bandwidth.setter
     def Bandwidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Bandwidth'], value)
 
     @property
     def BandwidthProtectionDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -158,10 +174,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BandwidthProtectionDesired'])
     @BandwidthProtectionDesired.setter
     def BandwidthProtectionDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BandwidthProtectionDesired'], value)
 
     @property
     def EnableBfdMpls(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -170,10 +188,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBfdMpls'])
     @EnableBfdMpls.setter
     def EnableBfdMpls(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBfdMpls'], value)
 
     @property
     def EnableFastReroute(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,10 +202,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFastReroute'])
     @EnableFastReroute.setter
     def EnableFastReroute(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFastReroute'], value)
 
     @property
     def EnableLspPing(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -194,10 +216,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLspPing'])
     @EnableLspPing.setter
     def EnableLspPing(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLspPing'], value)
 
     @property
     def EnablePathReoptimization(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -206,10 +230,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePathReoptimization'])
     @EnablePathReoptimization.setter
     def EnablePathReoptimization(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePathReoptimization'], value)
 
     @property
     def EnablePeriodicReEvaluationRequest(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -218,10 +244,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePeriodicReEvaluationRequest'])
     @EnablePeriodicReEvaluationRequest.setter
     def EnablePeriodicReEvaluationRequest(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePeriodicReEvaluationRequest'], value)
 
     @property
     def EnableResourceAffinities(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -230,10 +258,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableResourceAffinities'])
     @EnableResourceAffinities.setter
     def EnableResourceAffinities(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableResourceAffinities'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -242,10 +272,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ExcludeAny(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -254,10 +286,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExcludeAny'])
     @ExcludeAny.setter
     def ExcludeAny(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExcludeAny'], value)
 
     @property
     def FastRerouteBandwidth(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -266,6 +300,7 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteBandwidth'])
     @FastRerouteBandwidth.setter
     def FastRerouteBandwidth(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteBandwidth'], value)
 
     @property
@@ -282,6 +317,7 @@ class SenderRange(Base):
 
     @property
     def FastRerouteExcludeAny(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -290,10 +326,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteExcludeAny'])
     @FastRerouteExcludeAny.setter
     def FastRerouteExcludeAny(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteExcludeAny'], value)
 
     @property
     def FastRerouteFacilityBackupDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -302,10 +340,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteFacilityBackupDesired'])
     @FastRerouteFacilityBackupDesired.setter
     def FastRerouteFacilityBackupDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteFacilityBackupDesired'], value)
 
     @property
     def FastRerouteHoldingPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -314,10 +354,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteHoldingPriority'])
     @FastRerouteHoldingPriority.setter
     def FastRerouteHoldingPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteHoldingPriority'], value)
 
     @property
     def FastRerouteHopLimit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -326,10 +368,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteHopLimit'])
     @FastRerouteHopLimit.setter
     def FastRerouteHopLimit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteHopLimit'], value)
 
     @property
     def FastRerouteIncludeAll(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -338,10 +382,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAll'])
     @FastRerouteIncludeAll.setter
     def FastRerouteIncludeAll(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAll'], value)
 
     @property
     def FastRerouteIncludeAny(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -350,10 +396,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAny'])
     @FastRerouteIncludeAny.setter
     def FastRerouteIncludeAny(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteIncludeAny'], value)
 
     @property
     def FastRerouteOne2OneBackupDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -362,10 +410,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteOne2OneBackupDesired'])
     @FastRerouteOne2OneBackupDesired.setter
     def FastRerouteOne2OneBackupDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteOne2OneBackupDesired'], value)
 
     @property
     def FastRerouteSendDetour(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -374,10 +424,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteSendDetour'])
     @FastRerouteSendDetour.setter
     def FastRerouteSendDetour(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteSendDetour'], value)
 
     @property
     def FastRerouteSetupPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -386,10 +438,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FastRerouteSetupPriority'])
     @FastRerouteSetupPriority.setter
     def FastRerouteSetupPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FastRerouteSetupPriority'], value)
 
     @property
     def HoldingPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -398,10 +452,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HoldingPriority'])
     @HoldingPriority.setter
     def HoldingPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HoldingPriority'], value)
 
     @property
     def IncludeAll(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -410,10 +466,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeAll'])
     @IncludeAll.setter
     def IncludeAll(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeAll'], value)
 
     @property
     def IncludeAny(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -422,10 +480,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeAny'])
     @IncludeAny.setter
     def IncludeAny(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeAny'], value)
 
     @property
     def IpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -434,10 +494,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
     @IpCount.setter
     def IpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
 
     @property
     def IpStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -446,10 +508,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
     @IpStart.setter
     def IpStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
 
     @property
     def LabelRecordingDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -458,10 +522,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LabelRecordingDesired'])
     @LabelRecordingDesired.setter
     def LabelRecordingDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LabelRecordingDesired'], value)
 
     @property
     def LocalProtectionDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -470,10 +536,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LocalProtectionDesired'])
     @LocalProtectionDesired.setter
     def LocalProtectionDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LocalProtectionDesired'], value)
 
     @property
     def LspIdCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -482,10 +550,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspIdCount'])
     @LspIdCount.setter
     def LspIdCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspIdCount'], value)
 
     @property
     def LspIdStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -494,10 +564,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspIdStart'])
     @LspIdStart.setter
     def LspIdStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspIdStart'], value)
 
     @property
     def MaximumPacketSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -506,10 +578,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaximumPacketSize'])
     @MaximumPacketSize.setter
     def MaximumPacketSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaximumPacketSize'], value)
 
     @property
     def MinimumPolicedUnit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -518,10 +592,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MinimumPolicedUnit'])
     @MinimumPolicedUnit.setter
     def MinimumPolicedUnit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MinimumPolicedUnit'], value)
 
     @property
     def NodeProtectionDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -530,6 +606,7 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NodeProtectionDesired'])
     @NodeProtectionDesired.setter
     def NodeProtectionDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NodeProtectionDesired'], value)
 
     @property
@@ -558,6 +635,7 @@ class SenderRange(Base):
 
     @property
     def PeakDataRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -566,10 +644,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeakDataRate'])
     @PeakDataRate.setter
     def PeakDataRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeakDataRate'], value)
 
     @property
     def ReEvaluationRequestInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -578,10 +658,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ReEvaluationRequestInterval'])
     @ReEvaluationRequestInterval.setter
     def ReEvaluationRequestInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ReEvaluationRequestInterval'], value)
 
     @property
     def RefreshInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -590,10 +672,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RefreshInterval'])
     @RefreshInterval.setter
     def RefreshInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RefreshInterval'], value)
 
     @property
     def SeStyleDesired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -602,10 +686,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SeStyleDesired'])
     @SeStyleDesired.setter
     def SeStyleDesired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SeStyleDesired'], value)
 
     @property
     def SessionName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -614,10 +700,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SessionName'])
     @SessionName.setter
     def SessionName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SessionName'], value)
 
     @property
     def SetupPriority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -626,10 +714,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupPriority'])
     @SetupPriority.setter
     def SetupPriority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupPriority'], value)
 
     @property
     def TimeoutMultiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -638,10 +728,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'])
     @TimeoutMultiplier.setter
     def TimeoutMultiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimeoutMultiplier'], value)
 
     @property
     def TokenBucketRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -650,10 +742,12 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TokenBucketRate'])
     @TokenBucketRate.setter
     def TokenBucketRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TokenBucketRate'], value)
 
     @property
     def TokenBucketSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -662,6 +756,7 @@ class SenderRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TokenBucketSize'])
     @TokenBucketSize.setter
     def TokenBucketSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TokenBucketSize'], value)
 
     def update(self, AutoGenerateSessionName=None, BackupLspIdPoolStart=None, Bandwidth=None, BandwidthProtectionDesired=None, EnableBfdMpls=None, EnableFastReroute=None, EnableLspPing=None, EnablePathReoptimization=None, EnablePeriodicReEvaluationRequest=None, EnableResourceAffinities=None, Enabled=None, ExcludeAny=None, FastRerouteBandwidth=None, FastRerouteDetour=None, FastRerouteExcludeAny=None, FastRerouteFacilityBackupDesired=None, FastRerouteHoldingPriority=None, FastRerouteHopLimit=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteOne2OneBackupDesired=None, FastRerouteSendDetour=None, FastRerouteSetupPriority=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IpCount=None, IpStart=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspIdCount=None, LspIdStart=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, PathTearTlv=None, PathTlv=None, PeakDataRate=None, ReEvaluationRequestInterval=None, RefreshInterval=None, SeStyleDesired=None, SessionName=None, SetupPriority=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None):
@@ -878,28 +973,44 @@ class SenderRange(Base):
         """
         return self._read(href)
 
-    def DoMakeBeforeBreak(self):
+    def DoMakeBeforeBreak(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the doMakeBeforeBreak operation on the server.
 
         NOT DEFINED
 
+        doMakeBeforeBreak(async_operation=bool)bool
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('doMakeBeforeBreak', payload=payload, response_object=None)
 
-    def SendReEvaluationRequest(self):
+    def SendReEvaluationRequest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the sendReEvaluationRequest operation on the server.
 
         NOT DEFINED
 
+        sendReEvaluationRequest(async_operation=bool)bool
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendReEvaluationRequest', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FormulaColumn(Base):
@@ -36,12 +37,15 @@ class FormulaColumn(Base):
         'Caption': 'caption',
         'Formula': 'formula',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FormulaColumn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FormulaColumn, self).__init__(parent, list_op)
 
     @property
     def Caption(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,10 +54,12 @@ class FormulaColumn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Caption'])
     @Caption.setter
     def Caption(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Caption'], value)
 
     @property
     def Formula(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,9 +68,11 @@ class FormulaColumn(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Formula'])
     @Formula.setter
     def Formula(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Formula'], value)
 
     def update(self, Caption=None, Formula=None):
+        # type: (str, str) -> FormulaColumn
         """Updates formulaColumn resource on the server.
 
         Args
@@ -79,6 +87,7 @@ class FormulaColumn(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Caption=None, Formula=None):
+        # type: (str, str) -> FormulaColumn
         """Adds a new formulaColumn resource on the server and adds it to the container.
 
         Args
@@ -107,6 +116,7 @@ class FormulaColumn(Base):
         self._delete()
 
     def find(self, Caption=None, Formula=None):
+        # type: (str, str) -> FormulaColumn
         """Finds and retrieves formulaColumn resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve formulaColumn resources from the server.

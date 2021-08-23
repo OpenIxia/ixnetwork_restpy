@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RdInfo(Base):
@@ -36,9 +37,11 @@ class RdInfo(Base):
         'Rd': 'rd',
         'TunnelIdentifier': 'tunnelIdentifier',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RdInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RdInfo, self).__init__(parent, list_op)
 
     @property
     def OpaqueElementInfo(self):
@@ -52,10 +55,14 @@ class RdInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaqueelementinfo_2b730ff844de058a37c4e1ec1e4dfa87 import OpaqueElementInfo
-        return OpaqueElementInfo(self)
+        if self._properties.get('OpaqueElementInfo', None) is not None:
+            return self._properties.get('OpaqueElementInfo')
+        else:
+            return OpaqueElementInfo(self)
 
     @property
     def EthernetTagList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -65,6 +72,7 @@ class RdInfo(Base):
 
     @property
     def Rd(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,6 +82,7 @@ class RdInfo(Base):
 
     @property
     def TunnelIdentifier(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,7 +90,21 @@ class RdInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TunnelIdentifier'])
 
+    def add(self):
+        """Adds a new rdInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved rdInfo resources using find and the newly added rdInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, EthernetTagList=None, Rd=None, TunnelIdentifier=None):
+        # type: (List[str], str, str) -> RdInfo
         """Finds and retrieves rdInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rdInfo resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ethernet(Base):
@@ -35,12 +36,15 @@ class Ethernet(Base):
         'Mtu': 'mtu',
         'UidFromMac': 'uidFromMac',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ethernet, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ethernet, self).__init__(parent, list_op)
 
     @property
     def MacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -49,10 +53,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAddress'])
     @MacAddress.setter
     def MacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAddress'], value)
 
     @property
     def Mtu(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -61,10 +67,12 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mtu'])
     @Mtu.setter
     def Mtu(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mtu'], value)
 
     @property
     def UidFromMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,9 +81,11 @@ class Ethernet(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UidFromMac'])
     @UidFromMac.setter
     def UidFromMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UidFromMac'], value)
 
     def update(self, MacAddress=None, Mtu=None, UidFromMac=None):
+        # type: (str, int, bool) -> Ethernet
         """Updates ethernet resource on the server.
 
         Args

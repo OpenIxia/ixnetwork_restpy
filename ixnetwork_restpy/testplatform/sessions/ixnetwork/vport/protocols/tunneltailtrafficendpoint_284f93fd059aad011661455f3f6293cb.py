@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class TunnelTailTrafficEndPoint(Base):
@@ -37,12 +38,16 @@ class TunnelTailTrafficEndPoint(Base):
         'IpCount': 'ipCount',
         'IpStart': 'ipStart',
     }
+    _SDM_ENUM_MAP = {
+        'endPointType': ['ipv4', 'ipv6', '17', '18'],
+    }
 
-    def __init__(self, parent):
-        super(TunnelTailTrafficEndPoint, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(TunnelTailTrafficEndPoint, self).__init__(parent, list_op)
 
     @property
     def EndPointType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +56,12 @@ class TunnelTailTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EndPointType'])
     @EndPointType.setter
     def EndPointType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EndPointType'], value)
 
     @property
     def IpCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class TunnelTailTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpCount'])
     @IpCount.setter
     def IpCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpCount'], value)
 
     @property
     def IpStart(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +84,11 @@ class TunnelTailTrafficEndPoint(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpStart'])
     @IpStart.setter
     def IpStart(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpStart'], value)
 
     def update(self, EndPointType=None, IpCount=None, IpStart=None):
+        # type: (str, int, str) -> TunnelTailTrafficEndPoint
         """Updates tunnelTailTrafficEndPoint resource on the server.
 
         Args
@@ -93,6 +104,7 @@ class TunnelTailTrafficEndPoint(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EndPointType=None, IpCount=None, IpStart=None):
+        # type: (str, int, str) -> TunnelTailTrafficEndPoint
         """Adds a new tunnelTailTrafficEndPoint resource on the server and adds it to the container.
 
         Args
@@ -122,6 +134,7 @@ class TunnelTailTrafficEndPoint(Base):
         self._delete()
 
     def find(self, EndPointType=None, IpCount=None, IpStart=None):
+        # type: (str, int, str) -> TunnelTailTrafficEndPoint
         """Finds and retrieves tunnelTailTrafficEndPoint resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tunnelTailTrafficEndPoint resources from the server.

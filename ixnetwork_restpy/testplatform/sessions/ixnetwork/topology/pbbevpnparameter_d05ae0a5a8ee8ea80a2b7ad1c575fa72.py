@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PbbEVpnParameter(Base):
@@ -37,12 +38,15 @@ class PbbEVpnParameter(Base):
         'Count': 'count',
         'UsePbbEVpnParameters': 'usePbbEVpnParameters',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PbbEVpnParameter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PbbEVpnParameter, self).__init__(parent, list_op)
 
     @property
     def BMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class PbbEVpnParameter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class PbbEVpnParameter(Base):
 
     @property
     def UsePbbEVpnParameters(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -70,9 +76,11 @@ class PbbEVpnParameter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UsePbbEVpnParameters'])
     @UsePbbEVpnParameters.setter
     def UsePbbEVpnParameters(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UsePbbEVpnParameters'], value)
 
     def update(self, UsePbbEVpnParameters=None):
+        # type: (bool) -> PbbEVpnParameter
         """Updates pbbEVpnParameter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -89,6 +97,7 @@ class PbbEVpnParameter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, UsePbbEVpnParameters=None):
+        # type: (bool) -> PbbEVpnParameter
         """Adds a new pbbEVpnParameter resource on the server and adds it to the container.
 
         Args
@@ -116,6 +125,7 @@ class PbbEVpnParameter(Base):
         self._delete()
 
     def find(self, Count=None, UsePbbEVpnParameters=None):
+        # type: (int, bool) -> PbbEVpnParameter
         """Finds and retrieves pbbEVpnParameter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pbbEVpnParameter resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Egress(Base):
@@ -39,9 +40,11 @@ class Egress(Base):
         'Encapsulation': 'encapsulation',
         'Offset': 'offset',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Egress, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Egress, self).__init__(parent, list_op)
 
     @property
     def FieldOffset(self):
@@ -55,10 +58,14 @@ class Egress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import FieldOffset
-        return FieldOffset(self)._select()
+        if self._properties.get('FieldOffset', None) is not None:
+            return self._properties.get('FieldOffset')
+        else:
+            return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -68,6 +75,7 @@ class Egress(Base):
 
     @property
     def AvailableOffsets(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -77,6 +85,7 @@ class Egress(Base):
 
     @property
     def CustomOffsetBits(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -85,10 +94,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomOffsetBits'])
     @CustomOffsetBits.setter
     def CustomOffsetBits(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomOffsetBits'], value)
 
     @property
     def CustomWidthBits(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,10 +108,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomWidthBits'])
     @CustomWidthBits.setter
     def CustomWidthBits(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomWidthBits'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -109,10 +122,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def Encapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,10 +136,12 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Encapsulation'])
     @Encapsulation.setter
     def Encapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Encapsulation'], value)
 
     @property
     def Offset(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -133,9 +150,11 @@ class Egress(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
     def Offset(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Offset'], value)
 
     def update(self, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
+        # type: (int, int, bool, str, str) -> Egress
         """Updates egress resource on the server.
 
         Args

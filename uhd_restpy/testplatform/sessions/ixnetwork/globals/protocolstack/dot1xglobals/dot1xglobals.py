@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dot1xGlobals(Base):
@@ -55,9 +56,11 @@ class Dot1xGlobals(Base):
         'WaitBeforeRun': 'waitBeforeRun',
         'WaitForCompletion': 'waitForCompletion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dot1xGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dot1xGlobals, self).__init__(parent, list_op)
 
     @property
     def CertInfo(self):
@@ -71,7 +74,10 @@ class Dot1xGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.certinfo.certinfo import CertInfo
-        return CertInfo(self)._select()
+        if self._properties.get('CertInfo', None) is not None:
+            return self._properties.get('CertInfo')
+        else:
+            return CertInfo(self)._select()
 
     @property
     def NacSettings(self):
@@ -85,10 +91,14 @@ class Dot1xGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nacsettings import NacSettings
-        return NacSettings(self)._select()
+        if self._properties.get('NacSettings', None) is not None:
+            return self._properties.get('NacSettings')
+        else:
+            return NacSettings(self)._select()
 
     @property
     def AuthOnNoResponse(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -97,10 +107,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthOnNoResponse'])
     @AuthOnNoResponse.setter
     def AuthOnNoResponse(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthOnNoResponse'], value)
 
     @property
     def AuthPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,10 +121,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthPeriod'])
     @AuthPeriod.setter
     def AuthPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthPeriod'], value)
 
     @property
     def Authenticator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,10 +135,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Authenticator'])
     @Authenticator.setter
     def Authenticator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Authenticator'], value)
 
     @property
     def AuthenticatorMulticast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -133,10 +149,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AuthenticatorMulticast'])
     @AuthenticatorMulticast.setter
     def AuthenticatorMulticast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AuthenticatorMulticast'], value)
 
     @property
     def DisableLogoff(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -145,10 +163,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DisableLogoff'])
     @DisableLogoff.setter
     def DisableLogoff(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DisableLogoff'], value)
 
     @property
     def DutTestMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -157,10 +177,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DutTestMode'])
     @DutTestMode.setter
     def DutTestMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DutTestMode'], value)
 
     @property
     def FragmentSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -169,10 +191,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FragmentSize'])
     @FragmentSize.setter
     def FragmentSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FragmentSize'], value)
 
     @property
     def HeldPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -181,10 +205,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HeldPeriod'])
     @HeldPeriod.setter
     def HeldPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HeldPeriod'], value)
 
     @property
     def LogoffMaxClientsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -193,10 +219,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogoffMaxClientsPerSecond'])
     @LogoffMaxClientsPerSecond.setter
     def LogoffMaxClientsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogoffMaxClientsPerSecond'], value)
 
     @property
     def LogoffMaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -205,10 +233,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LogoffMaxOutstandingRequests'])
     @LogoffMaxOutstandingRequests.setter
     def LogoffMaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LogoffMaxOutstandingRequests'], value)
 
     @property
     def MacAuthPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -217,10 +247,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacAuthPrefix'])
     @MacAuthPrefix.setter
     def MacAuthPrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacAuthPrefix'], value)
 
     @property
     def MaxClientsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -229,10 +261,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'])
     @MaxClientsPerSecond.setter
     def MaxClientsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxClientsPerSecond'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -241,10 +275,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def MaxStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -253,10 +289,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxStart'])
     @MaxStart.setter
     def MaxStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxStart'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -266,6 +304,7 @@ class Dot1xGlobals(Base):
 
     @property
     def OnlyMulticast(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -274,10 +313,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnlyMulticast'])
     @OnlyMulticast.setter
     def OnlyMulticast(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnlyMulticast'], value)
 
     @property
     def StartPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -286,10 +327,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StartPeriod'])
     @StartPeriod.setter
     def StartPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StartPeriod'], value)
 
     @property
     def StatsPeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -298,10 +341,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StatsPeriod'])
     @StatsPeriod.setter
     def StatsPeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['StatsPeriod'], value)
 
     @property
     def SuccessiveStart(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -310,10 +355,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SuccessiveStart'])
     @SuccessiveStart.setter
     def SuccessiveStart(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SuccessiveStart'], value)
 
     @property
     def WaitBeforeRun(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -322,10 +369,12 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitBeforeRun'])
     @WaitBeforeRun.setter
     def WaitBeforeRun(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitBeforeRun'], value)
 
     @property
     def WaitForCompletion(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -334,9 +383,11 @@ class Dot1xGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WaitForCompletion'])
     @WaitForCompletion.setter
     def WaitForCompletion(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WaitForCompletion'], value)
 
     def update(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (bool, int, str, bool, bool, str, int, int, int, int, str, int, int, int, bool, int, int, int, int, bool) -> Dot1xGlobals
         """Updates dot1xGlobals resource on the server.
 
         Args
@@ -369,6 +420,7 @@ class Dot1xGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (bool, int, str, bool, bool, str, int, int, int, int, str, int, int, int, bool, int, int, int, int, bool) -> Dot1xGlobals
         """Adds a new dot1xGlobals resource on the server and adds it to the container.
 
         Args
@@ -415,6 +467,7 @@ class Dot1xGlobals(Base):
         self._delete()
 
     def find(self, AuthOnNoResponse=None, AuthPeriod=None, Authenticator=None, AuthenticatorMulticast=None, DisableLogoff=None, DutTestMode=None, FragmentSize=None, HeldPeriod=None, LogoffMaxClientsPerSecond=None, LogoffMaxOutstandingRequests=None, MacAuthPrefix=None, MaxClientsPerSecond=None, MaxOutstandingRequests=None, MaxStart=None, ObjectId=None, OnlyMulticast=None, StartPeriod=None, StatsPeriod=None, SuccessiveStart=None, WaitBeforeRun=None, WaitForCompletion=None):
+        # type: (bool, int, str, bool, bool, str, int, int, int, int, str, int, int, int, str, bool, int, int, int, int, bool) -> Dot1xGlobals
         """Finds and retrieves dot1xGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dot1xGlobals resources from the server.

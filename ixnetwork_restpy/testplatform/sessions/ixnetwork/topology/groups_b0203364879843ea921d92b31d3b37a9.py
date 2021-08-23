@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Groups(Base):
@@ -45,9 +46,11 @@ class Groups(Base):
         'NumberOfBuckets': 'numberOfBuckets',
         'OfChannel': 'ofChannel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Groups, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Groups, self).__init__(parent, list_op)
 
     @property
     def Buckets(self):
@@ -61,10 +64,14 @@ class Groups(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.buckets_bd4257b6720604ee2ee57801dd96774d import Buckets
-        return Buckets(self)
+        if self._properties.get('Buckets', None) is not None:
+            return self._properties.get('Buckets')
+        else:
+            return Buckets(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -75,6 +82,7 @@ class Groups(Base):
 
     @property
     def ChannelName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,6 +92,7 @@ class Groups(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,6 +102,7 @@ class Groups(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,6 +112,7 @@ class Groups(Base):
 
     @property
     def GroupAdvertise(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -112,6 +123,7 @@ class Groups(Base):
 
     @property
     def GroupDescription(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -122,6 +134,7 @@ class Groups(Base):
 
     @property
     def GroupId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,6 +145,7 @@ class Groups(Base):
 
     @property
     def GroupType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -142,6 +156,7 @@ class Groups(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -150,10 +165,12 @@ class Groups(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,10 +179,12 @@ class Groups(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfBuckets(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -174,10 +193,12 @@ class Groups(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfBuckets'])
     @NumberOfBuckets.setter
     def NumberOfBuckets(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfBuckets'], value)
 
     @property
     def OfChannel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -187,6 +208,7 @@ class Groups(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['OfChannel']))
 
     def update(self, Multiplier=None, Name=None, NumberOfBuckets=None):
+        # type: (int, str, int) -> Groups
         """Updates groups resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -204,7 +226,28 @@ class Groups(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Multiplier=None, Name=None, NumberOfBuckets=None):
+        # type: (int, str, int) -> Groups
+        """Adds a new groups resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Multiplier (number): Number of instances per parent instance (multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfBuckets (number): Specify the number of Buckets.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved groups resources using find and the newly added groups resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, ChannelName=None, Count=None, DescriptiveName=None, Multiplier=None, Name=None, NumberOfBuckets=None):
+        # type: (str, int, str, int, str, int) -> Groups
         """Finds and retrieves groups resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve groups resources from the server.
@@ -248,6 +291,92 @@ class Groups(Base):
         """
         return self._read(href)
 
+    def SendAllGroupAdd(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendAllGroupAdd operation on the server.
+
+        Sends a Group Add on all groups.
+
+        sendAllGroupAdd(async_operation=bool)list
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendAllGroupAdd', payload=payload, response_object=None)
+
+    def SendAllGroupRemove(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendAllGroupRemove operation on the server.
+
+        Sends a Group Remove on all groups.
+
+        sendAllGroupRemove(async_operation=bool)list
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendAllGroupRemove', payload=payload, response_object=None)
+
+    def SendGroupAdd(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendGroupAdd operation on the server.
+
+        Sends a Group Add on selected Group.
+
+        sendGroupAdd(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendGroupAdd', payload=payload, response_object=None)
+
+    def SendGroupRemove(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendGroupRemove operation on the server.
+
+        Sends a Group Remove on selected Group.
+
+        sendGroupRemove(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the group range grid
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendGroupRemove', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, GroupAdvertise=None, GroupDescription=None, GroupId=None, GroupType=None, OfChannel=None):
         """Base class infrastructure that gets a list of groups device ids encapsulated by this object.
 
@@ -272,69 +401,3 @@ class Groups(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def SendAllGroupAdd(self):
-        """Executes the sendAllGroupAdd operation on the server.
-
-        Sends a Group Add on all groups.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        return self._execute('sendAllGroupAdd', payload=payload, response_object=None)
-
-    def SendAllGroupRemove(self):
-        """Executes the sendAllGroupRemove operation on the server.
-
-        Sends a Group Remove on all groups.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        return self._execute('sendAllGroupRemove', payload=payload, response_object=None)
-
-    def SendGroupAdd(self, *args, **kwargs):
-        """Executes the sendGroupAdd operation on the server.
-
-        Sends a Group Add on selected Group.
-
-        sendGroupAdd(Arg2=list)list
-        ---------------------------
-        - Arg2 (list(number)): List of indices into the group range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupAdd', payload=payload, response_object=None)
-
-    def SendGroupRemove(self, *args, **kwargs):
-        """Executes the sendGroupRemove operation on the server.
-
-        Sends a Group Remove on selected Group.
-
-        sendGroupRemove(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the group range grid
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendGroupRemove', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowRange(Base):
@@ -58,9 +59,12 @@ class FlowRange(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'matchType': ['strict', 'loose'],
+    }
 
-    def __init__(self, parent):
-        super(FlowRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowRange, self).__init__(parent, list_op)
 
     @property
     def FlowRangeAction(self):
@@ -74,10 +78,14 @@ class FlowRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrangeaction_03657c6035891000482947c3eb53c6ea import FlowRangeAction
-        return FlowRangeAction(self)
+        if self._properties.get('FlowRangeAction', None) is not None:
+            return self._properties.get('FlowRangeAction')
+        else:
+            return FlowRangeAction(self)
 
     @property
     def CheckOverlap(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -86,10 +94,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CheckOverlap'])
     @CheckOverlap.setter
     def CheckOverlap(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CheckOverlap'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,10 +108,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def DontAddOnChannelUp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -110,10 +122,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DontAddOnChannelUp'])
     @DontAddOnChannelUp.setter
     def DontAddOnChannelUp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DontAddOnChannelUp'], value)
 
     @property
     def EmergencyFlow(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -122,10 +136,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EmergencyFlow'])
     @EmergencyFlow.setter
     def EmergencyFlow(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EmergencyFlow'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -134,10 +150,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,10 +164,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
     @EthernetDestination.setter
     def EthernetDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,10 +178,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
     @EthernetSource.setter
     def EthernetSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +192,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
     @EthernetType.setter
     def EthernetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
 
     @property
     def FlowModStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -183,6 +207,7 @@ class FlowRange(Base):
 
     @property
     def HardTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -191,10 +216,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HardTimeout'])
     @HardTimeout.setter
     def HardTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HardTimeout'], value)
 
     @property
     def IdleTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -203,10 +230,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IdleTimeout'])
     @IdleTimeout.setter
     def IdleTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IdleTimeout'], value)
 
     @property
     def InPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -215,10 +244,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InPort'])
     @InPort.setter
     def InPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -227,10 +258,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
     @IpDscp.setter
     def IpDscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,10 +272,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -251,10 +286,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -263,10 +300,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
     @Ipv4Source.setter
     def Ipv4Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
 
     @property
     def MatchType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -275,10 +314,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchType'])
     @MatchType.setter
     def MatchType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchType'], value)
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -287,10 +328,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def SendFlowRemoved(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -299,10 +342,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendFlowRemoved'])
     @SendFlowRemoved.setter
     def SendFlowRemoved(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendFlowRemoved'], value)
 
     @property
     def TotalFlowCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -311,10 +356,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TotalFlowCount'])
     @TotalFlowCount.setter
     def TotalFlowCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TotalFlowCount'], value)
 
     @property
     def TransportDestinationIcmpCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -323,10 +370,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportDestinationIcmpCode'])
     @TransportDestinationIcmpCode.setter
     def TransportDestinationIcmpCode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportDestinationIcmpCode'], value)
 
     @property
     def TransportSourceIcmpType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -335,10 +384,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransportSourceIcmpType'])
     @TransportSourceIcmpType.setter
     def TransportSourceIcmpType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransportSourceIcmpType'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -347,10 +398,12 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -359,9 +412,11 @@ class FlowRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, CheckOverlap=None, Description=None, DontAddOnChannelUp=None, EmergencyFlow=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, HardTimeout=None, IdleTimeout=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, MatchType=None, Priority=None, SendFlowRemoved=None, TotalFlowCount=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, bool, bool, bool, str, str, str, int, int, str, str, str, str, str, str, int, bool, int, str, str, str, str) -> FlowRange
         """Updates flowRange resource on the server.
 
         Args
@@ -397,6 +452,7 @@ class FlowRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, CheckOverlap=None, Description=None, DontAddOnChannelUp=None, EmergencyFlow=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, HardTimeout=None, IdleTimeout=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, MatchType=None, Priority=None, SendFlowRemoved=None, TotalFlowCount=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, bool, bool, bool, str, str, str, int, int, str, str, str, str, str, str, int, bool, int, str, str, str, str) -> FlowRange
         """Adds a new flowRange resource on the server and adds it to the container.
 
         Args
@@ -446,6 +502,7 @@ class FlowRange(Base):
         self._delete()
 
     def find(self, CheckOverlap=None, Description=None, DontAddOnChannelUp=None, EmergencyFlow=None, Enabled=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, FlowModStatus=None, HardTimeout=None, IdleTimeout=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, MatchType=None, Priority=None, SendFlowRemoved=None, TotalFlowCount=None, TransportDestinationIcmpCode=None, TransportSourceIcmpType=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, bool, bool, bool, str, str, str, str, int, int, str, str, str, str, str, str, int, bool, int, str, str, str, str) -> FlowRange
         """Finds and retrieves flowRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowRange resources from the server.
@@ -508,13 +565,15 @@ class FlowRange(Base):
         return self._read(href)
 
     def UpdateFlowMod(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateFlowMod operation on the server.
 
         NOT DEFINED
 
-        updateFlowMod(Arg2=enum)bool
-        ----------------------------
+        updateFlowMod(Arg2=enum, async_operation=bool)bool
+        --------------------------------------------------
         - Arg2 (str(sendFlowAdd | sendFlowModify | sendFlowRemove)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
         Raises

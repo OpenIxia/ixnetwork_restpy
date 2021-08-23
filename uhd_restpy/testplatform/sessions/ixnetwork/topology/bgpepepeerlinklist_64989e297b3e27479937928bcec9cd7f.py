@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpEpePeerLinkList(Base):
@@ -57,9 +58,11 @@ class BgpEpePeerLinkList(Base):
         'VBit': 'vBit',
         'Weight': 'weight',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpEpePeerLinkList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpEpePeerLinkList, self).__init__(parent, list_op)
 
     @property
     def TlvProfile(self):
@@ -73,10 +76,14 @@ class BgpEpePeerLinkList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        return TlvProfile(self)
+        if self._properties.get('TlvProfile', None) is not None:
+            return self._properties.get('TlvProfile')
+        else:
+            return TlvProfile(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -87,6 +94,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def BBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -97,6 +105,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -106,6 +115,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,6 +125,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def EnableLinkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -125,6 +136,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def EnableLinkIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +147,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def EnablePeerAdjSid(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +158,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +169,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LinkAddressType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +180,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LinkLocalIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +191,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LinkNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +202,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LinkRemoteIdentifier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +213,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LocalIpv4LinkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +224,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def LocalIpv6LinkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +235,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,10 +244,12 @@ class BgpEpePeerLinkList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -237,6 +260,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def PeerName(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -246,6 +270,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def RemoteIpv4LinkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -256,6 +281,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def RemoteIpv6LinkAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -266,6 +292,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def Reserved(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -276,6 +303,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def RsvdBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -286,6 +314,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def SidIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -296,6 +325,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def SidIndexValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -306,6 +336,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def VBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -316,6 +347,7 @@ class BgpEpePeerLinkList(Base):
 
     @property
     def Weight(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -325,6 +357,7 @@ class BgpEpePeerLinkList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Weight']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpEpePeerLinkList
         """Updates bgpEpePeerLinkList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

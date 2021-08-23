@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
@@ -46,12 +47,17 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         'ResponseTimeout': 'responseTimeout',
         'SourceHostList': 'sourceHostList',
     }
+    _SDM_ENUM_MAP = {
+        'meshingType': ['fullyMesh'],
+        'packetType': ['arp', 'ping', 'custom'],
+    }
 
-    def __init__(self, parent):
-        super(SwitchHostRangeLearnedInfoTriggerAttributes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchHostRangeLearnedInfoTriggerAttributes, self).__init__(parent, list_op)
 
     @property
     def CustomPacket(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,10 +66,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CustomPacket'])
     @CustomPacket.setter
     def CustomPacket(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CustomPacket'], value)
 
     @property
     def DestinationCustom(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -72,10 +80,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationCustom'])
     @DestinationCustom.setter
     def DestinationCustom(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationCustom'], value)
 
     @property
     def DestinationCustomIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +94,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationCustomIpv4Address'])
     @DestinationCustomIpv4Address.setter
     def DestinationCustomIpv4Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationCustomIpv4Address'], value)
 
     @property
     def DestinationCustomIpv4AddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,10 +108,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationCustomIpv4AddressStep'])
     @DestinationCustomIpv4AddressStep.setter
     def DestinationCustomIpv4AddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationCustomIpv4AddressStep'], value)
 
     @property
     def DestinationCustomMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -108,10 +122,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationCustomMacAddress'])
     @DestinationCustomMacAddress.setter
     def DestinationCustomMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationCustomMacAddress'], value)
 
     @property
     def DestinationCustomMacAddressStep(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -120,10 +136,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationCustomMacAddressStep'])
     @DestinationCustomMacAddressStep.setter
     def DestinationCustomMacAddressStep(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationCustomMacAddressStep'], value)
 
     @property
     def DestinationHostList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -132,10 +150,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DestinationHostList'])
     @DestinationHostList.setter
     def DestinationHostList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['DestinationHostList'], value)
 
     @property
     def MeshingType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -144,10 +164,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeshingType'])
     @MeshingType.setter
     def MeshingType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeshingType'], value)
 
     @property
     def PacketType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -156,10 +178,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PacketType'])
     @PacketType.setter
     def PacketType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PacketType'], value)
 
     @property
     def PeriodIntervalInMs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -168,10 +192,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodIntervalInMs'])
     @PeriodIntervalInMs.setter
     def PeriodIntervalInMs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodIntervalInMs'], value)
 
     @property
     def Periodic(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,10 +206,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Periodic'])
     @Periodic.setter
     def Periodic(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Periodic'], value)
 
     @property
     def PeriodicIterationNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -192,10 +220,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicIterationNumber'])
     @PeriodicIterationNumber.setter
     def PeriodicIterationNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicIterationNumber'], value)
 
     @property
     def ResponseTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -204,10 +234,12 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResponseTimeout'])
     @ResponseTimeout.setter
     def ResponseTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResponseTimeout'], value)
 
     @property
     def SourceHostList(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -216,9 +248,11 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SourceHostList'])
     @SourceHostList.setter
     def SourceHostList(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SourceHostList'], value)
 
     def update(self, CustomPacket=None, DestinationCustom=None, DestinationCustomIpv4Address=None, DestinationCustomIpv4AddressStep=None, DestinationCustomMacAddress=None, DestinationCustomMacAddressStep=None, DestinationHostList=None, MeshingType=None, PacketType=None, PeriodIntervalInMs=None, Periodic=None, PeriodicIterationNumber=None, ResponseTimeout=None, SourceHostList=None):
+        # type: (str, bool, str, str, str, str, List[str], str, str, int, bool, int, int, List[str]) -> SwitchHostRangeLearnedInfoTriggerAttributes
         """Updates switchHostRangeLearnedInfoTriggerAttributes resource on the server.
 
         Args

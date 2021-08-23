@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class LearnedFilter(Base):
@@ -54,12 +55,17 @@ class LearnedFilter(Base):
         'PeerMask': 'peerMask',
         'RootAddress': 'rootAddress',
     }
+    _SDM_ENUM_MAP = {
+        'ipv4FecMaskMatch': ['exactMatch', 'looseMatch'],
+        'martiniVcType': ['frameRelay', 'atmaal5', 'atmxCell', 'vlan', 'ethernet', 'hdlc', 'ppp', 'cem', 'atmvcc', 'atmvpc', 'ip'],
+    }
 
-    def __init__(self, parent):
-        super(LearnedFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(LearnedFilter, self).__init__(parent, list_op)
 
     @property
     def EnableFilter(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -68,10 +74,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableFilter'])
     @EnableFilter.setter
     def EnableFilter(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableFilter'], value)
 
     @property
     def EnableIpv4FecAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,10 +88,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIpv4FecAddress'])
     @EnableIpv4FecAddress.setter
     def EnableIpv4FecAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIpv4FecAddress'], value)
 
     @property
     def EnableIpv4FecMask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -92,10 +102,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIpv4FecMask'])
     @EnableIpv4FecMask.setter
     def EnableIpv4FecMask(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIpv4FecMask'], value)
 
     @property
     def EnableIpv4RootAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -104,10 +116,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIpv4RootAddress'])
     @EnableIpv4RootAddress.setter
     def EnableIpv4RootAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIpv4RootAddress'], value)
 
     @property
     def EnableLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -116,10 +130,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLabel'])
     @EnableLabel.setter
     def EnableLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLabel'], value)
 
     @property
     def EnableMartiniDescription(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -128,10 +144,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMartiniDescription'])
     @EnableMartiniDescription.setter
     def EnableMartiniDescription(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMartiniDescription'], value)
 
     @property
     def EnableMartiniGroupId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -140,10 +158,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMartiniGroupId'])
     @EnableMartiniGroupId.setter
     def EnableMartiniGroupId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMartiniGroupId'], value)
 
     @property
     def EnableMartiniVcId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -152,10 +172,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMartiniVcId'])
     @EnableMartiniVcId.setter
     def EnableMartiniVcId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMartiniVcId'], value)
 
     @property
     def EnableMartiniVcType(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -164,10 +186,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableMartiniVcType'])
     @EnableMartiniVcType.setter
     def EnableMartiniVcType(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableMartiniVcType'], value)
 
     @property
     def EnablePeerAddress(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -176,10 +200,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePeerAddress'])
     @EnablePeerAddress.setter
     def EnablePeerAddress(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePeerAddress'], value)
 
     @property
     def EnablePeerMask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -188,10 +214,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePeerMask'])
     @EnablePeerMask.setter
     def EnablePeerMask(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePeerMask'], value)
 
     @property
     def Ipv4FecAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,10 +228,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4FecAddress'])
     @Ipv4FecAddress.setter
     def Ipv4FecAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4FecAddress'], value)
 
     @property
     def Ipv4FecMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -212,10 +242,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4FecMask'])
     @Ipv4FecMask.setter
     def Ipv4FecMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4FecMask'], value)
 
     @property
     def Ipv4FecMaskMatch(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,10 +256,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4FecMaskMatch'])
     @Ipv4FecMaskMatch.setter
     def Ipv4FecMaskMatch(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4FecMaskMatch'], value)
 
     @property
     def Label(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -236,10 +270,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Label'])
     @Label.setter
     def Label(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Label'], value)
 
     @property
     def MartiniDescription(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -248,10 +284,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MartiniDescription'])
     @MartiniDescription.setter
     def MartiniDescription(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MartiniDescription'], value)
 
     @property
     def MartiniGroupId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -260,10 +298,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MartiniGroupId'])
     @MartiniGroupId.setter
     def MartiniGroupId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MartiniGroupId'], value)
 
     @property
     def MartiniVcId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -272,10 +312,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MartiniVcId'])
     @MartiniVcId.setter
     def MartiniVcId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MartiniVcId'], value)
 
     @property
     def MartiniVcType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -284,10 +326,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MartiniVcType'])
     @MartiniVcType.setter
     def MartiniVcType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MartiniVcType'], value)
 
     @property
     def PeerAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -296,10 +340,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeerAddress'])
     @PeerAddress.setter
     def PeerAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeerAddress'], value)
 
     @property
     def PeerMask(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -308,10 +354,12 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeerMask'])
     @PeerMask.setter
     def PeerMask(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeerMask'], value)
 
     @property
     def RootAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -320,9 +368,11 @@ class LearnedFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RootAddress'])
     @RootAddress.setter
     def RootAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RootAddress'], value)
 
     def update(self, EnableFilter=None, EnableIpv4FecAddress=None, EnableIpv4FecMask=None, EnableIpv4RootAddress=None, EnableLabel=None, EnableMartiniDescription=None, EnableMartiniGroupId=None, EnableMartiniVcId=None, EnableMartiniVcType=None, EnablePeerAddress=None, EnablePeerMask=None, Ipv4FecAddress=None, Ipv4FecMask=None, Ipv4FecMaskMatch=None, Label=None, MartiniDescription=None, MartiniGroupId=None, MartiniVcId=None, MartiniVcType=None, PeerAddress=None, PeerMask=None, RootAddress=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, str, int, str, int, int, str, str, int, str) -> LearnedFilter
         """Updates learnedFilter resource on the server.
 
         Args

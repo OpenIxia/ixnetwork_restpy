@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PceBasicSrSyncLspUpdateParams(Base):
@@ -66,9 +67,11 @@ class PceBasicSrSyncLspUpdateParams(Base):
         'Ttl': 'ttl',
         'XroFailBit': 'xroFailBit',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PceBasicSrSyncLspUpdateParams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PceBasicSrSyncLspUpdateParams, self).__init__(parent, list_op)
 
     @property
     def PceUpdateSrEroSubObjectList(self):
@@ -82,7 +85,10 @@ class PceBasicSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrerosubobjectlist_d9e41e4990a041fcca2fc6fd076cf303 import PceUpdateSrEroSubObjectList
-        return PceUpdateSrEroSubObjectList(self)
+        if self._properties.get('PceUpdateSrEroSubObjectList', None) is not None:
+            return self._properties.get('PceUpdateSrEroSubObjectList')
+        else:
+            return PceUpdateSrEroSubObjectList(self)
 
     @property
     def PceUpdateSrMetricSubObjectList(self):
@@ -96,7 +102,10 @@ class PceBasicSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrmetricsubobjectlist_161f8505e21b0db145157226f5332ddd import PceUpdateSrMetricSubObjectList
-        return PceUpdateSrMetricSubObjectList(self)
+        if self._properties.get('PceUpdateSrMetricSubObjectList', None) is not None:
+            return self._properties.get('PceUpdateSrMetricSubObjectList')
+        else:
+            return PceUpdateSrMetricSubObjectList(self)
 
     @property
     def PceUpdateXroSubObjectList(self):
@@ -110,10 +119,14 @@ class PceBasicSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist_3cb16b2513bf72ff7ee4a5e0387625cf import PceUpdateXroSubObjectList
-        return PceUpdateXroSubObjectList(self)
+        if self._properties.get('PceUpdateXroSubObjectList', None) is not None:
+            return self._properties.get('PceUpdateXroSubObjectList')
+        else:
+            return PceUpdateXroSubObjectList(self)
 
     @property
     def Bandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +137,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def BindingType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +148,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def Bos(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +159,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def ConfigureBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -154,6 +170,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def ConfigureEro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -164,6 +181,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def ConfigureLsp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -174,6 +192,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def ConfigureLspa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -184,6 +203,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def ConfigureMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -194,6 +214,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def ExcludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -204,6 +225,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def HoldingPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -214,6 +236,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeAll(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -224,6 +247,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -234,6 +258,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeConfiguredERO(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -244,6 +269,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeSrp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -254,6 +280,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeSymbolicPathName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -264,6 +291,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeTEPathBindingTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -274,6 +302,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def IncludeXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -284,6 +313,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def LocalProtection(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -294,6 +324,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def MplsLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -304,6 +335,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def NumberOfEroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -312,10 +344,12 @@ class PceBasicSrSyncLspUpdateParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'])
     @NumberOfEroSubObjects.setter
     def NumberOfEroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfEroSubObjects'], value)
 
     @property
     def NumberOfMetricSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -324,10 +358,12 @@ class PceBasicSrSyncLspUpdateParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObjects'])
     @NumberOfMetricSubObjects.setter
     def NumberOfMetricSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfMetricSubObjects'], value)
 
     @property
     def NumberOfXroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -336,10 +372,12 @@ class PceBasicSrSyncLspUpdateParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'])
     @NumberOfXroSubObjects.setter
     def NumberOfXroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfXroSubObjects'], value)
 
     @property
     def OverridePLSPID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -350,6 +388,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def OverrideSrpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -360,6 +399,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def PceTriggersChoiceList(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -370,6 +410,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def PlspIdTriggerParam(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -380,6 +421,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def SendEmptyTLV(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -390,6 +432,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def SetupPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -400,6 +443,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def SrpId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -410,6 +454,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def Srv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -420,6 +465,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def Tc(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -430,6 +476,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def Ttl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -440,6 +487,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
 
     @property
     def XroFailBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -449,6 +497,7 @@ class PceBasicSrSyncLspUpdateParams(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['XroFailBit']))
 
     def update(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
+        # type: (int, int, int) -> PceBasicSrSyncLspUpdateParams
         """Updates pceBasicSrSyncLspUpdateParams resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -466,7 +515,28 @@ class PceBasicSrSyncLspUpdateParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
+        # type: (int, int, int) -> PceBasicSrSyncLspUpdateParams
+        """Adds a new pceBasicSrSyncLspUpdateParams resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
+        - NumberOfMetricSubObjects (number): Value that indicates the number of Metric Objects to be configured.
+        - NumberOfXroSubObjects (number): Value that indicates the number of XRO Sub Objects to be configured.
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pceBasicSrSyncLspUpdateParams resources using find and the newly added pceBasicSrSyncLspUpdateParams resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, NumberOfEroSubObjects=None, NumberOfMetricSubObjects=None, NumberOfXroSubObjects=None):
+        # type: (int, int, int) -> PceBasicSrSyncLspUpdateParams
         """Finds and retrieves pceBasicSrSyncLspUpdateParams resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pceBasicSrSyncLspUpdateParams resources from the server.
@@ -506,6 +576,50 @@ class PceBasicSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def SendPcUpdate(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendPcUpdate operation on the server.
+
+        Counts property changes created by the user.
+
+        sendPcUpdate(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPcUpdate', payload=payload, response_object=None)
+
+    def SendReturnDelegation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendReturnDelegation operation on the server.
+
+        Counts property changes created by the user.
+
+        sendReturnDelegation(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendReturnDelegation', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Bandwidth=None, BindingType=None, Bos=None, ConfigureBandwidth=None, ConfigureEro=None, ConfigureLsp=None, ConfigureLspa=None, ConfigureMetric=None, ExcludeAny=None, HoldingPriority=None, IncludeAll=None, IncludeAny=None, IncludeConfiguredERO=None, IncludeSrp=None, IncludeSymbolicPathName=None, IncludeTEPathBindingTLV=None, IncludeXro=None, LocalProtection=None, MplsLabel=None, OverridePLSPID=None, OverrideSrpId=None, PceTriggersChoiceList=None, PlspIdTriggerParam=None, SendEmptyTLV=None, SetupPriority=None, SrpId=None, Srv6SID=None, Tc=None, Ttl=None, XroFailBit=None):
         """Base class infrastructure that gets a list of pceBasicSrSyncLspUpdateParams device ids encapsulated by this object.
@@ -555,43 +669,3 @@ class PceBasicSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def SendPcUpdate(self, *args, **kwargs):
-        """Executes the sendPcUpdate operation on the server.
-
-        Counts property changes created by the user.
-
-        sendPcUpdate(Arg2=list)list
-        ---------------------------
-        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPcUpdate', payload=payload, response_object=None)
-
-    def SendReturnDelegation(self, *args, **kwargs):
-        """Executes the sendReturnDelegation operation on the server.
-
-        Counts property changes created by the user.
-
-        sendReturnDelegation(Arg2=list)list
-        -----------------------------------
-        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendReturnDelegation', payload=payload, response_object=None)

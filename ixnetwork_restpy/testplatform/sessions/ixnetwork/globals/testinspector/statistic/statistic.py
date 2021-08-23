@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Statistic(Base):
@@ -40,12 +41,15 @@ class Statistic(Base):
         'Unit': 'unit',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Statistic, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Statistic, self).__init__(parent, list_op)
 
     @property
     def Enable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enable'])
     @Enable.setter
     def Enable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,6 +73,7 @@ class Statistic(Base):
 
     @property
     def Notes(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +83,7 @@ class Statistic(Base):
 
     @property
     def Operator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +93,7 @@ class Statistic(Base):
 
     @property
     def Unit(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,6 +103,7 @@ class Statistic(Base):
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -102,9 +112,11 @@ class Statistic(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Enable=None, Value=None):
+        # type: (bool, int) -> Statistic
         """Updates statistic resource on the server.
 
         Args
@@ -119,6 +131,7 @@ class Statistic(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enable=None, Value=None):
+        # type: (bool, int) -> Statistic
         """Adds a new statistic resource on the server and adds it to the container.
 
         Args
@@ -147,6 +160,7 @@ class Statistic(Base):
         self._delete()
 
     def find(self, Enable=None, Name=None, Notes=None, Operator=None, Unit=None, Value=None):
+        # type: (bool, str, str, str, str, int) -> Statistic
         """Finds and retrieves statistic resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistic resources from the server.

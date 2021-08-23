@@ -1,8 +1,8 @@
 """ Assistant class to simplify access to statistics views
 """
-from uhd_restpy.assistants.statistics.row import Row
-from uhd_restpy.errors import *
-from uhd_restpy.files import Files
+from ixnetwork_restpy.assistants.statistics.row import Row
+from ixnetwork_restpy.errors import *
+from ixnetwork_restpy.files import Files
 import re
 import os
 import io
@@ -39,7 +39,7 @@ class StatViewAssistant(object):
         """
         Args
         ----
-        - IxNetwork (obj (uhd_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
+        - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
         - ViewName (str): The name of a statistics view, supports regex
         - Timeout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
         - LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored. 
@@ -108,7 +108,7 @@ class StatViewAssistant(object):
         If no filters have been added then all rows are returned.
 
         Returns:
-            obj (uhd_restpy.assistants.statistics.row.Row): An iterable class encapsulating row data
+            obj (ixnetwork_restpy.assistants.statistics.row.Row): An iterable class encapsulating row data
         """
         self._is_view_ready
         self._take_csv_snapshot()
@@ -200,7 +200,7 @@ class StatViewAssistant(object):
             bool: True if the condition is met, False if the condition is not met
         
         Raises:
-            obj(uhd_restpy.errors.NotFoundError): If the condition is not met and the RaiseException is True 
+            obj(ixnetwork_restpy.errors.NotFoundError): If the condition is not met and the RaiseException is True 
         """
         start = time.time()
         while time.time() - start < Timeout:
@@ -260,7 +260,7 @@ class StatViewAssistant(object):
             TargetRowFilter (str): drill down filters are dynamic and are based on tracking options selected during traffic item creation
 
         Returns:
-            obj(uhd_restpy.assistants.statistics.statviewassistant.StatViewAssistant)
+            obj(ixnetwork_restpy.assistants.statistics.statviewassistant.StatViewAssistant)
         """
         drill_down = self._View.DrillDown.find()
         drill_down.TargetRowIndex = TargetRowIndex

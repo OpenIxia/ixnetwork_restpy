@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DhcpV6DiscoveredInfo(Base):
@@ -38,12 +39,15 @@ class DhcpV6DiscoveredInfo(Base):
         'ProtocolInterface': 'protocolInterface',
         'Tlvs': 'tlvs',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DhcpV6DiscoveredInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DhcpV6DiscoveredInfo, self).__init__(parent, list_op)
 
     @property
     def IaRebindTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,6 +57,7 @@ class DhcpV6DiscoveredInfo(Base):
 
     @property
     def IaRenewTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -62,6 +67,7 @@ class DhcpV6DiscoveredInfo(Base):
 
     @property
     def Ipv6Address(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -71,6 +77,7 @@ class DhcpV6DiscoveredInfo(Base):
 
     @property
     def IsDhcpV6LearnedInfoRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -80,6 +87,7 @@ class DhcpV6DiscoveredInfo(Base):
 
     @property
     def ProtocolInterface(self):
+        # type: () -> str
         """
         Returns
         -------

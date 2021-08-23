@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SelectWatch(Base):
@@ -43,12 +44,15 @@ class SelectWatch(Base):
         'Token': 'token',
         'Topic': 'topic',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SelectWatch, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SelectWatch, self).__init__(parent, list_op)
 
     @property
     def AverageExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class SelectWatch(Base):
 
     @property
     def IsDisabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class SelectWatch(Base):
 
     @property
     def LastExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class SelectWatch(Base):
 
     @property
     def LastNotification(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class SelectWatch(Base):
 
     @property
     def MaxExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +101,12 @@ class SelectWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def PollInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class SelectWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
@@ -121,6 +132,7 @@ class SelectWatch(Base):
 
     @property
     def Token(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class SelectWatch(Base):
 
     @property
     def Topic(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,6 +151,7 @@ class SelectWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, MaxExecutionTime=None, PollInterval=None, Selects=None, Topic=None):

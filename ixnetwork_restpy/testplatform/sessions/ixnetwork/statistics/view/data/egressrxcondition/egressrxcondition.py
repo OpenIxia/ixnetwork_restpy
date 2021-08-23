@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EgressRxCondition(Base):
@@ -34,12 +35,16 @@ class EgressRxCondition(Base):
         'Operator': 'operator',
         'Values': 'values',
     }
+    _SDM_ENUM_MAP = {
+        'operator': ['isBetween', 'isDifferent', 'isEqual', 'isEqualOrGreater', 'isEqualOrSmaller', 'isGreater', 'isSmaller'],
+    }
 
-    def __init__(self, parent):
-        super(EgressRxCondition, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EgressRxCondition, self).__init__(parent, list_op)
 
     @property
     def Operator(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -48,10 +53,12 @@ class EgressRxCondition(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Operator'])
     @Operator.setter
     def Operator(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Operator'], value)
 
     @property
     def Values(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -60,9 +67,11 @@ class EgressRxCondition(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Values'])
     @Values.setter
     def Values(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Values'], value)
 
     def update(self, Operator=None, Values=None):
+        # type: (str, List[int]) -> EgressRxCondition
         """Updates egressRxCondition resource on the server.
 
         Args

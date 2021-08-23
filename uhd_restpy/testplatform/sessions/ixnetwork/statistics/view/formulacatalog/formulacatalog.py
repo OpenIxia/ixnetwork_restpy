@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FormulaCatalog(Base):
@@ -34,9 +35,11 @@ formula.
     _SDM_NAME = 'formulaCatalog'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FormulaCatalog, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FormulaCatalog, self).__init__(parent, list_op)
 
     @property
     def FormulaColumn(self):
@@ -50,4 +53,7 @@ formula.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.formulacatalog.formulacolumn.formulacolumn import FormulaColumn
-        return FormulaColumn(self)
+        if self._properties.get('FormulaColumn', None) is not None:
+            return self._properties.get('FormulaColumn')
+        else:
+            return FormulaColumn(self)

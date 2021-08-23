@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DiscoveredInterface(Base):
@@ -35,12 +36,16 @@ class DiscoveredInterface(Base):
         'InterfaceName': 'interfaceName',
         'State': 'state',
     }
+    _SDM_ENUM_MAP = {
+        'state': ['assigned', 'available', 'unusable'],
+    }
 
-    def __init__(self, parent):
-        super(DiscoveredInterface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DiscoveredInterface, self).__init__(parent, list_op)
 
     @property
     def InterfaceName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,6 +55,7 @@ class DiscoveredInterface(Base):
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,7 +63,21 @@ class DiscoveredInterface(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['State'])
 
+    def add(self):
+        """Adds a new discoveredInterface resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved discoveredInterface resources using find and the newly added discoveredInterface resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, InterfaceName=None, State=None):
+        # type: (str, str) -> DiscoveredInterface
         """Finds and retrieves discoveredInterface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve discoveredInterface resources from the server.

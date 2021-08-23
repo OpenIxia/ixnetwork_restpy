@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class StartRate(Base):
@@ -38,12 +39,16 @@ class StartRate(Base):
         'RowNames': 'rowNames',
         'ScaleMode': 'scaleMode',
     }
+    _SDM_ENUM_MAP = {
+        'scaleMode': ['port', 'deviceGroup'],
+    }
 
-    def __init__(self, parent):
-        super(StartRate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(StartRate, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,6 +58,7 @@ class StartRate(Base):
 
     @property
     def Enabled(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -63,6 +69,7 @@ class StartRate(Base):
 
     @property
     def Interval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -73,6 +80,7 @@ class StartRate(Base):
 
     @property
     def Rate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +91,7 @@ class StartRate(Base):
 
     @property
     def RowNames(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -92,6 +101,7 @@ class StartRate(Base):
 
     @property
     def ScaleMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,9 +110,11 @@ class StartRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ScaleMode'])
     @ScaleMode.setter
     def ScaleMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ScaleMode'], value)
 
     def update(self, ScaleMode=None):
+        # type: (str) -> StartRate
         """Updates startRate resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

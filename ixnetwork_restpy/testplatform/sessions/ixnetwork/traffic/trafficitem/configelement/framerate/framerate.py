@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FrameRate(Base):
@@ -37,12 +38,18 @@ class FrameRate(Base):
         'Rate': 'rate',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+        'bitRateUnitsType': ['bitsPerSec', 'bytesPerSec', 'kbitsPerSec', 'kbytesPerSec', 'mbitsPerSec', 'mbytesPerSec'],
+        'interPacketGapUnitsType': ['bytes', 'nanoseconds'],
+        'type': ['bitsPerSecond', 'framesPerSecond', 'interPacketGap', 'percentLineRate'],
+    }
 
-    def __init__(self, parent):
-        super(FrameRate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FrameRate, self).__init__(parent, list_op)
 
     @property
     def BitRateUnitsType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,10 +58,12 @@ class FrameRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BitRateUnitsType'])
     @BitRateUnitsType.setter
     def BitRateUnitsType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BitRateUnitsType'], value)
 
     @property
     def EnforceMinimumInterPacketGap(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -63,10 +72,12 @@ class FrameRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'])
     @EnforceMinimumInterPacketGap.setter
     def EnforceMinimumInterPacketGap(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'], value)
 
     @property
     def InterPacketGapUnitsType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,10 +86,12 @@ class FrameRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
     @InterPacketGapUnitsType.setter
     def InterPacketGapUnitsType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'], value)
 
     @property
     def Rate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -87,10 +100,12 @@ class FrameRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Rate'])
     @Rate.setter
     def Rate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Rate'], value)
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,9 +114,11 @@ class FrameRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
     def Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Type'], value)
 
     def update(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
+        # type: (str, int, str, int, str) -> FrameRate
         """Updates frameRate resource on the server.
 
         Args

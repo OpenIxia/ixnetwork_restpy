@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchHostRangeLearnedInfo(Base):
@@ -40,9 +41,11 @@ class SwitchHostRangeLearnedInfo(Base):
         'SourceHostMac': 'sourceHostMac',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchHostRangeLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchHostRangeLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def SwitchHostRangeHopsLearnedInfo(self):
@@ -56,10 +59,14 @@ class SwitchHostRangeLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchhostrangehopslearnedinfo_644eba5a33f6c4a8b40b153ae361c253 import SwitchHostRangeHopsLearnedInfo
-        return SwitchHostRangeHopsLearnedInfo(self)
+        if self._properties.get('SwitchHostRangeHopsLearnedInfo', None) is not None:
+            return self._properties.get('SwitchHostRangeHopsLearnedInfo')
+        else:
+            return SwitchHostRangeHopsLearnedInfo(self)
 
     @property
     def DestinationHostIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -69,6 +76,7 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def DestinationHostMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +86,7 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def PacketType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,6 +96,7 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def Path(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,6 +106,7 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def SourceHostIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +116,7 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def SourceHostMac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,6 +126,7 @@ class SwitchHostRangeLearnedInfo(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,7 +134,21 @@ class SwitchHostRangeLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
+    def add(self):
+        """Adds a new switchHostRangeLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved switchHostRangeLearnedInfo resources using find and the newly added switchHostRangeLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DestinationHostIpv4Address=None, DestinationHostMac=None, PacketType=None, Path=None, SourceHostIpv4Address=None, SourceHostMac=None, Status=None):
+        # type: (str, str, str, str, str, str, str) -> SwitchHostRangeLearnedInfo
         """Finds and retrieves switchHostRangeLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRangeLearnedInfo resources from the server.

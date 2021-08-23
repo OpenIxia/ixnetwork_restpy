@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FortyGigLan(Base):
@@ -45,9 +46,13 @@ class FortyGigLan(Base):
         'TransmitClocking': 'transmitClocking',
         'TxIgnoreRxLinkFaults': 'txIgnoreRxLinkFaults',
     }
+    _SDM_ENUM_MAP = {
+        'autoInstrumentation': ['endOfFrame', 'floating'],
+        'transmitClocking': ['external', 'internal', 'recovered'],
+    }
 
-    def __init__(self, parent):
-        super(FortyGigLan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FortyGigLan, self).__init__(parent, list_op)
 
     @property
     def Fcoe(self):
@@ -61,7 +66,10 @@ class FortyGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe import Fcoe
-        return Fcoe(self)._select()
+        if self._properties.get('Fcoe', None) is not None:
+            return self._properties.get('Fcoe')
+        else:
+            return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -75,10 +83,14 @@ class FortyGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane import TxLane
-        return TxLane(self)._select()
+        if self._properties.get('TxLane', None) is not None:
+            return self._properties.get('TxLane')
+        else:
+            return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,10 +99,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
     def AutoInstrumentation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoInstrumentation'], value)
 
     @property
     def AvailableSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -100,6 +114,7 @@ class FortyGigLan(Base):
 
     @property
     def CanModifySpeed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -109,6 +124,7 @@ class FortyGigLan(Base):
 
     @property
     def CanSetMultipleSpeeds(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -118,6 +134,7 @@ class FortyGigLan(Base):
 
     @property
     def EnableLASIMonitoring(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -126,10 +143,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableLASIMonitoring'])
     @EnableLASIMonitoring.setter
     def EnableLASIMonitoring(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableLASIMonitoring'], value)
 
     @property
     def EnablePPM(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -138,10 +157,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
     def EnablePPM(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnablePPM'], value)
 
     @property
     def EnabledFlowControl(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -150,10 +171,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
     def EnabledFlowControl(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FlowControlDirectedAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,10 +185,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
     def FlowControlDirectedAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'], value)
 
     @property
     def Loopback(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -174,10 +199,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Loopback'])
     @Loopback.setter
     def Loopback(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Loopback'], value)
 
     @property
     def Ppm(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -186,10 +213,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
     def Ppm(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
 
     @property
     def SelectedSpeeds(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -198,10 +227,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SelectedSpeeds'])
     @SelectedSpeeds.setter
     def SelectedSpeeds(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['SelectedSpeeds'], value)
 
     @property
     def TransmitClocking(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,10 +241,12 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
     def TransmitClocking(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TransmitClocking'], value)
 
     @property
     def TxIgnoreRxLinkFaults(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -222,9 +255,11 @@ class FortyGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
     def TxIgnoreRxLinkFaults(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
     def update(self, AutoInstrumentation=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, bool, bool, bool, str, bool, int, List[str], str, bool) -> FortyGigLan
         """Updates fortyGigLan resource on the server.
 
         Args

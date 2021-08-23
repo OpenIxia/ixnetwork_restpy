@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PortFeaturesLearnedInformation(Base):
@@ -53,12 +54,15 @@ class PortFeaturesLearnedInformation(Base):
         'State': 'state',
         'SupportedFeatures': 'supportedFeatures',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PortFeaturesLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PortFeaturesLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def AdvertisedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -68,6 +72,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def Config(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,6 +82,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def CurrentFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,6 +92,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def CurrentSpeed(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +102,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -113,6 +122,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def ErrorCode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,6 +132,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -131,6 +142,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def EthernetAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,6 +152,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def Latency(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -149,6 +162,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,6 +172,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def MaxSpeed(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -167,6 +182,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,6 +192,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def NegotiatedVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -185,6 +202,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def PeerAdvertisedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,6 +212,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -203,6 +222,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -212,6 +232,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def ReplyState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -221,6 +242,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -230,6 +252,7 @@ class PortFeaturesLearnedInformation(Base):
 
     @property
     def SupportedFeatures(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -237,7 +260,21 @@ class PortFeaturesLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SupportedFeatures'])
 
+    def add(self):
+        """Adds a new portFeaturesLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved portFeaturesLearnedInformation resources using find and the newly added portFeaturesLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AdvertisedFeatures=None, Config=None, CurrentFeatures=None, CurrentSpeed=None, DataPathId=None, DataPathIdAsHex=None, ErrorCode=None, ErrorType=None, EthernetAddress=None, Latency=None, LocalIp=None, MaxSpeed=None, Name=None, NegotiatedVersion=None, PeerAdvertisedFeatures=None, PortNumber=None, RemoteIp=None, ReplyState=None, State=None, SupportedFeatures=None):
+        # type: (str, str, str, int, str, str, str, str, str, int, str, int, str, str, str, int, str, str, str, str) -> PortFeaturesLearnedInformation
         """Finds and retrieves portFeaturesLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portFeaturesLearnedInformation resources from the server.
@@ -295,10 +332,16 @@ class PortFeaturesLearnedInformation(Base):
         """
         return self._read(href)
 
-    def AddRecordForTrigger(self):
+    def AddRecordForTrigger(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the addRecordForTrigger operation on the server.
 
         NOT DEFINED
+
+        addRecordForTrigger(async_operation=bool)bool
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool: NOT DEFINED
 
         Raises
         ------
@@ -306,4 +349,6 @@ class PortFeaturesLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addRecordForTrigger', payload=payload, response_object=None)

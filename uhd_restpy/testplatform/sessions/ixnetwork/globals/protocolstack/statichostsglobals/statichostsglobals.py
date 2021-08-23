@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class StaticHostsGlobals(Base):
@@ -35,12 +36,15 @@ class StaticHostsGlobals(Base):
     _SDM_ATT_MAP = {
         'ObjectId': 'objectId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(StaticHostsGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(StaticHostsGlobals, self).__init__(parent, list_op)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,6 +76,7 @@ class StaticHostsGlobals(Base):
         self._delete()
 
     def find(self, ObjectId=None):
+        # type: (str) -> StaticHostsGlobals
         """Finds and retrieves staticHostsGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve staticHostsGlobals resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RxFilters(Base):
@@ -32,9 +33,11 @@ class RxFilters(Base):
     _SDM_NAME = 'rxFilters'
     _SDM_ATT_MAP = {
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RxFilters, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RxFilters, self).__init__(parent, list_op)
 
     @property
     def FilterPalette(self):
@@ -48,7 +51,10 @@ class RxFilters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.filterpalette.filterpalette import FilterPalette
-        return FilterPalette(self)._select()
+        if self._properties.get('FilterPalette', None) is not None:
+            return self._properties.get('FilterPalette')
+        else:
+            return FilterPalette(self)._select()
 
     @property
     def Uds(self):
@@ -62,4 +68,7 @@ class RxFilters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.uds.uds import Uds
-        return Uds(self)
+        if self._properties.get('Uds', None) is not None:
+            return self._properties.get('Uds')
+        else:
+            return Uds(self)

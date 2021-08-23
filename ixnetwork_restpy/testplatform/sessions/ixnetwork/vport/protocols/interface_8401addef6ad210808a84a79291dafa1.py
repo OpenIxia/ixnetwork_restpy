@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -37,12 +38,15 @@ class Interface(Base):
         'MapRegisterOrRequestTxInterface': 'mapRegisterOrRequestTxInterface',
         'ProtocolInterfaces': 'protocolInterfaces',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Interface, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Interface, self).__init__(parent, list_op)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -51,10 +55,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def MapRegisterOrRequestTxInterface(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -63,10 +69,12 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MapRegisterOrRequestTxInterface'])
     @MapRegisterOrRequestTxInterface.setter
     def MapRegisterOrRequestTxInterface(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['MapRegisterOrRequestTxInterface'], value)
 
     @property
     def ProtocolInterfaces(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,9 +83,11 @@ class Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'])
     @ProtocolInterfaces.setter
     def ProtocolInterfaces(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ProtocolInterfaces'], value)
 
     def update(self, Enabled=None, MapRegisterOrRequestTxInterface=None, ProtocolInterfaces=None):
+        # type: (bool, bool, str) -> Interface
         """Updates interface resource on the server.
 
         Args
@@ -93,6 +103,7 @@ class Interface(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Enabled=None, MapRegisterOrRequestTxInterface=None, ProtocolInterfaces=None):
+        # type: (bool, bool, str) -> Interface
         """Adds a new interface resource on the server and adds it to the container.
 
         Args
@@ -122,6 +133,7 @@ class Interface(Base):
         self._delete()
 
     def find(self, Enabled=None, MapRegisterOrRequestTxInterface=None, ProtocolInterfaces=None):
+        # type: (bool, bool, str) -> Interface
         """Finds and retrieves interface resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve interface resources from the server.

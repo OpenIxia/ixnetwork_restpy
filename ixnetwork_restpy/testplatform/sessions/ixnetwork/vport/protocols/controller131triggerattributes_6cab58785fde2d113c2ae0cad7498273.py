@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Controller131TriggerAttributes(Base):
@@ -59,12 +60,23 @@ class Controller131TriggerAttributes(Base):
         'VendorMessageExperimenterType': 'vendorMessageExperimenterType',
         'VendorStatExperimenterType': 'vendorStatExperimenterType',
     }
+    _SDM_ENUM_MAP = {
+        'flowStatOutGroupInputMode': ['allGroups', 'anyGroup', 'outGroupCustom'],
+        'flowStatOutPortInputMode': ['ofppInPort', 'ofppNormal', 'ofppFlood', 'ofppAll', 'ofppController', 'ofppLocal', 'ofppAny', 'outPortCustom'],
+        'flowStatTableIdInputMode': ['allTables', 'emergency', 'custom'],
+        'meterConfigStatMeterId': ['ofpmController', 'ofpmSlowPath', 'ofpmAll', 'manual'],
+        'meterStatMeterId': ['ofpmController', 'ofpmSlowPath', 'ofpmAll', 'manual'],
+        'portStatPortNumberInputMode': ['ofppAny', 'portNumberCustom'],
+        'queueConfigPortNumberInputMode': ['ofppAny', 'portNumberCustom'],
+        'queueStatPortNumberInputMode': ['ofppAll', 'ofppAny', 'portNumberCustom'],
+    }
 
-    def __init__(self, parent):
-        super(Controller131TriggerAttributes, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Controller131TriggerAttributes, self).__init__(parent, list_op)
 
     @property
     def EnableSendTriggerMeterConfigStatsLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -73,10 +85,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggerMeterConfigStatsLearnedInformation'])
     @EnableSendTriggerMeterConfigStatsLearnedInformation.setter
     def EnableSendTriggerMeterConfigStatsLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggerMeterConfigStatsLearnedInformation'], value)
 
     @property
     def EnableSendTriggerMeterFeatureStatsLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -85,10 +99,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggerMeterFeatureStatsLearnedInformation'])
     @EnableSendTriggerMeterFeatureStatsLearnedInformation.setter
     def EnableSendTriggerMeterFeatureStatsLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggerMeterFeatureStatsLearnedInformation'], value)
 
     @property
     def EnableSendTriggerMeterStatLearnedInformation(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -97,10 +113,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSendTriggerMeterStatLearnedInformation'])
     @EnableSendTriggerMeterStatLearnedInformation.setter
     def EnableSendTriggerMeterStatLearnedInformation(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSendTriggerMeterStatLearnedInformation'], value)
 
     @property
     def FlowStatOutGroup(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,10 +127,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutGroup'])
     @FlowStatOutGroup.setter
     def FlowStatOutGroup(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutGroup'], value)
 
     @property
     def FlowStatOutGroupInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,10 +141,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutGroupInputMode'])
     @FlowStatOutGroupInputMode.setter
     def FlowStatOutGroupInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutGroupInputMode'], value)
 
     @property
     def FlowStatOutPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -133,10 +155,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPort'])
     @FlowStatOutPort.setter
     def FlowStatOutPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPort'], value)
 
     @property
     def FlowStatOutPortInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,10 +169,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatOutPortInputMode'])
     @FlowStatOutPortInputMode.setter
     def FlowStatOutPortInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatOutPortInputMode'], value)
 
     @property
     def FlowStatTableId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,10 +183,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableId'])
     @FlowStatTableId.setter
     def FlowStatTableId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTableId'], value)
 
     @property
     def FlowStatTableIdInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,10 +197,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowStatTableIdInputMode'])
     @FlowStatTableIdInputMode.setter
     def FlowStatTableIdInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowStatTableIdInputMode'], value)
 
     @property
     def IsMeterConfigStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -182,6 +212,7 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def IsMeterFeatureStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -191,6 +222,7 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def IsMeterStatLearnedInformationRefreshed(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -200,6 +232,7 @@ class Controller131TriggerAttributes(Base):
 
     @property
     def MeterConfigStatMeterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -208,10 +241,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterConfigStatMeterId'])
     @MeterConfigStatMeterId.setter
     def MeterConfigStatMeterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterConfigStatMeterId'], value)
 
     @property
     def MeterConfigStatMeterNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -220,10 +255,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterConfigStatMeterNumber'])
     @MeterConfigStatMeterNumber.setter
     def MeterConfigStatMeterNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterConfigStatMeterNumber'], value)
 
     @property
     def MeterConfigStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -232,10 +269,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterConfigStatResponseTimeOut'])
     @MeterConfigStatResponseTimeOut.setter
     def MeterConfigStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterConfigStatResponseTimeOut'], value)
 
     @property
     def MeterFeatureStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -244,10 +283,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterFeatureStatResponseTimeOut'])
     @MeterFeatureStatResponseTimeOut.setter
     def MeterFeatureStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterFeatureStatResponseTimeOut'], value)
 
     @property
     def MeterStatMeterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -256,10 +297,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterStatMeterId'])
     @MeterStatMeterId.setter
     def MeterStatMeterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterStatMeterId'], value)
 
     @property
     def MeterStatMeterNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -268,10 +311,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterStatMeterNumber'])
     @MeterStatMeterNumber.setter
     def MeterStatMeterNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterStatMeterNumber'], value)
 
     @property
     def MeterStatResponseTimeOut(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -280,10 +325,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MeterStatResponseTimeOut'])
     @MeterStatResponseTimeOut.setter
     def MeterStatResponseTimeOut(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MeterStatResponseTimeOut'], value)
 
     @property
     def PortStatPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -292,10 +339,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortStatPortNumber'])
     @PortStatPortNumber.setter
     def PortStatPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortStatPortNumber'], value)
 
     @property
     def PortStatPortNumberInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -304,10 +353,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PortStatPortNumberInputMode'])
     @PortStatPortNumberInputMode.setter
     def PortStatPortNumberInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PortStatPortNumberInputMode'], value)
 
     @property
     def QueueConfigPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -316,10 +367,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueConfigPortNumber'])
     @QueueConfigPortNumber.setter
     def QueueConfigPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueConfigPortNumber'], value)
 
     @property
     def QueueConfigPortNumberInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -328,10 +381,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueConfigPortNumberInputMode'])
     @QueueConfigPortNumberInputMode.setter
     def QueueConfigPortNumberInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueConfigPortNumberInputMode'], value)
 
     @property
     def QueueStatPortNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -340,10 +395,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueStatPortNumber'])
     @QueueStatPortNumber.setter
     def QueueStatPortNumber(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueStatPortNumber'], value)
 
     @property
     def QueueStatPortNumberInputMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -352,10 +409,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['QueueStatPortNumberInputMode'])
     @QueueStatPortNumberInputMode.setter
     def QueueStatPortNumberInputMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['QueueStatPortNumberInputMode'], value)
 
     @property
     def VendorMessageExperimenterType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -364,10 +423,12 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorMessageExperimenterType'])
     @VendorMessageExperimenterType.setter
     def VendorMessageExperimenterType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorMessageExperimenterType'], value)
 
     @property
     def VendorStatExperimenterType(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -376,9 +437,11 @@ class Controller131TriggerAttributes(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VendorStatExperimenterType'])
     @VendorStatExperimenterType.setter
     def VendorStatExperimenterType(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VendorStatExperimenterType'], value)
 
     def update(self, EnableSendTriggerMeterConfigStatsLearnedInformation=None, EnableSendTriggerMeterFeatureStatsLearnedInformation=None, EnableSendTriggerMeterStatLearnedInformation=None, FlowStatOutGroup=None, FlowStatOutGroupInputMode=None, FlowStatOutPort=None, FlowStatOutPortInputMode=None, FlowStatTableId=None, FlowStatTableIdInputMode=None, MeterConfigStatMeterId=None, MeterConfigStatMeterNumber=None, MeterConfigStatResponseTimeOut=None, MeterFeatureStatResponseTimeOut=None, MeterStatMeterId=None, MeterStatMeterNumber=None, MeterStatResponseTimeOut=None, PortStatPortNumber=None, PortStatPortNumberInputMode=None, QueueConfigPortNumber=None, QueueConfigPortNumberInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, VendorMessageExperimenterType=None, VendorStatExperimenterType=None):
+        # type: (bool, bool, bool, int, str, int, str, int, str, str, int, int, int, str, int, int, int, str, int, str, int, str, int, int) -> Controller131TriggerAttributes
         """Updates controller131TriggerAttributes resource on the server.
 
         Args

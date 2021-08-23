@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Cluster(Base):
@@ -33,12 +34,15 @@ class Cluster(Base):
     _SDM_ATT_MAP = {
         'Val': 'val',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Cluster, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Cluster, self).__init__(parent, list_op)
 
     @property
     def Val(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -47,9 +51,11 @@ class Cluster(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Val'])
     @Val.setter
     def Val(self, value):
+        # type: (List[int]) -> None
         self._set_attribute(self._SDM_ATT_MAP['Val'], value)
 
     def update(self, Val=None):
+        # type: (List[int]) -> Cluster
         """Updates cluster resource on the server.
 
         Args

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Bfdv6Session(Base):
@@ -49,12 +50,15 @@ class Bfdv6Session(Base):
         'SourceIp6': 'sourceIp6',
         'Vni': 'vni',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Bfdv6Session, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Bfdv6Session, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -65,6 +69,7 @@ class Bfdv6Session(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -74,6 +79,7 @@ class Bfdv6Session(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,6 +89,7 @@ class Bfdv6Session(Base):
 
     @property
     def EnableAutoChooseSourceIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +100,7 @@ class Bfdv6Session(Base):
 
     @property
     def EnableOVSDBCommunication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +111,7 @@ class Bfdv6Session(Base):
 
     @property
     def EnableRemoteDiscriminatorLearned(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +122,7 @@ class Bfdv6Session(Base):
 
     @property
     def LearnedRemoteMac(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -122,6 +132,7 @@ class Bfdv6Session(Base):
 
     @property
     def LocalRouterId(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -131,6 +142,7 @@ class Bfdv6Session(Base):
 
     @property
     def MyDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +153,7 @@ class Bfdv6Session(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -149,10 +162,12 @@ class Bfdv6Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def RemoteDiscriminator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -163,6 +178,7 @@ class Bfdv6Session(Base):
 
     @property
     def RemoteIp6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -173,6 +189,7 @@ class Bfdv6Session(Base):
 
     @property
     def RemoteMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -183,6 +200,7 @@ class Bfdv6Session(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -192,6 +210,7 @@ class Bfdv6Session(Base):
 
     @property
     def SessionType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +221,7 @@ class Bfdv6Session(Base):
 
     @property
     def SourceIp6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -212,6 +232,7 @@ class Bfdv6Session(Base):
 
     @property
     def Vni(self):
+        # type: () -> List[int]
         """
         Returns
         -------
@@ -220,6 +241,7 @@ class Bfdv6Session(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Vni'])
 
     def update(self, Name=None):
+        # type: (str) -> Bfdv6Session
         """Updates bfdv6Session resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -234,6 +256,82 @@ class Bfdv6Session(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the start operation on the server.
+
+        Activate Session
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stop operation on the server.
+
+        Deactivate Session
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, EnableAutoChooseSourceIp=None, EnableOVSDBCommunication=None, EnableRemoteDiscriminatorLearned=None, MyDiscriminator=None, RemoteDiscriminator=None, RemoteIp6=None, RemoteMac=None, SessionType=None, SourceIp6=None):
         """Base class infrastructure that gets a list of bfdv6Session device ids encapsulated by this object.
@@ -263,63 +361,3 @@ class Bfdv6Session(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Activate Session
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        start(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Deactivate Session
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stop(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

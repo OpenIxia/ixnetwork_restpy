@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ImportBgpRoutesParams(Base):
@@ -38,12 +39,18 @@ class ImportBgpRoutesParams(Base):
         'RouteDistributionType': 'routeDistributionType',
         'RouteLimit': 'routeLimit',
     }
+    _SDM_ENUM_MAP = {
+        'fileType': ['csv', 'juniper', 'cisco'],
+        'nextHop': ['overwriteTestersAddress', 'preserveFromFile'],
+        'routeDistributionType': ['roundRobin', 'replicate'],
+    }
 
-    def __init__(self, parent):
-        super(ImportBgpRoutesParams, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ImportBgpRoutesParams, self).__init__(parent, list_op)
 
     @property
     def BestRoutes(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -52,6 +59,7 @@ class ImportBgpRoutesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BestRoutes'])
     @BestRoutes.setter
     def BestRoutes(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['BestRoutes'], value)
 
     @property
@@ -68,6 +76,7 @@ class ImportBgpRoutesParams(Base):
 
     @property
     def FileType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,10 +85,12 @@ class ImportBgpRoutesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FileType'])
     @FileType.setter
     def FileType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FileType'], value)
 
     @property
     def NextHop(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -88,10 +99,12 @@ class ImportBgpRoutesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHop'])
     @NextHop.setter
     def NextHop(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHop'], value)
 
     @property
     def RouteDistributionType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -100,10 +113,12 @@ class ImportBgpRoutesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteDistributionType'])
     @RouteDistributionType.setter
     def RouteDistributionType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteDistributionType'], value)
 
     @property
     def RouteLimit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -112,6 +127,7 @@ class ImportBgpRoutesParams(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RouteLimit'])
     @RouteLimit.setter
     def RouteLimit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RouteLimit'], value)
 
     def update(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None, RouteLimit=None):
@@ -132,10 +148,15 @@ class ImportBgpRoutesParams(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def ImportBgpRoutes(self):
+    def ImportBgpRoutes(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the importBgpRoutes operation on the server.
 
         Import IPv4 routes from standard route file. Supported format - Cisco IOS, Juniper JUNOS, Classis Ixia (.csv) and standard CSV.
+
+        importBgpRoutes(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -143,4 +164,6 @@ class ImportBgpRoutesParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('importBgpRoutes', payload=payload, response_object=None)

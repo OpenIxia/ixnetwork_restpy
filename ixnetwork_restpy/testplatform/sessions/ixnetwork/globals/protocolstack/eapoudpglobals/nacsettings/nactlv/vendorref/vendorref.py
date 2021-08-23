@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class VendorRef(Base):
@@ -35,9 +36,11 @@ class VendorRef(Base):
         'ObjectId': 'objectId',
         'Value': 'value',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(VendorRef, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(VendorRef, self).__init__(parent, list_op)
 
     @property
     def NacTypes(self):
@@ -51,10 +54,14 @@ class VendorRef(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nactlv.vendorref.nactypes.nactypes import NacTypes
-        return NacTypes(self)
+        if self._properties.get('NacTypes', None) is not None:
+            return self._properties.get('NacTypes')
+        else:
+            return NacTypes(self)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -63,10 +70,12 @@ class VendorRef(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +85,7 @@ class VendorRef(Base):
 
     @property
     def Value(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,9 +94,11 @@ class VendorRef(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Value'])
     @Value.setter
     def Value(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Value'], value)
 
     def update(self, Name=None, Value=None):
+        # type: (str, int) -> VendorRef
         """Updates vendorRef resource on the server.
 
         Args

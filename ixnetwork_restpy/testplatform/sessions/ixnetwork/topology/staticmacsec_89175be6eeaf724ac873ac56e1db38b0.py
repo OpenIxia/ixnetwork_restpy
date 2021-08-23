@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class StaticMacsec(Base):
@@ -78,9 +79,15 @@ class StaticMacsec(Base):
         'TxSakPoolSize': 'txSakPoolSize',
         'Version': 'version',
     }
+    _SDM_ENUM_MAP = {
+        'encryptedTrafficType': ['statefulL47', 'statelessL23'],
+        'encryptionEngine': ['softwareBased', 'hardwareBased'],
+        'rekeyBehaviour': ['dontRekey', 'rekeyContinuous', 'rekeyFixedCount'],
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(StaticMacsec, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(StaticMacsec, self).__init__(parent, list_op)
 
     @property
     def Connector(self):
@@ -94,7 +101,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        return Connector(self)
+        if self._properties.get('Connector', None) is not None:
+            return self._properties.get('Connector')
+        else:
+            return Connector(self)
 
     @property
     def InnerVlanList(self):
@@ -108,7 +118,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.innervlanlist_e709d209ac3f7ec472b5b8b70db9e853 import InnerVlanList
-        return InnerVlanList(self)
+        if self._properties.get('InnerVlanList', None) is not None:
+            return self._properties.get('InnerVlanList')
+        else:
+            return InnerVlanList(self)
 
     @property
     def Ipv4(self):
@@ -122,7 +135,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
-        return Ipv4(self)
+        if self._properties.get('Ipv4', None) is not None:
+            return self._properties.get('Ipv4')
+        else:
+            return Ipv4(self)
 
     @property
     def Ipv6(self):
@@ -136,7 +152,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
-        return Ipv6(self)
+        if self._properties.get('Ipv6', None) is not None:
+            return self._properties.get('Ipv6')
+        else:
+            return Ipv6(self)
 
     @property
     def RxSakPool(self):
@@ -150,7 +169,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rxsakpool_22340fe5cb5d81664cab595d3e6d08ef import RxSakPool
-        return RxSakPool(self)._select()
+        if self._properties.get('RxSakPool', None) is not None:
+            return self._properties.get('RxSakPool')
+        else:
+            return RxSakPool(self)._select()
 
     @property
     def TxSakPool(self):
@@ -164,10 +186,14 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.txsakpool_7ab8c0a10359fbab4d0c5bd3dab1bfb2 import TxSakPool
-        return TxSakPool(self)._select()
+        if self._properties.get('TxSakPool', None) is not None:
+            return self._properties.get('TxSakPool')
+        else:
+            return TxSakPool(self)._select()
 
     @property
     def ActiveDevice(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -178,6 +204,7 @@ class StaticMacsec(Base):
 
     @property
     def CipherSuite(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -188,6 +215,7 @@ class StaticMacsec(Base):
 
     @property
     def ConfidentialityOffset(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -198,6 +226,7 @@ class StaticMacsec(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -206,10 +235,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -219,6 +250,7 @@ class StaticMacsec(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -228,6 +260,7 @@ class StaticMacsec(Base):
 
     @property
     def DutMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +271,7 @@ class StaticMacsec(Base):
 
     @property
     def DutMsbOfXpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +282,7 @@ class StaticMacsec(Base):
 
     @property
     def DutSciMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +293,7 @@ class StaticMacsec(Base):
 
     @property
     def DutSciPortId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +304,7 @@ class StaticMacsec(Base):
 
     @property
     def EnableConfidentiality(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -278,6 +315,7 @@ class StaticMacsec(Base):
 
     @property
     def EnableEncryptedVlan(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -288,6 +326,7 @@ class StaticMacsec(Base):
 
     @property
     def EnableEncryptedVlans(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -298,6 +337,7 @@ class StaticMacsec(Base):
 
     @property
     def EncryptedTrafficType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -306,10 +346,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EncryptedTrafficType'])
     @EncryptedTrafficType.setter
     def EncryptedTrafficType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EncryptedTrafficType'], value)
 
     @property
     def EncryptedVlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -318,10 +360,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EncryptedVlanCount'])
     @EncryptedVlanCount.setter
     def EncryptedVlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EncryptedVlanCount'], value)
 
     @property
     def EncryptionEngine(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -330,10 +374,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EncryptionEngine'])
     @EncryptionEngine.setter
     def EncryptionEngine(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EncryptionEngine'], value)
 
     @property
     def EndStation(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -353,6 +399,7 @@ class StaticMacsec(Base):
 
     @property
     def FixedPn(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -361,10 +408,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FixedPn'])
     @FixedPn.setter
     def FixedPn(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FixedPn'], value)
 
     @property
     def IncludeSci(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -375,6 +424,7 @@ class StaticMacsec(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -383,10 +433,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def MvFixedXpn(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -397,6 +449,7 @@ class StaticMacsec(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -405,10 +458,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OverrideTciSetting(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -419,6 +474,7 @@ class StaticMacsec(Base):
 
     @property
     def PeriodicRekeyAttempts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -427,10 +483,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicRekeyAttempts'])
     @PeriodicRekeyAttempts.setter
     def PeriodicRekeyAttempts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicRekeyAttempts'], value)
 
     @property
     def PeriodicRekeyInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -439,10 +497,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PeriodicRekeyInterval'])
     @PeriodicRekeyInterval.setter
     def PeriodicRekeyInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PeriodicRekeyInterval'], value)
 
     @property
     def PortId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -453,6 +513,7 @@ class StaticMacsec(Base):
 
     @property
     def RekeyBehaviour(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -461,10 +522,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RekeyBehaviour'])
     @RekeyBehaviour.setter
     def RekeyBehaviour(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['RekeyBehaviour'], value)
 
     @property
     def RxSakPoolSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -473,10 +536,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RxSakPoolSize'])
     @RxSakPoolSize.setter
     def RxSakPoolSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RxSakPoolSize'], value)
 
     @property
     def SendGratArp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -485,10 +550,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendGratArp'])
     @SendGratArp.setter
     def SendGratArp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendGratArp'], value)
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -498,6 +565,7 @@ class StaticMacsec(Base):
 
     @property
     def SourceIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -508,6 +576,7 @@ class StaticMacsec(Base):
 
     @property
     def SourceMac(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -517,6 +586,7 @@ class StaticMacsec(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -525,6 +595,7 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -538,6 +609,7 @@ class StaticMacsec(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -547,6 +619,7 @@ class StaticMacsec(Base):
 
     @property
     def SystemId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -557,6 +630,7 @@ class StaticMacsec(Base):
 
     @property
     def TciCBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -567,6 +641,7 @@ class StaticMacsec(Base):
 
     @property
     def TciEBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -577,6 +652,7 @@ class StaticMacsec(Base):
 
     @property
     def TciEsBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -587,6 +663,7 @@ class StaticMacsec(Base):
 
     @property
     def TciScBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -597,6 +674,7 @@ class StaticMacsec(Base):
 
     @property
     def TciScbBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -607,6 +685,7 @@ class StaticMacsec(Base):
 
     @property
     def TxSakPoolSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -615,10 +694,12 @@ class StaticMacsec(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TxSakPoolSize'])
     @TxSakPoolSize.setter
     def TxSakPoolSize(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxSakPoolSize'], value)
 
     @property
     def Version(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -628,6 +709,7 @@ class StaticMacsec(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Version']))
 
     def update(self, ConnectedVia=None, EncryptedTrafficType=None, EncryptedVlanCount=None, EncryptionEngine=None, FixedPn=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RekeyBehaviour=None, RxSakPoolSize=None, SendGratArp=None, StackedLayers=None, TxSakPoolSize=None):
+        # type: (List[str], str, int, str, int, int, str, int, int, str, int, bool, List[str], int) -> StaticMacsec
         """Updates staticMacsec resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -657,6 +739,7 @@ class StaticMacsec(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, EncryptedTrafficType=None, EncryptedVlanCount=None, EncryptionEngine=None, FixedPn=None, Multiplier=None, Name=None, PeriodicRekeyAttempts=None, PeriodicRekeyInterval=None, RekeyBehaviour=None, RxSakPoolSize=None, SendGratArp=None, StackedLayers=None, TxSakPoolSize=None):
+        # type: (List[str], str, int, str, int, int, str, int, int, str, int, bool, List[str], int) -> StaticMacsec
         """Adds a new staticMacsec resource on the server and adds it to the container.
 
         Args
@@ -755,6 +838,134 @@ class StaticMacsec(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ActiveDevice=None, CipherSuite=None, ConfidentialityOffset=None, DutMac=None, DutMsbOfXpn=None, DutSciMac=None, DutSciPortId=None, EnableConfidentiality=None, EnableEncryptedVlan=None, EnableEncryptedVlans=None, EndStation=None, IncludeSci=None, MvFixedXpn=None, OverrideTciSetting=None, PortId=None, SourceIp=None, SystemId=None, TciCBit=None, TciEBit=None, TciEsBit=None, TciScBit=None, TciScbBit=None, Version=None):
         """Base class infrastructure that gets a list of staticMacsec device ids encapsulated by this object.
 
@@ -796,103 +1007,3 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

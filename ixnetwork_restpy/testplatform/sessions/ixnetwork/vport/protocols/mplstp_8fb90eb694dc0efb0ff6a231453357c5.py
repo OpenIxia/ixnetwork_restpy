@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MplsTp(Base):
@@ -43,9 +44,12 @@ class MplsTp(Base):
         'RunningState': 'runningState',
         'Y1731ChannelType': 'y1731ChannelType',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(MplsTp, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MplsTp, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -59,10 +63,14 @@ class MplsTp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_72a8c27ddd9762f7c4a0a41d1a263e83 import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def ApsChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -71,10 +79,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ApsChannelType'])
     @ApsChannelType.setter
     def ApsChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ApsChannelType'], value)
 
     @property
     def BfdCcChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -83,10 +93,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BfdCcChannelType'])
     @BfdCcChannelType.setter
     def BfdCcChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BfdCcChannelType'], value)
 
     @property
     def DelayManagementChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -95,10 +107,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayManagementChannelType'])
     @DelayManagementChannelType.setter
     def DelayManagementChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayManagementChannelType'], value)
 
     @property
     def EnableHighPerformanceMode(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -107,10 +121,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableHighPerformanceMode'])
     @EnableHighPerformanceMode.setter
     def EnableHighPerformanceMode(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableHighPerformanceMode'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -119,10 +135,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FaultManagementChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -131,10 +149,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FaultManagementChannelType'])
     @FaultManagementChannelType.setter
     def FaultManagementChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FaultManagementChannelType'], value)
 
     @property
     def LossMeasurementChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -143,10 +163,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LossMeasurementChannelType'])
     @LossMeasurementChannelType.setter
     def LossMeasurementChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['LossMeasurementChannelType'], value)
 
     @property
     def OnDemandCvChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -155,10 +177,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OnDemandCvChannelType'])
     @OnDemandCvChannelType.setter
     def OnDemandCvChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OnDemandCvChannelType'], value)
 
     @property
     def PwStatusChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -167,10 +191,12 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PwStatusChannelType'])
     @PwStatusChannelType.setter
     def PwStatusChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PwStatusChannelType'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -180,6 +206,7 @@ class MplsTp(Base):
 
     @property
     def Y1731ChannelType(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -188,9 +215,11 @@ class MplsTp(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Y1731ChannelType'])
     @Y1731ChannelType.setter
     def Y1731ChannelType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Y1731ChannelType'], value)
 
     def update(self, ApsChannelType=None, BfdCcChannelType=None, DelayManagementChannelType=None, EnableHighPerformanceMode=None, Enabled=None, FaultManagementChannelType=None, LossMeasurementChannelType=None, OnDemandCvChannelType=None, PwStatusChannelType=None, Y1731ChannelType=None):
+        # type: (str, str, str, bool, bool, str, str, str, str, str) -> MplsTp
         """Updates mplsTp resource on the server.
 
         Args
@@ -212,28 +241,42 @@ class MplsTp(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         This signifies the starting of the MPLSTP protocol on a port or group of ports.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         This signifies the stopping of the MPLSTP protocol on a port or group of ports.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

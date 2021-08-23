@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisSpbRouter(Base):
@@ -71,9 +72,12 @@ class IsisSpbRouter(Base):
         'StateCounts': 'stateCounts',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(IsisSpbRouter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisSpbRouter, self).__init__(parent, list_op)
 
     @property
     def SpbTopologyList(self):
@@ -87,10 +91,14 @@ class IsisSpbRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.spbtopologylist_079e088e28e1c709b12ccf5543f3c230 import SpbTopologyList
-        return SpbTopologyList(self)._select()
+        if self._properties.get('SpbTopologyList', None) is not None:
+            return self._properties.get('SpbTopologyList')
+        else:
+            return SpbTopologyList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +109,7 @@ class IsisSpbRouter(Base):
 
     @property
     def AreaAddresses(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -111,6 +120,7 @@ class IsisSpbRouter(Base):
 
     @property
     def AreaAuthenticationType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -121,6 +131,7 @@ class IsisSpbRouter(Base):
 
     @property
     def AreaTransmitPasswordOrMD5Key(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -131,6 +142,7 @@ class IsisSpbRouter(Base):
 
     @property
     def Attached(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -141,6 +153,7 @@ class IsisSpbRouter(Base):
 
     @property
     def CSNPInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -151,6 +164,7 @@ class IsisSpbRouter(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -160,6 +174,7 @@ class IsisSpbRouter(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -169,6 +184,7 @@ class IsisSpbRouter(Base):
 
     @property
     def DiscardLSPs(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +195,7 @@ class IsisSpbRouter(Base):
 
     @property
     def EnableHelloPadding(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +206,7 @@ class IsisSpbRouter(Base):
 
     @property
     def EnableHitlessRestart(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +217,7 @@ class IsisSpbRouter(Base):
 
     @property
     def EnableHostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -209,6 +228,7 @@ class IsisSpbRouter(Base):
 
     @property
     def EnableWideMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -228,6 +248,7 @@ class IsisSpbRouter(Base):
 
     @property
     def HitlessRestartMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -238,6 +259,7 @@ class IsisSpbRouter(Base):
 
     @property
     def HitlessRestartTime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -248,6 +270,7 @@ class IsisSpbRouter(Base):
 
     @property
     def HitlessRestartVersion(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -258,6 +281,7 @@ class IsisSpbRouter(Base):
 
     @property
     def HostName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -268,6 +292,7 @@ class IsisSpbRouter(Base):
 
     @property
     def IgnoreMTPortCapability(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -278,6 +303,7 @@ class IsisSpbRouter(Base):
 
     @property
     def IgnoreReceiveMD5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -288,6 +314,7 @@ class IsisSpbRouter(Base):
 
     @property
     def InterLSPsOrMGroupPDUBurstGap(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -298,6 +325,7 @@ class IsisSpbRouter(Base):
 
     @property
     def LSPLifetime(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -308,6 +336,7 @@ class IsisSpbRouter(Base):
 
     @property
     def LSPRefreshRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -318,6 +347,7 @@ class IsisSpbRouter(Base):
 
     @property
     def LSPorMGroupPDUMinTransmissionInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -328,6 +358,7 @@ class IsisSpbRouter(Base):
 
     @property
     def LocalSystemID(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -337,6 +368,7 @@ class IsisSpbRouter(Base):
 
     @property
     def MaxAreaAddresses(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +379,7 @@ class IsisSpbRouter(Base):
 
     @property
     def MaxLSPSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +390,7 @@ class IsisSpbRouter(Base):
 
     @property
     def MaxLSPsOrMGroupPDUsPerBurst(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +401,7 @@ class IsisSpbRouter(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -375,10 +410,12 @@ class IsisSpbRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Overloaded(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -389,6 +426,7 @@ class IsisSpbRouter(Base):
 
     @property
     def PSNPInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -399,6 +437,7 @@ class IsisSpbRouter(Base):
 
     @property
     def PartitionRepair(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -409,6 +448,7 @@ class IsisSpbRouter(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -418,6 +458,7 @@ class IsisSpbRouter(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -427,6 +468,7 @@ class IsisSpbRouter(Base):
 
     @property
     def SpbTopologyCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -435,6 +477,7 @@ class IsisSpbRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SpbTopologyCount'])
     @SpbTopologyCount.setter
     def SpbTopologyCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SpbTopologyCount'], value)
 
     @property
@@ -448,6 +491,7 @@ class IsisSpbRouter(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -456,6 +500,7 @@ class IsisSpbRouter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, Name=None, SpbTopologyCount=None):
+        # type: (str, int) -> IsisSpbRouter
         """Updates isisSpbRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -473,6 +518,7 @@ class IsisSpbRouter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, SpbTopologyCount=None):
+        # type: (str, int) -> IsisSpbRouter
         """Adds a new isisSpbRouter resource on the server and adds it to the container.
 
         Args
@@ -548,6 +594,198 @@ class IsisSpbRouter(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def IsisStartRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the isisStartRouter operation on the server.
+
+        Start ISIS Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        isisStartRouter(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStartRouter(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStartRouter(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('isisStartRouter', payload=payload, response_object=None)
+
+    def IsisStopRouter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the isisStopRouter operation on the server.
+
+        Stop ISIS Router
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        isisStopRouter(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStopRouter(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        isisStopRouter(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('isisStopRouter', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, AreaAddresses=None, AreaAuthenticationType=None, AreaTransmitPasswordOrMD5Key=None, Attached=None, CSNPInterval=None, DiscardLSPs=None, EnableHelloPadding=None, EnableHitlessRestart=None, EnableHostName=None, EnableWideMetric=None, HitlessRestartMode=None, HitlessRestartTime=None, HitlessRestartVersion=None, HostName=None, IgnoreMTPortCapability=None, IgnoreReceiveMD5=None, InterLSPsOrMGroupPDUBurstGap=None, LSPLifetime=None, LSPRefreshRate=None, LSPorMGroupPDUMinTransmissionInterval=None, MaxAreaAddresses=None, MaxLSPSize=None, MaxLSPsOrMGroupPDUsPerBurst=None, Overloaded=None, PSNPInterval=None, PartitionRepair=None):
         """Base class infrastructure that gets a list of isisSpbRouter device ids encapsulated by this object.
 
@@ -593,153 +831,3 @@ class IsisSpbRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def IsisStartRouter(self, *args, **kwargs):
-        """Executes the isisStartRouter operation on the server.
-
-        Start ISIS Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        isisStartRouter(SessionIndices=list)
-        ------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        isisStartRouter(SessionIndices=string)
-        --------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStartRouter', payload=payload, response_object=None)
-
-    def IsisStopRouter(self, *args, **kwargs):
-        """Executes the isisStopRouter operation on the server.
-
-        Stop ISIS Router
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        isisStopRouter(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        isisStopRouter(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('isisStopRouter', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

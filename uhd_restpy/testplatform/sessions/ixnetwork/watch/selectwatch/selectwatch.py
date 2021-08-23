@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SelectWatch(Base):
@@ -43,12 +44,15 @@ class SelectWatch(Base):
         'Token': 'token',
         'Topic': 'topic',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SelectWatch, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SelectWatch, self).__init__(parent, list_op)
 
     @property
     def AverageExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class SelectWatch(Base):
 
     @property
     def IsDisabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class SelectWatch(Base):
 
     @property
     def LastExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class SelectWatch(Base):
 
     @property
     def LastNotification(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class SelectWatch(Base):
 
     @property
     def MaxExecutionTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -93,10 +101,12 @@ class SelectWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxExecutionTime'])
     @MaxExecutionTime.setter
     def MaxExecutionTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxExecutionTime'], value)
 
     @property
     def PollInterval(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -105,6 +115,7 @@ class SelectWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PollInterval'])
     @PollInterval.setter
     def PollInterval(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['PollInterval'], value)
 
     @property
@@ -112,7 +123,7 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - list(dict(from:str[None | /api/v1/sessions/9/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])): 
+        - list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['Selects'])
     @Selects.setter
@@ -121,6 +132,7 @@ class SelectWatch(Base):
 
     @property
     def Token(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class SelectWatch(Base):
 
     @property
     def Topic(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -138,6 +151,7 @@ class SelectWatch(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Topic'])
     @Topic.setter
     def Topic(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Topic'], value)
 
     def update(self, MaxExecutionTime=None, PollInterval=None, Selects=None, Topic=None):
@@ -147,7 +161,7 @@ class SelectWatch(Base):
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/9/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
         - Topic (str): 
 
         Raises
@@ -163,7 +177,7 @@ class SelectWatch(Base):
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/9/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
         - Topic (str): 
 
         Returns
@@ -201,7 +215,7 @@ class SelectWatch(Base):
         - LastNotification (str): 
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/9/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))): 
         - Token (number): 
         - Topic (str): 
 

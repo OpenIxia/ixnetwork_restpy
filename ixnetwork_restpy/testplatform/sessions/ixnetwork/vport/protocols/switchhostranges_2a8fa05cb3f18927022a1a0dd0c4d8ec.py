@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchHostRanges(Base):
@@ -41,12 +42,15 @@ class SwitchHostRanges(Base):
         'HostVlanid': 'hostVlanid',
         'NumberOfHostsPerPort': 'numberOfHostsPerPort',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchHostRanges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchHostRanges, self).__init__(parent, list_op)
 
     @property
     def EnableStaticIp(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableStaticIp'])
     @EnableStaticIp.setter
     def EnableStaticIp(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableStaticIp'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def HostMacAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostMacAddress'])
     @HostMacAddress.setter
     def HostMacAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostMacAddress'], value)
 
     @property
     def HostStaticIpv4Address(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -103,10 +115,12 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostStaticIpv4Address'])
     @HostStaticIpv4Address.setter
     def HostStaticIpv4Address(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostStaticIpv4Address'], value)
 
     @property
     def HostVlanid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -115,10 +129,12 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HostVlanid'])
     @HostVlanid.setter
     def HostVlanid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['HostVlanid'], value)
 
     @property
     def NumberOfHostsPerPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -127,9 +143,11 @@ class SwitchHostRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'])
     @NumberOfHostsPerPort.setter
     def NumberOfHostsPerPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'], value)
 
     def update(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
+        # type: (bool, bool, bool, str, str, str, int) -> SwitchHostRanges
         """Updates switchHostRanges resource on the server.
 
         Args
@@ -149,6 +167,7 @@ class SwitchHostRanges(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
+        # type: (bool, bool, bool, str, str, str, int) -> SwitchHostRanges
         """Adds a new switchHostRanges resource on the server and adds it to the container.
 
         Args
@@ -182,6 +201,7 @@ class SwitchHostRanges(Base):
         self._delete()
 
     def find(self, EnableStaticIp=None, EnableVlan=None, Enabled=None, HostMacAddress=None, HostStaticIpv4Address=None, HostVlanid=None, NumberOfHostsPerPort=None):
+        # type: (bool, bool, bool, str, str, str, int) -> SwitchHostRanges
         """Finds and retrieves switchHostRanges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRanges resources from the server.

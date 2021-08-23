@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MapServerCacheInfo(Base):
@@ -52,9 +53,11 @@ class MapServerCacheInfo(Base):
         'ProxyMapReply': 'proxyMapReply',
         'WantMapNotify': 'wantMapNotify',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MapServerCacheInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MapServerCacheInfo, self).__init__(parent, list_op)
 
     @property
     def RemoteLocators(self):
@@ -68,10 +71,14 @@ class MapServerCacheInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.remotelocators_ace4921278a5aecb46922d99b858e10c import RemoteLocators
-        return RemoteLocators(self)
+        if self._properties.get('RemoteLocators', None) is not None:
+            return self._properties.get('RemoteLocators')
+        else:
+            return RemoteLocators(self)
 
     @property
     def Action(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -81,6 +88,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def EidPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +98,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def EidPrefixAfi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -99,6 +108,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def EidPrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,6 +118,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def EtrIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -117,6 +128,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def ExpiresAfter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -126,6 +138,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def InstanceId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -135,6 +148,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv4ErrorMapRegisterRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -144,6 +158,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv4MapNotifyTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,6 +168,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv4MapRegisterRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -162,6 +178,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv4MapRequestDropped(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -171,6 +188,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv6ErrorMapRegisterRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -180,6 +198,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv6MapNotifyTx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -189,6 +208,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv6MapRegisterRx(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -198,6 +218,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Ipv6MapRequestDropped(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -207,6 +228,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def Key(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,6 +238,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def MapVersionNumber(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -225,6 +248,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def ProxyMapReply(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -234,6 +258,7 @@ class MapServerCacheInfo(Base):
 
     @property
     def WantMapNotify(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -241,7 +266,21 @@ class MapServerCacheInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['WantMapNotify'])
 
+    def add(self):
+        """Adds a new mapServerCacheInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved mapServerCacheInfo resources using find and the newly added mapServerCacheInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Action=None, EidPrefix=None, EidPrefixAfi=None, EidPrefixLength=None, EtrIp=None, ExpiresAfter=None, InstanceId=None, Ipv4ErrorMapRegisterRx=None, Ipv4MapNotifyTx=None, Ipv4MapRegisterRx=None, Ipv4MapRequestDropped=None, Ipv6ErrorMapRegisterRx=None, Ipv6MapNotifyTx=None, Ipv6MapRegisterRx=None, Ipv6MapRequestDropped=None, Key=None, MapVersionNumber=None, ProxyMapReply=None, WantMapNotify=None):
+        # type: (str, str, str, int, str, str, int, int, int, int, int, int, int, int, int, str, int, bool, bool) -> MapServerCacheInfo
         """Finds and retrieves mapServerCacheInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mapServerCacheInfo resources from the server.

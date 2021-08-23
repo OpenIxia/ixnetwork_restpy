@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OpaqueRouteRange(Base):
@@ -41,12 +42,15 @@ class OpaqueRouteRange(Base):
         'SendMultiExitDiscovery': 'sendMultiExitDiscovery',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OpaqueRouteRange, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OpaqueRouteRange, self).__init__(parent, list_op)
 
     @property
     def Id__(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -55,10 +59,12 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Id__'])
     @Id__.setter
     def Id__(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Id__'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -67,10 +73,12 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def ImportedFile(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -79,10 +87,12 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ImportedFile'])
     @ImportedFile.setter
     def ImportedFile(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ImportedFile'], value)
 
     @property
     def NextHopAsIs(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -91,10 +101,12 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NextHopAsIs'])
     @NextHopAsIs.setter
     def NextHopAsIs(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NextHopAsIs'], value)
 
     @property
     def NumberOfRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,10 +115,12 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRoutes'])
     @NumberOfRoutes.setter
     def NumberOfRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRoutes'], value)
 
     @property
     def SendMultiExitDiscovery(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -115,10 +129,12 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendMultiExitDiscovery'])
     @SendMultiExitDiscovery.setter
     def SendMultiExitDiscovery(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendMultiExitDiscovery'], value)
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -127,6 +143,7 @@ class OpaqueRouteRange(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, Id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
+        # type: (str, bool, str, bool, int, bool) -> OpaqueRouteRange
         """Updates opaqueRouteRange resource on the server.
 
         Args
@@ -145,6 +162,7 @@ class OpaqueRouteRange(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None):
+        # type: (str, bool, str, bool, int, bool) -> OpaqueRouteRange
         """Adds a new opaqueRouteRange resource on the server and adds it to the container.
 
         Args
@@ -177,6 +195,7 @@ class OpaqueRouteRange(Base):
         self._delete()
 
     def find(self, Id__=None, Enabled=None, ImportedFile=None, NextHopAsIs=None, NumberOfRoutes=None, SendMultiExitDiscovery=None, Status=None):
+        # type: (str, bool, str, bool, int, bool, str) -> OpaqueRouteRange
         """Finds and retrieves opaqueRouteRange resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve opaqueRouteRange resources from the server.
@@ -221,10 +240,16 @@ class OpaqueRouteRange(Base):
         """
         return self._read(href)
 
-    def ApplyOpaqueRouteRange(self):
+    def ApplyOpaqueRouteRange(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the applyOpaqueRouteRange operation on the server.
 
         This function allows to Apply the route range information on the opaque route block.
+
+        applyOpaqueRouteRange(async_operation=bool)string
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -232,4 +257,6 @@ class OpaqueRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('applyOpaqueRouteRange', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FramePreemption(Base):
@@ -40,12 +41,17 @@ class FramePreemption(Base):
         'LastFragment': 'lastFragment',
         'SmdType': 'smdType',
     }
+    _SDM_ENUM_MAP = {
+        'frameType': ['control', 'fragment', 'invalid', 'wholeFrame'],
+        'smdType': ['autoSMDC', 'autoSMDS', 'invalidSMD', 'smdC0', 'smdC1', 'smdC2', 'smdC3', 'smdE', 'smdR', 'smdS0', 'smdS1', 'smdS2', 'smdS3', 'smdV'],
+    }
 
-    def __init__(self, parent):
-        super(FramePreemption, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FramePreemption, self).__init__(parent, list_op)
 
     @property
     def AutoFragmentCount(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -54,10 +60,12 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoFragmentCount'])
     @AutoFragmentCount.setter
     def AutoFragmentCount(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoFragmentCount'], value)
 
     @property
     def Enable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -66,10 +74,12 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enable'])
     @Enable.setter
     def Enable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enable'], value)
 
     @property
     def FragmentCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +88,12 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FragmentCount'])
     @FragmentCount.setter
     def FragmentCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FragmentCount'], value)
 
     @property
     def FrameType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +102,12 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FrameType'])
     @FrameType.setter
     def FrameType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FrameType'], value)
 
     @property
     def LastFragment(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -102,10 +116,12 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LastFragment'])
     @LastFragment.setter
     def LastFragment(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['LastFragment'], value)
 
     @property
     def SmdType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -114,9 +130,11 @@ class FramePreemption(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SmdType'])
     @SmdType.setter
     def SmdType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SmdType'], value)
 
     def update(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
+        # type: (bool, bool, int, str, bool, str) -> FramePreemption
         """Updates framePreemption resource on the server.
 
         Args
@@ -135,6 +153,7 @@ class FramePreemption(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
+        # type: (bool, bool, int, str, bool, str) -> FramePreemption
         """Adds a new framePreemption resource on the server and adds it to the container.
 
         Args
@@ -167,6 +186,7 @@ class FramePreemption(Base):
         self._delete()
 
     def find(self, AutoFragmentCount=None, Enable=None, FragmentCount=None, FrameType=None, LastFragment=None, SmdType=None):
+        # type: (bool, bool, int, str, bool, str) -> FramePreemption
         """Finds and retrieves framePreemption resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve framePreemption resources from the server.

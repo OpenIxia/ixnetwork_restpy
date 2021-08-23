@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisSRv6LocatorEntryList(Base):
@@ -51,9 +52,11 @@ class IsisSRv6LocatorEntryList(Base):
         'RouteOrigin': 'routeOrigin',
         'SidCount': 'sidCount',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisSRv6LocatorEntryList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisSRv6LocatorEntryList, self).__init__(parent, list_op)
 
     @property
     def IsisSRv6EndSIDList(self):
@@ -67,10 +70,14 @@ class IsisSRv6LocatorEntryList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6endsidlist_02de140eb2719a0e953620cb8889e8d6 import IsisSRv6EndSIDList
-        return IsisSRv6EndSIDList(self)._select()
+        if self._properties.get('IsisSRv6EndSIDList', None) is not None:
+            return self._properties.get('IsisSRv6EndSIDList')
+        else:
+            return IsisSRv6EndSIDList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -81,6 +88,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def AdvertiseLocatorAsPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -91,6 +99,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -101,6 +110,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -110,6 +120,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def DBit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -120,6 +131,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -129,6 +141,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def Locator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +152,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def LocatorName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +163,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def LocatorSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +174,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def Metric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +185,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def MtApplicabilityForIPv6Locator(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +196,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def MtId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +207,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,10 +216,12 @@ class IsisSRv6LocatorEntryList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +232,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def Redistribution(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +243,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def ReservedFlags(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +254,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def RouteMetric(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +265,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def RouteOrigin(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +276,7 @@ class IsisSRv6LocatorEntryList(Base):
 
     @property
     def SidCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -259,9 +285,11 @@ class IsisSRv6LocatorEntryList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SidCount'])
     @SidCount.setter
     def SidCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SidCount'], value)
 
     def update(self, Name=None, SidCount=None):
+        # type: (str, int) -> IsisSRv6LocatorEntryList
         """Updates isisSRv6LocatorEntryList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

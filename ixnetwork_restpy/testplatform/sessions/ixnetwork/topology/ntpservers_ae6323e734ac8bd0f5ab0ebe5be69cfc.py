@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NtpServers(Base):
@@ -48,12 +49,15 @@ class NtpServers(Base):
         'ServerIPAddress': 'serverIPAddress',
         'ServerIPv6Address': 'serverIPv6Address',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NtpServers, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NtpServers, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class NtpServers(Base):
 
     @property
     def AuthDelay(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +79,7 @@ class NtpServers(Base):
 
     @property
     def Authentication(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +90,7 @@ class NtpServers(Base):
 
     @property
     def AuthenticationKey(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -94,6 +101,7 @@ class NtpServers(Base):
 
     @property
     def BurstMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class NtpServers(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -113,6 +122,7 @@ class NtpServers(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,6 +132,7 @@ class NtpServers(Base):
 
     @property
     def InitialBurstMode(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -132,6 +143,7 @@ class NtpServers(Base):
 
     @property
     def IsParentV6(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -140,10 +152,12 @@ class NtpServers(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsParentV6'])
     @IsParentV6.setter
     def IsParentV6(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsParentV6'], value)
 
     @property
     def KeyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -154,6 +168,7 @@ class NtpServers(Base):
 
     @property
     def MaxPollInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -164,6 +179,7 @@ class NtpServers(Base):
 
     @property
     def MinPollInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -174,6 +190,7 @@ class NtpServers(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,10 +199,12 @@ class NtpServers(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ParticipateInClockSelect(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +215,7 @@ class NtpServers(Base):
 
     @property
     def ServerIPAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +226,7 @@ class NtpServers(Base):
 
     @property
     def ServerIPv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -215,6 +236,7 @@ class NtpServers(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ServerIPv6Address']))
 
     def update(self, IsParentV6=None, Name=None):
+        # type: (bool, str) -> NtpServers
         """Updates ntpServers resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -230,6 +252,82 @@ class NtpServers(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the start operation on the server.
+
+        Activate/Enable Ntp Servers
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stop operation on the server.
+
+        Deactivate/Disable selected Ntp Servers
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AuthDelay=None, Authentication=None, AuthenticationKey=None, BurstMode=None, InitialBurstMode=None, KeyId=None, MaxPollInterval=None, MinPollInterval=None, ParticipateInClockSelect=None, ServerIPAddress=None, ServerIPv6Address=None):
         """Base class infrastructure that gets a list of ntpServers device ids encapsulated by this object.
@@ -261,63 +359,3 @@ class NtpServers(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Activate/Enable Ntp Servers
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        start(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Deactivate/Disable selected Ntp Servers
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stop(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

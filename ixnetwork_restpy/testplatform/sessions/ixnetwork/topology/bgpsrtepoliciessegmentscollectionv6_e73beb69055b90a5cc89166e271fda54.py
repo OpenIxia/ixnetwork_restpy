@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpSRTEPoliciesSegmentsCollectionV6(Base):
@@ -67,12 +68,15 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         'TrafficClass': 'trafficClass',
         'Vflag': 'vflag',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpSRTEPoliciesSegmentsCollectionV6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpSRTEPoliciesSegmentsCollectionV6, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -83,6 +87,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Aflag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -93,6 +98,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Algorithm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -103,6 +109,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def BitReserved16(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -113,6 +120,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def BitReserved8(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -123,6 +131,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def BottomOfStack(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -133,6 +142,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -142,6 +152,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -151,6 +162,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def EnableGSRv6SIDEncoding(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -161,6 +173,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def GSIDBlockLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -171,6 +184,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def GSIDEncodingFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -181,6 +195,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def GSIDLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -191,6 +206,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def InterfaceIndex(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -201,6 +217,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv4LocalAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -211,6 +228,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv4NodeAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -221,6 +239,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv4RemoteAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -231,6 +250,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv6LocalAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -241,6 +261,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv6NodeAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -251,6 +272,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv6RemoteAddress(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -261,6 +283,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Ipv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -271,6 +294,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Label(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -281,6 +305,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -289,10 +314,12 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def OptionalBottomOfStack(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -303,6 +330,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def OptionalIpv6SID(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -313,6 +341,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def OptionalLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -323,6 +352,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def OptionalTLVType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -333,6 +363,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def OptionalTimeToLive(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -343,6 +374,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def OptionalTrafficClass(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -353,6 +385,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def RemainingBits(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -363,6 +396,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def SegmentListNumber(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -372,6 +406,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def SegmentType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -382,6 +417,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def SrtepolicyName(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -391,6 +427,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def TimeToLive(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -401,6 +438,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def TrafficClass(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -411,6 +449,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
 
     @property
     def Vflag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -420,6 +459,7 @@ class BgpSRTEPoliciesSegmentsCollectionV6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Vflag']))
 
     def update(self, Name=None):
+        # type: (str) -> BgpSRTEPoliciesSegmentsCollectionV6
         """Updates bgpSRTEPoliciesSegmentsCollectionV6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

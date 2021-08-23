@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PacketInHeaders(Base):
@@ -48,12 +49,15 @@ class PacketInHeaders(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PacketInHeaders, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PacketInHeaders, self).__init__(parent, list_op)
 
     @property
     def EthernetDestinationAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,10 +66,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestinationAddress'])
     @EthernetDestinationAddress.setter
     def EthernetDestinationAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestinationAddress'], value)
 
     @property
     def EthernetSourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -74,10 +80,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSourceAddress'])
     @EthernetSourceAddress.setter
     def EthernetSourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSourceAddress'], value)
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -86,10 +94,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
     @EthernetType.setter
     def EthernetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
 
     @property
     def Ipv4DestinationAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -98,10 +108,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4DestinationAddress'])
     @Ipv4DestinationAddress.setter
     def Ipv4DestinationAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4DestinationAddress'], value)
 
     @property
     def Ipv4Protocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -110,10 +122,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Protocol'])
     @Ipv4Protocol.setter
     def Ipv4Protocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Protocol'], value)
 
     @property
     def Ipv4SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -122,10 +136,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceAddress'])
     @Ipv4SourceAddress.setter
     def Ipv4SourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4SourceAddress'], value)
 
     @property
     def Ipv6DestinationAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,10 +150,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6DestinationAddress'])
     @Ipv6DestinationAddress.setter
     def Ipv6DestinationAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6DestinationAddress'], value)
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -146,10 +164,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
 
     @property
     def Ipv6SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -158,10 +178,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6SourceAddress'])
     @Ipv6SourceAddress.setter
     def Ipv6SourceAddress(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6SourceAddress'], value)
 
     @property
     def TcpDestinationPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,10 +192,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpDestinationPort'])
     @TcpDestinationPort.setter
     def TcpDestinationPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpDestinationPort'], value)
 
     @property
     def TcpSourcePort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -182,10 +206,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpSourcePort'])
     @TcpSourcePort.setter
     def TcpSourcePort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpSourcePort'], value)
 
     @property
     def UdpDestinationPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -194,10 +220,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpDestinationPort'])
     @UdpDestinationPort.setter
     def UdpDestinationPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpDestinationPort'], value)
 
     @property
     def UdpSourcePort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -206,10 +234,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSourcePort'])
     @UdpSourcePort.setter
     def UdpSourcePort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSourcePort'], value)
 
     @property
     def UniquePacketCount(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -219,6 +249,7 @@ class PacketInHeaders(Base):
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -227,10 +258,12 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -239,9 +272,11 @@ class PacketInHeaders(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, EthernetDestinationAddress=None, EthernetSourceAddress=None, EthernetType=None, Ipv4DestinationAddress=None, Ipv4Protocol=None, Ipv4SourceAddress=None, Ipv6DestinationAddress=None, Ipv6FlowLabel=None, Ipv6SourceAddress=None, TcpDestinationPort=None, TcpSourcePort=None, UdpDestinationPort=None, UdpSourcePort=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str) -> PacketInHeaders
         """Updates packetInHeaders resource on the server.
 
         Args

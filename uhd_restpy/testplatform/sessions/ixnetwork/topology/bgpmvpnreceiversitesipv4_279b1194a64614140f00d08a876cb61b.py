@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class BgpMVpnReceiverSitesIpv4(Base):
@@ -63,9 +64,11 @@ class BgpMVpnReceiverSitesIpv4(Base):
         'SupportLeafADRoutesSending': 'supportLeafADRoutesSending',
         'WildCardLeafAdForBierPta': 'wildCardLeafAdForBierPta',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(BgpMVpnReceiverSitesIpv4, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(BgpMVpnReceiverSitesIpv4, self).__init__(parent, list_op)
 
     @property
     def CMacProperties(self):
@@ -79,7 +82,10 @@ class BgpMVpnReceiverSitesIpv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        return CMacProperties(self)
+        if self._properties.get('CMacProperties', None) is not None:
+            return self._properties.get('CMacProperties')
+        else:
+            return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -93,7 +99,10 @@ class BgpMVpnReceiverSitesIpv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        return EvpnIPv4PrefixRange(self)
+        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv4PrefixRange')
+        else:
+            return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -107,7 +116,10 @@ class BgpMVpnReceiverSitesIpv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        return EvpnIPv6PrefixRange(self)
+        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+            return self._properties.get('EvpnIPv6PrefixRange')
+        else:
+            return EvpnIPv6PrefixRange(self)
 
     @property
     def Tag(self):
@@ -121,10 +133,14 @@ class BgpMVpnReceiverSitesIpv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def BFRId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -135,6 +151,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def BFRIpv4Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -145,6 +162,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def BFRIpv6Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -155,6 +173,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def BFRPrefixType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -165,6 +184,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SubDomainId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -175,6 +195,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def UseAutoSubDomainId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -185,6 +206,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -195,6 +217,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def CMulticastRouteType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -205,6 +228,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -214,6 +238,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -223,6 +248,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def DownstreamLabel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -233,6 +259,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def EnableNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -243,6 +270,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def GroupAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -253,6 +281,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def GroupMaskWidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -263,6 +292,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def IncludeBierPtainLeafAd(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -271,10 +301,12 @@ class BgpMVpnReceiverSitesIpv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeBierPtainLeafAd'])
     @IncludeBierPtainLeafAd.setter
     def IncludeBierPtainLeafAd(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeBierPtainLeafAd'], value)
 
     @property
     def Ipv4NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -285,6 +317,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def Ipv6NextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -295,6 +328,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -303,10 +337,12 @@ class BgpMVpnReceiverSitesIpv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SendTriggeredMulticastRoute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -317,6 +353,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SetNextHop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -327,6 +364,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SetNextHopIpType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -337,6 +375,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SourceAddressCount(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -347,6 +386,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SourceGroupMapping(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -357,6 +397,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SourceMaskWidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -367,6 +408,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def StartGroupAddressIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +419,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def StartSourceAddressIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -387,6 +430,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def StartSourceOrCrpAddressIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -397,6 +441,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def SupportLeafADRoutesSending(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -407,6 +452,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
 
     @property
     def WildCardLeafAdForBierPta(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -415,9 +461,11 @@ class BgpMVpnReceiverSitesIpv4(Base):
         return self._get_attribute(self._SDM_ATT_MAP['WildCardLeafAdForBierPta'])
     @WildCardLeafAdForBierPta.setter
     def WildCardLeafAdForBierPta(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['WildCardLeafAdForBierPta'], value)
 
     def update(self, IncludeBierPtainLeafAd=None, Name=None, WildCardLeafAdForBierPta=None):
+        # type: (bool, str, bool) -> BgpMVpnReceiverSitesIpv4
         """Updates bgpMVpnReceiverSitesIpv4 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -436,6 +484,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, IncludeBierPtainLeafAd=None, Name=None, WildCardLeafAdForBierPta=None):
+        # type: (bool, str, bool) -> BgpMVpnReceiverSitesIpv4
         """Adds a new bgpMVpnReceiverSitesIpv4 resource on the server and adds it to the container.
 
         Args
@@ -465,6 +514,7 @@ class BgpMVpnReceiverSitesIpv4(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, IncludeBierPtainLeafAd=None, Name=None, WildCardLeafAdForBierPta=None):
+        # type: (int, str, bool, str, bool) -> BgpMVpnReceiverSitesIpv4
         """Finds and retrieves bgpMVpnReceiverSitesIpv4 resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpMVpnReceiverSitesIpv4 resources from the server.
@@ -506,6 +556,90 @@ class BgpMVpnReceiverSitesIpv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, BFRId=None, BFRIpv4Prefix=None, BFRIpv6Prefix=None, BFRPrefixType=None, SubDomainId=None, UseAutoSubDomainId=None, Active=None, CMulticastRouteType=None, DownstreamLabel=None, EnableNextHop=None, GroupAddressCount=None, GroupMaskWidth=None, Ipv4NextHop=None, Ipv6NextHop=None, SendTriggeredMulticastRoute=None, SetNextHop=None, SetNextHopIpType=None, SourceAddressCount=None, SourceGroupMapping=None, SourceMaskWidth=None, StartGroupAddressIpv4=None, StartSourceAddressIpv4=None, StartSourceOrCrpAddressIpv4=None, SupportLeafADRoutesSending=None):
         """Base class infrastructure that gets a list of bgpMVpnReceiverSitesIpv4 device ids encapsulated by this object.
@@ -549,66 +683,3 @@ class BgpMVpnReceiverSitesIpv4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

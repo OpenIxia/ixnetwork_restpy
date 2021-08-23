@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class WriteActionsMissLearnedInfo(Base):
@@ -36,12 +37,15 @@ class WriteActionsMissLearnedInfo(Base):
         'Property': 'property',
         'SupportedField': 'supportedField',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(WriteActionsMissLearnedInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(WriteActionsMissLearnedInfo, self).__init__(parent, list_op)
 
     @property
     def NextTableIds(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -51,6 +55,7 @@ class WriteActionsMissLearnedInfo(Base):
 
     @property
     def Property(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -60,6 +65,7 @@ class WriteActionsMissLearnedInfo(Base):
 
     @property
     def SupportedField(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,7 +73,21 @@ class WriteActionsMissLearnedInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['SupportedField'])
 
+    def add(self):
+        """Adds a new writeActionsMissLearnedInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved writeActionsMissLearnedInfo resources using find and the newly added writeActionsMissLearnedInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, NextTableIds=None, Property=None, SupportedField=None):
+        # type: (str, str, str) -> WriteActionsMissLearnedInfo
         """Finds and retrieves writeActionsMissLearnedInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve writeActionsMissLearnedInfo resources from the server.

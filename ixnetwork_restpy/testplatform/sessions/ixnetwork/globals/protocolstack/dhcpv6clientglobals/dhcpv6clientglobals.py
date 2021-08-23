@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Dhcpv6ClientGlobals(Base):
@@ -42,12 +43,15 @@ class Dhcpv6ClientGlobals(Base):
         'SetupRateInitial': 'setupRateInitial',
         'SetupRateMax': 'setupRateMax',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Dhcpv6ClientGlobals, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Dhcpv6ClientGlobals, self).__init__(parent, list_op)
 
     @property
     def Dhcp6InfMaxRc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -56,10 +60,12 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRc'])
     @Dhcp6InfMaxRc.setter
     def Dhcp6InfMaxRc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRc'], value)
 
     @property
     def Dhcp6InfMaxRt(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -68,10 +74,12 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRt'])
     @Dhcp6InfMaxRt.setter
     def Dhcp6InfMaxRt(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6InfMaxRt'], value)
 
     @property
     def Dhcp6InfTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -80,10 +88,12 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Dhcp6InfTimeout'])
     @Dhcp6InfTimeout.setter
     def Dhcp6InfTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Dhcp6InfTimeout'], value)
 
     @property
     def MaxOutstandingRequests(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -92,10 +102,12 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'])
     @MaxOutstandingRequests.setter
     def MaxOutstandingRequests(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstandingRequests'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -105,6 +117,7 @@ class Dhcpv6ClientGlobals(Base):
 
     @property
     def SetupRateIncrement(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -113,10 +126,12 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateIncrement'])
     @SetupRateIncrement.setter
     def SetupRateIncrement(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateIncrement'], value)
 
     @property
     def SetupRateInitial(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -125,10 +140,12 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateInitial'])
     @SetupRateInitial.setter
     def SetupRateInitial(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateInitial'], value)
 
     @property
     def SetupRateMax(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -137,9 +154,11 @@ class Dhcpv6ClientGlobals(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRateMax'])
     @SetupRateMax.setter
     def SetupRateMax(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRateMax'], value)
 
     def update(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
+        # type: (int, int, int, int, int, int, int) -> Dhcpv6ClientGlobals
         """Updates dhcpv6ClientGlobals resource on the server.
 
         Args
@@ -159,6 +178,7 @@ class Dhcpv6ClientGlobals(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
+        # type: (int, int, int, int, int, int, int) -> Dhcpv6ClientGlobals
         """Adds a new dhcpv6ClientGlobals resource on the server and adds it to the container.
 
         Args
@@ -192,6 +212,7 @@ class Dhcpv6ClientGlobals(Base):
         self._delete()
 
     def find(self, Dhcp6InfMaxRc=None, Dhcp6InfMaxRt=None, Dhcp6InfTimeout=None, MaxOutstandingRequests=None, ObjectId=None, SetupRateIncrement=None, SetupRateInitial=None, SetupRateMax=None):
+        # type: (int, int, int, int, str, int, int, int) -> Dhcpv6ClientGlobals
         """Finds and retrieves dhcpv6ClientGlobals resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6ClientGlobals resources from the server.

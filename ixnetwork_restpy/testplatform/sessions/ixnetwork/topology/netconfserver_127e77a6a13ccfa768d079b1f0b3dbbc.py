@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NetconfServer(Base):
@@ -79,9 +80,12 @@ class NetconfServer(Base):
         'Status': 'status',
         'UserName': 'userName',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(NetconfServer, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NetconfServer, self).__init__(parent, list_op)
 
     @property
     def NotificationSnippetsData(self):
@@ -95,10 +99,14 @@ class NetconfServer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.notificationsnippetsdata_5b1f4007b065dbd052ff309a40e6be0a import NotificationSnippetsData
-        return NotificationSnippetsData(self)._select()
+        if self._properties.get('NotificationSnippetsData', None) is not None:
+            return self._properties.get('NotificationSnippetsData')
+        else:
+            return NotificationSnippetsData(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +117,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesBase1Dot0(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -119,6 +128,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesBase1Dot1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -129,6 +139,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesCandidate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -139,6 +150,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesConfirmedCommit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -149,6 +161,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesInterleave(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -159,6 +172,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesNotification(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +183,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesRollbackOnError(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +194,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesStartup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -189,6 +205,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesUrl(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -199,6 +216,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesValidate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -209,6 +227,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesWritableRunning(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -219,6 +238,7 @@ class NetconfServer(Base):
 
     @property
     def CapabilitiesXpath(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -229,6 +249,7 @@ class NetconfServer(Base):
 
     @property
     def ClientIpv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -239,6 +260,7 @@ class NetconfServer(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
@@ -247,10 +269,12 @@ class NetconfServer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -260,6 +284,7 @@ class NetconfServer(Base):
 
     @property
     def DecryptedCapture(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -270,6 +295,7 @@ class NetconfServer(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -279,6 +305,7 @@ class NetconfServer(Base):
 
     @property
     def ErrorInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -289,6 +316,7 @@ class NetconfServer(Base):
 
     @property
     def ErrorPercentage(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -299,6 +327,7 @@ class NetconfServer(Base):
 
     @property
     def ErrorSeverity(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,6 +338,7 @@ class NetconfServer(Base):
 
     @property
     def ErrorTag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -319,6 +349,7 @@ class NetconfServer(Base):
 
     @property
     def ErrorType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -338,6 +369,7 @@ class NetconfServer(Base):
 
     @property
     def GetConfigReplyXML(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -348,6 +380,7 @@ class NetconfServer(Base):
 
     @property
     def IncludeErrorInfo(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -358,6 +391,7 @@ class NetconfServer(Base):
 
     @property
     def IncludeRxTimestampInReplyMsg(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -368,6 +402,7 @@ class NetconfServer(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -376,10 +411,12 @@ class NetconfServer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -388,10 +425,12 @@ class NetconfServer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NetconfSessionState(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -401,6 +440,7 @@ class NetconfServer(Base):
 
     @property
     def NumberOfNotificationSnippetsPerServer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -409,10 +449,12 @@ class NetconfServer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfNotificationSnippetsPerServer'])
     @NumberOfNotificationSnippetsPerServer.setter
     def NumberOfNotificationSnippetsPerServer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfNotificationSnippetsPerServer'], value)
 
     @property
     def OutputDirectory(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -423,6 +465,7 @@ class NetconfServer(Base):
 
     @property
     def Password(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -433,6 +476,7 @@ class NetconfServer(Base):
 
     @property
     def PortNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -443,6 +487,7 @@ class NetconfServer(Base):
 
     @property
     def PublicKeyDirectory(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -453,6 +498,7 @@ class NetconfServer(Base):
 
     @property
     def PublicKeyFileName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -463,6 +509,7 @@ class NetconfServer(Base):
 
     @property
     def ResponseXMLDirectory(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -473,6 +520,7 @@ class NetconfServer(Base):
 
     @property
     def SendOkResponse(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -483,6 +531,7 @@ class NetconfServer(Base):
 
     @property
     def SendUnsolicitedNotifications(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -493,6 +542,7 @@ class NetconfServer(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -502,6 +552,7 @@ class NetconfServer(Base):
 
     @property
     def SshAuthenticationMechanism(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -512,6 +563,7 @@ class NetconfServer(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -520,6 +572,7 @@ class NetconfServer(Base):
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -533,6 +586,7 @@ class NetconfServer(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -542,6 +596,7 @@ class NetconfServer(Base):
 
     @property
     def UserName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -551,6 +606,7 @@ class NetconfServer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserName']))
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfNotificationSnippetsPerServer=None, StackedLayers=None):
+        # type: (List[str], int, str, int, List[str]) -> NetconfServer
         """Updates netconfServer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -571,6 +627,7 @@ class NetconfServer(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, NumberOfNotificationSnippetsPerServer=None, StackedLayers=None):
+        # type: (List[str], int, str, int, List[str]) -> NetconfServer
         """Adds a new netconfServer resource on the server and adds it to the container.
 
         Args
@@ -651,6 +708,347 @@ class NetconfServer(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def GetDecryptedCapture(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getDecryptedCapture operation on the server.
+
+        If Enable Capture is enabled, this will fetch and open the decrypted capture for selected sessions.
+
+        getDecryptedCapture(Arg2=list, Arg3=number, async_operation=bool)list
+        ---------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - Arg3 (number): The TCP Port number of the server connection for which the capture file is to be fetched. Enter 0 for the first server connection
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getDecryptedCapture', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def ResumeRPCReply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumeRPCReply operation on the server.
+
+        Resume sending responses to RPC requests.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        resumeRPCReply(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeRPCReply(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeRPCReply(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        resumeRPCReply(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('resumeRPCReply', payload=payload, response_object=None)
+
+    def SendRPCReplyWithWrongCharacterCount(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendRPCReplyWithWrongCharacterCount operation on the server.
+
+        The response to the next RPC request will be sent with wrong message Id.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendRPCReplyWithWrongCharacterCount(async_operation=bool)
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendRPCReplyWithWrongCharacterCount(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendRPCReplyWithWrongCharacterCount(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendRPCReplyWithWrongCharacterCount(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendRPCReplyWithWrongCharacterCount', payload=payload, response_object=None)
+
+    def SendRPCReplyWithWrongMessageId(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendRPCReplyWithWrongMessageId operation on the server.
+
+        The response to the next RPC request will be sent with wrong message Id.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendRPCReplyWithWrongMessageId(async_operation=bool)
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendRPCReplyWithWrongMessageId(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendRPCReplyWithWrongMessageId(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendRPCReplyWithWrongMessageId(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendRPCReplyWithWrongMessageId', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
+    def StopRPCReplyDropOutstandingRequests(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopRPCReplyDropOutstandingRequests operation on the server.
+
+        Stop sending replies to rpc requests. Drop the outstanding requests so that when Resume RPC Reply is triggered, responses will not be sent for these requests.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopRPCReplyDropOutstandingRequests(async_operation=bool)
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopRPCReplyDropOutstandingRequests(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopRPCReplyDropOutstandingRequests(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopRPCReplyDropOutstandingRequests(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopRPCReplyDropOutstandingRequests', payload=payload, response_object=None)
+
+    def StopRPCReplyStoreOutstandingRequests(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopRPCReplyStoreOutstandingRequests operation on the server.
+
+        Stop sending replies to rpc requests. Store the outstanding requests so that when Resume RPC Reply is triggered, responses will be sent for these requests.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stopRPCReplyStoreOutstandingRequests(async_operation=bool)
+        ----------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopRPCReplyStoreOutstandingRequests(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopRPCReplyStoreOutstandingRequests(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stopRPCReplyStoreOutstandingRequests(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stopRPCReplyStoreOutstandingRequests', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Active=None, CapabilitiesBase1Dot0=None, CapabilitiesBase1Dot1=None, CapabilitiesCandidate=None, CapabilitiesConfirmedCommit=None, CapabilitiesInterleave=None, CapabilitiesNotification=None, CapabilitiesRollbackOnError=None, CapabilitiesStartup=None, CapabilitiesUrl=None, CapabilitiesValidate=None, CapabilitiesWritableRunning=None, CapabilitiesXpath=None, ClientIpv4Address=None, DecryptedCapture=None, ErrorInfo=None, ErrorPercentage=None, ErrorSeverity=None, ErrorTag=None, ErrorType=None, GetConfigReplyXML=None, IncludeErrorInfo=None, IncludeRxTimestampInReplyMsg=None, OutputDirectory=None, Password=None, PortNumber=None, PublicKeyDirectory=None, PublicKeyFileName=None, ResponseXMLDirectory=None, SendOkResponse=None, SendUnsolicitedNotifications=None, SshAuthenticationMechanism=None, UserName=None):
         """Base class infrastructure that gets a list of netconfServer device ids encapsulated by this object.
 
@@ -702,274 +1100,3 @@ class NetconfServer(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def GetDecryptedCapture(self, *args, **kwargs):
-        """Executes the getDecryptedCapture operation on the server.
-
-        If Enable Capture is enabled, this will fetch and open the decrypted capture for selected sessions.
-
-        getDecryptedCapture(Arg2=list, Arg3=number)list
-        -----------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Arg3 (number): The TCP Port number of the server connection for which the capture file is to be fetched. Enter 0 for the first server connection
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('getDecryptedCapture', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def ResumeRPCReply(self, *args, **kwargs):
-        """Executes the resumeRPCReply operation on the server.
-
-        Resume sending responses to RPC requests.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeRPCReply(SessionIndices=list)
-        -----------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        resumeRPCReply(SessionIndices=string)
-        -------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        resumeRPCReply(Arg2=list)list
-        -----------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('resumeRPCReply', payload=payload, response_object=None)
-
-    def SendRPCReplyWithWrongCharacterCount(self, *args, **kwargs):
-        """Executes the sendRPCReplyWithWrongCharacterCount operation on the server.
-
-        The response to the next RPC request will be sent with wrong message Id.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendRPCReplyWithWrongCharacterCount(SessionIndices=list)
-        --------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendRPCReplyWithWrongCharacterCount(SessionIndices=string)
-        ----------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendRPCReplyWithWrongCharacterCount(Arg2=list)list
-        --------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRPCReplyWithWrongCharacterCount', payload=payload, response_object=None)
-
-    def SendRPCReplyWithWrongMessageId(self, *args, **kwargs):
-        """Executes the sendRPCReplyWithWrongMessageId operation on the server.
-
-        The response to the next RPC request will be sent with wrong message Id.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendRPCReplyWithWrongMessageId(SessionIndices=list)
-        ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendRPCReplyWithWrongMessageId(SessionIndices=string)
-        -----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        sendRPCReplyWithWrongMessageId(Arg2=list)list
-        ---------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendRPCReplyWithWrongMessageId', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)
-
-    def StopRPCReplyDropOutstandingRequests(self, *args, **kwargs):
-        """Executes the stopRPCReplyDropOutstandingRequests operation on the server.
-
-        Stop sending replies to rpc requests. Drop the outstanding requests so that when Resume RPC Reply is triggered, responses will not be sent for these requests.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopRPCReplyDropOutstandingRequests(SessionIndices=list)
-        --------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopRPCReplyDropOutstandingRequests(SessionIndices=string)
-        ----------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopRPCReplyDropOutstandingRequests(Arg2=list)list
-        --------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopRPCReplyDropOutstandingRequests', payload=payload, response_object=None)
-
-    def StopRPCReplyStoreOutstandingRequests(self, *args, **kwargs):
-        """Executes the stopRPCReplyStoreOutstandingRequests operation on the server.
-
-        Stop sending replies to rpc requests. Store the outstanding requests so that when Resume RPC Reply is triggered, responses will be sent for these requests.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopRPCReplyStoreOutstandingRequests(SessionIndices=list)
-        ---------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stopRPCReplyStoreOutstandingRequests(SessionIndices=string)
-        -----------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stopRPCReplyStoreOutstandingRequests(Arg2=list)list
-        ---------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stopRPCReplyStoreOutstandingRequests', payload=payload, response_object=None)

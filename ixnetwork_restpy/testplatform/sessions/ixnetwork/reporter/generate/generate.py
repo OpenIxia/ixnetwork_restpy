@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Generate(Base):
@@ -36,12 +37,17 @@ class Generate(Base):
         'State': 'state',
         'TemplatePath': 'templatePath',
     }
+    _SDM_ENUM_MAP = {
+        'outputFormat': ['html', 'pdf'],
+        'state': ['done', 'failed', 'inProgress', 'none'],
+    }
 
-    def __init__(self, parent):
-        super(Generate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Generate, self).__init__(parent, list_op)
 
     @property
     def OutputFormat(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,10 +56,12 @@ class Generate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutputFormat'])
     @OutputFormat.setter
     def OutputFormat(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutputFormat'], value)
 
     @property
     def OutputPath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -62,10 +70,12 @@ class Generate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OutputPath'])
     @OutputPath.setter
     def OutputPath(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['OutputPath'], value)
 
     @property
     def State(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -75,6 +85,7 @@ class Generate(Base):
 
     @property
     def TemplatePath(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -83,9 +94,11 @@ class Generate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TemplatePath'])
     @TemplatePath.setter
     def TemplatePath(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TemplatePath'], value)
 
     def update(self, OutputFormat=None, OutputPath=None, TemplatePath=None):
+        # type: (str, str, str) -> Generate
         """Updates generate resource on the server.
 
         Args
@@ -100,10 +113,15 @@ class Generate(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def GenerateReport(self):
+    def GenerateReport(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the generateReport operation on the server.
 
         NOT DEFINED
+
+        generateReport(async_operation=bool)
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -111,4 +129,6 @@ class Generate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('generateReport', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class IsisPseudoAppSpecSrlgList(Base):
@@ -44,12 +45,15 @@ class IsisPseudoAppSpecSrlgList(Base):
         'UserDefAppBm': 'userDefAppBm',
         'UserDefAppBmLen': 'userDefAppBmLen',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(IsisPseudoAppSpecSrlgList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(IsisPseudoAppSpecSrlgList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -60,6 +64,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -69,6 +74,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,6 +84,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def IpV4InterfaceAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -88,6 +95,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def IpV4NeighborAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -98,6 +106,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def IpV6InterfaceAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -108,6 +117,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def IpV6NeighborAddr(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -118,6 +128,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def LFlag(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -128,6 +139,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -136,10 +148,12 @@ class IsisPseudoAppSpecSrlgList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def StdAppType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -150,6 +164,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def UserDefAppBm(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +175,7 @@ class IsisPseudoAppSpecSrlgList(Base):
 
     @property
     def UserDefAppBmLen(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -169,6 +185,7 @@ class IsisPseudoAppSpecSrlgList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UserDefAppBmLen']))
 
     def update(self, Name=None):
+        # type: (str) -> IsisPseudoAppSpecSrlgList
         """Updates isisPseudoAppSpecSrlgList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -183,6 +200,66 @@ class IsisPseudoAppSpecSrlgList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, IpV4InterfaceAddr=None, IpV4NeighborAddr=None, IpV6InterfaceAddr=None, IpV6NeighborAddr=None, LFlag=None, StdAppType=None, UserDefAppBm=None, UserDefAppBmLen=None):
         """Base class infrastructure that gets a list of isisPseudoAppSpecSrlgList device ids encapsulated by this object.
@@ -211,42 +288,3 @@ class IsisPseudoAppSpecSrlgList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self):
-        """Executes the abort operation on the server.
-
-        Abort CPF control plane (equals to demote to kUnconfigured state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def Start(self):
-        """Executes the start operation on the server.
-
-        Start CPF control plane (equals to promote to negotiated state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self):
-        """Executes the stop operation on the server.
-
-        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        return self._execute('stop', payload=payload, response_object=None)

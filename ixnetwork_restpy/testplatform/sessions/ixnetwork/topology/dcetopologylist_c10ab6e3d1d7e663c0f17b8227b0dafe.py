@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class DceTopologyList(Base):
@@ -42,9 +43,11 @@ class DceTopologyList(Base):
         'StartFTAGValue': 'startFTAGValue',
         'TopologyId': 'topologyId',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(DceTopologyList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(DceTopologyList, self).__init__(parent, list_op)
 
     @property
     def InterestedVlanList(self):
@@ -58,7 +61,10 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_728a61dfe3033f50a4c4b24dd65f6d27 import InterestedVlanList
-        return InterestedVlanList(self)._select()
+        if self._properties.get('InterestedVlanList', None) is not None:
+            return self._properties.get('InterestedVlanList')
+        else:
+            return InterestedVlanList(self)._select()
 
     @property
     def NicknameRecordList(self):
@@ -72,10 +78,14 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nicknamerecordlist_035390df83e22e146cb32cc19244f93b import NicknameRecordList
-        return NicknameRecordList(self)._select()
+        if self._properties.get('NicknameRecordList', None) is not None:
+            return self._properties.get('NicknameRecordList')
+        else:
+            return NicknameRecordList(self)._select()
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +96,7 @@ class DceTopologyList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +106,7 @@ class DceTopologyList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +116,7 @@ class DceTopologyList(Base):
 
     @property
     def EnableFTAG(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +127,7 @@ class DceTopologyList(Base):
 
     @property
     def InterestedVlanRangeCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -122,10 +136,12 @@ class DceTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InterestedVlanRangeCount'])
     @InterestedVlanRangeCount.setter
     def InterestedVlanRangeCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['InterestedVlanRangeCount'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -134,10 +150,12 @@ class DceTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NicknameCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -146,10 +164,12 @@ class DceTopologyList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NicknameCount'])
     @NicknameCount.setter
     def NicknameCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NicknameCount'], value)
 
     @property
     def NoOfTreesToCompute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -160,6 +180,7 @@ class DceTopologyList(Base):
 
     @property
     def StartFTAGValue(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -170,6 +191,7 @@ class DceTopologyList(Base):
 
     @property
     def TopologyId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -179,6 +201,7 @@ class DceTopologyList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TopologyId']))
 
     def update(self, InterestedVlanRangeCount=None, Name=None, NicknameCount=None):
+        # type: (int, str, int) -> DceTopologyList
         """Updates dceTopologyList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

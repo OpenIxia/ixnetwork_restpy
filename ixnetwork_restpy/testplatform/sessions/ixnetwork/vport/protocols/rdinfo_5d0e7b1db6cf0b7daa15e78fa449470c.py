@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RdInfo(Base):
@@ -35,12 +36,15 @@ class RdInfo(Base):
         'DfElection': 'dfElection',
         'Rd': 'rd',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(RdInfo, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RdInfo, self).__init__(parent, list_op)
 
     @property
     def DfElection(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -50,6 +54,7 @@ class RdInfo(Base):
 
     @property
     def Rd(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -57,7 +62,21 @@ class RdInfo(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Rd'])
 
+    def add(self):
+        """Adds a new rdInfo resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved rdInfo resources using find and the newly added rdInfo resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, DfElection=None, Rd=None):
+        # type: (str, str) -> RdInfo
         """Finds and retrieves rdInfo resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rdInfo resources from the server.

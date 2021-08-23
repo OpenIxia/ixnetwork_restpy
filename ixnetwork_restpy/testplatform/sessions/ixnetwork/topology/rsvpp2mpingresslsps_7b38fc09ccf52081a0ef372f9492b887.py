@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class RsvpP2mpIngressLsps(Base):
@@ -90,9 +91,12 @@ class RsvpP2mpIngressLsps(Base):
         'TypeP2mpId': 'typeP2mpId',
         'UsingHeadendIp': 'usingHeadendIp',
     }
+    _SDM_ENUM_MAP = {
+        'typeP2mpId': ['p2MPId', 'iP'],
+    }
 
-    def __init__(self, parent):
-        super(RsvpP2mpIngressLsps, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(RsvpP2mpIngressLsps, self).__init__(parent, list_op)
 
     @property
     def RsvpDetourSubObjectsList(self):
@@ -106,7 +110,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import RsvpDetourSubObjectsList
-        return RsvpDetourSubObjectsList(self)
+        if self._properties.get('RsvpDetourSubObjectsList', None) is not None:
+            return self._properties.get('RsvpDetourSubObjectsList')
+        else:
+            return RsvpDetourSubObjectsList(self)
 
     @property
     def RsvpIngressRroSubObjectsList(self):
@@ -120,7 +127,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_a21ca5185e1490831d56bb810b32d086 import RsvpIngressRroSubObjectsList
-        return RsvpIngressRroSubObjectsList(self)
+        if self._properties.get('RsvpIngressRroSubObjectsList', None) is not None:
+            return self._properties.get('RsvpIngressRroSubObjectsList')
+        else:
+            return RsvpIngressRroSubObjectsList(self)
 
     @property
     def RsvpP2mpIngressSubLsps(self):
@@ -134,7 +144,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_c610bddfdb08c054e463708b863af4f0 import RsvpP2mpIngressSubLsps
-        return RsvpP2mpIngressSubLsps(self)._select()
+        if self._properties.get('RsvpP2mpIngressSubLsps', None) is not None:
+            return self._properties.get('RsvpP2mpIngressSubLsps')
+        else:
+            return RsvpP2mpIngressSubLsps(self)._select()
 
     @property
     def Tag(self):
@@ -148,10 +161,14 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -162,6 +179,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def AutoGenerateSessionName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -172,6 +190,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def BackupLspId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +201,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def BandwidthProtectionDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +212,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -201,6 +222,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def DelayLspSwitchOver(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -209,10 +231,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DelayLspSwitchOver'])
     @DelayLspSwitchOver.setter
     def DelayLspSwitchOver(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['DelayLspSwitchOver'], value)
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -222,6 +246,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def EnableFastReroute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -232,6 +257,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def EnablePathReOptimization(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -242,6 +268,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def EnablePeriodicReEvaluationRequest(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -252,6 +279,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def ExcludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -262,6 +290,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FacilityBackupDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -272,6 +301,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FastRerouteBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -282,6 +312,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FastRerouteExcludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -292,6 +323,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FastRerouteHoldingPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -302,6 +334,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FastRerouteIncludeAll(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -312,6 +345,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FastRerouteIncludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -322,6 +356,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def FastRerouteSetupPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -332,6 +367,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def HoldingPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -342,6 +378,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def HopLimit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -352,6 +389,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def IncludeAll(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -362,6 +400,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def IncludeAny(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -372,6 +411,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def IncludeConnectedIpOnTop(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -382,6 +422,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def IncludeHeadIpAtBottom(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -392,6 +433,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def IngressP2mpSubLspRanges(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -400,10 +442,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IngressP2mpSubLspRanges'])
     @IngressP2mpSubLspRanges.setter
     def IngressP2mpSubLspRanges(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IngressP2mpSubLspRanges'], value)
 
     @property
     def InsertIPv6ExplicitNull(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -414,6 +458,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def LabelRecordingDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -424,6 +469,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -433,6 +479,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def LocalProtectionDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -443,6 +490,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def LspId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -453,6 +501,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def LspSwitchOverDelayTime(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -461,10 +510,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['LspSwitchOverDelayTime'])
     @LspSwitchOverDelayTime.setter
     def LspSwitchOverDelayTime(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['LspSwitchOverDelayTime'], value)
 
     @property
     def MaximumPacketSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -475,6 +526,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def MinimumPolicedUnit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -485,6 +537,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -493,10 +546,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NodeProtectionDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -507,6 +562,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def NumberOfDetourSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -515,10 +571,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfDetourSubObjects'])
     @NumberOfDetourSubObjects.setter
     def NumberOfDetourSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfDetourSubObjects'], value)
 
     @property
     def NumberOfRroSubObjects(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -527,10 +585,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'])
     @NumberOfRroSubObjects.setter
     def NumberOfRroSubObjects(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfRroSubObjects'], value)
 
     @property
     def OneToOneBackupDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -541,6 +601,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def P2mpIdAsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -551,6 +612,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def P2mpIdIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -561,6 +623,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def PeakDataRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -571,6 +634,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def ReEvaluationRequestInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -581,6 +645,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def RefreshInterval(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -591,6 +656,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def ResourceAffinities(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -601,6 +667,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SeStyleDesired(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -611,6 +678,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SendDetour(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -621,6 +689,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SendRro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -631,6 +700,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SessionName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -641,6 +711,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SetupPriority(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -651,6 +722,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SourceIpv4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -661,6 +733,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def SourceIpv6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -671,6 +744,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def State(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -680,6 +754,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def TimeoutMultiplier(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -690,6 +765,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def TokenBucketRate(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -700,6 +776,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def TokenBucketSize(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -710,6 +787,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def TunnelId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -720,6 +798,7 @@ class RsvpP2mpIngressLsps(Base):
 
     @property
     def TypeP2mpId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -728,10 +807,12 @@ class RsvpP2mpIngressLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TypeP2mpId'])
     @TypeP2mpId.setter
     def TypeP2mpId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TypeP2mpId'], value)
 
     @property
     def UsingHeadendIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -741,6 +822,7 @@ class RsvpP2mpIngressLsps(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['UsingHeadendIp']))
 
     def update(self, DelayLspSwitchOver=None, IngressP2mpSubLspRanges=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfRroSubObjects=None, TypeP2mpId=None):
+        # type: (bool, int, int, str, int, int, str) -> RsvpP2mpIngressLsps
         """Updates rsvpP2mpIngressLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -761,6 +843,190 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def InitiateP2mpPathReoptimization(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the initiateP2mpPathReoptimization operation on the server.
+
+        Send P2MP Path with re-evaluation request bit of SESSION-ATTRIBUTE object set, for selected Head Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        initiateP2mpPathReoptimization(async_operation=bool)
+        ----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        initiateP2mpPathReoptimization(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        initiateP2mpPathReoptimization(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('initiateP2mpPathReoptimization', payload=payload, response_object=None)
+
+    def InitiatePathReoptimization(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the initiatePathReoptimization operation on the server.
+
+        Initiate Path Reoptimization
+
+        initiatePathReoptimization(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('initiatePathReoptimization', payload=payload, response_object=None)
+
+    def MakeBeforeBreak(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the makeBeforeBreak operation on the server.
+
+        Make Before Break
+
+        makeBeforeBreak(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('makeBeforeBreak', payload=payload, response_object=None)
+
+    def P2mpMakeBeforeBreak(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the p2mpMakeBeforeBreak operation on the server.
+
+        Initiate P2MP Make Before Break for selected Head Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        p2mpMakeBeforeBreak(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        p2mpMakeBeforeBreak(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        p2mpMakeBeforeBreak(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('p2mpMakeBeforeBreak', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the start operation on the server.
+
+        Activate/Enable P2MP Tunnel selected Head Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(Arg2=list, async_operation=bool)list
+        ------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stop operation on the server.
+
+        Deactivate/Disable P2MP selected Tunnel Head Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(Arg2=list, async_operation=bool)list
+        -----------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, AutoGenerateSessionName=None, BackupLspId=None, BandwidthProtectionDesired=None, EnableFastReroute=None, EnablePathReOptimization=None, EnablePeriodicReEvaluationRequest=None, ExcludeAny=None, FacilityBackupDesired=None, FastRerouteBandwidth=None, FastRerouteExcludeAny=None, FastRerouteHoldingPriority=None, FastRerouteIncludeAll=None, FastRerouteIncludeAny=None, FastRerouteSetupPriority=None, HoldingPriority=None, HopLimit=None, IncludeAll=None, IncludeAny=None, IncludeConnectedIpOnTop=None, IncludeHeadIpAtBottom=None, InsertIPv6ExplicitNull=None, LabelRecordingDesired=None, LocalProtectionDesired=None, LspId=None, MaximumPacketSize=None, MinimumPolicedUnit=None, NodeProtectionDesired=None, OneToOneBackupDesired=None, P2mpIdAsNumber=None, P2mpIdIp=None, PeakDataRate=None, ReEvaluationRequestInterval=None, RefreshInterval=None, ResourceAffinities=None, SeStyleDesired=None, SendDetour=None, SendRro=None, SessionName=None, SetupPriority=None, SourceIpv4=None, SourceIpv6=None, TimeoutMultiplier=None, TokenBucketRate=None, TokenBucketSize=None, TunnelId=None, UsingHeadendIp=None):
         """Base class infrastructure that gets a list of rsvpP2mpIngressLsps device ids encapsulated by this object.
@@ -827,153 +1093,3 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def InitiateP2mpPathReoptimization(self, *args, **kwargs):
-        """Executes the initiateP2mpPathReoptimization operation on the server.
-
-        Send P2MP Path with re-evaluation request bit of SESSION-ATTRIBUTE object set, for selected Head Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        initiateP2mpPathReoptimization(SessionIndices=list)
-        ---------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        initiateP2mpPathReoptimization(SessionIndices=string)
-        -----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('initiateP2mpPathReoptimization', payload=payload, response_object=None)
-
-    def InitiatePathReoptimization(self, *args, **kwargs):
-        """Executes the initiatePathReoptimization operation on the server.
-
-        Initiate Path Reoptimization
-
-        initiatePathReoptimization(Arg2=list)list
-        -----------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('initiatePathReoptimization', payload=payload, response_object=None)
-
-    def MakeBeforeBreak(self, *args, **kwargs):
-        """Executes the makeBeforeBreak operation on the server.
-
-        Make Before Break
-
-        makeBeforeBreak(Arg2=list)list
-        ------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('makeBeforeBreak', payload=payload, response_object=None)
-
-    def P2mpMakeBeforeBreak(self, *args, **kwargs):
-        """Executes the p2mpMakeBeforeBreak operation on the server.
-
-        Initiate P2MP Make Before Break for selected Head Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        p2mpMakeBeforeBreak(SessionIndices=list)
-        ----------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        p2mpMakeBeforeBreak(SessionIndices=string)
-        ------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('p2mpMakeBeforeBreak', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Activate/Enable P2MP Tunnel selected Head Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        start(Arg2=list)list
-        --------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Deactivate/Disable P2MP selected Tunnel Head Ranges
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        stop(Arg2=list)list
-        -------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class SwitchTables(Base):
@@ -38,9 +39,11 @@ class SwitchTables(Base):
         'TableId': 'tableId',
         'TableName': 'tableName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(SwitchTables, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(SwitchTables, self).__init__(parent, list_op)
 
     @property
     def WildcardsSupported(self):
@@ -54,10 +57,14 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_7f90a3dda0d8f10c99f0019fb1ddbad1 import WildcardsSupported
-        return WildcardsSupported(self)._select()
+        if self._properties.get('WildcardsSupported', None) is not None:
+            return self._properties.get('WildcardsSupported')
+        else:
+            return WildcardsSupported(self)._select()
 
     @property
     def MaxEntries(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -66,10 +73,12 @@ class SwitchTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxEntries'])
     @MaxEntries.setter
     def MaxEntries(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxEntries'], value)
 
     @property
     def NumberOfTables(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +87,12 @@ class SwitchTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfTables'])
     @NumberOfTables.setter
     def NumberOfTables(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfTables'], value)
 
     @property
     def TableId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,10 +101,12 @@ class SwitchTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableId'])
     @TableId.setter
     def TableId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableId'], value)
 
     @property
     def TableName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -102,9 +115,11 @@ class SwitchTables(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TableName'])
     @TableName.setter
     def TableName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TableName'], value)
 
     def update(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
+        # type: (str, int, str, str) -> SwitchTables
         """Updates switchTables resource on the server.
 
         Args
@@ -121,6 +136,7 @@ class SwitchTables(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
+        # type: (str, int, str, str) -> SwitchTables
         """Adds a new switchTables resource on the server and adds it to the container.
 
         Args
@@ -151,6 +167,7 @@ class SwitchTables(Base):
         self._delete()
 
     def find(self, MaxEntries=None, NumberOfTables=None, TableId=None, TableName=None):
+        # type: (str, int, str, str) -> SwitchTables
         """Finds and retrieves switchTables resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchTables resources from the server.

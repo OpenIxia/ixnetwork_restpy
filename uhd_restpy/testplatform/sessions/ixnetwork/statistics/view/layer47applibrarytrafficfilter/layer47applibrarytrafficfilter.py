@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Layer47AppLibraryTrafficFilter(Base):
@@ -39,9 +40,11 @@ class Layer47AppLibraryTrafficFilter(Base):
         'TopxEnabled': 'topxEnabled',
         'TopxValue': 'topxValue',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Layer47AppLibraryTrafficFilter, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Layer47AppLibraryTrafficFilter, self).__init__(parent, list_op)
 
     @property
     def AdvancedFilter(self):
@@ -55,10 +58,14 @@ class Layer47AppLibraryTrafficFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.layer47applibrarytrafficfilter.advancedfilter.advancedfilter import AdvancedFilter
-        return AdvancedFilter(self)
+        if self._properties.get('AdvancedFilter', None) is not None:
+            return self._properties.get('AdvancedFilter')
+        else:
+            return AdvancedFilter(self)
 
     @property
     def AdvancedFilterName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,28 +74,32 @@ class Layer47AppLibraryTrafficFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AdvancedFilterName'])
     @AdvancedFilterName.setter
     def AdvancedFilterName(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AdvancedFilterName'], value)
 
     @property
     def AllAdvancedFilters(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
         return self._get_attribute(self._SDM_ATT_MAP['AllAdvancedFilters'])
 
     @property
     def MatchingAdvancedFilters(self):
+        # type: () -> str
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableAdvancedFilters): Specifies a list that contains only the filters which can be applied on the current drill down view.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Specifies a list that contains only the filters which can be applied on the current drill down view.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MatchingAdvancedFilters'])
 
     @property
     def TopxEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -97,10 +108,12 @@ class Layer47AppLibraryTrafficFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopxEnabled'])
     @TopxEnabled.setter
     def TopxEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopxEnabled'], value)
 
     @property
     def TopxValue(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -109,9 +122,11 @@ class Layer47AppLibraryTrafficFilter(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TopxValue'])
     @TopxValue.setter
     def TopxValue(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TopxValue'], value)
 
     def update(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
+        # type: (str, bool, int) -> Layer47AppLibraryTrafficFilter
         """Updates layer47AppLibraryTrafficFilter resource on the server.
 
         Args
@@ -127,6 +142,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AdvancedFilterName=None, TopxEnabled=None, TopxValue=None):
+        # type: (str, bool, int) -> Layer47AppLibraryTrafficFilter
         """Adds a new layer47AppLibraryTrafficFilter resource on the server and adds it to the container.
 
         Args
@@ -156,6 +172,7 @@ class Layer47AppLibraryTrafficFilter(Base):
         self._delete()
 
     def find(self, AdvancedFilterName=None, AllAdvancedFilters=None, MatchingAdvancedFilters=None, TopxEnabled=None, TopxValue=None):
+        # type: (str, str, str, bool, int) -> Layer47AppLibraryTrafficFilter
         """Finds and retrieves layer47AppLibraryTrafficFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer47AppLibraryTrafficFilter resources from the server.
@@ -165,8 +182,8 @@ class Layer47AppLibraryTrafficFilter(Base):
         Args
         ----
         - AdvancedFilterName (str): Specifies an advanced filter from the ones available in the selected drill down view.
-        - AllAdvancedFilters (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
-        - MatchingAdvancedFilters (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableAdvancedFilters)): Specifies a list that contains only the filters which can be applied on the current drill down view.
+        - AllAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - MatchingAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Specifies a list that contains only the filters which can be applied on the current drill down view.
         - TopxEnabled (bool): The view only shows the number of rows specified by TopXValue. If the view is OnDemand, it will become RealTime.
         - TopxValue (number): The number of rows to be shown when TopXEnabled is set to true.
 
@@ -199,13 +216,15 @@ class Layer47AppLibraryTrafficFilter(Base):
         return self._read(href)
 
     def AddAdvancedFilter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addAdvancedFilter operation on the server.
 
         NOT DEFINED
 
-        addAdvancedFilter(Arg2=href)
-        ----------------------------
-        - Arg2 (str(None | /api/v1/sessions/9/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
+        addAdvancedFilter(Arg2=href, async_operation=bool)
+        --------------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -218,13 +237,15 @@ class Layer47AppLibraryTrafficFilter(Base):
         return self._execute('addAdvancedFilter', payload=payload, response_object=None)
 
     def RemoveAdvancedFilter(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the removeAdvancedFilter operation on the server.
 
         NOT DEFINED
 
-        removeAdvancedFilter(Arg2=string)
-        ---------------------------------
+        removeAdvancedFilter(Arg2=string, async_operation=bool)
+        -------------------------------------------------------
         - Arg2 (str): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -236,10 +257,15 @@ class Layer47AppLibraryTrafficFilter(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('removeAdvancedFilter', payload=payload, response_object=None)
 
-    def RemoveAllAdvancedFilters(self):
+    def RemoveAllAdvancedFilters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the removeAllAdvancedFilters operation on the server.
 
         NOT DEFINED
+
+        removeAllAdvancedFilters(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -247,4 +273,6 @@ class Layer47AppLibraryTrafficFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('removeAllAdvancedFilters', payload=payload, response_object=None)

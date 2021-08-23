@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OspfTrafficEngineering(Base):
@@ -48,12 +49,15 @@ class OspfTrafficEngineering(Base):
         'MetricLevel': 'metricLevel',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OspfTrafficEngineering, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OspfTrafficEngineering, self).__init__(parent, list_op)
 
     @property
     def AdministratorGroup(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -64,6 +68,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority0(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -74,6 +79,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority1(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -84,6 +90,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority2(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -94,6 +101,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority3(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority4(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +123,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority5(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority6(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +145,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def BandwidthPriority7(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +156,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -153,6 +166,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -162,6 +176,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def Enable(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -172,6 +187,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def MaxBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -182,6 +198,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def MaxReservableBandwidth(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -192,6 +209,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def MetricLevel(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -202,6 +220,7 @@ class OspfTrafficEngineering(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -210,9 +229,11 @@ class OspfTrafficEngineering(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Name=None):
+        # type: (str) -> OspfTrafficEngineering
         """Updates ospfTrafficEngineering resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).

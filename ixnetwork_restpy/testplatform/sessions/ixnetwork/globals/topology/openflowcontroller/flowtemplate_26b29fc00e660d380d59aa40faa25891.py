@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FlowTemplate(Base):
@@ -38,9 +39,11 @@ class FlowTemplate(Base):
         'Name': 'name',
         'SavedInVersion': 'savedInVersion',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FlowTemplate, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FlowTemplate, self).__init__(parent, list_op)
 
     @property
     def MatchAction(self):
@@ -54,10 +57,14 @@ class FlowTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.matchaction_b079e27f2bc5c60400840dea946d16e9 import MatchAction
-        return MatchAction(self)
+        if self._properties.get('MatchAction', None) is not None:
+            return self._properties.get('MatchAction')
+        else:
+            return MatchAction(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +74,7 @@ class FlowTemplate(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +84,7 @@ class FlowTemplate(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +93,12 @@ class FlowTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def SavedInVersion(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -96,9 +107,11 @@ class FlowTemplate(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SavedInVersion'])
     @SavedInVersion.setter
     def SavedInVersion(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SavedInVersion'], value)
 
     def update(self, Name=None, SavedInVersion=None):
+        # type: (str, str) -> FlowTemplate
         """Updates flowTemplate resource on the server.
 
         Args
@@ -113,6 +126,7 @@ class FlowTemplate(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, SavedInVersion=None):
+        # type: (str, str) -> FlowTemplate
         """Adds a new flowTemplate resource on the server and adds it to the container.
 
         Args
@@ -141,6 +155,7 @@ class FlowTemplate(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None, SavedInVersion=None):
+        # type: (int, str, str, str) -> FlowTemplate
         """Finds and retrieves flowTemplate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowTemplate resources from the server.

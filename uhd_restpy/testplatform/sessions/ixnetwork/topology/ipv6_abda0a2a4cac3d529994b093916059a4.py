@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv6(Base):
@@ -55,9 +56,12 @@ class Ipv6(Base):
         'StateCounts': 'stateCounts',
         'Status': 'status',
     }
+    _SDM_ENUM_MAP = {
+        'status': ['configured', 'error', 'mixed', 'notStarted', 'started', 'starting', 'stopping'],
+    }
 
-    def __init__(self, parent):
-        super(Ipv6, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv6, self).__init__(parent, list_op)
 
     @property
     def Bfdv6Interface(self):
@@ -71,7 +75,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        return Bfdv6Interface(self)
+        if self._properties.get('Bfdv6Interface', None) is not None:
+            return self._properties.get('Bfdv6Interface')
+        else:
+            return Bfdv6Interface(self)
 
     @property
     def BgpIpv6Peer(self):
@@ -85,7 +92,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20 import BgpIpv6Peer
-        return BgpIpv6Peer(self)
+        if self._properties.get('BgpIpv6Peer', None) is not None:
+            return self._properties.get('BgpIpv6Peer')
+        else:
+            return BgpIpv6Peer(self)
 
     @property
     def Dhcpv6relayAgent(self):
@@ -99,7 +109,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6relayagent_98152227df750678a31eb6776380facc import Dhcpv6relayAgent
-        return Dhcpv6relayAgent(self)
+        if self._properties.get('Dhcpv6relayAgent', None) is not None:
+            return self._properties.get('Dhcpv6relayAgent')
+        else:
+            return Dhcpv6relayAgent(self)
 
     @property
     def Dhcpv6server(self):
@@ -113,7 +126,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6server_df745f3926c8653c96b69175854d0c80 import Dhcpv6server
-        return Dhcpv6server(self)
+        if self._properties.get('Dhcpv6server', None) is not None:
+            return self._properties.get('Dhcpv6server')
+        else:
+            return Dhcpv6server(self)
 
     @property
     def Greoipv6(self):
@@ -127,7 +143,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.greoipv6_aad01583ffa3746a541812fe996bbcd0 import Greoipv6
-        return Greoipv6(self)
+        if self._properties.get('Greoipv6', None) is not None:
+            return self._properties.get('Greoipv6')
+        else:
+            return Greoipv6(self)
 
     @property
     def Ipv6sr(self):
@@ -141,7 +160,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6sr_5d596ce1a2d00c8f120ae357d45b9a46 import Ipv6sr
-        return Ipv6sr(self)
+        if self._properties.get('Ipv6sr', None) is not None:
+            return self._properties.get('Ipv6sr')
+        else:
+            return Ipv6sr(self)
 
     @property
     def LdpBasicRouterV6(self):
@@ -155,7 +177,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        return LdpBasicRouterV6(self)
+        if self._properties.get('LdpBasicRouterV6', None) is not None:
+            return self._properties.get('LdpBasicRouterV6')
+        else:
+            return LdpBasicRouterV6(self)
 
     @property
     def LdpTargetedRouterV6(self):
@@ -169,7 +194,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        return LdpTargetedRouterV6(self)
+        if self._properties.get('LdpTargetedRouterV6', None) is not None:
+            return self._properties.get('LdpTargetedRouterV6')
+        else:
+            return LdpTargetedRouterV6(self)
 
     @property
     def Ldpv6ConnectedInterface(self):
@@ -183,7 +211,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldpv6connectedinterface_c2cbc5e29b8ad12450804681ee48ce22 import Ldpv6ConnectedInterface
-        return Ldpv6ConnectedInterface(self)
+        if self._properties.get('Ldpv6ConnectedInterface', None) is not None:
+            return self._properties.get('Ldpv6ConnectedInterface')
+        else:
+            return Ldpv6ConnectedInterface(self)
 
     @property
     def MldHost(self):
@@ -197,7 +228,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        return MldHost(self)
+        if self._properties.get('MldHost', None) is not None:
+            return self._properties.get('MldHost')
+        else:
+            return MldHost(self)
 
     @property
     def MldQuerier(self):
@@ -211,7 +245,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        return MldQuerier(self)
+        if self._properties.get('MldQuerier', None) is not None:
+            return self._properties.get('MldQuerier')
+        else:
+            return MldQuerier(self)
 
     @property
     def Ntpclock(self):
@@ -225,7 +262,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ntpclock_0d879e81ae3d4c658c1fddb7e0bca059 import Ntpclock
-        return Ntpclock(self)
+        if self._properties.get('Ntpclock', None) is not None:
+            return self._properties.get('Ntpclock')
+        else:
+            return Ntpclock(self)
 
     @property
     def Ospfv3(self):
@@ -239,7 +279,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751 import Ospfv3
-        return Ospfv3(self)
+        if self._properties.get('Ospfv3', None) is not None:
+            return self._properties.get('Ospfv3')
+        else:
+            return Ospfv3(self)
 
     @property
     def PimV6Interface(self):
@@ -253,7 +296,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        return PimV6Interface(self)
+        if self._properties.get('PimV6Interface', None) is not None:
+            return self._properties.get('PimV6Interface')
+        else:
+            return PimV6Interface(self)
 
     @property
     def Ptp(self):
@@ -267,7 +313,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ptp_26111dde679ed88af879687d76db2401 import Ptp
-        return Ptp(self)
+        if self._properties.get('Ptp', None) is not None:
+            return self._properties.get('Ptp')
+        else:
+            return Ptp(self)
 
     @property
     def Tag(self):
@@ -281,7 +330,10 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        return Tag(self)
+        if self._properties.get('Tag', None) is not None:
+            return self._properties.get('Tag')
+        else:
+            return Tag(self)
 
     @property
     def Vxlanv6(self):
@@ -295,10 +347,14 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        return Vxlanv6(self)
+        if self._properties.get('Vxlanv6', None) is not None:
+            return self._properties.get('Vxlanv6')
+        else:
+            return Vxlanv6(self)
 
     @property
     def Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -309,18 +365,21 @@ class Ipv6(Base):
 
     @property
     def ConnectedVia(self):
+        # type: () -> List[str]
         """DEPRECATED 
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ConnectedVia'])
     @ConnectedVia.setter
     def ConnectedVia(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['ConnectedVia'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -330,6 +389,7 @@ class Ipv6(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -339,6 +399,7 @@ class Ipv6(Base):
 
     @property
     def DiscoverGatewayIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -349,6 +410,7 @@ class Ipv6(Base):
 
     @property
     def DiscoveredGatewayIp(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -361,12 +423,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP['Errors'])
 
     @property
     def GatewayIp(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -377,6 +440,7 @@ class Ipv6(Base):
 
     @property
     def IncludeRaPrefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -387,6 +451,7 @@ class Ipv6(Base):
 
     @property
     def ManualGatewayMac(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -397,6 +462,7 @@ class Ipv6(Base):
 
     @property
     def Multiplier(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -405,10 +471,12 @@ class Ipv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Multiplier'])
     @Multiplier.setter
     def Multiplier(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Multiplier'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -417,10 +485,12 @@ class Ipv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def Prefix(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -431,6 +501,7 @@ class Ipv6(Base):
 
     @property
     def ResolveGateway(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -441,6 +512,7 @@ class Ipv6(Base):
 
     @property
     def ResolvedGatewayMac(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -450,6 +522,7 @@ class Ipv6(Base):
 
     @property
     def SendRa(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -460,6 +533,7 @@ class Ipv6(Base):
 
     @property
     def SessionInfo(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -469,6 +543,7 @@ class Ipv6(Base):
 
     @property
     def SessionStatus(self):
+        # type: () -> List[str]
         """
         Returns
         -------
@@ -478,14 +553,16 @@ class Ipv6(Base):
 
     @property
     def StackedLayers(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP['StackedLayers'])
     @StackedLayers.setter
     def StackedLayers(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['StackedLayers'], value)
 
     @property
@@ -499,6 +576,7 @@ class Ipv6(Base):
 
     @property
     def Status(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -507,6 +585,7 @@ class Ipv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Status'])
 
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Ipv6
         """Updates ipv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -514,10 +593,10 @@ class Ipv6(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -526,14 +605,15 @@ class Ipv6(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
+        # type: (List[str], int, str, List[str]) -> Ipv6
         """Adds a new ipv6 resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -564,17 +644,17 @@ class Ipv6(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DiscoveredGatewayIp (list(str)): The discovered gateway IP addresses.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/9/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - ResolvedGatewayMac (list(str)): The resolved gateway's MAC addresses
         - SessionInfo (list(str[discoverIpFailed | duplicateAddress | interfaceRemoved | none | resolveMacFailed])): Logs additional information about the session state.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/9/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -606,6 +686,240 @@ class Ipv6(Base):
         """
         return self._read(href)
 
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        abort(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('abort', payload=payload, response_object=None)
+
+    def RestartDown(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the restartDown operation on the server.
+
+        Stop and start interfaces and sessions that are in Down state.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        restartDown(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        restartDown(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('restartDown', payload=payload, response_object=None)
+
+    def SendNs(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the sendNs operation on the server.
+
+        Send Neighbor Solicitation request to configured gateway IP address to resolve Gateway MAC for selected items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendNs(async_operation=bool)
+        ----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendNs(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        sendNs(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendNs', payload=payload, response_object=None)
+
+    def SendNsManual(self, *args, **kwargs):
+        """Executes the sendNsManual operation on the server.
+
+        Send Neighbor Solicitation request to specified IP address for selected items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendNsManual(DestIP=string, async_operation=bool)list
+        -----------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendNsManual(DestIP=string, SessionIndices=list, async_operation=bool)list
+        --------------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendNsManual(SessionIndices=string, DestIP=string, async_operation=bool)list
+        ----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIP of type kString
+        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendNsManual', payload=payload, response_object=None)
+
+    def SendPing(self, *args, **kwargs):
+        """Executes the sendPing operation on the server.
+
+        Send ping for selected IPv6 items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPing(DestIP=string, async_operation=bool)list
+        -------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing(DestIP=string, SessionIndices=list, async_operation=bool)list
+        ----------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPing(SessionIndices=string, DestIP=string, async_operation=bool)list
+        ------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIP of type kString
+        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPing', payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Start CPF control plane (equals to promote to negotiated state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('start', payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        stop(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('stop', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, Address=None, DiscoverGatewayIp=None, GatewayIp=None, IncludeRaPrefix=None, ManualGatewayMac=None, Prefix=None, ResolveGateway=None, SendRa=None):
         """Base class infrastructure that gets a list of ipv6 device ids encapsulated by this object.
 
@@ -632,196 +946,3 @@ class Ipv6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def Abort(self, *args, **kwargs):
-        """Executes the abort operation on the server.
-
-        Abort selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        abort(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        abort(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('abort', payload=payload, response_object=None)
-
-    def RestartDown(self, *args, **kwargs):
-        """Executes the restartDown operation on the server.
-
-        Stop and start interfaces and sessions that are in Down state.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        restartDown(SessionIndices=list)
-        --------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        restartDown(SessionIndices=string)
-        ----------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('restartDown', payload=payload, response_object=None)
-
-    def SendNs(self, *args, **kwargs):
-        """Executes the sendNs operation on the server.
-
-        Send Neighbor Solicitation request to configured gateway IP address to resolve Gateway MAC for selected items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendNs(SessionIndices=list)
-        ---------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        sendNs(SessionIndices=string)
-        -----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendNs', payload=payload, response_object=None)
-
-    def SendNsManual(self, *args, **kwargs):
-        """Executes the sendNsManual operation on the server.
-
-        Send Neighbor Solicitation request to specified IP address for selected items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendNsManual(DestIP=string, SessionIndices=list)list
-        ----------------------------------------------------
-        - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendNsManual(SessionIndices=string, DestIP=string)list
-        ------------------------------------------------------
-        - SessionIndices (str): This parameter requires a destIP of type kString
-        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendNsManual(DestIP=string)list
-        -------------------------------
-        - DestIP (str): This parameter requires a destIP of type kString
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendNsManual', payload=payload, response_object=None)
-
-    def SendPing(self, *args, **kwargs):
-        """Executes the sendPing operation on the server.
-
-        Send ping for selected IPv6 items.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendPing(DestIP=string, SessionIndices=list)list
-        ------------------------------------------------
-        - DestIP (str): This parameter requires a destIP of type kString
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(SessionIndices=string, DestIP=string)list
-        --------------------------------------------------
-        - SessionIndices (str): This parameter requires a destIP of type kString
-        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        sendPing(DestIP=string)list
-        ---------------------------
-        - DestIP (str): This parameter requires a destIP of type kString
-        - Returns list(dict(port:str[None | /api/v1/sessions/9/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPing', payload=payload, response_object=None)
-
-    def Start(self, *args, **kwargs):
-        """Executes the start operation on the server.
-
-        Start selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        start(SessionIndices=list)
-        --------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        start(SessionIndices=string)
-        ----------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('start', payload=payload, response_object=None)
-
-    def Stop(self, *args, **kwargs):
-        """Executes the stop operation on the server.
-
-        Stop selected protocols.
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stop(SessionIndices=list)
-        -------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-
-        stop(SessionIndices=string)
-        ---------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('stop', payload=payload, response_object=None)

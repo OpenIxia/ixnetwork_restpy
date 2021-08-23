@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ipv4MulticastVpn(Base):
@@ -60,9 +61,11 @@ family..
         'TunnelType': 'tunnelType',
         'UpstreamLabel': 'upstreamLabel',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Ipv4MulticastVpn, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ipv4MulticastVpn, self).__init__(parent, list_op)
 
     @property
     def OpaqueValueElement(self):
@@ -76,10 +79,14 @@ family..
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_d49e7d4c8b0df2f382492278f34bd590 import OpaqueValueElement
-        return OpaqueValueElement(self)
+        if self._properties.get('OpaqueValueElement', None) is not None:
+            return self._properties.get('OpaqueValueElement')
+        else:
+            return OpaqueValueElement(self)
 
     @property
     def AddressFamily(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -89,6 +96,7 @@ family..
 
     @property
     def AddressLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -98,6 +106,7 @@ family..
 
     @property
     def CMcastRouteType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -107,6 +116,7 @@ family..
 
     @property
     def GroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -116,6 +126,7 @@ family..
 
     @property
     def Neighbor(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -125,6 +136,7 @@ family..
 
     @property
     def OpaqueLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -134,6 +146,7 @@ family..
 
     @property
     def OriginatingRouter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -143,6 +156,7 @@ family..
 
     @property
     def RootAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,6 +166,7 @@ family..
 
     @property
     def RouteDistinguisher(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -161,6 +176,7 @@ family..
 
     @property
     def RouteKeyGroupAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -170,6 +186,7 @@ family..
 
     @property
     def RouteKeyOriginatingRouter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -179,6 +196,7 @@ family..
 
     @property
     def RouteKeyRouteDistinguisher(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,6 +206,7 @@ family..
 
     @property
     def RouteKeyRsvpP2mpExtendedTunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -197,6 +216,7 @@ family..
 
     @property
     def RouteKeyRsvpP2mpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -206,6 +226,7 @@ family..
 
     @property
     def RouteKeyRsvpP2mpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -215,6 +236,7 @@ family..
 
     @property
     def RouteKeySourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,6 +246,7 @@ family..
 
     @property
     def RouteKeyTunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -233,6 +256,7 @@ family..
 
     @property
     def RouteKeyUpstreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -242,6 +266,7 @@ family..
 
     @property
     def RouteType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -251,6 +276,7 @@ family..
 
     @property
     def RsvpP2mpExtendedTunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -260,6 +286,7 @@ family..
 
     @property
     def RsvpP2mpId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -269,6 +296,7 @@ family..
 
     @property
     def RsvpP2mpTunnelId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -278,6 +306,7 @@ family..
 
     @property
     def SourceAddress(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -287,6 +316,7 @@ family..
 
     @property
     def SourceAs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -296,6 +326,7 @@ family..
 
     @property
     def TunnelType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -305,6 +336,7 @@ family..
 
     @property
     def UpstreamLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -312,7 +344,21 @@ family..
         """
         return self._get_attribute(self._SDM_ATT_MAP['UpstreamLabel'])
 
+    def add(self):
+        """Adds a new ipv4MulticastVpn resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved ipv4MulticastVpn resources using find and the newly added ipv4MulticastVpn resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, AddressFamily=None, AddressLength=None, CMcastRouteType=None, GroupAddress=None, Neighbor=None, OpaqueLength=None, OriginatingRouter=None, RootAddress=None, RouteDistinguisher=None, RouteKeyGroupAddress=None, RouteKeyOriginatingRouter=None, RouteKeyRouteDistinguisher=None, RouteKeyRsvpP2mpExtendedTunnelId=None, RouteKeyRsvpP2mpId=None, RouteKeyRsvpP2mpTunnelId=None, RouteKeySourceAddress=None, RouteKeyTunnelType=None, RouteKeyUpstreamLabel=None, RouteType=None, RsvpP2mpExtendedTunnelId=None, RsvpP2mpId=None, RsvpP2mpTunnelId=None, SourceAddress=None, SourceAs=None, TunnelType=None, UpstreamLabel=None):
+        # type: (int, int, str, str, str, int, str, str, str, str, str, str, str, int, int, str, str, int, str, str, int, int, str, int, str, int) -> Ipv4MulticastVpn
         """Finds and retrieves ipv4MulticastVpn resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ipv4MulticastVpn resources from the server.

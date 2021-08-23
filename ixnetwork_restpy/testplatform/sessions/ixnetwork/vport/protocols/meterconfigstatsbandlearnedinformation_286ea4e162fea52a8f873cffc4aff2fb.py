@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class MeterConfigStatsBandLearnedInformation(Base):
@@ -43,12 +44,15 @@ class MeterConfigStatsBandLearnedInformation(Base):
         'RemoteIp': 'remoteIp',
         'Type': 'type',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(MeterConfigStatsBandLearnedInformation, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(MeterConfigStatsBandLearnedInformation, self).__init__(parent, list_op)
 
     @property
     def BurstSize(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -58,6 +62,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def DataPathId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -67,6 +72,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def DataPathIdAsHex(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -76,6 +82,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def Experimenter(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -85,6 +92,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def LocalIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -94,6 +102,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def MeterId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -103,6 +112,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def PrecedenceLevel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -112,6 +122,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def Rate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -121,6 +132,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def RemoteIp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -130,6 +142,7 @@ class MeterConfigStatsBandLearnedInformation(Base):
 
     @property
     def Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -137,7 +150,21 @@ class MeterConfigStatsBandLearnedInformation(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
 
+    def add(self):
+        """Adds a new meterConfigStatsBandLearnedInformation resource on the json, only valid with config assistant
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved meterConfigStatsBandLearnedInformation resources using find and the newly added meterConfigStatsBandLearnedInformation resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, BurstSize=None, DataPathId=None, DataPathIdAsHex=None, Experimenter=None, LocalIp=None, MeterId=None, PrecedenceLevel=None, Rate=None, RemoteIp=None, Type=None):
+        # type: (int, int, str, str, str, int, str, int, str, str) -> MeterConfigStatsBandLearnedInformation
         """Finds and retrieves meterConfigStatsBandLearnedInformation resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve meterConfigStatsBandLearnedInformation resources from the server.

@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PtpOptions(Base):
@@ -40,12 +41,15 @@ class PtpOptions(Base):
         'SetupRate': 'setupRate',
         'TeardownRate': 'teardownRate',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PtpOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PtpOptions, self).__init__(parent, list_op)
 
     @property
     def MaxOutstanding(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class PtpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxOutstanding'])
     @MaxOutstanding.setter
     def MaxOutstanding(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxOutstanding'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -67,6 +73,7 @@ class PtpOptions(Base):
 
     @property
     def OverrideGlobalRateOptions(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -75,10 +82,12 @@ class PtpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'])
     @OverrideGlobalRateOptions.setter
     def OverrideGlobalRateOptions(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRateOptions'], value)
 
     @property
     def Role(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -87,10 +96,12 @@ class PtpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Role'])
     @Role.setter
     def Role(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Role'], value)
 
     @property
     def SetupRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class PtpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SetupRate'])
     @SetupRate.setter
     def SetupRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SetupRate'], value)
 
     @property
     def TeardownRate(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class PtpOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TeardownRate'])
     @TeardownRate.setter
     def TeardownRate(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TeardownRate'], value)
 
     def update(self, MaxOutstanding=None, OverrideGlobalRateOptions=None, Role=None, SetupRate=None, TeardownRate=None):
+        # type: (int, bool, str, int, int) -> PtpOptions
         """Updates ptpOptions resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class PtpOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, MaxOutstanding=None, OverrideGlobalRateOptions=None, Role=None, SetupRate=None, TeardownRate=None):
+        # type: (int, bool, str, int, int) -> PtpOptions
         """Adds a new ptpOptions resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class PtpOptions(Base):
         self._delete()
 
     def find(self, MaxOutstanding=None, ObjectId=None, OverrideGlobalRateOptions=None, Role=None, SetupRate=None, TeardownRate=None):
+        # type: (int, str, bool, str, int, int) -> PtpOptions
         """Finds and retrieves ptpOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ptpOptions resources from the server.
@@ -206,14 +223,16 @@ class PtpOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -226,13 +245,15 @@ class PtpOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -246,13 +267,15 @@ class PtpOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

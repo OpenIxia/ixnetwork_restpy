@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class ControllerTableFlowRanges(Base):
@@ -112,9 +113,13 @@ class ControllerTableFlowRanges(Base):
         'VlanMatchType': 'vlanMatchType',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'matchType': ['loose', 'strict'],
+        'vlanMatchType': ['anyVlanTag', 'withoutVlanTag', 'withVlanTag', 'specificVlanTag'],
+    }
 
-    def __init__(self, parent):
-        super(ControllerTableFlowRanges, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(ControllerTableFlowRanges, self).__init__(parent, list_op)
 
     @property
     def Instructions(self):
@@ -128,10 +133,14 @@ class ControllerTableFlowRanges(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructions_a545a16ec203e97934be61b56f3be2b6 import Instructions
-        return Instructions(self)
+        if self._properties.get('Instructions', None) is not None:
+            return self._properties.get('Instructions')
+        else:
+            return Instructions(self)
 
     @property
     def ArpDstHwAddr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -140,10 +149,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'])
     @ArpDstHwAddr.setter
     def ArpDstHwAddr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddr'], value)
 
     @property
     def ArpDstHwAddrMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,10 +163,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpDstHwAddrMask'])
     @ArpDstHwAddrMask.setter
     def ArpDstHwAddrMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpDstHwAddrMask'], value)
 
     @property
     def ArpDstIpv4Addr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -164,10 +177,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'])
     @ArpDstIpv4Addr.setter
     def ArpDstIpv4Addr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpDstIpv4Addr'], value)
 
     @property
     def ArpDstIpv4AddrMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -176,10 +191,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpDstIpv4AddrMask'])
     @ArpDstIpv4AddrMask.setter
     def ArpDstIpv4AddrMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpDstIpv4AddrMask'], value)
 
     @property
     def ArpOpcode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -188,10 +205,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpOpcode'])
     @ArpOpcode.setter
     def ArpOpcode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpOpcode'], value)
 
     @property
     def ArpSrcHwAddr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -200,10 +219,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'])
     @ArpSrcHwAddr.setter
     def ArpSrcHwAddr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddr'], value)
 
     @property
     def ArpSrcHwAddrMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -212,10 +233,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpSrcHwAddrMask'])
     @ArpSrcHwAddrMask.setter
     def ArpSrcHwAddrMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpSrcHwAddrMask'], value)
 
     @property
     def ArpSrcIpv4Addr(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -224,10 +247,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'])
     @ArpSrcIpv4Addr.setter
     def ArpSrcIpv4Addr(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpSrcIpv4Addr'], value)
 
     @property
     def ArpSrcIpv4AddrMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -236,10 +261,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ArpSrcIpv4AddrMask'])
     @ArpSrcIpv4AddrMask.setter
     def ArpSrcIpv4AddrMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ArpSrcIpv4AddrMask'], value)
 
     @property
     def CheckOverlapFlags(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -248,10 +275,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CheckOverlapFlags'])
     @CheckOverlapFlags.setter
     def CheckOverlapFlags(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['CheckOverlapFlags'], value)
 
     @property
     def Cookie(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -260,10 +289,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Cookie'])
     @Cookie.setter
     def Cookie(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Cookie'], value)
 
     @property
     def CookieMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -272,10 +303,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CookieMask'])
     @CookieMask.setter
     def CookieMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['CookieMask'], value)
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -284,10 +317,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -296,10 +331,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EthernetDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -308,10 +345,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestination'])
     @EthernetDestination.setter
     def EthernetDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestination'], value)
 
     @property
     def EthernetDestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -320,10 +359,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetDestinationMask'])
     @EthernetDestinationMask.setter
     def EthernetDestinationMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetDestinationMask'], value)
 
     @property
     def EthernetSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -332,10 +373,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSource'])
     @EthernetSource.setter
     def EthernetSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSource'], value)
 
     @property
     def EthernetSourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -344,10 +387,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetSourceMask'])
     @EthernetSourceMask.setter
     def EthernetSourceMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetSourceMask'], value)
 
     @property
     def EthernetType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -356,10 +401,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EthernetType'])
     @EthernetType.setter
     def EthernetType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EthernetType'], value)
 
     @property
     def ExperimenterData(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -368,10 +415,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterData'])
     @ExperimenterData.setter
     def ExperimenterData(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterData'], value)
 
     @property
     def ExperimenterDatalength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -380,10 +429,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'])
     @ExperimenterDatalength.setter
     def ExperimenterDatalength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterDatalength'], value)
 
     @property
     def ExperimenterField(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -392,10 +443,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterField'])
     @ExperimenterField.setter
     def ExperimenterField(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterField'], value)
 
     @property
     def ExperimenterHasMask(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -404,10 +457,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterHasMask'])
     @ExperimenterHasMask.setter
     def ExperimenterHasMask(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterHasMask'], value)
 
     @property
     def ExperimenterId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -416,10 +471,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExperimenterId'])
     @ExperimenterId.setter
     def ExperimenterId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExperimenterId'], value)
 
     @property
     def FlowAdvertise(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -428,10 +485,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FlowAdvertise'])
     @FlowAdvertise.setter
     def FlowAdvertise(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FlowAdvertise'], value)
 
     @property
     def FlowModStatus(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -441,6 +500,7 @@ class ControllerTableFlowRanges(Base):
 
     @property
     def HardTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -449,10 +509,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['HardTimeout'])
     @HardTimeout.setter
     def HardTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['HardTimeout'], value)
 
     @property
     def Icmpv4Code(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -461,10 +523,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Code'])
     @Icmpv4Code.setter
     def Icmpv4Code(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv4Code'], value)
 
     @property
     def Icmpv4Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -473,10 +537,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv4Type'])
     @Icmpv4Type.setter
     def Icmpv4Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv4Type'], value)
 
     @property
     def Icmpv6Code(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -485,10 +551,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Code'])
     @Icmpv6Code.setter
     def Icmpv6Code(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv6Code'], value)
 
     @property
     def Icmpv6Type(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -497,10 +565,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Icmpv6Type'])
     @Icmpv6Type.setter
     def Icmpv6Type(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Icmpv6Type'], value)
 
     @property
     def IdleTimeout(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -509,10 +579,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IdleTimeout'])
     @IdleTimeout.setter
     def IdleTimeout(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IdleTimeout'], value)
 
     @property
     def InPhyPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -521,10 +593,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InPhyPort'])
     @InPhyPort.setter
     def InPhyPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InPhyPort'], value)
 
     @property
     def InPort(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -533,10 +607,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['InPort'])
     @InPort.setter
     def InPort(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['InPort'], value)
 
     @property
     def IpDscp(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -545,10 +621,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpDscp'])
     @IpDscp.setter
     def IpDscp(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpDscp'], value)
 
     @property
     def IpEcn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -557,10 +635,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpEcn'])
     @IpEcn.setter
     def IpEcn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpEcn'], value)
 
     @property
     def IpProtocol(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -569,10 +649,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IpProtocol'])
     @IpProtocol.setter
     def IpProtocol(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IpProtocol'], value)
 
     @property
     def Ipv4Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -581,10 +663,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Destination'])
     @Ipv4Destination.setter
     def Ipv4Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Destination'], value)
 
     @property
     def Ipv4DestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -593,10 +677,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4DestinationMask'])
     @Ipv4DestinationMask.setter
     def Ipv4DestinationMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4DestinationMask'], value)
 
     @property
     def Ipv4Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -605,10 +691,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4Source'])
     @Ipv4Source.setter
     def Ipv4Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4Source'], value)
 
     @property
     def Ipv4SourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -617,10 +705,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv4SourceMask'])
     @Ipv4SourceMask.setter
     def Ipv4SourceMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv4SourceMask'], value)
 
     @property
     def Ipv6Destination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -629,10 +719,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Destination'])
     @Ipv6Destination.setter
     def Ipv6Destination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Destination'], value)
 
     @property
     def Ipv6DestinationMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -641,10 +733,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6DestinationMask'])
     @Ipv6DestinationMask.setter
     def Ipv6DestinationMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6DestinationMask'], value)
 
     @property
     def Ipv6ExtHeader(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -653,10 +747,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'])
     @Ipv6ExtHeader.setter
     def Ipv6ExtHeader(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeader'], value)
 
     @property
     def Ipv6ExtHeaderMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -665,10 +761,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6ExtHeaderMask'])
     @Ipv6ExtHeaderMask.setter
     def Ipv6ExtHeaderMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6ExtHeaderMask'], value)
 
     @property
     def Ipv6FlowLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -677,10 +775,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'])
     @Ipv6FlowLabel.setter
     def Ipv6FlowLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabel'], value)
 
     @property
     def Ipv6FlowLabelMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -689,10 +789,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6FlowLabelMask'])
     @Ipv6FlowLabelMask.setter
     def Ipv6FlowLabelMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6FlowLabelMask'], value)
 
     @property
     def Ipv6NdDll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -701,10 +803,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdDll'])
     @Ipv6NdDll.setter
     def Ipv6NdDll(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NdDll'], value)
 
     @property
     def Ipv6NdSll(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -713,10 +817,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdSll'])
     @Ipv6NdSll.setter
     def Ipv6NdSll(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NdSll'], value)
 
     @property
     def Ipv6NdTarget(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -725,10 +831,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'])
     @Ipv6NdTarget.setter
     def Ipv6NdTarget(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6NdTarget'], value)
 
     @property
     def Ipv6Source(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -737,10 +845,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6Source'])
     @Ipv6Source.setter
     def Ipv6Source(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6Source'], value)
 
     @property
     def Ipv6SourceMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -749,10 +859,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Ipv6SourceMask'])
     @Ipv6SourceMask.setter
     def Ipv6SourceMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ipv6SourceMask'], value)
 
     @property
     def MatchType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -761,10 +873,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MatchType'])
     @MatchType.setter
     def MatchType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MatchType'], value)
 
     @property
     def Metadata(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -773,10 +887,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Metadata'])
     @Metadata.setter
     def Metadata(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Metadata'], value)
 
     @property
     def MetadataMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -785,10 +901,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MetadataMask'])
     @MetadataMask.setter
     def MetadataMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MetadataMask'], value)
 
     @property
     def MplsBos(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -797,10 +915,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsBos'])
     @MplsBos.setter
     def MplsBos(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsBos'], value)
 
     @property
     def MplsLabel(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -809,10 +929,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsLabel'])
     @MplsLabel.setter
     def MplsLabel(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsLabel'], value)
 
     @property
     def MplsTc(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -821,10 +943,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MplsTc'])
     @MplsTc.setter
     def MplsTc(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MplsTc'], value)
 
     @property
     def NoByteCounts(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -833,10 +957,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoByteCounts'])
     @NoByteCounts.setter
     def NoByteCounts(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoByteCounts'], value)
 
     @property
     def NoPacketCounts(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -845,10 +971,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NoPacketCounts'])
     @NoPacketCounts.setter
     def NoPacketCounts(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NoPacketCounts'], value)
 
     @property
     def NumberOfFlows(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -857,10 +985,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfFlows'])
     @NumberOfFlows.setter
     def NumberOfFlows(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfFlows'], value)
 
     @property
     def PbbIsId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -869,10 +999,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbIsId'])
     @PbbIsId.setter
     def PbbIsId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbIsId'], value)
 
     @property
     def PbbIsIdMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -881,10 +1013,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PbbIsIdMask'])
     @PbbIsIdMask.setter
     def PbbIsIdMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['PbbIsIdMask'], value)
 
     @property
     def Priority(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -893,10 +1027,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Priority'])
     @Priority.setter
     def Priority(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Priority'], value)
 
     @property
     def ResetCounts(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -905,10 +1041,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ResetCounts'])
     @ResetCounts.setter
     def ResetCounts(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['ResetCounts'], value)
 
     @property
     def SctpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -917,10 +1055,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SctpDestination'])
     @SctpDestination.setter
     def SctpDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SctpDestination'], value)
 
     @property
     def SctpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -929,10 +1069,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SctpSource'])
     @SctpSource.setter
     def SctpSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['SctpSource'], value)
 
     @property
     def SendFlowRemoved(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -941,10 +1083,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SendFlowRemoved'])
     @SendFlowRemoved.setter
     def SendFlowRemoved(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SendFlowRemoved'], value)
 
     @property
     def TcpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -953,10 +1097,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpDestination'])
     @TcpDestination.setter
     def TcpDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpDestination'], value)
 
     @property
     def TcpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -965,10 +1111,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TcpSource'])
     @TcpSource.setter
     def TcpSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TcpSource'], value)
 
     @property
     def TunnelId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -977,10 +1125,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelId'])
     @TunnelId.setter
     def TunnelId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelId'], value)
 
     @property
     def TunnelIdMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -989,10 +1139,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TunnelIdMask'])
     @TunnelIdMask.setter
     def TunnelIdMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TunnelIdMask'], value)
 
     @property
     def UdpDestination(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1001,10 +1153,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpDestination'])
     @UdpDestination.setter
     def UdpDestination(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpDestination'], value)
 
     @property
     def UdpSource(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1013,10 +1167,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UdpSource'])
     @UdpSource.setter
     def UdpSource(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['UdpSource'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1025,10 +1181,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanIdMask(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1037,10 +1195,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanIdMask'])
     @VlanIdMask.setter
     def VlanIdMask(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanIdMask'], value)
 
     @property
     def VlanMatchType(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1049,10 +1209,12 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanMatchType'])
     @VlanMatchType.setter
     def VlanMatchType(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanMatchType'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -1061,9 +1223,11 @@ class ControllerTableFlowRanges(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, ArpDstHwAddr=None, ArpDstHwAddrMask=None, ArpDstIpv4Addr=None, ArpDstIpv4AddrMask=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcHwAddrMask=None, ArpSrcIpv4Addr=None, ArpSrcIpv4AddrMask=None, CheckOverlapFlags=None, Cookie=None, CookieMask=None, Description=None, Enabled=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None, FlowAdvertise=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPhyPort=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4DestinationMask=None, Ipv4Source=None, Ipv4SourceMask=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, MatchType=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NoByteCounts=None, NoPacketCounts=None, NumberOfFlows=None, PbbIsId=None, PbbIsIdMask=None, Priority=None, ResetCounts=None, SctpDestination=None, SctpSource=None, SendFlowRemoved=None, TcpDestination=None, TcpSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanIdMask=None, VlanMatchType=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, str, str, str, bool, str, str, str, bool, str, str, str, str, str, str, int, int, bool, str, bool, int, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, int, str, str, int, bool, str, str, bool, str, str, str, str, str, str, str, str, str, str) -> ControllerTableFlowRanges
         """Updates controllerTableFlowRanges resource on the server.
 
         Args
@@ -1153,6 +1317,7 @@ class ControllerTableFlowRanges(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ArpDstHwAddr=None, ArpDstHwAddrMask=None, ArpDstIpv4Addr=None, ArpDstIpv4AddrMask=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcHwAddrMask=None, ArpSrcIpv4Addr=None, ArpSrcIpv4AddrMask=None, CheckOverlapFlags=None, Cookie=None, CookieMask=None, Description=None, Enabled=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None, FlowAdvertise=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPhyPort=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4DestinationMask=None, Ipv4Source=None, Ipv4SourceMask=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, MatchType=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NoByteCounts=None, NoPacketCounts=None, NumberOfFlows=None, PbbIsId=None, PbbIsIdMask=None, Priority=None, ResetCounts=None, SctpDestination=None, SctpSource=None, SendFlowRemoved=None, TcpDestination=None, TcpSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanIdMask=None, VlanMatchType=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, str, str, str, bool, str, str, str, bool, str, str, str, str, str, str, int, int, bool, str, bool, int, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, int, str, str, int, bool, str, str, bool, str, str, str, str, str, str, str, str, str, str) -> ControllerTableFlowRanges
         """Adds a new controllerTableFlowRanges resource on the server and adds it to the container.
 
         Args
@@ -1256,6 +1421,7 @@ class ControllerTableFlowRanges(Base):
         self._delete()
 
     def find(self, ArpDstHwAddr=None, ArpDstHwAddrMask=None, ArpDstIpv4Addr=None, ArpDstIpv4AddrMask=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcHwAddrMask=None, ArpSrcIpv4Addr=None, ArpSrcIpv4AddrMask=None, CheckOverlapFlags=None, Cookie=None, CookieMask=None, Description=None, Enabled=None, EthernetDestination=None, EthernetDestinationMask=None, EthernetSource=None, EthernetSourceMask=None, EthernetType=None, ExperimenterData=None, ExperimenterDatalength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None, FlowAdvertise=None, FlowModStatus=None, HardTimeout=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, IdleTimeout=None, InPhyPort=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4DestinationMask=None, Ipv4Source=None, Ipv4SourceMask=None, Ipv6Destination=None, Ipv6DestinationMask=None, Ipv6ExtHeader=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabel=None, Ipv6FlowLabelMask=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, Ipv6SourceMask=None, MatchType=None, Metadata=None, MetadataMask=None, MplsBos=None, MplsLabel=None, MplsTc=None, NoByteCounts=None, NoPacketCounts=None, NumberOfFlows=None, PbbIsId=None, PbbIsIdMask=None, Priority=None, ResetCounts=None, SctpDestination=None, SctpSource=None, SendFlowRemoved=None, TcpDestination=None, TcpSource=None, TunnelId=None, TunnelIdMask=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanIdMask=None, VlanMatchType=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, str, str, str, bool, str, str, str, bool, str, str, str, str, str, str, int, int, bool, str, bool, str, int, str, str, str, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, bool, bool, int, str, str, int, bool, str, str, bool, str, str, str, str, str, str, str, str, str, str) -> ControllerTableFlowRanges
         """Finds and retrieves controllerTableFlowRanges resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve controllerTableFlowRanges resources from the server.
@@ -1372,13 +1538,15 @@ class ControllerTableFlowRanges(Base):
         return self._read(href)
 
     def UpdateFlowMod(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
         """Executes the updateFlowMod operation on the server.
 
         NOT DEFINED
 
-        updateFlowMod(Arg2=enum)bool
-        ----------------------------
+        updateFlowMod(Arg2=enum, async_operation=bool)bool
+        --------------------------------------------------
         - Arg2 (str(sendFlowAdd | sendFlowModify | sendFlowRemove)): NOT DEFINED
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
         Raises

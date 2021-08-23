@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class OfHostData(Base):
@@ -40,12 +41,15 @@ class OfHostData(Base):
         'NumberOfHostsPerPort': 'numberOfHostsPerPort',
         'ParentSwitchPortName': 'parentSwitchPortName',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(OfHostData, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(OfHostData, self).__init__(parent, list_op)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -55,6 +59,7 @@ class OfHostData(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -64,6 +69,7 @@ class OfHostData(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,10 +78,12 @@ class OfHostData(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def NumberOfHostPorts(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -84,10 +92,12 @@ class OfHostData(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostPorts'])
     @NumberOfHostPorts.setter
     def NumberOfHostPorts(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfHostPorts'], value)
 
     @property
     def NumberOfHostsPerPort(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +106,12 @@ class OfHostData(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'])
     @NumberOfHostsPerPort.setter
     def NumberOfHostsPerPort(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfHostsPerPort'], value)
 
     @property
     def ParentSwitchPortName(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -109,6 +121,7 @@ class OfHostData(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ParentSwitchPortName']))
 
     def update(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
+        # type: (str, int, int) -> OfHostData
         """Updates ofHostData resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -127,6 +140,7 @@ class OfHostData(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
+        # type: (str, int, int) -> OfHostData
         """Adds a new ofHostData resource on the server and adds it to the container.
 
         Args
@@ -156,6 +170,7 @@ class OfHostData(Base):
         self._delete()
 
     def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfHostPorts=None, NumberOfHostsPerPort=None):
+        # type: (int, str, str, int, int) -> OfHostData
         """Finds and retrieves ofHostData resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ofHostData resources from the server.
@@ -198,6 +213,35 @@ class OfHostData(Base):
         """
         return self._read(href)
 
+    def SendPacketWithTraverseLI(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendPacketWithTraverseLI operation on the server.
+
+        Send an Host Packet (ARP/PING/CUSTOM) from the given device instance to the given destination instance.
+
+        sendPacketWithTraverseLI(Arg2=list, Arg3=number, Arg4=enum, Arg5=number, Arg6=number, Arg7=bool, Arg8=number, Arg9=number, async_operation=bool)list
+        ----------------------------------------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IP addresses are used as the source of the request messages.
+        - Arg3 (number): Destination Host index.
+        - Arg4 (str(aRP | pING | custom)): Packet Type.
+        - Arg5 (number): Encapsulation index.
+        - Arg6 (number): Response Timeout.
+        - Arg7 (bool): Periodic.
+        - Arg8 (number): Periodic Interval.
+        - Arg9 (number): Number of Iteration.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPacketWithTraverseLI', payload=payload, response_object=None)
+
     def get_device_ids(self, PortNames=None, ParentSwitchPortName=None):
         """Base class infrastructure that gets a list of ofHostData device ids encapsulated by this object.
 
@@ -217,30 +261,3 @@ class OfHostData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._get_ngpf_device_ids(locals())
-
-    def SendPacketWithTraverseLI(self, *args, **kwargs):
-        """Executes the sendPacketWithTraverseLI operation on the server.
-
-        Send an Host Packet (ARP/PING/CUSTOM) from the given device instance to the given destination instance.
-
-        sendPacketWithTraverseLI(Arg2=list, Arg3=number, Arg4=enum, Arg5=number, Arg6=number, Arg7=bool, Arg8=number, Arg9=number)list
-        ------------------------------------------------------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the device group for the corresponding device instances whose IP addresses are used as the source of the request messages.
-        - Arg3 (number): Destination Host index.
-        - Arg4 (str(aRP | pING | custom)): Packet Type.
-        - Arg5 (number): Encapsulation index.
-        - Arg6 (number): Response Timeout.
-        - Arg7 (bool): Periodic.
-        - Arg8 (number): Periodic Interval.
-        - Arg9 (number): Number of Iteration.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = { "Arg1": self.href }
-        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
-        for item in kwargs.items(): payload[item[0]] = item[1]
-        return self._execute('sendPacketWithTraverseLI', payload=payload, response_object=None)

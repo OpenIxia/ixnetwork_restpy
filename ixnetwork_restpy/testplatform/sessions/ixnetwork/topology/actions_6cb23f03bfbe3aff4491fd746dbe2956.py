@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Actions(Base):
@@ -41,9 +42,11 @@ class Actions(Base):
         'IsRequired': 'isRequired',
         'Name': 'name',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(Actions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Actions, self).__init__(parent, list_op)
 
     @property
     def Action(self):
@@ -57,10 +60,14 @@ class Actions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.action_910bcbfd3b7898385321127395ab1bd5 import Action
-        return Action(self)
+        if self._properties.get('Action', None) is not None:
+            return self._properties.get('Action')
+        else:
+            return Action(self)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -70,6 +77,7 @@ class Actions(Base):
 
     @property
     def Description(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class Actions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Description'])
     @Description.setter
     def Description(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Description'], value)
 
     @property
     def DisplayName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class Actions(Base):
 
     @property
     def IsEditable(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class Actions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEditable'])
     @IsEditable.setter
     def IsEditable(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEditable'], value)
 
     @property
     def IsEnabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -111,10 +124,12 @@ class Actions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsEnabled'])
     @IsEnabled.setter
     def IsEnabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsEnabled'], value)
 
     @property
     def IsRequired(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -123,10 +138,12 @@ class Actions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IsRequired'])
     @IsRequired.setter
     def IsRequired(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsRequired'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -135,9 +152,11 @@ class Actions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     def update(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> Actions
         """Updates actions resource on the server.
 
         Args
@@ -155,6 +174,7 @@ class Actions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Description=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+        # type: (str, bool, bool, bool, str) -> Actions
         """Adds a new actions resource on the server and adds it to the container.
 
         Args
@@ -186,6 +206,7 @@ class Actions(Base):
         self._delete()
 
     def find(self, Count=None, Description=None, DisplayName=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+        # type: (int, str, str, bool, bool, bool, str) -> Actions
         """Finds and retrieves actions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve actions resources from the server.
@@ -231,13 +252,15 @@ class Actions(Base):
         return self._read(href)
 
     def AddAction(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the addAction operation on the server.
 
         Adds an Action item.
 
-        addAction(Arg2=string)
-        ----------------------
+        addAction(Arg2=string, async_operation=bool)
+        --------------------------------------------
         - Arg2 (str): 
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------

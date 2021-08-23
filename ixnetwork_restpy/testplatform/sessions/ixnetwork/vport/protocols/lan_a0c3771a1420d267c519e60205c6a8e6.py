@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Lan(Base):
@@ -58,12 +59,19 @@ class Lan(Base):
         'VlanId': 'vlanId',
         'VlanPriority': 'vlanPriority',
     }
+    _SDM_ENUM_MAP = {
+        'incrementPerVcVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        'incrementVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        'incremetVlanMode': ['noIncrement', 'parallelIncrement', 'innerFirst', 'outerFirst'],
+        'macRangeMode': ['normal', 'bundled'],
+    }
 
-    def __init__(self, parent):
-        super(Lan, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Lan, self).__init__(parent, list_op)
 
     @property
     def AtmEncapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -72,10 +80,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AtmEncapsulation'])
     @AtmEncapsulation.setter
     def AtmEncapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['AtmEncapsulation'], value)
 
     @property
     def Bmac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -84,10 +94,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Bmac'])
     @Bmac.setter
     def Bmac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Bmac'], value)
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -96,10 +108,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Count'])
     @Count.setter
     def Count(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Count'], value)
 
     @property
     def CountPerVc(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -108,10 +122,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['CountPerVc'])
     @CountPerVc.setter
     def CountPerVc(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['CountPerVc'], value)
 
     @property
     def EnableBmac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -120,10 +136,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableBmac'])
     @EnableBmac.setter
     def EnableBmac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableBmac'], value)
 
     @property
     def EnableIncrementMac(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -132,10 +150,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncrementMac'])
     @EnableIncrementMac.setter
     def EnableIncrementMac(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncrementMac'], value)
 
     @property
     def EnableIncrementVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -144,10 +164,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableIncrementVlan'])
     @EnableIncrementVlan.setter
     def EnableIncrementVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableIncrementVlan'], value)
 
     @property
     def EnableSiteId(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -156,10 +178,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSiteId'])
     @EnableSiteId.setter
     def EnableSiteId(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSiteId'], value)
 
     @property
     def EnableVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -168,10 +192,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableVlan'])
     @EnableVlan.setter
     def EnableVlan(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableVlan'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -180,10 +206,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def FrEncapsulation(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -192,10 +220,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FrEncapsulation'])
     @FrEncapsulation.setter
     def FrEncapsulation(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['FrEncapsulation'], value)
 
     @property
     def IncrementPerVcVlanMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -204,10 +234,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementPerVcVlanMode'])
     @IncrementPerVcVlanMode.setter
     def IncrementPerVcVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementPerVcVlanMode'], value)
 
     @property
     def IncrementVlanMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -216,10 +248,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncrementVlanMode'])
     @IncrementVlanMode.setter
     def IncrementVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncrementVlanMode'], value)
 
     @property
     def IncremetVlanMode(self):
+        # type: () -> str
         """DEPRECATED 
         Returns
         -------
@@ -228,10 +262,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncremetVlanMode'])
     @IncremetVlanMode.setter
     def IncremetVlanMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncremetVlanMode'], value)
 
     @property
     def Mac(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -240,10 +276,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Mac'])
     @Mac.setter
     def Mac(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Mac'], value)
 
     @property
     def MacRangeMode(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -252,10 +290,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MacRangeMode'])
     @MacRangeMode.setter
     def MacRangeMode(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['MacRangeMode'], value)
 
     @property
     def NumberOfVcs(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -264,10 +304,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumberOfVcs'])
     @NumberOfVcs.setter
     def NumberOfVcs(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumberOfVcs'], value)
 
     @property
     def SiteId(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -276,10 +318,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SiteId'])
     @SiteId.setter
     def SiteId(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SiteId'], value)
 
     @property
     def SkipVlanIdZero(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -288,10 +332,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'])
     @SkipVlanIdZero.setter
     def SkipVlanIdZero(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SkipVlanIdZero'], value)
 
     @property
     def Tpid(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -300,10 +346,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Tpid'])
     @Tpid.setter
     def Tpid(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Tpid'], value)
 
     @property
     def TrafficGroupId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -312,10 +360,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TrafficGroupId'])
     @TrafficGroupId.setter
     def TrafficGroupId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TrafficGroupId'], value)
 
     @property
     def VlanCount(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -324,10 +374,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanCount'])
     @VlanCount.setter
     def VlanCount(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanCount'], value)
 
     @property
     def VlanId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -336,10 +388,12 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanId'])
     @VlanId.setter
     def VlanId(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanId'], value)
 
     @property
     def VlanPriority(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -348,9 +402,11 @@ class Lan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
     @VlanPriority.setter
     def VlanPriority(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['VlanPriority'], value)
 
     def update(self, AtmEncapsulation=None, Bmac=None, Count=None, CountPerVc=None, EnableBmac=None, EnableIncrementMac=None, EnableIncrementVlan=None, EnableSiteId=None, EnableVlan=None, Enabled=None, FrEncapsulation=None, IncrementPerVcVlanMode=None, IncrementVlanMode=None, IncremetVlanMode=None, Mac=None, MacRangeMode=None, NumberOfVcs=None, SiteId=None, SkipVlanIdZero=None, Tpid=None, TrafficGroupId=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, int, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, int, int, bool, str, str, int, str, str) -> Lan
         """Updates lan resource on the server.
 
         Args
@@ -387,6 +443,7 @@ class Lan(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AtmEncapsulation=None, Bmac=None, Count=None, CountPerVc=None, EnableBmac=None, EnableIncrementMac=None, EnableIncrementVlan=None, EnableSiteId=None, EnableVlan=None, Enabled=None, FrEncapsulation=None, IncrementPerVcVlanMode=None, IncrementVlanMode=None, IncremetVlanMode=None, Mac=None, MacRangeMode=None, NumberOfVcs=None, SiteId=None, SkipVlanIdZero=None, Tpid=None, TrafficGroupId=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, int, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, int, int, bool, str, str, int, str, str) -> Lan
         """Adds a new lan resource on the server and adds it to the container.
 
         Args
@@ -437,6 +494,7 @@ class Lan(Base):
         self._delete()
 
     def find(self, AtmEncapsulation=None, Bmac=None, Count=None, CountPerVc=None, EnableBmac=None, EnableIncrementMac=None, EnableIncrementVlan=None, EnableSiteId=None, EnableVlan=None, Enabled=None, FrEncapsulation=None, IncrementPerVcVlanMode=None, IncrementVlanMode=None, IncremetVlanMode=None, Mac=None, MacRangeMode=None, NumberOfVcs=None, SiteId=None, SkipVlanIdZero=None, Tpid=None, TrafficGroupId=None, VlanCount=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, int, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, int, int, bool, str, str, int, str, str) -> Lan
         """Finds and retrieves lan resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lan resources from the server.

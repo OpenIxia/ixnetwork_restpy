@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class Ripng(Base):
@@ -36,9 +37,12 @@ class Ripng(Base):
         'RunningState': 'runningState',
         'TimePeriod': 'timePeriod',
     }
+    _SDM_ENUM_MAP = {
+        'runningState': ['unknown', 'stopped', 'stopping', 'starting', 'started'],
+    }
 
-    def __init__(self, parent):
-        super(Ripng, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(Ripng, self).__init__(parent, list_op)
 
     @property
     def Router(self):
@@ -52,10 +56,14 @@ class Ripng(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_9fb44ce233d434122d4b7a7809f68cfb import Router
-        return Router(self)
+        if self._properties.get('Router', None) is not None:
+            return self._properties.get('Router')
+        else:
+            return Router(self)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -64,10 +72,12 @@ class Ripng(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def NumRoutes(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -76,10 +86,12 @@ class Ripng(Base):
         return self._get_attribute(self._SDM_ATT_MAP['NumRoutes'])
     @NumRoutes.setter
     def NumRoutes(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['NumRoutes'], value)
 
     @property
     def RunningState(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -89,6 +101,7 @@ class Ripng(Base):
 
     @property
     def TimePeriod(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -97,9 +110,11 @@ class Ripng(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TimePeriod'])
     @TimePeriod.setter
     def TimePeriod(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['TimePeriod'], value)
 
     def update(self, Enabled=None, NumRoutes=None, TimePeriod=None):
+        # type: (bool, int, int) -> Ripng
         """Updates ripng resource on the server.
 
         Args
@@ -114,28 +129,42 @@ class Ripng(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def Start(self):
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
         Starts the RIPng protocol on a port or group of ports simultaneously.
 
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
 
-    def Stop(self):
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
         Stops the RIPng protocol on a port or group of ports simultaneously.
 
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('stop', payload=payload, response_object=None)

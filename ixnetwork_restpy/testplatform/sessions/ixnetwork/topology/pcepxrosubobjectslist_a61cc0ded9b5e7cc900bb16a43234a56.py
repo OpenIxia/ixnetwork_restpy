@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class PcepXroSubObjectsList(Base):
@@ -50,12 +51,15 @@ class PcepXroSubObjectsList(Base):
         'SrlgId': 'srlgId',
         'SubObjectType': 'subObjectType',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(PcepXroSubObjectsList, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(PcepXroSubObjectsList, self).__init__(parent, list_op)
 
     @property
     def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -66,6 +70,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def AsNumber(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -76,6 +81,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Attribute(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -86,6 +92,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Count(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -95,6 +102,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def DescriptiveName(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -104,6 +112,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Exclude_bit(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -114,6 +123,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def InterfaceId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -124,6 +134,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Ipv4Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -134,6 +145,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Ipv6Address(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -144,6 +156,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -152,10 +165,12 @@ class PcepXroSubObjectsList(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def PFlagXro(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -166,6 +181,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def PceId128(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -176,6 +192,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def PceId32(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -186,6 +203,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def PrefixLength(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -196,6 +214,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def RouterId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -206,6 +225,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def SrlgId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -216,6 +236,7 @@ class PcepXroSubObjectsList(Base):
 
     @property
     def SubObjectType(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
@@ -225,6 +246,7 @@ class PcepXroSubObjectsList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubObjectType']))
 
     def update(self, Name=None):
+        # type: (str) -> PcepXroSubObjectsList
         """Updates pcepXroSubObjectsList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -240,7 +262,26 @@ class PcepXroSubObjectsList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def add(self, Name=None):
+        # type: (str) -> PcepXroSubObjectsList
+        """Adds a new pcepXroSubObjectsList resource on the json, only valid with config assistant
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with all currently retrieved pcepXroSubObjectsList resources using find and the newly added pcepXroSubObjectsList resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
     def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> PcepXroSubObjectsList
         """Finds and retrieves pcepXroSubObjectsList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcepXroSubObjectsList resources from the server.

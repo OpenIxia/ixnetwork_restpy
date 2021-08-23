@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class FcFportOptions(Base):
@@ -40,12 +41,15 @@ class FcFportOptions(Base):
         'OverrideGlobalRate': 'overrideGlobalRate',
         'RtTov': 'rtTov',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(FcFportOptions, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(FcFportOptions, self).__init__(parent, list_op)
 
     @property
     def B2bCredit(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -54,10 +58,12 @@ class FcFportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['B2bCredit'])
     @B2bCredit.setter
     def B2bCredit(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['B2bCredit'], value)
 
     @property
     def EdTov(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -66,10 +72,12 @@ class FcFportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EdTov'])
     @EdTov.setter
     def EdTov(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EdTov'], value)
 
     @property
     def MaxPacketsPerSecond(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -78,10 +86,12 @@ class FcFportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'])
     @MaxPacketsPerSecond.setter
     def MaxPacketsPerSecond(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['MaxPacketsPerSecond'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -91,6 +101,7 @@ class FcFportOptions(Base):
 
     @property
     def OverrideGlobalRate(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -99,10 +110,12 @@ class FcFportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'])
     @OverrideGlobalRate.setter
     def OverrideGlobalRate(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['OverrideGlobalRate'], value)
 
     @property
     def RtTov(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -111,9 +124,11 @@ class FcFportOptions(Base):
         return self._get_attribute(self._SDM_ATT_MAP['RtTov'])
     @RtTov.setter
     def RtTov(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['RtTov'], value)
 
     def update(self, B2bCredit=None, EdTov=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None):
+        # type: (int, int, int, bool, int) -> FcFportOptions
         """Updates fcFportOptions resource on the server.
 
         Args
@@ -131,6 +146,7 @@ class FcFportOptions(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, B2bCredit=None, EdTov=None, MaxPacketsPerSecond=None, OverrideGlobalRate=None, RtTov=None):
+        # type: (int, int, int, bool, int) -> FcFportOptions
         """Adds a new fcFportOptions resource on the server and adds it to the container.
 
         Args
@@ -162,6 +178,7 @@ class FcFportOptions(Base):
         self._delete()
 
     def find(self, B2bCredit=None, EdTov=None, MaxPacketsPerSecond=None, ObjectId=None, OverrideGlobalRate=None, RtTov=None):
+        # type: (int, int, int, str, bool, int) -> FcFportOptions
         """Finds and retrieves fcFportOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcFportOptions resources from the server.
@@ -206,14 +223,16 @@ class FcFportOptions(Base):
         return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
         """Executes the customProtocolStack operation on the server.
 
         Create custom protocol stack under /vport/protocolStack
 
-        customProtocolStack(Arg2=list, Arg3=enum)
-        -----------------------------------------
+        customProtocolStack(Arg2=list, Arg3=enum, async_operation=bool)
+        ---------------------------------------------------------------
         - Arg2 (list(str)): List of plugin types to be added in the new custom stack
         - Arg3 (str(kAppend | kMerge | kOverwrite)): Append, merge or overwrite existing protocol stack
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
         ------
@@ -226,13 +245,15 @@ class FcFportOptions(Base):
         return self._execute('customProtocolStack', payload=payload, response_object=None)
 
     def DisableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the disableProtocolStack operation on the server.
 
         Disable a protocol under protocolStack using the class name
 
-        disableProtocolStack(Arg2=string)string
-        ---------------------------------------
+        disableProtocolStack(Arg2=string, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg2 (str): Protocol class name to disable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises
@@ -246,13 +267,15 @@ class FcFportOptions(Base):
         return self._execute('disableProtocolStack', payload=payload, response_object=None)
 
     def EnableProtocolStack(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the enableProtocolStack operation on the server.
 
         Enable a protocol under protocolStack using the class name
 
-        enableProtocolStack(Arg2=string)string
-        --------------------------------------
+        enableProtocolStack(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------
         - Arg2 (str): Protocol class name to enable
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: Status of the exec
 
         Raises

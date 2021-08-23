@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
 
 
 class EthernetSegments(Base):
@@ -53,9 +54,13 @@ class EthernetSegments(Base):
         'TypeOfEthernetVpn': 'typeOfEthernetVpn',
         'UseSameSequenceNumber': 'useSameSequenceNumber',
     }
+    _SDM_ENUM_MAP = {
+        'dfElectionMethod': ['serviceCarving'],
+        'typeOfEthernetVpn': ['evpn', 'pbbEvpn'],
+    }
 
-    def __init__(self, parent):
-        super(EthernetSegments, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(EthernetSegments, self).__init__(parent, list_op)
 
     @property
     def AdBmacEsRouteAttributes(self):
@@ -69,7 +74,10 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.adbmacesrouteattributes_85d7cd2c65ac911ee7a94f0d8a9e4e10 import AdBmacEsRouteAttributes
-        return AdBmacEsRouteAttributes(self)._select()
+        if self._properties.get('AdBmacEsRouteAttributes', None) is not None:
+            return self._properties.get('AdBmacEsRouteAttributes')
+        else:
+            return AdBmacEsRouteAttributes(self)._select()
 
     @property
     def BMacMappedIp(self):
@@ -83,7 +91,10 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bmacmappedip_5d1351237be9d86d6e72123aac8c9ca6 import BMacMappedIp
-        return BMacMappedIp(self)
+        if self._properties.get('BMacMappedIp', None) is not None:
+            return self._properties.get('BMacMappedIp')
+        else:
+            return BMacMappedIp(self)
 
     @property
     def Evi(self):
@@ -97,10 +108,14 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evi_f4aba0f35140f705a8d5d733d2b2f38e import Evi
-        return Evi(self)
+        if self._properties.get('Evi', None) is not None:
+            return self._properties.get('Evi')
+        else:
+            return Evi(self)
 
     @property
     def AutoConfigureEsImport(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -109,10 +124,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['AutoConfigureEsImport'])
     @AutoConfigureEsImport.setter
     def AutoConfigureEsImport(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['AutoConfigureEsImport'], value)
 
     @property
     def BMacPrefix(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -121,10 +138,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BMacPrefix'])
     @BMacPrefix.setter
     def BMacPrefix(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['BMacPrefix'], value)
 
     @property
     def BMacPrefixLength(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -133,10 +152,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['BMacPrefixLength'])
     @BMacPrefixLength.setter
     def BMacPrefixLength(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['BMacPrefixLength'], value)
 
     @property
     def DfElectionMethod(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -145,10 +166,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DfElectionMethod'])
     @DfElectionMethod.setter
     def DfElectionMethod(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['DfElectionMethod'], value)
 
     @property
     def DfElectionTimer(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -157,10 +180,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['DfElectionTimer'])
     @DfElectionTimer.setter
     def DfElectionTimer(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['DfElectionTimer'], value)
 
     @property
     def EnableActiveStandby(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -169,10 +194,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableActiveStandby'])
     @EnableActiveStandby.setter
     def EnableActiveStandby(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableActiveStandby'], value)
 
     @property
     def EnableRootLeaf(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -181,10 +208,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableRootLeaf'])
     @EnableRootLeaf.setter
     def EnableRootLeaf(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableRootLeaf'], value)
 
     @property
     def EnableSecondLabel(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -193,10 +222,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EnableSecondLabel'])
     @EnableSecondLabel.setter
     def EnableSecondLabel(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['EnableSecondLabel'], value)
 
     @property
     def Enabled(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -205,10 +236,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
     def Enabled(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Enabled'], value)
 
     @property
     def EsImport(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -217,10 +250,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EsImport'])
     @EsImport.setter
     def EsImport(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['EsImport'], value)
 
     @property
     def Esi(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -229,10 +264,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Esi'])
     @Esi.setter
     def Esi(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Esi'], value)
 
     @property
     def EsiLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -241,10 +278,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['EsiLabel'])
     @EsiLabel.setter
     def EsiLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['EsiLabel'], value)
 
     @property
     def FirstLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -253,10 +292,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['FirstLabel'])
     @FirstLabel.setter
     def FirstLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirstLabel'], value)
 
     @property
     def IncludeMacMobilityExtendedCommunity(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -265,10 +306,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IncludeMacMobilityExtendedCommunity'])
     @IncludeMacMobilityExtendedCommunity.setter
     def IncludeMacMobilityExtendedCommunity(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['IncludeMacMobilityExtendedCommunity'], value)
 
     @property
     def SecondLabel(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -277,10 +320,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SecondLabel'])
     @SecondLabel.setter
     def SecondLabel(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['SecondLabel'], value)
 
     @property
     def SupportFastConvergence(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -289,10 +334,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportFastConvergence'])
     @SupportFastConvergence.setter
     def SupportFastConvergence(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportFastConvergence'], value)
 
     @property
     def SupportMultiHomedEsAutoDiscovery(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -301,10 +348,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['SupportMultiHomedEsAutoDiscovery'])
     @SupportMultiHomedEsAutoDiscovery.setter
     def SupportMultiHomedEsAutoDiscovery(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportMultiHomedEsAutoDiscovery'], value)
 
     @property
     def TypeOfEthernetVpn(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -313,10 +362,12 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['TypeOfEthernetVpn'])
     @TypeOfEthernetVpn.setter
     def TypeOfEthernetVpn(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['TypeOfEthernetVpn'], value)
 
     @property
     def UseSameSequenceNumber(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -325,9 +376,11 @@ class EthernetSegments(Base):
         return self._get_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber'])
     @UseSameSequenceNumber.setter
     def UseSameSequenceNumber(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['UseSameSequenceNumber'], value)
 
     def update(self, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionMethod=None, DfElectionTimer=None, EnableActiveStandby=None, EnableRootLeaf=None, EnableSecondLabel=None, Enabled=None, EsImport=None, Esi=None, EsiLabel=None, FirstLabel=None, IncludeMacMobilityExtendedCommunity=None, SecondLabel=None, SupportFastConvergence=None, SupportMultiHomedEsAutoDiscovery=None, TypeOfEthernetVpn=None, UseSameSequenceNumber=None):
+        # type: (bool, str, int, str, int, bool, bool, bool, bool, str, str, int, int, bool, int, bool, bool, str, bool) -> EthernetSegments
         """Updates ethernetSegments resource on the server.
 
         Args
@@ -359,6 +412,7 @@ class EthernetSegments(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionMethod=None, DfElectionTimer=None, EnableActiveStandby=None, EnableRootLeaf=None, EnableSecondLabel=None, Enabled=None, EsImport=None, Esi=None, EsiLabel=None, FirstLabel=None, IncludeMacMobilityExtendedCommunity=None, SecondLabel=None, SupportFastConvergence=None, SupportMultiHomedEsAutoDiscovery=None, TypeOfEthernetVpn=None, UseSameSequenceNumber=None):
+        # type: (bool, str, int, str, int, bool, bool, bool, bool, str, str, int, int, bool, int, bool, bool, str, bool) -> EthernetSegments
         """Adds a new ethernetSegments resource on the server and adds it to the container.
 
         Args
@@ -404,6 +458,7 @@ class EthernetSegments(Base):
         self._delete()
 
     def find(self, AutoConfigureEsImport=None, BMacPrefix=None, BMacPrefixLength=None, DfElectionMethod=None, DfElectionTimer=None, EnableActiveStandby=None, EnableRootLeaf=None, EnableSecondLabel=None, Enabled=None, EsImport=None, Esi=None, EsiLabel=None, FirstLabel=None, IncludeMacMobilityExtendedCommunity=None, SecondLabel=None, SupportFastConvergence=None, SupportMultiHomedEsAutoDiscovery=None, TypeOfEthernetVpn=None, UseSameSequenceNumber=None):
+        # type: (bool, str, int, str, int, bool, bool, bool, bool, str, str, int, int, bool, int, bool, bool, str, bool) -> EthernetSegments
         """Finds and retrieves ethernetSegments resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernetSegments resources from the server.
@@ -460,10 +515,16 @@ class EthernetSegments(Base):
         """
         return self._read(href)
 
-    def FlushRemoteCmacForwardingTable(self):
+    def FlushRemoteCmacForwardingTable(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the flushRemoteCmacForwardingTable operation on the server.
 
         NOT DEFINED
+
+        flushRemoteCmacForwardingTable(async_operation=bool)string
+        ----------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: NOT DEFINED
 
         Raises
         ------
@@ -471,4 +532,6 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('flushRemoteCmacForwardingTable', payload=payload, response_object=None)

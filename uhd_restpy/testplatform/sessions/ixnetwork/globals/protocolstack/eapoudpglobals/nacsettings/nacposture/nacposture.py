@@ -21,6 +21,7 @@
 # THE SOFTWARE. 
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
+from typing import List, Any, Union
 
 
 class NacPosture(Base):
@@ -39,12 +40,15 @@ class NacPosture(Base):
         'ObjectId': 'objectId',
         'Selected': 'selected',
     }
+    _SDM_ENUM_MAP = {
+    }
 
-    def __init__(self, parent):
-        super(NacPosture, self).__init__(parent)
+    def __init__(self, parent, list_op=False):
+        super(NacPosture, self).__init__(parent, list_op)
 
     @property
     def ExpectedSystemToken(self):
+        # type: () -> int
         """
         Returns
         -------
@@ -53,22 +57,26 @@ class NacPosture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'])
     @ExpectedSystemToken.setter
     def ExpectedSystemToken(self, value):
+        # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['ExpectedSystemToken'], value)
 
     @property
     def NacTlvs(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/9/ixnetwork/globals/.../nacTlv]): List of NacTLVs.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv]): List of NacTLVs.
         """
         return self._get_attribute(self._SDM_ATT_MAP['NacTlvs'])
     @NacTlvs.setter
     def NacTlvs(self, value):
+        # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP['NacTlvs'], value)
 
     @property
     def Name(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -77,10 +85,12 @@ class NacPosture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
     @Name.setter
     def Name(self, value):
+        # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Name'], value)
 
     @property
     def ObjectId(self):
+        # type: () -> str
         """
         Returns
         -------
@@ -90,6 +100,7 @@ class NacPosture(Base):
 
     @property
     def Selected(self):
+        # type: () -> bool
         """
         Returns
         -------
@@ -98,15 +109,17 @@ class NacPosture(Base):
         return self._get_attribute(self._SDM_ATT_MAP['Selected'])
     @Selected.setter
     def Selected(self, value):
+        # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['Selected'], value)
 
     def update(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, Selected=None):
+        # type: (int, List[str], str, bool) -> NacPosture
         """Updates nacPosture resource on the server.
 
         Args
         ----
         - ExpectedSystemToken (number): Expected System Token.
-        - NacTlvs (list(str[None | /api/v1/sessions/9/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
+        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
         - Name (str): Unique name for this NAC Posture.
         - Selected (bool): Add to postures list.
 
@@ -117,12 +130,13 @@ class NacPosture(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, Selected=None):
+        # type: (int, List[str], str, bool) -> NacPosture
         """Adds a new nacPosture resource on the server and adds it to the container.
 
         Args
         ----
         - ExpectedSystemToken (number): Expected System Token.
-        - NacTlvs (list(str[None | /api/v1/sessions/9/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
+        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
         - Name (str): Unique name for this NAC Posture.
         - Selected (bool): Add to postures list.
 
@@ -147,6 +161,7 @@ class NacPosture(Base):
         self._delete()
 
     def find(self, ExpectedSystemToken=None, NacTlvs=None, Name=None, ObjectId=None, Selected=None):
+        # type: (int, List[str], str, str, bool) -> NacPosture
         """Finds and retrieves nacPosture resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve nacPosture resources from the server.
@@ -156,7 +171,7 @@ class NacPosture(Base):
         Args
         ----
         - ExpectedSystemToken (number): Expected System Token.
-        - NacTlvs (list(str[None | /api/v1/sessions/9/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
+        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
         - Name (str): Unique name for this NAC Posture.
         - ObjectId (str): Unique identifier for this object
         - Selected (bool): Add to postures list.
