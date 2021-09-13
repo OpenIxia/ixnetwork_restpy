@@ -121,13 +121,13 @@ class Mpls(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_2efe527fac3c70d878c70b3cf02fb51b.Dhcpv4client): An instance of the Dhcpv4client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_51940f357e701f382297f94c99af7a22.Dhcpv4client): An instance of the Dhcpv4client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_2efe527fac3c70d878c70b3cf02fb51b import Dhcpv4client
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_51940f357e701f382297f94c99af7a22 import Dhcpv4client
         if self._properties.get('Dhcpv4client', None) is not None:
             return self._properties.get('Dhcpv4client')
         else:

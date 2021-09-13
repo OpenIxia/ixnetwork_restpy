@@ -411,13 +411,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39.Ospfv3Router): An instance of the Ospfv3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_8b017f50055a8a8daa11df922db1a75a.Ospfv3Router): An instance of the Ospfv3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_4fb70543029537debb6399a437c0ac39 import Ospfv3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_8b017f50055a8a8daa11df922db1a75a import Ospfv3Router
         if self._properties.get('Ospfv3Router', None) is not None:
             return self._properties.get('Ospfv3Router')
         else:

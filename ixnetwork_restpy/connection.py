@@ -413,14 +413,15 @@ class Connection(object):
 
         if response.status_code == 202:
             async_status = response.json()
-            poll_url = async_status["url"]
-            if poll_url.startswith(self._scheme) is False:
-                poll_url = "%s/%s" % (connection, poll_url.strip("/"))
-            Connection.ASYNC_OPERATION["poll_url"] = poll_url
-            Connection.ASYNC_OPERATION["poll_headers"] = headers.copy()
-            Connection.ASYNC_OPERATION["async_status"] = async_status
-            if Connection.ASYNC_OPERATION["request"] is None:
-                return self._poll()
+            if "url" in async_status.keys():
+                poll_url = async_status["url"]
+                if poll_url.startswith(self._scheme) is False:
+                    poll_url = "%s/%s" % (connection, poll_url.strip("/"))
+                Connection.ASYNC_OPERATION["poll_url"] = poll_url
+                Connection.ASYNC_OPERATION["poll_headers"] = headers.copy()
+                Connection.ASYNC_OPERATION["async_status"] = async_status
+                if Connection.ASYNC_OPERATION["request"] is None:
+                    return self._poll()
 
         while response.status_code == 409:
             time.sleep(6)

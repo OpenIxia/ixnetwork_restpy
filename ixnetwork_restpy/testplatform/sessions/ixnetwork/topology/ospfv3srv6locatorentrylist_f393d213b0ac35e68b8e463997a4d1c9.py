@@ -1,0 +1,302 @@
+# MIT LICENSE
+#
+# Copyright 1997 - 2020 by IXIA Keysight
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE. 
+from ixnetwork_restpy.base import Base
+from ixnetwork_restpy.files import Files
+from typing import List, Any, Union
+
+
+class Ospfv3SRv6LocatorEntryList(Base):
+    """OSPFv3 SRv6 Locator Entry
+    The Ospfv3SRv6LocatorEntryList class encapsulates a required ospfv3SRv6LocatorEntryList resource which will be retrieved from the server every time the property is accessed.
+    """
+
+    __slots__ = ()
+    _SDM_NAME = 'ospfv3SRv6LocatorEntryList'
+    _SDM_ATT_MAP = {
+        'ABit': 'aBit',
+        'Active': 'active',
+        'AdvertiseLocatorAsPrefix': 'advertiseLocatorAsPrefix',
+        'Algorithm': 'algorithm',
+        'Count': 'count',
+        'DescriptiveName': 'descriptiveName',
+        'Locator': 'locator',
+        'LocatorLength': 'locatorLength',
+        'LocatorName': 'locatorName',
+        'LocatorRouteType': 'locatorRouteType',
+        'Metric': 'metric',
+        'NBit': 'nBit',
+        'Name': 'name',
+        'PrefixMetric': 'prefixMetric',
+        'ReservedFlag': 'reservedFlag',
+        'SidCount': 'sidCount',
+    }
+    _SDM_ENUM_MAP = {
+    }
+
+    def __init__(self, parent, list_op=False):
+        super(Ospfv3SRv6LocatorEntryList, self).__init__(parent, list_op)
+
+    @property
+    def Ospfv3SRv6EndSIDList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srv6endsidlist_875e11f14eaca0bdcf1a1b187b7273f2.Ospfv3SRv6EndSIDList): An instance of the Ospfv3SRv6EndSIDList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srv6endsidlist_875e11f14eaca0bdcf1a1b187b7273f2 import Ospfv3SRv6EndSIDList
+        if self._properties.get('Ospfv3SRv6EndSIDList', None) is not None:
+            return self._properties.get('Ospfv3SRv6EndSIDList')
+        else:
+            return Ospfv3SRv6EndSIDList(self)._select()
+
+    @property
+    def ABit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): A Flag: Anycast Flag. If Set, then locator is configured as anycast.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ABit']))
+
+    @property
+    def Active(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Active']))
+
+    @property
+    def AdvertiseLocatorAsPrefix(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then the locator is advertised as Prefix.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AdvertiseLocatorAsPrefix']))
+
+    @property
+    def Algorithm(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Algorithm associated with the Locator.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Algorithm']))
+
+    @property
+    def Count(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['Count'])
+
+    @property
+    def DescriptiveName(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['DescriptiveName'])
+
+    @property
+    def Locator(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Locator']))
+
+    @property
+    def LocatorLength(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is the locator prefix length of SRv6 Locator.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorLength']))
+
+    @property
+    def LocatorName(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field denotes the name of the locator.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorName']))
+
+    @property
+    def LocatorRouteType(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of the locator route.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LocatorRouteType']))
+
+    @property
+    def Metric(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Metric Value associated with the Locator.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Metric']))
+
+    @property
+    def NBit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): N Flag: Node Flag. If Set, then locator uniquely identifies a node in the network.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['NBit']))
+
+    @property
+    def Name(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Name of NGPF element, guaranteed to be unique in Scenario
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['Name'])
+    @Name.setter
+    def Name(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP['Name'], value)
+
+    @property
+    def PrefixMetric(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefix Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PrefixMetric']))
+
+    @property
+    def ReservedFlag(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Reserved bits value in Flags Field.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ReservedFlag']))
+
+    @property
+    def SidCount(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Count of END Segment Identifier(SID) per Locator.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['SidCount'])
+    @SidCount.setter
+    def SidCount(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP['SidCount'], value)
+
+    def update(self, Name=None, SidCount=None):
+        # type: (str, int) -> Ospfv3SRv6LocatorEntryList
+        """Updates ospfv3SRv6LocatorEntryList resource on the server.
+
+        This method has some named parameters with a type: obj (Multivalue).
+        The Multivalue class has documentation that details the possible values for those named parameters.
+
+        Args
+        ----
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SidCount (number): Count of END Segment Identifier(SID) per Locator.
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def get_device_ids(self, PortNames=None, ABit=None, Active=None, AdvertiseLocatorAsPrefix=None, Algorithm=None, Locator=None, LocatorLength=None, LocatorName=None, LocatorRouteType=None, Metric=None, NBit=None, PrefixMetric=None, ReservedFlag=None):
+        """Base class infrastructure that gets a list of ospfv3SRv6LocatorEntryList device ids encapsulated by this object.
+
+        Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
+
+        Args
+        ----
+        - PortNames (str): optional regex of port names
+        - ABit (str): optional regex of aBit
+        - Active (str): optional regex of active
+        - AdvertiseLocatorAsPrefix (str): optional regex of advertiseLocatorAsPrefix
+        - Algorithm (str): optional regex of algorithm
+        - Locator (str): optional regex of locator
+        - LocatorLength (str): optional regex of locatorLength
+        - LocatorName (str): optional regex of locatorName
+        - LocatorRouteType (str): optional regex of locatorRouteType
+        - Metric (str): optional regex of metric
+        - NBit (str): optional regex of nBit
+        - PrefixMetric (str): optional regex of prefixMetric
+        - ReservedFlag (str): optional regex of reservedFlag
+
+        Returns
+        -------
+        - list(int): A list of device ids that meets the regex criteria provided in the method parameters
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._get_ngpf_device_ids(locals())

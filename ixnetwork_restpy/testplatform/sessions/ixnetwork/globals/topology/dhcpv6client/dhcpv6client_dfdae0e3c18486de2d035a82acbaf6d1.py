@@ -64,6 +64,23 @@ class Dhcpv6client(Base):
         super(Dhcpv6client, self).__init__(parent, list_op)
 
     @property
+    def Dhcp6nsRate(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.dhcp6nsrate.dhcp6nsrate_4ca4fc6bc3696aeee1ce2b3c52eec696.Dhcp6nsRate): An instance of the Dhcp6nsRate class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.dhcp6nsrate.dhcp6nsrate_4ca4fc6bc3696aeee1ce2b3c52eec696 import Dhcp6nsRate
+        if self._properties.get('Dhcp6nsRate', None) is not None:
+            return self._properties.get('Dhcp6nsRate')
+        else:
+            return Dhcp6nsRate(self)._select()
+
+    @property
     def SessionLifetime(self):
         """
         Returns

@@ -54,13 +54,13 @@ class BgpSRTEPoliciesSegmentListV6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_e73beb69055b90a5cc89166e271fda54.BgpSRTEPoliciesSegmentsCollectionV6): An instance of the BgpSRTEPoliciesSegmentsCollectionV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_1e92f467904f3ba3a451db4c7caa606b.BgpSRTEPoliciesSegmentsCollectionV6): An instance of the BgpSRTEPoliciesSegmentsCollectionV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_e73beb69055b90a5cc89166e271fda54 import BgpSRTEPoliciesSegmentsCollectionV6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentscollectionv6_1e92f467904f3ba3a451db4c7caa606b import BgpSRTEPoliciesSegmentsCollectionV6
         if self._properties.get('BgpSRTEPoliciesSegmentsCollectionV6', None) is not None:
             return self._properties.get('BgpSRTEPoliciesSegmentsCollectionV6')
         else:

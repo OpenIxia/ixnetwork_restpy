@@ -671,6 +671,51 @@ class Ixnetwork(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('disconnectCardById', payload=payload, response_object=None)
 
+    def FetchColDisplayNamesForProtocol(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the fetchColDisplayNamesForProtocol operation on the server.
+
+        Fetches List of Display Names of columns given a Protocol obj
+
+        fetchColDisplayNamesForProtocol(Arg1=string, async_operation=bool)list
+        ----------------------------------------------------------------------
+        - Arg1 (str): objref to a protocol
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): List of Display names of columns
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('fetchColDisplayNamesForProtocol', payload=payload, response_object=None)
+
+    def FetchPropertyNameForDisplayName(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the fetchPropertyNameForDisplayName operation on the server.
+
+        Fetches List of Property Names of columns given a Protocol obj and List of Display Names
+
+        fetchPropertyNameForDisplayName(Arg1=string, Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------------------------
+        - Arg1 (str): objref to a protocol
+        - Arg2 (list(str)): List of DisplayNames of columns
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): List of Property names of columns
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('fetchPropertyNameForDisplayName', payload=payload, response_object=None)
+
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the generateReport operation on the server.

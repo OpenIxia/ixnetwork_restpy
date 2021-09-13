@@ -4,7 +4,7 @@ from ixnetwork_restpy.files import Files
 
 class Rtmp(Base):
     __slots__ = ()
-    _SDM_NAME = 'rtmp'
+    _SDM_NAME = 'rtmp '
     _SDM_ATT_MAP = {
         'RtmpNonextendedNetworkNumber': 'rtmp .header.messageType.rtmpNonextended.networkNumber-1',
         'RtmpNonextendedNodeIDLength': 'rtmp .header.messageType.rtmpNonextended.nodeIDLength-2',

@@ -469,7 +469,7 @@ class NetconfClient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The TCP Port Number the Netconf Server is listening on to which to connect.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The TCP Port Number the Netconf server is listening on. Well-known port numbers are 830 (RFC 6242) and 22 (SSH).
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PortNumber']))

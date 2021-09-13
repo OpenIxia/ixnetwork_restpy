@@ -113,6 +113,40 @@ class Ipv4(Base):
             return BgpIpv4Peer(self)
 
     @property
+    def CuspCP(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcp_1ab532ec5eaeec746678378f2443dafe.CuspCP): An instance of the CuspCP class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspcp_1ab532ec5eaeec746678378f2443dafe import CuspCP
+        if self._properties.get('CuspCP', None) is not None:
+            return self._properties.get('CuspCP')
+        else:
+            return CuspCP(self)
+
+    @property
+    def CuspUP(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspup_84a781af92d08e3bf15d0b6f33a20a36.CuspUP): An instance of the CuspUP class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cuspup_84a781af92d08e3bf15d0b6f33a20a36 import CuspUP
+        if self._properties.get('CuspUP', None) is not None:
+            return self._properties.get('CuspUP')
+        else:
+            return CuspUP(self)
+
+    @property
     def Dhcpv4relayAgent(self):
         """
         Returns
@@ -372,13 +406,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_127e77a6a13ccfa768d079b1f0b3dbbc.NetconfServer): An instance of the NetconfServer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ef6d7597b8407441914451a9b6bf1bf5.NetconfServer): An instance of the NetconfServer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_127e77a6a13ccfa768d079b1f0b3dbbc import NetconfServer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ef6d7597b8407441914451a9b6bf1bf5 import NetconfServer
         if self._properties.get('NetconfServer', None) is not None:
             return self._properties.get('NetconfServer')
         else:
@@ -621,6 +655,23 @@ class Ipv4(Base):
             return self._properties.get('Vxlan')
         else:
             return Vxlan(self)
+
+    @property
+    def Vxlangpe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291.Vxlangpe): An instance of the Vxlangpe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import Vxlangpe
+        if self._properties.get('Vxlangpe', None) is not None:
+            return self._properties.get('Vxlangpe')
+        else:
+            return Vxlangpe(self)
 
     @property
     def Address(self):

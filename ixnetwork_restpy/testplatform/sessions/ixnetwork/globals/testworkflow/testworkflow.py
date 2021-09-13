@@ -34,6 +34,7 @@ class Testworkflow(Base):
     _SDM_ATT_MAP = {
         'CurrentDescription': 'currentDescription',
         'CurrentState': 'currentState',
+        'IsCaptureRunning': 'isCaptureRunning',
     }
     _SDM_ENUM_MAP = {
         'currentState': ['kApplyTraffic', 'kConnectPorts', 'kError', 'kGenerateTraffic', 'kIdle', 'kReleaseCrashedPorts', 'kStartLAG', 'kStartProtocols', 'kStartTopology', 'kStartTraffic', 'kStopLAG', 'kStopProtocols', 'kStopTraffic', 'kWaitForChassisUp', 'kWaitForLicenseBroadcast', 'kWaitForPortsUp', 'kWaitForProtocolsUp'],
@@ -61,6 +62,16 @@ class Testworkflow(Base):
         - str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['CurrentState'])
+
+    @property
+    def IsCaptureRunning(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Indicates whether capture is running on any port in config.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['IsCaptureRunning'])
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

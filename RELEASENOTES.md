@@ -1,5 +1,9 @@
 # Release Notes
 
+### Sep 2021
+* 1.1.1
+  * support ixnetwork 9.10.2011.227
+  * Fix for `intermittent failure when connecting to an already started ConnectionManager session`
 ### Aug 2021
 * 1.1.0
   * Async operation enhancement that allows all operations to be executed asynchronously 

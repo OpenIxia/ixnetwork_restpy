@@ -409,13 +409,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_127e77a6a13ccfa768d079b1f0b3dbbc.NetconfServer): An instance of the NetconfServer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ef6d7597b8407441914451a9b6bf1bf5.NetconfServer): An instance of the NetconfServer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_127e77a6a13ccfa768d079b1f0b3dbbc import NetconfServer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ef6d7597b8407441914451a9b6bf1bf5 import NetconfServer
         if self._properties.get('NetconfServer', None) is not None:
             return self._properties.get('NetconfServer')
         else:
@@ -443,13 +443,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751.Ospfv3): An instance of the Ospfv3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa.Ospfv3): An instance of the Ospfv3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751 import Ospfv3
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import Ospfv3
         if self._properties.get('Ospfv3', None) is not None:
             return self._properties.get('Ospfv3')
         else:
@@ -575,6 +575,23 @@ class Pppoxclient(Base):
             return Vxlan(self)
 
     @property
+    def Vxlangpe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291.Vxlangpe): An instance of the Vxlangpe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import Vxlangpe
+        if self._properties.get('Vxlangpe', None) is not None:
+            return self._properties.get('Vxlangpe')
+        else:
+            return Vxlangpe(self)
+
+    @property
     def Vxlanv6(self):
         """
         Returns
@@ -590,6 +607,23 @@ class Pppoxclient(Base):
             return self._properties.get('Vxlanv6')
         else:
             return Vxlanv6(self)
+
+    @property
+    def Vxlanv6gpe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa.Vxlanv6gpe): An instance of the Vxlanv6gpe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import Vxlanv6gpe
+        if self._properties.get('Vxlanv6gpe', None) is not None:
+            return self._properties.get('Vxlanv6gpe')
+        else:
+            return Vxlanv6gpe(self)
 
     @property
     def AcMatchMac(self):

@@ -44,6 +44,7 @@ class NovusTenGigLan(Base):
         'LoopbackMode': 'loopbackMode',
         'MasterSlaveMode': 'masterSlaveMode',
         'Media': 'media',
+        'NegotiateMasterSlave': 'negotiateMasterSlave',
         'Ppm': 'ppm',
         'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
@@ -252,6 +253,20 @@ class NovusTenGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['Media'], value)
 
     @property
+    def NegotiateMasterSlave(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'])
+    @NegotiateMasterSlave.setter
+    def NegotiateMasterSlave(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'], value)
+
+    @property
     def Ppm(self):
         # type: () -> int
         """
@@ -321,8 +336,8 @@ class NovusTenGigLan(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
-        # type: (str, bool, bool, bool, str, bool, str, str, str, int, List[str], str, List[str], bool) -> NovusTenGigLan
+    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, bool, bool, bool, str, bool, str, str, str, bool, int, List[str], str, List[str], bool) -> NovusTenGigLan
         """Updates novusTenGigLan resource on the server.
 
         Args
@@ -336,6 +351,7 @@ class NovusTenGigLan(Base):
         - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
         - MasterSlaveMode (str(master | slave)): 
         - Media (str(copper | fiber | sgmii)): Available only for cards that support this dual-PHY capability.
+        - NegotiateMasterSlave (bool): 
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - SelectedSpeeds (list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed1000 | speed100fd | speed10g | speed2.5g | speed5g)): NOT DEFINED

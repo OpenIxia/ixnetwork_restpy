@@ -88,13 +88,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_a0cdc3c071406e922841f5820d83e340.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_3b470f091e80d297b7e766d4fb5475c2.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_a0cdc3c071406e922841f5820d83e340 import BgpIpv4Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_3b470f091e80d297b7e766d4fb5475c2 import BgpIpv4Peer
         if self._properties.get('BgpIpv4Peer', None) is not None:
             return self._properties.get('BgpIpv4Peer')
         else:
@@ -105,13 +105,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_ab51eeb3a359346cdad8fa15fbb15a9b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_5867f3e4814dfe7f554ccb03bf0cc68b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_ab51eeb3a359346cdad8fa15fbb15a9b import BgpIpv6Peer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_5867f3e4814dfe7f554ccb03bf0cc68b import BgpIpv6Peer
         if self._properties.get('BgpIpv6Peer', None) is not None:
             return self._properties.get('BgpIpv6Peer')
         else:
@@ -150,6 +150,40 @@ class Topology(Base):
             return self._properties.get('CfmBridge')
         else:
             return CfmBridge(self)._select()
+
+    @property
+    def CuspCP(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cuspcp.cuspcp_09917f677121de2d441b03efd10c0992.CuspCP): An instance of the CuspCP class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cuspcp.cuspcp_09917f677121de2d441b03efd10c0992 import CuspCP
+        if self._properties.get('CuspCP', None) is not None:
+            return self._properties.get('CuspCP')
+        else:
+            return CuspCP(self)._select()
+
+    @property
+    def CuspUP(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cuspup.cuspup_985b33e540b199c473b9a9aa9d00f4c4.CuspUP): An instance of the CuspUP class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.cuspup.cuspup_985b33e540b199c473b9a9aa9d00f4c4 import CuspUP
+        if self._properties.get('CuspUP', None) is not None:
+            return self._properties.get('CuspUP')
+        else:
+            return CuspUP(self)._select()
 
     @property
     def Dhcpv4client(self):
@@ -479,13 +513,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_aff699fde2f7d9e05075621534ea8b2d.Ipv6): An instance of the Ipv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_ef62e7d01f88eb0ac20e06be06512826.Ipv6): An instance of the Ipv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_aff699fde2f7d9e05075621534ea8b2d import Ipv6
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6.ipv6_ef62e7d01f88eb0ac20e06be06512826 import Ipv6
         if self._properties.get('Ipv6', None) is not None:
             return self._properties.get('Ipv6')
         else:
@@ -870,13 +904,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.netconfserver.netconfserver_a0a29db48af83ed4d6cc5c2febf83313.NetconfServer): An instance of the NetconfServer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.netconfserver.netconfserver_12bf8eb804c05df100b307134c571553.NetconfServer): An instance of the NetconfServer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.netconfserver.netconfserver_a0a29db48af83ed4d6cc5c2febf83313 import NetconfServer
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.netconfserver.netconfserver_12bf8eb804c05df100b307134c571553 import NetconfServer
         if self._properties.get('NetconfServer', None) is not None:
             return self._properties.get('NetconfServer')
         else:
@@ -955,13 +989,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv3router.ospfv3router_4c45a88f00fdf201bca989331894ee2f.Ospfv3Router): An instance of the Ospfv3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv3router.ospfv3router_7372ae367ac5a1ebf0505ed8fc886eb8.Ospfv3Router): An instance of the Ospfv3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv3router.ospfv3router_4c45a88f00fdf201bca989331894ee2f import Ospfv3Router
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ospfv3router.ospfv3router_7372ae367ac5a1ebf0505ed8fc886eb8 import Ospfv3Router
         if self._properties.get('Ospfv3Router', None) is not None:
             return self._properties.get('Ospfv3Router')
         else:
@@ -1172,6 +1206,23 @@ class Topology(Base):
             return StaticMacsec(self)._select()
 
     @property
+    def UpGroupInfo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.upgroupinfo.upgroupinfo_00481e5137e600e738b95cd9c44d367d.UpGroupInfo): An instance of the UpGroupInfo class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.upgroupinfo.upgroupinfo_00481e5137e600e738b95cd9c44d367d import UpGroupInfo
+        if self._properties.get('UpGroupInfo', None) is not None:
+            return self._properties.get('UpGroupInfo')
+        else:
+            return UpGroupInfo(self)._select()
+
+    @property
     def Vxlan(self):
         """
         Returns
@@ -1189,6 +1240,23 @@ class Topology(Base):
             return Vxlan(self)._select()
 
     @property
+    def Vxlangpe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlangpe.vxlangpe_d9ba5236670dd27404d1b6b64c942474.Vxlangpe): An instance of the Vxlangpe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlangpe.vxlangpe_d9ba5236670dd27404d1b6b64c942474 import Vxlangpe
+        if self._properties.get('Vxlangpe', None) is not None:
+            return self._properties.get('Vxlangpe')
+        else:
+            return Vxlangpe(self)._select()
+
+    @property
     def Vxlanv6(self):
         """
         Returns
@@ -1204,6 +1272,23 @@ class Topology(Base):
             return self._properties.get('Vxlanv6')
         else:
             return Vxlanv6(self)._select()
+
+    @property
+    def Vxlanv6gpe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlanv6gpe.vxlanv6gpe_498d3159ba5a05647434f2adcc138c80.Vxlanv6gpe): An instance of the Vxlanv6gpe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.vxlanv6gpe.vxlanv6gpe_498d3159ba5a05647434f2adcc138c80 import Vxlanv6gpe
+        if self._properties.get('Vxlanv6gpe', None) is not None:
+            return self._properties.get('Vxlanv6gpe')
+        else:
+            return Vxlanv6gpe(self)._select()
 
     @property
     def ApplyOnTheFlyState(self):
