@@ -4,7 +4,7 @@ from ixnetwork_restpy.files import Files
 
 class RTag(Base):
     __slots__ = ()
-    _SDM_NAME = 'rTag'
+    _SDM_NAME = 'r_Tag'
     _SDM_ATT_MAP = {
         'RTagRTagReserved': 'rTag.rTag.RTagReserved-1',
         'RTagRTagSeqNum': 'rTag.rTag.RTagSeqNum-2',

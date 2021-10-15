@@ -21,13 +21,13 @@ def test_add_vports(config_assistant):
     config_assistant.commit()
 
     # checking if hrefs are getting filled properly
-    assert vport_1.href == '/api/v1/sessions/1/ixnetwork/vport/1'
-    assert vport_2.href == '/api/v1/sessions/1/ixnetwork/vport/2'
+    assert vport_1.href == "/api/v1/sessions/1/ixnetwork/vport/1"
+    assert vport_2.href == "/api/v1/sessions/1/ixnetwork/vport/2"
 
     # testing total number of ports
     assert len(config.Vport.find()) == 4
     for vport in config.Vport:
-        assert 'xpath' in vport._properties
+        assert "xpath" in vport._properties
 
 
 def test_can_change_vport_attributes(config_assistant):
@@ -40,23 +40,23 @@ def test_can_change_vport_attributes(config_assistant):
     """
     config = config_assistant.config
     vport_1 = config.Vport.add()
-    vport_1.TxMode = 'sequential'
+    vport_1.TxMode = "sequential"
     vport_1.TransmitIgnoreLinkStatus = True
-    vport_1.L1Config.Ethernet.Media = 'fiber'
+    vport_1.L1Config.Ethernet.Media = "fiber"
     vport_1.L1Config.Ethernet.AutoNegotiate = False
     config_assistant.commit()
     # checking if the change was reflected properly
     vport = config.Vport.find()
     l1Config = vport.L1Config
-    assert vport.TxMode == 'sequential'
+    assert vport.TxMode == "sequential"
     assert vport.TransmitIgnoreLinkStatus
-    assert l1Config.Ethernet.Media == 'fiber'
+    assert l1Config.Ethernet.Media == "fiber"
     assert not l1Config.Ethernet.AutoNegotiate
 
-    vport_1.L1Config.CurrentType = 'krakenFourHundredGigLan'
+    vport_1.L1Config.CurrentType = "krakenFourHundredGigLan"
     config_assistant.commit()
     l1Config = vport_1.L1Config
-    assert l1Config.CurrentType == 'krakenFourHundredGigLan'
+    assert l1Config.CurrentType == "krakenFourHundredGigLan"
 
 
 def test_can_change_uppercase_property_names(config_assistant):
@@ -71,14 +71,14 @@ def test_can_change_uppercase_property_names(config_assistant):
     """
     config = config_assistant.config
     vport_1 = config.Vport.add()
-    vport_1.Capture.FilterPallette.DA1 = '00:00:de:ad:be:ef'
+    vport_1.Capture.FilterPallette.DA1 = "00:00:de:ad:be:ef"
     config_assistant.commit()
     filterPallette = config.Vport.find()[0].Capture.FilterPallette
-    assert filterPallette.DA1 == '00:00:de:ad:be:ef'
-    vport_1.Capture.FilterPallette.DA1 = '00:00:de:ad:be:ef'
+    assert filterPallette.DA1 == "00:00:de:ad:be:ef"
+    vport_1.Capture.FilterPallette.DA1 = "00:00:de:ad:be:ef"
     config_assistant.commit()
     filterPallette = config.Vport.find()[0].Capture.FilterPallette
-    assert filterPallette.DA1 == '00:00:de:ad:be:ef'
+    assert filterPallette.DA1 == "00:00:de:ad:be:ef"
 
 
 # def test_can_add_lag_ports(ixnetwork):
@@ -95,5 +95,5 @@ def test_can_change_uppercase_property_names(config_assistant):
 #     assert (len(lag.Vports) == 2)
 
 
-if __name__ == '__main__':
-    pytest.main(['-s', __file__])
+if __name__ == "__main__":
+    pytest.main(["-v", "-s", "--server", "localhost:11009:windows", __file__])

@@ -1,5 +1,12 @@
 # Release Notes
 
+### Oct 2021
+* 1.1.2
+  * fixed issue #56: `UnboundLocalError: local variable 'response' referenced before assignment`
+  * fixed issue #58: `.find() method is slow`
+    * using the .find() method from objects returned by the IxNetwork object hierarchy will be responsive and is the recommended approach for retrieving objects
+    * using the .find() method from objects returned by ConfigAssistant.Config will be much slower as system incurs additional overhead, this is not the recommended approach as this assistant is meant for creating a batch configuration.
+  * fixed issue #54: `BadRequestError is not defined`
 ### Sep 2021
 * 1.1.1
   * support ixnetwork 9.10.2011.227

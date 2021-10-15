@@ -87,9 +87,9 @@ class Stack(Base):
         return H264csrc(self)
 
     @property
-    def H264SH(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.h264SH_template import H264SH
-        return H264SH(self)
+    def H264sh(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.h264sh_template import H264sh
+        return H264sh(self)
 
     @property
     def Avtpdu(self):
@@ -347,9 +347,9 @@ class Stack(Base):
         return Ppp(self)
 
     @property
-    def Pppnohdlc(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pppnohdlc_template import Pppnohdlc
-        return Pppnohdlc(self)
+    def PppWithoutHDLC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pppWithoutHDLC_template import PppWithoutHDLC
+        return PppWithoutHDLC(self)
 
     @property
     def PppLCP(self):
@@ -442,9 +442,9 @@ class Stack(Base):
         return FcoE(self)
 
     @property
-    def FCoEFabricLogo(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCoEFabricLogo_template import FCoEFabricLogo
-        return FCoEFabricLogo(self)
+    def FCoEFabricLogoEnode(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCoEFabricLogoEnode_template import FCoEFabricLogoEnode
+        return FCoEFabricLogoEnode(self)
 
     @property
     def FCoEFabricLogoLsAcc(self):
@@ -1073,388 +1073,388 @@ class Stack(Base):
 
     @property
     def FCGCSID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGCSID_template import FCGCSID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGCSID_template import FCGCSID
         return FCGCSID(self)
 
     @property
     def FCGANXT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGANXT_template import FCGANXT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGANXT_template import FCGANXT
         return FCGANXT(self)
 
     @property
     def FCGIEIL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEIL_template import FCGIEIL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEIL_template import FCGIEIL
         return FCGIEIL(self)
 
     @property
     def FCGIDPN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDPN_template import FCGIDPN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDPN_template import FCGIDPN
         return FCGIDPN(self)
 
     @property
     def FCGFPNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFPNID_template import FCGFPNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFPNID_template import FCGFPNID
         return FCGFPNID(self)
 
     @property
     def FCGPSC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPSC_template import FCGPSC
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPSC_template import FCGPSC
         return FCGPSC(self)
 
     @property
     def FCGSES(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSES_template import FCGSES
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSES_template import FCGSES
         return FCGSES(self)
 
     @property
     def FCGPNFT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNFT_template import FCGPNFT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNFT_template import FCGPNFT
         return FCGPNFT(self)
 
     @property
     def FCGIEILN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEILN_template import FCGIEILN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEILN_template import FCGIEILN
         return FCGIEILN(self)
 
     @property
     def FCGAPNL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGAPNL_template import FCGAPNL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGAPNL_template import FCGAPNL
         return FCGAPNL(self)
 
     @property
     def FCGSPNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSPNID_template import FCGSPNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSPNID_template import FCGSPNID
         return FCGSPNID(self)
 
     @property
     def FCRSNNNN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRSNNNN_template import FCRSNNNN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRSNNNN_template import FCRSNNNN
         return FCRSNNNN(self)
 
     @property
     def FCGNPL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNPL_template import FCGNPL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNPL_template import FCGNPL
         return FCGNPL(self)
 
     @property
     def FCGPL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPL_template import FCGPL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPL_template import FCGPL
         return FCGPL(self)
 
     @property
     def FCGNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNID_template import FCGNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNID_template import FCGNID
         return FCGNID(self)
 
     @property
     def FCRPLT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPLT_template import FCRPLT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPLT_template import FCRPLT
         return FCRPLT(self)
 
     @property
     def FCRIELN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRIELN_template import FCRIELN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRIELN_template import FCRIELN
         return FCRIELN(self)
 
     @property
     def FCGPNL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNL_template import FCGPNL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNL_template import FCGPNL
         return FCGPNL(self)
 
     @property
     def FCGNNFT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNNFT_template import FCGNNFT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNNFT_template import FCGNNFT
         return FCGNNFT(self)
 
     @property
     def FCGPLNL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLNL_template import FCGPLNL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLNL_template import FCGPLNL
         return FCGPLNL(self)
 
     @property
     def FCRFTID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRFTID_template import FCRFTID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRFTID_template import FCRFTID
         return FCRFTID(self)
 
     @property
     def FCGPLML(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLML_template import FCGPLML
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLML_template import FCGPLML
         return FCGPLML(self)
 
     @property
     def FCGPS(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPS_template import FCGPS
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPS_template import FCGPS
         return FCGPS(self)
 
     @property
     def FCRCSID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRCSID_template import FCRCSID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRCSID_template import FCRCSID
         return FCRCSID(self)
 
     @property
     def FCGSNNNN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSNNNN_template import FCGSNNNN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSNNNN_template import FCGSNNNN
         return FCGSNNNN(self)
 
     @property
     def FCGNNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNNID_template import FCGNNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNNID_template import FCGNNID
         return FCGNNID(self)
 
     @property
     def FCGMID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGMID_template import FCGMID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGMID_template import FCGMID
         return FCGMID(self)
 
     @property
     def FCGIET(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIET_template import FCGIET
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIET_template import FCGIET
         return FCGIET(self)
 
     @property
     def FCRPLM(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPLM_template import FCRPLM
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPLM_template import FCRPLM
         return FCRPLM(self)
 
     @property
     def FCGPAB(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPAB_template import FCGPAB
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPAB_template import FCGPAB
         return FCGPAB(self)
 
     @property
     def FCGIEAG(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEAG_template import FCGIEAG
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEAG_template import FCGIEAG
         return FCGIEAG(self)
 
     @property
     def FCGIEL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEL_template import FCGIEL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEL_template import FCGIEL
         return FCGIEL(self)
 
     @property
     def FCGPAG(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPAG_template import FCGPAG
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPAG_template import FCGPAG
         return FCGPAG(self)
 
     @property
     def FCGIDFT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDFT_template import FCGIDFT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDFT_template import FCGIDFT
         return FCGIDFT(self)
 
     @property
     def FCGFFID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFFID_template import FCGFFID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFFID_template import FCGFFID
         return FCGFFID(self)
 
     @property
     def FCGMAL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGMAL_template import FCGMAL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGMAL_template import FCGMAL
         return FCGMAL(self)
 
     @property
     def FCGPT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPT_template import FCGPT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPT_template import FCGPT
         return FCGPT(self)
 
     @property
     def FCGPTID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPTID_template import FCGPTID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPTID_template import FCGPTID
         return FCGPTID(self)
 
     @property
     def FCGATIN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGATIN_template import FCGATIN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGATIN_template import FCGATIN
         return FCGATIN(self)
 
     @property
     def FCRFFID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRFFID_template import FCRFFID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRFFID_template import FCRFFID
         return FCRFFID(self)
 
     @property
     def FCRPNL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPNL_template import FCRPNL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPNL_template import FCRPNL
         return FCRPNL(self)
 
     @property
     def FCGDID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGDID_template import FCGDID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGDID_template import FCGDID
         return FCGDID(self)
 
     @property
     def FCGTIN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGTIN_template import FCGTIN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGTIN_template import FCGTIN
         return FCGTIN(self)
 
     @property
     def FCRPL(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPL_template import FCRPL
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPL_template import FCRPL
         return FCRPL(self)
 
     @property
     def FCGPLT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLT_template import FCGPLT
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLT_template import FCGPLT
         return FCGPLT(self)
 
     @property
     def FCRNNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRNNID_template import FCRNNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRNNID_template import FCRNNID
         return FCRNNID(self)
 
     @property
     def FCGPPN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPPN_template import FCGPPN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPPN_template import FCGPPN
         return FCGPPN(self)
 
     @property
     def FCGPFCP(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPFCP_template import FCGPFCP
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPFCP_template import FCGPFCP
         return FCGPFCP(self)
 
     @property
     def FCGPLI(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLI_template import FCGPLI
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLI_template import FCGPLI
         return FCGPLI(self)
 
     @property
     def FCGFN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFN_template import FCGFN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFN_template import FCGFN
         return FCGFN(self)
 
     @property
     def FCDAID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCDAID_template import FCDAID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDAID_template import FCDAID
         return FCDAID(self)
 
     @property
     def FCRPAB(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPAB_template import FCRPAB
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPAB_template import FCRPAB
         return FCRPAB(self)
 
     @property
     def FCGFTID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFTID_template import FCGFTID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFTID_template import FCGFTID
         return FCGFTID(self)
 
     @property
     def FCRSPNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRSPNID_template import FCRSPNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRSPNID_template import FCRSPNID
         return FCRSPNID(self)
 
     @property
     def FCGIDNN(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDNN_template import FCGIDNN
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDNN_template import FCGIDNN
         return FCGIDNN(self)
 
     @property
     def FCGPNID(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNID_template import FCGPNID
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNID_template import FCGPNID
         return FCGPNID(self)
 
     @property
-    def FcEFPSWRJT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPSWRJT_template import FcEFPSWRJT
-        return FcEFPSWRJT(self)
+    def FCEFPSWRJT(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPSWRJT_template import FCEFPSWRJT
+        return FCEFPSWRJT(self)
 
     @property
-    def FcEFPSWACC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPSWACC_template import FcEFPSWACC
-        return FcEFPSWACC(self)
+    def FCEFPSWACC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPSWACC_template import FCEFPSWACC
+        return FCEFPSWACC(self)
 
     @property
-    def FcESCSWACC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCSWACC_template import FcESCSWACC
-        return FcESCSWACC(self)
+    def FCESCSWACC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCSWACC_template import FCESCSWACC
+        return FCESCSWACC(self)
 
     @property
-    def FcRDISWRJT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDISWRJT_template import FcRDISWRJT
-        return FcRDISWRJT(self)
+    def FCRDISWRJT(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDISWRJT_template import FCRDISWRJT
+        return FCRDISWRJT(self)
 
     @property
-    def FcMRRequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRRequest_template import FcMRRequest
-        return FcMRRequest(self)
+    def FCMRRequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRRequest_template import FCMRRequest
+        return FCMRRequest(self)
 
     @property
-    def FcLSARequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcLSARequest_template import FcLSARequest
-        return FcLSARequest(self)
+    def FCLSARequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCLSARequest_template import FCLSARequest
+        return FCLSARequest(self)
 
     @property
-    def FcDIASWRJT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIASWRJT_template import FcDIASWRJT
-        return FcDIASWRJT(self)
+    def FCDIASWRJT(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIASWRJT_template import FCDIASWRJT
+        return FCDIASWRJT(self)
 
     @property
-    def FcMRSWRJT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRSWRJT_template import FcMRSWRJT
-        return FcMRSWRJT(self)
+    def FCMRSWRJT(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRSWRJT_template import FCMRSWRJT
+        return FCMRSWRJT(self)
 
     @property
-    def FcDIASWACC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIASWACC_template import FcDIASWACC
-        return FcDIASWACC(self)
+    def FCDIASWACC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIASWACC_template import FCDIASWACC
+        return FCDIASWACC(self)
 
     @property
-    def FcRDISWACC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDISWACC_template import FcRDISWACC
-        return FcRDISWACC(self)
+    def FCRDISWACC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDISWACC_template import FCRDISWACC
+        return FCRDISWACC(self)
 
     @property
-    def FcESCSWRJT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCSWRJT_template import FcESCSWRJT
-        return FcESCSWRJT(self)
+    def FCESCSWRJT(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCSWRJT_template import FCESCSWRJT
+        return FCESCSWRJT(self)
 
     @property
-    def FcLSURequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcLSURequest_template import FcLSURequest
-        return FcLSURequest(self)
+    def FCLSURequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCLSURequest_template import FCLSURequest
+        return FCLSURequest(self)
 
     @property
-    def FcESCRequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCRequest_template import FcESCRequest
-        return FcESCRequest(self)
+    def FCESCRequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCRequest_template import FCESCRequest
+        return FCESCRequest(self)
 
     @property
-    def FcELPSWACC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPSWACC_template import FcELPSWACC
-        return FcELPSWACC(self)
+    def FCELPSWACC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPSWACC_template import FCELPSWACC
+        return FCELPSWACC(self)
 
     @property
-    def FcELPSWRJT(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPSWRJT_template import FcELPSWRJT
-        return FcELPSWRJT(self)
+    def FCELPSWRJT(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPSWRJT_template import FCELPSWRJT
+        return FCELPSWRJT(self)
 
     @property
-    def FcMRSWACC(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRSWACC_template import FcMRSWACC
-        return FcMRSWACC(self)
+    def FCMRSWACC(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRSWACC_template import FCMRSWACC
+        return FCMRSWACC(self)
 
     @property
-    def FcELPRequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPRequest_template import FcELPRequest
-        return FcELPRequest(self)
+    def FCELPRequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPRequest_template import FCELPRequest
+        return FCELPRequest(self)
 
     @property
-    def FcDIARequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIARequest_template import FcDIARequest
-        return FcDIARequest(self)
+    def FCDIARequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIARequest_template import FCDIARequest
+        return FCDIARequest(self)
 
     @property
-    def FcRDIRequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDIRequest_template import FcRDIRequest
-        return FcRDIRequest(self)
+    def FCRDIRequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDIRequest_template import FCRDIRequest
+        return FCRDIRequest(self)
 
     @property
-    def FcHLORequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcHLORequest_template import FcHLORequest
-        return FcHLORequest(self)
+    def FCHLORequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCHLORequest_template import FCHLORequest
+        return FCHLORequest(self)
 
     @property
-    def FcEFPRequest(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPRequest_template import FcEFPRequest
-        return FcEFPRequest(self)
+    def FCEFPRequest(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPRequest_template import FCEFPRequest
+        return FCEFPRequest(self)
 
     @property
     def MacInMACv42(self):
@@ -1587,9 +1587,9 @@ class Stack(Base):
         return ITagHeader(self)
 
     @property
-    def PreferedPwMPlsCw(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.preferedPwMPlsCw_template import PreferedPwMPlsCw
-        return PreferedPwMPlsCw(self)
+    def PreferredPwMplsCw(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.preferredPwMplsCw_template import PreferredPwMplsCw
+        return PreferredPwMplsCw(self)
 
     @property
     def RTag(self):
@@ -1603,7 +1603,7 @@ class Stack(Base):
 
     @property
     def MacsecHw(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.MacsecHw_template import MacsecHw
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.macsecHw_template import MacsecHw
         return MacsecHw(self)
 
     @property
@@ -1667,9 +1667,9 @@ class Stack(Base):
         return IsisL2PSNPDU(self)
 
     @property
-    def IsisPointToPointHelloPDU(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.isisPointToPointHelloPDU_template import IsisPointToPointHelloPDU
-        return IsisPointToPointHelloPDU(self)
+    def IsisPPPHelloPDU(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.isisPPPHelloPDU_template import IsisPPPHelloPDU
+        return IsisPPPHelloPDU(self)
 
     @property
     def IsisL1McastCSNPDU(self):
@@ -1912,9 +1912,9 @@ class Stack(Base):
         return Ospfv3LSAUpdate(self)
 
     @property
-    def PimdmAssertMessage(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmAssertMessage_template import PimdmAssertMessage
-        return PimdmAssertMessage(self)
+    def PimdmAssert(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmAssert_template import PimdmAssert
+        return PimdmAssert(self)
 
     @property
     def PimdmGraftGraftAckMessage(self):
@@ -1932,14 +1932,14 @@ class Stack(Base):
         return PimdmJoinPruneMessage(self)
 
     @property
-    def PimdmStateRefreshMessage(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmStateRefreshMessage_template import PimdmStateRefreshMessage
-        return PimdmStateRefreshMessage(self)
+    def PimdmStateRefresh(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmStateRefresh_template import PimdmStateRefresh
+        return PimdmStateRefresh(self)
 
     @property
-    def PimAssertMessage(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimAssertMessage_template import PimAssertMessage
-        return PimAssertMessage(self)
+    def PimAssert(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimAssert_template import PimAssert
+        return PimAssert(self)
 
     @property
     def PimBootstrapMessage(self):
@@ -2012,9 +2012,9 @@ class Stack(Base):
         return Intshimheader(self)
 
     @property
-    def Probemarker(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.probemarker_template import Probemarker
-        return Probemarker(self)
+    def Intprobemarker(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intprobemarker_template import Intprobemarker
+        return Intprobemarker(self)
 
     @property
     def Bier(self):
@@ -2177,9 +2177,9 @@ class Stack(Base):
         return LdpAddress(self)
 
     @property
-    def LdpAddressWithdraw(self):
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ldpAddressWithdraw_template import LdpAddressWithdraw
-        return LdpAddressWithdraw(self)
+    def LdpAddresWithdraw(self):
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ldpAddresWithdraw_template import LdpAddresWithdraw
+        return LdpAddresWithdraw(self)
 
     @property
     def LdpLabelMapping(self):

@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 from ixnetwork_restpy.base import Base
-from ixnetwork_restpy.errors import IxNetworkError
+from ixnetwork_restpy.errors import IxNetworkError, BadRequestError
 from ixnetwork_restpy.multivalue import Multivalue
 import time
 
@@ -30,8 +30,9 @@ class Sessions(Base):
     A list of resources can be retrieved from the server using the Sessions.find() method.
     The list can be managed by the user by using the Sessions.add() and Sessions.remove() methods.
     """
-    _SDM_NAME = 'sessions'
-    
+
+    _SDM_NAME = "sessions"
+
     def __init__(self, parent, list_op=False):
         super(Sessions, self).__init__(parent, list_op)
         self._build_numbers = []
@@ -59,7 +60,9 @@ class Sessions(Base):
             if len(build_number) == 0:
                 self.warn("Using DEBUG version of IxNetwork api server")
             elif LooseVersion(build_number) < LooseVersion("8.52"):
-                raise ValueError("IxNetwork api server version %s is not supported. The minimum version supported is 8.52" % build_number)
+                raise ValueError(
+                    "IxNetwork api server version %s is not supported. The minimum version supported is 8.52" % build_number
+                )
             else:
                 self.info("Using IxNetwork api server version %s" % (build_number))
                 self.info("User info %s" % (user_name))
@@ -355,7 +358,9 @@ class Sessions(Base):
         """
         if self._parent.Platform == "linux":
             remote_filename = remote_filename.replace("\\", "/")
-        return self._connection._get_file("%s/ixnetwork" % self.href, remote_filename=remote_filename, local_filename=local_filename)
+        return self._connection._get_file(
+            "%s/ixnetwork" % self.href, remote_filename=remote_filename, local_filename=local_filename
+        )
 
     def UploadFile(self, local_filename, remote_filename=None):
         """Upload a file to the IxNetwork session instance
@@ -371,7 +376,9 @@ class Sessions(Base):
         """
         if self._parent.Platform == "linux" and remote_filename is not None:
             remote_filename = remote_filename.replace("\\", "/")
-        return self._connection._put_file("%s/ixnetwork" % self.href, local_filename=local_filename, remote_filename=remote_filename)
+        return self._connection._put_file(
+            "%s/ixnetwork" % self.href, local_filename=local_filename, remote_filename=remote_filename
+        )
 
     def RemoveFile(self, remote_filename):
         if self._parent.Platform == "linux" and remote_filename is not None:

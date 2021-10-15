@@ -44,6 +44,7 @@ class Base(object):
     _xpathObj returns an object which consists of cached xpath dictionaries used by Config Assistant
     _isDependent denotes a dependent node used for some internal purpose Config Assistant
     """
+
     _SDM_NAME = None
     # new attributes added to slots for config assistant
     __slots__ = ("_object_properties", "_connection", "_parent", "_index", "_isDependent", "_xpath", "_xpathObj")
@@ -170,25 +171,30 @@ class Base(object):
 
     def _check_arg_type(self, object_to_test, arg_type):
         if isinstance(object_to_test, arg_type) is not True:
-            raise TypeError("the parameter supplied is of %s but must be of <type '%s'>" % (type(object_to_test), arg_type.__name__))
+            raise TypeError(
+                "the parameter supplied is of %s but must be of <type '%s'>" % (type(object_to_test), arg_type.__name__)
+            )
 
     def _get_attribute(self, name):
         """The main accessor for all attributes"""
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
-            if name == 'href':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
+            if name == "href":
                 return self._properties[name]
             else:
                 return name
         else:
             if len(self._object_properties) == 0:
                 msg = ("Failed to get the {}.{} property as the {} object has no " "encapsulated resources. ").format(
-                        self.__class__.__name__, name, self.__class__.__name__)
+                    self.__class__.__name__, name, self.__class__.__name__
+                )
                 if "find" in dir(self):
-                    msg += ("Either the {}.find() method was not called or it failed ""to retrieve any resources from the server.").format(self.__class__.__name__)
+                    msg += (
+                        "Either the {}.find() method was not called or it failed " "to retrieve any resources from the server."
+                    ).format(self.__class__.__name__)
                 raise NotFoundError(msg)
             else:
                 return self._properties[name]
-            
+
     def _set_attribute(self, name, value):
         """Update a property on the server and save it locally if there is no exception"""
         # this first checks if the attribute in enum map and attribute value is a valid enum then specific code for
@@ -196,12 +202,12 @@ class Base(object):
         # generally if config assistant is use xpathObj will not be none but the mode varies from normal to config
         # we change the mode to normal after commit so tha operations and find works, we need to change the mode back to
         # config if they try to do some config operation that's why we have the elif condition
-        if hasattr(self, '_SDM_ENUM_MAP'):
+        if hasattr(self, "_SDM_ENUM_MAP"):
             self._check_for_enum_values(self._SDM_ENUM_MAP, attribute=[name, value])
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._update_xpath_dict(name, value)
         elif self._xpathObj is not None:
-            self._xpathObj._mode = 'config'
+            self._xpathObj._mode = "config"
             self._update_xpath_dict(name, value)
         else:
             try:
@@ -310,7 +316,7 @@ class Base(object):
         # config if they try to do some config operation that's why we have the elif condition
         if hasattr(self, "_SDM_ENUM_MAP"):
             self._check_for_enum_values(self._SDM_ENUM_MAP, local_dict=locals_dict)
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._create_xpath_dict(self._SDM_NAME, locals_dict)
         elif self._xpathObj is not None:
             self._xpathObj._mode = "config"
@@ -352,7 +358,7 @@ class Base(object):
 
     def _update(self, locals_dict):
         # added code that if update is called before commit and using config assistant it throws an exception
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._raise_exception()
         else:
             payload = self._build_payload(locals_dict)
@@ -378,12 +384,12 @@ class Base(object):
 
     def _delete(self):
         # added code that if delete is called before commit and using config assistant it throws an exception
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._raise_exception()
         else:
             try:
                 for properties in self._object_properties:
-                    url = "%s/%s/%s" % (self._parent.href, self._SDM_NAME, properties['id'])
+                    url = "%s/%s/%s" % (self._parent.href, self._SDM_NAME, properties["id"])
                     self._connection._delete(url)
                 self._clear()
             except Exception as e:
@@ -391,7 +397,7 @@ class Base(object):
 
     def _execute(self, operation, child=None, payload=None, response_object=None):
         # added code that if any operation is called before commit and using config assistant it throws an exception
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._raise_exception()
         else:
             url = self.href
@@ -430,9 +436,9 @@ class Base(object):
             selects.append({"from": properties["href"], "properties": ["*"], "children": [], "inlines": []})
         payload = {"selects": selects}
         end = len(self._parent.href)
-        if 'ixnetwork' in self._parent.href:
-            end = self._parent.href.index('ixnetwork') + len('ixnetwork')
-        url = '%s/operations/select' % self._parent.href[0:end]
+        if "ixnetwork" in self._parent.href:
+            end = self._parent.href.index("ixnetwork") + len("ixnetwork")
+        url = "%s/operations/select" % self._parent.href[0:end]
         responses = self._connection._execute(url, payload)
         self._set_properties(None, clear=True)
         # process from
@@ -443,7 +449,7 @@ class Base(object):
 
     def _read(self, href):
         # added code that if read is called before commit and using config assistant it throws an exception
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._raise_exception()
         else:
             response = self._connection._read(href)
@@ -469,8 +475,8 @@ class Base(object):
         # we check the stack trace if it is find and used before commit we would raise an exception
         # but we have something like traffic._select() from property Traffic under ixnetwork we would automate the xpath
         # creation
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
-            if stack()[1][3] == 'find':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
+            if stack()[1][3] == "find":
                 self._raise_exception()
             else:
                 self._automate_xpath(no_indexing=True)
@@ -481,24 +487,15 @@ class Base(object):
                     {
                         "from": parent.href,
                         "properties": [],
-                        "children": [
-                            {
-                                "child": self._SDM_NAME,
-                                "properties": ["*"],
-                                "filters": []
-                            }
-                        ],
-                        "inlines": []
+                        "children": [{"child": self._SDM_NAME, "properties": ["*"], "filters": []}],
+                        "inlines": [],
                     }
                 )
             payload = {"selects": selects}
             for key in locals_dict.keys():
                 if key == "self" or locals_dict[key] is None or isclass(locals_dict[key]):
                     continue
-                child_filter = {
-                    "property": "%s%s" % (key[0].lower(), key[1:]),
-                    "regex": locals_dict[key]
-                }
+                child_filter = {"property": "%s%s" % (key[0].lower(), key[1:]), "regex": locals_dict[key]}
                 for select in selects:
                     select["children"][0]["filters"].append(child_filter)
             end = len(self._parent.href)
@@ -506,7 +503,10 @@ class Base(object):
                 end = self._parent.href.index("ixnetwork") + len("ixnetwork")
             # changing select to xpath=true cause after find if we need to use config assistant again we would need
             # the xpath
-            url = "%s/operations/select?xpath=true" % self._parent.href[0:end]
+            url = "{}/operations/select?xpath={}".format(
+                self._parent.href[0:end],
+                str(self._xpathObj is not None).lower(),
+            )
             while True:
                 responses = self._connection._execute(url, payload)
                 if self.__is_key_value_in_response("objRef", responses) is False:
@@ -625,57 +625,57 @@ class Base(object):
 
     def _add_xpath(self, locals_dict):
         """
-            This function is actually for dependent objects like vlan, bgp_ethernet_stack etc.
-            Its different from add function, its only allowed for config assistant
+        This function is actually for dependent objects like vlan, bgp_ethernet_stack etc.
+        Its different from add function, its only allowed for config assistant
         """
         if self._index == 0 and not self._isDependent:
             self._object_properties = []
             self._index = len(self._object_properties) - 1
             self._isDependent = True
-        if self._xpathObj is not None and self._xpathObj._mode == 'config':
+        if self._xpathObj is not None and self._xpathObj._mode == "config":
             self._create_xpath_dict(self._SDM_NAME, locals_dict)
         elif self._xpathObj is not None:
-            self._xpathObj._mode = 'config'
+            self._xpathObj._mode = "config"
             self._create_xpath_dict(self._SDM_NAME, locals_dict)
         else:
-            raise Exception('This feature is only available with Config Assistance')
+            raise Exception("This feature is only available with Config Assistance")
         return self
 
     def _create_xpath(self, name, no_indexing=False):
         """
-            This function basically creates the xpath, the no_indexing argument is used to tell which classes does not
-            need indexing in their xpath and which classes need them
+        This function basically creates the xpath, the no_indexing argument is used to tell which classes does not
+        need indexing in their xpath and which classes need them
         """
         # this skip list is for some special use case in Config assistant where we need to avoid indexing for these
         # classes
-        skip = ['protocols', 'stack']
-        if self.parent.__class__.__name__ == 'Ixnetwork':
-            path = '/' + name
+        skip = ["protocols", "stack"]
+        if self.parent.__class__.__name__ == "Ixnetwork":
+            path = "/" + name
         else:
-            path = self.parent._properties['xpath'] + '/' + name
+            path = self.parent._properties["xpath"] + "/" + name
 
         self._index += 1
         if not no_indexing and name not in skip:
-            self._xpath = path + '[' + str(self._index + 1) + ']'
+            self._xpath = path + "[" + str(self._index + 1) + "]"
         else:
             self._xpath = path
 
     def _create_xpath_dict(self, name, local_dict):
         """
-            This function basically creates a dictionary and ultimately pushes it in the xpathObj object
-            It has two segments one which creates xpath for normal nodes and one which does for traffic fields
-            and ultimately sets the properties.
+        This function basically creates a dictionary and ultimately pushes it in the xpathObj object
+        It has two segments one which creates xpath for normal nodes and one which does for traffic fields
+        and ultimately sets the properties.
         """
-        if self._parent.__class__.__name__ == 'Stack':
+        if self._parent.__class__.__name__ == "Stack":
             self._create_template_xpath()
             self._index += 1
         else:
             self._create_xpath(name)
             self._fill_href_child_name()
         xpath_dict = dict()
-        xpath_dict['xpath'] = self._xpath
+        xpath_dict["xpath"] = self._xpath
         for key in local_dict.keys():
-            if key == 'self' or local_dict[key] is None:
+            if key == "self" or local_dict[key] is None:
                 continue
             else:
                 value = self._get_value(key, local_dict[key])
@@ -686,23 +686,23 @@ class Base(object):
 
     def _set_xpath_properties(self, properties, clear=False):
         """
-            This function is at par with the _set_properties but is used for config assistant
-            one added feature is that it caches the current object in the parent object properties
-            so it helps to maintain the hierarchy.
+        This function is at par with the _set_properties but is used for config assistant
+        one added feature is that it caches the current object in the parent object properties
+        so it helps to maintain the hierarchy.
         """
         if clear is True:
             self._clear()
 
         temp_dict = dict()
-        temp_dict['xpath'] = self._xpath
-        temp_dict['id'] = self.index
+        temp_dict["xpath"] = self._xpath
+        temp_dict["id"] = self.index
         # temp_dict['href'] = self._create_href(self._SDM_NAME)
-        if self._parent.__class__.__name__ == 'Stack':
-            temp_dict['stack_index'] = self._parent._stack_index
+        if self._parent.__class__.__name__ == "Stack":
+            temp_dict["stack_index"] = self._parent._stack_index
             # self._set_parent_stack_properties(self._parent)
         if properties is not None:
             for key in properties.keys():
-                if key == 'self' or properties[key] is None:
+                if key == "self" or properties[key] is None:
                     continue
                 else:
                     value = self._get_value(key, properties[key])
@@ -713,22 +713,22 @@ class Base(object):
 
     def _get_value(self, key, value, ignore_is_list=False):
         """
-            This function is at par with _build_value function, used for Config Assistant
+        This function is at par with _build_value function, used for Config Assistant
         """
-        public_key = '%s%s' % (key[0].upper(), key[1:])
+        public_key = "%s%s" % (key[0].upper(), key[1:])
         if isinstance(value, Base):
             is_list = False
             if hasattr(self.__class__, public_key) is True:
-                returns = getattr(self.__class__, public_key).__doc__.replace('\n', '').replace('\t', '').replace(' ', '')
-                returns_pos = returns.find('Returns')
-                is_list = returns_pos != -1 and returns.find('list(', returns_pos) != -1
+                returns = getattr(self.__class__, public_key).__doc__.replace("\n", "").replace("\t", "").replace(" ", "")
+                returns_pos = returns.find("Returns")
+                is_list = returns_pos != -1 and returns.find("list(", returns_pos) != -1
             if is_list is True and ignore_is_list is False:
                 xpath_list = []
                 for list_value in value:
-                    xpath_list.append(list_value._properties['xpath'])
+                    xpath_list.append(list_value._properties["xpath"])
                 return xpath_list
             else:
-                return value._properties['xpath']
+                return value._properties["xpath"]
         elif isinstance(value, list):
             list_values = []
             for list_item in value:
@@ -741,27 +741,24 @@ class Base(object):
 
     def _update_xpath_dict(self, key, value):
         """
-            This function actually sets a property in the json, called from _set_attribute function
+        This function actually sets a property in the json, called from _set_attribute function
         """
         final_value = self._get_value(key, value)
-        if 'xpath' not in self._properties:
+        if "xpath" not in self._properties:
             self._create_xpath(self._SDM_NAME)
         xpath_present = False
         for dict in self._xpathObj._config:
-            if dict['xpath'] == self._properties['xpath']:
+            if dict["xpath"] == self._properties["xpath"]:
                 dict[key] = final_value
                 xpath_present = True
                 break
         if not xpath_present:
-            temp_dict = {
-                'xpath': self._properties['xpath'],
-                key: value
-            }
+            temp_dict = {"xpath": self._properties["xpath"], key: value}
             self._xpathObj._config.append(temp_dict)
 
     def _automate_xpath(self, no_indexing=False):
         """
-            This function automatically adds an xpath to the object
+        This function automatically adds an xpath to the object
         """
         if self._xpath is None:
             self._create_xpath(self._SDM_NAME, no_indexing)
@@ -777,19 +774,19 @@ class Base(object):
 
     def _create_template_xpath(self):
         """
-            This function basically forms the xpath for traffic fields and protocol templates
+        This function basically forms the xpath for traffic fields and protocol templates
         """
         self._parent._stack_index += 1
-        template_name = self._SDM_NAME + '-' + str(self._parent._stack_index)
+        template_name = self._SDM_NAME + "-" + str(self._parent._stack_index)
         self._xpath = self._parent._xpath + "[@alias = '" + template_name + "']"
 
     def _fill_href_child_name(self):
         """
-            This function prepares a string for the nodes which we need to pass in the select to get the hrefs after
-            commit and used for filling up the existing objects with those.
-            example string: ['vport|protocols', 'topology|deviceGroup|ethernet']
+        This function prepares a string for the nodes which we need to pass in the select to get the hrefs after
+        commit and used for filling up the existing objects with those.
+        example string: ['vport|protocols', 'topology|deviceGroup|ethernet']
         """
-        if self.parent.__class__.__name__ == 'Ixnetwork':
+        if self.parent.__class__.__name__ == "Ixnetwork":
             if len(self._xpathObj._children) == 0:
                 self._xpathObj._children.append(self._SDM_NAME)
             else:
@@ -798,28 +795,31 @@ class Base(object):
         else:
             for index, child_str in enumerate(self._xpathObj._children):
                 if self.parent._SDM_NAME in child_str and self._SDM_NAME not in child_str:
-                    self._xpathObj._children[index] = child_str + '|' + self._SDM_NAME
+                    self._xpathObj._children[index] = child_str + "|" + self._SDM_NAME
 
     def _check_for_enum_values(self, enum_map, local_dict=None, attribute=None):
         """
-            This function basically does a check for correct enum values for attributes and throws an exception
+        This function basically does a check for correct enum values for attributes and throws an exception
         """
         if len(enum_map) < 0:
             return
         if local_dict is not None:
             for key, value in local_dict.items():
-                if key == 'self' or value is None:
+                if key == "self" or value is None:
                     continue
                 if enum_map.get(key, None) is not None and value not in enum_map[key]:
-                    raise Exception('%s is not a valid value for attribute %s allowed values are %s' %
-                                    (value, str(key), str(enum_map[key])))
+                    raise Exception(
+                        "%s is not a valid value for attribute %s allowed values are %s" % (value, str(key), str(enum_map[key]))
+                    )
         if attribute is not None:
             if enum_map.get(attribute[0], None) is not None and attribute[1] not in enum_map[attribute[0]]:
-                raise Exception('%s is not a valid value  for attribute %s allowed values are %s' %
-                                (attribute[1], str(attribute[0]), str(enum_map[attribute[0]])))
+                raise Exception(
+                    "%s is not a valid value  for attribute %s allowed values are %s"
+                    % (attribute[1], str(attribute[0]), str(enum_map[attribute[0]]))
+                )
 
     def _raise_exception(self):
         """
-            This function basically raises an exception for operations before commit
+        This function basically raises an exception for operations before commit
         """
-        raise Exception('You are not allowed to use this function before commit in config mode')
+        raise Exception("You are not allowed to use this function before commit in config mode")

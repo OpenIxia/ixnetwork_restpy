@@ -45,7 +45,7 @@ class Connection(object):
 
     ASYNC_OPERATION = {
         "request": None,
-        "async_status": None,
+        "async_response": None,
         "poll_url": None,
         "poll_headers": None,
     }
@@ -419,7 +419,7 @@ class Connection(object):
                     poll_url = "%s/%s" % (connection, poll_url.strip("/"))
                 Connection.ASYNC_OPERATION["poll_url"] = poll_url
                 Connection.ASYNC_OPERATION["poll_headers"] = headers.copy()
-                Connection.ASYNC_OPERATION["async_status"] = async_status
+                Connection.ASYNC_OPERATION["async_response"] = response
                 if Connection.ASYNC_OPERATION["request"] is None:
                     return self._poll()
 
@@ -454,7 +454,8 @@ class Connection(object):
         poll_url = Connection.ASYNC_OPERATION["poll_url"]
         poll_headers = Connection.ASYNC_OPERATION["poll_headers"]
         while True:
-            async_status = Connection.ASYNC_OPERATION["async_status"]
+            async_response = Connection.ASYNC_OPERATION["async_response"]
+            async_status = async_response.json()
             if "state" not in async_status:
                 break
             state = async_status["state"]
@@ -463,7 +464,7 @@ class Connection(object):
                 self._print_request("GET", poll_url)
                 response = self._session.request("GET", poll_url, headers=poll_headers, verify=self._verify_cert)
                 self._print_response(response)
-                Connection.ASYNC_OPERATION["async_status"] = response.json()
+                Connection.ASYNC_OPERATION["async_response"] = response
             elif state == "SUCCESS":
                 if "result" in async_status.keys() and async_status["result"] != "kVoid":
                     return async_status["result"]
@@ -472,18 +473,18 @@ class Connection(object):
             elif self._platform == "connection_manager" and state in ["ACTIVE", "STOPPED", "STARTING"]:
                 return async_status
             else:
-                return self._process_response_status_code(url, poll_headers, response, async_status=True)
+                return self._process_response_status_code(url, poll_headers, async_response, async_status=True)
 
     def _get_async_response(self):
         """If there is an outstanding async operation poll until complete"""
-        async_status = Connection.ASYNC_OPERATION["async_status"]
-        if async_status is not None:
+        async_response = Connection.ASYNC_OPERATION["async_response"]
+        if async_response is not None:
             try:
                 return self._poll()
             finally:
                 Connection.ASYNC_OPERATION = {
                     "request": None,
-                    "async_status": None,
+                    "async_response": None,
                     "poll_url": None,
                     "poll_headers": None,
                 }
