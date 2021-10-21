@@ -1,6 +1,8 @@
 # Release Notes
 
 ### Oct 2021
+* 1.1.3
+  * Included Timeline class
 * 1.1.2
   * fixed issue #56: `UnboundLocalError: local variable 'response' referenced before assignment`
   * fixed issue #58: `.find() method is slow`
