@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TableFeaturePropertiesTrigger(Base):
@@ -68,10 +70,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyaction_a25d2515972205bfadb3c4eee9b345a8 import ApplyAction
-        if self._properties.get('ApplyAction', None) is not None:
-            return self._properties.get('ApplyAction')
-        else:
-            return ApplyAction(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplyAction', None) is not None:
+                return self._properties.get('ApplyAction')
+        return ApplyAction(self)._select()
 
     @property
     def ApplySetField(self):
@@ -85,10 +87,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_6b54e7b16ba9baf0b2a20fe04e8667fc import ApplySetField
-        if self._properties.get('ApplySetField', None) is not None:
-            return self._properties.get('ApplySetField')
-        else:
-            return ApplySetField(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetField', None) is not None:
+                return self._properties.get('ApplySetField')
+        return ApplySetField(self)._select()
 
     @property
     def Experimenter(self):
@@ -102,10 +104,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.experimenter_8f62d5e59a1560c2f29a49b8273e32d9 import Experimenter
-        if self._properties.get('Experimenter', None) is not None:
-            return self._properties.get('Experimenter')
-        else:
-            return Experimenter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Experimenter', None) is not None:
+                return self._properties.get('Experimenter')
+        return Experimenter(self)._select()
 
     @property
     def Instruction(self):
@@ -119,10 +121,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_0379cfa9d0d64cb1c14d9f8a669dcb24 import Instruction
-        if self._properties.get('Instruction', None) is not None:
-            return self._properties.get('Instruction')
-        else:
-            return Instruction(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Instruction', None) is not None:
+                return self._properties.get('Instruction')
+        return Instruction(self)._select()
 
     @property
     def Match(self):
@@ -136,10 +138,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_b032b60f8e92f6e0f66fded1be692b8f import Match
-        if self._properties.get('Match', None) is not None:
-            return self._properties.get('Match')
-        else:
-            return Match(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Match', None) is not None:
+                return self._properties.get('Match')
+        return Match(self)._select()
 
     @property
     def NextTable(self):
@@ -153,10 +155,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexttable_b55e2ecee6a23216ce0f8a34c42b425a import NextTable
-        if self._properties.get('NextTable', None) is not None:
-            return self._properties.get('NextTable')
-        else:
-            return NextTable(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('NextTable', None) is not None:
+                return self._properties.get('NextTable')
+        return NextTable(self)._select()
 
     @property
     def Wildcards(self):
@@ -170,10 +172,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_97e68e3bd4a38aea6a66dc14629576e3 import Wildcards
-        if self._properties.get('Wildcards', None) is not None:
-            return self._properties.get('Wildcards')
-        else:
-            return Wildcards(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Wildcards', None) is not None:
+                return self._properties.get('Wildcards')
+        return Wildcards(self)._select()
 
     @property
     def WriteAction(self):
@@ -187,10 +189,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeaction_5ed4bf989119006d5d77872c8c5bf503 import WriteAction
-        if self._properties.get('WriteAction', None) is not None:
-            return self._properties.get('WriteAction')
-        else:
-            return WriteAction(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteAction', None) is not None:
+                return self._properties.get('WriteAction')
+        return WriteAction(self)._select()
 
     @property
     def WriteSetField(self):
@@ -204,10 +206,10 @@ class TableFeaturePropertiesTrigger(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_dfdf63f4b03a4c586826f4e2a45d55f1 import WriteSetField
-        if self._properties.get('WriteSetField', None) is not None:
-            return self._properties.get('WriteSetField')
-        else:
-            return WriteSetField(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetField', None) is not None:
+                return self._properties.get('WriteSetField')
+        return WriteSetField(self)._select()
 
     @property
     def EnableApplyAction(self):

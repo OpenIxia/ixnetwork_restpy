@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Match(Base):
@@ -56,10 +58,10 @@ class Match(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchfields_8229e0c9507c32da61a580ce166621e7 import MatchFields
-        if self._properties.get('MatchFields', None) is not None:
-            return self._properties.get('MatchFields')
-        else:
-            return MatchFields(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MatchFields', None) is not None:
+                return self._properties.get('MatchFields')
+        return MatchFields(self)._select()
 
     @property
     def ExperimenterData(self):
@@ -148,3 +150,47 @@ class Match(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHasMask=None, ExperimenterId=None):
+        # type: (str, int, int, bool, int) -> Match
+        """Finds and retrieves match resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve match resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all match resources from the server.
+
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterField (number): NOT DEFINED
+        - ExperimenterHasMask (bool): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching match resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of match data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the match resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

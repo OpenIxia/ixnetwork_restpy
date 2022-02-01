@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Range(Base):
@@ -53,10 +55,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportvxport_b424cfaec81485070a734f5af5eb0087 import FcFportVxPort
-        if self._properties.get('FcFportVxPort', None) is not None:
-            return self._properties.get('FcFportVxPort')
-        else:
-            return FcFportVxPort(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FcFportVxPort', None) is not None:
+                return self._properties.get('FcFportVxPort')
+        return FcFportVxPort(self)._select()
 
     def add(self):
         """Adds a new range resource on the server and adds it to the container.

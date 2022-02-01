@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Tracking(Base):
@@ -62,10 +64,10 @@ class Tracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.egress import Egress
-        if self._properties.get('Egress', None) is not None:
-            return self._properties.get('Egress')
-        else:
-            return Egress(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Egress', None) is not None:
+                return self._properties.get('Egress')
+        return Egress(self)._select()
 
     @property
     def LatencyBin(self):
@@ -79,10 +81,10 @@ class Tracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.latencybin.latencybin import LatencyBin
-        if self._properties.get('LatencyBin', None) is not None:
-            return self._properties.get('LatencyBin')
-        else:
-            return LatencyBin(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LatencyBin', None) is not None:
+                return self._properties.get('LatencyBin')
+        return LatencyBin(self)._select()
 
     @property
     def AvailableProtocolOffsets(self):

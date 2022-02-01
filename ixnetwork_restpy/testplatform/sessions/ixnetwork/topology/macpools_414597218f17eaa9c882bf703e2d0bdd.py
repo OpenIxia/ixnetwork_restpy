@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MacPools(Base):
@@ -64,10 +66,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        if self._properties.get('CMacProperties', None) is not None:
-            return self._properties.get('CMacProperties')
-        else:
-            return CMacProperties(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CMacProperties', None) is not None:
+                return self._properties.get('CMacProperties')
+        return CMacProperties(self)
 
     @property
     def Connector(self):
@@ -81,10 +83,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -98,10 +100,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv4PrefixRange')
-        else:
-            return EvpnIPv4PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv4PrefixRange')
+        return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -115,10 +117,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv6PrefixRange')
-        else:
-            return EvpnIPv6PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv6PrefixRange')
+        return EvpnIPv6PrefixRange(self)
 
     @property
     def Ipv4PrefixPools(self):
@@ -132,10 +134,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4prefixpools_2d6f2aedde61c058965d4e1b21741352 import Ipv4PrefixPools
-        if self._properties.get('Ipv4PrefixPools', None) is not None:
-            return self._properties.get('Ipv4PrefixPools')
-        else:
-            return Ipv4PrefixPools(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4PrefixPools', None) is not None:
+                return self._properties.get('Ipv4PrefixPools')
+        return Ipv4PrefixPools(self)
 
     @property
     def Ipv6PrefixPools(self):
@@ -149,10 +151,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6prefixpools_f83aba85ff769655b348dc60ddcb30f2 import Ipv6PrefixPools
-        if self._properties.get('Ipv6PrefixPools', None) is not None:
-            return self._properties.get('Ipv6PrefixPools')
-        else:
-            return Ipv6PrefixPools(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6PrefixPools', None) is not None:
+                return self._properties.get('Ipv6PrefixPools')
+        return Ipv6PrefixPools(self)
 
     @property
     def IsisSpbMacCloudConfig(self):
@@ -166,10 +168,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbmaccloudconfig_791b0bf61c8f6877cabfa2621478ab8a import IsisSpbMacCloudConfig
-        if self._properties.get('IsisSpbMacCloudConfig', None) is not None:
-            return self._properties.get('IsisSpbMacCloudConfig')
-        else:
-            return IsisSpbMacCloudConfig(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSpbMacCloudConfig', None) is not None:
+                return self._properties.get('IsisSpbMacCloudConfig')
+        return IsisSpbMacCloudConfig(self)
 
     @property
     def IsisTrillUCastMacConfig(self):
@@ -183,10 +185,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillucastmacconfig_a91c5b3e28b2bee04ff08d2e22fad1e2 import IsisTrillUCastMacConfig
-        if self._properties.get('IsisTrillUCastMacConfig', None) is not None:
-            return self._properties.get('IsisTrillUCastMacConfig')
-        else:
-            return IsisTrillUCastMacConfig(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrillUCastMacConfig', None) is not None:
+                return self._properties.get('IsisTrillUCastMacConfig')
+        return IsisTrillUCastMacConfig(self)
 
     @property
     def Tag(self):
@@ -200,10 +202,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Vlan(self):
@@ -217,10 +219,10 @@ class MacPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import Vlan
-        if self._properties.get('Vlan', None) is not None:
-            return self._properties.get('Vlan')
-        else:
-            return Vlan(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vlan', None) is not None:
+                return self._properties.get('Vlan')
+        return Vlan(self)
 
     @property
     def Count(self):

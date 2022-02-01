@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Page(Base):
@@ -37,10 +39,12 @@ class Page(Base):
         'ColumnCount': 'columnCount',
         'CurrentPage': 'currentPage',
         'EgressMode': 'egressMode',
+        'EgressOption': 'egressOption',
         'EgressPageSize': 'egressPageSize',
         'IsBlocked': 'isBlocked',
         'IsReady': 'isReady',
         'IsReadyTimeout': 'isReadyTimeout',
+        'LastPageSize': 'lastPageSize',
         'PageSize': 'pageSize',
         'PageValues': 'pageValues',
         'RowCount': 'rowCount',
@@ -51,6 +55,7 @@ class Page(Base):
     }
     _SDM_ENUM_MAP = {
         'egressMode': ['conditional', 'paged'],
+        'egressOption': ['rowsWithNoPackets', 'rowsWithPackets', 'showAll'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -68,10 +73,10 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egress.egress import Egress
-        if self._properties.get('Egress', None) is not None:
-            return self._properties.get('Egress')
-        else:
-            return Egress(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Egress', None) is not None:
+                return self._properties.get('Egress')
+        return Egress(self)
 
     @property
     def EgressRxCondition(self):
@@ -85,10 +90,10 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.page.egressrxcondition.egressrxcondition import EgressRxCondition
-        if self._properties.get('EgressRxCondition', None) is not None:
-            return self._properties.get('EgressRxCondition')
-        else:
-            return EgressRxCondition(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('EgressRxCondition', None) is not None:
+                return self._properties.get('EgressRxCondition')
+        return EgressRxCondition(self)._select()
 
     @property
     def AllowPaging(self):
@@ -149,6 +154,20 @@ class Page(Base):
         self._set_attribute(self._SDM_ATT_MAP['EgressMode'], value)
 
     @property
+    def EgressOption(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(rowsWithNoPackets | rowsWithPackets | showAll): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['EgressOption'])
+    @EgressOption.setter
+    def EgressOption(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP['EgressOption'], value)
+
+    @property
     def EgressPageSize(self):
         # type: () -> int
         """
@@ -195,6 +214,16 @@ class Page(Base):
     def IsReadyTimeout(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['IsReadyTimeout'], value)
+
+    @property
+    def LastPageSize(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['LastPageSize'])
 
     @property
     def PageSize(self):
@@ -268,14 +297,15 @@ class Page(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['TotalRows'])
 
-    def update(self, CurrentPage=None, EgressMode=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
-        # type: (int, str, int, int, int) -> Page
+    def update(self, CurrentPage=None, EgressMode=None, EgressOption=None, EgressPageSize=None, IsReadyTimeout=None, PageSize=None):
+        # type: (int, str, str, int, int, int) -> Page
         """Updates page resource on the server.
 
         Args
         ----
         - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
+        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)): 
         - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
         - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
         - PageSize (number): The number of statistics per page.
@@ -285,3 +315,59 @@ class Page(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AllowPaging=None, ColumnCaptions=None, ColumnCount=None, CurrentPage=None, EgressMode=None, EgressOption=None, EgressPageSize=None, IsBlocked=None, IsReady=None, IsReadyTimeout=None, LastPageSize=None, PageSize=None, PageValues=None, RowCount=None, RowValues=None, Timestamp=None, TotalPages=None, TotalRows=None):
+        """Finds and retrieves page resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve page resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all page resources from the server.
+
+        Args
+        ----
+        - AllowPaging (bool): If true, statistics will be displayed in multiple pages.
+        - ColumnCaptions (list(str)): The statistics column caption.
+        - ColumnCount (number): Displays the particular column number in the view.
+        - CurrentPage (number): The current page number being displayed.
+        - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
+        - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)): 
+        - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
+        - IsBlocked (bool): Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
+        - IsReady (bool): If true, the counter is ready to record the statistics.
+        - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
+        - LastPageSize (number): 
+        - PageSize (number): The number of statistics per page.
+        - PageValues (list(list[list[str]])): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
+        - RowCount (number): Displays the particular row number in the view.
+        - RowValues (dict(arg1:list[list[list[str]]])): All statistics values in a row.
+        - Timestamp (number): Describes the date and time of the event.
+        - TotalPages (number): The total number of statistics pages.
+        - TotalRows (number): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching page resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of page data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the page resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LinkMode(Base):
@@ -227,3 +229,53 @@ class LinkMode(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Ofppf100GbFd=None, Ofppf100MbFd=None, Ofppf100MbHd=None, Ofppf10GbFd=None, Ofppf10MbFd=None, Ofppf10MbHd=None, Ofppf1GbFd=None, Ofppf1GbHd=None, Ofppf1TbFd=None, Ofppf40GbFd=None, OfppfOther=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> LinkMode
+        """Finds and retrieves linkMode resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve linkMode resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all linkMode resources from the server.
+
+        Args
+        ----
+        - Ofppf100GbFd (bool): NOT DEFINED
+        - Ofppf100MbFd (bool): NOT DEFINED
+        - Ofppf100MbHd (bool): NOT DEFINED
+        - Ofppf10GbFd (bool): NOT DEFINED
+        - Ofppf10MbFd (bool): NOT DEFINED
+        - Ofppf10MbHd (bool): NOT DEFINED
+        - Ofppf1GbFd (bool): NOT DEFINED
+        - Ofppf1GbHd (bool): NOT DEFINED
+        - Ofppf1TbFd (bool): NOT DEFINED
+        - Ofppf40GbFd (bool): NOT DEFINED
+        - OfppfOther (bool): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching linkMode resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of linkMode data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the linkMode resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

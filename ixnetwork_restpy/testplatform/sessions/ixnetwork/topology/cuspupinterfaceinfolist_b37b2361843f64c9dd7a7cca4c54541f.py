@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CuspUPInterfaceInfoList(Base):
@@ -132,7 +134,7 @@ class CuspUPInterfaceInfoList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 6 Byte System MAC Address
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 6 Byte System MAC Address.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['MACAddress']))
@@ -179,7 +181,7 @@ class CuspUPInterfaceInfoList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Sub port number.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Sub-Port number. All F and all 0 are invalid.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['SubPortNumber']))
@@ -200,6 +202,48 @@ class CuspUPInterfaceInfoList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> CuspUPInterfaceInfoList
+        """Finds and retrieves cuspUPInterfaceInfoList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cuspUPInterfaceInfoList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cuspUPInterfaceInfoList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with matching cuspUPInterfaceInfoList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of cuspUPInterfaceInfoList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the cuspUPInterfaceInfoList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, IfIndex=None, IncludeInterfaceDesc=None, InterfaceType=None, LogicID=None, MACAddress=None, PhyStatus=None, PortNumber=None, SubPortNumber=None):
         """Base class infrastructure that gets a list of cuspUPInterfaceInfoList device ids encapsulated by this object.

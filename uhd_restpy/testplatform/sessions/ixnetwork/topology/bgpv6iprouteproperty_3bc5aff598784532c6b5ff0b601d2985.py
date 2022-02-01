@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpV6IPRouteProperty(Base):
@@ -133,10 +135,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgp8277srsegmentidlist_0718aa70c2b1ee20aec9def96e59fdcc import Bgp8277SRSegmentIdList
-        if self._properties.get('Bgp8277SRSegmentIdList', None) is not None:
-            return self._properties.get('Bgp8277SRSegmentIdList')
-        else:
-            return Bgp8277SRSegmentIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bgp8277SRSegmentIdList', None) is not None:
+                return self._properties.get('Bgp8277SRSegmentIdList')
+        return Bgp8277SRSegmentIdList(self)
 
     @property
     def Rfc8277LabelStack(self):
@@ -150,10 +152,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rfc8277labelstack_c6a926d8802154f2012482423beab167 import Rfc8277LabelStack
-        if self._properties.get('Rfc8277LabelStack', None) is not None:
-            return self._properties.get('Rfc8277LabelStack')
-        else:
-            return Rfc8277LabelStack(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Rfc8277LabelStack', None) is not None:
+                return self._properties.get('Rfc8277LabelStack')
+        return Rfc8277LabelStack(self)
 
     @property
     def BgpAigpList(self):
@@ -167,10 +169,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaigplist_b76a0c0926b383c03300a5c9015e1c36 import BgpAigpList
-        if self._properties.get('BgpAigpList', None) is not None:
-            return self._properties.get('BgpAigpList')
-        else:
-            return BgpAigpList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAigpList', None) is not None:
+                return self._properties.get('BgpAigpList')
+        return BgpAigpList(self)
 
     @property
     def BgpAsPathSegmentList(self):
@@ -184,10 +186,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        if self._properties.get('BgpAsPathSegmentList', None) is not None:
-            return self._properties.get('BgpAsPathSegmentList')
-        else:
-            return BgpAsPathSegmentList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsPathSegmentList', None) is not None:
+                return self._properties.get('BgpAsPathSegmentList')
+        return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -201,10 +203,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        if self._properties.get('BgpClusterIdList', None) is not None:
-            return self._properties.get('BgpClusterIdList')
-        else:
-            return BgpClusterIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpClusterIdList', None) is not None:
+                return self._properties.get('BgpClusterIdList')
+        return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -218,10 +220,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        if self._properties.get('BgpCommunitiesList', None) is not None:
-            return self._properties.get('BgpCommunitiesList')
-        else:
-            return BgpCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpCommunitiesList', None) is not None:
+                return self._properties.get('BgpCommunitiesList')
+        return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -235,10 +237,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-            return self._properties.get('BgpExtendedCommunitiesList')
-        else:
-            return BgpExtendedCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+                return self._properties.get('BgpExtendedCommunitiesList')
+        return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpNonVPNRRLargeCommunitiesList(self):
@@ -252,10 +254,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_11861be5207f57b1a32d83eeb1d62224 import BgpNonVPNRRLargeCommunitiesList
-        if self._properties.get('BgpNonVPNRRLargeCommunitiesList', None) is not None:
-            return self._properties.get('BgpNonVPNRRLargeCommunitiesList')
-        else:
-            return BgpNonVPNRRLargeCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpNonVPNRRLargeCommunitiesList', None) is not None:
+                return self._properties.get('BgpNonVPNRRLargeCommunitiesList')
+        return BgpNonVPNRRLargeCommunitiesList(self)
 
     @property
     def CMacProperties(self):
@@ -269,10 +271,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        if self._properties.get('CMacProperties', None) is not None:
-            return self._properties.get('CMacProperties')
-        else:
-            return CMacProperties(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CMacProperties', None) is not None:
+                return self._properties.get('CMacProperties')
+        return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -286,10 +288,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv4PrefixRange')
-        else:
-            return EvpnIPv4PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv4PrefixRange')
+        return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -303,10 +305,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv6PrefixRange')
-        else:
-            return EvpnIPv6PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv6PrefixRange')
+        return EvpnIPv6PrefixRange(self)
 
     @property
     def GenerateIpv6RoutesParams(self):
@@ -320,10 +322,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.generateipv6routesparams_6a6e5a59a1ed54f9f9343ab3545821c1 import GenerateIpv6RoutesParams
-        if self._properties.get('GenerateIpv6RoutesParams', None) is not None:
-            return self._properties.get('GenerateIpv6RoutesParams')
-        else:
-            return GenerateIpv6RoutesParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('GenerateIpv6RoutesParams', None) is not None:
+                return self._properties.get('GenerateIpv6RoutesParams')
+        return GenerateIpv6RoutesParams(self)._select()
 
     @property
     def GenerateRoutesParams(self):
@@ -337,10 +339,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.generateroutesparams_117e1ed7232c32aa1932f4f8d5499699 import GenerateRoutesParams
-        if self._properties.get('GenerateRoutesParams', None) is not None:
-            return self._properties.get('GenerateRoutesParams')
-        else:
-            return GenerateRoutesParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('GenerateRoutesParams', None) is not None:
+                return self._properties.get('GenerateRoutesParams')
+        return GenerateRoutesParams(self)._select()
 
     @property
     def ImportBgpRoutesParams(self):
@@ -354,10 +356,10 @@ class BgpV6IPRouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.importbgproutesparams_4d60eb735df5bf7c597595458b68aa31 import ImportBgpRoutesParams
-        if self._properties.get('ImportBgpRoutesParams', None) is not None:
-            return self._properties.get('ImportBgpRoutesParams')
-        else:
-            return ImportBgpRoutesParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ImportBgpRoutesParams', None) is not None:
+                return self._properties.get('ImportBgpRoutesParams')
+        return ImportBgpRoutesParams(self)._select()
 
     @property
     def OverridePeerAsSetMode(self):

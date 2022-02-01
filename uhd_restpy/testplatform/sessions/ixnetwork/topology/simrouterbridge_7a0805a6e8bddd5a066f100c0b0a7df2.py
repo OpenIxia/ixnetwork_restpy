@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SimRouterBridge(Base):
@@ -58,10 +60,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedmp_67cd757b726cce9c0de4f91be721d97e import CfmSimulatedMp
-        if self._properties.get('CfmSimulatedMp', None) is not None:
-            return self._properties.get('CfmSimulatedMp')
-        else:
-            return CfmSimulatedMp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmSimulatedMp', None) is not None:
+                return self._properties.get('CfmSimulatedMp')
+        return CfmSimulatedMp(self)
 
     @property
     def Connector(self):
@@ -75,10 +77,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def IsisDcePseudoNode(self):
@@ -92,10 +94,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisdcepseudonode_6416adf40a9c10f6ed462f220e3c16ff import IsisDcePseudoNode
-        if self._properties.get('IsisDcePseudoNode', None) is not None:
-            return self._properties.get('IsisDcePseudoNode')
-        else:
-            return IsisDcePseudoNode(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisDcePseudoNode', None) is not None:
+                return self._properties.get('IsisDcePseudoNode')
+        return IsisDcePseudoNode(self)
 
     @property
     def IsisSpbPseudoNode(self):
@@ -109,10 +111,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbpseudonode_e0862fd97cf99212ff106c16f6c049cb import IsisSpbPseudoNode
-        if self._properties.get('IsisSpbPseudoNode', None) is not None:
-            return self._properties.get('IsisSpbPseudoNode')
-        else:
-            return IsisSpbPseudoNode(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSpbPseudoNode', None) is not None:
+                return self._properties.get('IsisSpbPseudoNode')
+        return IsisSpbPseudoNode(self)
 
     @property
     def IsisTrillPseudoNode(self):
@@ -126,10 +128,10 @@ class SimRouterBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillpseudonode_173e4463dccc2001457569c77f3570e0 import IsisTrillPseudoNode
-        if self._properties.get('IsisTrillPseudoNode', None) is not None:
-            return self._properties.get('IsisTrillPseudoNode')
-        else:
-            return IsisTrillPseudoNode(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrillPseudoNode', None) is not None:
+                return self._properties.get('IsisTrillPseudoNode')
+        return IsisTrillPseudoNode(self)
 
     @property
     def Count(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Router(Base):
@@ -115,10 +117,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtlv_9b3af0590ed159139a0d6ee63aafb653 import CustomTlv
-        if self._properties.get('CustomTlv', None) is not None:
-            return self._properties.get('CustomTlv')
-        else:
-            return CustomTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CustomTlv', None) is not None:
+                return self._properties.get('CustomTlv')
+        return CustomTlv(self)
 
     @property
     def CustomTopology(self):
@@ -132,10 +134,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.customtopology_95c201c50eb168382a558d283f2bec6c import CustomTopology
-        if self._properties.get('CustomTopology', None) is not None:
-            return self._properties.get('CustomTopology')
-        else:
-            return CustomTopology(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CustomTopology', None) is not None:
+                return self._properties.get('CustomTopology')
+        return CustomTopology(self)
 
     @property
     def DceMulticastIpv4GroupRange(self):
@@ -149,10 +151,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv4grouprange_137811bdde8c702243d4c46d844116e9 import DceMulticastIpv4GroupRange
-        if self._properties.get('DceMulticastIpv4GroupRange', None) is not None:
-            return self._properties.get('DceMulticastIpv4GroupRange')
-        else:
-            return DceMulticastIpv4GroupRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceMulticastIpv4GroupRange', None) is not None:
+                return self._properties.get('DceMulticastIpv4GroupRange')
+        return DceMulticastIpv4GroupRange(self)
 
     @property
     def DceMulticastIpv6GroupRange(self):
@@ -166,10 +168,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastipv6grouprange_ff34b9b498a42af784ac1d9e6870d89b import DceMulticastIpv6GroupRange
-        if self._properties.get('DceMulticastIpv6GroupRange', None) is not None:
-            return self._properties.get('DceMulticastIpv6GroupRange')
-        else:
-            return DceMulticastIpv6GroupRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceMulticastIpv6GroupRange', None) is not None:
+                return self._properties.get('DceMulticastIpv6GroupRange')
+        return DceMulticastIpv6GroupRange(self)
 
     @property
     def DceMulticastMacRange(self):
@@ -183,10 +185,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcemulticastmacrange_cc6bbd6d9c9c0e88f6e630afd3a84823 import DceMulticastMacRange
-        if self._properties.get('DceMulticastMacRange', None) is not None:
-            return self._properties.get('DceMulticastMacRange')
-        else:
-            return DceMulticastMacRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceMulticastMacRange', None) is not None:
+                return self._properties.get('DceMulticastMacRange')
+        return DceMulticastMacRange(self)
 
     @property
     def DceNetworkRange(self):
@@ -200,10 +202,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenetworkrange_de592cf3e2529092f28b2f14e5282a24 import DceNetworkRange
-        if self._properties.get('DceNetworkRange', None) is not None:
-            return self._properties.get('DceNetworkRange')
-        else:
-            return DceNetworkRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceNetworkRange', None) is not None:
+                return self._properties.get('DceNetworkRange')
+        return DceNetworkRange(self)
 
     @property
     def DceTopologyRange(self):
@@ -217,10 +219,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcetopologyrange_e13ee59af806de98161bf79b499b2a3b import DceTopologyRange
-        if self._properties.get('DceTopologyRange', None) is not None:
-            return self._properties.get('DceTopologyRange')
-        else:
-            return DceTopologyRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceTopologyRange', None) is not None:
+                return self._properties.get('DceTopologyRange')
+        return DceTopologyRange(self)
 
     @property
     def Interface(self):
@@ -234,10 +236,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_54e892c04a4d57ef720d90ef82e8d6e6 import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def LearnedInformation(self):
@@ -251,10 +253,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_0f99cbd8f68676519789d627dcbdf3bd import LearnedInformation
-        if self._properties.get('LearnedInformation', None) is not None:
-            return self._properties.get('LearnedInformation')
-        else:
-            return LearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInformation', None) is not None:
+                return self._properties.get('LearnedInformation')
+        return LearnedInformation(self)._select()
 
     @property
     def NetworkRange(self):
@@ -268,10 +270,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.networkrange_13f65c2451ab57b34c6f824d4665d3ea import NetworkRange
-        if self._properties.get('NetworkRange', None) is not None:
-            return self._properties.get('NetworkRange')
-        else:
-            return NetworkRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetworkRange', None) is not None:
+                return self._properties.get('NetworkRange')
+        return NetworkRange(self)
 
     @property
     def RouteRange(self):
@@ -285,10 +287,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_f356b867b4b5aaa0b94fb4b00d34a328 import RouteRange
-        if self._properties.get('RouteRange', None) is not None:
-            return self._properties.get('RouteRange')
-        else:
-            return RouteRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RouteRange', None) is not None:
+                return self._properties.get('RouteRange')
+        return RouteRange(self)
 
     @property
     def SpbNetworkRange(self):
@@ -302,10 +304,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbnetworkrange_d4c634041e8e33458ec27f522c953b2a import SpbNetworkRange
-        if self._properties.get('SpbNetworkRange', None) is not None:
-            return self._properties.get('SpbNetworkRange')
-        else:
-            return SpbNetworkRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SpbNetworkRange', None) is not None:
+                return self._properties.get('SpbNetworkRange')
+        return SpbNetworkRange(self)
 
     @property
     def SpbTopologyRange(self):
@@ -319,10 +321,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbtopologyrange_922b3eacc2d72dd7a24481d9cb1ee831 import SpbTopologyRange
-        if self._properties.get('SpbTopologyRange', None) is not None:
-            return self._properties.get('SpbTopologyRange')
-        else:
-            return SpbTopologyRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SpbTopologyRange', None) is not None:
+                return self._properties.get('SpbTopologyRange')
+        return SpbTopologyRange(self)
 
     @property
     def TrillPingOam(self):
@@ -336,10 +338,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillpingoam_1ad2c6d3f05ae8ebfc87ba18f1512d39 import TrillPingOam
-        if self._properties.get('TrillPingOam', None) is not None:
-            return self._properties.get('TrillPingOam')
-        else:
-            return TrillPingOam(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrillPingOam', None) is not None:
+                return self._properties.get('TrillPingOam')
+        return TrillPingOam(self)._select()
 
     @property
     def TrillUnicastMacRange(self):
@@ -353,10 +355,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillunicastmacrange_1a357144d008fb5372e816e033477ead import TrillUnicastMacRange
-        if self._properties.get('TrillUnicastMacRange', None) is not None:
-            return self._properties.get('TrillUnicastMacRange')
-        else:
-            return TrillUnicastMacRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrillUnicastMacRange', None) is not None:
+                return self._properties.get('TrillUnicastMacRange')
+        return TrillUnicastMacRange(self)
 
     @property
     def AreaAddressList(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Pce(Base):
@@ -64,17 +66,17 @@ class Pce(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_38d4bb7f936743f9bf59e702af0766bb.PccGroup): An instance of the PccGroup class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_de05278160425f9f4927025725e28501.PccGroup): An instance of the PccGroup class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_38d4bb7f936743f9bf59e702af0766bb import PccGroup
-        if self._properties.get('PccGroup', None) is not None:
-            return self._properties.get('PccGroup')
-        else:
-            return PccGroup(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_de05278160425f9f4927025725e28501 import PccGroup
+        if len(self._object_properties) > 0:
+            if self._properties.get('PccGroup', None) is not None:
+                return self._properties.get('PccGroup')
+        return PccGroup(self)
 
     @property
     def Active(self):

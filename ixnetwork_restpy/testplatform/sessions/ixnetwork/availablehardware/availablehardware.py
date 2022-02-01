@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AvailableHardware(Base):
@@ -54,10 +56,10 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.chassis import Chassis
-        if self._properties.get('Chassis', None) is not None:
-            return self._properties.get('Chassis')
-        else:
-            return Chassis(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Chassis', None) is not None:
+                return self._properties.get('Chassis')
+        return Chassis(self)
 
     @property
     def VirtualChassis(self):
@@ -71,10 +73,10 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import VirtualChassis
-        if self._properties.get('VirtualChassis', None) is not None:
-            return self._properties.get('VirtualChassis')
-        else:
-            return VirtualChassis(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('VirtualChassis', None) is not None:
+                return self._properties.get('VirtualChassis')
+        return VirtualChassis(self)._select()
 
     @property
     def IsLocked(self):
@@ -128,3 +130,45 @@ class AvailableHardware(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, IsLocked=None, IsOffChassis=None, OffChassisHwM=None):
+        # type: (bool, bool, str) -> AvailableHardware
+        """Finds and retrieves availableHardware resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve availableHardware resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all availableHardware resources from the server.
+
+        Args
+        ----
+        - IsLocked (bool): If true, locks the Hardware Manager.
+        - IsOffChassis (bool): If true, the Hardware Manager is Off Chassis.
+        - OffChassisHwM (str): Enables the Off Chassis Hardware Manager. The Hardware Manager is an IxOS component that manages the resources on an Ixia chassis. IxNetwork communicates with a chassis through Hardware Manager. Normally, Hardware Manager runs on the chassis itself; however, it can also be installed and run on a separate PC. This configuration is known as an Off-Chassis Hardware Manager.
+
+        Returns
+        -------
+        - self: This instance with matching availableHardware resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of availableHardware data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the availableHardware resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

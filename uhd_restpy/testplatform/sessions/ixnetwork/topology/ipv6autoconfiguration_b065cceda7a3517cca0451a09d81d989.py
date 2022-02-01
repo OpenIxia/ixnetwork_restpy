@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ipv6Autoconfiguration(Base):
@@ -69,10 +71,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        if self._properties.get('Bfdv6Interface', None) is not None:
-            return self._properties.get('Bfdv6Interface')
-        else:
-            return Bfdv6Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bfdv6Interface', None) is not None:
+                return self._properties.get('Bfdv6Interface')
+        return Bfdv6Interface(self)
 
     @property
     def BgpIpv6Peer(self):
@@ -86,10 +88,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4ac277d9da759fd5a152b8e6eb0ab20 import BgpIpv6Peer
-        if self._properties.get('BgpIpv6Peer', None) is not None:
-            return self._properties.get('BgpIpv6Peer')
-        else:
-            return BgpIpv6Peer(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpIpv6Peer', None) is not None:
+                return self._properties.get('BgpIpv6Peer')
+        return BgpIpv6Peer(self)
 
     @property
     def MldHost(self):
@@ -103,10 +105,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        if self._properties.get('MldHost', None) is not None:
-            return self._properties.get('MldHost')
-        else:
-            return MldHost(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldHost', None) is not None:
+                return self._properties.get('MldHost')
+        return MldHost(self)
 
     @property
     def MldQuerier(self):
@@ -120,10 +122,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        if self._properties.get('MldQuerier', None) is not None:
-            return self._properties.get('MldQuerier')
-        else:
-            return MldQuerier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldQuerier', None) is not None:
+                return self._properties.get('MldQuerier')
+        return MldQuerier(self)
 
     @property
     def Ospfv3(self):
@@ -137,10 +139,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_c029fd7cd4a9e9897b7b4e4547458751 import Ospfv3
-        if self._properties.get('Ospfv3', None) is not None:
-            return self._properties.get('Ospfv3')
-        else:
-            return Ospfv3(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3', None) is not None:
+                return self._properties.get('Ospfv3')
+        return Ospfv3(self)
 
     @property
     def PimV6Interface(self):
@@ -154,10 +156,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        if self._properties.get('PimV6Interface', None) is not None:
-            return self._properties.get('PimV6Interface')
-        else:
-            return PimV6Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV6Interface', None) is not None:
+                return self._properties.get('PimV6Interface')
+        return PimV6Interface(self)
 
     @property
     def Tag(self):
@@ -171,10 +173,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Vxlanv6(self):
@@ -188,10 +190,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        if self._properties.get('Vxlanv6', None) is not None:
-            return self._properties.get('Vxlanv6')
-        else:
-            return Vxlanv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlanv6', None) is not None:
+                return self._properties.get('Vxlanv6')
+        return Vxlanv6(self)
 
     @property
     def Address(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DhcpRange(Base):
@@ -102,10 +104,10 @@ class DhcpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_ae37126d22322e79083231fc57e3943e import VlanIdInfo
-        if self._properties.get('VlanIdInfo', None) is not None:
-            return self._properties.get('VlanIdInfo')
-        else:
-            return VlanIdInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VlanIdInfo', None) is not None:
+                return self._properties.get('VlanIdInfo')
+        return VlanIdInfo(self)
 
     @property
     def ClientOptionSet(self):
@@ -879,6 +881,96 @@ class DhcpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ClientOptionSet=None, Count=None, Dhcp4Broadcast=None, Dhcp4ParamRequestList=None, Dhcp4ServerAddress=None, Dhcp4UseFirstServer=None, Dhcp6DuidEnterpriseId=None, Dhcp6DuidType=None, Dhcp6DuidVendorId=None, Dhcp6DuidVendorIdIncrement=None, Dhcp6IaId=None, Dhcp6IaIdIncrement=None, Dhcp6IaT1=None, Dhcp6IaT2=None, Dhcp6IaType=None, Dhcp6MasterRange=None, Dhcp6ParamRequestList=None, Enabled=None, IpType=None, Name=None, ObjectId=None, Relay6HostsPerOptInterfaceId=None, Relay6OptInterfaceId=None, Relay6UseOptInterfaceId=None, RelayAddressIncrement=None, RelayCircuitId=None, RelayCount=None, RelayDestination=None, RelayFirstAddress=None, RelayFirstVlanId=None, RelayGateway=None, RelayHostsPerCircuitId=None, RelayHostsPerRemoteId=None, RelayOptionSet=None, RelayOverrideVlanSettings=None, RelayRemoteId=None, RelaySubnet=None, RelayUseCircuitId=None, RelayUseRemoteId=None, RelayUseSuboption6=None, RelayVlanCount=None, RelayVlanIncrMode=None, RelayVlanIncrement=None, RenewTimer=None, Suboption6AddressSubnet=None, Suboption6FirstAddress=None, UseRapidCommit=None, UseRelayAgent=None, UseTrustedNetworkElement=None, UseVendorClassId=None, VendorClassId=None):
+        # type: (str, int, bool, str, str, bool, int, str, int, int, int, int, int, int, str, str, str, bool, str, str, str, int, str, bool, str, str, int, str, str, int, str, int, int, str, bool, str, int, bool, bool, bool, int, int, int, int, int, str, bool, bool, bool, bool, str) -> DhcpRange
+        """Finds and retrieves dhcpRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpRange resources from the server.
+
+        Args
+        ----
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP client options associated with this range.
+        - Count (number): The number of DHCP clients to be created by this range.
+        - Dhcp4Broadcast (bool): If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
+        - Dhcp4ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Dhcp4ServerAddress (str): The address of the DHCP server from which the subnet will accept IP addresses.
+        - Dhcp4UseFirstServer (bool): If enabled, the subnet accepts the IP addresses offered by the firstserver to respond with an offer of IP addresses.
+        - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
+        - Dhcp6DuidType (str): DHCP Unique Identifier Type.
+        - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6DuidVendorIdIncrement (number): The value by which the VENDOR-ID is incremented for each DHCP client.
+        - Dhcp6IaId (number): The identity association unique ID for this range.This ID is incremented automaticaly for each DHCP client.
+        - Dhcp6IaIdIncrement (number): The value by which the IA-ID is incremented for each DHCP client.
+        - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
+        - Dhcp6IaT2 (number): The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
+        - Dhcp6IaType (str): Identity Association Type.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Relay6HostsPerOptInterfaceId (number): Number of consecutive hosts with the same interfaceId option.
+        - Relay6OptInterfaceId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit (see RFC3315, section 22.18).The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
+        - Relay6UseOptInterfaceId (bool): Select to add INTERFACE-ID option to outgoing messages.
+        - RelayAddressIncrement (str): The value by which to increment the IP address for each relay agent.
+        - RelayCircuitId (str): This option is added by relay agents that terminate switched or permanent circuits.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
+        - RelayCount (number): The number of relay agents to use in this range.
+        - RelayDestination (str): The address to which the requests from DHCP clients are be forwarded.
+        - RelayFirstAddress (str): The IP address used by first DHCP Relay Agent.
+        - RelayFirstVlanId (number): The first (outer) vlan id to allocate to relay agent interfaces.
+        - RelayGateway (str): The gateway address used for all relay agents.
+        - RelayHostsPerCircuitId (number): Number of consecutive hosts with the same Circuit ID.
+        - RelayHostsPerRemoteId (number): Number of consecutive hosts with the same Remote ID.
+        - RelayOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP relay options associated with this range.
+        - RelayOverrideVlanSettings (bool): If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
+        - RelayRemoteId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
+        - RelaySubnet (number): The network mask used for all relay agents.
+        - RelayUseCircuitId (bool): Select to add CIRCUIT-ID option to outgoing messages.
+        - RelayUseRemoteId (bool): Select to add REMOTE-ID option to outgoing messages.
+        - RelayUseSuboption6 (bool): If true then relays will add relay suboption6 (RFC3993) to the DHCP packages they send to DHCP servers.
+        - RelayVlanCount (number): The number of different vlan ids to use.
+        - RelayVlanIncrMode (number): The method used to increment VLAN IDs.
+        - RelayVlanIncrement (number): The vlan increment to use for relay interfaces.
+        - RenewTimer (number): The used-defined lease renewal timer.The value is estimated in seconds and will override the lease renewaltimer if it is not zero and is smaller than server-defined value.
+        - Suboption6AddressSubnet (number): The network mask used for all suboption6 addresses.
+        - Suboption6FirstAddress (str): We only allow suboption6 to store the IP address of a host to which replies from the DHCP server should be sent.
+        - UseRapidCommit (bool): Enables DHCP clients to negotiate leases with rapid commit.
+        - UseRelayAgent (bool): Activates DHCP Relay Agent Emulation.Use this if the DHCP server is located in a different network.
+        - UseTrustedNetworkElement (bool): Simulate trusted network elements on the port instead of relays - that is, the packets look like normal DHCP packets, but have the relay options added (in case the circuit and Remote ID are set). This makes the remote/circuit id fields available for edit.
+        - UseVendorClassId (bool): Enables use of the Vendor Class Identifier configured in the field below.
+        - VendorClassId (str): This option is used by a client to identify the vendor thatmanufactured the hardware on which the client is running.
+
+        Returns
+        -------
+        - self: This instance with matching dhcpRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dhcpRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dhcpRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

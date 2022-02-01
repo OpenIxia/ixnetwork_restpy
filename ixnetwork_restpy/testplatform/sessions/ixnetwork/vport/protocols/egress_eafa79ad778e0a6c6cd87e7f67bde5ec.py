@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Egress(Base):
@@ -252,3 +254,54 @@ class Egress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Bandwidth=None, EgressBehavior=None, EnableFixedLabelForResv=None, LabelValue=None, PathErrorTlv=None, ReflectRro=None, RefreshInterval=None, ReservationStyle=None, ReservationTearTlv=None, ReservationTlv=None, Rro=None, SendResvConfirmation=None, TimeoutMultiplier=None):
+        """Finds and retrieves egress resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egress resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egress resources from the server.
+
+        Args
+        ----
+        - Bandwidth (number): The requested bandwidth for the tunnel, expressed in kbits per second.
+        - EgressBehavior (str(alwaysUseConfiguredStyle | useSeWhenIndicatedInSessionAttribute)): Dictates the RSVP reservation style when the value of behavior is rsvpEgress.
+        - EnableFixedLabelForResv (bool): Enables the use of a fixed label in RESV messages while in Egress mode.
+        - LabelValue (str): RSVP label for IPV4 and IPv6 RSVP related routes.
+        - PathErrorTlv (list(dict(arg1:number,arg2:number,arg3:str))): When signaling fails in the head-end area, a path error message is sent to the head-end.
+        - ReflectRro (bool): Enables the reflection of a received RRO object for Egress mode destination ranges. When selected, any RRO items added with addRroItem are ignored. (default = true)
+        - RefreshInterval (number): When the destination range is used in Egress mode, this indicates the time, in seconds, between the simulated router's message to the DUT.
+        - ReservationStyle (str(se | ff | wf)): The reservation style desired. One of the following options: rsvpFF (fixed filtered mode) or rsvpSE (shared explicit mode).
+        - ReservationTearTlv (list(dict(arg1:number,arg2:number,arg3:str))): a set of custom TLVs to be included in RESV TEAR messages. These may only be used for egress routers.
+        - ReservationTlv (list(dict(arg1:number,arg2:number,arg3:str))): a set of custom TLVs to be included in RESV messages. These may only be used for egress routers.
+        - Rro (list(dict(arg1:str[ip | label],arg2:str,arg3:bool,arg4:bool,arg5:number,arg6:bool,arg7:bool,arg8:bool))): If enabled, an RRO is reflected back to the originating router.
+        - SendResvConfirmation (bool): Enables the generation of RESV Confirmation messages for received RESV messages which contain a RESV Confirmation Class object. (default = false)
+        - TimeoutMultiplier (number): The number of Hellos before a router is declared dead.
+
+        Returns
+        -------
+        - self: This instance with matching egress resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egress data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egress resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Lisp(Base):
@@ -61,10 +63,10 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_357d2cf668d2b194253f1fce270d5f0d import Router
-        if self._properties.get('Router', None) is not None:
-            return self._properties.get('Router')
-        else:
-            return Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Router', None) is not None:
+                return self._properties.get('Router')
+        return Router(self)
 
     @property
     def SiteEidRange(self):
@@ -78,10 +80,10 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.siteeidrange_bcf447bff5a7aca1758c0baa17c72645 import SiteEidRange
-        if self._properties.get('SiteEidRange', None) is not None:
-            return self._properties.get('SiteEidRange')
-        else:
-            return SiteEidRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SiteEidRange', None) is not None:
+                return self._properties.get('SiteEidRange')
+        return SiteEidRange(self)
 
     @property
     def BurstIntervalInMs(self):
@@ -225,6 +227,54 @@ class Lisp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BurstIntervalInMs=None, Enabled=None, Ipv4MapRegisterPacketsPerBurst=None, Ipv4MapRequestPacketsPerBurst=None, Ipv4SmrPacketsPerBurst=None, Ipv6MapRegisterPacketsPerBurst=None, Ipv6MapRequestPacketsPerBurst=None, Ipv6SmrPacketsPerBurst=None, ProtocolState=None):
+        # type: (int, bool, int, int, int, int, int, int, str) -> Lisp
+        """Finds and retrieves lisp resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lisp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lisp resources from the server.
+
+        Args
+        ----
+        - BurstIntervalInMs (number): It shows the details abou the burst interval in micro seconds
+        - Enabled (bool): If true, it shows enabled.
+        - Ipv4MapRegisterPacketsPerBurst (number): It gives details about the ip v4 map register packets per burst
+        - Ipv4MapRequestPacketsPerBurst (number): It gives details about the ip v4 map requests packets per burst
+        - Ipv4SmrPacketsPerBurst (number): It gives details about the Ip v4 Smr packets per bursts
+        - Ipv6MapRegisterPacketsPerBurst (number): It gives details about the ip v6 map register packets per burst
+        - Ipv6MapRequestPacketsPerBurst (number): It gives details about the ip v6 map requests packets per burst
+        - Ipv6SmrPacketsPerBurst (number): It gives details about the Ip v6 Smr packets per bursts
+        - ProtocolState (str(stopped | unknown | stopping | started | starting)): Shows different protocol states (read-only)
+
+        Returns
+        -------
+        - self: This instance with matching lisp resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of lisp data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the lisp resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

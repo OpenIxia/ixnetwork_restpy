@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RequestedLsps(Base):
@@ -106,10 +108,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccrequestedmetricsubobjectslist_c24616543d14c4003121b08785bb4446 import PccRequestedMetricSubObjectsList
-        if self._properties.get('PccRequestedMetricSubObjectsList', None) is not None:
-            return self._properties.get('PccRequestedMetricSubObjectsList')
-        else:
-            return PccRequestedMetricSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PccRequestedMetricSubObjectsList', None) is not None:
+                return self._properties.get('PccRequestedMetricSubObjectsList')
+        return PccRequestedMetricSubObjectsList(self)
 
     @property
     def PcepIroSubObjectsList(self):
@@ -123,10 +125,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepirosubobjectslist_9817af6d0e89111784eda2c3b9333ff5 import PcepIroSubObjectsList
-        if self._properties.get('PcepIroSubObjectsList', None) is not None:
-            return self._properties.get('PcepIroSubObjectsList')
-        else:
-            return PcepIroSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepIroSubObjectsList', None) is not None:
+                return self._properties.get('PcepIroSubObjectsList')
+        return PcepIroSubObjectsList(self)
 
     @property
     def PcepXroSubObjectsList(self):
@@ -140,10 +142,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepxrosubobjectslist_a61cc0ded9b5e7cc900bb16a43234a56 import PcepXroSubObjectsList
-        if self._properties.get('PcepXroSubObjectsList', None) is not None:
-            return self._properties.get('PcepXroSubObjectsList')
-        else:
-            return PcepXroSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepXroSubObjectsList', None) is not None:
+                return self._properties.get('PcepXroSubObjectsList')
+        return PcepXroSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -157,10 +159,10 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):
@@ -810,6 +812,57 @@ class RequestedLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, InsertIpv6ExplicitNull=None, LspDelegationState=None, MaxExpectedSegmentCount=None, MaxNoOfIroSubObjects=None, MaxNoOfXroSubObjects=None, MaxNumberOfMetrics=None, Name=None, OverridePlspId=None, OverrideRequestId=None, ReDelegationTimerStatus=None):
+        # type: (int, str, bool, List[str], int, int, int, int, str, bool, bool, List[str]) -> RequestedLsps
+        """Finds and retrieves requestedLsps resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve requestedLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all requestedLsps resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        - LspDelegationState (list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none])): LSP Delegation State
+        - MaxExpectedSegmentCount (number): This control is used to set the maximum Segment count/ MPLS labels that would be present in the generted traffic.
+        - MaxNoOfIroSubObjects (number): Max Number of IRO Sub Objects
+        - MaxNoOfXroSubObjects (number): Max Number of XRO Sub Objects
+        - MaxNumberOfMetrics (number): Max Number of Metrics
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - OverridePlspId (bool): Override PLSP-ID
+        - OverrideRequestId (bool): Override Request ID
+        - ReDelegationTimerStatus (list(str[expired | none | notStarted | running | stopped])): Re-Delegation Timer Status
+
+        Returns
+        -------
+        - self: This instance with matching requestedLsps resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of requestedLsps data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the requestedLsps resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Delegate(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

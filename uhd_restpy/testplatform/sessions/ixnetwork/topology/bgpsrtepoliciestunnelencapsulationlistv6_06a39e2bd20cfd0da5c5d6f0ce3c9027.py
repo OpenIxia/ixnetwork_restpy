@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpSRTEPoliciesTunnelEncapsulationListV6(Base):
@@ -81,10 +83,10 @@ class BgpSRTEPoliciesTunnelEncapsulationListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciessegmentlistv6_b4b77896ded7f6e7a9ac79adb5274f7a import BgpSRTEPoliciesSegmentListV6
-        if self._properties.get('BgpSRTEPoliciesSegmentListV6', None) is not None:
-            return self._properties.get('BgpSRTEPoliciesSegmentListV6')
-        else:
-            return BgpSRTEPoliciesSegmentListV6(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpSRTEPoliciesSegmentListV6', None) is not None:
+                return self._properties.get('BgpSRTEPoliciesSegmentListV6')
+        return BgpSRTEPoliciesSegmentListV6(self)._select()
 
     @property
     def ENLPValue(self):
@@ -436,6 +438,50 @@ class BgpSRTEPoliciesTunnelEncapsulationListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfSegmentListV6=None, SrtepolicyName=None):
+        # type: (int, str, str, int, List[str]) -> BgpSRTEPoliciesTunnelEncapsulationListV6
+        """Finds and retrieves bgpSRTEPoliciesTunnelEncapsulationListV6 resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpSRTEPoliciesTunnelEncapsulationListV6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpSRTEPoliciesTunnelEncapsulationListV6 resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfSegmentListV6 (number): Count of Segment Lists Per Tunnel
+        - SrtepolicyName (list(str)): Policy Name For Reference
+
+        Returns
+        -------
+        - self: This instance with matching bgpSRTEPoliciesTunnelEncapsulationListV6 resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of bgpSRTEPoliciesTunnelEncapsulationListV6 data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the bgpSRTEPoliciesTunnelEncapsulationListV6 resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, ENLPValue=None, IPv6SID=None, SID4Octet=None, Active=None, AddressFamily=None, As4Number=None, BindingSIDType=None, ColorCOBits=None, ColorReservedBits=None, ColorValue=None, EnBindingTLV=None, EnColorTLV=None, EnENLPTLV=None, EnPolicyNameTLV=None, EnPolicyPrioritySubTLV=None, EnPrefTLV=None, EnRemoteEndPointTLV=None, NumberOfActiveSegmentList=None, PolicyName=None, PrefValue=None, Priority=None, RemoteEndpointIPv4=None, RemoteEndpointIPv6=None, TunnelType=None, UseAsMPLSLabel=None):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesTunnelEncapsulationListV6 device ids encapsulated by this object.

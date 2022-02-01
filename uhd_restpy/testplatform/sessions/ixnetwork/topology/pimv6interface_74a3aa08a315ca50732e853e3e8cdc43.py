@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PimV6Interface(Base):
@@ -92,10 +94,10 @@ class PimV6Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def PimV6CandidateRPsList(self):
@@ -109,10 +111,10 @@ class PimV6Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pimv6candidaterpslist_844aa043d76dc15890b467e44e8f739e import PimV6CandidateRPsList
-        if self._properties.get('PimV6CandidateRPsList', None) is not None:
-            return self._properties.get('PimV6CandidateRPsList')
-        else:
-            return PimV6CandidateRPsList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV6CandidateRPsList', None) is not None:
+                return self._properties.get('PimV6CandidateRPsList')
+        return PimV6CandidateRPsList(self)._select()
 
     @property
     def PimV6JoinPruneList(self):
@@ -126,10 +128,10 @@ class PimV6Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pimv6joinprunelist_45b4e701e80080858668a0625c9a948b import PimV6JoinPruneList
-        if self._properties.get('PimV6JoinPruneList', None) is not None:
-            return self._properties.get('PimV6JoinPruneList')
-        else:
-            return PimV6JoinPruneList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV6JoinPruneList', None) is not None:
+                return self._properties.get('PimV6JoinPruneList')
+        return PimV6JoinPruneList(self)._select()
 
     @property
     def PimV6SourcesList(self):
@@ -143,10 +145,10 @@ class PimV6Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pimv6sourceslist_7c181c77974667394bfee5e6920a7772 import PimV6SourcesList
-        if self._properties.get('PimV6SourcesList', None) is not None:
-            return self._properties.get('PimV6SourcesList')
-        else:
-            return PimV6SourcesList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV6SourcesList', None) is not None:
+                return self._properties.get('PimV6SourcesList')
+        return PimV6SourcesList(self)._select()
 
     @property
     def Tag(self):
@@ -160,10 +162,10 @@ class PimV6Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):

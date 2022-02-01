@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Rfc2889partiallyMeshed(Base):
@@ -58,10 +60,10 @@ class Rfc2889partiallyMeshed(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.learnframes_f2d63f612ee7b3a32d682e49ef6c8f5d import LearnFrames
-        if self._properties.get('LearnFrames', None) is not None:
-            return self._properties.get('LearnFrames')
-        else:
-            return LearnFrames(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnFrames', None) is not None:
+                return self._properties.get('LearnFrames')
+        return LearnFrames(self)._select()
 
     @property
     def PassCriteria(self):
@@ -75,10 +77,10 @@ class Rfc2889partiallyMeshed(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_1496b4311e44c9f9029b6eb8313c56c5 import PassCriteria
-        if self._properties.get('PassCriteria', None) is not None:
-            return self._properties.get('PassCriteria')
-        else:
-            return PassCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PassCriteria', None) is not None:
+                return self._properties.get('PassCriteria')
+        return PassCriteria(self)._select()
 
     @property
     def Results(self):
@@ -92,10 +94,10 @@ class Rfc2889partiallyMeshed(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_b9fe57298c01a3aa07a8c2d5a4688d5a import Results
-        if self._properties.get('Results', None) is not None:
-            return self._properties.get('Results')
-        else:
-            return Results(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Results', None) is not None:
+                return self._properties.get('Results')
+        return Results(self)._select()
 
     @property
     def TestConfig(self):
@@ -109,10 +111,10 @@ class Rfc2889partiallyMeshed(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_901b51986dc65d0fff95a09fc2f887de import TestConfig
-        if self._properties.get('TestConfig', None) is not None:
-            return self._properties.get('TestConfig')
-        else:
-            return TestConfig(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestConfig', None) is not None:
+                return self._properties.get('TestConfig')
+        return TestConfig(self)._select()
 
     @property
     def TrafficSelection(self):
@@ -126,10 +128,10 @@ class Rfc2889partiallyMeshed(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_d9608d106616009533f3a21c5ce53263 import TrafficSelection
-        if self._properties.get('TrafficSelection', None) is not None:
-            return self._properties.get('TrafficSelection')
-        else:
-            return TrafficSelection(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficSelection', None) is not None:
+                return self._properties.get('TrafficSelection')
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

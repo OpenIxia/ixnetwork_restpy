@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class L1Config(Base):
@@ -53,10 +55,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.oam.oam import OAM
-        if self._properties.get('OAM', None) is not None:
-            return self._properties.get('OAM')
-        else:
-            return OAM(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OAM', None) is not None:
+                return self._properties.get('OAM')
+        return OAM(self)._select()
 
     @property
     def FramePreemption(self):
@@ -70,10 +72,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.framepreemption.framepreemption import FramePreemption
-        if self._properties.get('FramePreemption', None) is not None:
-            return self._properties.get('FramePreemption')
-        else:
-            return FramePreemption(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FramePreemption', None) is not None:
+                return self._properties.get('FramePreemption')
+        return FramePreemption(self)._select()
 
     @property
     def RxFilters(self):
@@ -87,10 +89,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.rxfilters.rxfilters import RxFilters
-        if self._properties.get('RxFilters', None) is not None:
-            return self._properties.get('RxFilters')
-        else:
-            return RxFilters(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RxFilters', None) is not None:
+                return self._properties.get('RxFilters')
+        return RxFilters(self)._select()
 
     @property
     def UhdOneHundredGigLan(self):
@@ -104,10 +106,10 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.uhdonehundredgiglan import UhdOneHundredGigLan
-        if self._properties.get('UhdOneHundredGigLan', None) is not None:
-            return self._properties.get('UhdOneHundredGigLan')
-        else:
-            return UhdOneHundredGigLan(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('UhdOneHundredGigLan', None) is not None:
+                return self._properties.get('UhdOneHundredGigLan')
+        return UhdOneHundredGigLan(self)._select()
 
     @property
     def CurrentType(self):
@@ -136,3 +138,43 @@ class L1Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CurrentType=None):
+        # type: (str) -> L1Config
+        """Finds and retrieves l1Config resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l1Config resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all l1Config resources from the server.
+
+        Args
+        ----
+        - CurrentType (str(uhdOneHundredGigLan)): Indicates the five types of ports for configuration to choose from.
+
+        Returns
+        -------
+        - self: This instance with matching l1Config resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of l1Config data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the l1Config resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

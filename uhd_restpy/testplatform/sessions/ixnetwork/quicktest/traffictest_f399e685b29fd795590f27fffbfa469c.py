@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TrafficTest(Base):
@@ -58,10 +60,10 @@ class TrafficTest(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.results_4bd3ac8dd93fa345122bab3f02361357 import Results
-        if self._properties.get('Results', None) is not None:
-            return self._properties.get('Results')
-        else:
-            return Results(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Results', None) is not None:
+                return self._properties.get('Results')
+        return Results(self)._select()
 
     @property
     def TestConfig(self):
@@ -75,10 +77,10 @@ class TrafficTest(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_cba0d6247545291d653f53b851f5f99f import TestConfig
-        if self._properties.get('TestConfig', None) is not None:
-            return self._properties.get('TestConfig')
-        else:
-            return TestConfig(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestConfig', None) is not None:
+                return self._properties.get('TestConfig')
+        return TestConfig(self)._select()
 
     @property
     def TrafficSelection(self):
@@ -92,10 +94,10 @@ class TrafficTest(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_269c6f7786daf3c1727aac52c05f527f import TrafficSelection
-        if self._properties.get('TrafficSelection', None) is not None:
-            return self._properties.get('TrafficSelection')
-        else:
-            return TrafficSelection(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficSelection', None) is not None:
+                return self._properties.get('TrafficSelection')
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SecondaryRange(Base):
@@ -53,10 +55,10 @@ class SecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcfportvnportrange_2e351062ecf3e413e092a255614857d9 import FcFportVnPortRange
-        if self._properties.get('FcFportVnPortRange', None) is not None:
-            return self._properties.get('FcFportVnPortRange')
-        else:
-            return FcFportVnPortRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FcFportVnPortRange', None) is not None:
+                return self._properties.get('FcFportVnPortRange')
+        return FcFportVnPortRange(self)._select()
 
     def add(self):
         """Adds a new secondaryRange resource on the server and adds it to the container.

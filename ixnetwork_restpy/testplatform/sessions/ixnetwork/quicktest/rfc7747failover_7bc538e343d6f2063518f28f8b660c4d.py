@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Rfc7747failover(Base):
@@ -58,10 +60,10 @@ class Rfc7747failover(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_6eed54348d625973db068811ba002a88 import PassCriteria
-        if self._properties.get('PassCriteria', None) is not None:
-            return self._properties.get('PassCriteria')
-        else:
-            return PassCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PassCriteria', None) is not None:
+                return self._properties.get('PassCriteria')
+        return PassCriteria(self)._select()
 
     @property
     def Results(self):
@@ -75,10 +77,10 @@ class Rfc7747failover(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_b526638a26ba60c3bf4c5ae9fd307c99 import Results
-        if self._properties.get('Results', None) is not None:
-            return self._properties.get('Results')
-        else:
-            return Results(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Results', None) is not None:
+                return self._properties.get('Results')
+        return Results(self)._select()
 
     @property
     def TestConfig(self):
@@ -92,10 +94,10 @@ class Rfc7747failover(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_008ae9871a97d31c1efea64e053d936f import TestConfig
-        if self._properties.get('TestConfig', None) is not None:
-            return self._properties.get('TestConfig')
-        else:
-            return TestConfig(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestConfig', None) is not None:
+                return self._properties.get('TestConfig')
+        return TestConfig(self)._select()
 
     @property
     def TrafficSelection(self):
@@ -109,10 +111,10 @@ class Rfc7747failover(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_91a8beda45d83c53669bc7cd0423c34d import TrafficSelection
-        if self._properties.get('TrafficSelection', None) is not None:
-            return self._properties.get('TrafficSelection')
-        else:
-            return TrafficSelection(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficSelection', None) is not None:
+                return self._properties.get('TrafficSelection')
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

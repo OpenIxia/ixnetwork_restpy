@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class UserLsa(Base):
@@ -59,10 +61,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asexternal_12dfafe33ad036e6bec4644070502044 import AsExternal
-        if self._properties.get('AsExternal', None) is not None:
-            return self._properties.get('AsExternal')
-        else:
-            return AsExternal(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AsExternal', None) is not None:
+                return self._properties.get('AsExternal')
+        return AsExternal(self)
 
     @property
     def InterAreaPrefix(self):
@@ -76,10 +78,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interareaprefix_51bc1fa5c3615d5498ea43e228445c3c import InterAreaPrefix
-        if self._properties.get('InterAreaPrefix', None) is not None:
-            return self._properties.get('InterAreaPrefix')
-        else:
-            return InterAreaPrefix(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterAreaPrefix', None) is not None:
+                return self._properties.get('InterAreaPrefix')
+        return InterAreaPrefix(self)
 
     @property
     def InterAreaRouter(self):
@@ -93,10 +95,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interarearouter_edc636547087f303c13b929510c197e4 import InterAreaRouter
-        if self._properties.get('InterAreaRouter', None) is not None:
-            return self._properties.get('InterAreaRouter')
-        else:
-            return InterAreaRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterAreaRouter', None) is not None:
+                return self._properties.get('InterAreaRouter')
+        return InterAreaRouter(self)
 
     @property
     def IntraAreaPrefix(self):
@@ -110,10 +112,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.intraareaprefix_4ec65d4b4fd020944df3498606a28a76 import IntraAreaPrefix
-        if self._properties.get('IntraAreaPrefix', None) is not None:
-            return self._properties.get('IntraAreaPrefix')
-        else:
-            return IntraAreaPrefix(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IntraAreaPrefix', None) is not None:
+                return self._properties.get('IntraAreaPrefix')
+        return IntraAreaPrefix(self)
 
     @property
     def Link(self):
@@ -127,10 +129,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_7f592ebf252bce0f6d8d1042bf348acd import Link
-        if self._properties.get('Link', None) is not None:
-            return self._properties.get('Link')
-        else:
-            return Link(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Link', None) is not None:
+                return self._properties.get('Link')
+        return Link(self)
 
     @property
     def Network(self):
@@ -144,10 +146,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_6984533d658be615d6eb86f965975b8b import Network
-        if self._properties.get('Network', None) is not None:
-            return self._properties.get('Network')
-        else:
-            return Network(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Network', None) is not None:
+                return self._properties.get('Network')
+        return Network(self)
 
     @property
     def Router(self):
@@ -161,10 +163,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_b249d35e2a940b6bd8f505a80cb0d44a import Router
-        if self._properties.get('Router', None) is not None:
-            return self._properties.get('Router')
-        else:
-            return Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Router', None) is not None:
+                return self._properties.get('Router')
+        return Router(self)
 
     @property
     def AdvertisingRouterId(self):

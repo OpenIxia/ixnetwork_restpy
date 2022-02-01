@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Statistic(Base):
@@ -48,7 +50,7 @@ class Statistic(Base):
         """
         Returns
         -------
-        - str: 
+        - str: Stats Caption.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Caption'])
 
@@ -58,7 +60,7 @@ class Statistic(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: Enabled stats for Raw Data.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
@@ -72,7 +74,7 @@ class Statistic(Base):
 
         Args
         ----
-        - Enabled (bool): 
+        - Enabled (bool): Enabled stats for Raw Data.
 
         Raises
         ------
@@ -86,7 +88,7 @@ class Statistic(Base):
 
         Args
         ----
-        - Enabled (bool): 
+        - Enabled (bool): Enabled stats for Raw Data.
 
         Returns
         -------
@@ -108,8 +110,8 @@ class Statistic(Base):
 
         Args
         ----
-        - Caption (str): 
-        - Enabled (bool): 
+        - Caption (str): Stats Caption.
+        - Enabled (bool): Enabled stats for Raw Data.
 
         Returns
         -------

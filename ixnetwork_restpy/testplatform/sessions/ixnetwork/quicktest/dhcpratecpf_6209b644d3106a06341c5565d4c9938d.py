@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DhcpRateCpf(Base):
@@ -58,10 +60,10 @@ class DhcpRateCpf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_2169b5c93f6ddab60b911bcdc46cd3fc import Results
-        if self._properties.get('Results', None) is not None:
-            return self._properties.get('Results')
-        else:
-            return Results(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Results', None) is not None:
+                return self._properties.get('Results')
+        return Results(self)._select()
 
     @property
     def TestConfig(self):
@@ -75,10 +77,10 @@ class DhcpRateCpf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_7e7c251ab89c08946f0aa859f3231872 import TestConfig
-        if self._properties.get('TestConfig', None) is not None:
-            return self._properties.get('TestConfig')
-        else:
-            return TestConfig(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestConfig', None) is not None:
+                return self._properties.get('TestConfig')
+        return TestConfig(self)._select()
 
     @property
     def ForceApplyQTConfig(self):

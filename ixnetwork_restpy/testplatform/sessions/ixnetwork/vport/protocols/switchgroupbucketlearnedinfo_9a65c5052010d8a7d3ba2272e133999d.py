@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchGroupBucketLearnedInfo(Base):
@@ -57,10 +59,10 @@ class SwitchGroupBucketLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgroupactionlearnedinfo_b2b33b0d8aab03a9558c5f84af5b73d2 import SwitchGroupActionLearnedInfo
-        if self._properties.get('SwitchGroupActionLearnedInfo', None) is not None:
-            return self._properties.get('SwitchGroupActionLearnedInfo')
-        else:
-            return SwitchGroupActionLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchGroupActionLearnedInfo', None) is not None:
+                return self._properties.get('SwitchGroupActionLearnedInfo')
+        return SwitchGroupActionLearnedInfo(self)
 
     @property
     def ByteCount(self):

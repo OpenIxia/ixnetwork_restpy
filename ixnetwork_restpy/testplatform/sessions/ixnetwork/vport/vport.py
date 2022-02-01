@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Vport(Base):
@@ -55,8 +57,10 @@ class Vport(Base):
         'IxnChassisVersion': 'ixnChassisVersion',
         'IxnClientVersion': 'ixnClientVersion',
         'IxosChassisVersion': 'ixosChassisVersion',
+        'LastLinkStateChangeEventTimestamp': 'lastLinkStateChangeEventTimestamp',
         'Licenses': 'licenses',
         'Location': 'location',
+        'MacsecEnabled': 'macsecEnabled',
         'Name': 'name',
         'ResourceMode': 'resourceMode',
         'RxMode': 'rxMode',
@@ -81,7 +85,7 @@ class Vport(Base):
         'traceLevel': ['kCritical', 'kDebug', 'kError', 'kInfo', 'kNote', 'kTrace', 'kWarning'],
         'txGapControlMode': ['fixedMode', 'averageMode'],
         'txMode': ['sequential', 'interleaved', 'sequentialCoarse', 'interleavedCoarse', 'packetImpairment'],
-        'type': ['ethernet', 'ethernetvm', 'ethernetFcoe', 'atm', 'pos', 'tenGigLan', 'tenGigLanFcoe', 'fortyGigLan', 'fortyGigLanFcoe', 'tenGigWan', 'tenGigWanFcoe', 'hundredGigLan', 'hundredGigLanFcoe', 'tenFortyHundredGigLan', 'tenFortyHundredGigLanFcoe', 'fc', 'ethernetImpairment', 'novusHundredGigLan', 'novusHundredGigLanFcoe', 'novusTenGigLan', 'novusTenGigLanFcoe', 'krakenFourHundredGigLan', 'krakenFourHundredGigLanFcoe', 'aresOneFourHundredGigLan', 'aresOneFourHundredGigLanFcoe', 'uhdOneHundredGigLan'],
+        'type': ['ethernet', 'ethernetvm', 'ethernetFcoe', 'atm', 'pos', 'tenGigLan', 'tenGigLanFcoe', 'fortyGigLan', 'fortyGigLanFcoe', 'tenGigWan', 'tenGigWanFcoe', 'hundredGigLan', 'hundredGigLanFcoe', 'tenFortyHundredGigLan', 'tenFortyHundredGigLanFcoe', 'fc', 'ethernetImpairment', 'novusHundredGigLan', 'novusHundredGigLanFcoe', 'novusTenGigLan', 'novusTenGigLanFcoe', 'krakenFourHundredGigLan', 'krakenFourHundredGigLanFcoe', 'aresOneFourHundredGigLan', 'aresOneFourHundredGigLanFcoe', 'uhdOneHundredGigLan', 'novus5GTenTwentyFiveGigLan', 'novus5GTenTwentyFiveGigLanFcoe', 'starFourHundredGigLan', 'starFourHundredGigLanFcoe'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -99,10 +103,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.capture import Capture
-        if self._properties.get('Capture', None) is not None:
-            return self._properties.get('Capture')
-        else:
-            return Capture(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Capture', None) is not None:
+                return self._properties.get('Capture')
+        return Capture(self)._select()
 
     @property
     def DiscoveredNeighbor(self):
@@ -116,10 +120,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.discoveredneighbor.discoveredneighbor import DiscoveredNeighbor
-        if self._properties.get('DiscoveredNeighbor', None) is not None:
-            return self._properties.get('DiscoveredNeighbor')
-        else:
-            return DiscoveredNeighbor(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DiscoveredNeighbor', None) is not None:
+                return self._properties.get('DiscoveredNeighbor')
+        return DiscoveredNeighbor(self)
 
     @property
     def Interface(self):
@@ -133,10 +137,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.interface import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def InterfaceDiscoveredAddress(self):
@@ -150,10 +154,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interfacediscoveredaddress.interfacediscoveredaddress import InterfaceDiscoveredAddress
-        if self._properties.get('InterfaceDiscoveredAddress', None) is not None:
-            return self._properties.get('InterfaceDiscoveredAddress')
-        else:
-            return InterfaceDiscoveredAddress(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterfaceDiscoveredAddress', None) is not None:
+                return self._properties.get('InterfaceDiscoveredAddress')
+        return InterfaceDiscoveredAddress(self)._select()
 
     @property
     def L1Config(self):
@@ -167,10 +171,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config import L1Config
-        if self._properties.get('L1Config', None) is not None:
-            return self._properties.get('L1Config')
-        else:
-            return L1Config(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('L1Config', None) is not None:
+                return self._properties.get('L1Config')
+        return L1Config(self)._select()
 
     @property
     def ProtocolStack(self):
@@ -184,10 +188,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.protocolstack import ProtocolStack
-        if self._properties.get('ProtocolStack', None) is not None:
-            return self._properties.get('ProtocolStack')
-        else:
-            return ProtocolStack(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ProtocolStack', None) is not None:
+                return self._properties.get('ProtocolStack')
+        return ProtocolStack(self)._select()
 
     @property
     def Protocols(self):
@@ -201,10 +205,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols import Protocols
-        if self._properties.get('Protocols', None) is not None:
-            return self._properties.get('Protocols')
-        else:
-            return Protocols(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Protocols', None) is not None:
+                return self._properties.get('Protocols')
+        return Protocols(self)
 
     @property
     def RateControlParameters(self):
@@ -218,10 +222,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ratecontrolparameters.ratecontrolparameters import RateControlParameters
-        if self._properties.get('RateControlParameters', None) is not None:
-            return self._properties.get('RateControlParameters')
-        else:
-            return RateControlParameters(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RateControlParameters', None) is not None:
+                return self._properties.get('RateControlParameters')
+        return RateControlParameters(self)._select()
 
     @property
     def TapSettings(self):
@@ -235,10 +239,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.tapsettings import TapSettings
-        if self._properties.get('TapSettings', None) is not None:
-            return self._properties.get('TapSettings')
-        else:
-            return TapSettings(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TapSettings', None) is not None:
+                return self._properties.get('TapSettings')
+        return TapSettings(self)
 
     @property
     def ActualSpeed(self):
@@ -266,7 +270,7 @@ class Vport(Base):
         """DEPRECATED 
         Returns
         -------
-        - str: (Read Only) A new port is assigned with this option.
+        - str: (Deprecated, Read Only) A new port is assigned with this option.
         """
         return self._get_attribute(self._SDM_ATT_MAP['AssignedTo'])
 
@@ -459,6 +463,16 @@ class Vport(Base):
         return self._get_attribute(self._SDM_ATT_MAP['IxosChassisVersion'])
 
     @property
+    def LastLinkStateChangeEventTimestamp(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: A string describing the last link status change client timestamp for the port.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['LastLinkStateChangeEventTimestamp'])
+
+    @property
     def Licenses(self):
         # type: () -> str
         """
@@ -481,6 +495,16 @@ class Vport(Base):
     def Location(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Location'], value)
+
+    @property
+    def MacsecEnabled(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['MacsecEnabled'])
 
     @property
     def Name(self):
@@ -630,7 +654,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan): The type of port selection.
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Type'])
     @Type.setter
@@ -679,7 +703,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -705,7 +729,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -728,8 +752,8 @@ class Vport(Base):
         """
         self._delete()
 
-    def find(self, ActualSpeed=None, AdminMode=None, AssignedTo=None, AssignedToDisplayName=None, CaptureSupported=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, ConnectionStatusDisplayName=None, DpdkPerformanceAcceleration=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, Licenses=None, Location=None, Name=None, ResourceMode=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
-        # type: (int, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
+    def find(self, ActualSpeed=None, AdminMode=None, AssignedTo=None, AssignedToDisplayName=None, CaptureSupported=None, ConnectedTo=None, ConnectionInfo=None, ConnectionState=None, ConnectionStatus=None, ConnectionStatusDisplayName=None, DpdkPerformanceAcceleration=None, InternalId=None, IsAvailable=None, IsConnected=None, IsFramePreemptionSupported=None, IsMapped=None, IsPullOnly=None, IsVMPort=None, IxnChassisVersion=None, IxnClientVersion=None, IxosChassisVersion=None, LastLinkStateChangeEventTimestamp=None, Licenses=None, Location=None, MacsecEnabled=None, Name=None, ResourceMode=None, RxMode=None, State=None, StateDetail=None, TraceEnabled=None, TraceLevel=None, TraceTag=None, TransmitIgnoreLinkStatus=None, TxGapControlMode=None, TxMode=None, Type=None, UseGlobalSettings=None, ValidTxModes=None):
+        # type: (int, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
         """Finds and retrieves vport resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
@@ -740,7 +764,7 @@ class Vport(Base):
         ----
         - ActualSpeed (number): The actual speed.
         - AdminMode (str): 
-        - AssignedTo (str): (Read Only) A new port is assigned with this option.
+        - AssignedTo (str): (Deprecated, Read Only) A new port is assigned with this option.
         - AssignedToDisplayName (str): 
         - CaptureSupported (str(data | control | dataAndControl | none)): 
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
@@ -759,8 +783,10 @@ class Vport(Base):
         - IxnChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by the IxNetwork Full installer/IxNetwork Chassis installer on chassis.
         - IxnClientVersion (str): (Read Only) If true, this installs full client side IxNetwork or IxNetwork-FT components.
         - IxosChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
+        - LastLinkStateChangeEventTimestamp (str): A string describing the last link status change client timestamp for the port.
         - Licenses (str): Number of licenses.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
+        - MacsecEnabled (bool): 
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         - ResourceMode (str): 
         - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
@@ -772,7 +798,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])): 
 
@@ -803,6 +829,28 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def AddGclEntry(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addGclEntry operation on the server.
+
+        Add an entry to the GCL list.
+
+        addGclEntry(Arg2=string, Arg3=string, async_operation=bool)
+        -----------------------------------------------------------
+        - Arg2 (str): String stating duration of this entry
+        - Arg3 (str): String stating gate states
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('addGclEntry', payload=payload, response_object=None)
 
     def AddQuickFlowGroups(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1247,6 +1295,27 @@ class Vport(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('releasePort', payload=payload, response_object=None)
 
+    def RemoveGclEntry(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the removeGclEntry operation on the server.
+
+        Remove an entry from the GCL list.
+
+        removeGclEntry(Arg2=number, async_operation=bool)
+        -------------------------------------------------
+        - Arg2 (number): Integer indicating GCL table entry index to remove
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('removeGclEntry', payload=payload, response_object=None)
+
     def ResetPortCpu(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the resetPortCpu operation on the server.
@@ -1677,3 +1746,26 @@ class Vport(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('unassignPorts', payload=payload, response_object=None)
+
+    def UpdateGclEntry(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the updateGclEntry operation on the server.
+
+        Update an entry in the GCL list.
+
+        updateGclEntry(Arg2=number, Arg3=string, Arg4=string, async_operation=bool)
+        ---------------------------------------------------------------------------
+        - Arg2 (number): Integer indicating GCL table index to update
+        - Arg3 (str): String stating the new duration of this entry
+        - Arg4 (str): String stating gate states
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('updateGclEntry', payload=payload, response_object=None)

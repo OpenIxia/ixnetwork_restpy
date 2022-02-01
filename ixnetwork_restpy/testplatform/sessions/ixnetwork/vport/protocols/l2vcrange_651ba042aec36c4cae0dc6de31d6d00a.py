@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class L2VcRange(Base):
@@ -128,10 +130,10 @@ class L2VcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2macvlanrange_b5d47400477b94bf42d3eeb6d47895d8 import L2MacVlanRange
-        if self._properties.get('L2MacVlanRange', None) is not None:
-            return self._properties.get('L2MacVlanRange')
-        else:
-            return L2MacVlanRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('L2MacVlanRange', None) is not None:
+                return self._properties.get('L2MacVlanRange')
+        return L2MacVlanRange(self)._select()
 
     @property
     def L2VcIpRange(self):
@@ -145,10 +147,10 @@ class L2VcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2vciprange_c61a81972a63da93a88d24c8322709a3 import L2VcIpRange
-        if self._properties.get('L2VcIpRange', None) is not None:
-            return self._properties.get('L2VcIpRange')
-        else:
-            return L2VcIpRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('L2VcIpRange', None) is not None:
+                return self._properties.get('L2VcIpRange')
+        return L2VcIpRange(self)._select()
 
     @property
     def TrafficGroupId(self):
@@ -162,10 +164,10 @@ class L2VcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficgroupid_9b5892cccfe90f8c60d2b9f6abbb5413 import TrafficGroupId
-        if self._properties.get('TrafficGroupId', None) is not None:
-            return self._properties.get('TrafficGroupId')
-        else:
-            return TrafficGroupId(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficGroupId', None) is not None:
+                return self._properties.get('TrafficGroupId')
+        return TrafficGroupId(self)
 
     @property
     def CapableOfReassembly(self):

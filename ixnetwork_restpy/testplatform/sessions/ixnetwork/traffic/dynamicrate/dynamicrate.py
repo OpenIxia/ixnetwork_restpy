@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DynamicRate(Base):
@@ -45,7 +47,7 @@ class DynamicRate(Base):
     }
     _SDM_ENUM_MAP = {
         'bitRateUnitsType': ['bitsPerSec', 'bytesPerSec', 'kbitsPerSec', 'kbytesPerSec', 'mbitsPerSec', 'mbytesPerSec'],
-        'interPacketGapUnitsType': ['bytes', 'nanoseconds'],
+        'interPacketGapUnitsType': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
         'rateType': ['bitsPerSecond', 'framesPerSecond', 'interPacketGap', 'percentLineRate'],
     }
 
@@ -72,7 +74,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - number: Sets the minimum inter-packet gap allowed for Ethernet ports only.
+        - number: Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnforceMinimumInterPacketGap'])
     @EnforceMinimumInterPacketGap.setter
@@ -96,7 +98,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - str(bytes | nanoseconds): The inter-packet gap expressed in units.
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
     @InterPacketGapUnitsType.setter
@@ -169,8 +171,8 @@ class DynamicRate(Base):
         Args
         ----
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
-        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only.
-        - InterPacketGapUnitsType (str(bytes | nanoseconds)): The inter-packet gap expressed in units.
+        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
         - Rate (number): The rate at which packet is transmitted.
         - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.
 
@@ -187,8 +189,8 @@ class DynamicRate(Base):
         Args
         ----
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
-        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only.
-        - InterPacketGapUnitsType (str(bytes | nanoseconds)): The inter-packet gap expressed in units.
+        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
         - Rate (number): The rate at which packet is transmitted.
         - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.
 
@@ -213,9 +215,9 @@ class DynamicRate(Base):
         Args
         ----
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
-        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only.
+        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         - HighLevelStreamName (str): The name of the high level stream
-        - InterPacketGapUnitsType (str(bytes | nanoseconds)): The inter-packet gap expressed in units.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
         - OverSubscribed (bool): If true, the packet transmission rate is oversubscribed.
         - Rate (number): The rate at which packet is transmitted.
         - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.

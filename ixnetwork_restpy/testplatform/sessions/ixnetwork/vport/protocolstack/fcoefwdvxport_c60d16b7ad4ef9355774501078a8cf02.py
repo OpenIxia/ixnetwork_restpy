@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FcoeFwdVxPort(Base):
@@ -446,6 +448,70 @@ class FcoeFwdVxPort(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, B2bRxSize=None, Enabled=None, FabricName=None, FcMap=None, FdiscRejectInterval=None, FipAddressingMode=None, FipAdvertisementPeriod=None, FipClearVlinkOnExpire=None, FipClearVlinkPortIds=None, FipEnabled=None, FipFkaDBit=None, FipPriority=None, FipVersion=None, FipVlanDiscovery=None, FipVnportKeepAlivePeriod=None, FlogiRejectInterval=None, LogoRejectInterval=None, Name=None, NameServer=None, NameServerCommands=None, ObjectId=None, OperatingMode=None, PlogiRejectInterval=None, SwitchName=None, VlanIds=None):
+        # type: (int, bool, str, str, int, str, int, bool, str, bool, bool, int, str, bool, int, int, int, str, bool, List[int], str, str, int, str, str) -> FcoeFwdVxPort
+        """Finds and retrieves fcoeFwdVxPort resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeFwdVxPort resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoeFwdVxPort resources from the server.
+
+        Args
+        ----
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FabricName (str): The Fabric Name value assigned to this interface.
+        - FcMap (str): The MAC Address Prefix associated to local FC fabric.
+        - FdiscRejectInterval (number): When the user enters N, IxNetwork FCF will send out one LS_RJT for every N-th FDISC request. If N = 0, no FDISC request will be rejected. If N = 1, every FDISC request will be rejected. If N = 10, then the first 9 FDISC requests will be accepted, and the 10th will be rejected.
+        - FipAddressingMode (str): The MAC Addressing Mode supported by this interface.
+        - FipAdvertisementPeriod (number): The interval in milliseconds between periodic Discovery Advertisements.It is also used to monitor the interval between ENodes FIP Keep-Alive frames.A value of 0 milliseconds indicates that no Keep-Alive message is expected.
+        - FipClearVlinkOnExpire (bool): Select this option to automatically send Clear Virtual Linkto ENodes and VN_Ports that forget to send periodic Keep-Alives on time.
+        - FipClearVlinkPortIds (str): Property used to store port IDs for Clear Virtual Link.
+        - FipEnabled (bool): Select this option to respond to general FIP requests.
+        - FipFkaDBit (bool): When the D bit is set, the VF_Port will not verify periodic receptionof ENode FIP Keep-Alive and VN_Port FIP Keep-Alive frames.
+        - FipPriority (number): The FIP Priority value sent with Discovery Advertisements.
+        - FipVersion (str): The FIP version to use.
+        - FipVlanDiscovery (bool): Select this option to respond to FIP VLAN Discovery requests.
+        - FipVnportKeepAlivePeriod (number): The interval in milliseconds between periodic VN_Port FIP Keep-Alive frames.A value of 0 milliseconds indicates that no Keep-Alive message is expected.
+        - FlogiRejectInterval (number): When the user enters N, IxNetwork FCF will send out one LS_RJT for every N-th FLOGI request. If N = 0, no FLOGI request will be rejected. If N = 1, every FLOGI request will be rejected. If N = 10, then the first 9 FLOGI requests will be accepted, and the 10th will be rejected.
+        - LogoRejectInterval (number): When the user enters N, IxNetwork FCF will send out one LS_RJT for every N-th LOGO request. If N = 0, no LOGO request will be rejected. If N = 1, every LOGO request will be rejected. If N = 10, then the first 9 LOGO requests will be accepted, and the 10th will be rejected.
+        - Name (str): Name of range
+        - NameServer (bool): Select this option to respond to Name Service requests.
+        - NameServerCommands (list(number)): Signifies the Name Server Commands that will be accepted by the forwarder.
+        - ObjectId (str): Unique identifier for this object
+        - OperatingMode (str): Describes the operating mode for this interface.
+        - PlogiRejectInterval (number): When the user enters N, IxNetwork FCF will send out one LS_RJT for every N-th PLOGI request. If N = 0, no PLOGI request will be rejected. If N = 1, every PLOGI request will be rejected. If N = 10, then the first 9 PLOGI requests will be accepted, and the 10th will be rejected.
+        - SwitchName (str): The Switch Name value assigned to this interface.
+        - VlanIds (str): The VLAN ID list sent with VLAN Notifications (e.g. 10,20). Discovery Advertisements will be periodically sent for each VLAN ID specified in this list.
+
+        Returns
+        -------
+        - self: This instance with matching fcoeFwdVxPort resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of fcoeFwdVxPort data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the fcoeFwdVxPort resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

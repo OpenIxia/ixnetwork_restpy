@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NacTlv(Base):
@@ -61,10 +63,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.appcoderef.appcoderef import AppCodeRef
-        if self._properties.get('AppCodeRef', None) is not None:
-            return self._properties.get('AppCodeRef')
-        else:
-            return AppCodeRef(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AppCodeRef', None) is not None:
+                return self._properties.get('AppCodeRef')
+        return AppCodeRef(self)._select()
 
     @property
     def AppTypeRef(self):
@@ -78,10 +80,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.apptyperef.apptyperef import AppTypeRef
-        if self._properties.get('AppTypeRef', None) is not None:
-            return self._properties.get('AppTypeRef')
-        else:
-            return AppTypeRef(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AppTypeRef', None) is not None:
+                return self._properties.get('AppTypeRef')
+        return AppTypeRef(self)._select()
 
     @property
     def VendorRef(self):
@@ -95,10 +97,10 @@ class NacTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.dot1xglobals.nacsettings.nactlv.vendorref.vendorref import VendorRef
-        if self._properties.get('VendorRef', None) is not None:
-            return self._properties.get('VendorRef')
-        else:
-            return VendorRef(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('VendorRef', None) is not None:
+                return self._properties.get('VendorRef')
+        return VendorRef(self)._select()
 
     @property
     def AppCode(self):

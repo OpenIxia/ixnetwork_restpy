@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Gre(Base):
@@ -163,3 +165,49 @@ class Gre(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Dest=None, InKey=None, OutKey=None, Source=None, UseChecksum=None, UseKey=None, UseSequence=None):
+        # type: (str, int, int, str, bool, bool, bool) -> Gre
+        """Finds and retrieves gre resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve gre resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all gre resources from the server.
+
+        Args
+        ----
+        - Dest (str): Part of the GRE Delivery Header: The IP address of the Destination router at the remote end of the GRE tunnel.
+        - InKey (number): This is the user-assigned GRE header authentication key value that the receiving router will check for to validate GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel).
+        - OutKey (number): This is the user-assigned GRE header authentication key value that will be included in the GRE packets being sent via the tunnel. All packets sent via a specific tunnel should contain the same key value (one key per GRE tunnel). In most cases, the In Key and Out Key will be the same.
+        - Source (str(None | /api/v1/sessions/1/ixnetwork/vport/.../ipv4 | /api/v1/sessions/1/ixnetwork/vport/.../ipv6)): Part of the GRE Delivery Header: The IP address of the connected interface associated with the source of this GRE tunnel.
+        - UseChecksum (bool): Enables the use of the optional GRE checksum.
+        - UseKey (bool): Enables the use of the optional GRE header key field.
+        - UseSequence (bool): If more than one GRE tunnel will be used, this is the amount that will be added to create each additional authentication key value to be sent in the GRE packets (one key per GRE tunnel).
+
+        Returns
+        -------
+        - self: This instance with matching gre resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of gre data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the gre resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

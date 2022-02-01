@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MacRange(Base):
@@ -158,6 +160,52 @@ class MacRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, Enabled=None, IncrementBy=None, Mac=None, Mtu=None, Name=None, ObjectId=None):
+        # type: (int, bool, str, str, int, str, str) -> MacRange
+        """Finds and retrieves macRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve macRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all macRange resources from the server.
+
+        Args
+        ----
+        - Count (number): The total number of interfaces to be created for the range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IncrementBy (str): Incrementor used when the plugin creates a range of MACs.
+        - Mac (str): Base value used when the plugin creates a MAC address.
+        - Mtu (number): Maximum Transmission Unit. The largest packet that a given network medium can carry. Ethernet, for example, has a fixed MTU of 1500 bytes without and 9500 bytes with Jumbo frame support. ATM has a fixed MTU of 48 bytes and PPP has a negotiated MTU that is usually between 500 and 2000 bytes.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+
+        Returns
+        -------
+        - self: This instance with matching macRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of macRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the macRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -59,10 +61,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.atm.atm import Atm
-        if self._properties.get('Atm', None) is not None:
-            return self._properties.get('Atm')
-        else:
-            return Atm(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Atm', None) is not None:
+                return self._properties.get('Atm')
+        return Atm(self)._select()
 
     @property
     def DhcpV4DiscoveredInfo(self):
@@ -76,10 +78,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv4discoveredinfo.dhcpv4discoveredinfo import DhcpV4DiscoveredInfo
-        if self._properties.get('DhcpV4DiscoveredInfo', None) is not None:
-            return self._properties.get('DhcpV4DiscoveredInfo')
-        else:
-            return DhcpV4DiscoveredInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DhcpV4DiscoveredInfo', None) is not None:
+                return self._properties.get('DhcpV4DiscoveredInfo')
+        return DhcpV4DiscoveredInfo(self)._select()
 
     @property
     def DhcpV4Properties(self):
@@ -93,10 +95,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv4properties.dhcpv4properties import DhcpV4Properties
-        if self._properties.get('DhcpV4Properties', None) is not None:
-            return self._properties.get('DhcpV4Properties')
-        else:
-            return DhcpV4Properties(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DhcpV4Properties', None) is not None:
+                return self._properties.get('DhcpV4Properties')
+        return DhcpV4Properties(self)._select()
 
     @property
     def DhcpV6DiscoveredInfo(self):
@@ -110,10 +112,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv6discoveredinfo.dhcpv6discoveredinfo import DhcpV6DiscoveredInfo
-        if self._properties.get('DhcpV6DiscoveredInfo', None) is not None:
-            return self._properties.get('DhcpV6DiscoveredInfo')
-        else:
-            return DhcpV6DiscoveredInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DhcpV6DiscoveredInfo', None) is not None:
+                return self._properties.get('DhcpV6DiscoveredInfo')
+        return DhcpV6DiscoveredInfo(self)._select()
 
     @property
     def DhcpV6Properties(self):
@@ -127,10 +129,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.dhcpv6properties.dhcpv6properties import DhcpV6Properties
-        if self._properties.get('DhcpV6Properties', None) is not None:
-            return self._properties.get('DhcpV6Properties')
-        else:
-            return DhcpV6Properties(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DhcpV6Properties', None) is not None:
+                return self._properties.get('DhcpV6Properties')
+        return DhcpV6Properties(self)._select()
 
     @property
     def Ethernet(self):
@@ -144,10 +146,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ethernet.ethernet import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)._select()
 
     @property
     def Gre(self):
@@ -161,10 +163,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.gre.gre import Gre
-        if self._properties.get('Gre', None) is not None:
-            return self._properties.get('Gre')
-        else:
-            return Gre(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Gre', None) is not None:
+                return self._properties.get('Gre')
+        return Gre(self)._select()
 
     @property
     def Ipv4(self):
@@ -178,10 +180,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ipv4.ipv4 import Ipv4
-        if self._properties.get('Ipv4', None) is not None:
-            return self._properties.get('Ipv4')
-        else:
-            return Ipv4(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4', None) is not None:
+                return self._properties.get('Ipv4')
+        return Ipv4(self)
 
     @property
     def Ipv6(self):
@@ -195,10 +197,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.ipv6.ipv6 import Ipv6
-        if self._properties.get('Ipv6', None) is not None:
-            return self._properties.get('Ipv6')
-        else:
-            return Ipv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6', None) is not None:
+                return self._properties.get('Ipv6')
+        return Ipv6(self)
 
     @property
     def Unconnected(self):
@@ -212,10 +214,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.unconnected.unconnected import Unconnected
-        if self._properties.get('Unconnected', None) is not None:
-            return self._properties.get('Unconnected')
-        else:
-            return Unconnected(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Unconnected', None) is not None:
+                return self._properties.get('Unconnected')
+        return Unconnected(self)._select()
 
     @property
     def Vlan(self):
@@ -229,10 +231,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.interface.vlan.vlan import Vlan
-        if self._properties.get('Vlan', None) is not None:
-            return self._properties.get('Vlan')
-        else:
-            return Vlan(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vlan', None) is not None:
+                return self._properties.get('Vlan')
+        return Vlan(self)._select()
 
     @property
     def Description(self):

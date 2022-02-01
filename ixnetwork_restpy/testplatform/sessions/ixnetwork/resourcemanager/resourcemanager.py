@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ResourceManager(Base):
@@ -39,11 +41,46 @@ class ResourceManager(Base):
     def __init__(self, parent, list_op=False):
         super(ResourceManager, self).__init__(parent, list_op)
 
+    def find(self):
+        """Finds and retrieves resourceManager resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve resourceManager resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all resourceManager resources from the server.
+
+        Returns
+        -------
+        - self: This instance with matching resourceManager resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of resourceManager data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the resourceManager resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
+
     def ExportConfig(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the exportConfig operation on the server.
 
-        Export the entire configuration or fragments of it in a text based format
+        Export the entire configuration or fragments of it in a text based format.
 
         exportConfig(Arg2=list, Arg3=bool, Arg4=enum, async_operation=bool)string
         -------------------------------------------------------------------------
@@ -67,7 +104,7 @@ class ResourceManager(Base):
         # type: (*Any, **Any) -> None
         """Executes the exportConfigFile operation on the server.
 
-        Export the entire configuration or fragments of it in a text based format
+        Export the entire configuration or fragments of it in a text based format.
 
         exportConfigFile(Arg2=list, Arg3=bool, Arg4=enum, Arg5=href, async_operation=bool)
         ----------------------------------------------------------------------------------
@@ -91,9 +128,7 @@ class ResourceManager(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the importConfig operation on the server.
 
-        Create or update the test tool configuration
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+        Create or update the test tool configuration.
 
         importConfig(Arg2=string, Arg3=bool, async_operation=bool)list
         --------------------------------------------------------------
@@ -101,15 +136,6 @@ class ResourceManager(Base):
         - Arg3 (bool): True to create a new configuration, false to update the current configuration
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): A list of errors that occurred during import
-
-        importConfig(Arg2=string, Arg3=bool, Arg4=enum, Arg5=bool, async_operation=bool)string
-        --------------------------------------------------------------------------------------
-        - Arg2 (str): 
-        - Arg3 (bool): 
-        - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
-        - Arg5 (bool): 
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: A list of errata that occurred during the import
 
         Raises
         ------
@@ -125,25 +151,14 @@ class ResourceManager(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the importConfigFile operation on the server.
 
-        Create or update the test tool configuration
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+        Create or update the test tool configuration.
 
         importConfigFile(Arg2=href, Arg3=bool, async_operation=bool)list
         ----------------------------------------------------------------
-        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
-        - Arg3 (bool): 
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): The file to read the configuration from
+        - Arg3 (bool): True to create a new configuration, false to update the current configuration
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): A list of errata that occurred during the import
-
-        importConfigFile(Arg2=href, Arg3=bool, Arg4=enum, Arg5=bool, async_operation=bool)string
-        ----------------------------------------------------------------------------------------
-        - Arg2 (obj(ixnetwork_restpy.files.Files)): 
-        - Arg3 (bool): 
-        - Arg4 (str(suppressErrorsWarnings | suppressNothing | suppressWarnings)): 
-        - Arg5 (bool): 
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: A list of errata that occurred during the import
+        - Returns list(str): A list of errors that occurred during the import
 
         Raises
         ------

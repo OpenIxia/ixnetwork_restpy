@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SimInterfaceIPv4Config(Base):
@@ -59,10 +61,10 @@ class SimInterfaceIPv4Config(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_f8951a0e4c7d97b10ce403458d4a9a66 import OspfPseudoInterface
-        if self._properties.get('OspfPseudoInterface', None) is not None:
-            return self._properties.get('OspfPseudoInterface')
-        else:
-            return OspfPseudoInterface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoInterface', None) is not None:
+                return self._properties.get('OspfPseudoInterface')
+        return OspfPseudoInterface(self)
 
     @property
     def Count(self):

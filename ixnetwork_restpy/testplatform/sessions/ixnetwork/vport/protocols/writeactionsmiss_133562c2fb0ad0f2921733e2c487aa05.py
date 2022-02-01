@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class WriteActionsMiss(Base):
@@ -307,3 +309,58 @@ class WriteActionsMiss(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> WriteActionsMiss
+        """Finds and retrieves writeActionsMiss resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve writeActionsMiss resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all writeActionsMiss resources from the server.
+
+        Args
+        ----
+        - CopyTtlIn (bool): If selected, Copy TTL In Write Actions is supported for table miss flow entries.
+        - CopyTtlOut (bool): If selected, Copy TTL Out Write Actions is supported for table miss flow entries.
+        - DecrementMplsTtl (bool): If selected, Decrement MPLS TTL Write Actions is supported for table miss flow entries.
+        - DecrementNetworkTtl (bool): If selected, Decrement Network TTL Write Actions is supported for table miss flow entries.
+        - Group (bool): If selected, Group Write Actions is supported for table miss flow entries.
+        - Output (bool): If selected, Output Write Actions is supported for table miss flow entries.
+        - PopMpls (bool): If selected, Pop MPLS Write Actions is supported for table miss flow entries.
+        - PopPbb (bool): If selected, Pop PBB Write Actions is supported for table miss flow entries.
+        - PopVlan (bool): If selected, Pop VLAN Write Actions is supported for table miss flow entries.
+        - PushMpls (bool): If selected, Push MPLS Write Actions is supported for table miss flow entries.
+        - PushPbb (bool): If selected, Push PBB Write Actions is supported for table miss flow entries.
+        - PushVlan (bool): If selected, Push VLAN Write Actions is supported for table miss flow entries.
+        - SetField (bool): If selected, Set Field Write Actions is supported for table miss flow entries.
+        - SetMplsTtl (bool): If selected, Set MPLS TTL Write Actions is supported for table miss flow entries.
+        - SetNetworkTtl (bool): If selected, Set Network TTL Write Actions is supported for table miss flow entries.
+        - SetQueue (bool): If selected, Set Queue Write Actions is supported for table miss flow entries.
+
+        Returns
+        -------
+        - self: This instance with matching writeActionsMiss resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of writeActionsMiss data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the writeActionsMiss resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

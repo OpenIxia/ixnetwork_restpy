@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Impairment(Base):
@@ -55,10 +57,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile import DefaultProfile
-        if self._properties.get('DefaultProfile', None) is not None:
-            return self._properties.get('DefaultProfile')
-        else:
-            return DefaultProfile(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DefaultProfile', None) is not None:
+                return self._properties.get('DefaultProfile')
+        return DefaultProfile(self)._select()
 
     @property
     def Link(self):
@@ -72,10 +74,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.link.link import Link
-        if self._properties.get('Link', None) is not None:
-            return self._properties.get('Link')
-        else:
-            return Link(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Link', None) is not None:
+                return self._properties.get('Link')
+        return Link(self)
 
     @property
     def Profile(self):
@@ -89,10 +91,10 @@ class Impairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile import Profile
-        if self._properties.get('Profile', None) is not None:
-            return self._properties.get('Profile')
-        else:
-            return Profile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Profile', None) is not None:
+                return self._properties.get('Profile')
+        return Profile(self)
 
     @property
     def Errors(self):
@@ -123,6 +125,48 @@ class Impairment(Base):
         - list(str): List of warnings which occurred while applying changes to the impairment configuration.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Warnings'])
+
+    def find(self, Errors=None, State=None, Warnings=None):
+        # type: (List[str], str, List[str]) -> Impairment
+        """Finds and retrieves impairment resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve impairment resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all impairment resources from the server.
+
+        Args
+        ----
+        - Errors (list(str)): List of errors which occurred while applying changes to the impairment configuration.
+        - State (str(applyingChanges | changesPending | errorOccurred | ready)): Indicates whether changes are being applied to the impairment configuration.
+        - Warnings (list(str)): List of warnings which occurred while applying changes to the impairment configuration.
+
+        Returns
+        -------
+        - self: This instance with matching impairment resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of impairment data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the impairment resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

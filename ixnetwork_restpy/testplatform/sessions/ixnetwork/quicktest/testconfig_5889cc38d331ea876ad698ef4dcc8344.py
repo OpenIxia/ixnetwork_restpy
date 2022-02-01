@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -1035,6 +1037,106 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ApplyMode=None, AssignGroupType=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryResolution=None, CountRandomFrameSize=None, DelayAfterTransmit=None, DummyTrafficId=None, Duration=None, EnableLayer1Rate=None, EnableLeaveGroup=None, EnableMinFrameSize=None, EnableMulticastQuerier=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, FloodedFramesProcessing=None, FloodedFramesTemp=None, ForceRegenerate=None, FrameSizeMode=None, FramesizeList=None, Gap=None, GroupCapacityGreaterThan=None, GroupDistributionType=None, IgmpV1Timeout=None, IgmpVersion=None, Igmpv3MessageType=None, Igmpv3SourceAddrList=None, IncrAddresses=None, IncrementLoadUnit=None, InitialBinaryLoadIntegerValues=None, Ipv4Address=None, Ipv6Address=None, IsIPv6=None, IsMulticastAutomaticFrameData=None, JoinLeaveMultiplier=None, JoinLeaveRate=None, JoinLeaveWaitTime=None, LoadInitialRate=None, LoadType=None, MapType=None, MaxBinaryLoadIntegerValue=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinBinaryLoadIntegerValues=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, MldVersion=None, MulticastProtocolUsed=None, NumAddresses=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportTputRateUnit=None, RouterAlert=None, ShowDetailedBinaryResults=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TestTrafficType=None, TxDelay=None):
+        # type: (str, str, bool, int, int, int, int, str, int, bool, bool, bool, bool, bool, bool, bool, str, bool, str, List[str], int, int, str, int, int, str, str, int, str, int, str, str, str, str, int, int, int, int, str, str, int, int, int, int, int, int, int, str, int, int, bool, str, int, List[str], str, bool, bool, int, str, str, int) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - ApplyMode (str): NOT DEFINED
+        - AssignGroupType (str(accumulated | distributed)): Assigns the group type.
+        - BidirectionalOptionEnabled (bool): If true, enables the bidirectional option.
+        - BinaryBackoff (number): Specifies the percentage of binary backoff.
+        - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+        - CountRandomFrameSize (number): The count of the random frame size to be sent.
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+        - DummyTrafficId (str): The id of the monitor traffic item
+        - Duration (number): The duration of the test in hours, minutes, or seconds, which is used to calculate the number of frames to transmit.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableLeaveGroup (bool): If true, the leave group is enabled.
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableMulticastQuerier (bool): Enable Multicast Querier Settings
+        - EnableOldStatsForReef (bool): If true, enables the old statistics for Reef.
+        - FloodedFramesEnabled (bool): If true, it enables the flooded frames statistics
+        - FloodedFramesProcessing (bool): Flooded Frames Processing
+        - FloodedFramesTemp (str): Flooded Frames Temp
+        - ForceRegenerate (bool): If true, enables force regenerate.
+        - FrameSizeMode (str(custom | fixed | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - FramesizeList (list(str)): The list of the available frame sizes.
+        - Gap (number): The gap in transmission of frames.
+        - GroupCapacityGreaterThan (number): Indicates the value by which the group capacity is greater than.
+        - GroupDistributionType (str(acrossHosts | acrossPorts)): Indicates the group distribution type.
+        - IgmpV1Timeout (number): It signifies the timeout of version 1 of IGMP.
+        - IgmpVersion (number): The igmp version.
+        - Igmpv3MessageType (str(exclude | include)): It gives details about the igmpv3 message type in the test configuration
+        - Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
+        - IncrAddresses (number): If true, the MAC address is incremented.
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The incremental value of the load unit.
+        - InitialBinaryLoadIntegerValues (number): Initial Binary Load Integer Values
+        - Ipv4Address (str): The selected IPv4 address.
+        - Ipv6Address (str): It signifies the IP address for version 6.
+        - IsIPv6 (str): If true, indicates an IPv6 address.
+        - IsMulticastAutomaticFrameData (str): If true, indicates a multicast automatic frame data.
+        - JoinLeaveMultiplier (number): NOT DEFINED
+        - JoinLeaveRate (number): The leave rate.
+        - JoinLeaveWaitTime (number): The wait time for the leave.
+        - LoadInitialRate (number): The initial rate of the load.
+        - LoadType (str(binary | step)): The type of load used to modify the variable parameter value.
+        - MapType (str): The mapping type.
+        - MaxBinaryLoadIntegerValue (number): Max Binary Load Integer Value
+        - MaxIncrementFrameSize (number): The maximum increment value of the frame size.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MinBinaryLoadIntegerValues (number): Min Binary Load Integer Values
+        - MinIncrementFrameSize (number): The minimum increment value of the frame size.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - MldVersion (number): The version of the MLD messages.
+        - MulticastProtocolUsed (str): The multicast protocol that is used.
+        - NumAddresses (number): The number address.
+        - Numtrials (number): Defines how many times each frame size will be tested.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
+        - PortDelayValue (number): Sets the port delay value
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Report identifying the unit for measuring the throughput rate in frames per second.
+        - RouterAlert (bool): If enabled, it alerts the router.
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - StepIncrementFrameSize (number): The step increment value of the frame size.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TestTrafficType (str): It signifies the test traffic type value.
+        - TxDelay (number): The delay in transmission.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

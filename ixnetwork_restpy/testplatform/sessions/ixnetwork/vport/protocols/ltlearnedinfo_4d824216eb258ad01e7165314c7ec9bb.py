@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LtLearnedInfo(Base):
@@ -61,10 +63,10 @@ class LtLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ltlearnedhop_48a0b09aae21f8233100d05d7dae419e import LtLearnedHop
-        if self._properties.get('LtLearnedHop', None) is not None:
-            return self._properties.get('LtLearnedHop')
-        else:
-            return LtLearnedHop(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LtLearnedHop', None) is not None:
+                return self._properties.get('LtLearnedHop')
+        return LtLearnedHop(self)
 
     @property
     def CVlan(self):

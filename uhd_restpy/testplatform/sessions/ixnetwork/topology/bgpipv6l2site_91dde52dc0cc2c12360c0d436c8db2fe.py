@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpIpv6L2Site(Base):
@@ -85,10 +87,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.clusterlist_6e3b9385a37769c7040d46a28feaa819 import ClusterList
-        if self._properties.get('ClusterList', None) is not None:
-            return self._properties.get('ClusterList')
-        else:
-            return ClusterList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ClusterList', None) is not None:
+                return self._properties.get('ClusterList')
+        return ClusterList(self)
 
     @property
     def Connector(self):
@@ -102,10 +104,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def LabelBlockList(self):
@@ -119,10 +121,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.labelblocklist_7243cf48ef4a1cf284a8988d7ce69917 import LabelBlockList
-        if self._properties.get('LabelBlockList', None) is not None:
-            return self._properties.get('LabelBlockList')
-        else:
-            return LabelBlockList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LabelBlockList', None) is not None:
+                return self._properties.get('LabelBlockList')
+        return LabelBlockList(self)
 
     @property
     def Tag(self):
@@ -136,10 +138,10 @@ class BgpIpv6L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):

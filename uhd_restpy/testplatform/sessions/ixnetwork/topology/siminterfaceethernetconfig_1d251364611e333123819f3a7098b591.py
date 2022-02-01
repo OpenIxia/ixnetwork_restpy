@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SimInterfaceEthernetConfig(Base):
@@ -58,10 +60,10 @@ class SimInterfaceEthernetConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmsimulatedlinks_ed9491a56ff2748e2dde581267b5d86e import CfmSimulatedLinks
-        if self._properties.get('CfmSimulatedLinks', None) is not None:
-            return self._properties.get('CfmSimulatedLinks')
-        else:
-            return CfmSimulatedLinks(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmSimulatedLinks', None) is not None:
+                return self._properties.get('CfmSimulatedLinks')
+        return CfmSimulatedLinks(self)
 
     @property
     def Vlan(self):
@@ -75,10 +77,10 @@ class SimInterfaceEthernetConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.vlan_a3ff17a54eb8b0ce450fbc0fd0191f37 import Vlan
-        if self._properties.get('Vlan', None) is not None:
-            return self._properties.get('Vlan')
-        else:
-            return Vlan(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vlan', None) is not None:
+                return self._properties.get('Vlan')
+        return Vlan(self)
 
     @property
     def Count(self):

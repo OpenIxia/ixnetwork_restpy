@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RsvpP2PIngressLsps(Base):
@@ -146,10 +148,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.backuplsperosubobjectslist_0daa9e1df4598df831fc9c6266f38cb9 import BackupLspEROSubObjectsList
-        if self._properties.get('BackupLspEROSubObjectsList', None) is not None:
-            return self._properties.get('BackupLspEROSubObjectsList')
-        else:
-            return BackupLspEROSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BackupLspEROSubObjectsList', None) is not None:
+                return self._properties.get('BackupLspEROSubObjectsList')
+        return BackupLspEROSubObjectsList(self)
 
     @property
     def RsvpDetourSubObjectsList(self):
@@ -163,10 +165,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import RsvpDetourSubObjectsList
-        if self._properties.get('RsvpDetourSubObjectsList', None) is not None:
-            return self._properties.get('RsvpDetourSubObjectsList')
-        else:
-            return RsvpDetourSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpDetourSubObjectsList', None) is not None:
+                return self._properties.get('RsvpDetourSubObjectsList')
+        return RsvpDetourSubObjectsList(self)
 
     @property
     def RsvpEROSubObjectsList(self):
@@ -180,10 +182,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_a93377fcf5a0e9cd238eac8616f8ff4c import RsvpEROSubObjectsList
-        if self._properties.get('RsvpEROSubObjectsList', None) is not None:
-            return self._properties.get('RsvpEROSubObjectsList')
-        else:
-            return RsvpEROSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpEROSubObjectsList', None) is not None:
+                return self._properties.get('RsvpEROSubObjectsList')
+        return RsvpEROSubObjectsList(self)
 
     @property
     def RsvpIngressRROSubObjectsList(self):
@@ -197,10 +199,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_cae3516af342fb3a35d3ff26ac4f830e import RsvpIngressRROSubObjectsList
-        if self._properties.get('RsvpIngressRROSubObjectsList', None) is not None:
-            return self._properties.get('RsvpIngressRROSubObjectsList')
-        else:
-            return RsvpIngressRROSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpIngressRROSubObjectsList', None) is not None:
+                return self._properties.get('RsvpIngressRROSubObjectsList')
+        return RsvpIngressRROSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -214,10 +216,10 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):
@@ -1310,6 +1312,64 @@ class RsvpP2PIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BackupLspNumberOfEroSubObjects=None, Count=None, DelayLspSwitchOver=None, DescriptiveName=None, DoMBBOnApplyChanges=None, EroSameAsPrimary=None, LocalIp=None, LspDelegationState=None, LspSelfPingStatus=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfEroSubObjects=None, NumberOfRroSubObjects=None, PccIp=None, ReDelegationTimerStatus=None, SessionInformation=None, State=None, TSpecSameAsPrimary=None):
+        # type: (int, int, bool, str, bool, bool, List[str], List[str], List[str], int, str, int, int, int, List[str], List[str], List[str], List[str], bool) -> RsvpP2PIngressLsps
+        """Finds and retrieves rsvpP2PIngressLsps resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpP2PIngressLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvpP2PIngressLsps resources from the server.
+
+        Args
+        ----
+        - BackupLspNumberOfEroSubObjects (number): Number Of ERO Sub-Objects
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DelayLspSwitchOver (bool): Delay LSP switch over
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DoMBBOnApplyChanges (bool): Do Make Before Break on Apply Changes
+        - EroSameAsPrimary (bool): ERO Same As Primary
+        - LocalIp (list(str)): Local IP
+        - LspDelegationState (list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none])): LSP Delegation State
+        - LspSelfPingStatus (list(str[none | success | timedOut])): Logs additional information about the LSP Self Ping Status(Success/Timed Out)
+        - LspSwitchOverDelayTime (number): LSP Switch Over Delay timer (sec)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfDetourSubObjects (number): Number Of Detour Sub-Objects
+        - NumberOfEroSubObjects (number): Number Of ERO Sub-Objects
+        - NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+        - PccIp (list(str)): PCC IP
+        - ReDelegationTimerStatus (list(str[expired | none | notStarted | running | stopped])): Re-Delegation Timer Status
+        - SessionInformation (list(str[lastErrLSPAdmissionControlFailure | lastErrLSPBadAdSpecValue | lastErrLSPBadExplicitRoute | lastErrLSPBadFlowspecValue | lastErrLSPBadInitialSubobject | lastErrLSPBadLooseNode | lastErrLSPBadStrictNode | lastErrLSPBadTSpecValue | lastErrLSPDelayBoundNotMet | lastErrLSPMPLSAllocationFailure | lastErrLSPMTUTooBig | lastErrLSPNonRSVPRouter | lastErrLSPNoRouteAvailable | lastErrLSPPathErr | lastErrLSPPathTearSent | lastErrLSPRequestedBandwidthUnavailable | lastErrLSPReservationTearReceived | lastErrLSPReservationTearSent | lastErrLSPReservationTimeout | lastErrLSPRoutingLoops | lastErrLSPRoutingProblem | lastErrLSPRSVPSystemError | lastErrLSPServiceConflict | lastErrLSPServiceUnsupported | lastErrLSPTrafficControlError | lastErrLSPTrafficControlSystemError | lastErrLSPTrafficOrganizationError | lastErrLSPTrafficServiceError | lastErrLSPUnknownObjectClass | lastErrLSPUnknownObjectCType | lastErrLSPUnsupportedL3PID | lSPAdmissionControlFailure | lSPBadAdSpecValue | lSPBadExplicitRoute | lSPBadFlowspecValue | lSPBadInitialSubobject | lSPBadLooseNode | lSPBadStrictNode | lSPBadTSpecValue | lSPDelayBoundNotMet | lSPMPLSAllocationFailure | lSPMTUTooBig | lSPNonRSVPRouter | lSPNoRouteAvailable | lSPPathErr | lSPPathTearSent | lSPRequestedBandwidthUnavailable | lSPReservationNotReceived | lSPReservationTearReceived | lSPReservationTearSent | lSPReservationTimeout | lSPRoutingLoops | lSPRoutingProblem | lSPRSVPSystemError | lSPServiceConflict | lSPServiceUnsupported | lSPTrafficControlError | lSPTrafficControlSystemError | lSPTrafficOrganizationError | lSPTrafficServiceError | lSPUnknownObjectClass | lSPUnknownObjectCType | lSPUnsupportedL3PID | mbbCompleted | mbbTriggered | none | noPathReceived | pCRepReceived | pCReqSent])): Logs additional information about the RSVP session state
+        - State (list(str[down | none | notStarted | up])): State
+        - TSpecSameAsPrimary (bool): TSpec Same As Primary
+
+        Returns
+        -------
+        - self: This instance with matching rsvpP2PIngressLsps resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of rsvpP2PIngressLsps data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the rsvpP2PIngressLsps resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def InitiatePathReoptimization(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

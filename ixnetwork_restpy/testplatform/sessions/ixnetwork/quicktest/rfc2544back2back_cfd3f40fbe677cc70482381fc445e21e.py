@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Rfc2544back2back(Base):
@@ -58,10 +60,10 @@ class Rfc2544back2back(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.learnframes_7035c7a8fb6cf6098f17581ec40eff9c import LearnFrames
-        if self._properties.get('LearnFrames', None) is not None:
-            return self._properties.get('LearnFrames')
-        else:
-            return LearnFrames(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnFrames', None) is not None:
+                return self._properties.get('LearnFrames')
+        return LearnFrames(self)._select()
 
     @property
     def PassCriteria(self):
@@ -75,10 +77,10 @@ class Rfc2544back2back(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_7402028bbaacf1a2b6e86d83729e0c42 import PassCriteria
-        if self._properties.get('PassCriteria', None) is not None:
-            return self._properties.get('PassCriteria')
-        else:
-            return PassCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PassCriteria', None) is not None:
+                return self._properties.get('PassCriteria')
+        return PassCriteria(self)._select()
 
     @property
     def Results(self):
@@ -92,10 +94,10 @@ class Rfc2544back2back(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.results_5e5f2e0277b95f048a3133269b7ab1a9 import Results
-        if self._properties.get('Results', None) is not None:
-            return self._properties.get('Results')
-        else:
-            return Results(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Results', None) is not None:
+                return self._properties.get('Results')
+        return Results(self)._select()
 
     @property
     def TestConfig(self):
@@ -109,10 +111,10 @@ class Rfc2544back2back(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_9258ab9b78da793408641adef54f6257 import TestConfig
-        if self._properties.get('TestConfig', None) is not None:
-            return self._properties.get('TestConfig')
-        else:
-            return TestConfig(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestConfig', None) is not None:
+                return self._properties.get('TestConfig')
+        return TestConfig(self)._select()
 
     @property
     def TrafficSelection(self):
@@ -126,10 +128,10 @@ class Rfc2544back2back(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_0a6f6538f7b4bc978d27df978c815f65 import TrafficSelection
-        if self._properties.get('TrafficSelection', None) is not None:
-            return self._properties.get('TrafficSelection')
-        else:
-            return TrafficSelection(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficSelection', None) is not None:
+                return self._properties.get('TrafficSelection')
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

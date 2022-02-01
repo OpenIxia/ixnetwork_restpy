@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ConfigVLANParams(Base):
@@ -279,6 +281,59 @@ class ConfigVLANParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CvlanID=None, CvlanIDStep=None, CvlanPriority=None, CvlanTpid=None, EnableVLAN=None, SvlanID=None, SvlanIDStep=None, SvlanPriority=None, SvlanTpid=None, VlanID=None, VlanIDStep=None, VlanPriority=None, VlanTpid=None, VlanType=None):
+        # type: (int, int, int, str, bool, int, int, int, str, int, int, int, str, str) -> ConfigVLANParams
+        """Finds and retrieves configVLANParams resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve configVLANParams resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all configVLANParams resources from the server.
+
+        Args
+        ----
+        - CvlanID (number): Import only the best routes (provided route file has this information).
+        - CvlanIDStep (number): Import only the best routes (provided route file has this information).
+        - CvlanPriority (number): Import only the best routes (provided route file has this information).
+        - CvlanTpid (str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200)): Import only the best routes (provided route file has this information).
+        - EnableVLAN (bool): Import only the best routes (provided route file has this information).
+        - SvlanID (number): Import only the best routes (provided route file has this information).
+        - SvlanIDStep (number): Import only the best routes (provided route file has this information).
+        - SvlanPriority (number): Import only the best routes (provided route file has this information).
+        - SvlanTpid (str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200)): Import only the best routes (provided route file has this information).
+        - VlanID (number): Import only the best routes (provided route file has this information).
+        - VlanIDStep (number): Import only the best routes (provided route file has this information).
+        - VlanPriority (number): Import only the best routes (provided route file has this information).
+        - VlanTpid (str(vlanTpId8100 | vlanTpId88a8 | vlanTpId9100 | vlanTpId9200)): Import only the best routes (provided route file has this information).
+        - VlanType (str(vlanStackingTypeSingleVlan | vlanStackingTypeStackedVlan)): Import only the best routes (provided route file has this information).
+
+        Returns
+        -------
+        - self: This instance with matching configVLANParams resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of configVLANParams data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the configVLANParams resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ConfigVLAN(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

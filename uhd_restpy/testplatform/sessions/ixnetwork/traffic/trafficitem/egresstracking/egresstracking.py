@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgressTracking(Base):
@@ -59,10 +61,10 @@ class EgressTracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset import FieldOffset
-        if self._properties.get('FieldOffset', None) is not None:
-            return self._properties.get('FieldOffset')
-        else:
-            return FieldOffset(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FieldOffset', None) is not None:
+                return self._properties.get('FieldOffset')
+        return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):

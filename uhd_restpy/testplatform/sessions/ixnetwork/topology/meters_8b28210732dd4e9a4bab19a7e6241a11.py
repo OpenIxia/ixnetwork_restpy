@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Meters(Base):
@@ -62,10 +64,10 @@ class Meters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bands_392f44cb40ca53ad5e0fc665cc14dea3 import Bands
-        if self._properties.get('Bands', None) is not None:
-            return self._properties.get('Bands')
-        else:
-            return Bands(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bands', None) is not None:
+                return self._properties.get('Bands')
+        return Bands(self)
 
     @property
     def Active(self):

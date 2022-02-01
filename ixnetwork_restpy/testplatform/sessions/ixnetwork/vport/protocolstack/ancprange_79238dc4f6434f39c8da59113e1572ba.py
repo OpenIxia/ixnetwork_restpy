@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AncpRange(Base):
@@ -72,10 +74,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpatmrange_6f63c06966e1498b719c634a547ca627 import AncpAtmRange
-        if self._properties.get('AncpAtmRange', None) is not None:
-            return self._properties.get('AncpAtmRange')
-        else:
-            return AncpAtmRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpAtmRange', None) is not None:
+                return self._properties.get('AncpAtmRange')
+        return AncpAtmRange(self)._select()
 
     @property
     def AncpIpRange(self):
@@ -89,10 +91,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpiprange_9509b9300eb51557917d821eac889943 import AncpIpRange
-        if self._properties.get('AncpIpRange', None) is not None:
-            return self._properties.get('AncpIpRange')
-        else:
-            return AncpIpRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpIpRange', None) is not None:
+                return self._properties.get('AncpIpRange')
+        return AncpIpRange(self)._select()
 
     @property
     def AncpMacRange(self):
@@ -106,10 +108,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpmacrange_c4838079ac3352fa8f3b5892714ecc39 import AncpMacRange
-        if self._properties.get('AncpMacRange', None) is not None:
-            return self._properties.get('AncpMacRange')
-        else:
-            return AncpMacRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpMacRange', None) is not None:
+                return self._properties.get('AncpMacRange')
+        return AncpMacRange(self)._select()
 
     @property
     def AncpPvcRange(self):
@@ -123,10 +125,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancppvcrange_adcdb16c4bef916c38a3688a09171c89 import AncpPvcRange
-        if self._properties.get('AncpPvcRange', None) is not None:
-            return self._properties.get('AncpPvcRange')
-        else:
-            return AncpPvcRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpPvcRange', None) is not None:
+                return self._properties.get('AncpPvcRange')
+        return AncpPvcRange(self)._select()
 
     @property
     def AncpVlanRange(self):
@@ -140,10 +142,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancpvlanrange_ecb2417bc7ff3eaf61e7a4c1579e45c3 import AncpVlanRange
-        if self._properties.get('AncpVlanRange', None) is not None:
-            return self._properties.get('AncpVlanRange')
-        else:
-            return AncpVlanRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpVlanRange', None) is not None:
+                return self._properties.get('AncpVlanRange')
+        return AncpVlanRange(self)._select()
 
     @property
     def DslProfileAllocationTable(self):
@@ -157,10 +159,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dslprofileallocationtable_081b694fd9ffdec0ee2b453426ee8ca7 import DslProfileAllocationTable
-        if self._properties.get('DslProfileAllocationTable', None) is not None:
-            return self._properties.get('DslProfileAllocationTable')
-        else:
-            return DslProfileAllocationTable(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DslProfileAllocationTable', None) is not None:
+                return self._properties.get('DslProfileAllocationTable')
+        return DslProfileAllocationTable(self)
 
     @property
     def DslResyncProfileAllocationTable(self):
@@ -174,10 +176,10 @@ class AncpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dslresyncprofileallocationtable_06e538ede4f238f66b42f332521d478c import DslResyncProfileAllocationTable
-        if self._properties.get('DslResyncProfileAllocationTable', None) is not None:
-            return self._properties.get('DslResyncProfileAllocationTable')
-        else:
-            return DslResyncProfileAllocationTable(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DslResyncProfileAllocationTable', None) is not None:
+                return self._properties.get('DslResyncProfileAllocationTable')
+        return DslResyncProfileAllocationTable(self)
 
     @property
     def AccessAggregationCbTlv(self):

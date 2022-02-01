@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -1005,6 +1007,104 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AddrRateNumFrames=None, AddrRateValidationFpsRate=None, AddrRateValidationRate=None, AddrRateValidationRateUnit=None, Age=None, BidirectionalOptionEnabled=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateLatency=None, CountRandomFrameSize=None, DelayAfterTransmit=None, Duration=None, EnableDataIntegrity=None, EnableDropLink=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, EnforceBidirectional=None, ForceRegenerate=None, FrameLossUnit=None, FrameSizeMode=None, FramesizeList=None, Gap=None, IncrementLoadUnit=None, InitialBinaryLoadRate=None, InitialIncrementLoadRate=None, LatencyBins=None, LatencyBinsEnabled=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxBinaryLoadRate=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MinBinaryLoadRate=None, MinIncrementFrameSize=None, MinIncrementLoadRate=None, MinRandomFrameSize=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortDownTime=None, ProtocolItem=None, ShowDetailedBinaryResults=None, StaggeredStart=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, SupportedTrafficTypes=None, TargetValue=None, TrafficType=None, TxDelay=None):
+        # type: (int, str, int, str, int, bool, int, str, str, int, str, int, int, bool, int, int, int, bool, bool, bool, bool, bool, bool, bool, str, str, List[str], int, str, int, int, str, bool, str, str, str, str, int, int, int, int, int, int, int, int, int, bool, str, int, int, List[str], bool, bool, int, int, str, str, str, int) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - AddrRateNumFrames (number): The number of addresses that are to be used for each port in the current configuration.
+        - AddrRateValidationFpsRate (str): The rate at which validation frames are sent.
+        - AddrRateValidationRate (number): The number of validation frames that IxNetwork sends for each address.
+        - AddrRateValidationRateUnit (str(fps | percentMaxRate)): The unit of validation frames that IxNetwork sends for each address.
+        - Age (number): New table size for each retry.
+        - BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
+        - BinaryBackoff (number): The percentage to be applied to the search interval through which the next iteration rate is obtained.
+        - BinaryFrameLossUnit (str(% | frames)): The binary frame loss unit, measured either as percentage value or number of frames lost.
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The binary load unit value of test configuration.
+        - BinaryResolution (number): The resolution of the iteration during a binary search.
+        - BinarySearchType (str(linear | perFlow)): Specify the binary search type of the test configuration.
+        - BinaryTolerance (number): The resolution of the iteration during a binary search.
+        - BurstSize (number): The number of packets that are sent in a burst.
+        - CalculateLatency (bool): If true, the latency is calculated.
+        - CountRandomFrameSize (number): If true, randomly counts the frame size.
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+        - Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+        - EnableDataIntegrity (bool): If true, enables data integrity test.
+        - EnableDropLink (bool): If true, allows to drop link.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableOldStatsForReef (bool): Enables old statistics for reef.
+        - EnforceBidirectional (bool): If true, uses bidirectional traffic mapping.
+        - ForceRegenerate (bool): Initiates a forced regeneration of the test configuration.
+        - FrameLossUnit (str): The frame loss unit of measurement for the algorithm.
+        - FrameSizeMode (str(custom | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - FramesizeList (list(str)): The list of the available frame size.
+        - Gap (number): Inter-frame gap.
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The incremental value of the load unit.
+        - InitialBinaryLoadRate (number): The load rate used in the first iteration for each frame size during a binary search.
+        - InitialIncrementLoadRate (number): The initial incremental value of load rate.
+        - LatencyBins (str): Sets the latency bins statistics.
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics.
+        - LoadRateList (str): Enter the Load Rate List.
+        - LoadType (str(binary | increment)): The type of the payload setting.
+        - LoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The load unit value of test configuration.
+        - MapType (str): The mapping type.
+        - MaxBinaryLoadRate (number): The upper bound of the iteration rates for each frame size during a binary search.
+        - MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+        - MaxIncrementLoadRate (number): The maximum incremental value of the load rate.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MinBinaryLoadRate (number): The lower bound of the iteration rates for each frame size during a binary search.
+        - MinIncrementFrameSize (number): The minimum random frame size to be sent.
+        - MinIncrementLoadRate (number): The minimum incremental value of load rate.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - Numtrials (number): Defines how many times each frame size will be tested.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - PortDownTime (number): The time interval during the port is down.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - StaggeredStart (bool): If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
+        - StepIncrementFrameSize (number): The incremental step value of the frame size.
+        - StepIncrementLoadRate (number): The step incremental value of the load rate.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TargetValue (str): The value of the statistic that determines the success of the test.
+        - TrafficType (str(burstyLoading | constantLoading)): Specify the type of the traffic of the test configuration.
+        - TxDelay (number): Signifies the transmission delay time.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

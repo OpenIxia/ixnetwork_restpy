@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ControllerTables(Base):
@@ -98,10 +100,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactions_f3190fab64661538563653e07df155a5 import ApplyActions
-        if self._properties.get('ApplyActions', None) is not None:
-            return self._properties.get('ApplyActions')
-        else:
-            return ApplyActions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplyActions', None) is not None:
+                return self._properties.get('ApplyActions')
+        return ApplyActions(self)._select()
 
     @property
     def ApplyActionsMiss(self):
@@ -115,10 +117,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmiss_c6e26bae5086b5561d3714cc015046b0 import ApplyActionsMiss
-        if self._properties.get('ApplyActionsMiss', None) is not None:
-            return self._properties.get('ApplyActionsMiss')
-        else:
-            return ApplyActionsMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplyActionsMiss', None) is not None:
+                return self._properties.get('ApplyActionsMiss')
+        return ApplyActionsMiss(self)._select()
 
     @property
     def ApplySetField(self):
@@ -132,10 +134,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_253c9a5a708bdb2312cf5d52ad1f87ad import ApplySetField
-        if self._properties.get('ApplySetField', None) is not None:
-            return self._properties.get('ApplySetField')
-        else:
-            return ApplySetField(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetField', None) is not None:
+                return self._properties.get('ApplySetField')
+        return ApplySetField(self)._select()
 
     @property
     def ApplySetFieldMiss(self):
@@ -149,10 +151,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmiss_cecf6f2fc7109bdd9f0f43cfdcab4a67 import ApplySetFieldMiss
-        if self._properties.get('ApplySetFieldMiss', None) is not None:
-            return self._properties.get('ApplySetFieldMiss')
-        else:
-            return ApplySetFieldMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetFieldMiss', None) is not None:
+                return self._properties.get('ApplySetFieldMiss')
+        return ApplySetFieldMiss(self)._select()
 
     @property
     def ControllerTableFlowRanges(self):
@@ -166,10 +168,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllertableflowranges_e75acbbcda7835d3ccf85f0dda576bbc import ControllerTableFlowRanges
-        if self._properties.get('ControllerTableFlowRanges', None) is not None:
-            return self._properties.get('ControllerTableFlowRanges')
-        else:
-            return ControllerTableFlowRanges(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ControllerTableFlowRanges', None) is not None:
+                return self._properties.get('ControllerTableFlowRanges')
+        return ControllerTableFlowRanges(self)
 
     @property
     def FeaturesSupported(self):
@@ -183,10 +185,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.featuressupported_54813e4d9341e0be8768b74817aeac3d import FeaturesSupported
-        if self._properties.get('FeaturesSupported', None) is not None:
-            return self._properties.get('FeaturesSupported')
-        else:
-            return FeaturesSupported(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FeaturesSupported', None) is not None:
+                return self._properties.get('FeaturesSupported')
+        return FeaturesSupported(self)._select()
 
     @property
     def Instruction(self):
@@ -200,10 +202,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_da8215ede02e2b1110439290731db450 import Instruction
-        if self._properties.get('Instruction', None) is not None:
-            return self._properties.get('Instruction')
-        else:
-            return Instruction(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Instruction', None) is not None:
+                return self._properties.get('Instruction')
+        return Instruction(self)._select()
 
     @property
     def InstructionMiss(self):
@@ -217,10 +219,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmiss_2ad1cd6bc93242f96042d2e2049a9732 import InstructionMiss
-        if self._properties.get('InstructionMiss', None) is not None:
-            return self._properties.get('InstructionMiss')
-        else:
-            return InstructionMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('InstructionMiss', None) is not None:
+                return self._properties.get('InstructionMiss')
+        return InstructionMiss(self)._select()
 
     @property
     def Match(self):
@@ -234,10 +236,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_090b898f6d78ba3c4bdf0995a399336f import Match
-        if self._properties.get('Match', None) is not None:
-            return self._properties.get('Match')
-        else:
-            return Match(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Match', None) is not None:
+                return self._properties.get('Match')
+        return Match(self)._select()
 
     @property
     def TableModificationTriggerAttributes(self):
@@ -251,10 +253,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablemodificationtriggerattributes_fa8f1d7a5a2f67cd2c8b254e201fdc5a import TableModificationTriggerAttributes
-        if self._properties.get('TableModificationTriggerAttributes', None) is not None:
-            return self._properties.get('TableModificationTriggerAttributes')
-        else:
-            return TableModificationTriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TableModificationTriggerAttributes', None) is not None:
+                return self._properties.get('TableModificationTriggerAttributes')
+        return TableModificationTriggerAttributes(self)._select()
 
     @property
     def Wildcards(self):
@@ -268,10 +270,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_82e961cfac4b8a1d597719e0a8012db9 import Wildcards
-        if self._properties.get('Wildcards', None) is not None:
-            return self._properties.get('Wildcards')
-        else:
-            return Wildcards(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Wildcards', None) is not None:
+                return self._properties.get('Wildcards')
+        return Wildcards(self)._select()
 
     @property
     def WriteActions(self):
@@ -285,10 +287,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactions_53b6fc380cbeecaf17b7c6a2c7a64909 import WriteActions
-        if self._properties.get('WriteActions', None) is not None:
-            return self._properties.get('WriteActions')
-        else:
-            return WriteActions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteActions', None) is not None:
+                return self._properties.get('WriteActions')
+        return WriteActions(self)._select()
 
     @property
     def WriteActionsMiss(self):
@@ -302,10 +304,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmiss_d80c3286af9e5d78bc736e7aeda2cd71 import WriteActionsMiss
-        if self._properties.get('WriteActionsMiss', None) is not None:
-            return self._properties.get('WriteActionsMiss')
-        else:
-            return WriteActionsMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteActionsMiss', None) is not None:
+                return self._properties.get('WriteActionsMiss')
+        return WriteActionsMiss(self)._select()
 
     @property
     def WriteSetField(self):
@@ -319,10 +321,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_fbe5072e08f345f2a2c8d7c98b09a8a5 import WriteSetField
-        if self._properties.get('WriteSetField', None) is not None:
-            return self._properties.get('WriteSetField')
-        else:
-            return WriteSetField(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetField', None) is not None:
+                return self._properties.get('WriteSetField')
+        return WriteSetField(self)._select()
 
     @property
     def WriteSetFieldMiss(self):
@@ -336,10 +338,10 @@ class ControllerTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmiss_499a12e92955cf043867d8a88984286f import WriteSetFieldMiss
-        if self._properties.get('WriteSetFieldMiss', None) is not None:
-            return self._properties.get('WriteSetFieldMiss')
-        else:
-            return WriteSetFieldMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetFieldMiss', None) is not None:
+                return self._properties.get('WriteSetFieldMiss')
+        return WriteSetFieldMiss(self)._select()
 
     @property
     def ApplyActionExperimenterData(self):

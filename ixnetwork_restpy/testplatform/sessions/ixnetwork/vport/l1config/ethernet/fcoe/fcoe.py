@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Fcoe(Base):
@@ -36,12 +38,15 @@ class Fcoe(Base):
         'FlowControlType': 'flowControlType',
         'PfcPauseDelay': 'pfcPauseDelay',
         'PfcPriorityGroups': 'pfcPriorityGroups',
+        'PfcQueueGroupSize': 'pfcQueueGroupSize',
+        'PfcQueueGroups': 'pfcQueueGroups',
         'PriorityGroupSize': 'priorityGroupSize',
         'SupportDataCenterMode': 'supportDataCenterMode',
     }
     _SDM_ENUM_MAP = {
         'flowControlType': ['ieee802.1Qbb', 'ieee802.3x'],
-        'priorityGroupSize': ['priorityGroupSize-4', 'priorityGroupSize-8'],
+        'pfcQueueGroupSize': ['pfcQueueGroupSize-1', 'pfcQueueGroupSize-4', 'pfcQueueGroupSize-8'],
+        'priorityGroupSize': ['priorityGroupSize-1', 'priorityGroupSize-4', 'priorityGroupSize-8'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -92,10 +97,10 @@ class Fcoe(Base):
     @property
     def PfcPriorityGroups(self):
         # type: () -> List[str]
-        """
+        """DEPRECATED 
         Returns
         -------
-        - list(str): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
+        - list(str): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the two/four/eight Priority Groups (or to None). The PFCs are numbered 0-7.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PfcPriorityGroups'])
     @PfcPriorityGroups.setter
@@ -104,12 +109,40 @@ class Fcoe(Base):
         self._set_attribute(self._SDM_ATT_MAP['PfcPriorityGroups'], value)
 
     @property
-    def PriorityGroupSize(self):
+    def PfcQueueGroupSize(self):
         # type: () -> str
         """
         Returns
         -------
-        - str(priorityGroupSize-4 | priorityGroupSize-8): The maximum size of a Priority Group.
+        - str(pfcQueueGroupSize-1 | pfcQueueGroupSize-4 | pfcQueueGroupSize-8): Max PFC queue group size
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['PfcQueueGroupSize'])
+    @PfcQueueGroupSize.setter
+    def PfcQueueGroupSize(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP['PfcQueueGroupSize'], value)
+
+    @property
+    def PfcQueueGroups(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): When you select 802.1Qbb as the flowControlType, you can use the Priority/PFC Queue settings to map each of the eight PFC priorities to one of the two/four/eight PFC Queue Groups (or to None).
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['PfcQueueGroups'])
+    @PfcQueueGroups.setter
+    def PfcQueueGroups(self, value):
+        # type: (List[str]) -> None
+        self._set_attribute(self._SDM_ATT_MAP['PfcQueueGroups'], value)
+
+    @property
+    def PriorityGroupSize(self):
+        # type: () -> str
+        """DEPRECATED 
+        Returns
+        -------
+        - str(priorityGroupSize-1 | priorityGroupSize-4 | priorityGroupSize-8): The maximum size of a Priority Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PriorityGroupSize'])
     @PriorityGroupSize.setter
@@ -131,8 +164,8 @@ class Fcoe(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['SupportDataCenterMode'], value)
 
-    def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
-        # type: (bool, str, int, List[str], str, bool) -> Fcoe
+    def update(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PfcQueueGroupSize=None, PfcQueueGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+        # type: (bool, str, int, List[str], str, List[str], str, bool) -> Fcoe
         """Updates fcoe resource on the server.
 
         Args
@@ -140,8 +173,10 @@ class Fcoe(Base):
         - EnablePFCPauseDelay (bool): If true, PFC pause delay is enabled.
         - FlowControlType (str(ieee802.1Qbb | ieee802.3x)): The type of flow control to be selected.
         - PfcPauseDelay (number): If selected, enables to increase the number of frames that is sent when a pause frame is received.
-        - PfcPriorityGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the eight Priority Groups (or to None). The PFCs are numbered 0-7.
-        - PriorityGroupSize (str(priorityGroupSize-4 | priorityGroupSize-8)): The maximum size of a Priority Group.
+        - PfcPriorityGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the two/four/eight Priority Groups (or to None). The PFCs are numbered 0-7.
+        - PfcQueueGroupSize (str(pfcQueueGroupSize-1 | pfcQueueGroupSize-4 | pfcQueueGroupSize-8)): Max PFC queue group size
+        - PfcQueueGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the Priority/PFC Queue settings to map each of the eight PFC priorities to one of the two/four/eight PFC Queue Groups (or to None).
+        - PriorityGroupSize (str(priorityGroupSize-1 | priorityGroupSize-4 | priorityGroupSize-8)): The maximum size of a Priority Group.
         - SupportDataCenterMode (bool): If true, this mode automatically sets Transmit Mode to Interleaved Streams.
 
         Raises
@@ -149,3 +184,50 @@ class Fcoe(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnablePFCPauseDelay=None, FlowControlType=None, PfcPauseDelay=None, PfcPriorityGroups=None, PfcQueueGroupSize=None, PfcQueueGroups=None, PriorityGroupSize=None, SupportDataCenterMode=None):
+        # type: (bool, str, int, List[str], str, List[str], str, bool) -> Fcoe
+        """Finds and retrieves fcoe resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoe resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoe resources from the server.
+
+        Args
+        ----
+        - EnablePFCPauseDelay (bool): If true, PFC pause delay is enabled.
+        - FlowControlType (str(ieee802.1Qbb | ieee802.3x)): The type of flow control to be selected.
+        - PfcPauseDelay (number): If selected, enables to increase the number of frames that is sent when a pause frame is received.
+        - PfcPriorityGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the PFC/Priority settings to map each of the eight PFC priorities to one of the two/four/eight Priority Groups (or to None). The PFCs are numbered 0-7.
+        - PfcQueueGroupSize (str(pfcQueueGroupSize-1 | pfcQueueGroupSize-4 | pfcQueueGroupSize-8)): Max PFC queue group size
+        - PfcQueueGroups (list(str)): When you select 802.1Qbb as the flowControlType, you can use the Priority/PFC Queue settings to map each of the eight PFC priorities to one of the two/four/eight PFC Queue Groups (or to None).
+        - PriorityGroupSize (str(priorityGroupSize-1 | priorityGroupSize-4 | priorityGroupSize-8)): The maximum size of a Priority Group.
+        - SupportDataCenterMode (bool): If true, this mode automatically sets Transmit Mode to Interleaved Streams.
+
+        Returns
+        -------
+        - self: This instance with matching fcoe resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of fcoe data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the fcoe resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

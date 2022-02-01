@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CpIpRange(Base):
@@ -270,6 +272,59 @@ class CpIpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoMacGeneration=None, Count=None, EnableGatewayArp=None, Enabled=None, GatewayAddress=None, GatewayIncrement=None, GatewayIncrementMode=None, IncrementBy=None, IpAddress=None, IpType=None, Mss=None, Name=None, ObjectId=None, Prefix=None):
+        # type: (bool, int, bool, bool, str, str, str, str, str, str, int, str, str, int) -> CpIpRange
+        """Finds and retrieves cpIpRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cpIpRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cpIpRange resources from the server.
+
+        Args
+        ----
+        - AutoMacGeneration (bool): If set, MAC addresses will be auto-generated based on IP
+        - Count (number): The total number of addresses to be created for the range.
+        - EnableGatewayArp (bool): Deprecated property, please use Static IP globals instead.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - GatewayAddress (str): Defines the gateway to be associated with all the addresses created in the range.
+        - GatewayIncrement (str): Defines the gateway step size to be used in the association with the addresses created in the range.
+        - GatewayIncrementMode (str): Defines the gateway step size to be used in the association with the addresses created in the range.
+        - IncrementBy (str): Defines the increment to be used for enumerating all the addresses in the range.
+        - IpAddress (str): Defines the base address to be used for enumerating all the addresses in the range.
+        - IpType (str): Defines the version of IP address style to be used for describing the range.
+        - Mss (number): The Maximum Segment Size, defines the maximum length of the data. TCP MSS = MTU - TCP header size - IP header size. Theoretically, this value can be as large as 65495, but such a large value is never used. For traditional Ethernet the maximum value for MSS is 1460 = 1500-40. With Jumbo Frame support, the maximum value is 9460 = 9500-40.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Prefix (number): Defines the length (in bits) of the mask to be used in conjunction with all the addresses created in the range. e.g., a prefix of 24 = 255.255.255.0 for IPv4.
+
+        Returns
+        -------
+        - self: This instance with matching cpIpRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of cpIpRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the cpIpRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

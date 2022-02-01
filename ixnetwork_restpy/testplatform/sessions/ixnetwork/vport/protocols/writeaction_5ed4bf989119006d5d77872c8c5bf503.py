@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class WriteAction(Base):
@@ -57,10 +59,10 @@ class WriteAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionmisstype_74e479a9923f7c41a7e661d1cc1ae3ad import WriteActionMissType
-        if self._properties.get('WriteActionMissType', None) is not None:
-            return self._properties.get('WriteActionMissType')
-        else:
-            return WriteActionMissType(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteActionMissType', None) is not None:
+                return self._properties.get('WriteActionMissType')
+        return WriteActionMissType(self)._select()
 
     @property
     def WriteActionType(self):
@@ -74,10 +76,10 @@ class WriteAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactiontype_a223fc2d5a16eef37e250b290c4a730d import WriteActionType
-        if self._properties.get('WriteActionType', None) is not None:
-            return self._properties.get('WriteActionType')
-        else:
-            return WriteActionType(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteActionType', None) is not None:
+                return self._properties.get('WriteActionType')
+        return WriteActionType(self)._select()
 
     @property
     def ExperimenterData(self):
@@ -181,3 +183,48 @@ class WriteAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterDataLengthMiss=None, ExperimenterDataMiss=None, ExperimenterId=None, ExperimenterIdMiss=None):
+        # type: (str, int, int, str, int, int) -> WriteAction
+        """Finds and retrieves writeAction resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve writeAction resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all writeAction resources from the server.
+
+        Args
+        ----
+        - ExperimenterData (str): NOT DEFINED
+        - ExperimenterDataLength (number): NOT DEFINED
+        - ExperimenterDataLengthMiss (number): NOT DEFINED
+        - ExperimenterDataMiss (str): NOT DEFINED
+        - ExperimenterId (number): NOT DEFINED
+        - ExperimenterIdMiss (number): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching writeAction resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of writeAction data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the writeAction resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

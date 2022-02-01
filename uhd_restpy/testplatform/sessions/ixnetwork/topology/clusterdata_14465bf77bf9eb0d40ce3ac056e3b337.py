@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ClusterData(Base):
@@ -275,6 +277,55 @@ class ClusterData(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BindingStatus=None, BindingsCount=None, Count=None, CurrentRetryCount=None, DescriptiveName=None, ErrorStatus=None, MaxRetryCount=None, Name=None, ProgressStatus=None, RetryStatus=None):
+        # type: (List[str], int, int, int, str, List[str], int, str, str, str) -> ClusterData
+        """Finds and retrieves clusterData resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve clusterData resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all clusterData resources from the server.
+
+        Args
+        ----
+        - BindingStatus (list(str[attached | attaching | detached | detaching | disconnected])): Additional information about the Binding's state
+        - BindingsCount (number): Bindings Count
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - CurrentRetryCount (number): This field will Show current retry count value Controller is doing to Synchronize TOR Database Automatically when TOR is reconnecting while doing the action.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - ErrorStatus (list(str[deleteBindingError | deleteBindingTimeout | deleteLsError | deleteLsTimeout | differentLsName | duplicateVlanLsPort | insertBindingError | insertBindingTimeout | insertLsError | insertLsTimeout | none | vlanMappedToDifferentLSs])): Error information about the Binding
+        - MaxRetryCount (number): Maximum number of Retries Controller will do the TOR Database Synchronization Automatically, If TOR is reconnecting while doing the action
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - ProgressStatus (str): Gives info Controller is busy doing some actions. There are 3 states: 1. None - Default State. 2. In Progress - Processing is in Progress. 3. Done - Controller is done processing all requests.
+        - RetryStatus (str): This field will Show if Controller has failed to complete the entire action even after Max Retry Count attempts There are 2 states: 1. None - Default State. 2. Retry Failed - Controller has done Max Retry Count attempts to complete the action, but failed
+
+        Returns
+        -------
+        - self: This instance with matching clusterData resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of clusterData data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the clusterData resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Attach(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

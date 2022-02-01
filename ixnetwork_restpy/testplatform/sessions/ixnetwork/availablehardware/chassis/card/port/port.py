@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Port(Base):
@@ -59,10 +61,10 @@ class Port(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.chassis.card.port.tapsettings.tapsettings import TapSettings
-        if self._properties.get('TapSettings', None) is not None:
-            return self._properties.get('TapSettings')
-        else:
-            return TapSettings(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TapSettings', None) is not None:
+                return self._properties.get('TapSettings')
+        return TapSettings(self)
 
     @property
     def Description(self):

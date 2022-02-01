@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Locations(Base):
@@ -43,11 +45,13 @@ class Locations(Base):
         'Hostname': 'hostname',
         'Ip': 'ip',
         'IsMaster': 'isMaster',
+        'IsPrimary': 'isPrimary',
         'IxnBuildNumber': 'ixnBuildNumber',
         'IxosBuildNumber': 'ixosBuildNumber',
         'LicenseErrors': 'licenseErrors',
         'MasterDevice': 'masterDevice',
         'OsType': 'osType',
+        'PrimaryDevice': 'primaryDevice',
         'ProtocolBuildNumber': 'protocolBuildNumber',
         'SequenceId': 'sequenceId',
         'State': 'state',
@@ -74,10 +78,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.ports.ports import Ports
-        if self._properties.get('Ports', None) is not None:
-            return self._properties.get('Ports')
-        else:
-            return Ports(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ports', None) is not None:
+                return self._properties.get('Ports')
+        return Ports(self)
 
     @property
     def ResourceGroups(self):
@@ -91,10 +95,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.resourcegroups.resourcegroups import ResourceGroups
-        if self._properties.get('ResourceGroups', None) is not None:
-            return self._properties.get('ResourceGroups')
-        else:
-            return ResourceGroups(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ResourceGroups', None) is not None:
+                return self._properties.get('ResourceGroups')
+        return ResourceGroups(self)
 
     @property
     def CableLength(self):
@@ -191,12 +195,22 @@ class Locations(Base):
     @property
     def IsMaster(self):
         # type: () -> bool
-        """
+        """DEPRECATED 
         Returns
         -------
         - bool: 
         """
         return self._get_attribute(self._SDM_ATT_MAP['IsMaster'])
+
+    @property
+    def IsPrimary(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Specifies whether this chassis is a primary of a secondary in a chain.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['IsPrimary'])
 
     @property
     def IxnBuildNumber(self):
@@ -231,7 +245,7 @@ class Locations(Base):
     @property
     def MasterDevice(self):
         # type: () -> str
-        """
+        """DEPRECATED 
         Returns
         -------
         - str: 
@@ -251,6 +265,20 @@ class Locations(Base):
         - str(linux | unknown | windows): 
         """
         return self._get_attribute(self._SDM_ATT_MAP['OsType'])
+
+    @property
+    def PrimaryDevice(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['PrimaryDevice'])
+    @PrimaryDevice.setter
+    def PrimaryDevice(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP['PrimaryDevice'], value)
 
     @property
     def ProtocolBuildNumber(self):
@@ -286,8 +314,8 @@ class Locations(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['State'])
 
-    def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterDevice=None, SequenceId=None):
-        # type: (int, str, str, str, int) -> Locations
+    def update(self, CableLength=None, ChainTopology=None, Hostname=None, MasterDevice=None, PrimaryDevice=None, SequenceId=None):
+        # type: (int, str, str, str, str, int) -> Locations
         """Updates locations resource on the server.
 
         Args
@@ -296,6 +324,7 @@ class Locations(Base):
         - ChainTopology (str(daisy | none | star)): 
         - Hostname (str): 
         - MasterDevice (str): 
+        - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - SequenceId (number): 
 
         Raises
@@ -304,8 +333,8 @@ class Locations(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, CableLength=None, ChainTopology=None, Hostname=None, MasterDevice=None, SequenceId=None):
-        # type: (int, str, str, str, int) -> Locations
+    def add(self, CableLength=None, ChainTopology=None, Hostname=None, MasterDevice=None, PrimaryDevice=None, SequenceId=None):
+        # type: (int, str, str, str, str, int) -> Locations
         """Adds a new locations resource on the server and adds it to the container.
 
         Args
@@ -314,6 +343,7 @@ class Locations(Base):
         - ChainTopology (str(daisy | none | star)): 
         - Hostname (str): 
         - MasterDevice (str): 
+        - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - SequenceId (number): 
 
         Returns
@@ -336,8 +366,8 @@ class Locations(Base):
         """
         self._delete()
 
-    def find(self, CableLength=None, ChainTopology=None, ConnectRetries=None, DeviceType=None, ErrorDescription=None, ErrorState=None, Hostname=None, Ip=None, IsMaster=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterDevice=None, OsType=None, ProtocolBuildNumber=None, SequenceId=None, State=None):
-        # type: (int, str, int, str, str, str, str, str, bool, str, str, List[str], str, str, str, int, str) -> Locations
+    def find(self, CableLength=None, ChainTopology=None, ConnectRetries=None, DeviceType=None, ErrorDescription=None, ErrorState=None, Hostname=None, Ip=None, IsMaster=None, IsPrimary=None, IxnBuildNumber=None, IxosBuildNumber=None, LicenseErrors=None, MasterDevice=None, OsType=None, PrimaryDevice=None, ProtocolBuildNumber=None, SequenceId=None, State=None):
+        # type: (int, str, int, str, str, str, str, str, bool, bool, str, str, List[str], str, str, str, str, int, str) -> Locations
         """Finds and retrieves locations resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve locations resources from the server.
@@ -355,11 +385,13 @@ class Locations(Base):
         - Hostname (str): 
         - Ip (str): 
         - IsMaster (bool): 
+        - IsPrimary (bool): Specifies whether this chassis is a primary of a secondary in a chain.
         - IxnBuildNumber (str): 
         - IxosBuildNumber (str): 
         - LicenseErrors (list(str)): 
         - MasterDevice (str): 
         - OsType (str(linux | unknown | windows)): 
+        - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - ProtocolBuildNumber (str): 
         - SequenceId (number): 
         - State (str(down | down | polling | polling | polling | ready)): 

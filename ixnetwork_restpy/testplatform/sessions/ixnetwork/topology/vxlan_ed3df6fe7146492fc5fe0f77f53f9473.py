@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Vxlan(Base):
@@ -72,10 +74,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
-        if self._properties.get('Bfdv4Interface', None) is not None:
-            return self._properties.get('Bfdv4Interface')
-        else:
-            return Bfdv4Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bfdv4Interface', None) is not None:
+                return self._properties.get('Bfdv4Interface')
+        return Bfdv4Interface(self)
 
     @property
     def Connector(self):
@@ -89,10 +91,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def Ethernet(self):
@@ -106,10 +108,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
@@ -123,10 +125,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        if self._properties.get('Ipv4Loopback', None) is not None:
-            return self._properties.get('Ipv4Loopback')
-        else:
-            return Ipv4Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4Loopback', None) is not None:
+                return self._properties.get('Ipv4Loopback')
+        return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
@@ -140,10 +142,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        if self._properties.get('Ipv6Loopback', None) is not None:
-            return self._properties.get('Ipv6Loopback')
-        else:
-            return Ipv6Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6Loopback', None) is not None:
+                return self._properties.get('Ipv6Loopback')
+        return Ipv6Loopback(self)
 
     @property
     def LdpBasicRouter(self):
@@ -157,10 +159,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
-        if self._properties.get('LdpBasicRouter', None) is not None:
-            return self._properties.get('LdpBasicRouter')
-        else:
-            return LdpBasicRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpBasicRouter', None) is not None:
+                return self._properties.get('LdpBasicRouter')
+        return LdpBasicRouter(self)
 
     @property
     def LdpBasicRouterV6(self):
@@ -174,10 +176,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        if self._properties.get('LdpBasicRouterV6', None) is not None:
-            return self._properties.get('LdpBasicRouterV6')
-        else:
-            return LdpBasicRouterV6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpBasicRouterV6', None) is not None:
+                return self._properties.get('LdpBasicRouterV6')
+        return LdpBasicRouterV6(self)
 
     @property
     def LdpTargetedRouter(self):
@@ -191,10 +193,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        if self._properties.get('LdpTargetedRouter', None) is not None:
-            return self._properties.get('LdpTargetedRouter')
-        else:
-            return LdpTargetedRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpTargetedRouter', None) is not None:
+                return self._properties.get('LdpTargetedRouter')
+        return LdpTargetedRouter(self)
 
     @property
     def LdpTargetedRouterV6(self):
@@ -208,10 +210,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        if self._properties.get('LdpTargetedRouterV6', None) is not None:
-            return self._properties.get('LdpTargetedRouterV6')
-        else:
-            return LdpTargetedRouterV6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpTargetedRouterV6', None) is not None:
+                return self._properties.get('LdpTargetedRouterV6')
+        return LdpTargetedRouterV6(self)
 
     @property
     def LearnedInfo(self):
@@ -225,10 +227,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def VxlanStaticInfo(self):
@@ -242,10 +244,10 @@ class Vxlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanstaticinfo_6879422db4d58cf50c6662a6238ea2d4 import VxlanStaticInfo
-        if self._properties.get('VxlanStaticInfo', None) is not None:
-            return self._properties.get('VxlanStaticInfo')
-        else:
-            return VxlanStaticInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('VxlanStaticInfo', None) is not None:
+                return self._properties.get('VxlanStaticInfo')
+        return VxlanStaticInfo(self)._select()
 
     @property
     def ConnectedVia(self):
@@ -424,7 +426,7 @@ class Vxlan(Base):
         """
         Returns
         -------
-        - number: number of unicast VTEP
+        - number: Number of unicast VTEP
         """
         return self._get_attribute(self._SDM_ATT_MAP['StaticInfoCount'])
     @StaticInfoCount.setter
@@ -470,7 +472,7 @@ class Vxlan(Base):
         - OvsdbConnectorMultiplier (number): Ovsdb to Vxlan multiplier, when part of OVSDB Server stack.
         - RunningMode (str(none | ovsdbStack | ovsdbControllerBfdStack)): There will be different behaviours based on role (normal=0, ovsdb controller stack=1, bfd stack=2.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - StaticInfoCount (number): number of unicast VTEP
+        - StaticInfoCount (number): Number of unicast VTEP
 
         Raises
         ------
@@ -492,7 +494,7 @@ class Vxlan(Base):
         - OvsdbConnectorMultiplier (number): Ovsdb to Vxlan multiplier, when part of OVSDB Server stack.
         - RunningMode (str(none | ovsdbStack | ovsdbControllerBfdStack)): There will be different behaviours based on role (normal=0, ovsdb controller stack=1, bfd stack=2.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - StaticInfoCount (number): number of unicast VTEP
+        - StaticInfoCount (number): Number of unicast VTEP
 
         Returns
         -------
@@ -536,7 +538,7 @@ class Vxlan(Base):
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
-        - StaticInfoCount (number): number of unicast VTEP
+        - StaticInfoCount (number): Number of unicast VTEP
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
         Returns

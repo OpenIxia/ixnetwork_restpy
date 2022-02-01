@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ECpriRec(Base):
@@ -91,10 +93,10 @@ class ECpriRec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def ECpriFaultSubObjectsList(self):
@@ -108,10 +110,10 @@ class ECpriRec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ecprifaultsubobjectslist_066a935ffc4b8b88998000da08d713eb import ECpriFaultSubObjectsList
-        if self._properties.get('ECpriFaultSubObjectsList', None) is not None:
-            return self._properties.get('ECpriFaultSubObjectsList')
-        else:
-            return ECpriFaultSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriFaultSubObjectsList', None) is not None:
+                return self._properties.get('ECpriFaultSubObjectsList')
+        return ECpriFaultSubObjectsList(self)
 
     @property
     def ActionType(self):

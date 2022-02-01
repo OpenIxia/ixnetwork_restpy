@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpFlowSpecRangesListV6(Base):
@@ -125,10 +127,10 @@ class BgpFlowSpecRangesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        if self._properties.get('BgpAsPathSegmentList', None) is not None:
-            return self._properties.get('BgpAsPathSegmentList')
-        else:
-            return BgpAsPathSegmentList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsPathSegmentList', None) is not None:
+                return self._properties.get('BgpAsPathSegmentList')
+        return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -142,10 +144,10 @@ class BgpFlowSpecRangesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        if self._properties.get('BgpClusterIdList', None) is not None:
-            return self._properties.get('BgpClusterIdList')
-        else:
-            return BgpClusterIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpClusterIdList', None) is not None:
+                return self._properties.get('BgpClusterIdList')
+        return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -159,10 +161,10 @@ class BgpFlowSpecRangesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        if self._properties.get('BgpCommunitiesList', None) is not None:
-            return self._properties.get('BgpCommunitiesList')
-        else:
-            return BgpCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpCommunitiesList', None) is not None:
+                return self._properties.get('BgpCommunitiesList')
+        return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -176,10 +178,10 @@ class BgpFlowSpecRangesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-            return self._properties.get('BgpExtendedCommunitiesList')
-        else:
-            return BgpExtendedCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+                return self._properties.get('BgpExtendedCommunitiesList')
+        return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpLargeCommunitiesList(self):
@@ -193,10 +195,10 @@ class BgpFlowSpecRangesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgplargecommunitieslist_4e8b7e63fdd826da6c354669eb5e3ed0 import BgpLargeCommunitiesList
-        if self._properties.get('BgpLargeCommunitiesList', None) is not None:
-            return self._properties.get('BgpLargeCommunitiesList')
-        else:
-            return BgpLargeCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpLargeCommunitiesList', None) is not None:
+                return self._properties.get('BgpLargeCommunitiesList')
+        return BgpLargeCommunitiesList(self)
 
     @property
     def Active(self):
@@ -1049,6 +1051,53 @@ class BgpFlowSpecRangesListV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfLargeCommunities=None):
+        # type: (int, str, str, int, int, int, int, int) -> BgpFlowSpecRangesListV6
+        """Finds and retrieves bgpFlowSpecRangesListV6 resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpFlowSpecRangesListV6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpFlowSpecRangesListV6 resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExtendedCommunity (number): Number of Extended Communities
+        - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
+
+        Returns
+        -------
+        - self: This instance with matching bgpFlowSpecRangesListV6 resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of bgpFlowSpecRangesListV6 data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the bgpFlowSpecRangesListV6 resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, AggregatorAs=None, AggregatorId=None, AsNumber2Bytes=None, AsNumber4Bytes=None, AsSetMode=None, AssignedNumber2Bytes=None, AssignedNumber4Bytes=None, DestPortMatch=None, DestPrefixLengthV6=None, DestPrefixOffset=None, DestPrefixV6=None, DscpMatch=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableDestPrefixV6=None, EnableExtendedCommunity=None, EnableLargeCommunities=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableRedirect=None, EnableReirectIPv6=None, EnableSourcePrefixV6=None, EnableTrafficAction=None, EnableTrafficMarketing=None, EnableTrafficMarking=None, EnableTrafficRate=None, FlowLabel=None, FlowSpecName=None, FragmentMatchV6=None, IcmpCodeMatch=None, IcmpTypeMatch=None, Ip=None, IpPacketLenMatch=None, IpV4=None, Ipv4NextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, NextHeader=None, NumberOfFlows=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PortMatch=None, RedirectCBit=None, RedirectExtCommunityType=None, RedirectIPv6=None, Redirectnexthop=None, SetNextHop=None, SetNextHopIpType=None, SourcePortMatch=None, SourcePrefixLengthV6=None, SourcePrefixV6=None, SrcPrefixOffset=None, TcpFlagsMatch=None, TerminalAction=None, TrafficActionSample=None, TrafficDscp=None, TrafficRate=None):
         """Base class infrastructure that gets a list of bgpFlowSpecRangesListV6 device ids encapsulated by this object.

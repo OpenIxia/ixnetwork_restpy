@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Instructions(Base):
@@ -63,10 +65,10 @@ class Instructions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionactions_9a3510fc7a5ebd848e6c88855a210c3c import InstructionActions
-        if self._properties.get('InstructionActions', None) is not None:
-            return self._properties.get('InstructionActions')
-        else:
-            return InstructionActions(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InstructionActions', None) is not None:
+                return self._properties.get('InstructionActions')
+        return InstructionActions(self)
 
     @property
     def Experimenter(self):

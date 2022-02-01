@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PccGroup(Base):
@@ -84,10 +86,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def LearnedInfoUpdate(self):
@@ -101,10 +103,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        if self._properties.get('LearnedInfoUpdate', None) is not None:
-            return self._properties.get('LearnedInfoUpdate')
-        else:
-            return LearnedInfoUpdate(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfoUpdate', None) is not None:
+                return self._properties.get('LearnedInfoUpdate')
+        return LearnedInfoUpdate(self)
 
     @property
     def PcReplyLspParameters(self):
@@ -118,10 +120,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_73031069954bcd625c2f1df5c90abae7 import PcReplyLspParameters
-        if self._properties.get('PcReplyLspParameters', None) is not None:
-            return self._properties.get('PcReplyLspParameters')
-        else:
-            return PcReplyLspParameters(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcReplyLspParameters', None) is not None:
+                return self._properties.get('PcReplyLspParameters')
+        return PcReplyLspParameters(self)._select()
 
     @property
     def PcRequestMatchCriteria(self):
@@ -135,10 +137,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_365554ce0f609244eb458907a0c918f3 import PcRequestMatchCriteria
-        if self._properties.get('PcRequestMatchCriteria', None) is not None:
-            return self._properties.get('PcRequestMatchCriteria')
-        else:
-            return PcRequestMatchCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcRequestMatchCriteria', None) is not None:
+                return self._properties.get('PcRequestMatchCriteria')
+        return PcRequestMatchCriteria(self)._select()
 
     @property
     def PceInitiateLSPParameters(self):
@@ -152,10 +154,10 @@ class PccGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_c8b10382dd410ad40974ae280a39117b import PceInitiateLSPParameters
-        if self._properties.get('PceInitiateLSPParameters', None) is not None:
-            return self._properties.get('PceInitiateLSPParameters')
-        else:
-            return PceInitiateLSPParameters(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PceInitiateLSPParameters', None) is not None:
+                return self._properties.get('PceInitiateLSPParameters')
+        return PceInitiateLSPParameters(self)._select()
 
     @property
     def Active(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IptvChannelZapping(Base):
@@ -58,10 +60,10 @@ class IptvChannelZapping(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.passcriteria_2aee0732b4b39a7954484cbeebe7d0b2 import PassCriteria
-        if self._properties.get('PassCriteria', None) is not None:
-            return self._properties.get('PassCriteria')
-        else:
-            return PassCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PassCriteria', None) is not None:
+                return self._properties.get('PassCriteria')
+        return PassCriteria(self)._select()
 
     @property
     def Results(self):
@@ -75,10 +77,10 @@ class IptvChannelZapping(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.results_1e32c8c1705e54282468d0b9b2534af0 import Results
-        if self._properties.get('Results', None) is not None:
-            return self._properties.get('Results')
-        else:
-            return Results(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Results', None) is not None:
+                return self._properties.get('Results')
+        return Results(self)._select()
 
     @property
     def TestConfig(self):
@@ -92,10 +94,10 @@ class IptvChannelZapping(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_1ffc215dd29a0a4a548359d5fc44fcc7 import TestConfig
-        if self._properties.get('TestConfig', None) is not None:
-            return self._properties.get('TestConfig')
-        else:
-            return TestConfig(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestConfig', None) is not None:
+                return self._properties.get('TestConfig')
+        return TestConfig(self)._select()
 
     @property
     def TrafficSelection(self):
@@ -109,10 +111,10 @@ class IptvChannelZapping(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.trafficselection_45858807eefa78d1672d884e5175f810 import TrafficSelection
-        if self._properties.get('TrafficSelection', None) is not None:
-            return self._properties.get('TrafficSelection')
-        else:
-            return TrafficSelection(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficSelection', None) is not None:
+                return self._properties.get('TrafficSelection')
+        return TrafficSelection(self)
 
     @property
     def ForceApplyQTConfig(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Range(Base):
@@ -53,10 +55,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientfdiscrange_4f65e1cb0736d0e25d41722411f1696d import FcClientFdiscRange
-        if self._properties.get('FcClientFdiscRange', None) is not None:
-            return self._properties.get('FcClientFdiscRange')
-        else:
-            return FcClientFdiscRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FcClientFdiscRange', None) is not None:
+                return self._properties.get('FcClientFdiscRange')
+        return FcClientFdiscRange(self)._select()
 
     @property
     def FcClientFlogiRange(self):
@@ -70,10 +72,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.fcclientflogirange_769b8cb65653ef5dc38dd106c278385d import FcClientFlogiRange
-        if self._properties.get('FcClientFlogiRange', None) is not None:
-            return self._properties.get('FcClientFlogiRange')
-        else:
-            return FcClientFlogiRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FcClientFlogiRange', None) is not None:
+                return self._properties.get('FcClientFlogiRange')
+        return FcClientFlogiRange(self)._select()
 
     def add(self):
         """Adds a new range resource on the server and adds it to the container.

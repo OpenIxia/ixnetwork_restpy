@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LearnedFilter(Base):
@@ -55,10 +57,10 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.capabilities_0f99151175aca98019658ce36676a82c import Capabilities
-        if self._properties.get('Capabilities', None) is not None:
-            return self._properties.get('Capabilities')
-        else:
-            return Capabilities(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Capabilities', None) is not None:
+                return self._properties.get('Capabilities')
+        return Capabilities(self)._select()
 
     @property
     def Prefix(self):
@@ -72,10 +74,10 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.prefix_0eba571084c9891c5e7d1691a9106eeb import Prefix
-        if self._properties.get('Prefix', None) is not None:
-            return self._properties.get('Prefix')
-        else:
-            return Prefix(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Prefix', None) is not None:
+                return self._properties.get('Prefix')
+        return Prefix(self)._select()
 
     @property
     def Afi(self):
@@ -149,3 +151,46 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Afi=None, EnableAfiSafi=None, EnablePrefix=None, Safi=None):
+        # type: (int, bool, bool, int) -> LearnedFilter
+        """Finds and retrieves learnedFilter resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedFilter resources from the server.
+
+        Args
+        ----
+        - Afi (number): Address Family Identifier value. Identifies the network layer protocol to be used with these routes.
+        - EnableAfiSafi (bool): If enabled, allows the user to set values to be used for BGP-MP - the user-specified AFI and SAFI values for the BGP MP_REACH_NLRI.
+        - EnablePrefix (bool): If enabled, BGP Prefix Filters configured in this dialog will be used to filter for routes that match those filter entries. Only those routes will be stored in the routing table. If disabled, all learned BGP routes will be stored.
+        - Safi (number): Subsequent Address Family Identifier value. Used with, and provides additional information about, the AFI in the NLRI, per RFC 2858.
+
+        Returns
+        -------
+        - self: This instance with matching learnedFilter resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of learnedFilter data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the learnedFilter resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

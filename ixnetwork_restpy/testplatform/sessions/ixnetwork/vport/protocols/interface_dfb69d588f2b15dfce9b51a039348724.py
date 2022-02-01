@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -83,10 +85,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannel_6438927b294940eb069f5082e5b0256a import OfChannel
-        if self._properties.get('OfChannel', None) is not None:
-            return self._properties.get('OfChannel')
-        else:
-            return OfChannel(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfChannel', None) is not None:
+                return self._properties.get('OfChannel')
+        return OfChannel(self)
 
     @property
     def Switch(self):
@@ -100,10 +102,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switch_01307b98e565f217f4916d54fbbe93ce import Switch
-        if self._properties.get('Switch', None) is not None:
-            return self._properties.get('Switch')
-        else:
-            return Switch(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Switch', None) is not None:
+                return self._properties.get('Switch')
+        return Switch(self)
 
     @property
     def AcceptUnconfiguredChannel(self):

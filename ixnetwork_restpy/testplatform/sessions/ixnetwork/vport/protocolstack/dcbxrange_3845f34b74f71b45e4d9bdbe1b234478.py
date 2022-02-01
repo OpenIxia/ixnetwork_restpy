@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DcbxRange(Base):
@@ -67,10 +69,10 @@ class DcbxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlv_37d6aa3b470efb288cbc76a9c77c1804 import DcbxTlv
-        if self._properties.get('DcbxTlv', None) is not None:
-            return self._properties.get('DcbxTlv')
-        else:
-            return DcbxTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlv', None) is not None:
+                return self._properties.get('DcbxTlv')
+        return DcbxTlv(self)
 
     @property
     def DcbxTlvQaz(self):
@@ -84,10 +86,10 @@ class DcbxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvqaz_208cf6f4022a5582a454a5c53e9a3b60 import DcbxTlvQaz
-        if self._properties.get('DcbxTlvQaz', None) is not None:
-            return self._properties.get('DcbxTlvQaz')
-        else:
-            return DcbxTlvQaz(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvQaz', None) is not None:
+                return self._properties.get('DcbxTlvQaz')
+        return DcbxTlvQaz(self)
 
     @property
     def LldpTlv(self):
@@ -101,10 +103,10 @@ class DcbxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlv_d5fbeb9514995f839bf297520a09968a import LldpTlv
-        if self._properties.get('LldpTlv', None) is not None:
-            return self._properties.get('LldpTlv')
-        else:
-            return LldpTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlv', None) is not None:
+                return self._properties.get('LldpTlv')
+        return LldpTlv(self)
 
     @property
     def ChassisId(self):
@@ -353,6 +355,61 @@ class DcbxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ChassisId=None, ControlTlvMaxVersion=None, DcbxEnable=None, DcbxSubtype=None, DestMacAddress=None, Enabled=None, FastInitEnable=None, HoldTime=None, Name=None, ObjectId=None, Oui=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, TxDelay=None, TxInterval=None):
+        # type: (str, int, bool, int, str, bool, bool, int, str, str, str, str, str, int, int, int) -> DcbxRange
+        """Finds and retrieves dcbxRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dcbxRange resources from the server.
+
+        Args
+        ----
+        - ChassisId (str): Chassis identification for thedevice that transmitted the LLDP frame.
+        - ControlTlvMaxVersion (number): Highest DCBX protocol version supported by the system.
+        - DcbxEnable (bool): Enable DCBX TLVs.
+        - DcbxSubtype (number): Organizationally defined subtype.
+        - DestMacAddress (str): The destination MAC address value.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FastInitEnable (bool): Enable fast initial retransmission.
+        - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Oui (str): The vendor identifier value.
+        - PortIdInterfaceName (str): Port identification for the device that sent the LLDP frame.
+        - PortIdMacAddress (str): 
+        - PortIdSubType (number): 
+        - TxDelay (number): Minimum delay between successive LLDP packets.
+        - TxInterval (number): This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
+
+        Returns
+        -------
+        - self: This instance with matching dcbxRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dcbxRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dcbxRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

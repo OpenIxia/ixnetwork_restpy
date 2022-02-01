@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CurrentFeatures(Base):
@@ -307,3 +309,58 @@ class CurrentFeatures(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, HundredGbFd=None, HundredMbFd=None, HundredMbHd=None, TenGbFd=None, TenMbFd=None, TenMbHd=None, OneGbFd=None, OneGbHd=None, OneTbFd=None, FortyGbFd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, OtherRate=None, Pause=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> CurrentFeatures
+        """Finds and retrieves currentFeatures resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve currentFeatures resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all currentFeatures resources from the server.
+
+        Args
+        ----
+        - HundredGbFd (bool): If true, 100 GB full-duplex rate support is available.
+        - HundredMbFd (bool): If true, 100 MB full-duplex rate support is available.
+        - HundredMbHd (bool): If true, 100 MB half-duplex rate support is available.
+        - TenGbFd (bool): If true, 10 GB full-duplex rate support is available.
+        - TenMbFd (bool): If true, 10 MB full-duplex rate support is available.
+        - TenMbHd (bool): If true, 10 MB half-duplex rate support is available.
+        - OneGbFd (bool): If true, 1 GB full-duplex rate support is available.
+        - OneGbHd (bool): If true, 1 GB half-duplex rate support is available.
+        - OneTbFd (bool): If true, 1 TB full-duplex rate support is available.
+        - FortyGbFd (bool): If true, 40 GB full-duplex rate support is available.
+        - AsymmetricPause (bool): If true, asymmetric pause of ports feature is available.
+        - AutoNegotiation (bool): If true, auto negotiation of ports is available.
+        - CopperMedium (bool): If true, copper medium link type is available.
+        - FiberMedium (bool): If true, fiber medium link type is available.
+        - OtherRate (bool): If true, supports other rate, not in the list.
+        - Pause (bool): If true, pause ports feature is available.
+
+        Returns
+        -------
+        - self: This instance with matching currentFeatures resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of currentFeatures data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the currentFeatures resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

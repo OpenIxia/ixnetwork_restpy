@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NovusHundredGigLan(Base):
@@ -71,7 +73,7 @@ class NovusHundredGigLan(Base):
     }
     _SDM_ENUM_MAP = {
         'autoInstrumentation': ['endOfFrame', 'floating'],
-        'loopbackMode': ['internalLoopback', 'lineLoopback', 'none'],
+        'loopbackMode': ['none', 'lineLoopback', 'internalLoopback'],
         'sendSetsMode': ['alternate', 'typeAOnly', 'typeBOnly'],
         'speed': ['speed100g', 'speed10g', 'speed25g', 'speed40g', 'speed50g'],
         'typeAOrderedSets': ['localFault', 'remoteFault'],
@@ -93,10 +95,10 @@ class NovusHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novushundredgiglan.fcoe.fcoe import Fcoe
-        if self._properties.get('Fcoe', None) is not None:
-            return self._properties.get('Fcoe')
-        else:
-            return Fcoe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fcoe', None) is not None:
+                return self._properties.get('Fcoe')
+        return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -110,10 +112,10 @@ class NovusHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novushundredgiglan.txlane.txlane import TxLane
-        if self._properties.get('TxLane', None) is not None:
-            return self._properties.get('TxLane')
-        else:
-            return TxLane(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxLane', None) is not None:
+                return self._properties.get('TxLane')
+        return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -235,7 +237,7 @@ class NovusHundredGigLan(Base):
         """
         Returns
         -------
-        - bool: NOT DEFINED
+        - bool: If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
@@ -427,7 +429,7 @@ class NovusHundredGigLan(Base):
         """
         Returns
         -------
-        - str(internalLoopback | lineLoopback | none): NOT DEFINED
+        - str(none | lineLoopback | internalLoopback): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
@@ -553,7 +555,7 @@ class NovusHundredGigLan(Base):
         """
         Returns
         -------
-        - bool: NOT DEFINED
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
@@ -615,7 +617,7 @@ class NovusHundredGigLan(Base):
         - EnablePPM (bool): If true, enables the portsppm.
         - EnableRsFec (bool): NOT DEFINED
         - EnableRsFecStats (bool): NOT DEFINED
-        - EnabledFlowControl (bool): NOT DEFINED
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         - FirecodeAdvertise (bool): NOT DEFINED
         - FirecodeForceOff (bool): NOT DEFINED
         - FirecodeForceOn (bool): NOT DEFINED
@@ -628,7 +630,7 @@ class NovusHundredGigLan(Base):
         - LoopContinuously (bool): NOT DEFINED
         - LoopCountNumber (number): NOT DEFINED
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
+        - LoopbackMode (str(none | lineLoopback | internalLoopback)): NOT DEFINED
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - RsFecAdvertise (bool): NOT DEFINED
         - RsFecForceOn (bool): NOT DEFINED
@@ -637,7 +639,7 @@ class NovusHundredGigLan(Base):
         - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
         - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): NOT DEFINED
         - StartErrorInsertion (bool): NOT DEFINED
-        - TxIgnoreRxLinkFaults (bool): NOT DEFINED
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
         - TypeAOrderedSets (str(localFault | remoteFault)): NOT DEFINED
         - TypeBOrderedSets (str(localFault | remoteFault)): NOT DEFINED
         - UseANResults (bool): NOT DEFINED
@@ -647,3 +649,78 @@ class NovusHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, BadBlocksNumber=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, FlowControlDirectedAddress=None, ForceDisableFEC=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SelectedSpeeds=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None, UseANResults=None):
+        # type: (str, List[str], int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> NovusHundredGigLan
+        """Finds and retrieves novusHundredGigLan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusHundredGigLan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all novusHundredGigLan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AvailableSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are available for the current media and AN settings.
+        - BadBlocksNumber (number): NOT DEFINED
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnableAutoNegotiation (bool): NOT DEFINED
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnableRsFec (bool): NOT DEFINED
+        - EnableRsFecStats (bool): NOT DEFINED
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FirecodeAdvertise (bool): NOT DEFINED
+        - FirecodeForceOff (bool): NOT DEFINED
+        - FirecodeForceOn (bool): NOT DEFINED
+        - FirecodeRequest (bool): NOT DEFINED
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - ForceDisableFEC (bool): NOT DEFINED
+        - GoodBlocksNumber (number): NOT DEFINED
+        - IeeeL1Defaults (bool): NOT DEFINED
+        - LaserOn (bool): NOT DEFINED
+        - LinkTraining (bool): NOT DEFINED
+        - LoopContinuously (bool): NOT DEFINED
+        - LoopCountNumber (number): NOT DEFINED
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(none | lineLoopback | internalLoopback)): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - RsFecAdvertise (bool): NOT DEFINED
+        - RsFecForceOn (bool): NOT DEFINED
+        - RsFecRequest (bool): NOT DEFINED
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
+        - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
+        - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): NOT DEFINED
+        - StartErrorInsertion (bool): NOT DEFINED
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        - TypeAOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+        - TypeBOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+        - UseANResults (bool): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching novusHundredGigLan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of novusHundredGigLan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the novusHundredGigLan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

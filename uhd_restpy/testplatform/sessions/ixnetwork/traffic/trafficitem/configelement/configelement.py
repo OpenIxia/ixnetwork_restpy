@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ConfigElement(Base):
@@ -62,10 +64,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framepayload.framepayload import FramePayload
-        if self._properties.get('FramePayload', None) is not None:
-            return self._properties.get('FramePayload')
-        else:
-            return FramePayload(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FramePayload', None) is not None:
+                return self._properties.get('FramePayload')
+        return FramePayload(self)._select()
 
     @property
     def FrameRate(self):
@@ -79,10 +81,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framerate.framerate import FrameRate
-        if self._properties.get('FrameRate', None) is not None:
-            return self._properties.get('FrameRate')
-        else:
-            return FrameRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FrameRate', None) is not None:
+                return self._properties.get('FrameRate')
+        return FrameRate(self)._select()
 
     @property
     def FrameRateDistribution(self):
@@ -96,10 +98,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.frameratedistribution.frameratedistribution import FrameRateDistribution
-        if self._properties.get('FrameRateDistribution', None) is not None:
-            return self._properties.get('FrameRateDistribution')
-        else:
-            return FrameRateDistribution(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FrameRateDistribution', None) is not None:
+                return self._properties.get('FrameRateDistribution')
+        return FrameRateDistribution(self)._select()
 
     @property
     def FrameSize(self):
@@ -113,10 +115,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.framesize.framesize import FrameSize
-        if self._properties.get('FrameSize', None) is not None:
-            return self._properties.get('FrameSize')
-        else:
-            return FrameSize(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FrameSize', None) is not None:
+                return self._properties.get('FrameSize')
+        return FrameSize(self)._select()
 
     @property
     def Stack(self):
@@ -130,10 +132,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.stack import Stack
-        if self._properties.get('Stack', None) is not None:
-            return self._properties.get('Stack')
-        else:
-            return Stack(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Stack', None) is not None:
+                return self._properties.get('Stack')
+        return Stack(self)
 
     @property
     def StackLink(self):
@@ -147,10 +149,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stacklink.stacklink import StackLink
-        if self._properties.get('StackLink', None) is not None:
-            return self._properties.get('StackLink')
-        else:
-            return StackLink(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('StackLink', None) is not None:
+                return self._properties.get('StackLink')
+        return StackLink(self)
 
     @property
     def TransmissionControl(self):
@@ -164,10 +166,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissioncontrol.transmissioncontrol import TransmissionControl
-        if self._properties.get('TransmissionControl', None) is not None:
-            return self._properties.get('TransmissionControl')
-        else:
-            return TransmissionControl(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TransmissionControl', None) is not None:
+                return self._properties.get('TransmissionControl')
+        return TransmissionControl(self)._select()
 
     @property
     def TransmissionDistribution(self):
@@ -181,10 +183,10 @@ class ConfigElement(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.transmissiondistribution.transmissiondistribution import TransmissionDistribution
-        if self._properties.get('TransmissionDistribution', None) is not None:
-            return self._properties.get('TransmissionDistribution')
-        else:
-            return TransmissionDistribution(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TransmissionDistribution', None) is not None:
+                return self._properties.get('TransmissionDistribution')
+        return TransmissionDistribution(self)
 
     @property
     def Crc(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RsvpP2mpIngressLsps(Base):
@@ -110,10 +112,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpdetoursubobjectslist_9740d38add800b02d578822ebd9149be import RsvpDetourSubObjectsList
-        if self._properties.get('RsvpDetourSubObjectsList', None) is not None:
-            return self._properties.get('RsvpDetourSubObjectsList')
-        else:
-            return RsvpDetourSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpDetourSubObjectsList', None) is not None:
+                return self._properties.get('RsvpDetourSubObjectsList')
+        return RsvpDetourSubObjectsList(self)
 
     @property
     def RsvpIngressRroSubObjectsList(self):
@@ -127,10 +129,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpingressrrosubobjectslist_a21ca5185e1490831d56bb810b32d086 import RsvpIngressRroSubObjectsList
-        if self._properties.get('RsvpIngressRroSubObjectsList', None) is not None:
-            return self._properties.get('RsvpIngressRroSubObjectsList')
-        else:
-            return RsvpIngressRroSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpIngressRroSubObjectsList', None) is not None:
+                return self._properties.get('RsvpIngressRroSubObjectsList')
+        return RsvpIngressRroSubObjectsList(self)
 
     @property
     def RsvpP2mpIngressSubLsps(self):
@@ -144,10 +146,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_c610bddfdb08c054e463708b863af4f0 import RsvpP2mpIngressSubLsps
-        if self._properties.get('RsvpP2mpIngressSubLsps', None) is not None:
-            return self._properties.get('RsvpP2mpIngressSubLsps')
-        else:
-            return RsvpP2mpIngressSubLsps(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpP2mpIngressSubLsps', None) is not None:
+                return self._properties.get('RsvpP2mpIngressSubLsps')
+        return RsvpP2mpIngressSubLsps(self)._select()
 
     @property
     def Tag(self):
@@ -161,10 +163,10 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):
@@ -843,6 +845,56 @@ class RsvpP2mpIngressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DelayLspSwitchOver=None, DescriptiveName=None, IngressP2mpSubLspRanges=None, LocalIp=None, LspSwitchOverDelayTime=None, Name=None, NumberOfDetourSubObjects=None, NumberOfRroSubObjects=None, State=None, TypeP2mpId=None):
+        # type: (int, bool, str, int, List[str], int, str, int, int, List[str], str) -> RsvpP2mpIngressLsps
+        """Finds and retrieves rsvpP2mpIngressLsps resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpP2mpIngressLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvpP2mpIngressLsps resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DelayLspSwitchOver (bool): Delay LSP switch over
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - IngressP2mpSubLspRanges (number): Number of P2MP Ingress Sub LSPs configured per RSVP-TE P2MP Ingress LSP
+        - LocalIp (list(str)): Local IP
+        - LspSwitchOverDelayTime (number): LSP Switch Over Delay timer (sec)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfDetourSubObjects (number): Number Of Detour Sub-Objects
+        - NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+        - State (list(str[down | none | notStarted | up])): State
+        - TypeP2mpId (str(p2MPId | iP)): P2MP ID Type
+
+        Returns
+        -------
+        - self: This instance with matching rsvpP2mpIngressLsps resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of rsvpP2mpIngressLsps data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the rsvpP2mpIngressLsps resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def InitiateP2mpPathReoptimization(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

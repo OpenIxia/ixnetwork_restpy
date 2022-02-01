@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NetTopologyFatTree(Base):
@@ -56,10 +58,10 @@ class NetTopologyFatTree(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.level_2d6a41b0a919905f176ad907ea4fdab6 import Level
-        if self._properties.get('Level', None) is not None:
-            return self._properties.get('Level')
-        else:
-            return Level(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Level', None) is not None:
+                return self._properties.get('Level')
+        return Level(self)
 
     @property
     def IncludeEntryPoint(self):

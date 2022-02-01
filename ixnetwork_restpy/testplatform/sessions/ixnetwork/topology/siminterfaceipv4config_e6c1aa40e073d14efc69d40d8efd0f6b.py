@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SimInterfaceIPv4Config(Base):
@@ -52,17 +54,17 @@ class SimInterfaceIPv4Config(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_afec4e0a68426f52e059c0c356a42b8b.OspfPseudoInterface): An instance of the OspfPseudoInterface class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_b7d6951378c8349a1b4de8073141e419.OspfPseudoInterface): An instance of the OspfPseudoInterface class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_afec4e0a68426f52e059c0c356a42b8b import OspfPseudoInterface
-        if self._properties.get('OspfPseudoInterface', None) is not None:
-            return self._properties.get('OspfPseudoInterface')
-        else:
-            return OspfPseudoInterface(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudointerface_b7d6951378c8349a1b4de8073141e419 import OspfPseudoInterface
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoInterface', None) is not None:
+                return self._properties.get('OspfPseudoInterface')
+        return OspfPseudoInterface(self)
 
     @property
     def Count(self):

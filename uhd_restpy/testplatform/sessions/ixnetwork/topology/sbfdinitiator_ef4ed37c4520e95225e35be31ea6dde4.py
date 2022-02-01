@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SbfdInitiator(Base):
@@ -62,10 +64,10 @@ class SbfdInitiator(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mplslabellist_37213b54082ea2315b262cbc86661827 import MplsLabelList
-        if self._properties.get('MplsLabelList', None) is not None:
-            return self._properties.get('MplsLabelList')
-        else:
-            return MplsLabelList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MplsLabelList', None) is not None:
+                return self._properties.get('MplsLabelList')
+        return MplsLabelList(self)
 
     @property
     def Active(self):
@@ -208,6 +210,50 @@ class SbfdInitiator(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, MplsLabelCount=None, Name=None, SessionInfo=None):
+        # type: (int, str, int, str, List[str]) -> SbfdInitiator
+        """Finds and retrieves sbfdInitiator resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve sbfdInitiator resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all sbfdInitiator resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - MplsLabelCount (number): Number of MPLS Labels.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - SessionInfo (list(str[adminDown | down | up])): Current state of the S-BFD Initiator Session. It is normally Up or Down depending on whether Responder is responding correctly or not.
+
+        Returns
+        -------
+        - self: This instance with matching sbfdInitiator resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of sbfdInitiator data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the sbfdInitiator resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, DestIPAddr=None, MyDiscriminator=None, PeerDiscriminator=None, TimeoutMultiplier=None, TxInterval=None):
         """Base class infrastructure that gets a list of sbfdInitiator device ids encapsulated by this object.

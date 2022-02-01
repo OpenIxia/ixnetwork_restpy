@@ -19,13 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AutoRefresh(Base):
-    """NOT DEFINED
+    """DEPRECATED NGPF on-demand views refresh parameters.
     The AutoRefresh class encapsulates a required autoRefresh resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -44,10 +46,10 @@ class AutoRefresh(Base):
     @property
     def Enabled(self):
         # type: () -> bool
-        """
+        """DEPRECATED 
         Returns
         -------
-        - bool: NOT DEFINED
+        - bool: Auto-refresh enable/disable for NGPF on-demand views.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Enabled'])
     @Enabled.setter
@@ -58,10 +60,10 @@ class AutoRefresh(Base):
     @property
     def MinRefreshInterval(self):
         # type: () -> int
-        """
+        """DEPRECATED 
         Returns
         -------
-        - number: NOT DEFINED
+        - number: Minimum Refresh Interval for Next Gen On-Demand Views.
         """
         return self._get_attribute(self._SDM_ATT_MAP['MinRefreshInterval'])
     @MinRefreshInterval.setter
@@ -75,11 +77,52 @@ class AutoRefresh(Base):
 
         Args
         ----
-        - Enabled (bool): NOT DEFINED
-        - MinRefreshInterval (number): NOT DEFINED
+        - Enabled (bool): Auto-refresh enable/disable for NGPF on-demand views.
+        - MinRefreshInterval (number): Minimum Refresh Interval for Next Gen On-Demand Views.
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Enabled=None, MinRefreshInterval=None):
+        # type: (bool, int) -> AutoRefresh
+        """Finds and retrieves autoRefresh resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve autoRefresh resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all autoRefresh resources from the server.
+
+        Args
+        ----
+        - Enabled (bool): Auto-refresh enable/disable for NGPF on-demand views.
+        - MinRefreshInterval (number): Minimum Refresh Interval for Next Gen On-Demand Views.
+
+        Returns
+        -------
+        - self: This instance with matching autoRefresh resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of autoRefresh data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the autoRefresh resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

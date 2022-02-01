@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Bridge(Base):
@@ -94,10 +96,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_7c0c7d81a93f9c4eb25c40a47dfbc2af import Cist
-        if self._properties.get('Cist', None) is not None:
-            return self._properties.get('Cist')
-        else:
-            return Cist(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Cist', None) is not None:
+                return self._properties.get('Cist')
+        return Cist(self)._select()
 
     @property
     def Interface(self):
@@ -111,10 +113,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_11193719861cedc70e27ad6eab53c08a import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def LearnedInfo(self):
@@ -128,10 +130,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_0b44805d06507cff11c29ecddf2132ce import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)._select()
 
     @property
     def Msti(self):
@@ -145,10 +147,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msti_de62cae276de4633f89c17f153c2b860 import Msti
-        if self._properties.get('Msti', None) is not None:
-            return self._properties.get('Msti')
-        else:
-            return Msti(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Msti', None) is not None:
+                return self._properties.get('Msti')
+        return Msti(self)
 
     @property
     def Vlan(self):
@@ -162,10 +164,10 @@ class Bridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vlan_2fd06caa7af8df8e2b057b8fad32a527 import Vlan
-        if self._properties.get('Vlan', None) is not None:
-            return self._properties.get('Vlan')
-        else:
-            return Vlan(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vlan', None) is not None:
+                return self._properties.get('Vlan')
+        return Vlan(self)
 
     @property
     def AutoPickBridgeMac(self):

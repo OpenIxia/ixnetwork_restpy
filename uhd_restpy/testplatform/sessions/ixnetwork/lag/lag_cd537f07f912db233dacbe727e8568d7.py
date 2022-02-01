@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Lag(Base):
@@ -59,10 +61,10 @@ class Lag(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e import LagMode
-        if self._properties.get('LagMode', None) is not None:
-            return self._properties.get('LagMode')
-        else:
-            return LagMode(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LagMode', None) is not None:
+                return self._properties.get('LagMode')
+        return LagMode(self)._select()
 
     @property
     def ProtocolStack(self):
@@ -76,10 +78,10 @@ class Lag(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.lag.protocolstack_1f83cdd4a566eb265063880d7c835bb4 import ProtocolStack
-        if self._properties.get('ProtocolStack', None) is not None:
-            return self._properties.get('ProtocolStack')
-        else:
-            return ProtocolStack(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ProtocolStack', None) is not None:
+                return self._properties.get('ProtocolStack')
+        return ProtocolStack(self)
 
     @property
     def AggregationStatus(self):

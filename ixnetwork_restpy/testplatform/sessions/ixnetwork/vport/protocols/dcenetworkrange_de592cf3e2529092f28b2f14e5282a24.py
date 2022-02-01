@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DceNetworkRange(Base):
@@ -73,10 +75,10 @@ class DceNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv4groups_45c069e4f39be165e2266b91bc876a78 import DceNodeIpv4Groups
-        if self._properties.get('DceNodeIpv4Groups', None) is not None:
-            return self._properties.get('DceNodeIpv4Groups')
-        else:
-            return DceNodeIpv4Groups(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceNodeIpv4Groups', None) is not None:
+                return self._properties.get('DceNodeIpv4Groups')
+        return DceNodeIpv4Groups(self)
 
     @property
     def DceNodeIpv6Groups(self):
@@ -90,10 +92,10 @@ class DceNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodeipv6groups_b1c5a6a36b8a89171fe4ff9773ebcf11 import DceNodeIpv6Groups
-        if self._properties.get('DceNodeIpv6Groups', None) is not None:
-            return self._properties.get('DceNodeIpv6Groups')
-        else:
-            return DceNodeIpv6Groups(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceNodeIpv6Groups', None) is not None:
+                return self._properties.get('DceNodeIpv6Groups')
+        return DceNodeIpv6Groups(self)
 
     @property
     def DceNodeMacGroups(self):
@@ -107,10 +109,10 @@ class DceNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodemacgroups_1bea0f65691a805b1d1d4bad054594d3 import DceNodeMacGroups
-        if self._properties.get('DceNodeMacGroups', None) is not None:
-            return self._properties.get('DceNodeMacGroups')
-        else:
-            return DceNodeMacGroups(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceNodeMacGroups', None) is not None:
+                return self._properties.get('DceNodeMacGroups')
+        return DceNodeMacGroups(self)
 
     @property
     def DceNodeTopologyRange(self):
@@ -124,10 +126,10 @@ class DceNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dcenodetopologyrange_34374b8565456318538178dbf3a92ccb import DceNodeTopologyRange
-        if self._properties.get('DceNodeTopologyRange', None) is not None:
-            return self._properties.get('DceNodeTopologyRange')
-        else:
-            return DceNodeTopologyRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceNodeTopologyRange', None) is not None:
+                return self._properties.get('DceNodeTopologyRange')
+        return DceNodeTopologyRange(self)
 
     @property
     def DceOutsideLinks(self):
@@ -141,10 +143,10 @@ class DceNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.dceoutsidelinks_c8ff484de41176eecca6e12142cde237 import DceOutsideLinks
-        if self._properties.get('DceOutsideLinks', None) is not None:
-            return self._properties.get('DceOutsideLinks')
-        else:
-            return DceOutsideLinks(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceOutsideLinks', None) is not None:
+                return self._properties.get('DceOutsideLinks')
+        return DceOutsideLinks(self)
 
     @property
     def TrillNodeMacRanges(self):
@@ -158,10 +160,10 @@ class DceNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trillnodemacranges_4f6b90623cca463478f04a7f774acbab import TrillNodeMacRanges
-        if self._properties.get('TrillNodeMacRanges', None) is not None:
-            return self._properties.get('TrillNodeMacRanges')
-        else:
-            return TrillNodeMacRanges(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrillNodeMacRanges', None) is not None:
+                return self._properties.get('TrillNodeMacRanges')
+        return TrillNodeMacRanges(self)
 
     @property
     def AdvertiseNetworkRange(self):

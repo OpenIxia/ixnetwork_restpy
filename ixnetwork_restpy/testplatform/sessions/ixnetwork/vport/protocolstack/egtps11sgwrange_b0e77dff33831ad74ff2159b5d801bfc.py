@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpS11SgwRange(Base):
@@ -70,10 +72,10 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpiprange_9dd717aabaaf0b4a85ad41a3cdbae461 import CpIpRange
-        if self._properties.get('CpIpRange', None) is not None:
-            return self._properties.get('CpIpRange')
-        else:
-            return CpIpRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CpIpRange', None) is not None:
+                return self._properties.get('CpIpRange')
+        return CpIpRange(self)._select()
 
     @property
     def CpMacRange(self):
@@ -87,10 +89,10 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpmacrange_cb07ef866c49f4028e7a1f0f2ca5536f import CpMacRange
-        if self._properties.get('CpMacRange', None) is not None:
-            return self._properties.get('CpMacRange')
-        else:
-            return CpMacRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CpMacRange', None) is not None:
+                return self._properties.get('CpMacRange')
+        return CpMacRange(self)._select()
 
     @property
     def CpVlanRange(self):
@@ -104,10 +106,10 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.cpvlanrange_549664285d6bba9281014b3084234074 import CpVlanRange
-        if self._properties.get('CpVlanRange', None) is not None:
-            return self._properties.get('CpVlanRange')
-        else:
-            return CpVlanRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CpVlanRange', None) is not None:
+                return self._properties.get('CpVlanRange')
+        return CpVlanRange(self)._select()
 
     @property
     def UpIpRange(self):
@@ -121,10 +123,10 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upiprange_52ad5d047d71b9e85b03a1a2911be678 import UpIpRange
-        if self._properties.get('UpIpRange', None) is not None:
-            return self._properties.get('UpIpRange')
-        else:
-            return UpIpRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('UpIpRange', None) is not None:
+                return self._properties.get('UpIpRange')
+        return UpIpRange(self)._select()
 
     @property
     def UpMacRange(self):
@@ -138,10 +140,10 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upmacrange_10e4ab178566e982ebd9d978960c9ad5 import UpMacRange
-        if self._properties.get('UpMacRange', None) is not None:
-            return self._properties.get('UpMacRange')
-        else:
-            return UpMacRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('UpMacRange', None) is not None:
+                return self._properties.get('UpMacRange')
+        return UpMacRange(self)._select()
 
     @property
     def UpVlanRange(self):
@@ -155,10 +157,10 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.upvlanrange_d4b3205c1f7bb215cb557aea8786157a import UpVlanRange
-        if self._properties.get('UpVlanRange', None) is not None:
-            return self._properties.get('UpVlanRange')
-        else:
-            return UpVlanRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('UpVlanRange', None) is not None:
+                return self._properties.get('UpVlanRange')
+        return UpVlanRange(self)._select()
 
     @property
     def ChangeReportingMode(self):
@@ -452,6 +454,64 @@ class EgtpS11SgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ChangeReportingMode=None, ControlPlaneLbType=None, EnableEchoRequest=None, Enabled=None, IpType=None, N3CreateBearerReq=None, N3DeleteBearerReq=None, N3EchoReq=None, N3MmeHandoverInProgress=None, N3UpdateBearerReq=None, Name=None, ObjectId=None, T3CreateBearerReq=None, T3DeleteBearerReq=None, T3EchoReq=None, T3MmeHandoverInProgress=None, T3UpdateBearerReq=None, UseCpIp=None, UseUpIp=None):
+        # type: (int, str, bool, bool, str, int, int, int, int, int, str, str, int, int, int, int, int, bool, bool) -> EgtpS11SgwRange
+        """Finds and retrieves egtpS11SgwRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpS11SgwRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpS11SgwRange resources from the server.
+
+        Args
+        ----
+        - ChangeReportingMode (number): OBSOLETE: Use changeReportingList instead.
+        - ControlPlaneLbType (str): The type of Control Plane load balancing used. * For R1, the Create Session Response is sent from the slave SGW. * For R2, the Create Session Response is sent from the controller SGW.
+        - EnableEchoRequest (bool): Set to true to send echo request
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
+        - N3CreateBearerReq (number): Number of retransmissions for Create Bearer request
+        - N3DeleteBearerReq (number): Number of retransmissions for Delete Bearer request
+        - N3EchoReq (number): Number of retransmissions for Echo request
+        - N3MmeHandoverInProgress (number): Number of retransmissions for MME Handover in Progress response cause
+        - N3UpdateBearerReq (number): Number of retransmissions for Update Bearer request
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - T3CreateBearerReq (number): Response timeout for a Create Bearer request (seconds)
+        - T3DeleteBearerReq (number): Response timeout for a Delete Bearer request (seconds)
+        - T3EchoReq (number): Response timeout for a Echo request (seconds).
+        - T3MmeHandoverInProgress (number): Retry timeout for a MME Handover in Progress response cause (seconds).
+        - T3UpdateBearerReq (number): Response timeout for a Update Bearer request (seconds)
+        - UseCpIp (bool): Use Control Plane Load Balancer
+        - UseUpIp (bool): Use User Plane Load Balancer
+
+        Returns
+        -------
+        - self: This instance with matching egtpS11SgwRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egtpS11SgwRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egtpS11SgwRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

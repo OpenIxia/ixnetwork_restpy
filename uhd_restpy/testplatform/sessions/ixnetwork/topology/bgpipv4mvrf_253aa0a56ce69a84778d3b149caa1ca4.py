@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpIpv4MVrf(Base):
@@ -116,10 +118,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import BgpExportRouteTargetList
-        if self._properties.get('BgpExportRouteTargetList', None) is not None:
-            return self._properties.get('BgpExportRouteTargetList')
-        else:
-            return BgpExportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExportRouteTargetList', None) is not None:
+                return self._properties.get('BgpExportRouteTargetList')
+        return BgpExportRouteTargetList(self)
 
     @property
     def BgpImportRouteTargetList(self):
@@ -133,10 +135,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import BgpImportRouteTargetList
-        if self._properties.get('BgpImportRouteTargetList', None) is not None:
-            return self._properties.get('BgpImportRouteTargetList')
-        else:
-            return BgpImportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpImportRouteTargetList', None) is not None:
+                return self._properties.get('BgpImportRouteTargetList')
+        return BgpImportRouteTargetList(self)
 
     @property
     def BgpUmhExportRouteTargetList(self):
@@ -150,10 +152,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpumhexportroutetargetlist_536e8a485efae5ffcda5cfc4f848255b import BgpUmhExportRouteTargetList
-        if self._properties.get('BgpUmhExportRouteTargetList', None) is not None:
-            return self._properties.get('BgpUmhExportRouteTargetList')
-        else:
-            return BgpUmhExportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpUmhExportRouteTargetList', None) is not None:
+                return self._properties.get('BgpUmhExportRouteTargetList')
+        return BgpUmhExportRouteTargetList(self)
 
     @property
     def BgpUmhImportRouteTargetList(self):
@@ -167,10 +169,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpumhimportroutetargetlist_02ef98778defb99b99d0de435c533ff0 import BgpUmhImportRouteTargetList
-        if self._properties.get('BgpUmhImportRouteTargetList', None) is not None:
-            return self._properties.get('BgpUmhImportRouteTargetList')
-        else:
-            return BgpUmhImportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpUmhImportRouteTargetList', None) is not None:
+                return self._properties.get('BgpUmhImportRouteTargetList')
+        return BgpUmhImportRouteTargetList(self)
 
     @property
     def Connector(self):
@@ -184,10 +186,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def PnTLVList(self):
@@ -201,10 +203,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import PnTLVList
-        if self._properties.get('PnTLVList', None) is not None:
-            return self._properties.get('PnTLVList')
-        else:
-            return PnTLVList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PnTLVList', None) is not None:
+                return self._properties.get('PnTLVList')
+        return PnTLVList(self)
 
     @property
     def Tag(self):
@@ -218,10 +220,10 @@ class BgpIpv4MVrf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def BFRId(self):

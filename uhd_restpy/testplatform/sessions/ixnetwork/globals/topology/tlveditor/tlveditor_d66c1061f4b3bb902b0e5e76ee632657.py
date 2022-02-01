@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TlvEditor(Base):
@@ -52,10 +54,10 @@ class TlvEditor(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.defaults_6da4efbc0f60f2cba8351f92d98fdc75 import Defaults
-        if self._properties.get('Defaults', None) is not None:
-            return self._properties.get('Defaults')
-        else:
-            return Defaults(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Defaults', None) is not None:
+                return self._properties.get('Defaults')
+        return Defaults(self)
 
     @property
     def Template(self):
@@ -69,10 +71,10 @@ class TlvEditor(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.template_251f4228c795442db61593bcbbdf8694 import Template
-        if self._properties.get('Template', None) is not None:
-            return self._properties.get('Template')
-        else:
-            return Template(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Template', None) is not None:
+                return self._properties.get('Template')
+        return Template(self)
 
     def add(self):
         """Adds a new tlvEditor resource on the json, only valid with config assistant

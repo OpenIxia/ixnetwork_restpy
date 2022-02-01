@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class UserLsaGroup(Base):
@@ -56,10 +58,10 @@ class UserLsaGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userlsa_fccdf05a72e451f4591323a7ac50aa51 import UserLsa
-        if self._properties.get('UserLsa', None) is not None:
-            return self._properties.get('UserLsa')
-        else:
-            return UserLsa(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('UserLsa', None) is not None:
+                return self._properties.get('UserLsa')
+        return UserLsa(self)
 
     @property
     def AreaId(self):

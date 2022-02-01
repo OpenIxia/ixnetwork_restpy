@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ProtocolStack(Base):
@@ -61,10 +63,10 @@ class ProtocolStack(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.lag.ethernet_16074ace2e581d9f35640391bde73384 import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)
 
     @property
     def Count(self):

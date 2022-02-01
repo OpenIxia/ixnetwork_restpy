@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IgmpGlobals(Base):
@@ -55,10 +57,10 @@ class IgmpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.igmpglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
-        if self._properties.get('IgmpGroupRange', None) is not None:
-            return self._properties.get('IgmpGroupRange')
-        else:
-            return IgmpGroupRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpGroupRange', None) is not None:
+                return self._properties.get('IgmpGroupRange')
+        return IgmpGroupRange(self)
 
     @property
     def MaxPacketsPerSecond(self):

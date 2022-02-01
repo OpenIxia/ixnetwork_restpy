@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MatchCriteria(Base):
@@ -58,10 +60,10 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.field_f65a45047b747ab6446cd586626ccd2d import Field
-        if self._properties.get('Field', None) is not None:
-            return self._properties.get('Field')
-        else:
-            return Field(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Field', None) is not None:
+                return self._properties.get('Field')
+        return Field(self)
 
     @property
     def MatchCriteria(self):
@@ -75,10 +77,10 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import MatchCriteria
-        if self._properties.get('MatchCriteria', None) is not None:
-            return self._properties.get('MatchCriteria')
-        else:
-            return MatchCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MatchCriteria', None) is not None:
+                return self._properties.get('MatchCriteria')
+        return MatchCriteria(self)._select()
 
     @property
     def Count(self):
@@ -187,3 +189,49 @@ class MatchCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, Description=None, DisplayName=None, IsEditable=None, IsEnabled=None, IsRequired=None, Name=None):
+        # type: (int, str, str, bool, bool, bool, str) -> MatchCriteria
+        """Finds and retrieves matchCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve matchCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all matchCriteria resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - Description (str): Description of the field.
+        - DisplayName (str): Display name used by GUI.
+        - IsEditable (bool): Information on the requirement of the field.
+        - IsEnabled (bool): Enables disables the field.
+        - IsRequired (bool): Information on the requirement of the field.
+        - Name (str): Name of packet field
+
+        Returns
+        -------
+        - self: This instance with matching matchCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of matchCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the matchCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

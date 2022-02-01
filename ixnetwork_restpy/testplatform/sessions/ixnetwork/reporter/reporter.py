@@ -19,14 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Reporter(Base):
-    """IxReporter helps to customize a test result report using different
-options, commands and wizards.
+    """IxReporter helps to customize a test result report using different options, commands and wizards.
     The Reporter class encapsulates a required reporter resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -54,10 +55,10 @@ options, commands and wizards.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.generate.generate import Generate
-        if self._properties.get('Generate', None) is not None:
-            return self._properties.get('Generate')
-        else:
-            return Generate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Generate', None) is not None:
+                return self._properties.get('Generate')
+        return Generate(self)._select()
 
     @property
     def SaveResults(self):
@@ -71,10 +72,10 @@ options, commands and wizards.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.saveresults.saveresults import SaveResults
-        if self._properties.get('SaveResults', None) is not None:
-            return self._properties.get('SaveResults')
-        else:
-            return SaveResults(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SaveResults', None) is not None:
+                return self._properties.get('SaveResults')
+        return SaveResults(self)._select()
 
     @property
     def TestParameters(self):
@@ -88,10 +89,10 @@ options, commands and wizards.
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.testparameters.testparameters import TestParameters
-        if self._properties.get('TestParameters', None) is not None:
-            return self._properties.get('TestParameters')
-        else:
-            return TestParameters(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TestParameters', None) is not None:
+                return self._properties.get('TestParameters')
+        return TestParameters(self)._select()
 
     @property
     def State(self):
@@ -99,6 +100,46 @@ options, commands and wizards.
         """
         Returns
         -------
-        - str(none | started | stopped): The state of the generated report.
+        - str(none | started | stopped): The state of the current test.
         """
         return self._get_attribute(self._SDM_ATT_MAP['State'])
+
+    def find(self, State=None):
+        # type: (str) -> Reporter
+        """Finds and retrieves reporter resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve reporter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all reporter resources from the server.
+
+        Args
+        ----
+        - State (str(none | started | stopped)): The state of the current test.
+
+        Returns
+        -------
+        - self: This instance with matching reporter resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of reporter data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the reporter resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DataMdt(Base):
@@ -65,10 +67,10 @@ class DataMdt(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtstate_dde8b4051ae44ed52084e863309783f6 import LearnedMdtState
-        if self._properties.get('LearnedMdtState', None) is not None:
-            return self._properties.get('LearnedMdtState')
-        else:
-            return LearnedMdtState(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedMdtState', None) is not None:
+                return self._properties.get('LearnedMdtState')
+        return LearnedMdtState(self)
 
     @property
     def ActivationInterval(self):

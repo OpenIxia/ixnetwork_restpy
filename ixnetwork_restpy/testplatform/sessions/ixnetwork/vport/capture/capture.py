@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Capture(Base):
@@ -95,10 +97,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.currentpacket import CurrentPacket
-        if self._properties.get('CurrentPacket', None) is not None:
-            return self._properties.get('CurrentPacket')
-        else:
-            return CurrentPacket(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CurrentPacket', None) is not None:
+                return self._properties.get('CurrentPacket')
+        return CurrentPacket(self)._select()
 
     @property
     def Filter(self):
@@ -112,10 +114,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filter.filter import Filter
-        if self._properties.get('Filter', None) is not None:
-            return self._properties.get('Filter')
-        else:
-            return Filter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Filter', None) is not None:
+                return self._properties.get('Filter')
+        return Filter(self)._select()
 
     @property
     def FilterPallette(self):
@@ -129,10 +131,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.filterpallette.filterpallette import FilterPallette
-        if self._properties.get('FilterPallette', None) is not None:
-            return self._properties.get('FilterPallette')
-        else:
-            return FilterPallette(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FilterPallette', None) is not None:
+                return self._properties.get('FilterPallette')
+        return FilterPallette(self)._select()
 
     @property
     def Trigger(self):
@@ -146,10 +148,10 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.trigger.trigger import Trigger
-        if self._properties.get('Trigger', None) is not None:
-            return self._properties.get('Trigger')
-        else:
-            return Trigger(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Trigger', None) is not None:
+                return self._properties.get('Trigger')
+        return Trigger(self)._select()
 
     @property
     def AfterTriggerFilter(self):
@@ -255,7 +257,7 @@ class Capture(Base):
         """
         Returns
         -------
-        - str: Controls the dividing line within the capture buffer between before trigger dataand post trigger data. This control is only useful in triggered mode.
+        - str: Controls the dividing line within the capture buffer between before trigger data and post trigger data.This control is only useful in triggered mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ControlCaptureFilter'])
     @ControlCaptureFilter.setter
@@ -555,7 +557,7 @@ class Capture(Base):
         """
         Returns
         -------
-        - bool: If true, enables the capture of control plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+        - bool: If true, enables the capture of control plane traffic. Note that in order for control traffic to be captured, the vport attritbute -rxMode must be set to capture.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SoftwareEnabled'])
     @SoftwareEnabled.setter
@@ -590,7 +592,7 @@ class Capture(Base):
         - ControlActiveCapture (str): The name of the active control capture (if any).The active control capture is the last one made on the port by default; but the user can change it using this attribute.
         - ControlBufferBehaviour (str(bufferAfterStopCircular | bufferAfterStopNonCircular | bufferLiveCircular | bufferLiveNonCircular)): Sets the control capture buffer behavior.
         - ControlBufferSize (number): Sets the size(%) of the ports memory used by the control capture.
-        - ControlCaptureFilter (str): Controls the dividing line within the capture buffer between before trigger dataand post trigger data. This control is only useful in triggered mode.
+        - ControlCaptureFilter (str): Controls the dividing line within the capture buffer between before trigger data and post trigger data.This control is only useful in triggered mode.
         - ControlCaptureTrigger (str): This is the control Trigger string.
         - ControlInterfaceType (str(anyInterface | specificInterface)): Enables control capture on the desired interfaces.
         - ControlSliceSize (number): Sets the size of the control capture slices.
@@ -600,7 +602,7 @@ class Capture(Base):
         - DisplayFiltersDataCapture (str): Displays the packet filter set inside the data capture that is used to filter the already captured packets
         - HardwareEnabled (bool): If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
         - SliceSize (number): The size of the capture slice.
-        - SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+        - SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for control traffic to be captured, the vport attritbute -rxMode must be set to capture.
         - TriggerPosition (number): Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
 
         Raises
@@ -608,6 +610,80 @@ class Capture(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AfterTriggerFilter=None, BeforeTriggerFilter=None, CaptureMode=None, ContinuousFilters=None, ControlActiveCapture=None, ControlBufferBehaviour=None, ControlBufferSize=None, ControlCaptureFilter=None, ControlCaptureState=None, ControlCaptureTrigger=None, ControlCapturedPacketCounter=None, ControlCaptures=None, ControlDecodeAsCurrentFilter=None, ControlInterfaceType=None, ControlPacketCounter=None, ControlSliceSize=None, DataActiveCapture=None, DataCaptureState=None, DataCapturedPacketCounter=None, DataCaptures=None, DataDecodeAsCurrentFilter=None, DataPacketCounter=None, DataReceiveTimestamp=None, DecodeAsLinkProtocols=None, DecodeAsNetworkProtocols=None, DecodeAsTransportProtocols=None, DisplayFiltersControlCapture=None, DisplayFiltersDataCapture=None, HardwareEnabled=None, IsCaptureRunning=None, IsControlCaptureRunning=None, IsDataCaptureRunning=None, SliceSize=None, SoftwareEnabled=None, TriggerPosition=None):
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, int, int, str, str, int, str, str, int, str, List[str], List[str], List[str], str, str, bool, bool, bool, bool, int, bool, int) -> Capture
+        """Finds and retrieves capture resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve capture resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all capture resources from the server.
+
+        Args
+        ----
+        - AfterTriggerFilter (str(captureAfterTriggerAll | captureAfterTriggerConditionFilter | captureAfterTriggerFilter)): Controls the capture of data after triggering when operating in triggered mode.
+        - BeforeTriggerFilter (str(captureBeforeTriggerAll | captureBeforeTriggerFilter | captureBeforeTriggerNone)): Controls the capture of data prior to triggering when operating in triggered mode
+        - CaptureMode (str(captureContinuousMode | captureTriggerMode)): Controls whether data capture is performed in a continuous or triggered mode.
+        - ContinuousFilters (str(captureContinuousAll | captureContinuousFilter)): Controls the circular buffer behaviour: continuous capture of all received packets or continuous capture of received packets which match the filter conditions applied.
+        - ControlActiveCapture (str): The name of the active control capture (if any).The active control capture is the last one made on the port by default; but the user can change it using this attribute.
+        - ControlBufferBehaviour (str(bufferAfterStopCircular | bufferAfterStopNonCircular | bufferLiveCircular | bufferLiveNonCircular)): Sets the control capture buffer behavior.
+        - ControlBufferSize (number): Sets the size(%) of the ports memory used by the control capture.
+        - ControlCaptureFilter (str): Controls the dividing line within the capture buffer between before trigger data and post trigger data.This control is only useful in triggered mode.
+        - ControlCaptureState (str(notReady | ready)): Current state of the control capture (if there are packets uploading in GUI or not).
+        - ControlCaptureTrigger (str): This is the control Trigger string.
+        - ControlCapturedPacketCounter (number): 
+        - ControlCaptures (str): The list of control captures which are available for the port.
+        - ControlDecodeAsCurrentFilter (str): The control capture decode as filter used by last decode as operation (if any).
+        - ControlInterfaceType (str(anyInterface | specificInterface)): Enables control capture on the desired interfaces.
+        - ControlPacketCounter (number): Shows the number of control capture packets.
+        - ControlSliceSize (number): Sets the size of the control capture slices.
+        - DataActiveCapture (str): The name of the active data capture (if any). The active data capture is the last one made on the port by default; but the user can change it using this attribute.
+        - DataCaptureState (str(notReady | ready)): Current state of the data capture; ready if all packets have been uploaded on client or notReady if packet uploading is in progress.
+        - DataCapturedPacketCounter (number): 
+        - DataCaptures (str): The list of data captures which are available for the port.
+        - DataDecodeAsCurrentFilter (str): The data capture decode as filter used by last decode as operation (if any).
+        - DataPacketCounter (number): Shows the number of data capture packets.
+        - DataReceiveTimestamp (str(chassisUtcTime | hwTimestamp)): Controls whether the data capture packets timestamp are using the chassis UTC time or the HW timestamp.
+        - DecodeAsLinkProtocols (list(str)): List with link protocols available for capture decode as operation. Need to have an active capture to retrieve the property.
+        - DecodeAsNetworkProtocols (list(str)): List with network protocols available for capture decode as operation. Need to have an active capture to retrieve the property.
+        - DecodeAsTransportProtocols (list(str)): List with transport protocols available for capture decode as operation. Need to have an active capture to retrieve the property.
+        - DisplayFiltersControlCapture (str): Displays the packet filter set inside the control capture that is used to filter the already captured packets
+        - DisplayFiltersDataCapture (str): Displays the packet filter set inside the data capture that is used to filter the already captured packets
+        - HardwareEnabled (bool): If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+        - IsCaptureRunning (bool): Indicates if the capture is running.
+        - IsControlCaptureRunning (bool): Indicates if the control capture is running.
+        - IsDataCaptureRunning (bool): Indicates if the data capture is running.
+        - SliceSize (number): The size of the capture slice.
+        - SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for control traffic to be captured, the vport attritbute -rxMode must be set to capture.
+        - TriggerPosition (number): Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
+
+        Returns
+        -------
+        - self: This instance with matching capture resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of capture data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the capture resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def DecodeAsApply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -653,7 +729,7 @@ class Capture(Base):
 
         decodeAsClear(Arg2=enum, async_operation=bool)
         ----------------------------------------------
-        - Arg2 (str(control | data)): The capture type, could be either control or data.
+        - Arg2 (str(control | data)): The capture type, could be either control or data
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -670,21 +746,21 @@ class Capture(Base):
         # type: (*Any, **Any) -> None
         """Executes the mergeCapture operation on the server.
 
-        The command merges to online captures.
+        The command merges two online captures.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
         mergeCapture(Arg2=enum, Arg3=href, Arg4=enum, Arg5=string, async_operation=bool)
         --------------------------------------------------------------------------------
-        - Arg2 (str(control | data)): The capture type, could be either control or data.
+        - Arg2 (str(control | data)): The type of the capture, either data or control.
         - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The capture object of a port.
-        - Arg4 (str(control | data)): The capture type, could be either control or data.
+        - Arg4 (str(control | data)): The type of the capture, either data or control.
         - Arg5 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         mergeCapture(Arg2=enum, Arg3=string, Arg4=string, async_operation=bool)
         -----------------------------------------------------------------------
-        - Arg2 (str(control | data)): The capture type, could be either control or data.
+        - Arg2 (str(control | data)): The type of the capture, either data or control.
         - Arg3 (str): The full path of the offline capture.
         - Arg4 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SpbNetworkRange(Base):
@@ -63,10 +65,10 @@ class SpbNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spboutsidelinks_086c6473238ca3788e998d3e79d13474 import SpbOutsideLinks
-        if self._properties.get('SpbOutsideLinks', None) is not None:
-            return self._properties.get('SpbOutsideLinks')
-        else:
-            return SpbOutsideLinks(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SpbOutsideLinks', None) is not None:
+                return self._properties.get('SpbOutsideLinks')
+        return SpbOutsideLinks(self)
 
     @property
     def SpbmNodeTopologyRange(self):
@@ -80,10 +82,10 @@ class SpbNetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbmnodetopologyrange_ae48ad426b9c732f083b1ad513ed2710 import SpbmNodeTopologyRange
-        if self._properties.get('SpbmNodeTopologyRange', None) is not None:
-            return self._properties.get('SpbmNodeTopologyRange')
-        else:
-            return SpbmNodeTopologyRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SpbmNodeTopologyRange', None) is not None:
+                return self._properties.get('SpbmNodeTopologyRange')
+        return SpbmNodeTopologyRange(self)
 
     @property
     def EnableAdvertiseNetworkRange(self):

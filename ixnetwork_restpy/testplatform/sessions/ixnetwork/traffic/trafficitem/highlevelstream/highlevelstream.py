@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class HighLevelStream(Base):
@@ -76,10 +78,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepayload.framepayload import FramePayload
-        if self._properties.get('FramePayload', None) is not None:
-            return self._properties.get('FramePayload')
-        else:
-            return FramePayload(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FramePayload', None) is not None:
+                return self._properties.get('FramePayload')
+        return FramePayload(self)._select()
 
     @property
     def FramePreemption(self):
@@ -93,10 +95,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framepreemption.framepreemption import FramePreemption
-        if self._properties.get('FramePreemption', None) is not None:
-            return self._properties.get('FramePreemption')
-        else:
-            return FramePreemption(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('FramePreemption', None) is not None:
+                return self._properties.get('FramePreemption')
+        return FramePreemption(self)
 
     @property
     def FrameRate(self):
@@ -110,10 +112,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framerate.framerate import FrameRate
-        if self._properties.get('FrameRate', None) is not None:
-            return self._properties.get('FrameRate')
-        else:
-            return FrameRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FrameRate', None) is not None:
+                return self._properties.get('FrameRate')
+        return FrameRate(self)._select()
 
     @property
     def FrameSize(self):
@@ -127,10 +129,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.framesize.framesize import FrameSize
-        if self._properties.get('FrameSize', None) is not None:
-            return self._properties.get('FrameSize')
-        else:
-            return FrameSize(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FrameSize', None) is not None:
+                return self._properties.get('FrameSize')
+        return FrameSize(self)._select()
 
     @property
     def Stack(self):
@@ -144,10 +146,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stack.stack import Stack
-        if self._properties.get('Stack', None) is not None:
-            return self._properties.get('Stack')
-        else:
-            return Stack(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Stack', None) is not None:
+                return self._properties.get('Stack')
+        return Stack(self)
 
     @property
     def StackLink(self):
@@ -161,10 +163,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.stacklink.stacklink import StackLink
-        if self._properties.get('StackLink', None) is not None:
-            return self._properties.get('StackLink')
-        else:
-            return StackLink(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('StackLink', None) is not None:
+                return self._properties.get('StackLink')
+        return StackLink(self)
 
     @property
     def TableUdf(self):
@@ -178,10 +180,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.tableudf import TableUdf
-        if self._properties.get('TableUdf', None) is not None:
-            return self._properties.get('TableUdf')
-        else:
-            return TableUdf(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TableUdf', None) is not None:
+                return self._properties.get('TableUdf')
+        return TableUdf(self)
 
     @property
     def TransmissionControl(self):
@@ -195,10 +197,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.transmissioncontrol.transmissioncontrol import TransmissionControl
-        if self._properties.get('TransmissionControl', None) is not None:
-            return self._properties.get('TransmissionControl')
-        else:
-            return TransmissionControl(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TransmissionControl', None) is not None:
+                return self._properties.get('TransmissionControl')
+        return TransmissionControl(self)._select()
 
     @property
     def Udf(self):
@@ -212,10 +214,10 @@ class HighLevelStream(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.udf import Udf
-        if self._properties.get('Udf', None) is not None:
-            return self._properties.get('Udf')
-        else:
-            return Udf(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Udf', None) is not None:
+                return self._properties.get('Udf')
+        return Udf(self)
 
     @property
     def AppliedFrameRate(self):
@@ -372,7 +374,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - number: Customizes the preamble size of the frame.
+        - number: >Customizes the preamble size of the frame.
         """
         return self._get_attribute(self._SDM_ATT_MAP['PreambleCustomSize'])
     @PreambleCustomSize.setter
@@ -477,7 +479,7 @@ class HighLevelStream(Base):
         - Enabled (bool): 
         - Name (str): An alphanumeric string that returns the name of the field.
         - Pause (bool): If true then pause is enabled.
-        - PreambleCustomSize (number): Customizes the preamble size of the frame.
+        - PreambleCustomSize (number): >Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
         - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - Suspend (bool): Suspends all traffic on this high level stream.
@@ -500,7 +502,7 @@ class HighLevelStream(Base):
         - Enabled (bool): 
         - Name (str): An alphanumeric string that returns the name of the field.
         - Pause (bool): If true then pause is enabled.
-        - PreambleCustomSize (number): Customizes the preamble size of the frame.
+        - PreambleCustomSize (number): >Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
         - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - Suspend (bool): Suspends all traffic on this high level stream.
@@ -538,7 +540,7 @@ class HighLevelStream(Base):
         - Name (str): An alphanumeric string that returns the name of the field.
         - OverSubscribed (bool): If true, the rate is oversubscribed.
         - Pause (bool): If true then pause is enabled.
-        - PreambleCustomSize (number): Customizes the preamble size of the frame.
+        - PreambleCustomSize (number): >Customizes the preamble size of the frame.
         - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
         - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - RxPortNames (list(str)): A list of names from the receiving virtual ports.

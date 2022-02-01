@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SupportedActions(Base):
@@ -243,3 +245,54 @@ class SupportedActions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Enqueue=None, EthernetDestination=None, EthernetSource=None, IpDscp=None, Ipv4Destination=None, Ipv4Source=None, Output=None, StripVlanHeader=None, TransportDestination=None, TransportSource=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SupportedActions
+        """Finds and retrieves supportedActions resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve supportedActions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all supportedActions resources from the server.
+
+        Args
+        ----
+        - Enqueue (bool): Indicates that the supported action of the switch includes Output to queue.
+        - EthernetDestination (bool): Indicates that the supported action of the switch includes setting Ethernet destination address.
+        - EthernetSource (bool): Indicates that the supported action of the switch includes setting Ethernet source address.
+        - IpDscp (bool): Indicates that the supported action of the switch includes setting IP ToS, DSCP field, 6 bits.
+        - Ipv4Destination (bool): Indicates that the supported action of the switch includes setting IP destination address.
+        - Ipv4Source (bool): Indicates that the supported action of the switch includes setting IP source address.
+        - Output (bool): Indicates that the supported action of the switch includes Output to switch port.
+        - StripVlanHeader (bool): Indicates that the supported action of the switch includes stripping the 802.1q header.
+        - TransportDestination (bool): Indicates that the supported action of the switch includes setting TCP/UDP destination port.
+        - TransportSource (bool): Indicates that the supported action of the switch includes setting TCP/UDP source port.
+        - VlanId (bool): Indicates that the supported action of the switch includes setting the 802.1q VLAN id.
+        - VlanPriority (bool): Indicates that the supported action of the switch includes setting the 802.1q priority.
+
+        Returns
+        -------
+        - self: This instance with matching supportedActions resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of supportedActions data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the supportedActions resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

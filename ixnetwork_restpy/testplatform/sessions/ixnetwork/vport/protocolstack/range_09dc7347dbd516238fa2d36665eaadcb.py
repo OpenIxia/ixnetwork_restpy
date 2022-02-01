@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Range(Base):
@@ -53,10 +55,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.amtrange_c6892a0c4bc2b5c56691f0652ab21110 import AmtRange
-        if self._properties.get('AmtRange', None) is not None:
-            return self._properties.get('AmtRange')
-        else:
-            return AmtRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AmtRange', None) is not None:
+                return self._properties.get('AmtRange')
+        return AmtRange(self)
 
     @property
     def AncpRange(self):
@@ -70,10 +72,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancprange_80ed1597ae69ba23d47b3d44a2e115da import AncpRange
-        if self._properties.get('AncpRange', None) is not None:
-            return self._properties.get('AncpRange')
-        else:
-            return AncpRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpRange', None) is not None:
+                return self._properties.get('AncpRange')
+        return AncpRange(self)
 
     @property
     def Dhcpv6ClientRange(self):
@@ -87,10 +89,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6clientrange_499d7f5e7b14d37af5166cb6a4d338a1 import Dhcpv6ClientRange
-        if self._properties.get('Dhcpv6ClientRange', None) is not None:
-            return self._properties.get('Dhcpv6ClientRange')
-        else:
-            return Dhcpv6ClientRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6ClientRange', None) is not None:
+                return self._properties.get('Dhcpv6ClientRange')
+        return Dhcpv6ClientRange(self)
 
     @property
     def Dhcpv6PdClientRange(self):
@@ -104,10 +106,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6pdclientrange_178731f12a5435abce85806535a5d479 import Dhcpv6PdClientRange
-        if self._properties.get('Dhcpv6PdClientRange', None) is not None:
-            return self._properties.get('Dhcpv6PdClientRange')
-        else:
-            return Dhcpv6PdClientRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6PdClientRange', None) is not None:
+                return self._properties.get('Dhcpv6PdClientRange')
+        return Dhcpv6PdClientRange(self)
 
     @property
     def Dhcpv6ServerRange(self):
@@ -121,10 +123,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6serverrange_0d95209617577bbee08b582a2b244a49 import Dhcpv6ServerRange
-        if self._properties.get('Dhcpv6ServerRange', None) is not None:
-            return self._properties.get('Dhcpv6ServerRange')
-        else:
-            return Dhcpv6ServerRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6ServerRange', None) is not None:
+                return self._properties.get('Dhcpv6ServerRange')
+        return Dhcpv6ServerRange(self)
 
     @property
     def Dot1xRange(self):
@@ -138,10 +140,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1xrange_fe2d1eadfec6527dae4377792d9f3cdc import Dot1xRange
-        if self._properties.get('Dot1xRange', None) is not None:
-            return self._properties.get('Dot1xRange')
-        else:
-            return Dot1xRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dot1xRange', None) is not None:
+                return self._properties.get('Dot1xRange')
+        return Dot1xRange(self)
 
     @property
     def EapoUdpRange(self):
@@ -155,10 +157,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudprange_4bb99114a906c718e66a5cc178841430 import EapoUdpRange
-        if self._properties.get('EapoUdpRange', None) is not None:
-            return self._properties.get('EapoUdpRange')
-        else:
-            return EapoUdpRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EapoUdpRange', None) is not None:
+                return self._properties.get('EapoUdpRange')
+        return EapoUdpRange(self)
 
     @property
     def EmulatedRouterRange(self):
@@ -172,10 +174,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.emulatedrouterrange_cbc3c26a4e615506bf63edbe2f801c99 import EmulatedRouterRange
-        if self._properties.get('EmulatedRouterRange', None) is not None:
-            return self._properties.get('EmulatedRouterRange')
-        else:
-            return EmulatedRouterRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('EmulatedRouterRange', None) is not None:
+                return self._properties.get('EmulatedRouterRange')
+        return EmulatedRouterRange(self)._select()
 
     @property
     def EsmcRange(self):
@@ -189,10 +191,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmcrange_a89585fba58a8ca72c7600ccd27ed3a3 import EsmcRange
-        if self._properties.get('EsmcRange', None) is not None:
-            return self._properties.get('EsmcRange')
-        else:
-            return EsmcRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EsmcRange', None) is not None:
+                return self._properties.get('EsmcRange')
+        return EsmcRange(self)
 
     @property
     def IgmpMldRange(self):
@@ -206,10 +208,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmldrange_df5f7130c1bb8815ce333c063ad2b71a import IgmpMldRange
-        if self._properties.get('IgmpMldRange', None) is not None:
-            return self._properties.get('IgmpMldRange')
-        else:
-            return IgmpMldRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpMldRange', None) is not None:
+                return self._properties.get('IgmpMldRange')
+        return IgmpMldRange(self)
 
     @property
     def IgmpQuerierRange(self):
@@ -223,10 +225,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerierrange_fb6763737d743dcfaccc147e44718891 import IgmpQuerierRange
-        if self._properties.get('IgmpQuerierRange', None) is not None:
-            return self._properties.get('IgmpQuerierRange')
-        else:
-            return IgmpQuerierRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpQuerierRange', None) is not None:
+                return self._properties.get('IgmpQuerierRange')
+        return IgmpQuerierRange(self)
 
     @property
     def IpRange(self):
@@ -240,10 +242,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iprange_ff652ca4294d3ce56ed8f58f1322ad31 import IpRange
-        if self._properties.get('IpRange', None) is not None:
-            return self._properties.get('IpRange')
-        else:
-            return IpRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IpRange', None) is not None:
+                return self._properties.get('IpRange')
+        return IpRange(self)._select()
 
     @property
     def IptvRange(self):
@@ -257,10 +259,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvrange_d874807cc50307f48464b2d9365ac39d import IptvRange
-        if self._properties.get('IptvRange', None) is not None:
-            return self._properties.get('IptvRange')
-        else:
-            return IptvRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IptvRange', None) is not None:
+                return self._properties.get('IptvRange')
+        return IptvRange(self)
 
     @property
     def L2tpRange(self):
@@ -274,10 +276,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.l2tprange_2de69b833edd31c332ce849ebc417a82 import L2tpRange
-        if self._properties.get('L2tpRange', None) is not None:
-            return self._properties.get('L2tpRange')
-        else:
-            return L2tpRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('L2tpRange', None) is not None:
+                return self._properties.get('L2tpRange')
+        return L2tpRange(self)._select()
 
     @property
     def MacRange(self):
@@ -291,10 +293,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.macrange_a6abeea548fa898d592978af8b2979f1 import MacRange
-        if self._properties.get('MacRange', None) is not None:
-            return self._properties.get('MacRange')
-        else:
-            return MacRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MacRange', None) is not None:
+                return self._properties.get('MacRange')
+        return MacRange(self)._select()
 
     @property
     def PtpRangeOverIp(self):
@@ -308,10 +310,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeoverip_57b46c22f219269b182ddf50480c66f9 import PtpRangeOverIp
-        if self._properties.get('PtpRangeOverIp', None) is not None:
-            return self._properties.get('PtpRangeOverIp')
-        else:
-            return PtpRangeOverIp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PtpRangeOverIp', None) is not None:
+                return self._properties.get('PtpRangeOverIp')
+        return PtpRangeOverIp(self)
 
     @property
     def PtpRangeOverMac(self):
@@ -325,10 +327,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptprangeovermac_66da14b73154846705bd445708af16af import PtpRangeOverMac
-        if self._properties.get('PtpRangeOverMac', None) is not None:
-            return self._properties.get('PtpRangeOverMac')
-        else:
-            return PtpRangeOverMac(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PtpRangeOverMac', None) is not None:
+                return self._properties.get('PtpRangeOverMac')
+        return PtpRangeOverMac(self)
 
     @property
     def RadiusRange(self):
@@ -342,10 +344,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.radiusrange_f4b2a1f6deb3e37c2bb565e21c58d92b import RadiusRange
-        if self._properties.get('RadiusRange', None) is not None:
-            return self._properties.get('RadiusRange')
-        else:
-            return RadiusRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RadiusRange', None) is not None:
+                return self._properties.get('RadiusRange')
+        return RadiusRange(self)
 
     @property
     def StaticHostsRange(self):
@@ -359,10 +361,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.statichostsrange_6b4070598ade0225ecb741e9b0067a3b import StaticHostsRange
-        if self._properties.get('StaticHostsRange', None) is not None:
-            return self._properties.get('StaticHostsRange')
-        else:
-            return StaticHostsRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StaticHostsRange', None) is not None:
+                return self._properties.get('StaticHostsRange')
+        return StaticHostsRange(self)._select()
 
     @property
     def TwampControlRange(self):
@@ -376,10 +378,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampcontrolrange_0fd731d6969e3c79748c4695de20723c import TwampControlRange
-        if self._properties.get('TwampControlRange', None) is not None:
-            return self._properties.get('TwampControlRange')
-        else:
-            return TwampControlRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TwampControlRange', None) is not None:
+                return self._properties.get('TwampControlRange')
+        return TwampControlRange(self)
 
     @property
     def TwampServerRange(self):
@@ -393,10 +395,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twampserverrange_e3eba97cc01654d110d82ebf54bf7e3d import TwampServerRange
-        if self._properties.get('TwampServerRange', None) is not None:
-            return self._properties.get('TwampServerRange')
-        else:
-            return TwampServerRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TwampServerRange', None) is not None:
+                return self._properties.get('TwampServerRange')
+        return TwampServerRange(self)
 
     @property
     def TwampTestRange(self):
@@ -410,10 +412,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.twamptestrange_b84c67410a56965aa9973ac6c3b3db00 import TwampTestRange
-        if self._properties.get('TwampTestRange', None) is not None:
-            return self._properties.get('TwampTestRange')
-        else:
-            return TwampTestRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TwampTestRange', None) is not None:
+                return self._properties.get('TwampTestRange')
+        return TwampTestRange(self)
 
     @property
     def VicClientRange(self):
@@ -427,10 +429,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclientrange_d558438bf492975eca13ae74dce17b43 import VicClientRange
-        if self._properties.get('VicClientRange', None) is not None:
-            return self._properties.get('VicClientRange')
-        else:
-            return VicClientRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VicClientRange', None) is not None:
+                return self._properties.get('VicClientRange')
+        return VicClientRange(self)
 
     @property
     def VlanRange(self):
@@ -444,10 +446,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanrange_63eb1ae8c6d88bfb0041130123aa852a import VlanRange
-        if self._properties.get('VlanRange', None) is not None:
-            return self._properties.get('VlanRange')
-        else:
-            return VlanRange(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('VlanRange', None) is not None:
+                return self._properties.get('VlanRange')
+        return VlanRange(self)._select()
 
     @property
     def WebAuthRange(self):
@@ -461,10 +463,10 @@ class Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauthrange_0c7024c24fd78970860a492a2c163b1b import WebAuthRange
-        if self._properties.get('WebAuthRange', None) is not None:
-            return self._properties.get('WebAuthRange')
-        else:
-            return WebAuthRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('WebAuthRange', None) is not None:
+                return self._properties.get('WebAuthRange')
+        return WebAuthRange(self)
 
     def add(self):
         """Adds a new range resource on the server and adds it to the container.

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class StaticMacsec(Base):
@@ -103,10 +105,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def InnerVlanList(self):
@@ -120,10 +122,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.innervlanlist_e709d209ac3f7ec472b5b8b70db9e853 import InnerVlanList
-        if self._properties.get('InnerVlanList', None) is not None:
-            return self._properties.get('InnerVlanList')
-        else:
-            return InnerVlanList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InnerVlanList', None) is not None:
+                return self._properties.get('InnerVlanList')
+        return InnerVlanList(self)
 
     @property
     def Ipv4(self):
@@ -137,10 +139,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
-        if self._properties.get('Ipv4', None) is not None:
-            return self._properties.get('Ipv4')
-        else:
-            return Ipv4(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4', None) is not None:
+                return self._properties.get('Ipv4')
+        return Ipv4(self)
 
     @property
     def Ipv6(self):
@@ -154,10 +156,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
-        if self._properties.get('Ipv6', None) is not None:
-            return self._properties.get('Ipv6')
-        else:
-            return Ipv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6', None) is not None:
+                return self._properties.get('Ipv6')
+        return Ipv6(self)
 
     @property
     def RxSakPool(self):
@@ -171,10 +173,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rxsakpool_22340fe5cb5d81664cab595d3e6d08ef import RxSakPool
-        if self._properties.get('RxSakPool', None) is not None:
-            return self._properties.get('RxSakPool')
-        else:
-            return RxSakPool(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RxSakPool', None) is not None:
+                return self._properties.get('RxSakPool')
+        return RxSakPool(self)._select()
 
     @property
     def TxSakPool(self):
@@ -188,10 +190,10 @@ class StaticMacsec(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.txsakpool_7ab8c0a10359fbab4d0c5bd3dab1bfb2 import TxSakPool
-        if self._properties.get('TxSakPool', None) is not None:
-            return self._properties.get('TxSakPool')
-        else:
-            return TxSakPool(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxSakPool', None) is not None:
+                return self._properties.get('TxSakPool')
+        return TxSakPool(self)._select()
 
     @property
     def ActiveDevice(self):

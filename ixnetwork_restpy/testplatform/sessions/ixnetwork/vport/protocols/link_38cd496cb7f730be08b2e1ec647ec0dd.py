@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Link(Base):
@@ -96,10 +98,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.discoveredlearnedinfo_c0e259e03145b18e9d30c510acecc721 import DiscoveredLearnedInfo
-        if self._properties.get('DiscoveredLearnedInfo', None) is not None:
-            return self._properties.get('DiscoveredLearnedInfo')
-        else:
-            return DiscoveredLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DiscoveredLearnedInfo', None) is not None:
+                return self._properties.get('DiscoveredLearnedInfo')
+        return DiscoveredLearnedInfo(self)
 
     @property
     def ErroredFramePeriodTlv(self):
@@ -113,10 +115,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframeperiodtlv_7e1618c295e055418cf5b367b43f7292 import ErroredFramePeriodTlv
-        if self._properties.get('ErroredFramePeriodTlv', None) is not None:
-            return self._properties.get('ErroredFramePeriodTlv')
-        else:
-            return ErroredFramePeriodTlv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ErroredFramePeriodTlv', None) is not None:
+                return self._properties.get('ErroredFramePeriodTlv')
+        return ErroredFramePeriodTlv(self)._select()
 
     @property
     def ErroredFrameSecondsSummaryTlv(self):
@@ -130,10 +132,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframesecondssummarytlv_4572df5d86785124bce4966bd170e271 import ErroredFrameSecondsSummaryTlv
-        if self._properties.get('ErroredFrameSecondsSummaryTlv', None) is not None:
-            return self._properties.get('ErroredFrameSecondsSummaryTlv')
-        else:
-            return ErroredFrameSecondsSummaryTlv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ErroredFrameSecondsSummaryTlv', None) is not None:
+                return self._properties.get('ErroredFrameSecondsSummaryTlv')
+        return ErroredFrameSecondsSummaryTlv(self)._select()
 
     @property
     def ErroredFrameTlv(self):
@@ -147,10 +149,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredframetlv_2de47697193c848397254c28f553122b import ErroredFrameTlv
-        if self._properties.get('ErroredFrameTlv', None) is not None:
-            return self._properties.get('ErroredFrameTlv')
-        else:
-            return ErroredFrameTlv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ErroredFrameTlv', None) is not None:
+                return self._properties.get('ErroredFrameTlv')
+        return ErroredFrameTlv(self)._select()
 
     @property
     def ErroredSymbolPeriodTlv(self):
@@ -164,10 +166,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.erroredsymbolperiodtlv_1f85b8c597f306d2953ee0bd546e6ce7 import ErroredSymbolPeriodTlv
-        if self._properties.get('ErroredSymbolPeriodTlv', None) is not None:
-            return self._properties.get('ErroredSymbolPeriodTlv')
-        else:
-            return ErroredSymbolPeriodTlv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ErroredSymbolPeriodTlv', None) is not None:
+                return self._properties.get('ErroredSymbolPeriodTlv')
+        return ErroredSymbolPeriodTlv(self)._select()
 
     @property
     def EventNotificationLearnedInfo(self):
@@ -181,10 +183,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eventnotificationlearnedinfo_e681bdab1ec425c98268821ac8241416 import EventNotificationLearnedInfo
-        if self._properties.get('EventNotificationLearnedInfo', None) is not None:
-            return self._properties.get('EventNotificationLearnedInfo')
-        else:
-            return EventNotificationLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EventNotificationLearnedInfo', None) is not None:
+                return self._properties.get('EventNotificationLearnedInfo')
+        return EventNotificationLearnedInfo(self)
 
     @property
     def Interface(self):
@@ -198,10 +200,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_fb4befd0e6a80f240fc4262878630bef import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def OrganizationSpecificEventTlv(self):
@@ -215,10 +217,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificeventtlv_97402ba8afcd510e9807d552c63ac5d6 import OrganizationSpecificEventTlv
-        if self._properties.get('OrganizationSpecificEventTlv', None) is not None:
-            return self._properties.get('OrganizationSpecificEventTlv')
-        else:
-            return OrganizationSpecificEventTlv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OrganizationSpecificEventTlv', None) is not None:
+                return self._properties.get('OrganizationSpecificEventTlv')
+        return OrganizationSpecificEventTlv(self)._select()
 
     @property
     def OrganizationSpecificInfoTlv(self):
@@ -232,10 +234,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificinfotlv_540bb6e0e1ea48ec1f0e9e2272797864 import OrganizationSpecificInfoTlv
-        if self._properties.get('OrganizationSpecificInfoTlv', None) is not None:
-            return self._properties.get('OrganizationSpecificInfoTlv')
-        else:
-            return OrganizationSpecificInfoTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OrganizationSpecificInfoTlv', None) is not None:
+                return self._properties.get('OrganizationSpecificInfoTlv')
+        return OrganizationSpecificInfoTlv(self)
 
     @property
     def OrganizationSpecificOamPduData(self):
@@ -249,10 +251,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.organizationspecificoampdudata_af0b25bf714f4cdf2df542ec69948aa9 import OrganizationSpecificOamPduData
-        if self._properties.get('OrganizationSpecificOamPduData', None) is not None:
-            return self._properties.get('OrganizationSpecificOamPduData')
-        else:
-            return OrganizationSpecificOamPduData(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OrganizationSpecificOamPduData', None) is not None:
+                return self._properties.get('OrganizationSpecificOamPduData')
+        return OrganizationSpecificOamPduData(self)
 
     @property
     def VarDescriptor(self):
@@ -266,10 +268,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vardescriptor_183285cb9f666d376d6aa33dcf457f3e import VarDescriptor
-        if self._properties.get('VarDescriptor', None) is not None:
-            return self._properties.get('VarDescriptor')
-        else:
-            return VarDescriptor(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VarDescriptor', None) is not None:
+                return self._properties.get('VarDescriptor')
+        return VarDescriptor(self)
 
     @property
     def VariableRequestLearnedInfo(self):
@@ -283,10 +285,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variablerequestlearnedinfo_0657cfbaba3ed550a2451249c7c53a6a import VariableRequestLearnedInfo
-        if self._properties.get('VariableRequestLearnedInfo', None) is not None:
-            return self._properties.get('VariableRequestLearnedInfo')
-        else:
-            return VariableRequestLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VariableRequestLearnedInfo', None) is not None:
+                return self._properties.get('VariableRequestLearnedInfo')
+        return VariableRequestLearnedInfo(self)
 
     @property
     def VariableResponseDatabase(self):
@@ -300,10 +302,10 @@ class Link(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.variableresponsedatabase_a754eac9129994b0d20fa50e381d4b44 import VariableResponseDatabase
-        if self._properties.get('VariableResponseDatabase', None) is not None:
-            return self._properties.get('VariableResponseDatabase')
-        else:
-            return VariableResponseDatabase(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VariableResponseDatabase', None) is not None:
+                return self._properties.get('VariableResponseDatabase')
+        return VariableResponseDatabase(self)
 
     @property
     def DisableInformationPduTx(self):

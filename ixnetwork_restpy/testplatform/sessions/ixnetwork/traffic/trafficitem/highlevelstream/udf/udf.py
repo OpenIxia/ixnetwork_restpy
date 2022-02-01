@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Udf(Base):
@@ -59,10 +61,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.counter.counter import Counter
-        if self._properties.get('Counter', None) is not None:
-            return self._properties.get('Counter')
-        else:
-            return Counter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Counter', None) is not None:
+                return self._properties.get('Counter')
+        return Counter(self)
 
     @property
     def Ipv4(self):
@@ -76,10 +78,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.ipv4.ipv4 import Ipv4
-        if self._properties.get('Ipv4', None) is not None:
-            return self._properties.get('Ipv4')
-        else:
-            return Ipv4(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4', None) is not None:
+                return self._properties.get('Ipv4')
+        return Ipv4(self)
 
     @property
     def NestedCounter(self):
@@ -93,10 +95,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.nestedcounter.nestedcounter import NestedCounter
-        if self._properties.get('NestedCounter', None) is not None:
-            return self._properties.get('NestedCounter')
-        else:
-            return NestedCounter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NestedCounter', None) is not None:
+                return self._properties.get('NestedCounter')
+        return NestedCounter(self)
 
     @property
     def Random(self):
@@ -110,10 +112,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.random.random import Random
-        if self._properties.get('Random', None) is not None:
-            return self._properties.get('Random')
-        else:
-            return Random(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Random', None) is not None:
+                return self._properties.get('Random')
+        return Random(self)
 
     @property
     def RangeList(self):
@@ -127,10 +129,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.rangelist.rangelist import RangeList
-        if self._properties.get('RangeList', None) is not None:
-            return self._properties.get('RangeList')
-        else:
-            return RangeList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RangeList', None) is not None:
+                return self._properties.get('RangeList')
+        return RangeList(self)
 
     @property
     def ValueList(self):
@@ -144,10 +146,10 @@ class Udf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.udf.valuelist.valuelist import ValueList
-        if self._properties.get('ValueList', None) is not None:
-            return self._properties.get('ValueList')
-        else:
-            return ValueList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ValueList', None) is not None:
+                return self._properties.get('ValueList')
+        return ValueList(self)
 
     @property
     def ByteOffset(self):

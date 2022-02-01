@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Uni(Base):
@@ -72,10 +74,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evc_7500f87dab98e04d2ff46357ef4c0a19 import Evc
-        if self._properties.get('Evc', None) is not None:
-            return self._properties.get('Evc')
-        else:
-            return Evc(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Evc', None) is not None:
+                return self._properties.get('Evc')
+        return Evc(self)
 
     @property
     def EvcStatusLearnedInfo(self):
@@ -89,10 +91,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evcstatuslearnedinfo_c3b2e43e894cb8069d3a77cd8cf95e2c import EvcStatusLearnedInfo
-        if self._properties.get('EvcStatusLearnedInfo', None) is not None:
-            return self._properties.get('EvcStatusLearnedInfo')
-        else:
-            return EvcStatusLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvcStatusLearnedInfo', None) is not None:
+                return self._properties.get('EvcStatusLearnedInfo')
+        return EvcStatusLearnedInfo(self)
 
     @property
     def LmiStatusLearnedInfo(self):
@@ -106,10 +108,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lmistatuslearnedinfo_eafb3fd4a42f8851d9c418f937223a26 import LmiStatusLearnedInfo
-        if self._properties.get('LmiStatusLearnedInfo', None) is not None:
-            return self._properties.get('LmiStatusLearnedInfo')
-        else:
-            return LmiStatusLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LmiStatusLearnedInfo', None) is not None:
+                return self._properties.get('LmiStatusLearnedInfo')
+        return LmiStatusLearnedInfo(self)
 
     @property
     def UniStatus(self):
@@ -123,10 +125,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatus_0096bbbaf5ab6dac178a8f65c71f8937 import UniStatus
-        if self._properties.get('UniStatus', None) is not None:
-            return self._properties.get('UniStatus')
-        else:
-            return UniStatus(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('UniStatus', None) is not None:
+                return self._properties.get('UniStatus')
+        return UniStatus(self)
 
     @property
     def UniStatusLearnedInfo(self):
@@ -140,10 +142,10 @@ class Uni(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.unistatuslearnedinfo_33a9891d20157d14ba19c5cd0bc4333e import UniStatusLearnedInfo
-        if self._properties.get('UniStatusLearnedInfo', None) is not None:
-            return self._properties.get('UniStatusLearnedInfo')
-        else:
-            return UniStatusLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('UniStatusLearnedInfo', None) is not None:
+                return self._properties.get('UniStatusLearnedInfo')
+        return UniStatusLearnedInfo(self)
 
     @property
     def DataInstance(self):

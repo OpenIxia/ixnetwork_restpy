@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ixnetwork(Base):
@@ -51,10 +53,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.availablehardware import AvailableHardware
-        if self._properties.get('AvailableHardware', None) is not None:
-            return self._properties.get('AvailableHardware')
-        else:
-            return AvailableHardware(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AvailableHardware', None) is not None:
+                return self._properties.get('AvailableHardware')
+        return AvailableHardware(self)._select()
 
     @property
     def Globals(self):
@@ -68,10 +70,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.globals import Globals
-        if self._properties.get('Globals', None) is not None:
-            return self._properties.get('Globals')
-        else:
-            return Globals(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Globals', None) is not None:
+                return self._properties.get('Globals')
+        return Globals(self)._select()
 
     @property
     def Impairment(self):
@@ -85,10 +87,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment import Impairment
-        if self._properties.get('Impairment', None) is not None:
-            return self._properties.get('Impairment')
-        else:
-            return Impairment(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Impairment', None) is not None:
+                return self._properties.get('Impairment')
+        return Impairment(self)._select()
 
     @property
     def Lag(self):
@@ -102,10 +104,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7 import Lag
-        if self._properties.get('Lag', None) is not None:
-            return self._properties.get('Lag')
-        else:
-            return Lag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lag', None) is not None:
+                return self._properties.get('Lag')
+        return Lag(self)
 
     @property
     def Locations(self):
@@ -119,10 +121,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.locations.locations import Locations
-        if self._properties.get('Locations', None) is not None:
-            return self._properties.get('Locations')
-        else:
-            return Locations(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Locations', None) is not None:
+                return self._properties.get('Locations')
+        return Locations(self)
 
     @property
     def QuickTest(self):
@@ -136,10 +138,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest import QuickTest
-        if self._properties.get('QuickTest', None) is not None:
-            return self._properties.get('QuickTest')
-        else:
-            return QuickTest(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('QuickTest', None) is not None:
+                return self._properties.get('QuickTest')
+        return QuickTest(self)._select()
 
     @property
     def Reporter(self):
@@ -153,10 +155,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.reporter.reporter import Reporter
-        if self._properties.get('Reporter', None) is not None:
-            return self._properties.get('Reporter')
-        else:
-            return Reporter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Reporter', None) is not None:
+                return self._properties.get('Reporter')
+        return Reporter(self)._select()
 
     @property
     def ResourceManager(self):
@@ -170,10 +172,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager import ResourceManager
-        if self._properties.get('ResourceManager', None) is not None:
-            return self._properties.get('ResourceManager')
-        else:
-            return ResourceManager(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ResourceManager', None) is not None:
+                return self._properties.get('ResourceManager')
+        return ResourceManager(self)._select()
 
     @property
     def Statistics(self):
@@ -187,27 +189,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.statistics import Statistics
-        if self._properties.get('Statistics', None) is not None:
-            return self._properties.get('Statistics')
-        else:
-            return Statistics(self)._select()
-
-    @property
-    def Timeline(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline.Timeline): An instance of the Timeline class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.timeline.timeline import Timeline
-        if self._properties.get('Timeline', None) is not None:
-            return self._properties.get('Timeline')
-        else:
-            return Timeline(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Statistics', None) is not None:
+                return self._properties.get('Statistics')
+        return Statistics(self)._select()
 
     @property
     def Topology(self):
@@ -221,10 +206,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958 import Topology
-        if self._properties.get('Topology', None) is not None:
-            return self._properties.get('Topology')
-        else:
-            return Topology(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Topology', None) is not None:
+                return self._properties.get('Topology')
+        return Topology(self)
 
     @property
     def Traffic(self):
@@ -238,10 +223,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.traffic import Traffic
-        if self._properties.get('Traffic', None) is not None:
-            return self._properties.get('Traffic')
-        else:
-            return Traffic(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Traffic', None) is not None:
+                return self._properties.get('Traffic')
+        return Traffic(self)._select()
 
     @property
     def Vport(self):
@@ -255,10 +240,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport import Vport
-        if self._properties.get('Vport', None) is not None:
-            return self._properties.get('Vport')
-        else:
-            return Vport(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vport', None) is not None:
+                return self._properties.get('Vport')
+        return Vport(self)
 
     @property
     def Watch(self):
@@ -272,10 +257,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.watch.watch import Watch
-        if self._properties.get('Watch', None) is not None:
-            return self._properties.get('Watch')
-        else:
-            return Watch(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Watch', None) is not None:
+                return self._properties.get('Watch')
+        return Watch(self)._select()
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -418,7 +403,7 @@ class Ixnetwork(Base):
         # type: (*Any, **Any) -> None
         """Executes the clearCPDPStats operation on the server.
 
-        Clear control plane and data plane statistics.
+        Clear control pland and data plane statistics.
 
         clearCPDPStats(async_operation=bool)
         ------------------------------------
@@ -536,60 +521,67 @@ class Ixnetwork(Base):
         return self._execute('closeAllTabs', payload=payload, response_object=None)
 
     def CollectLogs(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
+        # type: (*Any, **Any) -> Union[str, None]
         """Executes the collectLogs operation on the server.
 
         This command collects all of the IxNetwork logs and puts them in a .zip file
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        collectLogs(Arg1=href, async_operation=bool)
-        --------------------------------------------
+        collectLogs(Arg1=href, async_operation=bool)string
+        --------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
-        collectLogs(Arg1=href, Arg2=list, async_operation=bool)
-        -------------------------------------------------------
+        collectLogs(Arg1=href, Arg2=list, async_operation=bool)string
+        -------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
-        collectLogs(Arg1=href, Arg2=list, Arg3=string, async_operation=bool)
-        --------------------------------------------------------------------
+        collectLogs(Arg1=href, Arg2=list, Arg3=string, async_operation=bool)string
+        --------------------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
         - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
-        collectLogs(Arg1=href, Arg2=list, Arg3=string, Arg4=string, async_operation=bool)
-        ---------------------------------------------------------------------------------
+        collectLogs(Arg1=href, Arg2=list, Arg3=string, Arg4=string, async_operation=bool)string
+        ---------------------------------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
         - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
         - Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
-        collectLogs(Arg1=href, Arg2=list, Arg3=string, Arg4=string, Arg5=string, async_operation=bool)
-        ----------------------------------------------------------------------------------------------
+        collectLogs(Arg1=href, Arg2=list, Arg3=string, Arg4=string, Arg5=string, async_operation=bool)string
+        ----------------------------------------------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
         - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
         - Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
         - Arg5 (str): End Date in format yyyy-M-d H:mm (2019-01-01 00:00)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
-        collectLogs(Arg1=href, Arg2=string, async_operation=bool)
-        ---------------------------------------------------------
+        collectLogs(Arg1=href, Arg2=string, async_operation=bool)string
+        ---------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (str): A string value.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
-        collectLogs(Arg1=href, Arg2=string, Arg3=string, async_operation=bool)
-        ----------------------------------------------------------------------
+        collectLogs(Arg1=href, Arg2=string, Arg3=string, async_operation=bool)string
+        ----------------------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (str): A string value.
         - Arg3 (str): A string value.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
 
         Raises
         ------
@@ -643,6 +635,28 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('connectToChassis', payload=payload, response_object=None)
+
+    def ConvertToNgpf(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the convertToNgpf operation on the server.
+
+        Convert loaded classic config to ngpf config.
+
+        convertToNgpf(Arg1=bool, Arg2=bool, async_operation=bool)
+        ---------------------------------------------------------
+        - Arg1 (bool): mix - retain classic config where it is not supported and do not convert the supported classic protocols as well on the same port
+        - Arg2 (bool): dmtep - dont map traffic end point
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('convertToNgpf', payload=payload, response_object=None)
 
     def CopyFile(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -732,6 +746,58 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('fetchPropertyNameForDisplayName', payload=payload, response_object=None)
+
+    def GenerateByteValues(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[int], None]
+        """Executes the generateByteValues operation on the server.
+
+        Generates an array of bytes from input Hex Values based on a selected pattern.
+
+        generateByteValues(Arg1=string, Arg2=string, Arg3=string, Arg4=number, Arg5=bool, async_operation=bool)list
+        -----------------------------------------------------------------------------------------------------------
+        - Arg1 (str): The pattern type. Available options are: single, increment, decrement, random
+        - Arg2 (str): Single/Start Value. This should be in Hex format
+        - Arg3 (str): Step/Mask Value. This should be in Hex format
+        - Arg4 (number): Count of values required
+        - Arg5 (bool): Boolean flag to indicate Word length based calculation instead of Byte length based calculation. True for Word Length
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(number): Returns an array of bytes
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('generateByteValues', payload=payload, response_object=None)
+
+    def GenerateHexValues(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the generateHexValues operation on the server.
+
+        Generates a series of Hex values based on a selected pattern
+
+        generateHexValues(Arg1=string, Arg2=string, Arg3=string, Arg4=number, Arg5=bool, async_operation=bool)string
+        ------------------------------------------------------------------------------------------------------------
+        - Arg1 (str): The pattern type. Available options are: single, increment, decrement, random
+        - Arg2 (str): Single/Start Value. This should be in Hex format
+        - Arg3 (str): Step/Mask Value. This should be in Hex format
+        - Arg4 (number): Count of values required
+        - Arg5 (bool): Boolean flag to indicate Word length based calculation instead of Byte length based calculation. True for Word Length
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: Returns a string which contains a series of hex values
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('generateHexValues', payload=payload, response_object=None)
 
     def GenerateReport(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -878,6 +944,27 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getAvailableStatsForSourceType', payload=payload, response_object=None)
+
+    def GetChassisMode(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getChassisMode operation on the server.
+
+        Get current chassis mode(default/highRoute/unknown) for the default chassis.
+
+        getChassisMode(async_operation=bool)enum
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str(default\~highRoute\~unknown): current mode of chassis(default/highRoute/unknown).
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getChassisMode', payload=payload, response_object=None)
 
     def GetConfiguredProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1050,6 +1137,25 @@ class Ixnetwork(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getIxVmCardByIp', payload=payload, response_object=None)
 
+    def GetLicenseSummary(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getLicenseSummary operation on the server.
+
+        getLicenseSummary(async_operation=bool)string
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: 
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getLicenseSummary', payload=payload, response_object=None)
+
     def GetMemoryUsageInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getMemoryUsageInfo operation on the server.
@@ -1088,6 +1194,26 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getNetworkGroupSize', payload=payload, response_object=None)
+
+    def GetPastApplicationInstances(self, *args, **kwargs):
+        """Executes the getPastApplicationInstances operation on the server.
+
+        This command collects dat abaout all the past IxNetwork instances
+
+        getPastApplicationInstances(async_operation=bool)list
+        -----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(arg1:list[dict(arg1:str,arg2:str)])): List of past instances with their attribute data
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getPastApplicationInstances', payload=payload, response_object=None)
 
     def GetPortsForProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1401,7 +1527,7 @@ class Ixnetwork(Base):
         - Arg1 (str): Full path to the capture file.
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The port capture object.
         - Arg3 (str(control | data)): The type of the capture, either data or control.
-        - Arg4 (str): The full path where the resulted merged capture will be saved, the resulted capture name needs to contain extension also.
+        - Arg4 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         mergeCapture(Arg1=string, Arg2=string, Arg3=string, async_operation=bool)
@@ -1779,6 +1905,28 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendRsAll', payload=payload, response_object=None)
+
+    def SetChassisMode(self, *args, **kwargs):
+        """Executes the setChassisMode operation on the server.
+
+        Switch Mode(default/highRoute) for the default chassis.
+
+        setChassisMode(Arg1=enum, Arg2=bool, async_operation=bool)object
+        ----------------------------------------------------------------
+        - Arg1 (str(default | highRoute)): Takes as input corresponding mode (default/highRoute).
+        - Arg2 (bool): take ownership if required.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns dict(arg1:str,arg2:str): Result if succesful or not,chassis hostname and the response message.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('setChassisMode', payload=payload, response_object=None)
 
     def SetGuardRailVersion(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

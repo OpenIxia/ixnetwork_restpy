@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PassCriteria(Base):
@@ -312,6 +314,61 @@ class PassCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, SeqErrorsThresholdValue=None):
+        # type: (int, bool, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, int, int) -> PassCriteria
+        """Finds and retrieves passCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve passCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all passCriteria resources from the server.
+
+        Args
+        ----
+        - DataErrorThresholdValue (number): The data error of the threshold value.
+        - EnableDataIntegrityPassFail (bool): If true, that data integrity of the pass or fail criteria is enabled.
+        - EnableLatencyPassFail (bool): If true, the latency is enabled for pass fail.
+        - EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determineswhether the trial passed or failed.
+        - EnableRatePassFail (bool): If true, the rate of pass fail is enabled.
+        - EnableSequenceErrorsPassFail (bool): If true, the sequence errors for pass fail id enabled.
+        - EnableStandardDeviationPassFail (bool): If true, the standard deviation for pass or failure is enabled.
+        - LatencyThresholdMode (str(average | maximum)): The latency threshold mode.
+        - LatencyThresholdScale (str(ms | ns | us)): The scale by which the latency threshold is measured.
+        - LatencyThresholdValue (number): The value for the latency threshold.
+        - LatencyVarThresholdMode (str(average | maximum)): The latency variation threshold mode.
+        - LatencyVariationThresholdScale (str(ms | ns | us)): The scale in which latency variation threshold is measured.
+        - LatencyVariationThresholdValue (number): The threshold value of the latency variation.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The load rate scale for the pass criteria.
+        - PassCriteriaLoadRateValue (number): The load rate value for the pass criteria.
+        - SeqErrorsThresholdValue (number): The threshold value for the sequence errors.
+
+        Returns
+        -------
+        - self: This instance with matching passCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of passCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the passCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

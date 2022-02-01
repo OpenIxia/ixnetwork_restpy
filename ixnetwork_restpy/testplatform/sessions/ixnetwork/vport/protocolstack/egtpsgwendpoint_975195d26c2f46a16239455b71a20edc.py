@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpSgwEndpoint(Base):
@@ -55,10 +57,10 @@ class EgtpSgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pcrfsecondaryrange_bbcc6ef67e8b1c4ad0f758de9ed54e58 import PcrfSecondaryRange
-        if self._properties.get('PcrfSecondaryRange', None) is not None:
-            return self._properties.get('PcrfSecondaryRange')
-        else:
-            return PcrfSecondaryRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcrfSecondaryRange', None) is not None:
+                return self._properties.get('PcrfSecondaryRange')
+        return PcrfSecondaryRange(self)
 
     @property
     def Range(self):
@@ -72,10 +74,10 @@ class EgtpSgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_d647122d38f8050f3f2facda96175ffa import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def Name(self):

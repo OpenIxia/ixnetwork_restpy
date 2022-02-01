@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Profile(Base):
@@ -59,10 +61,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.accumulateandburst.accumulateandburst import AccumulateAndBurst
-        if self._properties.get('AccumulateAndBurst', None) is not None:
-            return self._properties.get('AccumulateAndBurst')
-        else:
-            return AccumulateAndBurst(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AccumulateAndBurst', None) is not None:
+                return self._properties.get('AccumulateAndBurst')
+        return AccumulateAndBurst(self)._select()
 
     @property
     def BitError(self):
@@ -76,10 +78,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.biterror.biterror import BitError
-        if self._properties.get('BitError', None) is not None:
-            return self._properties.get('BitError')
-        else:
-            return BitError(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BitError', None) is not None:
+                return self._properties.get('BitError')
+        return BitError(self)._select()
 
     @property
     def Checksums(self):
@@ -93,10 +95,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.checksums.checksums import Checksums
-        if self._properties.get('Checksums', None) is not None:
-            return self._properties.get('Checksums')
-        else:
-            return Checksums(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Checksums', None) is not None:
+                return self._properties.get('Checksums')
+        return Checksums(self)._select()
 
     @property
     def CustomDelayVariation(self):
@@ -110,10 +112,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.customdelayvariation.customdelayvariation import CustomDelayVariation
-        if self._properties.get('CustomDelayVariation', None) is not None:
-            return self._properties.get('CustomDelayVariation')
-        else:
-            return CustomDelayVariation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CustomDelayVariation', None) is not None:
+                return self._properties.get('CustomDelayVariation')
+        return CustomDelayVariation(self)._select()
 
     @property
     def Delay(self):
@@ -127,10 +129,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.delay.delay import Delay
-        if self._properties.get('Delay', None) is not None:
-            return self._properties.get('Delay')
-        else:
-            return Delay(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Delay', None) is not None:
+                return self._properties.get('Delay')
+        return Delay(self)._select()
 
     @property
     def DelayVariation(self):
@@ -144,10 +146,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.delayvariation.delayvariation import DelayVariation
-        if self._properties.get('DelayVariation', None) is not None:
-            return self._properties.get('DelayVariation')
-        else:
-            return DelayVariation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DelayVariation', None) is not None:
+                return self._properties.get('DelayVariation')
+        return DelayVariation(self)._select()
 
     @property
     def Drop(self):
@@ -161,10 +163,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.drop.drop import Drop
-        if self._properties.get('Drop', None) is not None:
-            return self._properties.get('Drop')
-        else:
-            return Drop(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Drop', None) is not None:
+                return self._properties.get('Drop')
+        return Drop(self)._select()
 
     @property
     def Duplicate(self):
@@ -178,10 +180,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.duplicate.duplicate import Duplicate
-        if self._properties.get('Duplicate', None) is not None:
-            return self._properties.get('Duplicate')
-        else:
-            return Duplicate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Duplicate', None) is not None:
+                return self._properties.get('Duplicate')
+        return Duplicate(self)._select()
 
     @property
     def FixedClassifier(self):
@@ -195,10 +197,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.fixedclassifier.fixedclassifier import FixedClassifier
-        if self._properties.get('FixedClassifier', None) is not None:
-            return self._properties.get('FixedClassifier')
-        else:
-            return FixedClassifier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('FixedClassifier', None) is not None:
+                return self._properties.get('FixedClassifier')
+        return FixedClassifier(self)
 
     @property
     def Modifier(self):
@@ -212,10 +214,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.modifier.modifier import Modifier
-        if self._properties.get('Modifier', None) is not None:
-            return self._properties.get('Modifier')
-        else:
-            return Modifier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Modifier', None) is not None:
+                return self._properties.get('Modifier')
+        return Modifier(self)
 
     @property
     def Reorder(self):
@@ -229,10 +231,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.reorder.reorder import Reorder
-        if self._properties.get('Reorder', None) is not None:
-            return self._properties.get('Reorder')
-        else:
-            return Reorder(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Reorder', None) is not None:
+                return self._properties.get('Reorder')
+        return Reorder(self)._select()
 
     @property
     def RxRateLimit(self):
@@ -246,10 +248,10 @@ class Profile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.profile.rxratelimit.rxratelimit import RxRateLimit
-        if self._properties.get('RxRateLimit', None) is not None:
-            return self._properties.get('RxRateLimit')
-        else:
-            return RxRateLimit(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RxRateLimit', None) is not None:
+                return self._properties.get('RxRateLimit')
+        return RxRateLimit(self)._select()
 
     @property
     def Links__(self):

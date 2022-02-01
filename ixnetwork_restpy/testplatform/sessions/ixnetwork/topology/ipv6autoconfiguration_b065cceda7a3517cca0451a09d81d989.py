@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ipv6Autoconfiguration(Base):
@@ -69,27 +71,27 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        if self._properties.get('Bfdv6Interface', None) is not None:
-            return self._properties.get('Bfdv6Interface')
-        else:
-            return Bfdv6Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bfdv6Interface', None) is not None:
+                return self._properties.get('Bfdv6Interface')
+        return Bfdv6Interface(self)
 
     @property
     def BgpIpv6Peer(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d74e5f921869bbf01d4b631d028968a4.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d74e5f921869bbf01d4b631d028968a4 import BgpIpv6Peer
-        if self._properties.get('BgpIpv6Peer', None) is not None:
-            return self._properties.get('BgpIpv6Peer')
-        else:
-            return BgpIpv6Peer(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import BgpIpv6Peer
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpIpv6Peer', None) is not None:
+                return self._properties.get('BgpIpv6Peer')
+        return BgpIpv6Peer(self)
 
     @property
     def MldHost(self):
@@ -103,10 +105,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        if self._properties.get('MldHost', None) is not None:
-            return self._properties.get('MldHost')
-        else:
-            return MldHost(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldHost', None) is not None:
+                return self._properties.get('MldHost')
+        return MldHost(self)
 
     @property
     def MldQuerier(self):
@@ -120,10 +122,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        if self._properties.get('MldQuerier', None) is not None:
-            return self._properties.get('MldQuerier')
-        else:
-            return MldQuerier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldQuerier', None) is not None:
+                return self._properties.get('MldQuerier')
+        return MldQuerier(self)
 
     @property
     def Ospfv3(self):
@@ -137,10 +139,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import Ospfv3
-        if self._properties.get('Ospfv3', None) is not None:
-            return self._properties.get('Ospfv3')
-        else:
-            return Ospfv3(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3', None) is not None:
+                return self._properties.get('Ospfv3')
+        return Ospfv3(self)
 
     @property
     def PimV6Interface(self):
@@ -154,10 +156,27 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        if self._properties.get('PimV6Interface', None) is not None:
-            return self._properties.get('PimV6Interface')
-        else:
-            return PimV6Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV6Interface', None) is not None:
+                return self._properties.get('PimV6Interface')
+        return PimV6Interface(self)
+
+    @property
+    def Srv6Oam(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578.Srv6Oam): An instance of the Srv6Oam class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import Srv6Oam
+        if len(self._object_properties) > 0:
+            if self._properties.get('Srv6Oam', None) is not None:
+                return self._properties.get('Srv6Oam')
+        return Srv6Oam(self)
 
     @property
     def Tag(self):
@@ -171,10 +190,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Vxlanv6(self):
@@ -188,10 +207,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        if self._properties.get('Vxlanv6', None) is not None:
-            return self._properties.get('Vxlanv6')
-        else:
-            return Vxlanv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlanv6', None) is not None:
+                return self._properties.get('Vxlanv6')
+        return Vxlanv6(self)
 
     @property
     def Vxlanv6gpe(self):
@@ -205,10 +224,10 @@ class Ipv6Autoconfiguration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import Vxlanv6gpe
-        if self._properties.get('Vxlanv6gpe', None) is not None:
-            return self._properties.get('Vxlanv6gpe')
-        else:
-            return Vxlanv6gpe(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlanv6gpe', None) is not None:
+                return self._properties.get('Vxlanv6gpe')
+        return Vxlanv6gpe(self)
 
     @property
     def Address(self):
@@ -507,6 +526,74 @@ class Ipv6Autoconfiguration(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('abort', payload=payload, response_object=None)
 
+    def CancelPing(self, *args, **kwargs):
+        """Executes the cancelPing operation on the server.
+
+        Cancel Ping for existing IPv6 Autoconfig Non-Blocking SendPing.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        cancelPing(async_operation=bool)list
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        cancelPing(SessionIndices=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        cancelPing(SessionIndices=string, async_operation=bool)list
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('cancelPing', payload=payload, response_object=None)
+
+    def PingStatus(self, *args, **kwargs):
+        """Executes the pingStatus operation on the server.
+
+        Ping Status for last/current IPv6 Autoconfig Non-Blocking SendPing.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        pingStatus(async_operation=bool)list
+        ------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        pingStatus(SessionIndices=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        pingStatus(SessionIndices=string, async_operation=bool)list
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('pingStatus', payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the restartDown operation on the server.
@@ -610,6 +697,135 @@ class Ipv6Autoconfiguration(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('sendPing', payload=payload, response_object=None)
+
+    def SendPingAsync(self, *args, **kwargs):
+        """Executes the sendPingAsync operation on the server.
+
+        Non-Blocking Send ping for selected IPv6 Autoconfig items.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPingAsync(DestIP=string, async_operation=bool)list
+        ------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPingAsync(DestIP=string, SessionIndices=list, async_operation=bool)list
+        ---------------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPingAsync(SessionIndices=string, DestIP=string, async_operation=bool)list
+        -----------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIP of type kString
+        - DestIP (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPingAsync', payload=payload, response_object=None)
+
+    def SendPingWithCountAndPayload(self, *args, **kwargs):
+        """Executes the sendPingWithCountAndPayload operation on the server.
+
+        Blocking Send ping for selected IPv6 Autoconfig items with Ping Count and Payload Size.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPingWithCountAndPayload(DestIP=string, PingCount=number, PingInterval=number, PayloadSize=number, async_operation=bool)list
+        -------------------------------------------------------------------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - PingCount (number): This parameter requires a pingCount of type kInteger
+        - PingInterval (number): This parameter requires a pingInterval of type kInteger
+        - PayloadSize (number): This parameter requires a payloadSize of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPingWithCountAndPayload(DestIP=string, PingCount=number, PingInterval=number, PayloadSize=number, SessionIndices=list, async_operation=bool)list
+        ----------------------------------------------------------------------------------------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - PingCount (number): This parameter requires a pingCount of type kInteger
+        - PingInterval (number): This parameter requires a pingInterval of type kInteger
+        - PayloadSize (number): This parameter requires a payloadSize of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPingWithCountAndPayload(SessionIndices=string, DestIP=string, PingCount=number, PingInterval=number, PayloadSize=number, async_operation=bool)list
+        ------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIP of type kString
+        - DestIP (str): This parameter requires a pingCount of type kInteger
+        - PingCount (number): This parameter requires a pingInterval of type kInteger
+        - PingInterval (number): This parameter requires a payloadSize of type kInteger
+        - PayloadSize (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPingWithCountAndPayload', payload=payload, response_object=None)
+
+    def SendPingWithCountAndPayloadAsync(self, *args, **kwargs):
+        """Executes the sendPingWithCountAndPayloadAsync operation on the server.
+
+        Non-Blocking Send ping for selected IPv6 Autoconfig items with Ping Count and Payload Size.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        sendPingWithCountAndPayloadAsync(DestIP=string, PingCount=number, PingInterval=number, PayloadSize=number, async_operation=bool)list
+        ------------------------------------------------------------------------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - PingCount (number): This parameter requires a pingCount of type kInteger
+        - PingInterval (number): This parameter requires a pingInterval of type kInteger
+        - PayloadSize (number): This parameter requires a payloadSize of type kInteger
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPingWithCountAndPayloadAsync(DestIP=string, PingCount=number, PingInterval=number, PayloadSize=number, SessionIndices=list, async_operation=bool)list
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------
+        - DestIP (str): This parameter requires a destIP of type kString
+        - PingCount (number): This parameter requires a pingCount of type kInteger
+        - PingInterval (number): This parameter requires a pingInterval of type kInteger
+        - PayloadSize (number): This parameter requires a payloadSize of type kInteger
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        sendPingWithCountAndPayloadAsync(SessionIndices=string, DestIP=string, PingCount=number, PingInterval=number, PayloadSize=number, async_operation=bool)list
+        -----------------------------------------------------------------------------------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a destIP of type kString
+        - DestIP (str): This parameter requires a pingCount of type kInteger
+        - PingCount (number): This parameter requires a pingInterval of type kInteger
+        - PingInterval (number): This parameter requires a payloadSize of type kInteger
+        - PayloadSize (number): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('sendPingWithCountAndPayloadAsync', payload=payload, response_object=None)
 
     def SendRs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

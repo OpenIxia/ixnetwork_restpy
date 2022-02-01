@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LearnedInfo(Base):
@@ -57,10 +59,10 @@ class LearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.col_82c9f692cc4dfbaf274869de8a335e5e import Col
-        if self._properties.get('Col', None) is not None:
-            return self._properties.get('Col')
-        else:
-            return Col(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Col', None) is not None:
+                return self._properties.get('Col')
+        return Col(self)
 
     @property
     def Table(self):
@@ -74,10 +76,10 @@ class LearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.table_5866003f22dc964c958a5bc4c3040ef4 import Table
-        if self._properties.get('Table', None) is not None:
-            return self._properties.get('Table')
-        else:
-            return Table(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Table', None) is not None:
+                return self._properties.get('Table')
+        return Table(self)
 
     @property
     def Id__(self):

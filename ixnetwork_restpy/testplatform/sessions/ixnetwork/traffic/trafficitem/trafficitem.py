@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TrafficItem(Base):
@@ -105,10 +107,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibprofile import AppLibProfile
-        if self._properties.get('AppLibProfile', None) is not None:
-            return self._properties.get('AppLibProfile')
-        else:
-            return AppLibProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AppLibProfile', None) is not None:
+                return self._properties.get('AppLibProfile')
+        return AppLibProfile(self)
 
     @property
     def ConfigElement(self):
@@ -122,10 +124,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import ConfigElement
-        if self._properties.get('ConfigElement', None) is not None:
-            return self._properties.get('ConfigElement')
-        else:
-            return ConfigElement(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ConfigElement', None) is not None:
+                return self._properties.get('ConfigElement')
+        return ConfigElement(self)
 
     @property
     def DynamicUpdate(self):
@@ -139,10 +141,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.dynamicupdate.dynamicupdate import DynamicUpdate
-        if self._properties.get('DynamicUpdate', None) is not None:
-            return self._properties.get('DynamicUpdate')
-        else:
-            return DynamicUpdate(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DynamicUpdate', None) is not None:
+                return self._properties.get('DynamicUpdate')
+        return DynamicUpdate(self)
 
     @property
     def EgressTracking(self):
@@ -156,10 +158,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
-        if self._properties.get('EgressTracking', None) is not None:
-            return self._properties.get('EgressTracking')
-        else:
-            return EgressTracking(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EgressTracking', None) is not None:
+                return self._properties.get('EgressTracking')
+        return EgressTracking(self)
 
     @property
     def EndpointSet(self):
@@ -173,10 +175,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import EndpointSet
-        if self._properties.get('EndpointSet', None) is not None:
-            return self._properties.get('EndpointSet')
-        else:
-            return EndpointSet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EndpointSet', None) is not None:
+                return self._properties.get('EndpointSet')
+        return EndpointSet(self)
 
     @property
     def HighLevelStream(self):
@@ -190,10 +192,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import HighLevelStream
-        if self._properties.get('HighLevelStream', None) is not None:
-            return self._properties.get('HighLevelStream')
-        else:
-            return HighLevelStream(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('HighLevelStream', None) is not None:
+                return self._properties.get('HighLevelStream')
+        return HighLevelStream(self)
 
     @property
     def Tracking(self):
@@ -207,10 +209,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import Tracking
-        if self._properties.get('Tracking', None) is not None:
-            return self._properties.get('Tracking')
-        else:
-            return Tracking(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tracking', None) is not None:
+                return self._properties.get('Tracking')
+        return Tracking(self)
 
     @property
     def TransmissionDistribution(self):
@@ -224,10 +226,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.transmissiondistribution.transmissiondistribution import TransmissionDistribution
-        if self._properties.get('TransmissionDistribution', None) is not None:
-            return self._properties.get('TransmissionDistribution')
-        else:
-            return TransmissionDistribution(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TransmissionDistribution', None) is not None:
+                return self._properties.get('TransmissionDistribution')
+        return TransmissionDistribution(self)
 
     @property
     def AllowSelfDestined(self):
@@ -637,7 +639,7 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - bool: Suspends all traffic on this stream.
+        - bool: uspends all traffic on this stream.<
         """
         return self._get_attribute(self._SDM_ATT_MAP['Suspend'])
     @Suspend.setter
@@ -784,7 +786,7 @@ class TrafficItem(Base):
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
-        - Suspend (bool): Suspends all traffic on this stream.
+        - Suspend (bool): uspends all traffic on this stream.<
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
         - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
@@ -830,7 +832,7 @@ class TrafficItem(Base):
         - RoundRobinPacketOrdering (bool): This option enables Round Robin Packet Ordering within endpoints across Rx ports.
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
-        - Suspend (bool): Suspends all traffic on this stream.
+        - Suspend (bool): uspends all traffic on this stream.<
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
         - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
@@ -898,7 +900,7 @@ class TrafficItem(Base):
         - RouteMesh (str(fullMesh | oneToOne)): The traffic flow type between each pair of source route endpoint and destination route endpoint.
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
         - State (str): (Read only) A read-only field which indicates the current state of the traffic item.
-        - Suspend (bool): Suspends all traffic on this stream.
+        - Suspend (bool): uspends all traffic on this stream.<
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
         - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item

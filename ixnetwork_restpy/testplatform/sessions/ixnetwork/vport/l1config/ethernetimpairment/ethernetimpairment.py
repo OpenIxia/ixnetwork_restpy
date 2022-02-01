@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EthernetImpairment(Base):
@@ -132,3 +134,48 @@ class EthernetImpairment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnablePPM=None, Ppm=None, SelectedSpeeds=None):
+        # type: (List[str], bool, bool, bool, int, List[str]) -> EthernetImpairment
+        """Finds and retrieves ethernetImpairment resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ethernetImpairment resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ethernetImpairment resources from the server.
+
+        Args
+        ----
+        - AvailableSpeeds (list(str[])): Which speeds are available for the current media and AN settings.
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
+
+        Returns
+        -------
+        - self: This instance with matching ethernetImpairment resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ethernetImpairment data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ethernetImpairment resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

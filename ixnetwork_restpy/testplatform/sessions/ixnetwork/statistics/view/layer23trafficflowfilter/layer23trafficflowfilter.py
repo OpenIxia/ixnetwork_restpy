@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Layer23TrafficFlowFilter(Base):
@@ -59,10 +61,10 @@ class Layer23TrafficFlowFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.enumerationfilter.enumerationfilter import EnumerationFilter
-        if self._properties.get('EnumerationFilter', None) is not None:
-            return self._properties.get('EnumerationFilter')
-        else:
-            return EnumerationFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EnumerationFilter', None) is not None:
+                return self._properties.get('EnumerationFilter')
+        return EnumerationFilter(self)
 
     @property
     def TrackingFilter(self):
@@ -76,10 +78,10 @@ class Layer23TrafficFlowFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trackingfilter.trackingfilter import TrackingFilter
-        if self._properties.get('TrackingFilter', None) is not None:
-            return self._properties.get('TrackingFilter')
-        else:
-            return TrackingFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrackingFilter', None) is not None:
+                return self._properties.get('TrackingFilter')
+        return TrackingFilter(self)
 
     @property
     def AggregatedAcrossPorts(self):

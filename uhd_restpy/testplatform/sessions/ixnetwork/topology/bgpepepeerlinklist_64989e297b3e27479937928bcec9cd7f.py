@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpEpePeerLinkList(Base):
@@ -76,10 +78,10 @@ class BgpEpePeerLinkList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        if self._properties.get('TlvProfile', None) is not None:
-            return self._properties.get('TlvProfile')
-        else:
-            return TlvProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TlvProfile', None) is not None:
+                return self._properties.get('TlvProfile')
+        return TlvProfile(self)
 
     @property
     def Active(self):
@@ -372,6 +374,49 @@ class BgpEpePeerLinkList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, PeerName=None):
+        # type: (int, str, str, List[str]) -> BgpEpePeerLinkList
+        """Finds and retrieves bgpEpePeerLinkList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpEpePeerLinkList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpEpePeerLinkList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PeerName (list(str)): Peer Name For Reference
+
+        Returns
+        -------
+        - self: This instance with matching bgpEpePeerLinkList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of bgpEpePeerLinkList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the bgpEpePeerLinkList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, BBit=None, EnableLinkAddress=None, EnableLinkIdentifier=None, EnablePeerAdjSid=None, LBit=None, LinkAddressType=None, LinkLocalIdentifier=None, LinkNumber=None, LinkRemoteIdentifier=None, LocalIpv4LinkAddress=None, LocalIpv6LinkAddress=None, PBit=None, RemoteIpv4LinkAddress=None, RemoteIpv6LinkAddress=None, Reserved=None, RsvdBits=None, SidIndex=None, SidIndexValue=None, VBit=None, Weight=None):
         """Base class infrastructure that gets a list of bgpEpePeerLinkList device ids encapsulated by this object.

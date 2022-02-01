@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ospfv3PseudoRouter(Base):
@@ -86,10 +88,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.externalroutes_1ced449f46e284c113ae2194af2ffb97 import ExternalRoutes
-        if self._properties.get('ExternalRoutes', None) is not None:
-            return self._properties.get('ExternalRoutes')
-        else:
-            return ExternalRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ExternalRoutes', None) is not None:
+                return self._properties.get('ExternalRoutes')
+        return ExternalRoutes(self)
 
     @property
     def InterAreaPrefix(self):
@@ -103,10 +105,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interareaprefix_d5c1af5dfb80980a591c026bbf1a1217 import InterAreaPrefix
-        if self._properties.get('InterAreaPrefix', None) is not None:
-            return self._properties.get('InterAreaPrefix')
-        else:
-            return InterAreaPrefix(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterAreaPrefix', None) is not None:
+                return self._properties.get('InterAreaPrefix')
+        return InterAreaPrefix(self)
 
     @property
     def InterAreaRouter(self):
@@ -120,10 +122,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interarearouter_e3708b9636f21a071f8de5213e1653fb import InterAreaRouter
-        if self._properties.get('InterAreaRouter', None) is not None:
-            return self._properties.get('InterAreaRouter')
-        else:
-            return InterAreaRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterAreaRouter', None) is not None:
+                return self._properties.get('InterAreaRouter')
+        return InterAreaRouter(self)
 
     @property
     def IntraAreaPrefix(self):
@@ -137,10 +139,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.intraareaprefix_948ccdbed233cc17b5c5cd2caa82b61f import IntraAreaPrefix
-        if self._properties.get('IntraAreaPrefix', None) is not None:
-            return self._properties.get('IntraAreaPrefix')
-        else:
-            return IntraAreaPrefix(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IntraAreaPrefix', None) is not None:
+                return self._properties.get('IntraAreaPrefix')
+        return IntraAreaPrefix(self)
 
     @property
     def LinkLsaRoutes(self):
@@ -154,10 +156,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.linklsaroutes_a80c9071154775869e327a02125984ee import LinkLsaRoutes
-        if self._properties.get('LinkLsaRoutes', None) is not None:
-            return self._properties.get('LinkLsaRoutes')
-        else:
-            return LinkLsaRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LinkLsaRoutes', None) is not None:
+                return self._properties.get('LinkLsaRoutes')
+        return LinkLsaRoutes(self)
 
     @property
     def NssaRoutes(self):
@@ -171,10 +173,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nssaroutes_ff8ecb21072a534ab3d887c03c4e1cc2 import NssaRoutes
-        if self._properties.get('NssaRoutes', None) is not None:
-            return self._properties.get('NssaRoutes')
-        else:
-            return NssaRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NssaRoutes', None) is not None:
+                return self._properties.get('NssaRoutes')
+        return NssaRoutes(self)
 
     @property
     def Ospfv3PseudoSRv6LocatorEntryList(self):
@@ -188,10 +190,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudosrv6locatorentrylist_189ed001286030b51baefaa3e501a216 import Ospfv3PseudoSRv6LocatorEntryList
-        if self._properties.get('Ospfv3PseudoSRv6LocatorEntryList', None) is not None:
-            return self._properties.get('Ospfv3PseudoSRv6LocatorEntryList')
-        else:
-            return Ospfv3PseudoSRv6LocatorEntryList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3PseudoSRv6LocatorEntryList', None) is not None:
+                return self._properties.get('Ospfv3PseudoSRv6LocatorEntryList')
+        return Ospfv3PseudoSRv6LocatorEntryList(self)._select()
 
     @property
     def Ospfv3SRGBRangeSubObjectsList(self):
@@ -205,10 +207,10 @@ class Ospfv3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srgbrangesubobjectslist_be527e153c8e6d4e5c3f4321aa8409c4 import Ospfv3SRGBRangeSubObjectsList
-        if self._properties.get('Ospfv3SRGBRangeSubObjectsList', None) is not None:
-            return self._properties.get('Ospfv3SRGBRangeSubObjectsList')
-        else:
-            return Ospfv3SRGBRangeSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3SRGBRangeSubObjectsList', None) is not None:
+                return self._properties.get('Ospfv3SRGBRangeSubObjectsList')
+        return Ospfv3SRGBRangeSubObjectsList(self)
 
     @property
     def Active(self):

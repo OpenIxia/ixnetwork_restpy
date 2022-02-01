@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Evc(Base):
@@ -63,10 +65,10 @@ class Evc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bwprofile_c7210d4d2555c28ee509abc680d0b951 import BwProfile
-        if self._properties.get('BwProfile', None) is not None:
-            return self._properties.get('BwProfile')
-        else:
-            return BwProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BwProfile', None) is not None:
+                return self._properties.get('BwProfile')
+        return BwProfile(self)
 
     @property
     def CeVlanIdRange(self):
@@ -80,10 +82,10 @@ class Evc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cevlanidrange_c020c993f4d4b311a0a67accf3fbe3cd import CeVlanIdRange
-        if self._properties.get('CeVlanIdRange', None) is not None:
-            return self._properties.get('CeVlanIdRange')
-        else:
-            return CeVlanIdRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CeVlanIdRange', None) is not None:
+                return self._properties.get('CeVlanIdRange')
+        return CeVlanIdRange(self)
 
     @property
     def DefaultEvc(self):

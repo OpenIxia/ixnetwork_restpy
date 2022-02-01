@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Group(Base):
@@ -60,10 +62,10 @@ class Group(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bucket_70fad76e12d52147154e1637a004a478 import Bucket
-        if self._properties.get('Bucket', None) is not None:
-            return self._properties.get('Bucket')
-        else:
-            return Bucket(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bucket', None) is not None:
+                return self._properties.get('Bucket')
+        return Bucket(self)
 
     @property
     def Id__(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LearnedInformation(Base):
@@ -91,10 +93,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.generallearnedinfo_9cb8a8283663cc3094a8443009722083 import GeneralLearnedInfo
-        if self._properties.get('GeneralLearnedInfo', None) is not None:
-            return self._properties.get('GeneralLearnedInfo')
-        else:
-            return GeneralLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('GeneralLearnedInfo', None) is not None:
+                return self._properties.get('GeneralLearnedInfo')
+        return GeneralLearnedInfo(self)
 
     @property
     def TriggeredPingLearnedInfo(self):
@@ -108,10 +110,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.triggeredpinglearnedinfo_350be9d7c8dd6514556f2297763ef94b import TriggeredPingLearnedInfo
-        if self._properties.get('TriggeredPingLearnedInfo', None) is not None:
-            return self._properties.get('TriggeredPingLearnedInfo')
-        else:
-            return TriggeredPingLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TriggeredPingLearnedInfo', None) is not None:
+                return self._properties.get('TriggeredPingLearnedInfo')
+        return TriggeredPingLearnedInfo(self)
 
     @property
     def TriggeredTracerouteLearnedInfo(self):
@@ -125,10 +127,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.triggeredtraceroutelearnedinfo_abc82c355a1d42abb4a65edfe0c6864c import TriggeredTracerouteLearnedInfo
-        if self._properties.get('TriggeredTracerouteLearnedInfo', None) is not None:
-            return self._properties.get('TriggeredTracerouteLearnedInfo')
-        else:
-            return TriggeredTracerouteLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TriggeredTracerouteLearnedInfo', None) is not None:
+                return self._properties.get('TriggeredTracerouteLearnedInfo')
+        return TriggeredTracerouteLearnedInfo(self)
 
     @property
     def DestinationAddressIpv4(self):

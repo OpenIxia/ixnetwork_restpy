@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Router(Base):
@@ -65,10 +67,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eidtorlocmapcacheinfo_d2216efccc3628c42dd062f5723dbcd0 import EidToRlocMapCacheInfo
-        if self._properties.get('EidToRlocMapCacheInfo', None) is not None:
-            return self._properties.get('EidToRlocMapCacheInfo')
-        else:
-            return EidToRlocMapCacheInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EidToRlocMapCacheInfo', None) is not None:
+                return self._properties.get('EidToRlocMapCacheInfo')
+        return EidToRlocMapCacheInfo(self)
 
     @property
     def Interface(self):
@@ -82,10 +84,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_8401addef6ad210808a84a79291dafa1 import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def LispInstance(self):
@@ -99,10 +101,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lispinstance_2ff435828a95cdea01ba6bffac98e703 import LispInstance
-        if self._properties.get('LispInstance', None) is not None:
-            return self._properties.get('LispInstance')
-        else:
-            return LispInstance(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LispInstance', None) is not None:
+                return self._properties.get('LispInstance')
+        return LispInstance(self)
 
     @property
     def MapServerCacheInfo(self):
@@ -116,10 +118,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapservercacheinfo_e631a8f0d76b2164fb127901735b2cf0 import MapServerCacheInfo
-        if self._properties.get('MapServerCacheInfo', None) is not None:
-            return self._properties.get('MapServerCacheInfo')
-        else:
-            return MapServerCacheInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MapServerCacheInfo', None) is not None:
+                return self._properties.get('MapServerCacheInfo')
+        return MapServerCacheInfo(self)
 
     @property
     def Enabled(self):

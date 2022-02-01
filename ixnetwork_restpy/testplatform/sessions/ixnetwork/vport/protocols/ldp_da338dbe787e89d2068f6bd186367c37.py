@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ldp(Base):
@@ -67,10 +69,10 @@ class Ldp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_94a4088a967c8e82566ebb7145e052d9 import Router
-        if self._properties.get('Router', None) is not None:
-            return self._properties.get('Router')
-        else:
-            return Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Router', None) is not None:
+                return self._properties.get('Router')
+        return Router(self)
 
     @property
     def EnableDiscardSelfAdvFecs(self):
@@ -304,6 +306,60 @@ class Ldp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableDiscardSelfAdvFecs=None, EnableHelloJitter=None, EnableLabelExchangeOverLsp=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, HelloHoldTime=None, HelloInterval=None, KeepAliveHoldTime=None, KeepAliveInterval=None, P2mpCapabilityParam=None, P2mpFecType=None, RunningState=None, TargetedHelloInterval=None, TargetedHoldTime=None, UseTransportLabelsForMplsOam=None):
+        # type: (bool, bool, bool, bool, bool, int, int, int, int, int, int, str, int, int, bool) -> Ldp
+        """Finds and retrieves ldp resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ldp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ldp resources from the server.
+
+        Args
+        ----
+        - EnableDiscardSelfAdvFecs (bool): Discards learned labels from the DUT that match any of the enabled configured IPv4 FEC ranges.
+        - EnableHelloJitter (bool): Allows staggered transmission of many HELLO messages.
+        - EnableLabelExchangeOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+        - EnableVpnLabelExchangeOverLsp (bool): NOT DEFINED
+        - Enabled (bool): Enables or disables the use of this emulated LDP router in the emulated LDP network. (default = disabled)
+        - HelloHoldTime (number): One of the timers associated with maintaining adjacencies based on hello messages.
+        - HelloInterval (number): One of the timers associated with maintaining adjacencies based on hello messages.
+        - KeepAliveHoldTime (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+        - KeepAliveInterval (number): One of the timers associated with maintaining adjacencies based on PDU and keep-alive messages.
+        - P2mpCapabilityParam (number): The P2MP capability parameter value in hexadecimal.
+        - P2mpFecType (number): The MLDP P2MP FEC type value in hexadecimal.
+        - RunningState (str(unknown | stopped | stopping | starting | started)): The current state of the LDP server.
+        - TargetedHelloInterval (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+        - TargetedHoldTime (number): One of the timers associated with maintaining targeted peer adjacencies based on hello messages.
+        - UseTransportLabelsForMplsOam (bool): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching ldp resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ldp data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ldp resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

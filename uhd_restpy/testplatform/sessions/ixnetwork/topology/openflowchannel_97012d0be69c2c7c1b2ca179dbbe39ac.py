@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OpenFlowChannel(Base):
@@ -84,10 +86,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.groups_b0203364879843ea921d92b31d3b37a9 import Groups
-        if self._properties.get('Groups', None) is not None:
-            return self._properties.get('Groups')
-        else:
-            return Groups(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Groups', None) is not None:
+                return self._properties.get('Groups')
+        return Groups(self)
 
     @property
     def Meters(self):
@@ -101,10 +103,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.meters_8b28210732dd4e9a4bab19a7e6241a11 import Meters
-        if self._properties.get('Meters', None) is not None:
-            return self._properties.get('Meters')
-        else:
-            return Meters(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Meters', None) is not None:
+                return self._properties.get('Meters')
+        return Meters(self)
 
     @property
     def Tables(self):
@@ -118,10 +120,10 @@ class OpenFlowChannel(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tables_3d687bbed07969785585da03f7a19e75 import Tables
-        if self._properties.get('Tables', None) is not None:
-            return self._properties.get('Tables')
-        else:
-            return Tables(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tables', None) is not None:
+                return self._properties.get('Tables')
+        return Tables(self)
 
     @property
     def Active(self):

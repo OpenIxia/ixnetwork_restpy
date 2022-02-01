@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DestinationRange(Base):
@@ -67,10 +69,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.egress_eafa79ad778e0a6c6cd87e7f67bde5ec import Egress
-        if self._properties.get('Egress', None) is not None:
-            return self._properties.get('Egress')
-        else:
-            return Egress(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Egress', None) is not None:
+                return self._properties.get('Egress')
+        return Egress(self)._select()
 
     @property
     def Ingress(self):
@@ -84,10 +86,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ingress_da8eb3f5bded227d4615e7b9e030b32d import Ingress
-        if self._properties.get('Ingress', None) is not None:
-            return self._properties.get('Ingress')
-        else:
-            return Ingress(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ingress', None) is not None:
+                return self._properties.get('Ingress')
+        return Ingress(self)._select()
 
     @property
     def TunnelLeafRange(self):
@@ -101,10 +103,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunnelleafrange_66cac69e2e026fc7d2fdc68b1e28e7ca import TunnelLeafRange
-        if self._properties.get('TunnelLeafRange', None) is not None:
-            return self._properties.get('TunnelLeafRange')
-        else:
-            return TunnelLeafRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TunnelLeafRange', None) is not None:
+                return self._properties.get('TunnelLeafRange')
+        return TunnelLeafRange(self)
 
     @property
     def TunnelTailTrafficEndPoint(self):
@@ -118,10 +120,10 @@ class DestinationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tunneltailtrafficendpoint_284f93fd059aad011661455f3f6293cb import TunnelTailTrafficEndPoint
-        if self._properties.get('TunnelTailTrafficEndPoint', None) is not None:
-            return self._properties.get('TunnelTailTrafficEndPoint')
-        else:
-            return TunnelTailTrafficEndPoint(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TunnelTailTrafficEndPoint', None) is not None:
+                return self._properties.get('TunnelTailTrafficEndPoint')
+        return TunnelTailTrafficEndPoint(self)
 
     @property
     def Behavior(self):

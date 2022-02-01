@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -664,6 +666,83 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BidirectionalOptionEnabled=None, BinarySearchType=None, BurstSize=None, CountRandomFrameSize=None, DelayAfterTransmit=None, Duration=None, EnableAlignmentErr=None, EnableBadCrcErr=None, EnableDribbleErr=None, EnableFragmentErr=None, EnableMinFrameSize=None, EnableOversizeErr=None, EnableUndersizeErr=None, EnforceBidirectional=None, ForceRegenerate=None, FragmentFramesizeList=None, FrameSizeMode=None, FramesizeList=None, LoadRatePercent=None, LoadType=None, MapType=None, MaxIncrementFrameSize=None, MaxRandomFrameSize=None, MinIncrementFrameSize=None, MinRandomFrameSize=None, Numtrials=None, OversizeFramesizeList=None, PassFailNote=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, SendFullyMeshed=None, StepIncrementFrameSize=None, SupportedTrafficTypes=None, TrafficType=None, TxDelay=None, UndersizeFramesizeList=None):
+        # type: (bool, str, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, List[str], int, str, str, int, int, int, int, int, str, str, bool, str, int, List[str], bool, int, str, str, int, str) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
+        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type value.
+        - BurstSize (number): The number of packets that are sent in a burst.
+        - CountRandomFrameSize (number): If true, frame sizes are counted at random.
+        - DelayAfterTransmit (number): A delay that is inserted after transmit is complete, before it continues with the test.
+        - Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+        - EnableAlignmentErr (bool): If true, alignment error is enabled.
+        - EnableBadCrcErr (bool): If true, BadCrc error is enabled.
+        - EnableDribbleErr (bool): If true, dribble error. is enabled.
+        - EnableFragmentErr (bool): If true, fragment error is enabled.
+        - EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. In the case of IPv4 and Ethernet, 64 bytes will be allowed. This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
+        - EnableOversizeErr (bool): If true, oversize error is enabled.
+        - EnableUndersizeErr (bool): If true, oversize error is enabled.
+        - EnforceBidirectional (bool): If true, uses bidirectional traffic mapping.
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FragmentFramesizeList (str): The list of fragmented framesize.
+        - FrameSizeMode (str(custom | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - FramesizeList (list(str)): List containing the frame sizes used in the test.
+        - LoadRatePercent (number): The percent value of Load Rate.
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): The type of the payload setting.
+        - MapType (str): The POS traffic map type.
+        - MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
+        - MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+        - MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
+        - MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
+        - Numtrials (number): Defines how many times each frame size will be tested.
+        - OversizeFramesizeList (str): The list of oversized framesize.
+        - PassFailNote (str): The note that indicates whether the test has cleared the pass/fail criterion or not.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
+        - PortDelayValue (number): Sets the port delay value
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - SendFullyMeshed (bool): Sending fully meshed traffic.
+        - StepIncrementFrameSize (number): The step to increment the frame size.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TrafficType (str(burstyLoading | constantLoading)): The test based on the traffic type.
+        - TxDelay (number): The minimum delay between successive LLDP packets. The default value is 2, the minimum is 1, and the maximum is 8192. Note that Tx Delay must be lower than txInterval.
+        - UndersizeFramesizeList (str): The list of undersized framesize.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

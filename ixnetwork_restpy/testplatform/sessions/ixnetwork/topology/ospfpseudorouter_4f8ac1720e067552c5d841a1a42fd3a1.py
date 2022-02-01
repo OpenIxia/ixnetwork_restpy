@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OspfPseudoRouter(Base):
@@ -84,10 +86,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoprefixessid_3b1ec47376666bd4309a78f3999c54d1 import OspfPseudoPrefixesSid
-        if self._properties.get('OspfPseudoPrefixesSid', None) is not None:
-            return self._properties.get('OspfPseudoPrefixesSid')
-        else:
-            return OspfPseudoPrefixesSid(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoPrefixesSid', None) is not None:
+                return self._properties.get('OspfPseudoPrefixesSid')
+        return OspfPseudoPrefixesSid(self)._select()
 
     @property
     def OspfPseudoRouterStubNetworks(self):
@@ -101,10 +103,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubnetworks_529623b7b4a99bce259e7e9cc31d4740 import OspfPseudoRouterStubNetworks
-        if self._properties.get('OspfPseudoRouterStubNetworks', None) is not None:
-            return self._properties.get('OspfPseudoRouterStubNetworks')
-        else:
-            return OspfPseudoRouterStubNetworks(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoRouterStubNetworks', None) is not None:
+                return self._properties.get('OspfPseudoRouterStubNetworks')
+        return OspfPseudoRouterStubNetworks(self)
 
     @property
     def OspfPseudoRouterStubRoutes(self):
@@ -118,10 +120,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouterstubroutes_412e064d08a94b4fcc40c44dd11c5318 import OspfPseudoRouterStubRoutes
-        if self._properties.get('OspfPseudoRouterStubRoutes', None) is not None:
-            return self._properties.get('OspfPseudoRouterStubRoutes')
-        else:
-            return OspfPseudoRouterStubRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoRouterStubRoutes', None) is not None:
+                return self._properties.get('OspfPseudoRouterStubRoutes')
+        return OspfPseudoRouterStubRoutes(self)
 
     @property
     def OspfPseudoRouterSummaryRoutes(self):
@@ -135,10 +137,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutersummaryroutes_5e51c97c0564d672f57ec5fd0f34b1cb import OspfPseudoRouterSummaryRoutes
-        if self._properties.get('OspfPseudoRouterSummaryRoutes', None) is not None:
-            return self._properties.get('OspfPseudoRouterSummaryRoutes')
-        else:
-            return OspfPseudoRouterSummaryRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoRouterSummaryRoutes', None) is not None:
+                return self._properties.get('OspfPseudoRouterSummaryRoutes')
+        return OspfPseudoRouterSummaryRoutes(self)
 
     @property
     def OspfPseudoRouterType1ExtRoutes(self):
@@ -152,10 +154,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype1extroutes_8af6c2f32014611d60e64f734921e6df import OspfPseudoRouterType1ExtRoutes
-        if self._properties.get('OspfPseudoRouterType1ExtRoutes', None) is not None:
-            return self._properties.get('OspfPseudoRouterType1ExtRoutes')
-        else:
-            return OspfPseudoRouterType1ExtRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoRouterType1ExtRoutes', None) is not None:
+                return self._properties.get('OspfPseudoRouterType1ExtRoutes')
+        return OspfPseudoRouterType1ExtRoutes(self)
 
     @property
     def OspfPseudoRouterType2ExtRoutes(self):
@@ -169,10 +171,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudoroutertype2extroutes_1eb6898acd2430328b24bfa765a4dc59 import OspfPseudoRouterType2ExtRoutes
-        if self._properties.get('OspfPseudoRouterType2ExtRoutes', None) is not None:
-            return self._properties.get('OspfPseudoRouterType2ExtRoutes')
-        else:
-            return OspfPseudoRouterType2ExtRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoRouterType2ExtRoutes', None) is not None:
+                return self._properties.get('OspfPseudoRouterType2ExtRoutes')
+        return OspfPseudoRouterType2ExtRoutes(self)
 
     @property
     def OspfSRAlgorithmList(self):
@@ -186,10 +188,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsralgorithmlist_6d5b092154ba202ff142c9a80bdf1352 import OspfSRAlgorithmList
-        if self._properties.get('OspfSRAlgorithmList', None) is not None:
-            return self._properties.get('OspfSRAlgorithmList')
-        else:
-            return OspfSRAlgorithmList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfSRAlgorithmList', None) is not None:
+                return self._properties.get('OspfSRAlgorithmList')
+        return OspfSRAlgorithmList(self)
 
     @property
     def OspfSRGBRangeSubObjectsList(self):
@@ -203,10 +205,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrgbrangesubobjectslist_3183939e699e6d81694733106246396f import OspfSRGBRangeSubObjectsList
-        if self._properties.get('OspfSRGBRangeSubObjectsList', None) is not None:
-            return self._properties.get('OspfSRGBRangeSubObjectsList')
-        else:
-            return OspfSRGBRangeSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfSRGBRangeSubObjectsList', None) is not None:
+                return self._properties.get('OspfSRGBRangeSubObjectsList')
+        return OspfSRGBRangeSubObjectsList(self)
 
     @property
     def OspfSRLBRangeSubObjectsList(self):
@@ -220,10 +222,10 @@ class OspfPseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrlbrangesubobjectslist_3469b01175113efcd50b58a826370e91 import OspfSRLBRangeSubObjectsList
-        if self._properties.get('OspfSRLBRangeSubObjectsList', None) is not None:
-            return self._properties.get('OspfSRLBRangeSubObjectsList')
-        else:
-            return OspfSRLBRangeSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfSRLBRangeSubObjectsList', None) is not None:
+                return self._properties.get('OspfSRLBRangeSubObjectsList')
+        return OspfSRLBRangeSubObjectsList(self)
 
     @property
     def Active(self):

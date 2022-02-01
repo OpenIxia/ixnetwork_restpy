@@ -19,13 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Field(Base):
-    """
+    """This object contains the attributes related to stack field.
     The Field class encapsulates a list of field resources that are managed by the system.
     A list of resources can be retrieved from the server using the Field.find() method.
     """
@@ -89,7 +91,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: An alphanumeric string that defines the internal field ID.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Id__'])
 
@@ -99,7 +101,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ActiveFieldChoice'])
     @ActiveFieldChoice.setter
@@ -113,7 +115,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Auto'])
     @Auto.setter
@@ -137,7 +139,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: It is used to get the count value of the field.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CountValue'])
     @CountValue.setter
@@ -151,7 +153,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: It is used to get the default value of the field.
         """
         return self._get_attribute(self._SDM_ATT_MAP['DefaultValue'])
 
@@ -161,7 +163,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: It is used to get the name of the particular field as available in Packet/Qos
         """
         return self._get_attribute(self._SDM_ATT_MAP['DisplayName'])
 
@@ -171,7 +173,7 @@ class Field(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str): If the field has string options, then each string is associated with a particular integer value. This attribute is used to get the mapping of integer value with the corresponding string option.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnumValues'])
 
@@ -181,7 +183,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: It is true for all the field options active in the GUI.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FieldChoice'])
 
@@ -211,7 +213,7 @@ class Field(Base):
         """DEPRECATED 
         Returns
         -------
-        - str: 
+        - str: An alphanumeric string that returns the value of the field.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FieldValue'])
     @FieldValue.setter
@@ -225,7 +227,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: Sets all the fields to a constant specified size.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FixedBits'])
     @FixedBits.setter
@@ -249,7 +251,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: If true, Full Mesh is enabled.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FullMesh'])
     @FullMesh.setter
@@ -263,7 +265,7 @@ class Field(Base):
         """
         Returns
         -------
-        - number: 
+        - number: It is used to get the length of the field in bits.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Length'])
 
@@ -273,7 +275,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: It is used to get the level of the field in bits.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Level'])
 
@@ -311,7 +313,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: An alphanumeric string that returns the name of the field.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Name'])
 
@@ -321,7 +323,7 @@ class Field(Base):
         """
         Returns
         -------
-        - number: 
+        - number: It is used to get the position of the field in terms of number of bits.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
 
@@ -331,7 +333,7 @@ class Field(Base):
         """
         Returns
         -------
-        - number: 
+        - number: It is used to get the position of the field in terms of number of bits from the root packet.
         """
         return self._get_attribute(self._SDM_ATT_MAP['OffsetFromRoot'])
 
@@ -355,7 +357,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: A read-only field that accepts true/false to make the field optional.<
         """
         return self._get_attribute(self._SDM_ATT_MAP['Optional'])
 
@@ -365,7 +367,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: If true, the optional field can accept values.
         """
         return self._get_attribute(self._SDM_ATT_MAP['OptionalEnabled'])
     @OptionalEnabled.setter
@@ -379,7 +381,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: Select to use random mask bit values.
         """
         return self._get_attribute(self._SDM_ATT_MAP['RandomMask'])
     @RandomMask.setter
@@ -393,7 +395,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: It is used to get the varied rate of packet field.
         """
         return self._get_attribute(self._SDM_ATT_MAP['RateVaried'])
 
@@ -413,7 +415,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: It is used to check whether UDF is required.
         """
         return self._get_attribute(self._SDM_ATT_MAP['RequiresUdf'])
 
@@ -423,7 +425,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: Select to use seed.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Seed'])
     @Seed.setter
@@ -437,7 +439,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
         """
         return self._get_attribute(self._SDM_ATT_MAP['SingleValue'])
     @SingleValue.setter
@@ -451,7 +453,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: startValue
         """
         return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
     @StartValue.setter
@@ -465,7 +467,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: 
+        - str: Specifies the value by which value will keep incrementing or decrementing.
         """
         return self._get_attribute(self._SDM_ATT_MAP['StepValue'])
     @StepValue.setter
@@ -489,7 +491,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: Indicates whether or not this type of stack supports non-repeatable random
         """
         return self._get_attribute(self._SDM_ATT_MAP['SupportsNonRepeatableRandom'])
 
@@ -519,7 +521,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: If true, tracking is enabled on the particular field in flowTracking.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TrackingEnabled'])
     @TrackingEnabled.setter
@@ -533,7 +535,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex): 
+        - str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex): It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ValueFormat'])
 
@@ -543,7 +545,7 @@ class Field(Base):
         """
         Returns
         -------
-        - list(str): 
+        - list(str): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ValueList'])
     @ValueList.setter
@@ -557,7 +559,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList): 
+        - str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList): It is used to select a particular value type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['ValueType'])
     @ValueType.setter
@@ -571,24 +573,24 @@ class Field(Base):
 
         Args
         ----
-        - ActiveFieldChoice (bool): 
-        - Auto (bool): 
-        - CountValue (str): 
-        - FieldValue (str): 
-        - FixedBits (str): 
-        - FullMesh (bool): 
+        - ActiveFieldChoice (bool): It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
+        - Auto (bool): If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
+        - CountValue (str): It is used to get the count value of the field.
+        - FieldValue (str): An alphanumeric string that returns the value of the field.
+        - FixedBits (str): Sets all the fields to a constant specified size.
+        - FullMesh (bool): If true, Full Mesh is enabled.
         - MaxValue (str): 
         - MinValue (str): 
         - OnTheFlyMask (str): 
-        - OptionalEnabled (bool): 
-        - RandomMask (str): 
-        - Seed (str): 
-        - SingleValue (str): 
-        - StartValue (str): 
-        - StepValue (str): 
-        - TrackingEnabled (bool): 
-        - ValueList (list(str)): 
-        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): 
+        - OptionalEnabled (bool): If true, the optional field can accept values.
+        - RandomMask (str): Select to use random mask bit values.
+        - Seed (str): Select to use seed.
+        - SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
+        - StartValue (str): startValue
+        - StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
+        - TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
+        - ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
+        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): It is used to select a particular value type.
 
         Raises
         ------
@@ -602,24 +604,24 @@ class Field(Base):
 
         Args
         ----
-        - ActiveFieldChoice (bool): 
-        - Auto (bool): 
-        - CountValue (str): 
-        - FieldValue (str): 
-        - FixedBits (str): 
-        - FullMesh (bool): 
+        - ActiveFieldChoice (bool): It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
+        - Auto (bool): If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
+        - CountValue (str): It is used to get the count value of the field.
+        - FieldValue (str): An alphanumeric string that returns the value of the field.
+        - FixedBits (str): Sets all the fields to a constant specified size.
+        - FullMesh (bool): If true, Full Mesh is enabled.
         - MaxValue (str): 
         - MinValue (str): 
         - OnTheFlyMask (str): 
-        - OptionalEnabled (bool): 
-        - RandomMask (str): 
-        - Seed (str): 
-        - SingleValue (str): 
-        - StartValue (str): 
-        - StepValue (str): 
-        - TrackingEnabled (bool): 
-        - ValueList (list(str)): 
-        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): 
+        - OptionalEnabled (bool): If true, the optional field can accept values.
+        - RandomMask (str): Select to use random mask bit values.
+        - Seed (str): Select to use seed.
+        - SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
+        - StartValue (str): startValue
+        - StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
+        - TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
+        - ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
+        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): It is used to select a particular value type.
 
         Returns
         -------
@@ -641,47 +643,47 @@ class Field(Base):
 
         Args
         ----
-        - Id__ (str): 
-        - ActiveFieldChoice (bool): 
-        - Auto (bool): 
+        - Id__ (str): An alphanumeric string that defines the internal field ID.
+        - ActiveFieldChoice (bool): It is used to select a particular option out of multiple field choice options. The activeFieldChoice will be true only for the fields of the option which is active in GUI.
+        - Auto (bool): If true, value for the particular field is considered automatically. If false, user can set values for the particular field.
         - AvailableValueTypes (list(str[decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList])): 
-        - CountValue (str): 
-        - DefaultValue (str): 
-        - DisplayName (str): 
-        - EnumValues (list(str)): 
-        - FieldChoice (bool): 
+        - CountValue (str): It is used to get the count value of the field.
+        - DefaultValue (str): It is used to get the default value of the field.
+        - DisplayName (str): It is used to get the name of the particular field as available in Packet/Qos
+        - EnumValues (list(str)): If the field has string options, then each string is associated with a particular integer value. This attribute is used to get the mapping of integer value with the corresponding string option.
+        - FieldChoice (bool): It is true for all the field options active in the GUI.
         - FieldGroupName (str): 
         - FieldTypeId (str): 
-        - FieldValue (str): 
-        - FixedBits (str): 
+        - FieldValue (str): An alphanumeric string that returns the value of the field.
+        - FixedBits (str): Sets all the fields to a constant specified size.
         - FormattedFieldValue (str): 
-        - FullMesh (bool): 
-        - Length (number): 
-        - Level (bool): 
+        - FullMesh (bool): If true, Full Mesh is enabled.
+        - Length (number): It is used to get the length of the field in bits.
+        - Level (bool): It is used to get the level of the field in bits.
         - MaxValue (str): 
         - MinValue (str): 
-        - Name (str): 
-        - Offset (number): 
-        - OffsetFromRoot (number): 
+        - Name (str): An alphanumeric string that returns the name of the field.
+        - Offset (number): It is used to get the position of the field in terms of number of bits.
+        - OffsetFromRoot (number): It is used to get the position of the field in terms of number of bits from the root packet.
         - OnTheFlyMask (str): 
-        - Optional (bool): 
-        - OptionalEnabled (bool): 
-        - RandomMask (str): 
-        - RateVaried (bool): 
+        - Optional (bool): A read-only field that accepts true/false to make the field optional.<
+        - OptionalEnabled (bool): If true, the optional field can accept values.
+        - RandomMask (str): Select to use random mask bit values.
+        - RateVaried (bool): It is used to get the varied rate of packet field.
         - ReadOnly (bool): 
-        - RequiresUdf (bool): 
-        - Seed (str): 
-        - SingleValue (str): 
-        - StartValue (str): 
-        - StepValue (str): 
+        - RequiresUdf (bool): It is used to check whether UDF is required.
+        - Seed (str): Select to use seed.
+        - SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
+        - StartValue (str): startValue
+        - StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
         - SupportsAuto (bool): 
-        - SupportsNonRepeatableRandom (bool): 
+        - SupportsNonRepeatableRandom (bool): Indicates whether or not this type of stack supports non-repeatable random
         - SupportsOnTheFlyMask (bool): 
         - SupportsRepeatableRandomRange (bool): 
-        - TrackingEnabled (bool): 
-        - ValueFormat (str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex)): 
-        - ValueList (list(str)): 
-        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): 
+        - TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
+        - ValueFormat (str(aTM | bool | debug | decimal | decimalFixed2 | decimalSigned8 | fCID | float | floatEng | hex | hex8WithColons | hex8WithSpaces | iPv4 | iPv6 | mAC | mACMAC | mACSiteId | mACVLAN | mACVLANSiteId | string | unknown | varLenHex)): It is used to get the format of the field like whether format is mac, hex, integer, ipv4 and ipv6.
+        - ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
+        - ValueType (str(decrement | increment | nonRepeatableRandom | random | repeatableRandomRange | singleValue | valueList)): It is used to select a particular value type.
 
         Returns
         -------
@@ -731,6 +733,50 @@ class Field(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addLevel', payload=payload, response_object=None)
+
+    def GetColumnNames(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getColumnNames operation on the server.
+
+        Return the column names from a file for list Import.
+
+        getColumnNames(Arg2=href, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): A valid readFrom file handle.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This exec returns column headers as Array of String.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getColumnNames', payload=payload, response_object=None)
+
+    def Import(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the import operation on the server.
+
+        Imports values from a csv file to be used as the field's list data.
+
+        import(Arg2=href, Arg3=string, async_operation=bool)
+        ----------------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): A valid readFrom file handle.
+        - Arg3 (str): A valid Column Name(case sensitive) in input file.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('import', payload=payload, response_object=None)
 
     def RemoveLevel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Cist(Base):
@@ -51,10 +53,10 @@ class Cist(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cistlearnedinfo_ab0130170187b84c756a225eddf532d7 import CistLearnedInfo
-        if self._properties.get('CistLearnedInfo', None) is not None:
-            return self._properties.get('CistLearnedInfo')
-        else:
-            return CistLearnedInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CistLearnedInfo', None) is not None:
+                return self._properties.get('CistLearnedInfo')
+        return CistLearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
@@ -68,7 +70,42 @@ class Cist(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_624758fed3751b10c746ab8fdb7d7f56 import LearnedInterface
-        if self._properties.get('LearnedInterface', None) is not None:
-            return self._properties.get('LearnedInterface')
-        else:
-            return LearnedInterface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInterface', None) is not None:
+                return self._properties.get('LearnedInterface')
+        return LearnedInterface(self)
+
+    def find(self):
+        """Finds and retrieves cist resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cist resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cist resources from the server.
+
+        Returns
+        -------
+        - self: This instance with matching cist resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of cist data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the cist resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

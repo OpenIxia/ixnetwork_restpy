@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PppoxRange(Base):
@@ -139,10 +141,10 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acmac_0d42b19631c076c1f85ba68c7c3a929c import AcMac
-        if self._properties.get('AcMac', None) is not None:
-            return self._properties.get('AcMac')
-        else:
-            return AcMac(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AcMac', None) is not None:
+                return self._properties.get('AcMac')
+        return AcMac(self)
 
     @property
     def AcName(self):
@@ -156,10 +158,10 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.acname_3a8e01734093193dda3ed571f59b74ab import AcName
-        if self._properties.get('AcName', None) is not None:
-            return self._properties.get('AcName')
-        else:
-            return AcName(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AcName', None) is not None:
+                return self._properties.get('AcName')
+        return AcName(self)
 
     @property
     def DomainGroup(self):
@@ -173,10 +175,10 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_497e5f99c9c81e00bebc05512ef50263 import DomainGroup
-        if self._properties.get('DomainGroup', None) is not None:
-            return self._properties.get('DomainGroup')
-        else:
-            return DomainGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DomainGroup', None) is not None:
+                return self._properties.get('DomainGroup')
+        return DomainGroup(self)
 
     @property
     def AcName(self):
@@ -1505,6 +1507,133 @@ class PppoxRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AcName=None, AcOptions=None, ActualRateDownstream=None, ActualRateUpstream=None, AgentCircuitId=None, AgentRemoteId=None, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ClientSignalIwf=None, ClientSignalLoopChar=None, ClientSignalLoopEncapsulation=None, ClientSignalLoopId=None, DataLink=None, DnsServerList=None, DomainList=None, EchoReqInterval=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableIncludeTagInPadi=None, EnableIncludeTagInPado=None, EnableIncludeTagInPadr=None, EnableIncludeTagInPads=None, EnableIntermediateAgentTags=None, EnableMaxPayload=None, EnableMru=None, EnableMruNegotiation=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, Encaps1=None, Encaps2=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, MaxPayload=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NumSessions=None, ObjectId=None, PadiRetries=None, PadiTimeout=None, PadrRetries=None, PadrTimeout=None, PapPassword=None, PapUser=None, PppoeOptions=None, RedialMax=None, RedialTimeout=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, ServerSignalIwf=None, ServerSignalLoopChar=None, ServerSignalLoopEncapsulation=None, ServerSignalLoopId=None, ServiceName=None, ServiceOptions=None, UnlimitedRedialAttempts=None, UseMagic=None):
+        # type: (str, str, int, int, str, str, str, int, int, str, str, str, str, str, str, int, str, str, str, str, str, bool, bool, bool, bool, str, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, str, int, str, int, int, int, int, int, int, str, int, int, str, int, str, int, int, int, int, str, str, str, int, int, str, str, str, int, str, str, str, str, str, bool, bool, bool, bool, str, str, bool, bool) -> PppoxRange
+        """Finds and retrieves pppoxRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pppoxRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pppoxRange resources from the server.
+
+        Args
+        ----
+        - AcName (str): Access Concentrator Name - this option is only available for PPP servers.
+        - AcOptions (str): Indicates PPPoE AC retrieval mode
+        - ActualRateDownstream (number): Actual Data Rate Downstream Value (TR-101 suboption 0x82)
+        - ActualRateUpstream (number): Actual Data Rate Upstream Value (TR-101 suboption 0x81)
+        - AgentCircuitId (str): Agent Circuit ID (TR-101 suboption 0x01)
+        - AgentRemoteId (str): Agent Remote ID (TR-101 suboption 0x02)
+        - AuthOptions (str): For GUI grouping.
+        - AuthRetries (number): Number of PPP authentication retries
+        - AuthTimeout (number): Timeout for PPP authentication, in seconds.
+        - AuthType (str): Authentication type
+        - ChapName (str): User name when CHAP Authentication is being used
+        - ChapSecret (str): Secret when CHAP Authentication is being used
+        - ClientBaseIid (str): Base for IPv6CP interface identifiers assigned to clients.
+        - ClientBaseIp (str): Base for IPv4 PPP client address creation
+        - ClientDnsOptions (str): Client DNS options
+        - ClientIidIncr (number): Increment for IPv6CP client interface identifiers.
+        - ClientIpIncr (str): Incrementor for IPv4 PPP client address creation
+        - ClientNetmask (str): Netmask that the client should request
+        - ClientNetmaskOptions (str): Client netmask options
+        - ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
+        - ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
+        - ClientSignalIwf (bool): Enables the sending of the interworked session (0xFE) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
+        - ClientSignalLoopChar (bool): Enables the sending of the access loop characteristics TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
+        - ClientSignalLoopEncapsulation (bool): Enables the sending of the loop encapsulation (0x90) TR-101 suboption in client PPPoE messages (PADI/PADR/PADT)
+        - ClientSignalLoopId (bool): Enables the sending of the remote ID and circuit ID TR-101 suboptions in client PPPoE messages (PADI/PADR/PADT)
+        - DataLink (str): Data Link for TR-101 suboption 0x90
+        - DnsServerList (str): DNS server list separacted by semicolon
+        - DomainList (str): Configure domain group settings
+        - EchoReqInterval (number): Keep alive interval
+        - EnableDnsRa (bool): Enable RDNSS routing advertisments
+        - EnableDomainGroups (bool): Enable domain groups
+        - EnableEchoReq (bool): Enable Echo requests
+        - EnableEchoRsp (bool): Enable Echo replies
+        - EnableIncludeTagInPadi (bool): OBSOLETE - If checked, PADI messages include Intermediate Agent Tags(only for PPP client)
+        - EnableIncludeTagInPado (bool): OBSOLETE - If checked, PADO messages include Intermediate Agent Tags(only for PPP server)
+        - EnableIncludeTagInPadr (bool): OBSOLETE - If checked, PADR messages include Intermediate Agent Tags(only for PPP client)
+        - EnableIncludeTagInPads (bool): OBSOLETE - If checked, PADs messages include Intermediate Agent Tags(only for PPP server)
+        - EnableIntermediateAgentTags (bool): OBSOLETE - If checked, Intermediate Agent Tags are enabled
+        - EnableMaxPayload (bool): Enable/Disable Max Payload
+        - EnableMru (bool): Enable/Disable MRU negotiation
+        - EnableMruNegotiation (bool): Option is deprecated. Please use enableMaxPayload. If checked, MRU negotiation is enabled
+        - EnablePasswordCheck (bool): Enable authentication credential checking on the port.
+        - EnableRedial (bool): Enable/Disable PPPoE redial
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Encaps1 (str): Encapsulation 1 for TR-101 suboption 0x90
+        - Encaps2 (str): Encapsulation 2 for TR-101 suboption 0x90
+        - Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
+        - Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
+        - Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
+        - LcpOptions (str): For GUI grouping.
+        - LcpRetries (number): Number of LCP retries
+        - LcpTermRetries (number): Number of LCP Termination Retries
+        - LcpTermTimeout (number): Timeout for LCP termination, in seconds.
+        - LcpTimeout (number): Timeout for LCP phase, in seconds
+        - MaxPayload (number): Max Payload
+        - Mtu (number): Max Transmit Unit for PPP
+        - Name (str): Name of range
+        - NcpRetries (number): Number of NCP retries
+        - NcpTimeout (number): Timeout for NCP phase, in seconds
+        - NcpType (str): IP type (IPv4/IPv6) for Network Control Protocol
+        - NumSessions (number): No. of sessions to setup
+        - ObjectId (str): Unique identifier for this object
+        - PadiRetries (number): Number of PADI Retries
+        - PadiTimeout (number): Timeout for PADI no response, in seconds
+        - PadrRetries (number): Number of PADR Retries
+        - PadrTimeout (number): Timeout for PADR no response, in seconds
+        - PapPassword (str): Password when PAP Authentication is being used
+        - PapUser (str): User name when PAP Authentication is being used
+        - PppoeOptions (str): For GUI grouping.
+        - RedialMax (number): Maximum number of PPPoE redials
+        - RedialTimeout (number): PPPoE redial timeout, in seconds
+        - ServerBaseIid (str): Base for IPv6CP interface identifiers assigned to servers.
+        - ServerBaseIp (str): Base for IPv4 PPP server address creation
+        - ServerDnsOptions (str): Server DNS options
+        - ServerIidIncr (number): Increment for IPv6CP server interface identifiers.
+        - ServerIpIncr (str): *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
+        - ServerNetmask (str): Netmask that the server should supply to clients
+        - ServerNetmaskOptions (str): Server netmask options
+        - ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
+        - ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
+        - ServerSignalIwf (bool): If enabled, the PPPoE server echoes the interworked session TR-101 suboption received in messages from the client
+        - ServerSignalLoopChar (bool): If enabled, the PPPoE server echoes the loop characteristics TR-101 suboptions received in messages from the client
+        - ServerSignalLoopEncapsulation (bool): If enabled, the PPPoE server echoes the loop encapsulation (0x90) TR-101 suboption received in messages from the client
+        - ServerSignalLoopId (bool): If enabled, the PPPoE server echoes the remote ID and circuit ID TR-101 suboptions received in messages from the client
+        - ServiceName (str): Access Concentrator Service Name - this option is only available for PPP servers.
+        - ServiceOptions (str): Indicates PPPoE service retrieval mode
+        - UnlimitedRedialAttempts (bool): Enable/Disable PPPoE unlimited redial attempts
+        - UseMagic (bool): use magic
+
+        Returns
+        -------
+        - self: This instance with matching pppoxRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of pppoxRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the pppoxRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

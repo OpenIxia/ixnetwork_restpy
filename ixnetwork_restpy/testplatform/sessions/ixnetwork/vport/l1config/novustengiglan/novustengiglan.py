@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NovusTenGigLan(Base):
@@ -45,7 +47,9 @@ class NovusTenGigLan(Base):
         'MasterSlaveMode': 'masterSlaveMode',
         'Media': 'media',
         'NegotiateMasterSlave': 'negotiateMasterSlave',
+        'NegotiatePrimarySecondary': 'negotiatePrimarySecondary',
         'Ppm': 'ppm',
+        'PrimarySecondaryMode': 'primarySecondaryMode',
         'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
         'SpeedAuto': 'speedAuto',
@@ -53,9 +57,10 @@ class NovusTenGigLan(Base):
     }
     _SDM_ENUM_MAP = {
         'autoInstrumentation': ['endOfFrame', 'floating'],
-        'loopbackMode': ['internalLoopback', 'lineLoopback', 'none'],
+        'loopbackMode': ['none', 'lineLoopback', 'internalLoopback'],
         'masterSlaveMode': ['master', 'slave'],
         'media': ['copper', 'fiber', 'sgmii'],
+        'primarySecondaryMode': ['primary', 'secondary'],
         'speed': ['speed1000', 'speed100fd', 'speed10g', 'speed2.5g', 'speed5g'],
     }
 
@@ -74,10 +79,10 @@ class NovusTenGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.fcoe.fcoe import Fcoe
-        if self._properties.get('Fcoe', None) is not None:
-            return self._properties.get('Fcoe')
-        else:
-            return Fcoe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fcoe', None) is not None:
+                return self._properties.get('Fcoe')
+        return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -91,10 +96,10 @@ class NovusTenGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.novustengiglan.txlane.txlane import TxLane
-        if self._properties.get('TxLane', None) is not None:
-            return self._properties.get('TxLane')
-        else:
-            return TxLane(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxLane', None) is not None:
+                return self._properties.get('TxLane')
+        return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -174,7 +179,7 @@ class NovusTenGigLan(Base):
         """
         Returns
         -------
-        - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+        - bool: If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
@@ -216,7 +221,7 @@ class NovusTenGigLan(Base):
         """
         Returns
         -------
-        - str(internalLoopback | lineLoopback | none): NOT DEFINED
+        - str(none | lineLoopback | internalLoopback): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
@@ -227,7 +232,7 @@ class NovusTenGigLan(Base):
     @property
     def MasterSlaveMode(self):
         # type: () -> str
-        """
+        """DEPRECATED 
         Returns
         -------
         - str(master | slave): 
@@ -255,7 +260,7 @@ class NovusTenGigLan(Base):
     @property
     def NegotiateMasterSlave(self):
         # type: () -> bool
-        """
+        """DEPRECATED 
         Returns
         -------
         - bool: 
@@ -265,6 +270,20 @@ class NovusTenGigLan(Base):
     def NegotiateMasterSlave(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['NegotiateMasterSlave'], value)
+
+    @property
+    def NegotiatePrimarySecondary(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['NegotiatePrimarySecondary'])
+    @NegotiatePrimarySecondary.setter
+    def NegotiatePrimarySecondary(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP['NegotiatePrimarySecondary'], value)
 
     @property
     def Ppm(self):
@@ -279,6 +298,20 @@ class NovusTenGigLan(Base):
     def Ppm(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP['Ppm'], value)
+
+    @property
+    def PrimarySecondaryMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(primary | secondary): 
+        """
+        return self._get_attribute(self._SDM_ATT_MAP['PrimarySecondaryMode'])
+    @PrimarySecondaryMode.setter
+    def PrimarySecondaryMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP['PrimarySecondaryMode'], value)
 
     @property
     def SelectedSpeeds(self):
@@ -336,8 +369,8 @@ class NovusTenGigLan(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'], value)
 
-    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, Ppm=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
-        # type: (str, bool, bool, bool, str, bool, str, str, str, bool, int, List[str], str, List[str], bool) -> NovusTenGigLan
+    def update(self, AutoInstrumentation=None, AutoNegotiate=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, NegotiatePrimarySecondary=None, Ppm=None, PrimarySecondaryMode=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, bool, bool, bool, str, bool, str, str, str, bool, bool, int, str, List[str], str, List[str], bool) -> NovusTenGigLan
         """Updates novusTenGigLan resource on the server.
 
         Args
@@ -345,14 +378,16 @@ class NovusTenGigLan(Base):
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
         - AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed.
         - EnablePPM (bool): If true, enables the portsppm.
-        - EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
+        - LoopbackMode (str(none | lineLoopback | internalLoopback)): NOT DEFINED
         - MasterSlaveMode (str(master | slave)): 
         - Media (str(copper | fiber | sgmii)): Available only for cards that support this dual-PHY capability.
         - NegotiateMasterSlave (bool): 
+        - NegotiatePrimarySecondary (bool): 
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - PrimarySecondaryMode (str(primary | secondary)): 
         - SelectedSpeeds (list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed1000 | speed100fd | speed10g | speed2.5g | speed5g)): NOT DEFINED
         - SpeedAuto (list(str[speed1000 | speed100fd | speed10g | speed2.5g | speed5g])): 
@@ -363,3 +398,62 @@ class NovusTenGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AutoNegotiate=None, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, LoopbackMode=None, MasterSlaveMode=None, Media=None, NegotiateMasterSlave=None, NegotiatePrimarySecondary=None, Ppm=None, PrimarySecondaryMode=None, SelectedSpeeds=None, Speed=None, SpeedAuto=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, bool, List[str], bool, bool, bool, bool, str, bool, str, str, str, bool, bool, int, str, List[str], str, List[str], bool) -> NovusTenGigLan
+        """Finds and retrieves novusTenGigLan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusTenGigLan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all novusTenGigLan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed.
+        - AvailableSpeeds (list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are available for the current media and AN settings.
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(none | lineLoopback | internalLoopback)): NOT DEFINED
+        - MasterSlaveMode (str(master | slave)): 
+        - Media (str(copper | fiber | sgmii)): Available only for cards that support this dual-PHY capability.
+        - NegotiateMasterSlave (bool): 
+        - NegotiatePrimarySecondary (bool): 
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - PrimarySecondaryMode (str(primary | secondary)): 
+        - SelectedSpeeds (list(str[speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd | speed10g | speed2.5g | speed5g)): NOT DEFINED
+        - SpeedAuto (list(str[speed1000 | speed100fd | speed10g | speed2.5g | speed5g])): 
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+
+        Returns
+        -------
+        - self: This instance with matching novusTenGigLan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of novusTenGigLan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the novusTenGigLan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

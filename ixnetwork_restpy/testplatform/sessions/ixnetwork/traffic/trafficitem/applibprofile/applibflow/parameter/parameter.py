@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Parameter(Base):
@@ -56,10 +58,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.bool.bool import Bool
-        if self._properties.get('Bool', None) is not None:
-            return self._properties.get('Bool')
-        else:
-            return Bool(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bool', None) is not None:
+                return self._properties.get('Bool')
+        return Bool(self)
 
     @property
     def Choice(self):
@@ -73,10 +75,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.choice.choice import Choice
-        if self._properties.get('Choice', None) is not None:
-            return self._properties.get('Choice')
-        else:
-            return Choice(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Choice', None) is not None:
+                return self._properties.get('Choice')
+        return Choice(self)
 
     @property
     def Hex(self):
@@ -90,10 +92,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.hex.hex import Hex
-        if self._properties.get('Hex', None) is not None:
-            return self._properties.get('Hex')
-        else:
-            return Hex(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Hex', None) is not None:
+                return self._properties.get('Hex')
+        return Hex(self)
 
     @property
     def Number(self):
@@ -107,10 +109,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.number.number import Number
-        if self._properties.get('Number', None) is not None:
-            return self._properties.get('Number')
-        else:
-            return Number(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Number', None) is not None:
+                return self._properties.get('Number')
+        return Number(self)
 
     @property
     def Range(self):
@@ -124,10 +126,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.range.range import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def String(self):
@@ -141,10 +143,10 @@ class Parameter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.parameter.string.string import String
-        if self._properties.get('String', None) is not None:
-            return self._properties.get('String')
-        else:
-            return String(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('String', None) is not None:
+                return self._properties.get('String')
+        return String(self)
 
     @property
     def DisplayValue(self):

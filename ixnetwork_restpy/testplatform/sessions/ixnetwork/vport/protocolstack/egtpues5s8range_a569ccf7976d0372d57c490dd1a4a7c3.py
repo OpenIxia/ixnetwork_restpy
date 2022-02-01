@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpUeS5S8Range(Base):
@@ -75,10 +77,10 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mobilepathentriess5s8sgw_294a5a10bf19642e7689820d854c6b14 import MobilePathEntriesS5S8Sgw
-        if self._properties.get('MobilePathEntriesS5S8Sgw', None) is not None:
-            return self._properties.get('MobilePathEntriesS5S8Sgw')
-        else:
-            return MobilePathEntriesS5S8Sgw(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MobilePathEntriesS5S8Sgw', None) is not None:
+                return self._properties.get('MobilePathEntriesS5S8Sgw')
+        return MobilePathEntriesS5S8Sgw(self)
 
     @property
     def TrafficProfileProxiesS5S8Sgw(self):
@@ -92,10 +94,10 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8sgw_5c238c72aef9828614d256e8f1c16fdd import TrafficProfileProxiesS5S8Sgw
-        if self._properties.get('TrafficProfileProxiesS5S8Sgw', None) is not None:
-            return self._properties.get('TrafficProfileProxiesS5S8Sgw')
-        else:
-            return TrafficProfileProxiesS5S8Sgw(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficProfileProxiesS5S8Sgw', None) is not None:
+                return self._properties.get('TrafficProfileProxiesS5S8Sgw')
+        return TrafficProfileProxiesS5S8Sgw(self)
 
     @property
     def APNRestriction(self):
@@ -464,6 +466,69 @@ class EgtpUeS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, APNRestriction=None, Count=None, EnableLifetime=None, EnableMobility=None, EnableSV=None, Enabled=None, IMSI=None, IncrementBy=None, Lifetime=None, MEI=None, MSISDN=None, MaxDelayVariation=None, MaxIntervalVariation=None, MobilityInterval=None, Name=None, ObjectId=None, ParentRange=None, SV=None, SelectionMode=None, StartDelay=None, UpdateAmbrEnable=None, UpdateAmbrIncrement=None, UpdateAmbrIterations=None, UpdateAmbrTimeout=None):
+        # type: (int, int, bool, bool, bool, bool, str, int, int, str, str, int, int, int, str, str, str, str, int, int, bool, int, int, int) -> EgtpUeS5S8Range
+        """Finds and retrieves egtpUeS5S8Range resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpUeS5S8Range resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpUeS5S8Range resources from the server.
+
+        Args
+        ----
+        - APNRestriction (number): Authorization to access another APN
+        - Count (number): The total number of UEs to be created for this range.
+        - EnableLifetime (bool): Enable UE lifetime control. The UE will disconnect after the specified time.
+        - EnableMobility (bool): Perform a mobility test
+        - EnableSV (bool): Use Software Version to generate IMEISV
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IMSI (str): International Mobile Subscriber Identity
+        - IncrementBy (number): Increment by this amount
+        - Lifetime (number): Amount of time (in seconds) to wait after attach procedure completes before scheduling forced detach.
+        - MEI (str): International Mobile Equipment Identity IMEI MUST be 15 char length. You must enter only the first 14! The last number(15th) of the IMEI is a check digit calculated using the Luhn algorithm.
+        - MSISDN (str): Start value for Mobile Subscriber ISDN(Integrated Services Digital Network) Number
+        - MaxDelayVariation (number): Randomize Start delay by max +/- X%
+        - MaxIntervalVariation (number): Randomize Mobility interval by max +/- X%
+        - MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)): Parent range
+        - SV (str): The software version number to be appended to the IMEI in order to generate IMEISV
+        - SelectionMode (number): Indicates the origin of the APN in the message
+        - StartDelay (number): How many seconds to wait before starting to move the UEs
+        - UpdateAmbrEnable (bool): Update APN-AMBR for this UE
+        - UpdateAmbrIncrement (number): Percentage to increase the value of APN-AMBR at each update. Use negative values to decrease it.
+        - UpdateAmbrIterations (number): How many updates to be sent during the lifetime of each session. Use 0 to send unlimited number of updates
+        - UpdateAmbrTimeout (number): Time to wait (in seconds) since the session was created until sending the update
+
+        Returns
+        -------
+        - self: This instance with matching egtpUeS5S8Range resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egtpUeS5S8Range data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egtpUeS5S8Range resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

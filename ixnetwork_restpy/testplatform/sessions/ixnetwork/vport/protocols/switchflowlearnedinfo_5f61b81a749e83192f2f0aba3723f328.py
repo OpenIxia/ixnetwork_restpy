@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchFlowLearnedInfo(Base):
@@ -133,10 +135,10 @@ class SwitchFlowLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionlearnedinfo_9e46c41b8abd4718021189fe5e5af931 import SwitchActionLearnedInfo
-        if self._properties.get('SwitchActionLearnedInfo', None) is not None:
-            return self._properties.get('SwitchActionLearnedInfo')
-        else:
-            return SwitchActionLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchActionLearnedInfo', None) is not None:
+                return self._properties.get('SwitchActionLearnedInfo')
+        return SwitchActionLearnedInfo(self)
 
     @property
     def SwitchFlowInstructionLearnedInfo(self):
@@ -150,10 +152,10 @@ class SwitchFlowLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowinstructionlearnedinfo_18876b6839ad8af19f820bd250cf246f import SwitchFlowInstructionLearnedInfo
-        if self._properties.get('SwitchFlowInstructionLearnedInfo', None) is not None:
-            return self._properties.get('SwitchFlowInstructionLearnedInfo')
-        else:
-            return SwitchFlowInstructionLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchFlowInstructionLearnedInfo', None) is not None:
+                return self._properties.get('SwitchFlowInstructionLearnedInfo')
+        return SwitchFlowInstructionLearnedInfo(self)
 
     @property
     def ActiveNanoSeconds(self):

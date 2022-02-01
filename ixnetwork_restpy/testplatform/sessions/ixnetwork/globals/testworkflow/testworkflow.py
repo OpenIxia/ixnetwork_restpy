@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Testworkflow(Base):
@@ -73,6 +75,48 @@ class Testworkflow(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP['IsCaptureRunning'])
 
+    def find(self, CurrentDescription=None, CurrentState=None, IsCaptureRunning=None):
+        # type: (str, str, bool) -> Testworkflow
+        """Finds and retrieves testworkflow resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testworkflow resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testworkflow resources from the server.
+
+        Args
+        ----
+        - CurrentDescription (str): 
+        - CurrentState (str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp)): 
+        - IsCaptureRunning (bool): Indicates whether capture is running on any port in config.
+
+        Returns
+        -------
+        - self: This instance with matching testworkflow resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testworkflow data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testworkflow resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
+
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
@@ -93,6 +137,27 @@ class Testworkflow(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('start', payload=payload, response_object=None)
+
+    def StartAllProtocolsGlobally(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startAllProtocolsGlobally operation on the server.
+
+        connect ports and start specific protocol globally
+
+        startAllProtocolsGlobally(Arg2=string, async_operation=bool)
+        ------------------------------------------------------------
+        - Arg2 (str): argument should be action id which return from the API getAllProtocolsAvailableforGlobalStartStop. like start_ethernet_id, start_ipv4_id or start_ospfv2_id
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('startAllProtocolsGlobally', payload=payload, response_object=None)
 
     def Startlag(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

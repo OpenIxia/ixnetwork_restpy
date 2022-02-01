@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OspfBierSubDomainList(Base):
@@ -61,10 +63,10 @@ class OspfBierSubDomainList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfbierbsobjectlist_d963618a7e3bb458722a4ffc379ac86a import OspfBierBSObjectList
-        if self._properties.get('OspfBierBSObjectList', None) is not None:
-            return self._properties.get('OspfBierBSObjectList')
-        else:
-            return OspfBierBSObjectList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfBierBSObjectList', None) is not None:
+                return self._properties.get('OspfBierBSObjectList')
+        return OspfBierBSObjectList(self)
 
     @property
     def BFRId(self):
@@ -197,6 +199,49 @@ class OspfBierSubDomainList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfBSLen=None):
+        # type: (int, str, str, int) -> OspfBierSubDomainList
+        """Finds and retrieves ospfBierSubDomainList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ospfBierSubDomainList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ospfBierSubDomainList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfBSLen (number): Number of Supported Bit String Length
+
+        Returns
+        -------
+        - self: This instance with matching ospfBierSubDomainList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ospfBierSubDomainList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ospfBierSubDomainList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, BFRId=None, Bar=None, Active=None, Ipa=None, MtId=None, SubDomainId=None):
         """Base class infrastructure that gets a list of ospfBierSubDomainList device ids encapsulated by this object.

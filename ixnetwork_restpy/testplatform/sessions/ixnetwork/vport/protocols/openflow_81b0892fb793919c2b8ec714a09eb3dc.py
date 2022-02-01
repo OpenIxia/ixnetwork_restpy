@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OpenFlow(Base):
@@ -56,10 +58,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.device_4586a4936a98f79a4eb811335e8b0199 import Device
-        if self._properties.get('Device', None) is not None:
-            return self._properties.get('Device')
-        else:
-            return Device(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Device', None) is not None:
+                return self._properties.get('Device')
+        return Device(self)
 
     @property
     def EthernetTrafficEndPoint(self):
@@ -73,10 +75,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernettrafficendpoint_399c5a8996b8d783c5205ec4f1afc1a9 import EthernetTrafficEndPoint
-        if self._properties.get('EthernetTrafficEndPoint', None) is not None:
-            return self._properties.get('EthernetTrafficEndPoint')
-        else:
-            return EthernetTrafficEndPoint(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EthernetTrafficEndPoint', None) is not None:
+                return self._properties.get('EthernetTrafficEndPoint')
+        return EthernetTrafficEndPoint(self)
 
     @property
     def HostTopologyLearnedInformation(self):
@@ -90,10 +92,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_4110abe6bc708b97f65a28c397fa159a import HostTopologyLearnedInformation
-        if self._properties.get('HostTopologyLearnedInformation', None) is not None:
-            return self._properties.get('HostTopologyLearnedInformation')
-        else:
-            return HostTopologyLearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('HostTopologyLearnedInformation', None) is not None:
+                return self._properties.get('HostTopologyLearnedInformation')
+        return HostTopologyLearnedInformation(self)._select()
 
     @property
     def Ipv4TrafficEndPoint(self):
@@ -107,10 +109,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv4trafficendpoint_ccf0ac687ab3e96bf323237e4242c33d import Ipv4TrafficEndPoint
-        if self._properties.get('Ipv4TrafficEndPoint', None) is not None:
-            return self._properties.get('Ipv4TrafficEndPoint')
-        else:
-            return Ipv4TrafficEndPoint(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4TrafficEndPoint', None) is not None:
+                return self._properties.get('Ipv4TrafficEndPoint')
+        return Ipv4TrafficEndPoint(self)
 
     @property
     def Ipv6TrafficEndPoint(self):
@@ -124,10 +126,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6trafficendpoint_5ba047ad864d88c7c789f996fb9125d8 import Ipv6TrafficEndPoint
-        if self._properties.get('Ipv6TrafficEndPoint', None) is not None:
-            return self._properties.get('Ipv6TrafficEndPoint')
-        else:
-            return Ipv6TrafficEndPoint(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6TrafficEndPoint', None) is not None:
+                return self._properties.get('Ipv6TrafficEndPoint')
+        return Ipv6TrafficEndPoint(self)
 
     @property
     def LearnedInformation(self):
@@ -141,10 +143,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_5ae2c6e302466a4ce0ccf9b15b6452d6 import LearnedInformation
-        if self._properties.get('LearnedInformation', None) is not None:
-            return self._properties.get('LearnedInformation')
-        else:
-            return LearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInformation', None) is not None:
+                return self._properties.get('LearnedInformation')
+        return LearnedInformation(self)._select()
 
     @property
     def MplsTrafficEndPoint(self):
@@ -158,10 +160,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplstrafficendpoint_9c9576354d6d254197b269b117417591 import MplsTrafficEndPoint
-        if self._properties.get('MplsTrafficEndPoint', None) is not None:
-            return self._properties.get('MplsTrafficEndPoint')
-        else:
-            return MplsTrafficEndPoint(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MplsTrafficEndPoint', None) is not None:
+                return self._properties.get('MplsTrafficEndPoint')
+        return MplsTrafficEndPoint(self)
 
     @property
     def OfTopologyLearnedInformation(self):
@@ -175,10 +177,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.oftopologylearnedinformation_87be98fe03804b7931f394eeeb6ce91e import OfTopologyLearnedInformation
-        if self._properties.get('OfTopologyLearnedInformation', None) is not None:
-            return self._properties.get('OfTopologyLearnedInformation')
-        else:
-            return OfTopologyLearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfTopologyLearnedInformation', None) is not None:
+                return self._properties.get('OfTopologyLearnedInformation')
+        return OfTopologyLearnedInformation(self)._select()
 
     @property
     def SwitchLearnedInformation(self):
@@ -192,10 +194,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchlearnedinformation_229c33dcb7a8e23f875f8a6acf5d4f8a import SwitchLearnedInformation
-        if self._properties.get('SwitchLearnedInformation', None) is not None:
-            return self._properties.get('SwitchLearnedInformation')
-        else:
-            return SwitchLearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchLearnedInformation', None) is not None:
+                return self._properties.get('SwitchLearnedInformation')
+        return SwitchLearnedInformation(self)._select()
 
     @property
     def TrafficEndPoint(self):
@@ -209,10 +211,10 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.trafficendpoint_3120038095a42c08bd61e91959198aa0 import TrafficEndPoint
-        if self._properties.get('TrafficEndPoint', None) is not None:
-            return self._properties.get('TrafficEndPoint')
-        else:
-            return TrafficEndPoint(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficEndPoint', None) is not None:
+                return self._properties.get('TrafficEndPoint')
+        return TrafficEndPoint(self)
 
     @property
     def Enabled(self):
@@ -266,6 +268,48 @@ class OpenFlow(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Enabled=None, PortRole=None, RunningState=None):
+        # type: (bool, str, str) -> OpenFlow
+        """Finds and retrieves openFlow resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve openFlow resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all openFlow resources from the server.
+
+        Args
+        ----
+        - Enabled (bool): If true, the openFlow object is enabled.
+        - PortRole (str(control | traffic | controlAndTraffic)): Indicates the role of the port in the protocol configuration.
+        - RunningState (str(unknown | stopped | stopping | starting | started)): Indicates the state of the OpenFlow protocol on the port.
+
+        Returns
+        -------
+        - self: This instance with matching openFlow resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of openFlow data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the openFlow resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

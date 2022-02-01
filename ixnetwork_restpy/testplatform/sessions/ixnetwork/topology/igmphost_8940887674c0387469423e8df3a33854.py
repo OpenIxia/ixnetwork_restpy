@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IgmpHost(Base):
@@ -76,10 +78,10 @@ class IgmpHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpmcastipv4grouplist_9d36f1712e120291f6d70f4be5ea1fe4 import IgmpMcastIPv4GroupList
-        if self._properties.get('IgmpMcastIPv4GroupList', None) is not None:
-            return self._properties.get('IgmpMcastIPv4GroupList')
-        else:
-            return IgmpMcastIPv4GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpMcastIPv4GroupList', None) is not None:
+                return self._properties.get('IgmpMcastIPv4GroupList')
+        return IgmpMcastIPv4GroupList(self)._select()
 
     @property
     def Iptv(self):
@@ -93,10 +95,10 @@ class IgmpHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.iptv_0fb517c26bbef4136d857dbc8aaa8c72 import Iptv
-        if self._properties.get('Iptv', None) is not None:
-            return self._properties.get('Iptv')
-        else:
-            return Iptv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Iptv', None) is not None:
+                return self._properties.get('Iptv')
+        return Iptv(self)._select()
 
     @property
     def Tag(self):
@@ -110,10 +112,10 @@ class IgmpHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):

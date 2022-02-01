@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MplsOam(Base):
@@ -94,10 +96,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def LearnedInfoUpdate(self):
@@ -111,10 +113,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        if self._properties.get('LearnedInfoUpdate', None) is not None:
-            return self._properties.get('LearnedInfoUpdate')
-        else:
-            return LearnedInfoUpdate(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfoUpdate', None) is not None:
+                return self._properties.get('LearnedInfoUpdate')
+        return LearnedInfoUpdate(self)
 
     @property
     def SbfdInitiator(self):
@@ -128,10 +130,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.sbfdinitiator_ef4ed37c4520e95225e35be31ea6dde4 import SbfdInitiator
-        if self._properties.get('SbfdInitiator', None) is not None:
-            return self._properties.get('SbfdInitiator')
-        else:
-            return SbfdInitiator(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SbfdInitiator', None) is not None:
+                return self._properties.get('SbfdInitiator')
+        return SbfdInitiator(self)._select()
 
     @property
     def SbfdResponder(self):
@@ -145,10 +147,10 @@ class MplsOam(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.sbfdresponder_e89a7c6cba0a1f66c71ecb217db4ccfd import SbfdResponder
-        if self._properties.get('SbfdResponder', None) is not None:
-            return self._properties.get('SbfdResponder')
-        else:
-            return SbfdResponder(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SbfdResponder', None) is not None:
+                return self._properties.get('SbfdResponder')
+        return SbfdResponder(self)._select()
 
     @property
     def Active(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RouteDistinguisher(Base):
@@ -164,3 +166,49 @@ class RouteDistinguisher(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AsNumber=None, AsNumberStep=None, AssignedNumber=None, AssignedNumberStep=None, IpAddress=None, IpAddressStep=None, Type=None):
+        # type: (int, int, int, int, str, str, str) -> RouteDistinguisher
+        """Finds and retrieves routeDistinguisher resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve routeDistinguisher resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all routeDistinguisher resources from the server.
+
+        Args
+        ----
+        - AsNumber (number): If the type was set to as or asNumber2, this is the AS number in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0)
+        - AsNumberStep (number): The increment step for for the AS.
+        - AssignedNumber (number): The Assigned Number sub-field of the Value field of the MVPN Route Distinguisher. It is a number from a numbering space, which the enterprise administers, for a given IP address or ASN space. It is the Local part of the RD. (default = 0)
+        - AssignedNumberStep (number): The increment step for for the assigned number.
+        - IpAddress (str): If the type was set to ip, this is the 4-byte IP address in the Administrator subfield of the Value field of the MVPN Route Distinguisher (RD). It is the Global part of the RD. (default = 0.0.0.0)
+        - IpAddressStep (str): The increment step for for the IP address.
+        - Type (str(as | ip | asNumber2)): Indicates the type of administrator field used in route distinguisher that will be included in the route announcements.
+
+        Returns
+        -------
+        - self: This instance with matching routeDistinguisher resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of routeDistinguisher data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the routeDistinguisher resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

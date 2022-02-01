@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FortyGigLan(Base):
@@ -48,7 +50,7 @@ class FortyGigLan(Base):
     }
     _SDM_ENUM_MAP = {
         'autoInstrumentation': ['endOfFrame', 'floating'],
-        'transmitClocking': ['external', 'internal', 'recovered'],
+        'transmitClocking': ['internal', 'external', 'recovered'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -66,10 +68,10 @@ class FortyGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.fcoe.fcoe import Fcoe
-        if self._properties.get('Fcoe', None) is not None:
-            return self._properties.get('Fcoe')
-        else:
-            return Fcoe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fcoe', None) is not None:
+                return self._properties.get('Fcoe')
+        return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -83,10 +85,10 @@ class FortyGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fortygiglan.txlane.txlane import TxLane
-        if self._properties.get('TxLane', None) is not None:
-            return self._properties.get('TxLane')
-        else:
-            return TxLane(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxLane', None) is not None:
+                return self._properties.get('TxLane')
+        return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -166,7 +168,7 @@ class FortyGigLan(Base):
         """
         Returns
         -------
-        - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+        - bool: If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
@@ -180,7 +182,7 @@ class FortyGigLan(Base):
         """
         Returns
         -------
-        - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
@@ -236,7 +238,7 @@ class FortyGigLan(Base):
         """
         Returns
         -------
-        - str(external | internal | recovered): Allows to select the transmit clocing options.
+        - str(internal | external | recovered): The transmit clocking type for the 10G LAN port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
@@ -250,7 +252,7 @@ class FortyGigLan(Base):
         """
         Returns
         -------
-        - bool: Tx ignore Rx link fault.
+        - bool: If enabled, will allow transmission of packets even if the receive link is down.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreRxLinkFaults'])
     @TxIgnoreRxLinkFaults.setter
@@ -267,16 +269,68 @@ class FortyGigLan(Base):
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
         - EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
         - EnablePPM (bool): If true, enables the portsppm.
-        - EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-        - FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
-        - TransmitClocking (str(external | internal | recovered)): Allows to select the transmit clocing options.
-        - TxIgnoreRxLinkFaults (bool): Tx ignore Rx link fault.
+        - TransmitClocking (str(internal | external | recovered)): The transmit clocking type for the 10G LAN port.
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnableLASIMonitoring=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, Loopback=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, List[str], bool, bool, bool, bool, bool, str, bool, int, List[str], str, bool) -> FortyGigLan
+        """Finds and retrieves fortyGigLan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fortyGigLan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fortyGigLan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AvailableSpeeds (list(str[])): Which speeds are available for the current media and AN settings.
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnableLASIMonitoring (bool): If selected, enables LASI monitoring.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
+        - TransmitClocking (str(internal | external | recovered)): The transmit clocking type for the 10G LAN port.
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+
+        Returns
+        -------
+        - self: This instance with matching fortyGigLan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of fortyGigLan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the fortyGigLan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

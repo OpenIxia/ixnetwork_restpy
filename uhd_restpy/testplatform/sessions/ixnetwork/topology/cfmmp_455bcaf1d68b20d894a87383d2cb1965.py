@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CfmMp(Base):
@@ -167,10 +169,10 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import CfmCustomTLVList
-        if self._properties.get('CfmCustomTLVList', None) is not None:
-            return self._properties.get('CfmCustomTLVList')
-        else:
-            return CfmCustomTLVList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmCustomTLVList', None) is not None:
+                return self._properties.get('CfmCustomTLVList')
+        return CfmCustomTLVList(self)
 
     @property
     def StartCcmEmulatedMpParams(self):
@@ -184,10 +186,10 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.startccmemulatedmpparams_62b1a2be6189ae1e1aa5f0cee8254081 import StartCcmEmulatedMpParams
-        if self._properties.get('StartCcmEmulatedMpParams', None) is not None:
-            return self._properties.get('StartCcmEmulatedMpParams')
-        else:
-            return StartCcmEmulatedMpParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StartCcmEmulatedMpParams', None) is not None:
+                return self._properties.get('StartCcmEmulatedMpParams')
+        return StartCcmEmulatedMpParams(self)._select()
 
     @property
     def StopCcmEmulatedMpParams(self):
@@ -201,10 +203,10 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.stopccmemulatedmpparams_a24dfdb02ad9d3f95459876f02f9eff0 import StopCcmEmulatedMpParams
-        if self._properties.get('StopCcmEmulatedMpParams', None) is not None:
-            return self._properties.get('StopCcmEmulatedMpParams')
-        else:
-            return StopCcmEmulatedMpParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StopCcmEmulatedMpParams', None) is not None:
+                return self._properties.get('StopCcmEmulatedMpParams')
+        return StopCcmEmulatedMpParams(self)._select()
 
     @property
     def Active(self):
@@ -1502,6 +1504,50 @@ class CfmMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, MacAddress=None, Name=None, NumberOfCustomTLVs=None):
+        # type: (int, str, List[str], str, int) -> CfmMp
+        """Finds and retrieves cfmMp resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cfmMp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cfmMp resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - MacAddress (list(str)): MAC Address of MP.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfCustomTLVs (number): Number of Custom TLVs for PDUs.
+
+        Returns
+        -------
+        - self: This instance with matching cfmMp resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of cfmMp data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the cfmMp resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ActivateMpEmulated(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

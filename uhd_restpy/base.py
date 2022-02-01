@@ -67,7 +67,7 @@ class Base(object):
         class_functions = dir(self)
         if self.parent is not None and "remove" not in class_functions and "find" in class_functions:
             if self._xpathObj is not None and self._xpathObj._mode == "config" and not list_op:
-                self._automate_xpath()
+                self._automate_xpath(not list_op)
 
     def __iter__(self):
         self._index = -1

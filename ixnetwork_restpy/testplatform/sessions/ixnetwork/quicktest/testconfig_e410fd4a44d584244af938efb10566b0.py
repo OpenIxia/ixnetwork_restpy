@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -714,6 +716,86 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AddrRateNumFrames=None, AddrRateValidationFpsRate=None, AddrRateValidationRate=None, AddrRateValidationRateUnit=None, AddressRatePassCriteriaMode=None, AddressRatePassFailValue=None, BinaryBackoff=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, CacheTimeout=None, DelayAfterTransmit=None, EnableAddressRatePassFail=None, EnableCacheTimeout=None, EnableDaD=None, EnableDropLink=None, EnableExtraIterations=None, EnableMinFrameSize=None, ExtraIterationOffsets=None, FrameSizeMode=None, Framesize=None, FramesizeFixedValue=None, FramesizeList=None, InitialBinaryLoadRate=None, Layer3AddressCount=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxBinaryLoadRate=None, MaxOutstandingRequests=None, MinBinaryLoadRate=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, PortDownTime=None, ProtocolItem=None, StaggeredStart=None, SupportedTrafficTypes=None, TxDelay=None):
+        # type: (int, str, int, str, str, int, int, str, int, str, int, int, bool, bool, bool, bool, bool, bool, str, str, str, int, List[str], int, int, str, str, str, str, int, int, int, int, bool, str, int, int, List[str], bool, str, int) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - AddrRateNumFrames (number): Indicates the address rate in number of frames.
+        - AddrRateValidationFpsRate (str): Indicates that the step rate of the load unit is fpsRate.
+        - AddrRateValidationRate (number): Indicates the address rate validation rate.
+        - AddrRateValidationRateUnit (str(fps | percentMaxRate)): Indicates the address rate validation rate unit.
+        - AddressRatePassCriteriaMode (str): Indicates the address rate pass criteria mode.
+        - AddressRatePassFailValue (number): Indicates the Address Rate value.
+        - BinaryBackoff (number): The binary search interval through which the next iteration's rate is obtained.
+        - BinaryLoadUnit (str(fpsRate)): Indicates the binary load unit.
+        - BinaryResolution (number): Indicates the resolution during the binary search.
+        - BinarySearchType (str(linear)): Indicates the search type for a Binary search.
+        - CacheTimeout (number): Indicates cache time out.
+        - DelayAfterTransmit (number): A delay that is inserted after transmit is complete, before it continues with the test.
+        - EnableAddressRatePassFail (bool): If true, allows Address Rate to be used as a Pass/Fail criteria.
+        - EnableCacheTimeout (bool): If true, enables cache time out.
+        - EnableDaD (bool): If true, a Neighbor Solicitation is sent from the interface for Duplicate Address Detection (DAD), to confirm that no other node on the link has the same address.
+        - EnableDropLink (bool): If true, allows Route Range to be dropped.
+        - EnableExtraIterations (bool): If true, enables extra iterations. Sets extra iteration offset values.
+        - EnableMinFrameSize (bool): If true, allows to set minimum frame size.
+        - ExtraIterationOffsets (str): Sets extra iteration offset values.
+        - FrameSizeMode (str(fixed)): Indicates the frame size mode.
+        - Framesize (str): The frame size used by the service.
+        - FramesizeFixedValue (number): It signifies the frame size fixed value.
+        - FramesizeList (list(str)): The list of the available frame size.
+        - InitialBinaryLoadRate (number): Indicates the initial binary load rate.
+        - Layer3AddressCount (number): Indicates the Layer 3 address count.
+        - LoadRateList (str): Enter the Load Rate List.
+        - LoadType (str(binary)): Indicates the load type.
+        - LoadUnit (str(fpsRate)): Indicates the load unit.
+        - MapType (str): Indicates the traffic map type.
+        - MaxBinaryLoadRate (number): Indicates the maximum binary load rate.
+        - MaxOutstandingRequests (number): Indicates maximum outstanding request.
+        - MinBinaryLoadRate (number): Indicates the minimum binary load rate.
+        - Numtrials (number): Number of trials that can be run.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - PortDownTime (number): During flapping, the amount of time during which the routes in the Route Range are withdrawn/down.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - StaggeredStart (bool): Enables a staggered start to traffic transmit.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TxDelay (number): Specifies the amount of delay after every transmit.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

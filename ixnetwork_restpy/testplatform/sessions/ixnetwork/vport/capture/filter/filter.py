@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Filter(Base):
@@ -58,7 +60,7 @@ class Filter(Base):
         """
         Returns
         -------
-        - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available destination MAC addresses to filter on. Applicable only when capturefilternable is set to true.
+        - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available destination MAC addresses to filter on. Applicable only when captureFilterEnable is set to true.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterDA'])
     @CaptureFilterDA.setter
@@ -170,7 +172,7 @@ class Filter(Base):
         """
         Returns
         -------
-        - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available destination MAC addresses to filter on. Applicable only when capturefilternable is set to true.
+        - str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2): One of two available source MAC addresses to filter on. Applicable only when captureFilterEnable is set to true.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CaptureFilterSA'])
     @CaptureFilterSA.setter
@@ -184,7 +186,7 @@ class Filter(Base):
 
         Args
         ----
-        - CaptureFilterDA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when capturefilternable is set to true.
+        - CaptureFilterDA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureFilterEnable is set to true.
         - CaptureFilterEnable (bool): Enables or disables the capture filter.
         - CaptureFilterError (str(errAnyFrame | errAnyIpTcpUdpChecksumError | errAnySequencekError | errBadCRC | errBadFrame | errBigSequenceError | errDataIntegrityError | errGoodFrame | errInvalidFcoeFrame | errReverseSequenceError | errSmallSequenceError)): Applicable only when captureFilterEnable is set to true.
         - CaptureFilterExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
@@ -192,10 +194,58 @@ class Filter(Base):
         - CaptureFilterFrameSizeFrom (number): Applicable only when captureFilterFrameSizeEnable is enabled. The minimum range of the size of frame to be filtered.
         - CaptureFilterFrameSizeTo (number): Applicable only when captureFilterFrameSizeEnable is enabled. The maximum range of the size of frame to be filtered.
         - CaptureFilterPattern (str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern1AndPattern2 | pattern2)): Applicable only when captureFilterEnable is set to true.
-        - CaptureFilterSA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when capturefilternable is set to true.
+        - CaptureFilterSA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available source MAC addresses to filter on. Applicable only when captureFilterEnable is set to true.
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CaptureFilterDA=None, CaptureFilterEnable=None, CaptureFilterError=None, CaptureFilterExpressionString=None, CaptureFilterFrameSizeEnable=None, CaptureFilterFrameSizeFrom=None, CaptureFilterFrameSizeTo=None, CaptureFilterPattern=None, CaptureFilterSA=None):
+        # type: (str, bool, str, str, bool, int, int, str, str) -> Filter
+        """Finds and retrieves filter resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve filter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all filter resources from the server.
+
+        Args
+        ----
+        - CaptureFilterDA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureFilterEnable is set to true.
+        - CaptureFilterEnable (bool): Enables or disables the capture filter.
+        - CaptureFilterError (str(errAnyFrame | errAnyIpTcpUdpChecksumError | errAnySequencekError | errBadCRC | errBadFrame | errBigSequenceError | errDataIntegrityError | errGoodFrame | errInvalidFcoeFrame | errReverseSequenceError | errSmallSequenceError)): Applicable only when captureFilterEnable is set to true.
+        - CaptureFilterExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
+        - CaptureFilterFrameSizeEnable (bool): Enables or disables the frame size constraint which specifies a range of frame.
+        - CaptureFilterFrameSizeFrom (number): Applicable only when captureFilterFrameSizeEnable is enabled. The minimum range of the size of frame to be filtered.
+        - CaptureFilterFrameSizeTo (number): Applicable only when captureFilterFrameSizeEnable is enabled. The maximum range of the size of frame to be filtered.
+        - CaptureFilterPattern (str(anyPattern | notPattern1 | notPattern2 | pattern1 | pattern1AndPattern2 | pattern2)): Applicable only when captureFilterEnable is set to true.
+        - CaptureFilterSA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available source MAC addresses to filter on. Applicable only when captureFilterEnable is set to true.
+
+        Returns
+        -------
+        - self: This instance with matching filter resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of filter data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the filter resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

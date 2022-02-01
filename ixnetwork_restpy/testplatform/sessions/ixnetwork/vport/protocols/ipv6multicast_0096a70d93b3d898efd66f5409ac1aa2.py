@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ipv6Multicast(Base):
@@ -58,10 +60,10 @@ class Ipv6Multicast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ipv6unicastitem_73a56a6835701d696b28341a9b498502 import Ipv6UnicastItem
-        if self._properties.get('Ipv6UnicastItem', None) is not None:
-            return self._properties.get('Ipv6UnicastItem')
-        else:
-            return Ipv6UnicastItem(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6UnicastItem', None) is not None:
+                return self._properties.get('Ipv6UnicastItem')
+        return Ipv6UnicastItem(self)
 
     @property
     def Age(self):

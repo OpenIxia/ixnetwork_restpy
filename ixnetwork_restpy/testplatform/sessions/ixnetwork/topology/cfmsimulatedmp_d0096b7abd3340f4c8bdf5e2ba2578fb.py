@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CfmSimulatedMp(Base):
@@ -173,10 +175,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmcustomtlvlist_798bcbc04fddcff054434d56d2b00117 import CfmCustomTLVList
-        if self._properties.get('CfmCustomTLVList', None) is not None:
-            return self._properties.get('CfmCustomTLVList')
-        else:
-            return CfmCustomTLVList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmCustomTLVList', None) is not None:
+                return self._properties.get('CfmCustomTLVList')
+        return CfmCustomTLVList(self)
 
     @property
     def CfmSlm(self):
@@ -190,10 +192,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cfmslm_a552256bb40704de586bc05808a60f7f import CfmSlm
-        if self._properties.get('CfmSlm', None) is not None:
-            return self._properties.get('CfmSlm')
-        else:
-            return CfmSlm(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmSlm', None) is not None:
+                return self._properties.get('CfmSlm')
+        return CfmSlm(self)._select()
 
     @property
     def StartCcmSimulatedMpParams(self):
@@ -207,10 +209,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.startccmsimulatedmpparams_4c311ea185eeaa4106e3c4181a4ec347 import StartCcmSimulatedMpParams
-        if self._properties.get('StartCcmSimulatedMpParams', None) is not None:
-            return self._properties.get('StartCcmSimulatedMpParams')
-        else:
-            return StartCcmSimulatedMpParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StartCcmSimulatedMpParams', None) is not None:
+                return self._properties.get('StartCcmSimulatedMpParams')
+        return StartCcmSimulatedMpParams(self)._select()
 
     @property
     def StopCcmSimulatedMpParams(self):
@@ -224,10 +226,10 @@ class CfmSimulatedMp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.stopccmsimulatedmpparams_93b05cff27480ec5b14accd9b8a754a7 import StopCcmSimulatedMpParams
-        if self._properties.get('StopCcmSimulatedMpParams', None) is not None:
-            return self._properties.get('StopCcmSimulatedMpParams')
-        else:
-            return StopCcmSimulatedMpParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StopCcmSimulatedMpParams', None) is not None:
+                return self._properties.get('StopCcmSimulatedMpParams')
+        return StopCcmSimulatedMpParams(self)._select()
 
     @property
     def Active(self):

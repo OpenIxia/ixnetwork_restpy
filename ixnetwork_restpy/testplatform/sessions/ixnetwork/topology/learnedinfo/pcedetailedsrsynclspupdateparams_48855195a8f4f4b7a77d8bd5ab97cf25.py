@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PceDetailedSrSyncLspUpdateParams(Base):
@@ -90,10 +92,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrerosubobjectlist_d9e41e4990a041fcca2fc6fd076cf303 import PceUpdateSrEroSubObjectList
-        if self._properties.get('PceUpdateSrEroSubObjectList', None) is not None:
-            return self._properties.get('PceUpdateSrEroSubObjectList')
-        else:
-            return PceUpdateSrEroSubObjectList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PceUpdateSrEroSubObjectList', None) is not None:
+                return self._properties.get('PceUpdateSrEroSubObjectList')
+        return PceUpdateSrEroSubObjectList(self)
 
     @property
     def PceUpdateSrMetricSubObjectList(self):
@@ -107,10 +109,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatesrmetricsubobjectlist_161f8505e21b0db145157226f5332ddd import PceUpdateSrMetricSubObjectList
-        if self._properties.get('PceUpdateSrMetricSubObjectList', None) is not None:
-            return self._properties.get('PceUpdateSrMetricSubObjectList')
-        else:
-            return PceUpdateSrMetricSubObjectList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PceUpdateSrMetricSubObjectList', None) is not None:
+                return self._properties.get('PceUpdateSrMetricSubObjectList')
+        return PceUpdateSrMetricSubObjectList(self)
 
     @property
     def PceUpdateXroSubObjectList(self):
@@ -124,10 +126,10 @@ class PceDetailedSrSyncLspUpdateParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.pceupdatexrosubobjectlist_3cb16b2513bf72ff7ee4a5e0387625cf import PceUpdateXroSubObjectList
-        if self._properties.get('PceUpdateXroSubObjectList', None) is not None:
-            return self._properties.get('PceUpdateXroSubObjectList')
-        else:
-            return PceUpdateXroSubObjectList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PceUpdateXroSubObjectList', None) is not None:
+                return self._properties.get('PceUpdateXroSubObjectList')
+        return PceUpdateXroSubObjectList(self)
 
     @property
     def AssociationId(self):

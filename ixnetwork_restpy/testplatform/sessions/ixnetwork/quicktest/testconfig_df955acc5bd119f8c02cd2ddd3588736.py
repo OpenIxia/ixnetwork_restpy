@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -746,6 +748,88 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AlgorithmType=None, CalculateJitter=None, CalculateLatency=None, ContinuePassFailed=None, CurrentService=None, DelayAfterTransmit=None, Duration=None, DurationLabel=None, EnableBurstTest=None, EnableDataIntegrity=None, EnableLatencyPassFailLabel=None, EnableLayer1Rate=None, EnableStandardDeviationPassFailLabel=None, ForceRegenerate=None, FrameDataDetailedResults=None, FrameLossFramesMode=None, FrameSizeMode=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, IsColorAware=None, IsServicePeformanceMode=None, IterationInitialRate=None, IterationStep=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LearnSnoopConfig=None, NoOfFrames=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, Rfc2889ordering=None, ServiceIterations=None, ServicesList=None, SkipDefaultPassFailEvaluation=None, StaggeredStart=None, TestTrafficType=None, TransmitMode=None, TxDelay=None):
+        # type: (str, bool, bool, bool, str, int, int, str, bool, bool, str, bool, str, bool, bool, str, str, int, bool, bool, str, str, str, str, bool, str, bool, str, int, bool, str, int, List[str], bool, str, str, str, str, bool, bool, str, str, int) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - AlgorithmType (str(srvConfiguration | srvPerformance)): The type of algorithm used.
+        - CalculateJitter (bool): Calculates the interval between timestamps of PGID packet arrivals.
+        - CalculateLatency (bool): Calculates and reports latency.
+        - ContinuePassFailed (bool): NOT DEFINED
+        - CurrentService (str): The service in use currently.
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+        - Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+        - DurationLabel (str): The label defining the traffic duration time.
+        - EnableBurstTest (bool): If true, enables burst test.
+        - EnableDataIntegrity (bool): If true, enables data integrity test.
+        - EnableLatencyPassFailLabel (str): The latency pass fail criteria is set.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableStandardDeviationPassFailLabel (str): Standard Deviation for the Pass/Fail criteria is set.
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameDataDetailedResults (bool): NOT DEFINED
+        - FrameLossFramesMode (str): NOT DEFINED
+        - FrameSizeMode (str(custom | fixed | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - Gap (number): The gap in transmission of frames.
+        - GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+        - IsColorAware (bool): If true, it becomes aware of the color.
+        - IsServicePeformanceMode (str): The service performance mode.
+        - IterationInitialRate (str): The initial rate of iteration.
+        - IterationStep (str): The iteration step.
+        - LatencyBins (str): Sets the latency bins statistics.
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics.
+        - LatencyType (str(cutThrough | mef | storeForward)): The type of latency.
+        - LearnSnoopConfig (bool): The learned snoop configuration.
+        - NoOfFrames (str): The number of frames sent.
+        - Numtrials (number): This signifies the Number of trials.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportSequenceError (bool): If true, the sequence error, if found, is reported.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The unit of rate for throughput.
+        - Rfc2889ordering (str(noOrdering | unchanged | val2889Ordering)): NOT DEFINED
+        - ServiceIterations (str): Number of service iterations.
+        - ServicesList (str): The list of service.
+        - SkipDefaultPassFailEvaluation (bool): If true, it skips the default pass fail evaluation.
+        - StaggeredStart (bool): Staggered start of traffic.
+        - TestTrafficType (str): It gives the test traffic type.
+        - TransmitMode (str(noFrames | useDuration)): The transmit mode for this traffic item.
+        - TxDelay (number): The minimum delay between successive packets.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

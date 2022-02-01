@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BroadcastDomainV4(Base):
@@ -87,10 +89,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchigmp_f89f38fca85b1442229391afe5b95e76 import BgpEvpnJoinSynchIgmp
-        if self._properties.get('BgpEvpnJoinSynchIgmp', None) is not None:
-            return self._properties.get('BgpEvpnJoinSynchIgmp')
-        else:
-            return BgpEvpnJoinSynchIgmp(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpEvpnJoinSynchIgmp', None) is not None:
+                return self._properties.get('BgpEvpnJoinSynchIgmp')
+        return BgpEvpnJoinSynchIgmp(self)._select()
 
     @property
     def BgpEvpnJoinSynchMld(self):
@@ -104,10 +106,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnjoinsynchmld_4f5a831aa8e923cbdbff69a4f078837d import BgpEvpnJoinSynchMld
-        if self._properties.get('BgpEvpnJoinSynchMld', None) is not None:
-            return self._properties.get('BgpEvpnJoinSynchMld')
-        else:
-            return BgpEvpnJoinSynchMld(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpEvpnJoinSynchMld', None) is not None:
+                return self._properties.get('BgpEvpnJoinSynchMld')
+        return BgpEvpnJoinSynchMld(self)._select()
 
     @property
     def BgpEvpnLeaveSynchIgmp(self):
@@ -121,10 +123,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchigmp_411f258090ec14c0d716cabc5159977e import BgpEvpnLeaveSynchIgmp
-        if self._properties.get('BgpEvpnLeaveSynchIgmp', None) is not None:
-            return self._properties.get('BgpEvpnLeaveSynchIgmp')
-        else:
-            return BgpEvpnLeaveSynchIgmp(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpEvpnLeaveSynchIgmp', None) is not None:
+                return self._properties.get('BgpEvpnLeaveSynchIgmp')
+        return BgpEvpnLeaveSynchIgmp(self)._select()
 
     @property
     def BgpEvpnLeaveSynchMld(self):
@@ -138,10 +140,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnleavesynchmld_226fbb8fe75f87a6460aecae872f059a import BgpEvpnLeaveSynchMld
-        if self._properties.get('BgpEvpnLeaveSynchMld', None) is not None:
-            return self._properties.get('BgpEvpnLeaveSynchMld')
-        else:
-            return BgpEvpnLeaveSynchMld(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpEvpnLeaveSynchMld', None) is not None:
+                return self._properties.get('BgpEvpnLeaveSynchMld')
+        return BgpEvpnLeaveSynchMld(self)._select()
 
     @property
     def BgpEvpnSmetIgmp(self):
@@ -155,10 +157,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetigmp_68fa5fa63ce581945025c1253038bccb import BgpEvpnSmetIgmp
-        if self._properties.get('BgpEvpnSmetIgmp', None) is not None:
-            return self._properties.get('BgpEvpnSmetIgmp')
-        else:
-            return BgpEvpnSmetIgmp(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpEvpnSmetIgmp', None) is not None:
+                return self._properties.get('BgpEvpnSmetIgmp')
+        return BgpEvpnSmetIgmp(self)._select()
 
     @property
     def BgpEvpnSmetMld(self):
@@ -172,10 +174,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpevpnsmetmld_8d81cf97f583ad4547c03c6110c5168a import BgpEvpnSmetMld
-        if self._properties.get('BgpEvpnSmetMld', None) is not None:
-            return self._properties.get('BgpEvpnSmetMld')
-        else:
-            return BgpEvpnSmetMld(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpEvpnSmetMld', None) is not None:
+                return self._properties.get('BgpEvpnSmetMld')
+        return BgpEvpnSmetMld(self)._select()
 
     @property
     def PnTLVList(self):
@@ -189,10 +191,10 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pntlvlist_f29efa99695d122f75b5efd68698cd57 import PnTLVList
-        if self._properties.get('PnTLVList', None) is not None:
-            return self._properties.get('PnTLVList')
-        else:
-            return PnTLVList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PnTLVList', None) is not None:
+                return self._properties.get('PnTLVList')
+        return PnTLVList(self)
 
     @property
     def Active(self):
@@ -639,6 +641,56 @@ class BroadcastDomainV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfMacPools=None, NumJoinSynchIgmpRoutes=None, NumJoinSynchMldRoutes=None, NumLeaveSynchIgmpRoutes=None, NumLeaveSynchMldRoutes=None, NumSmetIgmpRoutes=None, NumSmetMldRoutes=None, UsebVlan=None):
+        # type: (int, str, str, int, int, int, int, int, int, int, bool) -> BroadcastDomainV4
+        """Finds and retrieves broadcastDomainV4 resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve broadcastDomainV4 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all broadcastDomainV4 resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfMacPools (number): Number of Mac Pools
+        - NumJoinSynchIgmpRoutes (number): The number of JoinSnch (IGMP) Routes to be configured under Broadcast Domain
+        - NumJoinSynchMldRoutes (number): The number of JoinSynch (MLD) Routes to be configured under Broadcast Domain
+        - NumLeaveSynchIgmpRoutes (number): The number of LeaveSynch (IGMP) Routes to be configured under Broadcast Domain
+        - NumLeaveSynchMldRoutes (number): The number of LeaveSynch (MLD) Routes to be configured under Broadcast Domain
+        - NumSmetIgmpRoutes (number): The number of SMET (IGMP) Routes to be configured under Broadcast Domain
+        - NumSmetMldRoutes (number): The number of SMET (MLD) Routes to be configured under Broadcast Domain
+        - UsebVlan (bool): Use B-VLAN
+
+        Returns
+        -------
+        - self: This instance with matching broadcastDomainV4 resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of broadcastDomainV4 data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the broadcastDomainV4 resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def AdvertiseAliasing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

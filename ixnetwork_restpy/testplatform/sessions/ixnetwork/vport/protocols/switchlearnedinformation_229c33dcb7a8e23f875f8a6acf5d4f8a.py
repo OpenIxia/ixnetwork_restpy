@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchLearnedInformation(Base):
@@ -76,10 +78,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelswitchlearnedinfo_b388ce0c4d70741ca769d564a7b8e654 import OfChannelSwitchLearnedInfo
-        if self._properties.get('OfChannelSwitchLearnedInfo', None) is not None:
-            return self._properties.get('OfChannelSwitchLearnedInfo')
-        else:
-            return OfChannelSwitchLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfChannelSwitchLearnedInfo', None) is not None:
+                return self._properties.get('OfChannelSwitchLearnedInfo')
+        return OfChannelSwitchLearnedInfo(self)
 
     @property
     def SwitchFlow131TriggerAttributes(self):
@@ -93,10 +95,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflow131triggerattributes_e48e6a22f9f9bbf78e2684330b75a32e import SwitchFlow131TriggerAttributes
-        if self._properties.get('SwitchFlow131TriggerAttributes', None) is not None:
-            return self._properties.get('SwitchFlow131TriggerAttributes')
-        else:
-            return SwitchFlow131TriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchFlow131TriggerAttributes', None) is not None:
+                return self._properties.get('SwitchFlow131TriggerAttributes')
+        return SwitchFlow131TriggerAttributes(self)._select()
 
     @property
     def SwitchFlowLearnedInfo(self):
@@ -110,10 +112,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowlearnedinfo_5f61b81a749e83192f2f0aba3723f328 import SwitchFlowLearnedInfo
-        if self._properties.get('SwitchFlowLearnedInfo', None) is not None:
-            return self._properties.get('SwitchFlowLearnedInfo')
-        else:
-            return SwitchFlowLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchFlowLearnedInfo', None) is not None:
+                return self._properties.get('SwitchFlowLearnedInfo')
+        return SwitchFlowLearnedInfo(self)
 
     @property
     def SwitchFlowMatchCriteria131TriggerAttributes(self):
@@ -127,10 +129,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchflowmatchcriteria131triggerattributes_bfd68967531928dd87f9224a41a38633 import SwitchFlowMatchCriteria131TriggerAttributes
-        if self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes', None) is not None:
-            return self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes')
-        else:
-            return SwitchFlowMatchCriteria131TriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes', None) is not None:
+                return self._properties.get('SwitchFlowMatchCriteria131TriggerAttributes')
+        return SwitchFlowMatchCriteria131TriggerAttributes(self)._select()
 
     @property
     def SwitchGroupLearnedInfo(self):
@@ -144,10 +146,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchgrouplearnedinfo_1b0e7ca2c5c5bf68353402fcf910385f import SwitchGroupLearnedInfo
-        if self._properties.get('SwitchGroupLearnedInfo', None) is not None:
-            return self._properties.get('SwitchGroupLearnedInfo')
-        else:
-            return SwitchGroupLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchGroupLearnedInfo', None) is not None:
+                return self._properties.get('SwitchGroupLearnedInfo')
+        return SwitchGroupLearnedInfo(self)
 
     @property
     def SwitchMeterLearnedInfo(self):
@@ -161,10 +163,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchmeterlearnedinfo_912ee9c10af14a4526668258ad5851db import SwitchMeterLearnedInfo
-        if self._properties.get('SwitchMeterLearnedInfo', None) is not None:
-            return self._properties.get('SwitchMeterLearnedInfo')
-        else:
-            return SwitchMeterLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchMeterLearnedInfo', None) is not None:
+                return self._properties.get('SwitchMeterLearnedInfo')
+        return SwitchMeterLearnedInfo(self)
 
     @property
     def SwitchTableFeaturesStatLearnedInfo(self):
@@ -178,10 +180,10 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchtablefeaturesstatlearnedinfo_1ae04328da2a331275401279fecdcbc9 import SwitchTableFeaturesStatLearnedInfo
-        if self._properties.get('SwitchTableFeaturesStatLearnedInfo', None) is not None:
-            return self._properties.get('SwitchTableFeaturesStatLearnedInfo')
-        else:
-            return SwitchTableFeaturesStatLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchTableFeaturesStatLearnedInfo', None) is not None:
+                return self._properties.get('SwitchTableFeaturesStatLearnedInfo')
+        return SwitchTableFeaturesStatLearnedInfo(self)
 
     @property
     def EnableVendorExperimenterMessage(self):
@@ -530,6 +532,68 @@ class SwitchLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableVendorExperimenterMessage=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, InPort=None, IpDscp=None, IpProtocol=None, Ipv4Source=None, Ipv4destination=None, IsOfChannelLearnedInformationRefreshed=None, IsOfFlowsLearnedInformationRefreshed=None, OutPort=None, OutPortInputMode=None, TableId=None, TableIdInputMode=None, TansportSource=None, TransportDestination=None, VendorExperimenterId=None, VendorExperimenterType=None, VendorMessage=None, VendorMessageLength=None, VlanId=None, VlanPriority=None):
+        # type: (bool, str, str, str, str, str, str, str, str, bool, bool, int, str, int, str, str, str, int, int, str, int, str, str) -> SwitchLearnedInformation
+        """Finds and retrieves switchLearnedInformation resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchLearnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchLearnedInformation resources from the server.
+
+        Args
+        ----
+        - EnableVendorExperimenterMessage (bool): If true, the vendor message trigger configuration parameters are available.
+        - EthernetDestination (str): This describes the flow match value for ethernet destination address field.
+        - EthernetSource (str): This describes the flow match value for ethernet source address field.
+        - EthernetType (str): This describes the Ethernet type of the flow match.
+        - InPort (str): This describes the flow match value for input port field
+        - IpDscp (str): This describes the flow match value for IP ToS field.
+        - IpProtocol (str): This describes the flow match value for IP Protocol field.
+        - Ipv4Source (str): This describes the flow match value for IPv4 source address field.
+        - Ipv4destination (str): This describes the flow match value for IPv4 destination address field.
+        - IsOfChannelLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the OF Channels is received.
+        - IsOfFlowsLearnedInformationRefreshed (bool): If true, it denotes that the Flow Learned Info for the OF Channels is received.
+        - OutPort (number): This describes the flow match value for output port field.
+        - OutPortInputMode (str(ofppMax | ofppInPort | ofppTable | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppNone | outPortCustom)): This describes the output port type.
+        - TableId (number): This describes the table identifier. It indicates the next table in the packet processing pipeline.
+        - TableIdInputMode (str(allTables | emergency | tableIdCustom)): This describes the type of table from which flow statistics will be sought.
+        - TansportSource (str): This describes the flow match value for transport source field.
+        - TransportDestination (str): This describes the flow match value for transport destination field.
+        - VendorExperimenterId (number): This describes the ID of the vendor for which vendor message is triggered.
+        - VendorExperimenterType (number): This describes the Type of experimenter only for v 1.3.
+        - VendorMessage (str): This describes the vendor data of the vendor message trigger.
+        - VendorMessageLength (number): This describes the length of vendor data of the vendor message trigger.
+        - VlanId (str): This describes the flow match value for VLAN ID field.
+        - VlanPriority (str): This describes the flow match value for VLAN Priority field.
+
+        Returns
+        -------
+        - self: This instance with matching switchLearnedInformation resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of switchLearnedInformation data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the switchLearnedInformation resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ClearRecordsForTrigger(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]

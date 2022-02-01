@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisTrillSimRouter(Base):
@@ -71,10 +73,10 @@ class IsisTrillSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def TrillSimulatedMCastIpv4GroupList(self):
@@ -88,10 +90,10 @@ class IsisTrillSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastipv4grouplist_c79d67ba115d7ed47c7c73c05670cc0d import TrillSimulatedMCastIpv4GroupList
-        if self._properties.get('TrillSimulatedMCastIpv4GroupList', None) is not None:
-            return self._properties.get('TrillSimulatedMCastIpv4GroupList')
-        else:
-            return TrillSimulatedMCastIpv4GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrillSimulatedMCastIpv4GroupList', None) is not None:
+                return self._properties.get('TrillSimulatedMCastIpv4GroupList')
+        return TrillSimulatedMCastIpv4GroupList(self)._select()
 
     @property
     def TrillSimulatedMCastIpv6GroupList(self):
@@ -105,10 +107,10 @@ class IsisTrillSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastipv6grouplist_89c8c841a0a83999d64fdbb091de6f9e import TrillSimulatedMCastIpv6GroupList
-        if self._properties.get('TrillSimulatedMCastIpv6GroupList', None) is not None:
-            return self._properties.get('TrillSimulatedMCastIpv6GroupList')
-        else:
-            return TrillSimulatedMCastIpv6GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrillSimulatedMCastIpv6GroupList', None) is not None:
+                return self._properties.get('TrillSimulatedMCastIpv6GroupList')
+        return TrillSimulatedMCastIpv6GroupList(self)._select()
 
     @property
     def TrillSimulatedMCastMacGroupList(self):
@@ -122,10 +124,10 @@ class IsisTrillSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.trillsimulatedmcastmacgrouplist_ddbcd1cff50daaf74cd80d85ea7655da import TrillSimulatedMCastMacGroupList
-        if self._properties.get('TrillSimulatedMCastMacGroupList', None) is not None:
-            return self._properties.get('TrillSimulatedMCastMacGroupList')
-        else:
-            return TrillSimulatedMCastMacGroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrillSimulatedMCastMacGroupList', None) is not None:
+                return self._properties.get('TrillSimulatedMCastMacGroupList')
+        return TrillSimulatedMCastMacGroupList(self)._select()
 
     @property
     def Active(self):

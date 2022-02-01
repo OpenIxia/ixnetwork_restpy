@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Globals(Base):
@@ -339,6 +341,63 @@ class Globals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Comments=None, EnableAbortIfLinkDown=None, EnableCapture=None, EnableCheckLinkState=None, EnableGenerateReportAfterRun=None, EnableRebootCpu=None, EnableSwitchToResult=None, EnableSwitchToStats=None, LinkDownTimeout=None, MaxLinesToDisplay=None, OutputRootPath=None, ProductLabel=None, SaveCaptureBeforeRun=None, SerialNumber=None, SleepTimeAfterReboot=None, TitlePageComments=None, UseDefaultRootPath=None, Version=None):
+        # type: (str, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, bool, str, int, str, bool, str) -> Globals
+        """Finds and retrieves globals resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve globals resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all globals resources from the server.
+
+        Args
+        ----
+        - Comments (str): User-specified comments for reporting
+        - EnableAbortIfLinkDown (bool): Controls how long to wait for an up link state before aborting the test.
+        - EnableCapture (bool): Available only if the (L1) receive mode has been set to capture packets. Select this option to save the packet capture file.
+        - EnableCheckLinkState (bool): Initiates a link state check of the port before a test is run.
+        - EnableGenerateReportAfterRun (bool): When this option is enabled, IxNetwork automatically generates a test report after the test is complete.
+        - EnableRebootCpu (bool): Reboots the port CPU before a test is run.
+        - EnableSwitchToResult (bool): When this option is enabled, IxNetwork immediately switches to the result display after the test is complete.
+        - EnableSwitchToStats (bool): If true, the IxNetwork GUI immediately switches to the Result display after the test is complete.
+        - LinkDownTimeout (number): Select this option to simulate a port link being down.
+        - MaxLinesToDisplay (number): The maximum number of lines to display.
+        - OutputRootPath (str): This object holds the configurable output root path of IxNetwork for quick test.
+        - ProductLabel (str): User-specified product label for reporting
+        - SaveCaptureBeforeRun (bool): This command saves the current capture data to the specified directory before run.
+        - SerialNumber (str): User-specified serial number for reporting
+        - SleepTimeAfterReboot (number): If a reboot is initiated, the sleep after reboot is the number of seconds to wait after the port CPU goes into sleep mode.
+        - TitlePageComments (str): User-specified comments for title page
+        - UseDefaultRootPath (bool): This object uses the default root path for quick test.
+        - Version (str): User-specified version for reporting
+
+        Returns
+        -------
+        - self: This instance with matching globals resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of globals data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the globals resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

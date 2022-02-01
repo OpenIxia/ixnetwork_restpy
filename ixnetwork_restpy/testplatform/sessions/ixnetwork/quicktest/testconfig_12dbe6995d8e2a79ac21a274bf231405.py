@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -575,6 +577,77 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CustomLoadUnit=None, DataPlaneJitterWindow=None, Duration=None, EnableBFD=None, EnableTolerance=None, FixedFrameSize=None, ForceContinuosTraffic=None, FrameSizeMode=None, Framesize=None, HoldDownTimer=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LoadRateValue=None, LoadType=None, NetworkGroupRoutesType=None, NetworkGroupSizeListIpv4=None, NetworkGroupSizeListIpv6=None, NetworkGroupSizeModeIpv4=None, NetworkGroupSizeModeIpv6=None, NumberOfIterations=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, RoutesDistribution=None, TestTrafficType=None, Threshold=None, Tolerance=None, TrafficType=None, WaitAfterThresholdReached=None, WaitBeforeAdvertise=None):
+        # type: (str, str, int, bool, bool, int, bool, str, str, int, str, int, int, int, str, str, List[str], List[str], str, str, int, int, List[str], str, str, str, str, int, int, str, int, int) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
+        - DataPlaneJitterWindow (str(k_10485760 | k_1310720 | k_167772160 | k_20971520 | k_2621440 | k_335544320 | k_41943040 | k_5242880 | k_671088640 | k_83886080)): 
+        - Duration (number): 
+        - EnableBFD (bool): 
+        - EnableTolerance (bool): 
+        - FixedFrameSize (number): 
+        - ForceContinuosTraffic (bool): 
+        - FrameSizeMode (str(fixed)): 
+        - Framesize (str): 
+        - HoldDownTimer (number): 
+        - IpRatioMode (str(custom | fixed | increment | random)): 
+        - Ipv4rate (number): 
+        - Ipv6rate (number): 
+        - LoadRateValue (number): 
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
+        - NetworkGroupRoutesType (str(ipv4 | ipv4/ipv6 | ipv6)): 
+        - NetworkGroupSizeListIpv4 (list(str)): 
+        - NetworkGroupSizeListIpv6 (list(str)): 
+        - NetworkGroupSizeModeIpv4 (str(custom)): 
+        - NetworkGroupSizeModeIpv6 (str(custom)): 
+        - NumberOfIterations (number): 
+        - Numtrials (number): 
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportConvergenceUnit (str(ms | s | us)): 
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
+        - RoutesDistribution (str(distributedAcrossPorts | equalCostOnEachPort)): 
+        - TestTrafficType (str): 
+        - Threshold (number): 
+        - Tolerance (number): 
+        - TrafficType (str(burstyLoading | constantLoading)): 
+        - WaitAfterThresholdReached (number): 
+        - WaitBeforeAdvertise (number): 
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

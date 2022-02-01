@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Length(Base):
@@ -61,10 +63,10 @@ class Length(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.restriction_e362d0ce9d693ee94a071e4f973da1d3 import Restriction
-        if self._properties.get('Restriction', None) is not None:
-            return self._properties.get('Restriction')
-        else:
-            return Restriction(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Restriction', None) is not None:
+                return self._properties.get('Restriction')
+        return Restriction(self)
 
     @property
     def Description(self):
@@ -197,6 +199,52 @@ class Length(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Description=None, Encoding=None, IsEditable=None, IsRequired=None, Name=None, Size=None, SizeType=None):
+        # type: (str, str, bool, bool, str, int, str) -> Length
+        """Finds and retrieves length resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve length resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all length resources from the server.
+
+        Args
+        ----
+        - Description (str): Description of the tlv
+        - Encoding (str(bool | decimal | fcid | float | hex | ipv4 | ipv6 | mac | string | varLenHex)): Encoding of the tlv value, any change will result in the value being reset
+        - IsEditable (bool): Indicates whether this is editable or not
+        - IsRequired (bool): Flag indicating whether this is required or not
+        - Name (str): Name of the tlv
+        - Size (number): Size of the tlv value in bits/bytes based on sizeType, any change will result in the value being reset
+        - SizeType (str(bit | byte)): Size type of the tlv value, any change will result in the value being reset
+
+        Returns
+        -------
+        - self: This instance with matching length resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of length data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the length resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Value=None):
         """Base class infrastructure that gets a list of length device ids encapsulated by this object.

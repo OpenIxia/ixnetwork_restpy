@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AncpPvcRange(Base):
@@ -238,6 +240,57 @@ class AncpPvcRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Enabled=None, IncrementMode=None, Name=None, ObjectId=None, VciFirstId=None, VciIncrement=None, VciIncrementStep=None, VciUniqueCount=None, VpiFirstId=None, VpiIncrement=None, VpiIncrementStep=None, VpiUniqueCount=None):
+        # type: (bool, int, str, str, int, int, int, int, int, int, int, int) -> AncpPvcRange
+        """Finds and retrieves ancpPvcRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpPvcRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ancpPvcRange resources from the server.
+
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IncrementMode (number): May take the following values: 0 (VCI first), 1 (VPI first), 2 (Both)
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - VciFirstId (number): First ATM VCI value to use
+        - VciIncrement (number): Step size for VCI increment
+        - VciIncrementStep (number): Increment VCI every 'vciIncrementStep' addresses
+        - VciUniqueCount (number): Number of VCIs
+        - VpiFirstId (number): First ATM VPI value to use.
+        - VpiIncrement (number): Step size for VPI increment
+        - VpiIncrementStep (number): Increment VPI every 'vpiIncrementStep' addresses
+        - VpiUniqueCount (number): Number of VPIs
+
+        Returns
+        -------
+        - self: This instance with matching ancpPvcRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ancpPvcRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ancpPvcRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

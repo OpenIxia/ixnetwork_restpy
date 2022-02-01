@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Flapping(Base):
@@ -163,3 +165,49 @@ class Flapping(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Delay=None, DownTime=None, EnablePartialFlap=None, Enabled=None, RoutesToFlapFrom=None, RoutesToFlapTo=None, UpTime=None):
+        # type: (int, int, bool, bool, int, int, int) -> Flapping
+        """Finds and retrieves flapping resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flapping resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all flapping resources from the server.
+
+        Args
+        ----
+        - Delay (number): The setting for a timer that must elapse before a route range is advertised. It allows the user to specify a pause time between the sending of route ranges.
+        - DownTime (number): During flapping, the amount of time during which the routes in the route range are withdrawn/down.
+        - EnablePartialFlap (bool): Enables partial flapping, based on the Flap From and To Route Index settings.
+        - Enabled (bool): If true, enables route flapping.
+        - RoutesToFlapFrom (number): The index of the first generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
+        - RoutesToFlapTo (number): The index of the last generated route to be flapped (starting at 0). (Flap and Partial Flap must be enabled.)
+        - UpTime (number): During flapping, the amount of time during which the routes in the route range are up.
+
+        Returns
+        -------
+        - self: This instance with matching flapping resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of flapping data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the flapping resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

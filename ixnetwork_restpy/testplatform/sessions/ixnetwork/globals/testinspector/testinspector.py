@@ -19,13 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestInspector(Base):
-    """
+    """DEPRECATED 
     The TestInspector class encapsulates a required testInspector resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -43,7 +45,7 @@ class TestInspector(Base):
 
     @property
     def Statistic(self):
-        """
+        """DEPRECATED 
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic.Statistic): An instance of the Statistic class
@@ -53,10 +55,10 @@ class TestInspector(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.testinspector.statistic.statistic import Statistic
-        if self._properties.get('Statistic', None) is not None:
-            return self._properties.get('Statistic')
-        else:
-            return Statistic(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Statistic', None) is not None:
+                return self._properties.get('Statistic')
+        return Statistic(self)
 
     @property
     def EnableTestInspector(self):
@@ -100,3 +102,44 @@ class TestInspector(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableTestInspector=None, PollingInterval=None):
+        # type: (bool, int) -> TestInspector
+        """Finds and retrieves testInspector resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testInspector resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testInspector resources from the server.
+
+        Args
+        ----
+        - EnableTestInspector (bool): Enable/Disable Test Inspector
+        - PollingInterval (number): Polling Interval
+
+        Returns
+        -------
+        - self: This instance with matching testInspector resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testInspector data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testInspector resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

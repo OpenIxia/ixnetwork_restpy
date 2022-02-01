@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RsvpP2mpIngressSubLsps(Base):
@@ -69,10 +71,10 @@ class RsvpP2mpIngressSubLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvperosubobjectslist_c0ebecb067ebf96898ae4f90af81d688 import RsvpEroSubObjectsList
-        if self._properties.get('RsvpEroSubObjectsList', None) is not None:
-            return self._properties.get('RsvpEroSubObjectsList')
-        else:
-            return RsvpEroSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpEroSubObjectsList', None) is not None:
+                return self._properties.get('RsvpEroSubObjectsList')
+        return RsvpEroSubObjectsList(self)
 
     @property
     def Active(self):
@@ -288,6 +290,54 @@ class RsvpP2mpIngressSubLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None, NumberOfEroSubObjects=None, P2mpIdAsIp=None, P2mpIdAsNum=None, SessionInformation=None, State=None):
+        # type: (int, str, List[str], str, int, List[str], List[str], List[str], List[str]) -> RsvpP2mpIngressSubLsps
+        """Finds and retrieves rsvpP2mpIngressSubLsps resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpP2mpIngressSubLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvpP2mpIngressSubLsps resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalIp (list(str)): Local IP
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfEroSubObjects (number): Number Of ERO Sub-Objects
+        - P2mpIdAsIp (list(str)): P2MP ID As IP
+        - P2mpIdAsNum (list(str)): P2MP ID displayed in Integer format
+        - SessionInformation (list(str[lastErrLSPAdmissionControlFailure | lastErrLSPBadAdSpecValue | lastErrLSPBadExplicitRoute | lastErrLSPBadFlowspecValue | lastErrLSPBadInitialSubobject | lastErrLSPBadLooseNode | lastErrLSPBadStrictNode | lastErrLSPBadTSpecValue | lastErrLSPDelayBoundNotMet | lastErrLSPMPLSAllocationFailure | lastErrLSPMTUTooBig | lastErrLSPNonRSVPRouter | lastErrLSPNoRouteAvailable | lastErrLSPPathErr | lastErrLSPPathTearSent | lastErrLSPRequestedBandwidthUnavailable | lastErrLSPReservationTearReceived | lastErrLSPReservationTearSent | lastErrLSPReservationTimeout | lastErrLSPRoutingLoops | lastErrLSPRoutingProblem | lastErrLSPRSVPSystemError | lastErrLSPServiceConflict | lastErrLSPServiceUnsupported | lastErrLSPTrafficControlError | lastErrLSPTrafficControlSystemError | lastErrLSPTrafficOrganizationError | lastErrLSPTrafficServiceError | lastErrLSPUnknownObjectClass | lastErrLSPUnknownObjectCType | lastErrLSPUnsupportedL3PID | lSPAdmissionControlFailure | lSPBadAdSpecValue | lSPBadExplicitRoute | lSPBadFlowspecValue | lSPBadInitialSubobject | lSPBadLooseNode | lSPBadStrictNode | lSPBadTSpecValue | lSPDelayBoundNotMet | lSPMPLSAllocationFailure | lSPMTUTooBig | lSPNonRSVPRouter | lSPNoRouteAvailable | lSPPathErr | lSPPathTearSent | lSPRequestedBandwidthUnavailable | lSPReservationNotReceived | lSPReservationTearReceived | lSPReservationTearSent | lSPReservationTimeout | lSPRoutingLoops | lSPRoutingProblem | lSPRSVPSystemError | lSPServiceConflict | lSPServiceUnsupported | lSPTrafficControlError | lSPTrafficControlSystemError | lSPTrafficOrganizationError | lSPTrafficServiceError | lSPUnknownObjectClass | lSPUnknownObjectCType | lSPUnsupportedL3PID | mbbCompleted | mbbTriggered | none])): Logs additional information about the RSVP session state
+        - State (list(str[down | none | notStarted | up])): State
+
+        Returns
+        -------
+        - self: This instance with matching rsvpP2mpIngressSubLsps resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of rsvpP2mpIngressSubLsps data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the rsvpP2mpIngressSubLsps resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ExcludeEroOrSero(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

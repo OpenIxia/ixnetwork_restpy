@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Router(Base):
@@ -71,10 +73,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.advfecrange_f00588596498857b75d5d898ca2e9a6f import AdvFecRange
-        if self._properties.get('AdvFecRange', None) is not None:
-            return self._properties.get('AdvFecRange')
-        else:
-            return AdvFecRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AdvFecRange', None) is not None:
+                return self._properties.get('AdvFecRange')
+        return AdvFecRange(self)
 
     @property
     def IncludeIpFecRange(self):
@@ -88,10 +90,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.includeipfecrange_373b75680a1f0ec85775f1ba1a1428c8 import IncludeIpFecRange
-        if self._properties.get('IncludeIpFecRange', None) is not None:
-            return self._properties.get('IncludeIpFecRange')
-        else:
-            return IncludeIpFecRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IncludeIpFecRange', None) is not None:
+                return self._properties.get('IncludeIpFecRange')
+        return IncludeIpFecRange(self)
 
     @property
     def Interface(self):
@@ -105,10 +107,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_fe0b08fd21beb5f4d59f82e4c9b072a9 import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def L2Interface(self):
@@ -122,10 +124,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2interface_3d1eb8aa91ce49d1264d0d3e9350426f import L2Interface
-        if self._properties.get('L2Interface', None) is not None:
-            return self._properties.get('L2Interface')
-        else:
-            return L2Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('L2Interface', None) is not None:
+                return self._properties.get('L2Interface')
+        return L2Interface(self)
 
     @property
     def LearnedBgpAdVplsLabels(self):
@@ -139,10 +141,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedbgpadvplslabels_d636c7428c14c72b574463ac879c4b82 import LearnedBgpAdVplsLabels
-        if self._properties.get('LearnedBgpAdVplsLabels', None) is not None:
-            return self._properties.get('LearnedBgpAdVplsLabels')
-        else:
-            return LearnedBgpAdVplsLabels(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedBgpAdVplsLabels', None) is not None:
+                return self._properties.get('LearnedBgpAdVplsLabels')
+        return LearnedBgpAdVplsLabels(self)
 
     @property
     def MulticastLeafRange(self):
@@ -156,10 +158,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastleafrange_61982e4d7933d5db8e1c6734f344bc95 import MulticastLeafRange
-        if self._properties.get('MulticastLeafRange', None) is not None:
-            return self._properties.get('MulticastLeafRange')
-        else:
-            return MulticastLeafRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MulticastLeafRange', None) is not None:
+                return self._properties.get('MulticastLeafRange')
+        return MulticastLeafRange(self)
 
     @property
     def MulticastRootRange(self):
@@ -173,10 +175,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastrootrange_2ba3e3319b567aec9e33e2c02f700b75 import MulticastRootRange
-        if self._properties.get('MulticastRootRange', None) is not None:
-            return self._properties.get('MulticastRootRange')
-        else:
-            return MulticastRootRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MulticastRootRange', None) is not None:
+                return self._properties.get('MulticastRootRange')
+        return MulticastRootRange(self)
 
     @property
     def ReqFecRange(self):
@@ -190,10 +192,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.reqfecrange_c17e1dc9cea7640db4f5e99196ecfcff import ReqFecRange
-        if self._properties.get('ReqFecRange', None) is not None:
-            return self._properties.get('ReqFecRange')
-        else:
-            return ReqFecRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ReqFecRange', None) is not None:
+                return self._properties.get('ReqFecRange')
+        return ReqFecRange(self)
 
     @property
     def EnableBfdMplsLearnedLsp(self):

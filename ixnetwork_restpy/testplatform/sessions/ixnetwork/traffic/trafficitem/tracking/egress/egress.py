@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Egress(Base):
@@ -58,10 +60,10 @@ class Egress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.egress.fieldoffset.fieldoffset import FieldOffset
-        if self._properties.get('FieldOffset', None) is not None:
-            return self._properties.get('FieldOffset')
-        else:
-            return FieldOffset(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FieldOffset', None) is not None:
+                return self._properties.get('FieldOffset')
+        return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):
@@ -170,3 +172,49 @@ class Egress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AvailableEncapsulations=None, AvailableOffsets=None, CustomOffsetBits=None, CustomWidthBits=None, Enabled=None, Encapsulation=None, Offset=None):
+        # type: (List[str], List[str], int, int, bool, str, str) -> Egress
+        """Finds and retrieves egress resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egress resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egress resources from the server.
+
+        Args
+        ----
+        - AvailableEncapsulations (list(str)): Specifies the available Encapsulations for Egress Tracking.
+        - AvailableOffsets (list(str)): Specifies the available Offsets for Egress Tracking.
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
+        - Enabled (bool): If true, egress tracking is enabled.
+        - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
+        - Offset (str): Specifies the Offset for Egress Tracking.
+
+        Returns
+        -------
+        - self: This instance with matching egress resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egress data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egress resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

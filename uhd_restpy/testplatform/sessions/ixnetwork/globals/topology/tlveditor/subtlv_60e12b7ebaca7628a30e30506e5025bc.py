@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SubTlv(Base):
@@ -58,10 +60,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.length_828f03942c0c7f1066634a834f100b60 import Length
-        if self._properties.get('Length', None) is not None:
-            return self._properties.get('Length')
-        else:
-            return Length(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Length', None) is not None:
+                return self._properties.get('Length')
+        return Length(self)._select()
 
     @property
     def Type(self):
@@ -75,10 +77,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.type_fb01e405e39d16957d5b5665edb1f0b0 import Type
-        if self._properties.get('Type', None) is not None:
-            return self._properties.get('Type')
-        else:
-            return Type(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Type', None) is not None:
+                return self._properties.get('Type')
+        return Type(self)._select()
 
     @property
     def Value(self):
@@ -92,10 +94,10 @@ class SubTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.value_407e2b8dcab743cb358f96d452da3721 import Value
-        if self._properties.get('Value', None) is not None:
-            return self._properties.get('Value')
-        else:
-            return Value(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Value', None) is not None:
+                return self._properties.get('Value')
+        return Value(self)._select()
 
     @property
     def Description(self):

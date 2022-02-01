@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TransmissionControl(Base):
@@ -48,8 +50,8 @@ class TransmissionControl(Base):
         'Type': 'type',
     }
     _SDM_ENUM_MAP = {
-        'interBurstGapUnits': ['bytes', 'nanoseconds'],
-        'startDelayUnits': ['bytes', 'nanoseconds'],
+        'interBurstGapUnits': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
+        'startDelayUnits': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
         'type': ['auto', 'burstFixedDuration', 'continuous', 'custom', 'fixedDuration', 'fixedFrameCount', 'fixedIterationCount'],
     }
 
@@ -146,7 +148,7 @@ class TransmissionControl(Base):
         """
         Returns
         -------
-        - str(bytes | nanoseconds): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterBurstGapUnits'])
     @InterBurstGapUnits.setter
@@ -230,7 +232,7 @@ class TransmissionControl(Base):
         """
         Returns
         -------
-        - str(bytes | nanoseconds): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
         """
         return self._get_attribute(self._SDM_ATT_MAP['StartDelayUnits'])
     @StartDelayUnits.setter
@@ -264,13 +266,13 @@ class TransmissionControl(Base):
         - EnableInterStreamGap (bool): Enables the inter-stream gap of a frame.
         - FrameCount (number): Specifies Fixed Packet Count when Transmission Mode is Interleaved.
         - InterBurstGap (number): Specifies the gap between any two consecutive burst.
-        - InterBurstGapUnits (str(bytes | nanoseconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
+        - InterBurstGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         - InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
         - IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
         - MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
         - RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
         - StartDelay (number): Specifies the delay in Start when Transmission Mode is Interleaved.
-        - StartDelayUnits (str(bytes | nanoseconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
+        - StartDelayUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
         - Type (str(auto | burstFixedDuration | continuous | custom | fixedDuration | fixedFrameCount | fixedIterationCount)): The Transmission Control types.
 
         Raises
@@ -278,3 +280,56 @@ class TransmissionControl(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BurstPacketCount=None, Duration=None, EnableInterBurstGap=None, EnableInterStreamGap=None, FrameCount=None, InterBurstGap=None, InterBurstGapUnits=None, InterStreamGap=None, IterationCount=None, MinGapBytes=None, RepeatBurst=None, StartDelay=None, StartDelayUnits=None, Type=None):
+        # type: (int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
+        """Finds and retrieves transmissionControl resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve transmissionControl resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all transmissionControl resources from the server.
+
+        Args
+        ----
+        - BurstPacketCount (number): Specifies the number of packets per burst.
+        - Duration (number): Indicates the time duration.
+        - EnableInterBurstGap (bool): Enables the inter-burst gap of a frame.
+        - EnableInterStreamGap (bool): Enables the inter-stream gap of a frame.
+        - FrameCount (number): Specifies Fixed Packet Count when Transmission Mode is Interleaved.
+        - InterBurstGap (number): Specifies the gap between any two consecutive burst.
+        - InterBurstGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
+        - InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
+        - IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
+        - MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
+        - RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
+        - StartDelay (number): Specifies the delay in Start when Transmission Mode is Interleaved.
+        - StartDelayUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies the unit for Delay in Start when Transmission Mode is Interleaved.
+        - Type (str(auto | burstFixedDuration | continuous | custom | fixedDuration | fixedFrameCount | fixedIterationCount)): The Transmission Control types.
+
+        Returns
+        -------
+        - self: This instance with matching transmissionControl resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of transmissionControl data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the transmissionControl resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

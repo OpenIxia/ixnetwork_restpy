@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EthernetEndpoint(Base):
@@ -55,10 +57,10 @@ class EthernetEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dot1x_a0eb680f1419e7d7914095cc230eb3d2 import Dot1x
-        if self._properties.get('Dot1x', None) is not None:
-            return self._properties.get('Dot1x')
-        else:
-            return Dot1x(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dot1x', None) is not None:
+                return self._properties.get('Dot1x')
+        return Dot1x(self)
 
     @property
     def Esmc(self):
@@ -72,10 +74,10 @@ class EthernetEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.esmc_fc0fc61d7125690618a8802cad58c919 import Esmc
-        if self._properties.get('Esmc', None) is not None:
-            return self._properties.get('Esmc')
-        else:
-            return Esmc(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Esmc', None) is not None:
+                return self._properties.get('Esmc')
+        return Esmc(self)
 
     @property
     def Ptp(self):
@@ -89,10 +91,10 @@ class EthernetEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ptp_2576d7bea351074f3285f32fdc11eac6 import Ptp
-        if self._properties.get('Ptp', None) is not None:
-            return self._properties.get('Ptp')
-        else:
-            return Ptp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ptp', None) is not None:
+                return self._properties.get('Ptp')
+        return Ptp(self)
 
     @property
     def Range(self):
@@ -106,10 +108,10 @@ class EthernetEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_092d943b2a13c1e5470555b58a77a0f1 import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def VicClient(self):
@@ -123,10 +125,10 @@ class EthernetEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vicclient_1ddec8114010f720bea6df8b3eedafd8 import VicClient
-        if self._properties.get('VicClient', None) is not None:
-            return self._properties.get('VicClient')
-        else:
-            return VicClient(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VicClient', None) is not None:
+                return self._properties.get('VicClient')
+        return VicClient(self)
 
     @property
     def Name(self):

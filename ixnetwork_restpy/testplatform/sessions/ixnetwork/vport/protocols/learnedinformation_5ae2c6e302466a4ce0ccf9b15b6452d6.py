@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LearnedInformation(Base):
@@ -203,10 +205,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.asyncconfstatlearnedinformation_8263676c7436dc68c8c6376e412a59a0 import AsyncConfStatLearnedInformation
-        if self._properties.get('AsyncConfStatLearnedInformation', None) is not None:
-            return self._properties.get('AsyncConfStatLearnedInformation')
-        else:
-            return AsyncConfStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AsyncConfStatLearnedInformation', None) is not None:
+                return self._properties.get('AsyncConfStatLearnedInformation')
+        return AsyncConfStatLearnedInformation(self)
 
     @property
     def Controller131TriggerAttributes(self):
@@ -220,10 +222,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controller131triggerattributes_6cab58785fde2d113c2ae0cad7498273 import Controller131TriggerAttributes
-        if self._properties.get('Controller131TriggerAttributes', None) is not None:
-            return self._properties.get('Controller131TriggerAttributes')
-        else:
-            return Controller131TriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Controller131TriggerAttributes', None) is not None:
+                return self._properties.get('Controller131TriggerAttributes')
+        return Controller131TriggerAttributes(self)._select()
 
     @property
     def DescriptionStatLearnedInformation(self):
@@ -237,10 +239,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.descriptionstatlearnedinformation_a359e482aaae60d1717b225a494fa484 import DescriptionStatLearnedInformation
-        if self._properties.get('DescriptionStatLearnedInformation', None) is not None:
-            return self._properties.get('DescriptionStatLearnedInformation')
-        else:
-            return DescriptionStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DescriptionStatLearnedInformation', None) is not None:
+                return self._properties.get('DescriptionStatLearnedInformation')
+        return DescriptionStatLearnedInformation(self)
 
     @property
     def FlowAggregatedStatLearnedInformation(self):
@@ -254,10 +256,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowaggregatedstatlearnedinformation_46c4230f1b3c053b903df6ed8cf276f3 import FlowAggregatedStatLearnedInformation
-        if self._properties.get('FlowAggregatedStatLearnedInformation', None) is not None:
-            return self._properties.get('FlowAggregatedStatLearnedInformation')
-        else:
-            return FlowAggregatedStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('FlowAggregatedStatLearnedInformation', None) is not None:
+                return self._properties.get('FlowAggregatedStatLearnedInformation')
+        return FlowAggregatedStatLearnedInformation(self)
 
     @property
     def FlowAggregatedStatMatchCriteria131TriggerAttributes(self):
@@ -271,10 +273,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowaggregatedstatmatchcriteria131triggerattributes_315a5f3f92d4de91dc57b878df643d23 import FlowAggregatedStatMatchCriteria131TriggerAttributes
-        if self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes', None) is not None:
-            return self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes')
-        else:
-            return FlowAggregatedStatMatchCriteria131TriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes', None) is not None:
+                return self._properties.get('FlowAggregatedStatMatchCriteria131TriggerAttributes')
+        return FlowAggregatedStatMatchCriteria131TriggerAttributes(self)._select()
 
     @property
     def FlowStatLearnedInformation(self):
@@ -288,10 +290,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowstatlearnedinformation_30004ff541577c4d728de71d4d15d766 import FlowStatLearnedInformation
-        if self._properties.get('FlowStatLearnedInformation', None) is not None:
-            return self._properties.get('FlowStatLearnedInformation')
-        else:
-            return FlowStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('FlowStatLearnedInformation', None) is not None:
+                return self._properties.get('FlowStatLearnedInformation')
+        return FlowStatLearnedInformation(self)
 
     @property
     def FlowStatMatchCriteria131TriggerAttributes(self):
@@ -305,10 +307,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowstatmatchcriteria131triggerattributes_332604ca4d52c2eba1dfeb1164ec44dd import FlowStatMatchCriteria131TriggerAttributes
-        if self._properties.get('FlowStatMatchCriteria131TriggerAttributes', None) is not None:
-            return self._properties.get('FlowStatMatchCriteria131TriggerAttributes')
-        else:
-            return FlowStatMatchCriteria131TriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FlowStatMatchCriteria131TriggerAttributes', None) is not None:
+                return self._properties.get('FlowStatMatchCriteria131TriggerAttributes')
+        return FlowStatMatchCriteria131TriggerAttributes(self)._select()
 
     @property
     def GroupDescriptionStatLearnedInformation(self):
@@ -322,10 +324,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupdescriptionstatlearnedinformation_8b9e5ac842eadde534391442ad6b9af1 import GroupDescriptionStatLearnedInformation
-        if self._properties.get('GroupDescriptionStatLearnedInformation', None) is not None:
-            return self._properties.get('GroupDescriptionStatLearnedInformation')
-        else:
-            return GroupDescriptionStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('GroupDescriptionStatLearnedInformation', None) is not None:
+                return self._properties.get('GroupDescriptionStatLearnedInformation')
+        return GroupDescriptionStatLearnedInformation(self)
 
     @property
     def GroupFeatureStatLearnedInformation(self):
@@ -339,10 +341,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupfeaturestatlearnedinformation_a36a2e649d69b292cdb4a21ca980e647 import GroupFeatureStatLearnedInformation
-        if self._properties.get('GroupFeatureStatLearnedInformation', None) is not None:
-            return self._properties.get('GroupFeatureStatLearnedInformation')
-        else:
-            return GroupFeatureStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('GroupFeatureStatLearnedInformation', None) is not None:
+                return self._properties.get('GroupFeatureStatLearnedInformation')
+        return GroupFeatureStatLearnedInformation(self)
 
     @property
     def GroupStatLearnedInformation(self):
@@ -356,10 +358,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.groupstatlearnedinformation_100495e05f6e7b1b1650ad63b2ee4161 import GroupStatLearnedInformation
-        if self._properties.get('GroupStatLearnedInformation', None) is not None:
-            return self._properties.get('GroupStatLearnedInformation')
-        else:
-            return GroupStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('GroupStatLearnedInformation', None) is not None:
+                return self._properties.get('GroupStatLearnedInformation')
+        return GroupStatLearnedInformation(self)
 
     @property
     def MeterConfigStatsLearnedInformation(self):
@@ -373,10 +375,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterconfigstatslearnedinformation_ee133b5ab250ce978ccd6e7000f18e28 import MeterConfigStatsLearnedInformation
-        if self._properties.get('MeterConfigStatsLearnedInformation', None) is not None:
-            return self._properties.get('MeterConfigStatsLearnedInformation')
-        else:
-            return MeterConfigStatsLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MeterConfigStatsLearnedInformation', None) is not None:
+                return self._properties.get('MeterConfigStatsLearnedInformation')
+        return MeterConfigStatsLearnedInformation(self)
 
     @property
     def MeterFeatureStatsLearnedInformation(self):
@@ -390,10 +392,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterfeaturestatslearnedinformation_ab32f8b3a8c2aa48d53fedc3e2df59dd import MeterFeatureStatsLearnedInformation
-        if self._properties.get('MeterFeatureStatsLearnedInformation', None) is not None:
-            return self._properties.get('MeterFeatureStatsLearnedInformation')
-        else:
-            return MeterFeatureStatsLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MeterFeatureStatsLearnedInformation', None) is not None:
+                return self._properties.get('MeterFeatureStatsLearnedInformation')
+        return MeterFeatureStatsLearnedInformation(self)
 
     @property
     def MeterStatsLearnedInformation(self):
@@ -407,10 +409,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.meterstatslearnedinformation_bd5899f9e605047a4933dec0fdf73366 import MeterStatsLearnedInformation
-        if self._properties.get('MeterStatsLearnedInformation', None) is not None:
-            return self._properties.get('MeterStatsLearnedInformation')
-        else:
-            return MeterStatsLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MeterStatsLearnedInformation', None) is not None:
+                return self._properties.get('MeterStatsLearnedInformation')
+        return MeterStatsLearnedInformation(self)
 
     @property
     def OfChannelLearnedInformation(self):
@@ -424,10 +426,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannellearnedinformation_2c0d9c826a237f044b4b6368ca250839 import OfChannelLearnedInformation
-        if self._properties.get('OfChannelLearnedInformation', None) is not None:
-            return self._properties.get('OfChannelLearnedInformation')
-        else:
-            return OfChannelLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfChannelLearnedInformation', None) is not None:
+                return self._properties.get('OfChannelLearnedInformation')
+        return OfChannelLearnedInformation(self)
 
     @property
     def PacketOutTriggerActions(self):
@@ -441,10 +443,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetouttriggeractions_ec5821e9272e2ea2c05e3910edf98056 import PacketOutTriggerActions
-        if self._properties.get('PacketOutTriggerActions', None) is not None:
-            return self._properties.get('PacketOutTriggerActions')
-        else:
-            return PacketOutTriggerActions(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PacketOutTriggerActions', None) is not None:
+                return self._properties.get('PacketOutTriggerActions')
+        return PacketOutTriggerActions(self)
 
     @property
     def PortFeaturesLearnedInformation(self):
@@ -458,10 +460,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portfeatureslearnedinformation_d0dbd87b574c9a18016cdef98678e453 import PortFeaturesLearnedInformation
-        if self._properties.get('PortFeaturesLearnedInformation', None) is not None:
-            return self._properties.get('PortFeaturesLearnedInformation')
-        else:
-            return PortFeaturesLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PortFeaturesLearnedInformation', None) is not None:
+                return self._properties.get('PortFeaturesLearnedInformation')
+        return PortFeaturesLearnedInformation(self)
 
     @property
     def PortModificationTriggerAttributes(self):
@@ -475,10 +477,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portmodificationtriggerattributes_5bc5835d31569d2613fda0b3721ad681 import PortModificationTriggerAttributes
-        if self._properties.get('PortModificationTriggerAttributes', None) is not None:
-            return self._properties.get('PortModificationTriggerAttributes')
-        else:
-            return PortModificationTriggerAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PortModificationTriggerAttributes', None) is not None:
+                return self._properties.get('PortModificationTriggerAttributes')
+        return PortModificationTriggerAttributes(self)._select()
 
     @property
     def PortStatLearnedInformation(self):
@@ -492,10 +494,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.portstatlearnedinformation_31c26a5bcbe87f62ff543b7a7ffb3432 import PortStatLearnedInformation
-        if self._properties.get('PortStatLearnedInformation', None) is not None:
-            return self._properties.get('PortStatLearnedInformation')
-        else:
-            return PortStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PortStatLearnedInformation', None) is not None:
+                return self._properties.get('PortStatLearnedInformation')
+        return PortStatLearnedInformation(self)
 
     @property
     def QueueConfigLearnedInformation(self):
@@ -509,10 +511,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queueconfiglearnedinformation_10211d0e530099c486d9e89481f764c8 import QueueConfigLearnedInformation
-        if self._properties.get('QueueConfigLearnedInformation', None) is not None:
-            return self._properties.get('QueueConfigLearnedInformation')
-        else:
-            return QueueConfigLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('QueueConfigLearnedInformation', None) is not None:
+                return self._properties.get('QueueConfigLearnedInformation')
+        return QueueConfigLearnedInformation(self)
 
     @property
     def QueueStatLearnedInformation(self):
@@ -526,10 +528,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.queuestatlearnedinformation_7fd65340d3c1f24a9ea2dfe8160d524a import QueueStatLearnedInformation
-        if self._properties.get('QueueStatLearnedInformation', None) is not None:
-            return self._properties.get('QueueStatLearnedInformation')
-        else:
-            return QueueStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('QueueStatLearnedInformation', None) is not None:
+                return self._properties.get('QueueStatLearnedInformation')
+        return QueueStatLearnedInformation(self)
 
     @property
     def SwitchConfigLearnedInformation(self):
@@ -543,10 +545,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchconfiglearnedinformation_0ea07dc2417e7dcbb9cea0bd70f007ec import SwitchConfigLearnedInformation
-        if self._properties.get('SwitchConfigLearnedInformation', None) is not None:
-            return self._properties.get('SwitchConfigLearnedInformation')
-        else:
-            return SwitchConfigLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchConfigLearnedInformation', None) is not None:
+                return self._properties.get('SwitchConfigLearnedInformation')
+        return SwitchConfigLearnedInformation(self)
 
     @property
     def TableFeaturePropertiesTrigger(self):
@@ -560,10 +562,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablefeaturepropertiestrigger_159cbb76bc90f1cb0a06dd89e98757fa import TableFeaturePropertiesTrigger
-        if self._properties.get('TableFeaturePropertiesTrigger', None) is not None:
-            return self._properties.get('TableFeaturePropertiesTrigger')
-        else:
-            return TableFeaturePropertiesTrigger(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TableFeaturePropertiesTrigger', None) is not None:
+                return self._properties.get('TableFeaturePropertiesTrigger')
+        return TableFeaturePropertiesTrigger(self)
 
     @property
     def TableFeaturesLearnedInformation(self):
@@ -577,10 +579,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablefeatureslearnedinformation_25618c8be71a4cf85be5f34e995db75e import TableFeaturesLearnedInformation
-        if self._properties.get('TableFeaturesLearnedInformation', None) is not None:
-            return self._properties.get('TableFeaturesLearnedInformation')
-        else:
-            return TableFeaturesLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TableFeaturesLearnedInformation', None) is not None:
+                return self._properties.get('TableFeaturesLearnedInformation')
+        return TableFeaturesLearnedInformation(self)
 
     @property
     def TableStatLearnedInformation(self):
@@ -594,10 +596,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.tablestatlearnedinformation_80bff3610dd3cd2ada6c7aca20b53b76 import TableStatLearnedInformation
-        if self._properties.get('TableStatLearnedInformation', None) is not None:
-            return self._properties.get('TableStatLearnedInformation')
-        else:
-            return TableStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TableStatLearnedInformation', None) is not None:
+                return self._properties.get('TableStatLearnedInformation')
+        return TableStatLearnedInformation(self)
 
     @property
     def VendorStatLearnedInformation(self):
@@ -611,10 +613,10 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vendorstatlearnedinformation_80b9796ada805b38f41bbaf9e9ecb473 import VendorStatLearnedInformation
-        if self._properties.get('VendorStatLearnedInformation', None) is not None:
-            return self._properties.get('VendorStatLearnedInformation')
-        else:
-            return VendorStatLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VendorStatLearnedInformation', None) is not None:
+                return self._properties.get('VendorStatLearnedInformation')
+        return VendorStatLearnedInformation(self)
 
     @property
     def AsyncConfStatResponseTimeOut(self):
@@ -2673,6 +2675,186 @@ class LearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AsyncConfStatResponseTimeOut=None, DescriptionStatResponseTimeOut=None, EnableAsyncConfMasterFlowRemovedFlowDelete=None, EnableAsyncConfMasterFlowRemovedGroupDelete=None, EnableAsyncConfMasterFlowRemovedHardTimeOut=None, EnableAsyncConfMasterFlowRemovedIdleTimeOut=None, EnableAsyncConfMasterPacketInActionOutputToController=None, EnableAsyncConfMasterPacketInInvalidTtl=None, EnableAsyncConfMasterPacketInNoMatching=None, EnableAsyncConfMasterPortStatusAdd=None, EnableAsyncConfMasterPortStatusDelete=None, EnableAsyncConfMasterPortStatusModify=None, EnableAsyncConfSlaveFlowRemovedFlowDelete=None, EnableAsyncConfSlaveFlowRemovedGroupDelete=None, EnableAsyncConfSlaveFlowRemovedHardTimeOut=None, EnableAsyncConfSlaveFlowRemovedIdleTimeOut=None, EnableAsyncConfSlavePacketInActionOutputToController=None, EnableAsyncConfSlavePacketInInvalidTtl=None, EnableAsyncConfSlavePacketInNoMatching=None, EnableAsyncConfSlavePortStatusAdd=None, EnableAsyncConfSlavePortStatusDelete=None, EnableAsyncConfSlavePortStatusModify=None, EnableFlowAggregatedStatMatchCapability=None, EnableFlowStatMatchCapability=None, EnableGroupStatMatchCapability=None, EnablePortStatMatchCapability=None, EnableQueueStatMatchCapability=None, EnableSendTableFeaturesTrigger=None, EnableSendTriggerPortFeaturesLearnedInformation=None, EnableSendTriggeredAsyncConfStatLearnedInformation=None, EnableSendTriggeredBarrierRequestMessage=None, EnableSendTriggeredDescriptionStatLearnedInformation=None, EnableSendTriggeredFlowAggregatedStatLearnedInformation=None, EnableSendTriggeredFlowStatLearnedInformation=None, EnableSendTriggeredGroupDescriptionStatLearnedInformation=None, EnableSendTriggeredGroupFeatureStatLearnedInformation=None, EnableSendTriggeredGroupStatLearnedInformation=None, EnableSendTriggeredPacketOutMessage=None, EnableSendTriggeredPortModificationMessage=None, EnableSendTriggeredPortStatLearnedInformation=None, EnableSendTriggeredQueueConfigLearnedInformation=None, EnableSendTriggeredQueueStatLearnedInformation=None, EnableSendTriggeredRoleRequestMessage=None, EnableSendTriggeredSwitchConfigLearnedInformation=None, EnableSendTriggeredTableStatLearnedInformation=None, EnableSendTriggeredVendorStatLearnedInformation=None, EnableSetAsyncConfig=None, EnableSetSwitchConfig=None, EnableSetTableFeatures=None, EnableTableStatMatchCapability=None, EnableTriggeredVendorMessage=None, FlowAggregatedStatEthernetDestination=None, FlowAggregatedStatEthernetSource=None, FlowAggregatedStatEthernetType=None, FlowAggregatedStatInPort=None, FlowAggregatedStatIpDscp=None, FlowAggregatedStatIpProtocol=None, FlowAggregatedStatIpv4Destination=None, FlowAggregatedStatIpv4Source=None, FlowAggregatedStatOutPortInputMode=None, FlowAggregatedStatResponseTimeOut=None, FlowAggregatedStatTableIdInputMode=None, FlowAggregatedStatTableIdInputModeNumber=None, FlowAggregatedStatTransportDestination=None, FlowAggregatedStatTransportSource=None, FlowAggregatedStatVlanId=None, FlowAggregatedStatVlanPriority=None, FlowStatEthernetDestination=None, FlowStatEthernetSource=None, FlowStatEthernetType=None, FlowStatInPort=None, FlowStatIpDscp=None, FlowStatIpProtocol=None, FlowStatIpv4Destination=None, FlowStatIpv4Source=None, FlowStatOutPortInputMode=None, FlowStatResponseTimeOut=None, FlowStatTableIdInputMode=None, FlowStatTableIdInputModeNumber=None, FlowStatTransportDestination=None, FlowStatTransportSource=None, FlowStatVlanId=None, FlowStatVlanPriority=None, GroupDescriptionStatResponseTimeOut=None, GroupFeatureStatResponseTimeOut=None, GroupId=None, GroupIdType=None, GroupStatResponseTimeOut=None, IsAsyncConfStatLearnedInformationRefreshed=None, IsDescriptionStatLearnedInformationRefreshed=None, IsFlowAggregatedStatLearnedInformationRefreshed=None, IsFlowStatLearnedInformationRefreshed=None, IsGroupDescriptionStatLearnedInformationRefreshed=None, IsGroupFeatureStatLearnedInformationRefreshed=None, IsGroupStatLearnedInformationRefreshed=None, IsOfChannelLearnedInformationRefreshed=None, IsPortFeaturesLearnedInformationRefreshed=None, IsPortStatLearnedInformationRefreshed=None, IsQueueConfigLearnedInformationRefreshed=None, IsQueueStatLearnedInformationRefreshed=None, IsTableStatLearnedInformationRefreshed=None, IsVendorStatLearnedInformationRefreshed=None, PacketOutAuxiliaryId=None, PacketOutBufferId=None, PacketOutBufferIdInputMode=None, PacketOutData=None, PacketOutDataLength=None, PacketOutInPortInputMode=None, PacketOutInPortNumber=None, PortFeaturesResponseTimeOut=None, PortNumber=None, PortNumberInputMode=None, PortStatResponseTimeOut=None, QueueConfigPortNumber=None, QueueConfigResponseTimeOut=None, QueueId=None, QueueIdInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, QueueStatResponseTimeOut=None, RoleRequestGenerationId=None, RoleRequestType=None, SwitchConfigDropFragments=None, SwitchConfigMissSendLength=None, SwitchConfigReassembleFragments=None, SwitchConfigResponseTimeOut=None, TableFeatureConfig=None, TableFeatureMaxEntries=None, TableFeatureMetadataMatch=None, TableFeatureMetadataWrite=None, TableFeatureName=None, TableFeatureResponseTimeOut=None, TableFeatureTableId=None, TableStatResponseTimeOut=None, TriggeredVendorMessage=None, TriggeredVendorMessageId=None, TriggeredVendorMessageLength=None, VendorId=None, VendorMessage=None, VendorMessageLength=None, VendorStateResponseTimeOut=None):
+        # type: (int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str, str, str, int, str, int, str, str, str, str, str, str, str, str, str, str, str, str, str, int, str, int, str, str, str, str, int, int, int, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, str, int, str, int, int, int, str, int, int, int, int, str, int, str, int, str, str, bool, int, bool, int, int, int, str, str, str, int, int, int, str, int, int, int, str, int, int) -> LearnedInformation
+        """Finds and retrieves learnedInformation resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedInformation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedInformation resources from the server.
+
+        Args
+        ----
+        - AsyncConfStatResponseTimeOut (number): NOT DEFINED
+        - DescriptionStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no description statistics response is received.
+        - EnableAsyncConfMasterFlowRemovedFlowDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Flow Removed Flow Delete is received.
+        - EnableAsyncConfMasterFlowRemovedGroupDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Flow Removed Group Delete is received.
+        - EnableAsyncConfMasterFlowRemovedHardTimeOut (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Flow Removed Hard Time Out is received.
+        - EnableAsyncConfMasterFlowRemovedIdleTimeOut (bool): NOT DEFINED
+        - EnableAsyncConfMasterPacketInActionOutputToController (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Packet In Action Output To Controller is received.
+        - EnableAsyncConfMasterPacketInInvalidTtl (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Packet In Invalid Ttl is received.
+        - EnableAsyncConfMasterPacketInNoMatching (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Packet In No Matching is received.
+        - EnableAsyncConfMasterPortStatusAdd (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Port Status Add is received.
+        - EnableAsyncConfMasterPortStatusDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Master Port Status Delete is received.
+        - EnableAsyncConfMasterPortStatusModify (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Delete is received.
+        - EnableAsyncConfSlaveFlowRemovedFlowDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Flow Delete is received.
+        - EnableAsyncConfSlaveFlowRemovedGroupDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Group Delete is received.
+        - EnableAsyncConfSlaveFlowRemovedHardTimeOut (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Hard Time Out is received.
+        - EnableAsyncConfSlaveFlowRemovedIdleTimeOut (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Flow Removed Idle Time Out is received.
+        - EnableAsyncConfSlavePacketInActionOutputToController (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Packet In Action Output To Controller is received.
+        - EnableAsyncConfSlavePacketInInvalidTtl (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Packet In Invalid Ttl is received.
+        - EnableAsyncConfSlavePacketInNoMatching (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Packet In No Matching is received.
+        - EnableAsyncConfSlavePortStatusAdd (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Add is received.
+        - EnableAsyncConfSlavePortStatusDelete (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Delete is received.
+        - EnableAsyncConfSlavePortStatusModify (bool): If enabled,it denotes that the enable Asynchronous Configuration Slave Port Status Modify is received.
+        - EnableFlowAggregatedStatMatchCapability (bool): Checks to see if the switch has the capability to publish Flow Aggregated Statistics
+        - EnableFlowStatMatchCapability (bool): Checks to see if the switch has the capability to publish Flow Statistics
+        - EnableGroupStatMatchCapability (bool): If enabled,it denotes that the enable Group Statistics Match Capability is received.
+        - EnablePortStatMatchCapability (bool): Checks to see if the switch has the capability to publish Port Statistics
+        - EnableQueueStatMatchCapability (bool): If true, the switch has the capability to publish Queue Statistics.
+        - EnableSendTableFeaturesTrigger (bool): If enabled,it denotes that the enable Send Table Features Trigger is received.
+        - EnableSendTriggerPortFeaturesLearnedInformation (bool): Enables Trigger for port features learned information.
+        - EnableSendTriggeredAsyncConfStatLearnedInformation (bool): If enabled,it denotes that the Triggered Asynchronous Configuration Statistics Learned Information is received.
+        - EnableSendTriggeredBarrierRequestMessage (bool): If true, enables trigger for barrier request message
+        - EnableSendTriggeredDescriptionStatLearnedInformation (bool): If true, the description statistic trigger configuration parameters are available.
+        - EnableSendTriggeredFlowAggregatedStatLearnedInformation (bool): If true, the flow aggregated statistic trigger configuration parameters are available.
+        - EnableSendTriggeredFlowStatLearnedInformation (bool): If true, the flow statistic trigger configuration parameters are available.
+        - EnableSendTriggeredGroupDescriptionStatLearnedInformation (bool): If enabled,it denotes that the enable Send Triggered Group Description Statistics Learned Information is received.
+        - EnableSendTriggeredGroupFeatureStatLearnedInformation (bool): If enabled,it denotes that the enable Send Triggered Group Feature Statistics Learned Information is received.
+        - EnableSendTriggeredGroupStatLearnedInformation (bool): If enabled,it denotes that the Send Triggered Group Statistics Learned Information is received.
+        - EnableSendTriggeredPacketOutMessage (bool): If enabled,it denotes that the enable Send Triggered Packet Out Message is received.
+        - EnableSendTriggeredPortModificationMessage (bool): If enabled,it denotes that the enable Send Triggered Port Modification Message is received.
+        - EnableSendTriggeredPortStatLearnedInformation (bool): If true, the port statistic trigger configuration parameters are available.
+        - EnableSendTriggeredQueueConfigLearnedInformation (bool): If true, the queue config trigger configuration parameters are available.
+        - EnableSendTriggeredQueueStatLearnedInformation (bool): If true, the queue statistic trigger configuration parameters are available.
+        - EnableSendTriggeredRoleRequestMessage (bool): If enabled,it denotes that the Triggered Role Request Message is received.
+        - EnableSendTriggeredSwitchConfigLearnedInformation (bool): If enabled,it denotes that the enable Switch Configuration Learned Information is received.
+        - EnableSendTriggeredTableStatLearnedInformation (bool): If true, the table statistic trigger configuration parameters are available.
+        - EnableSendTriggeredVendorStatLearnedInformation (bool): If true, the vendor statistic trigger configuration parameters are available.
+        - EnableSetAsyncConfig (bool): If enabled,it denotes that the Set Asynchronous Configuration is received.
+        - EnableSetSwitchConfig (bool): If enabled,it denotes that the enable Set Switch Configuration is received.
+        - EnableSetTableFeatures (bool): NOT DEFINED
+        - EnableTableStatMatchCapability (bool): If true, the switch has the capability to publish Table Statistics.
+        - EnableTriggeredVendorMessage (bool): If true, the vendor message trigger configuration parameters are available.
+        - FlowAggregatedStatEthernetDestination (str): Signifies the ethernet destination address.
+        - FlowAggregatedStatEthernetSource (str): Signifies the ethernet source address.
+        - FlowAggregatedStatEthernetType (str): Signifies the type of Ethernet used.
+        - FlowAggregatedStatInPort (str): Signifies the input port used.
+        - FlowAggregatedStatIpDscp (str): Signifies the IP DSCP value for advertising.
+        - FlowAggregatedStatIpProtocol (str): Signifies the IP protocol used.
+        - FlowAggregatedStatIpv4Destination (str): Signifies the IPv4 destination address.
+        - FlowAggregatedStatIpv4Source (str): Signifies the IPv4 source address.
+        - FlowAggregatedStatOutPortInputMode (str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppNone | custom)): Signifies the identifier output mode of the aggregated flow statistics table.
+        - FlowAggregatedStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no flow aggregated statistics response is received.
+        - FlowAggregatedStatTableIdInputMode (str(allTables | emergency | custom)): Signifies the identifier input mode of the flow aggregated statistics table.
+        - FlowAggregatedStatTableIdInputModeNumber (number): Signifies the identifier input mode of the flow aggregated statistics table.
+        - FlowAggregatedStatTransportDestination (str): Signifies the Transport destination address.
+        - FlowAggregatedStatTransportSource (str): Signifies the Transport source address.
+        - FlowAggregatedStatVlanId (str): Signifies the unique VLAN Identifier.
+        - FlowAggregatedStatVlanPriority (str): Signifies the User Priority for this VLAN.
+        - FlowStatEthernetDestination (str): Specifies the Ethernet destination address.
+        - FlowStatEthernetSource (str): Specifies the Ethernet source address.
+        - FlowStatEthernetType (str): Specifies the type of Ethernet used.
+        - FlowStatInPort (str): Specifies the input port used.
+        - FlowStatIpDscp (str): Specifies the IP DSCP value for advertising.
+        - FlowStatIpProtocol (str): Specifies the IP protocol used.
+        - FlowStatIpv4Destination (str): Specifies the The IPv4 destination address.
+        - FlowStatIpv4Source (str): Specifies the The IPv4 source address.
+        - FlowStatOutPortInputMode (str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppNone | custom)): Specifies the output mode of the Table identifier.
+        - FlowStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no response is received.
+        - FlowStatTableIdInputMode (str(allTables | emergency | custom)): Specifies the input mode of the Table identifier.
+        - FlowStatTableIdInputModeNumber (number): Signifies the identifier input mode of the flow statistics table.
+        - FlowStatTransportDestination (str): Specifies the Transport destination address.
+        - FlowStatTransportSource (str): Specifies the Transport source address.
+        - FlowStatVlanId (str): Specifies the unique VLAN Identifier.
+        - FlowStatVlanPriority (str): Specifies the User Priority for this VLAN.
+        - GroupDescriptionStatResponseTimeOut (number): NOT DEFINED
+        - GroupFeatureStatResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+        - GroupId (number): The ID of the group used. .
+        - GroupIdType (str(ofpgAll | ofpgAny | manual)): NOT DEFINED
+        - GroupStatResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+        - IsAsyncConfStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Queue Statistics is received.
+        - IsDescriptionStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Description Statistics is received.
+        - IsFlowAggregatedStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Flow Aggregated Statistics is received.
+        - IsFlowStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Flow Statistics is received.
+        - IsGroupDescriptionStatLearnedInformationRefreshed (bool): NOT DEFINED
+        - IsGroupFeatureStatLearnedInformationRefreshed (bool): NOT DEFINED
+        - IsGroupStatLearnedInformationRefreshed (bool): NOT DEFINED
+        - IsOfChannelLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the OF Channels is received.
+        - IsPortFeaturesLearnedInformationRefreshed (bool): Checks if the learned information for the port feature Learned Information is refreshed.
+        - IsPortStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Port Statistics is received.
+        - IsQueueConfigLearnedInformationRefreshed (bool): If true, it denotes that the reply for the queue config request is received.
+        - IsQueueStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Queue Statistics is received.
+        - IsTableStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Table Statistics is received.
+        - IsVendorStatLearnedInformationRefreshed (bool): If true, it denotes that the Learned Info for the Vendor Statistics is received
+        - PacketOutAuxiliaryId (number): NOT DEFINED
+        - PacketOutBufferId (number): NOT DEFINED
+        - PacketOutBufferIdInputMode (str(opfNoBuffer | manual)): NOT DEFINED
+        - PacketOutData (str): NOT DEFINED
+        - PacketOutDataLength (number): NOT DEFINED
+        - PacketOutInPortInputMode (str(ofppController | ofppLocal | manual)): NOT DEFINED
+        - PacketOutInPortNumber (number): NOT DEFINED
+        - PortFeaturesResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+        - PortNumber (number): Specifies the port number.
+        - PortNumberInputMode (str(ofppNone | custom)): Specifies the input mode for the Port number.
+        - PortStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no port statistics response is received.
+        - QueueConfigPortNumber (number): Indicates the Port for which the queue config request is sought.
+        - QueueConfigResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no queue config response is received.
+        - QueueId (number): Indicates the queue ID for which queue statistics is being sought.
+        - QueueIdInputMode (str(ofpqAll | custom)): Request queue statistics for the queues belonging to the specified ports.
+        - QueueStatPortNumber (number): Specifies the port number for which queue statistics is sought.
+        - QueueStatPortNumberInputMode (str(ofppAll | custom)): Indicates the ports for which queue statistics is sought.
+        - QueueStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no queue statistics response is received.
+        - RoleRequestGenerationId (str): The generation ID number.
+        - RoleRequestType (str(equal | master | slave | noChange)): Select the type of role for the controller.
+        - SwitchConfigDropFragments (bool): NOT DEFINED
+        - SwitchConfigMissSendLength (number): NOT DEFINED
+        - SwitchConfigReassembleFragments (bool): NOT DEFINED
+        - SwitchConfigResponseTimeOut (number): NOT DEFINED
+        - TableFeatureConfig (number): The bitmap of OFPTC_* values.
+        - TableFeatureMaxEntries (number): The maximum number of entries supported.
+        - TableFeatureMetadataMatch (str): The bits of metadata which the table can match.
+        - TableFeatureMetadataWrite (str): MetaData Write The bits of metadata which the table can write.
+        - TableFeatureName (str): The table name.
+        - TableFeatureResponseTimeOut (number): The time in milliseconds after which the trigger request times out if no response is received.
+        - TableFeatureTableId (number): The table identifier.
+        - TableStatResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no table statistics response is received.
+        - TriggeredVendorMessage (str): Indicates the vendor data of the vendor message trigger.
+        - TriggeredVendorMessageId (number): Indicates the ID of the vendor for which vendor message is triggered.
+        - TriggeredVendorMessageLength (number): Indicates the length of vendor data of the vendor message trigger.
+        - VendorId (number): Specifies the unique Vendor identifier.
+        - VendorMessage (str): Speciifes the vendor message value.
+        - VendorMessageLength (number): Specifies the length of the message being transmitted.
+        - VendorStateResponseTimeOut (number): Indicates the duration in milliseconds after which the trigger request times out if no vendor statistics response is received.
+
+        Returns
+        -------
+        - self: This instance with matching learnedInformation resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of learnedInformation data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the learnedInformation resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ClearRecordsForTrigger(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[bool, None]

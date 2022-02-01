@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ipv4PrefixPools(Base):
@@ -63,10 +65,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_ffd9071ae88c6283e9f54ec948882405 import BgpIPRouteProperty
-        if self._properties.get('BgpIPRouteProperty', None) is not None:
-            return self._properties.get('BgpIPRouteProperty')
-        else:
-            return BgpIPRouteProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpIPRouteProperty', None) is not None:
+                return self._properties.get('BgpIPRouteProperty')
+        return BgpIPRouteProperty(self)
 
     @property
     def BgpL3VpnRouteProperty(self):
@@ -80,10 +82,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty_3b5e18e475abdb9b6f2bf410d51d886a import BgpL3VpnRouteProperty
-        if self._properties.get('BgpL3VpnRouteProperty', None) is not None:
-            return self._properties.get('BgpL3VpnRouteProperty')
-        else:
-            return BgpL3VpnRouteProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpL3VpnRouteProperty', None) is not None:
+                return self._properties.get('BgpL3VpnRouteProperty')
+        return BgpL3VpnRouteProperty(self)
 
     @property
     def BgpMVpnReceiverSitesIpv4(self):
@@ -97,10 +99,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv4_279b1194a64614140f00d08a876cb61b import BgpMVpnReceiverSitesIpv4
-        if self._properties.get('BgpMVpnReceiverSitesIpv4', None) is not None:
-            return self._properties.get('BgpMVpnReceiverSitesIpv4')
-        else:
-            return BgpMVpnReceiverSitesIpv4(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpMVpnReceiverSitesIpv4', None) is not None:
+                return self._properties.get('BgpMVpnReceiverSitesIpv4')
+        return BgpMVpnReceiverSitesIpv4(self)
 
     @property
     def BgpMVpnReceiverSitesIpv6(self):
@@ -114,10 +116,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnreceiversitesipv6_49c886be42acc1f3fc70df1023ccb0bd import BgpMVpnReceiverSitesIpv6
-        if self._properties.get('BgpMVpnReceiverSitesIpv6', None) is not None:
-            return self._properties.get('BgpMVpnReceiverSitesIpv6')
-        else:
-            return BgpMVpnReceiverSitesIpv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpMVpnReceiverSitesIpv6', None) is not None:
+                return self._properties.get('BgpMVpnReceiverSitesIpv6')
+        return BgpMVpnReceiverSitesIpv6(self)
 
     @property
     def BgpMVpnSenderSitesIpv4(self):
@@ -131,10 +133,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv4_4fb28863ad3595e11a7fecc4fbb6ec9d import BgpMVpnSenderSitesIpv4
-        if self._properties.get('BgpMVpnSenderSitesIpv4', None) is not None:
-            return self._properties.get('BgpMVpnSenderSitesIpv4')
-        else:
-            return BgpMVpnSenderSitesIpv4(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpMVpnSenderSitesIpv4', None) is not None:
+                return self._properties.get('BgpMVpnSenderSitesIpv4')
+        return BgpMVpnSenderSitesIpv4(self)
 
     @property
     def BgpMVpnSenderSitesIpv6(self):
@@ -148,10 +150,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitesipv6_3217a8473cfbb135fc2545010c09ffb6 import BgpMVpnSenderSitesIpv6
-        if self._properties.get('BgpMVpnSenderSitesIpv6', None) is not None:
-            return self._properties.get('BgpMVpnSenderSitesIpv6')
-        else:
-            return BgpMVpnSenderSitesIpv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpMVpnSenderSitesIpv6', None) is not None:
+                return self._properties.get('BgpMVpnSenderSitesIpv6')
+        return BgpMVpnSenderSitesIpv6(self)
 
     @property
     def BgpV6IPRouteProperty(self):
@@ -165,10 +167,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_3bc5aff598784532c6b5ff0b601d2985 import BgpV6IPRouteProperty
-        if self._properties.get('BgpV6IPRouteProperty', None) is not None:
-            return self._properties.get('BgpV6IPRouteProperty')
-        else:
-            return BgpV6IPRouteProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpV6IPRouteProperty', None) is not None:
+                return self._properties.get('BgpV6IPRouteProperty')
+        return BgpV6IPRouteProperty(self)
 
     @property
     def BgpV6L3VpnRouteProperty(self):
@@ -182,10 +184,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_15999adbfe8d61825751768ad5e0ddda import BgpV6L3VpnRouteProperty
-        if self._properties.get('BgpV6L3VpnRouteProperty', None) is not None:
-            return self._properties.get('BgpV6L3VpnRouteProperty')
-        else:
-            return BgpV6L3VpnRouteProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpV6L3VpnRouteProperty', None) is not None:
+                return self._properties.get('BgpV6L3VpnRouteProperty')
+        return BgpV6L3VpnRouteProperty(self)
 
     @property
     def CMacProperties(self):
@@ -199,10 +201,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        if self._properties.get('CMacProperties', None) is not None:
-            return self._properties.get('CMacProperties')
-        else:
-            return CMacProperties(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CMacProperties', None) is not None:
+                return self._properties.get('CMacProperties')
+        return CMacProperties(self)
 
     @property
     def Connector(self):
@@ -216,10 +218,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def ECpriReRadioChannelsOrUsers(self):
@@ -233,10 +235,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprireradiochannelsorusers_d1f6861b47ba784e3298939a333f12b9 import ECpriReRadioChannelsOrUsers
-        if self._properties.get('ECpriReRadioChannelsOrUsers', None) is not None:
-            return self._properties.get('ECpriReRadioChannelsOrUsers')
-        else:
-            return ECpriReRadioChannelsOrUsers(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriReRadioChannelsOrUsers', None) is not None:
+                return self._properties.get('ECpriReRadioChannelsOrUsers')
+        return ECpriReRadioChannelsOrUsers(self)
 
     @property
     def ECpriRecRadioChannelsOrUsers(self):
@@ -250,10 +252,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirecradiochannelsorusers_5814e34000b9bdc960142e49f7af3c67 import ECpriRecRadioChannelsOrUsers
-        if self._properties.get('ECpriRecRadioChannelsOrUsers', None) is not None:
-            return self._properties.get('ECpriRecRadioChannelsOrUsers')
-        else:
-            return ECpriRecRadioChannelsOrUsers(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriRecRadioChannelsOrUsers', None) is not None:
+                return self._properties.get('ECpriRecRadioChannelsOrUsers')
+        return ECpriRecRadioChannelsOrUsers(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -267,10 +269,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv4PrefixRange')
-        else:
-            return EvpnIPv4PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv4PrefixRange')
+        return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -284,10 +286,27 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv6PrefixRange')
-        else:
-            return EvpnIPv6PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv6PrefixRange')
+        return EvpnIPv6PrefixRange(self)
+
+    @property
+    def GRIBIIpv4Entry(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.gribiipv4entry_ed5330eae91aea3aecb945c3eda32ad4.GRIBIIpv4Entry): An instance of the GRIBIIpv4Entry class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.gribiipv4entry_ed5330eae91aea3aecb945c3eda32ad4 import GRIBIIpv4Entry
+        if len(self._object_properties) > 0:
+            if self._properties.get('GRIBIIpv4Entry', None) is not None:
+                return self._properties.get('GRIBIIpv4Entry')
+        return GRIBIIpv4Entry(self)
 
     @property
     def IsisL3RouteProperty(self):
@@ -301,10 +320,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3routeproperty_b92337ebc659bd40bd9c30fab98749e7 import IsisL3RouteProperty
-        if self._properties.get('IsisL3RouteProperty', None) is not None:
-            return self._properties.get('IsisL3RouteProperty')
-        else:
-            return IsisL3RouteProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3RouteProperty', None) is not None:
+                return self._properties.get('IsisL3RouteProperty')
+        return IsisL3RouteProperty(self)
 
     @property
     def LdpFECProperty(self):
@@ -318,10 +337,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpfecproperty_9d07999903dc2acadf9a2f44f8a94399 import LdpFECProperty
-        if self._properties.get('LdpFECProperty', None) is not None:
-            return self._properties.get('LdpFECProperty')
-        else:
-            return LdpFECProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpFECProperty', None) is not None:
+                return self._properties.get('LdpFECProperty')
+        return LdpFECProperty(self)
 
     @property
     def OspfRouteProperty(self):
@@ -335,10 +354,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfrouteproperty_d69371739e1874a63feb0c8493c3f052 import OspfRouteProperty
-        if self._properties.get('OspfRouteProperty', None) is not None:
-            return self._properties.get('OspfRouteProperty')
-        else:
-            return OspfRouteProperty(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfRouteProperty', None) is not None:
+                return self._properties.get('OspfRouteProperty')
+        return OspfRouteProperty(self)
 
     @property
     def Tag(self):
@@ -352,10 +371,10 @@ class Ipv4PrefixPools(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def AddrStepSupported(self):

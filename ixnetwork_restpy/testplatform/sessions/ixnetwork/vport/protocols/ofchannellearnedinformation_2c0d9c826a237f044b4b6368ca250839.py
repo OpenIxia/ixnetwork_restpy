@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OfChannelLearnedInformation(Base):
@@ -72,10 +74,10 @@ class OfChannelLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.controllerauxiliaryconnectionlearnedinfo_ab5a755c40a9da1388ea17855c2a32b0 import ControllerAuxiliaryConnectionLearnedInfo
-        if self._properties.get('ControllerAuxiliaryConnectionLearnedInfo', None) is not None:
-            return self._properties.get('ControllerAuxiliaryConnectionLearnedInfo')
-        else:
-            return ControllerAuxiliaryConnectionLearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ControllerAuxiliaryConnectionLearnedInfo', None) is not None:
+                return self._properties.get('ControllerAuxiliaryConnectionLearnedInfo')
+        return ControllerAuxiliaryConnectionLearnedInfo(self)
 
     @property
     def OfChannelPortsLearnedInformation(self):
@@ -89,10 +91,10 @@ class OfChannelLearnedInformation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ofchannelportslearnedinformation_4d9d59409f73e69eb94129e9e84242be import OfChannelPortsLearnedInformation
-        if self._properties.get('OfChannelPortsLearnedInformation', None) is not None:
-            return self._properties.get('OfChannelPortsLearnedInformation')
-        else:
-            return OfChannelPortsLearnedInformation(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfChannelPortsLearnedInformation', None) is not None:
+                return self._properties.get('OfChannelPortsLearnedInformation')
+        return OfChannelPortsLearnedInformation(self)
 
     @property
     def ActionsSupported(self):

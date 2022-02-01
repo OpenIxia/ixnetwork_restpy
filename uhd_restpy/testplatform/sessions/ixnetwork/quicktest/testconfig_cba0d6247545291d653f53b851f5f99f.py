@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -458,6 +460,70 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CalculateLatency=None, CustomLoadUnit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, FixedFrameSize=None, FloodedFramesEnabled=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, IncrementFramesizeFrom=None, IncrementFramesizeStep=None, IncrementFramesizeTo=None, IpRatioMode=None, Ipv4rate=None, Ipv6rate=None, LatencyType=None, LoadRateValue=None, LoadType=None, Numtrials=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, TrafficType=None):
+        # type: (bool, str, bool, int, bool, bool, int, bool, bool, str, int, int, int, int, str, int, int, str, int, str, int, List[str], bool, str, str) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - CalculateLatency (bool): 
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): 
+        - DetailedResultsEnabled (bool): 
+        - Duration (number): 
+        - EnableDataIntegrity (bool): 
+        - EnableLayer1Rate (bool): 
+        - FixedFrameSize (number): 
+        - FloodedFramesEnabled (bool): 
+        - ForceContinuosTraffic (bool): 
+        - FrameSizeMode (str(fixed | increment)): 
+        - Gap (number): 
+        - IncrementFramesizeFrom (number): 
+        - IncrementFramesizeStep (number): 
+        - IncrementFramesizeTo (number): 
+        - IpRatioMode (str(custom | fixed | increment | random)): 
+        - Ipv4rate (number): 
+        - Ipv6rate (number): 
+        - LatencyType (str(cutThrough)): 
+        - LoadRateValue (number): 
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): 
+        - Numtrials (number): 
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportSequenceError (bool): 
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): 
+        - TrafficType (str(burstyLoading | constantLoading)): 
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

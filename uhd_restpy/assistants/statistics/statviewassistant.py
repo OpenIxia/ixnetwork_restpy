@@ -116,7 +116,12 @@ class StatViewAssistant(object):
         column_headers = self._snapshot.readline()
         if isinstance(column_headers, bytes) is True:
             column_headers = column_headers.decode('ascii')
-        column_headers = column_headers.rstrip().split(',')
+        column_headers = column_headers.rstrip()
+        #  Bug IXNETWORK-19510
+        # Some column headers have special characters like "(S,G) Pairs Joined", "(*, G) Pairs joined"
+        # Earlier we use to use normal split, so we use to get wrong column headers.
+        # Added a fix to only split on commas outside double quotes.
+        column_headers = re.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", column_headers)
         for row in self._snapshot:
             if isinstance(row, bytes) is True:
                 row = row.decode('ascii')

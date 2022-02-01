@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PassCriteria(Base):
@@ -216,6 +218,55 @@ class PassCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None):
+        # type: (bool, bool, bool, str, str, int, str, str, int, str) -> PassCriteria
+        """Finds and retrieves passCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve passCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all passCriteria resources from the server.
+
+        Args
+        ----
+        - EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
+        - EnablePassFail (bool): If true, the pass fail criteria is set.
+        - EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+        - LatencyThresholdMode (str(average | maximum)): The threshold mode for the latency.
+        - LatencyThresholdScale (str(ms | ns | us)): The scale by which the latency threshold is measured.
+        - LatencyThresholdValue (number): The value by which legacy threshold value is to be measured.
+        - PassCriteriaLoadRateMode (str(average | minimum)): The pass criteria set for the load rate mode.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The pass criteria scale in which the load rate is to be measured.
+        - PassCriteriaLoadRateValue (number): The pass criteria for the Value of the load rate.
+        - PassFailFrequency (str(framesizes | trials)): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching passCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of passCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the passCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

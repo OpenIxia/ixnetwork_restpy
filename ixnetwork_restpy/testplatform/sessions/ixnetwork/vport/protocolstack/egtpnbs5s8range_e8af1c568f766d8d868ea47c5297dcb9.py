@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpNbS5S8Range(Base):
@@ -318,6 +320,62 @@ class EgtpNbS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ECI=None, Enabled=None, MCC=None, MNC=None, Name=None, ObjectId=None, ParentMme=None, ParentSgw=None, RAILAC=None, RAIMCC1=None, RAIMCC2=None, RAIMCC3=None, RAIMNC1=None, RAIMNC2=None, RAIMNC3=None, RAIRAC=None, TAC=None):
+        # type: (str, bool, str, str, str, str, str, str, str, int, int, int, int, int, int, str, str) -> EgtpNbS5S8Range
+        """Finds and retrieves egtpNbS5S8Range resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpNbS5S8Range resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpNbS5S8Range resources from the server.
+
+        Args
+        ----
+        - ECI (str): EUTRAN Cell Identifier
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - MCC (str): Mobile Country Code
+        - MNC (str): Mobile Network Code
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - ParentMme (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange)): Id of parent MME range
+        - ParentSgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent SGW range
+        - RAILAC (str): LAC for UEs (Hexa value)
+        - RAIMCC1 (number): First digit of MCC location for UEs
+        - RAIMCC2 (number): Second digit of MCC location for UEs
+        - RAIMCC3 (number): 3rd digit of MCC location for UEs
+        - RAIMNC1 (number): first digit of MNC location for UEs
+        - RAIMNC2 (number): Second digit of MNC location for UEs
+        - RAIMNC3 (number): Third digit of MNC location for UEs
+        - RAIRAC (str): RAC for UEs (Hexa value)
+        - TAC (str): Tracking Area Code
+
+        Returns
+        -------
+        - self: This instance with matching egtpNbS5S8Range resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egtpNbS5S8Range data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egtpNbS5S8Range resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

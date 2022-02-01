@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpSRTEPoliciesListV4(Base):
@@ -94,10 +96,10 @@ class BgpSRTEPoliciesListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        if self._properties.get('BgpAsPathSegmentList', None) is not None:
-            return self._properties.get('BgpAsPathSegmentList')
-        else:
-            return BgpAsPathSegmentList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsPathSegmentList', None) is not None:
+                return self._properties.get('BgpAsPathSegmentList')
+        return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -111,10 +113,10 @@ class BgpSRTEPoliciesListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        if self._properties.get('BgpClusterIdList', None) is not None:
-            return self._properties.get('BgpClusterIdList')
-        else:
-            return BgpClusterIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpClusterIdList', None) is not None:
+                return self._properties.get('BgpClusterIdList')
+        return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -128,10 +130,10 @@ class BgpSRTEPoliciesListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        if self._properties.get('BgpCommunitiesList', None) is not None:
-            return self._properties.get('BgpCommunitiesList')
-        else:
-            return BgpCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpCommunitiesList', None) is not None:
+                return self._properties.get('BgpCommunitiesList')
+        return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -145,27 +147,27 @@ class BgpSRTEPoliciesListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-            return self._properties.get('BgpExtendedCommunitiesList')
-        else:
-            return BgpExtendedCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+                return self._properties.get('BgpExtendedCommunitiesList')
+        return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpSRTEPoliciesTunnelEncapsulationListV4(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4_92b9a5bbebe14b523f238427c0265124.BgpSRTEPoliciesTunnelEncapsulationListV4): An instance of the BgpSRTEPoliciesTunnelEncapsulationListV4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4_9031e764336dd61c6ed0b672cca24aab.BgpSRTEPoliciesTunnelEncapsulationListV4): An instance of the BgpSRTEPoliciesTunnelEncapsulationListV4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4_92b9a5bbebe14b523f238427c0265124 import BgpSRTEPoliciesTunnelEncapsulationListV4
-        if self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV4', None) is not None:
-            return self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV4')
-        else:
-            return BgpSRTEPoliciesTunnelEncapsulationListV4(self)._select()
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepoliciestunnelencapsulationlistv4_9031e764336dd61c6ed0b672cca24aab import BgpSRTEPoliciesTunnelEncapsulationListV4
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV4', None) is not None:
+                return self._properties.get('BgpSRTEPoliciesTunnelEncapsulationListV4')
+        return BgpSRTEPoliciesTunnelEncapsulationListV4(self)._select()
 
     @property
     def Active(self):
@@ -677,6 +679,53 @@ class BgpSRTEPoliciesListV4(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NumberOfTunnelsV4=None):
+        # type: (int, str, str, int, int, int, int, int) -> BgpSRTEPoliciesListV4
+        """Finds and retrieves bgpSRTEPoliciesListV4 resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpSRTEPoliciesListV4 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpSRTEPoliciesListV4 resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExtendedCommunity (number): Number of Extended Communities
+        - NumberOfTunnelsV4 (number): Count of Tunnel TLVs Per Policy
+
+        Returns
+        -------
+        - self: This instance with matching bgpSRTEPoliciesListV4 resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of bgpSRTEPoliciesListV4 data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the bgpSRTEPoliciesListV4 resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, AddPathId=None, AggregatorAs=None, AggregatorId=None, AsSetMode=None, Distinguisher=None, EnableAddPath=None, EnableAggregatorId=None, EnableAsPathSegments=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableExtendedCommunity=None, EnableLinkLocal=None, EnableLocalPreference=None, EnableMultiExitDiscriminator=None, EnableNextHop=None, EnableOrigin=None, EnableOriginatorId=None, EnableSendWithdraw=None, EndPointV4=None, EndPointV6=None, Ipv4NextHop=None, Ipv6LinkLocalNextHop=None, Ipv6NextHop=None, LocalPreference=None, MultiExitDiscriminator=None, Origin=None, OriginatorId=None, OverridePeerAsSetMode=None, PolicyColor=None, PolicyType=None, SetNextHop=None, SetNextHopIpType=None, SrtepolicyName=None):
         """Base class infrastructure that gets a list of bgpSRTEPoliciesListV4 device ids encapsulated by this object.

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CurrentPacket(Base):
@@ -52,10 +54,10 @@ class CurrentPacket(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.currentpacket.stack.stack import Stack
-        if self._properties.get('Stack', None) is not None:
-            return self._properties.get('Stack')
-        else:
-            return Stack(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Stack', None) is not None:
+                return self._properties.get('Stack')
+        return Stack(self)
 
     @property
     def PacketHex(self):
@@ -66,6 +68,46 @@ class CurrentPacket(Base):
         - str: Gets the packet hex of the current packet
         """
         return self._get_attribute(self._SDM_ATT_MAP['PacketHex'])
+
+    def find(self, PacketHex=None):
+        # type: (str) -> CurrentPacket
+        """Finds and retrieves currentPacket resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve currentPacket resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all currentPacket resources from the server.
+
+        Args
+        ----
+        - PacketHex (str): Gets the packet hex of the current packet
+
+        Returns
+        -------
+        - self: This instance with matching currentPacket resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of currentPacket data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the currentPacket resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def GetPacketFromControlCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

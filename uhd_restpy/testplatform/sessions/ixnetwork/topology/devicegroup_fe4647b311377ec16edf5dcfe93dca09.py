@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DeviceGroup(Base):
@@ -61,10 +63,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import DeviceGroup
-        if self._properties.get('DeviceGroup', None) is not None:
-            return self._properties.get('DeviceGroup')
-        else:
-            return DeviceGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DeviceGroup', None) is not None:
+                return self._properties.get('DeviceGroup')
+        return DeviceGroup(self)
 
     @property
     def Ethernet(self):
@@ -78,10 +80,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
@@ -95,10 +97,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        if self._properties.get('Ipv4Loopback', None) is not None:
-            return self._properties.get('Ipv4Loopback')
-        else:
-            return Ipv4Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4Loopback', None) is not None:
+                return self._properties.get('Ipv4Loopback')
+        return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
@@ -112,10 +114,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        if self._properties.get('Ipv6Loopback', None) is not None:
-            return self._properties.get('Ipv6Loopback')
-        else:
-            return Ipv6Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6Loopback', None) is not None:
+                return self._properties.get('Ipv6Loopback')
+        return Ipv6Loopback(self)
 
     @property
     def IsisL3Router(self):
@@ -129,10 +131,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_502c03d3345feb0ad46b4b9e2d2f2e95 import IsisL3Router
-        if self._properties.get('IsisL3Router', None) is not None:
-            return self._properties.get('IsisL3Router')
-        else:
-            return IsisL3Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3Router', None) is not None:
+                return self._properties.get('IsisL3Router')
+        return IsisL3Router(self)
 
     @property
     def NetworkGroup(self):
@@ -146,10 +148,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.networkgroup_4a63874e791827c3a0361c2d201dbc0c import NetworkGroup
-        if self._properties.get('NetworkGroup', None) is not None:
-            return self._properties.get('NetworkGroup')
-        else:
-            return NetworkGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetworkGroup', None) is not None:
+                return self._properties.get('NetworkGroup')
+        return NetworkGroup(self)
 
     @property
     def NetworkTopology(self):
@@ -163,10 +165,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.networktopology_657b9792feb17675a34c183046aa9924 import NetworkTopology
-        if self._properties.get('NetworkTopology', None) is not None:
-            return self._properties.get('NetworkTopology')
-        else:
-            return NetworkTopology(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetworkTopology', None) is not None:
+                return self._properties.get('NetworkTopology')
+        return NetworkTopology(self)
 
     @property
     def OfHostData(self):
@@ -180,10 +182,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ofhostdata_bd823feb7a8ba9bb9ba77fa35a83dce3 import OfHostData
-        if self._properties.get('OfHostData', None) is not None:
-            return self._properties.get('OfHostData')
-        else:
-            return OfHostData(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfHostData', None) is not None:
+                return self._properties.get('OfHostData')
+        return OfHostData(self)
 
     @property
     def RouterData(self):
@@ -197,10 +199,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.routerdata_48b2bbc3e057b769b893f4a6c10ed927 import RouterData
-        if self._properties.get('RouterData', None) is not None:
-            return self._properties.get('RouterData')
-        else:
-            return RouterData(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RouterData', None) is not None:
+                return self._properties.get('RouterData')
+        return RouterData(self)
 
     @property
     def Count(self):

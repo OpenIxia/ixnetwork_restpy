@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpPcrfS5S8Range(Base):
@@ -83,10 +85,10 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearerss5s8pgw_aedeefc591b39483fa91d9a71ada1b57 import DedicatedBearersS5S8Pgw
-        if self._properties.get('DedicatedBearersS5S8Pgw', None) is not None:
-            return self._properties.get('DedicatedBearersS5S8Pgw')
-        else:
-            return DedicatedBearersS5S8Pgw(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DedicatedBearersS5S8Pgw', None) is not None:
+                return self._properties.get('DedicatedBearersS5S8Pgw')
+        return DedicatedBearersS5S8Pgw(self)
 
     @property
     def TrafficProfileProxiesS5S8Pgw(self):
@@ -100,10 +102,10 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiess5s8pgw_acb2da84ac2e7d4a1c6b32589106655a import TrafficProfileProxiesS5S8Pgw
-        if self._properties.get('TrafficProfileProxiesS5S8Pgw', None) is not None:
-            return self._properties.get('TrafficProfileProxiesS5S8Pgw')
-        else:
-            return TrafficProfileProxiesS5S8Pgw(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficProfileProxiesS5S8Pgw', None) is not None:
+                return self._properties.get('TrafficProfileProxiesS5S8Pgw')
+        return TrafficProfileProxiesS5S8Pgw(self)
 
     @property
     def Apn(self):
@@ -592,6 +594,77 @@ class EgtpPcrfS5S8Range(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Apn=None, Apn_AMBRD=None, Apn_AMBRU=None, Db_gbrd=None, Db_gbru=None, Db_mbrd=None, Db_mbru=None, Db_pci=None, Db_pl=None, Db_pvi=None, Db_qci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNIDBCreationDelay=None, Enabled=None, IMSI=None, Ims_apn=None, IpType=None, Name=None, NidbCreationDelay=None, ObjectId=None, ParentPgw=None, PoolSize=None, PoolStartIPv4=None, PoolStartIPv6=None, PoolStartIp=None, RoundRobinDistribution=None, TotalCount=None, UserPlaneIPv4Address=None, UserPlaneIPv6Address=None, UserPlaneIpAddress=None, UserPlaneIpCount=None):
+        # type: (str, int, int, int, int, int, int, bool, int, bool, int, int, bool, bool, bool, str, bool, str, str, int, str, str, int, str, str, str, bool, int, str, str, str, int) -> EgtpPcrfS5S8Range
+        """Finds and retrieves egtpPcrfS5S8Range resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpPcrfS5S8Range resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpPcrfS5S8Range resources from the server.
+
+        Args
+        ----
+        - Apn (str): Access Point Name
+        - Apn_AMBRD (number): APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - Apn_AMBRU (number): APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - Db_gbrd (number): Deprecated. Field is ignored. Kept for TCL BW compatibility
+        - Db_gbru (number): Deprecated. Field is ignored. Kept for TCL BW compatibility
+        - Db_mbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Db_mbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - Db_pci (bool): ARP Preemption Capability
+        - Db_pl (number): ARP Priority Level
+        - Db_pvi (bool): ARP Preemption Vulnerability
+        - Db_qci (number): QoS Class Identifier
+        - DefaultBearerLifetimeTimer (number): The time, in seconds, after which the default bearer is deleted
+        - EnableDefaultBearerLifetime (bool): If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
+        - EnableNIDBCreationDelay (bool): Delay Network Initiated Dedicated Bearer(NIDB) Creation
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IMSI (str): The first International Mobile Subscriber Identifier that will be accepted.
+        - Ims_apn (bool): IMS APN
+        - IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
+        - Name (str): Name of range
+        - NidbCreationDelay (number): Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
+        - ObjectId (str): Unique identifier for this object
+        - ParentPgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent PGW range
+        - PoolSize (number): The number of UEs that will be accepted.
+        - PoolStartIPv4 (str): The first IPv4 address to be assigned to an UE.
+        - PoolStartIPv6 (str): The first IPv6 address to be assigned to an UE.
+        - PoolStartIp (str): Obsolete - use poolStartIPv4 or poolStartIPv6
+        - RoundRobinDistribution (bool): Distribute the IMSIs on the assigned ports in a round-robin manner (E.g.: When having 3 IMSIs to distribute and 2 ports assigned the first IMSI will be distributed on the first port, the second one on the second port and the 3rd one on the first port)
+        - TotalCount (number): Layer 7 Server Count On All Ports
+        - UserPlaneIPv4Address (str): The first IPv4 address to be used by the L4-7 server activies.
+        - UserPlaneIPv6Address (str): The first IPv6 address to be used by the L4-7 server activies.
+        - UserPlaneIpAddress (str): Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
+        - UserPlaneIpCount (number): Layer 7 Server Count Per Port
+
+        Returns
+        -------
+        - self: This instance with matching egtpPcrfS5S8Range resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egtpPcrfS5S8Range data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egtpPcrfS5S8Range resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

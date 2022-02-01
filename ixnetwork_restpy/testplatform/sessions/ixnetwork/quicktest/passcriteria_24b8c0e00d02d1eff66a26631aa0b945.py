@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PassCriteria(Base):
@@ -446,6 +448,69 @@ class PassCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, FramelossThresholdMode=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+        # type: (str, int, bool, bool, bool, bool, bool, bool, bool, str, str, str, int, str, str, int, str, int, str, str, int, str, str, int) -> PassCriteria
+        """Finds and retrieves passCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve passCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all passCriteria resources from the server.
+
+        Args
+        ----
+        - DataErrorThresholdMode (str(average | maximum)): The data error threshold mode.
+        - DataErrorThresholdValue (number): The data error threshold value.
+        - EnableDataIntegrityPassFail (bool): If true, the data integrity pass fail is enabled.
+        - EnableFrameLossPassFail (bool): If true, the frame loss pass fail is enabled.
+        - EnableLatencyPassFail (bool): If true, the latency pass fail is enabled.
+        - EnablePassFail (bool): If true, the pass criteria is enabled.
+        - EnableRatePassFail (bool): If true, the pass fail rate is enabled.
+        - EnableSequenceErrorsPassFail (bool): If true, enables sequence errors pass fail.
+        - EnableStandardDeviationPassFail (bool): If true, the standard deviation of pass fail is enabled.
+        - FramelossThresholdMode (str(average | maximum)): Thr frame loss threshold mode.
+        - LatencyThresholdMode (str(average | maximum)): The latency threshold mode.
+        - LatencyThresholdScale (str(ms | ns | us)): The latency threshold scale.
+        - LatencyThresholdValue (number): The latency threshold value.
+        - LatencyVarThresholdMode (str(average | maximum)): The latency variable threshold mode.
+        - LatencyVariationThresholdScale (str(ms | ns | us)): The variation threshold scale.
+        - LatencyVariationThresholdValue (number): The latency threshold value variation.
+        - LossThresholdMode (str(average | maximum)): The loss threshold mode.
+        - LossThresholdValue (number): The loss threshold value.
+        - PassCriteriaLoadRateMode (str(average | minimum)): The pass criteria load rate mode.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The pass Criteria Load rate scale.
+        - PassCriteriaLoadRateValue (number): The pass criteria load rate value.
+        - PassFailFrequency (str(framesizes | trials)): NOT DEFINED
+        - SeqErrorsThresholdMode (str(average | maximum)): The sequence errors threshold mode.
+        - SeqErrorsThresholdValue (number): The sequence error threshold value.
+
+        Returns
+        -------
+        - self: This instance with matching passCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of passCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the passCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

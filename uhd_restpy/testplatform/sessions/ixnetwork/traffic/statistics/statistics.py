@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Statistics(Base):
@@ -51,10 +53,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.advancedsequencechecking.advancedsequencechecking import AdvancedSequenceChecking
-        if self._properties.get('AdvancedSequenceChecking', None) is not None:
-            return self._properties.get('AdvancedSequenceChecking')
-        else:
-            return AdvancedSequenceChecking(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AdvancedSequenceChecking', None) is not None:
+                return self._properties.get('AdvancedSequenceChecking')
+        return AdvancedSequenceChecking(self)._select()
 
     @property
     def CpdpConvergence(self):
@@ -68,10 +70,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.cpdpconvergence.cpdpconvergence import CpdpConvergence
-        if self._properties.get('CpdpConvergence', None) is not None:
-            return self._properties.get('CpdpConvergence')
-        else:
-            return CpdpConvergence(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CpdpConvergence', None) is not None:
+                return self._properties.get('CpdpConvergence')
+        return CpdpConvergence(self)._select()
 
     @property
     def DataIntegrity(self):
@@ -85,10 +87,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.dataintegrity.dataintegrity import DataIntegrity
-        if self._properties.get('DataIntegrity', None) is not None:
-            return self._properties.get('DataIntegrity')
-        else:
-            return DataIntegrity(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DataIntegrity', None) is not None:
+                return self._properties.get('DataIntegrity')
+        return DataIntegrity(self)._select()
 
     @property
     def DelayVariation(self):
@@ -102,10 +104,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.delayvariation.delayvariation import DelayVariation
-        if self._properties.get('DelayVariation', None) is not None:
-            return self._properties.get('DelayVariation')
-        else:
-            return DelayVariation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DelayVariation', None) is not None:
+                return self._properties.get('DelayVariation')
+        return DelayVariation(self)._select()
 
     @property
     def ErrorStats(self):
@@ -119,10 +121,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.errorstats.errorstats import ErrorStats
-        if self._properties.get('ErrorStats', None) is not None:
-            return self._properties.get('ErrorStats')
-        else:
-            return ErrorStats(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ErrorStats', None) is not None:
+                return self._properties.get('ErrorStats')
+        return ErrorStats(self)._select()
 
     @property
     def InterArrivalTimeRate(self):
@@ -136,10 +138,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.interarrivaltimerate.interarrivaltimerate import InterArrivalTimeRate
-        if self._properties.get('InterArrivalTimeRate', None) is not None:
-            return self._properties.get('InterArrivalTimeRate')
-        else:
-            return InterArrivalTimeRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterArrivalTimeRate', None) is not None:
+                return self._properties.get('InterArrivalTimeRate')
+        return InterArrivalTimeRate(self)._select()
 
     @property
     def L1Rates(self):
@@ -153,10 +155,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.l1rates.l1rates import L1Rates
-        if self._properties.get('L1Rates', None) is not None:
-            return self._properties.get('L1Rates')
-        else:
-            return L1Rates(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('L1Rates', None) is not None:
+                return self._properties.get('L1Rates')
+        return L1Rates(self)._select()
 
     @property
     def Latency(self):
@@ -170,10 +172,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.latency.latency import Latency
-        if self._properties.get('Latency', None) is not None:
-            return self._properties.get('Latency')
-        else:
-            return Latency(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Latency', None) is not None:
+                return self._properties.get('Latency')
+        return Latency(self)._select()
 
     @property
     def PacketLossDuration(self):
@@ -187,7 +189,42 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.packetlossduration.packetlossduration import PacketLossDuration
-        if self._properties.get('PacketLossDuration', None) is not None:
-            return self._properties.get('PacketLossDuration')
-        else:
-            return PacketLossDuration(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PacketLossDuration', None) is not None:
+                return self._properties.get('PacketLossDuration')
+        return PacketLossDuration(self)._select()
+
+    def find(self):
+        """Finds and retrieves statistics resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistics resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all statistics resources from the server.
+
+        Returns
+        -------
+        - self: This instance with matching statistics resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of statistics data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the statistics resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

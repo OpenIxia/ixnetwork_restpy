@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SpbTopologyRange(Base):
@@ -66,10 +68,10 @@ class SpbTopologyRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.spbbasevidrange_1c9fe669457e475f948c1f67d34ad28c import SpbBaseVidRange
-        if self._properties.get('SpbBaseVidRange', None) is not None:
-            return self._properties.get('SpbBaseVidRange')
-        else:
-            return SpbBaseVidRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SpbBaseVidRange', None) is not None:
+                return self._properties.get('SpbBaseVidRange')
+        return SpbBaseVidRange(self)
 
     @property
     def AuxMcidConfigName(self):

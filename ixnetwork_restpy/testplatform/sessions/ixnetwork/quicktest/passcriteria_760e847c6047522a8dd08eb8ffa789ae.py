@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PassCriteria(Base):
@@ -234,6 +236,56 @@ class PassCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassFailLatencyUnit=None):
+        # type: (bool, bool, bool, bool, str, str, str, str, str, str, str) -> PassCriteria
+        """Finds and retrieves passCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve passCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all passCriteria resources from the server.
+
+        Args
+        ----
+        - EnableLatencyPassFail (bool): If true, the latency pass fail criteria is set.
+        - EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determineswhether the trial passed or failed.
+        - EnableRatePassFail (bool): If true, the rate of pass and fail criteria is set.
+        - EnableStandardDeviationPassFail (bool): If true, Standard Deviation for the Pass/Fail criteria is set.
+        - LatencyThresholdMode (str(average | maximum)): The threshold mode for the latency.
+        - LatencyThresholdScale (str(ms | ns | us)): The scale by which the latency threshold is measured.
+        - LatencyVarThresholdMode (str(average | maximum)): The latency variation threshold mode.
+        - LatencyVariationThresholdScale (str(ms | ns | us)): The scale by which the latency variation threshold is measured.
+        - PassCriteriaLoadRateMode (str(average | minimum)): The pass critria set for the load rate mode.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The pass criteria scale in which the load rateis to be measured.
+        - PassFailLatencyUnit (str(ms | ns | us)): If true, the pass fail latency unit is set.
+
+        Returns
+        -------
+        - self: This instance with matching passCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of passCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the passCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

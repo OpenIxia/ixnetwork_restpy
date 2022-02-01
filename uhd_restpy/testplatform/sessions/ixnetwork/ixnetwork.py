@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ixnetwork(Base):
@@ -51,10 +53,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.globals import Globals
-        if self._properties.get('Globals', None) is not None:
-            return self._properties.get('Globals')
-        else:
-            return Globals(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Globals', None) is not None:
+                return self._properties.get('Globals')
+        return Globals(self)._select()
 
     @property
     def Impairment(self):
@@ -68,10 +70,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.impairment.impairment import Impairment
-        if self._properties.get('Impairment', None) is not None:
-            return self._properties.get('Impairment')
-        else:
-            return Impairment(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Impairment', None) is not None:
+                return self._properties.get('Impairment')
+        return Impairment(self)._select()
 
     @property
     def Lag(self):
@@ -85,10 +87,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.lag.lag_cd537f07f912db233dacbe727e8568d7 import Lag
-        if self._properties.get('Lag', None) is not None:
-            return self._properties.get('Lag')
-        else:
-            return Lag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lag', None) is not None:
+                return self._properties.get('Lag')
+        return Lag(self)
 
     @property
     def Locations(self):
@@ -102,10 +104,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.locations.locations import Locations
-        if self._properties.get('Locations', None) is not None:
-            return self._properties.get('Locations')
-        else:
-            return Locations(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Locations', None) is not None:
+                return self._properties.get('Locations')
+        return Locations(self)
 
     @property
     def QuickTest(self):
@@ -119,10 +121,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.quicktest.quicktest import QuickTest
-        if self._properties.get('QuickTest', None) is not None:
-            return self._properties.get('QuickTest')
-        else:
-            return QuickTest(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('QuickTest', None) is not None:
+                return self._properties.get('QuickTest')
+        return QuickTest(self)._select()
 
     @property
     def Reporter(self):
@@ -136,10 +138,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.reporter.reporter import Reporter
-        if self._properties.get('Reporter', None) is not None:
-            return self._properties.get('Reporter')
-        else:
-            return Reporter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Reporter', None) is not None:
+                return self._properties.get('Reporter')
+        return Reporter(self)._select()
 
     @property
     def ResourceManager(self):
@@ -153,10 +155,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.resourcemanager.resourcemanager import ResourceManager
-        if self._properties.get('ResourceManager', None) is not None:
-            return self._properties.get('ResourceManager')
-        else:
-            return ResourceManager(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ResourceManager', None) is not None:
+                return self._properties.get('ResourceManager')
+        return ResourceManager(self)._select()
 
     @property
     def Statistics(self):
@@ -170,10 +172,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.statistics import Statistics
-        if self._properties.get('Statistics', None) is not None:
-            return self._properties.get('Statistics')
-        else:
-            return Statistics(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Statistics', None) is not None:
+                return self._properties.get('Statistics')
+        return Statistics(self)._select()
 
     @property
     def Topology(self):
@@ -187,10 +189,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958 import Topology
-        if self._properties.get('Topology', None) is not None:
-            return self._properties.get('Topology')
-        else:
-            return Topology(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Topology', None) is not None:
+                return self._properties.get('Topology')
+        return Topology(self)
 
     @property
     def Traffic(self):
@@ -204,10 +206,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.traffic import Traffic
-        if self._properties.get('Traffic', None) is not None:
-            return self._properties.get('Traffic')
-        else:
-            return Traffic(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Traffic', None) is not None:
+                return self._properties.get('Traffic')
+        return Traffic(self)._select()
 
     @property
     def Vport(self):
@@ -221,10 +223,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.vport import Vport
-        if self._properties.get('Vport', None) is not None:
-            return self._properties.get('Vport')
-        else:
-            return Vport(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vport', None) is not None:
+                return self._properties.get('Vport')
+        return Vport(self)
 
     @property
     def Watch(self):
@@ -238,10 +240,10 @@ class Ixnetwork(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.watch.watch import Watch
-        if self._properties.get('Watch', None) is not None:
-            return self._properties.get('Watch')
-        else:
-            return Watch(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Watch', None) is not None:
+                return self._properties.get('Watch')
+        return Watch(self)._select()
 
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -712,6 +714,27 @@ class Ixnetwork(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getAllPorts', payload=payload, response_object=None)
+
+    def GetAvailableGlobalStatsActions(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getAvailableGlobalStatsActions operation on the server.
+
+        The command to get the available global statistics actions.
+
+        getAvailableGlobalStatsActions(async_operation=bool)string
+        ----------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: A string containing the list of all available global statistics actions.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)): payload['Arg%s' % (i + 1)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getAvailableGlobalStatsActions', payload=payload, response_object=None)
 
     def GetAvailableProtocolStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]

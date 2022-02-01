@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
@@ -277,3 +279,56 @@ class SwitchHostRangeLearnedInfoTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CustomPacket=None, DestinationCustom=None, DestinationCustomIpv4Address=None, DestinationCustomIpv4AddressStep=None, DestinationCustomMacAddress=None, DestinationCustomMacAddressStep=None, DestinationHostList=None, MeshingType=None, PacketType=None, PeriodIntervalInMs=None, Periodic=None, PeriodicIterationNumber=None, ResponseTimeout=None, SourceHostList=None):
+        # type: (str, bool, str, str, str, str, List[str], str, str, int, bool, int, int, List[str]) -> SwitchHostRangeLearnedInfoTriggerAttributes
+        """Finds and retrieves switchHostRangeLearnedInfoTriggerAttributes resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve switchHostRangeLearnedInfoTriggerAttributes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all switchHostRangeLearnedInfoTriggerAttributes resources from the server.
+
+        Args
+        ----
+        - CustomPacket (str): NOT DEFINED
+        - DestinationCustom (bool): NOT DEFINED
+        - DestinationCustomIpv4Address (str): NOT DEFINED
+        - DestinationCustomIpv4AddressStep (str): NOT DEFINED
+        - DestinationCustomMacAddress (str): NOT DEFINED
+        - DestinationCustomMacAddressStep (str): NOT DEFINED
+        - DestinationHostList (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
+        - MeshingType (str(fullyMesh)): NOT DEFINED
+        - PacketType (str(arp | ping | custom)): NOT DEFINED
+        - PeriodIntervalInMs (number): NOT DEFINED
+        - Periodic (bool): NOT DEFINED
+        - PeriodicIterationNumber (number): NOT DEFINED
+        - ResponseTimeout (number): NOT DEFINED
+        - SourceHostList (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../switchHostRanges])): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching switchHostRangeLearnedInfoTriggerAttributes resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of switchHostRangeLearnedInfoTriggerAttributes data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the switchHostRangeLearnedInfoTriggerAttributes resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CsvSnapshot(Base):
@@ -256,6 +258,58 @@ class CsvSnapshot(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CsvDecimalPrecision=None, CsvDumpTxPortLabelMap=None, CsvFormatTimestamp=None, CsvLocation=None, CsvName=None, CsvStringQuotes=None, CsvSupportsCSVSorting=None, NextGenRefreshBeforeSnapshot=None, OpenViewer=None, SnapshotSettingsName=None, SnapshotViewContents=None, SnapshotViewCsvGenerationMode=None, Views=None):
+        # type: (int, bool, bool, str, str, bool, bool, bool, bool, str, str, str, List[str]) -> CsvSnapshot
+        """Finds and retrieves csvSnapshot resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve csvSnapshot resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all csvSnapshot resources from the server.
+
+        Args
+        ----
+        - CsvDecimalPrecision (number): NOT DEFINED
+        - CsvDumpTxPortLabelMap (bool): NOT DEFINED
+        - CsvFormatTimestamp (bool): NOT DEFINED
+        - CsvLocation (str): NOT DEFINED
+        - CsvName (str): 
+        - CsvStringQuotes (bool): NOT DEFINED
+        - CsvSupportsCSVSorting (bool): NOT DEFINED
+        - NextGenRefreshBeforeSnapshot (bool): nextGenRefreshBeforeSnapshot is deprecated and has no effect starting from IxNetwork 8.10.
+        - OpenViewer (bool): 
+        - SnapshotSettingsName (str): NOT DEFINED
+        - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
+        - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
+        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../view])): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching csvSnapshot resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of csvSnapshot data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the csvSnapshot resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ResetToDefaults(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

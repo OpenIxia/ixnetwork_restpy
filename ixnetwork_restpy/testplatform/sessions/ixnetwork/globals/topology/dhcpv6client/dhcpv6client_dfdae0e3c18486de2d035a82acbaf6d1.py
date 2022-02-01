@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Dhcpv6client(Base):
@@ -75,10 +77,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv6client.dhcp6nsrate.dhcp6nsrate_4ca4fc6bc3696aeee1ce2b3c52eec696 import Dhcp6nsRate
-        if self._properties.get('Dhcp6nsRate', None) is not None:
-            return self._properties.get('Dhcp6nsRate')
-        else:
-            return Dhcp6nsRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcp6nsRate', None) is not None:
+                return self._properties.get('Dhcp6nsRate')
+        return Dhcp6nsRate(self)._select()
 
     @property
     def SessionLifetime(self):
@@ -92,10 +94,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.sessionlifetime.sessionlifetime_c56c3cca82dcd438a26eb5e7980bb00a import SessionLifetime
-        if self._properties.get('SessionLifetime', None) is not None:
-            return self._properties.get('SessionLifetime')
-        else:
-            return SessionLifetime(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('SessionLifetime', None) is not None:
+                return self._properties.get('SessionLifetime')
+        return SessionLifetime(self)._select()
 
     @property
     def StartRate(self):
@@ -109,10 +111,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.startrate.startrate_1bba90e9b5242a924a45ce8454358006 import StartRate
-        if self._properties.get('StartRate', None) is not None:
-            return self._properties.get('StartRate')
-        else:
-            return StartRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StartRate', None) is not None:
+                return self._properties.get('StartRate')
+        return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -126,10 +128,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv6autoconfiguration.stoprate.stoprate_e57c921a314c7c4a39ab432f5e2970a0 import StopRate
-        if self._properties.get('StopRate', None) is not None:
-            return self._properties.get('StopRate')
-        else:
-            return StopRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StopRate', None) is not None:
+                return self._properties.get('StopRate')
+        return StopRate(self)._select()
 
     @property
     def TlvEditor(self):
@@ -143,10 +145,10 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
-        if self._properties.get('TlvEditor', None) is not None:
-            return self._properties.get('TlvEditor')
-        else:
-            return TlvEditor(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TlvEditor', None) is not None:
+                return self._properties.get('TlvEditor')
+        return TlvEditor(self)
 
     @property
     def Count(self):
@@ -428,6 +430,49 @@ class Dhcpv6client(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
+        # type: (int, str, str, List[str]) -> Dhcpv6client
+        """Finds and retrieves dhcpv6client resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv6client resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpv6client resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - RowNames (list(str)): Name of rows
+
+        Returns
+        -------
+        - self: This instance with matching dhcpv6client resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dhcpv6client data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dhcpv6client resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Dhcp6EchoIAInfo=None, Dhcp6InfoReqMaxRc=None, Dhcp6InfoReqMaxRt=None, Dhcp6InfoReqTimeout=None, Dhcp6NsGw=None, Dhcp6RebMaxRt=None, Dhcp6RebTimeout=None, Dhcp6RelMaxRc=None, Dhcp6RelTimeout=None, Dhcp6RenMaxRt=None, Dhcp6RenTimeout=None, Dhcp6ReqMaxRc=None, Dhcp6ReqMaxRt=None, Dhcp6ReqTimeout=None, Dhcp6SolMaxRc=None, Dhcp6SolMaxRt=None, Dhcp6SolTimeout=None, ImmediateResponse=None, RenewOnLinkUp=None, SkipReleaseOnStop=None):
         """Base class infrastructure that gets a list of dhcpv6client device ids encapsulated by this object.

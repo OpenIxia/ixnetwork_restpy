@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Cleanup(Base):
@@ -275,6 +277,59 @@ class Cleanup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ChassisDaysOld=None, CleanupChassis=None, CleanupClient=None, ClientDaysOld=None, ProfileAes=None, ProfileAllprofiles=None, ProfileAnalyzer=None, ProfileHlapi=None, ProfileImpairment=None, ProfileIxloadlite=None, ProfileMiddleware=None, ProfileQuicktests=None, ProfileStackmanager=None, ProfileStatviewerreporter=None):
+        # type: (int, bool, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Cleanup
+        """Finds and retrieves cleanup resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cleanup resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cleanup resources from the server.
+
+        Args
+        ----
+        - ChassisDaysOld (number): 
+        - CleanupChassis (bool): 
+        - CleanupClient (bool): 
+        - ClientDaysOld (number): 
+        - ProfileAes (bool): Set this flag to cleanup AES logs/artifacts
+        - ProfileAllprofiles (bool): Set this flag to cleanup All-Profiles logs/artifacts
+        - ProfileAnalyzer (bool): Set this flag to cleanup Analyzer logs/artifacts
+        - ProfileHlapi (bool): Set this flag to cleanup HLAPI logs/artifacts
+        - ProfileImpairment (bool): Set this flag to cleanup Impairment logs/artifacts
+        - ProfileIxloadlite (bool): Set this flag to cleanup IxLoad Lite logs/artifacts
+        - ProfileMiddleware (bool): Set this flag to cleanup MiddleWare logs/artifacts
+        - ProfileQuicktests (bool): Set this flag to cleanup QuickTests logs/artifacts
+        - ProfileStackmanager (bool): Set this flag to cleanup StackManager logs/artifacts
+        - ProfileStatviewerreporter (bool): Set this flag to cleanup StatViewer-Reporter logs/artifacts
+
+        Returns
+        -------
+        - self: This instance with matching cleanup resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of cleanup data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the cleanup resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CleanupLogs(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

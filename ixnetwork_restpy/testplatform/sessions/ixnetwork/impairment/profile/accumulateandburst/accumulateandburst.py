@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AccumulateAndBurst(Base):
@@ -242,3 +244,54 @@ class AccumulateAndBurst(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BurstSize=None, BurstSizeUnit=None, BurstTimeout=None, BurstTimeoutUnit=None, Enabled=None, InterBurstGap=None, InterBurstGapValue=None, InterBurstGapValueUnit=None, PacketCount=None, QueueAutoSize=None, QueueAutoSizeEnabled=None, QueueSize=None):
+        # type: (int, str, str, str, bool, str, int, str, int, int, bool, int) -> AccumulateAndBurst
+        """Finds and retrieves accumulateAndBurst resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve accumulateAndBurst resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all accumulateAndBurst resources from the server.
+
+        Args
+        ----
+        - BurstSize (number): Represents the burst octet size. The default value is 1014.
+        - BurstSizeUnit (str(kilobytes | kKilobytes | kMegabytes | megabytes)): The burst size unit is either megabytes or kilobytes. The default unit is kilobytes.
+        - BurstTimeout (str): The burst timeout.The default value is 5 seconds.
+        - BurstTimeoutUnit (str(kMilliseconds | kSeconds | kTimeFormat | milliseconds | seconds | timeFormat)): Seconds(default) / milliseconds / mm:ss.fff time format.
+        - Enabled (bool): If true, received packets are queued and transmitted in bursts.
+        - InterBurstGap (str(headToHead | kHeadToHead | kTailToHead | tailToHead)): Tail to head (default) / Head to head.
+        - InterBurstGapValue (number): The InterBurst gap value. The default value is 20 ms.
+        - InterBurstGapValueUnit (str(kMilliseconds | kSeconds | milliseconds | seconds)): Seconds / milliseconds (default).
+        - PacketCount (number): Represents the burst packet count. The default value is 1000 packets.
+        - QueueAutoSize (number): Gets the automatically calculated queue size when queueAutoSizeEnable is true or zero when queueAutoSizeEnable is false.
+        - QueueAutoSizeEnabled (bool): Automatically calculate queue size. The default value is true.
+        - QueueSize (number): The accumulate-and-burst queue size expressed in MB. The default value is 1.
+
+        Returns
+        -------
+        - self: This instance with matching accumulateAndBurst resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of accumulateAndBurst data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the accumulateAndBurst resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DhcpV4Properties(Base):
@@ -160,3 +162,48 @@ class DhcpV4Properties(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ClientId=None, Enabled=None, RenewTimer=None, RequestRate=None, ServerId=None, Tlvs=None, VendorId=None):
+        """Finds and retrieves dhcpV4Properties resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpV4Properties resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpV4Properties resources from the server.
+
+        Args
+        ----
+        - ClientId (str): The user may optionally assign an identifier for the Client. This value must be unique on the subnet where the DHCP Client is located.
+        - Enabled (bool): If enabled, DHCP negotiation will be started and an IPv4 address learned from the DHCP server will be assigned automatically to the protocol interface.
+        - RenewTimer (number): The renew timer value specified by the DHCPv4 server.
+        - RequestRate (number): (For rate control) The user-specified maximum number of Request messages that can be sent per second from the client to the DHCP server, requesting an IPv4 address. A value of zero (0) indicates that there will be no rate control, i.e., Requests will be sent as quickly as possible.
+        - ServerId (str): This IPv4 address value is used to identify the DHCP Server and as a destination address from the client.
+        - Tlvs (list(dict(arg1:number,arg2:str))): The type length value for DHCP.
+        - VendorId (str): The optional, user-assigned Vendor ID (vendor class identifier).
+
+        Returns
+        -------
+        - self: This instance with matching dhcpV4Properties resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dhcpV4Properties data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dhcpV4Properties resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

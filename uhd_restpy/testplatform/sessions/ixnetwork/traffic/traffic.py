@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Traffic(Base):
@@ -107,10 +109,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.dynamicframesize.dynamicframesize import DynamicFrameSize
-        if self._properties.get('DynamicFrameSize', None) is not None:
-            return self._properties.get('DynamicFrameSize')
-        else:
-            return DynamicFrameSize(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DynamicFrameSize', None) is not None:
+                return self._properties.get('DynamicFrameSize')
+        return DynamicFrameSize(self)
 
     @property
     def DynamicRate(self):
@@ -124,10 +126,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.dynamicrate.dynamicrate import DynamicRate
-        if self._properties.get('DynamicRate', None) is not None:
-            return self._properties.get('DynamicRate')
-        else:
-            return DynamicRate(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DynamicRate', None) is not None:
+                return self._properties.get('DynamicRate')
+        return DynamicRate(self)
 
     @property
     def ProtocolTemplate(self):
@@ -141,10 +143,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.protocoltemplate.protocoltemplate import ProtocolTemplate
-        if self._properties.get('ProtocolTemplate', None) is not None:
-            return self._properties.get('ProtocolTemplate')
-        else:
-            return ProtocolTemplate(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ProtocolTemplate', None) is not None:
+                return self._properties.get('ProtocolTemplate')
+        return ProtocolTemplate(self)
 
     @property
     def Statistics(self):
@@ -158,10 +160,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.statistics.statistics import Statistics
-        if self._properties.get('Statistics', None) is not None:
-            return self._properties.get('Statistics')
-        else:
-            return Statistics(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Statistics', None) is not None:
+                return self._properties.get('Statistics')
+        return Statistics(self)._select()
 
     @property
     def TrafficGroup(self):
@@ -175,10 +177,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficgroup.trafficgroup import TrafficGroup
-        if self._properties.get('TrafficGroup', None) is not None:
-            return self._properties.get('TrafficGroup')
-        else:
-            return TrafficGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficGroup', None) is not None:
+                return self._properties.get('TrafficGroup')
+        return TrafficGroup(self)
 
     @property
     def TrafficItem(self):
@@ -192,10 +194,10 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.trafficitem import TrafficItem
-        if self._properties.get('TrafficItem', None) is not None:
-            return self._properties.get('TrafficItem')
-        else:
-            return TrafficItem(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficItem', None) is not None:
+                return self._properties.get('TrafficItem')
+        return TrafficItem(self)
 
     @property
     def AutoCorrectL4HeaderChecksums(self):
@@ -934,6 +936,95 @@ class Traffic(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoCorrectL4HeaderChecksums=None, CycleOffsetForScheduledStart=None, CycleOffsetUnitForScheduledStart=None, CycleTimeForScheduledStart=None, CycleTimeUnitForScheduledStart=None, DataPlaneJitterWindow=None, DelayTimeForScheduledStart=None, DestMacRetryCount=None, DestMacRetryDelay=None, DetectMisdirectedOnAllPorts=None, DisablePortLevelMisdirected=None, DisplayMplsCurrentLabelValue=None, EgressOnlyTrafficItemName=None, ElapsedTransmitTime=None, EnableDataIntegrityCheck=None, EnableDestMacRetry=None, EnableEgressOnlyTracking=None, EnableEgressOnlyTxStats=None, EnableInstantaneousStatsSupport=None, EnableLagAutoRate=None, EnableLagFlowBalancing=None, EnableLagFlowFailoverMode=None, EnableLagRebalanceOnPortUp=None, EnableMinFrameSize=None, EnableMulticastScalingFactor=None, EnableSequenceChecking=None, EnableStaggeredStartDelay=None, EnableStaggeredTransmit=None, EnableStreamOrdering=None, FrameOrderingMode=None, GlobalStreamControl=None, GlobalStreamControlIterations=None, IsApplicationTrafficRunning=None, IsApplyOnTheFlyRequired=None, IsTrafficRunning=None, LargeErrorThreshhold=None, LearningFrameSize=None, LearningFramesCount=None, LearningFramesRate=None, MacChangeOnFly=None, MaxTrafficGenerationQueries=None, MplsLabelLearningTimeout=None, PeakLoadingReplicationCount=None, PreventDataPlaneToCpu=None, RefreshLearnedInfoBeforeApply=None, State=None, UseRfc5952=None, UseScheduledStartTransmit=None, UseTxRxSync=None, WaitTime=None):
+        # type: (bool, int, str, int, str, str, int, int, int, bool, bool, bool, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, bool, int, int, int, int, bool, int, int, int, bool, bool, str, bool, bool, bool, int) -> Traffic
+        """Finds and retrieves traffic resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve traffic resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all traffic resources from the server.
+
+        Args
+        ----
+        - AutoCorrectL4HeaderChecksums (bool): This is used for Multis and Xdensity as checksum is not calculated correctly when change on the fly operations are performed. When this option is enabled IxOS uses 2 bytes before CRC, that way ensuring the checksum is correct when change on the fly operations are performed.
+        - CycleOffsetForScheduledStart (number): 
+        - CycleOffsetUnitForScheduledStart (str(microseconds | milliseconds | nanoseconds | seconds)): 
+        - CycleTimeForScheduledStart (number): 
+        - CycleTimeUnitForScheduledStart (str(microseconds | milliseconds | nanoseconds | seconds)): 
+        - DataPlaneJitterWindow (str(0 | 10485760 | 1310720 | 167772160 | 20971520 | 2621440 | 335544320 | 41943040 | 5242880 | 671088640 | 83886080)): Indicates the number of packets received during a time interval. This is used forcalculating the rate on the recieve side.
+        - DelayTimeForScheduledStart (number): Delay Time For Scheduled Start Transmit in seconds
+        - DestMacRetryCount (number): The number of time to attempt to obtain the destination MAC address.
+        - DestMacRetryDelay (number): The number of seconds to wait between attempts to obtain the destination MAC address.
+        - DetectMisdirectedOnAllPorts (bool): 
+        - DisablePortLevelMisdirected (bool): 
+        - DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
+        - EgressOnlyTrafficItemName (str): Traffic Item name for egress only flows in statistics.
+        - ElapsedTransmitTime (number): Specifies the amount of time traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
+        - EnableDataIntegrityCheck (bool): If true, enable data integrity check.
+        - EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
+        - EnableEgressOnlyTracking (bool): This flags enables/disables egress only tracking. In this mode only traffic without ingress tracking is supported on ports with egress only settings, user will have only PGID stats and the packets will not contain any instrumentation block.
+        - EnableEgressOnlyTxStats (bool): This flags enables/disables egress only tx stats. In this mode all traffic without ingress tracking is considered for tx stats.
+        - EnableInstantaneousStatsSupport (bool): If true, enables instantaneous stats support
+        - EnableLagAutoRate (bool): 
+        - EnableLagFlowBalancing (bool): 
+        - EnableLagFlowFailoverMode (bool): 
+        - EnableLagRebalanceOnPortUp (bool): 
+        - EnableMinFrameSize (bool): If true, IxNetwork will allow the stream to use smaller packet sizes. (In the case of IPv4 and Ethernet, 64 bytes will be allowed.) This is achieved by reducing the size of the instrumentation tag, which will be identified by receiving ports.
+        - EnableMulticastScalingFactor (bool): If true, traffic items with the Merged Destination Ranges option selected have be to manually regenerated by the user.
+        - EnableSequenceChecking (bool): If true, this field enables sequence checking. The default is false.
+        - EnableStaggeredStartDelay (bool): If checked, enables the staggered start delay function.
+        - EnableStaggeredTransmit (bool): If true, the start of transmit is staggered across ports. A 25-30 ms delay is introduced between the time one port begins transmitting and the time next port begins transmitting.
+        - EnableStreamOrdering (bool): If true, IxNetwork will allow stream ordering per RFC 2889.
+        - FrameOrderingMode (str(flowGroupSetup | none | peakLoading | RFC2889)): If true, enables frame ordering.
+        - GlobalStreamControl (str(continuous | iterations)): The Global Stream Control parameters.
+        - GlobalStreamControlIterations (number): If true, the user can specify how many times each packet stream will be transmitted.
+        - IsApplicationTrafficRunning (bool): If true, application traffic is running.
+        - IsApplyOnTheFlyRequired (bool): 
+        - IsTrafficRunning (bool): If true, non-application traffic is running.
+        - LargeErrorThreshhold (number): The user-configurable threshold value used to determine error levels for out-of-sequence, received packets.
+        - LearningFrameSize (number): Learns frame size
+        - LearningFramesCount (number): Learns frames count
+        - LearningFramesRate (number): Learns frames rate
+        - MacChangeOnFly (bool): If true, enables IxNetwork's gratuitous ARP capability. When enabled, IxNetwork listens for gratuitous ARP messages from its neighbors.
+        - MaxTrafficGenerationQueries (number): The maximum number of traffic generation queries. The default is 500.
+        - MplsLabelLearningTimeout (number): The MPLS label learning timeout in seconds. The default is 30 seconds.
+        - PeakLoadingReplicationCount (number): The peak loading replication count
+        - PreventDataPlaneToCpu (bool): Prevent all data plane packets from being forwarded to Port CPU (disabling this option requires Port CPU reboot)
+        - RefreshLearnedInfoBeforeApply (bool): This field refreshes the learned information from the DUT.
+        - State (str(error | locked | started | startedWaitingForStats | startedWaitingForStreams | stopped | stoppedWaitingForStats | txStopWatchExpected | unapplied)): Denotes the current state of traffic.
+        - UseRfc5952 (bool): Use RFC 5952 for formatting IPv6 addresses (:ffff:1.2.3.4)
+        - UseScheduledStartTransmit (bool): Use Scheduled Start Transmit
+        - UseTxRxSync (bool): If true, enables the transmit/receive port synchronization algorithm.
+        - WaitTime (number): The time (in seconds) to wait after Stop Transmit before stopping Latency Measurement.
+
+        Returns
+        -------
+        - self: This instance with matching traffic resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of traffic data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the traffic resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

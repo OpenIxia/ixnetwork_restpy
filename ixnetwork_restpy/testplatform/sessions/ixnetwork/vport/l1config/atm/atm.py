@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Atm(Base):
@@ -53,10 +55,10 @@ class Atm(Base):
     }
     _SDM_ENUM_MAP = {
         'cellHeader': ['nni', 'uni'],
-        'crcSize': ['crc16', 'crc32'],
+        'crcSize': ['crc32', 'crc16'],
         'fillerCell': ['idle', 'unassigned'],
-        'interfaceType': ['oc12', 'oc3', 'stm1', 'stm4'],
-        'transmitClocking': ['external', 'internal', 'recovered'],
+        'interfaceType': ['oc3', 'oc12', 'stm1', 'stm4'],
+        'transmitClocking': ['internal', 'external', 'recovered'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -154,7 +156,7 @@ class Atm(Base):
         """
         Returns
         -------
-        - str(crc16 | crc32): Choose the type of Cyclic Redundancy Check to be used.
+        - str(crc32 | crc16): Choose the type of Cyclic Redundancy Check to be used.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CrcSize'])
     @CrcSize.setter
@@ -210,7 +212,7 @@ class Atm(Base):
         """
         Returns
         -------
-        - str(oc12 | oc3 | stm1 | stm4): The interface type for ATM.
+        - str(oc3 | oc12 | stm1 | stm4): The interface type for ATM.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
@@ -294,7 +296,7 @@ class Atm(Base):
         """
         Returns
         -------
-        - str(external | internal | recovered): The options for the transmit clock.
+        - str(internal | external | recovered): The options for the transmit clock.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
@@ -312,20 +314,77 @@ class Atm(Base):
         - C2Tx (number): The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
         - CellHeader (str(nni | uni)): user/network-to-network interface
         - CosetActive (bool): CRC + Exclusive OR Operation
-        - CrcSize (str(crc16 | crc32)): Choose the type of Cyclic Redundancy Check to be used.
+        - CrcSize (str(crc32 | crc16)): Choose the type of Cyclic Redundancy Check to be used.
         - DataScrambling (bool): If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
         - EnablePPM (bool): If true, enables the portsppm.
         - FillerCell (str(idle | unassigned)): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
-        - InterfaceType (str(oc12 | oc3 | stm1 | stm4)): The interface type for ATM.
+        - InterfaceType (str(oc3 | oc12 | stm1 | stm4)): The interface type for ATM.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - PatternMatching (bool): Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - ReassemblyTimeout (number): Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
         - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
-        - TransmitClocking (str(external | internal | recovered)): The options for the transmit clock.
+        - TransmitClocking (str(internal | external | recovered)): The options for the transmit clock.
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AvailableSpeeds=None, C2Expected=None, C2Tx=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, CellHeader=None, CosetActive=None, CrcSize=None, DataScrambling=None, EnablePPM=None, FillerCell=None, InterfaceType=None, Loopback=None, PatternMatching=None, Ppm=None, ReassemblyTimeout=None, SelectedSpeeds=None, TransmitClocking=None):
+        # type: (List[str], int, int, bool, bool, str, bool, str, bool, bool, str, str, bool, bool, int, int, List[str], str) -> Atm
+        """Finds and retrieves atm resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve atm resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all atm resources from the server.
+
+        Args
+        ----
+        - AvailableSpeeds (list(str[])): Which speeds are available for the current media and AN settings.
+        - C2Expected (number): The expected value of the C2 byte in the received path overhead. Typically, this will match the value in the Transmit field. For ATM, the expected value is 0x13 (Hex).
+        - C2Tx (number): The value of the C2 byte in the transmitted path overhead. For ATM, the transmitted value is 0x13 (Hex).
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - CellHeader (str(nni | uni)): user/network-to-network interface
+        - CosetActive (bool): CRC + Exclusive OR Operation
+        - CrcSize (str(crc32 | crc16)): Choose the type of Cyclic Redundancy Check to be used.
+        - DataScrambling (bool): If enabled, data is scrambled with the x43 + 1 polynomial. Note: The ATM cell header is not scrambled.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - FillerCell (str(idle | unassigned)): SONET frame transmission is continuous even when data or control messages are not being transmitted. Choose the ATM cell type to be transmitted during those intervals.
+        - InterfaceType (str(oc3 | oc12 | stm1 | stm4)): The interface type for ATM.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - PatternMatching (bool): Used to enable capture/filter values for use with ATM ports. When enabled, the frame data from one or more VPI/VCIs may be used as capture trigger or capture filter option.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - ReassemblyTimeout (number): Sets the value for the Reassembly Timeout. It is the period of time that the receive side will wait for another cell on that channel - for reassembly of cells into a CPCS PDU (packet). If no cell is received within that period, the timer will expire. (in hex)
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
+        - TransmitClocking (str(internal | external | recovered)): The options for the transmit clock.
+
+        Returns
+        -------
+        - self: This instance with matching atm resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of atm data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the atm resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

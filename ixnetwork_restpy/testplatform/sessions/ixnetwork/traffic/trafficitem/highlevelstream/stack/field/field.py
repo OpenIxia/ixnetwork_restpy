@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Field(Base):
@@ -355,7 +357,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: A read-only field that accepts true/false to make the field optional.
+        - bool: A read-only field that accepts true/false to make the field optional.<
         """
         return self._get_attribute(self._SDM_ATT_MAP['Optional'])
 
@@ -451,7 +453,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str: Specifies the initial value of increment or decrement.
+        - str: startValue
         """
         return self._get_attribute(self._SDM_ATT_MAP['StartValue'])
     @StartValue.setter
@@ -584,7 +586,7 @@ class Field(Base):
         - RandomMask (str): Select to use random mask bit values.
         - Seed (str): Select to use seed.
         - SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
-        - StartValue (str): Specifies the initial value of increment or decrement.
+        - StartValue (str): startValue
         - StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
         - TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
         - ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
@@ -615,7 +617,7 @@ class Field(Base):
         - RandomMask (str): Select to use random mask bit values.
         - Seed (str): Select to use seed.
         - SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
-        - StartValue (str): Specifies the initial value of increment or decrement.
+        - StartValue (str): startValue
         - StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
         - TrackingEnabled (bool): If true, tracking is enabled on the particular field in flowTracking.
         - ValueList (list(str)): If valueType is set as valueList, then after setting valueType to valueList a, list of values can be provided using this attribute.
@@ -664,7 +666,7 @@ class Field(Base):
         - Offset (number): It is used to get the position of the field in terms of number of bits.
         - OffsetFromRoot (number): It is used to get the position of the field in terms of number of bits from the root packet.
         - OnTheFlyMask (str): 
-        - Optional (bool): A read-only field that accepts true/false to make the field optional.
+        - Optional (bool): A read-only field that accepts true/false to make the field optional.<
         - OptionalEnabled (bool): If true, the optional field can accept values.
         - RandomMask (str): Select to use random mask bit values.
         - RateVaried (bool): It is used to get the varied rate of packet field.
@@ -672,7 +674,7 @@ class Field(Base):
         - RequiresUdf (bool): It is used to check whether UDF is required.
         - Seed (str): Select to use seed.
         - SingleValue (str): If valueType is to be set as singleValue, then after setting the valueType to singleValue, the singleValue is set to a particular value.
-        - StartValue (str): Specifies the initial value of increment or decrement.
+        - StartValue (str): startValue
         - StepValue (str): Specifies the value by which value will keep incrementing or decrementing.
         - SupportsAuto (bool): 
         - SupportsNonRepeatableRandom (bool): Indicates whether or not this type of stack supports non-repeatable random
@@ -732,6 +734,28 @@ class Field(Base):
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('addLevel', payload=payload, response_object=None)
 
+    def GetColumnNames(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getColumnNames operation on the server.
+
+        Return the column names from a file for list Import.
+
+        getColumnNames(Arg2=href, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): A valid readFrom file handle.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This exec returns column headers as Array of String.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getColumnNames', payload=payload, response_object=None)
+
     def GetLearntInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the getLearntInfo operation on the server.
@@ -752,6 +776,28 @@ class Field(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('getLearntInfo', payload=payload, response_object=None)
+
+    def Import(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the import operation on the server.
+
+        Imports values from a csv file to be used as the field's list data.
+
+        import(Arg2=href, Arg3=string, async_operation=bool)
+        ----------------------------------------------------
+        - Arg2 (obj(ixnetwork_restpy.files.Files)): A valid readFrom file handle.
+        - Arg3 (str): A valid Column Name(case sensitive) in input file.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('import', payload=payload, response_object=None)
 
     def RemoveLevel(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

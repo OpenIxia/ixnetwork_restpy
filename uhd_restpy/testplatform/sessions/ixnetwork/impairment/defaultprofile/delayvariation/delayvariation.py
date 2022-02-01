@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DelayVariation(Base):
@@ -149,3 +151,48 @@ class DelayVariation(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Distribution=None, Enabled=None, ExponentialMeanArrival=None, GaussianStandardDeviation=None, UniformSpread=None, Units=None):
+        # type: (str, bool, int, int, int, str) -> DelayVariation
+        """Finds and retrieves delayVariation resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve delayVariation resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all delayVariation resources from the server.
+
+        Args
+        ----
+        - Distribution (str(exponential | gaussian | kExponential | kGaussian | kUniform | uniform)): Specify the distribution of the random variation.
+        - Enabled (bool): If true, randomly vary the packet delay.
+        - ExponentialMeanArrival (number): Mean arrival time for the exponential distribution.
+        - GaussianStandardDeviation (number): Standard deviation for the Gaussian distribution.
+        - UniformSpread (number): Spread for the uniform distribution.
+        - Units (str(kilometers | kKilometers | kMicroseconds | kMilliseconds | kSeconds | microseconds | milliseconds | seconds)): Specify the units for the value of the spread, standard deviation, or mean arrival time.
+
+        Returns
+        -------
+        - self: This instance with matching delayVariation resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of delayVariation data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the delayVariation resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

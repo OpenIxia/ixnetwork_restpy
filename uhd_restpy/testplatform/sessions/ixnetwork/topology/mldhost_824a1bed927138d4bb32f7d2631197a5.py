@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MldHost(Base):
@@ -76,10 +78,10 @@ class MldHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.iptv_0fb517c26bbef4136d857dbc8aaa8c72 import Iptv
-        if self._properties.get('Iptv', None) is not None:
-            return self._properties.get('Iptv')
-        else:
-            return Iptv(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Iptv', None) is not None:
+                return self._properties.get('Iptv')
+        return Iptv(self)._select()
 
     @property
     def MldMcastIPv6GroupList(self):
@@ -93,10 +95,10 @@ class MldHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mldmcastipv6grouplist_62c8609753f136498d5149746f36e12e import MldMcastIPv6GroupList
-        if self._properties.get('MldMcastIPv6GroupList', None) is not None:
-            return self._properties.get('MldMcastIPv6GroupList')
-        else:
-            return MldMcastIPv6GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldMcastIPv6GroupList', None) is not None:
+                return self._properties.get('MldMcastIPv6GroupList')
+        return MldMcastIPv6GroupList(self)._select()
 
     @property
     def Tag(self):
@@ -110,10 +112,10 @@ class MldHost(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):

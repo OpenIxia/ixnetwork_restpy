@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FlowStatMatchCriteria131TriggerAttributes(Base):
@@ -694,3 +696,87 @@ class FlowStatMatchCriteria131TriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ArpDstHwAddr=None, ArpDstIpv4Addr=None, ArpOpcode=None, ArpSrcHwAddr=None, ArpSrcIpv4Addr=None, Cookie=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, ExperimenterData=None, ExperimenterDataLength=None, ExperimenterField=None, ExperimenterHashmask=None, ExperimenterId=None, Icmpv4Code=None, Icmpv4Type=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdDll=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6Source=None, MetaData=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbISid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        """Finds and retrieves flowStatMatchCriteria131TriggerAttributes resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flowStatMatchCriteria131TriggerAttributes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all flowStatMatchCriteria131TriggerAttributes resources from the server.
+
+        Args
+        ----
+        - ArpDstHwAddr (dict(arg1:str,arg2:str)): Value of the ARP destination hardware address.
+        - ArpDstIpv4Addr (dict(arg1:str,arg2:str)): The ARP destination IPv4 address field value.
+        - ArpOpcode (dict(arg1:str,arg2:str)): Value of the ARP opcode field.
+        - ArpSrcHwAddr (dict(arg1:str,arg2:str)): Value of the ARP source hardware address.
+        - ArpSrcIpv4Addr (dict(arg1:str,arg2:str)): The ARP source IPv4 address field value.
+        - Cookie (dict(arg1:str,arg2:str)): The Cookie field value.
+        - EthernetDestination (dict(arg1:str,arg2:str)): The Ethernet destination address.
+        - EthernetSource (dict(arg1:str,arg2:str)): The Ethernet source address.
+        - EthernetType (dict(arg1:str,arg2:str)): The type of Ethernet port used.
+        - ExperimenterData (dict(arg1:str,arg2:str)): The experimenter data field value.
+        - ExperimenterDataLength (dict(arg1:number,arg2:str)): Value of the Experimenter data length field.
+        - ExperimenterField (dict(arg1:number,arg2:str)): Value of the Experimenter Field field.
+        - ExperimenterHashmask (dict(arg1:bool,arg2:str)): The experimented hasmask field value.
+        - ExperimenterId (dict(arg1:str,arg2:str)): Value of the experimenter ID field.
+        - Icmpv4Code (dict(arg1:str,arg2:str)): The code of ICMPv4 port used.
+        - Icmpv4Type (dict(arg1:str,arg2:str)): The type of ICMPv4 port used.
+        - Icmpv6Code (dict(arg1:str,arg2:str)): Value of the ICMPv4 code field.
+        - Icmpv6Type (dict(arg1:str,arg2:str)): Value of the ICMPv6 type field.
+        - InPort (dict(arg1:str,arg2:str)): The input port used.
+        - IpDscp (dict(arg1:str,arg2:str)): The IP DSCP value for advertising.
+        - IpEcn (dict(arg1:str,arg2:str)): The IP ECN field value.
+        - IpProtocol (dict(arg1:str,arg2:str)): The IP protocol used.
+        - Ipv4Destination (dict(arg1:str,arg2:str)): The IPv4 destination address.
+        - Ipv4Source (dict(arg1:str,arg2:str)): The IPv4 source address.
+        - Ipv6Destination (dict(arg1:str,arg2:str)): Value of the IPv6 destination field.
+        - Ipv6ExtHeader (dict(arg1:str,arg2:str)): The Ipv6 extension header field value.
+        - Ipv6FlowLabel (dict(arg1:str,arg2:str)): Value of the IPv6 flow label field.
+        - Ipv6NdDll (dict(arg1:str,arg2:str)): The IPv6 ND DLL field value.
+        - Ipv6NdSll (dict(arg1:str,arg2:str)): Source link-layer for IPv6 neighbour discovery.
+        - Ipv6NdTarget (dict(arg1:str,arg2:str)): The IPv6 ND target field value.
+        - Ipv6Source (dict(arg1:str,arg2:str)): Value of the IPv6 source field.
+        - MetaData (dict(arg1:str,arg2:str)): Value of the metadata field.
+        - MplsBos (dict(arg1:str,arg2:str)): Value of the MPLS BoS field.
+        - MplsLabel (dict(arg1:str,arg2:str)): Value of the MPLS label field.
+        - MplsTc (dict(arg1:str,arg2:str)): The MPLS TC field value.
+        - PbbISid (dict(arg1:str,arg2:str)): Value of the PBB I-SID field.
+        - PhysicalInPort (dict(arg1:str,arg2:str)): Value of the Physical IN port field.
+        - SctpDestination (dict(arg1:str,arg2:str)): The SCTP destination field value.
+        - SctpSource (dict(arg1:str,arg2:str)): Value of the SCTP source field.
+        - TcpDestination (dict(arg1:str,arg2:str)): The Transport destination address.
+        - TcpSource (dict(arg1:str,arg2:str)): Value of the TCP source field.
+        - TunnelId (dict(arg1:str,arg2:str)): Value of the tunnel ID field.
+        - UdpDestination (dict(arg1:str,arg2:str)): Value of the UDP destination field.
+        - UdpSource (dict(arg1:str,arg2:str)): Value of the UDP source field.
+        - VlanId (dict(arg1:str,arg2:str)): The unique VLAN Identifier.
+        - VlanPriority (dict(arg1:str,arg2:str)): The User Priority for this VLAN.
+
+        Returns
+        -------
+        - self: This instance with matching flowStatMatchCriteria131TriggerAttributes resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of flowStatMatchCriteria131TriggerAttributes data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the flowStatMatchCriteria131TriggerAttributes resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

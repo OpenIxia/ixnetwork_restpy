@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EntryTe(Base):
@@ -179,3 +181,50 @@ class EntryTe(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableEntryTe=None, EteAdmGroup=None, EteLinkMetric=None, EteMaxBandWidth=None, EteMaxReserveBandWidth=None, EteRouterId=None, EteRouterIdIncrement=None, EteUnreservedBandWidth=None):
+        # type: (bool, str, int, str, str, str, str, List[str]) -> EntryTe
+        """Finds and retrieves entryTe resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve entryTe resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all entryTe resources from the server.
+
+        Args
+        ----
+        - EnableEntryTe (bool): If enabled, the Entry TE configuration values specified in the ISIS Advanced Router Settings TE dialog may be overridden, and replaced by the values specified in this dialog.
+        - EteAdmGroup (str): For setting the administrative group sub-TLV (sub-TLV 3). It is a 4-octet user-defined bit mask used to assign administrative group numbers to the interface., for use in assigning colors and resource classes. Each set bit corresponds to a single administrative group for this interface. The settings translate into group numbers which range from 0 to 31 (integers).The default value is 00 00 00 00 (hex)
+        - EteLinkMetric (number): A user-defined metric for the link.
+        - EteMaxBandWidth (str): For setting the Maximum link bandwidth (sub-TLV 9) allowed for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - EteMaxReserveBandWidth (str): For setting the Maximum reservable link bandwidth sub-TLV 10). It is the maximum bandwidth that can be reserved for this link in this direction. It is a 32-bit IEEE floating point value, in bytes/sec. The default is 0.00.
+        - EteRouterId (str): This attribute is the TE router ID of the first router in the grid (at row = 0, column = 0), in IPv4 format.
+        - EteRouterIdIncrement (str): The increment step to be used for creating the router IDs for the emulated ISIS routers in this network range.
+        - EteUnreservedBandWidth (list(str)): There are eight levels, one for each possible priority level (for colors or resource classes). The values specify the amount of bandwidth that can be reserved for each of 8 priority levels (0 through 7). The bandwidth values are 32-bit IEEE floating point values, in bytes/sec.The default is 0.00. The total bandwidth for all 8 priority levels may exceed the bandwidth of the link, in cases where the user wants to oversubscribe the link.
+
+        Returns
+        -------
+        - self: This instance with matching entryTe resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of entryTe data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the entryTe resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

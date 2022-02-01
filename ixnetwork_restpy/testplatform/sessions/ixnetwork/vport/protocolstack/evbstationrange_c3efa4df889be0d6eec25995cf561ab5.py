@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EvbStationRange(Base):
@@ -64,10 +66,10 @@ class EvbStationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.errange_162ea2ac786a0c4f518cef35d874b832 import ErRange
-        if self._properties.get('ErRange', None) is not None:
-            return self._properties.get('ErRange')
-        else:
-            return ErRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ErRange', None) is not None:
+                return self._properties.get('ErRange')
+        return ErRange(self)
 
     @property
     def ChannelCapability(self):
@@ -271,6 +273,58 @@ class EvbStationRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ChannelCapability=None, ChassisId=None, DefaultEr=None, Enabled=None, HoldTime=None, Name=None, ObjectId=None, PortIdInterfaceName=None, PortIdMacAddress=None, PortIdSubType=None, SComponentMode=None, TxDelay=None, TxInterval=None):
+        # type: (int, str, str, bool, int, str, str, str, str, int, str, int, int) -> EvbStationRange
+        """Finds and retrieves evbStationRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve evbStationRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all evbStationRange resources from the server.
+
+        Args
+        ----
+        - ChannelCapability (number): Advertised Channel Capability.
+        - ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
+        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)): 
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - PortIdInterfaceName (str): 
+        - PortIdMacAddress (str): 
+        - PortIdSubType (number): Pop-up used for configuring the port id.
+        - SComponentMode (str): This field is a dropdown that will indicate the behavior of S-Component negotiation -Disabled: no CDCP packets are sent, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Disabled with CDCP: CDCP TLV sent has s-bit disabled and default (1/1) SCh-ID/SVID pair, no VLANs are set on ER interface (only one ER can be associated to the EVB Station) -Manual Config: no CDCP packets are set, ER interfaces will have SVID set manually -CDCP: CDCP TLVs will advertise the configured SChID/SVID (if SVID is 0, ERs expect SVID from bridge)
+        - TxDelay (number): Minimum delay between successive LLDP packets.
+        - TxInterval (number): This parameter indicates the interval at which LLDP frames are transmitted on behalf of this LLDP agent.
+
+        Returns
+        -------
+        - self: This instance with matching evbStationRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of evbStationRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the evbStationRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

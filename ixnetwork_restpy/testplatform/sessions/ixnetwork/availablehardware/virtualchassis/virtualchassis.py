@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class VirtualChassis(Base):
@@ -56,10 +58,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.discoveredappliance.discoveredappliance import DiscoveredAppliance
-        if self._properties.get('DiscoveredAppliance', None) is not None:
-            return self._properties.get('DiscoveredAppliance')
-        else:
-            return DiscoveredAppliance(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DiscoveredAppliance', None) is not None:
+                return self._properties.get('DiscoveredAppliance')
+        return DiscoveredAppliance(self)
 
     @property
     def Hypervisor(self):
@@ -73,10 +75,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.hypervisor.hypervisor import Hypervisor
-        if self._properties.get('Hypervisor', None) is not None:
-            return self._properties.get('Hypervisor')
-        else:
-            return Hypervisor(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Hypervisor', None) is not None:
+                return self._properties.get('Hypervisor')
+        return Hypervisor(self)
 
     @property
     def IxVmCard(self):
@@ -90,10 +92,10 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.ixvmcard.ixvmcard import IxVmCard
-        if self._properties.get('IxVmCard', None) is not None:
-            return self._properties.get('IxVmCard')
-        else:
-            return IxVmCard(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IxVmCard', None) is not None:
+                return self._properties.get('IxVmCard')
+        return IxVmCard(self)
 
     @property
     def EnableLicenseCheck(self):
@@ -177,3 +179,47 @@ class VirtualChassis(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableLicenseCheck=None, Hostname=None, LicenseServer=None, NtpServer=None, StartTxDelay=None):
+        # type: (bool, str, str, str, str) -> VirtualChassis
+        """Finds and retrieves virtualChassis resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve virtualChassis resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all virtualChassis resources from the server.
+
+        Args
+        ----
+        - EnableLicenseCheck (bool): Enables license check on port connect
+        - Hostname (str): Virtual Chassis hostname or IP
+        - LicenseServer (str): The address of the license server
+        - NtpServer (str): The address of the NTP server
+        - StartTxDelay (str): The delay amount for transmit
+
+        Returns
+        -------
+        - self: This instance with matching virtualChassis resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of virtualChassis data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the virtualChassis resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

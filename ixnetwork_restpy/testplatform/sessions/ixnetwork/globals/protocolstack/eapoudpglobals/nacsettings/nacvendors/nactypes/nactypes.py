@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NacTypes(Base):
@@ -56,10 +58,10 @@ class NacTypes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacvendors.nactypes.nacapps.nacapps import NacApps
-        if self._properties.get('NacApps', None) is not None:
-            return self._properties.get('NacApps')
-        else:
-            return NacApps(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NacApps', None) is not None:
+                return self._properties.get('NacApps')
+        return NacApps(self)
 
     @property
     def Name(self):

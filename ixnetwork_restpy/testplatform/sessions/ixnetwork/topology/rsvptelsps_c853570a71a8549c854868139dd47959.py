@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RsvpteLsps(Base):
@@ -64,34 +66,34 @@ class RsvpteLsps(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_1581d5bc15266f4f3d71f22c869262cd.RsvpP2PEgressLsps): An instance of the RsvpP2PEgressLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_9f054ab50236d49eeef8a9fbc0ba1127.RsvpP2PEgressLsps): An instance of the RsvpP2PEgressLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_1581d5bc15266f4f3d71f22c869262cd import RsvpP2PEgressLsps
-        if self._properties.get('RsvpP2PEgressLsps', None) is not None:
-            return self._properties.get('RsvpP2PEgressLsps')
-        else:
-            return RsvpP2PEgressLsps(self)._select()
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pegresslsps_9f054ab50236d49eeef8a9fbc0ba1127 import RsvpP2PEgressLsps
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpP2PEgressLsps', None) is not None:
+                return self._properties.get('RsvpP2PEgressLsps')
+        return RsvpP2PEgressLsps(self)._select()
 
     @property
     def RsvpP2PIngressLsps(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_ff5672c34fa5c89aea939131eeaa4b98.RsvpP2PIngressLsps): An instance of the RsvpP2PIngressLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_b3cad06292c51571163e9346869405a0.RsvpP2PIngressLsps): An instance of the RsvpP2PIngressLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_ff5672c34fa5c89aea939131eeaa4b98 import RsvpP2PIngressLsps
-        if self._properties.get('RsvpP2PIngressLsps', None) is not None:
-            return self._properties.get('RsvpP2PIngressLsps')
-        else:
-            return RsvpP2PIngressLsps(self)._select()
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2pingresslsps_b3cad06292c51571163e9346869405a0 import RsvpP2PIngressLsps
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpP2PIngressLsps', None) is not None:
+                return self._properties.get('RsvpP2PIngressLsps')
+        return RsvpP2PIngressLsps(self)._select()
 
     @property
     def RsvpP2mpEgressLsps(self):
@@ -105,10 +107,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpegresslsps_a7be6d237185c970a66235441605770c import RsvpP2mpEgressLsps
-        if self._properties.get('RsvpP2mpEgressLsps', None) is not None:
-            return self._properties.get('RsvpP2mpEgressLsps')
-        else:
-            return RsvpP2mpEgressLsps(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpP2mpEgressLsps', None) is not None:
+                return self._properties.get('RsvpP2mpEgressLsps')
+        return RsvpP2mpEgressLsps(self)._select()
 
     @property
     def RsvpP2mpIngressLsps(self):
@@ -122,10 +124,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresslsps_7b38fc09ccf52081a0ef372f9492b887 import RsvpP2mpIngressLsps
-        if self._properties.get('RsvpP2mpIngressLsps', None) is not None:
-            return self._properties.get('RsvpP2mpIngressLsps')
-        else:
-            return RsvpP2mpIngressLsps(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpP2mpIngressLsps', None) is not None:
+                return self._properties.get('RsvpP2mpIngressLsps')
+        return RsvpP2mpIngressLsps(self)._select()
 
     @property
     def RsvpPcepExpectedInitiatedLsps(self):
@@ -139,10 +141,10 @@ class RsvpteLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvppcepexpectedinitiatedlsps_64b47067effbb8886f7ee1d4dd6e8560 import RsvpPcepExpectedInitiatedLsps
-        if self._properties.get('RsvpPcepExpectedInitiatedLsps', None) is not None:
-            return self._properties.get('RsvpPcepExpectedInitiatedLsps')
-        else:
-            return RsvpPcepExpectedInitiatedLsps(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpPcepExpectedInitiatedLsps', None) is not None:
+                return self._properties.get('RsvpPcepExpectedInitiatedLsps')
+        return RsvpPcepExpectedInitiatedLsps(self)._select()
 
     @property
     def Active(self):

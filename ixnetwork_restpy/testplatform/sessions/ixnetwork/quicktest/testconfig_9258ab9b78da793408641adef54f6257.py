@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -1861,6 +1863,156 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryResolution=None, BinaryTolerance=None, Binary_delay_enableAccLoss=None, Binary_delay_modeAccLoss=None, Binary_delay_scaleAccLoss=None, Binary_delay_thresholdAccLoss=None, Binary_flooded_enableAccLoss=None, Binary_flooded_thresholdAccLoss=None, Binary_integrity_enableAccLoss=None, Binary_integrity_thresholdAccLoss=None, Binary_latency_enableAccLoss=None, Binary_latency_modeAccLoss=None, Binary_latency_scaleAccLoss=None, Binary_latency_thresholdAccLoss=None, Binary_seq_enableAccLoss=None, Binary_seq_modeAccLoss=None, Binary_seq_thresholdAccLoss=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, CalibrateLatency=None, CountRandomFrameSize=None, CountRandomIpRatio=None, CountRandomLoadRate=None, CustomLoadUnit=None, DelayAfterTransmit=None, DetailedResultsEnabled=None, Duration=None, EnableDataIntegrity=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, FloodedFramesEnabled=None, ForceRegenerate=None, FrameLossUnit=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialIncrementLoadRate=None, IpRatioMode=None, Ipv4RatioList=None, Ipv4rate=None, Ipv6RatioList=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRate=None, LoadRateList=None, LoadType=None, LoadUnit=None, MapType=None, MaxIncrementFrameSize=None, MaxIncrementIpv4Ratio=None, MaxIncrementIpv6Ratio=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MaxRandomIpv4Ratio=None, MaxRandomIpv6Ratio=None, MaxRandomLoadRate=None, MinFpsRate=None, MinIncrementFrameSize=None, MinIncrementIpv4Ratio=None, MinIncrementIpv6Ratio=None, MinKbpsRate=None, MinRandomFrameSize=None, MinRandomIpv4Ratio=None, MinRandomIpv6Ratio=None, MinRandomLoadRate=None, NumFrames=None, NumFramesFromula=None, Numtrials=None, PeakLoadingReplicationCount=None, PerTrafficResults=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2544ImixDataQoS=None, Rfc2889ordering=None, SendFullyMeshed=None, ShowDetailedBinaryResults=None, SpyderFramesizeList=None, StaggeredStart=None, StepIncrementFrameSize=None, StepIncrementIpv4Ratio=None, StepIncrementIpv6Ratio=None, StepIncrementLoadRate=None, SupportedTrafficTypes=None, Tolerance=None, TrafficType=None, TxDelay=None):
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - BinaryBackoff (number): NOT DEFINED
+        - BinaryFrameLossUnit (str(% | frames)): NOT DEFINED
+        - BinaryResolution (number): NOT DEFINED
+        - BinaryTolerance (number): NOT DEFINED
+        - Binary_delay_enableAccLoss (bool): NOT DEFINED
+        - Binary_delay_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Binary_delay_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Binary_delay_thresholdAccLoss (number): NOT DEFINED
+        - Binary_flooded_enableAccLoss (bool): NOT DEFINED
+        - Binary_flooded_thresholdAccLoss (number): NOT DEFINED
+        - Binary_integrity_enableAccLoss (bool): NOT DEFINED
+        - Binary_integrity_thresholdAccLoss (number): NOT DEFINED
+        - Binary_latency_enableAccLoss (bool): NOT DEFINED
+        - Binary_latency_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Binary_latency_scaleAccLoss (str(ms | ns | us)): NOT DEFINED
+        - Binary_latency_thresholdAccLoss (number): NOT DEFINED
+        - Binary_seq_enableAccLoss (bool): NOT DEFINED
+        - Binary_seq_modeAccLoss (str(average | maximum)): NOT DEFINED
+        - Binary_seq_thresholdAccLoss (number): NOT DEFINED
+        - BurstSize (number): NOT DEFINED
+        - CalculateJitter (bool): NOT DEFINED
+        - CalculateLatency (bool): NOT DEFINED
+        - CalibrateLatency (bool): NOT DEFINED
+        - CountRandomFrameSize (number): NOT DEFINED
+        - CountRandomIpRatio (number): NOT DEFINED
+        - CountRandomLoadRate (number): NOT DEFINED
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - DelayAfterTransmit (number): NOT DEFINED
+        - DetailedResultsEnabled (bool): NOT DEFINED
+        - Duration (number): NOT DEFINED
+        - EnableDataIntegrity (bool): NOT DEFINED
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): NOT DEFINED
+        - EnableOldStatsForReef (bool): NOT DEFINED
+        - FloodedFramesEnabled (bool): NOT DEFINED
+        - ForceRegenerate (bool): NOT DEFINED
+        - FrameLossUnit (str): NOT DEFINED
+        - FrameSizeMode (str(custom | customlist | increment | random)): NOT DEFINED
+        - FramesPerBurstGap (number): NOT DEFINED
+        - Framesize (str): NOT DEFINED
+        - FramesizeImixList (str): NOT DEFINED
+        - FramesizeList (list(str)): NOT DEFINED
+        - Gap (number): NOT DEFINED
+        - GenerateTrackingOptionAggregationFiles (bool): NOT DEFINED
+        - ImixAdd (str): NOT DEFINED
+        - ImixData (str): NOT DEFINED
+        - ImixDelete (str): NOT DEFINED
+        - ImixDistribution (str(bwpercentage | weight)): NOT DEFINED
+        - ImixEnabled (bool): NOT DEFINED
+        - ImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): NOT DEFINED
+        - ImixTrafficType (str): NOT DEFINED
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - InitialIncrementLoadRate (number): NOT DEFINED
+        - IpRatioMode (str(custom | fixed | increment | random)): NOT DEFINED
+        - Ipv4RatioList (str): NOT DEFINED
+        - Ipv4rate (number): NOT DEFINED
+        - Ipv6RatioList (str): NOT DEFINED
+        - Ipv6rate (number): NOT DEFINED
+        - LatencyBins (str): NOT DEFINED
+        - LatencyBinsEnabled (bool): NOT DEFINED
+        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)): NOT DEFINED
+        - LoadRate (number): NOT DEFINED
+        - LoadRateList (str): NOT DEFINED
+        - LoadType (str(binary)): NOT DEFINED
+        - LoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - MapType (str): NOT DEFINED
+        - MaxIncrementFrameSize (number): NOT DEFINED
+        - MaxIncrementIpv4Ratio (str): NOT DEFINED
+        - MaxIncrementIpv6Ratio (str): NOT DEFINED
+        - MaxIncrementLoadRate (number): NOT DEFINED
+        - MaxRandomFrameSize (number): NOT DEFINED
+        - MaxRandomIpv4Ratio (str): NOT DEFINED
+        - MaxRandomIpv6Ratio (str): NOT DEFINED
+        - MaxRandomLoadRate (number): NOT DEFINED
+        - MinFpsRate (number): NOT DEFINED
+        - MinIncrementFrameSize (number): NOT DEFINED
+        - MinIncrementIpv4Ratio (str): NOT DEFINED
+        - MinIncrementIpv6Ratio (str): NOT DEFINED
+        - MinKbpsRate (number): NOT DEFINED
+        - MinRandomFrameSize (number): NOT DEFINED
+        - MinRandomIpv4Ratio (str): NOT DEFINED
+        - MinRandomIpv6Ratio (str): NOT DEFINED
+        - MinRandomLoadRate (number): NOT DEFINED
+        - NumFrames (number): NOT DEFINED
+        - NumFramesFromula (str): 
+        - Numtrials (number): NOT DEFINED
+        - PeakLoadingReplicationCount (number): NOT DEFINED
+        - PerTrafficResults (bool): 
+        - PercentMaxRate (number): NOT DEFINED
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): NOT DEFINED
+        - PortDelayValue (number): NOT DEFINED
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - RandomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
+        - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): NOT DEFINED
+        - ReportSequenceError (bool): NOT DEFINED
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): NOT DEFINED
+        - Resolution (number): NOT DEFINED
+        - Rfc2544ImixDataQoS (bool): NOT DEFINED
+        - Rfc2889ordering (str(noOrdering | peakLoading | unchanged | val2889Ordering)): NOT DEFINED
+        - SendFullyMeshed (bool): NOT DEFINED
+        - ShowDetailedBinaryResults (bool): NOT DEFINED
+        - SpyderFramesizeList (list(dict(arg1:number,arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../customImix | /api/v1/sessions/1/ixnetwork/quickTest/.../imix]))): 
+        - StaggeredStart (bool): NOT DEFINED
+        - StepIncrementFrameSize (number): NOT DEFINED
+        - StepIncrementIpv4Ratio (str): NOT DEFINED
+        - StepIncrementIpv6Ratio (str): NOT DEFINED
+        - StepIncrementLoadRate (number): NOT DEFINED
+        - SupportedTrafficTypes (str): NOT DEFINED
+        - Tolerance (number): NOT DEFINED
+        - TrafficType (str(burstyLoading | constantLoading)): NOT DEFINED
+        - TxDelay (number): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -521,6 +523,74 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BinaryLoadUnit=None, BinaryResolution=None, CalculateLatency=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayBeforeStartTransmit=None, DeleteFlowsAtStartup=None, EnableMinFrameSize=None, EnableTrafficValidation=None, FrameSizeMode=None, Gap=None, InitialBinaryLoadIntegerValues=None, InitialStepIntegerValues=None, LatencyType=None, LoadRateValue=None, LoadType=None, MaxBinaryLoadIntegerValue=None, MaxRandomFrameSize=None, MaxStepIntegerValues=None, MinAddressTableSize=None, MinBinaryLoadIntegerValues=None, MinRandomFrameSize=None, Numtrials=None, PacketsPerFlow=None, ProtocolItem=None, RangeCount=None, StepLoadUnit=None, StepStepIntegerValues=None, WaitAffterFlowAdd=None):
+        # type: (str, int, bool, int, str, int, bool, bool, bool, str, int, int, int, str, int, str, int, int, int, int, int, int, int, int, List[str], int, str, int, int) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The load unit value in binary. Possible values include:
+        - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops
+        - CalculateLatency (bool): If true, calculates the latency.
+        - CustomFramesizeValue (number): Sets the custom framesize value
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the custom load unit.
+        - DelayBeforeStartTransmit (number): If true, a delay is introduced before transmission is started.
+        - DeleteFlowsAtStartup (bool): If true, the test will delete the flowgroups at startup
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableTrafficValidation (bool): If true, traffic validation is performed. It provides a high level view of the errors detected in each traffic item and flow group. With the help of this option you can easily identify the various categories of errors detected in each traffic item and flow group.
+        - FrameSizeMode (str(increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - Gap (number): The gap in transmission of frames.
+        - InitialBinaryLoadIntegerValues (number): Indicates the initial binary load integer values.
+        - InitialStepIntegerValues (number): Indicates the initial step value.
+        - LatencyType (str(cutThrough | forwardingDelay | mef | storeForward)): Indicate the type of latency that needs to be measured. Can be Cut-Through, Store-Forward and so on.
+        - LoadRateValue (number): The value of the load rate.
+        - LoadType (str(binary | step)): Indicates the load type. Can be any of the following:
+        - MaxBinaryLoadIntegerValue (number): Indicates the maximum load integer values.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MaxStepIntegerValues (number): Indicates the maximum step value.
+        - MinAddressTableSize (number): Indicates the minimum size of the address table.
+        - MinBinaryLoadIntegerValues (number): Indicates the minimum binary load integer values.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - Numtrials (number): Number of trials that can be run
+        - PacketsPerFlow (number): Indicates the number of packets per flow.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - RangeCount (number): Indicates the range count.
+        - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit.
+        - StepStepIntegerValues (number): Indicates the step integer value.
+        - WaitAffterFlowAdd (number): If true, the traffic is paused after flowdetection is added.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

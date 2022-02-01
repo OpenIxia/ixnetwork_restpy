@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Column(Base):
@@ -66,7 +68,7 @@ class Column(Base):
         """
         Returns
         -------
-        - number: The offset value, in bytes, of the Table UDF list (column).
+        - number: >The offset value, in bytes, of the Table UDF list (column).
         """
         return self._get_attribute(self._SDM_ATT_MAP['Offset'])
     @Offset.setter
@@ -109,7 +111,7 @@ class Column(Base):
         Args
         ----
         - Format (str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac)): The format of the Table UDF list (column).
-        - Offset (number): The offset value, in bytes, of the Table UDF list (column).
+        - Offset (number): >The offset value, in bytes, of the Table UDF list (column).
         - Size (number): The size, in bytes, of the Table UDF list (column).
         - Values (list(str)): The value of the table UDF column.
 
@@ -126,7 +128,7 @@ class Column(Base):
         Args
         ----
         - Format (str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac)): The format of the Table UDF list (column).
-        - Offset (number): The offset value, in bytes, of the Table UDF list (column).
+        - Offset (number): >The offset value, in bytes, of the Table UDF list (column).
         - Size (number): The size, in bytes, of the Table UDF list (column).
         - Values (list(str)): The value of the table UDF column.
 
@@ -161,7 +163,7 @@ class Column(Base):
         Args
         ----
         - Format (str(ascii | binary | custom | decimal | hex | ipv4 | ipv6 | mac)): The format of the Table UDF list (column).
-        - Offset (number): The offset value, in bytes, of the Table UDF list (column).
+        - Offset (number): >The offset value, in bytes, of the Table UDF list (column).
         - Size (number): The size, in bytes, of the Table UDF list (column).
         - Values (list(str)): The value of the table UDF column.
 

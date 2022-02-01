@@ -362,8 +362,8 @@ class Dhcp(Base):
     def ClientHwAddress(self):
         """
         Display Name: Client hardware address
-        Default Value: 00:00:00:00:00:00
-        Value Format: mAC
+        Default Value: 0x0
+        Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['ClientHwAddress']))

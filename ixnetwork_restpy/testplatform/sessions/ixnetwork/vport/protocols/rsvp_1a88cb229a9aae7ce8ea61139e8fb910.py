@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Rsvp(Base):
@@ -60,10 +62,10 @@ class Rsvp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.neighborpair_62767236969162b40f4736b7bf4280eb import NeighborPair
-        if self._properties.get('NeighborPair', None) is not None:
-            return self._properties.get('NeighborPair')
-        else:
-            return NeighborPair(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NeighborPair', None) is not None:
+                return self._properties.get('NeighborPair')
+        return NeighborPair(self)
 
     @property
     def EnableBgpOverLsp(self):
@@ -192,6 +194,53 @@ class Rsvp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableBgpOverLsp=None, EnableControlLspInitiationRate=None, EnableShowTimeValue=None, EnableVpnLabelExchangeOverLsp=None, Enabled=None, MaxLspInitiationsPerSec=None, RunningState=None, UseTransportLabelsForMplsOam=None):
+        # type: (bool, bool, bool, bool, bool, int, str, bool) -> Rsvp
+        """Finds and retrieves rsvp resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvp resources from the server.
+
+        Args
+        ----
+        - EnableBgpOverLsp (bool): Enables the ability to exchange labels over LSP for VPNs.
+        - EnableControlLspInitiationRate (bool): Controls the LSP initiation rate.
+        - EnableShowTimeValue (bool): If true, allows to calculate LSP/sub LSP setup time. When a first path message is sent for an LSP or sub LSP, the state machine takes the time stamp and stores it in the internal structure. It repeats this, when a reserve message is received for that LSP or sub LSP.
+        - EnableVpnLabelExchangeOverLsp (bool): If true, enables VPN label exchange over LSP
+        - Enabled (bool): Enables or disables the use of this emulated RSVP router in the emulated RSVP network. (default = disabled)
+        - MaxLspInitiationsPerSec (number): The maximum number of LSP Initiations sent per second.
+        - RunningState (str(unknown | stopped | stopping | starting | started)): The current running state of the RSVP server.
+        - UseTransportLabelsForMplsOam (bool): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching rsvp resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of rsvp data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the rsvp resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

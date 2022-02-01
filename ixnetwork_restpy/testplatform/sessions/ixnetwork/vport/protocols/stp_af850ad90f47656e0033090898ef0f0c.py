@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Stp(Base):
@@ -54,10 +56,10 @@ class Stp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bridge_f5eb213292554c87fbba0896618d8189 import Bridge
-        if self._properties.get('Bridge', None) is not None:
-            return self._properties.get('Bridge')
-        else:
-            return Bridge(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bridge', None) is not None:
+                return self._properties.get('Bridge')
+        return Bridge(self)
 
     @property
     def Lan(self):
@@ -71,10 +73,10 @@ class Stp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_7e56cbddd866444e811691cca31f325e import Lan
-        if self._properties.get('Lan', None) is not None:
-            return self._properties.get('Lan')
-        else:
-            return Lan(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lan', None) is not None:
+                return self._properties.get('Lan')
+        return Lan(self)
 
     @property
     def Enabled(self):
@@ -113,6 +115,47 @@ class Stp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Enabled=None, RunningState=None):
+        # type: (bool, str) -> Stp
+        """Finds and retrieves stp resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all stp resources from the server.
+
+        Args
+        ----
+        - Enabled (bool): Enables or disables the use of this emulated spanning-tree protocol (STP) router in the emulated STP network. (default = disabled) STP is used to resolve and eliminate loops in a network.
+        - RunningState (str(unknown | stopped | stopping | starting | started)): The current running state of the STP server.
+
+        Returns
+        -------
+        - self: This instance with matching stp resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of stp data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the stp resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Duplicate(Base):
@@ -115,3 +117,46 @@ class Duplicate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ClusterSize=None, DuplicateCount=None, Enabled=None, PercentRate=None):
+        # type: (int, int, bool, int) -> Duplicate
+        """Finds and retrieves duplicate resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve duplicate resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all duplicate resources from the server.
+
+        Args
+        ----
+        - ClusterSize (number): Number of packets to duplicate on each occurrence.
+        - DuplicateCount (number): Number of times to duplicate each packet.
+        - Enabled (bool): If true, periodically duplicate received packets.
+        - PercentRate (number): How often to duplicate packets.
+
+        Returns
+        -------
+        - self: This instance with matching duplicate resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of duplicate data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the duplicate resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

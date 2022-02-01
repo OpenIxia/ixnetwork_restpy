@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TraceRouteLearnedInfo(Base):
@@ -58,10 +60,10 @@ class TraceRouteLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hops_db4316dd77cab088f2212f004300bf3c import Hops
-        if self._properties.get('Hops', None) is not None:
-            return self._properties.get('Hops')
-        else:
-            return Hops(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Hops', None) is not None:
+                return self._properties.get('Hops')
+        return Hops(self)
 
     @property
     def IncomingLabelOuterInner(self):

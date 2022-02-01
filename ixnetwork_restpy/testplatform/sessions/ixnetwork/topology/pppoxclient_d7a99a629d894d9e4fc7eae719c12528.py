@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Pppoxclient(Base):
@@ -161,10 +163,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv4interface_91b557a3f744baf442dbe21ac75e8f2e import Bfdv4Interface
-        if self._properties.get('Bfdv4Interface', None) is not None:
-            return self._properties.get('Bfdv4Interface')
-        else:
-            return Bfdv4Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bfdv4Interface', None) is not None:
+                return self._properties.get('Bfdv4Interface')
+        return Bfdv4Interface(self)
 
     @property
     def Bfdv6Interface(self):
@@ -178,10 +180,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdv6interface_b9a91920db1b70c8c6410d2de0b438d3 import Bfdv6Interface
-        if self._properties.get('Bfdv6Interface', None) is not None:
-            return self._properties.get('Bfdv6Interface')
-        else:
-            return Bfdv6Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bfdv6Interface', None) is not None:
+                return self._properties.get('Bfdv6Interface')
+        return Bfdv6Interface(self)
 
     @property
     def BgpIpv4Peer(self):
@@ -195,27 +197,27 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import BgpIpv4Peer
-        if self._properties.get('BgpIpv4Peer', None) is not None:
-            return self._properties.get('BgpIpv4Peer')
-        else:
-            return BgpIpv4Peer(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpIpv4Peer', None) is not None:
+                return self._properties.get('BgpIpv4Peer')
+        return BgpIpv4Peer(self)
 
     @property
     def BgpIpv6Peer(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d74e5f921869bbf01d4b631d028968a4.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d74e5f921869bbf01d4b631d028968a4 import BgpIpv6Peer
-        if self._properties.get('BgpIpv6Peer', None) is not None:
-            return self._properties.get('BgpIpv6Peer')
-        else:
-            return BgpIpv6Peer(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import BgpIpv6Peer
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpIpv6Peer', None) is not None:
+                return self._properties.get('BgpIpv6Peer')
+        return BgpIpv6Peer(self)
 
     @property
     def Connector(self):
@@ -229,10 +231,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def Dhcpv6client(self):
@@ -246,10 +248,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
-        if self._properties.get('Dhcpv6client', None) is not None:
-            return self._properties.get('Dhcpv6client')
-        else:
-            return Dhcpv6client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6client', None) is not None:
+                return self._properties.get('Dhcpv6client')
+        return Dhcpv6client(self)
 
     @property
     def ECpriRe(self):
@@ -263,10 +265,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        if self._properties.get('ECpriRe', None) is not None:
-            return self._properties.get('ECpriRe')
-        else:
-            return ECpriRe(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriRe', None) is not None:
+                return self._properties.get('ECpriRe')
+        return ECpriRe(self)
 
     @property
     def ECpriRec(self):
@@ -280,10 +282,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        if self._properties.get('ECpriRec', None) is not None:
-            return self._properties.get('ECpriRec')
-        else:
-            return ECpriRec(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriRec', None) is not None:
+                return self._properties.get('ECpriRec')
+        return ECpriRec(self)
 
     @property
     def Geneve(self):
@@ -297,10 +299,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.geneve_14ab6f140956b4fc77d1d0f03c5e7514 import Geneve
-        if self._properties.get('Geneve', None) is not None:
-            return self._properties.get('Geneve')
-        else:
-            return Geneve(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Geneve', None) is not None:
+                return self._properties.get('Geneve')
+        return Geneve(self)
 
     @property
     def IgmpHost(self):
@@ -314,10 +316,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmphost_8940887674c0387469423e8df3a33854 import IgmpHost
-        if self._properties.get('IgmpHost', None) is not None:
-            return self._properties.get('IgmpHost')
-        else:
-            return IgmpHost(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpHost', None) is not None:
+                return self._properties.get('IgmpHost')
+        return IgmpHost(self)
 
     @property
     def IgmpQuerier(self):
@@ -331,10 +333,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.igmpquerier_38c883b0cec7ffb5405af90bf1b8cda5 import IgmpQuerier
-        if self._properties.get('IgmpQuerier', None) is not None:
-            return self._properties.get('IgmpQuerier')
-        else:
-            return IgmpQuerier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpQuerier', None) is not None:
+                return self._properties.get('IgmpQuerier')
+        return IgmpQuerier(self)
 
     @property
     def MldHost(self):
@@ -348,10 +350,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldhost_824a1bed927138d4bb32f7d2631197a5 import MldHost
-        if self._properties.get('MldHost', None) is not None:
-            return self._properties.get('MldHost')
-        else:
-            return MldHost(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldHost', None) is not None:
+                return self._properties.get('MldHost')
+        return MldHost(self)
 
     @property
     def MldQuerier(self):
@@ -365,10 +367,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mldquerier_e20671d730d138d65036e88d7cad63ac import MldQuerier
-        if self._properties.get('MldQuerier', None) is not None:
-            return self._properties.get('MldQuerier')
-        else:
-            return MldQuerier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MldQuerier', None) is not None:
+                return self._properties.get('MldQuerier')
+        return MldQuerier(self)
 
     @property
     def MplsOam(self):
@@ -382,10 +384,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoam_e01bb6affe899a4731aa60619f4aeadc import MplsOam
-        if self._properties.get('MplsOam', None) is not None:
-            return self._properties.get('MplsOam')
-        else:
-            return MplsOam(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MplsOam', None) is not None:
+                return self._properties.get('MplsOam')
+        return MplsOam(self)
 
     @property
     def NetconfClient(self):
@@ -399,27 +401,27 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclient_1eaa2ab0efacd988796bdc1f5fe4291c import NetconfClient
-        if self._properties.get('NetconfClient', None) is not None:
-            return self._properties.get('NetconfClient')
-        else:
-            return NetconfClient(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetconfClient', None) is not None:
+                return self._properties.get('NetconfClient')
+        return NetconfClient(self)
 
     @property
     def NetconfServer(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ef6d7597b8407441914451a9b6bf1bf5.NetconfServer): An instance of the NetconfServer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_bf453114f7f2bb7b009c8c9874517624.NetconfServer): An instance of the NetconfServer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_ef6d7597b8407441914451a9b6bf1bf5 import NetconfServer
-        if self._properties.get('NetconfServer', None) is not None:
-            return self._properties.get('NetconfServer')
-        else:
-            return NetconfServer(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfserver_bf453114f7f2bb7b009c8c9874517624 import NetconfServer
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetconfServer', None) is not None:
+                return self._properties.get('NetconfServer')
+        return NetconfServer(self)
 
     @property
     def Ospfv2(self):
@@ -433,10 +435,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2_eb5737de1e17134d62e78286b93d24ac import Ospfv2
-        if self._properties.get('Ospfv2', None) is not None:
-            return self._properties.get('Ospfv2')
-        else:
-            return Ospfv2(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv2', None) is not None:
+                return self._properties.get('Ospfv2')
+        return Ospfv2(self)
 
     @property
     def Ospfv3(self):
@@ -450,10 +452,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import Ospfv3
-        if self._properties.get('Ospfv3', None) is not None:
-            return self._properties.get('Ospfv3')
-        else:
-            return Ospfv3(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3', None) is not None:
+                return self._properties.get('Ospfv3')
+        return Ospfv3(self)
 
     @property
     def Pcc(self):
@@ -467,10 +469,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import Pcc
-        if self._properties.get('Pcc', None) is not None:
-            return self._properties.get('Pcc')
-        else:
-            return Pcc(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Pcc', None) is not None:
+                return self._properties.get('Pcc')
+        return Pcc(self)
 
     @property
     def Pce(self):
@@ -484,10 +486,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import Pce
-        if self._properties.get('Pce', None) is not None:
-            return self._properties.get('Pce')
-        else:
-            return Pce(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Pce', None) is not None:
+                return self._properties.get('Pce')
+        return Pce(self)
 
     @property
     def PimV4Interface(self):
@@ -501,10 +503,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4interface_92603cbceaf153039f7575ed9bc4aa67 import PimV4Interface
-        if self._properties.get('PimV4Interface', None) is not None:
-            return self._properties.get('PimV4Interface')
-        else:
-            return PimV4Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV4Interface', None) is not None:
+                return self._properties.get('PimV4Interface')
+        return PimV4Interface(self)
 
     @property
     def PimV6Interface(self):
@@ -518,10 +520,27 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import PimV6Interface
-        if self._properties.get('PimV6Interface', None) is not None:
-            return self._properties.get('PimV6Interface')
-        else:
-            return PimV6Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimV6Interface', None) is not None:
+                return self._properties.get('PimV6Interface')
+        return PimV6Interface(self)
+
+    @property
+    def Srv6Oam(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578.Srv6Oam): An instance of the Srv6Oam class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import Srv6Oam
+        if len(self._object_properties) > 0:
+            if self._properties.get('Srv6Oam', None) is not None:
+                return self._properties.get('Srv6Oam')
+        return Srv6Oam(self)
 
     @property
     def Tag(self):
@@ -535,10 +554,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def TlvProfile(self):
@@ -552,10 +571,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import TlvProfile
-        if self._properties.get('TlvProfile', None) is not None:
-            return self._properties.get('TlvProfile')
-        else:
-            return TlvProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TlvProfile', None) is not None:
+                return self._properties.get('TlvProfile')
+        return TlvProfile(self)
 
     @property
     def Vxlan(self):
@@ -569,10 +588,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlan_ed3df6fe7146492fc5fe0f77f53f9473 import Vxlan
-        if self._properties.get('Vxlan', None) is not None:
-            return self._properties.get('Vxlan')
-        else:
-            return Vxlan(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlan', None) is not None:
+                return self._properties.get('Vxlan')
+        return Vxlan(self)
 
     @property
     def Vxlangpe(self):
@@ -586,10 +605,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlangpe_e779e9783907b2c61304fff3bae70291 import Vxlangpe
-        if self._properties.get('Vxlangpe', None) is not None:
-            return self._properties.get('Vxlangpe')
-        else:
-            return Vxlangpe(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlangpe', None) is not None:
+                return self._properties.get('Vxlangpe')
+        return Vxlangpe(self)
 
     @property
     def Vxlanv6(self):
@@ -603,10 +622,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6_c18187deccae3db44b9e9de30ad538ec import Vxlanv6
-        if self._properties.get('Vxlanv6', None) is not None:
-            return self._properties.get('Vxlanv6')
-        else:
-            return Vxlanv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlanv6', None) is not None:
+                return self._properties.get('Vxlanv6')
+        return Vxlanv6(self)
 
     @property
     def Vxlanv6gpe(self):
@@ -620,10 +639,10 @@ class Pppoxclient(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.vxlanv6gpe_c816572194cd020274b16a0978c849fa import Vxlanv6gpe
-        if self._properties.get('Vxlanv6gpe', None) is not None:
-            return self._properties.get('Vxlanv6gpe')
-        else:
-            return Vxlanv6gpe(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Vxlanv6gpe', None) is not None:
+                return self._properties.get('Vxlanv6gpe')
+        return Vxlanv6gpe(self)
 
     @property
     def AcMatchMac(self):

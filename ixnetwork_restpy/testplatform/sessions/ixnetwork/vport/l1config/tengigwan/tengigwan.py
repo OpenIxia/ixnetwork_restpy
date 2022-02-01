@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TenGigWan(Base):
@@ -52,7 +54,7 @@ class TenGigWan(Base):
     _SDM_ENUM_MAP = {
         'autoInstrumentation': ['endOfFrame', 'floating'],
         'interfaceType': ['wanSdh', 'wanSonet'],
-        'transmitClocking': ['external', 'internal', 'recovered'],
+        'transmitClocking': ['internal', 'external', 'recovered'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -70,10 +72,10 @@ class TenGigWan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.fcoe.fcoe import Fcoe
-        if self._properties.get('Fcoe', None) is not None:
-            return self._properties.get('Fcoe')
-        else:
-            return Fcoe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fcoe', None) is not None:
+                return self._properties.get('Fcoe')
+        return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -87,10 +89,10 @@ class TenGigWan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tengigwan.txlane.txlane import TxLane
-        if self._properties.get('TxLane', None) is not None:
-            return self._properties.get('TxLane')
-        else:
-            return TxLane(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxLane', None) is not None:
+                return self._properties.get('TxLane')
+        return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -184,7 +186,7 @@ class TenGigWan(Base):
         """
         Returns
         -------
-        - bool: Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
+        - bool: If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
@@ -198,7 +200,7 @@ class TenGigWan(Base):
         """
         Returns
         -------
-        - str: This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
@@ -282,7 +284,7 @@ class TenGigWan(Base):
         """
         Returns
         -------
-        - str(external | internal | recovered): The transmit clocking type for this 10G WAN port.
+        - str(internal | external | recovered): The transmit clocking type for this 10G WAN port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
@@ -314,14 +316,14 @@ class TenGigWan(Base):
         - C2Expected (number): The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
         - C2Tx (number): The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
         - EnablePPM (bool): If true, enables the portsppm.
-        - EnabledFlowControl (bool): Enables the port's MAC Flow control mechanisms to listen for a directed address pause message.
-        - FlowControlDirectedAddress (str): This is the 48-bit MAC address that the port will listen on for a directed pause message.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
         - IfsStretch (bool): If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
         - InterfaceType (str(wanSdh | wanSonet)): The 10G WAN interface type for the port.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
-        - TransmitClocking (str(external | internal | recovered)): The transmit clocking type for this 10G WAN port.
+        - TransmitClocking (str(internal | external | recovered)): The transmit clocking type for this 10G WAN port.
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
         Raises
@@ -329,3 +331,58 @@ class TenGigWan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, C2Expected=None, C2Tx=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnablePPM=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, IfsStretch=None, InterfaceType=None, Loopback=None, Ppm=None, SelectedSpeeds=None, TransmitClocking=None, TxIgnoreRxLinkFaults=None):
+        # type: (str, List[str], int, int, bool, bool, bool, bool, str, bool, str, bool, int, List[str], str, bool) -> TenGigWan
+        """Finds and retrieves tenGigWan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tenGigWan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tenGigWan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AvailableSpeeds (list(str[])): Which speeds are available for the current media and AN settings.
+        - C2Expected (number): The expected value of the link partner's C2 byte. Typically, this will match the value in the Transmit field. (Hex). The default value is 0x24 (hex).
+        - C2Tx (number): The value of the C2 byte in the transmitted stream. (Hex) The default value is 0x24 (hex).
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - IfsStretch (bool): If checked, indicates the ifsStretch as the desired mode of operation. The IFS Stretch ratio determines the number of bits in a frame that require one octet of Inter Frame Spacing Extension.
+        - InterfaceType (str(wanSdh | wanSonet)): The 10G WAN interface type for the port.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
+        - TransmitClocking (str(internal | external | recovered)): The transmit clocking type for this 10G WAN port.
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+
+        Returns
+        -------
+        - self: This instance with matching tenGigWan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of tenGigWan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the tenGigWan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

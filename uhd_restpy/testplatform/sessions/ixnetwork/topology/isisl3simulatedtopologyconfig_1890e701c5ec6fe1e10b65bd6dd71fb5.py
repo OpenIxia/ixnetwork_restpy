@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisL3SimulatedTopologyConfig(Base):
@@ -60,10 +62,10 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv4noderoutelist_ae7695e0538209b004b305811ac652f1 import IsisL3ipv4NodeRouteList
-        if self._properties.get('IsisL3ipv4NodeRouteList', None) is not None:
-            return self._properties.get('IsisL3ipv4NodeRouteList')
-        else:
-            return IsisL3ipv4NodeRouteList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3ipv4NodeRouteList', None) is not None:
+                return self._properties.get('IsisL3ipv4NodeRouteList')
+        return IsisL3ipv4NodeRouteList(self)._select()
 
     @property
     def IsisL3ipv6NodeRouteList(self):
@@ -77,10 +79,10 @@ class IsisL3SimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3ipv6noderoutelist_305cdb4f4026728819c2e41364d4f782 import IsisL3ipv6NodeRouteList
-        if self._properties.get('IsisL3ipv6NodeRouteList', None) is not None:
-            return self._properties.get('IsisL3ipv6NodeRouteList')
-        else:
-            return IsisL3ipv6NodeRouteList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3ipv6NodeRouteList', None) is not None:
+                return self._properties.get('IsisL3ipv6NodeRouteList')
+        return IsisL3ipv6NodeRouteList(self)._select()
 
     @property
     def Active(self):

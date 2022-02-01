@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LightweightDhcpv6relayAgent(Base):
@@ -66,10 +68,10 @@ class LightweightDhcpv6relayAgent(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.lightweightdhcp6relaytlvprofile_987f303b51886f2a61c9c1388518f037 import LightweightDhcp6RelayTlvProfile
-        if self._properties.get('LightweightDhcp6RelayTlvProfile', None) is not None:
-            return self._properties.get('LightweightDhcp6RelayTlvProfile')
-        else:
-            return LightweightDhcp6RelayTlvProfile(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LightweightDhcp6RelayTlvProfile', None) is not None:
+                return self._properties.get('LightweightDhcp6RelayTlvProfile')
+        return LightweightDhcp6RelayTlvProfile(self)._select()
 
     @property
     def ConnectedVia(self):

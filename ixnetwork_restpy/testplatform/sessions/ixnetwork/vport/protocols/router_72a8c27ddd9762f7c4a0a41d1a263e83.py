@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Router(Base):
@@ -55,10 +57,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interface_a520e7d2a02fa7a6c1ebd87fc660ec37 import Interface
-        if self._properties.get('Interface', None) is not None:
-            return self._properties.get('Interface')
-        else:
-            return Interface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Interface', None) is not None:
+                return self._properties.get('Interface')
+        return Interface(self)
 
     @property
     def LearnedInformation(self):
@@ -72,10 +74,10 @@ class Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_7d2c51b0968785320b2c489c670b9f95 import LearnedInformation
-        if self._properties.get('LearnedInformation', None) is not None:
-            return self._properties.get('LearnedInformation')
-        else:
-            return LearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInformation', None) is not None:
+                return self._properties.get('LearnedInformation')
+        return LearnedInformation(self)._select()
 
     @property
     def Enabled(self):

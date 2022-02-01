@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class UhdOneHundredGigLan(Base):
@@ -74,10 +76,10 @@ class UhdOneHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.uhdonehundredgiglan.fcoe.fcoe import Fcoe
-        if self._properties.get('Fcoe', None) is not None:
-            return self._properties.get('Fcoe')
-        else:
-            return Fcoe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fcoe', None) is not None:
+                return self._properties.get('Fcoe')
+        return Fcoe(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -376,3 +378,63 @@ class UhdOneHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnabledFlowControl=None, FirecodeForceOff=None, FirecodeForceOn=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, Ppm=None, PromiscuousMode=None, RsFecForceOn=None, SelectedSpeeds=None, Speed=None):
+        # type: (str, List[str], bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, bool, bool, List[str], str) -> UhdOneHundredGigLan
+        """Finds and retrieves uhdOneHundredGigLan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve uhdOneHundredGigLan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all uhdOneHundredGigLan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): 
+        - AvailableSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are available for the current media and AN settings.
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnableAutoNegotiation (bool): 
+        - EnablePPM (bool): 
+        - EnableRsFec (bool): 
+        - EnabledFlowControl (bool): 
+        - FirecodeForceOff (bool): 
+        - FirecodeForceOn (bool): 
+        - ForceDisableFEC (bool): 
+        - IeeeL1Defaults (bool): 
+        - LaserOn (bool): 
+        - LinkTraining (bool): 
+        - Loopback (bool): 
+        - Mtu (number): 
+        - Ppm (number): 
+        - PromiscuousMode (bool): 
+        - RsFecForceOn (bool): 
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): 
+
+        Returns
+        -------
+        - self: This instance with matching uhdOneHundredGigLan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of uhdOneHundredGigLan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the uhdOneHundredGigLan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OpenFlowController(Base):
@@ -102,10 +104,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def LearnedInfoUpdate(self):
@@ -119,10 +121,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
-        if self._properties.get('LearnedInfoUpdate', None) is not None:
-            return self._properties.get('LearnedInfoUpdate')
-        else:
-            return LearnedInfoUpdate(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfoUpdate', None) is not None:
+                return self._properties.get('LearnedInfoUpdate')
+        return LearnedInfoUpdate(self)
 
     @property
     def OpenFlowChannel(self):
@@ -136,10 +138,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.openflowchannel_97012d0be69c2c7c1b2ca179dbbe39ac import OpenFlowChannel
-        if self._properties.get('OpenFlowChannel', None) is not None:
-            return self._properties.get('OpenFlowChannel')
-        else:
-            return OpenFlowChannel(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OpenFlowChannel', None) is not None:
+                return self._properties.get('OpenFlowChannel')
+        return OpenFlowChannel(self)
 
     @property
     def AcceptUnconfiguredChannel(self):

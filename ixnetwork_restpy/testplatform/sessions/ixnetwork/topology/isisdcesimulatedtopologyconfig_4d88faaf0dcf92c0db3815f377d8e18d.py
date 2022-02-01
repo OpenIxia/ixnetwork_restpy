@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisDceSimulatedTopologyConfig(Base):
@@ -59,10 +61,10 @@ class IsisDceSimulatedTopologyConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcenodetopologylist_88a5fd3dfb37184b7299bc183cfa4683 import DceNodeTopologyList
-        if self._properties.get('DceNodeTopologyList', None) is not None:
-            return self._properties.get('DceNodeTopologyList')
-        else:
-            return DceNodeTopologyList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceNodeTopologyList', None) is not None:
+                return self._properties.get('DceNodeTopologyList')
+        return DceNodeTopologyList(self)._select()
 
     @property
     def Active(self):

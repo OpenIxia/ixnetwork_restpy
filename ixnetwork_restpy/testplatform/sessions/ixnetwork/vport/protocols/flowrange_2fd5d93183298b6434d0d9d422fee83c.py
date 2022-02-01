@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FlowRange(Base):
@@ -78,10 +80,10 @@ class FlowRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flowrangeaction_03657c6035891000482947c3eb53c6ea import FlowRangeAction
-        if self._properties.get('FlowRangeAction', None) is not None:
-            return self._properties.get('FlowRangeAction')
-        else:
-            return FlowRangeAction(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('FlowRangeAction', None) is not None:
+                return self._properties.get('FlowRangeAction')
+        return FlowRangeAction(self)
 
     @property
     def CheckOverlap(self):

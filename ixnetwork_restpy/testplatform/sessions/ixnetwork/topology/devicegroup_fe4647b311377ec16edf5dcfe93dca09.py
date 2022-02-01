@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DeviceGroup(Base):
@@ -61,10 +63,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bfdrouter_deb1cea5df395bf5b6957f7f9cde8ef4 import BfdRouter
-        if self._properties.get('BfdRouter', None) is not None:
-            return self._properties.get('BfdRouter')
-        else:
-            return BfdRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BfdRouter', None) is not None:
+                return self._properties.get('BfdRouter')
+        return BfdRouter(self)
 
     @property
     def BridgeData(self):
@@ -78,10 +80,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bridgedata_46f9e50d9befc7b4e2640ba4217a2af2 import BridgeData
-        if self._properties.get('BridgeData', None) is not None:
-            return self._properties.get('BridgeData')
-        else:
-            return BridgeData(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BridgeData', None) is not None:
+                return self._properties.get('BridgeData')
+        return BridgeData(self)
 
     @property
     def DeviceGroup(self):
@@ -95,10 +97,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.devicegroup_fe4647b311377ec16edf5dcfe93dca09 import DeviceGroup
-        if self._properties.get('DeviceGroup', None) is not None:
-            return self._properties.get('DeviceGroup')
-        else:
-            return DeviceGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DeviceGroup', None) is not None:
+                return self._properties.get('DeviceGroup')
+        return DeviceGroup(self)
 
     @property
     def Ethernet(self):
@@ -112,10 +114,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
@@ -129,10 +131,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        if self._properties.get('Ipv4Loopback', None) is not None:
-            return self._properties.get('Ipv4Loopback')
-        else:
-            return Ipv4Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4Loopback', None) is not None:
+                return self._properties.get('Ipv4Loopback')
+        return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
@@ -146,10 +148,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        if self._properties.get('Ipv6Loopback', None) is not None:
-            return self._properties.get('Ipv6Loopback')
-        else:
-            return Ipv6Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6Loopback', None) is not None:
+                return self._properties.get('Ipv6Loopback')
+        return Ipv6Loopback(self)
 
     @property
     def IsisFabricPathRouter(self):
@@ -163,27 +165,27 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpathrouter_3484383ef19d547bbf8b6a3a8701d8ab import IsisFabricPathRouter
-        if self._properties.get('IsisFabricPathRouter', None) is not None:
-            return self._properties.get('IsisFabricPathRouter')
-        else:
-            return IsisFabricPathRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisFabricPathRouter', None) is not None:
+                return self._properties.get('IsisFabricPathRouter')
+        return IsisFabricPathRouter(self)
 
     @property
     def IsisL3Router(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_d361218740d3267022bce12b7b124967.IsisL3Router): An instance of the IsisL3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_1aab69b36c29778284d68b01b8febe48.IsisL3Router): An instance of the IsisL3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_d361218740d3267022bce12b7b124967 import IsisL3Router
-        if self._properties.get('IsisL3Router', None) is not None:
-            return self._properties.get('IsisL3Router')
-        else:
-            return IsisL3Router(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_1aab69b36c29778284d68b01b8febe48 import IsisL3Router
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3Router', None) is not None:
+                return self._properties.get('IsisL3Router')
+        return IsisL3Router(self)
 
     @property
     def IsisSpbRouter(self):
@@ -197,10 +199,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisspbrouter_7f125b55fde121bdcf257dc13c69a82b import IsisSpbRouter
-        if self._properties.get('IsisSpbRouter', None) is not None:
-            return self._properties.get('IsisSpbRouter')
-        else:
-            return IsisSpbRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSpbRouter', None) is not None:
+                return self._properties.get('IsisSpbRouter')
+        return IsisSpbRouter(self)
 
     @property
     def IsisTrillRouter(self):
@@ -214,10 +216,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrillrouter_a0dffe09cb3b7d2c96fc3b3507112129 import IsisTrillRouter
-        if self._properties.get('IsisTrillRouter', None) is not None:
-            return self._properties.get('IsisTrillRouter')
-        else:
-            return IsisTrillRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrillRouter', None) is not None:
+                return self._properties.get('IsisTrillRouter')
+        return IsisTrillRouter(self)
 
     @property
     def LdpBasicRouter(self):
@@ -231,10 +233,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
-        if self._properties.get('LdpBasicRouter', None) is not None:
-            return self._properties.get('LdpBasicRouter')
-        else:
-            return LdpBasicRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpBasicRouter', None) is not None:
+                return self._properties.get('LdpBasicRouter')
+        return LdpBasicRouter(self)
 
     @property
     def LdpBasicRouterV6(self):
@@ -248,10 +250,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        if self._properties.get('LdpBasicRouterV6', None) is not None:
-            return self._properties.get('LdpBasicRouterV6')
-        else:
-            return LdpBasicRouterV6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpBasicRouterV6', None) is not None:
+                return self._properties.get('LdpBasicRouterV6')
+        return LdpBasicRouterV6(self)
 
     @property
     def LdpLpbInterface(self):
@@ -265,10 +267,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldplpbinterface_a8182405aecaf64e394e960bc0e2f18f import LdpLpbInterface
-        if self._properties.get('LdpLpbInterface', None) is not None:
-            return self._properties.get('LdpLpbInterface')
-        else:
-            return LdpLpbInterface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpLpbInterface', None) is not None:
+                return self._properties.get('LdpLpbInterface')
+        return LdpLpbInterface(self)
 
     @property
     def LdpTargetedRouter(self):
@@ -282,10 +284,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        if self._properties.get('LdpTargetedRouter', None) is not None:
-            return self._properties.get('LdpTargetedRouter')
-        else:
-            return LdpTargetedRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpTargetedRouter', None) is not None:
+                return self._properties.get('LdpTargetedRouter')
+        return LdpTargetedRouter(self)
 
     @property
     def LdpTargetedRouterV6(self):
@@ -299,10 +301,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        if self._properties.get('LdpTargetedRouterV6', None) is not None:
-            return self._properties.get('LdpTargetedRouterV6')
-        else:
-            return LdpTargetedRouterV6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpTargetedRouterV6', None) is not None:
+                return self._properties.get('LdpTargetedRouterV6')
+        return LdpTargetedRouterV6(self)
 
     @property
     def Ldpv6LoopbackInterface(self):
@@ -316,10 +318,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldpv6loopbackinterface_1c613e9df4bfa76dac19166ff3ca5017 import Ldpv6LoopbackInterface
-        if self._properties.get('Ldpv6LoopbackInterface', None) is not None:
-            return self._properties.get('Ldpv6LoopbackInterface')
-        else:
-            return Ldpv6LoopbackInterface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ldpv6LoopbackInterface', None) is not None:
+                return self._properties.get('Ldpv6LoopbackInterface')
+        return Ldpv6LoopbackInterface(self)
 
     @property
     def MplsoamRouter(self):
@@ -333,10 +335,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mplsoamrouter_845700fadfdfffc9273541ede90252e5 import MplsoamRouter
-        if self._properties.get('MplsoamRouter', None) is not None:
-            return self._properties.get('MplsoamRouter')
-        else:
-            return MplsoamRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MplsoamRouter', None) is not None:
+                return self._properties.get('MplsoamRouter')
+        return MplsoamRouter(self)
 
     @property
     def NetworkGroup(self):
@@ -350,10 +352,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networkgroup_4a63874e791827c3a0361c2d201dbc0c import NetworkGroup
-        if self._properties.get('NetworkGroup', None) is not None:
-            return self._properties.get('NetworkGroup')
-        else:
-            return NetworkGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetworkGroup', None) is not None:
+                return self._properties.get('NetworkGroup')
+        return NetworkGroup(self)
 
     @property
     def NetworkTopology(self):
@@ -367,10 +369,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.networktopology_657b9792feb17675a34c183046aa9924 import NetworkTopology
-        if self._properties.get('NetworkTopology', None) is not None:
-            return self._properties.get('NetworkTopology')
-        else:
-            return NetworkTopology(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NetworkTopology', None) is not None:
+                return self._properties.get('NetworkTopology')
+        return NetworkTopology(self)
 
     @property
     def OfHostData(self):
@@ -384,27 +386,27 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ofhostdata_bd823feb7a8ba9bb9ba77fa35a83dce3 import OfHostData
-        if self._properties.get('OfHostData', None) is not None:
-            return self._properties.get('OfHostData')
-        else:
-            return OfHostData(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OfHostData', None) is not None:
+                return self._properties.get('OfHostData')
+        return OfHostData(self)
 
     @property
     def Ospfv2Router(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_18cdb9707bffd56b0efa6b810027c1a1.Ospfv2Router): An instance of the Ospfv2Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_cbf436add158272345961e609dd48227.Ospfv2Router): An instance of the Ospfv2Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_18cdb9707bffd56b0efa6b810027c1a1 import Ospfv2Router
-        if self._properties.get('Ospfv2Router', None) is not None:
-            return self._properties.get('Ospfv2Router')
-        else:
-            return Ospfv2Router(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv2router_cbf436add158272345961e609dd48227 import Ospfv2Router
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv2Router', None) is not None:
+                return self._properties.get('Ospfv2Router')
+        return Ospfv2Router(self)
 
     @property
     def Ospfv3Router(self):
@@ -418,10 +420,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3router_8b017f50055a8a8daa11df922db1a75a import Ospfv3Router
-        if self._properties.get('Ospfv3Router', None) is not None:
-            return self._properties.get('Ospfv3Router')
-        else:
-            return Ospfv3Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3Router', None) is not None:
+                return self._properties.get('Ospfv3Router')
+        return Ospfv3Router(self)
 
     @property
     def PimRouter(self):
@@ -435,10 +437,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimrouter_fdf354c2c4e318a7557c536f097648a7 import PimRouter
-        if self._properties.get('PimRouter', None) is not None:
-            return self._properties.get('PimRouter')
-        else:
-            return PimRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PimRouter', None) is not None:
+                return self._properties.get('PimRouter')
+        return PimRouter(self)
 
     @property
     def RouterData(self):
@@ -452,10 +454,10 @@ class DeviceGroup(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.routerdata_48b2bbc3e057b769b893f4a6c10ed927 import RouterData
-        if self._properties.get('RouterData', None) is not None:
-            return self._properties.get('RouterData')
-        else:
-            return RouterData(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RouterData', None) is not None:
+                return self._properties.get('RouterData')
+        return RouterData(self)
 
     @property
     def Count(self):
@@ -700,6 +702,27 @@ class DeviceGroup(Base):
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('fetchAndUpdateConfigFromCloud', payload=payload, response_object=None)
+
+    def GetIPv6NeighborInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getIPv6NeighborInfo operation on the server.
+
+        Fetches the IPv6 Neighbor info of all the configured device(s) of the configured IPv6 protocol layer(s).
+
+        getIPv6NeighborInfo(async_operation=bool)list
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = { "Arg1": self.href }
+        for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
+        for item in kwargs.items(): payload[item[0]] = item[1]
+        return self._execute('getIPv6NeighborInfo', payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

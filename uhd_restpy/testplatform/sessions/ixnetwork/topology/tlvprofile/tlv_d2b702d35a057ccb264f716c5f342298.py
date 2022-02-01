@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Tlv(Base):
@@ -59,10 +61,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.length_0bd681ada144795cbd0b8c30dee1562d import Length
-        if self._properties.get('Length', None) is not None:
-            return self._properties.get('Length')
-        else:
-            return Length(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Length', None) is not None:
+                return self._properties.get('Length')
+        return Length(self)._select()
 
     @property
     def Type(self):
@@ -76,10 +78,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.type_b3f7b13bb03ac01972b75a01e4f61712 import Type
-        if self._properties.get('Type', None) is not None:
-            return self._properties.get('Type')
-        else:
-            return Type(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Type', None) is not None:
+                return self._properties.get('Type')
+        return Type(self)._select()
 
     @property
     def Value(self):
@@ -93,10 +95,10 @@ class Tlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.value_ac1d7b13584a86b9cf1c28dca3390bca import Value
-        if self._properties.get('Value', None) is not None:
-            return self._properties.get('Value')
-        else:
-            return Value(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Value', None) is not None:
+                return self._properties.get('Value')
+        return Value(self)._select()
 
     @property
     def AvailableIncludeInMessages(self):

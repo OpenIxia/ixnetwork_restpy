@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CMacRange(Base):
@@ -74,10 +76,10 @@ class CMacRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacmappedip_48b7535562046322b0adbf2eb95cecf1 import CMacMappedIp
-        if self._properties.get('CMacMappedIp', None) is not None:
-            return self._properties.get('CMacMappedIp')
-        else:
-            return CMacMappedIp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CMacMappedIp', None) is not None:
+                return self._properties.get('CMacMappedIp')
+        return CMacMappedIp(self)
 
     @property
     def CmacRouteAttributes(self):
@@ -91,10 +93,10 @@ class CMacRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cmacrouteattributes_a2fb1110b2532702570503443080f315 import CmacRouteAttributes
-        if self._properties.get('CmacRouteAttributes', None) is not None:
-            return self._properties.get('CmacRouteAttributes')
-        else:
-            return CmacRouteAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CmacRouteAttributes', None) is not None:
+                return self._properties.get('CmacRouteAttributes')
+        return CmacRouteAttributes(self)._select()
 
     @property
     def CmacPrefixLength(self):

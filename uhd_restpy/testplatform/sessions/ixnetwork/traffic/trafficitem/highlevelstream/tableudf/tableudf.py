@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TableUdf(Base):
@@ -53,10 +55,10 @@ class TableUdf(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.tableudf.column.column import Column
-        if self._properties.get('Column', None) is not None:
-            return self._properties.get('Column')
-        else:
-            return Column(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Column', None) is not None:
+                return self._properties.get('Column')
+        return Column(self)
 
     @property
     def Enabled(self):

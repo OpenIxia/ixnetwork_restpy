@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Static(Base):
@@ -51,10 +53,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atm_9bbaac5d21c0632b71ee4c92d14864c3 import Atm
-        if self._properties.get('Atm', None) is not None:
-            return self._properties.get('Atm')
-        else:
-            return Atm(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Atm', None) is not None:
+                return self._properties.get('Atm')
+        return Atm(self)
 
     @property
     def Fr(self):
@@ -68,10 +70,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.fr_ebc5d45018c74d53700c88afea530ca2 import Fr
-        if self._properties.get('Fr', None) is not None:
-            return self._properties.get('Fr')
-        else:
-            return Fr(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fr', None) is not None:
+                return self._properties.get('Fr')
+        return Fr(self)
 
     @property
     def InterfaceGroup(self):
@@ -85,10 +87,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacegroup_c2c90e7b7cf8bf4a351e197fc18ccb92 import InterfaceGroup
-        if self._properties.get('InterfaceGroup', None) is not None:
-            return self._properties.get('InterfaceGroup')
-        else:
-            return InterfaceGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterfaceGroup', None) is not None:
+                return self._properties.get('InterfaceGroup')
+        return InterfaceGroup(self)
 
     @property
     def Ip(self):
@@ -102,10 +104,10 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ip_205717d3d79aa12a8dcea858982c666e import Ip
-        if self._properties.get('Ip', None) is not None:
-            return self._properties.get('Ip')
-        else:
-            return Ip(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ip', None) is not None:
+                return self._properties.get('Ip')
+        return Ip(self)
 
     @property
     def Lan(self):
@@ -119,7 +121,42 @@ class Static(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.lan_a0c3771a1420d267c519e60205c6a8e6 import Lan
-        if self._properties.get('Lan', None) is not None:
-            return self._properties.get('Lan')
-        else:
-            return Lan(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lan', None) is not None:
+                return self._properties.get('Lan')
+        return Lan(self)
+
+    def find(self):
+        """Finds and retrieves static resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve static resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all static resources from the server.
+
+        Returns
+        -------
+        - self: This instance with matching static resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of static data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the static resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

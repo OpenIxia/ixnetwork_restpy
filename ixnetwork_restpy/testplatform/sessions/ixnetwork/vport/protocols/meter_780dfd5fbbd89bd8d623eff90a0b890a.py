@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Meter(Base):
@@ -58,10 +60,10 @@ class Meter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.band_c5b39b825ad40e5d5771ea1cb0ce8304 import Band
-        if self._properties.get('Band', None) is not None:
-            return self._properties.get('Band')
-        else:
-            return Band(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Band', None) is not None:
+                return self._properties.get('Band')
+        return Band(self)
 
     @property
     def Flags(self):
@@ -75,10 +77,10 @@ class Meter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flags_18e546bb4511a17ab3e126f260698036 import Flags
-        if self._properties.get('Flags', None) is not None:
-            return self._properties.get('Flags')
-        else:
-            return Flags(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Flags', None) is not None:
+                return self._properties.get('Flags')
+        return Flags(self)._select()
 
     @property
     def Id__(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class L2Site(Base):
@@ -82,10 +84,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_044b5666a07dd04f7fe6493072b12207 import Cluster
-        if self._properties.get('Cluster', None) is not None:
-            return self._properties.get('Cluster')
-        else:
-            return Cluster(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Cluster', None) is not None:
+                return self._properties.get('Cluster')
+        return Cluster(self)._select()
 
     @property
     def LabelBlock(self):
@@ -99,10 +101,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelblock_9dc039523bf8ddf644ba0b304bd91db9 import LabelBlock
-        if self._properties.get('LabelBlock', None) is not None:
-            return self._properties.get('LabelBlock')
-        else:
-            return LabelBlock(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LabelBlock', None) is not None:
+                return self._properties.get('LabelBlock')
+        return LabelBlock(self)
 
     @property
     def LearnedRoute(self):
@@ -116,10 +118,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_fcc7cef4c15bb872fcc8499e708cc164 import LearnedRoute
-        if self._properties.get('LearnedRoute', None) is not None:
-            return self._properties.get('LearnedRoute')
-        else:
-            return LearnedRoute(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedRoute', None) is not None:
+                return self._properties.get('LearnedRoute')
+        return LearnedRoute(self)
 
     @property
     def MacAddressRange(self):
@@ -133,10 +135,10 @@ class L2Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macaddressrange_cb64b65b0ce814edd651d27ccd0840b2 import MacAddressRange
-        if self._properties.get('MacAddressRange', None) is not None:
-            return self._properties.get('MacAddressRange')
-        else:
-            return MacAddressRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MacAddressRange', None) is not None:
+                return self._properties.get('MacAddressRange')
+        return MacAddressRange(self)
 
     @property
     def DistinguishAssignedIncrement(self):

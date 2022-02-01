@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ptp(Base):
@@ -209,10 +211,10 @@ class Ptp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.atoitlvlist_5c4e305687043a6232999175d09f7f65 import AtoiTLVList
-        if self._properties.get('AtoiTLVList', None) is not None:
-            return self._properties.get('AtoiTLVList')
-        else:
-            return AtoiTLVList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AtoiTLVList', None) is not None:
+                return self._properties.get('AtoiTLVList')
+        return AtoiTLVList(self)._select()
 
     @property
     def PtpNegBehaveList(self):
@@ -226,10 +228,10 @@ class Ptp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ptpnegbehavelist_95420ff08c49e28cbca41e3d66ac6215 import PtpNegBehaveList
-        if self._properties.get('PtpNegBehaveList', None) is not None:
-            return self._properties.get('PtpNegBehaveList')
-        else:
-            return PtpNegBehaveList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PtpNegBehaveList', None) is not None:
+                return self._properties.get('PtpNegBehaveList')
+        return PtpNegBehaveList(self)._select()
 
     @property
     def AllowedFaults(self):

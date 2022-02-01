@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FrameSize(Base):
@@ -226,3 +228,52 @@ class FrameSize(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, FixedSize=None, IncrementFrom=None, IncrementStep=None, IncrementTo=None, PresetDistribution=None, QuadGaussian=None, RandomMax=None, RandomMin=None, Type=None, WeightedPairs=None, WeightedRangePairs=None):
+        """Finds and retrieves frameSize resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve frameSize resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all frameSize resources from the server.
+
+        Args
+        ----
+        - FixedSize (number): Sets all frames to a constant specified size.
+        - IncrementFrom (number): Specifies the Start Value if the Frame Size is incremented.
+        - IncrementStep (number): Specifies the Step Value if the Frame Size is Increment.
+        - IncrementTo (number): Specifies the Final Value if the Frame Size is Increment.
+        - PresetDistribution (str(cisco | imix | ipSecImix | ipV6Imix | rprQuar | rprTri | standardImix | tcpImix | tolly)): If set, Frame Size is set to IMIX.
+        - QuadGaussian (list(number)): This option allows to set frames to use a calculated distribution of Frame sizes. Quad Gaussian is the superposition of four Gaussian distributions. The user can specify the center (or mean), width of half maximum, and weight of each Gaussian distribution. The distribution is then normalized to a single distribution and generates the random numbers according to the normalized distribution.
+        - RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
+        - RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
+        - Type (str(auto | fixed | increment | presetDistribution | quadGaussian | random | weightedPairs)): Sets the type of Frame Size.
+        - WeightedPairs (list(number)): Defines the values for the weight pairs.
+        - WeightedRangePairs (list(dict(arg1:number,arg2:number,arg3:number))): A list of structures that define the weighted range.
+
+        Returns
+        -------
+        - self: This instance with matching frameSize resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of frameSize data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the frameSize resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

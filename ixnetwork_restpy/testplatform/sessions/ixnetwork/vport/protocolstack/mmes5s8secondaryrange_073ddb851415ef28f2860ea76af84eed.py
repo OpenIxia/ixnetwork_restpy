@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MmeS5S8SecondaryRange(Base):
@@ -53,10 +55,10 @@ class MmeS5S8SecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtpmmes5s8range_f00a01682e7724fdf1abbf7ae7199162 import EgtpMmeS5S8Range
-        if self._properties.get('EgtpMmeS5S8Range', None) is not None:
-            return self._properties.get('EgtpMmeS5S8Range')
-        else:
-            return EgtpMmeS5S8Range(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('EgtpMmeS5S8Range', None) is not None:
+                return self._properties.get('EgtpMmeS5S8Range')
+        return EgtpMmeS5S8Range(self)._select()
 
     def add(self):
         """Adds a new mmeS5S8SecondaryRange resource on the server and adds it to the container.

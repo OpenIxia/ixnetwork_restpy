@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NetworkRange(Base):
@@ -72,10 +74,10 @@ class NetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.entryte_f91a7acd3933b98f6f3aecf039325b41 import EntryTe
-        if self._properties.get('EntryTe', None) is not None:
-            return self._properties.get('EntryTe')
-        else:
-            return EntryTe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('EntryTe', None) is not None:
+                return self._properties.get('EntryTe')
+        return EntryTe(self)._select()
 
     @property
     def RangeTe(self):
@@ -89,10 +91,10 @@ class NetworkRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.rangete_4dac5090bdeb7392da854c328353c856 import RangeTe
-        if self._properties.get('RangeTe', None) is not None:
-            return self._properties.get('RangeTe')
-        else:
-            return RangeTe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RangeTe', None) is not None:
+                return self._properties.get('RangeTe')
+        return RangeTe(self)._select()
 
     @property
     def EnableHostName(self):

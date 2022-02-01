@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DhcpServerRange(Base):
@@ -478,6 +480,72 @@ class DhcpServerRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, Dhcp4EchoRelayInfo=None, Dhcp6IaType=None, Enabled=None, IpAddress=None, IpAddressIncrement=None, IpAddressPoolIncrement=None, IpAddressPrefix=None, IpAddressPrefixIncrement=None, IpAddressPrefixPoolIncrement=None, IpDns1=None, IpDns2=None, IpGateway=None, IpGatewayIncrement=None, IpPrefix=None, IpType=None, Name=None, ObjectId=None, PrefixCount=None, PrefixLength=None, ServerAddress=None, ServerAddressIncrement=None, ServerCount=None, ServerGateway=None, ServerGatewayIncrement=None, ServerPrefix=None, UseRapidCommit=None):
+        # type: (int, bool, str, bool, str, str, str, str, str, str, str, str, str, str, int, str, str, str, int, int, str, str, int, str, str, int, bool) -> DhcpServerRange
+        """Finds and retrieves dhcpServerRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpServerRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dhcpServerRange resources from the server.
+
+        Args
+        ----
+        - Count (number): The number of leases to be allocated per each server address.
+        - Dhcp4EchoRelayInfo (bool): Enable echoing of DHCP option 82.
+        - Dhcp6IaType (str): The Identity Association type supported by IPv6 address pools.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - IpAddress (str): The IP address of the first lease pool.
+        - IpAddressIncrement (str): The increment value for the lease address within the lease pool.
+        - IpAddressPoolIncrement (str): The increment value for the starting lease address.
+        - IpAddressPrefix (str): The prefix of the first lease pool.
+        - IpAddressPrefixIncrement (str): The increment value for the prefix of the lease address within the lease pool.
+        - IpAddressPrefixPoolIncrement (str): The increment value for the prefix of the starting lease.
+        - IpDns1 (str): The first DNS address advertised in DHCP Offer and Reply messages.
+        - IpDns2 (str): The second DNS address advertised in DHCP Offer and Reply messages.
+        - IpGateway (str): The Router address advertised in DHCP Offer and Reply messages.
+        - IpGatewayIncrement (str): The increment value for the Router address.
+        - IpPrefix (number): The Subnet Address length used to compute the subnetwork the advertised lease is part of.
+        - IpType (str): The type of IP addresses to be created by this range.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - PrefixCount (number): The number of leases to be allocated per each server prefix.
+        - PrefixLength (number): The Subnet Prefix length advertised in DHCP Offer and Reply messages.
+        - ServerAddress (str): The IP address of the first server interface.
+        - ServerAddressIncrement (str): The increment value for the server address.
+        - ServerCount (number): The number of server addresses to create for this range.
+        - ServerGateway (str): The gateway address associated with DHCP server interfaces.
+        - ServerGatewayIncrement (str): The increment value for the gateway addresses.
+        - ServerPrefix (number): The subnet prefix length associated with server interfaces.
+        - UseRapidCommit (bool): Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
+
+        Returns
+        -------
+        - self: This instance with matching dhcpServerRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dhcpServerRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dhcpServerRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

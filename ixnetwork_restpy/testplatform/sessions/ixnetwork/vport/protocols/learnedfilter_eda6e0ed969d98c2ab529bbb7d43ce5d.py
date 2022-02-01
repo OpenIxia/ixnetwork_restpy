@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LearnedFilter(Base):
@@ -428,3 +430,69 @@ class LearnedFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AdvRouterId=None, AreaSummaryLsaCount=None, EnableAdvRouterId=None, EnableFilter=None, EnableLinkStateId=None, ExcludeAdvRouterId=None, ExcludeLinkStateId=None, ExternalLsaCount=None, ExternalSummaryLsaCount=None, IsComplete=None, LinkStateId=None, NetworkLsaCount=None, NssaLsaCount=None, OpaqueAreaScopeLsaCount=None, OpaqueAsScopeLsaCount=None, OpaqueLocalScopeLsaCount=None, RouterLsaCount=None, ShowExternalAsLsa=None, ShowNetworkLsa=None, ShowNssaLsa=None, ShowOpaqueAreaLsa=None, ShowOpaqueDomainLsa=None, ShowOpaqueLocalLsa=None, ShowRouterLsa=None, ShowSummaryAsLsa=None, ShowSummaryIpLsa=None, TotalLsaCount=None):
+        # type: (str, int, bool, bool, bool, bool, bool, int, int, bool, str, int, int, int, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, int) -> LearnedFilter
+        """Finds and retrieves learnedFilter resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve learnedFilter resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all learnedFilter resources from the server.
+
+        Args
+        ----
+        - AdvRouterId (str): Filter on the router ID of the router that is originating the LSA.
+        - AreaSummaryLsaCount (number): Filter on the number of LSAs in the Summary Area.
+        - EnableAdvRouterId (bool): If true filter on the advertised router ID.
+        - EnableFilter (bool): Enables the use of the OSPF learned filter.
+        - EnableLinkStateId (bool): If true, filter on the Link State ID.
+        - ExcludeAdvRouterId (bool): If true, filter on no advertised router ID available.
+        - ExcludeLinkStateId (bool): If true, filter on no Link State ID available.
+        - ExternalLsaCount (number): Filter on the number of External LSAs.
+        - ExternalSummaryLsaCount (number): Filter on the number of External Summary LSAs.
+        - IsComplete (bool): If true, indicates the Filter operation has finished.
+        - LinkStateId (str): Filter on the Link State ID.
+        - NetworkLsaCount (number): Filter on the number of Network LSAs.
+        - NssaLsaCount (number): Filter on the number of NSSA LSAs.
+        - OpaqueAreaScopeLsaCount (number): Filter on the number of Opaque Area LSAs.
+        - OpaqueAsScopeLsaCount (number): Filter on the number of AS Scope LSAs.
+        - OpaqueLocalScopeLsaCount (number): Filter on the number of Local Scope LSAs.
+        - RouterLsaCount (number): Filter on the number of Router LSAs.
+        - ShowExternalAsLsa (bool): If true, filter on the LSAs from routers with External routes.
+        - ShowNetworkLsa (bool): If true, filter on LSAs from router with Network routes.
+        - ShowNssaLsa (bool): If true, filter on LSAs from router with NSSA routes.
+        - ShowOpaqueAreaLsa (bool): If true, filter on LSAs from router with Opaque Area routes.
+        - ShowOpaqueDomainLsa (bool): If true, filter on LSAs from router with Opaque Domain routes.
+        - ShowOpaqueLocalLsa (bool): If true, filter on LSAs from router with Opaque Local routes.
+        - ShowRouterLsa (bool): If true, filter on LSAs from router with BR or DBR routes.
+        - ShowSummaryAsLsa (bool): If true, filter on LSAs from router with Summary AS routes.
+        - ShowSummaryIpLsa (bool): If true, filter on LSAs from router with Summary IP routes.
+        - TotalLsaCount (number): Filter on the total number of LSAs.
+
+        Returns
+        -------
+        - self: This instance with matching learnedFilter resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of learnedFilter data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the learnedFilter resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

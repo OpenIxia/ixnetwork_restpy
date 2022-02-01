@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class L2tpRange(Base):
@@ -145,10 +147,10 @@ class L2tpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.domaingroup_2079169b6b98a50105be828a81e9b293 import DomainGroup
-        if self._properties.get('DomainGroup', None) is not None:
-            return self._properties.get('DomainGroup')
-        else:
-            return DomainGroup(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DomainGroup', None) is not None:
+                return self._properties.get('DomainGroup')
+        return DomainGroup(self)
 
     @property
     def LnsIp(self):
@@ -162,10 +164,10 @@ class L2tpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lnsip_44ee3cad8f094c9c08a451357b924f78 import LnsIp
-        if self._properties.get('LnsIp', None) is not None:
-            return self._properties.get('LnsIp')
-        else:
-            return LnsIp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LnsIp', None) is not None:
+                return self._properties.get('LnsIp')
+        return LnsIp(self)
 
     @property
     def AuthOptions(self):
@@ -1584,6 +1586,139 @@ class L2tpRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AuthOptions=None, AuthRetries=None, AuthTimeout=None, AuthType=None, BaseLnsIp=None, BasicOptions=None, BearerCapability=None, BearerType=None, ChapName=None, ChapSecret=None, ClientBaseIid=None, ClientBaseIp=None, ClientDnsOptions=None, ClientIidIncr=None, ClientIpIncr=None, ClientNetmask=None, ClientNetmaskOptions=None, ClientPrimaryDnsAddress=None, ClientSecondaryDnsAddress=None, ControlMsgsRetryCounter=None, ControlPlaneOptions=None, DataPlaneOptions=None, DnsServerList=None, DomainList=None, DomainToIpList=None, EchoReqInterval=None, EnableControlChecksum=None, EnableDataChecksum=None, EnableDnsRa=None, EnableDomainGroups=None, EnableEchoReq=None, EnableEchoRsp=None, EnableHelloRequest=None, EnableMru=None, EnablePasswordCheck=None, EnableRedial=None, Enabled=None, FramingCapability=None, HelloRequestInterval=None, IncrementBy=None, InitRetransmitInterval=None, IpIncrementOctet=None, Ipv6AddrPrefixLen=None, Ipv6PoolPrefix=None, Ipv6PoolPrefixLen=None, L2tpAuthOptions=None, LacHostName=None, LacSecret=None, LacToLnsMapping=None, LcpOptions=None, LcpRetries=None, LcpTermRetries=None, LcpTermTimeout=None, LcpTimeout=None, LnsHostName=None, LnsIpList=None, LnsIpNumber=None, MaxRedialAttempts=None, MaxRetransmitInterval=None, Mtu=None, Name=None, NcpRetries=None, NcpTimeout=None, NcpType=None, NoCallTimeout=None, NumSessions=None, ObjectId=None, OffsetByte=None, OffsetLength=None, PapPassword=None, PapUser=None, ReceiveWindowSize=None, RedialInterval=None, ServerBaseIid=None, ServerBaseIp=None, ServerDnsOptions=None, ServerIidIncr=None, ServerIpIncr=None, ServerNetmask=None, ServerNetmaskOptions=None, ServerPrimaryDnsAddress=None, ServerSecondaryDnsAddress=None, SessionAllocMethod=None, SessionsPerTunnel=None, TunnelAuthentication=None, TunnelDestinationIp=None, TunnelIncrementBy=None, UdpDestinationPort=None, UdpSourcePort=None, UseHiddenAvps=None, UseLengthBitInPayload=None, UseMagic=None, UseOffsetBitInPayload=None, UseSequenceNoInPayload=None):
+        # type: (str, int, int, str, str, str, str, str, str, str, str, str, str, int, str, str, str, str, str, int, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, int, int, str, int, str, str, str, str, str, int, int, int, int, str, str, int, int, int, int, str, int, int, str, int, int, str, int, int, str, str, int, int, str, str, str, int, str, str, str, str, str, str, int, str, str, str, int, int, bool, bool, bool, bool, bool) -> L2tpRange
+        """Finds and retrieves l2tpRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve l2tpRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all l2tpRange resources from the server.
+
+        Args
+        ----
+        - AuthOptions (str): For GUI grouping.
+        - AuthRetries (number): Number of PPP authentication retries
+        - AuthTimeout (number): Timeout for PPP authentication, in seconds.
+        - AuthType (str): Authentication type
+        - BaseLnsIp (str): Defines the base address to be used by the L2TP tunnel
+        - BasicOptions (str): 
+        - BearerCapability (str): Bearer capability
+        - BearerType (str): Bearer Type
+        - ChapName (str): User name when CHAP Authentication is being used
+        - ChapSecret (str): Secret when CHAP Authentication is being used
+        - ClientBaseIid (str): Base for IPv6CP interface identifiers assigned to clients.
+        - ClientBaseIp (str): Base for IPv4 PPP client address creation
+        - ClientDnsOptions (str): Client DNS options
+        - ClientIidIncr (number): Increment for IPv6CP client interface identifiers.
+        - ClientIpIncr (str): Incrementor for IPv4 PPP client address creation
+        - ClientNetmask (str): Netmask that the client should request
+        - ClientNetmaskOptions (str): Client netmask options
+        - ClientPrimaryDnsAddress (str): Primary DNS server address requested by client
+        - ClientSecondaryDnsAddress (str): Secondary DNS server address requested by client
+        - ControlMsgsRetryCounter (number): Number of L2TP retries
+        - ControlPlaneOptions (str): 
+        - DataPlaneOptions (str): 
+        - DnsServerList (str): DNS server list separacted by semicolon
+        - DomainList (str): Configure domain group settings
+        - DomainToIpList (str): Domain To LNS
+        - EchoReqInterval (number): Keep alive interval
+        - EnableControlChecksum (bool): Enable/Disable UDP checksums on control plane packets
+        - EnableDataChecksum (bool): Enable/Disable UDP checksums on data plane packets
+        - EnableDnsRa (bool): Enable RDNSS routing advertisments
+        - EnableDomainGroups (bool): Enable domain groups
+        - EnableEchoReq (bool): Enable Echo requests
+        - EnableEchoRsp (bool): Enable Echo replies
+        - EnableHelloRequest (bool): If enabled, L2TP hello request is performed
+        - EnableMru (bool): Enable/Disable MRU negotiation
+        - EnablePasswordCheck (bool): Enable authentication credential checking on the port.
+        - EnableRedial (bool): If enabled, L2TP redial is activated
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FramingCapability (str): Designates sync or async framing
+        - HelloRequestInterval (number): Timeout for L2TP hello request, in seconds
+        - IncrementBy (number): Defines the increment to be used for enumerating all the addresses in the range.
+        - InitRetransmitInterval (number): Initial L2TP timeout
+        - IpIncrementOctet (number): IP increment octet
+        - Ipv6AddrPrefixLen (number): IPv6 Address Prefix Length
+        - Ipv6PoolPrefix (str): Pool prefix for the IPv6 IP pool.
+        - Ipv6PoolPrefixLen (number): IPv6 Pool Prefix Length
+        - L2tpAuthOptions (str): 
+        - LacHostName (str): L2TP host name used during authentication on LAC, or authenticated against (on LNS).
+        - LacSecret (str): L2TP secret used during authentication
+        - LacToLnsMapping (str): LAC to LNS Mapping
+        - LcpOptions (str): For GUI grouping.
+        - LcpRetries (number): Number of LCP retries
+        - LcpTermRetries (number): Number of LCP Termination Retries
+        - LcpTermTimeout (number): Timeout for LCP termination, in seconds.
+        - LcpTimeout (number): Timeout for LCP phase, in seconds
+        - LnsHostName (str): L2TP hostname sent by Ixia port when acting as LNS
+        - LnsIpList (str): LNS IP Addresses
+        - LnsIpNumber (number): LNS IP number
+        - MaxRedialAttempts (number): Max number of L2TP redial attempts
+        - MaxRetransmitInterval (number): Max. L2TP timeout
+        - Mtu (number): Max Transmit Unit for PPP
+        - Name (str): Name of range
+        - NcpRetries (number): Number of NCP retries
+        - NcpTimeout (number): Timeout for NCP phase, in seconds
+        - NcpType (str): IP type (IPv4/IPv6) for Network Control Protocol
+        - NoCallTimeout (number): Timeout for no call establishment, in seconds
+        - NumSessions (number): No. of sessions to setup
+        - ObjectId (str): Unique identifier for this object
+        - OffsetByte (number): L2TP offset byte
+        - OffsetLength (number): L2TP offset length in bytes
+        - PapPassword (str): Password when PAP Authentication is being used
+        - PapUser (str): User name when PAP Authentication is being used
+        - ReceiveWindowSize (number): L2TP Receive Window Size
+        - RedialInterval (number): L2TP redial timeout, in seconds
+        - ServerBaseIid (str): Base for IPv6CP interface identifiers assigned to servers.
+        - ServerBaseIp (str): Base for IPv4 PPP server address creation
+        - ServerDnsOptions (str): Server DNS options
+        - ServerIidIncr (number): Increment for IPv6CP server interface identifiers.
+        - ServerIpIncr (str): *For internal use only*. For PPP/IP v4 server plugins, exactly one server address is used. As a result, 0.0.0.0 is the only legal value for this property.
+        - ServerNetmask (str): Netmask that the server should supply to clients
+        - ServerNetmaskOptions (str): Server netmask options
+        - ServerPrimaryDnsAddress (str): Primary DNS server address supplied by server
+        - ServerSecondaryDnsAddress (str): Secondary DNS server address supplied by server
+        - SessionAllocMethod (str): 
+        - SessionsPerTunnel (number): Number of sessions per L2TP tunnel
+        - TunnelAuthentication (str): Enable/Disable L2TP tunnel authentication
+        - TunnelDestinationIp (str): Defines the base address to be used for L2TP tunnel destination in the range
+        - TunnelIncrementBy (str): Defines the increment to be used between L2TP tunnels
+        - UdpDestinationPort (number): UDP port to employ for tunneling destinations
+        - UdpSourcePort (number): UDP port to employ for tunneling sources
+        - UseHiddenAvps (bool): Enable/Disable (A)ttribute (V)alue (P)air hiding
+        - UseLengthBitInPayload (bool): If enabled, length bit set in L2TP data packets.
+        - UseMagic (bool): use magic
+        - UseOffsetBitInPayload (bool): If enabled, offset bit is enabled in L2TP data packets
+        - UseSequenceNoInPayload (bool): If enabled, sequence bit is set in L2TP data packets.
+
+        Returns
+        -------
+        - self: This instance with matching l2tpRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of l2tpRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the l2tpRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ApplyActions(Base):
@@ -307,3 +309,58 @@ class ApplyActions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> ApplyActions
+        """Finds and retrieves applyActions resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve applyActions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all applyActions resources from the server.
+
+        Args
+        ----
+        - CopyTtlIn (bool): If selected, table supports Copy TTL In Apply Actions.
+        - CopyTtlOut (bool): If selected, table supports Copy TTL Out Apply Actions.
+        - DecrementMplsTtl (bool): If selected, table supports Decrement MPLS TTL Apply Actions.
+        - DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Apply Actions.
+        - Group (bool): If selected, table supports Group Apply Actions.
+        - Output (bool): If selected, table supports Output Apply Actions.
+        - PopMpls (bool): If selected, table supports Pop MPLS Apply Actions.
+        - PopPbb (bool): If selected, table supports Pop PBB Apply Actions.
+        - PopVlan (bool): If selected, table supports Pop VLAN Apply Actions.
+        - PushMpls (bool): If selected, table supports Push MPLS Apply Actions.
+        - PushPbb (bool): If selected, table supports Push PBB Apply Actions.
+        - PushVlan (bool): If selected, table supports Push VLAN Apply Actions.
+        - SetField (bool): If selected, table supports Set Field Apply Actions.
+        - SetMplsTtl (bool): If selected, table supports Set MPLS TTL Apply Actions.
+        - SetNetworkTtl (bool): If selected, table supports Set Network TTL Apply Actions.
+        - SetQueue (bool): If selected, table supports Set Queue Apply Actions.
+
+        Returns
+        -------
+        - self: This instance with matching applyActions resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of applyActions data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the applyActions resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

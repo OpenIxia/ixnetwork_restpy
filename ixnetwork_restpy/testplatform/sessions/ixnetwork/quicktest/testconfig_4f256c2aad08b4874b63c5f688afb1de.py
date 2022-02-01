@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -340,6 +342,63 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Duration=None, EnableAllSlavesStatus=None, EnableExpectedGrandMasterStatus=None, EnableNonExpectedMasterStatus=None, ExpectedMasterClockId=None, ExpectedMasterPort=None, GrandMasterStatus=None, MasterPorts=None, MaxOutstanding=None, NonExpectedMasterStatus=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, SlavePorts=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
+        # type: (int, str, str, str, str, str, str, str, int, str, int, List[str], str, int, str, str, int, bool) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - Duration (number): The wait time in hours, minutes, and seconds, that is required for the PTP protocol to negotiate
+        - EnableAllSlavesStatus (str): Master Clock ID of all the slave clocks is the same as the ID of the clock configured as Expected Master
+        - EnableExpectedGrandMasterStatus (str): Status of the clock configured as Expected Master is Grand Master
+        - EnableNonExpectedMasterStatus (str): Status of clocks configured as Master is not Grand Master
+        - ExpectedMasterClockId (str): ID of the Expected Master Clock
+        - ExpectedMasterPort (str): Port selected as Expected Master
+        - GrandMasterStatus (str): Port selected as Grand Master Clock
+        - MasterPorts (str): Ports selected as Master
+        - MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
+        - NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
+        - Numtrials (number): Number of trials that can be run
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - Runmode (str(duration | noframes)): Running mode used
+        - SetupRate (number): The number of PTP connections to be initiated per second
+        - SlavePorts (str): The ports selected as slaves
+        - StartTraffic (str): All traffic configured in IxNetwork is initiated on running this test
+        - TeardownRate (number): The number of PTP connections to tear down per second
+        - UseExistingSetupRate (bool): Currently set Setup Rate value is used
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

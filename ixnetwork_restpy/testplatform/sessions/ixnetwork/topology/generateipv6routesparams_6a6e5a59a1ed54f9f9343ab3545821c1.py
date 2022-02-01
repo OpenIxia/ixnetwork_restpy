@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class GenerateIpv6RoutesParams(Base):
@@ -290,6 +292,59 @@ class GenerateIpv6RoutesParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, SkipLoopback=None, SkipMcast=None):
+        """Finds and retrieves generateIpv6RoutesParams resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve generateIpv6RoutesParams resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all generateIpv6RoutesParams resources from the server.
+
+        Args
+        ----
+        - AddressRangesToSkip (str): Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: aa:0:1:b: - bb:0:2:c:, aa00: - bb00:1
+        - CustomDistributionFile (obj(ixnetwork_restpy.files.Files)): Source file having custom distribution information.
+        - DuplicateRoutesAsPathSuffix (str): AS Path Suffix for Duplicate Routes
+        - DuplicateRoutesPerDevicePercent (number): Percentage to Duplicate Primary Routes per Device.
+        - NetworkAddressStart (str): Network Address Start Value.
+        - NetworkAddressStep (str): Network Address Step Value.
+        - PrefixLengthDistributionScope (str(perTopology | perDevice | perPort)): Prefix Length Distribution Scope.
+        - PrefixLengthDistributionType (str(fixed | random | even | exponential | internet | custom)): Prefix Length Distribution Type.
+        - PrefixLengthEnd (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
+        - PrefixLengthStart (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
+        - PrimaryRoutesAsPathSuffix (str): AS Path Suffix for Primary Routes
+        - PrimaryRoutesPerDevice (number): Number of Primary Routes per Device.
+        - PrimaryRoutesPerRange (number): Number of Routes per Route Range.
+        - SkipLoopback (bool): Do not include Loopback Address in the generated Address Range
+        - SkipMcast (bool): Do not include Multicast Address in the generated Address Range
+
+        Returns
+        -------
+        - self: This instance with matching generateIpv6RoutesParams resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of generateIpv6RoutesParams data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the generateIpv6RoutesParams resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def GenerateIpv6Routes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

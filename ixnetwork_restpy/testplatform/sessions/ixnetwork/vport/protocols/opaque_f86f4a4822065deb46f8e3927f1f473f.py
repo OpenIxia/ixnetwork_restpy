@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Opaque(Base):
@@ -53,10 +55,10 @@ class Opaque(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktlv_452cab99b16a3494d6169df873b31fc6 import LinkTlv
-        if self._properties.get('LinkTlv', None) is not None:
-            return self._properties.get('LinkTlv')
-        else:
-            return LinkTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LinkTlv', None) is not None:
+                return self._properties.get('LinkTlv')
+        return LinkTlv(self)
 
     @property
     def RouterTlv(self):
@@ -70,10 +72,10 @@ class Opaque(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routertlv_7bd1e801f928228f94fc1e60463de9a3 import RouterTlv
-        if self._properties.get('RouterTlv', None) is not None:
-            return self._properties.get('RouterTlv')
-        else:
-            return RouterTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RouterTlv', None) is not None:
+                return self._properties.get('RouterTlv')
+        return RouterTlv(self)
 
     @property
     def EnableRouterTlv(self):

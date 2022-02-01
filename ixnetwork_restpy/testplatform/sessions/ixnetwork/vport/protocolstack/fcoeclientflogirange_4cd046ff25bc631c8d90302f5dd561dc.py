@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FcoeClientFlogiRange(Base):
@@ -574,6 +576,78 @@ class FcoeClientFlogiRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, Enabled=None, FipAddressingMode=None, FipDestinationMacAddress=None, FipEnabled=None, FipOptionSet=None, FipOptionSetName=None, FipSolicitTimeout=None, FipVendorId=None, FipVlanDiscovery=None, FipVlanDiscoveryUntagged=None, Name=None, NameServerCommands=None, NameServerQuery=None, NameServerQueryCommand=None, NameServerQueryParameterType=None, NameServerQueryParameterValue=None, NameServerRegistration=None, NodeWwnIncrement=None, NodeWwnStart=None, ObjectId=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortWwnIncrement=None, PortWwnStart=None, PrliEnabled=None, SourceOui=None, SourceOuiIncrement=None, StateChangeRegistration=None, StateChangeRegistrationOption=None, UnicastFipSolicit=None):
+        # type: (int, bool, str, str, bool, str, str, int, str, bool, bool, str, List[int], bool, str, str, str, bool, str, str, str, str, bool, str, str, str, str, bool, str, str, bool, str, str) -> FcoeClientFlogiRange
+        """Finds and retrieves fcoeClientFlogiRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeClientFlogiRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoeClientFlogiRange resources from the server.
+
+        Args
+        ----
+        - Count (number): The number of FLOGI VN_Ports to be created by this VN_Port range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FipAddressingMode (str): The addressing mode specified by FLOGI/FDISC requests.
+        - FipDestinationMacAddress (str): Represents the address to which FIP Solicit Unicast is sent.
+        - FipEnabled (bool): Enable FCoE Initialization Protocol (FIP).
+        - FipOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../fcoeClientOptionSet)): List of TLV options used with FIP.
+        - FipOptionSetName (str): The name of the Option Set used by this range.
+        - FipSolicitTimeout (number): Period of time (in seconds) that the client waits for a message of type FIP Discovery Advertisement Multicast before failing.
+        - FipVendorId (str): The Vendor Identifier value (8-byte).
+        - FipVlanDiscovery (bool): Enable FIP VLAN Discovery.
+        - FipVlanDiscoveryUntagged (bool): If enabled, VLAN Discovery will be performed using plain Ethernet frames, i.e. without any VLAN tags.
+        - Name (str): Name of range
+        - NameServerCommands (list(number)): Signifies the Name Server Commands that will be sent by the client.
+        - NameServerQuery (bool): If set, the N_Port will attempt to query a Name Server.
+        - NameServerQueryCommand (str): Name Server request command codes.
+        - NameServerQueryParameterType (str): State Change Registration Parameter Type.
+        - NameServerQueryParameterValue (str): State Change Registration Parameter Value.
+        - NameServerRegistration (bool): If set, the N_Port will attempt to register to a Name Server.
+        - NodeWwnIncrement (str): The Node Name incrementing value for this N_Port range.
+        - NodeWwnStart (str): The Node Name starting value for this N_Port range.
+        - ObjectId (str): Unique identifier for this object
+        - PlogiDestId (str): Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
+        - PlogiEnabled (bool): Enables these N_Ports to attempt a PLOGI connection with specified destinations.
+        - PlogiMeshMode (str): The association mode between PLOGI initiators and targets.
+        - PlogiTargetName (str): Indicates the N_Port range used as destination for PLOGI requests.
+        - PortWwnIncrement (str): The Port Name incrementing value for this N_Port range.
+        - PortWwnStart (str): The Port Name starting value for this N_Port range.
+        - PrliEnabled (bool): Process login.
+        - SourceOui (str): The OUI ID (3-byte) associated to all N_Ports in this range.
+        - SourceOuiIncrement (str): The OUI ID incrementing value for this N_Port range.
+        - StateChangeRegistration (bool): If set, the N_Port will attempt to subscribe to State Change events.
+        - StateChangeRegistrationOption (str): State Change Registration option.
+        - UnicastFipSolicit (str): None - Fip Solicit is made as multicast. Listen/Learn FIFO - The client waits a message of type FIP Discovery Advertisement Multicast and replies with FIP Solicit Unicast to the server. Listen/Learn PB - In this mode the FCoE Client listens for Unsolicited Advertisements from FCFs; when the waiting period is over, the FCF with the highest priority is chosen and a Discovery Solicitation unicast is sent to it. Explicit - The client sends directly a FIP Solicit Unicast to the address from FIP Destination MAC Address field.
+
+        Returns
+        -------
+        - self: This instance with matching fcoeClientFlogiRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of fcoeClientFlogiRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the fcoeClientFlogiRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

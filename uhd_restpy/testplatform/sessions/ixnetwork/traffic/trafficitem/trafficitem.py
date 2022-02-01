@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TrafficItem(Base):
@@ -99,10 +101,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.configelement import ConfigElement
-        if self._properties.get('ConfigElement', None) is not None:
-            return self._properties.get('ConfigElement')
-        else:
-            return ConfigElement(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ConfigElement', None) is not None:
+                return self._properties.get('ConfigElement')
+        return ConfigElement(self)
 
     @property
     def EgressTracking(self):
@@ -116,10 +118,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.egresstracking import EgressTracking
-        if self._properties.get('EgressTracking', None) is not None:
-            return self._properties.get('EgressTracking')
-        else:
-            return EgressTracking(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EgressTracking', None) is not None:
+                return self._properties.get('EgressTracking')
+        return EgressTracking(self)
 
     @property
     def EndpointSet(self):
@@ -133,10 +135,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.endpointset.endpointset import EndpointSet
-        if self._properties.get('EndpointSet', None) is not None:
-            return self._properties.get('EndpointSet')
-        else:
-            return EndpointSet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EndpointSet', None) is not None:
+                return self._properties.get('EndpointSet')
+        return EndpointSet(self)
 
     @property
     def HighLevelStream(self):
@@ -150,10 +152,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.highlevelstream import HighLevelStream
-        if self._properties.get('HighLevelStream', None) is not None:
-            return self._properties.get('HighLevelStream')
-        else:
-            return HighLevelStream(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('HighLevelStream', None) is not None:
+                return self._properties.get('HighLevelStream')
+        return HighLevelStream(self)
 
     @property
     def Tracking(self):
@@ -167,10 +169,10 @@ class TrafficItem(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.tracking.tracking import Tracking
-        if self._properties.get('Tracking', None) is not None:
-            return self._properties.get('Tracking')
-        else:
-            return Tracking(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tracking', None) is not None:
+                return self._properties.get('Tracking')
+        return Tracking(self)
 
     @property
     def AllowSelfDestined(self):

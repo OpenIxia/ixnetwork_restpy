@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PassCriteria(Base):
@@ -429,6 +431,68 @@ class PassCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, DataErrorThresholdMode=None, DataErrorThresholdValue=None, EnableDataIntegrityPassFail=None, EnableFrameLossPassFail=None, EnableLatencyPassFail=None, EnablePassFail=None, EnableRatePassFail=None, EnableSequenceErrorsPassFail=None, EnableStandardDeviationPassFail=None, LatencyThresholdMode=None, LatencyThresholdScale=None, LatencyThresholdValue=None, LatencyVarThresholdMode=None, LatencyVariationThresholdScale=None, LatencyVariationThresholdValue=None, LossThresholdMode=None, LossThresholdValue=None, PassCriteriaLoadRateMode=None, PassCriteriaLoadRateScale=None, PassCriteriaLoadRateValue=None, PassFailFrequency=None, SeqErrorsThresholdMode=None, SeqErrorsThresholdValue=None):
+        # type: (str, int, bool, bool, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, int, str, str, int, str, str, int) -> PassCriteria
+        """Finds and retrieves passCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve passCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all passCriteria resources from the server.
+
+        Args
+        ----
+        - DataErrorThresholdMode (str(average | maximum)): The threshold mode for the data error.
+        - DataErrorThresholdValue (number): The data error threshold value.
+        - EnableDataIntegrityPassFail (bool): If true, enables the checking of data integrity for the pass or fail of the trial.
+        - EnableFrameLossPassFail (bool): If true, enables the checking of frame loss for the pass or fail of the trial.
+        - EnableLatencyPassFail (bool): If true, enables latency at which trails pass or fail.
+        - EnablePassFail (bool): If true, IxNetwork applies the Pass Criteria to each trial in the test and determines whether the trial passed or failed.
+        - EnableRatePassFail (bool): If true, enables the rate of pass or failure of the trial.
+        - EnableSequenceErrorsPassFail (bool): If true, sets the amount of time required by the DUT to forward frames and the sequence errors for the pass or fail of the trial.
+        - EnableStandardDeviationPassFail (bool): If true, enables standard deviation in the pass or failure of the trial.
+        - LatencyThresholdMode (str(average | maximum)): The threshold latency mode value.
+        - LatencyThresholdScale (str(ms | ns | us)): The latency threshold scale value.
+        - LatencyThresholdValue (number): The latency threshold value of the test.
+        - LatencyVarThresholdMode (str(average | maximum)): The threshold mode for the latency variation.
+        - LatencyVariationThresholdScale (str(ms | ns | us)): signifies the latency variation in the threshold scale.
+        - LatencyVariationThresholdValue (number): signifies the latency variation in the threshold value.
+        - LossThresholdMode (str(average | maximum)): Signifies threshold mode of the frame loss.
+        - LossThresholdValue (number): Denotes the loss in threshold value.
+        - PassCriteriaLoadRateMode (str(average | minimum)): The Pass Criteria per trial rate at which the DUT should be able to transmit and receive, expressed as a percentage of the maximum theoretical line speed or in terms of frames per second.
+        - PassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The load rate scale for the Pass Criteria per trial.
+        - PassCriteriaLoadRateValue (number): The load rate value for the Pass Criteria per trial.
+        - PassFailFrequency (str(framesizes | trials)): NOT DEFINED
+        - SeqErrorsThresholdMode (str(average | maximum)): The sequence error value for the threshold mode.
+        - SeqErrorsThresholdValue (number): The value for the sequence error threshold.
+
+        Returns
+        -------
+        - self: This instance with matching passCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of passCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the passCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

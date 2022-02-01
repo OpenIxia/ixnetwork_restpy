@@ -19,13 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Statistic(Base):
-    """
+    """DEPRECATED 
     The Statistic class encapsulates a list of statistic resources that are managed by the user.
     A list of resources can be retrieved from the server using the Statistic.find() method.
     The list can be managed by using the Statistic.add() and Statistic.remove() methods.

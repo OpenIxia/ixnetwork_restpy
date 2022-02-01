@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Statistics(Base):
@@ -68,10 +70,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.autorefresh.autorefresh import AutoRefresh
-        if self._properties.get('AutoRefresh', None) is not None:
-            return self._properties.get('AutoRefresh')
-        else:
-            return AutoRefresh(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AutoRefresh', None) is not None:
+                return self._properties.get('AutoRefresh')
+        return AutoRefresh(self)._select()
 
     @property
     def CsvSnapshot(self):
@@ -85,10 +87,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.csvsnapshot.csvsnapshot import CsvSnapshot
-        if self._properties.get('CsvSnapshot', None) is not None:
-            return self._properties.get('CsvSnapshot')
-        else:
-            return CsvSnapshot(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CsvSnapshot', None) is not None:
+                return self._properties.get('CsvSnapshot')
+        return CsvSnapshot(self)._select()
 
     @property
     def Ixreporter(self):
@@ -102,10 +104,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.ixreporter.ixreporter import Ixreporter
-        if self._properties.get('Ixreporter', None) is not None:
-            return self._properties.get('Ixreporter')
-        else:
-            return Ixreporter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ixreporter', None) is not None:
+                return self._properties.get('Ixreporter')
+        return Ixreporter(self)._select()
 
     @property
     def MeasurementMode(self):
@@ -119,10 +121,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.measurementmode.measurementmode import MeasurementMode
-        if self._properties.get('MeasurementMode', None) is not None:
-            return self._properties.get('MeasurementMode')
-        else:
-            return MeasurementMode(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MeasurementMode', None) is not None:
+                return self._properties.get('MeasurementMode')
+        return MeasurementMode(self)._select()
 
     @property
     def RawData(self):
@@ -136,10 +138,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.rawdata.rawdata import RawData
-        if self._properties.get('RawData', None) is not None:
-            return self._properties.get('RawData')
-        else:
-            return RawData(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RawData', None) is not None:
+                return self._properties.get('RawData')
+        return RawData(self)._select()
 
     @property
     def View(self):
@@ -153,10 +155,10 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.statistics.view.view import View
-        if self._properties.get('View', None) is not None:
-            return self._properties.get('View')
-        else:
-            return View(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('View', None) is not None:
+                return self._properties.get('View')
+        return View(self)
 
     @property
     def AdditionalFcoeStat1(self):
@@ -375,6 +377,59 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AdditionalFcoeStat1=None, AdditionalFcoeStat2=None, CsvFilePath=None, CsvLogPollIntervalMultiplier=None, DataStorePollingIntervalMultiplier=None, EnableAutoDataStore=None, EnableCsvLogging=None, EnableDataCenterSharedStats=None, GuardrailEnabled=None, MaxNumberOfStatsPerCustomGraph=None, PollInterval=None, TimeSynchronization=None, TimestampPrecision=None, UgsTcpPort=None):
+        # type: (str, str, str, int, int, bool, bool, bool, bool, int, int, str, int, int) -> Statistics
+        """Finds and retrieves statistics resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistics resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all statistics resources from the server.
+
+        Args
+        ----
+        - AdditionalFcoeStat1 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Signifies additional FCOE stat 1
+        - AdditionalFcoeStat2 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Sets the additional FCoE shared stats.
+        - CsvFilePath (str): Sets the CSV file path.
+        - CsvLogPollIntervalMultiplier (number): Used to specify the time interval between log polling events.
+        - DataStorePollingIntervalMultiplier (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
+        - EnableAutoDataStore (bool): If this option is enabled, StatViewer writes the statistical values in binary format for all test results in a view. The test results is converted into a binary array and written to a file.
+        - EnableCsvLogging (bool): If this option is enabled, StatViewer writes the statistical values in comma separated value format for all test results in a view.
+        - EnableDataCenterSharedStats (bool): If true, enables statistics for Data Center.
+        - GuardrailEnabled (bool): NOT DEFINED
+        - MaxNumberOfStatsPerCustomGraph (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
+        - PollInterval (number): The multiplier used with the frequency (2 seconds), to set the time interval between polling events. The default is 1 (1 times 2 seconds = 2 seconds).
+        - TimeSynchronization (str(syncTimeToSystemClock | syncTimeToTestStart)): The statistics polling time can be configured to get synchronized with the system clock or reset it to 0 when the test starts. The time synchronization behavior can be changed only before the test starts and does not apply during test run.
+        - TimestampPrecision (number): The timestamp precision allows you to change the timestamp precision from microseconds to nanoseconds for specific StatViewer statistics and features. The timestamp precision can be set to have the fstatistics display values with decimals ranging from 0 to 9.
+        - UgsTcpPort (number): Used to specify the UGS TCP port.
+
+        Returns
+        -------
+        - self: This instance with matching statistics resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of statistics data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the statistics resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CheckViewTreeGroupExists(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

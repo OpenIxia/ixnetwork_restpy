@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PppoxEndpoint(Base):
@@ -56,10 +58,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_645e8a6e78256f1015f9f82f4e1ee1c5 import Ancp
-        if self._properties.get('Ancp', None) is not None:
-            return self._properties.get('Ancp')
-        else:
-            return Ancp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ancp', None) is not None:
+                return self._properties.get('Ancp')
+        return Ancp(self)
 
     @property
     def Dhcp2v6Client(self):
@@ -73,10 +75,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcp2v6client_c0bfa39f593baf3c28c2c6d71cbb8758 import Dhcp2v6Client
-        if self._properties.get('Dhcp2v6Client', None) is not None:
-            return self._properties.get('Dhcp2v6Client')
-        else:
-            return Dhcp2v6Client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcp2v6Client', None) is not None:
+                return self._properties.get('Dhcp2v6Client')
+        return Dhcp2v6Client(self)
 
     @property
     def Dhcpv6Client(self):
@@ -90,10 +92,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6client_0e35f0235583a6fcb4fbaec4f4342eba import Dhcpv6Client
-        if self._properties.get('Dhcpv6Client', None) is not None:
-            return self._properties.get('Dhcpv6Client')
-        else:
-            return Dhcpv6Client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6Client', None) is not None:
+                return self._properties.get('Dhcpv6Client')
+        return Dhcpv6Client(self)
 
     @property
     def Dhcpv6Server(self):
@@ -107,10 +109,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6server_a5e15a17e47cc36d6445e706ab116ac0 import Dhcpv6Server
-        if self._properties.get('Dhcpv6Server', None) is not None:
-            return self._properties.get('Dhcpv6Server')
-        else:
-            return Dhcpv6Server(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6Server', None) is not None:
+                return self._properties.get('Dhcpv6Server')
+        return Dhcpv6Server(self)
 
     @property
     def IgmpMld(self):
@@ -124,10 +126,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_bb81b8ee93b45bab3b8e315d7d8cfe4e import IgmpMld
-        if self._properties.get('IgmpMld', None) is not None:
-            return self._properties.get('IgmpMld')
-        else:
-            return IgmpMld(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpMld', None) is not None:
+                return self._properties.get('IgmpMld')
+        return IgmpMld(self)
 
     @property
     def IgmpQuerier(self):
@@ -141,10 +143,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpquerier_209d31ae9666cd4d90b580d9566bf2ed import IgmpQuerier
-        if self._properties.get('IgmpQuerier', None) is not None:
-            return self._properties.get('IgmpQuerier')
-        else:
-            return IgmpQuerier(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpQuerier', None) is not None:
+                return self._properties.get('IgmpQuerier')
+        return IgmpQuerier(self)
 
     @property
     def Iptv(self):
@@ -158,10 +160,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_3a1cc35f9d82bf88f6776d4b6d6e1976 import Iptv
-        if self._properties.get('Iptv', None) is not None:
-            return self._properties.get('Iptv')
-        else:
-            return Iptv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Iptv', None) is not None:
+                return self._properties.get('Iptv')
+        return Iptv(self)
 
     @property
     def Range(self):
@@ -175,10 +177,10 @@ class PppoxEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_9ecefbd1639215458ad6cad8355e64be import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def Name(self):

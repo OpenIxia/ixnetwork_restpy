@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CfmSimulatedTopology(Base):
@@ -56,10 +58,10 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.configmanamesparams_122374d4856af71309d8e8b3391bfdcd import ConfigMANamesParams
-        if self._properties.get('ConfigMANamesParams', None) is not None:
-            return self._properties.get('ConfigMANamesParams')
-        else:
-            return ConfigMANamesParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ConfigMANamesParams', None) is not None:
+                return self._properties.get('ConfigMANamesParams')
+        return ConfigMANamesParams(self)._select()
 
     @property
     def ConfigMDLevelsParams(self):
@@ -73,10 +75,10 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.configmdlevelsparams_1bf3d8514855f50e409c0aef7ac6bf1e import ConfigMDLevelsParams
-        if self._properties.get('ConfigMDLevelsParams', None) is not None:
-            return self._properties.get('ConfigMDLevelsParams')
-        else:
-            return ConfigMDLevelsParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ConfigMDLevelsParams', None) is not None:
+                return self._properties.get('ConfigMDLevelsParams')
+        return ConfigMDLevelsParams(self)._select()
 
     @property
     def ConfigVLANParams(self):
@@ -90,10 +92,10 @@ class CfmSimulatedTopology(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.configvlanparams_ab1a6e3f956da910a4175820dceb06bd import ConfigVLANParams
-        if self._properties.get('ConfigVLANParams', None) is not None:
-            return self._properties.get('ConfigVLANParams')
-        else:
-            return ConfigVLANParams(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ConfigVLANParams', None) is not None:
+                return self._properties.get('ConfigVLANParams')
+        return ConfigVLANParams(self)._select()
 
     @property
     def Active(self):

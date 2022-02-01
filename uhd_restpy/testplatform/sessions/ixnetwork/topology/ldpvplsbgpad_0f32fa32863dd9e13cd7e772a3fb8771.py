@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ldpvplsbgpad(Base):
@@ -101,10 +103,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def Ethernet(self):
@@ -118,10 +120,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)
 
     @property
     def Ipv4Loopback(self):
@@ -135,10 +137,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4loopback_f84286c6e2c90f5267670278dde3f258 import Ipv4Loopback
-        if self._properties.get('Ipv4Loopback', None) is not None:
-            return self._properties.get('Ipv4Loopback')
-        else:
-            return Ipv4Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4Loopback', None) is not None:
+                return self._properties.get('Ipv4Loopback')
+        return Ipv4Loopback(self)
 
     @property
     def Ipv6Loopback(self):
@@ -152,10 +154,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6loopback_c5557054afff2b9cc84b7676de50b805 import Ipv6Loopback
-        if self._properties.get('Ipv6Loopback', None) is not None:
-            return self._properties.get('Ipv6Loopback')
-        else:
-            return Ipv6Loopback(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6Loopback', None) is not None:
+                return self._properties.get('Ipv6Loopback')
+        return Ipv6Loopback(self)
 
     @property
     def LdpBasicRouter(self):
@@ -169,10 +171,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouter_53e2de40003674322c811a1ba519dbb6 import LdpBasicRouter
-        if self._properties.get('LdpBasicRouter', None) is not None:
-            return self._properties.get('LdpBasicRouter')
-        else:
-            return LdpBasicRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpBasicRouter', None) is not None:
+                return self._properties.get('LdpBasicRouter')
+        return LdpBasicRouter(self)
 
     @property
     def LdpBasicRouterV6(self):
@@ -186,10 +188,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldpbasicrouterv6_b554f464616f39033d7acad4846e556c import LdpBasicRouterV6
-        if self._properties.get('LdpBasicRouterV6', None) is not None:
-            return self._properties.get('LdpBasicRouterV6')
-        else:
-            return LdpBasicRouterV6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpBasicRouterV6', None) is not None:
+                return self._properties.get('LdpBasicRouterV6')
+        return LdpBasicRouterV6(self)
 
     @property
     def LdpTargetedRouter(self):
@@ -203,10 +205,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouter_85c7a9993d80996c22a9dbd739df9692 import LdpTargetedRouter
-        if self._properties.get('LdpTargetedRouter', None) is not None:
-            return self._properties.get('LdpTargetedRouter')
-        else:
-            return LdpTargetedRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpTargetedRouter', None) is not None:
+                return self._properties.get('LdpTargetedRouter')
+        return LdpTargetedRouter(self)
 
     @property
     def LdpTargetedRouterV6(self):
@@ -220,10 +222,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ldptargetedrouterv6_e86e77f17dfccefac9e15769756089cf import LdpTargetedRouterV6
-        if self._properties.get('LdpTargetedRouterV6', None) is not None:
-            return self._properties.get('LdpTargetedRouterV6')
-        else:
-            return LdpTargetedRouterV6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpTargetedRouterV6', None) is not None:
+                return self._properties.get('LdpTargetedRouterV6')
+        return LdpTargetedRouterV6(self)
 
     @property
     def Tag(self):
@@ -237,10 +239,10 @@ class Ldpvplsbgpad(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):

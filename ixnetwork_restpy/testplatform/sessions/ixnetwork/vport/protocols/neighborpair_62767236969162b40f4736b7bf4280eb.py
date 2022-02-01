@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NeighborPair(Base):
@@ -77,10 +79,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assignedlabel_1ca73f384f23326da21a0d9e6590f861 import AssignedLabel
-        if self._properties.get('AssignedLabel', None) is not None:
-            return self._properties.get('AssignedLabel')
-        else:
-            return AssignedLabel(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AssignedLabel', None) is not None:
+                return self._properties.get('AssignedLabel')
+        return AssignedLabel(self)
 
     @property
     def DestinationRange(self):
@@ -94,10 +96,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.destinationrange_9b313479dda95958405e4134c28a030e import DestinationRange
-        if self._properties.get('DestinationRange', None) is not None:
-            return self._properties.get('DestinationRange')
-        else:
-            return DestinationRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DestinationRange', None) is not None:
+                return self._properties.get('DestinationRange')
+        return DestinationRange(self)
 
     @property
     def ReceivedLabel(self):
@@ -111,10 +113,10 @@ class NeighborPair(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.receivedlabel_66d892ad12fd2388f95e64d763d34ee0 import ReceivedLabel
-        if self._properties.get('ReceivedLabel', None) is not None:
-            return self._properties.get('ReceivedLabel')
-        else:
-            return ReceivedLabel(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ReceivedLabel', None) is not None:
+                return self._properties.get('ReceivedLabel')
+        return ReceivedLabel(self)
 
     @property
     def ActualRestartTime(self):

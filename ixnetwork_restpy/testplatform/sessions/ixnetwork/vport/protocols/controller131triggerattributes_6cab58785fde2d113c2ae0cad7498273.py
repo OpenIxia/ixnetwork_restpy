@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Controller131TriggerAttributes(Base):
@@ -476,3 +478,69 @@ class Controller131TriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableSendTriggerMeterConfigStatsLearnedInformation=None, EnableSendTriggerMeterFeatureStatsLearnedInformation=None, EnableSendTriggerMeterStatLearnedInformation=None, FlowStatOutGroup=None, FlowStatOutGroupInputMode=None, FlowStatOutPort=None, FlowStatOutPortInputMode=None, FlowStatTableId=None, FlowStatTableIdInputMode=None, IsMeterConfigStatLearnedInformationRefreshed=None, IsMeterFeatureStatLearnedInformationRefreshed=None, IsMeterStatLearnedInformationRefreshed=None, MeterConfigStatMeterId=None, MeterConfigStatMeterNumber=None, MeterConfigStatResponseTimeOut=None, MeterFeatureStatResponseTimeOut=None, MeterStatMeterId=None, MeterStatMeterNumber=None, MeterStatResponseTimeOut=None, PortStatPortNumber=None, PortStatPortNumberInputMode=None, QueueConfigPortNumber=None, QueueConfigPortNumberInputMode=None, QueueStatPortNumber=None, QueueStatPortNumberInputMode=None, VendorMessageExperimenterType=None, VendorStatExperimenterType=None):
+        # type: (bool, bool, bool, int, str, int, str, int, str, bool, bool, bool, str, int, int, int, str, int, int, int, str, int, str, int, str, int, int) -> Controller131TriggerAttributes
+        """Finds and retrieves controller131TriggerAttributes resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve controller131TriggerAttributes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all controller131TriggerAttributes resources from the server.
+
+        Args
+        ----
+        - EnableSendTriggerMeterConfigStatsLearnedInformation (bool): NOT DEFINED
+        - EnableSendTriggerMeterFeatureStatsLearnedInformation (bool): NOT DEFINED
+        - EnableSendTriggerMeterStatLearnedInformation (bool): NOT DEFINED
+        - FlowStatOutGroup (number): The out group used.
+        - FlowStatOutGroupInputMode (str(allGroups | anyGroup | outGroupCustom)): The input mode of the out group.
+        - FlowStatOutPort (number): Specifies the Output port number.
+        - FlowStatOutPortInputMode (str(ofppInPort | ofppNormal | ofppFlood | ofppAll | ofppController | ofppLocal | ofppAny | outPortCustom)): The output port used.
+        - FlowStatTableId (number): The identifier of the table.
+        - FlowStatTableIdInputMode (str(allTables | emergency | custom)): The identifier of the table.
+        - IsMeterConfigStatLearnedInformationRefreshed (bool): NOT DEFINED
+        - IsMeterFeatureStatLearnedInformationRefreshed (bool): NOT DEFINED
+        - IsMeterStatLearnedInformationRefreshed (bool): NOT DEFINED
+        - MeterConfigStatMeterId (str(ofpmController | ofpmSlowPath | ofpmAll | manual)): NOT DEFINED
+        - MeterConfigStatMeterNumber (number): NOT DEFINED
+        - MeterConfigStatResponseTimeOut (number): NOT DEFINED
+        - MeterFeatureStatResponseTimeOut (number): NOT DEFINED
+        - MeterStatMeterId (str(ofpmController | ofpmSlowPath | ofpmAll | manual)): NOT DEFINED
+        - MeterStatMeterNumber (number): NOT DEFINED
+        - MeterStatResponseTimeOut (number): NOT DEFINED
+        - PortStatPortNumber (number): The port number for port stat learned information.
+        - PortStatPortNumberInputMode (str(ofppAny | portNumberCustom)): The input mode of port number for port stat learned information.
+        - QueueConfigPortNumber (number): The port number for queue config learned information.
+        - QueueConfigPortNumberInputMode (str(ofppAny | portNumberCustom)): The input mode of port number for queue config learned information.
+        - QueueStatPortNumber (number): The port number for queue statistics learned information.
+        - QueueStatPortNumberInputMode (str(ofppAll | ofppAny | portNumberCustom)): The input mode of port number for queue statistics learned information.
+        - VendorMessageExperimenterType (number): Experimenter type for Vendor Message.
+        - VendorStatExperimenterType (number): Experimenter type for Vendor stat.
+
+        Returns
+        -------
+        - self: This instance with matching controller131TriggerAttributes resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of controller131TriggerAttributes data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the controller131TriggerAttributes resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

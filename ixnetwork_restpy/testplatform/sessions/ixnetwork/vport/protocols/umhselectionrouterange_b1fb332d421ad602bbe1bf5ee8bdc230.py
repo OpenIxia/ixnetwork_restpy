@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class UmhSelectionRouteRange(Base):
@@ -108,10 +110,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.assegment_4988c478ce9b4241205f6811a359ffe8 import AsSegment
-        if self._properties.get('AsSegment', None) is not None:
-            return self._properties.get('AsSegment')
-        else:
-            return AsSegment(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AsSegment', None) is not None:
+                return self._properties.get('AsSegment')
+        return AsSegment(self)._select()
 
     @property
     def Cluster(self):
@@ -125,10 +127,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cluster_f3997bb962d2128c99954ba076f70beb import Cluster
-        if self._properties.get('Cluster', None) is not None:
-            return self._properties.get('Cluster')
-        else:
-            return Cluster(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Cluster', None) is not None:
+                return self._properties.get('Cluster')
+        return Cluster(self)._select()
 
     @property
     def Community(self):
@@ -142,10 +144,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.community_6aed3c83f2a302323de0f8dd850abdcc import Community
-        if self._properties.get('Community', None) is not None:
-            return self._properties.get('Community')
-        else:
-            return Community(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Community', None) is not None:
+                return self._properties.get('Community')
+        return Community(self)._select()
 
     @property
     def ExtendedCommunity(self):
@@ -159,10 +161,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.extendedcommunity_1088c247b717ff4329d3c4e43ec9916b import ExtendedCommunity
-        if self._properties.get('ExtendedCommunity', None) is not None:
-            return self._properties.get('ExtendedCommunity')
-        else:
-            return ExtendedCommunity(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ExtendedCommunity', None) is not None:
+                return self._properties.get('ExtendedCommunity')
+        return ExtendedCommunity(self)._select()
 
     @property
     def Flapping(self):
@@ -176,10 +178,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.flapping_0c191468e6dbc2508006af0395ecab15 import Flapping
-        if self._properties.get('Flapping', None) is not None:
-            return self._properties.get('Flapping')
-        else:
-            return Flapping(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Flapping', None) is not None:
+                return self._properties.get('Flapping')
+        return Flapping(self)._select()
 
     @property
     def LabelSpace(self):
@@ -193,10 +195,10 @@ class UmhSelectionRouteRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.labelspace_f8e4bd27d1a26b770c2211ad8e011438 import LabelSpace
-        if self._properties.get('LabelSpace', None) is not None:
-            return self._properties.get('LabelSpace')
-        else:
-            return LabelSpace(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LabelSpace', None) is not None:
+                return self._properties.get('LabelSpace')
+        return LabelSpace(self)._select()
 
     @property
     def AggregatorAsNumber(self):

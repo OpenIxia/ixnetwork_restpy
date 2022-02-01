@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SupportedFeatures(Base):
@@ -307,3 +309,58 @@ class SupportedFeatures(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, HundredGbFd=None, HundredMbFd=None, HundredMbHd=None, TenGbFd=None, TenMbFd=None, TenMbHd=None, OneGbFd=None, OneGbHd=None, OneTbFd=None, FortyGbFd=None, AsymmetricPause=None, AutoNegotiation=None, CopperMedium=None, FiberMedium=None, OtherRate=None, Pause=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> SupportedFeatures
+        """Finds and retrieves supportedFeatures resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve supportedFeatures resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all supportedFeatures resources from the server.
+
+        Args
+        ----
+        - HundredGbFd (bool): If selected, 100 GB full-duplex rate support is available.
+        - HundredMbFd (bool): If selected, 100 MB full-duplex rate support is available.
+        - HundredMbHd (bool): If selected, 100 MB half-duplex rate support is available.
+        - TenGbFd (bool): If selected, 10 GB full-duplex rate support is available.
+        - TenMbFd (bool): If selected, 10 MB full-duplex rate support is available.
+        - TenMbHd (bool): If selected, 10 MB half-duplex rate support is available.
+        - OneGbFd (bool): If selected, 1 GB full-duplex rate support is available.
+        - OneGbHd (bool): If selected, 1 GB half-duplex rate support is available.
+        - OneTbFd (bool): If selected, 1 TB full-duplex rate support is available.
+        - FortyGbFd (bool): If selected, 40 GB full-duplex rate support is available.
+        - AsymmetricPause (bool): If selected, asymmetric pause of ports feature is available.
+        - AutoNegotiation (bool): If selected, auto negotiation of ports is available.
+        - CopperMedium (bool): If selected, copper medium link type is available.
+        - FiberMedium (bool): If selected, fiber medium link type is available.
+        - OtherRate (bool): If true, supports other rate, not in the list.
+        - Pause (bool): If selected, pause ports feature is available.
+
+        Returns
+        -------
+        - self: This instance with matching supportedFeatures resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of supportedFeatures data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the supportedFeatures resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

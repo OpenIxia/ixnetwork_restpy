@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EvpnIPv4PrefixRange(Base):
@@ -101,10 +103,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        if self._properties.get('BgpAsPathSegmentList', None) is not None:
-            return self._properties.get('BgpAsPathSegmentList')
-        else:
-            return BgpAsPathSegmentList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsPathSegmentList', None) is not None:
+                return self._properties.get('BgpAsPathSegmentList')
+        return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -118,10 +120,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        if self._properties.get('BgpClusterIdList', None) is not None:
-            return self._properties.get('BgpClusterIdList')
-        else:
-            return BgpClusterIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpClusterIdList', None) is not None:
+                return self._properties.get('BgpClusterIdList')
+        return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -135,10 +137,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        if self._properties.get('BgpCommunitiesList', None) is not None:
-            return self._properties.get('BgpCommunitiesList')
-        else:
-            return BgpCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpCommunitiesList', None) is not None:
+                return self._properties.get('BgpCommunitiesList')
+        return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -152,10 +154,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-            return self._properties.get('BgpExtendedCommunitiesList')
-        else:
-            return BgpExtendedCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+                return self._properties.get('BgpExtendedCommunitiesList')
+        return BgpExtendedCommunitiesList(self)
 
     @property
     def CMacProperties(self):
@@ -169,10 +171,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        if self._properties.get('CMacProperties', None) is not None:
-            return self._properties.get('CMacProperties')
-        else:
-            return CMacProperties(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CMacProperties', None) is not None:
+                return self._properties.get('CMacProperties')
+        return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -186,10 +188,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv4PrefixRange')
-        else:
-            return EvpnIPv4PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv4PrefixRange')
+        return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -203,10 +205,10 @@ class EvpnIPv4PrefixRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv6PrefixRange')
-        else:
-            return EvpnIPv6PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv6PrefixRange')
+        return EvpnIPv6PrefixRange(self)
 
     @property
     def Active(self):

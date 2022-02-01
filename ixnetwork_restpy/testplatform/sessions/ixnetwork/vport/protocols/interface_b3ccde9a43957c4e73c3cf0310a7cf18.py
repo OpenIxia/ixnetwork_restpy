@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -89,10 +91,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.crprange_597167656c83f71e3e5a55938cb106a8 import CrpRange
-        if self._properties.get('CrpRange', None) is not None:
-            return self._properties.get('CrpRange')
-        else:
-            return CrpRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CrpRange', None) is not None:
+                return self._properties.get('CrpRange')
+        return CrpRange(self)
 
     @property
     def DataMdt(self):
@@ -106,10 +108,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.datamdt_79ed433986fc353fbd239fb7999ae1ee import DataMdt
-        if self._properties.get('DataMdt', None) is not None:
-            return self._properties.get('DataMdt')
-        else:
-            return DataMdt(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DataMdt', None) is not None:
+                return self._properties.get('DataMdt')
+        return DataMdt(self)
 
     @property
     def JoinPrune(self):
@@ -123,10 +125,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.joinprune_9763e6279a674992cf71e86306c68672 import JoinPrune
-        if self._properties.get('JoinPrune', None) is not None:
-            return self._properties.get('JoinPrune')
-        else:
-            return JoinPrune(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('JoinPrune', None) is not None:
+                return self._properties.get('JoinPrune')
+        return JoinPrune(self)
 
     @property
     def LearnedBsrInfo(self):
@@ -140,10 +142,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedbsrinfo_2b92bfaf7519829d075075f5c767de14 import LearnedBsrInfo
-        if self._properties.get('LearnedBsrInfo', None) is not None:
-            return self._properties.get('LearnedBsrInfo')
-        else:
-            return LearnedBsrInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedBsrInfo', None) is not None:
+                return self._properties.get('LearnedBsrInfo')
+        return LearnedBsrInfo(self)
 
     @property
     def LearnedCrpInfo(self):
@@ -157,10 +159,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedcrpinfo_60dd066e4b0de49ae66860f72856bd39 import LearnedCrpInfo
-        if self._properties.get('LearnedCrpInfo', None) is not None:
-            return self._properties.get('LearnedCrpInfo')
-        else:
-            return LearnedCrpInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedCrpInfo', None) is not None:
+                return self._properties.get('LearnedCrpInfo')
+        return LearnedCrpInfo(self)
 
     @property
     def LearnedMdtInfo(self):
@@ -174,10 +176,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmdtinfo_bbc54102507121c33244de8dacb03b19 import LearnedMdtInfo
-        if self._properties.get('LearnedMdtInfo', None) is not None:
-            return self._properties.get('LearnedMdtInfo')
-        else:
-            return LearnedMdtInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedMdtInfo', None) is not None:
+                return self._properties.get('LearnedMdtInfo')
+        return LearnedMdtInfo(self)
 
     @property
     def Source(self):
@@ -191,10 +193,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_f52e88433233160a4b212fd8bab440ba import Source
-        if self._properties.get('Source', None) is not None:
-            return self._properties.get('Source')
-        else:
-            return Source(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Source', None) is not None:
+                return self._properties.get('Source')
+        return Source(self)
 
     @property
     def AddressFamily(self):

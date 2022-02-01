@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TxSakPool(Base):
@@ -110,7 +112,7 @@ class TxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 128 bit value of Secure Association Key with which DUT is expected to encrypt MACsec packets.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 128 bit value of Secure Association Key used for encryption of transmitted MACsec packets.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSak128']))
@@ -132,7 +134,7 @@ class TxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 12 bytes Salt value for XPN cipher suites.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 12 bytes Salt used for encryption of transmitted MACsec packets in case of XPN cipher suites.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSalt']))
@@ -143,7 +145,7 @@ class TxSakPool(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 bytes Short SCI for XPN cipher suites.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 4 bytes short SCI used for encryption of transmitted MACsec packets in case of XPN cipher suites.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['TxSsci']))
@@ -164,6 +166,48 @@ class TxSakPool(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> TxSakPool
+        """Finds and retrieves txSakPool resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve txSakPool resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all txSakPool resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with matching txSakPool resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of txSakPool data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the txSakPool resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, ActiveSak=None, AnInUse=None, TxSak128=None, TxSak256=None, TxSalt=None, TxSsci=None):
         """Base class infrastructure that gets a list of txSakPool device ids encapsulated by this object.

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MatchAction(Base):
@@ -60,10 +62,10 @@ class MatchAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.instructions_c6523447e39f8424f52417c8fe0de9ff import Instructions
-        if self._properties.get('Instructions', None) is not None:
-            return self._properties.get('Instructions')
-        else:
-            return Instructions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Instructions', None) is not None:
+                return self._properties.get('Instructions')
+        return Instructions(self)._select()
 
     @property
     def MatchCriteria(self):
@@ -77,10 +79,10 @@ class MatchAction(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.matchcriteria_0cfbf8546f5ee9d503c47b3a37bded66 import MatchCriteria
-        if self._properties.get('MatchCriteria', None) is not None:
-            return self._properties.get('MatchCriteria')
-        else:
-            return MatchCriteria(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MatchCriteria', None) is not None:
+                return self._properties.get('MatchCriteria')
+        return MatchCriteria(self)._select()
 
     @property
     def Count(self):

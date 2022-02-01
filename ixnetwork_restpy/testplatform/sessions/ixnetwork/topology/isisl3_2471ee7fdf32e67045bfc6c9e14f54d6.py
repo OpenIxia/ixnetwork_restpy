@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisL3(Base):
@@ -141,10 +143,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def IsisAppSpecSrlgList(self):
@@ -158,10 +160,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisappspecsrlglist_c86dcbcff988ad5c54aecdd16dd33b6f import IsisAppSpecSrlgList
-        if self._properties.get('IsisAppSpecSrlgList', None) is not None:
-            return self._properties.get('IsisAppSpecSrlgList')
-        else:
-            return IsisAppSpecSrlgList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisAppSpecSrlgList', None) is not None:
+                return self._properties.get('IsisAppSpecSrlgList')
+        return IsisAppSpecSrlgList(self)._select()
 
     @property
     def IsisMTIDList(self):
@@ -175,10 +177,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_546f33e99cab8ba1beaa9a395387c9df import IsisMTIDList
-        if self._properties.get('IsisMTIDList', None) is not None:
-            return self._properties.get('IsisMTIDList')
-        else:
-            return IsisMTIDList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisMTIDList', None) is not None:
+                return self._properties.get('IsisMTIDList')
+        return IsisMTIDList(self)._select()
 
     @property
     def IsisSRv6AdjSIDList(self):
@@ -192,10 +194,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6adjsidlist_dd39940f27d58c46a476b64e85215861 import IsisSRv6AdjSIDList
-        if self._properties.get('IsisSRv6AdjSIDList', None) is not None:
-            return self._properties.get('IsisSRv6AdjSIDList')
-        else:
-            return IsisSRv6AdjSIDList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSRv6AdjSIDList', None) is not None:
+                return self._properties.get('IsisSRv6AdjSIDList')
+        return IsisSRv6AdjSIDList(self)._select()
 
     @property
     def IsisTrafficEngineering(self):
@@ -209,10 +211,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineering_6032af9b157866ba1321273f0c47a612 import IsisTrafficEngineering
-        if self._properties.get('IsisTrafficEngineering', None) is not None:
-            return self._properties.get('IsisTrafficEngineering')
-        else:
-            return IsisTrafficEngineering(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrafficEngineering', None) is not None:
+                return self._properties.get('IsisTrafficEngineering')
+        return IsisTrafficEngineering(self)._select()
 
     @property
     def IsisTrafficEngineeringProfileList(self):
@@ -226,10 +228,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isistrafficengineeringprofilelist_c47e6899658130ebf14e5ea5147ac23a import IsisTrafficEngineeringProfileList
-        if self._properties.get('IsisTrafficEngineeringProfileList', None) is not None:
-            return self._properties.get('IsisTrafficEngineeringProfileList')
-        else:
-            return IsisTrafficEngineeringProfileList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrafficEngineeringProfileList', None) is not None:
+                return self._properties.get('IsisTrafficEngineeringProfileList')
+        return IsisTrafficEngineeringProfileList(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -243,10 +245,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def SrlgValueList(self):
@@ -260,10 +262,10 @@ class IsisL3(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
-        if self._properties.get('SrlgValueList', None) is not None:
-            return self._properties.get('SrlgValueList')
-        else:
-            return SrlgValueList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SrlgValueList', None) is not None:
+                return self._properties.get('SrlgValueList')
+        return SrlgValueList(self)
 
     @property
     def Active(self):

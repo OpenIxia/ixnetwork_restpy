@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TlvSettings(Base):
@@ -52,10 +54,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvcisconivcapable_ac09c6a52c14632b690eaa0d1b5e73a8 import LldpTlvCiscoNivCapable
-        if self._properties.get('LldpTlvCiscoNivCapable', None) is not None:
-            return self._properties.get('LldpTlvCiscoNivCapable')
-        else:
-            return LldpTlvCiscoNivCapable(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlvCiscoNivCapable', None) is not None:
+                return self._properties.get('LldpTlvCiscoNivCapable')
+        return LldpTlvCiscoNivCapable(self)._select()
 
     @property
     def LldpTlvMa(self):
@@ -69,10 +71,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvma_b51f62f119f8071d61fd9079b984e5b1 import LldpTlvMa
-        if self._properties.get('LldpTlvMa', None) is not None:
-            return self._properties.get('LldpTlvMa')
-        else:
-            return LldpTlvMa(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlvMa', None) is not None:
+                return self._properties.get('LldpTlvMa')
+        return LldpTlvMa(self)._select()
 
     @property
     def LldpTlvOui(self):
@@ -86,10 +88,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvoui_4e354d831fb96e884fb961bdc998300c import LldpTlvOui
-        if self._properties.get('LldpTlvOui', None) is not None:
-            return self._properties.get('LldpTlvOui')
-        else:
-            return LldpTlvOui(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlvOui', None) is not None:
+                return self._properties.get('LldpTlvOui')
+        return LldpTlvOui(self)._select()
 
     @property
     def LldpTlvPd(self):
@@ -103,10 +105,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvpd_4171f170fecfc786a3d45c6e849068fe import LldpTlvPd
-        if self._properties.get('LldpTlvPd', None) is not None:
-            return self._properties.get('LldpTlvPd')
-        else:
-            return LldpTlvPd(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlvPd', None) is not None:
+                return self._properties.get('LldpTlvPd')
+        return LldpTlvPd(self)._select()
 
     @property
     def LldpTlvSd(self):
@@ -120,10 +122,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsd_3b1eb228dea2a2d31a85fe1519124060 import LldpTlvSd
-        if self._properties.get('LldpTlvSd', None) is not None:
-            return self._properties.get('LldpTlvSd')
-        else:
-            return LldpTlvSd(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlvSd', None) is not None:
+                return self._properties.get('LldpTlvSd')
+        return LldpTlvSd(self)._select()
 
     @property
     def LldpTlvSn(self):
@@ -137,10 +139,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.lldptlvsn_24bf0d2844544a93d5fbf4a91d165bc2 import LldpTlvSn
-        if self._properties.get('LldpTlvSn', None) is not None:
-            return self._properties.get('LldpTlvSn')
-        else:
-            return LldpTlvSn(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LldpTlvSn', None) is not None:
+                return self._properties.get('LldpTlvSn')
+        return LldpTlvSn(self)._select()
 
     @property
     def ObjectId(self):
@@ -151,6 +153,46 @@ class TlvSettings(Base):
         - str: Unique identifier for this object
         """
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+
+    def find(self, ObjectId=None):
+        # type: (str) -> TlvSettings
+        """Finds and retrieves tlvSettings resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tlvSettings resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tlvSettings resources from the server.
+
+        Args
+        ----
+        - ObjectId (str): Unique identifier for this object
+
+        Returns
+        -------
+        - self: This instance with matching tlvSettings resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of tlvSettings data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the tlvSettings resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

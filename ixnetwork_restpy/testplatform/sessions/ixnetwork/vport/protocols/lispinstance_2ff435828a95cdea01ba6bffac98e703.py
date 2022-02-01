@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class LispInstance(Base):
@@ -70,10 +72,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.itrremoteeidrange_6d86dfd39ed3653dbc6a71137989c5ad import ItrRemoteEidRange
-        if self._properties.get('ItrRemoteEidRange', None) is not None:
-            return self._properties.get('ItrRemoteEidRange')
-        else:
-            return ItrRemoteEidRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ItrRemoteEidRange', None) is not None:
+                return self._properties.get('ItrRemoteEidRange')
+        return ItrRemoteEidRange(self)
 
     @property
     def LocalEidRange(self):
@@ -87,10 +89,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.localeidrange_9229aba0e3a65c664e2285d3dcb3f60f import LocalEidRange
-        if self._properties.get('LocalEidRange', None) is not None:
-            return self._properties.get('LocalEidRange')
-        else:
-            return LocalEidRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LocalEidRange', None) is not None:
+                return self._properties.get('LocalEidRange')
+        return LocalEidRange(self)
 
     @property
     def MapServerResolver(self):
@@ -104,10 +106,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mapserverresolver_b4ceea809f63888622dd6232272f2c7e import MapServerResolver
-        if self._properties.get('MapServerResolver', None) is not None:
-            return self._properties.get('MapServerResolver')
-        else:
-            return MapServerResolver(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MapServerResolver', None) is not None:
+                return self._properties.get('MapServerResolver')
+        return MapServerResolver(self)
 
     @property
     def MsAllowedEidRange(self):
@@ -121,10 +123,10 @@ class LispInstance(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.msallowedeidrange_842afae7700143f32019dfe7904f2cdd import MsAllowedEidRange
-        if self._properties.get('MsAllowedEidRange', None) is not None:
-            return self._properties.get('MsAllowedEidRange')
-        else:
-            return MsAllowedEidRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MsAllowedEidRange', None) is not None:
+                return self._properties.get('MsAllowedEidRange')
+        return MsAllowedEidRange(self)
 
     @property
     def Act(self):

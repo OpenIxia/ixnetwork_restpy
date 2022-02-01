@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Field(Base):
@@ -64,10 +66,10 @@ class Field(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.restriction_e362d0ce9d693ee94a071e4f973da1d3 import Restriction
-        if self._properties.get('Restriction', None) is not None:
-            return self._properties.get('Restriction')
-        else:
-            return Restriction(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Restriction', None) is not None:
+                return self._properties.get('Restriction')
+        return Restriction(self)
 
     @property
     def Description(self):

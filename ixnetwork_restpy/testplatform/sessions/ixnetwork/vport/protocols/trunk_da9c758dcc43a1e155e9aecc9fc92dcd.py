@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Trunk(Base):
@@ -161,10 +163,10 @@ class Trunk(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.macranges_73cee592904a08c0f6dad66b39c954fd import MacRanges
-        if self._properties.get('MacRanges', None) is not None:
-            return self._properties.get('MacRanges')
-        else:
-            return MacRanges(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MacRanges', None) is not None:
+                return self._properties.get('MacRanges')
+        return MacRanges(self)
 
     @property
     def AddCcmCustomTlvs(self):

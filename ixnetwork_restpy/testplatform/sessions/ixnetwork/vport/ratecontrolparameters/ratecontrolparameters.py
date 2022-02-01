@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RateControlParameters(Base):
@@ -163,3 +165,49 @@ class RateControlParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ArpRefreshInterval=None, MaxRequestsPerBurst=None, MaxRequestsPerSec=None, MinRetryInterval=None, RetryCount=None, SendInBursts=None, SendRequestsAsFastAsPossible=None):
+        # type: (int, int, int, int, int, bool, bool) -> RateControlParameters
+        """Finds and retrieves rateControlParameters resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rateControlParameters resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rateControlParameters resources from the server.
+
+        Args
+        ----
+        - ArpRefreshInterval (number): Indicates the Arp Refresh Interval per Port. Set this to override the defaul value of 60 seconds
+        - MaxRequestsPerBurst (number): Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
+        - MaxRequestsPerSec (number): The maximum requests per second.
+        - MinRetryInterval (number): Indicates the minimum wait time for re-sending the ARP/NS requests for a particular interface.
+        - RetryCount (number): Indicates the number of times the ARP/NS requests will be resent for a particular interface, if there is an ARP issue.
+        - SendInBursts (bool): Indicates the flow pattern of the ARP/NS request for each port. Enable this, to send the ARP/NS requests in bursts of size defined by 'Max requests per Bursts'.
+        - SendRequestsAsFastAsPossible (bool): If enabled, allows to send ARP/NS requests immediately without any rate control.
+
+        Returns
+        -------
+        - self: This instance with matching rateControlParameters resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of rateControlParameters data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the rateControlParameters resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

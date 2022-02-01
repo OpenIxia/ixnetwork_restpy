@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class L3Site(Base):
@@ -68,10 +70,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.importtarget_5de62449ab162506e7d4343bed6cdae9 import ImportTarget
-        if self._properties.get('ImportTarget', None) is not None:
-            return self._properties.get('ImportTarget')
-        else:
-            return ImportTarget(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ImportTarget', None) is not None:
+                return self._properties.get('ImportTarget')
+        return ImportTarget(self)._select()
 
     @property
     def LearnedRoute(self):
@@ -85,10 +87,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedroute_bf92411e6ec4c496c037ba0073ceb01c import LearnedRoute
-        if self._properties.get('LearnedRoute', None) is not None:
-            return self._properties.get('LearnedRoute')
-        else:
-            return LearnedRoute(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedRoute', None) is not None:
+                return self._properties.get('LearnedRoute')
+        return LearnedRoute(self)
 
     @property
     def LearnedRouteIpv6(self):
@@ -102,10 +104,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedrouteipv6_e146efad7b2709c72b7ef3489e6a153e import LearnedRouteIpv6
-        if self._properties.get('LearnedRouteIpv6', None) is not None:
-            return self._properties.get('LearnedRouteIpv6')
-        else:
-            return LearnedRouteIpv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedRouteIpv6', None) is not None:
+                return self._properties.get('LearnedRouteIpv6')
+        return LearnedRouteIpv6(self)
 
     @property
     def Multicast(self):
@@ -119,10 +121,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicast_753c518b5f1dc0635a787650b6627859 import Multicast
-        if self._properties.get('Multicast', None) is not None:
-            return self._properties.get('Multicast')
-        else:
-            return Multicast(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Multicast', None) is not None:
+                return self._properties.get('Multicast')
+        return Multicast(self)._select()
 
     @property
     def MulticastReceiverSite(self):
@@ -136,10 +138,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastreceiversite_cac2a5b53ffba8f61d029919a79e1343 import MulticastReceiverSite
-        if self._properties.get('MulticastReceiverSite', None) is not None:
-            return self._properties.get('MulticastReceiverSite')
-        else:
-            return MulticastReceiverSite(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MulticastReceiverSite', None) is not None:
+                return self._properties.get('MulticastReceiverSite')
+        return MulticastReceiverSite(self)
 
     @property
     def MulticastSenderSite(self):
@@ -153,10 +155,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.multicastsendersite_83f523e9811617a00cbff1d57dcf5a27 import MulticastSenderSite
-        if self._properties.get('MulticastSenderSite', None) is not None:
-            return self._properties.get('MulticastSenderSite')
-        else:
-            return MulticastSenderSite(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MulticastSenderSite', None) is not None:
+                return self._properties.get('MulticastSenderSite')
+        return MulticastSenderSite(self)
 
     @property
     def OpaqueValueElement(self):
@@ -170,10 +172,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquevalueelement_09e1c3fa84ec75f297eac04830ce7156 import OpaqueValueElement
-        if self._properties.get('OpaqueValueElement', None) is not None:
-            return self._properties.get('OpaqueValueElement')
-        else:
-            return OpaqueValueElement(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OpaqueValueElement', None) is not None:
+                return self._properties.get('OpaqueValueElement')
+        return OpaqueValueElement(self)
 
     @property
     def Target(self):
@@ -187,10 +189,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.target_c6cbdddc7771a9b67858085e8d346456 import Target
-        if self._properties.get('Target', None) is not None:
-            return self._properties.get('Target')
-        else:
-            return Target(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Target', None) is not None:
+                return self._properties.get('Target')
+        return Target(self)._select()
 
     @property
     def UmhImportTarget(self):
@@ -204,10 +206,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.umhimporttarget_6c3dc34540c306cc15b2ab9bf4d49565 import UmhImportTarget
-        if self._properties.get('UmhImportTarget', None) is not None:
-            return self._properties.get('UmhImportTarget')
-        else:
-            return UmhImportTarget(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('UmhImportTarget', None) is not None:
+                return self._properties.get('UmhImportTarget')
+        return UmhImportTarget(self)._select()
 
     @property
     def UmhSelectionRouteRange(self):
@@ -221,10 +223,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.umhselectionrouterange_b1fb332d421ad602bbe1bf5ee8bdc230 import UmhSelectionRouteRange
-        if self._properties.get('UmhSelectionRouteRange', None) is not None:
-            return self._properties.get('UmhSelectionRouteRange')
-        else:
-            return UmhSelectionRouteRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('UmhSelectionRouteRange', None) is not None:
+                return self._properties.get('UmhSelectionRouteRange')
+        return UmhSelectionRouteRange(self)
 
     @property
     def UmhTarget(self):
@@ -238,10 +240,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.umhtarget_7fd706c876de38f4f7aea952e9a68a18 import UmhTarget
-        if self._properties.get('UmhTarget', None) is not None:
-            return self._properties.get('UmhTarget')
-        else:
-            return UmhTarget(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('UmhTarget', None) is not None:
+                return self._properties.get('UmhTarget')
+        return UmhTarget(self)._select()
 
     @property
     def VpnRouteRange(self):
@@ -255,10 +257,10 @@ class L3Site(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.vpnrouterange_63f34e6d80ef976eee3f8513cd149760 import VpnRouteRange
-        if self._properties.get('VpnRouteRange', None) is not None:
-            return self._properties.get('VpnRouteRange')
-        else:
-            return VpnRouteRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VpnRouteRange', None) is not None:
+                return self._properties.get('VpnRouteRange')
+        return VpnRouteRange(self)
 
     @property
     def Enabled(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IxNetCodeOptions(Base):
@@ -83,7 +85,7 @@ class IxNetCodeOptions(Base):
         """
         Returns
         -------
-        - bool: Flag to include attributes that have values which are default
+        - bool: Flag to include attributes that have values which are defaul
         """
         return self._get_attribute(self._SDM_ATT_MAP['IncludeDefaultValues'])
     @IncludeDefaultValues.setter
@@ -197,7 +199,7 @@ class IxNetCodeOptions(Base):
         ----
         - IncludeAvailableHardware (bool): Flag to include available hardware nodes
         - IncludeConnect (bool): Flag to include the connect command
-        - IncludeDefaultValues (bool): Flag to include attributes that have values which are default
+        - IncludeDefaultValues (bool): Flag to include attributes that have values which are defaul
         - IncludeQuickTest (bool): Flag to include quickTest nodes
         - IncludeStatistic (bool): Flag to include statistic view nodes
         - IncludeTAPSettings (bool): 
@@ -211,3 +213,52 @@ class IxNetCodeOptions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, IncludeAvailableHardware=None, IncludeConnect=None, IncludeDefaultValues=None, IncludeQuickTest=None, IncludeStatistic=None, IncludeTAPSettings=None, IncludeTestComposer=None, IncludeTraffic=None, IncludeTrafficFlowGroup=None, IncludeTrafficStack=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> IxNetCodeOptions
+        """Finds and retrieves ixNetCodeOptions resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ixNetCodeOptions resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ixNetCodeOptions resources from the server.
+
+        Args
+        ----
+        - IncludeAvailableHardware (bool): Flag to include available hardware nodes
+        - IncludeConnect (bool): Flag to include the connect command
+        - IncludeDefaultValues (bool): Flag to include attributes that have values which are defaul
+        - IncludeQuickTest (bool): Flag to include quickTest nodes
+        - IncludeStatistic (bool): Flag to include statistic view nodes
+        - IncludeTAPSettings (bool): 
+        - IncludeTestComposer (bool): Flag to include test composer code
+        - IncludeTraffic (bool): Flag to include traffic item nodes
+        - IncludeTrafficFlowGroup (bool): Flag to include traffic item high level stream nodes
+        - IncludeTrafficStack (bool): Flag to include high level stream stack nodes
+
+        Returns
+        -------
+        - self: This instance with matching ixNetCodeOptions resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ixNetCodeOptions data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ixNetCodeOptions resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

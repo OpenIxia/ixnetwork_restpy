@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Object(Base):
@@ -54,10 +56,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.container_1a12044c5aa69dabfe18a51e622cd1b5 import Container
-        if self._properties.get('Container', None) is not None:
-            return self._properties.get('Container')
-        else:
-            return Container(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Container', None) is not None:
+                return self._properties.get('Container')
+        return Container(self)
 
     @property
     def Field(self):
@@ -71,10 +73,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.field_01f1f7f093248c40b24c4bf69cffe573 import Field
-        if self._properties.get('Field', None) is not None:
-            return self._properties.get('Field')
-        else:
-            return Field(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Field', None) is not None:
+                return self._properties.get('Field')
+        return Field(self)
 
     @property
     def SubTlv(self):
@@ -88,10 +90,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.subtlv_60e12b7ebaca7628a30e30506e5025bc import SubTlv
-        if self._properties.get('SubTlv', None) is not None:
-            return self._properties.get('SubTlv')
-        else:
-            return SubTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SubTlv', None) is not None:
+                return self._properties.get('SubTlv')
+        return SubTlv(self)
 
     @property
     def Name(self):

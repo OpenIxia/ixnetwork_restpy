@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisL3PseudoRouter(Base):
@@ -131,10 +133,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4pseudonoderoutes_7cd9e3747243dcf6c295ddd7cc532731 import IPv4PseudoNodeRoutes
-        if self._properties.get('IPv4PseudoNodeRoutes', None) is not None:
-            return self._properties.get('IPv4PseudoNodeRoutes')
-        else:
-            return IPv4PseudoNodeRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IPv4PseudoNodeRoutes', None) is not None:
+                return self._properties.get('IPv4PseudoNodeRoutes')
+        return IPv4PseudoNodeRoutes(self)
 
     @property
     def IPv6PseudoNodeRoutes(self):
@@ -148,10 +150,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6pseudonoderoutes_e49889067cd5030685c5c28101e243d5 import IPv6PseudoNodeRoutes
-        if self._properties.get('IPv6PseudoNodeRoutes', None) is not None:
-            return self._properties.get('IPv6PseudoNodeRoutes')
-        else:
-            return IPv6PseudoNodeRoutes(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IPv6PseudoNodeRoutes', None) is not None:
+                return self._properties.get('IPv6PseudoNodeRoutes')
+        return IPv6PseudoNodeRoutes(self)
 
     @property
     def IsisPseudoMultiTopologyValuesList(self):
@@ -165,10 +167,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudomultitopologyvalueslist_611d6ab2b1a502e3b27f153266aa7670 import IsisPseudoMultiTopologyValuesList
-        if self._properties.get('IsisPseudoMultiTopologyValuesList', None) is not None:
-            return self._properties.get('IsisPseudoMultiTopologyValuesList')
-        else:
-            return IsisPseudoMultiTopologyValuesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisPseudoMultiTopologyValuesList', None) is not None:
+                return self._properties.get('IsisPseudoMultiTopologyValuesList')
+        return IsisPseudoMultiTopologyValuesList(self)
 
     @property
     def IsisPseudoFlexAlgorithm(self):
@@ -182,10 +184,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudoflexalgorithm_da21ce814ae20d74de8689303f8c2e83 import IsisPseudoFlexAlgorithm
-        if self._properties.get('IsisPseudoFlexAlgorithm', None) is not None:
-            return self._properties.get('IsisPseudoFlexAlgorithm')
-        else:
-            return IsisPseudoFlexAlgorithm(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisPseudoFlexAlgorithm', None) is not None:
+                return self._properties.get('IsisPseudoFlexAlgorithm')
+        return IsisPseudoFlexAlgorithm(self)._select()
 
     @property
     def IsisPseudoSRv6LocatorEntryList(self):
@@ -199,10 +201,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isispseudosrv6locatorentrylist_41e56680c4c88d313d713433ca07cac5 import IsisPseudoSRv6LocatorEntryList
-        if self._properties.get('IsisPseudoSRv6LocatorEntryList', None) is not None:
-            return self._properties.get('IsisPseudoSRv6LocatorEntryList')
-        else:
-            return IsisPseudoSRv6LocatorEntryList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisPseudoSRv6LocatorEntryList', None) is not None:
+                return self._properties.get('IsisPseudoSRv6LocatorEntryList')
+        return IsisPseudoSRv6LocatorEntryList(self)._select()
 
     @property
     def IsisSRAlgorithmList(self):
@@ -216,10 +218,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissralgorithmlist_a50f1cd4168a3642597a66e7f63343e6 import IsisSRAlgorithmList
-        if self._properties.get('IsisSRAlgorithmList', None) is not None:
-            return self._properties.get('IsisSRAlgorithmList')
-        else:
-            return IsisSRAlgorithmList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSRAlgorithmList', None) is not None:
+                return self._properties.get('IsisSRAlgorithmList')
+        return IsisSRAlgorithmList(self)
 
     @property
     def IsisSRGBRangeSubObjectsList(self):
@@ -233,10 +235,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissrgbrangesubobjectslist_6180dd47f637b6f4581c2dcaa7a1a071 import IsisSRGBRangeSubObjectsList
-        if self._properties.get('IsisSRGBRangeSubObjectsList', None) is not None:
-            return self._properties.get('IsisSRGBRangeSubObjectsList')
-        else:
-            return IsisSRGBRangeSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSRGBRangeSubObjectsList', None) is not None:
+                return self._properties.get('IsisSRGBRangeSubObjectsList')
+        return IsisSRGBRangeSubObjectsList(self)
 
     @property
     def IsisSRLBDescriptorList(self):
@@ -250,10 +252,10 @@ class IsisL3PseudoRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isissrlbdescriptorlist_1eec075b53920dfd5040006478718f6a import IsisSRLBDescriptorList
-        if self._properties.get('IsisSRLBDescriptorList', None) is not None:
-            return self._properties.get('IsisSRLBDescriptorList')
-        else:
-            return IsisSRLBDescriptorList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSRLBDescriptorList', None) is not None:
+                return self._properties.get('IsisSRLBDescriptorList')
+        return IsisSRLBDescriptorList(self)
 
     @property
     def Active(self):

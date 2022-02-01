@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MatchFields(Base):
@@ -707,3 +709,83 @@ class MatchFields(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, ArpTargetHardwareAddress=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, Experimenter=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> MatchFields
+        """Finds and retrieves matchFields resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve matchFields resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all matchFields resources from the server.
+
+        Args
+        ----
+        - ArpDestinationIpv4Address (bool): NOT DEFINED
+        - ArpOpcode (bool): NOT DEFINED
+        - ArpSourceHardwareAddress (bool): NOT DEFINED
+        - ArpSourceIpv4Address (bool): NOT DEFINED
+        - ArpTargetHardwareAddress (bool): NOT DEFINED
+        - EthernetDestination (bool): NOT DEFINED
+        - EthernetSource (bool): NOT DEFINED
+        - EthernetType (bool): NOT DEFINED
+        - Experimenter (bool): NOT DEFINED
+        - IcmpCode (bool): NOT DEFINED
+        - IcmpType (bool): NOT DEFINED
+        - Icmpv6Code (bool): NOT DEFINED
+        - Icmpv6Type (bool): NOT DEFINED
+        - InPort (bool): NOT DEFINED
+        - IpDscp (bool): NOT DEFINED
+        - IpEcn (bool): NOT DEFINED
+        - IpProtocol (bool): NOT DEFINED
+        - Ipv4Destination (bool): NOT DEFINED
+        - Ipv4Source (bool): NOT DEFINED
+        - Ipv6Destination (bool): NOT DEFINED
+        - Ipv6ExtHeader (bool): NOT DEFINED
+        - Ipv6FlowLabel (bool): NOT DEFINED
+        - Ipv6NdSll (bool): NOT DEFINED
+        - Ipv6NdTarget (bool): NOT DEFINED
+        - Ipv6NdTll (bool): NOT DEFINED
+        - Ipv6Source (bool): NOT DEFINED
+        - Metadata (bool): NOT DEFINED
+        - MplsBos (bool): NOT DEFINED
+        - MplsLabel (bool): NOT DEFINED
+        - MplsTc (bool): NOT DEFINED
+        - PbbIsid (bool): NOT DEFINED
+        - PhysicalInPort (bool): NOT DEFINED
+        - SctpDestination (bool): NOT DEFINED
+        - SctpSource (bool): NOT DEFINED
+        - TcpDestination (bool): NOT DEFINED
+        - TcpSource (bool): NOT DEFINED
+        - TunnelId (bool): NOT DEFINED
+        - UdpDestination (bool): NOT DEFINED
+        - UdpSource (bool): NOT DEFINED
+        - VlanId (bool): NOT DEFINED
+        - VlanPriority (bool): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching matchFields resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of matchFields data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the matchFields resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

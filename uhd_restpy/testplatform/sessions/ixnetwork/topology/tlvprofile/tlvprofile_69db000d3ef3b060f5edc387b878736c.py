@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TlvProfile(Base):
@@ -52,10 +54,10 @@ class TlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.defaulttlv_8e41257d3d01ec013783dd0fd6697862 import DefaultTlv
-        if self._properties.get('DefaultTlv', None) is not None:
-            return self._properties.get('DefaultTlv')
-        else:
-            return DefaultTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DefaultTlv', None) is not None:
+                return self._properties.get('DefaultTlv')
+        return DefaultTlv(self)
 
     @property
     def Tlv(self):
@@ -69,10 +71,10 @@ class TlvProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlv_d2b702d35a057ccb264f716c5f342298 import Tlv
-        if self._properties.get('Tlv', None) is not None:
-            return self._properties.get('Tlv')
-        else:
-            return Tlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tlv', None) is not None:
+                return self._properties.get('Tlv')
+        return Tlv(self)
 
     def add(self):
         """Adds a new tlvProfile resource on the json, only valid with config assistant

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Layer23TrafficFlowDetectiveFilter(Base):
@@ -61,10 +63,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.allflowsfilter.allflowsfilter import AllFlowsFilter
-        if self._properties.get('AllFlowsFilter', None) is not None:
-            return self._properties.get('AllFlowsFilter')
-        else:
-            return AllFlowsFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AllFlowsFilter', None) is not None:
+                return self._properties.get('AllFlowsFilter')
+        return AllFlowsFilter(self)
 
     @property
     def DeadFlowsFilter(self):
@@ -78,10 +80,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.deadflowsfilter.deadflowsfilter import DeadFlowsFilter
-        if self._properties.get('DeadFlowsFilter', None) is not None:
-            return self._properties.get('DeadFlowsFilter')
-        else:
-            return DeadFlowsFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DeadFlowsFilter', None) is not None:
+                return self._properties.get('DeadFlowsFilter')
+        return DeadFlowsFilter(self)
 
     @property
     def LiveFlowsFilter(self):
@@ -95,10 +97,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.liveflowsfilter.liveflowsfilter import LiveFlowsFilter
-        if self._properties.get('LiveFlowsFilter', None) is not None:
-            return self._properties.get('LiveFlowsFilter')
-        else:
-            return LiveFlowsFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LiveFlowsFilter', None) is not None:
+                return self._properties.get('LiveFlowsFilter')
+        return LiveFlowsFilter(self)
 
     @property
     def StatisticFilter(self):
@@ -112,10 +114,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.statisticfilter.statisticfilter import StatisticFilter
-        if self._properties.get('StatisticFilter', None) is not None:
-            return self._properties.get('StatisticFilter')
-        else:
-            return StatisticFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('StatisticFilter', None) is not None:
+                return self._properties.get('StatisticFilter')
+        return StatisticFilter(self)
 
     @property
     def TrackingFilter(self):
@@ -129,10 +131,10 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.trackingfilter.trackingfilter import TrackingFilter
-        if self._properties.get('TrackingFilter', None) is not None:
-            return self._properties.get('TrackingFilter')
-        else:
-            return TrackingFilter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrackingFilter', None) is not None:
+                return self._properties.get('TrackingFilter')
+        return TrackingFilter(self)
 
     @property
     def DeadFlowsCount(self):

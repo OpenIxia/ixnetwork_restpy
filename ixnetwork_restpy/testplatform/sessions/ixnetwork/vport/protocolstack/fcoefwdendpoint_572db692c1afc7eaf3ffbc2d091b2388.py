@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FcoeFwdEndpoint(Base):
@@ -55,10 +57,10 @@ class FcoeFwdEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_f09751c9d3e1d386601fd6ebbf0f6a2d import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def SecondaryRange(self):
@@ -72,10 +74,10 @@ class FcoeFwdEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.secondaryrange_9b8748d7b9ae8321b5d034d9a94992cc import SecondaryRange
-        if self._properties.get('SecondaryRange', None) is not None:
-            return self._properties.get('SecondaryRange')
-        else:
-            return SecondaryRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SecondaryRange', None) is not None:
+                return self._properties.get('SecondaryRange')
+        return SecondaryRange(self)
 
     @property
     def Name(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpSgwRange(Base):
@@ -79,10 +81,10 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dedicatedbearer_f9a0d0ce2b62efc55ec60bc7a6a96c56 import DedicatedBearer
-        if self._properties.get('DedicatedBearer', None) is not None:
-            return self._properties.get('DedicatedBearer')
-        else:
-            return DedicatedBearer(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('DedicatedBearer', None) is not None:
+                return self._properties.get('DedicatedBearer')
+        return DedicatedBearer(self)
 
     @property
     def TrafficProfileProxiesSgw(self):
@@ -96,10 +98,10 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.trafficprofileproxiessgw_b0da1e27ea5ae3e015eae8ae4d510cb3 import TrafficProfileProxiesSgw
-        if self._properties.get('TrafficProfileProxiesSgw', None) is not None:
-            return self._properties.get('TrafficProfileProxiesSgw')
-        else:
-            return TrafficProfileProxiesSgw(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TrafficProfileProxiesSgw', None) is not None:
+                return self._properties.get('TrafficProfileProxiesSgw')
+        return TrafficProfileProxiesSgw(self)
 
     @property
     def Apn(self):
@@ -528,6 +530,73 @@ class EgtpSgwRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Apn=None, ApnAmbrd=None, ApnAmbru=None, DbMbrd=None, DbMbru=None, DbPci=None, DbPl=None, DbPvi=None, DbQci=None, DefaultBearerLifetimeTimer=None, EnableDefaultBearerLifetime=None, EnableNidbCreationDelay=None, Enabled=None, Ims_apn=None, Imsi=None, IpType=None, Name=None, NidbCreationDelay=None, ObjectId=None, PoolSize=None, PoolStartIp=None, PoolStartIpv4=None, PoolStartIpv6=None, TotalCount=None, UserPlaneIpAddress=None, UserPlaneIpCount=None, UserPlaneIpv4Address=None, UserPlaneIpv6Address=None):
+        # type: (str, int, int, int, int, bool, int, bool, int, int, bool, bool, bool, bool, str, str, str, int, str, int, str, str, str, int, str, int, str, str) -> EgtpSgwRange
+        """Finds and retrieves egtpSgwRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve egtpSgwRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all egtpSgwRange resources from the server.
+
+        Args
+        ----
+        - Apn (str): Access Point Name
+        - ApnAmbrd (number): APN aggregated maximum bit rate for downlink. For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - ApnAmbru (number): APN aggregated maximum bit rate for uplink.For both spec versions (December '09 and December '10) this value represents kbps and the maximum value that can be encoded is 4,294,967,295 kbps.
+        - DbMbrd (number): Maximum bitrate for downlink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - DbMbru (number): Maximum bitrate for uplink. For December '09 and December '10 spec versions the maximum value that can be encoded is 1,099,511,627,775 kbps.
+        - DbPci (bool): ARP Preemption Capability
+        - DbPl (number): ARP Priority Level
+        - DbPvi (bool): ARP Preemption Vulnerability
+        - DbQci (number): QoS Class Identifier
+        - DefaultBearerLifetimeTimer (number): The time, in seconds, after which the default bearer is deleted
+        - EnableDefaultBearerLifetime (bool): If enabled the default bearer will be deleted using the PGW initiated bearer deactivation procedure
+        - EnableNidbCreationDelay (bool): Delay Network Initiated Dedicated Bearer(NIDB) Creation
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Ims_apn (bool): IMS APN
+        - Imsi (str): The first International Mobile Subscriber Identifier that will be accepted.
+        - IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
+        - Name (str): Name of range
+        - NidbCreationDelay (number): Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
+        - ObjectId (str): Unique identifier for this object
+        - PoolSize (number): The number of UEs that will be accepted.
+        - PoolStartIp (str): Obsolete - use poolStartIPv4 or poolStartIPv6
+        - PoolStartIpv4 (str): The first IPv4 address to be assigned to an UE.
+        - PoolStartIpv6 (str): The first IPv6 address to be assigned to an UE.
+        - TotalCount (number): Layer 7 Server Count On All Ports
+        - UserPlaneIpAddress (str): Obsolete - use userPlaneIPv4Address or userPlaneIPv6Address
+        - UserPlaneIpCount (number): Layer 7 Server Count Per Port
+        - UserPlaneIpv4Address (str): The first IPv4 address to be used by the L4-7 server activies.
+        - UserPlaneIpv6Address (str): The first IPv6 address to be used by the L4-7 server activies.
+
+        Returns
+        -------
+        - self: This instance with matching egtpSgwRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of egtpSgwRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the egtpSgwRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

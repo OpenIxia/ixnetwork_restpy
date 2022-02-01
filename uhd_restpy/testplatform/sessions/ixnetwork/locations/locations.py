@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Locations(Base):
@@ -74,10 +76,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.locations.ports.ports import Ports
-        if self._properties.get('Ports', None) is not None:
-            return self._properties.get('Ports')
-        else:
-            return Ports(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ports', None) is not None:
+                return self._properties.get('Ports')
+        return Ports(self)
 
     @property
     def ResourceGroups(self):
@@ -91,10 +93,10 @@ class Locations(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.locations.resourcegroups.resourcegroups import ResourceGroups
-        if self._properties.get('ResourceGroups', None) is not None:
-            return self._properties.get('ResourceGroups')
-        else:
-            return ResourceGroups(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ResourceGroups', None) is not None:
+                return self._properties.get('ResourceGroups')
+        return ResourceGroups(self)
 
     @property
     def CableLength(self):

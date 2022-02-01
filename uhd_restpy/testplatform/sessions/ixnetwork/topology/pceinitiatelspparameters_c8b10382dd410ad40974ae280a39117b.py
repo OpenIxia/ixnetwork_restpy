@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PceInitiateLSPParameters(Base):
@@ -100,10 +102,10 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatexroobject_4394b1635bed370ec02e722a5dab40b6 import PceInitiateXROobject
-        if self._properties.get('PceInitiateXROobject', None) is not None:
-            return self._properties.get('PceInitiateXROobject')
-        else:
-            return PceInitiateXROobject(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PceInitiateXROobject', None) is not None:
+                return self._properties.get('PceInitiateXROobject')
+        return PceInitiateXROobject(self)
 
     @property
     def PcepEroSubObjectsList(self):
@@ -117,10 +119,10 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
-        if self._properties.get('PcepEroSubObjectsList', None) is not None:
-            return self._properties.get('PcepEroSubObjectsList')
-        else:
-            return PcepEroSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepEroSubObjectsList', None) is not None:
+                return self._properties.get('PcepEroSubObjectsList')
+        return PcepEroSubObjectsList(self)
 
     @property
     def PcepMetricSubObjectsList(self):
@@ -134,10 +136,10 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
-        if self._properties.get('PcepMetricSubObjectsList', None) is not None:
-            return self._properties.get('PcepMetricSubObjectsList')
-        else:
-            return PcepMetricSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepMetricSubObjectsList', None) is not None:
+                return self._properties.get('PcepMetricSubObjectsList')
+        return PcepMetricSubObjectsList(self)
 
     @property
     def Active(self):
@@ -714,6 +716,54 @@ class PceInitiateLSPParameters(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, NumberOfXroSubObjects=None, OverridePlspId=None, OverrideSrpIdNumber=None, SessionInfo=None):
+        # type: (int, str, str, int, int, int, bool, bool, List[str]) -> PceInitiateLSPParameters
+        """Finds and retrieves pceInitiateLSPParameters resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pceInitiateLSPParameters resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pceInitiateLSPParameters resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
+        - NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
+        - NumberOfXroSubObjects (number): Number of XRO Sub Objects
+        - OverridePlspId (bool): Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
+        - OverrideSrpIdNumber (bool): Indicates whether SRP ID Number is overridable.
+        - SessionInfo (list(str[advertised | delegatedActive | delegatedDown | delegatedGoingUp | delegatedUp | init | none | notDelegatedActive | notDelegatedDown | notDelegatedGoingUp | notDelegatedUp | pcErrorReceived | removedByPCC | removedByPCE | returnDelegation])): Logs additional information about the LSP state
+
+        Returns
+        -------
+        - self: This instance with matching pceInitiateLSPParameters resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of pceInitiateLSPParameters data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the pceInitiateLSPParameters resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ReturnDelegation(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

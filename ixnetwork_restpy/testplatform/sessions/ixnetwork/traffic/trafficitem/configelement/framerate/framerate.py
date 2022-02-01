@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FrameRate(Base):
@@ -40,7 +42,7 @@ class FrameRate(Base):
     }
     _SDM_ENUM_MAP = {
         'bitRateUnitsType': ['bitsPerSec', 'bytesPerSec', 'kbitsPerSec', 'kbytesPerSec', 'mbitsPerSec', 'mbytesPerSec'],
-        'interPacketGapUnitsType': ['bytes', 'nanoseconds'],
+        'interPacketGapUnitsType': ['bytes', 'microseconds', 'milliseconds', 'nanoseconds', 'seconds'],
         'type': ['bitsPerSecond', 'framesPerSecond', 'interPacketGap', 'percentLineRate'],
     }
 
@@ -81,7 +83,7 @@ class FrameRate(Base):
         """
         Returns
         -------
-        - str(bytes | nanoseconds): The inter-packet gap expressed in units.
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterPacketGapUnitsType'])
     @InterPacketGapUnitsType.setter
@@ -125,7 +127,7 @@ class FrameRate(Base):
         ----
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
-        - InterPacketGapUnitsType (str(bytes | nanoseconds)): The inter-packet gap expressed in units.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
         - Rate (number): The rate at which packet is transmitted.
         - Type (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): Sets the frame rate types.
 
@@ -134,3 +136,47 @@ class FrameRate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BitRateUnitsType=None, EnforceMinimumInterPacketGap=None, InterPacketGapUnitsType=None, Rate=None, Type=None):
+        # type: (str, int, str, int, str) -> FrameRate
+        """Finds and retrieves frameRate resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve frameRate resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all frameRate resources from the server.
+
+        Args
+        ----
+        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
+        - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
+        - Rate (number): The rate at which packet is transmitted.
+        - Type (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): Sets the frame rate types.
+
+        Returns
+        -------
+        - self: This instance with matching frameRate resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of frameRate data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the frameRate resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

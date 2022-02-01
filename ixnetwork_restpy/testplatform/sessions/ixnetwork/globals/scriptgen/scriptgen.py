@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Scriptgen(Base):
@@ -63,10 +65,10 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.base64codeoptions.base64codeoptions import Base64CodeOptions
-        if self._properties.get('Base64CodeOptions', None) is not None:
-            return self._properties.get('Base64CodeOptions')
-        else:
-            return Base64CodeOptions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Base64CodeOptions', None) is not None:
+                return self._properties.get('Base64CodeOptions')
+        return Base64CodeOptions(self)._select()
 
     @property
     def IxNetCodeOptions(self):
@@ -80,10 +82,10 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.scriptgen.ixnetcodeoptions.ixnetcodeoptions import IxNetCodeOptions
-        if self._properties.get('IxNetCodeOptions', None) is not None:
-            return self._properties.get('IxNetCodeOptions')
-        else:
-            return IxNetCodeOptions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IxNetCodeOptions', None) is not None:
+                return self._properties.get('IxNetCodeOptions')
+        return IxNetCodeOptions(self)._select()
 
     @property
     def ConnectHostname(self):
@@ -247,6 +249,55 @@ class Scriptgen(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ConnectHostname=None, ConnectPort=None, ConnectVersion=None, IncludeConnect=None, IncludeTestComposer=None, Language=None, LinePerAttribute=None, OverwriteScriptFilename=None, ScriptFilename=None, SerializationType=None):
+        # type: (str, int, str, bool, bool, str, bool, bool, str, str) -> Scriptgen
+        """Finds and retrieves scriptgen resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve scriptgen resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all scriptgen resources from the server.
+
+        Args
+        ----
+        - ConnectHostname (str): The hostname to be used in the connect command
+        - ConnectPort (number): The port number to be used in the connect command
+        - ConnectVersion (str): The version number to be used in the connect command
+        - IncludeConnect (bool): Flag to include the connect command
+        - IncludeTestComposer (bool): Flag to include test composer code
+        - Language (str(perl | python | ruby | tcl)): Select the target scriptgen language
+        - LinePerAttribute (bool): If true the scriptgen output will show each attribute on a separate line
+        - OverwriteScriptFilename (bool): If true the file indicated by the script filename will be overwritten
+        - ScriptFilename (str): The name of the target scriptgen file
+        - SerializationType (str(base64 | ixNet)): The scriptgen serialization type
+
+        Returns
+        -------
+        - self: This instance with matching scriptgen resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of scriptgen data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the scriptgen resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Generate(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

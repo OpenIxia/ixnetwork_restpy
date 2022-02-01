@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FeaturesSupported(Base):
@@ -275,3 +277,56 @@ class FeaturesSupported(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ApplyActions=None, ApplyActionsMiss=None, ApplySetField=None, ApplySetFieldMiss=None, Instruction=None, InstructionMiss=None, Match=None, NextTable=None, NextTableMiss=None, Wildcards=None, WriteActions=None, WriteActionsMiss=None, WriteSetField=None, WriteSetFieldMiss=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> FeaturesSupported
+        """Finds and retrieves featuresSupported resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve featuresSupported resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all featuresSupported resources from the server.
+
+        Args
+        ----
+        - ApplyActions (bool): Select the type of apply action capability that the table will support. The selected actions associated with a flow are applied immediately.
+        - ApplyActionsMiss (bool): Select the type of apply action miss capability that the table miss flow entry will support.
+        - ApplySetField (bool): Apply set field property.
+        - ApplySetFieldMiss (bool): Apply set field for table-miss.
+        - Instruction (bool): Select the type of instructions that the table flow entry will support.
+        - InstructionMiss (bool): Select the type of instruction miss capabilities that the table miss flow entry will support.
+        - Match (bool): Select the type of match capability that the table will support.
+        - NextTable (bool): Specify the next table property.
+        - NextTableMiss (bool): Specify the next table-miss property.
+        - Wildcards (bool): Select the type of wildcard capability that the table will support.
+        - WriteActions (bool): Select the type of write action capability that the table will support. The selected actions are appended to the existing action set of the packet.
+        - WriteActionsMiss (bool): Select the type of write action miss capability that the table miss flow entry will support.
+        - WriteSetField (bool): Write set field property.
+        - WriteSetFieldMiss (bool): Write set field for table-miss.
+
+        Returns
+        -------
+        - self: This instance with matching featuresSupported resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of featuresSupported data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the featuresSupported resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

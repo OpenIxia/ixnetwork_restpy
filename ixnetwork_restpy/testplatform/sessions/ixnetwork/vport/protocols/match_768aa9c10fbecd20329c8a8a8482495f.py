@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Match(Base):
@@ -691,3 +693,82 @@ class Match(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, InPort=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, Metadata=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, PhysicalInPort=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Match
+        """Finds and retrieves match resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve match resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all match resources from the server.
+
+        Args
+        ----
+        - ArpDestinationHardwareAddress (bool): If selected, ARP Destination Hardware Address matching is supported.
+        - ArpDestinationIpv4Address (bool): If selected, ARP Destination IPv4 Address matching is supported.
+        - ArpOpcode (bool): If selected, ARP Opcode matching is supported.
+        - ArpSourceHardwareAddress (bool): If selected, ARP Source Hardware Address matching is supported.
+        - ArpSourceIpv4Address (bool): If selected, ARP Source IPv4 Address matching is supported.
+        - EthernetDestination (bool): If selected, Ethernet Destination matching is supported.
+        - EthernetSource (bool): If selected, Ethernet Source matching is supported.
+        - EthernetType (bool): If selected, Ethernet Type matching is supported.
+        - IcmpCode (bool): If selected, ICMP Code matching is supported.
+        - IcmpType (bool): If selected, ICMP Type matching is supported.
+        - Icmpv6Code (bool): If selected, ICMPv6 Code matching is supported.
+        - Icmpv6Type (bool): If selected, ICMPv6 Type matching is supported.
+        - InPort (bool): If selected, In Port matching is supported.
+        - IpDscp (bool): If selected, IP DSCP matching is supported.
+        - IpEcn (bool): If selected, IP ECN matching is supported.
+        - IpProtocol (bool): If selected, IP ECN matching is supported.
+        - Ipv4Destination (bool): If selected, IPv4 Destination matching is supported.
+        - Ipv4Source (bool): If selected, IPv4 Source matching is supported.
+        - Ipv6Destination (bool): If selected, IPv6 Destination matching is supported.
+        - Ipv6ExtHeader (bool): If selected, IPv6 Ext Header matching is supported.
+        - Ipv6FlowLabel (bool): If selected, IPv6 Flow Label matching is supported.
+        - Ipv6NdSll (bool): If selected, IPv6 ND SLL matching is supported.
+        - Ipv6NdTarget (bool): If selected, IPv6 ND Target matching is supported.
+        - Ipv6NdTll (bool): If selected, IPv6 ND TLL matching is supported.
+        - Ipv6Source (bool): If selected, IPv6 Source matching is supported.
+        - Metadata (bool): If selected, Metadata matching is supported.
+        - MplsBos (bool): If selected, MPLS BoS matching is supported.
+        - MplsLabel (bool): If selected, MPLS Label matching is supported.
+        - MplsTc (bool): If selected, MPLS TC matching is supported.
+        - PbbIsid (bool): If selected, PBB ISID matching is supported.
+        - PhysicalInPort (bool): If selected, Physical In Port matching is supported.
+        - SctpDestination (bool): If selected, SCTP Destination matching is supported.
+        - SctpSource (bool): If selected, SCTP Source matching is supported.
+        - TcpDestination (bool): If selected, TCP Destination matching is supported.
+        - TcpSource (bool): If selected, TCP Source matching is supported.
+        - TunnelId (bool): If selected, Tunnel ID matching is supported.
+        - UdpDestination (bool): If selected, UDP Destination matching is supported.
+        - UdpSource (bool): If selected, UDP Source matching is supported.
+        - VlanId (bool): If selected, VLAN ID matching is supported.
+        - VlanPriority (bool): If selected, VLAN Priority matching is supported.
+
+        Returns
+        -------
+        - self: This instance with matching match resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of match data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the match resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

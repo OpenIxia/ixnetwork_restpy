@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpIPv4EvpnPbb(Base):
@@ -124,10 +126,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        if self._properties.get('BgpAsPathSegmentList', None) is not None:
-            return self._properties.get('BgpAsPathSegmentList')
-        else:
-            return BgpAsPathSegmentList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsPathSegmentList', None) is not None:
+                return self._properties.get('BgpAsPathSegmentList')
+        return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -141,10 +143,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        if self._properties.get('BgpClusterIdList', None) is not None:
-            return self._properties.get('BgpClusterIdList')
-        else:
-            return BgpClusterIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpClusterIdList', None) is not None:
+                return self._properties.get('BgpClusterIdList')
+        return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -158,10 +160,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        if self._properties.get('BgpCommunitiesList', None) is not None:
-            return self._properties.get('BgpCommunitiesList')
-        else:
-            return BgpCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpCommunitiesList', None) is not None:
+                return self._properties.get('BgpCommunitiesList')
+        return BgpCommunitiesList(self)
 
     @property
     def BgpExportRouteTargetList(self):
@@ -175,10 +177,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpexportroutetargetlist_ce93ce056c01eaf7643c31a7fd67768c import BgpExportRouteTargetList
-        if self._properties.get('BgpExportRouteTargetList', None) is not None:
-            return self._properties.get('BgpExportRouteTargetList')
-        else:
-            return BgpExportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExportRouteTargetList', None) is not None:
+                return self._properties.get('BgpExportRouteTargetList')
+        return BgpExportRouteTargetList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -192,10 +194,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-            return self._properties.get('BgpExtendedCommunitiesList')
-        else:
-            return BgpExtendedCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+                return self._properties.get('BgpExtendedCommunitiesList')
+        return BgpExtendedCommunitiesList(self)
 
     @property
     def BgpImportRouteTargetList(self):
@@ -209,10 +211,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpimportroutetargetlist_99470595cc13238e15b19c07b8af6021 import BgpImportRouteTargetList
-        if self._properties.get('BgpImportRouteTargetList', None) is not None:
-            return self._properties.get('BgpImportRouteTargetList')
-        else:
-            return BgpImportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpImportRouteTargetList', None) is not None:
+                return self._properties.get('BgpImportRouteTargetList')
+        return BgpImportRouteTargetList(self)
 
     @property
     def BgpL3VNIExportRouteTargetList(self):
@@ -226,10 +228,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniexportroutetargetlist_0ceb637a2c3fee9e0d0bdf68e75d9054 import BgpL3VNIExportRouteTargetList
-        if self._properties.get('BgpL3VNIExportRouteTargetList', None) is not None:
-            return self._properties.get('BgpL3VNIExportRouteTargetList')
-        else:
-            return BgpL3VNIExportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpL3VNIExportRouteTargetList', None) is not None:
+                return self._properties.get('BgpL3VNIExportRouteTargetList')
+        return BgpL3VNIExportRouteTargetList(self)
 
     @property
     def BgpL3VNIImportRouteTargetList(self):
@@ -243,10 +245,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vniimportroutetargetlist_f9fc41787790538b1714fae483245f7d import BgpL3VNIImportRouteTargetList
-        if self._properties.get('BgpL3VNIImportRouteTargetList', None) is not None:
-            return self._properties.get('BgpL3VNIImportRouteTargetList')
-        else:
-            return BgpL3VNIImportRouteTargetList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpL3VNIImportRouteTargetList', None) is not None:
+                return self._properties.get('BgpL3VNIImportRouteTargetList')
+        return BgpL3VNIImportRouteTargetList(self)
 
     @property
     def BroadcastDomainV4(self):
@@ -260,10 +262,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.broadcastdomainv4_b480f8504233bfe084a59cf7d9584195 import BroadcastDomainV4
-        if self._properties.get('BroadcastDomainV4', None) is not None:
-            return self._properties.get('BroadcastDomainV4')
-        else:
-            return BroadcastDomainV4(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('BroadcastDomainV4', None) is not None:
+                return self._properties.get('BroadcastDomainV4')
+        return BroadcastDomainV4(self)._select()
 
     @property
     def Connector(self):
@@ -277,10 +279,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def Tag(self):
@@ -294,10 +296,10 @@ class BgpIPv4EvpnPbb(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):

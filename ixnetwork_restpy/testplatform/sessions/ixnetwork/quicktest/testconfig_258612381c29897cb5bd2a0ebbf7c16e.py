@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -1800,6 +1802,153 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AggregateByDirection=None, AggregateByFlowgroup=None, AggregateByPort=None, BackoffIteration=None, BinaryAcceptableFrameLossLabel=None, BinaryBackoffLabel=None, BinaryInitialRateLabel=None, BinaryLoadUnitLabel=None, BinaryMaxRateLabel=None, BinaryMinRateLabel=None, BinaryResolutionLabel=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, DelayAfterTransmit=None, DownstreamBinaryBackoff=None, DownstreamBinaryFrameLossUnit=None, DownstreamBinaryLoadUnit=None, DownstreamBinaryResolution=None, DownstreamBinarySearchType=None, DownstreamBinaryTolerance=None, DownstreamImixAdd=None, DownstreamImixData=None, DownstreamImixDataQoS=None, DownstreamImixDelete=None, DownstreamImixDistribution=None, DownstreamImixEnabled=None, DownstreamImixTemplates=None, DownstreamInitialBinaryLoadRate=None, DownstreamInitialStepLoadRate=None, DownstreamLoadType=None, DownstreamMaxBinaryLoadRate=None, DownstreamMaxStepLoadRate=None, DownstreamMinBinaryLoadRate=None, DownstreamStepFrameLossUnit=None, DownstreamStepLoadUnit=None, DownstreamStepStepLoadRate=None, DownstreamStepTolerance=None, DownstreamStopTestOnHighLoss=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, ForceRegenerate=None, FramesPerBurstGap=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixTrafficType=None, IterationParameters=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadType=None, MapType=None, Numtrials=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, ReportSequenceError=None, ReportTputRateUnit=None, SaturationIteration=None, StaggeredStart=None, StepAcceptableFrameLossLabel=None, StepEndRateLabel=None, StepInitialRateLabel=None, StepLoadUnitLabel=None, StepStepRateLabel=None, SupportedTrafficTypes=None, TestType=None, TestTypeTemp=None, TestTypeTemp2=None, Tolerance=None, TrafficType=None, TxDelay=None, UpstreamBinaryBackoff=None, UpstreamBinaryFrameLossUnit=None, UpstreamBinaryLoadUnit=None, UpstreamBinaryResolution=None, UpstreamBinarySearchType=None, UpstreamBinaryTolerance=None, UpstreamEnableExtraIterations=None, UpstreamExtraIterationOffsets=None, UpstreamImixAdd=None, UpstreamImixData=None, UpstreamImixDataQoS=None, UpstreamImixDelete=None, UpstreamImixDistribution=None, UpstreamImixEnabled=None, UpstreamImixTemplates=None, UpstreamInitialBinaryLoadRate=None, UpstreamInitialStepLoadRate=None, UpstreamLoadType=None, UpstreamMaxBinaryLoadRate=None, UpstreamMaxStepLoadRate=None, UpstreamMinBinaryLoadRate=None, UpstreamStepFrameLossUnit=None, UpstreamStepLoadUnit=None, UpstreamStepStepLoadRate=None, UpstreamStepTolerance=None, UpstreamStopTestOnHighLoss=None, UpstreamUsePercentOffsets=None):
+        # type: (bool, bool, bool, int, str, str, str, str, str, str, str, int, bool, bool, int, int, str, str, int, str, int, str, str, bool, str, str, bool, str, int, int, str, int, int, int, str, str, str, int, int, int, bool, bool, bool, bool, bool, bool, bool, int, int, bool, int, int, bool, str, str, str, bool, str, str, str, int, bool, str, int, List[str], bool, str, int, bool, str, str, str, str, str, str, str, str, str, int, str, int, int, str, str, int, str, int, bool, str, str, str, bool, str, str, bool, str, int, int, str, int, int, int, str, str, str, int, int, str) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - AggregateByDirection (bool): NOT DEFINED
+        - AggregateByFlowgroup (bool): NOT DEFINED
+        - AggregateByPort (bool): NOT DEFINED
+        - BackoffIteration (number): Signifies the back of iteration.
+        - BinaryAcceptableFrameLossLabel (str): Signifies the binary value of acceptable frame loss label
+        - BinaryBackoffLabel (str): Signifies the binary backoff label
+        - BinaryInitialRateLabel (str): Signifies initial rate label
+        - BinaryLoadUnitLabel (str): Signifies the binary load unit label
+        - BinaryMaxRateLabel (str): Signifies the binary maximum rate label
+        - BinaryMinRateLabel (str): Signifies the binary minimum rte label
+        - BinaryResolutionLabel (str): Signifies the binary resolution label
+        - BurstSize (number): The number of packets to send in a burst.
+        - CalculateJitter (bool): If true, calculates jitter.
+        - CalculateLatency (bool): If true, calculates latency.
+        - DelayAfterTransmit (number): Signifies the delay time after transmit of the packet.
+        - DownstreamBinaryBackoff (number): Signifies the downstream binary backoff
+        - DownstreamBinaryFrameLossUnit (str(% | frames)): Signifies the downstream binary frame loss unit.
+        - DownstreamBinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies downstream binary load unit.
+        - DownstreamBinaryResolution (number): Signifies the downstream binary resolution.
+        - DownstreamBinarySearchType (str): This signifies the downstream binary search type.
+        - DownstreamBinaryTolerance (number): Signifies the downstream binary tolerance.
+        - DownstreamImixAdd (str): Adds downstream IMIX
+        - DownstreamImixData (str): Signifies the downstream IMIX data
+        - DownstreamImixDataQoS (bool): If true, enables the quality of service for downstream IMIX
+        - DownstreamImixDelete (str): Deletes downstream IMIX
+        - DownstreamImixDistribution (str(bwpercentage | weight)): signifies the downstream imix distribution.
+        - DownstreamImixEnabled (bool): If true, enables downstream IMIX
+        - DownstreamImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Signifies downstream IMIX templates.
+        - DownstreamInitialBinaryLoadRate (number): This signifies downstream initial binary load rate.
+        - DownstreamInitialStepLoadRate (number): This signifies downstream initial step load rate.
+        - DownstreamLoadType (str): Signifies downstream load type.
+        - DownstreamMaxBinaryLoadRate (number): Signifies maximum downstream binary load rate.
+        - DownstreamMaxStepLoadRate (number): Signifies downstream maximum step load rate.
+        - DownstreamMinBinaryLoadRate (number): Signifies minimum downstream binary load rate.
+        - DownstreamStepFrameLossUnit (str(% | frames)): Signifies downstream step frame loss unit.
+        - DownstreamStepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies downstream step load unit.
+        - DownstreamStepStepLoadRate (str): This signifies downstream step load rate.
+        - DownstreamStepTolerance (number): Signifies downstream step tolerance.
+        - DownstreamStopTestOnHighLoss (number): This stops the downstream test on high loss.
+        - Duration (number): Signifies the duration.
+        - EnableBackoffIteration (bool): If true, enables backoff iteration.
+        - EnableDataIntegrity (bool): If true, enables data integrity.
+        - EnableFastConvergence (bool): If true, enables fast convergence.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the SaturationLatency.
+        - EnableStopTestOnHighLoss (bool): If true, enables stop test on high loss option.
+        - FastConvergenceDuration (number): Signifies fast convergence duration.
+        - FastConvergenceThreshold (number): Signifies the threshold for fast convergence.
+        - ForceRegenerate (bool): If true, enables force regenerate.
+        - FramesPerBurstGap (number): Signifies the frames sent per burst gap
+        - Gap (number): Signifies the burst gap
+        - GenerateTrackingOptionAggregationFiles (bool): If true, generates tracking option of aggregation files.
+        - ImixTrafficType (str): Signifies the type of IMIX traffic.
+        - IterationParameters (str): This signifies the Iteration Parameters.
+        - LatencyBins (str): Sets the latency bins statistics.
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics.
+        - LatencyType (str(cutThrough | storeForward)): Signifies the latency type.
+        - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): Signifies the load type.
+        - MapType (str): Signifies the map type.
+        - Numtrials (number): Signifies the numeric trials.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportSequenceError (bool): If true, reports sequence error.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Reports throughput rate unit.
+        - SaturationIteration (number): Signifies saturation iteration.
+        - StaggeredStart (bool): If true, staggers start.
+        - StepAcceptableFrameLossLabel (str): Signifies step acceptable frame loss label
+        - StepEndRateLabel (str): Signifies step end rate label
+        - StepInitialRateLabel (str): Signifies step initial rate label
+        - StepLoadUnitLabel (str): Signifies the step load unit label
+        - StepStepRateLabel (str): Signifies the step rate label
+        - SupportedTrafficTypes (str): Signifies the traffic types supported.
+        - TestType (str(downstreamOnly | upstreamDownstream | upstreamOnly)): Signifies th test type.
+        - TestTypeTemp (str(downstreamOnly | upstreamDownstream | upstreamOnly)): Signifies the temporary test type.
+        - TestTypeTemp2 (str(downstreamOnly | upstreamDownstream | upstreamOnly)): Signifies the second temporary test type.
+        - Tolerance (number): Signifies the tolerance.
+        - TrafficType (str(burstyLoading | constantLoading)): Signifies the traffic type.
+        - TxDelay (number): Signifies the delay time during the transmission of data
+        - UpstreamBinaryBackoff (number): Signifies upstream binary backoff
+        - UpstreamBinaryFrameLossUnit (str(% | frames)): Signifies the upstream binary frame loss unit.
+        - UpstreamBinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): This signifies the upstream binary load unit.
+        - UpstreamBinaryResolution (number): Signifies upstream binary resolution.
+        - UpstreamBinarySearchType (str): Signifies the upstream binary search type.
+        - UpstreamBinaryTolerance (number): Signifies the upstream binary tolerance.
+        - UpstreamEnableExtraIterations (bool): If true, enables extra iterations upstream.
+        - UpstreamExtraIterationOffsets (str): Signifies extra iteration offsets upstream.
+        - UpstreamImixAdd (str): Adds upstream IMIX
+        - UpstreamImixData (str): Signifies upstream IMIX data
+        - UpstreamImixDataQoS (bool): If true, enables quality of service for upstream IMIX data
+        - UpstreamImixDelete (str): Deletes upstream IMIX data
+        - UpstreamImixDistribution (str(bwpercentage | weight)): Distributes upstream IMIX
+        - UpstreamImixEnabled (bool): If true, enables upstream IMIX
+        - UpstreamImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Signifies upstream IMIX templates.
+        - UpstreamInitialBinaryLoadRate (number): Signifies the uptream initial binary load rate.
+        - UpstreamInitialStepLoadRate (number): This signifies upstream initial step load rate.
+        - UpstreamLoadType (str(binary)): Signifies upstream load type.
+        - UpstreamMaxBinaryLoadRate (number): Signifies upstream maximum binary load rate.
+        - UpstreamMaxStepLoadRate (number): Signifies upstream maximum step load rate.
+        - UpstreamMinBinaryLoadRate (number): Signifies the upstream binary load rate.
+        - UpstreamStepFrameLossUnit (str(% | frames)): Signifies the upstream step frame loss unit.
+        - UpstreamStepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies upstream step load unit.
+        - UpstreamStepStepLoadRate (str): Signifies the upstream step load rate.
+        - UpstreamStepTolerance (number): Signifies upstream step tolerance value.
+        - UpstreamStopTestOnHighLoss (number): Signifies upstream stop test on high loss.
+        - UpstreamUsePercentOffsets (str): Signifies upstream use percent offsets.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

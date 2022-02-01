@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class InstructionMiss(Base):
@@ -147,3 +149,48 @@ class InstructionMiss(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ApplyActions=None, ClearActions=None, GoToTable=None, Meter=None, WriteActions=None, WriteMetadata=None):
+        # type: (bool, bool, bool, bool, bool, bool) -> InstructionMiss
+        """Finds and retrieves instructionMiss resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve instructionMiss resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all instructionMiss resources from the server.
+
+        Args
+        ----
+        - ApplyActions (bool): Apply actions property.
+        - ClearActions (bool): If selected, Clear Actions instruction is supported.
+        - GoToTable (bool): If selected, GoTo Table instruction is supported.
+        - Meter (bool): If selected, Meter instruction is supported.
+        - WriteActions (bool): Write actions property.
+        - WriteMetadata (bool): If selected, Write Metadata instruction is supported.
+
+        Returns
+        -------
+        - self: This instance with matching instructionMiss resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of instructionMiss data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the instructionMiss resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

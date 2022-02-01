@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AncpGlobals(Base):
@@ -57,10 +59,10 @@ class AncpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslprofile.ancpdslprofile import AncpDslProfile
-        if self._properties.get('AncpDslProfile', None) is not None:
-            return self._properties.get('AncpDslProfile')
-        else:
-            return AncpDslProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpDslProfile', None) is not None:
+                return self._properties.get('AncpDslProfile')
+        return AncpDslProfile(self)
 
     @property
     def AncpDslResyncProfile(self):
@@ -74,10 +76,10 @@ class AncpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.ancpglobals.ancpdslresyncprofile.ancpdslresyncprofile import AncpDslResyncProfile
-        if self._properties.get('AncpDslResyncProfile', None) is not None:
-            return self._properties.get('AncpDslResyncProfile')
-        else:
-            return AncpDslResyncProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AncpDslResyncProfile', None) is not None:
+                return self._properties.get('AncpDslResyncProfile')
+        return AncpDslResyncProfile(self)
 
     @property
     def ObjectId(self):

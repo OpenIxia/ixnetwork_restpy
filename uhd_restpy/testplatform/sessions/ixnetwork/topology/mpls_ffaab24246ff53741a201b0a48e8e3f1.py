@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Mpls(Base):
@@ -77,10 +79,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bondedgre_09eda4ea678bfaf1026122797df45443 import BondedGRE
-        if self._properties.get('BondedGRE', None) is not None:
-            return self._properties.get('BondedGRE')
-        else:
-            return BondedGRE(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BondedGRE', None) is not None:
+                return self._properties.get('BondedGRE')
+        return BondedGRE(self)
 
     @property
     def CfmBridge(self):
@@ -94,10 +96,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmbridge_0d1f83a1e9fee8ee7d444b2a33a0e03b import CfmBridge
-        if self._properties.get('CfmBridge', None) is not None:
-            return self._properties.get('CfmBridge')
-        else:
-            return CfmBridge(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmBridge', None) is not None:
+                return self._properties.get('CfmBridge')
+        return CfmBridge(self)
 
     @property
     def Connector(self):
@@ -111,10 +113,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def Dhcpv4client(self):
@@ -128,10 +130,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcpv4client_cfcdda8db5004b679a441f92193405ea import Dhcpv4client
-        if self._properties.get('Dhcpv4client', None) is not None:
-            return self._properties.get('Dhcpv4client')
-        else:
-            return Dhcpv4client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv4client', None) is not None:
+                return self._properties.get('Dhcpv4client')
+        return Dhcpv4client(self)
 
     @property
     def Dhcpv6client(self):
@@ -145,10 +147,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import Dhcpv6client
-        if self._properties.get('Dhcpv6client', None) is not None:
-            return self._properties.get('Dhcpv6client')
-        else:
-            return Dhcpv6client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6client', None) is not None:
+                return self._properties.get('Dhcpv6client')
+        return Dhcpv6client(self)
 
     @property
     def ECpriRe(self):
@@ -162,10 +164,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import ECpriRe
-        if self._properties.get('ECpriRe', None) is not None:
-            return self._properties.get('ECpriRe')
-        else:
-            return ECpriRe(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriRe', None) is not None:
+                return self._properties.get('ECpriRe')
+        return ECpriRe(self)
 
     @property
     def ECpriRec(self):
@@ -179,10 +181,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import ECpriRec
-        if self._properties.get('ECpriRec', None) is not None:
-            return self._properties.get('ECpriRec')
-        else:
-            return ECpriRec(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('ECpriRec', None) is not None:
+                return self._properties.get('ECpriRec')
+        return ECpriRec(self)
 
     @property
     def Ethernet(self):
@@ -196,10 +198,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ethernet_18677f1f170027c217563a3250b1f635 import Ethernet
-        if self._properties.get('Ethernet', None) is not None:
-            return self._properties.get('Ethernet')
-        else:
-            return Ethernet(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ethernet', None) is not None:
+                return self._properties.get('Ethernet')
+        return Ethernet(self)
 
     @property
     def Ipv4(self):
@@ -213,10 +215,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv4_8cb960b62ae85a03e1b40a57bfaeb7bb import Ipv4
-        if self._properties.get('Ipv4', None) is not None:
-            return self._properties.get('Ipv4')
-        else:
-            return Ipv4(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv4', None) is not None:
+                return self._properties.get('Ipv4')
+        return Ipv4(self)
 
     @property
     def Ipv6(self):
@@ -230,10 +232,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6_abda0a2a4cac3d529994b093916059a4 import Ipv6
-        if self._properties.get('Ipv6', None) is not None:
-            return self._properties.get('Ipv6')
-        else:
-            return Ipv6(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6', None) is not None:
+                return self._properties.get('Ipv6')
+        return Ipv6(self)
 
     @property
     def Ipv6Autoconfiguration(self):
@@ -247,10 +249,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import Ipv6Autoconfiguration
-        if self._properties.get('Ipv6Autoconfiguration', None) is not None:
-            return self._properties.get('Ipv6Autoconfiguration')
-        else:
-            return Ipv6Autoconfiguration(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ipv6Autoconfiguration', None) is not None:
+                return self._properties.get('Ipv6Autoconfiguration')
+        return Ipv6Autoconfiguration(self)
 
     @property
     def IsisDceSimRouter(self):
@@ -264,10 +266,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisdcesimrouter_92c9662fb6421c6639f138f508faf4d4 import IsisDceSimRouter
-        if self._properties.get('IsisDceSimRouter', None) is not None:
-            return self._properties.get('IsisDceSimRouter')
-        else:
-            return IsisDceSimRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisDceSimRouter', None) is not None:
+                return self._properties.get('IsisDceSimRouter')
+        return IsisDceSimRouter(self)
 
     @property
     def IsisFabricPath(self):
@@ -281,10 +283,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisfabricpath_49ed8317c28295615f21a4a8362c2b95 import IsisFabricPath
-        if self._properties.get('IsisFabricPath', None) is not None:
-            return self._properties.get('IsisFabricPath')
-        else:
-            return IsisFabricPath(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisFabricPath', None) is not None:
+                return self._properties.get('IsisFabricPath')
+        return IsisFabricPath(self)
 
     @property
     def IsisL3(self):
@@ -298,10 +300,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisl3_dd64c602d4f484ff78cfcd9dc64c9599 import IsisL3
-        if self._properties.get('IsisL3', None) is not None:
-            return self._properties.get('IsisL3')
-        else:
-            return IsisL3(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3', None) is not None:
+                return self._properties.get('IsisL3')
+        return IsisL3(self)
 
     @property
     def IsisSpbBcb(self):
@@ -315,10 +317,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbbcb_d576c38717539c1b1768a3a9f8ab5670 import IsisSpbBcb
-        if self._properties.get('IsisSpbBcb', None) is not None:
-            return self._properties.get('IsisSpbBcb')
-        else:
-            return IsisSpbBcb(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSpbBcb', None) is not None:
+                return self._properties.get('IsisSpbBcb')
+        return IsisSpbBcb(self)
 
     @property
     def IsisSpbBeb(self):
@@ -332,10 +334,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbbeb_82771ae7e9ec8dfc9848a0c0aa078da2 import IsisSpbBeb
-        if self._properties.get('IsisSpbBeb', None) is not None:
-            return self._properties.get('IsisSpbBeb')
-        else:
-            return IsisSpbBeb(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSpbBeb', None) is not None:
+                return self._properties.get('IsisSpbBeb')
+        return IsisSpbBeb(self)
 
     @property
     def IsisSpbSimRouter(self):
@@ -349,10 +351,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isisspbsimrouter_4d8d2b3596c2f006afcd75a76b6934ff import IsisSpbSimRouter
-        if self._properties.get('IsisSpbSimRouter', None) is not None:
-            return self._properties.get('IsisSpbSimRouter')
-        else:
-            return IsisSpbSimRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisSpbSimRouter', None) is not None:
+                return self._properties.get('IsisSpbSimRouter')
+        return IsisSpbSimRouter(self)
 
     @property
     def IsisTrill(self):
@@ -366,10 +368,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrill_e1cc1866688f861871e06513525d235b import IsisTrill
-        if self._properties.get('IsisTrill', None) is not None:
-            return self._properties.get('IsisTrill')
-        else:
-            return IsisTrill(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrill', None) is not None:
+                return self._properties.get('IsisTrill')
+        return IsisTrill(self)
 
     @property
     def IsisTrillSimRouter(self):
@@ -383,10 +385,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.isistrillsimrouter_7f0721f1a50df44db865ccea96c8f735 import IsisTrillSimRouter
-        if self._properties.get('IsisTrillSimRouter', None) is not None:
-            return self._properties.get('IsisTrillSimRouter')
-        else:
-            return IsisTrillSimRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisTrillSimRouter', None) is not None:
+                return self._properties.get('IsisTrillSimRouter')
+        return IsisTrillSimRouter(self)
 
     @property
     def Lacp(self):
@@ -400,10 +402,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lacp_b6b488f98125e4a7318076cb1375941b import Lacp
-        if self._properties.get('Lacp', None) is not None:
-            return self._properties.get('Lacp')
-        else:
-            return Lacp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lacp', None) is not None:
+                return self._properties.get('Lacp')
+        return Lacp(self)
 
     @property
     def Lagportlacp(self):
@@ -417,10 +419,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lagportlacp_ed42d76e076cab1a6c2369b757a5d616 import Lagportlacp
-        if self._properties.get('Lagportlacp', None) is not None:
-            return self._properties.get('Lagportlacp')
-        else:
-            return Lagportlacp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lagportlacp', None) is not None:
+                return self._properties.get('Lagportlacp')
+        return Lagportlacp(self)
 
     @property
     def Lagportstaticlag(self):
@@ -434,10 +436,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lagportstaticlag_f67759421ceee90b665b41bf19b8202d import Lagportstaticlag
-        if self._properties.get('Lagportstaticlag', None) is not None:
-            return self._properties.get('Lagportstaticlag')
-        else:
-            return Lagportstaticlag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Lagportstaticlag', None) is not None:
+                return self._properties.get('Lagportstaticlag')
+        return Lagportstaticlag(self)
 
     @property
     def Mka(self):
@@ -451,10 +453,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mka_d0af5e39c81cb01eb75d4a693187a9ca import Mka
-        if self._properties.get('Mka', None) is not None:
-            return self._properties.get('Mka')
-        else:
-            return Mka(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Mka', None) is not None:
+                return self._properties.get('Mka')
+        return Mka(self)
 
     @property
     def Mpls(self):
@@ -468,10 +470,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mpls_ffaab24246ff53741a201b0a48e8e3f1 import Mpls
-        if self._properties.get('Mpls', None) is not None:
-            return self._properties.get('Mpls')
-        else:
-            return Mpls(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Mpls', None) is not None:
+                return self._properties.get('Mpls')
+        return Mpls(self)
 
     @property
     def MsrpListener(self):
@@ -485,10 +487,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.msrplistener_e4c5ef0942a99c83ab955893f78633c0 import MsrpListener
-        if self._properties.get('MsrpListener', None) is not None:
-            return self._properties.get('MsrpListener')
-        else:
-            return MsrpListener(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MsrpListener', None) is not None:
+                return self._properties.get('MsrpListener')
+        return MsrpListener(self)
 
     @property
     def MsrpTalker(self):
@@ -502,10 +504,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.msrptalker_ac4e61374b0b4d8500aef7076a2cda89 import MsrpTalker
-        if self._properties.get('MsrpTalker', None) is not None:
-            return self._properties.get('MsrpTalker')
-        else:
-            return MsrpTalker(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MsrpTalker', None) is not None:
+                return self._properties.get('MsrpTalker')
+        return MsrpTalker(self)
 
     @property
     def StaticLag(self):
@@ -519,10 +521,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.staticlag_d16a8997708d466db9c9f007ce04724e import StaticLag
-        if self._properties.get('StaticLag', None) is not None:
-            return self._properties.get('StaticLag')
-        else:
-            return StaticLag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('StaticLag', None) is not None:
+                return self._properties.get('StaticLag')
+        return StaticLag(self)
 
     @property
     def Streams(self):
@@ -536,10 +538,10 @@ class Mpls(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.streams_dcd5bdb9e0099c6354f7bed1be55d8f6 import Streams
-        if self._properties.get('Streams', None) is not None:
-            return self._properties.get('Streams')
-        else:
-            return Streams(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Streams', None) is not None:
+                return self._properties.get('Streams')
+        return Streams(self)
 
     @property
     def Bos(self):

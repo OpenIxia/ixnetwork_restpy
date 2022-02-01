@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ospfv2(Base):
@@ -117,10 +119,10 @@ class Ospfv2(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def LearnedInfo(self):
@@ -134,10 +136,10 @@ class Ospfv2(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def OspfSRMappingServerList(self):
@@ -151,10 +153,10 @@ class Ospfv2(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfsrmappingserverlist_862027d65187e27ca0fba54bb0c8b3f4 import OspfSRMappingServerList
-        if self._properties.get('OspfSRMappingServerList', None) is not None:
-            return self._properties.get('OspfSRMappingServerList')
-        else:
-            return OspfSRMappingServerList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfSRMappingServerList', None) is not None:
+                return self._properties.get('OspfSRMappingServerList')
+        return OspfSRMappingServerList(self)._select()
 
     @property
     def OspfTrafficEngineering(self):
@@ -168,10 +170,10 @@ class Ospfv2(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineering_d69348cf2c027c25fac7ced298f72f15 import OspfTrafficEngineering
-        if self._properties.get('OspfTrafficEngineering', None) is not None:
-            return self._properties.get('OspfTrafficEngineering')
-        else:
-            return OspfTrafficEngineering(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfTrafficEngineering', None) is not None:
+                return self._properties.get('OspfTrafficEngineering')
+        return OspfTrafficEngineering(self)._select()
 
     @property
     def OspfTrafficEngineeringProfileList(self):
@@ -185,10 +187,10 @@ class Ospfv2(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_401775f4ebafd104abb270e025fbc95e import OspfTrafficEngineeringProfileList
-        if self._properties.get('OspfTrafficEngineeringProfileList', None) is not None:
-            return self._properties.get('OspfTrafficEngineeringProfileList')
-        else:
-            return OspfTrafficEngineeringProfileList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfTrafficEngineeringProfileList', None) is not None:
+                return self._properties.get('OspfTrafficEngineeringProfileList')
+        return OspfTrafficEngineeringProfileList(self)._select()
 
     @property
     def SrlgValueList(self):
@@ -202,10 +204,10 @@ class Ospfv2(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srlgvaluelist_355b617a5f46ce90d800290d21158418 import SrlgValueList
-        if self._properties.get('SrlgValueList', None) is not None:
-            return self._properties.get('SrlgValueList')
-        else:
-            return SrlgValueList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SrlgValueList', None) is not None:
+                return self._properties.get('SrlgValueList')
+        return SrlgValueList(self)
 
     @property
     def Active(self):
@@ -347,7 +349,7 @@ class Ospfv2(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 5
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Option bit 7
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['DemandCircuit']))

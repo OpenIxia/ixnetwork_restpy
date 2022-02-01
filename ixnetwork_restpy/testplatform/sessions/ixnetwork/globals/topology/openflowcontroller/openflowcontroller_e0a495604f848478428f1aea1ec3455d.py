@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class OpenFlowController(Base):
@@ -55,10 +57,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_3506879509654c1d0d77f933edb1922c import ActionsTemplate
-        if self._properties.get('ActionsTemplate', None) is not None:
-            return self._properties.get('ActionsTemplate')
-        else:
-            return ActionsTemplate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ActionsTemplate', None) is not None:
+                return self._properties.get('ActionsTemplate')
+        return ActionsTemplate(self)._select()
 
     @property
     def FlowSetTemplate(self):
@@ -72,10 +74,10 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1b79b45150c48e9f752113654ba90a51 import FlowSetTemplate
-        if self._properties.get('FlowSetTemplate', None) is not None:
-            return self._properties.get('FlowSetTemplate')
-        else:
-            return FlowSetTemplate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FlowSetTemplate', None) is not None:
+                return self._properties.get('FlowSetTemplate')
+        return FlowSetTemplate(self)._select()
 
     @property
     def Count(self):
@@ -134,3 +136,46 @@ class OpenFlowController(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
+        # type: (int, str, str, List[str]) -> OpenFlowController
+        """Finds and retrieves openFlowController resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve openFlowController resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all openFlowController resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - RowNames (list(str)): Name of rows
+
+        Returns
+        -------
+        - self: This instance with matching openFlowController resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of openFlowController data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the openFlowController resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

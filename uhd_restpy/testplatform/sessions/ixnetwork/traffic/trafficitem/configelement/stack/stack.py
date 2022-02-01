@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Stack(Base):
@@ -56,10 +58,15 @@ class Stack(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.field.field import Field
-        if self._properties.get('Field', None) is not None:
-            return self._properties.get('Field')
-        else:
-            return Field(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Field', None) is not None:
+                return self._properties.get('Field')
+        return Field(self)
+
+    @property
+    def EthernetARP(self):
+        from uhd_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ethernetARP_template import EthernetARP
+        return EthernetARP(self)
 
     @property
     def Ethernet(self):

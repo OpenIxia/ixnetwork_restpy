@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BaseVidList(Base):
@@ -64,10 +66,10 @@ class BaseVidList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isidlist_e6ba204fca19b050969280a4a79443f8 import IsidList
-        if self._properties.get('IsidList', None) is not None:
-            return self._properties.get('IsidList')
-        else:
-            return IsidList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsidList', None) is not None:
+                return self._properties.get('IsidList')
+        return IsidList(self)._select()
 
     @property
     def Active(self):
@@ -233,6 +235,49 @@ class BaseVidList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, IsidCount=None, Name=None):
+        # type: (int, str, int, str) -> BaseVidList
+        """Finds and retrieves baseVidList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve baseVidList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all baseVidList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - IsidCount (number): ISID Count(multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with matching baseVidList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of baseVidList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the baseVidList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, BaseVid=None, BaseVlanPriority=None, Bmac=None, BmacSameAsSystemId=None, BvlanTpid=None, EctAlgorithm=None, TopologyId=None, UseFlagBit=None):
         """Base class infrastructure that gets a list of baseVidList device ids encapsulated by this object.

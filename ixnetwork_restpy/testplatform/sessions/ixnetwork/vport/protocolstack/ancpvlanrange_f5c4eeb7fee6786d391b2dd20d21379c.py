@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AncpVlanRange(Base):
@@ -68,10 +70,10 @@ class AncpVlanRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vlanidinfo_41f74d191e9027b5d1e25bbcb7ca31fc import VlanIdInfo
-        if self._properties.get('VlanIdInfo', None) is not None:
-            return self._properties.get('VlanIdInfo')
-        else:
-            return VlanIdInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VlanIdInfo', None) is not None:
+                return self._properties.get('VlanIdInfo')
+        return VlanIdInfo(self)
 
     @property
     def Enabled(self):
@@ -335,6 +337,62 @@ class AncpVlanRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Enabled=None, FirstId=None, IdIncrMode=None, Increment=None, IncrementStep=None, InnerEnable=None, InnerFirstId=None, InnerIncrement=None, InnerIncrementStep=None, InnerPriority=None, InnerTpid=None, InnerUniqueCount=None, Name=None, ObjectId=None, Priority=None, Tpid=None, UniqueCount=None):
+        # type: (bool, int, int, int, int, bool, int, int, int, int, str, int, str, str, int, str, int) -> AncpVlanRange
+        """Finds and retrieves ancpVlanRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ancpVlanRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ancpVlanRange resources from the server.
+
+        Args
+        ----
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - FirstId (number): The first ID to be used for the first VLAN tag.
+        - IdIncrMode (number): Method used to increment VLAN IDs. May take the following values: 0 (First VLAN first), 1 (Last VLAN first), 2 (All).
+        - Increment (number): Amount of increment per increment step for first VLAN. E.g. increment step = 10 and increment = 2 means increment VLAN ID by 2 for every 10 IPs
+        - IncrementStep (number): Frequency of first VLAN ID increment. E.g., value of 10 means increment VLAN ID once for every 10 IP addresses.
+        - InnerEnable (bool): Enable the inner VLAN.
+        - InnerFirstId (number): The first ID to be used for the inner VLAN tag.
+        - InnerIncrement (number): Amount of increment per increment step for Inner VLAN. E.g. increment step = 10 and increment = 2 means increment VLAN ID by 2 for every 10 IPs
+        - InnerIncrementStep (number): Frequency of inner VLAN ID increment. E.g., value of 10 means increment VLAN ID once for every 10 IP addresses.
+        - InnerPriority (number): The 802.1Q priority to be used for the inner VLAN tag.
+        - InnerTpid (str): The TPID value in the inner VLAN Tag.
+        - InnerUniqueCount (number): Number of unique inner VLAN IDs to use.
+        - Name (str): Name of range
+        - ObjectId (str): Unique identifier for this object
+        - Priority (number): The 802.1Q priority to be used for the outer VLAN tag.
+        - Tpid (str): The TPID value in the outer VLAN Tag.
+        - UniqueCount (number): Number of unique first VLAN IDs to use.
+
+        Returns
+        -------
+        - self: This instance with matching ancpVlanRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ancpVlanRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ancpVlanRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

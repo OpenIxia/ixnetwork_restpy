@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ospfv3Router(Base):
@@ -106,10 +108,10 @@ class Ospfv3Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srgbrangesubobjectslist_be527e153c8e6d4e5c3f4321aa8409c4 import Ospfv3SRGBRangeSubObjectsList
-        if self._properties.get('Ospfv3SRGBRangeSubObjectsList', None) is not None:
-            return self._properties.get('Ospfv3SRGBRangeSubObjectsList')
-        else:
-            return Ospfv3SRGBRangeSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3SRGBRangeSubObjectsList', None) is not None:
+                return self._properties.get('Ospfv3SRGBRangeSubObjectsList')
+        return Ospfv3SRGBRangeSubObjectsList(self)
 
     @property
     def Ospfv3SRv6LocatorEntryList(self):
@@ -123,10 +125,10 @@ class Ospfv3Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3srv6locatorentrylist_f393d213b0ac35e68b8e463997a4d1c9 import Ospfv3SRv6LocatorEntryList
-        if self._properties.get('Ospfv3SRv6LocatorEntryList', None) is not None:
-            return self._properties.get('Ospfv3SRv6LocatorEntryList')
-        else:
-            return Ospfv3SRv6LocatorEntryList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3SRv6LocatorEntryList', None) is not None:
+                return self._properties.get('Ospfv3SRv6LocatorEntryList')
+        return Ospfv3SRv6LocatorEntryList(self)._select()
 
     @property
     def Active(self):

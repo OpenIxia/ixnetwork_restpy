@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ospfv2Router(Base):
@@ -69,10 +71,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import StartRate
-        if self._properties.get('StartRate', None) is not None:
-            return self._properties.get('StartRate')
-        else:
-            return StartRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StartRate', None) is not None:
+                return self._properties.get('StartRate')
+        return StartRate(self)._select()
 
     @property
     def StopRate(self):
@@ -86,10 +88,10 @@ class Ospfv2Router(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import StopRate
-        if self._properties.get('StopRate', None) is not None:
-            return self._properties.get('StopRate')
-        else:
-            return StopRate(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('StopRate', None) is not None:
+                return self._properties.get('StopRate')
+        return StopRate(self)._select()
 
     @property
     def AppSpecLinkAttrSubTlvType(self):

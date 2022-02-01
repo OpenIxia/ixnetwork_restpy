@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -1880,6 +1882,158 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Backoff=None, BackoffIteration=None, BinaryBackoff=None, BinaryFrameLossUnit=None, BinaryLoadUnit=None, BinaryResolution=None, BinarySearchType=None, BinaryTolerance=None, BurstSize=None, CalculateJitter=None, CalculateLatency=None, ComboBackoff=None, ComboFrameLossUnit=None, ComboLoadUnit=None, ComboResolution=None, ComboTolerance=None, CountFramesize=None, CountRandomFrameSize=None, CountRandomLoadRate=None, CustomFramesize=None, CustomLoadUnit=None, DelayAfterTransmit=None, DisableInheritedImix=None, Duration=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FixedLoadUnit=None, ForceRegenerate=None, FrameLossUnit=None, FrameSizeMode=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeImixList=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, ImixAdd=None, ImixData=None, ImixDelete=None, ImixDistribution=None, ImixEnabled=None, ImixTemplates=None, ImixTrafficType=None, IncrementLoadUnit=None, InitialBinaryLoadRate=None, InitialComboLoadRate=None, InitialFramesize=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, Ipv4rate=None, Ipv6rate=None, LastFramesize=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, LoadUnit=None, MaxBinaryLoadRate=None, MaxComboLoadRate=None, MaxFramesize=None, MaxIncrementFrameSize=None, MaxIncrementLoadRate=None, MaxRandomFrameSize=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinBinaryLoadRate=None, MinComboLoadRate=None, MinFpsRate=None, MinFramesize=None, MinIncrementFrameSize=None, MinKbpsRate=None, MinRandomFrameSize=None, MinRandomLoadRate=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, SaturationIteration=None, StaggeredStart=None, StepComboLoadRate=None, StepFrameLossUnit=None, StepFramesize=None, StepIncrementFrameSize=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, Tolerance=None, TrafficType=None, TxDelay=None, UnchangedInitial=None, UnchangedValueList=None, UsePercentOffsets=None):
+        # type: (int, int, int, str, str, int, str, int, int, bool, bool, int, str, str, int, int, int, int, int, str, str, int, str, int, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, str, bool, str, str, int, str, int, str, List[str], int, bool, str, str, str, str, bool, str, str, str, int, int, int, int, int, int, int, int, str, bool, str, str, int, str, str, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, bool, str, int, List[str], str, str, bool, str, int, int, bool, int, str, int, int, int, str, int, int, int, int, str, int, str, str, str) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - Backoff (number): The percentage value to increase or decrease, when the load is adjusted to decrease frame loss.
+        - BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+        - BinaryBackoff (number): Specifies the percentage of binary backoff.
+        - BinaryFrameLossUnit (str(% | frames)): Signifies the two values of frame loss unit.
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies the binary load unit.
+        - BinaryResolution (number): Specifies the resolution of the iteration.
+        - BinarySearchType (str(linear | perFlow | perPort | perTrafficItem)): The binary search type value.
+        - BinaryTolerance (number): The binary tolerance level.
+        - BurstSize (number): The number of packets to send in a burst.
+        - CalculateJitter (bool): If true, calculates jitter.
+        - CalculateLatency (bool): If true, calculates the latency.
+        - ComboBackoff (number): The combined backoff value.
+        - ComboFrameLossUnit (str(% | frames)): Signifies the loss unit for frames for test configuration.
+        - ComboLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Signifies the combo loud unit.
+        - ComboResolution (number): Signifies the combination of resolution values.
+        - ComboTolerance (number): The combined tolerance level.
+        - CountFramesize (number): Counts the number of frame sizes.
+        - CountRandomFrameSize (number): If true, randomly counts the frame size.
+        - CountRandomLoadRate (number): The random count of the load rate.
+        - CustomFramesize (str): Signifies the customized frame size.
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the custom load unit.
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+        - DisableInheritedImix (str): If true, disables inherited imix data.
+        - Duration (number): sec
+        - EnableBackoffIteration (bool): If true, enables the test to run an extra iteration for calculating the Backoff Latency.
+        - EnableDataIntegrity (bool): If true, enables data integrity test.
+        - EnableExtraIterations (bool): If enabled, it signifies extra iterations.
+        - EnableFastConvergence (bool): If enabled, it signifies the fast convergence.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the Saturation Latency.
+        - EnableStopTestOnHighLoss (bool): If true, enable this to stop the high frame loss.
+        - ExtraIterationOffsets (str): It signifies the extra iterations offsets value.
+        - FastConvergenceDuration (number): It signifies the fast convergence duration value.
+        - FastConvergenceThreshold (number): It signifies the fast convergence threshold value.
+        - FixedLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The fixed values for load unit.
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameLossUnit (str): Signifies the unit for frame loss for test configuration.
+        - FrameSizeMode (str(custom | fixed | increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - FramesPerBurstGap (number): The number of frames to be sent after each burst.
+        - Framesize (str): Signifies the frame size for test configuration.
+        - FramesizeFixedValue (number): It signifies the frame size fixed value.
+        - FramesizeImixList (str): Signifies the list of frame size imix value.
+        - FramesizeList (list(str)): The list of the available frame sizes.
+        - Gap (number): It signifies the gap value for the protocol.
+        - GenerateTrackingOptionAggregationFiles (bool): If enabled, it generates the tracking option for aggregation files.
+        - ImixAdd (str): Signifies the test configuration.
+        - ImixData (str): Signifies the IMIX data for test configuration.
+        - ImixDelete (str): Signifies the deleted data of IMIX.
+        - ImixDistribution (str(bwpercentage | weight)): Signifies the distribution list for imix values.
+        - ImixEnabled (bool): If true, enables the imix value.
+        - ImixTemplates (str(cisco | imix | ipsec | ipv6 | none | quadmodal | standard | tcp | tolly | trimodal)): Signifies the imix templates.
+        - ImixTrafficType (str): Signifies the traffic type of test configuration.
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): If true, increments the load unit.
+        - InitialBinaryLoadRate (number): Signifies the initial binary load rate.
+        - InitialComboLoadRate (number): The first combination load rate.
+        - InitialFramesize (number): Signifies the initial frame size.
+        - InitialIncrementLoadRate (number): Signifies the initial incremented load rate.
+        - InitialStepLoadRate (number): The initial step value of the load rate.
+        - Ipv4rate (number): The rate at which IPv4 traffic is sent.
+        - Ipv6rate (number): The rate at which IPv6 traffic is sent.
+        - LastFramesize (number): Signifies the last frame size.
+        - LatencyBins (str): Sets the latency bins statistics.
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics.
+        - LatencyType (str(cutThrough | storeForward)): The type of latency.
+        - LoadRateList (str): Enters the Load Rate List.
+        - LoadRateValue (number): Signifies the load rate value.
+        - LoadType (str(binary | combo | step)): The type of the payload setting.
+        - LoadUnit (str): Signifies the load unit value.
+        - MaxBinaryLoadRate (number): Specifies the maximum rate of the binary algorithm.
+        - MaxComboLoadRate (number): The maximum combination load rate.
+        - MaxFramesize (number): Signifies the maximum frame size.
+        - MaxIncrementFrameSize (number): The maximum incremental value of the frame size.
+        - MaxIncrementLoadRate (number): Signifies the maximum increment of load rate.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MaxRandomLoadRate (number): The maximum random value of the load rate.
+        - MaxStepLoadRate (number): The maximum step value of the load rate.
+        - MinBinaryLoadRate (number): Specifies the minimum rate of the binary algorithm.
+        - MinComboLoadRate (number): The minimum combination load rate.
+        - MinFpsRate (number): The rate at which minimum frames are sent per second.
+        - MinFramesize (number): Signifies the minimum frame size.
+        - MinIncrementFrameSize (number): The minimum incremental value of the frame size.
+        - MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - MinRandomLoadRate (number): The minimum random value of the load rate.
+        - Numtrials (number): Signifies the number of trials.
+        - PercentMaxRate (number): The maximum rate in percentage.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - RandomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The random values of the load unit.
+        - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): The selected rate.
+        - ReportSequenceError (bool): If true, the sequence error, if found, is reported.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): If true, reports the throughput rate unit.
+        - Resolution (number): Specify the resolution of the iteration.
+        - SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation Latency.
+        - StaggeredStart (bool): If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
+        - StepComboLoadRate (number): Signifies the combination of step load rate.
+        - StepFrameLossUnit (str(% | frames)): The step frame loss unit for upstream traffic.
+        - StepFramesize (number): The step value for frame size.
+        - StepIncrementFrameSize (number): The incremental step value of the frame size.
+        - StepIncrementLoadRate (number): Signifies the step value for incremented load rate.
+        - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit.
+        - StepStepLoadRate (number): The incremental step value of load rate.
+        - StepTolerance (number): The step value of the tolerance level.
+        - StopTestOnHighLoss (number): If true, enables this to stop the test in case of high frame loss.
+        - Tolerance (number): The value set for the tolerance level.
+        - TrafficType (str(burstyLoading | constantLoading)): The test based on the traffic type.
+        - TxDelay (number): Signifies the transmission delay time.
+        - UnchangedInitial (str(False | True)): Signifies the initial value that is unchanged.
+        - UnchangedValueList (str): It signifies the unchanged value list.
+        - UsePercentOffsets (str): It signifies the value of percent offsets when used.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

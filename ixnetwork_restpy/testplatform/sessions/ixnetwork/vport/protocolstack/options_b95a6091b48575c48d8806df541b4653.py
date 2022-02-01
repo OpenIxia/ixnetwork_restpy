@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Options(Base):
@@ -270,6 +272,59 @@ class Options(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ActOnGratArp=None, ArpRefreshInterval=None, DadEnabled=None, DadTransmits=None, IgnoreMldQueries=None, Ipv4McastSolicit=None, Ipv4RetransTime=None, Mcast_solicit=None, NsRefreshInterval=None, ObjectId=None, RetransTime=None, RouterSolicitationDelay=None, RouterSolicitationInterval=None, RouterSolicitations=None):
+        # type: (bool, int, bool, int, bool, int, int, int, int, str, int, int, int, int) -> Options
+        """Finds and retrieves options resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve options resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all options resources from the server.
+
+        Args
+        ----
+        - ActOnGratArp (bool): When enabled, the ARP refresh timer in kernel will be set to initial value configured by the user when GratArp message is received.
+        - ArpRefreshInterval (number): The time interval in seconds taken by IxNetwork to refresh IPv4 address cache. By default, it is set to 60 seconds
+        - DadEnabled (bool): When enabled, IPv6 server will reply to NDP DAD NS messages with Neighbor Advertisement packets.
+        - DadTransmits (number): Number of Neighbor Solicitations to send until assuming no routers are present.
+        - IgnoreMldQueries (bool): When enabled IPv6 emulation will not respond to MLD queries with Solicited node membership reports.
+        - Ipv4McastSolicit (number): Maximum number of ARP requests to send to resolve one MAC address.
+        - Ipv4RetransTime (number): Number of milliseconds to wait between ARP requests.
+        - Mcast_solicit (number): Number of Neighbor Solicitations to send until giving up on link layer address resolution.
+        - NsRefreshInterval (number): The time interval in seconds taken by IxNetwork to refresh IPv6 address cache. By default, it is set to 60 seconds
+        - ObjectId (str): Unique identifier for this object
+        - RetransTime (number): Number of milliseconds to wait between Neighbor Solicitations.
+        - RouterSolicitationDelay (number): Number of seconds to wait after interface is brought up before sending Router Solicitations. When an IPv6 link-local address is added to an interface, first NS can be sent after no more than the value of this setting seconds.
+        - RouterSolicitationInterval (number): Number of seconds to wait between Router Solicitations.
+        - RouterSolicitations (number): Number of Router Solicitations to send until assuming no routers are present.
+
+        Returns
+        -------
+        - self: This instance with matching options resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of options data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the options resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

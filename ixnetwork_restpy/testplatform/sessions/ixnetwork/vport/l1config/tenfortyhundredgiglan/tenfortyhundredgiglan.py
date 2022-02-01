@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TenFortyHundredGigLan(Base):
@@ -62,7 +64,7 @@ class TenFortyHundredGigLan(Base):
     }
     _SDM_ENUM_MAP = {
         'autoInstrumentation': ['endOfFrame', 'floating'],
-        'loopbackMode': ['internalLoopback', 'lineLoopback', 'none'],
+        'loopbackMode': ['none', 'lineLoopback', 'internalLoopback'],
         'sendSetsMode': ['alternate', 'typeAOnly', 'typeBOnly'],
         'speed': ['speed100g', 'speed10g', 'speed25g', 'speed40g', 'speed50g'],
         'typeAOrderedSets': ['localFault', 'remoteFault'],
@@ -84,10 +86,10 @@ class TenFortyHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.fcoe.fcoe import Fcoe
-        if self._properties.get('Fcoe', None) is not None:
-            return self._properties.get('Fcoe')
-        else:
-            return Fcoe(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Fcoe', None) is not None:
+                return self._properties.get('Fcoe')
+        return Fcoe(self)._select()
 
     @property
     def TxLane(self):
@@ -101,10 +103,10 @@ class TenFortyHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.tenfortyhundredgiglan.txlane.txlane import TxLane
-        if self._properties.get('TxLane', None) is not None:
-            return self._properties.get('TxLane')
-        else:
-            return TxLane(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxLane', None) is not None:
+                return self._properties.get('TxLane')
+        return TxLane(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -226,7 +228,7 @@ class TenFortyHundredGigLan(Base):
         """
         Returns
         -------
-        - bool: If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
+        - bool: If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
     @EnabledFlowControl.setter
@@ -240,7 +242,7 @@ class TenFortyHundredGigLan(Base):
         """
         Returns
         -------
-        - str: NOT DEFINED
+        - str: The 48-bit MAC address that the port listens on for a directed pause.
         """
         return self._get_attribute(self._SDM_ATT_MAP['FlowControlDirectedAddress'])
     @FlowControlDirectedAddress.setter
@@ -352,7 +354,7 @@ class TenFortyHundredGigLan(Base):
         """
         Returns
         -------
-        - str(internalLoopback | lineLoopback | none): NOT DEFINED
+        - str(none | lineLoopback | internalLoopback): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP['LoopbackMode'])
     @LoopbackMode.setter
@@ -366,7 +368,7 @@ class TenFortyHundredGigLan(Base):
         """
         Returns
         -------
-        - number: Indicates the value that needs to be adjusted for the line transmit frequency
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
     @Ppm.setter
@@ -484,8 +486,8 @@ class TenFortyHundredGigLan(Base):
         - EnablePPM (bool): If true, enables the portsppm.
         - EnableRsFec (bool): NOT DEFINED
         - EnableRsFecStats (bool): NOT DEFINED
-        - EnabledFlowControl (bool): If true, enables the port's MAC flow control and mechanisms to listen for a directed address pause message.
-        - FlowControlDirectedAddress (str): NOT DEFINED
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
         - GoodBlocksNumber (number): NOT DEFINED
         - IeeeL1Defaults (bool): NOT DEFINED
         - LaserOn (bool): NOT DEFINED
@@ -493,8 +495,8 @@ class TenFortyHundredGigLan(Base):
         - LoopContinuously (bool): NOT DEFINED
         - LoopCountNumber (number): NOT DEFINED
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
-        - LoopbackMode (str(internalLoopback | lineLoopback | none)): NOT DEFINED
-        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency
+        - LoopbackMode (str(none | lineLoopback | internalLoopback)): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
         - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
         - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): The speed of the lan
@@ -508,3 +510,69 @@ class TenFortyHundredGigLan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, BadBlocksNumber=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnableRsFecStats=None, EnabledFlowControl=None, FlowControlDirectedAddress=None, GoodBlocksNumber=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, LoopContinuously=None, LoopCountNumber=None, Loopback=None, LoopbackMode=None, Ppm=None, SelectedSpeeds=None, SendSetsMode=None, Speed=None, StartErrorInsertion=None, TxIgnoreRxLinkFaults=None, TypeAOrderedSets=None, TypeBOrderedSets=None):
+        # type: (str, List[str], int, bool, bool, bool, bool, bool, bool, bool, str, int, bool, bool, bool, bool, int, bool, str, int, List[str], str, str, bool, bool, str, str) -> TenFortyHundredGigLan
+        """Finds and retrieves tenFortyHundredGigLan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tenFortyHundredGigLan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tenFortyHundredGigLan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AvailableSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are available for the current media and AN settings.
+        - BadBlocksNumber (number): NOT DEFINED
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnableAutoNegotiation (bool): NOT DEFINED
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnableRsFec (bool): NOT DEFINED
+        - EnableRsFecStats (bool): NOT DEFINED
+        - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
+        - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - GoodBlocksNumber (number): NOT DEFINED
+        - IeeeL1Defaults (bool): NOT DEFINED
+        - LaserOn (bool): NOT DEFINED
+        - LinkTraining (bool): NOT DEFINED
+        - LoopContinuously (bool): NOT DEFINED
+        - LoopCountNumber (number): NOT DEFINED
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - LoopbackMode (str(none | lineLoopback | internalLoopback)): NOT DEFINED
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
+        - SendSetsMode (str(alternate | typeAOnly | typeBOnly)): NOT DEFINED
+        - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): The speed of the lan
+        - StartErrorInsertion (bool): NOT DEFINED
+        - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
+        - TypeAOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+        - TypeBOrderedSets (str(localFault | remoteFault)): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching tenFortyHundredGigLan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of tenFortyHundredGigLan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the tenFortyHundredGigLan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

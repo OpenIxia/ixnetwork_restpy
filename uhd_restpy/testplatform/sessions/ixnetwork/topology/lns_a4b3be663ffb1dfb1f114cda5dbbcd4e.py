@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Lns(Base):
@@ -92,10 +94,10 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.lnsauthcredentials_caa048d94ca4e6927df8160f32c829bf import LnsAuthCredentials
-        if self._properties.get('LnsAuthCredentials', None) is not None:
-            return self._properties.get('LnsAuthCredentials')
-        else:
-            return LnsAuthCredentials(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LnsAuthCredentials', None) is not None:
+                return self._properties.get('LnsAuthCredentials')
+        return LnsAuthCredentials(self)._select()
 
     @property
     def Pppoxserver(self):
@@ -109,10 +111,10 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import Pppoxserver
-        if self._properties.get('Pppoxserver', None) is not None:
-            return self._properties.get('Pppoxserver')
-        else:
-            return Pppoxserver(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Pppoxserver', None) is not None:
+                return self._properties.get('Pppoxserver')
+        return Pppoxserver(self)
 
     @property
     def Tag(self):
@@ -126,10 +128,10 @@ class Lns(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def BearerCapability(self):

@@ -48,10 +48,14 @@ class Sessions(Base):
         ------
         - ValueError: Version of IxNetwork server is not supported. Minimum version supported is 8.52.
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import (
+            Ixnetwork,
+        )
 
         ixnetwork = Ixnetwork(self)
-        response = ixnetwork._connection._read("%s/ixnetwork/globals" % self.href)
+        response = ixnetwork._connection._read(
+            "%s/ixnetwork/globals?includes=buildNumber,username" % self.href
+        )
         build_number = response["buildNumber"]
         if build_number not in self._build_numbers:
             user_name = response["username"]
@@ -61,13 +65,20 @@ class Sessions(Base):
                 self.warn("Using DEBUG version of IxNetwork api server")
             elif LooseVersion(build_number) < LooseVersion("8.52"):
                 raise ValueError(
-                    "IxNetwork api server version %s is not supported. The minimum version supported is 8.52" % build_number
+                    "IxNetwork api server version %s is not supported. The minimum version supported is 8.52"
+                    % build_number
                 )
             else:
-                self.info("Using IxNetwork api server version %s" % (build_number))
+                self.info(
+                    "Using IxNetwork api server version %s" % (build_number)
+                )
                 self.info("User info %s" % (user_name))
             self._build_numbers.append(build_number)
-        ixnetwork._set_properties(ixnetwork._connection._read("%s/%s" % (self.href, Ixnetwork._SDM_NAME)))
+        ixnetwork._set_properties(
+            ixnetwork._connection._read(
+                "%s/%s" % (self.href, Ixnetwork._SDM_NAME)
+            )
+        )
         return ixnetwork
 
     @property
@@ -134,11 +145,20 @@ class Sessions(Base):
     def Name(self, value):
         if value is not None:
             if self._connection.platform == "linux":
-                self._connection._update("ixnetworkweb/api/v1/%s/%s" % (self._SDM_NAME, self.Id), payload={"sessionName": value})
+                self._connection._update(
+                    "ixnetworkweb/api/v1/%s/%s" % (self._SDM_NAME, self.Id),
+                    payload={"sessionName": value},
+                )
                 self._properties["name"] = value
             else:
-                self.warn("Setting the session name is not supported on the %s platform" % self._connection.platform)
-        elif self._connection.platform == "linux" and "name" not in self._properties:
+                self.warn(
+                    "Setting the session name is not supported on the %s platform"
+                    % self._connection.platform
+                )
+        elif (
+            self._connection.platform == "linux"
+            and "name" not in self._properties
+        ):
             if "sessionName" in self._properties:
                 self._properties["name"] = self._properties["sessionName"]
             else:
@@ -158,21 +178,39 @@ class Sessions(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         id = self.Id
-        if self.parent.Platform == "linux" and self._properties["state"].upper() != "ACTIVE":
+        if (
+            self.parent.Platform == "linux"
+            and self._properties["state"].upper() != "ACTIVE"
+        ):
             # linux and windows offer async operation status on session start
-            self._execute("start", payload={"applicationType": self.ApplicationType})
-        elif self.parent.Platform == "connection_manager" and "IN USE" not in self._properties["subState"]:
+            self._execute(
+                "start", payload={"applicationType": self.ApplicationType}
+            )
+        elif (
+            self.parent.Platform == "connection_manager"
+            and "IN USE" not in self._properties["subState"]
+        ):
             # connection manager does not offer async operation status on session start
-            self._execute("start", payload={"applicationType": self.ApplicationType})
+            self._execute(
+                "start", payload={"applicationType": self.ApplicationType}
+            )
             start = time.time()
             while True:
-                response = self._connection._read("%s/%s/%s" % (self._parent.href, self._SDM_NAME, id))
-                if response["state"] == "ACTIVE" and "IN USE" in response["subState"]:
+                response = self._connection._read(
+                    "%s/%s/%s" % (self._parent.href, self._SDM_NAME, id)
+                )
+                if (
+                    response["state"] == "ACTIVE"
+                    and "IN USE" in response["subState"]
+                ):
                     self._properties["state"] = response["state"]
                     self._properties["subState"] = response["subState"]
                     break
                 elif time.time() - start > 300:
-                    raise BadRequestError("Unable to start session %s after %s seconds" % (id, time.time() - start))
+                    raise BadRequestError(
+                        "Unable to start session %s after %s seconds"
+                        % (id, time.time() - start)
+                    )
                 time.sleep(5)
         return self
 
@@ -192,7 +230,9 @@ class Sessions(Base):
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        responses = self._connection._read("%s/%s" % (self._parent.href, self._SDM_NAME))
+        responses = self._connection._read(
+            "%s/%s" % (self._parent.href, self._SDM_NAME)
+        )
         self._clear()
         for response in responses:
             if self._connection.platform == "linux":
@@ -237,11 +277,15 @@ class Sessions(Base):
         elif ApplicationType == "ixnrest":
             applicationType = "ixnrest"
         else:
-            raise ValueError("%s is not a supported SessionType" % ApplicationType)
+            raise ValueError(
+                "%s is not a supported SessionType" % ApplicationType
+            )
         ApplicationType = None
         self._create(locals())
         if self._properties["applicationType"] == "ixnetwork":
-            self._object_properties[self.index]["applicationType"] = "quicktest"
+            self._object_properties[self.index][
+                "applicationType"
+            ] = "quicktest"
         self.Start()
         self.Name = Name
         return self
@@ -278,7 +322,10 @@ class Sessions(Base):
             try:
                 url = None
                 if self.parent.Platform == "linux":
-                    url = "%s/operations/stop?deleteAfterStop=true" % properties["href"]
+                    url = (
+                        "%s/operations/stop?deleteAfterStop=true"
+                        % properties["href"]
+                    )
                 elif self.parent.Platform == "connection_manager":
                     url = "%s/operations/stop" % properties["href"]
                 if url is not None:
@@ -359,7 +406,9 @@ class Sessions(Base):
         if self._parent.Platform == "linux":
             remote_filename = remote_filename.replace("\\", "/")
         return self._connection._get_file(
-            "%s/ixnetwork" % self.href, remote_filename=remote_filename, local_filename=local_filename
+            "%s/ixnetwork" % self.href,
+            remote_filename=remote_filename,
+            local_filename=local_filename,
         )
 
     def UploadFile(self, local_filename, remote_filename=None):
@@ -377,10 +426,14 @@ class Sessions(Base):
         if self._parent.Platform == "linux" and remote_filename is not None:
             remote_filename = remote_filename.replace("\\", "/")
         return self._connection._put_file(
-            "%s/ixnetwork" % self.href, local_filename=local_filename, remote_filename=remote_filename
+            "%s/ixnetwork" % self.href,
+            local_filename=local_filename,
+            remote_filename=remote_filename,
         )
 
     def RemoveFile(self, remote_filename):
         if self._parent.Platform == "linux" and remote_filename is not None:
             remote_filename = remote_filename.replace("\\", "/")
-        return self._connection._delete_file("%s/ixnetwork" % self.href, remote_filename=remote_filename)
+        return self._connection._delete_file(
+            "%s/ixnetwork" % self.href, remote_filename=remote_filename
+        )

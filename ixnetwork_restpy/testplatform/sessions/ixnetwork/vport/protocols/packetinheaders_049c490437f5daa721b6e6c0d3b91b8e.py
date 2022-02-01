@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PacketInHeaders(Base):
@@ -214,3 +216,58 @@ class PacketInHeaders(Base):
         - str: Indicates the frame priority level.
         """
         return self._get_attribute(self._SDM_ATT_MAP['VlanPriority'])
+
+    def find(self, EthernetDestinationAddress=None, EthernetSourceAddress=None, EthernetType=None, Ipv4DestinationAddress=None, Ipv4Protocol=None, Ipv4SourceAddress=None, Ipv6DestinationAddress=None, Ipv6FlowLabel=None, Ipv6SourceAddress=None, TcpDestinationPort=None, TcpSourcePort=None, UdpDestinationPort=None, UdpSourcePort=None, UniquePacketCount=None, VlanId=None, VlanPriority=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str) -> PacketInHeaders
+        """Finds and retrieves packetInHeaders resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve packetInHeaders resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all packetInHeaders resources from the server.
+
+        Args
+        ----
+        - EthernetDestinationAddress (str): Indicates the Ethernet destination address for the packet.
+        - EthernetSourceAddress (str): Indicates the ethernet address of the source from which this packet arrived.
+        - EthernetType (str): Indicates the ethernet frame type.
+        - Ipv4DestinationAddress (str): Indicates the IPv4 destination address for this packet.
+        - Ipv4Protocol (str): Defines the protocol used in the data portion of the IP datagram.
+        - Ipv4SourceAddress (str): Indicates the IPv4 address of the source from which this packet arrived.
+        - Ipv6DestinationAddress (str): Indicates the IPv6 destination address for this packet.
+        - Ipv6FlowLabel (str): Originally created for giving real-time applications special service.The flow label when set to a non-zero value now serves as a hint to routers and switches with multiple outbound paths that these packets should stay on the same path so that they will not be re-ordered.
+        - Ipv6SourceAddress (str): Indicates the IPv6 address of the source from which this packet arrived.
+        - TcpDestinationPort (str): Identifies the TCP port number of the destination application program.
+        - TcpSourcePort (str): Identifies the TCP port number of the source application program.
+        - UdpDestinationPort (str): Identifies the UDP port number of the destination application program.
+        - UdpSourcePort (str): Identifies the UDP port number of the source application program.
+        - UniquePacketCount (str): Indicates the packet-in count in this Range.
+        - VlanId (str): Indicates the field specifying the VLAN to which the frame belongs.
+        - VlanPriority (str): Indicates the frame priority level.
+
+        Returns
+        -------
+        - self: This instance with matching packetInHeaders resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of packetInHeaders data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the packetInHeaders resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class RsvpP2PEgressLsps(Base):
@@ -72,10 +74,10 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.rsvprrosubobjectslist_77057ceebebb20e47d2ca898582fad61 import RsvpRROSubObjectsList
-        if self._properties.get('RsvpRROSubObjectsList', None) is not None:
-            return self._properties.get('RsvpRROSubObjectsList')
-        else:
-            return RsvpRROSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RsvpRROSubObjectsList', None) is not None:
+                return self._properties.get('RsvpRROSubObjectsList')
+        return RsvpRROSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -89,10 +91,10 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):
@@ -344,6 +346,51 @@ class RsvpP2PEgressLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, LocalIp=None, Name=None, NumberOfRroSubObjects=None, State=None):
+        # type: (int, str, List[str], str, int, List[str]) -> RsvpP2PEgressLsps
+        """Finds and retrieves rsvpP2PEgressLsps resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rsvpP2PEgressLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all rsvpP2PEgressLsps resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalIp (list(str)): Local IP
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfRroSubObjects (number): Number Of RRO Sub-Objects
+        - State (list(str[down | none | notStarted | up])): State
+
+        Returns
+        -------
+        - self: This instance with matching rsvpP2PEgressLsps resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of rsvpP2PEgressLsps data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the rsvpP2PEgressLsps resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgtpS5S8SgwEndpoint(Base):
@@ -55,10 +57,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.enbs5s8secondaryrange_d38feb87b2d8802982f3358945f10f5a import EnbS5S8SecondaryRange
-        if self._properties.get('EnbS5S8SecondaryRange', None) is not None:
-            return self._properties.get('EnbS5S8SecondaryRange')
-        else:
-            return EnbS5S8SecondaryRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EnbS5S8SecondaryRange', None) is not None:
+                return self._properties.get('EnbS5S8SecondaryRange')
+        return EnbS5S8SecondaryRange(self)
 
     @property
     def MmeS5S8SecondaryRange(self):
@@ -72,10 +74,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mmes5s8secondaryrange_8e42fb0111222b63e5a97e03ee0bf819 import MmeS5S8SecondaryRange
-        if self._properties.get('MmeS5S8SecondaryRange', None) is not None:
-            return self._properties.get('MmeS5S8SecondaryRange')
-        else:
-            return MmeS5S8SecondaryRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MmeS5S8SecondaryRange', None) is not None:
+                return self._properties.get('MmeS5S8SecondaryRange')
+        return MmeS5S8SecondaryRange(self)
 
     @property
     def Range(self):
@@ -89,10 +91,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_b87256b85dcd5af249d46cedbd0827d5 import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def UeS5S8SecondaryRange(self):
@@ -106,10 +108,10 @@ class EgtpS5S8SgwEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ues5s8secondaryrange_fa3921bfe2878f4cd48bff2e981fec2b import UeS5S8SecondaryRange
-        if self._properties.get('UeS5S8SecondaryRange', None) is not None:
-            return self._properties.get('UeS5S8SecondaryRange')
-        else:
-            return UeS5S8SecondaryRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('UeS5S8SecondaryRange', None) is not None:
+                return self._properties.get('UeS5S8SecondaryRange')
+        return UeS5S8SecondaryRange(self)
 
     @property
     def Name(self):

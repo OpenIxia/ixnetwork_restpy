@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisDceSimRouter(Base):
@@ -71,10 +73,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def DceSimulatedMCastIpv4GroupList(self):
@@ -88,10 +90,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dcesimulatedmcastipv4grouplist_81627c13e7781d475d54b1321526cb62 import DceSimulatedMCastIpv4GroupList
-        if self._properties.get('DceSimulatedMCastIpv4GroupList', None) is not None:
-            return self._properties.get('DceSimulatedMCastIpv4GroupList')
-        else:
-            return DceSimulatedMCastIpv4GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceSimulatedMCastIpv4GroupList', None) is not None:
+                return self._properties.get('DceSimulatedMCastIpv4GroupList')
+        return DceSimulatedMCastIpv4GroupList(self)._select()
 
     @property
     def DceSimulatedMCastIpv6GroupList(self):
@@ -105,10 +107,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dcesimulatedmcastipv6grouplist_7fbea0bd4f7507b7b0d975bb7a4d36b7 import DceSimulatedMCastIpv6GroupList
-        if self._properties.get('DceSimulatedMCastIpv6GroupList', None) is not None:
-            return self._properties.get('DceSimulatedMCastIpv6GroupList')
-        else:
-            return DceSimulatedMCastIpv6GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceSimulatedMCastIpv6GroupList', None) is not None:
+                return self._properties.get('DceSimulatedMCastIpv6GroupList')
+        return DceSimulatedMCastIpv6GroupList(self)._select()
 
     @property
     def DceSimulatedMCastMacGroupList(self):
@@ -122,10 +124,10 @@ class IsisDceSimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.dcesimulatedmcastmacgrouplist_d6ad8319ad4117715425a07710acdbc7 import DceSimulatedMCastMacGroupList
-        if self._properties.get('DceSimulatedMCastMacGroupList', None) is not None:
-            return self._properties.get('DceSimulatedMCastMacGroupList')
-        else:
-            return DceSimulatedMCastMacGroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceSimulatedMCastMacGroupList', None) is not None:
+                return self._properties.get('DceSimulatedMCastMacGroupList')
+        return DceSimulatedMCastMacGroupList(self)._select()
 
     @property
     def Active(self):

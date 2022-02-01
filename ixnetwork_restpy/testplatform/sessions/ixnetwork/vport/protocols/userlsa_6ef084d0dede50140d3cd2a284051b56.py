@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class UserLsa(Base):
@@ -67,10 +69,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.external_5f713e4ff5ec2297a9ee77f4fc87e67f import External
-        if self._properties.get('External', None) is not None:
-            return self._properties.get('External')
-        else:
-            return External(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('External', None) is not None:
+                return self._properties.get('External')
+        return External(self)
 
     @property
     def Network(self):
@@ -84,10 +86,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.network_ab7cacc5147193bf15144d9976e31e5e import Network
-        if self._properties.get('Network', None) is not None:
-            return self._properties.get('Network')
-        else:
-            return Network(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Network', None) is not None:
+                return self._properties.get('Network')
+        return Network(self)
 
     @property
     def Nssa(self):
@@ -101,10 +103,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nssa_926f7a4ce5a139e05060d94a97af7411 import Nssa
-        if self._properties.get('Nssa', None) is not None:
-            return self._properties.get('Nssa')
-        else:
-            return Nssa(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Nssa', None) is not None:
+                return self._properties.get('Nssa')
+        return Nssa(self)
 
     @property
     def Opaque(self):
@@ -118,10 +120,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaque_f86f4a4822065deb46f8e3927f1f473f import Opaque
-        if self._properties.get('Opaque', None) is not None:
-            return self._properties.get('Opaque')
-        else:
-            return Opaque(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Opaque', None) is not None:
+                return self._properties.get('Opaque')
+        return Opaque(self)
 
     @property
     def Router(self):
@@ -135,10 +137,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_0adffb2d881dee33ea86b034b59de2e6 import Router
-        if self._properties.get('Router', None) is not None:
-            return self._properties.get('Router')
-        else:
-            return Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Router', None) is not None:
+                return self._properties.get('Router')
+        return Router(self)
 
     @property
     def SummaryIp(self):
@@ -152,10 +154,10 @@ class UserLsa(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.summaryip_d35397f1c35713560a222df362b20a8a import SummaryIp
-        if self._properties.get('SummaryIp', None) is not None:
-            return self._properties.get('SummaryIp')
-        else:
-            return SummaryIp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SummaryIp', None) is not None:
+                return self._properties.get('SummaryIp')
+        return SummaryIp(self)
 
     @property
     def AdvertisingRouterId(self):

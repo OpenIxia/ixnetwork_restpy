@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ospfv3PseudoInterface(Base):
@@ -76,10 +78,10 @@ class Ospfv3PseudoInterface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudosrv6adjsidlist_08a5b0e6d4fa3ec826e164debaebe1cc import Ospfv3PseudoSRv6AdjSIDList
-        if self._properties.get('Ospfv3PseudoSRv6AdjSIDList', None) is not None:
-            return self._properties.get('Ospfv3PseudoSRv6AdjSIDList')
-        else:
-            return Ospfv3PseudoSRv6AdjSIDList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3PseudoSRv6AdjSIDList', None) is not None:
+                return self._properties.get('Ospfv3PseudoSRv6AdjSIDList')
+        return Ospfv3PseudoSRv6AdjSIDList(self)._select()
 
     @property
     def AdjSID(self):

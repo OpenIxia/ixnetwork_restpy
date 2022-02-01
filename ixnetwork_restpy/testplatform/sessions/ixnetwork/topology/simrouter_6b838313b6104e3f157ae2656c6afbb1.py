@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SimRouter(Base):
@@ -58,27 +60,27 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def IsisL3PseudoRouter(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_85a56cb1f0a833e5ddef28a9b9e69093.IsisL3PseudoRouter): An instance of the IsisL3PseudoRouter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_2581092b19f750d9ddbcd9aa57823e30.IsisL3PseudoRouter): An instance of the IsisL3PseudoRouter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_85a56cb1f0a833e5ddef28a9b9e69093 import IsisL3PseudoRouter
-        if self._properties.get('IsisL3PseudoRouter', None) is not None:
-            return self._properties.get('IsisL3PseudoRouter')
-        else:
-            return IsisL3PseudoRouter(self)
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_2581092b19f750d9ddbcd9aa57823e30 import IsisL3PseudoRouter
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3PseudoRouter', None) is not None:
+                return self._properties.get('IsisL3PseudoRouter')
+        return IsisL3PseudoRouter(self)
 
     @property
     def LdpPseudoRouter(self):
@@ -92,10 +94,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ldppseudorouter_5f6f01cad846224121837f6b8e6bf015 import LdpPseudoRouter
-        if self._properties.get('LdpPseudoRouter', None) is not None:
-            return self._properties.get('LdpPseudoRouter')
-        else:
-            return LdpPseudoRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LdpPseudoRouter', None) is not None:
+                return self._properties.get('LdpPseudoRouter')
+        return LdpPseudoRouter(self)
 
     @property
     def OspfPseudoRouter(self):
@@ -109,10 +111,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudorouter_4f8ac1720e067552c5d841a1a42fd3a1 import OspfPseudoRouter
-        if self._properties.get('OspfPseudoRouter', None) is not None:
-            return self._properties.get('OspfPseudoRouter')
-        else:
-            return OspfPseudoRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OspfPseudoRouter', None) is not None:
+                return self._properties.get('OspfPseudoRouter')
+        return OspfPseudoRouter(self)
 
     @property
     def Ospfv3PseudoRouter(self):
@@ -126,10 +128,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudorouter_c91985aa394a58376f1a6a15792ca69e import Ospfv3PseudoRouter
-        if self._properties.get('Ospfv3PseudoRouter', None) is not None:
-            return self._properties.get('Ospfv3PseudoRouter')
-        else:
-            return Ospfv3PseudoRouter(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ospfv3PseudoRouter', None) is not None:
+                return self._properties.get('Ospfv3PseudoRouter')
+        return Ospfv3PseudoRouter(self)
 
     @property
     def Tag(self):
@@ -143,10 +145,10 @@ class SimRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Count(self):

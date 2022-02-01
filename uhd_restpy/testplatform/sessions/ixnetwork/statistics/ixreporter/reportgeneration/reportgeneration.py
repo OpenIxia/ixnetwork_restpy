@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ReportGeneration(Base):
@@ -116,6 +118,49 @@ class ReportGeneration(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, OutputFile=None, OutputType=None, Template=None, TestRunId=None):
+        # type: (str, str, str, int) -> ReportGeneration
+        """Finds and retrieves reportGeneration resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve reportGeneration resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all reportGeneration resources from the server.
+
+        Args
+        ----
+        - OutputFile (str): Signifies the output file
+        - OutputType (str(Html | Pdf)): Signifies the output type
+        - Template (str): Signifies the template for IxReporter
+        - TestRunId (number): Signifies the identifier for the test run
+
+        Returns
+        -------
+        - self: This instance with matching reportGeneration resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of reportGeneration data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the reportGeneration resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

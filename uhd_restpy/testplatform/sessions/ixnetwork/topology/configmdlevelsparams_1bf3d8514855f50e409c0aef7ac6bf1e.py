@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ConfigMDLevelsParams(Base):
@@ -459,6 +461,70 @@ class ConfigMDLevelsParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, MdLevel1=None, MdLevel2=None, MdLevel3=None, MdLevel4=None, MdLevel5=None, MdLevel6=None, MdLevel7=None, MdLevel8=None, MdName1=None, MdName2=None, MdName3=None, MdName4=None, MdName5=None, MdName6=None, MdName7=None, MdName8=None, MdNameFormat1=None, MdNameFormat2=None, MdNameFormat3=None, MdNameFormat4=None, MdNameFormat5=None, MdNameFormat6=None, MdNameFormat7=None, MdNameFormat8=None, NumMDLevels=None):
+        # type: (int, int, int, int, int, int, int, int, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, str, int) -> ConfigMDLevelsParams
+        """Finds and retrieves configMDLevelsParams resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve configMDLevelsParams resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all configMDLevelsParams resources from the server.
+
+        Args
+        ----
+        - MdLevel1 (number): Text
+        - MdLevel2 (number): Text
+        - MdLevel3 (number): Text
+        - MdLevel4 (number): Text
+        - MdLevel5 (number): Text
+        - MdLevel6 (number): Text
+        - MdLevel7 (number): Text
+        - MdLevel8 (number): Text
+        - MdName1 (str): Network Address Step Value.
+        - MdName2 (str): Network Address Step Value.
+        - MdName3 (str): Network Address Step Value.
+        - MdName4 (str): Network Address Step Value.
+        - MdName5 (str): Network Address Step Value.
+        - MdName6 (str): Network Address Step Value.
+        - MdName7 (str): Network Address Step Value.
+        - MdName8 (str): Network Address Step Value.
+        - MdNameFormat1 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat2 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat3 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat4 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat5 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat6 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat7 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - MdNameFormat8 (str(mdNameFormatNoMaintenanceDomainName | mdNameFormatDomainNameBasedStr | mdNameFormatMacPlusTwoOctetInt | mdNameFormatCharacterStr)): Text
+        - NumMDLevels (number): Import only the best routes (provided route file has this information).
+
+        Returns
+        -------
+        - self: This instance with matching configMDLevelsParams resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of configMDLevelsParams data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the configMDLevelsParams resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ConfigMDLevels(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

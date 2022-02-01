@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Object(Base):
@@ -53,10 +55,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.container_ad14fff79850a810bf70af3c662f313a import Container
-        if self._properties.get('Container', None) is not None:
-            return self._properties.get('Container')
-        else:
-            return Container(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Container', None) is not None:
+                return self._properties.get('Container')
+        return Container(self)
 
     @property
     def Field(self):
@@ -70,10 +72,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.field_e196f9febcf3a6c28484d9f1e36ac377 import Field
-        if self._properties.get('Field', None) is not None:
-            return self._properties.get('Field')
-        else:
-            return Field(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Field', None) is not None:
+                return self._properties.get('Field')
+        return Field(self)
 
     @property
     def RepeatableContainer(self):
@@ -87,10 +89,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.repeatablecontainer_a17d3ce6bb8123640f8dd7d1e6a6435c import RepeatableContainer
-        if self._properties.get('RepeatableContainer', None) is not None:
-            return self._properties.get('RepeatableContainer')
-        else:
-            return RepeatableContainer(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RepeatableContainer', None) is not None:
+                return self._properties.get('RepeatableContainer')
+        return RepeatableContainer(self)
 
     @property
     def SubTlv(self):
@@ -104,10 +106,10 @@ class Object(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.subtlv_7c94061598b794f7b720de3bb85f6cdb import SubTlv
-        if self._properties.get('SubTlv', None) is not None:
-            return self._properties.get('SubTlv')
-        else:
-            return SubTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SubTlv', None) is not None:
+                return self._properties.get('SubTlv')
+        return SubTlv(self)
 
     @property
     def Name(self):

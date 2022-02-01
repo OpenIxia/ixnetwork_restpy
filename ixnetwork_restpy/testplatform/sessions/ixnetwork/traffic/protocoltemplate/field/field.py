@@ -19,13 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Field(Base):
-    """This object specifies the field properties of the protocol template.
+    """This object specifies the field properties of the protocol template
     The Field class encapsulates a list of field resources that are managed by the system.
     A list of resources can be retrieved from the server using the Field.find() method.
     """

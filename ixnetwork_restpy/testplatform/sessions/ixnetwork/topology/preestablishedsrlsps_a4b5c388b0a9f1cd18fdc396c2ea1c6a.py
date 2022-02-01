@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PreEstablishedSrLsps(Base):
@@ -95,10 +97,10 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import PcepEroSubObjectsList
-        if self._properties.get('PcepEroSubObjectsList', None) is not None:
-            return self._properties.get('PcepEroSubObjectsList')
-        else:
-            return PcepEroSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepEroSubObjectsList', None) is not None:
+                return self._properties.get('PcepEroSubObjectsList')
+        return PcepEroSubObjectsList(self)
 
     @property
     def PcepMetricSubObjectsList(self):
@@ -112,10 +114,10 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepmetricsubobjectslist_b1398d82dd25e8e98d50662ebf5ba3d1 import PcepMetricSubObjectsList
-        if self._properties.get('PcepMetricSubObjectsList', None) is not None:
-            return self._properties.get('PcepMetricSubObjectsList')
-        else:
-            return PcepMetricSubObjectsList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepMetricSubObjectsList', None) is not None:
+                return self._properties.get('PcepMetricSubObjectsList')
+        return PcepMetricSubObjectsList(self)
 
     @property
     def Tag(self):
@@ -129,10 +131,10 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import Tag
-        if self._properties.get('Tag', None) is not None:
-            return self._properties.get('Tag')
-        else:
-            return Tag(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tag', None) is not None:
+                return self._properties.get('Tag')
+        return Tag(self)
 
     @property
     def Active(self):
@@ -649,6 +651,54 @@ class PreEstablishedSrLsps(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, InsertIpv6ExplicitNull=None, LspDelegationState=None, Name=None, NumberOfEroSubObjects=None, NumberOfMetricSubObject=None, OverridePlspId=None, ReDelegationTimerStatus=None):
+        # type: (int, str, bool, List[str], str, int, int, bool, List[str]) -> PreEstablishedSrLsps
+        """Finds and retrieves preEstablishedSrLsps resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preEstablishedSrLsps resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all preEstablishedSrLsps resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
+        - LspDelegationState (list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none])): LSP Delegation State
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
+        - NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
+        - OverridePlspId (bool): Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
+        - ReDelegationTimerStatus (list(str[expired | none | notStarted | running | stopped])): Re-Delegation Timer Status
+
+        Returns
+        -------
+        - self: This instance with matching preEstablishedSrLsps resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of preEstablishedSrLsps data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the preEstablishedSrLsps resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Delegate(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]

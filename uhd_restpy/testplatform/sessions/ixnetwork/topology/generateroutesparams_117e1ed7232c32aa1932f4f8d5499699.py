@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class GenerateRoutesParams(Base):
@@ -388,6 +390,65 @@ class GenerateRoutesParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AddressRangesToSkip=None, CustomDistributionFile=None, DuplicateRoutesAsPathSuffix=None, DuplicateRoutesPerDevicePercent=None, EnableRandomASPath=None, IncludeDefaultRoute=None, NetworkAddressStart=None, NetworkAddressStep=None, PrefixLengthDistributionScope=None, PrefixLengthDistributionType=None, PrefixLengthEnd=None, PrefixLengthMix=None, PrefixLengthStart=None, PrimaryRoutesAsPathSuffix=None, PrimaryRoutesPerDevice=None, PrimaryRoutesPerRange=None, RouteCount=None, RouteReplicationType=None, SkipClassEAddresses=None, SkipLoopback=None, SkipMcast=None):
+        """Finds and retrieves generateRoutesParams resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve generateRoutesParams resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all generateRoutesParams resources from the server.
+
+        Args
+        ----
+        - AddressRangesToSkip (str): Address Ranges that will be skipped. You can provide multiple ranges separated by ','. Example: 192.0.0.0 - 192.255.255.255, 201.0.0.0. - 201.255.255.255
+        - CustomDistributionFile (obj(uhd_restpy.files.Files)): Source file having custom distribution information.
+        - DuplicateRoutesAsPathSuffix (str): AS Path Suffix for Duplicate Routes
+        - DuplicateRoutesPerDevicePercent (number): Percentage to Duplicate Primary Routes per Device.
+        - EnableRandomASPath (bool): If selected, Random AS Path is turned on for the route range. Only available, when Route Replication is selected as Per Device.
+        - IncludeDefaultRoute (bool): Include the default route address, 0.0.0.0, in the generated Address Range.
+        - NetworkAddressStart (str): Network Address Start Value.
+        - NetworkAddressStep (str): Network Address Step Value.
+        - PrefixLengthDistributionScope (str(perTopology | perDevice | perPort)): Prefix Length Distribution Scope.
+        - PrefixLengthDistributionType (str(fixed | random | even | exponential | internet | custom)): Prefix Length Distribution Type.
+        - PrefixLengthEnd (number): Prefix Length End Value. Applicable only for Even and Exponential distribution type.
+        - PrefixLengthMix (str(internetMix | customMix)): The prefix lengths are assigned to the routes in accordance with Internet Prefix Profile.
+        - PrefixLengthStart (number): Prefix Length Start Value. Applicable only for Fixed, Even and Exponential distribution type.
+        - PrimaryRoutesAsPathSuffix (str): AS Path Suffix for Primary Routes
+        - PrimaryRoutesPerDevice (number): Number of Primary Routes per Device.
+        - PrimaryRoutesPerRange (number): Number of Routes per Route Range.
+        - RouteCount (number): The number of routes you want to generate. Only available, when Route Replication is selected as Per Device.
+        - RouteReplicationType (str(none)): The replication type of the routes.
+        - SkipClassEAddresses (bool): DO not include Class E Addresses (240.0.0.0 - 255.255.255.254) in the generated Address Range.
+        - SkipLoopback (bool): Do not include Loopback Address in the generated Address Range
+        - SkipMcast (bool): Do not include Multicast Address in the generated Address Range
+
+        Returns
+        -------
+        - self: This instance with matching generateRoutesParams resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of generateRoutesParams data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the generateRoutesParams resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def GenerateRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

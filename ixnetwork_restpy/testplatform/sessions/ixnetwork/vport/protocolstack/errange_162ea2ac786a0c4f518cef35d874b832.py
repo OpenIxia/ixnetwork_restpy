@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ErRange(Base):
@@ -66,10 +68,10 @@ class ErRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.vsirange_89147b4a94e33164f96e37b09ee46b58 import VsiRange
-        if self._properties.get('VsiRange', None) is not None:
-            return self._properties.get('VsiRange')
-        else:
-            return VsiRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('VsiRange', None) is not None:
+                return self._properties.get('VsiRange')
+        return VsiRange(self)
 
     @property
     def Count(self):

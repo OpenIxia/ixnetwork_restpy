@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ProgressDialog(Base):
@@ -115,3 +117,49 @@ class ProgressDialog(Base):
         - str: Title or Group name of the Progress bar.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Title'])
+
+    def find(self, ElapsedDuration=None, EstimatedDuration=None, IsOpen=None, Progress=None, RemainingDuration=None, TaskName=None, Title=None):
+        # type: (str, str, bool, int, str, str, str) -> ProgressDialog
+        """Finds and retrieves progressDialog resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve progressDialog resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all progressDialog resources from the server.
+
+        Args
+        ----
+        - ElapsedDuration (str): Elapsed time since the start of the Progress operation.
+        - EstimatedDuration (str): Estimated time to complete the Progress operation.
+        - IsOpen (bool): Indicates whether any progress bar is open.
+        - Progress (number): A progress update from 0(start) to 1(end) (Not all progress bars may have a progress update).
+        - RemainingDuration (str): Remaining time of the Progress operation.
+        - TaskName (str): Sub Task name belonging to the Progress bar.
+        - Title (str): Title or Group name of the Progress bar.
+
+        Returns
+        -------
+        - self: This instance with matching progressDialog resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of progressDialog data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the progressDialog resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

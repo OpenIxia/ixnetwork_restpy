@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DcbxTlvPfcQaz(Base):
@@ -126,6 +128,50 @@ class DcbxTlvPfcQaz(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Mbc=None, ObjectId=None, PfcCapability=None, PfcEnableVector=None, Willing=None):
+        # type: (bool, str, int, List[int], bool) -> DcbxTlvPfcQaz
+        """Finds and retrieves dcbxTlvPfcQaz resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dcbxTlvPfcQaz resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dcbxTlvPfcQaz resources from the server.
+
+        Args
+        ----
+        - Mbc (bool): MACsec Bypass Capability Bit. Indicates whether the station is capable of bypassing MACsec when MACsec is disabled.
+        - ObjectId (str): Unique identifier for this object
+        - PfcCapability (number): How many traffic classes may simultaneously support PFC.
+        - PfcEnableVector (list(number)): enable/disable PFC for each priority.
+        - Willing (bool): Indicates whether this feature accepts its configuration from remote peers.
+
+        Returns
+        -------
+        - self: This instance with matching dcbxTlvPfcQaz resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dcbxTlvPfcQaz data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dcbxTlvPfcQaz resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

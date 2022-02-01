@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpAsPathSegmentList(Base):
@@ -58,10 +60,10 @@ class BgpAsPathSegmentList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.bgpasnumberlist_1529f0c2f511c5c16621b75c6205cf08 import BgpAsNumberList
-        if self._properties.get('BgpAsNumberList', None) is not None:
-            return self._properties.get('BgpAsNumberList')
-        else:
-            return BgpAsNumberList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsNumberList', None) is not None:
+                return self._properties.get('BgpAsNumberList')
+        return BgpAsNumberList(self)
 
     @property
     def Count(self):

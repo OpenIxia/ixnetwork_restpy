@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisL3RouteProperty(Base):
@@ -101,10 +103,10 @@ class IsisL3RouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_4ac468c2f246fc5ef1a77fc3e4ebe180 import CMacProperties
-        if self._properties.get('CMacProperties', None) is not None:
-            return self._properties.get('CMacProperties')
-        else:
-            return CMacProperties(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CMacProperties', None) is not None:
+                return self._properties.get('CMacProperties')
+        return CMacProperties(self)
 
     @property
     def EvpnIPv4PrefixRange(self):
@@ -118,10 +120,10 @@ class IsisL3RouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_79e14e1ab070701ebf4eb586cecc565f import EvpnIPv4PrefixRange
-        if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv4PrefixRange')
-        else:
-            return EvpnIPv4PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv4PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv4PrefixRange')
+        return EvpnIPv4PrefixRange(self)
 
     @property
     def EvpnIPv6PrefixRange(self):
@@ -135,10 +137,10 @@ class IsisL3RouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_f8dd80c93700c982de65324fe6552b86 import EvpnIPv6PrefixRange
-        if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
-            return self._properties.get('EvpnIPv6PrefixRange')
-        else:
-            return EvpnIPv6PrefixRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EvpnIPv6PrefixRange', None) is not None:
+                return self._properties.get('EvpnIPv6PrefixRange')
+        return EvpnIPv6PrefixRange(self)
 
     @property
     def IsisL3PrefixesMtId(self):
@@ -152,10 +154,10 @@ class IsisL3RouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_7f655e2e5caa37b3bd2fd2abdfec8d3c import IsisL3PrefixesMtId
-        if self._properties.get('IsisL3PrefixesMtId', None) is not None:
-            return self._properties.get('IsisL3PrefixesMtId')
-        else:
-            return IsisL3PrefixesMtId(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3PrefixesMtId', None) is not None:
+                return self._properties.get('IsisL3PrefixesMtId')
+        return IsisL3PrefixesMtId(self)._select()
 
     @property
     def IsisL3PrefixesSrSid(self):
@@ -169,10 +171,10 @@ class IsisL3RouteProperty(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixessrsid_d90ea659336c02c3669004f4825a6c15 import IsisL3PrefixesSrSid
-        if self._properties.get('IsisL3PrefixesSrSid', None) is not None:
-            return self._properties.get('IsisL3PrefixesSrSid')
-        else:
-            return IsisL3PrefixesSrSid(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('IsisL3PrefixesSrSid', None) is not None:
+                return self._properties.get('IsisL3PrefixesSrSid')
+        return IsisL3PrefixesSrSid(self)._select()
 
     @property
     def BAR(self):

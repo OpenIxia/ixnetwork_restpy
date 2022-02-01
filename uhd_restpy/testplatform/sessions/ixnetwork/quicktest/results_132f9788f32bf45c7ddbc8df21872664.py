@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Results(Base):
@@ -156,6 +158,55 @@ class Results(Base):
         - dict(arg1:number,arg2:number): Test waiting status
         """
         return self._get_attribute(self._SDM_ATT_MAP['WaitingStatus'])
+
+    def find(self, CurrentActions=None, CurrentViews=None, Duration=None, IsRunning=None, Progress=None, Result=None, ResultPath=None, StartTime=None, Status=None, TrafficStatus=None, WaitingStatus=None):
+        """Finds and retrieves results resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve results resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all results resources from the server.
+
+        Args
+        ----
+        - CurrentActions (list(dict(arg1:str,arg2:str[AgingTable | ApplyFlowGroups | CheckingForAvailableStats | CheckingLicense | ClearingStats | CollectingStats | DropLink | frameLossCriteriaNotMet | HoldDown | InitializingTest | IterationStart | LicenseFailed | LicenseVerified | None | NoRibInConvergenceStopping | ReleasingResources | SendingLearningFrames | SetTestConfiguration | SetupStatisticsCollection | StartingTraffic | TestEnded | TestStarted | ThresholdReachedStopping | TransmittingComplete | TransmittingFrames | WaitAfterFailover | WaitBeforeFailover | WaitingAfterLearningFramesSent | WaitingBeforeSendingTraffic | WaitingForDelayBetweenIterations | WaitingForPorts | WaitingForStats | WaitingTrafficToStop]))): Current actions
+        - CurrentViews (list(str)): Views used by this QuickTest
+        - Duration (str): Test duration
+        - IsRunning (bool): Indicates whether the test is currently running
+        - Progress (str): Test progress
+        - Result (str): Test result
+        - ResultPath (str): Folder containing test result files
+        - StartTime (str): Test start time
+        - Status (str): Test status
+        - TrafficStatus (dict(arg1:number,arg2:number)): Test traffic status
+        - WaitingStatus (dict(arg1:number,arg2:number)): Test waiting status
+
+        Returns
+        -------
+        - self: This instance with matching results resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of results data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the results resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

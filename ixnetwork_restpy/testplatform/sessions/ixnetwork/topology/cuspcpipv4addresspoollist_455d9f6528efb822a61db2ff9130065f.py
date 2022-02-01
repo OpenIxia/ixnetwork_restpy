@@ -19,13 +19,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CuspCPIPv4AddressPoolList(Base):
-    """IPv4 Address Pools.
+    """IPv4 Address Pools. Requests for addresses from UP is serviced from this pool.
     The CuspCPIPv4AddressPoolList class encapsulates a required cuspCPIPv4AddressPoolList resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -66,7 +68,7 @@ class CuspCPIPv4AddressPoolList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address Count
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CGN IPv4 Address count in the pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['AddressCount']))
@@ -97,7 +99,7 @@ class CuspCPIPv4AddressPoolList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Start IPv4 address.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Start IPv4 Address of the pool.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['Ipv4Address']))
@@ -130,7 +132,7 @@ class CuspCPIPv4AddressPoolList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Lease Time.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Lease Time for the IPv4 Adressses.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['LeaseTime']))
@@ -155,7 +157,7 @@ class CuspCPIPv4AddressPoolList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Address Pool Name.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CGN IPv4 Address pool name.
         """
         from ixnetwork_restpy.multivalue import Multivalue
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP['PoolName']))
@@ -176,6 +178,48 @@ class CuspCPIPv4AddressPoolList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, Name=None):
+        # type: (int, str, str) -> CuspCPIPv4AddressPoolList
+        """Finds and retrieves cuspCPIPv4AddressPoolList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve cuspCPIPv4AddressPoolList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all cuspCPIPv4AddressPoolList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with matching cuspCPIPv4AddressPoolList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of cuspCPIPv4AddressPoolList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the cuspCPIPv4AddressPoolList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, AddressCount=None, Ipv4Address=None, Ipv4AddressIncrement=None, Ipv4PrefixLength=None, LeaseTime=None, PoolName=None):
         """Base class infrastructure that gets a list of cuspCPIPv4AddressPoolList device ids encapsulated by this object.

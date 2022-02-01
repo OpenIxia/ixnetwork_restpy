@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EgressTracking(Base):
@@ -59,10 +61,10 @@ class EgressTracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.egresstracking.fieldoffset.fieldoffset import FieldOffset
-        if self._properties.get('FieldOffset', None) is not None:
-            return self._properties.get('FieldOffset')
-        else:
-            return FieldOffset(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FieldOffset', None) is not None:
+                return self._properties.get('FieldOffset')
+        return FieldOffset(self)._select()
 
     @property
     def AvailableEncapsulations(self):
@@ -90,7 +92,7 @@ class EgressTracking(Base):
         """
         Returns
         -------
-        - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - number: Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings
         """
         return self._get_attribute(self._SDM_ATT_MAP['CustomOffsetBits'])
     @CustomOffsetBits.setter
@@ -104,7 +106,7 @@ class EgressTracking(Base):
         """
         Returns
         -------
-        - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - number: Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CustomWidthBits'])
     @CustomWidthBits.setter
@@ -146,8 +148,8 @@ class EgressTracking(Base):
 
         Args
         ----
-        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
         - Offset (str): Specifies the Offset for Egress Tracking.
 
@@ -163,8 +165,8 @@ class EgressTracking(Base):
 
         Args
         ----
-        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
         - Offset (str): Specifies the Offset for Egress Tracking.
 
@@ -200,8 +202,8 @@ class EgressTracking(Base):
         ----
         - AvailableEncapsulations (list(str)): (Read only) Specifies the available Encapsulations for Egress Tracking.
         - AvailableOffsets (list(str)): (Read only) Specifies the available Offsets for Egress Tracking.
-        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
-        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings .
+        - CustomOffsetBits (number): Specifies the Custom Offset in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings
+        - CustomWidthBits (number): Specifies the Custom Width in bits for Egress Tracking when Encapsulation is Any: Use Custom Settings.
         - Encapsulation (str): Specifies the Encapsulation for Egress Tracking.
         - Offset (str): Specifies the Offset for Egress Tracking.
 

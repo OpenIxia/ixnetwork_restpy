@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FilterPalette(Base):
@@ -309,3 +311,58 @@ class FilterPalette(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, DestinationAddress1=None, DestinationAddress1Mask=None, DestinationAddress2=None, DestinationAddress2Mask=None, Pattern1=None, Pattern1Mask=None, Pattern1Offset=None, Pattern1OffsetType=None, Pattern2=None, Pattern2Mask=None, Pattern2Offset=None, Pattern2OffsetType=None, SourceAddress1=None, SourceAddress1Mask=None, SourceAddress2=None, SourceAddress2Mask=None):
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, str, str) -> FilterPalette
+        """Finds and retrieves filterPalette resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve filterPalette resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all filterPalette resources from the server.
+
+        Args
+        ----
+        - DestinationAddress1 (str): Destination address 1.
+        - DestinationAddress1Mask (str): The destination address mask.
+        - DestinationAddress2 (str): Destination address 2.
+        - DestinationAddress2Mask (str): Destination address to mask.
+        - Pattern1 (str): Pattern 1.
+        - Pattern1Mask (str): Pattern 1 mask.
+        - Pattern1Offset (number): Pattern 1 offset.
+        - Pattern1OffsetType (str(fromStartOfFrame | fromStartOfIp | fromStartOfProtocol | fromStartOfSonet)): The pattern offset type.
+        - Pattern2 (str): Patternt 2.
+        - Pattern2Mask (str): The pattern mask.
+        - Pattern2Offset (number): The offset at which the pattern is located in the packet.
+        - Pattern2OffsetType (str(fromStartOfFrame | fromStartOfIp | fromStartOfProtocol | fromStartOfSonet)): Pattern 2 offset type
+        - SourceAddress1 (str): Source address 1.
+        - SourceAddress1Mask (str): Source address 1 mask.
+        - SourceAddress2 (str): Source address 2.
+        - SourceAddress2Mask (str): Source address to mask.
+
+        Returns
+        -------
+        - self: This instance with matching filterPalette resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of filterPalette data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the filterPalette resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

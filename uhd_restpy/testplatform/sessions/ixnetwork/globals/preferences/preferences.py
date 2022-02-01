@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Preferences(Base):
@@ -435,3 +437,66 @@ class Preferences(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AllowProtocolSessionStateLog=None, AutoSaveIntervalMin=None, AutoSaveLocation=None, ClientTraceLevel=None, ConfigurationAtIxNetworkStartup=None, ConnectPortsOnLoadConfig=None, DeleteDumpFilesOlderThan=None, EnableAutoSave=None, EnableCloudTools=None, ForceLegacyPortNameInStats=None, IncludeTroubleshootingComments=None, LatestConfigInDiagEnabled=None, PhyMode=None, PingChassisOnConnect=None, RebootPortsOnConnect=None, ReceiveMode=None, RecentChassisList=None, RecentFiles=None, ResourceManagerLocation=None, ScriptgenTextEditorPath=None, StreamLogsToSyslogServer=None, SyslogHost=None, SyslogPort=None, TransmitMode=None):
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, str, int, str) -> Preferences
+        """Finds and retrieves preferences resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all preferences resources from the server.
+
+        Args
+        ----
+        - AllowProtocolSessionStateLog (bool): Enables logging each protocol session state change. This option is very heavy for performance.
+        - AutoSaveIntervalMin (number): Set the interval time in minutes in which the configuration will be saved automatically
+        - AutoSaveLocation (str): Set the location where the configuration will be saved automatically
+        - ClientTraceLevel (str(debug | error | fatal | info | warn)): Set the IxNetwork Client side Log/Trace level
+        - ConfigurationAtIxNetworkStartup (str(useEmptyConfiguration | useLastSavedConfiguration)): Controls which configuration to load when IxNetwork starts
+        - ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded
+        - DeleteDumpFilesOlderThan (number): Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
+        - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
+        - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
+        - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
+        - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
+        - LatestConfigInDiagEnabled (bool): 
+        - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
+        - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
+        - RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
+        - ReceiveMode (str(capturePackets | measureTrafficFlow)): Set the receive mode in Default Port settings
+        - RecentChassisList (list(str)): List of recently used chassis
+        - RecentFiles (list(str)): List of recently used files
+        - ResourceManagerLocation (str): Set the Resource Manager resources location
+        - ScriptgenTextEditorPath (str): Set the text editor path for Scriptgen
+        - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
+        - SyslogHost (str): syslog host
+        - SyslogPort (number): syslog Port
+        - TransmitMode (str(interleavedStreams | sequentialStreams)): Set the transmit mode in Default Port settings
+
+        Returns
+        -------
+        - self: This instance with matching preferences resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of preferences data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the preferences resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

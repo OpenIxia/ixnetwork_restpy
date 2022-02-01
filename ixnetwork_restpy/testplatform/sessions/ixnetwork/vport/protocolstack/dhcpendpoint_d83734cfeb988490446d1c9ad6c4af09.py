@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DhcpEndpoint(Base):
@@ -56,10 +58,10 @@ class DhcpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ancp_ac1221f5aa3962592ceee25d34314c21 import Ancp
-        if self._properties.get('Ancp', None) is not None:
-            return self._properties.get('Ancp')
-        else:
-            return Ancp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ancp', None) is not None:
+                return self._properties.get('Ancp')
+        return Ancp(self)
 
     @property
     def EapoUdp(self):
@@ -73,10 +75,10 @@ class DhcpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.eapoudp_cfa2209193673fc9cc787de0d346608f import EapoUdp
-        if self._properties.get('EapoUdp', None) is not None:
-            return self._properties.get('EapoUdp')
-        else:
-            return EapoUdp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EapoUdp', None) is not None:
+                return self._properties.get('EapoUdp')
+        return EapoUdp(self)
 
     @property
     def IgmpMld(self):
@@ -90,10 +92,10 @@ class DhcpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.igmpmld_3b761050c9dc09036426153861c227cf import IgmpMld
-        if self._properties.get('IgmpMld', None) is not None:
-            return self._properties.get('IgmpMld')
-        else:
-            return IgmpMld(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpMld', None) is not None:
+                return self._properties.get('IgmpMld')
+        return IgmpMld(self)
 
     @property
     def Iptv(self):
@@ -107,10 +109,10 @@ class DhcpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptv_21f3026b4e83b0f68ca8a819c1de0eab import Iptv
-        if self._properties.get('Iptv', None) is not None:
-            return self._properties.get('Iptv')
-        else:
-            return Iptv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Iptv', None) is not None:
+                return self._properties.get('Iptv')
+        return Iptv(self)
 
     @property
     def Range(self):
@@ -124,10 +126,10 @@ class DhcpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_9867684aa353d6d6ae01074fe35b5995 import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def WebAuth(self):
@@ -141,10 +143,10 @@ class DhcpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.webauth_ff5c71b6bf4bac97a52d11c4a81c100d import WebAuth
-        if self._properties.get('WebAuth', None) is not None:
-            return self._properties.get('WebAuth')
-        else:
-            return WebAuth(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('WebAuth', None) is not None:
+                return self._properties.get('WebAuth')
+        return WebAuth(self)
 
     @property
     def Name(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PgwS5S8PcrfSecondaryRange(Base):
@@ -53,10 +55,10 @@ class PgwS5S8PcrfSecondaryRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.egtppcrfs5s8range_38dc35d54a9c87ec71ba5211d21005bc import EgtpPcrfS5S8Range
-        if self._properties.get('EgtpPcrfS5S8Range', None) is not None:
-            return self._properties.get('EgtpPcrfS5S8Range')
-        else:
-            return EgtpPcrfS5S8Range(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('EgtpPcrfS5S8Range', None) is not None:
+                return self._properties.get('EgtpPcrfS5S8Range')
+        return EgtpPcrfS5S8Range(self)._select()
 
     def add(self):
         """Adds a new pgwS5S8PcrfSecondaryRange resource on the server and adds it to the container.

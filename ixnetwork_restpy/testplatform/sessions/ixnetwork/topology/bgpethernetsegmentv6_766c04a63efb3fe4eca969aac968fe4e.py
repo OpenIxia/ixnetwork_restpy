@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class BgpEthernetSegmentV6(Base):
@@ -109,10 +111,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpaspathsegmentlist_4d209c5ac36c18374125f19531d4795f import BgpAsPathSegmentList
-        if self._properties.get('BgpAsPathSegmentList', None) is not None:
-            return self._properties.get('BgpAsPathSegmentList')
-        else:
-            return BgpAsPathSegmentList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpAsPathSegmentList', None) is not None:
+                return self._properties.get('BgpAsPathSegmentList')
+        return BgpAsPathSegmentList(self)
 
     @property
     def BgpClusterIdList(self):
@@ -126,10 +128,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpclusteridlist_82b17094a31a96f755045be572017577 import BgpClusterIdList
-        if self._properties.get('BgpClusterIdList', None) is not None:
-            return self._properties.get('BgpClusterIdList')
-        else:
-            return BgpClusterIdList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpClusterIdList', None) is not None:
+                return self._properties.get('BgpClusterIdList')
+        return BgpClusterIdList(self)
 
     @property
     def BgpCommunitiesList(self):
@@ -143,10 +145,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import BgpCommunitiesList
-        if self._properties.get('BgpCommunitiesList', None) is not None:
-            return self._properties.get('BgpCommunitiesList')
-        else:
-            return BgpCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpCommunitiesList', None) is not None:
+                return self._properties.get('BgpCommunitiesList')
+        return BgpCommunitiesList(self)
 
     @property
     def BgpExtendedCommunitiesList(self):
@@ -160,10 +162,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import BgpExtendedCommunitiesList
-        if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
-            return self._properties.get('BgpExtendedCommunitiesList')
-        else:
-            return BgpExtendedCommunitiesList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BgpExtendedCommunitiesList', None) is not None:
+                return self._properties.get('BgpExtendedCommunitiesList')
+        return BgpExtendedCommunitiesList(self)
 
     @property
     def Bgpv6BMacMappedIpList(self):
@@ -177,10 +179,10 @@ class BgpEthernetSegmentV6(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6bmacmappediplist_817eaa9cef28501f557db118314de575 import Bgpv6BMacMappedIpList
-        if self._properties.get('Bgpv6BMacMappedIpList', None) is not None:
-            return self._properties.get('Bgpv6BMacMappedIpList')
-        else:
-            return Bgpv6BMacMappedIpList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bgpv6BMacMappedIpList', None) is not None:
+                return self._properties.get('Bgpv6BMacMappedIpList')
+        return Bgpv6BMacMappedIpList(self)._select()
 
     @property
     def AdvertiseAliasingBeforeAdPerEsRoute(self):
@@ -866,11 +868,76 @@ class BgpEthernetSegmentV6(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
+    def find(self, Count=None, DescriptiveName=None, EvisCount=None, Name=None, NoOfASPathSegmentsPerRouteRange=None, NoOfClusters=None, NoOfCommunities=None, NoOfExtendedCommunity=None, NoOfbMacMappedIpsV6=None, UseControlWord=None):
+        # type: (int, str, int, str, int, int, int, int, int, bool) -> BgpEthernetSegmentV6
+        """Finds and retrieves bgpEthernetSegmentV6 resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpEthernetSegmentV6 resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all bgpEthernetSegmentV6 resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - EvisCount (number): Number of EVIs
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NoOfASPathSegmentsPerRouteRange (number): Number Of AS Path Segments Per Route Range
+        - NoOfClusters (number): Number of Clusters
+        - NoOfCommunities (number): Number of Communities
+        - NoOfExtendedCommunity (number): Number of Extended Communities
+        - NoOfbMacMappedIpsV6 (number): Number of B-MAC Mapped IPs
+        - UseControlWord (bool): Use Control Word
+
+        Returns
+        -------
+        - self: This instance with matching bgpEthernetSegmentV6 resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of bgpEthernetSegmentV6 data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the bgpEthernetSegmentV6 resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
+
     def AdvertiseAdPerEsRoute(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the advertiseAdPerEsRoute operation on the server.
 
-        Advertise AD per ES Route.
+        Advertise AD per ES Route
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        advertiseAdPerEsRoute(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        advertiseAdPerEsRoute(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        advertiseAdPerEsRoute(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         advertiseAdPerEsRoute(Arg2=list, async_operation=bool)list
         ----------------------------------------------------------
@@ -883,7 +950,7 @@ class BgpEthernetSegmentV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
+        payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('advertiseAdPerEsRoute', payload=payload, response_object=None)
@@ -930,7 +997,23 @@ class BgpEthernetSegmentV6(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the withdrawAdPerEsRoute operation on the server.
 
-        Withdraw AD per ES Route.
+        Withdraw AD per ES Route
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        withdrawAdPerEsRoute(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdrawAdPerEsRoute(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        withdrawAdPerEsRoute(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         withdrawAdPerEsRoute(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------
@@ -943,7 +1026,7 @@ class BgpEthernetSegmentV6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = { "Arg1": self.href }
+        payload = { "Arg1": self }
         for i in range(len(args)): payload['Arg%s' % (i + 2)] = args[i]
         for item in kwargs.items(): payload[item[0]] = item[1]
         return self._execute('withdrawAdPerEsRoute', payload=payload, response_object=None)

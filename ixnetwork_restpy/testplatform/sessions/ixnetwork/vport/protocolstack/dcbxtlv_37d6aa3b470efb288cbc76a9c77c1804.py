@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DcbxTlv(Base):
@@ -63,10 +65,10 @@ class DcbxTlv(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.tlvsettings_9ee7f0bbd6252892487709b1e2bd344a import TlvSettings
-        if self._properties.get('TlvSettings', None) is not None:
-            return self._properties.get('TlvSettings')
-        else:
-            return TlvSettings(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TlvSettings', None) is not None:
+                return self._properties.get('TlvSettings')
+        return TlvSettings(self)._select()
 
     @property
     def Enabled(self):

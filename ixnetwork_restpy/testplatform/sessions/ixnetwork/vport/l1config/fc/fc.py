@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Fc(Base):
@@ -53,7 +55,7 @@ class Fc(Base):
     }
     _SDM_ENUM_MAP = {
         'forceErrors': ['noErrors', 'noRRDY', 'noRRDYEvery'],
-        'rrdyResponseDelays': ['creditStarvation', 'fixedDelay', 'noDelay', 'randomDelay'],
+        'rrdyResponseDelays': ['noDelay', 'fixedDelay', 'randomDelay', 'creditStarvation'],
         'speed': ['speed2000', 'speed4000', 'speed8000'],
     }
 
@@ -96,7 +98,7 @@ class Fc(Base):
         """
         Returns
         -------
-        - number: If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
+        - number: f selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CreditStarvationValue'])
     @CreditStarvationValue.setter
@@ -152,7 +154,7 @@ class Fc(Base):
         """
         Returns
         -------
-        - str(noErrors | noRRDY | noRRDYEvery): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
+        - str(noErrors | noRRDY | noRRDYEvery): Helps to configure the port to introduce errors in the transmission of R_RDY Primitive Signals
         """
         return self._get_attribute(self._SDM_ATT_MAP['ForceErrors'])
     @ForceErrors.setter
@@ -236,7 +238,7 @@ class Fc(Base):
         """
         Returns
         -------
-        - str(creditStarvation | fixedDelay | noDelay | randomDelay): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
+        - str(noDelay | fixedDelay | randomDelay | creditStarvation): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
         """
         return self._get_attribute(self._SDM_ATT_MAP['RrdyResponseDelays'])
     @RrdyResponseDelays.setter
@@ -278,7 +280,7 @@ class Fc(Base):
         """
         Returns
         -------
-        - bool: The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
+        - bool: The transmitting port does not listen to flow control. It keeps transmitting packets irrespective of available credits. For example, if two Fibre Channel ports are connected back-to-back and Transmitignoreavailablecredits option is true on the transmitting port and DontsendR_RDY option is true on the receiving port, and the transmit is started, the port transmits at full rate even though it does not have credits.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TxIgnoreAvailableCredits'])
     @TxIgnoreAvailableCredits.setter
@@ -306,20 +308,20 @@ class Fc(Base):
 
         Args
         ----
-        - CreditStarvationValue (number): If selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
+        - CreditStarvationValue (number): f selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
         - EnableEmissionLoweringProtocol (bool): NOT DEFINED
         - EnablePPM (bool): If true, enables the portsppm.
         - FixedDelayValue (number): Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
-        - ForceErrors (str(noErrors | noRRDY | noRRDYEvery)): Helps to configure the port to introduce errors in the transmission of R_RDYPrimitive Signals
+        - ForceErrors (str(noErrors | noRRDY | noRRDYEvery)): Helps to configure the port to introduce errors in the transmission of R_RDY Primitive Signals
         - Loopback (bool): If true, the port is set to internally loopback from transmit to receive.
         - MaxDelayForRandomValue (number): The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
         - MinDelayForRandomValue (number): The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
         - NoRRDYAfter (number): Sends R_RDY primitive signals without any delay.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
-        - RrdyResponseDelays (str(creditStarvation | fixedDelay | noDelay | randomDelay)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
+        - RrdyResponseDelays (str(noDelay | fixedDelay | randomDelay | creditStarvation)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
         - SelectedSpeeds (list(str[speed2000 | speed4000 | speed8000])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed2000 | speed4000 | speed8000)): Indicates the line speed.
-        - TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmittingpackets irrespective of available credits. For example, if two Fibre Channel portsare connected back-to-back andTransmitignoreavailablecredits'optionistrueonthetransmittingportand'Don'tsendR_RDY'optionistrueonthereceivingport,andthentransmitisstarted,theporttransmitsatfullrateeventhoughitdoesnothavecredits.
+        - TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmitting packets irrespective of available credits. For example, if two Fibre Channel ports are connected back-to-back and Transmitignoreavailablecredits option is true on the transmitting port and DontsendR_RDY option is true on the receiving port, and the transmit is started, the port transmits at full rate even though it does not have credits.
         - TxIgnoreRxLinkFaults (bool): If true, allows transmission of packets even if the receive link is down.
 
         Raises
@@ -327,3 +329,60 @@ class Fc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, CreditStarvationValue=None, EnableEmissionLoweringProtocol=None, EnablePPM=None, FixedDelayValue=None, ForceErrors=None, Loopback=None, MaxDelayForRandomValue=None, MinDelayForRandomValue=None, NoRRDYAfter=None, Ppm=None, RrdyResponseDelays=None, SelectedSpeeds=None, Speed=None, TxIgnoreAvailableCredits=None, TxIgnoreRxLinkFaults=None):
+        # type: (List[str], bool, bool, int, bool, bool, int, str, bool, int, int, int, int, str, List[str], str, bool, bool) -> Fc
+        """Finds and retrieves fc resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fc resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fc resources from the server.
+
+        Args
+        ----
+        - AvailableSpeeds (list(str[speed2000 | speed4000 | speed8000])): Which speeds are available for the current media and AN settings.
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - CreditStarvationValue (number): f selected, programs encounter a delay value specified in the Hold R_RDY field. The counter starts counting down after it receives the first frame. The port holds R_RDY for all frames received until counter reaches to 0. After counter reaches 0, the port sends out all accumulated R_RDY.
+        - EnableEmissionLoweringProtocol (bool): NOT DEFINED
+        - EnablePPM (bool): If true, enables the portsppm.
+        - FixedDelayValue (number): Internally delays the R_RDY primitive signals with X ms. X is between 0 and 20000 milliseconds.
+        - ForceErrors (str(noErrors | noRRDY | noRRDYEvery)): Helps to configure the port to introduce errors in the transmission of R_RDY Primitive Signals
+        - Loopback (bool): If true, the port is set to internally loopback from transmit to receive.
+        - MaxDelayForRandomValue (number): The maximum random delay value for the R_RDY primitives. The maximum value is 1,000,000 microseconds.
+        - MinDelayForRandomValue (number): The minimum random delay value for the R_RDY primitives. The minimum value is 0 microseconds.
+        - NoRRDYAfter (number): Sends R_RDY primitive signals without any delay.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - RrdyResponseDelays (str(noDelay | fixedDelay | randomDelay | creditStarvation)): Helps to set internal delays for the transmission of R_RDY Primitive Signals.
+        - SelectedSpeeds (list(str[speed2000 | speed4000 | speed8000])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed2000 | speed4000 | speed8000)): Indicates the line speed.
+        - TxIgnoreAvailableCredits (bool): The transmitting port does not listen to flow control. It keeps transmitting packets irrespective of available credits. For example, if two Fibre Channel ports are connected back-to-back and Transmitignoreavailablecredits option is true on the transmitting port and DontsendR_RDY option is true on the receiving port, and the transmit is started, the port transmits at full rate even though it does not have credits.
+        - TxIgnoreRxLinkFaults (bool): If true, allows transmission of packets even if the receive link is down.
+
+        Returns
+        -------
+        - self: This instance with matching fc resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of fc data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the fc resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

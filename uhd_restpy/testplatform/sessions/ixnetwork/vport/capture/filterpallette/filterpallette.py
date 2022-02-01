@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FilterPallette(Base):
@@ -309,3 +311,58 @@ class FilterPallette(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, DA1=None, DA2=None, DAMask1=None, DAMask2=None, SA1=None, SA2=None, SAMask1=None, SAMask2=None, Pattern1=None, Pattern2=None, PatternMask1=None, PatternMask2=None, PatternOffset1=None, PatternOffset2=None, PatternOffsetType1=None, PatternOffsetType2=None):
+        # type: (str, str, str, str, str, str, str, str, str, str, str, str, int, int, str, str) -> FilterPallette
+        """Finds and retrieves filterPallette resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve filterPallette resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all filterPallette resources from the server.
+
+        Args
+        ----
+        - DA1 (str): Only frames that contain this destination MAC address are filtered, captured or counted.
+        - DA2 (str): Only frames that contain this destination MAC address are filtered, captured or counted.
+        - DAMask1 (str): Only frames that contain this destination MAC address are filtered, captured or counted.
+        - DAMask2 (str): A bit mask that allows the user to specify which bits of the DA2 should be used when filtering. If the mask bit is set high, the pattern bit will be used in the filter
+        - SA1 (str): Only frames that contain this source MAC address are filtered, captured or counted.
+        - SA2 (str): Only frames that contain this source MAC address are filtered, captured or counted.
+        - SAMask1 (str): A bit mask that allows the user to specify which bits of the SA1 should be used when filtering. If the mask bit is set high, the pattern bit will be used in the filter.
+        - SAMask2 (str): A bit mask that allows the user to specify which bits of the SA2 should be used when filtering. If the mask bit is set high, the pattern bit will be used in the filter
+        - Pattern1 (str): Only frames that contain this pattern at offset patternOffset1 are filtered, captured or counted.
+        - Pattern2 (str): Only frames that contain this pattern at offset patternOffset2 are filtered, captured or counted.
+        - PatternMask1 (str): A bit mask that allows the user to specify which bits of pattern1 should be used when filtering. If the mask bit is set low, the pattern bit will be used in the filter.
+        - PatternMask2 (str): A bit mask that allows the user to specify which bits of pattern2 should be used when filtering. If the mask bit is set high, the pattern bit will be used in the filter.
+        - PatternOffset1 (number): Offset of pattern1 in the frame to be filtered, captured or counted.
+        - PatternOffset2 (number): Offset of pattern2 in the frame to be filtered, captured or counted.
+        - PatternOffsetType1 (str(filterPalletteOffsetStartOfFrame | filterPalletteOffsetStartOfIp | filterPalletteOffsetStartOfProtocol)): For ports that support the portFeaturePatternOffsetFlexible feature, this option specifies the place that patternOffset1 is relative to.
+        - PatternOffsetType2 (str(filterPalletteOffsetStartOfFrame | filterPalletteOffsetStartOfIp | filterPalletteOffsetStartOfProtocol)): For ports that support the portFeaturePatternOffsetFlexible feature, this option specifies the place that patternOffset1 is relative to.
+
+        Returns
+        -------
+        - self: This instance with matching filterPallette resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of filterPallette data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the filterPallette resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

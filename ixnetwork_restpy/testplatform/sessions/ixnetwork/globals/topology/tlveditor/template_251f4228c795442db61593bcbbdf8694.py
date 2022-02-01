@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Template(Base):
@@ -54,10 +56,10 @@ class Template(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlv_485a5849242c96601ea954c1e6fdcfe5 import Tlv
-        if self._properties.get('Tlv', None) is not None:
-            return self._properties.get('Tlv')
-        else:
-            return Tlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Tlv', None) is not None:
+                return self._properties.get('Tlv')
+        return Tlv(self)
 
     @property
     def Name(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EvpnMulticast(Base):
@@ -54,10 +56,10 @@ class EvpnMulticast(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.nexthopinfo_27593f5bf51f1d6b95b80c04d9eaf7f0 import NextHopInfo
-        if self._properties.get('NextHopInfo', None) is not None:
-            return self._properties.get('NextHopInfo')
-        else:
-            return NextHopInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('NextHopInfo', None) is not None:
+                return self._properties.get('NextHopInfo')
+        return NextHopInfo(self)
 
     @property
     def Neighbor(self):

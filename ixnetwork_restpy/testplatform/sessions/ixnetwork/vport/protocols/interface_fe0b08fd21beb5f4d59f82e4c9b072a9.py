@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Interface(Base):
@@ -70,10 +72,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.atmlabelrange_ebe9434fea7d160a4f5a4fca69d81dcf import AtmLabelRange
-        if self._properties.get('AtmLabelRange', None) is not None:
-            return self._properties.get('AtmLabelRange')
-        else:
-            return AtmLabelRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AtmLabelRange', None) is not None:
+                return self._properties.get('AtmLabelRange')
+        return AtmLabelRange(self)
 
     @property
     def LearnedFilter(self):
@@ -87,10 +89,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df33d6e2936a15d8a0c3082383d4e700 import LearnedFilter
-        if self._properties.get('LearnedFilter', None) is not None:
-            return self._properties.get('LearnedFilter')
-        else:
-            return LearnedFilter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedFilter', None) is not None:
+                return self._properties.get('LearnedFilter')
+        return LearnedFilter(self)._select()
 
     @property
     def LearnedIpv4Label(self):
@@ -104,10 +106,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4label_fd641bf6fc1fc77c6a919b5699bdcbe0 import LearnedIpv4Label
-        if self._properties.get('LearnedIpv4Label', None) is not None:
-            return self._properties.get('LearnedIpv4Label')
-        else:
-            return LearnedIpv4Label(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedIpv4Label', None) is not None:
+                return self._properties.get('LearnedIpv4Label')
+        return LearnedIpv4Label(self)
 
     @property
     def LearnedIpv4P2mpLables(self):
@@ -121,10 +123,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedipv4p2mplables_7da643070755e8b965ca7f53c9a8250a import LearnedIpv4P2mpLables
-        if self._properties.get('LearnedIpv4P2mpLables', None) is not None:
-            return self._properties.get('LearnedIpv4P2mpLables')
-        else:
-            return LearnedIpv4P2mpLables(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedIpv4P2mpLables', None) is not None:
+                return self._properties.get('LearnedIpv4P2mpLables')
+        return LearnedIpv4P2mpLables(self)
 
     @property
     def LearnedMartiniLabel(self):
@@ -138,10 +140,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedmartinilabel_cc6a3b5bae90ffc430db92d0f71136a1 import LearnedMartiniLabel
-        if self._properties.get('LearnedMartiniLabel', None) is not None:
-            return self._properties.get('LearnedMartiniLabel')
-        else:
-            return LearnedMartiniLabel(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedMartiniLabel', None) is not None:
+                return self._properties.get('LearnedMartiniLabel')
+        return LearnedMartiniLabel(self)
 
     @property
     def TargetPeer(self):
@@ -155,10 +157,10 @@ class Interface(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.targetpeer_d7cc221539f0f14696e2588a1ed5bda7 import TargetPeer
-        if self._properties.get('TargetPeer', None) is not None:
-            return self._properties.get('TargetPeer')
-        else:
-            return TargetPeer(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TargetPeer', None) is not None:
+                return self._properties.get('TargetPeer')
+        return TargetPeer(self)
 
     @property
     def AdvertisingMode(self):

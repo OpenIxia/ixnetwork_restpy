@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PortModificationTriggerAttributes(Base):
@@ -65,10 +67,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkfeature_2218f0edff079bfefabc46ff517244ed import LinkFeature
-        if self._properties.get('LinkFeature', None) is not None:
-            return self._properties.get('LinkFeature')
-        else:
-            return LinkFeature(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LinkFeature', None) is not None:
+                return self._properties.get('LinkFeature')
+        return LinkFeature(self)._select()
 
     @property
     def LinkMode(self):
@@ -82,10 +84,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linkmode_74aa7aa60a1fac72da4cb79ff35dbccc import LinkMode
-        if self._properties.get('LinkMode', None) is not None:
-            return self._properties.get('LinkMode')
-        else:
-            return LinkMode(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LinkMode', None) is not None:
+                return self._properties.get('LinkMode')
+        return LinkMode(self)._select()
 
     @property
     def LinkType(self):
@@ -99,10 +101,10 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.linktype_f1c0f4e35dd4b90849930768604d1618 import LinkType
-        if self._properties.get('LinkType', None) is not None:
-            return self._properties.get('LinkType')
-        else:
-            return LinkType(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LinkType', None) is not None:
+                return self._properties.get('LinkType')
+        return LinkType(self)._select()
 
     @property
     def AdvertisedFeatures(self):
@@ -326,3 +328,56 @@ class PortModificationTriggerAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AdvertisedFeatures=None, DoNotSendPacketIn=None, DropAllPackets=None, DropForwardedPackets=None, EnableAdvertiseFeature=None, EnableEthernetAddress=None, EnablePortConfig=None, EnablePortModPortFeatures=None, EnablePortNumber=None, EthernetAddress=None, PortAdministrativelyDown=None, PortConfig=None, PortConfigMask=None, PortNumber=None):
+        # type: (str, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, str, str, int) -> PortModificationTriggerAttributes
+        """Finds and retrieves portModificationTriggerAttributes resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portModificationTriggerAttributes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all portModificationTriggerAttributes resources from the server.
+
+        Args
+        ----
+        - AdvertisedFeatures (str): NOT DEFINED
+        - DoNotSendPacketIn (bool): NOT DEFINED
+        - DropAllPackets (bool): NOT DEFINED
+        - DropForwardedPackets (bool): NOT DEFINED
+        - EnableAdvertiseFeature (bool): NOT DEFINED
+        - EnableEthernetAddress (bool): NOT DEFINED
+        - EnablePortConfig (bool): NOT DEFINED
+        - EnablePortModPortFeatures (bool): NOT DEFINED
+        - EnablePortNumber (bool): NOT DEFINED
+        - EthernetAddress (str): NOT DEFINED
+        - PortAdministrativelyDown (bool): NOT DEFINED
+        - PortConfig (str): NOT DEFINED
+        - PortConfigMask (str): NOT DEFINED
+        - PortNumber (number): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching portModificationTriggerAttributes resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of portModificationTriggerAttributes data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the portModificationTriggerAttributes resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

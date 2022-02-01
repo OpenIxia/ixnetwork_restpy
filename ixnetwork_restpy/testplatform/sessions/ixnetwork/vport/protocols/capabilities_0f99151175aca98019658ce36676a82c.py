@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Capabilities(Base):
@@ -323,3 +325,59 @@ class Capabilities(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AdVpls=None, Evpn=None, FetchDetailedIpV4UnicastInfo=None, FetchDetailedIpV6UnicastInfo=None, IpV4Mpls=None, IpV4MplsVpn=None, IpV4Multicast=None, IpV4MulticastMplsVpn=None, IpV4MulticastVpn=None, IpV4Unicast=None, IpV6Mpls=None, IpV6MplsVpn=None, IpV6Multicast=None, IpV6MulticastMplsVpn=None, IpV6MulticastVpn=None, IpV6Unicast=None, Vpls=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> Capabilities
+        """Finds and retrieves capabilities resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve capabilities resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all capabilities resources from the server.
+
+        Args
+        ----
+        - AdVpls (bool): If true, enables the BGP autodiscovery VPLS tunnels.
+        - Evpn (bool): If enabled, then this BGP peer range supports BGP MPLS Based Ethernet VPN per draft-ietf-l2vpn-evpn-03. Default value is false.
+        - FetchDetailedIpV4UnicastInfo (bool): If enabled, this BGP router displays complete information about the Ipv4UnicastInfo.
+        - FetchDetailedIpV6UnicastInfo (bool): NOT DEFINED
+        - IpV4Mpls (bool): If true, learns IPv4 MPLS routes.
+        - IpV4MplsVpn (bool): If true, learns MPLS VPN routes.
+        - IpV4Multicast (bool): If true, learns IPv4 Multicast routes.
+        - IpV4MulticastMplsVpn (bool): NOT DEFINED
+        - IpV4MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv4 Multicast/VPN address family.
+        - IpV4Unicast (bool): If true, learns IPv4 Unicast routes.
+        - IpV6Mpls (bool): If true, learns IPv6 MPLS routes.
+        - IpV6MplsVpn (bool): If true, learns IPv6 MPLS VPN routes.
+        - IpV6Multicast (bool): If true, learns IPv6 Multicast routes.
+        - IpV6MulticastMplsVpn (bool): NOT DEFINED
+        - IpV6MulticastVpn (bool): If enabled, this BGP router/peer supports the IPv6 Multicast/VPN address family.
+        - IpV6Unicast (bool): If true, learns IPv6 Unicast routes.
+        - Vpls (bool): If true, learns VPLS routes.
+
+        Returns
+        -------
+        - self: This instance with matching capabilities resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of capabilities data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the capabilities resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

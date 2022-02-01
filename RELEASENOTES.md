@@ -1,5 +1,9 @@
 # Release Notes
 
+### Feb 2022
+* 1.1.4
+  * support uhd version 1.4.1
+  * support ixnetwork version 9.20.2112.6 + HF001150
 ### Oct 2021
 * 1.1.3
   * Included Timeline class
@@ -15,7 +19,7 @@
   * Fix for `intermittent failure when connecting to an already started ConnectionManager session`
 ### Aug 2021
 * 1.1.0
-  * Async operation enhancement that allows all operations to be executed asynchronously 
+  * Async operation enhancement that allows all operations to be executed asynchronously
     * issue details https://github.com/OpenIxia/ixnetwork_restpy/issues/51
   * ConfigAssistant enhancement that allows for configuration with a single commit
     * reduces rest api transactions
@@ -63,7 +67,7 @@
 * 1.0.59
   * bug fix: SessionAssistant ApiKey not passed
   * bug fix: python 2.7 import ixnetwork_restpy
-  * bug fix: StatViewAssistant column csv exception 
+  * bug fix: StatViewAssistant column csv exception
 
 ### Sep 2020
 * 1.0.58
@@ -79,8 +83,8 @@
 ### Jul 2020
 * 1.0.55
   * PortMapAssistant.Connect method bug fix
-  * StatViewAssistant processes snapshots using in memory IO 
-  * removal of duplicate attempts in test platform determination 
+  * StatViewAssistant processes snapshots using in memory IO
+  * removal of duplicate attempts in test platform determination
 * 1.0.54
   * inclusion of uhd_restpy package in distribution
   * PortMapAssistant supports user defined timeouts on the .Connect method
@@ -94,7 +98,7 @@
 ### Apr 2020
 * 1.0.52
   * classes generated from IxNetwork build 9.00.1915.16
-  * TestPlatform.Sessions.find(Id=) fixed when using connection_manager 
+  * TestPlatform.Sessions.find(Id=) fixed when using connection_manager
   * TlvProfile sample demonstrates creating and copying a template tlv to a protocol tlvprofile
   * CollectLogs sample demonstrates collecting diagnostic logs and downloading them
   * samples use SessionAssistant when relevant
@@ -105,10 +109,10 @@
   * documentation site updates:
     * API Reference readibility enhancement for inline class/method/property documentation
     * release notes included in documentation
- 
+
 ### Mar 2020
 * 1.0.51
-  * classes generated from IxNetwork build 9.01.1911.7 
+  * classes generated from IxNetwork build 9.01.1911.7
   * New SessionAssistant class
     * combines TestPlatform, Session, logging, authentication and NewConfig functionality into constructor
     * reduces number of import statements and complexity
@@ -119,11 +123,11 @@
     * see examples in the class documentation
   * proxy bypass fix
   * generated quickTest...testConfig attributes
-  
+
 ### Jan 2020
 * 1.0.48
   * support ipv6 address with no square brackets in TestPlatform init
-  * MultiValue.Steps.find() support 
+  * MultiValue.Steps.find() support
 
 ### Nov 2019
 * 1.0.47
@@ -133,7 +137,7 @@
   * QuickTest TestConfig classes are now supported
   * added additional logging levels (info, warn, all), the default logging level is TestPlatform.NONE
   * MultiValue.Steps fixes
-  * enhanced reference parameter processing 
+  * enhanced reference parameter processing
     * pass a list of references using the container
       * EndpointSet.add(Sources=Vport.find())
     * pass a list of references using a list of objects
@@ -141,7 +145,7 @@
   * improved formatting of raised errors which also includes any server side app errors
   * fixed class generation
     * property/method names that are reserved/prohibited are corrected
-    * compile all classes  
+    * compile all classes
   * added PortMapAssistant class
     * easily add ports that are mapped to a location
     * connect all mapped ports in one call without having to specify a complex payload

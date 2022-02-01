@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AdInclusiveMulticastRouteAttributes(Base):
@@ -451,3 +453,66 @@ class AdInclusiveMulticastRouteAttributes(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AggregatorAs=None, AggregatorId=None, AsPath=None, AsSetMode=None, Cluster=None, Community=None, EnableAggregator=None, EnableAsPath=None, EnableAtomicAggregate=None, EnableCluster=None, EnableCommunity=None, EnableLocalPref=None, EnableMultiExit=None, EnableNextHop=None, EnableOrigin=None, EnableOriginator=None, ExtendedCommunity=None, LocalPref=None, MultiExit=None, NextHop=None, NextHopIpType=None, NextHopMode=None, Origin=None, OriginatorId=None, SetNextHop=None):
+        """Finds and retrieves adInclusiveMulticastRouteAttributes resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve adInclusiveMulticastRouteAttributes resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all adInclusiveMulticastRouteAttributes resources from the server.
+
+        Args
+        ----
+        - AggregatorAs (number): The AS associated with the aggregator router ID in the AGGREGATOR attribute. (default = 0)
+        - AggregatorId (str): The IP address of the router that aggregated two or more routes in the AGGREGATOR attribute. (default = 0.0.0.0)
+        - AsPath (list(dict(arg1:bool,arg2:str[unknown | asSet | asSequence | asConfedSet | asConfedSequence],arg3:list[number]))): Indicates the local IP address of the BGP router
+        - AsSetMode (str(includeAsSeq | includeAsSeqConf | includeAsSet | includeAsSetConf | noInclude | prependAs)): The mode to set the AsPath. Possible values include:
+        - Cluster (list(number)): The list of BGP clusters that a particular route has passed through
+        - Community (list(number)): This object is used to construct an extended community attribute for a route item
+        - EnableAggregator (bool): Generates an AGGREGATOR attribute using the aggregatorIpAddress, aggregatorASNum, and aggregatorIDMode. (default = false)
+        - EnableAsPath (bool): Enables the generation of AS Path related items.
+        - EnableAtomicAggregate (bool): Sets the attribute bit that indicates that the router has aggregated two or more prefixes in the AGGREGATOR attribute. (default = false)
+        - EnableCluster (bool): Enables the generation of the CLUSTER attribute list based on information in clusterList. (default = false)
+        - EnableCommunity (bool): Enables the generation of a COMMUNITY attribute list. (default = false)
+        - EnableLocalPref (bool): Enables the generation of a LOCAL PREF attribute based on the information in localPref. This value should be set to true only for EBGP. (default = false)
+        - EnableMultiExit (bool): Enables the generation of a MULTI EXIT DISCRIMINATOR attribute. (default = false)
+        - EnableNextHop (bool): Enables the generation of a NEXT HOP attribute. (default = true)
+        - EnableOrigin (bool): Enables the generation of an ORIGIN attribute. (default = true)
+        - EnableOriginator (bool): Enables the generation of an ORIGINATOR-ID attribute, based on information in originatorId. (default = false)
+        - ExtendedCommunity (list(dict(arg1:str[decimal | hex | ip | ieeeFloat],arg2:str[decimal | hex | ip | ieeeFloat],arg3:str[twoOctetAs | ip | fourOctetAs | opaque | administratorAsTwoOctetLinkBw],arg4:str[routeTarget | origin | extendedBandwidthSubType],arg5:str))): This object is used to construct an extended community attribute for a route item
+        - LocalPref (number): The local preference value for the routes with the LOCAL PREF attribute. (default = 0)
+        - MultiExit (number): The multi-exit discriminator value in the MULTI EXIT DISCRIMINATOR attribute. (default = 0)
+        - NextHop (str): The IP address, in either IPv4 or IPv6 format of the next hop associated with the NEXT HOP attribute. (default = 0.0.0.0)
+        - NextHopIpType (str(ipv4 | ipv6)): IP type of Next Hop. Default is IPv4.
+        - NextHopMode (str(fixed | incrementPerPeer)): Indicates that the nextHopIpAddress may be incremented for each neighbor session generated for the range of neighbor addresses
+        - Origin (str(igp | egp | incomplete)): (0x03) Route Origin Community. Identifies one or more routers injecting a set of routes with this extended community, into BGP
+        - OriginatorId (str): The router that originated a particular route; associated with the ORIGINATOR-ID attribute. (default = 0.0.0.0)
+        - SetNextHop (str(manually | sameAsLocalIp)): Indicates now to set the next hop IP address.
+
+        Returns
+        -------
+        - self: This instance with matching adInclusiveMulticastRouteAttributes resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of adInclusiveMulticastRouteAttributes data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the adInclusiveMulticastRouteAttributes resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchPacketIn(Base):
@@ -59,10 +61,10 @@ class SwitchPacketIn(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.packetinheaders_049c490437f5daa721b6e6c0d3b91b8e import PacketInHeaders
-        if self._properties.get('PacketInHeaders', None) is not None:
-            return self._properties.get('PacketInHeaders')
-        else:
-            return PacketInHeaders(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PacketInHeaders', None) is not None:
+                return self._properties.get('PacketInHeaders')
+        return PacketInHeaders(self)._select()
 
     @property
     def ConsultFlowTable(self):

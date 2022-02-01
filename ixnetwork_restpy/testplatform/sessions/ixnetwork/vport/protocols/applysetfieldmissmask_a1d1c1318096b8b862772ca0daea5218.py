@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ApplySetFieldMissMask(Base):
@@ -291,3 +293,57 @@ class ApplySetFieldMissMask(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ArpDestinationIpv4AddressMask=None, ArpDstHwAddressMask=None, ArpSourceIpv4AddressMask=None, ArpSrcHwAddressMask=None, EthernetDestinationMask=None, EthernetSourceMask=None, Ipv4DestinationMask=None, Ipv4SourceMask=None, Ipv6DestinationMask=None, Ipv6ExtHeaderMask=None, Ipv6FlowLabelMask=None, Ipv6SourceMask=None, PbbIsidMask=None, TunnelIdMask=None, VlanMask=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> ApplySetFieldMissMask
+        """Finds and retrieves applySetFieldMissMask resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve applySetFieldMissMask resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all applySetFieldMissMask resources from the server.
+
+        Args
+        ----
+        - ArpDestinationIpv4AddressMask (bool): If selected, Apply Set Field for ARP Destination IPv4 Address miss Mask is supported.
+        - ArpDstHwAddressMask (bool): If selected, Apply Set Field for ARP Destination IPv4 Address miss Mask is supported.
+        - ArpSourceIpv4AddressMask (bool): If selected, Apply Set Field for ARP Source IPv4 Address miss Mask is supported.
+        - ArpSrcHwAddressMask (bool): If selected, Apply Set Field for ARP Source Hardware Address miss Mask is supported.
+        - EthernetDestinationMask (bool): If selected, Apply Set Field for Ethernet Destination miss Mask is supported.
+        - EthernetSourceMask (bool): If selected, Apply Set Field for Ethernet Source miss Mask is supported.
+        - Ipv4DestinationMask (bool): If selected, Apply Set Field for IPv4 Destination miss Mask is supported.
+        - Ipv4SourceMask (bool): If selected, Apply Set Field for IPv4 Source miss Mask is supported.
+        - Ipv6DestinationMask (bool): If selected, Apply Set Field for IPv6 Destination miss Mask is supported.
+        - Ipv6ExtHeaderMask (bool): If selected, Apply Set Field for IPv6 Ext Header miss Mask is supported.
+        - Ipv6FlowLabelMask (bool): If selected, Apply Set Field for IPv6 Flow Label miss Mask is supported.
+        - Ipv6SourceMask (bool): If selected, Apply Set Field for IPv6 Source miss Mask is supported.
+        - PbbIsidMask (bool): If selected, Apply Set Field for PBB ISID miss Mask is supported.
+        - TunnelIdMask (bool): If selected, Apply Set Field for Tunnel ID miss Mask is supported.
+        - VlanMask (bool): If selected, Apply Set Field for VLAN miss Mask is supported.
+
+        Returns
+        -------
+        - self: This instance with matching applySetFieldMissMask resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of applySetFieldMissMask data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the applySetFieldMissMask resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

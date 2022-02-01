@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IsisFabricPathRouter(Base):
@@ -89,10 +91,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv4grouplist_a8b0a14d8e77939b2e00841f8ca4aa44 import DceMCastIpv4GroupList
-        if self._properties.get('DceMCastIpv4GroupList', None) is not None:
-            return self._properties.get('DceMCastIpv4GroupList')
-        else:
-            return DceMCastIpv4GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceMCastIpv4GroupList', None) is not None:
+                return self._properties.get('DceMCastIpv4GroupList')
+        return DceMCastIpv4GroupList(self)._select()
 
     @property
     def DceMCastIpv6GroupList(self):
@@ -106,10 +108,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastipv6grouplist_48e0f523130d7b4e7948cb21c19b53d3 import DceMCastIpv6GroupList
-        if self._properties.get('DceMCastIpv6GroupList', None) is not None:
-            return self._properties.get('DceMCastIpv6GroupList')
-        else:
-            return DceMCastIpv6GroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceMCastIpv6GroupList', None) is not None:
+                return self._properties.get('DceMCastIpv6GroupList')
+        return DceMCastIpv6GroupList(self)._select()
 
     @property
     def DceMCastMacGroupList(self):
@@ -123,10 +125,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcemcastmacgrouplist_1115ac54d89360ba3a14a6027a9eda75 import DceMCastMacGroupList
-        if self._properties.get('DceMCastMacGroupList', None) is not None:
-            return self._properties.get('DceMCastMacGroupList')
-        else:
-            return DceMCastMacGroupList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceMCastMacGroupList', None) is not None:
+                return self._properties.get('DceMCastMacGroupList')
+        return DceMCastMacGroupList(self)._select()
 
     @property
     def DceTopologyList(self):
@@ -140,10 +142,10 @@ class IsisFabricPathRouter(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dcetopologylist_c10ab6e3d1d7e663c0f17b8227b0dafe import DceTopologyList
-        if self._properties.get('DceTopologyList', None) is not None:
-            return self._properties.get('DceTopologyList')
-        else:
-            return DceTopologyList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DceTopologyList', None) is not None:
+                return self._properties.get('DceTopologyList')
+        return DceTopologyList(self)._select()
 
     @property
     def Active(self):

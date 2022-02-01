@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ntpclock(Base):
@@ -71,10 +73,10 @@ class Ntpclock(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.ntpservers_ae6323e734ac8bd0f5ab0ebe5be69cfc import NtpServers
-        if self._properties.get('NtpServers', None) is not None:
-            return self._properties.get('NtpServers')
-        else:
-            return NtpServers(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('NtpServers', None) is not None:
+                return self._properties.get('NtpServers')
+        return NtpServers(self)._select()
 
     @property
     def AcceptNTPPacketswithCryptoNAK(self):

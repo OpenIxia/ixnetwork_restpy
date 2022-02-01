@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class DceTopologyList(Base):
@@ -61,10 +63,10 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.interestedvlanlist_728a61dfe3033f50a4c4b24dd65f6d27 import InterestedVlanList
-        if self._properties.get('InterestedVlanList', None) is not None:
-            return self._properties.get('InterestedVlanList')
-        else:
-            return InterestedVlanList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterestedVlanList', None) is not None:
+                return self._properties.get('InterestedVlanList')
+        return InterestedVlanList(self)._select()
 
     @property
     def NicknameRecordList(self):
@@ -78,10 +80,10 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.nicknamerecordlist_035390df83e22e146cb32cc19244f93b import NicknameRecordList
-        if self._properties.get('NicknameRecordList', None) is not None:
-            return self._properties.get('NicknameRecordList')
-        else:
-            return NicknameRecordList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('NicknameRecordList', None) is not None:
+                return self._properties.get('NicknameRecordList')
+        return NicknameRecordList(self)._select()
 
     @property
     def Active(self):
@@ -218,6 +220,50 @@ class DceTopologyList(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Count=None, DescriptiveName=None, InterestedVlanRangeCount=None, Name=None, NicknameCount=None):
+        # type: (int, str, int, str, int) -> DceTopologyList
+        """Finds and retrieves dceTopologyList resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dceTopologyList resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all dceTopologyList resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - InterestedVlanRangeCount (number): Interested VLAN Range Count(multiplier)
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NicknameCount (number): Nickname Count(multiplier)
+
+        Returns
+        -------
+        - self: This instance with matching dceTopologyList resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of dceTopologyList data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the dceTopologyList resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def get_device_ids(self, PortNames=None, Active=None, EnableFTAG=None, NoOfTreesToCompute=None, StartFTAGValue=None, TopologyId=None):
         """Base class infrastructure that gets a list of dceTopologyList device ids encapsulated by this object.

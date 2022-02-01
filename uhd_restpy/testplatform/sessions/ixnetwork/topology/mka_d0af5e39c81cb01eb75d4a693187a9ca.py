@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Mka(Base):
@@ -93,10 +95,10 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cakcache_9d23d3bf0d5a4d71a4e75ece8ff0a1ea import CakCache
-        if self._properties.get('CakCache', None) is not None:
-            return self._properties.get('CakCache')
-        else:
-            return CakCache(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CakCache', None) is not None:
+                return self._properties.get('CakCache')
+        return CakCache(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -110,10 +112,10 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def TxChannels(self):
@@ -127,10 +129,10 @@ class Mka(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.txchannels_a961f7f036af2edebf4e1957fed8ab53 import TxChannels
-        if self._properties.get('TxChannels', None) is not None:
-            return self._properties.get('TxChannels')
-        else:
-            return TxChannels(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('TxChannels', None) is not None:
+                return self._properties.get('TxChannels')
+        return TxChannels(self)._select()
 
     @property
     def ActiveDevice(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class WriteActionsMiss(Base):
@@ -323,3 +325,59 @@ class WriteActionsMiss(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CopyTtlIn=None, CopyTtlOut=None, DecrementMplsTtl=None, DecrementNetworkTtl=None, Experimenter=None, Group=None, Output=None, PopMpls=None, PopPbb=None, PopVlan=None, PushMpls=None, PushPbb=None, PushVlan=None, SetField=None, SetMplsTtl=None, SetNetworkTtl=None, SetQueue=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> WriteActionsMiss
+        """Finds and retrieves writeActionsMiss resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve writeActionsMiss resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all writeActionsMiss resources from the server.
+
+        Args
+        ----
+        - CopyTtlIn (bool): Applies copy TTL inwards action to the packet from outermost to next-to-outermost.
+        - CopyTtlOut (bool): Applies copy TTL outwards action to the packet from next-to-outermost to outermost.
+        - DecrementMplsTtl (bool): Decrements the MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - DecrementNetworkTtl (bool): If selected, table supports Decrement Network TTL Write Actions.
+        - Experimenter (bool): If selected, table supports Experimenter Write Actions.
+        - Group (bool): Sets the Group ID
+        - Output (bool): Output to switch port.
+        - PopMpls (bool): Pops the outer MPLS tag.
+        - PopPbb (bool): If selected, table supports Pop PBB Write Actions.
+        - PopVlan (bool): Pops the outer VLAN tag.
+        - PushMpls (bool): Pushes a new MPLS tag.
+        - PushPbb (bool): If selected, table supports Push PBB Write Actions.
+        - PushVlan (bool): Pushes a new VLAN tag
+        - SetField (bool): If selected, table supports Set Field Write Actions.
+        - SetMplsTtl (bool): Replaces the existing MPLS TTL. Only applies to packets with an existing MPLS shim header.
+        - SetNetworkTtl (bool): If selected, table supports Set Network TTL Write Actions.
+        - SetQueue (bool): Set queue ID when outputting to a port.
+
+        Returns
+        -------
+        - self: This instance with matching writeActionsMiss resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of writeActionsMiss data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the writeActionsMiss resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

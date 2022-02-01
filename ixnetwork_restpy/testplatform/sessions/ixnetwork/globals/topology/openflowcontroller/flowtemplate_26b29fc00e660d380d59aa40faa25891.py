@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FlowTemplate(Base):
@@ -57,10 +59,10 @@ class FlowTemplate(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.matchaction_b079e27f2bc5c60400840dea946d16e9 import MatchAction
-        if self._properties.get('MatchAction', None) is not None:
-            return self._properties.get('MatchAction')
-        else:
-            return MatchAction(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MatchAction', None) is not None:
+                return self._properties.get('MatchAction')
+        return MatchAction(self)
 
     @property
     def Count(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CfmBridge(Base):
@@ -71,10 +73,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.advancedlearnedinfooptions_b2029cff9a0e1b9db1c05c032a4f003c import AdvancedLearnedInfoOptions
-        if self._properties.get('AdvancedLearnedInfoOptions', None) is not None:
-            return self._properties.get('AdvancedLearnedInfoOptions')
-        else:
-            return AdvancedLearnedInfoOptions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AdvancedLearnedInfoOptions', None) is not None:
+                return self._properties.get('AdvancedLearnedInfoOptions')
+        return AdvancedLearnedInfoOptions(self)._select()
 
     @property
     def CfmMp(self):
@@ -88,10 +90,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.cfmmp_455bcaf1d68b20d894a87383d2cb1965 import CfmMp
-        if self._properties.get('CfmMp', None) is not None:
-            return self._properties.get('CfmMp')
-        else:
-            return CfmMp(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CfmMp', None) is not None:
+                return self._properties.get('CfmMp')
+        return CfmMp(self)._select()
 
     @property
     def Connector(self):
@@ -105,10 +107,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.connector_d0d942810e4010add7642d3914a1f29b import Connector
-        if self._properties.get('Connector', None) is not None:
-            return self._properties.get('Connector')
-        else:
-            return Connector(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Connector', None) is not None:
+                return self._properties.get('Connector')
+        return Connector(self)
 
     @property
     def CustomTLV(self):
@@ -122,10 +124,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.customtlv_9dedbdbc1a4a245cbe35b21b51fa3a57 import CustomTLV
-        if self._properties.get('CustomTLV', None) is not None:
-            return self._properties.get('CustomTLV')
-        else:
-            return CustomTLV(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CustomTLV', None) is not None:
+                return self._properties.get('CustomTLV')
+        return CustomTLV(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -139,10 +141,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def Link(self):
@@ -156,10 +158,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.link_3c4eb8730b5826d36118e54600a5188b import Link
-        if self._properties.get('Link', None) is not None:
-            return self._properties.get('Link')
-        else:
-            return Link(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Link', None) is not None:
+                return self._properties.get('Link')
+        return Link(self)._select()
 
     @property
     def MdLevels(self):
@@ -173,10 +175,10 @@ class CfmBridge(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.mdlevels_139c757bfb085e85b81902e33a549b1f import MdLevels
-        if self._properties.get('MdLevels', None) is not None:
-            return self._properties.get('MdLevels')
-        else:
-            return MdLevels(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MdLevels', None) is not None:
+                return self._properties.get('MdLevels')
+        return MdLevels(self)._select()
 
     @property
     def Active(self):

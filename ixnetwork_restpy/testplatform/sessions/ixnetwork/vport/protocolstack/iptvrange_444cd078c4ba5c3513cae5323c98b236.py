@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IptvRange(Base):
@@ -70,10 +72,10 @@ class IptvRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.iptvchannels_fa138a64660ad65ba8ae37fa2ed4f558 import IptvChannels
-        if self._properties.get('IptvChannels', None) is not None:
-            return self._properties.get('IptvChannels')
-        else:
-            return IptvChannels(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IptvChannels', None) is not None:
+                return self._properties.get('IptvChannels')
+        return IptvChannels(self)
 
     @property
     def Enabled(self):

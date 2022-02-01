@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Value(Base):
@@ -52,10 +54,10 @@ class Value(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.object_1ba6063c8cfb61359d0cafa499ed49e4 import Object
-        if self._properties.get('Object', None) is not None:
-            return self._properties.get('Object')
-        else:
-            return Object(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Object', None) is not None:
+                return self._properties.get('Object')
+        return Object(self)
 
     @property
     def Name(self):
@@ -84,6 +86,46 @@ class Value(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, Name=None):
+        # type: (str) -> Value
+        """Finds and retrieves value resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve value resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all value resources from the server.
+
+        Args
+        ----
+        - Name (str): The name of the object
+
+        Returns
+        -------
+        - self: This instance with matching value resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of value data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the value resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def GetMVPropertyCandidatesToSharePatternWith(self, *args, **kwargs):
         """Executes the getMVPropertyCandidatesToSharePatternWith operation on the server.

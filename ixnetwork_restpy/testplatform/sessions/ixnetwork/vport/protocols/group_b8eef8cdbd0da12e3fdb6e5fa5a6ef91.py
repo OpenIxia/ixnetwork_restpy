@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Group(Base):
@@ -63,10 +65,10 @@ class Group(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.source_a4386e3fbbfa375898fa5272de81807b import Source
-        if self._properties.get('Source', None) is not None:
-            return self._properties.get('Source')
-        else:
-            return Source(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Source', None) is not None:
+                return self._properties.get('Source')
+        return Source(self)
 
     @property
     def EnablePacking(self):

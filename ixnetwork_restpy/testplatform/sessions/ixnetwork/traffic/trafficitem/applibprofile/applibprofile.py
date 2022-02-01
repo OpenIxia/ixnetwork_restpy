@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class AppLibProfile(Base):
@@ -63,10 +65,10 @@ class AppLibProfile(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.applibprofile.applibflow.applibflow import AppLibFlow
-        if self._properties.get('AppLibFlow', None) is not None:
-            return self._properties.get('AppLibFlow')
-        else:
-            return AppLibFlow(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('AppLibFlow', None) is not None:
+                return self._properties.get('AppLibFlow')
+        return AppLibFlow(self)
 
     @property
     def AvailableFlows(self):
@@ -258,11 +260,11 @@ class AppLibProfile(Base):
         # type: (*Any, **Any) -> None
         """Executes the addAppLibraryFlow operation on the server.
 
-        This exec adds a flow to an application traffic profile.
+        This exec adds a flow to an application traffic profile. Valid list of flows to be added is a subset of the flows available or installed in the system.
 
         addAppLibraryFlow(Arg2=list, async_operation=bool)
         --------------------------------------------------
-        - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be added.
+        - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be added. User can provide a single flow or a list of flows to be added to the traffic profile. Valid list of flows should be a subset of the available or installed flows in the system. User must ensure to validate the argument flow list against the availableFlows attribute to avoid error conditions, before executing the addAppLibraryFlow api.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -279,11 +281,11 @@ class AppLibProfile(Base):
         # type: (*Any, **Any) -> None
         """Executes the addAppLibraryFlowEx operation on the server.
 
-        This exec adds a flow to an application traffic profile.
+        This exec adds a flow to an application traffic profile. Valid list of flows to be added is a subset of the flows available or installed in the system. It also validates the input list of flows against the installed flows in the system.
 
         addAppLibraryFlowEx(Arg2=list, async_operation=bool)
         ----------------------------------------------------
-        - Arg2 (list(str)): This object specifies an array of the flow names to be added.
+        - Arg2 (list(str)): This object specifies the flow(s) to be added. User can provide a single flow or a list of flows to be added to the traffic profile.Valid list of flows should be a subset of the available or installed flows in the system. The input flow list gets validated aginast the installed flows in the system.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -324,7 +326,7 @@ class AppLibProfile(Base):
 
         removeAppLibraryFlow(Arg2=list, async_operation=bool)
         -----------------------------------------------------
-        - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be removed.
+        - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be removed. User can provide a single flow or a list of flows to be removed from the traffic profile.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class IptvGlobals(Base):
@@ -54,10 +56,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.globalchannellist.globalchannellist import GlobalChannelList
-        if self._properties.get('GlobalChannelList', None) is not None:
-            return self._properties.get('GlobalChannelList')
-        else:
-            return GlobalChannelList(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('GlobalChannelList', None) is not None:
+                return self._properties.get('GlobalChannelList')
+        return GlobalChannelList(self)
 
     @property
     def IgmpGroupRange(self):
@@ -71,10 +73,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.igmpgrouprange.igmpgrouprange import IgmpGroupRange
-        if self._properties.get('IgmpGroupRange', None) is not None:
-            return self._properties.get('IgmpGroupRange')
-        else:
-            return IgmpGroupRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IgmpGroupRange', None) is not None:
+                return self._properties.get('IgmpGroupRange')
+        return IgmpGroupRange(self)
 
     @property
     def IptvProfile(self):
@@ -88,10 +90,10 @@ class IptvGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.iptvglobals.iptvprofile.iptvprofile import IptvProfile
-        if self._properties.get('IptvProfile', None) is not None:
-            return self._properties.get('IptvProfile')
-        else:
-            return IptvProfile(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('IptvProfile', None) is not None:
+                return self._properties.get('IptvProfile')
+        return IptvProfile(self)
 
     @property
     def ObjectId(self):

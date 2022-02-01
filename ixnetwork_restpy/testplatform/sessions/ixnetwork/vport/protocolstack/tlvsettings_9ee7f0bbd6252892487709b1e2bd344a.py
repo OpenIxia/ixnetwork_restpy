@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TlvSettings(Base):
@@ -52,10 +54,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvappqaz_587acb2c8baf495ea66170032055878b import DcbxTlvAppQaz
-        if self._properties.get('DcbxTlvAppQaz', None) is not None:
-            return self._properties.get('DcbxTlvAppQaz')
-        else:
-            return DcbxTlvAppQaz(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvAppQaz', None) is not None:
+                return self._properties.get('DcbxTlvAppQaz')
+        return DcbxTlvAppQaz(self)._select()
 
     @property
     def DcbxTlvBcn(self):
@@ -69,10 +71,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvbcn_3b81386afeb068318a1e62f02a9da5dd import DcbxTlvBcn
-        if self._properties.get('DcbxTlvBcn', None) is not None:
-            return self._properties.get('DcbxTlvBcn')
-        else:
-            return DcbxTlvBcn(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvBcn', None) is not None:
+                return self._properties.get('DcbxTlvBcn')
+        return DcbxTlvBcn(self)._select()
 
     @property
     def DcbxTlvCustom(self):
@@ -86,10 +88,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvcustom_03275859075c4e6ed702cf66d51cacbc import DcbxTlvCustom
-        if self._properties.get('DcbxTlvCustom', None) is not None:
-            return self._properties.get('DcbxTlvCustom')
-        else:
-            return DcbxTlvCustom(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvCustom', None) is not None:
+                return self._properties.get('DcbxTlvCustom')
+        return DcbxTlvCustom(self)._select()
 
     @property
     def DcbxTlvEtsQaz(self):
@@ -103,10 +105,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvetsqaz_04e4d4f9220135fb169caf1f82c3c682 import DcbxTlvEtsQaz
-        if self._properties.get('DcbxTlvEtsQaz', None) is not None:
-            return self._properties.get('DcbxTlvEtsQaz')
-        else:
-            return DcbxTlvEtsQaz(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvEtsQaz', None) is not None:
+                return self._properties.get('DcbxTlvEtsQaz')
+        return DcbxTlvEtsQaz(self)._select()
 
     @property
     def DcbxTlvFcoeIeee(self):
@@ -120,10 +122,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvfcoeieee_96a877200349714c34d4895d720d0bc7 import DcbxTlvFcoeIeee
-        if self._properties.get('DcbxTlvFcoeIeee', None) is not None:
-            return self._properties.get('DcbxTlvFcoeIeee')
-        else:
-            return DcbxTlvFcoeIeee(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvFcoeIeee', None) is not None:
+                return self._properties.get('DcbxTlvFcoeIeee')
+        return DcbxTlvFcoeIeee(self)._select()
 
     @property
     def DcbxTlvFcoeIntel(self):
@@ -137,10 +139,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvfcoeintel_fcf0f6f5e7ff409ce4a32c93cedee9fd import DcbxTlvFcoeIntel
-        if self._properties.get('DcbxTlvFcoeIntel', None) is not None:
-            return self._properties.get('DcbxTlvFcoeIntel')
-        else:
-            return DcbxTlvFcoeIntel(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvFcoeIntel', None) is not None:
+                return self._properties.get('DcbxTlvFcoeIntel')
+        return DcbxTlvFcoeIntel(self)._select()
 
     @property
     def DcbxTlvLogicalLink(self):
@@ -154,10 +156,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvlogicallink_d04b8ac5be821679d2c562369f7becc9 import DcbxTlvLogicalLink
-        if self._properties.get('DcbxTlvLogicalLink', None) is not None:
-            return self._properties.get('DcbxTlvLogicalLink')
-        else:
-            return DcbxTlvLogicalLink(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvLogicalLink', None) is not None:
+                return self._properties.get('DcbxTlvLogicalLink')
+        return DcbxTlvLogicalLink(self)._select()
 
     @property
     def DcbxTlvNivIeee(self):
@@ -171,10 +173,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvnivieee_f8a4eea5f43c15671e2ae0b7270b8d8c import DcbxTlvNivIeee
-        if self._properties.get('DcbxTlvNivIeee', None) is not None:
-            return self._properties.get('DcbxTlvNivIeee')
-        else:
-            return DcbxTlvNivIeee(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvNivIeee', None) is not None:
+                return self._properties.get('DcbxTlvNivIeee')
+        return DcbxTlvNivIeee(self)._select()
 
     @property
     def DcbxTlvNivIntel(self):
@@ -188,10 +190,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvnivintel_e737a38b76044a795c7ed858b1a2213d import DcbxTlvNivIntel
-        if self._properties.get('DcbxTlvNivIntel', None) is not None:
-            return self._properties.get('DcbxTlvNivIntel')
-        else:
-            return DcbxTlvNivIntel(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvNivIntel', None) is not None:
+                return self._properties.get('DcbxTlvNivIntel')
+        return DcbxTlvNivIntel(self)._select()
 
     @property
     def DcbxTlvPfcIeee(self):
@@ -205,10 +207,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvpfcieee_bd7d08517c4bada6e40073649c4b169b import DcbxTlvPfcIeee
-        if self._properties.get('DcbxTlvPfcIeee', None) is not None:
-            return self._properties.get('DcbxTlvPfcIeee')
-        else:
-            return DcbxTlvPfcIeee(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvPfcIeee', None) is not None:
+                return self._properties.get('DcbxTlvPfcIeee')
+        return DcbxTlvPfcIeee(self)._select()
 
     @property
     def DcbxTlvPfcIntel(self):
@@ -222,10 +224,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvpfcintel_54c442933f28122b24622c86a570f5d1 import DcbxTlvPfcIntel
-        if self._properties.get('DcbxTlvPfcIntel', None) is not None:
-            return self._properties.get('DcbxTlvPfcIntel')
-        else:
-            return DcbxTlvPfcIntel(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvPfcIntel', None) is not None:
+                return self._properties.get('DcbxTlvPfcIntel')
+        return DcbxTlvPfcIntel(self)._select()
 
     @property
     def DcbxTlvPfcQaz(self):
@@ -239,10 +241,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvpfcqaz_0e854f66d9d6ebece1b3ef2e12724a53 import DcbxTlvPfcQaz
-        if self._properties.get('DcbxTlvPfcQaz', None) is not None:
-            return self._properties.get('DcbxTlvPfcQaz')
-        else:
-            return DcbxTlvPfcQaz(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvPfcQaz', None) is not None:
+                return self._properties.get('DcbxTlvPfcQaz')
+        return DcbxTlvPfcQaz(self)._select()
 
     @property
     def DcbxTlvPgIeee(self):
@@ -256,10 +258,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvpgieee_06160cc09161a4199f2eb699e1d29b17 import DcbxTlvPgIeee
-        if self._properties.get('DcbxTlvPgIeee', None) is not None:
-            return self._properties.get('DcbxTlvPgIeee')
-        else:
-            return DcbxTlvPgIeee(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvPgIeee', None) is not None:
+                return self._properties.get('DcbxTlvPgIeee')
+        return DcbxTlvPgIeee(self)._select()
 
     @property
     def DcbxTlvPgIntel(self):
@@ -273,10 +275,10 @@ class TlvSettings(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dcbxtlvpgintel_dee71f02fca764a8d3616fac2380ec93 import DcbxTlvPgIntel
-        if self._properties.get('DcbxTlvPgIntel', None) is not None:
-            return self._properties.get('DcbxTlvPgIntel')
-        else:
-            return DcbxTlvPgIntel(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('DcbxTlvPgIntel', None) is not None:
+                return self._properties.get('DcbxTlvPgIntel')
+        return DcbxTlvPgIntel(self)._select()
 
     @property
     def ObjectId(self):
@@ -287,6 +289,46 @@ class TlvSettings(Base):
         - str: Unique identifier for this object
         """
         return self._get_attribute(self._SDM_ATT_MAP['ObjectId'])
+
+    def find(self, ObjectId=None):
+        # type: (str) -> TlvSettings
+        """Finds and retrieves tlvSettings resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve tlvSettings resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all tlvSettings resources from the server.
+
+        Args
+        ----
+        - ObjectId (str): Unique identifier for this object
+
+        Returns
+        -------
+        - self: This instance with matching tlvSettings resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of tlvSettings data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the tlvSettings resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class L2tpEndpoint(Base):
@@ -56,10 +58,10 @@ class L2tpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcp2v6client_f9738b072dc37109aa04ff5a171efc19 import Dhcp2v6Client
-        if self._properties.get('Dhcp2v6Client', None) is not None:
-            return self._properties.get('Dhcp2v6Client')
-        else:
-            return Dhcp2v6Client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcp2v6Client', None) is not None:
+                return self._properties.get('Dhcp2v6Client')
+        return Dhcp2v6Client(self)
 
     @property
     def Dhcpv6Client(self):
@@ -73,10 +75,10 @@ class L2tpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6client_3d9b32c35e1283bc70421d434d95476b import Dhcpv6Client
-        if self._properties.get('Dhcpv6Client', None) is not None:
-            return self._properties.get('Dhcpv6Client')
-        else:
-            return Dhcpv6Client(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6Client', None) is not None:
+                return self._properties.get('Dhcpv6Client')
+        return Dhcpv6Client(self)
 
     @property
     def Dhcpv6Server(self):
@@ -90,10 +92,10 @@ class L2tpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.dhcpv6server_b5323b35dfdf4539d0af9d8b27628908 import Dhcpv6Server
-        if self._properties.get('Dhcpv6Server', None) is not None:
-            return self._properties.get('Dhcpv6Server')
-        else:
-            return Dhcpv6Server(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dhcpv6Server', None) is not None:
+                return self._properties.get('Dhcpv6Server')
+        return Dhcpv6Server(self)
 
     @property
     def Radius(self):
@@ -107,10 +109,10 @@ class L2tpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.radius_de20a87743e6f441acc55ada7b218708 import Radius
-        if self._properties.get('Radius', None) is not None:
-            return self._properties.get('Radius')
-        else:
-            return Radius(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Radius', None) is not None:
+                return self._properties.get('Radius')
+        return Radius(self)
 
     @property
     def Range(self):
@@ -124,10 +126,10 @@ class L2tpEndpoint(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_c6ba8b5c4a24569f583fb0fe8b04375c import Range
-        if self._properties.get('Range', None) is not None:
-            return self._properties.get('Range')
-        else:
-            return Range(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Range', None) is not None:
+                return self._properties.get('Range')
+        return Range(self)
 
     @property
     def Name(self):

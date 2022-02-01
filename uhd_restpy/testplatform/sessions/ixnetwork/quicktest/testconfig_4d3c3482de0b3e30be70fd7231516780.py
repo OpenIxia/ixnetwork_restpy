@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -473,6 +475,71 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, CpDpConvergenceFactorScale=None, CpDpConvergenceTime=None, CustomFramesizeValue=None, CustomLoadUnit=None, DelayAfterFailover=None, DelayBeforeFailover=None, DeleteFlowsAtStartup=None, DpDpConvergenceFactorScale=None, DpDpConvergenceTime=None, EnableCpDpPassFail=None, EnableDpDpPassFail=None, EnableMinFrameSize=None, FailureMode=None, FailureType=None, ForceContinuosTraffic=None, FrameSizeMode=None, Gap=None, LoadRateValue=None, MaxRandomFrameSize=None, MinRandomFrameSize=None, Numtrials=None, ProtocolItem=None, ReportConvergenceUnit=None, ReportTputRateUnit=None, SecondaryRxPort=None, TestTrafficType=None):
+        # type: (str, int, int, str, int, int, bool, str, int, bool, bool, bool, str, str, bool, str, int, int, int, int, int, List[str], str, str, int, str) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - CpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
+        - CpDpConvergenceTime (number): Indicates the convergence time.
+        - CustomFramesizeValue (number): Sets the custom frame size value.
+        - CustomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the custom load unit.
+        - DelayAfterFailover (number): Sets the delay after failover.
+        - DelayBeforeFailover (number): Sets the delay before failover.
+        - DeleteFlowsAtStartup (bool): If true, the test will delete the flowgroups at startup.
+        - DpDpConvergenceFactorScale (str): Indicates the convergence factor scale.
+        - DpDpConvergenceTime (number): Indicates the convergence time.
+        - EnableCpDpPassFail (bool): Enables the CP DP pass fail.
+        - EnableDpDpPassFail (bool): Enables the DP DP pass fail
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - FailureMode (str(delPrimaryFlow | modifyRxPort)): Sets the failure mode.
+        - FailureType (str(proactive)): Sets the type of failure.
+        - ForceContinuosTraffic (bool): Forces continuous traffic.
+        - FrameSizeMode (str(increment | random)): This attribute is the frame size mode for the Quad Gaussian.
+        - Gap (number): The gap in transmission of frames.
+        - LoadRateValue (number): The value of the load rate.
+        - MaxRandomFrameSize (number): The maximum random frame size to be sent.
+        - MinRandomFrameSize (number): The minimum random frame size to be sent.
+        - Numtrials (number): The integer value that states the number of trials permitted.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ReportConvergenceUnit (str(ms | ns | us)): The unit in which convergence will be reported.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The unit of rate for throughput.
+        - SecondaryRxPort (number): Sets the secondary receiving Port.
+        - TestTrafficType (str): It signifies the test traffic type value.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

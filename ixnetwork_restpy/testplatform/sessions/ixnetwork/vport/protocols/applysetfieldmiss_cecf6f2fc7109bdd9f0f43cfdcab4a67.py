@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ApplySetFieldMiss(Base):
@@ -643,3 +645,79 @@ class ApplySetFieldMiss(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, ArpDestinationHardwareAddress=None, ArpDestinationIpv4Address=None, ArpOpcode=None, ArpSourceHardwareAddress=None, ArpSourceIpv4Address=None, EthernetDestination=None, EthernetSource=None, EthernetType=None, IcmpCode=None, IcmpType=None, Icmpv6Code=None, Icmpv6Type=None, IpDscp=None, IpEcn=None, IpProtocol=None, Ipv4Destination=None, Ipv4Source=None, Ipv6Destination=None, Ipv6ExtHeader=None, Ipv6FlowLabel=None, Ipv6NdSll=None, Ipv6NdTarget=None, Ipv6NdTll=None, Ipv6Source=None, MplsBos=None, MplsLabel=None, MplsTc=None, PbbIsid=None, SctpDestination=None, SctpSource=None, TcpDestination=None, TcpSource=None, TunnelId=None, UdpDestination=None, UdpSource=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> ApplySetFieldMiss
+        """Finds and retrieves applySetFieldMiss resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve applySetFieldMiss resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all applySetFieldMiss resources from the server.
+
+        Args
+        ----
+        - ArpDestinationHardwareAddress (bool): If selected, Apply Set Field Miss for ARP Destination Hardware Address is supported.
+        - ArpDestinationIpv4Address (bool): If selected, Apply Set Field Miss for ARP Destination IPv4 Address is supported.
+        - ArpOpcode (bool): If selected, Apply Set Field Miss for ARP Opcode is supported.
+        - ArpSourceHardwareAddress (bool): If selected, Apply Set Field Miss for ARP Source Hardware Address is supported.
+        - ArpSourceIpv4Address (bool): If selected, Apply Set Field Miss for ARP Source IPv4 Address is supported.
+        - EthernetDestination (bool): If selected, Apply Set Field Miss for Ethernet Destination is supported.
+        - EthernetSource (bool): If selected, Apply Set Field Miss for Ethernet Source is supported.
+        - EthernetType (bool): If selected, Apply Set Field Miss for Ethernet Type is supported.
+        - IcmpCode (bool): If selected, Apply Set Field Miss for ICMP Code is supported.
+        - IcmpType (bool): If selected, Apply Set Field Miss for ICMP Type is supported.
+        - Icmpv6Code (bool): If selected, Apply Set Field Miss for ICMPv6 Code is supported.
+        - Icmpv6Type (bool): If selected, Apply Set Field Miss for ICMPv6 Type is supported.
+        - IpDscp (bool): If selected, Apply Set Field Miss for IP DSCP is supported.
+        - IpEcn (bool): If selected, Apply Set Field Miss for IP ECN is supported.
+        - IpProtocol (bool): If selected, Apply Set Field Miss for IP Protocol is supported.
+        - Ipv4Destination (bool): If selected, Apply Set Field Miss for IPv4 Destination is supported.
+        - Ipv4Source (bool): If selected, Apply Set Field Miss for IPv4 Source is supported.
+        - Ipv6Destination (bool): If selected, Apply Set Field Miss for IPv6 Destination is supported.
+        - Ipv6ExtHeader (bool): If selected, Apply Set Field Miss for IPv6 Ext Header is supported.
+        - Ipv6FlowLabel (bool): If selected, Apply Set Field Miss for IPv6 Flow Label is supported.
+        - Ipv6NdSll (bool): If selected, Apply Set Field Miss for IPv6 ND SLL is supported.
+        - Ipv6NdTarget (bool): If selected, Apply Set Field Miss for IPv6 ND Target is supported.
+        - Ipv6NdTll (bool): If selected, Apply Set Field Miss for IPv6 ND TLL is supported.
+        - Ipv6Source (bool): If selected, Apply Set Field Miss for IPv6 Source is supported.
+        - MplsBos (bool): If selected, Apply Set Field Miss for MPLS BoS is supported.
+        - MplsLabel (bool): If selected, Apply Set Field Miss for MPLS Label is supported.
+        - MplsTc (bool): If selected, Apply Set Field Miss for MPLS TC is supported.
+        - PbbIsid (bool): If selected, Apply Set Field Miss for PBB ISID is supported.
+        - SctpDestination (bool): If selected, Apply Set Field Miss for SCTP Destination is supported.
+        - SctpSource (bool): If selected, Apply Set Field Miss for SCTP Source is supported.
+        - TcpDestination (bool): If selected, Apply Set Field Miss for TCP Destination is supported.
+        - TcpSource (bool): If selected, Apply Set Field Miss for TCP Source is supported.
+        - TunnelId (bool): If selected, Apply Set Field Miss for Tunnel ID is supported.
+        - UdpDestination (bool): If selected, Apply Set Field Miss for UDP Destination is supported.
+        - UdpSource (bool): If selected, Apply Set Field Miss for UDP Source is supported.
+        - VlanId (bool): If selected, Apply Set Field Miss for VLAN ID is supported.
+        - VlanPriority (bool): If selected, Apply Set Field Miss for VLAN Priority is supported.
+
+        Returns
+        -------
+        - self: This instance with matching applySetFieldMiss resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of applySetFieldMiss data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the applySetFieldMiss resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

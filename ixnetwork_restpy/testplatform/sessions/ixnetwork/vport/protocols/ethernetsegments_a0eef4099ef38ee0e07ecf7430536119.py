@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EthernetSegments(Base):
@@ -74,10 +76,10 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.adbmacesrouteattributes_85d7cd2c65ac911ee7a94f0d8a9e4e10 import AdBmacEsRouteAttributes
-        if self._properties.get('AdBmacEsRouteAttributes', None) is not None:
-            return self._properties.get('AdBmacEsRouteAttributes')
-        else:
-            return AdBmacEsRouteAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AdBmacEsRouteAttributes', None) is not None:
+                return self._properties.get('AdBmacEsRouteAttributes')
+        return AdBmacEsRouteAttributes(self)._select()
 
     @property
     def BMacMappedIp(self):
@@ -91,10 +93,10 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bmacmappedip_5d1351237be9d86d6e72123aac8c9ca6 import BMacMappedIp
-        if self._properties.get('BMacMappedIp', None) is not None:
-            return self._properties.get('BMacMappedIp')
-        else:
-            return BMacMappedIp(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BMacMappedIp', None) is not None:
+                return self._properties.get('BMacMappedIp')
+        return BMacMappedIp(self)
 
     @property
     def Evi(self):
@@ -108,10 +110,10 @@ class EthernetSegments(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.evi_f4aba0f35140f705a8d5d733d2b2f38e import Evi
-        if self._properties.get('Evi', None) is not None:
-            return self._properties.get('Evi')
-        else:
-            return Evi(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Evi', None) is not None:
+                return self._properties.get('Evi')
+        return Evi(self)
 
     @property
     def AutoConfigureEsImport(self):

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class ImportBgpRoutesParams(Base):
@@ -147,6 +149,50 @@ class ImportBgpRoutesParams(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BestRoutes=None, DataFile=None, FileType=None, NextHop=None, RouteDistributionType=None, RouteLimit=None):
+        """Finds and retrieves importBgpRoutesParams resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve importBgpRoutesParams resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all importBgpRoutesParams resources from the server.
+
+        Args
+        ----
+        - BestRoutes (bool): Import only the best routes (provided route file has this information).
+        - DataFile (obj(uhd_restpy.files.Files)): Select source file having route information.
+        - FileType (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - NextHop (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
+        - RouteDistributionType (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
+        - RouteLimit (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
+
+        Returns
+        -------
+        - self: This instance with matching importBgpRoutesParams resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of importBgpRoutesParams data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the importBgpRoutesParams resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def ImportBgpRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

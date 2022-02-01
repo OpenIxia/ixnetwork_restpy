@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EvpnEthernetSegment(Base):
@@ -54,10 +56,10 @@ class EvpnEthernetSegment(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.originipinfo_d61799d0d437af743c8f98d98c592b92 import OriginIpInfo
-        if self._properties.get('OriginIpInfo', None) is not None:
-            return self._properties.get('OriginIpInfo')
-        else:
-            return OriginIpInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OriginIpInfo', None) is not None:
+                return self._properties.get('OriginIpInfo')
+        return OriginIpInfo(self)
 
     @property
     def Esi(self):

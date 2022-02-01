@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class MsrpTalker(Base):
@@ -73,10 +75,10 @@ class MsrpTalker(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def MsrpTalkerDomains(self):
@@ -90,10 +92,10 @@ class MsrpTalker(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.topology.msrptalkerdomains_0f385bfc871543091b3fa2e404918150 import MsrpTalkerDomains
-        if self._properties.get('MsrpTalkerDomains', None) is not None:
-            return self._properties.get('MsrpTalkerDomains')
-        else:
-            return MsrpTalkerDomains(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MsrpTalkerDomains', None) is not None:
+                return self._properties.get('MsrpTalkerDomains')
+        return MsrpTalkerDomains(self)._select()
 
     @property
     def Active(self):

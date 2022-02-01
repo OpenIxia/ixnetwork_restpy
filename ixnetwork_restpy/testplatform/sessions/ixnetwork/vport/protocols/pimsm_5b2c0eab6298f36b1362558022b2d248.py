@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Pimsm(Base):
@@ -68,10 +70,10 @@ class Pimsm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.router_904e72c6fa0992bd72a34758e59774b5 import Router
-        if self._properties.get('Router', None) is not None:
-            return self._properties.get('Router')
-        else:
-            return Router(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Router', None) is not None:
+                return self._properties.get('Router')
+        return Router(self)
 
     @property
     def BsmFramePerInterval(self):
@@ -305,6 +307,60 @@ class Pimsm(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BsmFramePerInterval=None, CrpFramePerInterval=None, DataMdtFramePerInterval=None, DenyGrePimIpPrefix=None, EnableDiscardJoinPruneProcessing=None, EnableRateControl=None, Enabled=None, GreFilterType=None, HelloMsgsPerInterval=None, Interval=None, JoinPruneMessagesPerInterval=None, OverrideSourceIpForSmInterface=None, RegisterMessagesPerInterval=None, RegisterStopMessagesPerInterval=None, RunningState=None):
+        # type: (int, int, int, str, bool, bool, bool, str, int, int, int, bool, int, int, str) -> Pimsm
+        """Finds and retrieves pimsm resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimsm resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pimsm resources from the server.
+
+        Args
+        ----
+        - BsmFramePerInterval (number): Allows to specify the rate of the number of BSM messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
+        - CrpFramePerInterval (number): Allows to specify the rate of the number of CRP Adv messages to be sent per interval. Note: This field is enabled only after enabling Rate Control interval.
+        - DataMdtFramePerInterval (number): The number of Data MST message to be sent per interval specified in the interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+        - DenyGrePimIpPrefix (str): Ixia will reject all GRE-PIM packets whose outer source IP address falls within this specified network prefix.
+        - EnableDiscardJoinPruneProcessing (bool): If enabled, discards the join/prune messages.
+        - EnableRateControl (bool): Rate control (flow control) is enabled on this PIM-SM port.
+        - Enabled (bool): Enables the emulated PIM-SM router.
+        - GreFilterType (str(noDataMdt | dataMdtIpv4)): Specifies type of filter for GRE.
+        - HelloMsgsPerInterval (number): The total hello messages received per interval.
+        - Interval (number): The length of the interval during which a number of messages are sent. The default value is 0, which means that messages will be sent on a best effort basis.
+        - JoinPruneMessagesPerInterval (number): The join/prune interval specifies the length of time between transmissions of join/prune messages.The default is 60 seconds.
+        - OverrideSourceIpForSmInterface (bool): If enabled, it will override source ip for SM interfaces.
+        - RegisterMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+        - RegisterStopMessagesPerInterval (number): The number of Register messages to be sent per interval specified in the Interval field below. The default value is 0, which means that messages will be sent on a best effort basis.
+        - RunningState (str(unknown | stopped | stopping | starting | started)): The current running state of the PIM-SM server.
+
+        Returns
+        -------
+        - self: This instance with matching pimsm resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of pimsm data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the pimsm resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

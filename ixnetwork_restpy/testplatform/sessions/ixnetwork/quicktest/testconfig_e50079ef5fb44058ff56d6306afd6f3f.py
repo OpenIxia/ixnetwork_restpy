@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -1262,6 +1264,120 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BackoffIteration=None, CalculateJitter=None, CalculateLatency=None, ContentInformation=None, CountRandomLoadRate=None, DelayAfterTransmit=None, Duration=None, DynamicRateList=None, EnableBackoffIteration=None, EnableDataIntegrity=None, EnableExtraIterations=None, EnableFastConvergence=None, EnableLayer1Rate=None, EnableMinFrameSize=None, EnableOldStatsForReef=None, EnableSaturationIteration=None, EnableStopTestOnHighLoss=None, ExtraIterationOffsets=None, FastConvergenceDuration=None, FastConvergenceThreshold=None, FixedIteration=None, FixedLoadUnit=None, ForceRegenerate=None, FrameLossUnit=None, FramesPerBurstGap=None, Framesize=None, FramesizeFixedValue=None, FramesizeList=None, Gap=None, GenerateTrackingOptionAggregationFiles=None, IncrementLoadUnit=None, InitialIncrementLoadRate=None, InitialStepLoadRate=None, Ipv4rate=None, Ipv6rate=None, LatencyBins=None, LatencyBinsEnabled=None, LatencyType=None, LoadRateList=None, LoadRateValue=None, LoadType=None, MapType=None, MaxIncrementLoadRate=None, MaxRandomLoadRate=None, MaxStepLoadRate=None, MinFpsRate=None, MinKbpsRate=None, MinRandomLoadRate=None, Numtrials=None, PercentMaxRate=None, PortDelayEnabled=None, PortDelayUnit=None, PortDelayValue=None, ProtocolItem=None, RandomLoadUnit=None, RateSelect=None, ReportSequenceError=None, ReportTputRateUnit=None, Resolution=None, Rfc2889ordering=None, SaturationIteration=None, SkipDefaultPassFailEvaluation=None, StaggeredStart=None, StepFrameLossUnit=None, StepIncrementLoadRate=None, StepLoadUnit=None, StepStepLoadRate=None, StepTolerance=None, StopTestOnHighLoss=None, SupportedTrafficTypes=None, TestTrafficType=None, TimelineRateList=None, Tolerance=None, TxDelay=None, UsePercentOffsets=None):
+        # type: (int, bool, bool, str, int, int, int, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, int, int, int, str, bool, str, int, str, int, List[str], int, bool, str, int, int, int, int, str, bool, str, str, int, str, str, int, int, int, int, int, int, int, int, bool, str, int, List[str], str, str, bool, str, int, str, int, bool, bool, str, int, str, int, int, int, str, str, str, int, int, str) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - BackoffIteration (number): This enables the test to run an extra iteration for calculating the Backoff Latency.
+        - CalculateJitter (bool): If true, the jitter is calculated.
+        - CalculateLatency (bool): If true, calculates the latency.
+        - ContentInformation (str): NOT DEFINED
+        - CountRandomLoadRate (number): The random count of the load rate.
+        - DelayAfterTransmit (number): Specifies the amount of delay after every transmit.
+        - Duration (number): The duration of the test in hours, which is used to calculate the number of frames to transmit.
+        - DynamicRateList (str): NOT DEFINED
+        - EnableBackoffIteration (bool): If true, enables back off iteration test.
+        - EnableDataIntegrity (bool): If true, enables the checking of data integrity for the pass or fail of the trial.
+        - EnableExtraIterations (bool): If true, more iterations are performed.
+        - EnableFastConvergence (bool): If true, the test perform iterations using the fast convergence duration configured.
+        - EnableLayer1Rate (bool): NOT DEFINED
+        - EnableMinFrameSize (bool): If true, enables minimum frame size.
+        - EnableOldStatsForReef (bool): If true, enables old statistics for reef load module.
+        - EnableSaturationIteration (bool): If true, enables the test to run an extra iteration for calculating the Saturation Latency.
+        - EnableStopTestOnHighLoss (bool): The test stops in case of a high loss.
+        - ExtraIterationOffsets (str): This enables the test to run an extra iteration.
+        - FastConvergenceDuration (number): This enables the test to perform iterations using the fast convergence duration configured.
+        - FastConvergenceThreshold (number): This enables the test to perform iterations using the fast convergence threshold configured.
+        - FixedIteration (number): NOT DEFINED
+        - FixedLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The fixed load unit.
+        - ForceRegenerate (bool): Initiates a forced regeneration.
+        - FrameLossUnit (str): Frame loss measurement unit.
+        - FramesPerBurstGap (number): The number of frames to be sent after each burst.
+        - Framesize (str): The frame size to be used.
+        - FramesizeFixedValue (number): The fixed value of frame size.
+        - FramesizeList (list(str)): The list of the available frame sizes.
+        - Gap (number): The gap in transmission of frames.
+        - GenerateTrackingOptionAggregationFiles (bool): If true, enables the tracking option in aggregation files.
+        - IncrementLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The unit increment for the load.
+        - InitialIncrementLoadRate (number): The initial incremental value of the load rate.
+        - InitialStepLoadRate (number): The initial step value of the load rate.
+        - Ipv4rate (number): The rate at which IPv4 traffic is sent.
+        - Ipv6rate (number): The rate at which IPv6 traffic is sent.
+        - LatencyBins (str): Sets the latency bins statistics.
+        - LatencyBinsEnabled (bool): Enables the latency bins statistics.
+        - LatencyType (str(cutThrough | storeForward)): The type of latency.
+        - LoadRateList (str): Enters the Load Rate List.
+        - LoadRateValue (number): The value of the load rate.
+        - LoadType (str(dynamic | step | timeline)): The type of the payload setting.
+        - MapType (str): The mapping type.
+        - MaxIncrementLoadRate (number): The maximum incremental value of the load rate.
+        - MaxRandomLoadRate (number): The maximum random value of the load rate.
+        - MaxStepLoadRate (number): The maximum step value of the load rate.
+        - MinFpsRate (number): The rate at which minimum frames are sent per second.
+        - MinKbpsRate (number): The rate at which minimum frames are sent per kbps.
+        - MinRandomLoadRate (number): The minimum random value of the load rate.
+        - Numtrials (number): The integer value that states the number of trials permitted.
+        - PercentMaxRate (number): The rate selected in percentMax.
+        - PortDelayEnabled (bool): NOT DEFINED
+        - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
+        - PortDelayValue (number): Sets the port delay value.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - RandomLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The random values of the load unit.
+        - RateSelect (str(fpsRate | kbpsRate | percentMaxRate)): The rate selected.
+        - ReportSequenceError (bool): Reports sequence errors in the test result.
+        - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The unit of rate for throughput.
+        - Resolution (number): Specify the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
+        - Rfc2889ordering (str(noOrdering | unchanged | val2889Ordering)): If true, indicates frame ordering by Rfc2889.
+        - SaturationIteration (number): This enables the test to run an extra iteration for calculating the Saturation latency.
+        - SkipDefaultPassFailEvaluation (bool): If true, it skips the default pass fail evaluation.
+        - StaggeredStart (bool): Starts test with a stagger.
+        - StepFrameLossUnit (str(%)): Signifies the step frame loss unit.
+        - StepIncrementLoadRate (number): The step incremental value of the load rate.
+        - StepLoadUnit (str(percentMaxRate)): Specifies the step rate of the load unit.
+        - StepStepLoadRate (number): The incremental step value of load rate.
+        - StepTolerance (number): The step value of the tolerance level.
+        - StopTestOnHighLoss (number): It stops test on high loss.
+        - SupportedTrafficTypes (str): The traffic types supported.
+        - TestTrafficType (str): It signifies the test traffic type value.
+        - TimelineRateList (str): NOT DEFINED
+        - Tolerance (number): The value set for the tolerance level.
+        - TxDelay (number): Specifies the amount of delay after every transmit.
+        - UsePercentOffsets (str): If true, sets the offset value in percentage.
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

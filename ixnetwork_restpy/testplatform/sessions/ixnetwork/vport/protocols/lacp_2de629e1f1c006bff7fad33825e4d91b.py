@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Lacp(Base):
@@ -56,10 +58,10 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_4e6b30ede278e0f1f44ceef59a7cc716 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def Link(self):
@@ -73,10 +75,10 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.link_05cc0903dd20fb640a82079159eed6bc import Link
-        if self._properties.get('Link', None) is not None:
-            return self._properties.get('Link')
-        else:
-            return Link(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Link', None) is not None:
+                return self._properties.get('Link')
+        return Link(self)
 
     @property
     def EnablePreservePartnerInfo(self):
@@ -140,6 +142,49 @@ class Lacp(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnablePreservePartnerInfo=None, Enabled=None, IsLacpPortLearnedInfoRefreshed=None, RunningState=None):
+        # type: (bool, bool, bool, str) -> Lacp
+        """Finds and retrieves lacp resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve lacp resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all lacp resources from the server.
+
+        Args
+        ----
+        - EnablePreservePartnerInfo (bool): If true, the fields of previous link are updatedw
+        - Enabled (bool): If true, the Link Aggregation Control Protocol (LACP) is enabled.
+        - IsLacpPortLearnedInfoRefreshed (bool): (read only) If true, the learned port information is up to date.
+        - RunningState (str(unknown | stopped | stopping | starting | started)): The current running state of LACP.
+
+        Returns
+        -------
+        - self: This instance with matching lacp resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of lacp data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the lacp resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def RefreshLacpPortLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

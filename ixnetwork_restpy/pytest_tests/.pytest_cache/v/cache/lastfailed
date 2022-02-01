@@ -1,6 +1,4 @@
 {
-  "tests/config_assistant/test_config_assistant_call.py::test_config_assist_call[localhost:11009:windows]": true,
-  "tests/config_assistant/test_config_assistant_call.py::test_empty_commit[localhost:11009:windows]": true,
-  "tests/config_assistant/test_iterators_ca.py::test_can_add_remove_containers[localhost:11009:windows]": true,
-  "tests/config_assistant/test_ngpf_device_id_Ca.py::test_can_fetch_device_id_without_filter[localhost:11009:windows]": true
+  "tests/traffic/test_stack_field.py::test_stack_field[localhost:11009:windows]": true,
+  "tests/traffic/test_stack_field.py::test_update_stack_field[localhost:11009:windows]": true
 }

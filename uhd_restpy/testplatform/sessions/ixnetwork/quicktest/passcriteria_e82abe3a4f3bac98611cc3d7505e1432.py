@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class PassCriteria(Base):
@@ -677,6 +679,83 @@ class PassCriteria(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, DownstreamDataErrorThresholdMode=None, DownstreamDataErrorThresholdValue=None, DownstreamEnableDataIntegrityPassFail=None, DownstreamEnableLatencyPassFail=None, DownstreamEnableRatePassFail=None, DownstreamEnableSequenceErrorsPassFail=None, DownstreamEnableStandardDeviationPassFail=None, DownstreamLatencyThresholdMode=None, DownstreamLatencyThresholdScale=None, DownstreamLatencyThresholdValue=None, DownstreamLatencyVarThresholdMode=None, DownstreamLatencyVariationThresholdScale=None, DownstreamLatencyVariationThresholdValue=None, DownstreamPassCriteriaLoadRateMode=None, DownstreamPassCriteriaLoadRateScale=None, DownstreamPassCriteriaLoadRateValue=None, DownstreamSeqErrorsThresholdMode=None, DownstreamSeqErrorsThresholdValue=None, Downstream_passFailFrequency=None, UpstreamDataErrorThresholdMode=None, UpstreamDataErrorThresholdValue=None, UpstreamEnableDataIntegrityPassFail=None, UpstreamEnableLatencyPassFail=None, UpstreamEnableRatePassFail=None, UpstreamEnableSequenceErrorsPassFail=None, UpstreamEnableStandardDeviationPassFail=None, UpstreamLatencyThresholdMode=None, UpstreamLatencyThresholdScale=None, UpstreamLatencyThresholdValue=None, UpstreamLatencyVarThresholdMode=None, UpstreamLatencyVariationThresholdScale=None, UpstreamLatencyVariationThresholdValue=None, UpstreamPassCriteriaLoadRateMode=None, UpstreamPassCriteriaLoadRateScale=None, UpstreamPassCriteriaLoadRateValue=None, UpstreamSeqErrorsThresholdMode=None, UpstreamSeqErrorsThresholdValue=None, Upstream_passFailFrequency=None):
+        # type: (str, int, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, str, int, str, int, str, str, int, bool, bool, bool, bool, bool, str, str, int, str, str, int, str, str, int, str, int, str) -> PassCriteria
+        """Finds and retrieves passCriteria resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve passCriteria resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all passCriteria resources from the server.
+
+        Args
+        ----
+        - DownstreamDataErrorThresholdMode (str(average | maximum)): The downstream Data Error Threshold mode.
+        - DownstreamDataErrorThresholdValue (number): The downstream data error threshold value.
+        - DownstreamEnableDataIntegrityPassFail (bool): Enables downstream data integrity pass or fail criteria.
+        - DownstreamEnableLatencyPassFail (bool): Enable downstream traffic latency pass or fail criteria.
+        - DownstreamEnableRatePassFail (bool): Enables to check downstream pass or fail rate.
+        - DownstreamEnableSequenceErrorsPassFail (bool): Enables downstream sequence errors pass or fail criteria.
+        - DownstreamEnableStandardDeviationPassFail (bool): Enables downstream standard deviation pass or fail criteria.
+        - DownstreamLatencyThresholdMode (str(average | maximum)): The latency threshold mode for downstream traffic.
+        - DownstreamLatencyThresholdScale (str(ms | ns | us)): The latency threshold scale for downstream trafic.
+        - DownstreamLatencyThresholdValue (number): The latency threshold value for downstream traffic.
+        - DownstreamLatencyVarThresholdMode (str(average | maximum)): The latency variation threshold mode for downstream traffic.
+        - DownstreamLatencyVariationThresholdScale (str(ms | ns | us)): The latency variation threshold scale for downstream traffic.
+        - DownstreamLatencyVariationThresholdValue (number): The latency variation threshold value for downstream traffic.
+        - DownstreamPassCriteriaLoadRateMode (str(average | minimum)): The downstream traffic pass criteria for load rate mode.
+        - DownstreamPassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The downstream traffic pass criteria for load rate scale.
+        - DownstreamPassCriteriaLoadRateValue (number): The downstream traffic pass criteria load rate value.
+        - DownstreamSeqErrorsThresholdMode (str(average | maximum)): The downstream traffic sequence error threshold mode.
+        - DownstreamSeqErrorsThresholdValue (number): The downstream traffic sequence error threshold value.
+        - Downstream_passFailFrequency (str(framesizes | trials)): NOT DEFINED
+        - UpstreamDataErrorThresholdMode (str(average | maximum)): The upstream Data Error Threshold mode.
+        - UpstreamDataErrorThresholdValue (number): The upstream Data Error Threshold value.
+        - UpstreamEnableDataIntegrityPassFail (bool): Enables data integrity pass or fail criteria for upstream traffic.
+        - UpstreamEnableLatencyPassFail (bool): Enables latency pass fail criteria for upstream traffic.
+        - UpstreamEnableRatePassFail (bool): Enables pass or fail rate for upstream traffic.
+        - UpstreamEnableSequenceErrorsPassFail (bool): Enables sequence error pass or fail criteria for upstream traffic.
+        - UpstreamEnableStandardDeviationPassFail (bool): Enables upstream traffic standard deviation pass or fail.
+        - UpstreamLatencyThresholdMode (str(average | maximum)): The upstream latency threshold mode.
+        - UpstreamLatencyThresholdScale (str(ms | ns | us)): The upstream latency threshold scale.
+        - UpstreamLatencyThresholdValue (number): The upstream latency threshold value.
+        - UpstreamLatencyVarThresholdMode (str(average | maximum)): The upstream latency variation threshold mode.
+        - UpstreamLatencyVariationThresholdScale (str(ms | ns | us)): The upstream latency variation threshold scale.
+        - UpstreamLatencyVariationThresholdValue (number): The upstream latency variation threshold value.
+        - UpstreamPassCriteriaLoadRateMode (str(average | minimum)): The upstream pass criteria load rate mode.
+        - UpstreamPassCriteriaLoadRateScale (str(fps | gbps | kbps | mbps | percent)): The upstream pass criteria load rate scale.
+        - UpstreamPassCriteriaLoadRateValue (number): The upstream pass criteria load rate value.
+        - UpstreamSeqErrorsThresholdMode (str(average | maximum)): The upstream sequence error threshold mode.
+        - UpstreamSeqErrorsThresholdValue (number): The upstream sequence error threshold value.
+        - Upstream_passFailFrequency (str(framesizes | trials)): NOT DEFINED
+
+        Returns
+        -------
+        - self: This instance with matching passCriteria resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of passCriteria data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the passCriteria resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

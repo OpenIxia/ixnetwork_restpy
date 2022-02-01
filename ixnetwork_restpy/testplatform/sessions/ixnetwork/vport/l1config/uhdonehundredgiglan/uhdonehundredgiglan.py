@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class UhdOneHundredGigLan(Base):
@@ -39,11 +41,9 @@ class UhdOneHundredGigLan(Base):
         'EnableAutoNegotiation': 'enableAutoNegotiation',
         'EnablePPM': 'enablePPM',
         'EnableRsFec': 'enableRsFec',
-        'EnableRsFecStats': 'enableRsFecStats',
-        'FirecodeAdvertise': 'firecodeAdvertise',
+        'EnabledFlowControl': 'enabledFlowControl',
         'FirecodeForceOff': 'firecodeForceOff',
         'FirecodeForceOn': 'firecodeForceOn',
-        'FirecodeRequest': 'firecodeRequest',
         'ForceDisableFEC': 'forceDisableFEC',
         'IeeeL1Defaults': 'ieeeL1Defaults',
         'LaserOn': 'laserOn',
@@ -52,12 +52,9 @@ class UhdOneHundredGigLan(Base):
         'Mtu': 'mtu',
         'Ppm': 'ppm',
         'PromiscuousMode': 'promiscuousMode',
-        'RsFecAdvertise': 'rsFecAdvertise',
         'RsFecForceOn': 'rsFecForceOn',
-        'RsFecRequest': 'rsFecRequest',
         'SelectedSpeeds': 'selectedSpeeds',
         'Speed': 'speed',
-        'UseANResults': 'useANResults',
     }
     _SDM_ENUM_MAP = {
         'autoInstrumentation': ['endOfFrame', 'floating'],
@@ -73,7 +70,7 @@ class UhdOneHundredGigLan(Base):
         """
         Returns
         -------
-        - str(endOfFrame | floating): 
+        - str(endOfFrame | floating): The auto instrumentation mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP['AutoInstrumentation'])
     @AutoInstrumentation.setter
@@ -131,7 +128,7 @@ class UhdOneHundredGigLan(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
 
@@ -150,32 +147,18 @@ class UhdOneHundredGigLan(Base):
         self._set_attribute(self._SDM_ATT_MAP['EnableRsFec'], value)
 
     @property
-    def EnableRsFecStats(self):
+    def EnabledFlowControl(self):
         # type: () -> bool
         """
         Returns
         -------
         - bool: 
         """
-        return self._get_attribute(self._SDM_ATT_MAP['EnableRsFecStats'])
-    @EnableRsFecStats.setter
-    def EnableRsFecStats(self, value):
+        return self._get_attribute(self._SDM_ATT_MAP['EnabledFlowControl'])
+    @EnabledFlowControl.setter
+    def EnabledFlowControl(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['EnableRsFecStats'], value)
-
-    @property
-    def FirecodeAdvertise(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: 
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['FirecodeAdvertise'])
-    @FirecodeAdvertise.setter
-    def FirecodeAdvertise(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirecodeAdvertise'], value)
+        self._set_attribute(self._SDM_ATT_MAP['EnabledFlowControl'], value)
 
     @property
     def FirecodeForceOff(self):
@@ -204,20 +187,6 @@ class UhdOneHundredGigLan(Base):
     def FirecodeForceOn(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['FirecodeForceOn'], value)
-
-    @property
-    def FirecodeRequest(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: 
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['FirecodeRequest'])
-    @FirecodeRequest.setter
-    def FirecodeRequest(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['FirecodeRequest'], value)
 
     @property
     def ForceDisableFEC(self):
@@ -309,7 +278,7 @@ class UhdOneHundredGigLan(Base):
         """
         Returns
         -------
-        - number: 
+        - number: Indicates the value that needs to be adjusted for the line transmit frequency.
         """
         return self._get_attribute(self._SDM_ATT_MAP['Ppm'])
 
@@ -324,20 +293,6 @@ class UhdOneHundredGigLan(Base):
         return self._get_attribute(self._SDM_ATT_MAP['PromiscuousMode'])
 
     @property
-    def RsFecAdvertise(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: 
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['RsFecAdvertise'])
-    @RsFecAdvertise.setter
-    def RsFecAdvertise(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsFecAdvertise'], value)
-
-    @property
     def RsFecForceOn(self):
         # type: () -> bool
         """
@@ -350,20 +305,6 @@ class UhdOneHundredGigLan(Base):
     def RsFecForceOn(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP['RsFecForceOn'], value)
-
-    @property
-    def RsFecRequest(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: 
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['RsFecRequest'])
-    @RsFecRequest.setter
-    def RsFecRequest(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['RsFecRequest'], value)
 
     @property
     def SelectedSpeeds(self):
@@ -393,49 +334,90 @@ class UhdOneHundredGigLan(Base):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP['Speed'], value)
 
-    @property
-    def UseANResults(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: 
-        """
-        return self._get_attribute(self._SDM_ATT_MAP['UseANResults'])
-    @UseANResults.setter
-    def UseANResults(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP['UseANResults'], value)
-
-    def update(self, AutoInstrumentation=None, EnableAutoNegotiation=None, EnableRsFec=None, EnableRsFecStats=None, FirecodeAdvertise=None, FirecodeForceOff=None, FirecodeForceOn=None, FirecodeRequest=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, RsFecAdvertise=None, RsFecForceOn=None, RsFecRequest=None, SelectedSpeeds=None, Speed=None, UseANResults=None):
-        # type: (str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, bool, bool, List[str], str, bool) -> UhdOneHundredGigLan
+    def update(self, AutoInstrumentation=None, EnableAutoNegotiation=None, EnableRsFec=None, EnabledFlowControl=None, FirecodeForceOff=None, FirecodeForceOn=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, RsFecForceOn=None, SelectedSpeeds=None, Speed=None):
+        # type: (str, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, bool, List[str], str) -> UhdOneHundredGigLan
         """Updates uhdOneHundredGigLan resource on the server.
 
         Args
         ----
-        - AutoInstrumentation (str(endOfFrame | floating)): 
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
         - EnableAutoNegotiation (bool): 
         - EnableRsFec (bool): 
-        - EnableRsFecStats (bool): 
-        - FirecodeAdvertise (bool): 
+        - EnabledFlowControl (bool): 
         - FirecodeForceOff (bool): 
         - FirecodeForceOn (bool): 
-        - FirecodeRequest (bool): 
         - ForceDisableFEC (bool): 
         - IeeeL1Defaults (bool): 
         - LaserOn (bool): 
         - LinkTraining (bool): 
         - Loopback (bool): 
         - Mtu (number): 
-        - RsFecAdvertise (bool): 
         - RsFecForceOn (bool): 
-        - RsFecRequest (bool): 
         - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): 
-        - UseANResults (bool): 
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AutoInstrumentation=None, AvailableSpeeds=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, EnableAutoNegotiation=None, EnablePPM=None, EnableRsFec=None, EnabledFlowControl=None, FirecodeForceOff=None, FirecodeForceOn=None, ForceDisableFEC=None, IeeeL1Defaults=None, LaserOn=None, LinkTraining=None, Loopback=None, Mtu=None, Ppm=None, PromiscuousMode=None, RsFecForceOn=None, SelectedSpeeds=None, Speed=None):
+        # type: (str, List[str], bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, bool, bool, List[str], str) -> UhdOneHundredGigLan
+        """Finds and retrieves uhdOneHundredGigLan resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve uhdOneHundredGigLan resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all uhdOneHundredGigLan resources from the server.
+
+        Args
+        ----
+        - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AvailableSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are available for the current media and AN settings.
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - EnableAutoNegotiation (bool): 
+        - EnablePPM (bool): If true, enables the portsppm.
+        - EnableRsFec (bool): 
+        - EnabledFlowControl (bool): 
+        - FirecodeForceOff (bool): 
+        - FirecodeForceOn (bool): 
+        - ForceDisableFEC (bool): 
+        - IeeeL1Defaults (bool): 
+        - LaserOn (bool): 
+        - LinkTraining (bool): 
+        - Loopback (bool): 
+        - Mtu (number): 
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - PromiscuousMode (bool): 
+        - RsFecForceOn (bool): 
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed10g | speed40g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed100g | speed10g | speed25g | speed40g | speed50g)): 
+
+        Returns
+        -------
+        - self: This instance with matching uhdOneHundredGigLan resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of uhdOneHundredGigLan data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the uhdOneHundredGigLan resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

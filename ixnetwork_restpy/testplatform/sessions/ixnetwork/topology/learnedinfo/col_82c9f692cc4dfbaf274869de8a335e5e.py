@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Col(Base):
@@ -53,10 +55,10 @@ class Col(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.celltable_bef6632b895c626cc7174eb89a76162c import CellTable
-        if self._properties.get('CellTable', None) is not None:
-            return self._properties.get('CellTable')
-        else:
-            return CellTable(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('CellTable', None) is not None:
+                return self._properties.get('CellTable')
+        return CellTable(self)
 
     @property
     def Row(self):
@@ -70,10 +72,10 @@ class Col(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.row_dbafc34e8c4bf46a4ac7b647400c39d3 import Row
-        if self._properties.get('Row', None) is not None:
-            return self._properties.get('Row')
-        else:
-            return Row(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Row', None) is not None:
+                return self._properties.get('Row')
+        return Row(self)
 
     @property
     def Value(self):

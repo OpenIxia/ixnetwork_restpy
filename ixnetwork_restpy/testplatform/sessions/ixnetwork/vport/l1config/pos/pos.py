@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Pos(Base):
@@ -49,11 +51,11 @@ class Pos(Base):
         'TransmitClocking': 'transmitClocking',
     }
     _SDM_ENUM_MAP = {
-        'crcSize': ['crc16', 'crc32'],
-        'interfaceType': ['oc12', 'oc192', 'oc3', 'oc48', 'stm1', 'stm16', 'stm4', 'stm64'],
+        'crcSize': ['crc32', 'crc16'],
+        'interfaceType': ['oc3', 'oc12', 'oc48', 'oc192', 'stm1', 'stm4', 'stm16', 'stm64'],
         'payloadType': ['ciscoFrameRelay', 'ciscoHdlc', 'frameRelay', 'ppp'],
         'trafficMapType': ['dcc', 'spe'],
-        'transmitClocking': ['external', 'internal', 'recovered'],
+        'transmitClocking': ['internal', 'external', 'recovered'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -71,10 +73,10 @@ class Pos(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.dcc.dcc import Dcc
-        if self._properties.get('Dcc', None) is not None:
-            return self._properties.get('Dcc')
-        else:
-            return Dcc(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Dcc', None) is not None:
+                return self._properties.get('Dcc')
+        return Dcc(self)._select()
 
     @property
     def Ppp(self):
@@ -88,10 +90,10 @@ class Pos(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pos.ppp.ppp import Ppp
-        if self._properties.get('Ppp', None) is not None:
-            return self._properties.get('Ppp')
-        else:
-            return Ppp(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Ppp', None) is not None:
+                return self._properties.get('Ppp')
+        return Ppp(self)._select()
 
     @property
     def AvailableSpeeds(self):
@@ -157,7 +159,7 @@ class Pos(Base):
         """
         Returns
         -------
-        - str(crc16 | crc32): The type of cyclic redundancy check (CRC) to be used.
+        - str(crc32 | crc16): The type of cyclic redundancy check (CRC) to be used.
         """
         return self._get_attribute(self._SDM_ATT_MAP['CrcSize'])
     @CrcSize.setter
@@ -185,7 +187,7 @@ class Pos(Base):
         """
         Returns
         -------
-        - bool: If true, enables the portsppm
+        - bool: If true, enables the portsppm.
         """
         return self._get_attribute(self._SDM_ATT_MAP['EnablePPM'])
     @EnablePPM.setter
@@ -199,7 +201,7 @@ class Pos(Base):
         """
         Returns
         -------
-        - str(oc12 | oc192 | oc3 | oc48 | stm1 | stm16 | stm4 | stm64): The POS interface type for the port.
+        - str(oc3 | oc12 | oc48 | oc192 | stm1 | stm4 | stm16 | stm64): The POS interface type for the port.
         """
         return self._get_attribute(self._SDM_ATT_MAP['InterfaceType'])
     @InterfaceType.setter
@@ -283,7 +285,7 @@ class Pos(Base):
         """
         Returns
         -------
-        - str(external | internal | recovered): The POS transmit clocking type.
+        - str(internal | external | recovered): The POS transmit clocking type.
         """
         return self._get_attribute(self._SDM_ATT_MAP['TransmitClocking'])
     @TransmitClocking.setter
@@ -299,19 +301,73 @@ class Pos(Base):
         ----
         - C2Expected (number): C2 Byte
         - C2Tx (number): C2 Byte
-        - CrcSize (str(crc16 | crc32)): The type of cyclic redundancy check (CRC) to be used.
+        - CrcSize (str(crc32 | crc16)): The type of cyclic redundancy check (CRC) to be used.
         - DataScrambling (bool): Data scrambling is enabled on this POS port.
-        - EnablePPM (bool): If true, enables the portsppm
-        - InterfaceType (str(oc12 | oc192 | oc3 | oc48 | stm1 | stm16 | stm4 | stm64)): The POS interface type for the port.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - InterfaceType (str(oc3 | oc12 | oc48 | oc192 | stm1 | stm4 | stm16 | stm64)): The POS interface type for the port.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - PayloadType (str(ciscoFrameRelay | ciscoHdlc | frameRelay | ppp)): The POS payload type.
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
         - TrafficMapType (str(dcc | spe)): The POS traffic map type.
-        - TransmitClocking (str(external | internal | recovered)): The POS transmit clocking type.
+        - TransmitClocking (str(internal | external | recovered)): The POS transmit clocking type.
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AvailableSpeeds=None, C2Expected=None, C2Tx=None, CanModifySpeed=None, CanSetMultipleSpeeds=None, CrcSize=None, DataScrambling=None, EnablePPM=None, InterfaceType=None, Loopback=None, PayloadType=None, Ppm=None, SelectedSpeeds=None, TrafficMapType=None, TransmitClocking=None):
+        # type: (List[str], int, int, bool, bool, str, bool, bool, str, bool, str, int, List[str], str, str) -> Pos
+        """Finds and retrieves pos resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pos resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pos resources from the server.
+
+        Args
+        ----
+        - AvailableSpeeds (list(str[])): Which speeds are available for the current media and AN settings.
+        - C2Expected (number): C2 Byte
+        - C2Tx (number): C2 Byte
+        - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
+        - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
+        - CrcSize (str(crc32 | crc16)): The type of cyclic redundancy check (CRC) to be used.
+        - DataScrambling (bool): Data scrambling is enabled on this POS port.
+        - EnablePPM (bool): If true, enables the portsppm.
+        - InterfaceType (str(oc3 | oc12 | oc48 | oc192 | stm1 | stm4 | stm16 | stm64)): The POS interface type for the port.
+        - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
+        - PayloadType (str(ciscoFrameRelay | ciscoHdlc | frameRelay | ppp)): The POS payload type.
+        - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - SelectedSpeeds (list(str[])): Which speeds are selected for the current media and AN settings.
+        - TrafficMapType (str(dcc | spe)): The POS traffic map type.
+        - TransmitClocking (str(internal | external | recovered)): The POS transmit clocking type.
+
+        Returns
+        -------
+        - self: This instance with matching pos resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of pos data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the pos resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

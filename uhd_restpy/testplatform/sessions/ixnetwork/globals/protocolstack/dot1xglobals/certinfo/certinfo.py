@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class CertInfo(Base):
@@ -318,3 +320,59 @@ class CertInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, AltName=None, CertFormat=None, CertPath=None, City=None, Company=None, Country=None, Department=None, GetCACertOnly=None, KeyPath=None, KeySize=None, KeyUsage=None, ObjectId=None, SameKeyFile=None, SendCACertOnly=None, ServerUrl=None, State=None, UseCertServer=None):
+        # type: (str, str, str, str, str, str, str, bool, str, int, str, str, bool, bool, str, str, bool) -> CertInfo
+        """Finds and retrieves certInfo resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve certInfo resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all certInfo resources from the server.
+
+        Args
+        ----
+        - AltName (str): Other Options - Alternative Subject Name
+        - CertFormat (str): Required.
+        - CertPath (str): The path to certificate files.
+        - City (str): Identification Info - City
+        - Company (str): Identification Info - Company
+        - Country (str): Identification Info - Country
+        - Department (str): Identification Info - Department
+        - GetCACertOnly (bool): Obtain only the CA certificate.
+        - KeyPath (str): The path to key files.
+        - KeySize (number): Key Options - Key Size
+        - KeyUsage (str): Key Options - Key Usage
+        - ObjectId (str): Unique identifier for this object
+        - SameKeyFile (bool): Required.
+        - SendCACertOnly (bool): Send only the CA certificate.
+        - ServerUrl (str): Cerficate Server URL
+        - State (str): Identification Info - State
+        - UseCertServer (bool): This value is true if the certificates are obtained from a certificate server.
+
+        Returns
+        -------
+        - self: This instance with matching certInfo resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of certInfo data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the certInfo resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TxLane(Base):
@@ -44,7 +46,7 @@ class TxLane(Base):
         'SynchronizedSkewVal': 'synchronizedSkewVal',
     }
     _SDM_ENUM_MAP = {
-        'laneMappingType': ['custom', 'decrement', 'default', 'increment', 'random'],
+        'laneMappingType': ['default', 'increment', 'decrement', 'custom', 'random'],
     }
 
     def __init__(self, parent, list_op=False):
@@ -56,7 +58,7 @@ class TxLane(Base):
         """
         Returns
         -------
-        - bool: 
+        - bool: If true, skew value will apply for all the lanes.
         """
         return self._get_attribute(self._SDM_ATT_MAP['IsSkewSynchronized'])
     @IsSkewSynchronized.setter
@@ -70,7 +72,7 @@ class TxLane(Base):
         """
         Returns
         -------
-        - str(custom | decrement | default | increment | random): 
+        - str(default | increment | decrement | custom | random): Lane Mapping
         """
         return self._get_attribute(self._SDM_ATT_MAP['LaneMappingType'])
     @LaneMappingType.setter
@@ -104,7 +106,7 @@ class TxLane(Base):
         """
         Returns
         -------
-        - number: 
+        - number: Number of lanes
         """
         return self._get_attribute(self._SDM_ATT_MAP['NoOfLanes'])
 
@@ -114,7 +116,7 @@ class TxLane(Base):
         """
         Returns
         -------
-        - list(number): 
+        - list(number): Pcs Lane
         """
         return self._get_attribute(self._SDM_ATT_MAP['PcsLane'])
     @PcsLane.setter
@@ -148,7 +150,7 @@ class TxLane(Base):
         """
         Returns
         -------
-        - list(number): 
+        - list(number): Skew Values
         """
         return self._get_attribute(self._SDM_ATT_MAP['SkewValues'])
     @SkewValues.setter
@@ -162,7 +164,7 @@ class TxLane(Base):
         """
         Returns
         -------
-        - number: 
+        - number: Synchronized Skew Values
         """
         return self._get_attribute(self._SDM_ATT_MAP['SynchronizedSkewVal'])
     @SynchronizedSkewVal.setter
@@ -176,14 +178,63 @@ class TxLane(Base):
 
         Args
         ----
-        - IsSkewSynchronized (bool): 
-        - LaneMappingType (str(custom | decrement | default | increment | random)): 
-        - PcsLane (list(number)): 
-        - SkewValues (list(number)): 
-        - SynchronizedSkewVal (number): 
+        - IsSkewSynchronized (bool): If true, skew value will apply for all the lanes.
+        - LaneMappingType (str(default | increment | decrement | custom | random)): Lane Mapping
+        - PcsLane (list(number)): Pcs Lane
+        - SkewValues (list(number)): Skew Values
+        - SynchronizedSkewVal (number): Synchronized Skew Values
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, IsSkewSynchronized=None, LaneMappingType=None, MaxSkewVal=None, MinSkewVal=None, NoOfLanes=None, PcsLane=None, PhysicalLanes=None, Resolution=None, SkewValues=None, SynchronizedSkewVal=None):
+        # type: (bool, str, int, int, int, List[int], List[str], int, List[int], int) -> TxLane
+        """Finds and retrieves txLane resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve txLane resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all txLane resources from the server.
+
+        Args
+        ----
+        - IsSkewSynchronized (bool): If true, skew value will apply for all the lanes.
+        - LaneMappingType (str(default | increment | decrement | custom | random)): Lane Mapping
+        - MaxSkewVal (number): 
+        - MinSkewVal (number): 
+        - NoOfLanes (number): Number of lanes
+        - PcsLane (list(number)): Pcs Lane
+        - PhysicalLanes (list(str)): 
+        - Resolution (number): 
+        - SkewValues (list(number)): Skew Values
+        - SynchronizedSkewVal (number): Synchronized Skew Values
+
+        Returns
+        -------
+        - self: This instance with matching txLane resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of txLane data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the txLane resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

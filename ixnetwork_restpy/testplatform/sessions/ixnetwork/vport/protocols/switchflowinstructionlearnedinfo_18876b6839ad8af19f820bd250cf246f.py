@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchFlowInstructionLearnedInfo(Base):
@@ -60,10 +62,10 @@ class SwitchFlowInstructionLearnedInfo(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.switchactionv131learnedinfo_86007ee49ffb3db3e01e332902e297a7 import SwitchActionV131LearnedInfo
-        if self._properties.get('SwitchActionV131LearnedInfo', None) is not None:
-            return self._properties.get('SwitchActionV131LearnedInfo')
-        else:
-            return SwitchActionV131LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SwitchActionV131LearnedInfo', None) is not None:
+                return self._properties.get('SwitchActionV131LearnedInfo')
+        return SwitchActionV131LearnedInfo(self)
 
     @property
     def Experimenter(self):

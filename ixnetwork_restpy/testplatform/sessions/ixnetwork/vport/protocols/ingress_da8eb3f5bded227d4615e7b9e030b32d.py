@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Ingress(Base):
@@ -61,10 +63,10 @@ class Ingress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.senderrange_5f32a5353c2a36df08769d2b836cbf75 import SenderRange
-        if self._properties.get('SenderRange', None) is not None:
-            return self._properties.get('SenderRange')
-        else:
-            return SenderRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('SenderRange', None) is not None:
+                return self._properties.get('SenderRange')
+        return SenderRange(self)
 
     @property
     def EnableEro(self):
@@ -206,3 +208,50 @@ class Ingress(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EnableEro=None, Ero=None, PrefixLength=None, PrependDutToEro=None, ReservationErrorTlv=None, Rro=None, SendRro=None, TunnelIdsCount=None, TunnelIdsStart=None):
+        """Finds and retrieves ingress resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve ingress resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all ingress resources from the server.
+
+        Args
+        ----
+        - EnableEro (bool): Enables use of the ERO option in Ingress mode.
+        - Ero (list(dict(arg1:str[ip | as],arg2:str,arg3:number,arg4:bool))): Enables use of the ERO option in Ingress mode.
+        - PrefixLength (number): If the DUT's address is to be prepended to the ERO list, this indicates what prefix length is to be used for the entry.
+        - PrependDutToEro (str(none | prependLoose | prependStrict)): Enables the user to insert the DUT address at the beginning of the list of hops in the path.
+        - ReservationErrorTlv (list(dict(arg1:number,arg2:number,arg3:str))): a set of custom TLVs to be included in RESV ERR messages. These may only be used for ingress routers.
+        - Rro (list(dict(arg1:str[ip | label],arg2:str,arg3:bool,arg4:bool,arg5:number,arg6:bool,arg7:bool,arg8:bool))): If enabled, an RRO is reflected back to the originating router.
+        - SendRro (bool): When the destination range is used in Ingress mode, this indicates that a SEND RRO option is to be included in RSVP messages sent downstream.
+        - TunnelIdsCount (number): The number of destination routers. Each router's address is one greater than the previous one's.
+        - TunnelIdsStart (number): Sets the start of the range of Tunnel IDs to be used in simulations.
+
+        Returns
+        -------
+        - self: This instance with matching ingress resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of ingress data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the ingress resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

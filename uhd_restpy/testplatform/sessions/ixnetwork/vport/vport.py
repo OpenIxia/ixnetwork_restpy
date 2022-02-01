@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from uhd_restpy.base import Base
 from uhd_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Vport(Base):
@@ -94,10 +96,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.capture.capture import Capture
-        if self._properties.get('Capture', None) is not None:
-            return self._properties.get('Capture')
-        else:
-            return Capture(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Capture', None) is not None:
+                return self._properties.get('Capture')
+        return Capture(self)._select()
 
     @property
     def L1Config(self):
@@ -111,10 +113,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.l1config.l1config import L1Config
-        if self._properties.get('L1Config', None) is not None:
-            return self._properties.get('L1Config')
-        else:
-            return L1Config(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('L1Config', None) is not None:
+                return self._properties.get('L1Config')
+        return L1Config(self)._select()
 
     @property
     def Protocols(self):
@@ -128,10 +130,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.protocols.protocols import Protocols
-        if self._properties.get('Protocols', None) is not None:
-            return self._properties.get('Protocols')
-        else:
-            return Protocols(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Protocols', None) is not None:
+                return self._properties.get('Protocols')
+        return Protocols(self)
 
     @property
     def TapSettings(self):
@@ -145,10 +147,10 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from uhd_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.tapsettings import TapSettings
-        if self._properties.get('TapSettings', None) is not None:
-            return self._properties.get('TapSettings')
-        else:
-            return TapSettings(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('TapSettings', None) is not None:
+                return self._properties.get('TapSettings')
+        return TapSettings(self)
 
     @property
     def ActualSpeed(self):

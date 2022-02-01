@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class EapoUdpGlobals(Base):
@@ -66,10 +68,10 @@ class EapoUdpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.certinfo.certinfo import CertInfo
-        if self._properties.get('CertInfo', None) is not None:
-            return self._properties.get('CertInfo')
-        else:
-            return CertInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('CertInfo', None) is not None:
+                return self._properties.get('CertInfo')
+        return CertInfo(self)._select()
 
     @property
     def NacSettings(self):
@@ -83,10 +85,10 @@ class EapoUdpGlobals(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.protocolstack.eapoudpglobals.nacsettings.nacsettings import NacSettings
-        if self._properties.get('NacSettings', None) is not None:
-            return self._properties.get('NacSettings')
-        else:
-            return NacSettings(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('NacSettings', None) is not None:
+                return self._properties.get('NacSettings')
+        return NacSettings(self)._select()
 
     @property
     def ChangeStatusQuery(self):

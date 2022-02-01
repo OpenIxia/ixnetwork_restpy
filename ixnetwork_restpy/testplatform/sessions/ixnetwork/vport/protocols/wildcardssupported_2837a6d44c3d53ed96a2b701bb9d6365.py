@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class WildcardsSupported(Base):
@@ -243,3 +245,54 @@ class WildcardsSupported(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, EthernetDestinationAddress=None, EthernetFrameType=None, EthernetSourceAddress=None, IpDestinationAddress=None, IpProtocol=None, IpSourceAddress=None, IpTos=None, SwitchInputPort=None, TcpUdpDestinationPort=None, TcpUdpSourcePort=None, VlanId=None, VlanPriority=None):
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> WildcardsSupported
+        """Finds and retrieves wildcardsSupported resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve wildcardsSupported resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all wildcardsSupported resources from the server.
+
+        Args
+        ----
+        - EthernetDestinationAddress (bool): Indicates that the Ethernet destination address is supported.
+        - EthernetFrameType (bool): Indicates that the Ethernet frame type is supported.
+        - EthernetSourceAddress (bool): Indicates that the Ethernet source address is supported.
+        - IpDestinationAddress (bool): Indicates that the IP destination address is supported.
+        - IpProtocol (bool): Indicates that the IP protocol is supported.
+        - IpSourceAddress (bool): Indicates that the IP source address is supported.
+        - IpTos (bool): Indicates that the IP ToS (DSCP field, 6 bits) is supported.
+        - SwitchInputPort (bool): Indicates that the Switch input port is supported.
+        - TcpUdpDestinationPort (bool): Indicates that the TCP/UDP destination port is supported.
+        - TcpUdpSourcePort (bool): Indicates that the TCP/UDP source port is supported.
+        - VlanId (bool): Indicates that the VLAN id is supported.
+        - VlanPriority (bool): Indicates that the VLAN priority is supported.
+
+        Returns
+        -------
+        - self: This instance with matching wildcardsSupported resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of wildcardsSupported data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the wildcardsSupported resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)

@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class SwitchTables(Base):
@@ -62,10 +64,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactions_ec6a3d2ae6bb0592212467e2b9ae0f03 import ApplyActions
-        if self._properties.get('ApplyActions', None) is not None:
-            return self._properties.get('ApplyActions')
-        else:
-            return ApplyActions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplyActions', None) is not None:
+                return self._properties.get('ApplyActions')
+        return ApplyActions(self)._select()
 
     @property
     def ApplyActionsMiss(self):
@@ -79,10 +81,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applyactionsmiss_c88d65e1e0f8f637a660f0fb9cd6f4a7 import ApplyActionsMiss
-        if self._properties.get('ApplyActionsMiss', None) is not None:
-            return self._properties.get('ApplyActionsMiss')
-        else:
-            return ApplyActionsMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplyActionsMiss', None) is not None:
+                return self._properties.get('ApplyActionsMiss')
+        return ApplyActionsMiss(self)._select()
 
     @property
     def ApplySetField(self):
@@ -96,10 +98,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_0df63c15745bdf9e39be14dd8ed2de8c import ApplySetField
-        if self._properties.get('ApplySetField', None) is not None:
-            return self._properties.get('ApplySetField')
-        else:
-            return ApplySetField(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetField', None) is not None:
+                return self._properties.get('ApplySetField')
+        return ApplySetField(self)._select()
 
     @property
     def ApplySetFieldMask(self):
@@ -113,10 +115,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmask_ac2394ebbb58a0e3e4bd90699e8e83eb import ApplySetFieldMask
-        if self._properties.get('ApplySetFieldMask', None) is not None:
-            return self._properties.get('ApplySetFieldMask')
-        else:
-            return ApplySetFieldMask(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetFieldMask', None) is not None:
+                return self._properties.get('ApplySetFieldMask')
+        return ApplySetFieldMask(self)._select()
 
     @property
     def ApplySetFieldMiss(self):
@@ -130,10 +132,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmiss_d5e913768f62c6a315b980602e613536 import ApplySetFieldMiss
-        if self._properties.get('ApplySetFieldMiss', None) is not None:
-            return self._properties.get('ApplySetFieldMiss')
-        else:
-            return ApplySetFieldMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetFieldMiss', None) is not None:
+                return self._properties.get('ApplySetFieldMiss')
+        return ApplySetFieldMiss(self)._select()
 
     @property
     def ApplySetFieldMissMask(self):
@@ -147,10 +149,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfieldmissmask_a1d1c1318096b8b862772ca0daea5218 import ApplySetFieldMissMask
-        if self._properties.get('ApplySetFieldMissMask', None) is not None:
-            return self._properties.get('ApplySetFieldMissMask')
-        else:
-            return ApplySetFieldMissMask(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ApplySetFieldMissMask', None) is not None:
+                return self._properties.get('ApplySetFieldMissMask')
+        return ApplySetFieldMissMask(self)._select()
 
     @property
     def FeaturesSupported(self):
@@ -164,10 +166,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.featuressupported_92f575d2a2332efe64bd7fe760fcf22c import FeaturesSupported
-        if self._properties.get('FeaturesSupported', None) is not None:
-            return self._properties.get('FeaturesSupported')
-        else:
-            return FeaturesSupported(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('FeaturesSupported', None) is not None:
+                return self._properties.get('FeaturesSupported')
+        return FeaturesSupported(self)._select()
 
     @property
     def Instruction(self):
@@ -181,10 +183,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instruction_fc4b94bed361448b3d919547f5d505a9 import Instruction
-        if self._properties.get('Instruction', None) is not None:
-            return self._properties.get('Instruction')
-        else:
-            return Instruction(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Instruction', None) is not None:
+                return self._properties.get('Instruction')
+        return Instruction(self)._select()
 
     @property
     def InstructionMiss(self):
@@ -198,10 +200,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.instructionmiss_c4b2f1d7f7d9c8ad00aae67c1b5af082 import InstructionMiss
-        if self._properties.get('InstructionMiss', None) is not None:
-            return self._properties.get('InstructionMiss')
-        else:
-            return InstructionMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('InstructionMiss', None) is not None:
+                return self._properties.get('InstructionMiss')
+        return InstructionMiss(self)._select()
 
     @property
     def Match(self):
@@ -215,10 +217,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.match_768aa9c10fbecd20329c8a8a8482495f import Match
-        if self._properties.get('Match', None) is not None:
-            return self._properties.get('Match')
-        else:
-            return Match(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Match', None) is not None:
+                return self._properties.get('Match')
+        return Match(self)._select()
 
     @property
     def MatchMask(self):
@@ -232,10 +234,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.matchmask_3e54fe54588386540da4d88f8eefac19 import MatchMask
-        if self._properties.get('MatchMask', None) is not None:
-            return self._properties.get('MatchMask')
-        else:
-            return MatchMask(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('MatchMask', None) is not None:
+                return self._properties.get('MatchMask')
+        return MatchMask(self)._select()
 
     @property
     def Wildcards(self):
@@ -249,10 +251,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcards_d37a03c83fd57b830f05531c024bda35 import Wildcards
-        if self._properties.get('Wildcards', None) is not None:
-            return self._properties.get('Wildcards')
-        else:
-            return Wildcards(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('Wildcards', None) is not None:
+                return self._properties.get('Wildcards')
+        return Wildcards(self)._select()
 
     @property
     def WildcardsMask(self):
@@ -266,10 +268,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardsmask_58852c1aea55c59402d8fa035d06df5c import WildcardsMask
-        if self._properties.get('WildcardsMask', None) is not None:
-            return self._properties.get('WildcardsMask')
-        else:
-            return WildcardsMask(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WildcardsMask', None) is not None:
+                return self._properties.get('WildcardsMask')
+        return WildcardsMask(self)._select()
 
     @property
     def WildcardsSupported(self):
@@ -283,10 +285,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.wildcardssupported_2837a6d44c3d53ed96a2b701bb9d6365 import WildcardsSupported
-        if self._properties.get('WildcardsSupported', None) is not None:
-            return self._properties.get('WildcardsSupported')
-        else:
-            return WildcardsSupported(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WildcardsSupported', None) is not None:
+                return self._properties.get('WildcardsSupported')
+        return WildcardsSupported(self)._select()
 
     @property
     def WriteActions(self):
@@ -300,10 +302,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactions_b6ffad884e16fd072bdbe0c697cc514e import WriteActions
-        if self._properties.get('WriteActions', None) is not None:
-            return self._properties.get('WriteActions')
-        else:
-            return WriteActions(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteActions', None) is not None:
+                return self._properties.get('WriteActions')
+        return WriteActions(self)._select()
 
     @property
     def WriteActionsMiss(self):
@@ -317,10 +319,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writeactionsmiss_133562c2fb0ad0f2921733e2c487aa05 import WriteActionsMiss
-        if self._properties.get('WriteActionsMiss', None) is not None:
-            return self._properties.get('WriteActionsMiss')
-        else:
-            return WriteActionsMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteActionsMiss', None) is not None:
+                return self._properties.get('WriteActionsMiss')
+        return WriteActionsMiss(self)._select()
 
     @property
     def WriteSetField(self):
@@ -334,10 +336,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_1d3fe60ac5d235c8b6ffa41f05cf0752 import WriteSetField
-        if self._properties.get('WriteSetField', None) is not None:
-            return self._properties.get('WriteSetField')
-        else:
-            return WriteSetField(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetField', None) is not None:
+                return self._properties.get('WriteSetField')
+        return WriteSetField(self)._select()
 
     @property
     def WriteSetFieldMask(self):
@@ -351,10 +353,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmask_70c7a66c3e5975b41b9e4e368cebf9cc import WriteSetFieldMask
-        if self._properties.get('WriteSetFieldMask', None) is not None:
-            return self._properties.get('WriteSetFieldMask')
-        else:
-            return WriteSetFieldMask(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetFieldMask', None) is not None:
+                return self._properties.get('WriteSetFieldMask')
+        return WriteSetFieldMask(self)._select()
 
     @property
     def WriteSetFieldMiss(self):
@@ -368,10 +370,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmiss_89c5b6da627e4dc15d5aad1904210c18 import WriteSetFieldMiss
-        if self._properties.get('WriteSetFieldMiss', None) is not None:
-            return self._properties.get('WriteSetFieldMiss')
-        else:
-            return WriteSetFieldMiss(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetFieldMiss', None) is not None:
+                return self._properties.get('WriteSetFieldMiss')
+        return WriteSetFieldMiss(self)._select()
 
     @property
     def WriteSetFieldMissMask(self):
@@ -385,10 +387,10 @@ class SwitchTables(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfieldmissmask_f99c606569bcd266be92a115b6a3b059 import WriteSetFieldMissMask
-        if self._properties.get('WriteSetFieldMissMask', None) is not None:
-            return self._properties.get('WriteSetFieldMissMask')
-        else:
-            return WriteSetFieldMissMask(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('WriteSetFieldMissMask', None) is not None:
+                return self._properties.get('WriteSetFieldMissMask')
+        return WriteSetFieldMissMask(self)._select()
 
     @property
     def AutoConfigureNextTable(self):

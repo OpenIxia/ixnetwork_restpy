@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Evi(Base):
@@ -70,10 +72,10 @@ class Evi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.adinclusivemulticastrouteattributes_cbb2286b138e4134a4fd675abdd1b50f import AdInclusiveMulticastRouteAttributes
-        if self._properties.get('AdInclusiveMulticastRouteAttributes', None) is not None:
-            return self._properties.get('AdInclusiveMulticastRouteAttributes')
-        else:
-            return AdInclusiveMulticastRouteAttributes(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('AdInclusiveMulticastRouteAttributes', None) is not None:
+                return self._properties.get('AdInclusiveMulticastRouteAttributes')
+        return AdInclusiveMulticastRouteAttributes(self)._select()
 
     @property
     def BroadcastDomains(self):
@@ -87,10 +89,10 @@ class Evi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.broadcastdomains_e0e4233dfafdf70a0eed2ffe3c495b2d import BroadcastDomains
-        if self._properties.get('BroadcastDomains', None) is not None:
-            return self._properties.get('BroadcastDomains')
-        else:
-            return BroadcastDomains(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('BroadcastDomains', None) is not None:
+                return self._properties.get('BroadcastDomains')
+        return BroadcastDomains(self)
 
     @property
     def EviOpaqueTlv(self):
@@ -104,10 +106,10 @@ class Evi(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.eviopaquetlv_033801b83d5c442510c75fb6d0e848f9 import EviOpaqueTlv
-        if self._properties.get('EviOpaqueTlv', None) is not None:
-            return self._properties.get('EviOpaqueTlv')
-        else:
-            return EviOpaqueTlv(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EviOpaqueTlv', None) is not None:
+                return self._properties.get('EviOpaqueTlv')
+        return EviOpaqueTlv(self)
 
     @property
     def AdRouteLabel(self):

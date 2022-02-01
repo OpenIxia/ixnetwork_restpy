@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Vlan(Base):
@@ -61,10 +63,10 @@ class Vlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinfo_91d909247e15cc11a36d2ce682a6cad8 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)._select()
 
     @property
     def LearnedInterface(self):
@@ -78,10 +80,10 @@ class Vlan(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinterface_12063376c05c1de5b307a327a1cf75d8 import LearnedInterface
-        if self._properties.get('LearnedInterface', None) is not None:
-            return self._properties.get('LearnedInterface')
-        else:
-            return LearnedInterface(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInterface', None) is not None:
+                return self._properties.get('LearnedInterface')
+        return LearnedInterface(self)
 
     @property
     def Enabled(self):

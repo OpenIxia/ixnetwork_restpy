@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class Pcc(Base):
@@ -97,10 +99,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.expectedinitiatedlsplist_c1edb3ac572c229482ac3b16768b81b1 import ExpectedInitiatedLspList
-        if self._properties.get('ExpectedInitiatedLspList', None) is not None:
-            return self._properties.get('ExpectedInitiatedLspList')
-        else:
-            return ExpectedInitiatedLspList(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('ExpectedInitiatedLspList', None) is not None:
+                return self._properties.get('ExpectedInitiatedLspList')
+        return ExpectedInitiatedLspList(self)._select()
 
     @property
     def LearnedInfo(self):
@@ -114,10 +116,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import LearnedInfo
-        if self._properties.get('LearnedInfo', None) is not None:
-            return self._properties.get('LearnedInfo')
-        else:
-            return LearnedInfo(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInfo', None) is not None:
+                return self._properties.get('LearnedInfo')
+        return LearnedInfo(self)
 
     @property
     def PccLearnedLspDb(self):
@@ -131,10 +133,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcclearnedlspdb_1f09e65ced78209c908d7bf80bf0e73d import PccLearnedLspDb
-        if self._properties.get('PccLearnedLspDb', None) is not None:
-            return self._properties.get('PccLearnedLspDb')
-        else:
-            return PccLearnedLspDb(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PccLearnedLspDb', None) is not None:
+                return self._properties.get('PccLearnedLspDb')
+        return PccLearnedLspDb(self)._select()
 
     @property
     def PcepBackupPCEs(self):
@@ -148,10 +150,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepbackuppces_f780e95e8b1b209ab7ad3ca8a9f3a4c6 import PcepBackupPCEs
-        if self._properties.get('PcepBackupPCEs', None) is not None:
-            return self._properties.get('PcepBackupPCEs')
-        else:
-            return PcepBackupPCEs(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PcepBackupPCEs', None) is not None:
+                return self._properties.get('PcepBackupPCEs')
+        return PcepBackupPCEs(self)._select()
 
     @property
     def PreEstablishedSrLsps(self):
@@ -165,10 +167,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_a4b5c388b0a9f1cd18fdc396c2ea1c6a import PreEstablishedSrLsps
-        if self._properties.get('PreEstablishedSrLsps', None) is not None:
-            return self._properties.get('PreEstablishedSrLsps')
-        else:
-            return PreEstablishedSrLsps(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('PreEstablishedSrLsps', None) is not None:
+                return self._properties.get('PreEstablishedSrLsps')
+        return PreEstablishedSrLsps(self)._select()
 
     @property
     def RequestedLsps(self):
@@ -182,10 +184,10 @@ class Pcc(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestedlsps_13f940a8c982ec765fee3bc34ba5d305 import RequestedLsps
-        if self._properties.get('RequestedLsps', None) is not None:
-            return self._properties.get('RequestedLsps')
-        else:
-            return RequestedLsps(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('RequestedLsps', None) is not None:
+                return self._properties.get('RequestedLsps')
+        return RequestedLsps(self)._select()
 
     @property
     def Active(self):

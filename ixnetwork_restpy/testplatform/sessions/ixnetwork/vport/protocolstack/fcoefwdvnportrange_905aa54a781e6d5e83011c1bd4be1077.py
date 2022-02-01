@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class FcoeFwdVnPortRange(Base):
@@ -318,6 +320,62 @@ class FcoeFwdVnPortRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, B2bRxSize=None, Count=None, Enabled=None, Name=None, NodeWwnIncrement=None, NodeWwnStart=None, ObjectId=None, PlogiDestId=None, PlogiEnabled=None, PlogiMeshMode=None, PlogiTargetName=None, PortIdIncrement=None, PortIdStart=None, PortWwnIncrement=None, PortWwnStart=None, Simulated=None, VxPortName=None):
+        # type: (int, int, bool, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str) -> FcoeFwdVnPortRange
+        """Finds and retrieves fcoeFwdVnPortRange resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve fcoeFwdVnPortRange resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all fcoeFwdVnPortRange resources from the server.
+
+        Args
+        ----
+        - B2bRxSize (number): The buffer-to-buffer receive data field size in bytes.
+        - Count (number): The number of VN_Ports allocated by this range.
+        - Enabled (bool): Disabled ranges won't be configured nor validated.
+        - Name (str): Name of range
+        - NodeWwnIncrement (str): The Node Name incrementing value for this N_Port range.
+        - NodeWwnStart (str): The Node Name starting value for this N_Port range.
+        - ObjectId (str): Unique identifier for this object
+        - PlogiDestId (str): Indicates FCIDs and WWNs that can be used as destination for PLOGI requests.
+        - PlogiEnabled (bool): Enables these N_Ports to attempt a PLOGI connection with specified destinations.
+        - PlogiMeshMode (str): The association mode between PLOGI initiators and targets.
+        - PlogiTargetName (str): Indicates the N_Port range used as destination for PLOGI requests.
+        - PortIdIncrement (str): The increment value used to generate new FC_ID values.
+        - PortIdStart (str): The FC_ID value assigned to first VN_Port.
+        - PortWwnIncrement (str): The Port Name incrementing value for this N_Port range.
+        - PortWwnStart (str): The Port Name starting value for this N_Port range.
+        - Simulated (bool): Enables these VN_Ports to be simulated behind FCoE Forwarder.
+        - VxPortName (str): The FCoE Forwarder interface associated with this range.
+
+        Returns
+        -------
+        - self: This instance with matching fcoeFwdVnPortRange resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of fcoeFwdVnPortRange data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the fcoeFwdVnPortRange resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def CustomProtocolStack(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

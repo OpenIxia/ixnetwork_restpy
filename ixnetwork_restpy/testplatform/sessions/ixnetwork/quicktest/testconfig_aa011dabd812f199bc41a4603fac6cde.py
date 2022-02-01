@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class TestConfig(Base):
@@ -357,6 +359,64 @@ class TestConfig(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, BinaryResolutionSlaveNumber=None, Duration=None, EnableSlavesPassFail=None, IncrementStepSlaveNumber=None, InitialBinarySlaveNumber=None, InitialStepSlaveNumber=None, LoadType=None, MaxBinarySlaveNumber=None, MaxOutstanding=None, MaxStepSlaveNumber=None, MinBinarySlaveNumber=None, NumberOfSlavesPassFail=None, Numtrials=None, ProtocolItem=None, Runmode=None, SetupRate=None, StartTraffic=None, TeardownRate=None, UseExistingSetupRate=None):
+        # type: (int, int, str, int, int, int, str, int, int, int, int, int, int, List[str], str, int, str, int, bool) -> TestConfig
+        """Finds and retrieves testConfig resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all testConfig resources from the server.
+
+        Args
+        ----
+        - BinaryResolutionSlaveNumber (number): Specifies the binary resolution slave number.
+        - Duration (number): The duration of the test in hours, minutes, or seconds, which is used to calculate.
+        - EnableSlavesPassFail (str): If true, enables slaves pass fail.
+        - IncrementStepSlaveNumber (number): The incremental step value for the slave number.
+        - InitialBinarySlaveNumber (number): The initial incremental value of the binary slave number.
+        - InitialStepSlaveNumber (number): The initial step value of the slave number.
+        - LoadType (str(binary | step)): The type of the payload setting.
+        - MaxBinarySlaveNumber (number): The maximum value of the binary slave number.
+        - MaxOutstanding (number): The maximum oustanding value of the slave scalability.
+        - MaxStepSlaveNumber (number): The maximum step value of the slave number.
+        - MinBinarySlaveNumber (number): The minimum binary value of the slave number.
+        - NumberOfSlavesPassFail (number): The number of slaves pass fail.
+        - Numtrials (number): The number of trials.
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - Runmode (str(duration | noframes)): It gives the run mode
+        - SetupRate (number): The setup rate.
+        - StartTraffic (str): It starts the traffic
+        - TeardownRate (number): The teardown rate.
+        - UseExistingSetupRate (bool): If True, it uses the Existing Setup rate
+
+        Returns
+        -------
+        - self: This instance with matching testConfig resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of testConfig data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the testConfig resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
 
     def Apply(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

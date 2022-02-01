@@ -19,9 +19,11 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE. 
+import sys
 from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
-from typing import List, Any, Union
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
 
 
 class NeighborRange(Base):
@@ -112,10 +114,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.bgp4vpnbgpadvplsrange_c396d4abd272d60c3ff5958f98263958 import Bgp4VpnBgpAdVplsRange
-        if self._properties.get('Bgp4VpnBgpAdVplsRange', None) is not None:
-            return self._properties.get('Bgp4VpnBgpAdVplsRange')
-        else:
-            return Bgp4VpnBgpAdVplsRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('Bgp4VpnBgpAdVplsRange', None) is not None:
+                return self._properties.get('Bgp4VpnBgpAdVplsRange')
+        return Bgp4VpnBgpAdVplsRange(self)
 
     @property
     def EthernetSegments(self):
@@ -129,10 +131,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.ethernetsegments_a0eef4099ef38ee0e07ecf7430536119 import EthernetSegments
-        if self._properties.get('EthernetSegments', None) is not None:
-            return self._properties.get('EthernetSegments')
-        else:
-            return EthernetSegments(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('EthernetSegments', None) is not None:
+                return self._properties.get('EthernetSegments')
+        return EthernetSegments(self)
 
     @property
     def InterfaceLearnedInfo(self):
@@ -146,10 +148,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.interfacelearnedinfo_44709d044bd5612e19aaa934437e496a import InterfaceLearnedInfo
-        if self._properties.get('InterfaceLearnedInfo', None) is not None:
-            return self._properties.get('InterfaceLearnedInfo')
-        else:
-            return InterfaceLearnedInfo(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('InterfaceLearnedInfo', None) is not None:
+                return self._properties.get('InterfaceLearnedInfo')
+        return InterfaceLearnedInfo(self)._select()
 
     @property
     def L2Site(self):
@@ -163,10 +165,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l2site_261b4b7984b4a56f96a23ca529af873f import L2Site
-        if self._properties.get('L2Site', None) is not None:
-            return self._properties.get('L2Site')
-        else:
-            return L2Site(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('L2Site', None) is not None:
+                return self._properties.get('L2Site')
+        return L2Site(self)
 
     @property
     def L3Site(self):
@@ -180,10 +182,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.l3site_1184c1264fe43eeeb88002bee9622490 import L3Site
-        if self._properties.get('L3Site', None) is not None:
-            return self._properties.get('L3Site')
-        else:
-            return L3Site(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('L3Site', None) is not None:
+                return self._properties.get('L3Site')
+        return L3Site(self)
 
     @property
     def LearnedFilter(self):
@@ -197,10 +199,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedfilter_df26bdb55c5d9a2a87a7eb099776d203 import LearnedFilter
-        if self._properties.get('LearnedFilter', None) is not None:
-            return self._properties.get('LearnedFilter')
-        else:
-            return LearnedFilter(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedFilter', None) is not None:
+                return self._properties.get('LearnedFilter')
+        return LearnedFilter(self)._select()
 
     @property
     def LearnedInformation(self):
@@ -214,10 +216,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_1802ba18af469548428332b926b4e374 import LearnedInformation
-        if self._properties.get('LearnedInformation', None) is not None:
-            return self._properties.get('LearnedInformation')
-        else:
-            return LearnedInformation(self)._select()
+        if len(self._object_properties) > 0:
+            if self._properties.get('LearnedInformation', None) is not None:
+                return self._properties.get('LearnedInformation')
+        return LearnedInformation(self)._select()
 
     @property
     def MplsRouteRange(self):
@@ -231,10 +233,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.mplsrouterange_d92b7c314e154932c6a571f5bccc9139 import MplsRouteRange
-        if self._properties.get('MplsRouteRange', None) is not None:
-            return self._properties.get('MplsRouteRange')
-        else:
-            return MplsRouteRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('MplsRouteRange', None) is not None:
+                return self._properties.get('MplsRouteRange')
+        return MplsRouteRange(self)
 
     @property
     def OpaqueRouteRange(self):
@@ -248,10 +250,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.opaquerouterange_758cfa0f54d8a32ec8c2cdda163db9de import OpaqueRouteRange
-        if self._properties.get('OpaqueRouteRange', None) is not None:
-            return self._properties.get('OpaqueRouteRange')
-        else:
-            return OpaqueRouteRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('OpaqueRouteRange', None) is not None:
+                return self._properties.get('OpaqueRouteRange')
+        return OpaqueRouteRange(self)
 
     @property
     def RouteImportOptions(self):
@@ -265,10 +267,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routeimportoptions_6dbeb38f5cd6a11bd94fb0d2945c0d1b import RouteImportOptions
-        if self._properties.get('RouteImportOptions', None) is not None:
-            return self._properties.get('RouteImportOptions')
-        else:
-            return RouteImportOptions(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RouteImportOptions', None) is not None:
+                return self._properties.get('RouteImportOptions')
+        return RouteImportOptions(self)
 
     @property
     def RouteRange(self):
@@ -282,10 +284,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.routerange_0d3bbd0c1e734e0573f923091baa82c2 import RouteRange
-        if self._properties.get('RouteRange', None) is not None:
-            return self._properties.get('RouteRange')
-        else:
-            return RouteRange(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('RouteRange', None) is not None:
+                return self._properties.get('RouteRange')
+        return RouteRange(self)
 
     @property
     def UserDefinedAfiSafi(self):
@@ -299,10 +301,10 @@ class NeighborRange(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.userdefinedafisafi_963e12659eb9e18aba3316a600da5e38 import UserDefinedAfiSafi
-        if self._properties.get('UserDefinedAfiSafi', None) is not None:
-            return self._properties.get('UserDefinedAfiSafi')
-        else:
-            return UserDefinedAfiSafi(self)
+        if len(self._object_properties) > 0:
+            if self._properties.get('UserDefinedAfiSafi', None) is not None:
+                return self._properties.get('UserDefinedAfiSafi')
+        return UserDefinedAfiSafi(self)
 
     @property
     def AsNumMode(self):
